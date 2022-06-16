@@ -76,7 +76,7 @@ or
 $ pretext build latex --stringparam latex.font.size 11pt
 ```
 for a slightly larger font (recommended).
-* This will take a little time - roughly 3 minutes on a modest linux laptop computer
+* This will take a little time - roughly 10 minutes on a modest linux laptop computer
 * The latex is output to the `output/latex` subdirectory
 * To then compile this latex into PDF run 
 ```
