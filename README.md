@@ -16,4 +16,73 @@ The text grew out of our lecture notes for [Mathematics 220](https://www.calenda
 
 ## Build instructions
 
-The source can be compiled into either a website or latex using the [pretext-cli](https://pretextbook.org/doc/guide/html/processing-CLI.html). Instructions coming soon.
+The source is writen in [PreTeXt](https://pretextbook.org/) and so can
+be compiled into a number of different formats using the
+[pretext-cli](https://pretextbook.org/doc/guide/html/processing-CLI.html).
+
+### Installing PreTeXt CLI
+* Requires an up to date `python` installation.
+* See instructions at the [pretext-cli repository](https://github.com/PreTeXtBook/pretext-cli/)
+
+### Compile into HTML
+* From the repository root directory move into the `plp_book` subdirectory
+```
+$ cd plp_book
+```
+* Then run
+```
+$ pretext build html
+```
+* This will take a little time - roughly 3 minutes on a modest linux laptop computer
+* The resulting HTML will be produced in the `output/html` subdirectory
+* To view the HTML run
+```
+$ pretext view html
+```
+* This launches a mini http-server. It should tell you something like 
+```
+PreTeXt project found in `<PATH TO THE REPOSITORY>/PLP/plp_book`.
+Now starting a server to preview directory `<PATH TO THE REPOSITORY>/PLP/plp_book/output/html`.
+
+Success! Open the below url in a web browser to preview the most recent build of your project.
+    http://localhost:8000
+Use [Ctrl]+[C] to halt the server.
+
+```
+* Open your browser to the indicated URL to view the text.
+* You can also easily copy the site to a webserver by (for example)
+```
+$ cd output/
+$ tar -zcf html.tar.gz html
+```
+This produces a gzip'd tar file of the HTML. Copy that to the desired location and then untar it using
+```
+$ tar -zxf html.tgz
+```
+Then rename the `html` directory to whatever you like.
+
+
+### Compile into LaTeX and PDF
+* From the repository root directory move into the `plp_book` subdirectory
+```
+$ cd plp_book
+```
+* Then run
+```
+$ pretext build latex 
+```
+or
+```
+$ pretext build latex --stringparam latex.font.size 11pt
+```
+for a slightly larger font (recommended).
+* This will take a little time - roughly 3 minutes on a modest linux laptop computer
+* The latex is output to the `output/latex` subdirectory
+* To then compile this latex into PDF run 
+```
+pdflatex main.tex
+```
+or
+```
+latexmk main.tex
+```
