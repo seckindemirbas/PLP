@@ -86,3 +86,4 @@ or
 ```
 latexmk main.tex
 ```
+This latter command takes about 30s on a modest laptop.
