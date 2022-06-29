@@ -17,11 +17,12 @@ if len(sys.argv) != 2:
 sourceFile = Path(sys.argv[1])
 if sourceFile.suffix != ".ptx":
     print("Need sourcefile ptx:", sourceFile)
+    quit()
 
-# source prefix = blah
-sourcePrefix = sourceFile.stem
-# output directory
-outFile = sourcePrefix + ".html"
+# source stem = blah
+sourceStem = sourceFile.stem
+
+html_out_file = sourceStem + ".html"
 
 print("Reading in XSL transforms")
 pretext_xsl_dir = Path(core_xsl(as_path=True))
@@ -52,24 +53,31 @@ print("Error log:")
 print(transform.error_log)
 
 print("Writing HTML")
-with open(outFile, "w") as fh:
+with open(html_out_file, "w") as fh:
     fh.write(str(htmlSource))
 print("HTML written")
+
+# uncomment this "quit" if you want to build the pdfs too
+# uses 'decktape' to covert reveal.js to pdf
+# assumes that you have working pretext-cli install and
+# also decktape installed through npm as per instructions here
+# https://github.com/astefanutti/decktape
+
+quit()
 
 # run NPM to get the bin path for decktape
 try:
     npm_bin_output = subprocess.check_output(["npm", "bin"]).decode()
+    decktape_path = Path(npm_bin_output.strip()) / "decktape"
 except subprocess.CalledProcessError as err:
     print(f"Something went wrong trying to call find npm and decktape - {err}")
     print("Stopping without PDF conversion")
     quit()
 
-decktape_path = Path(npm_bin_output.strip()) / "decktape"
-
-# make a pdf output directory
+# some directory for pdf output
 pdf_dir = Path("pdf_out")
 pdf_dir.mkdir(exist_ok=True)
-pdf_out_file = pdf_dir / (sourcePrefix+".pdf")
+pdf_out_file = pdf_dir / (sourceStem + ".pdf")
 
 print("Converting to PDF")
 subprocess.run(
@@ -77,8 +85,7 @@ subprocess.run(
         decktape_path,
         "-s",
         "1920x1080",
-        "--chrome-arg=--disable-web-security",
-        outFile,
-        pdf_out_file
+        html_out_file,
+        pdf_out_file,
     ]
 )
