@@ -1,0 +1,37 @@
+<exercise>
+<!-- source latex = 'Check injective and surjective.tex' -->
+<!-- converted on 27/11/2021 at 15:25 -->
+<statement>
+<p>
+Let <m>f : \mathbb{Z} \rightarrow \mathbb{Z}\times\mathbb{Z}</m> be defined by <m>f(n) = (2n+1, n + 2)</m>. Check whether this
+function is injective and whether it is surjective. Prove your answer.
+</p>
+</statement>
+
+<!-- <hint></hint> -->
+
+<solution>
+<p>
+<em>Claim:</em> The function is injective, but not surjective.
+</p>
+
+<proof><p>
+  To prove that the function is injective, let <m>m,n \in \mathbb{Z}</m> so that <m>f(n)=f(m)</m>. Then <m>(2n+1,n+2) = (2m+1,m+2)</m>. This gives us two equations
+  <me>
+  2n+1=2m+1 \qquad \text{and} \qquad n+2=m+2
+  </me>
+  Both of these give <m>n=m</m> as required.
+</p>
+<p>
+Now, to show that the function is not surjective, we find a point in <m>(y_1, y_2) \in \mathbb{Z}\times \mathbb{Z}</m> which is not the image of any <m>x\in \mathbb{Z}</m>. Consider <m>(2,0)\in\mathbb Z\times \mathbb Z</m>. We see that <m>(2n+1, n+2)\neq (2,0)</m> for any <m>n\in\mathbb Z</m> since <m>2</m> is even and <m>2n+1</m> is always odd, that is <m>2\neq 2n+1</m> for any <m>n\in\mathbb Z</m>.
+</p></proof>
+<p>
+Notice that we can also prove that the function is an injection as follows:
+</p>
+<proof><title>Alternative proof of injectiveness</title>
+  <p>
+ Let <m>n,m\in\mathbb Z</m> and assume <m>n\neq m</m>. Then we see that <m>n+2\neq m+2</m>. Hence, we see <m>(2n+1, n+2)\neq (2m+1, m+2)</m>, that is <m>f(n)\neq f(m)</m>. Therefore the function is injective.
+</p></proof>
+
+</solution>
+</exercise>

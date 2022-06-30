@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<exercises xmlns:xi="http://www.w3.org/2001/XInclude">
+<xi:include href="ch07/3_divides_n_cube_minus_n_by_induction_question.ptx"/>
+<xi:include href="ch07/induction_adr1.ptx"/>
+<xi:include href="ch07/n_factorial_is_greater_than_3_to_the_n_question.ptx"/>
+<xi:include href="ch07/there_is_x_and_y_and_z_such_that_x_quare_plus_y_square_is_equal_to_z_to_the_2n_plus_1_question.ptx"/>
+<xi:include href="ch07/8_divides_3_to_2n1.ptx"/>
+<xi:include href="ch07/distributive_law.ptx"/>
+<xi:include href="ch07/n_fact_is_more_than_3_to_n_.ptx"/>
+<xi:include href="ch07/power_of_2_greater_than_2n.ptx"/>
+<xi:include href="ch07/sum_of_exponentials.ptx"/>
+<xi:include href="ch07/sum_of_rationals.ptx"/>
+<xi:include href="ch07/Sum_of_cubes_is_the_square_of_the_sum_question.ptx"/>
+<xi:include href="ch07/sum_of_cubes_from_1_to_n_is_greater_than_fourth_of_n_to_the_4_question.ptx"/>
+<xi:include href="ch07/geometric_series.ptx"/>
+<xi:include href="ch07/Induction_with_derivatives.ptx"/>
+<xi:include href="ch07/Sum_of_n_squared.ptx"/>
+<xi:include href="ch07/Sum_of_powers_of_half.ptx"/>
+<xi:include href="ch07/faulty_induction_max_of_infinite_sets.ptx"/>
+<xi:include href="ch07/factorial_as_integral.ptx"/>
+<xi:include href="ch07/triangle_inequality_with_multiple_numbers_using_induction_question.ptx"/>
+<xi:include href="ch07/Things_are_divisible_by_53.ptx"/>
+<xi:include href="ch07/fib_div.ptx"/>
+<xi:include href="ch07/binomial_thm.ptx"/>
+<xi:include href="ch07/Laplace_Operator.ptx"/>
+<xi:include href="ch07/Induction_with_nth_powers.ptx"/>
+<xi:include href="ch07/factoring_out_powers_of_3_question.ptx"/>
+<!-- <xi:include href="ch07/FTA_existence.ptx"/> -->
+<xi:include href="ch07/Numbers_are_sums_of_3s_and_5s.ptx"/>
+<xi:include href="ch07/formula_for_recurrence.ptx"/>
+<xi:include href="ch07/writing_numbers_in_binary_using_strong_induction_question.ptx"/>
+<xi:include href="ch07/merge_sort.ptx"/>
+<xi:include href="ch07/piling_stones_strong_induction_question.ptx"/>
+  <!-- <xi:include href="ch07/"/> -->
+
+</exercises>

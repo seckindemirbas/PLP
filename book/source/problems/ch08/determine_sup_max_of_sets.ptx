@@ -1,0 +1,213 @@
+<exercise xml:id="ex_sup_q1">
+<!-- source latex = 'determine_sup_max_of_sets.tex' -->
+<!-- converted on 07/12/2021 at 11:54 -->
+<statement>
+<p>
+Let <m>S\subset\mathbb{R}</m>. We say <m>b\in\mathbb{R}</m> is an <em>upper bound</em> of <m>S</m> if <m>s\leq b</m> for every <m>s\in S</m>. Further, we say <m>a\in\mathbb{R}</m> is the <em>supremum</em> (or the <em>least upper bound</em>) of <m>S</m>, denoted by <m>\sup(S)</m>, if
+<ul>
+<li>
+<p>
+ <m>a</m> is an upper bound for <m>S</m>, and
+</p></li>
+<li>
+<p>
+ if <m>b</m> is an upper bound for <m>S</m>, then <m>a\leq b</m>.
+</p></li>
+</ul>
+We also call <m>c\in S</m> the
+<em>maximum element</em> of <m>S</m>, denoted by <m>\max(S)</m>, if it is the largest element in <m>S</m>. So, <m>\max(S)</m> belongs to <m>S</m>, and is an upper bound of <m>S</m>.
+</p>
+
+<p>
+For each of the following sets, determine its maximum and supremum, if they exist. Justify your answers.
+<ol marker="(a)">
+<li>
+<p>
+ <m>[1,3]= \set{x \in \mathbb{R} \;:\; 1\leq x \leq 3}</m>
+</p></li>
+<li>
+<p>
+ <m>(1,3)= \set{x \in \mathbb{R} \;:\; 1\lt x \lt 3}</m>
+</p></li>
+<li>
+<p>
+ <m>\set{m\in\mathbb{Z}\;:\; |2(m-4)|\leq 15}</m>
+</p></li>
+<li>
+<p>
+ <m>\set{2-\frac{1}{n}\;:\;n\in\mathbb{N}}</m>
+</p></li>
+<li>
+<p>
+ <m>\set{x\in\mathbb{R}\;:\;\cos(2x)=1}</m>
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<hint>
+<p>
+In order to prove that <m>a</m> is the supremum of a set <m>S</m>, it suffices to show that <m>a</m> is an upper bound for <m>S</m>, and that if <m>b \lt a</m>, then <m>b</m> is not an upper bound of the set.
+The latter statement may be rephrased as follows: if <m>b \lt a</m>, then there is some <m>s\in S</m> with <m>s \gt b</m>.
+</p>
+<p>
+If you want to show instead that <m>S</m> has no maximum, prove that any <m>s\in S</m> is not an upper bound of the set.  That is, for any <m>s\in S</m>, there is some <m>t\in S</m> with <m>t \gt s</m>.
+</p>
+</hint>
+
+<answer>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ Any real number that is at least <m>3</m> is larger than or equal to every element of the set <m>[1,3]</m>. That means that any real number that is at least <m>3</m> is an upper bound of <m>[1,3]</m>.
+Since <m>3</m> is an element of <m>[1,3]</m>, and any number less than <m>3</m> is not an upper bound for <m>[1,3]</m>, we see that <m>3</m> is the least upper bound and the maximum of <m>[1,3]</m>.
+</p>
+
+
+</li>
+<li>
+<p>
+ We claim that <m>(1,3)</m> has no maximum. In order to show this, we need to show that any <m>x\in (1,3)</m> is not an upper bound of the set.
+</p>
+
+
+
+<p>
+We claim that <m>3</m> is the supremum of <m>(1,3)</m>. For any <m>x\in (1,3)</m>, <m>x \lt 3</m>, and therefore <m>3</m> is an upper bound of <m>(1,3)</m>.
+Now we need to show that it is the <em>least</em> upper bound. That is, we need to show that if <m>a</m> is an upper bound of <m>(1,3)</m>, then <m>3\leq a</m>.
+We will instead prove the converse of this statement: if <m>a \lt 3</m>, then <m>a</m> is not an upper bound of <m>(1,3)</m>.
+</p>
+
+
+
+</li>
+<li>
+<p>
+ It is important to realise that this is a subset of integers, not reals. Then we can simplify the set before we determine its maximum or supremum. The inequality <m>|2(m-4)|\leq15</m> holds if and only if
+<me> -15 \leq 2(m-4)\leq 15.</me>
+Dividing by 2, we then have
+<me> -\frac{15}{2} \leq m-4\leq \frac{15}{2} </me>
+and then adding <m>4</m>,
+<me> -\frac{7}{2} \leq m\leq \frac{23}{2}. </me>
+Since each of these steps can be reversed, we see that this inequality is equivalent to the original one. Hence
+<me> \set{m\in\mathbb{Z}: |2(m-4)|\leq 15}=\set{m\in\mathbb{Z}:- \frac{7}{2}\leq m\leq \frac{23}{2} }. </me>
+In this form, it's easier to see that the maximum and supremum of the set is <m>11</m>: indeed, any integer that is at most <m> \frac{23}{2} = 11 + \frac{1}{2}</m> must be at most <m>11</m>, so <m>11</m> is an upper bound for the set.
+Since <m>11</m> is an element of the set, it is the maximum. Since any element less than <m>11</m> cannot be an upper bound for the set, we see that <m>11</m> is also the supremum.
+</p>
+</li>
+<li>
+<p>
+ Let
+<me> S=\set{2-\frac{1}{n}:n\in\mathbb{N}}. </me>
+</p>
+<p>
+We claim that the set has no maximum. We need to show that for any <m>x\in S</m>, there is some other element of <m>S</m> that is greater than <m>x</m>; then <m>x</m> will not be an upper bound for <m>S</m>, and hence not its maximum.
+</p>
+
+
+<p>
+We claim that the supremum of <m>S</m> is <m>2</m>.
+First, we'll need to show that <m>2</m> is an upper bound for <m>S</m>. Then, we'll need to show that for any <m>a \lt 2</m>, <m>a</m> is not an upper bound of <m>S</m>.
+In order to do that, we need to find some <m>n\in\mathbb{N}</m> so that <m>a \lt 2-1/n</m>. Rearranging this, we have <m>1/n \lt 2-a</m>. Since <m>a \lt 2</m>, we have <m>2-a \gt 0</m>, and so the inequality <m>1/n \lt 2-a</m> may be rearranged to <m>1/(2-a) \lt n</m>.
+So the choice of <m>n=\lceil 1/(2-a)\rceil+1</m> will work.
+</p>
+
+
+</li>
+<li>
+<p>
+ Recall that <m>\cos(\theta)=1</m> holds if and only if <m>\theta =2\pi k</m> for some <m>k\in\mathbb{Z}</m>. Hence, if <m>\cos(2x)=1</m>, we must have <m>x=\pi k</m> for some <m>k\in\mathbb{Z}</m>. So
+<me> \set{x\in \mathbb{R}:\cos(2x)=1}=\set{\pi k:k\in\mathbb{Z}}. </me>
+We claim that this set has no upper bound; this means that the set cannot have a maximum or a supremum, since both the maximum and supremum would be upper bounds of the set.
+</p>
+
+</li>
+</ol>
+</p>
+</answer>
+<solution>
+  <proof><title>Proof of (a)</title>
+  <p>
+If <m>x\in [1,3]</m>, then <m>x\leq 3</m>, and so <m>3</m> is an upper bound of the set. Since <m>3\in [1,3]</m>, it is also the maximum of the set.
+Suppose <m>a</m> is an upper bound for <m>[1,3]</m>. Then <m>y\leq a</m> for all <m>y\in [1,3]</m>; in particular, <m>3\leq a</m>.
+Since <m>3</m> is an upper bound for <m>[1,3]</m>, and any upper bound of the set must be at least <m>3</m>, we have that the supremum of <m>[1,3]</m> is <m>3</m>.
+</p></proof>
+
+<proof><title>Proof of (b)</title>
+<p>
+Let <m>x\in (1,3)</m>. Then <m>x \lt 3</m>. Set <m>y=x + \frac{3-x}{2} = \frac{x+3}{2}</m>, which is the number half-way between <m>x</m> and <m>3</m>. Then notice that
+<me>
+  x+x \lt  2y = x+3  \lt 3+3
+</me>
+and so <m>x \lt y \lt 3</m>. Thus <m>y \in (1,3)</m> and larger than <m>x</m>. Thus <m>x</m> cannot be an upper bound of <m>(1,3)</m>. Since this is true for any <m>x \in (1,3)</m>, this set has no maximum.
+</p>
+<p>
+Note that we could choose other <m>y</m>-values, but this choice makes the argument quite clean.
+</p></proof>
+
+<proof><title>Proof of (c)</title>
+<p>
+  Since this is a finite set of integers we can list out its elements
+  explicitly and find the maximum and supremum from that. The set is
+  equivalent to <m>\set{n \in \mathbb{Z} : -\frac{7}{2} \leq n \leq
+  \frac{23}{2}}</m>. Hence it is the set <m>\set{-3,-2,\dots,
+  11}</m>. Thus the element <m>11</m> is the maximum. It is also the
+  supremum, since there is no greater element, and any <m>x \lt 11</m>
+  is not an upper bound.
+</p>
+</proof>
+
+<proof><title>Proof of (d)</title>
+<p>
+  We first prove that the supremum is 3 and then prove that there  is no maximum.
+</p>
+<p>  
+Since <m>x\lt 3</m> for all <m>x\in (1,3)</m>, <m>3</m> is an upper bound of <m>(1,3)</m>.
+Now let <m>a \lt 3</m>. If <m>a \leq 1</m>, then it is not an upper bound of <m>(1,3)</m>, since <m>2 \in (1,3)</m> but <m>a \lt 2</m>.
+Now suppose <m>a \gt 1</m>. Then set <m>y</m> to be the number half-way between <m>a</m> and <m>3</m>, namely set <m>y=a + \frac{3-a}{2} = \frac{a+3}{2}</m>. Then, as argued above,
+<me>
+  2 \lt a+a \lt 2y = a+3 \lt 3+3
+</me>
+Then <m>y\in (1,3)</m> but <m>y \gt a</m>, so <m>a</m> is not an upper bound of <m>(1,3)</m>.
+Thus <m>3</m> is the supremum of <m>(1,3)</m>, as claimed.
+</p>
+
+<p>
+  Now let <m>x\in S</m>. Then <m>x=2-1/n</m> for some <m>n\in\mathbb{N}</m>. But then
+<me> \frac{1}{n+1}\lt \frac{1}{n}, </me>
+and so
+<me> x=2-\frac{1}{n}\lt 2-\frac{1}{n+1}=y. </me>
+Since <m>y \in S</m> and <m>y \gt x</m>, <m>x</m> is not the maximum of <m>S</m>. As <m>x</m> was an arbitrary element of <m>S</m>, the set has no maximum.
+</p></proof>
+
+
+<proof><title>Proof of (e)</title>
+<p>
+Let <m>a\in\mathbb{R}</m>. We show that <m>a</m> is not an upper bound of the set. Let <m>k=\left\lceil a/\pi\right\rceil+1</m>. Then
+<me> \pi k  \gt \pi\cdot \frac{a}{\pi}=a. </me>
+Since <m>\pi k</m> is an element of <m>\set{x\in \mathbb{R}:\cos(2x)=1}</m>, <m>a</m> is not an upper bound of the set. Since <m>a</m> was arbitrary, the set has no upper bound, and hence no maximum or supremum.
+</p></proof>
+
+<p>
+After completing this question, you may be wondering when a set has a supremum or a maximum.
+Every non-empty subset of the real numbers that has an upper bound also has a supremum; this property is called <em>completeness of the real numbers</em>. This may fail if the set has no upper bound, as we saw in part (e).
+</p>
+<p>
+However, even if a non-empty subset of the real numbers has an upper bound, it may not have a maximum.
+For example, in part (b), we saw that <m>(1,3)</m> has an upper bound (for example, 3), but no maximum.
+</p>
+<p>
+Note that rational numbers do not share this property; they are not complete. For example, the set
+<md>
+<mrow>
+  A  \amp = \set{r \in \mathbb{Q} \;:\; 0 \lt r \leq \sqrt{2} }
+</mrow>
+</md>
+is the set of positive rational numbers that are at most <m>\sqrt{2}</m>. This set has a supremum in the real numbers; it is <m>\sqrt{2}</m>. We will show in <xref ref="ch-contradictions"/> that <m>\sqrt{2} \not \in \mathbb{Q}</m>.
+We could consider <m>A</m> to be a subset of the rational numbers, rather than the real numbers. Then <m>A</m> does not have a maximum nor a supremum in the rational numbers, even though it has an upper bound in the rational numbers (for example, <m>2</m>).  With some more work, one can show that for any <m>\frac{a}{b}</m> in this set, you can construct another <m>\frac{c}{d}</m> in the set which is larger. In fact, we'll make that an exercise in <xref ref="ch-contradictions"/>.
+This statement implies that <m>\sqrt{2}</m> is the set's supremum in the real numbers, and that the set has no supremum in the rational numbers.
+</p>
+</solution>
+
+</exercise>

@@ -1,0 +1,61 @@
+<exercise>
+<!-- source latex = 'induction_adr1.tex' -->
+<!-- converted on 12/08/2021 at 20:08 -->
+<statement>
+<p>
+Let <m>n \in \mathbb{N}</m> so that <m>n \geq 2</m>. Use mathematical induction to prove that
+<me>
+  n!  \leq n^n
+</me>
+Recall that <m>n! = n \cdot(n-1) \cdot(n-2)\cdots 2 \cdot 1</m>.
+</p>
+</statement>
+<hint>
+<p>
+Write out the statement for <m>n=k</m> and <m>n=k+1</m> and try to work out how to make the left-hand side of the first statement look like the left-hand side of the second statement.
+</p>
+</hint>
+<answer>
+<p>
+When <m>n=k</m> the statement is
+<me>
+k! \leq k^k
+</me>
+and we will need to prove that when <m>n=k+1</m>
+<me>
+(k+1)! \leq (k+1)^(k+1)
+</me>
+Notice that <m>(k+1)! = k! \cdot (k+1)</m>, and so we can make the first statement look like the second by multiplying by <m>(k+1)</m>.
+</p>
+</answer>
+
+<solution>
+<proof><p>
+We prove the result by induction.
+<ul>
+<li>
+<p>
+ Base case: when <m>n=2</m> we have <m>n! = 2 \cdot 1 = 2</m> and <m>n^n = 2^2 = 4</m>. Since <m>2 \leq 4</m>, the result holds when <m>n=2</m>.
+  </p></li>
+<li>
+<p>
+ Inductive step: Assume the result holds when <m>n=k\geq 2</m>. Then we have
+  <md>
+<mrow>
+      k!  \amp  \leq k^k  \amp  \text{multiply both sides by } k+1 \gt 0
+</mrow><mrow>
+      (k+1)!  \amp  \leq (k+1) \cdot k^k  \amp  \text{since } k \lt k+1
+</mrow><mrow>
+       \amp  \leq (k+1) \cdot (k+1)^k
+</mrow><mrow>
+       \amp  = (k+1)^{k+1}
+  </mrow>
+</md>
+  That is <m>(k+1)! \leq (k+1)^{k+1}</m>, so the result holds when <m>n=k+1</m>.
+</p></li>
+</ul>
+Since the base case and inductive step both hold, the result follows by induction.
+</p></proof>
+
+</solution>
+</exercise>

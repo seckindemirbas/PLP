@@ -1,0 +1,65 @@
+<exercise>
+<!-- source latex = 'set_builder.tex' -->
+<!-- converted on 23/06/2021 at 19:40 -->
+<statement>
+<p>
+Determine which of the following sets are equal to the set <m>S=\set{\frac{1}{n}\st n\in\mathbb{N}}</m>.
+<md>
+<mrow>
+A \amp =\set{\frac{1}{n+1}\st n\in\mathbb{N}} \amp  \;  \amp B=\set{\frac{1}{|n|}\st n\in\mathbb{Z}, \; n\neq0}
+</mrow><mrow>
+C \amp =\set{\frac{2}{k}\st k\in\mathbb{N}, \; k \text{ even}} \amp  \;  \amp D=\set{\frac{a}{b}\st a,b\in\mathbb{N}}
+</mrow><mrow>
+E \amp =\set{\frac{1}{n-1}\st n\in\mathbb{N}, \; n>1} \amp  \;  \amp F=\set{\frac{1}{m} \st m\in\mathbb{Z}, \; m>0 }
+</mrow>
+</md>
+</p>
+</statement>
+<hint>
+<p>
+Try writing out the first few terms of each set.
+</p>
+</hint>
+<solution>
+<p>
+The sets <m>B</m>, <m>C</m>, <m>E</m>, and <m>F</m> equal <m>S</m>. The sets <m>A</m> and <m>D</m> do not.
+</p>
+<p>
+<ul>
+<li>
+<p>
+ <m>A\neq S</m> because <m>1\not\in A</m> but <m>1\in S</m>.
+</p>
+</li>
+<li>
+<p>
+ <m>B=S</m> since the elements of <m>B</m> are just the reciprocal of the absolute value of non-zero integers.
+Hence <m>-1,1</m> both give <m>1/1</m>, <m>-2,+2</m> both give <m>1/2</m> and so on.
+</p>
+</li>
+<li>
+<p>
+ <m>C=S</m> since the elements of <m>C</m> can be reduced to the form <m>1/n</m>, <m>n\in\mathbb{N}</m>.
+Indeed, <m>1/n=2/k</m> when <m>k=2n</m>, and in the definition of <m>C</m>, we require that <m>k</m> is even.
+</p>
+</li>
+<li>
+<p>
+ <m>D\neq S</m> because <m>3/2\in D</m> but <m>3/2\not\in S</m>.
+Since <m>D</m> is the set of rational numbers, there are many elements in <m>D</m> that are not in <m>S</m>.
+</p>
+</li>
+<li>
+<p>
+ <m>E=S</m> because we compensate for writing its elements as <m>\frac{1}{n-1}</m> by restricting to <m>n\in\mathbb{N}</m> that are greater than one.
+Then <m>n=2</m> gives <m>1/1</m>, <m>n=3</m> gives <m>1/2</m>, and so on.
+</p>
+</li>
+<li>
+<p>
+ <m>F=S</m> since the requirement that <m>m\in\mathbb{Z}, \; m>0 </m> is the same as saying <m>m\in\mathbb{N}</m>.
+</p></li>
+</ul>
+</p>
+</solution>
+</exercise>

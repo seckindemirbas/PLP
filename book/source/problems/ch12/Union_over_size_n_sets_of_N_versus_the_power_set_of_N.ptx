@@ -1,0 +1,57 @@
+<exercise>
+<!-- source latex = 'Union over size n sets of N versus the power set of N.tex' -->
+<!-- converted on 30/03/2022 at 15:26 -->
+<statement>
+<p>
+Let <m>F_n= \{ X \subset \mathbb{N} \colon |X| = n \}\subseteq \mathcal{P}(\mathbb{N})</m>.
+<ol marker="(a)">
+<li>
+<p>
+ Prove that for every <m>n\in\mathbb{N}</m>, <m>|F_n|= |\mathbb{N}|</m>.
+    </p></li>
+<li>
+<p>
+ Also show that <m> \big|\bigcup\limits_{n\in \mathbb N}F_n \big|=|\mathbb{N}|</m>.
+    </p></li>
+<li>
+<p>
+ Does the result in part (b) contradict the fact that <m>|\mathbb{N}| \lt |\mathcal{P}(\mathbb{N})|</m>? Explain why or why not (you do not need to give a formal proof).
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+
+  <proof><title>Proof of (a)</title>
+  <p>
+    Let <m>n\in\mathbb{N}</m>. We see that the set <m>F_n</m> is the set of all subsets of <m>\mathbb{N}</m> of size <m>n</m>. We see that <m>F_n</m> is an infinite set. This means that we need to show that <m>F_n</m> is countable. As <m>F_n</m> is infinite, we know that <m>|F_n| \geq |\mathbb{N}|</m>. We must show that <m>|F_n|\leq |\mathbb{N}|</m>, so it is enough to show that there is an injection from <m>F_n</m> to a countable set.  We can define such injection as follows:
+    <md>
+<mrow>
+    f: F_n \amp \rightarrow \mathbb{N}^n,
+</mrow><mrow>
+    f(\{ a_1, a_2, a_3, \cdots, a_n \}) \amp =(a_{k_1}, a_{k_2},  a_{k_3}, \cdots, a_{k_n}),
+    </mrow>
+</md>
+    where <m>\{ a_1, a_2, a_3, \cdots, a_n \}=\{a_{k_1}, a_{k_2},  a_{k_3}, \cdots, a_{k_n}\}</m> and <m>a_{k_1} \lt  a_{k_2} \lt   a_{k_3} \lt  \cdots \lt  a_{k_n}</m>. We see that <m>f</m> is a well-defined function since if the sets <m>\{ a_1, a_2, a_3, \cdots, a_n \}=\{ b_1, b_2, b_3, \cdots, b_n \}</m>, then <m>(a_{k_1}, a_{k_2},  a_{k_3}, \cdots, a_{k_n})=(b_{k_1}, b_{k_2},  b_{k_3}, \cdots, b_{k_n})</m>, that is, when the <m>a_i</m>'s and <m>b_j</m>'s are arranged in ascending order, the corresponding <m>n</m>-tuples are equal.
+</p>
+<p>
+    Moreover, if <m>f(\{ a_1, a_2, a_3, \cdots, a_n \})=f(\{ b_1, b_2, b_3, \cdots, b_n \})</m>, then
+</p>
+<p>
+    <m>(a_{k_1}, a_{k_2},  a_{k_3}, \cdots, a_{k_n})=(b_{k_1}, b_{k_2},  b_{k_3}, \cdots, b_{k_n})</m> and since
+</p>
+<p>
+    <m>\{ a_1, a_2, a_3, \cdots, a_n \}=\{a_{k_1}, a_{k_2},  a_{k_3}, \cdots, a_{k_n}\}</m> and <m>\{ b_1, b_2, b_3, \cdots, b_n \}=\{b_{k_1}, b_{k_2},  b_{k_3}, \cdots, b_{k_n}\}</m> we see <m>\{ a_1, a_2, a_3, \cdots, a_n \}=\{b_{1}, b_{2},  b_{3}, \cdots, b_{n}\}</m>, meaning that <m>f</m> is injective.
+</p>
+<p>
+    We have also seen that the finite cartesian product of countable sets is countable (via <xref ref="res_prod_of_denum"/>). Thus, we see <m>\mathbb{N}^n</m> is countable. Therefore since <m>f</m> is an injection from <m>F_n</m> to <m>\mathbb{N}^n</m> and since <m>\mathbb{N}^n</m> is countable, we see <m>F_n</m> is countable.
+    </p></proof>
+
+    <proof><title>Proof of (c)</title>
+      <p> Since we are taking the union over denumerably many denumerable sets, by <xref ref="ex_countable_union"/>, we see that <m> \big|\bigcup\limits_{n\in \mathbb N}F_n \big|=|\mathbb{N}|</m>.
+    </p></proof>
+<p>(c) This result says that the set of all finite subsets of <m>\mathbb N</m> is countable. This is not really a contradiction with <m>\mathcal P(\mathbb N)</m> being uncountable, since we can show that the set of infinite subsets of <m>\mathbb N</m> is indeed uncountable.
+</p>
+</solution>
+</exercise>

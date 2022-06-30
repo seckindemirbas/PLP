@@ -1,0 +1,154 @@
+<exercise>
+<statement>
+  <p>
+    Let <m>F_k</m> be the <m>k^\mathrm{th}</m> Fibonacci number, and
+    let <m>q \in \mathbb{N}</m>. Show that <m>F_q \mid F_{qn}</m> for
+    all <m>n \in \mathbb{N}</m>. This generalises <xref ref="prop-fib3"/>.
+</p>
+</statement>
+<hint>
+  <p>
+    The proof of <xref ref="prop-fib3"/> works because <m>5</m> is a Fibonacci number. See how you might generalise what is happening in the proof.
+  </p>
+</hint>
+<answer>
+  <p>
+    Let's try making this work with <m>F_7 = 13</m>. That is, we want
+    to show that <m>F_7 \mid F_7n</m>.  Se we'll assume that <m>F_7
+    \mid F_{7k}</m> and then we'll try to show that this implies that
+    <m>F_7 \mid F_{7k+7}</m>. Now, from the definition of the
+    Fibonacci numbers, we can write <m>F_{7k+7}</m> in terms of
+    <m>F_{7k+6}</m> and <m>F_{7k+5}</m>:
+    <me>
+      F_{7k+7} = F_{7k+6}+F_{7k+5}
+    </me>
+    and then similarly expand <m>F_{7k+6} = F_{7k+5}+F_{7k+4}</m>, so:
+    <me>
+      F_{7k+7} = 2F_{7k+5}+F_{7k+4}
+    </me>
+    and keep going:
+    <md>
+      <mrow>F_{7k+7} \amp = 2F_{7k+5}+F_{7k+4} \amp \text{expand } F_{7k+5}</mrow>
+      <mrow> \amp= 3F_{7k+4} + 2 F_{7k+3} \amp \text{expand } F_{7k+4}</mrow>
+      <mrow> \amp= 5F_{7k+3} + 3 F_{7k+2} \amp \text{expand } F_{7k+3}</mrow>
+      <mrow> \amp= 8F_{7k+2} + 5 F_{7k+1} \amp \text{expand } F_{7k+2}</mrow>
+      <mrow> \amp= 13F_{7k+1} + 8 F_{7k}</mrow>
+    </md>
+    Now since, by assumption <m>13=F_{7} \mid F_{7k}</m>, we are done.
+  </p>
+  <p>
+    Notice that each time we expand and regroup the terms we get another Fibonacci number. So, let us try to write this more explicitly in terms of Fibonacci numbers:
+    <md>
+      <mrow>F_n \amp = 1 \cdot F_{n-1} + 1 \cdot F_{n-2}</mrow>
+      <mrow> \amp = F_2 \cdot F_{n-1} + F_1 \cdot F_{n-2}</mrow>
+      <mrow> \amp = F_3 \cdot F_{n-2} + F_2 \cdot F_{n-3} </mrow>
+      <mrow> \amp = F_4 \cdot F_{n-3} + F_3 \cdot F_{n-4} </mrow>
+      <mrow> \amp = F_5 \cdot F_{n-4} + F_4 \cdot F_{n-5} </mrow>
+    </md>
+    So we might try to show, more generally, that
+    <me>
+      F_n = F_{\ell} \cdot F_{n-\ell+1} + F_{\ell-1} \cdot F_{n-\ell}
+    </me>
+    or equivalently (after substituting <m>n \mapsto n+\ell</m>)
+    <me>
+      F_{n+\ell} = F_{\ell} \cdot F_{n+1} + F_{\ell-1} \cdot F_{n}.
+    </me>
+    Setting <m>n=7k, \ell=7</m> in this gives us 
+    <me>
+      F_{7k+7} = F_{7} \cdot F_{7k+1} + F_{6} \cdot F_{7k}
+    </me>
+    which is precisely what we need.
+  </p>
+</answer>
+<solution>
+  <proof>
+    <p>
+      Let <m>n \in \mathbb{N}</m>. We prove, using strong induction, that for all <m>\ell \in \mathbb{N}</m>
+      <me>
+      F_{n+\ell} = F_{\ell} \cdot F_{n+1} + F_{\ell-1} \cdot F_{n}.
+      </me>
+      and then use this to prove the result.
+      <ul>
+	<li>
+	  <p>
+	    Base case: When <m>\ell=1</m> we have
+	    <me>
+	      F_{n+1} = F_1 \cdot F_{n+1} + F_0 \cdot F_{n}
+	    </me>
+	    and since <m>F_0=0, =F_1=1</m>, this follows.
+	  </p>
+	</li>
+	<li>Inductive step: 
+	  Now assume that 
+	  <me>
+	    F_{n+k} = F_{k} \cdot F_{n+1} + F_{k-1} \cdot F_{n}.
+	  </me>
+	  holds for all <m>k \leq \ell</m>. Then
+	  <md>
+	    <mrow>F_{n+\ell+1} \amp = F_{n+\ell} + F_{n+\ell-1}</mrow>
+	    <mrow>\amp =
+	    (F_{\ell} \cdot F_{n+1} + F_{\ell-1} \cdot F_{n}) + (F_{\ell-1} \cdot F_{n} + F_{\ell-2} \cdot F_{n-1})
+	    </mrow>
+	    <mrow>
+	      \amp = (F_{\ell}+F_{\ell-1} ) \cdot F_{n} + (F_{\ell-1}+F_{\ell-2}) \cdot F_{n-1}
+	    </mrow>
+	    <mrow>
+	      \amp = F_{\ell+1} \cdot F_{n} + F_{\ell} \cdot F_{n-1}
+	    </mrow>
+	  </md>
+	  as required.
+	</li>
+      </ul>
+      Thus
+      <me>
+      F_{n+\ell} = F_{\ell} \cdot F_{n+1} + F_{\ell-1} \cdot F_{n}.	
+      </me>
+      holds for all <m>\ell \in\mathbb{N}</m>.      
+    </p>
+    <p>
+      Now we prove the main result by induction.
+      <ul>
+	<li>Base case: Since <m>F_q \mid F_q</m> the case case is true.</li>
+	<li>
+	  <p>
+	    Inductive step: Assume that
+	    <me>
+	      F_q \mid F_{qn}
+	    </me>
+	    and consider <m>F_{qn+q}</m>. By the inductive result we proved above (with <m>n \mapsto qn</m> and <m>\ell \mapsto q</m>) we know that
+	    <me>
+	      F_{qn+q} = F_{q+1} \cdot F_{qn} + F_q \cdot F_{qn-1}
+	    </me>
+	    Now since <m>F_q \mid F_{qn}</m> by assumption, this shows that <m>F_q \mid F_{qn+q}</m> as required.
+	  </p>
+	</li>
+      </ul>
+      Thus <m>F_q \mid F_{qn}</m> for all <m>n \in \mathbb{N}</m>.
+    </p>
+  </proof>
+
+  <!-- <proof> -->
+  <!--   <p> -->
+  <!--     Fix <m>q \in \mathbb{N}</m>. We prove the result by -->
+  <!--     induction. When <m>n=1</m> the result holds since <m>F_q \mid -->
+  <!--     F_q</m>. -->
+  <!--   </p> -->
+  <!--   <p> -->
+  <!--     Now assume that <m>F_q \mid F_{qk}</m>. Now -->
+  <!--     <md> -->
+  <!--       <mrow>F_{qk+q} \amp= F_{qk+q-1} + F_{qk+q-2} </mrow> -->
+  <!--       <mrow> \amp= (F_{qk+q-2} + F_{qk+q-3}) + F_{qk+q-2} = 2F_{qk+q-2}+F_{qk+q-3}</mrow> -->
+  <!--       <mrow> \amp= 2(F_{qk+q-3}+F_{qk+q-4}) + F_{qk+q-3} = 3 F_{qk+q-3} + 2F_{qk+q-4}</mrow> -->
+  <!--       <mrow> \amp= 3(F_{qk+q-4}+F_{qk+q-5}) + 2F_{qk+q-3} = 5 F_{qk+q-4} + 3F_{qk+q-5}</mrow> -->
+  <!--       <mrow> \amp= 5(F_{qk+q-5}+F_{qk+q-6}) + 3F_{qk+q-3} = 8 F_{qk+q-5} + 5F_{qk+q-6}</mrow> -->
+  <!--       <mrow> \amp=\vdots  </mrow> -->
+  <!--       <mrow> \amp = F_{j} F_{qk+q-j-1} + F_{j-1} F_{qk+q-j} </mrow> -->
+  <!--       <mrow> \amp=\vdots  </mrow> -->
+  <!--       <mrow> \amp=  F_q F_{qk+1} + F_{q-1} F_{qk}</mrow> -->
+  <!--     </md> -->
+  <!--     Then since <m>F_q \mid F_{qk}</m> it follows that <m>F_q \mid F_{qk+q}</m> as required. -->
+  <!--     The result follows by induction. -->
+  <!--   </p> -->
+  <!-- </proof> -->
+</solution>
+</exercise>

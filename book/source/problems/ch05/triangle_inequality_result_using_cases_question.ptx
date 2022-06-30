@@ -1,0 +1,65 @@
+<exercise>
+<!-- source latex = 'triangle inequality result using cases question.tex' -->
+<!-- converted on 05/07/2021 at 11:07 -->
+<statement>
+<p>
+Without using the triangle inequality, prove that if <m>x\in\mathbb{R}</m>, then <m>|x+4|+|x-3|\geq 7</m>.
+</p>
+</statement>
+<hint>
+<p>
+You may want to look at cases for <m>x\in\mathbb R</m> to get rid of the absolute values.
+</p>
+</hint>
+<answer>
+<p>
+Questions of this type are a good examples of how useful the triangle inequality can be. We see that if we wanted to use triangle inequality we could just say:
+<md>
+<mrow>
+|x+4|+|x-3|=|x+4|+|3-x|\geq |(x+4)+(3-x)|=|7| = 7.
+</mrow>
+</md>
+</p>
+<p>
+However, we are not allowed to use triangle inequality in this question. This means that we need to find a way to simplify the absolute values in the question. For that, we need to understand when the expressions <m>(x+4)</m> and <m>(x-3)</m> change signs. We see that these expressions change signs at <m>x=-4</m> and <m>x=3</m>, respectively.
+</p>
+<p>
+It is quite common to think here to look at cases <m>x\lt -4</m>, <m>x\geq 4</m>, <m>x\lt 3</m>, and <m>x\geq 3</m>. However, this is not the most efficient way to divide this hypothesis into cases since even when we look at <m>x\geq -4</m>, we need to consider the sign of <m>x-3</m>. This means that within some of the cases, we may have extra cases to consider.
+</p>
+<p>
+Instead, we can divide these into <m>3</m> cases: <m>x\lt 4</m>, <m>-4\leq x\leq 3</m>, and <m>x\gt 3</m>. This is more efficient since the expressions <m>(x+4)</m> and <m>(x-3)</m> do not change signs in the intervals <m>(-\infty,-4)</m>, <m>[-4, 3]</m>, and <m>(3,\infty)</m>.
+</p>
+<p>
+Let's see how this works in the proof.
+</p>
+</answer>
+
+<solution>
+<proof><p>
+We see that the statement involves the expressions <m>|x+4|</m> and <m>|x-3|</m>. Thus, we need to understand when the expressions <m>(x+4)</m> and <m>(x-3)</m> change signs. To do that, we need to consider three cases: <m>x\lt -4</m>, <m>-4\leq x\leq 3</m>, and <m>x\gt 3</m>.
+</p>
+<p>
+<ul>
+<li>
+<p>
+<em>Case 1</em>: Let <m>x\lt -4</m>. In this case, we see that <m>|x+4|=-x-4</m> and <m>|x-3|=3-x</m>. Therefore, <m>|x+4|+|x-3|=(-x-4)+(3-x)=-2x-1</m>. Moreover, since <m>x\lt -4</m>, we see <m>-2x-1\geq 7</m> which implies <m>|x+4|+|x-3|\geq 7</m>.
+</p>
+</li>
+<li>
+<p>
+<em>Case 2</em>: Let <m>-4\leq x\leq 3</m>. In this case, we see that <m>|x+4|=x+4</m> and <m>|x-3|=3-x</m>. Therefore, <m>|x+4|+|x-3|=(x+4)+(3-x)=7</m>. Hence, <m>|x+4|+|x-3|\geq 7</m>.
+</p>
+</li>
+<li>
+<p>
+<em>Case 3</em>: Finally, assume that <m>x\gt 3</m>. In this case, we see that <m>|x+4|=x+4</m> and <m>|x-3|=x-3</m>. Therefore, <m>|x+4|+|x-3|=(x+4)+(x-3)=2x+1</m>. Moreover, since <m>x\gt 3</m>, we see <m>2x+1\geq 7</m> which implies <m>|x+4|+|x-3|\geq 7</m>.
+</p></li>
+</ul>
+</p>
+<p>
+Therefore if <m>x\in\mathbb{R}</m>, then <m>|x+4|+|x-3|\geq 7</m>.
+</p>
+</proof>
+
+</solution>
+</exercise>

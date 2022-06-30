@@ -1,0 +1,104 @@
+<exercise>
+<!-- source latex = '8 divides 3^{2n}-1.tex' -->
+<!-- converted on 08/11/2021 at 10:43 -->
+<statement>
+<p>
+Let <m>m\in\mathbb{N}</m>, with <m>m</m> even. Show that <m>8</m> divides <m>3^m-1</m>.
+</p>
+</statement>
+<hint>
+<p>
+The even-ness of the exponent is required, otherwise the statement is simply not true:
+<me>
+  3^3 -1 = 27-1 = 26
+</me>
+and 8 definitely does not divide 26. Rephrase things to take advantage of what you know about even numbers.
+</p>
+</hint>
+<answer>
+<p>
+We want to prove this statement by induction. As written, we want to prove something about all <m>m\in\mathbb{N}</m>, with <m>m</m> even.
+In order to prove this by induction, however, we need reformulate the statement into something that we want to prove for all natural numbers instead.
+We can do this by writing <m>m=2n</m> for <m>n\in\mathbb{N}</m>. Then we need to prove that <m>8</m> divides <m>3^{2n}-1</m>. We can prove this by induction on <m>n</m>.
+</p>
+<p>
+<ul>
+<li>
+<p>
+ Base case: Take <m>n=1</m>. Then <m> 3^{2\cdot n}-1 =9-1=8, </m>, so the result holds.
+</p></li>
+<li>
+<p>
+ Inductive step: Assume that
+<me> 8\mid 3^{2k}-1. </me>
+We want to show that
+<me> 8\mid 3^{2(k+1)}-1. </me>
+Our assumption implies that there is some <m>\ell</m> so that
+<me>
+  3^{2k}-1 = 8 \ell
+</me>
+Rephrasing this we have <m>3^{2k} = 8\ell+1</m>. Notice that this implies that
+<me>
+  3^{2k+2} = 72\ell + 9
+</me>
+and thus
+<me>
+  3^{2k+2}-1 = 72\ell + 8 = 8(9\ell + 1)
+</me>
+giving us the divisibilty result we need.
+</p>
+</li>
+<li>
+<p>
+ Inductive step <mdash/> another way: Another way to approach the inductive step is to consider the difference between
+<me>
+  (3^{2k}-1) \qquad \text{and} \qquad (3^{2k+2}-1).
+</me>
+If that difference is a multiple of 8 then we can infer the result we need. So again, we assume that <m>8 \mid 3^{2k}-1</m>, and then consider the difference:
+<me>
+(3^{2k+2}-1) - (3^{2k}-1)
+= 3^{2k+2} - 3^{2k} = 9 \cdot 3^{2k} - 3^{2k} = 8\cdot 3^{2k}.
+</me>
+Then since <m>8 \mid 3^{2k}-1</m> we can write it as <m>8\ell</m> for some integer <m>\ell</m>, and so
+<me>
+(3^{2k+2}-1) - \underbrace{(3^{2k}-1)}_{=8\ell} = 8 \cdot 3^{2k}
+</me>
+and so, with a little rearranging:
+<me>
+(3^{2k+2}-1) = 8 \ell + 8 \cdot 3^{2k}.
+</me>
+So we see that <m>3^{2(k+1)}-1</m> is divisible by <m>8</m>.
+</p></li>
+</ul>
+</p>
+<p>
+Now we can write the formal proof up:
+</p>
+</answer>
+
+<solution>
+  <proof>
+<p>
+Let <m>n\in\mathbb{N}</m>.
+We proceed by induction on <m>n</m>. When <m>n=1</m>, we have
+<me> 3^{2\cdot 1}-1 =9-1=8, </me>
+which is divisible by <m>8</m>. Now suppose that the result holds for <m>n=k</m>, so
+<me> 8 \mid 3^{2k}-1. </me>
+So we can write <m>3^{2k}-1 = 8\ell</m> for some <m>\ell \in \mathbb{Z}</m>. Now, notice that
+<md>
+<mrow>
+  3^{2k+2} -1  \amp = 9 \cdot 3^{2k} -1  
+</mrow><mrow>
+   \amp = 8\cdot 3^{2k} + (3^{2k} -1)  
+</mrow><mrow>
+   \amp = 8\cdot 3^{2k} + 8\ell
+</mrow>
+</md>
+Thus <m>8</m> divides <m>3^{2(k+1)}</m> as required.
+</p>
+<p>
+Therefore, by induction, <m>8</m> divides <m>3^{2n}-1</m> for all <m>n\in\mathbb{N}</m>. Hence, equivalently, <m>8</m> divides <m>3^m-1</m> for any even <m>m\in\mathbb{N}</m>.
+</p></proof>
+
+</solution>
+</exercise>

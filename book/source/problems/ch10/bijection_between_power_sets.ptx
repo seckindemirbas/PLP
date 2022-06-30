@@ -1,0 +1,63 @@
+<exercise>
+<!-- source latex = 'bijection between power sets.tex' -->
+<!-- converted on 06/02/2022 at 13:42 -->
+<statement>
+<p>
+Let <m>A, B</m> be nonempty sets. Prove that if there is a bijection <m>f:A\rightarrow B</m>, then there is a bijection from <m>\mathcal{P}(A)</m>, the power set of <m>A</m>, to <m>\mathcal{P}(B)</m>, the power set of <m>B</m>.
+</p>
+</statement>
+<hint>
+<p>
+<ul>
+<li>
+<p>
+ You need to do a lot of work mapping elements and subsets. We recommend that you use (say) <m>x,y</m> to denote elements of <m>A</m> and <m>B</m>, and (say) <m>X, Y</m> to denote subsets of <m>A,B</m> (which makes <m>X,Y</m> elements of <m>\mathcal{P}(A), \mathcal{P} (b)</m>).
+    </p></li>
+<li>
+<p>
+ Try this with two small sets. For example, take <m>A=\{1,2,3\}</m> and <m>B=\{10,20,30\}</m>. Construct a simple bijection from <m>A</m> to <m>B</m> and then use that to make a bijection from <m>\mathcal{P}(A)</m> to <m>\mathcal{P}(B)</m>.
+</p></li>
+</ul>
+</p>
+</hint>
+<solution>
+
+<proof><p>
+Let <m>A, B</m> be nonempty sets and assume that there is a bijection <m>f:A\rightarrow B</m>. Then, since <m>f</m> is a function, we can define a new function <m>g:\mathcal{P}(A)\rightarrow \mathcal{P}(B)</m> as follows:
+<me>g(X)=\set{ f(x) : x\in X } \in \mathcal P(B). </me>
+That is, our new function <m>g</m> takes each element of a subset to its image under <m>f</m>. We need to check that <m>g</m> is injective and surjective.
+</p>
+<p>
+<ul>
+<li>
+<p>
+ Surjective: Let <m>Y\in\mathcal P(B)</m>. Then we know that <m>Y\subseteq B</m>. We also know that <m>f</m> is surjective. Then, we see that <m>\forall y\in Y</m> there is an <m>x\in A</m> such that <m>f(x)=y</m>. Consider the set <m>X=\set{x\in A: f(x)\in Y}</m>. We would like to show that <m>g(X) = Y</m>.
+</p>
+<p>
+  First, let <m>b \in g(X)</m>. Then by the definition of <m>g</m>, <m>b = f(a)</m> for some <m>a\in X</m>. In particular, <m>X</m> is the set of <m>x\in A</m> such that <m>f(x) \in Y</m>, so <m>a \in X</m> implies <m>a = f(b) \in Y</m>. Thus, <m>g(X) \subseteq Y</m>.
+</p>
+<p>
+  Now, let <m>b \in Y</m>. Since <m>f</m> is surjective, there exists <m>a \in A</m> such that <m>f(a)=b</m>. Thus, by the definition of <m>X</m> we have <m>a \in X</m>, and by the definition of <m>g</m>, <m>f(a) = b \in g(X)</m>.
+</p>
+<p>
+Therefore we see <m>g(X)=Y</m>. Hence <m>g</m> is surjective.
+</p>
+</li>
+<li>
+<p>
+ Injective: We proceed by contrapositive. Let <m>Z, W \in \mathcal{P}(A)</m>. We will show that if <m>g(Z) = g(W)</m> then <m>Z=W</m>. Assume <m>g(Z)=g(W)</m>.
+</p>
+<p>
+Let <m>z \in Z</m>. By the definition of <m>g</m>, <m>f(z) \in g(Z) = g(W)</m>. Thus, there is some <m>w\in W</m> so that <m>f(w) = f(z)</m>. By the injectivity of <m>f</m>, <m>w=z</m>, so <m>z\in W</m>, and we see <m>Z \subseteq W</m>.
+</p>
+<p>
+Now, let <m>w\in W</m>. By the definition of <m>g</m>, <m>f(w) \in g(W) = g(Z)</m>. Thus, there is some <m>z\in Z</m> so that <m>f(w) = f(z)</m>. By the injectivity of <m>f</m>, <m>w=z</m>, so <m>w\in Z</m>, and we see <m>W \subseteq Z</m>. Therefore, <m>Z=W</m>, and we see that <m>g</m> is injective.
+</p>
+<p>
+We conclude that <m>g</m> is a bijection.
+</p></li>
+</ul>
+</p></proof>
+
+</solution>
+</exercise>

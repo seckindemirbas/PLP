@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude"><title>Sets</title>
+<introduction>
+<p>
+  All subjects have to start from somewhere, and we'll start our work at sets.
+  The authors believe that you, the reader, will have all seen some basic bits of set-theory before you got to this text.
+  We hope we can safely assume<fn>
+  Assumptions can be dangerous, and in general we will avoid them, or at least do our best to be honest with the reader that we are making an assumption.
+  </fn> that you have at least some passing familiarity with sets, intersections, unions, Venn diagrams (those famous overlapping circle pictures), and so forth.
+  Based on this assumption, we will move quite quickly through an introduction to this topic and do our best to get you to new material.
+  We really want to get you proving things as quickly as possible.
+</p>
+
+<p>
+Set theory now appears so thoroughly throughout mathematics that it is difficult to imagine how Mathematics could have existed without it.
+It might be surprising to note that set theory is a much newer part of mathematics than calculus.
+Set theory (as its own subject) was really only invented in the 19th Century <mdash/> primarily by Georg Cantor<fn>
+A mathematician we will discuss in much more detail in footnotes much like this much later in the text when we get to the topic of Cardinality in Chapter<nbsp /><xref ref="chap_cardinality" />. We will also try to reduce the overuse of the word <q>much</q> as much as possible.
+</fn>
+Really mathematicians were using sets well before then, just without defining things quite so formally.
+</p>
+
+<p>Since it (and logic) will form the underpinning of all the structures we will discuss in this text it is important that we start with some definitions.
+  We should try to make them as firm and formal as we can.
+</p>
+</introduction>
+
+<section><title>Not so formal definition</title>
+<introduction>
+
+<p>In mathematics and elsewhere<fn>Including the so-called <q>real life</q> that non-mathematicians inhabit.</fn> we are used to dealing with collections of things.
+For example
+<ul>
+<li> a family is a collection of relatives.
+</li>
+<li> hockey team is a collection of hockey players.
+</li>
+<li> shopping list is a collection of items we need to buy.
+</li>
+</ul>
+</p>
+
+<p>Let us give our first definition for the course.
+Now this one is not so formal <mdash/> but it will be enough for our purposes<fn>
+Unfortunately the formal theory of sets gets very difficult very quickly and is well beyond the scope of this text.
+So rather than investing a large amount of time on the precise definition of <term>set</term>, we will make do with this one.
+It is better for us to just get on with learning how to give precise definitions of particular sets and how to work with them.
+</fn>.
+</p>
+
+
+<definition><title>(A not so formal definition of sets)</title>
+<statement><p>
+ A <term>set</term> is a collection of objects.
+ The objects are referred to as <term>elements</term> or <term>members</term> of the set.
+</p></statement>
+</definition>
+
+<p>
+One reason to be not-so-formal here, is that while the notion of a set is relatively simple and intuitive, it turns out that making the definition completely rigorous is quite difficult.
+The interested reader should search-engine their way to discussions of this point.
+</p>
+
+<p>Now <mdash/> let's just take a few moments to describe some conventions.
+There are many of these in mathematics.
+These are not firm mathematical rules, but rather they are much like traditions.
+It makes it much easier for people reading your work to understand what you are trying to say.
+<ul>
+<li> Use capital letters to denote sets, <m>A,B, C, X, Y</m> etc.
+</li>
+<li> Use lower case letters to denote elements of the sets <m>a,b,c,x,y</m>.
+</li>
+</ul>
+So when you are writing a proof or just describing what you are doing then if you stick with these conventions people reading your work (including the person marking your exams) will know <mdash/> <q>Oh <m>A</m> is that set they are talking about</q> and <q><m>a</m> is an element of that set.</q>.
+On the other hand, if you use any old letter or symbol might be correct, but it can be unnecessarily confusing for the reader<fn>
+While obfuscation can be useful in many endeavours, the authors do not know of any good reason to deliberately obfuscate your mathematics.
+</fn>.
+Think of it as being a bit like spelling <mdash/> if you don't spell words correctly people can usually understand what you mean, but it is much easier if you spell words the same way as everyone else<fn>Okay, maybe Noah Webster had some not completely unreasonable reasons for tweaking English spelling, but this author is not entirely convinced that quite so many z's are needed.</fn>.
+</p>
+
+<p>We will encounter more of these conventions as we go <mdash/> another good one is
+<ul>
+<li> The letters <m>i,j,k,l,m,n</m> usually denote integers.
+</li>
+<li> The letters <m>x,y,z,w</m> usually denote real numbers.
+</li>
+</ul>
+</p>
+
+<p>So <mdash/> what can we do with a set?
+There is only thing we can ask of a set:
+</p>
+<blockquote>
+<p><q>Is this object in the set</q></p>
+</blockquote>
+<p>
+and the set will answer
+</p>
+<blockquote>
+  <p>
+    <q>yes</q>
+  </p>
+</blockquote>
+<p>
+  or
+</p>
+<blockquote>
+  <p>
+    <q>no</q>
+  </p>
+</blockquote>
+<p>
+and nothing else.
+If you want to know more than just <q>yes</q> or <q>no</q>, then you need to use with more complicated mathematical structures (we'll touch on some as we go along).
+</p>
+
+<p>
+  For example, if <m>A</m> is the set of even numbers we can ask <q>Is 4 in <m>A</m></q> we get back the answer <q>yes</q>.
+We write this as
+<md>
+<mrow>
+  4 \in A
+</mrow>
+</md>
+While if we ask  <q>Is <m>3</m> in <m>A</m>?</q> and we get back the answer <q>no</q>.
+Mathematically we would write this as
+<md>
+<mrow>
+  3 \notin A
+</mrow>
+</md>
+So this symbol <q><m>\in</m></q> is mathematical shorthand for <q>is an element of</q>, while the same symbol with a stroke through it <q><m>\notin</m></q> is shorthand for <q>is not an element of</q>.
+Similar <q>put a stroke through the symbol to indicate negation</q>-notation gets used a lot in different contexts and we'll see it throughout this text. While it is arguably not terribly creative, it is effective <mdash /> perhaps because it isn't too creative.
+</p>
+
+<p>
+  This is standard notation <mdash/> it is very important that you learn it and use it.
+  Do not confuse the reader, or the person who marks your tests and exams, by using some variation of this.
+  For instance, some of you may have previously used <m>\varepsilon</m> in place of <m>\in</m> <mdash/> please stop doing so.
+  For most mathematicians,  <q><m>4\varepsilon A</m></q> denotes the product of three things, while <q><m>4 \in A</m></q> is a mathematical sentence that tells us that the object <q>4</q> is a member of the set <m>A</m>.
+</p>
+</introduction>
+<subsection>
+  <title>Who is this reader you keep on mentioning?</title>
+  <p>
+    We have referred to a <q>reader</q> several times in the text above but not really explained who we mean by <q>the reader</q>.
+    There are 3 different types of reader that we mean when we say <q>think about the reader</q>: you, another person, and not-a-real-reader.
+  <ul>
+    <li>
+      <p>
+        You: Frequently, the only person who will read your mathematics is you.
+        Your lecture notes, your homework drafts, your experimenting, etc <mdash /> you typically don't show them to other people.
+        For that sort of work <alert>in isolation</alert> it doesn't really matter too much if you don't use standard notation, take shortcuts, and a myriad of other things that people typically do to save time.
+        However, if we only think of ourselves when we write then we can form many bad habits that we take with us when we write for other people.
+        These shortcuts can be hard for other people to understand unless we take the time to explain them.
+        Consequently, it is a good idea to avoid these habits even when writing for ourselves; your reader, and even your future self, will thank you.
+      </p>
+    </li>
+    <li>
+      <p>
+          Another person: On many occasions another person will read your work <mdash /> the most obvious being the person who marks your homework, tests and exams.
+          Generally you will not be present while they read (and perhaps grade) your mathematics, so typically they will only be able to mark what you have written on the page; they cannot mark <alert>what you mean</alert> by what is on the page.
+          So you need to make sure things are as clear as possible, so that what you have written conveys what you mean.
+          If you are in the habit of using your own shorthand or definitions or notation, then you must make sure these are clearly explained.
+      </p>
+    </li>
+    <li>
+      <p>
+        Not-a-real-reader: Finally, we should often think of a reader who isn't really a reader at all, but really just a mechanism we should use to decide if what we are writing is good enough. Our imaginary reader is intelligent, sensible, knows some mathematics (but not everything), and is a bit of an annoying pedant<fn>
+        Is there any other sort of pedant?
+      </fn>.
+        As we write we should think of this imaginary reader looking over our shoulder asking questions like <q>Is that the right notation?</q>, <q>Is that clear enough?</q>, <q>Does the logic flow in the right direction?</q> and offering advice like <q>Add another sentence to the explanation.</q> and <q>Make sure you define that function.</q>
+      </p>
+    </li>
+  </ul>
+    As we continue along in this text we will keep referring to these readers and reminding you to think of them as you write.
+    Communicating mathematics is a very important part of doing mathematics.
+  </p>
+</subsection>
+</section>
+
+<section xml:id="sec-describing"><title>Describing a set</title>
+<p>
+We really need to be able to describe and define lots of different sets when we are doing mathematics.
+It must be completely clear from the definition how to answer the question <q>Is this object in the set or not?</q>
+<ul>
+<li> <q>Let <m>A</m> be the set of even integers between 1 and 13.</q> <mdash/> nice and clear.
+</li>
+<li> <q>Let <m>B</m> be the set of tall people in this class room.</q> <mdash/> not clear.
+</li>
+</ul>
+More generally if there are only a small number of elements in the set we just list them all out
+<ul>
+<li> <q>Let <m>C = \set{1,2,3}</m>.</q>
+</li>
+</ul>
+When we write out the list we put the elements inside braces <m>\{ \cdot \}</m>.
+Do not use round, square or angle brackets <mdash/> those things have other mathematical meanings <mdash/> we must use braces or <q>curly brackets</q> if you like.
+Not that the order we write things in doesn't matter
+<md>
+<mrow>
+  C &amp; = \set{1,2,3} = \set{2,1,3} = \set{3,2,1}
+</mrow>
+</md>
+because the only thing we can ask is <q>Is this object an element of <m>C</m>?</q>
+We cannot ask more complex questions like <q>what is the third element of <m>C</m></q> <mdash/> we require more sophisticated mathematical objects to ask such questions and we'll might get around to looking at such things later in the course.
+</p>
+
+<p>Similarly, it doesn't matter how many times we write the same object in the list
+<md>
+<mrow>
+  C &amp;= \set{1,1,1,2,3,3,3,3,1,2,1,2,1,3} = \set{1,2,3}
+</mrow>
+</md>
+because all we ask is <q>Is <m>1 \in C</m>?</q>.
+Not <q>how many times is 1 in <m>C</m>?</q> (you need a mathematical construction called a multiset to ask and answer this question).
+</p>
+
+<p>Now <mdash/> if the set is a bit bigger then we might write do something like this
+<ul>
+<li> <m>C = \set{1,2,3,\dots,40}</m> the set of all integers between 1 and 40 (inclusive).
+</li>
+<li> <m>A = \set{1,4,9,16,\dots}</m> the set of all positive square integers
+</li>
+</ul>
+The <q><m>\dots</m></q> (ellipsis) is shorthand for the missing entries and tells us to follow the pattern as long as we can.
+You must be careful with this as you can easily confuse the reader if the pattern is not clear.
+That, in turn, that means that your set is not defined sufficiently precisely.
+<ul>
+<li> <m>B = \set{3,5,7,\dots }</m> <mdash/> is this all odd primes, or all odd numbers bigger than 1 or prime numbers that differ from a power of 2 by exactly 1?
+</li>
+</ul>
+Only use this where it is completely clear by context.
+A few extra words can save the reader (and yourself) a lot of confusion.
+</p>
+
+<p>This is perhaps the most important set <mdash/> many other important objects in mathematics can be built up from this.</p>
+
+<definition><title>Empty set</title>
+<statement><p>
+  The <term>empty set</term> (or null set or void set) is the set which contains no elements.
+  It is denoted <m>\es</m>.
+  For any object <m>x</m>, we always have <m>x \notin \es</m>; hence <m>\es = \set{ }</m>.
+</p></statement>
+</definition>
+
+<p>
+  Notice that the empty set is not nothing <mdash/> you should think of it as an empty bag. Be careful not to confuse it with the empty in the empty bag<fn>
+This potential confusion is akin to that caused by the number zero. How can something, that is <q>0</q>, denote nothing? We recommend taking a little digression into this topic (with digressions into Parmenides, Leucippus, Democritus, Zeno, horror vacui, and many other topics) with your favourite search engine.
+</fn>.
+</p>
+
+<example>
+<p>
+<ul>
+<li> <m>A = \set{1,2,\es }</m> <mdash/> this set contains three elements; the numbers one and two and the empty set.
+A set can contain sets.
+</li>
+<li> <m>B = \set{\es }</m> <mdash/> this set is not the empty set <mdash/> it contains a single element, being the empty set. You can think of this set as being a bag that contains an empty bag.
+</li>
+<li> <m>C = \set{\es, \set{\es } }</m> <mdash/> this set contains two elements; the empty set and the set that contains the empty set (our set <m>B</m> above).
+</li>
+</ul>
+</p>
+</example>
+
+
+<p>Now <mdash/> this is all fine when the set doesn't contain too many elements.
+But for infinite sets or even just big sets we can't do this and instead we have to give the defining rule.
+For example the set of all positive even numbers we write as
+<md>
+<mrow>
+  S &amp;= \set{x \so x \text{ is even and positive} } = \set{2,4,6,8\dots}
+</mrow>
+</md>
+The second notation is also okay, but you have to be careful to make sure it is completely clear which set you are talking about.
+The first notation can be read as <q><m>S</m> is the set of elements <m>x</m> such that <m>x</m> is even and positive</q>.
+This is the standard way of writing a set defined by a rule.
+This sort of notation is sometimes called <alert>set-builder notation</alert>.
+<md>
+<mrow>
+  S &amp;= \set{\text{some expression } \so \text{ some rule} } &amp;\text{or}
+</mrow><mrow>
+  &amp;= \set{\text{a function} \so \text{ a domain}}
+</mrow>
+</md>
+The set of all primes is
+<md>
+<mrow>
+  S &amp;= \set{ p : p \mbox{ is prime} }
+</mrow>
+</md>
+the <q>:</q> is read as <q>such that</q> or <q>so that</q>, and you will also often see
+<md>
+<mrow>
+  S &amp;= \set{ p \st p \mbox{ is prime} } = \set{ p \so p \mbox{ is prime} }
+</mrow>
+</md>
+This author prefers <q><m>\so</m></q> since it provides a clear (even physical) demarcation. You should recognise all three notations.
+</p>
+
+<p>While set-builder notation avoids many problems of clarity, it does not avoid all problems.
+A very famous example is
+<md>
+<mrow>
+  S \amp = \set{A \so A \not\in A }
+</mrow>
+</md>
+ie. the set of all sets that do not contain themselves.
+This is a problem, because if <m>S \in S</m>, then according to the defining rule, it cannot be.
+On the other hand, if <m>S \not\in S</m> then it must be.
+Hence the rule is ambiguous.
+This is Russell's paradox.
+It is closely related to the sentence
+</p>
+
+<blockquote>
+<p>
+  This sentence is false.
+</p>
+</blockquote>
+
+<p>
+One way around these problems is to avoid talking about self-referential objects <mdash/> but this is way too heavy for the moment, and we should just get back to easier sets<fn>The book <q>Gödel, Escher, Bach: An Eternal Golden Braid</q> by Douglas Hofstadter is a wonderful exploration of topics related to Russell's paradox and much much more.</fn>.
+</p>
+
+<p>The empty set is one important set, here are a few more.
+  What follows is not really a formal definition of these sets, rather it is here to remind the reader of some sets that they should already know and to highlight some standard notation that people use to refer to them.
+</p>
+<definition>
+  <statement>
+    <p>
+      Some other important sets.
+      <ul>
+      <li> Positive integers <m>\mathbb{N} = \set{1,2,3,\dots }</m> <mdash/> these are usually called the <term>natural numbers</term>.
+      </li>
+      <li> All <term>integers</term> <m>\mathbb{Z} = \set{\dots,-2,-1,0,1,2,\dots}</m>
+      </li>
+      <li> All <term>rational numbers</term> (fractions) <m>\mathbb{Q} = \set{ \frac{a}{b} \so a \in \mathbb{Z}, b \in \mathbb{N} }</m>
+      </li>
+      <li> All <term>real numbers</term> <m>\mathbb{R}</m>
+      </li>
+      <li> <term>Irrational numbers</term> <m>\mathbb{I}</m> = real numbers that are not rational.
+      Examples of this are <m>\sqrt{2}, \sqrt{3}, \pi, e</m>.
+      Hence <m>\sqrt{2} \in \mathbb{R}</m> and <m>\sqrt{2} \notin \mathbb{Q}</m>, so <m>\sqrt{2} \in \mathbb{I}</m> (we'll get around to proving this later in the text).
+      </li>
+      </ul>
+    </p>
+  </statement>
+</definition>
+<p>
+Here are some points to note about the above definition.
+<ul>
+  <li>
+    <p>
+      Unfortunately there is often confusion as to whether or not zero should be included in the set of <q>natural numbers</q>.
+      This text will not include zero as is, in the experience of the authors at least, the more common mathematical convention.
+      If you work in formal logic, set theory or computer science, then often zero is included in the set.
+      The number zero has an interesting history in mathematics and the reader should search-engine their way to articles on that history. Often its use in mathematics was complicated by the question <q>how can nothing be something?</q>
+    </p>
+  </li>
+  <li>
+    We can also define the set of rational numbers as <m>\mathbb{Q} = \set{ \frac{a}{b} \so a,b \in \mathbb{Z}, b \neq 0 }</m>.
+    The authors prefer the one given in the definition; it feels a little <q>cleaner</q> in that we represent a third as <m>\frac{1}{3}</m> rather than <m>\frac{-1}{-3}</m>.
+    Of course, we can also represent <m>\frac{1}{3} = \frac{2}{6}</m>.
+    We discuss this more in <xref ref="eg_rel_frac"/>.
+  </li>
+  <li>
+    <p>
+      We must use <q>blackboard bold</q> to denote these sets.
+    <md>
+    <mrow>
+      \mathbb{N} &amp;\neq N, &amp;\mathbb{R} &amp;\neq R.
+    </mrow>
+    </md>
+    Notice here, these are not written in a normal bold font, but rather they are written in <q>blackboard bold</q> so that certain lines, usually the vertical ones, are doubled.
+    This style of writing came from the need to distinguish between regular and bold face letters when writing on blackboards (as mathematicians are want to do).
+    It eventually became standard notation both on boards and in print.
+    Since it is now quite standard notation, please learn it and use it.
+    Do not confuse the reader.
+    </p>
+  </li>
+  <li>
+    <p>
+      Also note that <m>\mathbb{I}</m> is not a very  standard notation (though we might use it from time to time in this text) <mdash/> the others are standard.
+      This is in part because the set of irrational numbers has some pretty ugly properties <mdash/> it is not closed under addition or multiplication; you can take two irrational numbers and add them to get a rational number; you can take two irrational numbers and multiply them to get a rational number.
+      The other sets are closed under addition and multiplication.
+    </p>
+  </li>
+</ul>
+</p>
+
+<p>So now using these as standard sets we can start to build more interesting things
+<ul>
+<li> Even integers
+<md>
+<mrow>
+E &amp;= \set{ n \so n \text{ is an even integer} }
+</mrow><mrow>
+ &amp;= \set{n \so n =2k \text{ for some } k \in \mathbb{Z} }
+</mrow><mrow>
+ &amp;= \set{2n \so n \in \mathbb{Z} }
+</mrow>
+</md>
+</li>
+<li> Square integers <m>S = \set{n^2 \so n \in \mathbb{Z} }</m>.
+</li>
+</ul>
+</p>
+
+<p>One obvious question that one can ask about a set is <q>How many elements are there in it?</q> <mdash/> there is quite a bit more to this question than you might think.
+</p>
+
+<definition>
+<statement><p>
+  For a set <m>S</m> we write <m>|S|</m> to denote the <term>cardinality</term> of <m>S</m> or its <term>cardinal number</term>.
+  For finite sets, <m>|S|</m> is just the the number of elements in <m>S</m>.
+  We extend this concept to infinite sets in <xref ref="chap_cardinality"/>.
+</p></statement>
+</definition>
+
+<p>
+Hence <m>|\es| = 0</m>, and <m>| \set{ 1,2,\set{\es } }| = 3</m>.
+For (small) finite sets we can just list things out, but for larger sets it gets very difficult very quickly, and for infinite sets things become very weird.
+One thing we will study in this course is the size of sets <mdash/> in particular we show that
+<ul>
+<li> <m>|\mathbb{N}| = | \mathbb{Z}|</m>
+</li>
+<li> <m>|E| = |\mathbb{Z}|</m>
+</li>
+<li> <m>|\mathbb{Z}| = |\mathbb{Q}|</m>
+</li>
+<li> <m>|\mathbb{Z}|  \lt  | \mathbb{R}|</m>
+</li>
+</ul>
+These statements are really very strange and we need to build up some mathematical infrastructure to make sense of them.
+Notice that the first and second statement tell us that there are two infinite sets (positive integers and all integers), where one is a strict subset of the other, but they are actually the same size! The last statement is even stranger <mdash /> it tells us that there are two infinite sets (integers and reals) that are definitely not the same size. This implies that there is more than one sort of infinity. Before we are done we will actually prove that there are an infinite number of different infinities!
+</p>
+
+</section>
+
+<section><title>Onward</title>
+<p>
+Of course there is much more to be done with sets, however we'd really like to get into logic and proving things as quickly as possible.
+So we'll stop our discussion of sets for now and come back later armed with more logic and some proof ideas.
+</p>
+
+</section>
+
+<xi:include href="../problems/01ex.ptx" />
+
+</chapter>

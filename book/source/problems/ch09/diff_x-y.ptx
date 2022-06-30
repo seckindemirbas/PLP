@@ -1,0 +1,31 @@
+<exercise>
+<!-- source latex = 'diff x-y.tex' -->
+<!-- converted on 26/11/2021 at 16:56 -->
+<statement>
+<p>
+Define a relation on <m>\mathbb{R}</m> as <m>x \rel y</m> if <m>|x-y|  \lt  1</m>. Is <m>R</m> reflexive? Symmetric? Transitive?
+</p>
+</statement>
+<solution>
+
+<proof><p>
+We show that the relation is reflexive and symmetric but not transitive.
+<ul>
+<li>
+<p>
+ Reflexive. For all <m>x\in\mathbb{R}</m> we have <m>|x-x|=0 \lt 1</m>. Thus, <m>x\rel x</m> for any <m>x\in\mathbb{R}</m>.
+  </p></li>
+<li>
+<p>
+ Symmetric. Since <m>|x-y|=|y-x|</m>, we see that if <m>x\rel y</m>, that is, <m>|x-y| \lt 1</m>, then <m>|y-x| \lt 1</m>, which implies <m>y\rel x</m>.
+</p>
+</li>
+<li>
+<p>
+ Not transitive. Consider <m>x=0</m>, <m>y=3/4</m>, and <m>z=3/2</m>. Then we see that <m>|x-y| \lt 1</m> and <m>|y-z| \lt 1</m>, but <m>|x-z|=3/2 \gt 1</m>. Thus, <m>x\rel y</m>, <m>y\rel z</m>, but <m>x</m> is not related to <m>z</m>. Therefore the relation is not transitive.
+</p></li>
+</ul>
+</p></proof>
+
+</solution>
+</exercise>

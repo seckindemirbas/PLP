@@ -1,0 +1,65 @@
+<exercise>
+<!-- source latex = 'geometric_series.tex' -->
+<!-- converted on 12/10/2021 at 14:03 -->
+<statement>
+<p>
+Let <m>r</m> be a real number so that <m>r\neq 1</m>. Use induction to show that
+<me> \sum_{i=0}^nr^i = \frac{1-r^{n+1}}{1-r} </me>
+for <m>n\in\set{0,1,2,\dots}</m>.
+</p>
+<p>
+Note: you may have seen a proof of this that does not use induction. Make sure your proof here uses induction.
+</p>
+</statement>
+
+<!-- <hint></hint> -->
+<answer>
+<p>
+Let <m>r \neq 1</m>, and then we need to prove the result
+<me> \sum_{i=0}^nr^i = \frac{1-r^{n+1}}{1-r} </me>
+for all <m>n\in\set{0,1,2,\dots}</m>. Notice that since <m>r \neq 1</m> the expression is okay; we do not divide by zero. For the base case, we need to show that the result holds for <m>n=0</m>, while for the inductive step, we need to assume that the result is true for <m>n=k</m>, and then show that the result also holds for <m>n=k+1</m>.
+<ul>
+<li>
+<p>
+ The base case is true, since
+<me> \sum_{i=0}^0r^i=r^0=1=\frac{1-r}{1-r}=\frac{1-r^{0+1}}{1-r}. </me>
+</p>
+</li>
+<li>
+<p>
+ For the inductive step, we assume that
+<me> \sum_{i=0}^kr^i = \frac{1-r^{k+1}}{1-r} </me>
+and we need to show that
+<me> \sum_{i=0}^{k+1}r^i = \frac{1-r^{(k+1)+1}}{1-r}. </me>
+Notice that we can obtain the left-hand side of the equation above by adding <m>r^{k+1}</m> to the left-hand side of the inductive hypothesis.
+Then
+<me> \sum_{i=0}^{k+1}r^i=\sum_{i=0}^kr^i+r^{k+1}=\frac{1-r^{k+1}}{1-r}+r^{k+1}, </me>
+by the inductive hypothesis. Now we just need to simplify the right-hand side of this equation:
+<me> \frac{1-r^{k+1}}{1-r}+r^{k+1}=\frac{1-r^{k+1}+r^{k+1}(1-r)}{1-r}=\frac{1-r^{k+2}}{1-r}, </me>
+and we end up with
+<me> \sum_{i=0}^{k+1}r^i = \frac{1-r^{(k+1)+1}}{1-r} </me>
+which is what we wanted to show.
+</p></li>
+</ul>
+</p>
+</answer>
+<solution>
+
+<proof>
+<p>
+Let <m>r\in\mathbb{R}</m>, <m>r\neq 1</m>. We proceed with induction on <m>n</m>. For the base case, let <m>n=0</m>. Then
+<me> \sum_{i=0}^nr^i=r^0=1=\frac{1-r}{1-r}=\frac{1-r^{n+1}}{1-r}. </me>
+Now suppose that
+<me> \sum_{i=0}^kr^i = \frac{1-r^{k+1}}{1-r} </me>
+for <m>n=k</m>, where <m>k\in\mathbb{Z}</m> and <m>k\geq0</m>. Then
+<me> \sum_{i=0}^{k+1}r^i = \left(\sum_{i=0}^kr^i \right)+r^{k+1} =\frac{1-r^{k+1}}{1-r}+r^{k+1}, </me>
+by the inductive hypothesis. Some arithmetic gives
+<me> \frac{1-r^{k+1}}{1-r}+r^{k+1}=\frac{1-r^{k+1}+r^{k+1}(1-r)}{1-r}=\frac{1-r^{k+2}}{1-r}. </me>
+Putting everything together, we have
+<me> \sum_{i=0}^{k+1}r^i = \frac{1-r^{k+2}}{1-r}=\frac{1-r^{(k+1)+1}}{1-r} </me>
+and so the result holds for <m>n=k+1</m>. Then, by induction, the result holds for any <m>n\in\set{0,1,2,\dots}</m>.
+</p>
+</proof>
+
+</solution>
+</exercise>

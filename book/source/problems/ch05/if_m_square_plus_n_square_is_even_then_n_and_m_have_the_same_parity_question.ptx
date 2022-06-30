@@ -1,0 +1,54 @@
+<exercise>
+<!-- source latex = 'if m square plus n square is even then n and m have the same parity question.tex' -->
+<!-- converted on 12/07/2021 at 13:50 -->
+<statement>
+<p>
+Let <m>n,m\in\mathbb{Z}</m>. Prove that if <m>n^2+m^2</m> is even, then <m>n,m</m> have the same parity.
+</p>
+</statement>
+<hint>
+<p>
+What is the contrapositive of the statement?
+</p>
+</hint>
+<answer>
+<p>
+We see that this is a conditional statement. To prove it, we can assume that <m>n^2+m^2</m> is even and try to show that then <m>n,m</m> have the same parity, that is, <m>n,m</m> are both odd or both even. We know that <m>n^2+m^2</m> being even means that <m>n^2+m^2=2k</m> for some <m>k\in\mathbb Z</m>. We see that it may not be trivial to get from this assumption to the conclusion on <m>n,m</m>. It would require us to take square-roots or solve a quadratic or something like that. Urgh.
+</p>
+<p>
+What we may try instead, is to look at the contrapositive of the statement we want to prove:
+<md>
+<mrow>
+\text{if } n,m \text{ have different parities, then } n^2+m^2 \text{ is not even,}
+</mrow>
+</md>
+and since we know that <m>n^2+m^2\in\mathbb Z</m>, the conclusion also means that <m>n^2+m^2</m> is odd.
+</p>
+<p>
+Here, if we assume the hypothesis of the contrapositive, we see that we have <m>2</m> cases: <m>n</m> is even and <m>m</m> is odd, and <m>m</m> is even and <m>n</m> is odd.
+<ul>
+<li>
+<p>
+ If <m>n</m> is even and <m>m</m> is odd, then we have <m>n=2a</m> and <m>m=2b+1</m> for some <m>a,b\in\mathbb Z</m>. This means that <m>n+2+m^2=(2a)^2+(2b+1)^2=4a^2+4b^2+4b+1=2(2a^2+2b^2+2b)+1</m>, which is odd.
+</p>
+</li>
+<li>
+<p>
+ If <m>n</m> is odd and <m>m</m> is even, then we have <m>n=2a+1</m> and <m>m=2b</m> for some <m>a,b\in\mathbb Z</m>. This means that <m>n+2+m^2=(2a+1)^2+(2b)^2=4a^2+4a+1+4b^2=2(2a^2+2b^2+2a)+1</m>, which is also odd.
+</p></li>
+</ul>
+</p>
+<p>
+ Here, we also see that these cases are almost the same since the conclusion is symmetric with respect to <m>n,m</m>. So, practically, we will only need to prove one of case, and the other will be proven very similarly. So, we can use <q>WLOG</q> and prove only one of the cases. But, whenever you want to use <q>WLOG</q>, you should always convince yourself that the cases are similar by doing both possibilities and seeing just how similar they are. Let's see how we can make this work in a proof.
+</p>
+</answer>
+<solution>
+<proof><p>
+ (Proof by contrapositive) Assume <m>n,m</m> have opposite parities. The we have two cases; either <m>n</m> is even and <m>m</m> is odd, or <m>m</m> is even and <m>n</m> is odd. Since the statement and the cases are symmetric with respect to <m>n</m> and <m>m</m>, WLOG we can assume <m>n</m> is even and <m>m</m> is odd. In this case, we can write <m>n=2a</m> and <m>m=2b+1</m> for some <m>a,b\in\mathbb Z</m>. Hence, <m>n^2+m^2=(2a)^2+(2b+1)^2=4a^2+4b^2+4b+1=2(2a^2+2b^2+2b)+1</m>. Since <m>(2a^2+2b^2+2b)\in\mathbb Z</m>,  we see that <m>n^2+m^2</m> is odd.
+</p></proof>
+
+<p>
+Notice that we have used the standard contraction <q>WLOG</q> to mean <q>without loss of generality</q>. If you are unsure if your reader knows such an abbreviation, then you should explain it to them, say with a quick comment in brackets or a footnote.
+</p>
+</solution>
+</exercise>

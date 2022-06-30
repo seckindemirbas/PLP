@@ -1,0 +1,81 @@
+<exercise>
+<!-- source latex = 'Sum of n squared.tex' -->
+<!-- converted on 12/10/2021 at 14:15 -->
+<statement>
+<p>
+Let <m>n\in \mathbb{N}</m>. Prove that
+<me>\sum_{k=1}^n k^2 = \frac{n(n+1)(2n+1)}{6}</me>
+</p>
+</statement>
+<hint>
+<p>
+Factoring a cubic can be painful. Perhaps write down the cubics you need and then expand them out. This might help with some of the arithmetic.
+</p>
+</hint>
+<answer>
+<p>
+As scratch work for this problem, we work through the computation we will have to do after we adopt the inductive hypothesis. That is, we want to work through the <m>n=j+1</m> case after assuming that the <m>n=j</m> case is true.
+<md>
+<mrow>
+    \sum_{k=1}^{j+1} k^2  \amp = (j+1)^2 + \sum_{k=1}^{j} k^2
+    </mrow><intertext>By the inductive hypothesis, </intertext><mrow>
+     \amp = (j+1)^2 + \frac{j(j+1)(2j+1)}{6}.
+    </mrow><intertext>Expanding the expression and giving both terms a common denominator yields</intertext><mrow>
+     \amp =\frac{(6j^2+12j+6) + (2j^3+3j^2+j)}{6}.
+    </mrow><intertext>Grouping like terms,</intertext><mrow>
+     \amp = \frac{2j^3+9j^2+13j+6}{6}
+    </mrow><intertext>We now factor the top of the expression to get</intertext><mrow>
+     \amp = \frac{(j+1)(j+2)(2j+3)}{6}
+    </mrow><intertext>Finally, we rearrange into the desired form</intertext><mrow>
+     \amp = \frac{(j+1)((j+1)+1)(2(j+1)+1)}{6}.
+</mrow>
+</md>
+The above method works, but, in line (2), we could also notice that <m>j+1</m> is a common factor, rather than expanding the cubic. That computation looks like:
+<md>
+<mrow>
+    \sum_{k=1}^{j+1} k^2  \amp = (j+1)^2 + \sum_{k=1}^{j} k^2
+    </mrow><intertext>By the inductive hypothesis, </intertext><mrow>
+     \amp = (j+1)^2 + \frac{j(j+1)(2j+1)}{6}.
+    </mrow><intertext>Factoring out <m>j+1</m> and giving both terms a common denominator yields</intertext><mrow>
+     \amp =\frac{(j+1)(6(j+1)+j(2j+1))}{6}.
+    </mrow><intertext>Simplifying,</intertext><mrow>
+     \amp = \frac{(j+1)(2j^2+7j+6)}{6}
+    </mrow><intertext>We now factor the top of the expression to get</intertext><mrow>
+     \amp = \frac{(j+1)(j+2)(2j+3)}{6}
+    </mrow><intertext>Finally, we rearrange into the desired form</intertext><mrow>
+     \amp = \frac{(j+1)((j+1)+1)(2(j+1)+1)}{6}.
+</mrow>
+</md>
+</p>
+</answer>
+<solution>
+
+<proof><p>
+As a base case, we take <m>n=1</m>. Then we see that
+<me>\sum_{k=1}^1 k^2 = 1^2 = \frac{1(2)(3)}{6}.</me>
+</p>
+<p>
+We assume that the statement is true for <m>n = j \in \mathbb{N}</m>, that is
+<me>\sum_{k=1}^j k^2 = \frac{j(j+1)(2j+1)}{6},</me>
+and show that the statement is true for <m>n=j+1</m>.
+<md>
+<mrow>
+    \sum_{k=1}^{j+1} k^2  \amp = (j+1)^2 + \sum_{k=1}^{j} k^2
+    </mrow><intertext>By the inductive hypothesis, </intertext><mrow>
+     \amp = (j+1)^2 + \frac{j(j+1)(2j+1)}{6}.
+    </mrow><intertext>Factoring out <m>j+1</m> and giving both terms a common denominator yields</intertext><mrow>
+     \amp =\frac{(j+1)(2j^2+7j+6)}{6}
+    </mrow><intertext>We now factor the numerator to get</intertext><mrow>
+     \amp = \frac{(j+1)(j+2)(2j+3)}{6}
+    </mrow><intertext>Finally, we rearrange into the desired form</intertext><mrow>
+     \amp = \frac{(j+1)((j+1)+1)(2(j+1)+1)}{6}.
+</mrow>
+</md>
+And so the statement holds for <m>n=j+1</m>, as required.
+</p>
+<p>
+Since the base case and inductive step are true, by the principle of induction, the statement holds true for each <m>n\in \mathbb{N}</m>.
+</p></proof>
+
+</solution>
+</exercise>

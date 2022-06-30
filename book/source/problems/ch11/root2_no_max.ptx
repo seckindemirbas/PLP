@@ -1,0 +1,44 @@
+<exercise>
+<!-- source latex = 'root2_no_max.tex' -->
+<!-- converted on 07/12/2021 at 12:29 -->
+<statement>
+<p>
+Consider the subset of rational numbers
+<me>
+  A = \set{x \in \mathbb{Q} \st x \leq \sqrt{2}}
+</me>
+Prove that it does not have a maximum.
+</p>
+<p>
+See also <xref ref="ex_sup_q1"/> and <xref ref="ex_sup_q2"/>.
+</p>
+</statement>
+<hint>
+<p>
+If <m>A</m> were to have a maximum, what is the difference between <m>\sqrt{2}</m> and that? It is not a rational number, but how can we use it to make a rational number that is still in <m>A</m>?
+</p>
+</hint>
+<solution>
+
+<proof><p>
+  Assume, to the contrary, that this set does have a maxium. Then we can write that maximum as
+  <m> \frac{a}{b} \in \mathbb{Q}</m>. Since <m>\sqrt{2} \not\in \mathbb{Q}</m>, we must have that
+  <me>
+    \sqrt{2} - \frac{a}{b} = \delta \gt 0.
+  </me>
+  Now let <m>n = \left\lceil \frac{1}{\delta} \right\rceil</m>. Then
+  <me>
+    0 \lt \frac{1}{n} \lt \delta = \sqrt{2}-\frac{a}{b}
+  </me>
+  and so
+  <me>
+    \frac{a}{b} \lt \frac{a}{b}+\frac{1}{n} \lt \sqrt{2}
+  </me>
+  Thus <m>\frac{a}{b}+\frac{1}{n} </m> is a rational number larger than <m>\frac{a}{b}</m> and smaller than <m>\sqrt{2}</m>, which contradicts our assumption that the maximum of <m>A</m> was <m>\frac{a}{b}</m>.
+</p>
+<p>
+  Hence the set has no maximum.
+</p></proof>
+
+</solution>
+</exercise>

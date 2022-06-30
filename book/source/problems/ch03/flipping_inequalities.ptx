@@ -1,0 +1,49 @@
+<exercise>
+<!-- source latex = 'flipping_inequalities.tex' -->
+<!-- converted on 12/08/2021 at 19:09 -->
+<statement>
+<p>
+Consider the faulty proof below for the following statement:
+</p>
+
+<p>
+Let <m>x</m> be a negative real number. Show that <m>-1 \lt \dfrac{5}{3x-5}</m>.
+</p>
+
+<proof><title>Faulty proof</title>
+<p>
+Let <m>x</m> be negative. Then by multiplying the inequality
+<me> -1 \lt \dfrac{5}{3x-5} </me>
+by <m>3x-5</m> we obtain
+<me> -3x+5 \lt 5 . </me>
+and therefore <m>-3x \lt 0</m>. Dividing by <m>-3</m> we end up with <m>x \lt 0</m>, which is true.
+</p>
+</proof>
+
+<p>
+Identify any issues with the proof as written above, and then give a correct proof of the statement.
+</p>
+</statement>
+<solution>
+<p>
+There are a number of issues with this proof.
+First, it is written in the wrong order <mdash/> we start with the conclusion of the implication, and end up with the hypothesis of the implication.
+Also, there are two times that we divide by a negative number but fail to flip the sign of the inequality. This happens when we divide by
+<m>3x-5</m>, which is negative since <m>x \lt 0</m>, and when we divide by <m>-3</m>.
+Notice that since this happens twice, we end up with the right inequality (by luck!), but the proof is still incorrect since we took the wrong path to this inequality.
+</p>
+<p>
+Here's a correct proof of the statement:
+</p>
+
+<proof><p>
+Let <m>x \lt 0</m>. Multiplying by <m>-3</m>, we have <m>-3x \gt 0</m>, and so <m>-3x+5 \gt 5</m>. Writing this as
+<me> -(3x-5) \gt 5 </me>
+we divide through by <m>3x-5</m>, which is negative as <m>x \lt 0</m>, and obtain
+<me> -1 \lt \dfrac{5}{3x-5}. </me>
+</p>
+
+</proof>
+
+</solution>
+</exercise>

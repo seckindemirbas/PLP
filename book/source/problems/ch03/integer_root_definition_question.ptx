@@ -1,0 +1,38 @@
+<exercise>
+<!-- source latex = 'integer root definition question.tex' -->
+<!-- converted on 05/07/2021 at 13:12 -->
+<statement>
+<p>
+<em>Definition</em>: We call a number <m>n</m> an <em>integer root</em> if <m>n^k=m</m> for some <m>k\in \mathbb{N}</m> and <m>m \in \mathbb{Z}</m>.
+</p>
+<p>
+For example, <m>\sqrt{7}</m> is an integer root because <m>\left( \sqrt{7}\right)^2 = 7</m>. However, <m>\frac{5}{3}</m> is not an integer root (but proving that is a little beyond this point in the text).
+</p>
+<p>
+Use the above definition to show that if <m>a</m> and <m>b</m> are integer roots, then so is <m>ab</m>.
+</p>
+</statement>
+<hint>
+<p>
+Try writing down different integer roots and check whether their product is also an integer root.
+</p>
+</hint>
+<answer>
+<p>
+Before we get into the proof we see that every integer <m>\ell</m> is an integer root since we can take <m>k=1</m> and <m>m=\ell</m> as given in the definition. But these numbers also include non-integer numbers such as <m>\sqrt[3]{7}</m>, since we can take <m>k=3</m> and <m>m=7</m> or <m>\sqrt 5</m> since we can teke <m>k=2</m> and <m>m=5</m> as given in the definition. We also see that the statement also says that the product of <m>\sqrt[3]{7}</m> and <m>\sqrt 5</m> should also be an integer root. If we check carefully, we see that
+<me>\sqrt[3]7\cdot \sqrt 5=7^{1/3}5^{1/2}=(7^2)^{1/6}(5^3)^{1/6}=(7^25^3)^{1/6}.</me>
+Indeed, the product is an integer root.
+</p>
+<p>
+Now, assume that <m>a</m> and <m>b</m> are integer roots. This means that there are natural numbers <m>k,\ell</m> and integers <m>m,n</m> such that <m>a^k=n</m> and <m>b^\ell=m</m>. Now, we are going to do the same trick we did in the example above to make the powers <q>same</q> so that we can multiply the bases. We see <m>a^{k\ell}=n^\ell</m> and <m>b^{\ell k}=m^k</m>. Thus, <m>(ab)^{k\ell}=n^\ell m^k</m>, which is the desired result, since <m>n^\ell m^k\in\mathbb Z</m>. Now, we can write this in a proof.
+</p>
+
+</answer>
+
+<solution>
+<proof><p>
+ Assume that <m>a, b</m> are integer roots, then, by definition, there are natural numbers <m>k,\ell</m> and integers <m>m,n</m> such that <m>a^k=n</m> and <m>b^\ell=m</m>. Therefore we see that <m>(ab)^{k\ell}=n^\ell m^k</m>. Since <m>k\ell\in\mathbb{N}</m> and <m>n^\ell m^k\in\mathbb{Z}</m>, we see that <m>ab</m> is also an integer root.
+</p></proof>
+
+</solution>
+</exercise>

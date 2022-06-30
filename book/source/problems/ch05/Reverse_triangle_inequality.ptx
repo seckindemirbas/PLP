@@ -1,0 +1,62 @@
+<exercise>
+<!-- source latex = 'Reverse triangle inequality.tex' -->
+<!-- converted on 08/11/2021 at 10:35 -->
+<statement>
+<p>
+Prove the reverse triangle inequality. That is, given <m>x, y\in \mathbb{R}</m>, prove
+<me>|x-y|\geq \big||x|-|y|\big|.</me>
+</p>
+</statement>
+<hint>
+<p>
+<ul>
+<li>
+<p>
+ Notice that the statement is equivalent to proving <me>-|x-y|\leq |x|-|y|\leq |x-y|.</me>
+    </p></li>
+<li>
+<p>
+ Use the triangle inequality!
+</p></li>
+</ul>
+</p>
+</hint>
+<answer>
+<p>
+We start with some scratch work. We are asked to prove an inequality involving absolute values. Often, the triangle inequality can be helpful in these types of situations. Recall that the triangle inequality states: For any <m>a,b\in \mathbb{R}</m>, <m>|a+b|\leq |a|+|b|</m>. Following the hint, we would like to show that <m>-|x-y|\leq |x|-|y|</m> and <m>|x|-|y|\leq |x-y|</m>.
+</p>
+<p>
+We rearrange the triangle inequality and attempt to get the formula <m>|x|-|y|\leq |x-y|</m> (the other formula can be obtained similarly).
+</p>
+<p>
+First, we want to rearrange the inequality to have a minus sign on the left, and only one set of absolute values on the right:
+<me>|a+b| - |b| \leq |a|.</me>
+Then we can try to write <m>a</m> and <m>b</m> in terms of <m>x</m> and <m>y</m> to make the equation above look more like the equation we want to prove. Notice that we currently have <m>|a|</m> on the right hand side, whereas the expression we want to obtain has <m>|x-y|</m>. Let's try setting <m>a = x-y</m>:
+<me>|x-y+b| - |b| \leq |x-y|.</me>
+Now, the left hand side has <m>|x-y+b|-|b|</m> where we want <m>|x|-|y|</m>. We set <m>b = y</m> to obtain the desired expression:
+<me>|x-y+y| - |y|  = |x|-|y|\leq |x-y|.</me>
+All that's left to do is to write this up as a proof!
+</p>
+</answer>
+
+<solution>
+<proof><p>
+Assume that <m>x,y\in \mathbb{R}</m>. Recall the triangle inequality, which states: For any <m>a,b\in \mathbb{R}</m>, <m>|a+b|\leq |a|+|b|</m>. We set <m>a = x-y</m> and <m>b = y</m>. Since <m>x,y\in \mathbb{R}</m>, <m>x-y \in \mathbb{R}</m>, so <m>a</m> and <m>b</m> satisfy the hypothesis of the triangle inequality. Plugging our values of <m>a</m> and <m>b</m> into the triangle inequality yields,
+    <me>|x-y+y|\leq |x-y|+|y|.</me>
+Subtracting <m>|y|</m> from both sides gives
+<me>|x|-|y|\leq |x-y|. \tag{1}</me>
+</p>
+<p>
+We use the triangle inequality again. This time setting <m>a=x</m>  and <m>b= y-x</m>.  Again, since <m>x</m> and <m>y-x</m> are real numbers, the hypothesis of the triangle inequality is satisfied, so we obtain
+<me>|x+y-x|\leq |x|+|y-x|.</me>
+Subtracting <m>|x|</m> from each side, we see
+<m>|y|-|x|\leq |y-x|</m>. Dividing both sides by <m>-1</m> yields
+<me>|x|-|y| \geq -|y-x| =-|x-y| \tag{2}.</me>
+</p>
+<p>
+Combining equations (1) and (2), we obtain the desired result
+<me>-|x-y|\leq |x|-|y| \leq |x-y|</me>
+</p></proof>
+
+</solution>
+</exercise>

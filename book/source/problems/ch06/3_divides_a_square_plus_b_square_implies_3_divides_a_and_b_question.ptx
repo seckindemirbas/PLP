@@ -1,0 +1,65 @@
+<exercise>
+<!-- source latex = '3 divides a square plus b square implies 3 divides a and b question.tex' -->
+<!-- converted on 05/07/2021 at 10:57 -->
+<statement>
+<p>
+Prove or disprove the following statement:
+<me>\forall a,b\in\mathbb{Z}, \text{ if } 3\mid (a^2+b^2), \text{ then } 3\mid a \text{ and } 3\mid b.</me>
+</p>
+</statement>
+<answer>
+<p>
+Even though this result looks counter-intuitive, it is indeed true.
+</p>
+<p>
+We are going to use proof by contrapositive. We see that the expression <m>\forall a,b\in\mathbb Z</m> is not a part of the conditional statement, and therefore we see that the contrapositive of the statement is:
+</p>
+
+<blockquote>
+<p>
+ <m>\forall a,b\in\mathbb Z</m>, if <m> 3\nmid a</m> or <m>3\nmid b</m>, then  <m>\forall a,b\in\mathbb Z</m>, we have <m>3\nmid (a^2+b^2)</m>.
+</p>
+</blockquote>
+
+<p>
+Looking at the contrapositive still doesn't sound like the right thing to do since we are trading a <q><m>3</m> divides (blah)</q> type of statement as the hypothesis of the conditional statement, with two <q><m>3</m> doesn't divide (blah)</q> type of statement that are connected with <q>or</q>. This may seem like it will make our assumption more complicated. But, by looking at the contrapositive, we now have an assumption on simpler building blocks, <m>a</m> and <m>b</m>, instead of the their complicated, complex, counterpart <m>a^2+b^2</m>. Since we now have <q><m> 3\nmid a</m> or <m>3\nmid b</m></q>, it also suggests that we look at cases.
+</p>
+<p>
+Since these two cases, <m> 3\nmid a</m> and <m> 3\nmid b</m>, are very similar we will will make the proof a little shorter by using <q>without loss of generality</q>. To make it shorter still, we will contract <q>without loss of generality</q> to <q>WLOG</q>. Note that one should always be careful using WLOG since it is easy to introduce errors by assuming two cases are very similar when, in fact, there are subtle differences between them.
+</p>
+<p>
+Once we assume, WLOG that <m>3\nmid a</m>, this will introduce <m>2</m> new cases. Then, within those cases, we may still need to have some extra cases for the choices of <m>b</m>. We want to mention that this is quite standard to have cases within cases, within cases, within cases, within<ellipsis/>
+</p>
+</answer>
+
+<solution>
+<proof><p>  We are going to use proof by contrapositive. Let <m>a,b\in\mathbb{Z}</m>. Assume that <m>3\nmid a</m> or  <m>3\nmid b</m>. WLOG we can assume <m>3\nmid a</m>. Then we see that we have 2 cases <m>a=3k+1</m> or <m>a=3k+2</m> for some <m>k\in\mathbb Z</m>.
+<ul>
+<li>
+<p>
+ <em>Case 1:</em> Let <m>a=3k+1</m> for some <m>k\in\mathbb Z</m>, then we see that <m>a^2=9k^2+6k+1=3(3k^2+2k)+1</m>.
+</p></li>
+<li>
+<p>
+ <em>Case 2:</em> Now let <m>a=3k+2</m> for some <m>k\in\mathbb Z</m>. Then <m>a^2=9k^2+12k+4=3(3k^2+4k+1)+1</m>.
+</p></li>
+</ul>
+Thus, we see that since <m>3\nmid a</m>, we have <m>a^2=3m+1</m> for some <m>m\in\mathbb Z</m>.
+</p>
+<p>
+Now, either <m>3 \mid b</m> or <m>3 \nmid b</m>.
+<ul>
+<li>
+<p>
+ When <m>3\mid b</m>, <m>b = 3\ell</m> for some <m>\ell \in \mathbb{Z}</m>, and so <m>a^2+b^2 = 3m + 9\ell^2 +1 = 3(m+3\ell^2)+1</m>.
+  </p></li>
+<li>
+<p>
+ On the other hand, when <m>3\nmid b</m>, then, by the reasoning above, we get <m>b^2=3\ell+1</m> for some <m>\ell\in\mathbb Z</m>. And so <m>a^2+b^2=3(m+\ell)+2</m>.
+</p></li>
+</ul>
+In both cases, we see that <m>3\nmid (a^2+b^2)</m> as required.
+</p></proof>
+
+</solution>
+</exercise>

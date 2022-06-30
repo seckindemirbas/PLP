@@ -1,0 +1,28 @@
+<exercise>
+<!-- source latex = 'contra_divisibility.tex' -->
+<!-- converted on 12/08/2021 at 19:24 -->
+<statement>
+<p>
+Let <m>n\in\mathbb{Z}</m>. Show that if <m>5\nmid n^2</m>, then <m>5\nmid n</m>.
+</p>
+</statement>
+
+<answer>
+<p>
+Trying to prove this statement directly doesn't make sense, and instead we're going to prove this statement by its contrapositive; that way, we will end up with a statement about what happens when <m>5</m> does divide an integer, and we can directly use the definition of that.
+</p>
+<p>
+The contrapositive of this statement is: If <m>5\mid n</m>, then <m>5\mid n^2</m>. We've had plenty of practice proving statements like this.
+</p>
+</answer>
+
+<solution>
+<proof><p>
+Let <m>n\in\mathbb{Z}</m>, and suppose <m>5\mid n</m>. Then <m>n=5k</m> for some <m>k\in\mathbb{Z}</m>, and so
+<me> n^2=(5k)^2=5(5k^2). </me>
+Since <m>k\in\mathbb{Z}</m>, we also have <m>5k^2\in\mathbb{Z}</m>, and so we see that <m>5\mid n^2</m>.
+</p>
+</proof>
+
+</solution>
+</exercise>

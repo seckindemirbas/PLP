@@ -1,0 +1,98 @@
+<exercise>
+<!-- source latex = 'equiv_rel_mod_5.tex' -->
+<!-- converted on 07/12/2021 at 11:59 -->
+<statement>
+<p>
+Let <m>R</m> be a relation on <m>\mathbb Z</m> defined by <m>a\rel b</m> if <m>7a^2\equiv 2b^2 \mod{5}</m>. Prove that <m>R</m> is an equivalence relation. Determine its equivalence classes.
+</p>
+</statement>
+<solution>
+
+<proof><p>
+To prove that this is an equivalence relation, we need to show that <m>R</m> is reflexive, symmetric, and transitive.
+<ul>
+<li>
+<p>
+ <m>R</m> is reflexive: Let <m>a\in\mathbb Z</m>. Notice that <m>7a^2 - 2a^2 = 5a^2</m> and  <m>5\mid 5a^2</m>. Thus, <m>a\rel a</m>, and so <m>R</m> is relexive.
+</p>
+</li>
+<li>
+<p>
+ <m>R</m> is symmetric: Let <m>a,b \in\mathbb Z</m> such that <m>a\rel b</m>. This means that <m>7a^2\equiv 2b^2\mod{5}</m>, that is <m>5\mid (7a^2-2b^2)</m>, and so
+<m> 7a^2-2b^2 = 5\ell</m> for some <m>\ell \in \mathbb{Z}</m>. Then notice that we can write
+<me>
+  7b^2-2a^2 = 5a^2+5b^2 - (7a^2-2b^2) = 5(a^2+b^2-\ell)
+</me>
+Thus <m>5\mid (7b^2-2a^2)</m>, which implies <m>7b^2\equiv 2a^2\mod{5}</m>  Thus, <m>b\rel a</m> and so <m>R</m> is symmetric.
+</p>
+</li>
+<li>
+<p>
+ <m>R</m> is transitive: Let <m>a,b,c \in\mathbb Z</m> such that <m>a\rel b</m> and <m>b\rel c</m>. This means that <m>7a^2\equiv 2b^2\mod{5}</m>, and <m>7b^2\equiv 2c^2\mod{5}</m>. So for some <m>k,\ell \in \mathbb{Z}</m> we have
+<md>
+<mrow>
+  7a^2 -2b^2  \amp = 5k  \amp   \text{and}  \amp  \amp  7b^2-2c^2  \amp = 5\ell
+</mrow>
+</md>
+Then
+<md>
+<mrow>
+  7a^2-2c^2  \amp = (7a^2-2b^2)+(7b^2-2c^2)-5b^2 = 5(k+\ell-b^2)
+</mrow>
+</md>
+Hence,  <m>5\mid (7a^2-2c^2)</m>, which implies <m>7a^2\equiv 2c^2\mod{5}</m>  Thus, <m>a\rel c</m>, and so <m>R</m> is symmetric.
+</p></li>
+</ul>
+</p></proof>
+
+<p>
+Now let's consider the equivalence classes of <m>R</m>.
+Let <m>a,b\in\mathbb{Z}</m> and suppose that <m>a \rel b</m>. We know that <m>7a^2 \equiv 2b^2 \mod{5}</m>. It makes sense to consider the integers modulo 5, and by the division algorithm there are unique integers <m>q_a,q_a, r_a, r_b</m> with <m>0\leq r_a, r_b \lt 5</m> so that
+<md>
+<mrow>
+  a  \amp = 5q_a + r_a  \amp  b = 5q_b + r_b
+</mrow>
+</md>
+Then
+<md>
+<mrow>
+  7a^2  \amp = 7(5q_a+r_a)^2 = 5(35q_a^2 + 14q_ar_a+r_a^2) + 2ra^2
+</mrow><mrow>
+     \amp \equiv 2r_a^2 \mod{5}  \amp  \text{ and similarly}
+</mrow><mrow>
+  2b^2  \amp \equiv 2r_b^2 \mod{5}
+</mrow>
+</md>
+Hence
+<md>
+<mrow>
+  a \rel b \qquad \iff \qquad 2r_a^2 \equiv 2r_b^2
+</mrow>
+</md>
+So, for example, to determine all the numbers equivalent to <m>a=0</m>, which has <m>r_a=0</m>, we need to find all the remainders that give <m>2r_b^2 \equiv 0 \mod{5}</m>. Rather than do the specific case, we compute <m>2r^2 \mod{5}</m> for <m>r=0,1,2,3,4</m> and then compare the results:
+<md>
+<mrow>
+  2\cdot0^2  \amp \equiv0\mod{5},  \amp  2\cdot 1^2  \amp \equiv 2\mod{5}  \amp  2\cdot2^2  \amp =8\equiv3\mod{5},
+</mrow><mrow> 2\cdot3^2  \amp = 18\equiv3\mod{5}  \amp  2\cdot4^2  \amp =32\equiv2\mod{5}
+</mrow>
+</md>
+Hence the integers equivalent to 0 must have <m>r=0</m>. That is
+<me>
+  [0] = \set{5 n \st n \in \mathbb{Z} }
+</me>
+The integers equivalent to <m>1</m> must have <m>r=1,4</m>, since they both result in <m>2r^2 \equiv 2 \mod{5}</m>. That is
+<me>
+  [1] = \set{5n+1 \st n \in \mathbb{Z}} \cup \set{5n+4 \st n \in \mathbb{Z}}
+</me>
+Notice that since <m>4 \equiv -1 \mod{5}</m> we can also write this as
+<me>
+  [1] = \set{5n \pm 1 \st n \in \mathbb{Z}}
+</me>
+The integers equivalent to <m>2</m> must have <m>r=2,3</m> since they both result in <m>2r^2 \equiv 3 \mod{5}</m>. And since <m>3 \equiv -2 \mod{5}</m> we can write
+<me>
+  [2] = \set{5n \pm 2 \st n \in \mathbb{Z}}
+</me>
+Since every integer has remainder <m>0,1,2,3,4</m> modulo 5, the above are all the equivalence classes.
+</p>
+</solution>
+</exercise>

@@ -1,0 +1,157 @@
+<exercise>
+<!-- source latex = 'factorial_as_integral.tex' -->
+<!-- converted on 08/11/2021 at 10:45 -->
+<statement>
+<p>
+Let <m>n\in\mathbb{Z}</m>, <m>n\geq0</m>.
+<ol marker="(a)">
+<li>
+<p>
+ Use induction and l'Hôpital's rule to show that
+<me> \lim_{x\to\infty}x^ne^{-x}=0. </me>
+</p></li>
+<li>
+<p>
+ Show that
+<me> n! = \int_0^\infty x^ne^{-x}\mathrm{d}x. </me>
+</p>
+</li>
+</ol>
+For this question
+<ul>
+<li>
+<p>
+ recall that <m>0!=1</m>, and
+  </p></li>
+<li>
+<p>
+ you may use basic facts about limits and integration from your Calculus-1 course.
+</p></li>
+</ul>
+</p>
+</statement>
+<hint>
+<p>
+For (b) try integration by parts.
+</p>
+</hint>
+
+<answer>
+
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ We'll prove this by induction on <m>n</m>.
+</p>
+<p>
+<ul>
+<li>
+<p>
+ Base case: take <m>n=0</m>. Then
+<me> \lim_{x\to\infty}x^ne^{-x}=\lim_{x\to\infty}e^{-x}=0. </me>
+</p></li>
+<li>
+<p>
+ Inductive step: Assuming
+<me> \lim_{x\to\infty}x^ke^{-x}=0, </me>
+we want to show that
+<me> \lim_{x\to\infty}x^{k+1}e^{-x}=0. </me>
+Rewrite the limit as
+<me> \lim_{x\to\infty}\frac{x^{k+1}}{e^{x}} </me>
+Then both the numerator and the denominator go to infinity as <m>x\to\infty</m>. Then we can use l'Hôpital's rule to obtain
+<me> \lim_{x\to\infty}\frac{x^{k+1}}{e^{x}}=\lim_{x\to\infty}\frac{(k+1)x^{k}}{e^{x}}. </me>
+Now we have a limit that almost looks like the one from the inductive hypothesis; we just need to pull out the constant factor of <m>k+1</m>, and then
+apply the inductive hypothesis:
+<me> \lim_{x\to\infty}\frac{x^{k+1}}{e^{x}}=(k+1)\lim_{x\to\infty}\frac{x^{k}}{e^{x}}=(k+1)\cdot0=0. </me>
+</p></li>
+</ul>
+</p>
+</li>
+<li>
+<p>
+ We'll prove this by induction on <m>n</m>.
+</p>
+<p>
+<ul>
+<li>
+<p>
+ Base case: take <m>n=0</m>. Then
+<me> \int_0^\infty x^ne^{-x}\mathrm{d}x =\int_0^\infty e^{-x}\mathrm{d}x  </me>
+Evaluating this integral yields
+<me> \int_0^\infty e^{-x}\mathrm{d}x = \lim_{t\to\infty}(-e^{-x})\Big]_0^t = 1. </me>
+And since <m>1=0!</m> the base case holds.
+</p></li>
+<li>
+<p>
+ Inductive step: Suppose that
+<me> k! = \int_0^\infty x^ke^{-x}\mathrm{d}x.</me>
+We want to use this equation in order to show that
+<me> (k+1)! = \int_0^\infty x^{k+1}e^{-x}\mathrm{d}x.</me>
+We can connect the integral in the equation for <m>(k+1)!</m> to the integral in the equation for <m>k!</m> by using integration by parts, because <m>\frac{d}{\mathrm{d}x}x^{k+1}=(k+1)x^k</m>.
+Indeed, by integration by parts,
+<md>
+<mrow>
+\int_0^\infty x^{k+1}e^{-x}\mathrm{d}x \amp =(-x^{k+1}e^{-x})\Big]_0^\infty +(k+1)\int_0^\infty x^ke^{-x}\mathrm{d}x
+</mrow><mrow>
+ \amp =\lim_{t\to\infty} \left(-t^{k+1}e^{-t}\right)+0^{k+1}e^{-0} +(k+1)\int_0^\infty x^ke^{-x}\mathrm{d}x
+</mrow>
+<intertext>We then use our result from (a) to evaluate that limit, giving</intertext><mrow>
+ \amp = 0 +(k+1)\int_0^\infty x^ke^{-x}\mathrm{d}x
+</mrow>
+</md>
+Now we're left with <m>(k+1)</m> times the integral that we've assumed is equal to <m>k!</m> in the inductive hypothesis. But this gives exactly the equation that we wanted to show!
+</p></li>
+</ul>
+</p>
+</li>
+</ol>
+</p>
+
+</answer>
+
+<solution>
+
+<proof><title>Proof of (a)</title>
+<p>
+Let <m>n\in\mathbb{Z}</m>, <m>n\geq0</m>. We proceed by induction on <m>n</m>. First assume <m>n=0</m>. Then
+<me> \lim_{x\to\infty}x^ne^{-x}=\lim_{x\to\infty}e^{-x}=0, </me>
+and so the result holds. Next suppose the result holds for <m>n=k</m>, so that
+<me> \lim_{x\to\infty}x^ke^{-x}=0. </me>
+By l'Hôpital's rule,
+<me> \lim_{x\to\infty}x^{k+1}e^{-x}=\lim_{x\to\infty}\frac{x^{k+1}}{e^{x}}=\lim_{x\to\infty}\frac{(k+1)x^{k}}{e^{x}}. </me>
+Pulling out the constant, and applying the inductive hypothesis, we have
+<me> \lim_{x\to\infty}\frac{x^{k+1}}{e^{x}}=(k+1)\lim_{x\to\infty}\frac{x^{k}}{e^{x}}=(k+1)\cdot0=0. </me>
+Therefore the result holds for <m>n=k+1</m>, and by induction, for any <m>n</m>.
+</p></proof>
+
+
+
+
+<proof><title>Proof of (b)</title>
+<p>
+Let <m>n\in\mathbb{Z}</m>, <m>n\geq0</m>. We proceed by induction on <m>n</m>. First assume <m>n=0</m>. Then
+<me> \int_0^\infty x^ne^{-x}\mathrm{d}x =\int_0^\infty e^{-x}\mathrm{d}x = \lim_{t\to\infty}(-e^{-x})\Big]_0^t = 1=0!. </me>
+Next suppose that the result holds for <m>n=k</m>; that is,
+<me> k! = \int_0^\infty x^ke^{-x}\mathrm{d}x.</me>
+Then, by integration by parts,
+<md>
+<mrow>
+\int_0^\infty x^{k+1}e^{-x}\mathrm{d}x \amp =(-x^{k+1}e^{-x})\Big]_0^\infty +(k+1)\int_0^\infty x^ke^{-x}\mathrm{d}x
+</mrow><mrow>
+ \amp =\lim_{t\to\infty} \left(-t^{k+1}e^{-t}\right)+0^{k+1}e^{-0} +(k+1)\int_0^\infty x^ke^{-x}\mathrm{d}x
+</mrow><mrow>
+ \amp = 0 +(k+1)\int_0^\infty x^ke^{-x}\mathrm{d}x
+</mrow>
+</md>
+where we have used the fact that
+<me>
+\lim_{x \to \infty} x^k e^{-x} = 0.
+</me>
+which we proved in (a). Now using the induction hypothesis, we therefore have
+<me> \int_0^\infty x^{k+1}e^{-x}\mathrm{d}x=(k+1)\int_0^\infty x^ke^{-x}\mathrm{d}x=(k+1)k!=(k+1)!. </me>
+Thus, by induction, the result holds for all <m>n</m>.
+</p></proof>
+
+</solution>
+</exercise>

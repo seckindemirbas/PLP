@@ -1,0 +1,39 @@
+<exercise>
+<!-- source latex = 'Polynomial equivalence relation.tex' -->
+<!-- converted on 03/03/2022 at 11:50 -->
+<statement>
+<p>
+Let <m>n\in\mathbb{N}</m> with <m>n \gt 1</m> and let <m>P</m> be the set of  polynomials with coefficients in <m>\mathbb{R}</m>. We define a relation, <m>T</m>, on <m>P</m> as follows:
+</p>
+
+<p>
+Let <m>f,g\in P</m>. Then we say <m>f T g</m> if <m>f-g=c</m> for some <m>c\in\mathbb R</m>. That is, if there exists a <m>c\in \mathbb{R}</m> such that for all <m>x\in \mathbb{R}</m>, <m>f(x)-g(x) = c</m>.
+</p>
+
+<p>
+Show that <m>T</m> is an equivalence relation on <m>P</m>.
+</p>
+</statement>
+
+<solution>
+
+<proof><p>
+We need to check that the relation is reflexive, symmetric and transitive.
+</p>
+<p>
+<em>Reflexivity:</em> Let <m>f\in P</m>. Then, since <m>f-f=0</m> and <m>0\in\mathbb R</m>, we see that <m>fTf</m>. Hence <m>T</m> is reflexive.
+</p>
+<p>
+<em>Symmetry:</em> Let <m>f,g\in P</m> and assume that <m>fTg</m>. Then, by definition, we see that <m>f-g=c</m> for some <m>c\in \mathbb R</m>. Hence, we see that <m>g-f=-c</m>, and since <m>-c\in \mathbb R</m>, we have <m>gTf</m>, that is, <m>T</m> is symmetric.
+</p>
+<p>
+<em>Transitive:</em>. Let <m>f,g,h\in P</m> and assume that <m>fTg</m> and <m>gTh</m>. This means <m>f-g=c</m> for some <m>c\in\mathbb R</m> and <m>g-h=d</m> for some <m>d\in\mathbb{R}</m>. Hence, we see that
+<me>f-h=(f-g)+(g-h)=c+d.</me>
+Thus, since <m>c+d\in\mathbb R</m>, we see <m>fTh</m>. Therefore <m>T</m> is transitive.
+</p>
+<p>
+Hence the relation <m>T</m> is an equivalence relation.
+</p></proof>
+
+</solution>
+</exercise>

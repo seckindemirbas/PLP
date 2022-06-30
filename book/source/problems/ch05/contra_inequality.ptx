@@ -1,0 +1,32 @@
+<exercise>
+<!-- source latex = 'contra_inequality.tex' -->
+<!-- converted on 12/08/2021 at 19:32 -->
+<statement>
+<p>
+Let <m>x\in\mathbb{R}</m>. Show that if <m>x^3+5x\geq x^2+1</m>, then <m>x \gt 0</m>.
+</p>
+</statement>
+
+<answer>
+<p>
+If we were to provide a direct proof of this statement, we'd have to start with the inequality <m>x^3+5x\geq x^2+1</m> which would be difficult, since we have a cubic term. Instead we're going to prove this statement by its contrapositive; this will allow us to assume that <m>x\leq0</m>, and from that we will know the sign of powers of <m>x</m>.
+</p>
+
+<p>
+The contrapositive of this statement is: If <m>x\leq0</m>, then <m>x^3+5x \lt  x^2+1</m>.
+Notice that the right-hand side is positive, since <m>x^2 \geq 0</m>. At the same time, since <m>x \leq 0</m>, we know that <m>x^3 \leq 0</m> and <m>5x \leq 0</m>. So the left-hand side is non-positive. Thus we can write <m>x^3+5x \leq 0 \lt x^2+1</m>. And now we have everything we need for the proof.
+</p>
+</answer>
+<solution>
+<proof><p>
+We prove the contrapositive. Let <m>x\in\mathbb{R}</m>, and suppose that <m>x\leq 0</m>. Then
+<me> x^2+1  \gt 0 </me>
+and both <m>x^3\leq0</m> and <m>5x\leq0</m>. Putting this all together, we have
+<me> x^3+5x \leq 0 \lt x^2+1 </me>
+and hence <m>x^3+5x \lt  x^2+1</m>.
+</p>
+
+</proof>
+
+</solution>
+</exercise>

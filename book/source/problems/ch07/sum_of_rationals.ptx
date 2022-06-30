@@ -1,0 +1,44 @@
+<exercise xml:id="ex_sum_of_rats">
+<!-- source latex = 'sum_of_rationals.tex' -->
+<!-- converted on 08/11/2021 at 10:56 -->
+<statement>
+<p>
+Let <m>n\in\mathbb{N}</m>, <m>n\geq 2</m>. Suppose that <m>x_1,x_2,\dots,x_n\in\mathbb{Q}</m>. Show by induction that <m>x_1+x_2+\dots+x_n\in\mathbb{Q}</m>.
+</p>
+</statement>
+
+<!-- <hint></hint> -->
+<answer>
+<p>
+The base case of our induction will be <m>n=2</m>. For this part, we'll need to show that the sum of two rational numbers is rational.
+For the inductive step, we'll suppose that any sum of <m>k</m> rational numbers is rational, and we need to show that if <m>x_1,x_2,\dots,x_{k+1}\in\mathbb{Q}</m>, then their sum lies in <m>\mathbb{Q}</m>.
+The inductive hypothesis tells us that <m>x_1+x_2+\dots+x_k\in\mathbb{Q}</m>. But then <m>x_1+x_2+\dots+x_k+x_{k+1}</m> is really the sum of two rational numbers, and hence rational itself, as we already proved this in the base case.
+</p>
+</answer>
+
+<solution>
+<proof>
+<p>
+Let <m>n\in\mathbb{N}</m>. Suppose <m>n=2</m>, and that <m>x_1,x_2\in\mathbb{Q}</m>. Then there are <m>a_1,a_1,b_1,b_2\in\mathbb{Z}</m> with <m>b_1\neq0</m> and <m>b_2\neq0</m> so that <m>x_1=a_1/b_1</m> and <m>x_2=a_2/b_2</m>.
+Then
+<me> x_1+x_2 = \frac{b_2a_1+b_1a_2}{b_1b_2} </me>
+where <m>b_2a_1+b_1a_2,b_1b_2\in\mathbb{Z}</m> with <m>b_1b_2\neq0</m>. Thus <m>x_1+x_2\in\mathbb{Q}</m>.
+</p>
+<p>
+Now assume the result holds for <m>n=k</m> for some <m>k\geq 2</m>, and suppose that <m>x_1,x_2,\dots,x_{k+1}\in\mathbb{Q}</m>. By the inductive hypothesis, <m>x_1+x_2+\dots+x_k\in\mathbb{Q}</m>. Moreover, by the base case, the sum of two rationals is rational, and therefore
+<me> x_1+x_2+\dots+x_{k+1}=(x_1+x_2+\dots+x_k)+x_{k+1}\in\mathbb{Q}. </me>
+By induction, the result holds for any <m>n\geq2</m>.
+</p>
+</proof>
+
+<p>
+Note that the proof by induction only gives the result for a sum of finitely many terms. We cannot conclude that the sum of an infinite number of rational numbers is rational; indeed that statement is false.
+To see this, suppose that <m>x_0=1</m>, <m>x_1=4</m>, <m>x_3=1</m>, and in general, <m>x_n</m> is the <m>n^{th}</m> digit of <m>\sqrt{2}</m>. Then <m>x_n 10^{-n} \in\mathbb{Q}</m> for all <m>n=0,1,2,3,\dots</m>. But
+<me> \sqrt{2}=\sum_{n=0}^\infty x_n 10^{-n} \not\in\mathbb{Q}. </me>
+We'll take the statement that <m>\sqrt{2}=\sum_{n=0}^\infty x_n 10^{-n}</m> to be a fact, but this does require a proof, since we're dealing with an infinite number of terms.
+Really, we'd need to prove that
+<me> \sqrt{2}=\lim_{N\to\infty}\sum_{n=0}^Nx_n 10^{-n} </me>
+which is beyond the scope of what we are trying to do in this chapter.
+</p>
+</solution>
+</exercise>

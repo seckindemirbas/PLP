@@ -27,7 +27,7 @@ be compiled into a number of different formats using the
 ### Compile into HTML
 * From the repository root directory move into the `plp_book` subdirectory
 ```
-$ cd plp_book
+$ cd book
 ```
 * Then run
 ```
@@ -65,18 +65,16 @@ Then rename the `html` directory to whatever you like.
 ### Compile into LaTeX and PDF
 * From the repository root directory move into the `plp_book` subdirectory
 ```
-$ cd plp_book
+$ cd book
 ```
 * Then run
 ```
 $ pretext build latex 
 ```
-or
+$ pretext build latex --stringparam latex.font.size 12pt
 ```
-$ pretext build latex --stringparam latex.font.size 11pt
-```
-for a slightly larger font (recommended).
-* This will take a little time - roughly 10 minutes on a modest linux laptop computer
+for a slightly larger font.
+* This will take a little time - roughly 8 minutes on a modest linux laptop computer
 * The latex is output to the `output/latex` subdirectory
 * To then compile this latex into PDF run 
 ```

@@ -1,0 +1,74 @@
+<exercise>
+<!-- source latex = 'two sets are related if a fixed element belongs to both or none question.tex' -->
+<!-- converted on 26/11/2021 at 16:56 -->
+<statement>
+<p>
+Let <m>E</m> be a non-empty set and <m>q \in E</m> be a fixed element of <m>E</m>. Consider the relation <m>\rel</m> on <m>\mathcal P(E)</m> (power set of <m>E</m>) defined as
+<md>
+<mrow>
+    A \rel B \iff (q \in A\cap B)\lor (q \in \overline{A}\cap \overline{B}),
+</mrow>
+</md>
+where for any set <m>S\subseteq E</m>, we write <m>\overline{S}=E-S</m> for the complement of <m>S</m> in <m>E</m>.
+Prove or disprove that <m>\rel</m> an equivalence relation.
+</p>
+</statement>
+<hint>
+<p>
+You can first look at the relation <m>R</m> for <m>E=\set {1,2,3,4}</m>, and  <m>q=1</m> to understand the relation better. Also, recall that <m>\overline{A}\cap \overline{B}=\overline{A\cup B}</m>.
+</p>
+</hint>
+<answer>
+<p>
+The hint suggests that this relation says for the nonempty set <m>E</m>, <m>q\in E</m>, and <m>A,B\in\mathcal P(E)</m>, <m>A\rel B</m> if <m>q</m> is in both of them or in neither of them. This observation immediately suggests that the relation is reflexive and symmetric. Moreover, we see that if <m>A\rel B</m> and <m>B\rel C</m>, then we see that <m>q</m> is in all three sets <m>A, B</m>, and <m>C</m>; or in none of them. In either case, we see that <m>A\rel C</m>. Thus, the relation should be transitive too.
+</p>
+</answer>
+<solution>
+
+<proof><p>
+Let us prove that <m>\rel</m> is an equivalence relation.
+<ul>
+<li>
+<p>
+ Reflexivity: Let <m>A\in \mathcal P (E)</m>. Then <m>(q\in A)\vee (q\in \overline{A})</m> which we can rewrite as  <m>(q\in A\cap A)\vee (q\in \overline{A}\cap \overline{A})</m>. Hence, <m>A\rel A</m>.
+</p></li>
+<li>
+<p>
+ Symmetry: The symmetry is immediate from the symmetry of the intersection of sets.
+</p></li>
+<li>
+<p>
+ Transitivity: Let <m>A,B,C \in \mathcal P(E)</m> and assume that <m>A\rel B</m> and <m>B\rel C</m> so that
+<md>
+<mrow>
+    \left((q\in A\cap B)\vee (q\in \overline{A}\cap \overline{B})\right) \land \left((q\in B\cap C)\vee (q\in \overline{B}\cap \overline{C})\right).
+</mrow>
+</md>
+Now we can study 4 cases in turn:
+<ul>
+<li>
+<p>
+ Case 1: <m>(q\in A\cap B)\land (q\in B\cap C)</m>. Then <m>q\in A</m> and <m>q\in C</m> so <m>q\in A\cap C</m>, which implies <m>A \rel C.</m>
+    </p></li>
+<li>
+<p>
+ Case 2: <m>(q\in A\cap B) \land (q\in \overline{B}\cap \overline{C})</m>, which entails that <m>q\in B\cap \overline{B}</m> so this case never happens.
+    </p></li>
+<li>
+<p>
+ Case 3: <m>(q\in \overline{A}\cap \overline{B}) \land (q\in B\cap C)</m>. This case does not happen for the same reason as above.
+    </p></li>
+<li>
+<p>
+ Case 4: <m>\left(q\in \overline{A}\cap \overline{B})\right) \land (q\in \overline{B}\cap \overline{C})</m>. From there <m>q\in \overline{A} \cap \overline{C}</m> and so <m>A \rel C</m>.
+</p></li>
+</ul>
+</p>
+<p>
+Therefore we see that the relation is an equivalence relation.
+</p></li>
+</ul>
+</p></proof>
+
+</solution>
+</exercise>

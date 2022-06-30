@@ -1,0 +1,244 @@
+<exercise>
+<!-- source latex = 'simple set operations question.tex' -->
+<!-- converted on 18/08/2021 at 15:44 -->
+<statement>
+<p>
+Consider the following sets
+<ul>
+<li>
+<p>
+ <m>A_1=\set{ x\in\mathbb{Z}\colon x^2 \lt 2 }</m>,
+</p></li>
+<li>
+<p>
+ <m>A_2=\set{ x\in\mathbb{N}\colon (3\mid x)\land (x\mid 216) }</m>,
+</p></li>
+<li>
+<p>
+ <m>A_3=\set{ x\in\mathbb{Z}\colon \dfrac{x+2}{5}\in\mathbb{Z} }</m>,
+</p></li>
+<li>
+<p>
+ <m>A_4=\set{ a\in B\colon 6\leq 4a+1 \lt 17 }</m>, where <m>B=\set{1,2,3,4,5,6}</m>,
+</p></li>
+<li>
+<p>
+ <m>A_5=\set{ x\in C\colon 50 \lt xd \lt 100 \text{ for some } d\in D}</m>, where <m>C=\set{ 2,3,5,7,11,13, \ldots }</m> and <m>D=\set{ 5,10 }</m>,
+</p></li>
+<li>
+<p>
+ <m>A_6=\set{5,10,15,20,25,\ldots}</m>,
+</p></li>
+<li>
+<p>
+ <m>A_7=\set{2,3,4,6,8,9,12,16,18, 24\ldots }</m>,
+</p>
+</li>
+</ul>
+Write down the sets below by listing their elements.
+<ol marker="(a)">
+<li>
+<p>
+ <m>A_2- A_3</m>,
+</p></li>
+<li>
+<p>
+ <m>A_5\cap A_6</m>,
+</p></li>
+<li>
+<p>
+ <m>\pow{A_1})</m>,
+</p></li>
+<li>
+<p>
+ <m>\pow{\pow{A_1-\set{-1} }} </m>,
+</p></li>
+<li>
+<p>
+ <m>A_3\cap A_4</m>,
+</p></li>
+<li>
+<p>
+ <m>A_3-A_7</m>,
+</p></li>
+<li>
+<p>
+ <m>A_5\cup A_2</m>,
+</p></li>
+<li>
+<p>
+ <m>A_2\cap A_7</m>.
+</p></li>
+<li>
+<p>
+ <m>A_5\cap \overline{A_2}</m>, given the universal set <m>U=\mathbb R</m>.
+</p></li>
+<li>
+<p>
+ Verify whether <m>(A_4\times B)\cap(B\times A_4)=A_4\times A_4</m> and <m>(A_4\times B)\cup(B\times A_4)=B\times B</m>.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+
+
+<!-- 
+<answer> 
+<p>
+First of all, to help us understand the answer, we can write the given sets <m>A_1, A_2, \ldots, A_7</m> by listing their elements. This would be especially useful if the sets are finite.
+</p>
+<p>
+<ul>
+<li>
+<p>
+ <m>A_1=\set{ x\in\mathbb{Z}\colon x^2 \lt 2 }=\set{-1,0,1}</m>.
+</p>
+</li>
+<li>
+<p>
+ <m>A_2=\set{ x\in\mathbb{N}\colon (3\mid x)\land (x\mid 216) }=\set{ 3, 6, 9, 12, 18, 24, 27, 36, 54, 72, 108, 216}</m>.
+</p>
+</li>
+<li>
+<p>
+ <m>A_3=\set{ x\in\mathbb{Z}\colon \dfrac{x+2}{5}\in\mathbb{Z} }=\set{\ldots, -12, -7, -2, 3,  8, 13, \ldots}</m>.
+</p>
+</li>
+<li>
+<p>
+ <m>A_4=\set{ a\in B\colon 6\leq 4a+1 \lt 17 }</m>, where <m>B=\set{1,2,3,4,5,6}</m>.
+Then,  <m>A_4=\set{2,3}</m>.
+</p>
+</li>
+<li>
+<p>
+ <m>A_5=\set{ x\in C\colon 50 \lt xd \lt 100 \text{ for some } d\in D}</m>, where <m>C=\set{ 2,3,5,7,11,13, \ldots }</m> and <m>D=\set{ 5,10 }</m>. Then <m>A_5=\set{7,11,13,17,19}</m>.
+</p>
+</li>
+<li>
+<p>
+ <m>A_6=\set{5,10,15,20,25,\ldots}</m> is the set of positive multiples of 5,
+</p>
+</li>
+<li>
+<p>
+ <m>A_7=\set{2,3,4,6,8,9,12,16,18, 24\ldots }</m> is the set of products of non-negative integer powers of 2 and 3, excluding <m>2^0 3^0 = 1</m>.
+</p></li>
+</ul>
+</p>
+</answer>
+-->
+
+<solution>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ <m>A_2- A_3=\set{  6, 9, 12, 24, 27, 36, 54, 72, 216 }</m>.
+</p>
+</li>
+<li>
+<p>
+ <m>A_5\cap A_6=\emptyset</m>.
+</p>
+</li>
+<li>
+<p>
+ <m>\pow{A_1}=\set{ \emptyset, \set{-1},\set{0},\set{1},\set{-1,1},\set{-1,0},\set{0,1}, \set{-1,0,1} }</m>. Notice that since <m>|A_1|=3</m> we have <m>|\pow{A_1}| = 2^3 = 8</m>.
+</p>
+</li>
+<li>
+<p>
+ <m>\pow{\pow{A_1-\set{-1} }}</m>. We see that <m>A_1-\set{-1}=\set{0,1}</m>. Then we get,
+</p>
+<p>
+<m>\pow{A_1-\set{-1}})=\set{\emptyset, \set{0},\set{1},\set{0,1} }</m>. Thus we see,
+</p>
+<p>
+<md>
+<mrow>
+\pow{\pow{A_1-\set{-1} }}
+ \amp =\Big\{ \emptyset,
+ \set{\emptyset}, \set{\set{0}},\set{\set{1}},\set{\set{0,1}},
+
+</mrow><mrow>
+ \amp  \quad \set{\emptyset, \set{0}},
+\set{\emptyset,\set{1}},
+\set{\emptyset,\set{0,1}}
+\set{\set{0},\set{1}},
+\set{\set{0},\set{0,1}}
+\set{\set{1},\set{0,1}},
+
+</mrow><mrow>
+ \amp 
+\quad \set{\emptyset,\set{0},\set{1}},
+\set{\emptyset, \set{0},\set{0,1}},
+\set{\emptyset,\set{1},\set{0,1}},
+\set{\set{0},\set{1},\set{0,1}}, 
+</mrow><mrow>
+\quad
+ \amp \qquad \set{\emptyset, \set{0},\set{1},\set{0,1}} \Big\} .
+</mrow>
+</md>
+Since <m>|\pow{A_1-\set{-1} }| = 4</m>, the power set of that has <m>2^4 = 16</m> elements. We have arranged our answer here so that the single subset with 0 elements is followed by the four subsets with 1 element, then the 6 with two elements,  the four with 3 elements and finally the single subset with 4 elements. Of course, the order doesn't matter, as long as all 16 are there.
+</p>
+</li>
+<li>
+<p>
+ <m>A_3\cap A_4=\set{3}</m>,
+</p>
+</li>
+<li>
+<p>
+ <m>A_2-A_7=\emptyset</m>.
+</p>
+</li>
+<li>
+<p>
+ <m>A_5\cup A_2=\set{ 3, 7, 6, 9, 11, 12, 13, 17 18, 19, 24, 27, 36, 54, 72, 108, 216}</m>.
+</p>
+</li>
+<li>
+<p>
+ <m>A_2\cap A_7=\set{ 3, 6, 9, 12, 18, 24, 27, 36, 54, 72, 108, 216}=A_2</m>.
+</p>
+</li>
+<li>
+<p>
+ <m>A_5\cap \overline{A_2}</m>, given the universal set <m>U=\mathbb R</m>. We have <m>A_5\cap\overline{A_2}=\set{ 7,11,13,17,19 }=A_5</m>.
+</p>
+</li>
+<li>
+<p>
+ Verify whether <m>(A_4\times B)\cap(B\times A_4)=A_4\times A_4</m> and <m>(A_4\times B)\cup(B\times A_4)=B\times B</m>.
+</p>
+<p>
+We see <me>
+A_4\times B=\set{ (2,1),(2,2),(2,3),(2,4),(2,5),(2,6),(3,1),(3,2),(3,3),(3,4),(3,5),(3,6) }, </me>
+and
+<me>
+B\times A_4=\set{ (1,2),(2,2),(3,2),(4,2),(5, 2), (6, 2),(1, 3),(2,3),(3,3),(4,3),(5,3),(6,3) }.
+</me>
+Then, <me>(A_4\times B)\cap  (B\times A_4)=\set{  (2,2),(2,3),(3,2),(3,3) }=A_4\times A_4.</me>
+</p>
+<p>
+We also see,
+<md>
+<mrow>
+(A_4 \amp \times B)\cup  (B\times A_4)
+</mrow><mrow>
+ \amp =\{  (2,1),(2,2),(2,3),(2,4),(2,5),(2,6),(3,1),(3,2),(3,3),(3,4),(3,5),(3,6),
+</mrow><mrow>
+ \amp \qquad (1,2),(4,2),(5, 2), (6, 2),(1, 3),(4,3),(5,3),(6,3) \}\neq B\times B,
+</mrow>
+</md>
+</p>
+<p>
+ since <m>(1,1)\in B\times B</m> but <m>(1,1)\notin (A_4\times B)\cup  (B\times A_4)</m>.
+</p>
+</li>
+</ol>
+</p>
+</solution>
+</exercise>

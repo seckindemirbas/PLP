@@ -1,0 +1,51 @@
+<exercise>
+<!-- source latex = 'sets_han2.tex' -->
+<!-- converted on 23/06/2021 at 19:54 -->
+<statement>
+<p>
+Are the following sets equal?
+<ol marker="(a)">
+<li>
+<p>
+ <m>\mathbb{Z}</m> and <m>\{ a: a \in \mathbb{N} \text{ or } -a\in\mathbb{N}\}</m>
+    </p></li>
+<li>
+<p>
+ <m>\{1,2,2,3,3,3,2,2,1\}</m> and <m>\{1,1,1,1,1,2,2,2,2,2,3,3,3,3,3\}</m>
+    </p></li>
+<li>
+<p>
+ <m>\{d : d \text{ is a day with 40 hours}\}</m> and <m>\{w: w \text{ is a week with 6 days}\}</m>
+    </p></li>
+<li>
+<p>
+ <m>\{p: p \text{ is prime, } p\lt 42\}</m> and <m>\{1,2,3,5,7,11,13,17,19,23,29,31,37,41\}</m>
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ <m>\mathbb{Z} \neq\{ a: a \in \mathbb{N} \text{ or } -a\in\mathbb{N}\}</m>. This is because <m>0\in \mathbb{Z}</m>, but <m>0 \not\in \{ a: a \in \mathbb{N} \text{ or } -a\in\mathbb{N}\}</m>.
+    </p></li>
+<li>
+<p>
+ <m>\{1,2,2,3,3,3,2,2,1\}=\{1,1,1,1,1,2,2,2,2,2,3,3,3,3,3\}</m>. The number of occurrences of an element of a set does not matter. Both of these sets are equal to the set <m>\{1,2,3\}</m>.
+    </p></li>
+<li>
+<p>
+ <m>\{d : d \text{ is a day of the week with 40 hours}\}=\{w: w \text{ is a week with 6 days}\}</m>. Since there are no days with <m>40</m> hours and no weeks with <m>6</m> days, both of these are equal to the empty set.
+    </p></li>
+<li>
+<p>
+ <m>\{p: p \text{ is prime, } p\lt 42\}\neq\{1,2,3,5,7,11,13,17,19,23,29,31,37,41\}</m>. The number <m>1</m> is not a prime, thus there is an element in the set on the right hand side that is not present in the left hand side.
+</p>
+</li>
+</ol>
+</p>
+</solution>
+</exercise>

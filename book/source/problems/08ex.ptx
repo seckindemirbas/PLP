@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<exercises xmlns:xi="http://www.w3.org/2001/XInclude">
+<xi:include href="ch08/simple_set_operations_question.ptx"/>
+<xi:include href="ch08/intersection_of_graphs_question.ptx"/>
+<xi:include href="ch08/if_A_is_B_difference_C_then_B_is_A_union_C_question.ptx"/>
+<xi:include href="ch08/rational_powers_of_two_certain_elements_gives_the_same_set_question.ptx"/>
+<xi:include href="ch08/set_question_that_says_if_x_is_a_multiple_of_m_and_n_then_it_is_a_mn.ptx"/>
+<xi:include href="ch08/set_question_that_says_if_x_is_a_multiple_of_mn_then_it_is_a_m_and_n.ptx"/>
+<xi:include href="ch08/Cartesian_product_with_empty_set.ptx"/>
+<xi:include href="ch08/Cartesian_products_and_subsets.ptx"/>
+<xi:include href="ch08/intersection_of_power_sets_is_the_power_set_of_the_intersection_question.ptx"/>
+<xi:include href="ch08/union_of_power_sets_is_the_power_set_of_the_union_question.ptx"/>
+<xi:include href="ch08/size_of_a_finite_power_set_question.ptx"/>
+<xi:include href="ch08/diff_of_powsets.ptx"/>
+<xi:include href="ch08/index_set_question.ptx"/>
+<xi:include href="ch08/index_sets_union_of_balls.ptx"/>
+<xi:include href="ch08/determine_sup_max_of_sets.ptx"/>
+<xi:include href="ch08/question_on_sups.ptx"/>
+<xi:include href="ch08/incr_seq_converges_to_sup.ptx"/>
+
+</exercises>

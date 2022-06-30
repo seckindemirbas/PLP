@@ -1,0 +1,74 @@
+<exercise>
+<!-- source latex = 'Sparse relation properties.tex' -->
+<!-- converted on 19/11/2021 at 10:59 -->
+<statement>
+<p>
+In this question we will call a relation <m>R \subset \mathbb{Z}\times \mathbb{Z}</m> <em>sparse</em> if <m>(a,b) \in R</m> implies that <m>(a,b+1)</m> and <m>(a+1,b)</m> are NOT elements of <m>R</m>.
+<ol marker="(a)">
+<li>
+<p>
+ Prove that for all <m>n \in \mathbb{N}</m> the equivalence relation <m>R = \{(a,b) \in \mathbb{Z} \times \mathbb{Z} : n\mid (a-b)\}</m> is sparse if and only if <m>n \neq 1</m>.
+    </p></li>
+<li>
+<p>
+ Prove or disprove that every equivalence relation <m>R</m> on <m>\mathbb{Z}</m> is sparse.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<hint>
+<p>
+For the first part, the result in <xref ref="ex_n_div_a_aplus1"/> will be useful.
+</p>
+</hint>
+<answer>
+<p>
+For the first part, we first realize the relation  <m>R = \{(a,b) \in \mathbb{Z} \times \mathbb{Z} : n\mid (a-b)\}</m> is nothing but the congruence modulo <m>n</m> relation.
+Moreover, we see that if <m>R</m> is not sparse than there are <m>a,b\in\mathbb Z</m> such that <m>a\equiv b \pmod n</m> and either <m>a\equiv (b+1) \pmod n</m> or <m>(a+1)\equiv b \pmod n</m>.
+Since these cases are symetric with respect to <m>a</m> and <m>b</m>, WLOG, we can assume that <m>a\equiv (b+1) \pmod n</m>.
+Then, we see that <m>n\mid (b-a)</m> and <m>n\mid ((b+1)-a)</m>, that is <m>n\mid ((b-a)+1)</m>.
+Therefore, as the hint suggested, we get <m>n=1</m> (since <m>n\in\mathbb N</m>).
+We can also see that if <m>n=1</m>, then the congruence relation cannot be sparse, since every element will be related to every nonzero element.
+</p>
+<p>
+This final observation is also going to be useful in the second part, since we know that the relation <m>R = \{(a,b) \in \mathbb{Z} \times \mathbb{Z} : 1\mid (a-b)\}=\mathbb Z\times \mathbb Z</m> is an equivalence relation, and it is not sparse.
+</p>
+<p>
+Now, we can write this nicely as a proof.
+</p>
+</answer>
+<solution>
+  <proof><title>Proof of (a)</title>
+  <p>
+      We prove each implication in turn.
+</p>
+<p>
+    First, suppose that <m>R</m> is sparse, and observe that since <m>n\mid 0</m> for all <m>n \in \mathbb{N}</m>, <m>(a,a) \in \mathbb{R}</m> for all <m>a \in \mathbb{Z}</m>. Then since <m>R</m> is sparse, <m>(a,a+1) \notin R</m> and hence <m>n \nmid (a - a - 1) = -1</m>. In particular, <m>n \neq 1</m>, as desired.
+</p>
+<p>
+    For the second implication we will prove the contrapositive. Suppose that <m>R</m> is not sparse. Then we have two cases: either there exist <m>a,b \in \mathbb{Z}</m> so that <m>(a,b)</m> and <m>(a,b+1)</m> are in <m>R</m>, or there exist <m>a,b \in \mathbb{Z}</m> so that <m>(a,b)</m> and <m>(a+1,b)</m> are in <m>R</m>.
+<ul>
+<li>
+<p>
+ In the first case, we have that <m>n|(a-b)</m> and <m>n|(a-(b+1))</m>, and hence <m>n</m> divides their difference. That is, <m>n|1</m>. Since <m>n \in \mathbb{N}</m>, this implies <m>n =1</m>.
+    </p></li>
+<li>
+<p>
+ The second case is very similar. We have that <m>n|(a-b)</m> and <m>n|(a+1-b)</m>, and hence <m>n|1</m>. In particular <m>n =1</m>.
+</p></li>
+</ul>
+Note that these are the modular equivalence relations.
+</p></proof>
+<p>
+The statement in (b) is false.
+</p>
+<proof><title>Disproof of (b)</title><p>
+  Consider <m>R = \mathbb{Z} \times \mathbb{Z}</m>. This is an equivalence relation: all three conditions are trivially satisfied since <m>R</m> contains all pairs of integers. However, both <m>(0,0)</m> and <m>(0,1)</m> are elements of <m>R</m>, so <m>R</m> is not sparse.
+  </p></proof>
+<p>
+Note that the counter-example in this disproof is just the case <m>n =1</m> in the previous part of the question.
+</p>
+
+</solution>
+</exercise>

@@ -1,0 +1,126 @@
+<exercise>
+<!-- source latex = 'writing numbers in binary using strong induction question.tex' -->
+<!-- converted on 12/10/2021 at 14:12 -->
+<statement>
+<p>
+Show that every  <m>n\in\mathbb N</m> can be written in binary. That is, for all <m>n \in \mathbb{N}</m>, there exists an <m> m\in\mathbb Z</m> with <m>m\geq 0</m> and constants <m> c_0,c_1,c_2,\dots, c_m\in\set{0,1} </m> such that
+<me>
+a= c_m \cdot 2^m+c_{m-1}\cdot 2^{m-1}+\cdots+c_1\cdot 2+c_0.
+</me>
+</p>
+<p>
+For example,
+<me>
+  537 = 512 + 16 + 8 + 1 = 2^9 + 2^4 + 2^3 + 2^0,
+</me>
+so <m>m=9</m> and <m> (c_0,c_1,c_2,\dots,c_9) = (1,0,0,1,1,0,0,0,0,1)</m>.
+</p>
+</statement>
+<hint>
+<p>
+Strong induction helps, as does the parity of the number.
+</p>
+</hint>
+
+<answer>
+<p>
+You may have already seen how to write a natural number in binary:
+<ul>
+<li>
+<p>
+ We take the natural number,
+</p></li>
+<li>
+<p>
+ find the biggest power of <m>2</m> that is smaller than that number,
+</p></li>
+<li>
+<p>
+ subtract that power of <m>2</m> from the number,
+</p></li>
+<li>
+<p>
+ and keep doing this till you end up with <m>0</m> or <m>1</m>.
+</p></li>
+</ul>
+Here we see that, even though this method is practically useful, this doesn't give us the proof. Since there are some gaps in the argument. For example, how can we pick that <q>biggest factor of <m>2</m></q>, or what does it mean to <q>keep doing till we end up with <m>0</m> or <m>1</m></q>?
+</p>
+<p>
+This is a good use of induction methods since induction takes care of that <q>keep going till<ellipsis/></q> portion of the process.
+</p>
+<p>
+Now, we may want to use regular induction in this question. If we think about how we can prove the inductive step, to get from <m>n</m> to <m>n+1</m>, we would assume <m>n=c_m2^m+c_{m-1}2^{m-1}+\cdots+c_12+c_0</m> for some <m>m\geq 0</m> and constants <m> c_0,c_1,c_2,\dots, c_m\in\set{0,1} </m>. Then, we see <m>n+1=c_m2^m+c_{m-1}2^{m-1}+\cdots+c_12+c_0+1</m>. But then, we have to have <m>2m</m> different cases depending on whether or not <m>c_i</m> is <m>0</m> or not, for <m>0\leq i\leq m</m>. We see that this has a very similar <q>keep going till...</q> type of problem. Instead, we can use strong induction and the fact that every natural number is even or odd.
+</p>
+
+<p>
+Notice that in our argument we are implicitly making use of the distributive law
+<me>
+  2 \cdot (a_0+a_1+a_2+\cdots+a_n) =
+  2\cdot a_0 + 2\cdot a_1 +2\cdot a_2 +\cdots +2\cdot a_n
+</me>
+Now normally, we state the distributive law as
+<me>
+  a \cdot(b+c) = a\cdot b + a\cdot c,
+</me>
+that is, we show how we distribute the produce over two summands, rather than <m>n</m> summands. So we should really prove that it extends in this way. That is precisely <xref ref="ex_distributive_law"/>.
+</p>
+
+
+</answer>
+<solution>
+
+<proof><p>
+ We are going to use strong induction on <m>n</m>.
+</p>
+<p>
+<ul>
+<li>
+<p>
+<em>Base case:</em> We see that the statement is true for <m>n=1</m> since we can take <m>m=0</m> and <m>c_0=1</m>.
+</p>
+</li>
+<li>
+<p>
+<em>Inductive step:</em> Assume that the statement is true for all <m>1 \leq \ell \leq k</m>
+Then for <m>n=k+1</m> we have two cases.
+</p>
+<p>
+<ul>
+<li>
+<p>
+ <em>Case 1:</em> <m>n</m> is even. So <m>n=2a</m> for some <m>a \in \mathbb{N}</m>. Since <m>a \lt n</m>, we know <m>a \leq k</m> and so the induction hypothesis implies that  there exists <m> m\in\mathbb Z</m>, <m>m\geq 0</m> and constants <m> c_0,c_1,c_2,\dots, c_m\in\set{0,1} </m> such that
+<me>
+ a = c_m\cdot 2^m+c_{m-1}\cdot 2^{m-1}+\cdots+c_1\cdot 2+c_0.
+</me>
+This implies that
+<me>
+n=2a = c_m\cdot 2^{m+1}+c_{m-1}\cdot 2^{m}+\cdots+c_1\cdot 2^2+c_0 \cdot 2,
+</me>
+Hence, the statement is true for <m>n=k+1</m>.
+</p>
+</li>
+<li>
+<p>
+ <em>Case 2:</em> <m>n</m> is odd. So, <m>n=2b+1</m> for some <m>b \in \mathbb{N}</m>. Again, since <m>b \lt n</m>, we know that <m>b \leq k</m> and so the induction hypothesis tells us that there exists <m> m\in\mathbb Z</m>, <m>m\geq 0</m> and constants <m> c_0,c_1,c_2,\dots, c_m\in\set{0,1} </m> such that
+<me>
+ b = c_m\cdot 2^m+c_{m-1}\cdot 2^{m-1}+\cdots+c_1\cdot 2+c_0.
+</me>
+This, then, implies
+<me>
+2b = c_m\cdot 2^{m+1}+c_{m-1}\cdot 2^{m}+\cdots+c_1\cdot 2^2 +c_0\cdot 2.
+</me>
+and so
+<me>
+n=2b+1 = c_m\cdot 2^{m+1}+c_{m-1}\cdot 2^{m}+\cdots+c_1\cdot 2^2 +c_0\cdot 2+1.
+</me>
+Hence, the statement is true for <m>k=n+1</m>.
+</p></li>
+</ul>
+Since both cases are true, the inductive step holds.
+</p></li>
+</ul>
+Therefore the statement is true for all <m>n\in\mathbb N</m>.
+</p></proof>
+
+</solution>
+</exercise>

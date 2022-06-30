@@ -1,0 +1,83 @@
+<exercise>
+<!-- source latex = 'inverse of a piecewise function.tex' -->
+<!-- converted on 07/12/2021 at 12:11 -->
+<statement>
+<p>
+Let <m>f:\mathbb Z \rightarrow \mathbb Z</m> defined so that <m>f(n)=-n+3</m> if <m>n</m> is even and <m>f(n)=n+7</m> if <m>n</m> is odd.
+Prove that <m>f</m> is bijective and find its inverse, <m>f^{-1}</m>.
+</p>
+</statement>
+<hint>
+<p>
+Observe that <m>f</m> takes even numbers to odd numbers and odd numbers to even numbers. Considering that, what should the inverse of <m>f</m> look like?
+</p>
+<p>
+Also - there are some very <em>handy</em> lemmas in <xref ref="sec_inv_func"/>.
+</p>
+</hint>
+<answer>
+<p>
+In this question, we can try to show that <m>f</m> is an injective and surjective function, and conclude that <m>f</m> has an inverse, and calculate the inverse afterwards.
+</p>
+<p>
+However, if we know what the inverse of <m>f</m> should look like, call it a new function <m>g</m>, we can check whether <m>g</m> is a right and also a left inverse of <m>f</m>. If so, using <xref ref="lem_left_inv"/>
+and <xref ref="lem_right_inv"/>,
+we can conlude that <m>f</m> is bijective and moreover <m>g</m> is its inverse.
+</p>
+<p>
+We can find what the inverse of <m>f</m> should look like quite easily in this question. We see that <m>f</m> takes even numbers to odd numbers and the odd numbers to even numbers. For example, <m>f(5)=5+7=12</m>. This means that if we want to find, <m>g</m>, the the inverse of <m>f</m> we should have <m>g(12)=5=12-7</m> (since we added <m>7</m> to <m>5</m> to get <m>12</m>), that is <m>g(n)=n-7</m> for <m>n</m> even. Similarly for <m>n</m> even, we see that <m>f(n)=-n+3</m>, so we must have <m>g(-n+3)=n=-((-n+3)-3)</m>, that is, <m>g(n)=-n+3</m> for <m>n</m> odd. Now, we can check whether this function <m>g</m> is the right- and the left-inverse of <m>f</m>.
+</p>
+</answer>
+<solution>
+
+<proof><p>
+Let <m>g:\mathbb Z \rightarrow \mathbb Z</m> be defined as
+<me>
+  g(n) = \begin{cases}
+  3-n  \amp  \text{if } n \text{ is odd } \\
+  n-7  \amp  \text{if } n \text{ is even }
+\end{cases}
+</me>
+We prove that <m>g</m> is a left and right inverse of <m>f</m>, which implies, via <xref ref="lem_left_inv"/> and <xref ref="lem_right_inv"/>, that <m>f</m> is bijective and that <m>g</m> is its inverse.
+</p>
+<p>
+<ul>
+<li>
+<p>
+ <em><m>g</m> is the left inverse of <m>f</m></em>: Let <m>n\in\mathbb Z</m> and consider <m>g(f(n))</m>. Then <m>n</m> is either even or odd.
+<ul>
+<li>
+<p>
+ <em><m>n</m> is even</em>: In this case, <m>g(f(n))=g(-n+3)=-(-n+3)+3=n</m> since <m>-n+3</m> is odd.
+</p></li>
+<li>
+<p>
+ <em><m>n</m> is odd</em>: Then, we see that <m>g(f(n))=g(n+7)=(n+7)-7=n</m> since <m>n+7</m> is even.
+</p></li>
+</ul>
+ Hence <m>g\circ f=i_\mathbb Z</m>, where <m>i_\mathbb Z</m> is the identity function on <m>\mathbb Z</m>, and so <m>g</m> is a left-inverse of <m>f</m>.
+</p>
+</li>
+<li>
+<p>
+ <em><m>g</m> is the right inverse of <m>f</m></em>: Let <m>n\in\mathbb Z</m> and consider <m>f(g(n))</m>. Then, again, we have two cases, <m>n</m> is either even or odd;
+<ul>
+<li>
+<p>
+ <em><m>n</m> is even</em>: Then, we have <m>f(g(n))=f(n-7)=(n-7)+7=n</m> since <m>n-7</m> is odd.
+</p></li>
+<li>
+<p>
+ <em><m>n</m> is odd</em> : Finally, in this case we have <m>f(g(n))=f(-n+3)=-(-n+3)+3=n</m> since <m>-n+3</m> is even.
+</p></li>
+</ul>
+Hence <m>f\circ g=i_\mathbb Z</m> and so <m>g</m> is a right-inverse of <m>f</m>.
+</p></li>
+</ul>
+</p>
+<p>
+Therefore <m>f</m> is bijective and <m>g</m> is the inverse of <m>f</m> .
+</p></proof>
+
+</solution>
+</exercise>

@@ -1,0 +1,56 @@
+<exercise xml:id="ex_sqrt_sum_ineq">
+<!-- source latex = 'square_root_ineq.tex' -->
+<!-- converted on 12/10/2021 at 12:29 -->
+<statement>
+<p>
+Let <m>x,y\in\mathbb{R}</m> such that <m>x,y\geq0</m>. Show that <m>\sqrt{x+y}\leq \sqrt{x}+\sqrt{y}</m>.
+</p>
+<p>
+You may use the following without proof:
+</p>
+<p>
+<me> \text{If } 0\leq a\leq b, \text{ then } \sqrt{a}\leq \sqrt{b}. </me>
+</p>
+</statement>
+
+<!-- <hint></hint> -->
+<answer>
+<p>
+For scratchwork, we'll begin with the inequality
+<me> \sqrt{x+y}\leq \sqrt{x}+\sqrt{y} </me>
+Note that this is what we actually want to show though! When we write up the formal proof, we'll have to reverse the order of our logic.
+We'll try to derive something true from this inequality, which will be the starting point of our actual proof.
+Starting with
+<me> \sqrt{x+y}\leq \sqrt{x}+\sqrt{y}, </me>
+note that <m>0\leq \sqrt{x+y}</m>, and so we can square both sides to obtain
+<me> x+y \leq x+2\sqrt{x}\sqrt{y}+y.</me>
+Here we are using that <m>(\sqrt{x})^2=x</m> since <m>x\geq0</m>, and similarly for <m>y</m>.
+Subtracting <m>x+y</m> from both sides of this inequality, we obtain
+<me> 0 \leq \sqrt{x}\sqrt{y} </me>
+and this inequality is true since the square root function is never negative.
+So, for the actual proof of the statement, we should start with the inequality
+<me> 0\leq\sqrt{x}\sqrt{y}, </me>
+and reverse the argument above to show the desired conclusion,
+<me> \sqrt{x+y}\leq \sqrt{x}+\sqrt{y}. </me>
+</p>
+</answer>
+
+<solution>
+<proof>
+<p>
+Let <m>x,y\in\mathbb{R}</m> such that <m>x,y\geq0</m>. Since the square root function is never negative,
+<m>\sqrt{x}\sqrt{y}\geq0</m>. Then multiplying by <m>2</m> and adding <m>x+y</m> to both sides, we have
+<me> x + y \leq x+2\sqrt{x}\sqrt{y}+y. </me>
+Since <m>x,y\geq0</m>, we have that <m>(\sqrt{x})^2=x</m> and <m>(\sqrt{y})^2=y</m>, and so we may factor the righthand side of the above inequality to obtain
+<me> x+y \leq (\sqrt{x}+\sqrt{y})^2. </me>
+Since <m>x+y\geq0</m>, we then have
+<me> \sqrt{x+y} \leq \sqrt{(\sqrt{x}+\sqrt{y})^2} </me>
+But
+<me> \sqrt{(\sqrt{x}+\sqrt{y})^2}=\sqrt{x}+\sqrt{y}, </me>
+since <m>\sqrt{x}+\sqrt{y}\geq0</m>. Therefore
+<me>\sqrt{x+y} \leq \sqrt{x}+\sqrt{y}, </me>
+as required.
+</p></proof>
+
+</solution>
+</exercise>

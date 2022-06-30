@@ -1,0 +1,65 @@
+<exercise>
+<!-- source latex = 'If f is injective, then f of A minus B is f of A minus f of B.tex' -->
+<!-- converted on 07/12/2021 at 12:02 -->
+<statement>
+<p>
+Let <m>f:C\to D</m> be a function. Let <m>A, B \subset C</m> be nonempty sets. Prove that if <m>f</m> is injective, then <m>f(A-B)=f(A)-f(B)</m>.
+</p>
+</statement>
+
+<!-- <hint></hint> -->
+
+<solution>
+
+<proof><p>
+Assume <m>f</m> is injective. Then we need to show <m>f(A-B)\subseteq f(A)-f(B)</m> and <m>f(A)-f(B)\subseteq f(A-B)</m>. Let us start with the second inclusion.
+</p>
+<p>
+<ul>
+<li>
+<p>
+  Let <m>y\in f(A-B)</m>. Then, by definition, there exists <m>x\in A-B</m> such that <m>f(x)=y</m>. Then, we see that <m>y\in f(A)</m>. Now we must show that <m>y \not\in f(B)</m>. Let <m>z</m> be any element of <m>B</m>. Then we must have that <m>x \neq z</m>, and so, since <m>f</m> is injective, we know that <m>f(x) \neq f(z)</m>.
+  This means that <m>y</m> cannot be the image of any <m>z \in B</m>, and so <m>y \not\in f(B)</m>. Hence <m>y \in f(A) - f(B)</m>, and so <m>f(A-B) \subseteq f(A)-f(B)</m> as required.
+</p>
+<p>
+  We note that the contrapositive of this argument is illuminating. If <m>y \in f(B)</m> then there is some <m>z \in B</m> so that <m>f(z)=y</m>. Now, since <m>y=f(x)</m> this means <m>f(x) = f(z)</m>. But since <m>x \not\in B</m> and <m>z \in B</m>, we know <m>x\neq z</m> and thus <m>f</m> is not injective.
+</p>
+
+</li>
+<li>
+<p>
+ Now, let <m>y\in f(A)-f(B)</m>. This means that <m>y \in f(A)</m> and so there is some <m>x \in A</m> so that <m>y=f(x)</m>.
+  At the same time,  <m>y\not\in f(B)</m>, which means that <m>y\neq f(z)</m> for any <m>z\in B</m>. Hence it cannot be the case that <m>x \in B</m>. Thus <m>x \in A-B</m> and so <m>y = f(x) \in f(A-B)</m>, and therefore <m>f(A)-f(B)\subseteq f(A-B)</m> as required.
+</p>
+</li>
+</ul>
+</p></proof>
+
+<p>
+  Notice that the proof that <m>f(A)-f(B)\subseteq f(A-B)</m> does not
+  actually require that <m>f</m> is surjective. It holds for all
+  functions.  Also notice that when we prove first inclusion we are actually proving that 
+<md>
+<mrow>
+  f \text{ is injective}  \amp \implies (LHS \subseteq RHS)
+</mrow>
+</md>
+So we could prove the contrapositive of this instead. Namely
+<md>
+<mrow>
+  (LHS \not\subseteq RHS)  \amp  \implies f \text{ is not injective}.
+</mrow>
+</md>
+</p>
+
+<proof><title>Contrapositive proof</title>
+  <p>
+  Assume that <m>f(A-B) \not\subseteq f(A)-f(B)</m>. Hence there is some <m>y \in f(A-B)</m> so that <m>y \not\in f(A)-f(B)</m>.
+  So we know that there is some <m>x \in A-B</m> with <m>f(x)=y</m>. Notice that since <m>x \in A</m>, we know that <m>y=f(x) \in f(A)</m>.
+</p>
+<p>
+  Now since <m>y \not\in f(A)-f(B)</m> and <m>y \in f(A)</m> it must be the case that <m>y \in f(B)</m>. However, this means that there is some <m>z \in B</m> so that <m>f(z)=y</m>.  This implies that <m>f(z)=y=f(x)</m> and at the same time <m>x \neq z</m> and thus <m>f</m> is not injective.
+</p></proof>
+
+</solution>
+</exercise>

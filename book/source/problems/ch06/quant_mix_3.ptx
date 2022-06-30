@@ -1,0 +1,75 @@
+<exercise>
+<!-- source latex = 'quant_mix_3.tex' -->
+<!-- converted on 18/08/2021 at 14:54 -->
+<statement>
+<p>
+Determine whether the following statements are true or false. Explain your answers.
+<ol marker="(a)">
+<li>
+<p>
+ <m>\exists x\in\mathbb{R} \text{ s.t. } \exists y\in\mathbb{R} \text{ s.t. } (xy \gt 0) \implies (x+y \gt 0) </m>.
+</p></li>
+<li>
+<p>
+ <m>\exists x\in\mathbb{R} \text{ s.t. } \forall y\in\mathbb{R}, (xy \gt 0) \implies (x+y \gt 0) </m>.
+</p></li>
+<li>
+<p>
+ <m>\forall x\in\mathbb{R}, \exists y\in\mathbb{R} \text{ s.t. }  (xy \gt 0) \implies (x+y \gt 0) </m>.
+</p></li>
+<li>
+<p>
+ <m>\forall x\in\mathbb{R}, \forall y\in\mathbb{R},  (xy \gt 0) \implies (x+y \gt 0) </m>.
+</p>
+</li>
+<li>
+<p>
+ <m>\exists x\in\mathbb{R} \text{ s.t. } \forall y\in\mathbb{R}, (xy \geq 0) \implies (x+y \geq 0) </m>.
+</p></li>
+<li>
+<p>
+ <m>\forall x\in\mathbb{R}, \exists y\in\mathbb{R} \text{ s.t. }  (xy \geq 0) \implies (x+y \geq 0) </m>.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<hint>
+<p>
+Think carefully about the truth table of the implication. Also, negate carefully. Finally, be careful with your inequalities.
+</p>
+</hint>
+<solution>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ True. We only need an example, so pick <m>x=y=1</m>. Then <m>xy = 1 \gt 0</m> and <m>x+y=2 \gt 0</m>. Since both the hypothesis and conclusion are true, the implication is true.
+</p></li>
+<li>
+<p>
+ True. Note that when the hypothesis is false, the implication is always true. By picking <m>x=0</m>, then no matter what <m>y</m> is chosen, <m>xy=0</m>, making the hypothesis false and the implication true.
+</p></li>
+<li>
+<p>
+ True. We can use a similar <q>trick</q> to the previous statement. Let <m>x</m> be any real number, and then pick <m>y=0</m>. Then <m>xy=0</m>, making the hypothesis false and so the implcation holds.
+</p></li>
+<li>
+<p>
+ False. The negation is <m>\exists x\in\mathbb{R} \text{ s.t. } \exists y\in\mathbb{R} \text{ s.t. } (xy \gt 0) \land  (x+y \leq 0) </m>, so we only need an example of <m>x,y</m>. Pick <m>x=y=-1</m>. Then <m>xy=1 \gt 0</m> and <m>x+y = -2 \leq 0</m>. Since the negation is true, the original is false.
+</p>
+</li>
+<li>
+<p>
+ True. Let <m>x=1</m>, and then let <m>y \in \mathbb{R}</m>. When <m>y \lt 0</m>, the hypothesis is false, since <m>xy=y\lt 0</m>, so the implication is true. While if <m>y \geq 0</m>, the hypothesis is true, and the conclusion is true, since <m>xy=y \geq 0</m> and <m>x+y = 1+y \geq 1 \gt 0</m>. Thus the statement holds.
+</p>
+</li>
+<li>
+<p>
+ True. Let <m>x</m> be any real number and then set <m>y=1</m>. When <m>x \lt 0</m>, the hypothesis is false since <m>xy=x \lt 0</m>, and thus the implication is true. On the other hand, when <m>x \geq 0</m>, the hypothesis and conclusion are both true since <m>xy=x \geq 0</m> and <m>x+y=x+1 \geq 1 \gt 0</m>. So the statement is true.
+</p>
+</li>
+</ol>
+</p>
+</solution>
+</exercise>

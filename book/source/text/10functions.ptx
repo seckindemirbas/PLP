@@ -1,0 +1,1709 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="ch-functions"><title>Functions</title>
+<introduction>
+  <p>
+One of the reasons to introduce relations is because they are nice intermediate mathematical object between sets (which have very little additional structure) and functions (which have quite a lot of structure).
+Indeed the idea of relations allows us to escape from the idea of a function as being a formula.
+Arguably, the usual high-school mathematics curriculum (especially the last couple of years of it) is really driving us towards being able to do calculus.
+And in calculus all the functions we look at nice formulas that build up more complicated functions by doing arithmetic on simpler functions.
+At their core, these functions are really very algorithmic:
+<ul>
+<li> Give me an input number <m>x</m>
+</li>
+<li> I do some arithmetic on <m>x</m>, and maybe look up some values (in a table or via a calculator or computer<fn>
+Since doing complicated mathematical computations by hand can be very laborious, people who needed the results of those computations would hire people to do those computations for them. These people were called <term>computers</term>.
+</fn>) of things like sine, or logarithms.
+</li>
+<li> Then I return to you numerical result <m>y</m>.
+</li>
+</ul>
+Of course to be a function, this procedure has to be well defined <mdash/> if you give me one input then I return to you one output.
+And if you give me the same input twice then I'd better return the same output each time.
+</p>
+</introduction>
+
+<section><title>Functions</title>
+<p>So let's try to strip the idea of a function back as far as we can to make it both simpler and more general. First of all, we should escape from the idea that functions are restricted to have numbers are inputs and outputs; those of you with some programming experience will find this quite natural.
+</p>
+<p>
+  The following is a perfectly good function:
+<ul>
+<li><p> Give me the name of a day of the week<fn>
+  Written in correct <mdash/> ie. Australian <mdash/> English. The author might be biased in this assessment.
+</fn>.
+</p>
+</li>
+<li> I return to you the first letter of that word.
+</li>
+</ul>
+Now this is still quite algorithmic, but we have escaped from the tyranny of numbers <mdash/> small steps first. The function takes inputs from the set
+<md>
+<mrow>
+  A &amp;= \set{ \text{Sunday}, \text{Monday}, \text{Tuesday}, \text{Wednesday}, \text{Thursday}, \text{Friday}, \text{Saturday}}
+</mrow>
+</md>
+and maps them to outputs in the set
+<md>
+<mrow>
+  B &amp;= \set{F, M, S, T, W}
+</mrow>
+</md>
+We can summarise what is happening here by drawing a diagram that illustrates the inputs and outputs.
+</p>
+
+<image width="50%" source="day_function1"/>
+
+<p>
+This is fine when the set of inputs is small, but will clearly become more and more painful as the set of inputs becomes larger. It is also still a quite algorithmic way of thinking about functions, but we can reduce the idea down further:
+</p>
+<blockquote>
+<p>
+ Take an element of set <m>A</m> and do <em>something</em> to it to get an element of set <m>B</m>.
+</p></blockquote>
+<p>
+So we can summarise the function above by the pairs of inputs and outputs:
+<md>
+<mrow>
+  \Big\{ (\text{Sunday}, S), \amp (\text{Monday}, M), (\text{Tuesday}, T), (\text{Wednesday}, W),
+</mrow>
+<mrow>  \amp (\text{Thursday}, T), (\text{Friday}, F), (\text{Saturday},S) \Big\}</mrow>
+</md>
+So the set of ordered pairs of inputs and outputs is a subset of <m>A \times B</m> <mdash/> so it is a relation. However, its not <em>just any</em> relation <mdash/> that is too general. We have extra conditions that a relation must satisfy in order to be a function.
+<ul>
+<li>  We know that a function can only give one output for a given input. That is, if <m>f(a)=b_1</m> and <m>f(a)=b_2</m> then we must have <m>b_1=b_2</m>.  We can also express this in terms of relations:
+  <md>
+<mrow>
+    ( (a,b_1) \in R \land (a,b_2) \in R ) \implies b_1=b_2
+  </mrow>
+</md>
+  <!-- Notice the contrapositive of this:
+  <md>
+<mrow>
+    b_1 \neq b_2 \implies ( (a,b_1) \not\in R \lor (a,b_2) \not\in R )
+  </mrow>
+</md> -->
+</li>
+<li> Also everything in the input set has to have an output. That is
+  <md>
+<mrow>
+    \forall a \in A, \exists b \in B \text{ so that } f(a)=b.
+  </mrow>
+</md>
+  Notice that this does <em>not</em> say that we have to reach <em>everything</em> in the output set <mdash/> rather it just says that every input has to be <q>legal</q>; it results in some element in the output set.
+</li>
+</ul>
+Armed with these ideas we can define our new and more abstract idea of a function.
+</p>
+
+</section>
+<section><title>A more abstract definition</title>
+
+<definition>
+<statement><p>
+ Let <m>A, B</m> be non-empty sets.
+<ul>
+<li><p>
+   A <term>function</term> from <m>A</m> to <m>B</m>, written <m>f: A \to B</m> is a non-empty subset of <m>A \times B</m> with two further properties
+<ul>
+<li> for every <m>a \in A</m> there is some <m>b \in B</m> so that <m>(a,b) \in f</m>.
+</li>
+<li> if <m>(a,b) \in f</m> and <m>(a,c) \in f</m> then <m>b=c</m>.
+</li>
+</ul>
+</p>
+</li>
+<li> In this context we call the set <m>A</m> the <term>domain</term> of <m>f</m>, and the set <m>B</m> is called the <term>co-domain</term>.
+</li>
+<li><p>
+   If <m>(a,b) \in f</m> then we write <m>f(a) = b</m>, and we call <m>b</m> the image of <m>a</m>.
+We also sometimes say that <m>f</m> maps <m>a</m> to <m>b</m>. With this notation the above two conditions are written as
+<ul>
+<li> for every <m>a \in A</m> there is some <m>b \in B</m> so that <m>f(a)=b</m>.
+</li>
+<li> if <m>f(a)=b</m> and <m>f(a)=c</m> then <m>b=c</m>.
+</li>
+</ul></p>
+</li>
+<li> We can further refine the co-domain to be exactly the set of elements of <m>B</m> that are mapped to by something in <m>A</m>; this set is called the <term>range</term>:
+<md>
+<mrow>
+	\mathrm{rng} f &amp;= \set{b \in B \;|\; \exists a \in A \st f(a) = b}
+</mrow>
+</md>
+</li>
+</ul>
+</p></statement>
+</definition>
+
+
+<p>Some things to note
+<ul>
+<li> The condition that if <m>f(a) = b</m> and <m>f(a) = c</m> then <m>b=c</m> just means that the function is well defined.
+If we apply the function to a given element then we only get 1 result.
+You might know this from high-school as the <q>vertical line test</q> <mdash/> ie a graph-sketch corresponds to a function provided every vertical line intersects the graph once or not at all.
+</li>
+<li> Two functions <m>f,g:A \to B</m> are equal when <m>f(a) = g(a)</m> for all <m>a \in A</m>.
+</li>
+<li> The range is not (necessarily) the same as the co-domain. The range is always a subset of the co-domain. For example
+<md>
+<mrow>
+	f: \mathbb{R} \to \mathbb{R} &amp;&amp; f(x) = x^2
+</mrow>
+</md>
+has domain <m>\mathbb{R}</m>, co-domain <m>\mathbb{R}</m> and range <m>[0,\infty)</m>.
+We make the distinction between the two because sometimes it is really hard to write the range, but it is usually very easy to write the co-domain. We must be able to apply <m>f</m> to every single <m>a \in A</m>, but we don't have to arrive at every <m>b \in B</m>.
+</li>
+</ul>
+</p>
+
+<p>The term <q>function</q> only entered mathematics around the 17th century with Leibniz concurrent with the development of calculus and analytical geometry (such as the study of curves in the plane).
+Before this notions of dependent and independent variables that we are used to when studying <m>y=f(x)</m> were not so well formalised.
+Arguably there was some work in this direction around the 12th-14th centuries by mathematicians such as  Sharaf al-Din al-Tusi (who developed systematic method for numerical approximation of the roots of cubic polynomials) and Nicole Oresme (who first proved that the harmonic series diverges).
+Around the 19th century developments in mathematics required more general notions of functions and mathematicians, such as Dirichlet, Dedekind and Cantor, pushed away from the notion of a function as a formula and towards more general definitions such as the one above.
+</p>
+
+<p>Once we have this more general idea of a function, we need ways to represent it. A very natural way (once Descartes introduced it <mdash/> though it was also developed concurrently by Fermat and much earlier by Oresme) is to plot the function as a curve in the plane. Each point on the curve represents a pair of coordinates <m>(x,y)</m> so that <m>y=f(x)</m>. With this more general idea of a function we might try drawing something like we did above for the days-of-the-week example. That is, we might draw two sets of elements and edges between them to indicate that the function applied to that element in the first set gives the corresponding element in the second.
+</p>
+
+<image width="90%" source="function_drawing"/>
+
+<p>
+  We could also just explicitly write out the mapping. So, for example, if the sets in the first of these functions are
+  <me>
+    A = \set{1,2,3,4,5} \qquad B = \set{a,b,c,d}
+  </me>
+  then the function can be written as
+  <me>
+    f = \set{ (1,b), (2,d), (3,b), (4,a), (5,d)}
+  </me>
+  Both these approaches are reasonably practical when the domain and co-domain of the function are small, but is really not going to work as soon as they get a little bigger.
+</p>
+
+<example>
+<p>
+  Consider the sets
+  <md>
+<mrow>
+    f &amp;= \set{ (x,y) \in \mathbb{Z}\times \mathbb{Z} \so 3x+2y=0}
+</mrow><mrow>
+    g &amp;= \set{ (x,y) \in \mathbb{Z}\times \mathbb{Z} \so 3x+y=0}.
+  </mrow>
+</md>
+  Both are subsets of <m>\mathbb{Z} \times \mathbb{Z}</m> and so are (by definition) relations on <m>\mathbb{Z}</m>. Only one is a function from <m>\mathbb{Z}</m> to <m>\mathbb{Z}</m>.
+</p>
+
+<p>In order for <m>f</m> to be a function it has to satisfy two conditions:
+<ul>
+<li> For every <m>x</m> in the domain, there must be a <m>y</m> in the co-domain so that <m>f(x)=y </m>, and
+</li>
+<li> If <m>f(x)=y</m>  and <m>f(x)=z</m> then <m>y=z</m>.
+</li>
+</ul>
+The first of these fails, since if we set <m>x=1</m>, then there is no integer <m>y</m> so that <m> 3+2y=0</m>. Indeed we require <m>y=-\frac{3}{2}</m>. The second condition is satisfied, because if <m>f(x)=y</m>  and <m>f(x)=z</m>, then we know that
+<me>
+  3x + 2y = 0 \qquad \text{and} \qquad 3x+2z = 0
+</me>
+then subtract one equation from the other to get
+<me>
+  2y-2z = 0
+</me>
+and so <m>y=z</m>.
+</p>
+
+<p>  The relation <m>g</m> satisfies both conditions:
+  <ul>
+<li> Let <m>x</m> be any integer, then we can set <m>y=-3x \in \mathbb{Z}</m> and <m>3x+y=0</m> as required.
+</li>
+<li> The second condition is satisfied by the same argument we used for <m>f</m>.
+</li>
+</ul>
+  The co-domain of <m>g</m> is the set of integers, but its range <m>\set{n \in \mathbb{Z} \text{ so that } 3|n}</m>.
+</p>
+</example>
+</section>
+<section><title>Images and preimages of sets</title>
+<p>
+When we defined the function <m>f:A \to B</m>,  we said that if <m>f(a)=b</m> then we called <m>b</m> the image of <m>a</m> under <m>f</m>. This idea can be extended quite naturally to think of the image of a set of points. Also, given an element <m>b \in B</m>, we can ask for all the elements of <m>A</m> that map to it. This latter idea is not quite the inverse function, but it is getting close to it.
+</p>
+
+<p>
+  We should define these sets more precisely:
+</p>
+<definition><title>Image and preimage</title>
+<statement><p>
+  Let <m>f: A \to B</m> be a function, and let <m>C \subseteq A</m> and let <m>D \subseteq B</m>.
+  <ul>
+<li> The set <m>f(C) = \set{f(x) : x \in C}</m> is the <term>image of <m>C</m> in <m>B</m></term>.
+</li>
+<li> The set <m>f^{-1}(D) = \set{ x \in A : f(x) \in D }</m> is the <term>preimage of  <m>D</m> in <m>A</m></term> or <term><m>f</m>-inverse of <m>D</m></term>.
+</li>
+</ul>
+</p></statement>
+</definition>
+<remark><title>Preimage of a single element</title>
+<p>
+Note that the preimage of a set containing a single element of
+<m>B</m> is a (possibly) set of elements of <m>A</m>. For example,
+consider the function <m>f: \mathbb{R} \to \mathbb{R} </m> defined by
+<m>f(x)=x^2</m>. Then
+<md>
+<mrow>
+  f^{-1}(\set{0}) &amp;= \set{0} &amp;
+  f^{-1}(\set{1}) &amp;= \set{-1,1} &amp;
+  f^{-1}(\set{-1}) &amp;= \es.
+</mrow>
+</md>
+This shows that the preimage of a set containing a single element is a
+set that may contain zero, one, two or even more elements. Indeed, it
+is not hard to construct an example in which the preimage contains
+infinitely many elements. When our function satisfies very specific
+conditions, we can ensure that the preimage of a set containing a
+single element is always set containing a single
+element. Understanding those conditions is one of the main aims of
+this chapter and we'll discuss it in detail in the next section. That,
+in turn, will help us to define the <term>inverse function</term>.
+</p>
+<p>
+  You will have noticed that in the preceding paragraph we have had to
+  write <q>the preimage of a set containing a single element</q>
+  several times. This becomes quite cumbersome. We will, from here,
+  abuse the definition of the preimage a little to simplify our
+  writing. In particular, we will often write <q>the preimage of an
+  element <m>x</m></q> to mean <q>the preimage of the set
+  <m>\set{x}</m></q>. While this is modestly incorrect, it does make
+  the writing and reading easier.
+</p>
+</remark>
+
+
+
+<p>The notation for preimage, <m>f^{-1}</m>, is somewhat unfortunate in that we use the same notation to mean the inverse-function. Additionally, it is regularly confused with
+<me>\left(f(x)\right)^{-1} = \dfrac{1}{f(x)}</me>
+ie the reciprocal. Alas, we are stuck with this notation and must be careful to understand its meaning by context.
+</p>
+
+<p>This is an important point, so we'll make it a formal warning:</p>
+<warning>
+  <p>
+  Be careful with preimages:
+  <ul>
+<li> The preimage <m>f^{-1}</m> is <em>not</em> the inverse function.
+</li>
+<li> If certain special conditions are satisfied, then the inverse function exists and we use the same notation to denote that function.
+</li>
+</ul>
+Consequently, when you see <m>f^{-1}</m> you should think <q>preimage</q> and not <q>inverse function</q> unless we specifically know that the inverse exists.
+</p>
+</warning>
+
+<p>
+  After all those warnings and caveats, lets draw a schematic of images and preimages:
+</p>
+
+<image width="90%" source="function_imgpreimg"/>
+
+<p>
+Notice in this figure that
+<ul>
+<li> we have drawn <m>f(A)</m> as a subset of <m>B</m> <mdash/> in fact <m>f(A)</m> is exactly the range of <m>f</m> and so must be a subset of <m>B</m>.
+</li>
+<li> we have drawn the preimage of <m>D</m> so that it looks like two copies of half of the set <m>D</m> <mdash/> this is to emphasise the fact that not every element of <m>B</m> has to have a preimage in <m>A</m>. Further, a given point in <m>B</m> might have more than one preimage.
+</li>
+</ul>
+Our quick look at preimages of <m>f(x)=x^2</m> above illustrated this second point. That was a little brief, but the following example looks at this in more detail.
+</p>
+
+<example><title>Images and preimages</title>
+  <statement>
+    <p>
+      Let <m>f: \mathbb{R} \to \mathbb{R}</m> be defined by <m>f(x) = x^2</m>. Find the
+     following
+     <ol marker="(a)">
+     <li> <m>f([0,4])</m>
+     </li>
+     <li> <m>f( [-3,-1] \cup [1,2] )</m>
+     </li>
+     <li><m>f^{-1}(\set{0})</m></li>
+     <li><m>f^{-1}(\set{1})</m></li>
+     <li> <m>f^{-1}( [0,4] ) = [-2,2]</m>
+     </li>
+     <li> <m>f^{-1}( [1,4] ) = [-2,-1] \cup [1,2]</m>
+     </li>
+     <li><m>f^{-1}(\set{-1})</m></li>
+     <li><m>f^{-1}([-4,-1])</m></li>
+   </ol>
+    </p>
+  </statement>
+  <solution>
+    <p>
+      It will help to make a quick sketch of <m>y=f(x)=x^2</m> and think about the various intervals in the domain and co-domain. That <m>f(x)</m> is decreasing for <m>x\lt 0</m> and increasing for <m>x \gt 0</m> does make this exercise a little easier.
+    </p>
+
+    <image width="66%" source="parabola"/>
+
+    <p>
+      <ol marker="(a)">
+        <li>
+          The interval <m>0 \leq x \leq 4</m> maps to <m>0 \leq x^2 \leq 16</m>. So <m>f([0,4])=[0,16]</m>
+      </li>
+      <li>The interval <m>-3 \leq x \leq -1</m> maps to <m>1 \leq x^2 \leq 9</m>, and the interval <m>1 \leq x \leq 2</m> maps to <m>1 \leq x^2 \leq 4</m>. Hence the points in the union <m>[-3,-1] \cup [1,2]</m> map to the interval <m>[1,9] \cup [1,4] = [1,9]</m>. Hence <m>f( [-3,-1] \cup [1,2] ) = [1,9]</m>.
+      </li>
+      <li>To find the preimage of <m>\set{0}</m>, we need to solve <m>f(x)=x^2=0</m>. This only has a single solution, namely <m>x=0</m>, and so <m>f^{-1}(\set{0})= \set{0}</m></li>
+      <li>To find the preimage of <m>\set{1}</m>, we need to solve <m>f(x)=x^2=1</m>. This only two solutions, namely <m>x= \pm 1</m>, and so <m>f^{-1}(\set{1})= \set{-1,1}</m></li>
+      <li><p>
+        The interval <m>0 \leq x^2 \leq 4</m> is mapped to by any number in the interval <m>-2 \leq x \leq 2</m>. So <m>f^{-1}([0,4])=[-2,2]</m>.
+      </p>
+      <p>
+      We can check this by looking at the above plot, but also by considering <m>f([-2,0] \cup [0,2])</m>. The interval <m>0 \leq x \leq 2</m> maps to <m>0 \leq x^2 \leq 4</m> and <m>-2 \leq x \leq 0</m> maps to the same, <m>0 \leq x^2 \leq 4</m>.
+    </p>
+      </li>
+      <li><p>The interval <m>1 \leq x^2 \leq 4</m> is mapped to by any number in the interval <m>1 \leq x \leq 2</m> or any number in <m>-2 \leq x \leq -1</m>. So <m>f^{-1}([1,4])=[-2,-1]\cup[1,2]</m>.
+      </p>
+        <p>Again, we can check this by looking at the above plot, but also by considering <m>f([-2,-1] \cup [1,2])</m>. The interval <m>1\leq x \leq 2</m> mapes to <m>1 \leq x^2 \leq 4</m>, and <m>-2 \leq x \leq -1</m> maps to the same.
+        </p>
+      </li>
+      <li>To find the preimage of <m>\set{-1}</m>, we need to solve <m>f(x)=x^2=-1</m>. This has no solutions<fn>To be more precise, it has no solutions over the reals, which is the domain of the function.</fn>, so <m>f^{-1}(\set{-1})=\es </m></li>
+      <li>To find the preimage of <m>-4 \leq x^2 \leq -1</m>, we should recall that the square of any real number is non-negative. So there are no values of <m>x</m> that map into that interval. Thus <m>f^{-1}([-4,-1])=\es</m>.
+    </li>
+      </ol>
+    </p>
+</solution>
+</example>
+
+<p>
+  This example shows that the preimage of a single element<fn>Recall that we are abusing the definition of preimage here; we really mean <q>the preimage of a set containing a single element</q>.</fn> in the co-domain can be empty, or can contain a single element, or can contain multiple elements. As noted above, we want to understand what conditions we can impose on a function so that the preimage of a single point<fn>Another similar abuse of the definition of preimage in order to keep the language flowing.</fn> in the co-domain always contains exactly one point in the domain. This will allow us to properly define inverse functions <mdash /> that is if <m>f(x)=y</m> then how do we define a new function <m>g</m> so that <m>g(y)=x</m>.
+</p>
+
+<p>
+  Before we get to inverses we can do some more exploring of images and preimages. Since these are really operations on sets, we can (and should) ask ourselves how do these new things we can do to sets interact with the other things we can do to sets. So we now explore some of the relationships between subsets and their images and preimages, and also the interplay between functions, unions, intersections and differences.
+</p>
+<p>
+  For example <mdash/> it is clearly
+<fn>This is always a dangerous word when writing mathematics, and the authors include it here as an example of what, perhaps, one should not do. One person's <q>clearly</q> is another persons <q>3 hours of confusion</q>.</fn>
+ the case that if <m>C_1 \subseteq C_2 \subseteq A</m> then <m>f(C_1) \subseteq f(C_2)</m>. Similarly if <m>D_1 \subseteq D_2 \subseteq B</m> then <m>f^{-1}(D_1) \subseteq f^{-1}(D_2)</m>.  While we've said <q>clearly</q>, we should really state results carefully and make them a result and prove them. We'll follow this up with a more important result which we'll call a theorem.
+</p>
+
+<proposition>
+  <statement>
+    <p>
+      Let <m>f: A \to B</m>, and let <m>C_1 \subseteq C_2 \subseteq A</m> and <m>D_1 \subseteq D_2 \subseteq B</m>. Then
+      <me>f(C_1) \subseteq f(C_2) \qquad \text{and} \qquad f^{-1}(D_1) \subseteq f^{-1}(D_2).</me>
+    </p>
+  </statement>
+</proposition>
+<proof>
+  <p>
+    We prove each inclusion in turn.
+    <ul>
+      <li>
+        <p>
+          Let <m>b \in f(C_1)</m>. Then (by the definition of image) there is some <m>a \in C_1</m> so that <m>f(a)=b</m>. But since <m>C_1 \subseteq C_2</m>, we know that <m>a \in C_2</m>. Hence <m>b=f(a) \in f(C_2)</m> as required.
+        </p>
+      </li>
+      <li>
+        <p>
+          Let <m>a \in f^{-1}(D_1)</m>. Then (by definition of preimage) <m>f(a) \in D_1</m>. But since <m>D_1 \subseteq D_2</m>, we know <m>f(a) \in D_2</m>. Then, by the definition of preimage, we know that <m>a \in f^{-1}(D_2)</m>.
+        </p>
+      </li>
+    </ul>
+  </p>
+</proof>
+<p>
+  Now, while the above proof is not terribly technical, it does require us to know the definitions of image and preimage and to understand how to manipulate them. Even though the statement we have just proved is (arguably) obvious<fn><q>Obvious</q> is another dangerous word, and is a good example of <term>emotive conjugation</term>. <q>I found it obvious</q> but <q>they spent 4 days trying to work out what was going on</q>. This sort of thing often arises in the descriptions that people give their own actions compared with the descriptions of others. The interested reader should search-engine their way to the BBC series <q>Yes Prime Minister</q> which has the following example: <q>I give confidential press briefings; you leak; he's being charged under section 2A of the Official Secrets Act.</q></fn>, its proof is not so trivial.
+</p>
+
+
+<theorem xml:id="thm_img_preimg">
+<statement><p>
+ Let <m>f: A \to B</m>, and let <m>C \subseteq A</m> and <m>D \subseteq B</m>. Further, let <m>C_1, C_2</m> be subsets of <m>A</m> and let <m>D_1, D_2</m> be subsets of <m>B</m>. The following are true
+<ol marker="(i)">
+<li> <m>C \subseteq f^{-1}( f(C) )</m>
+</li>
+<li> <m>f( f^{-1}(D) ) \subseteq D</m>
+</li>
+<li> <m>f(C_1 \cap C_2) \subseteq f(C_1) \cap f(C_2)</m> <mdash/> note: need not be equal
+</li>
+<li> <m>f(C_1 \cup C_2) = f(C_1) \cup f(C_2)</m> <mdash/> note: are equal
+</li>
+<li> <m>f^{-1}(D_1 \cap D_2) = f^{-1}(D_1) \cap f^{-1}(D_2)</m>
+</li>
+<li> <m>f^{-1}(D_1 \cup D_2) = f^{-1}(D_1) \cup f^{-1}(D_2)</m>
+</li>
+</ol>
+</p></statement>
+</theorem>
+
+<p>So what does this theorem tell us? It says that preimages play very nicely with set operations <mdash/> they are  well-behaved:
+<ul>
+<li> The preimage of the intersection is the intersection of the preimages
+</li>
+<li> The preimage of the union is the union of the preimages
+</li>
+</ul>
+It also tells us that images are <em>mostly</em> well-behaved:
+<ul>
+<li> The image of the union is the union of the images
+</li>
+<li> The image of the intersection is <em>a subset of</em> the intersection of
+  the images.
+</li>
+</ul>
+</p>
+
+<p>Of course, we should prove these results. We'll do some in the text and leave some of them as exercises. We'll prove (iii) first and then (vi) and leave (i) until last. In the authors' experience, people find (i) quite confusing, so we will tackle it after we've warmed up on the other two.
+</p>
+
+<proof>
+<p>
+<ul>
+<li>
+  <p>Proof of (iii):</p>
+  <p>
+   We need to show that if an element is in the set on the left then it is in the set on the right. Let <m>b \in f(C_1 \cap C_2</m>).
+  Hence there is  <m>a \in C_1 \cap C_2</m> such that <m>f(a) = b</m>.
+  This means that <m>a \in C_1</m> and <m>a \in C_2</m>.
+  It follows that  <m>f(a) = b \in f(C_1)</m> and <m>f(a) = b \in f(C_2)</m>,
+  and hence <m>b \in f(C_1) \cap f(C_2)</m>.
+</p>
+
+<p>  The converse is false: <m>f(C_1) \cap f(C_2) \not\subseteq f(C_1 \cap C_2)</m> <mdash/> another good exercise for the reader.
+</p>
+</li>
+<li>
+  <p>Proof of (vi):</p>
+  <p>
+   Let <m>a \in f^{-1}(D_1 \cup D_2)</m> and so <m>f(a)
+  \in D_1 \cup D_2</m>. This means that <m>f(a) \in D_1</m> or <m>f(a) \in D_2</m>. If <m>f(a)
+  \in D_1</m> it follows that <m>a \in f^{-1}(D_1)</m>. Similarly if <m>f(a) \in D_2</m> then
+  <m>a \in f^{-1}(D_2)</m>. Since <m>a</m> lies in one of these two sets, it follows that
+  <m>a \in f^{-1}(D_1) \cup f^{-1}(D_2)</m>.
+</p>
+
+<p>  Let <m>a \in f^{-1}(D_1) \cup f^{-1}(D_2)</m>. Then <m>a</m> is an element of one of
+  these two sets. If <m>a \in f^{-1}(D_1)</m>, then <m>f(a) \in D_1</m>. Similarly if <m>a
+  \in f^{-1}(D_2)</m> then <m>f(a) \in D_2</m>. In either case <m>f(a) \in D_1 \cup D_2</m>
+  and so <m>a \in f^{-1} ( D_1 \cup D_2 )</m>.
+</p>
+</li>
+<li>
+  <p>Proof of (i):</p>
+  <p>
+  Let <m>x \in C</m>. We need to show that <m>x \in f^{-1}( f(C) )</m>. So what is
+  this set <mdash/> by the definition it is <m>\{a \in A : f(a) \in f(C) \}</m>. Since <m>x
+  \in C</m> we have, by definition, <m>f(x) \in f(C)</m>. Since <m>f(x) \in f(C)</m> it follows that <m>x \in
+  f^{-1}(f(C))</m>.
+</p>
+<p>  Note that the converse of this statement is false: <m>f^{-1}(f(C)) \not\subseteq C</m>. This makes a good exercise. We also note that (ii) follows a similarly flavoured argument and is another good exercise for the reader.</p>
+</li>
+</ul>
+</p>
+</proof>
+</section>
+
+
+<section><title>Injective and surjective functions</title>
+<introduction>
+<p>
+We typically think of a function as taking objects from one set, <m>A</m>, doing <q>stuff</q> and turning them into elements from another set <m>B</m>. With this in mind, it is quite natural to ask whether or not we can reverse this process; take our result and turn it back into our original object. That is, <q>when is a given function invertible</q>.
+</p>
+
+<p>
+  If you think back to our days-of-the-week example:
+</p>
+
+<image width="40%" source="day_function1"/>
+
+<p>
+You can see that if we have arrived at the letter <q>M</q> then it is easy to determine that we started at <q>Monday</q> <mdash/> so easy to undo the function. However, if we have arrived at <q>S</q> then things are not so simple <mdash/> we could have started with either <q>Sunday</q> or <q>Saturday</q>. Obviously this is related to the preimage that we saw before. The good case of <q>M</q> worked because the preimage<fn>To be more precise, the preimage of the set <m>\set{\text{M}}</m> is the set <m>\set{\text{Monday}}</m>.</fn> had 1 element in it, <q>Monday</q>. The bad case of <q>S</q> didn't work because the preimage<fn>Again, being more precise, the preimage of the set <m>\set{\text{S}}</m> is the set <m>\set{\text{Saturday}, \text{Sunday}}</m>.</fn> had 2 elements in it. More generally the preimage could have any number of elements in it <mdash/> including zero.
+</p>
+
+<p>
+  Now, for us to be able to sensibly undo our function, we need the
+  preimage of every element in our co-domain to have exactly one
+  element in it. To be more precise, for any element <m>y</m> in our
+  codomain, there must exist some <m>x</m> in the domain so that the
+  preimage of <m>\set{y}</m> is the set <m>\set{x}</m>.  If you think
+  about this a little, this means that the domain and co-domain must
+  have the same size<fn>This is perhaps no so hard to see when
+  everything is finite, but harder to see when things are
+  infinite. Indeed, we'll see examples of just how weird this can be
+  when we get to cardinality later in the text.</fn>. We'll discuss
+  this more soon. But it should be clear from this discussion that not
+  every function can be undone, and that those that are
+  <q>undoable</q> have to satisfy special properties. This brings us
+  to a couple of important definitions.
+</p>
+
+<p>
+  To get to this we need to define some simple properties that functions can have.
+</p>
+</introduction>
+
+<subsection><title>Injections and surjections</title>
+<definition>
+<statement><p>
+  Let <m>a_1, a_2 \in A</m> and let <m>f: A \to B</m> be a function. We say that <m>f</m> is  injective or one-to-one when
+  <me>
+    \text{if } a_1 \neq a_2 \text{ then } f(a_1) \neq f(a_2).
+  </me>
+  It is helpful to also write the contrapositive of this condition.
+  We say that <m>f</m> is  injective or one-to-one when
+ <me>
+   \text{if } f(a_1) = f(a_2) \text{ then } a_1 = a_2.
+ </me>
+</p></statement>
+</definition>
+
+<p>
+Things to note
+<ul>
+<li> The term injective is, in this author's opinion, better to use than one-to-one. When we speak (and write) we are sometimes quite sloppy with our use of prepositions like <q>to</q> or <q>on</q> or <q>in</q> or <q>onto</q>, so we might accidentally say one-onto-one, for example. The term injective is a nice latin-flavoured word that makes the speaker / writer sound more authoritative
+<fn>Of course that doesn't mean the speaker knows what they are talking about, just that they sound like it. This is a variation of the <q>argument from authority</q> fallacy. Mind you there is the equally, or perhaps even more pernicious, fallacy that because a statement comes from an authority it should be mistrusted. Perhaps an example of an <q>appeal to common folk</q> fallacy. <q>Experts <mdash/> bah! What would they know?!</q></fn>
+.
+</li>
+<li><p>
+   A very common mistake made with this definition is to get the implications around the wrong way <mdash/> to give the converse of what is required:
+<ul>
+<li> The right way <mdash/> <m>f(a_1) = f(a_2) \implies a_1 = a_2</m>. Injective!
+</li>
+<li> The wrong way <mdash/> <m>a_1 = a_2 \implies f(a_1) = f(a_2)</m> <mdash/> this is just <q>same input implies same output</q> which  just says the function is <em>well defined</em>.
+</li>
+</ul>
+Be careful of this.
+</p>
+</li>
+<li> So when a function is injective, different elements map to different elements.
+</li>
+<li> When a function is not injective there must be at least one pair <m>a_1,a_2 \in A</m> so that <m>a_1 \neq a_2 \in A</m> but <m>f(a_1)=f(a_2)</m>.
+</li>
+</ul>
+</p>
+
+<p>As a preview of what is to come when we reach the chapter on cardinality, think about what we can say about the sizes of <em>finite</em> sets <m>A,B</m> if there is an injective function between them <m>f: A \to B</m>. Each element <m>a \in A</m> has to map to a <em>different</em> element <m>b \in B</m>. Consequently the set <m>B</m> must have at least as many elements as <m>A</m>. That is <m>|A| \leq |B|</m>. We note that when <m>A,B</m> are infinite, these sorts of questions become much less obvious.
+</p>
+
+<proposition xml:id="res_simple_inj">
+<statement><p>
+ Let <m>f: \mathbb{R} \to \mathbb{R}</m> be defined by <m>f(x) = 7x-3</m>. Then <m>f</m> is injective.
+</p></statement>
+</proposition>
+
+<p>
+So <mdash/> how do we prove this. We have two equivalent conditions
+<ul>
+<li> <m>a_1 \neq a_2 \implies f(a_1) \neq f(a_2)</m>
+</li>
+<li> <m>f(a_1) = f(a_2) \implies a_1 = a_2</m>.
+</li>
+</ul>
+Arguably, the second is easier since we have all had much more practice manipulating equalities than manipulating inequalities. So lets run through the argument. Let <m>a_1,a_2 \in \mathbb{R}</m>, and assume that
+<md>
+<mrow>
+  f(a_1) &amp;= f(a_2) &amp; \text{ then we must have }
+  </mrow>
+  <mrow>
+  7a_1-3 &amp;= 7a_2-3 &amp; \text{ and so }
+  </mrow>
+  <mrow>
+  7a_1 &amp;= 7a_2 &amp; \text{ and hence }
+  </mrow>
+  <mrow>
+  a_1 &amp;= a_2.
+</mrow>
+</md>
+That wasn't too bad. Time to write it up as a proof.
+</p>
+
+<proof><title>Proof of <xref ref="res_simple_inj"/></title>
+<p>
+ Let <m>a_1, a_2 \in \mathbb{R}</m> and assume <m>f(a_1) = f(a_2)</m>. Then <m>7a_1-3 = 7a_2-3</m> and so
+<m>7a_1=7a_2</m> and thus <m>a_1 = a_2</m>. Hence <m>f</m> is injective.
+</p></proof>
+
+<p>
+  Now what about an example that is not injective <mdash /> we can recycle our <m>x^2</m> example from above.
+</p>
+
+<proposition xml:id="res_simple_non_inj">
+<statement><p>
+ The function <m>f: \mathbb{R} \to \mathbb{R}</m> defined by <m>f(x) = x^2</m> is not injective.
+</p></statement>
+</proposition>
+<p>
+  Injective means
+  <me>\forall a_1,a_2 \in A, f(a_1)=f(a_2)  \implies a_1 = a_2</me>
+  and hence non-injective is just the negation of this, namely
+  <me>\exists a_1,a_2 \in A \text{ s.t. } f(a_1)=f(a_2)  \land a_1 \neq a_2.</me>
+  So we need a counter-example; there exists some pair of distinct <m>a_1,a_2 \in \mathbb{R}</m> that map to the same value. Of course, we could have started with the equivalent contrapositive definition of injective:
+  <me>\forall a_1,a_2 \in A, a_1 \neq a_2 \implies f(a_1) \neq f(a_2)</me>
+  The negation of that is
+  <me>\exists a_1,a_2 \in A \text{ s.t. } a_2 \neq a_2 \implies f(a_1) = f(a_2)</me>
+  which is the same as we found with the first definition of injective. Of course, this must be the case because the two definitions are equivalent.
+</p>
+
+<proof><title>Proof of <xref ref="res_simple_non_inj"/></title>
+<p>
+  Since <m>-1,1</m> are in the domain of <m>f</m> and <m>f(-1) = f(1) = 1</m>, the function is not injective.
+</p>
+</proof>
+
+
+<remark><title>Preimages and injections</title>
+<p>
+  Consider an injection <m>f: A \to B</m> and, for any given <m>b \in B</m>, the preimage of <m>\set{b}</m>:
+  <me>
+    f^{-1}(\set{b}) = \set{ a \in A \so f(a)=b}
+  </me>
+  This set is either empty or contains exactly 1 element. To see this consider <m>a,c \in f^{-1}(\set{b})</m>. By definition of the preimage, we know that <m>f(a)=b</m> and <m>f(c)=b</m>. Since <m>f</m> is injective, this tells us that <m>a=c</m>. So the preimage of a point under an injection contains at most 1 element.
+</p>
+</remark>
+
+<p>
+  Another important class of functions are surjections.
+</p>
+
+<definition>
+<statement><p>
+ Let <m>f: A \to B</m> be a function. We say that <m>f</m> is surjective, or onto, when for every <m>b \in B</m> there is some <m>a \in A</m> such that <m>f(a) = b</m>.
+</p></statement>
+</definition>
+
+<p>
+Things to note
+<ul>
+<li> This simply means that every element in <m>B</m> is mapped to by some element of <m>A</m>.
+</li>
+<li> If the function is not surjective then there is some <m>b \in B</m> such that for all
+  <m>a \in A</m>, <m>f(a) \neq b</m>.
+</li>
+<li> Again, this author prefers the nice latin <q>surjective</q> over the term <q>onto</q> because it is less likely to confused with other prepositions.
+</li>
+</ul>
+</p>
+
+<p>Again, as a preview of cardinality, think about what we can say about the sizes of <em>finite</em> sets <m>A,B</m> if there is an surjection between them <m>g: A \to B</m>. Each element <m>b \in B</m> must be mapped to by <em>at least one</em> element <m>a \in A</m>. Consequently the set <m>A</m> must have at least as many elements as <m>B</m>. That is <m>|A| \geq |B|</m>.
+</p>
+
+
+<proposition xml:id="res_simple_surj">
+<statement><p>
+ The function <m>f: \mathbb{R} \to \mathbb{R}</m> defined by <m>f(x) = 7x-3</m> is surjective
+</p></statement>
+</proposition>
+
+<p>
+So we need to show that no matter which <m>y \in \mathbb{R}</m> we can always find some <m>x \in
+\mathbb{R}</m> such that <m>f(x) = 7x-3 = y</m>. So we can just make <m>x</m> the subject giving <m>x=(y+3)/7</m>.
+</p>
+<p>Now that we have chosen <m>x</m>, we need to make sure it is actually an element of the domain of the function. In this case it is easy since <m>(y+3)/7 \in \mathbb{R}</m>. However, if we consider a similarly function
+<me>
+  g: \mathbb{Z} \to \mathbb{Z} \qquad g(x)=7x-3
+</me>
+we would also get <m>x = \frac{y+3}{7}</m>, but then <m>x</m> is not always in the domain. Time to write up.
+</p>
+
+<proof><title>Proof of <xref ref="res_simple_surj"/></title>
+<p>
+ Let <m>y \in \mathbb{R}</m>. Choose <m>x = (y+3)/7</m>, then <m>f(x) = 7 \cdot \frac{y+3}{7}  -3
+=y</m>. Hence <m>f</m> is surjective.
+</p></proof>
+
+<p>
+Notice that in the proof we <em>do not</em> have to explain to the reader how we found the choice of <m>x</m>. It is not necessary to work through solving <m>y=f(x)</m> for <m>x</m>. All we need to do in the proof is tell the reader <q>Given <m>y</m> we choose this value of <m>x</m></q> and then show that <m>f(x)=y</m>. This can often be a little frustrating for the reader who can be left thinking <q>How on earth did they get that?</q>; a good author might put in a little explanation in the text surrounding the proof, but it is not required for the proof to be valid.
+</p>
+
+<proposition xml:id="res_simple_non_surj">
+<statement><p>
+ The function <m>g: \mathbb{R} \to \mathbb{R}</m> defined by <m>g(x) = x^2</m> is not surjective.
+</p></statement>
+</proposition>
+
+<p>
+  Since surjective means
+  <me>
+    \forall b \in B, \exists a \in A \text{ s.t. } f(a)=b
+  </me>
+  its negation is
+  <me>
+    \exists b \in B \text{ s.t. } \forall a \in A, f(a) \neq b.
+  </me>
+  So in order to show that <m>g</m> is not surjective, we have to find (at least one) <m>b \in \mathbb{R}</m> (in the co-domain) that is not the image of any <m>a \in \mathbb{R}</m> (in the domain). Sometimes this can be tricky to  prove, but for the example above we can use the fact that the square of a real is non-negative.
+</p>
+
+<proof><title>Proof of <xref ref="res_simple_non_surj"/></title>
+<p>
+Let <m>b = -1 \in \mathbb{R}</m>. Since the square of any real number is non-negative, we know that <m>f(x) = x^2 \geq 0</m> for any <m>x \in \mathbb{R}</m>. Hence there is no <m>x \in \mathbb{R}</m> so that <m>f(x) = -1</m>. Thus the function is not surjective.
+</p></proof>
+
+<remark><title>Preimages and surjections</title>
+<p>
+  Consider a surjection <m>g: A \to B</m> and, for any given <m>b \in B</m>, the preimage of <m>\set{b}</m>:
+  <me>
+    g^{-1}(\set{b}) = \set{ a \in A \so g(a)=b}
+  </me>
+  Since <m>g</m> is a surjection, for any given <m>b \in B</m>, there must be at least <m>a \in A</m> so that <m>g(a)=b</m>. Hence the preimage must contain at least one element.
+</p>
+</remark>
+
+</subsection>
+<subsection><title>Bijective functions</title>
+<p>
+  Recall that we reasoned (but didn't really prove) that for <em>finite</em> sets <m>A, B</m>
+<ul>
+<li>if there is an injection <m>f: A\to B</m> then <m> |A| \leq |B|</m>, and
+</li>
+<li>if there is a surjection <m>g: A \to B</m> then <m> |A| \geq |B|</m>
+</li>
+</ul>
+</p>
+
+<warning>
+<p>
+  Be careful with your converses. Consider two finite sets <m>A,B</m>. If <m>|A|\leq|B|</m> it does <em>not</em> mean that all functions <m>f:A \to B</m> will be injections. Similarly if <m>|A|\geq |B|</m> not all functions <m>g: A\to B</m> need to surjections.
+</p>
+
+<image width="40%" source="function_drawing2" />
+
+<p>
+  The function on the left is not injective (despite its domain being smaller than its co-domain). And the function on the right it not surjective (despite its domain being larger than its co-domain).
+</p>
+</warning>
+
+
+<p>
+So given sets <m>A,B</m> if we can find such an injection and a surjection between them, then <m>|A|=|B|</m>. One way to do this is to find one function <m>h: A \to B</m> that is <em>both</em> injective and surjective; these functions are called <term>bijections</term>. Finding a bijection between two sets is a good way to demonstrate that they have the same size <mdash /> we'll do more on this in the chapter on cardinality.
+</p>
+
+
+<definition>
+<statement><p>
+ Let <m>f: A \to B</m> be a function. If <m>f</m> is injective and surjective then we say that <m>f</m>
+is <term>bijective</term>, or a <term>one-to-one correspondence</term>.
+</p></statement>
+</definition>
+
+<p>
+  The terms <term>injective</term>, <term>surjective</term> and <term>bijective</term> were coined by Nicholas Bourbaki. Bourbaki was not a person, but the pseudonym of a group of (mostly French) mathematicians who wrote a series of texts in the mid 20th century. The group still exists and published a book in 2016. The central aim of the group was to create a series of complete and self-contained texts on the core of mathematics. The texts strive to be extremely rigorous and very general in their treatment of the material and not without controversy. You can search engine your way to more information on this topic.
+</p>
+
+<example>
+<statement>
+<p>
+Consider the following functions. Determine whether they are injective, surjective or bijective.
+They all have the same formula, but have different domains and co-domains (and so are different functions).
+<ul>
+<li> <m>f: \mathbb{R} \to \mathbb{R}</m> given by <m>f(x) =x^2</m>. Neither surjective, nor injective.
+</li>
+<li> <m>g: \mathbb{R} \to [0, \infty)</m> given by <m>g(x) =x^2</m>. Surjective, but not injective.
+</li>
+<li> <m>h: [0,\infty) \to \mathbb{R}</m> given by <m>h(x) =x^2</m>. Not surjective, but is injective.
+</li>
+<li> <m>\rho: [0,\infty) \to [0,\infty) </m> given by <m>\rho(x) =x^2</m>. Is bijective.
+</li>
+</ul>
+</p>
+</statement>
+<solution>
+  <p>
+  All of these functions have the same formula, just different domains and co-domains.
+  <ul>
+    <li><p>
+      Think about how these functions can fail to be injective. We can verify that <m>f(-x)=(-x)^2 = x^2 = f(x)</m>. Hence these functions will fail to be injective if <m>x</m> and <m>-x</m> are both within the domain. So neither <m>f, g</m> are injective since
+    <me>
+      f(-1)=f(1)=1 \qquad \text{ and } \qquad g(-1)=g(1)=1
+    </me>
+    </p>
+      <p>
+        We now prove that <m>h</m> is injective. So let <m>a_1,a_2 \geq 0</m>, so that <m>h(a_1)=h(a_2)</m>. Hence
+        <me>
+          a_1^2 = a_2^2
+        </me>
+        Taking square-roots gives
+        <me>
+          a_1 = \pm a_2
+        </me>
+        However, since neither <m>a_1,a_2</m> are negative, we must have <m>a_1=a_2</m> and so <m>h</m> is an injection. The same argument works for <m>\rho</m>.
+      </p>
+    </li>
+    <li>
+      <p>Now think about how these functions might fail to be surjective. We know that the square of a real number is non-negative. That is <m>0 \leq x^2</m>. So if there is a negative number in the co-domain there is no real number that can map to it. Consequently, neither <m>f</m> nor <m>h</m> are surjections, since there is no <m>x \in \mathbb{R}</m> so that
+      <me>
+        f(x) = -1 \qquad \text{ or } \qquad h(x)=-1.
+      </me>
+    </p>
+    <p>
+      We now prove that <m>g</m> is surjective using the square-root
+      function. Given any <m>y</m> in the codomain of <m>g</m>, pick
+      <m>x = \sqrt{y}</m>. Since <m>y \geq 0</m>, <m>x</m> is defined
+      and non-negative and so in the domain of <m>g</m>. Further, we
+      know that <m>g(x) = x^2 = (\sqrt{y})^2 = y</m>. Thus <m>g</m> is
+      surjective. The argument for <m>\rho</m> is identical.
+    </p>
+    </li>
+  </ul>
+</p>
+<p>
+  So to summarise
+  <ul>
+    <li><m>f</m> is neither injective, nor surjective,</li>
+    <li><m>g</m> is surjective but not injective,</li>
+    <li><m>h</m> is injective but not surjective, and </li>
+    <li><m>\rho</m> is both injective and surjective, and so bijective.</li>
+  </ul>
+</p>
+</solution>
+</example>
+
+<p>
+  The simplest (useful) bijective function is the identity function.
+</p>
+
+<definition>
+<statement><p>
+ Given a non-empty set <m>A</m> we define the identity function <m>i_A: A \to A</m> by <m>i_A(a) = a</m>
+for all <m>a\in A</m>.
+</p></statement>
+</definition>
+
+<p>
+The authors are usually loath to use the word <q>clear</q>, but we hope that it is clear that the identify function is surjective and injective and so bijective. We could prove it if we really had to. We will need the identity function to help us define the inverse of a function.
+</p>
+
+<p>
+  We need a couple more examples.
+</p>
+
+<proposition>
+  <statement>
+    <p>
+      The function <m>g:\mathbb{R} \to \mathbb{R}</m>, defined by <m>7x-3</m>, is a bijection.
+    </p>
+  </statement>
+<proof>
+  <p>
+    We need to show that <m>g</m> is both injective and surjective.
+    <ul>
+      <li>
+        Injective: We proved this in <xref ref="res_simple_inj"/>.
+      </li>
+      <li>
+        Surjective: We proved this in <xref ref="res_simple_surj"/>.
+      </li>
+    </ul>
+    Since the function is both injective and surjective it is bijective.
+  </p>
+</proof>
+
+</proposition>
+
+<p>
+  A more interesting example. Let <m>a,b,c,d \in \mathbb{R}</m> and define
+  <me>
+    h: \mathbb{R}-\set{\frac{d}{c}} \to \mathbb{R}-\set{\frac{a}{c}} \qquad h(x) = \frac{ax-b}{cx-d}
+  </me>
+  If the constants satisfy <m>ad\neq bc</m>, then this is a Möbius transformation<fn>Well, we should really take <m>x</m> over complex numbers, but the interested reader should search-engine their way to more on this topic. They are named for August Möbius who was 19th century German mathematician and astronomer. He is perhaps best known for discovering the Möbius strip which is an two-dimensional surface with only 1 side. The Möbius strip was actually discovered slightly earlier by Johann Listing; perhaps <q>Listing strip</q> doesn't have quite the same ring to it (sorry for the poor pun).</fn>  Notice that the denominator is zero when <m>cx=d</m>, and hence we have removed the point <m>x=\frac{d}{c}</m> from the domain; the function is not defined there. Some similar reasoning can show that there is no <m>x \in \mathbb{R}</m> so that <m>h(x)= \frac{a}{c}</m>, so we remove that point from the co-domain.  Finally, notice that if <m>ad=bc</m> then
+  <md>
+    <mrow> h(x)\amp = \frac{ax-b}{cx-d} </mrow>
+    <mrow> \amp = \frac{cax-cb}{c^2 x - cd} \amp \text{since } bc=ad</mrow>
+    <mrow> \amp = \frac{cax - ad}{c^2 x-cd} = \frac{a(cx-d)}{c(cx-d)}</mrow>
+    <mrow> \amp = \frac{a}{c}</mrow>
+  </md>
+  and so is constant.
+</p>
+
+<p>
+  Möbius transforms are a good source of non-trivial bijective function examples for authors to give to students. So let us just do this in full generality.
+</p>
+
+
+<proposition xml:id="prop-mobius">
+<statement><p>
+  Let <m>a,b,c,d \in \mathbb{R}</m> with <m>ad\neq bc</m>.
+ The function <m>h: \mathbb{R}-\set{\frac{d}{c}} \to \mathbb{R}-\set{\frac{a}{c}}</m> defined by <m>h(x) =
+\frac{ax-b}{cx-d}</m> is bijective.
+</p></statement>
+</proposition>
+
+<p>
+Scratch work.
+<ul>
+<li> Injective. Let <m>x,y \in \mathbb{R}-\set{\frac{d}{c}}</m> and assume <m>h(x) = h(y)</m>. Then
+ <md>
+<mrow>
+  \frac{ax-b}{cx-d} &amp;= \frac{ay-b}{cy-d}
+</mrow><mrow>
+  (cy-d)(ax-b) &amp;= (ay-b)(cx-d) &amp; \text{ since denominator } \neq 0
+</mrow><mrow>
+  caxy-cyb-adx+db  &amp;= acxy - ady -bcx +bd
+</mrow><mrow>
+  (ad-bc)y \amp = (ad-bc)x \amp \text{ so we are done}
+</mrow>
+</md>
+</li>
+<li> Surjective. Let <m>y = h(x)</m>, now find <m>x</m>
+<md>
+<mrow>
+ y &amp;= \frac{ax-b}{cx-d}
+</mrow><mrow>
+ cxy-dy &amp;= ax-b
+</mrow><mrow>
+ cxy - ax &amp;= dy-b
+</mrow><mrow>
+x(cy-a) \amp = dy-b
+</mrow>
+<mrow> x \amp = \frac{dy-b}{cy-a} </mrow>
+</md>
+We now need to show that <m>x \neq \frac{d}{c}</m> (and so is in the domain), and we can do so by considering
+<md>
+  <mrow> x - \frac{d}{c}\amp = \frac{dy-b}{cy-a} - \frac{d}{c} </mrow>
+  <mrow> \amp = \frac{dcy-bc-dcy+da}{c(cy-a)}</mrow>
+  <mrow> \amp = \frac{ad-bc}{c(cy-a)}</mrow>
+</md>
+Now since <m>ad \neq bc</m> and <m>y \neq \frac{a}{c}</m>, this is never zero. Hence this choice of <m>x</m> really does lie in the domain of the function.
+</li>
+</ul>
+</p>
+
+<proof><title>Proof of <xref ref="prop-mobius"/></title>
+<p>
+ We need to show that <m>h</m> is both injective and surjective.
+ <ul>
+<li> Let <m>y \in \mathbb{R}- \frac{a}{c}</m>. Pick <m>x = \frac{dy-b}{cy-a} = \frac{d}{c} + \frac{ad-bc}{c(cy-a)}</m>. Since
+<m>\frac{ad-bc}{c(cy-a)} \neq 0</m> for any <m>y \in \mathbb{R}-\set{\frac{a}{c}}</m>, this choice of <m>x</m> is in the domain of the function. Now
+  <md>
+<mrow>
+  h(x) &amp;= \frac{a \frac{dy-b}{cy-a} -b}{ c\frac{dy-b}{cy-a}-d }
+</mrow><mrow>
+  &amp;= \frac{a(dy-b) - b(cy-a)}{c(dy-b)-d(cy-a)}
+</mrow><mrow>
+  &amp;= \frac{y(ad-bc)}{ad-bc} = y
+  </mrow>
+</md>
+  Hence for any <m>y</m> in the co-domain, there is an <m>x</m> in the range such that <m>h(x) = y</m>.
+So the function is surjective.
+</li>
+<li> Now let <m>x, y</m> be two elements of the range such that <m>h(x) = h(y)</m>. Hence
+<md>
+<mrow>
+  \frac{ax-b}{cx-d} &amp;= \frac{ay-b}{cy-d}
+</mrow><mrow>
+  (cy-d)(ax-b) &amp;= (ay-b)(cx-d) &amp; \text{ since denominator} \neq 0
+</mrow><mrow>
+  cax-cby-dax+db   &amp;= acxy-day-bcx+db
+</mrow><mrow>
+  (ad-bc)y &amp;= (ad-bc)x
+</mrow>
+</md>
+Hence <m>x=y</m>. Thus if <m>h(x)=h(y)</m> we must have <m>x=y</m> and so <m>h</m> is injective.
+</li>
+</ul>
+Since the function is both injective and surjective, it is bijective as required.
+</p></proof>
+
+</subsection>
+</section>
+
+<section><title>Composition of functions</title>
+<p>
+Our last step before defining inverse functions is to explain a generic way of combining
+functions. Now since we are dealing with general sets and not just sets of numbers, we can't add or subtract or divide or differentiate or any of the things we usually do with functions in calculus courses. Really the only thing we can with our abstract functions defined on abstract sets is <term>composition</term> <mdash /> that is, take an element, apply the first function and then apply the second function.
+</p>
+
+
+<image width="75%" source="composition"/>
+
+
+<definition>
+<statement><p>
+ Let <m>f: A \to B</m> and <m>g: B \to C</m> be two functions. The composition of <m>f</m> and
+<m>g</m> is denoted <m>g \circ f</m> which we read <q><m>g</m> of <m>f</m></q>. It defines a new
+function
+<md>
+<mrow>
+  g\circ f: A \to C &amp;&amp; \left(g\circ f\right)(a) = g\left(f(a)\right) \qquad\forall a \in A
+</mrow>
+</md>
+</p></statement>
+</definition>
+
+<p>
+This standard notation for compositions looks a bit backwards <mdash/> we read things from left to right, but when we actually evaluate the composition we do the rightmost function first.
+<md>
+<mrow>
+  (h \circ g \circ f)(x) = h \left( g\left (f (x) \right) \right)
+</mrow>
+</md>
+We start with <m>x</m>, apply <m>f</m>, then apply <m>g</m> to the result, and finally apply <m>h</m> to the result of that.
+</p>
+
+<p>It is important to note that composition is not, in general, commutative:
+<md>
+<mrow>
+  g \circ f \neq f \circ g.
+</mrow>
+</md>
+But it is associative
+</p>
+
+<theorem>
+<statement><p>
+ Let <m>f:A \to B</m>, <m>g: B \to C</m> and <m>h: C \to D</m> be functions. Then <m>h \circ(g \circ f) =
+(h \circ g) \circ f</m>.
+</p></statement>
+</theorem>
+
+<p>
+  The proof of associativity is not difficult but is quite long; we leave it to the interested reader to work through it. Instead we'll look at the following useful (and nice) theorem. This tells us that composition of functions interacts nicely with injections, surjections and bijections.
+</p>
+
+<theorem xml:id="thm_comp_inj_surj">
+<statement><p>
+ Let <m>f:A \to B</m> and <m>g: B \to C</m> be functions.
+ <ul>
+<li> If <m>f</m> and <m>g</m> are injective then so is <m>g\circ f</m>.
+</li>
+<li> If <m>f</m> and <m>g</m> are surjective then so is <m>g\circ f</m>.
+</li>
+</ul>
+Consequently if <m>f,g</m> are bijective then so is <m>g \circ f</m>.
+</p></statement>
+</theorem>
+
+<p>
+Scratch work:
+<ul>
+  <li><p>
+Injective: Assume both <m>f</m> and <m>g</m> are injective. So if <m>a_1 \neq a_2 \in A</m>
+then <m>f(a_1) \neq f(a_2)</m>. Similarly if <m>b_1 \neq b_2</m> then <m>g(b_1) \neq g(b_2)</m>. We can just put these together. If <m>a_1 \neq a_2</m> then <m>f(a_1) \neq f(a_2)</m> and so <m>g(f(a_1)) \neq g(f(a_2))</m>. Thus <m>(g \circ f)(a_1) \neq (g\circ f)(a_2)</m>. The diagram below should help.
+</p>
+
+<image width="66%" source="composition2"/>
+
+</li>
+<li>
+<p>
+Surjective: Assume both <m>f</m> and <m>g</m> are surjective. Then for each <m>c \in C</m> there
+is some <m>b \in B</m> such that <m>g(b) = c</m>. Similarly for each <m>b \in B</m> there is some <m>a \in A</m> such that <m>f(a) = b</m>. Thus <m>g(f(a)) = c</m>. Again, we refer the reader to the diagram below.
+</p>
+
+<image width="66%" source="composition3"/>
+
+</li>
+<li>
+<p>
+  Bijectiveness follows from surjectiveness and injectiveness. That is, if <m>f,g</m> are both bijective, then they are both injective and surjective. Hence their composition <m>g \circ f</m> is injective and surjective, and so bijective.
+</p>
+</li>
+</ul>
+  We are ready to write things up nicely for the reader.
+</p>
+<proof><title>Proof of <xref ref="thm_comp_inj_surj"/></title>
+<p>
+  It suffices to prove the first two points, since the final point follows immediately from them.
+ <ul>
+<li> Let <m>f,g</m> be injective functions. And let <m>a_1, a_2 \in A</m> such that <m>a_1 \neq
+a_2</m>. Since <m>f</m> is injective, it follows that <m>f(a_1) \neq f(a_2)</m>. And since <m>g</m> is
+injective it followst that <m>g(f(a_1)) \neq g(f(a_2))</m>. Thus <m>(g\circ f)(a_1) \neq (g\circ
+f)(a_2)</m>. Thus <m>g\circ f</m> is injective.
+</li>
+<li> Let <m>f,g</m> be surjective functions and let <m>c \in C</m>. Since <m>g</m> is surjective, <m>g(c)
+= b</m> for some <m>b \in B</m>. Since <m>f</m> is surjective, there is some <m>a \in A</m> such that <m>f(a)
+= b</m>. It follows that <m>g(f(a)) = c</m> and so <m>g\circ f</m> is surjective.
+</li>
+</ul>
+</p>
+</proof>
+
+<p>
+  Here is another nice result about compositions, injections and surjections. In particular, if we know the composition <m>g \circ f</m> is injective, then what can we say about <m>f,g</m>. Similarly, if <m>g \circ f</m> is surjective, then what can we say about <m>f,g</m>. Similarly
+</p>
+<theorem xml:id="thm_pseudo_inv">
+  <statement>
+    <p>
+      Let <m>f:A \to B</m> and <m>g: B \to C</m> be functions. Then
+      <ul>
+        <li>If <m>g\circ f</m> is injective then <m>f</m> is injective</li>
+        <li>If <m>g \circ f</m> is surjective then <m>g</m> is surjective</li>
+      </ul>
+    </p>
+  </statement>
+</theorem>
+<proof>
+  <p>
+    We prove each in turn.
+    <ul>
+      <li>
+        <p>
+          Assume that <m>g\circ f</m> is injective, and let <m>a_1,a_2 \in A</m> so that <m>f(a_1)=f(a_2)</m>. To show that <m>f</m> is injective it suffices to show that <m>a_1=a_2</m>. Since <m>f(a_1)=f(a_2)</m>, we know that <m>g(f(a_1))=g(f(a_2))</m>, and since <m>g\circ f</m> is injective we have that <m>a_1=a_2</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Now assume that <m>g\circ f</m> is surjective and let <m>c \in C</m>. To prove that <m>g</m> is surjective it suffices to find <m>b \in B</m> so that <m>g(b)=c</m>.  Since <m>g\circ f</m> is surjective, we know that there is <m>a \in A</m> so that <m>g(f(a))=c</m>. Now set <m>b = f(a)</m>. Then <m>g(b) = g(f(a))=c</m> as required.
+        </p>
+      </li>
+    </ul>
+  </p>
+</proof>
+
+<example>
+  <p>
+  The above theorem proves that when <m>g\circ f</m> is injective, we know that <m>f</m> is injective, the following example show that <m>g</m> need not be injective. Further, it also shows that just because <m>g\circ f</m> and <m>g</m> are surjective, we need not have that <m>f</m> is surjective.
+  </p>
+
+
+  <image width="50%" source="function_drawing3"/>
+
+
+  <p>
+  Let <m>A = \set{1,2}, B=\set{3,4,5}, C=\set{6,7}</m> and consider the following functions
+  <md>
+  <mrow> \amp f: A \to B \amp\amp f(1)=3,\quad f(2)=4</mrow>
+  <mrow> \amp g: B \to C \amp\amp g(3)=6,\quad g(4)=7, \quad g(5)=7</mrow>
+  <mrow> \amp g\circ f: A \to C \amp\amp g(f(1))=6, \quad g(f(2))=7 </mrow>
+  </md>
+  Notice that <m>f</m> and <m>g\circ f</m> are injective, but <m>g</m> is not injective since <m>g(4)=g(5)</m>. Additionally, <m>g</m> and <m>g\circ f</m> are surjective, but <m>f</m> is not surjective.
+</p>
+</example>
+
+</section>
+<section xml:id="sec_inv_func"><title>Inverse functions</title>
+<p>
+  We now have enough machinery to start working on inverse functions. Consider what an inverse <em>function</em> needs to do. If we start with <m>a \in A</m> and apply a function <m>f: A \to B</m> then we obtain some element <m>b \in B</m>. We want our inverse to <q>undo</q> this and take <m>b</m> back to <m>a</m>. We'll start by defining functions that are <em>nearly</em> inverses and give a few examples.
+</p>
+
+<p>
+  But before we do that, we note that some of the material below is a bit technical. The reader who is interested in these details should continue on. The reader who wishes to just get to the main results should instead skip ahead to <xref ref="def_inverse"/> and <xref ref="thm_inv_exists"/>
+</p>
+
+<definition>
+  <statement>
+    <p>
+      Let <m>f:A \to B</m> and <m>g: B \to A</m> be functions.
+      <ul>
+        <li>If <m>g \circ f = i_A</m> then we say that <m>g</m> is a <term>left-inverse</term> of <m>f</m>.</li>
+        <li>Similarly, if <m>f \circ g = i_B</m> then we say that <m>g</m> is a <term>right-inverse</term> of <m>f</m>.</li>
+      </ul>
+    </p>
+  </statement>
+</definition>
+<p>
+  So notice that if we start at some point <m>a \in A</m> and apply <m>f</m> to get <m>b \in B</m>, then a left-inverse <m>g</m> tells us how to get back from <m>b</m> to <m>a</m>:
+  <me>
+    g(b) = g(f(a)) = a
+  </me>
+  On the other hand, if are trying to get to a particular point <m>b \in B</m> in the codomain using <m>f</m>, then the right-inverse tells you a possible starting point <m>a \in A</m>:
+  <me>
+    g(b) = a \qquad \text{ so that } \qquad f(a) = f(g(b)) = b
+  </me>
+</p>
+
+<example>
+  <p>
+    Let <m>A=\set{1,2}</m> and <m>g = \set{4,5,6}</m> and define
+    <md>
+      <mrow>\amp f: A \to B \amp\amp f(1)=4, f(2)=5 </mrow>
+      <mrow>\amp g: B \to A \amp\amp g(4)=1, g(5)=2, g(6)=2</mrow>
+    </md>
+    as depicted below.
+  </p>
+
+  <image width="50%" source="function_drawing5"/>
+  
+  <p>
+    Then notice that <m>g \circ f: A \to A</m> satisfies
+    <me>
+      g(f(1))=g(4)=1 \qquad \text{ and } \qquad g(f(2))=g(5)=2.
+    </me>
+    That is <m>g \circ f=i_A</m> and so is a left-inverse of <m>f</m>. At the same time,
+    <m>f \circ g: B \to B</m> satisfies
+    <me>
+      f(g(4))=f(1)=4 \qquad f(g(5))=f(2)=5 \qquad \text{but} \qquad f(g(6))=f(2)=5
+    </me>
+    and so <m>g</m> is not a right-inverse of <m>f</m>.
+  </p>
+  <p>
+    By swapping the roles of <m>f,g</m> in the above we can construct a function that is a right-inverse but not a left-inverse. Consider the functions defined in the image below.
+  </p>
+
+  <image width="50%" source="function_drawing6"/>
+  
+  <p>
+    Then we see that
+    <me>
+      g(f(1))=g(4)=1 \qquad g(f(2))=g(5)=2 \qquad \text{but} \qquad g(f(6))=g(2)=5
+    </me>
+    and so <m>g</m> is not a left-inverse of <m>f</m>. And then
+    <me>
+      f(g(4))=f(1)=4 \qquad \text{and} \qquad f(g(2))=f(5)=2
+    </me>
+    making <m>g</m> a right-inverse of <m>f</m>.
+  </p>
+</example>
+
+<p>
+  Notice in the above example, that the function that has a left-inverse is injective, while the function with the right-inverse is surjective. This is not a coincidence as the following two lemmas prove.
+</p>
+<lemma xml:id="lem_left_inv">
+  <statement>
+    <p>
+      Let <m>f: A \to B</m>, then <m>f</m> has a left-inverse if and only if <m>f</m> is injective.
+    </p>
+  </statement>
+  <proof>
+    <p>
+      We prove each implication in turn.
+    <ul>
+      <li>Assume that <m>f</m> has a left-inverse, <m>g</m>. Now let <m>a_1, a_2 \in A</m> so that <m>f(a_1)=f(a_2)</m>. Then <m>g(f(a_1)) = g(f(a_2))</m>, but since <m>g</m> is the left-inverse of <m>f</m>, we know that <m>g(f(a_1))=a_1</m> and <m>g(f(a_2)) = a_2</m>. Thus <m>a_1=a_2</m> and so <m>f</m> is injective.
+      </li>
+      <li>
+        <p>
+          Now let <m>f</m> be injective. We construct a left-inverse of <m>f</m> in two steps. First pick any <m>\alpha \in A</m>. Then consider the preimage of a given point <m>b \in B</m>. That preimage, <m>f^{-1}(\set{b})</m>, is empty or not.
+          <ul>
+	    <li>If <m>f^{-1}(\set{b}) = \es</m>, then define <m>g(b)=\alpha</m></li>
+            <li>Now assume that <m>f^{-1}(\set{b}) \neq \es</m>. Since <m>f</m> is injective, the preimage <m>f^{-1}(\set{b})</m> contains exactly 1 element. To see why, consider <m>a,c</m> both in the preimage. We must have <m>f(c)=f(a)=b</m> (since they are both in the preimage of <m>b</m>), but since <m>f</m> is an injection, we must have <m>c=a</m>. So define <m>g(b)=a</m> the unique element in the preimage.
+          </li>
+        </ul>
+        To summarise
+        <me>
+          g(b) = \begin{cases}
+          \alpha \amp \text{if preimage empty} \\
+          a \amp \text{otherwise take unique $a$ in the preimage}
+        \end{cases}.
+        </me>
+        Now let <m>a \in A</m>, under <m>f</m> it maps to some <m>b \in B</m> with <m>b=f(a)</m>. Hence (as argued above) <m>a</m> is the unique element in the preimage of <m>b</m>, and so <m>g(f(a))=g(b)=a</m>.  Thus <m>g</m> is a left-inverse of <m>f</m>.
+        </p>
+      </li>
+    </ul>
+    </p>
+  </proof>
+</lemma>
+
+<lemma xml:id="lem_right_inv">
+  <statement>
+    <p>
+      Let <m>f: A \to B</m>, then <m>f</m> has a right-inverse if and only if <m>f</m> is surjective.
+    </p>
+  </statement>
+  <proof>
+    <p>
+      We prove each implication in turn.
+    <ul>
+      <li>Assume that <m>f</m> has a right-inverse, <m>g</m>. Now let <m>b \in B</m> and set <m>a = g(b)</m>. Then <m>f(a)=f(g(b))=b</m> and so <m>f</m> is surjective.
+      </li>
+      <li>
+        <p>
+          Now let <m>f</m> be surjective and let <m>b \in B</m>. For the sake of this proof, let us denote the preimage of <m>b</m> as
+          <me>
+            A_b = \set{a \in A \so f(a)=b}.
+          </me>
+          Since <m>f</m> is surjective, we know that <m>A_b \neq \es</m> for every <m>b \in B</m>. So now define <m>g(b)</m> to be any<fn>
+          That one can do this is not as obvious as it might seem. In particular, if <m>B</m> is infinite we need the Axiom of Choice in order to make this selection. The interested reader should search engine their way to more information on this. Now in the event that our function <m>f</m> is injective, then <m>A_b</m> contains exactly one element and we don't need the Axiom of Choice to construct our function. Thankfully we apply this result when our function is bijective  <mdash /> phew.
+        </fn> element of <m>A_b</m>.
+      </p>
+      <p>
+        Now let <m>b \in B</m>, then under <m>g</m> it maps to some <m>a \in A</m> so that (by construction) <m>f(a)=b</m>. Hence <m>f(g(b)) = f(a) = b</m> and thus <m>g</m> is a right-inverse as required.
+        </p>
+      </li>
+    </ul>
+    </p>
+  </proof>
+</lemma>
+
+<p>
+  These lemmas tell us that a function has both a left inverse and right inverse if and only if it is bijective. We can go further those one-sided inverses are actually the same function.
+</p>
+<lemma xml:id="lem_left_right_inv">
+  <statement>
+    <p>Let <m>f:A \to B</m> have a left-inverse, <m>g:B \to A</m> and a right inverse <m>h: B \to A</m>, then <m>g=h</m>. Further, the function <m>f</m> has a left and right inverse if and only if <m>f</m> is bijective.
+    </p>
+  </statement>
+  <proof>
+    <p>
+      Let <m>f,g,h</m> be as stated. Then we know that
+      <me>
+        g \circ f = i_A \qquad \text{ and } \qquad  f \circ h = i_B
+      </me>
+      Now starting with <m>g</m> we can write:
+      <md>
+        <mrow> g \amp = g \circ i_B </mrow>
+        <mrow> \amp = g \circ (f \circ h) = (g \circ f) \circ h</mrow>
+        <mrow> \amp = i_A \circ h = h</mrow>
+      </md>
+      and thus <m>g=h</m> as required.
+    </p>
+    <p>
+      The last part of the lemma follows by combining the previous two lemmas.
+    </p>
+  </proof>
+</lemma>
+
+<p>
+  So this lemma tells us conditions under which a function will have both a left- and right-inverse, and that those one-sided inverses are actually the same function. A function that is a left- and right-inverse is a (usual) inverse.
+</p>
+
+<definition xml:id="def_inverse">
+  <statement>
+    <p>
+      Let <m>f:A \to B</m> and <m>g:B \to A</m> be functions. If <m>g \circ f=i_A</m> and <m>f \circ g = i_B</m> then we say that <m>g</m> is an <term>inverse</term> of <m>f</m>.
+    </p>
+    <p>
+      Note that we will prove that the inverse is unique, and so we <em>will</em> be able to say that <m>g</m> is <em>the</em> inverse of <m>f</m> and denote it <m>f^{-1}</m>.
+    </p>
+    <p>Also note that if a function is an inverse then it is also a left- and right-inverse.</p>
+  </statement>
+</definition>
+
+<lemma xml:id="lem_inv_unique">
+  <statement>
+    <p>
+      If a function <m>f: A \to B</m> has an inverse, then that inverse is unique.
+    </p>
+  </statement>
+  <proof>
+    <p>
+      This proof is very similar to the proof of <xref ref="lem_left_right_inv"/>. Let <m>g:B \to A</m> and <m>h: B \to A</m> both be inverses to the function <m>f</m>. Then
+      <md>
+        <mrow>g \amp = g \circ i_B  </mrow>
+        <mrow> \amp = g\circ (f \circ h) = (g \circ f) \circ h </mrow>
+        <mrow> \amp = i_A \circ h = h</mrow>
+      </md>
+      and so <m>g=h</m>. Thus the inverse is unique.
+    </p>
+  </proof>
+</lemma>
+
+<p>
+  We can now state our main theorem about inverse functions.
+</p>
+
+<theorem xml:id="thm_inv_exists">
+  <statement>
+    <p>
+      Let <m>f:A \to B</m>.
+      <ul>
+        <li>The function <m>f</m> has an inverse function if and only if it is bijective</li>
+        <li>The inverse of <m>f</m>, if it exists, is unique.</li>
+      </ul>
+    </p>
+  </statement>
+  <proof>
+    <p>
+      We combine some the lemmas above to prove this result.
+      <ul>
+        <li>
+          <p>Assume that <m>f</m> has an inverse. Then that inverse is both a left-inverse and a right-inverse. <xref ref="lem_left_right_inv"/> then implies that <m>f</m> is both injective and surjective, and so is bijective.
+        </p>
+          <p>Now assume that <m>f</m> is bijective. Then <xref ref="lem_left_right_inv"/> tells us there there exists a function <m>g</m> that is a left-inverse and right-inverse for <m>f</m>. Then, by definition <m>g</m> is an inverse for <m>f</m>.
+          </p>
+        </li>
+        <li>The uniqueness of the inverse is proven by <xref ref="lem_inv_unique"/>.
+        </li>
+      </ul>
+    </p>
+  </proof>
+
+</theorem>
+
+<p>
+  <xref ref="thm_inv_exists"/> tells us under what circumstances a function has an inverse. However, it does not tell us if that inverse has a nice expression. If the original function is nice enough, then we may be able to state the inverse nicely. Here are a couple of such examples.
+</p>
+
+<example>
+  <p>
+    The function <m>f: \mathbb{R} \to \mathbb{R}</m> defined by <m>f(x)=7x-3</m> is bijective and so has an inverse function. We proved this in <xref ref="res_simple_inj"/> and <xref ref="res_simple_inj"/>. The inverse is <m>f^{-1}: \mathbb{R} \to \mathbb{R}</m> and we can work out a formula for it by solving <m>y=f(x)</m> for <m>x</m> in terms of <m>y</m>. Notice that we did exactly that when we proved that <m>f</m> was surjective. In particular, we found that
+    <me>
+      f^{-1}: \mathbb{R} \to \mathbb{R} \qquad \text{defined by}
+      \qquad f^{-1}(y)= \frac{y+3}{7}.
+    </me>
+  </p>
+  <p>
+    To verify that this is correct it suffices to show that <m>f^{-1}\circ f</m> is the identity function:
+    <md>
+      <mrow> f^{-1} \circ f (x) \amp = f^{-1}(7x-3) </mrow>
+      <mrow> \amp = \dfrac{(7x-3)+3}{y}=x</mrow>
+    </md>
+    as required.
+  </p>
+</example>
+
+<example><title>Möbius continued</title>
+  <p>
+    In <xref ref="prop-mobius"/> above we saw saw that a Möbius transformation <m>h: \mathbb{R}-\set{\frac{d}{c}} \to \mathbb{R}-\set{\frac{a}{c}}</m> defined by <me>h(x) = \frac{ax-b}{cx-d}</me> is bijective. The above result tells us that it has an inverse function.
+
+    We can verify that the inverse is
+    <m>h^{-1}: \mathbb{R}-\set{\frac{a}{c}} \to \mathbb{R}-\set{\frac{d}{c}}</m> defined by
+    <me>
+      h^{-1}(y) = \frac{dy-b}{cy-a}.
+    </me>
+    (which we computed while proving the result). We simply need to show that <m>h^{-1} \circ h</m> is the identity:
+  <md>
+    <mrow> h^{-1}(h(x))\amp  = h^{-1}\left(\frac{ax-b}{cx-d} \right) </mrow>
+    <mrow> \amp = \dfrac{d \frac{ax-b}{cx-d} -b }{c \frac{ax-b}{cx-d} -a}</mrow>
+    <mrow> \amp = \dfrac{d(ax-b)-b(cx-d)}{c(ax-b)-a(cx-d)}</mrow>
+    <mrow> \amp = \dfrac{(ad-bc)x}{ad-bc} = c</mrow>
+  </md>
+  as required.
+    </p>
+</example>
+
+</section>
+
+<section><title>(Optional) The axiom of choice</title>
+<p>
+  Consider the following, not terribly controversial, statement
+</p>
+<blockquote>
+  <p>
+    Given a non-empty set <m>A</m>, we can pick an element from it.
+  </p>
+</blockquote>
+<p>
+  This is almost trivial. The fact that <m>A \neq \es</m> is equivalent to the statement <m>\exists a \in A</m>. So, we can simply take <em>that</em> element <m>a</m>, and we are done.
+</p>
+<p>
+  Let's turn up the complexity a little:
+</p>
+<blockquote>
+  <p>
+    Given two non-empty sets <m>A,B</m>, we can pick one element from each.
+  </p>
+</blockquote>
+<p>
+  This is no harder, since <m>A</m> is non-empty, we can take <m>a \in
+  A</m>. And since <m>B\neq \es</m> we can take <m>b \in B</m>. And,
+  at this point, we need to start phrasing things a little differently
+  so that we can be a little more formal and a little more careful.
+</p>
+<blockquote>
+  <p>
+    Given two sets <m>A,B</m> there exists a function <m>f:\set{A,B} \to A\cup B</m>
+  </p>
+</blockquote>
+<p>
+  That is, our <em>choosing</em> of elements from <m>A</m> and
+  <m>B</m> is really just a function that takes us from the collection
+  <m>\set{A,B}</m> to a specific elements <m>a,b \in A\cup
+  B</m>. Similarly, if such a function exists, then we can use it to
+  choose specific elements. We call such functions <term>choice
+  functions</term>.
+</p>
+<definition><title>Choice function</title>
+<statement>
+  <p>
+    Let <m>\mathcal{S}</m> be a collection of non-empty sets. Then a <term>choice function</term> on <m>\mathcal{S}</m> is a function
+    <me>
+      f: \mathcal{S} \to \bigcup_{X \in S} X
+    </me>
+    so that, for any <m>X \in \mathcal{S}</m>, <m>f(X) \in X</m>. That is, for
+    any set <m>X</m> in our collection <m>\mathcal{S}</m>, the
+    <term>choice function</term> <m>f</m> chooses an element <m>f(X)=x
+    \in X</m>.
+  </p>
+</statement>
+</definition>
+<p>
+  This definition allows us to rephrase the above statements as
+  <ul>
+    <li>A collection of a single set <m>\set{A}</m> always has a choice function, and</li>
+    <li>A collection of two sets <m>\set{A,B}</m> always has a choice function.</li>
+  </ul>
+  This is quite easily extended to any finite collection of non-empty
+  sets. Note that while the collection must be finite, the sets in the
+  collection can be infinite.
+</p>
+<proposition>
+  <statement>
+    <p>
+      Let <m>\mathcal{S} = \set{A_i \st i \in \set{1,2,\dots,n}}</m>
+      be a finite collection of non-empty sets. Then there exists a
+      choice function on <m>\mathcal{S}</m>.
+    </p>
+  </statement>
+  <proof>
+    <p>
+      We prove this by induction.
+      <ul>
+	<li>
+	  <p>
+	  Let <m>\mathcal{S}=\set{A}</m> consist of a single non-empty set <m>A</m>. Since <m>A</m> is non-empty, there is some <m>a \in A</m>. The function
+	<me>
+	  f:\set{A} \to A \qquad f(A) = a
+	</me>
+	is a choice function on <m>\mathcal{S}</m>. Thus the statement is true for <m>|\mathcal{S}|=1</m>.
+	  </p>
+	</li>
+	<li>
+	  <p>
+	    Now assume that the statement hold for all collections of
+	    <m>k</m> non-empty sets, and let <m>\mathcal{T} = \set{A_i
+	    \st i \in \set{1,2,\dots,k+1}}</m>. Since <m>A_{k+1} \neq \es</m> there is some <m>q \in A_{k+1}</m>. 
+	  </p>
+	  <p>
+	    Then, by assumption, the collection <m>\mathcal{S} =
+	    \set{A_i \st i \in \set{1,2,\dots,k}}</m> has a choice
+	    function <m>f</m>. We can then use this to define the
+	    required choice function <m>g</m>:
+	  <me>
+	    g(A_i) = \begin{cases}
+	    f(A_i) \amp i = 1,2,\dots, k \\
+	    q \amp i = k+1
+	    \end{cases}
+	  </me>
+	  </p>
+	</li>
+      </ul>
+      Then, by induction, the statement holds for any finite collection of non-empty sets.
+    </p>
+  </proof>
+</proposition>
+
+<p>
+  The existence of such choice-functions is intuitively quite
+  obvious. I can always grab an element out from a set, so I can grab
+  an element out from each set in turn. Indeed, it is equivalent to
+  the statement that the Cartesian product of a finite number of
+  non-empty sets is also non-empty.
+</p>
+
+<proposition>
+  <statement>
+    <p>
+      Let <m>A_1, A_2, \dots, A_n</m> be non-empty sets. The the
+      collection <m>\set{A_1,\dots,A_n}</m> has a choice function if
+      and only if the Cartesian product <m>A_1 \times A_2 \times
+      \cdots \times A_n</m> is non-empty.
+    </p>
+  </statement>
+  <proof>
+    <p>
+      Let the <m>A_i</m> be as stated. We then prove each implication in turn.
+    </p>
+    <p>
+      Assume that the collection <m>\set{A_1, \dots, A_n}</m> has a choice
+      function, <m>f</m>. We can use that to select <m>f(A_i) = a_i \in A_i</m> for
+      <m>i=1,2,\dots, n</m>. Hence <m>(a_1, a_2, \dots, a_n) \in A_1
+      \times A_2 \times \cdots \times A_n</m>. Thus the product is non-empty.
+    </p>
+    <p>
+      Similarly, assume that the product <m>A_1 \times A_2 \times
+      \cdots \times A_n \neq \es</m>, and hence there is <m>(a_1, \dots a_n) \in A_1 \times \cdots \times A_n</m>. We use that element to define
+      <me>
+	f: \set{A_1, \dots, A_n} \to \cup A_i \qquad f(A_i) = a_i
+      </me>
+      giving the required choice function.
+    </p>
+  </proof>
+</proposition>
+
+
+<p>
+  Where things become really very non-trivial, and the consequences
+  very non-intuitive, is when we have infinite collections of
+  sets. Our inductive argument above can't get us there <mdash/> it
+  cannot make the leap from large, but <em>finite</em> collections, to
+  infinite collections. 
+</p>
+<p>
+  Of course, if we the sets in our infinite collection are nice and have extra structure, then this might be easy. For example,
+  <ul>
+    <li>A collection of subsets of <m>\mathbb{N}</m> <mdash/> just choose the smallest element of each subset (via the well-ordering principle).</li>
+    <li>A collection of sets of English words <mdash/> just choose the words that come first in alphabetic order<fn>More formally, we pick the lexicographic least word from each subset. Lexicographic ordering is really useful and the interested reader should search-engine their way to more on this topic.</fn>.</li>
+    <li>A collection of pairs of shoes <mdash/> just choose the left shoe of each pair.</li>
+  </ul>
+  This last example is very famous and is due to Bertrand
+  Russell<fn>No footnote can even begin to do justice to the many
+  contributions of Russell to logic and mathematics and many other
+  disciplines. The reader should search-engine their way to more
+  information.</fn>. The second half of the example points out that it
+  is far from obvious how to do the same with an infinite collection
+  of pairs of socks.
+</p>
+
+<p>
+  Indeed, for an infinite collection of non-empty sets, without extra
+  structure, the existence of a choice function is taken as an axiom
+  <mdash/> the Axiom of Choice.
+</p>
+
+
+<axiom xml:id="ax_choice"><title>Axiom of choice</title>
+<statement>
+  <p>
+    Let <m>\mathcal{S}</m> be any collection of non-empty sets. Then there exists a choice function on <m>\mathcal{S}</m>.
+  </p>
+</statement>
+</axiom>
+<p>
+  This statement feels so intuitively true, it was used quite
+  implicitly until 1904 when Zermelo realised that the question of the
+  existence of choice functions was not at all trivial.  Indeed, it
+  was subsequently shown that Axiom of Choice cannot be proved or
+  disproved using usual set theory<fn>By which we mean Zermelo-Fraenkel
+  set theory, which is, roughly speaking, the formalisation of the
+  usual notions of set theory, including those in this text.</fn>.  To
+  be more precise, 1938 Kurt Gödel proved that one can not disprove
+  the existence of such a choice function using the standard axioms of
+  set theory, while in 1963 Paul Cohen proved that the existence
+  cannot be proven either. It is now accepted<fn>By most
+  mathematicians in most contexts. There is, however, an interesting
+  body of research on what happens when the Axiom of Choice is
+  false. Very strange things happen <mdash/> the interested reader
+  should search engine their way to more information.</fn> as a
+  standard part of set theory.
+</p>
+
+<p>
+  The <xref ref="ax_choice">Axiom of Choice</xref> is equivalent to
+  the statement that the Cartesian product of any collection of
+  non-empty sets is itself non-empty <mdash/> this seems reasonable
+  and hardly controversial. However, the Axiom of Choice does have
+  some very strange implications.
+  <ul>
+    <li>Well-ordering theorem <mdash/> every set can be
+    well-ordered. That is, one can define an ordering of the elements
+    of any set so that any subset has a first element! Cantor
+    conjectured this result in 1883 but it was proved Zermelo in 1904.
+    It was in that proof that the Axiom of Choice was first
+    formalised. It is also known as Zermelo's theorem.
+    </li>
+    <li>Banach-Tarski paradox <mdash/> it is possible to decompose a
+    solid ball into finitely many pieces and reassemble them into two
+    solid balls each having the same volume as the original!</li>
+    <li>It allows you to predict the result of coin tosses <mdash/>
+    see this <url
+    href="https://mattbaker.blog/2015/01/17/spooky-inference-and-the-axiom-of-choice/"
+    visual="https://mattbaker.blog/2015/01/17/spooky-inference-and-the-axiom-of-choice/">nice
+    article</url> by Matt Baker. The interested reader should also
+    examine a very nice (and somewhat provocative) <url
+    href="https://www.tandfonline.com/doi/abs/10.1080/00029890.2008.11920502"
+    visual="https://www.tandfonline.com/doi/abs/10.1080/00029890.2008.11920502">paper</url>
+    by Hardin and Taylor push this line of reasoning explaining how
+    you can use the Axiom of Choice to predict future values of
+    real-valued functions<fn>Such as temperatures, stock-market
+    prices, position of balls on roulette tables, etc.</fn>.  <url
+    href="https://xorshammer.com/2008/08/23/set-theory-and-weather-prediction/"
+    visual="https://xorshammer.com/2008/08/23/set-theory-and-weather-prediction/">Here</url>
+    is a nice and more accessible description of the result by Michael
+    O'Connor.
+    </li>
+  </ul>  
+</p>
+<p>
+  The Axiom of Choice is an extremely interesting and complicated
+  topic, and, well beyond the scope of this text; the interested reader
+  should search-engine their way to more information<fn>There are many
+  articles out there on this topic, but the authors found <url
+  href="https://jaydaigle.net/blog/what-is-the-axiom-of-choice/"
+  visual="https://jaydaigle.net/blog/what-is-the-axiom-of-choice/">this
+  blog</url> to be a very nice discussion of the Axiom of
+  Choice.</fn>.
+</p>
+
+
+
+</section>
+
+<xi:include href="../problems/10ex.ptx"/>
+
+</chapter>

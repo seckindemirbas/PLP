@@ -1,0 +1,44 @@
+<exercise>
+<!-- source latex = 'limit_1_on_n_squared.tex' -->
+<!-- converted on 12/10/2021 at 12:39 -->
+<statement>
+<p>
+Show that <m>\displaystyle\lim_{n\to\infty}1/n^2=0</m>.
+</p>
+</statement>
+
+<!-- <hint></hint> -->
+
+
+<answer>
+<p>
+Given <m>\epsilon \gt 0</m>, we need to find a number <m>N</m> so that whenever <m>n\gt N</m>, we have
+<me> \left|\frac{1}{n^2}-0\right|=\frac{1}{n^2} \lt \epsilon. </me>
+Rearranging this gives (and using the fact that <m>\epsilon</m> is positive)
+<me>
+  \frac{1}{\epsilon}\lt n^2
+</me>
+Taking the square-root of both sides then tells us that we need
+<me>
+  n \gt \frac{1}{\sqrt{\epsilon}}
+</me>
+Therefore, we could take <m>N</m> to be any number greater than <m>1/\sqrt{\epsilon}</m>.
+In particular, we could take <m>N</m> to be the smallest integer greater than <m>1/\sqrt{\epsilon}</m>, which we denote by
+<me> \left\lceil 1/\sqrt{\epsilon} \right\rceil. </me>
+</p>
+</answer>
+
+<solution>
+<proof>
+<p>
+Let <m>\epsilon \gt 0</m>. Take
+<me> N=\left\lceil 1/\sqrt{\epsilon}\right\rceil </me>
+Then for <m>n\gt N</m>, we have
+<me> \left|\frac{1}{n^2}-0\right|\lt \frac{1}{N^2} \lt \epsilon. </me>
+Hence
+<me> \lim_{n\to\infty}1/n^2=0. </me>
+</p>
+</proof>
+
+</solution>
+</exercise>

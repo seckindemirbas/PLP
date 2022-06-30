@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<exercises xmlns:xi="http://www.w3.org/2001/XInclude">
+<xi:include href="ch11/a_number_cannot_be_2_mod_6_and_7_mod_9_question.ptx"/>
+<xi:include href="ch11/parity_pythagorean_triple.ptx"/>
+<xi:include href="ch11/no_mult_inverse.ptx"/>
+<xi:include href="ch11/If_ab_is_1_mod_n_and_c_is_not_zero_mod_n,_then_ac_is_nonzero_mod_n.ptx"/>
+<xi:include href="ch11/4_x_square_plus_5_y_square_equals_7_does_not_have_integer_solutions.ptx"/>
+<xi:include href="ch11/no_smallest_pos_rat_irrat.ptx"/>
+<xi:include href="ch11/sqrt_6_irrational.ptx"/>
+<xi:include href="ch11/cube_root_of_25_is_irrational.ptx"/>
+<xi:include href="ch11/if_square_root_of_k_is_not_integer_then_it_is_irrational_question.ptx"/>
+<xi:include href="ch11/product_rational_irrational_is_irrational.ptx"/>
+<xi:include href="ch11/sum_prod_irrationals.ptx"/>
+<xi:include href="ch11/A_solution_to_an_equation_cannot_be_rational_question.ptx"/>
+<xi:include href="ch11/log_irrational.ptx"/>
+<xi:include href="ch11/root2_no_max.ptx"/>
+<xi:include href="ch11/a_squared_plus_35_is_not_power_of_7.ptx"/>
+<xi:include href="ch11/1_by_2x.1_minus_x.is_at_least_2_for_specific_x.ptx"/>
+<xi:include href="ch11/x_by_y_plus_y_by_x_is_greater_than_2.ptx"/>
+<xi:include href="ch11/2_by_a_plus_2_by_b_is_not_4_by_a_plus_b.ptx"/>
+<xi:include href="ch11/Continuous_bijection_increases_or_decreases.ptx"/>
+
+
+
+</exercises>

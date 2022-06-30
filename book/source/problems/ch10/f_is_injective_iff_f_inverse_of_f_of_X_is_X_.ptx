@@ -1,0 +1,54 @@
+<exercise>
+<!-- source latex = 'f is injective iff f inverse of f of X is X .tex' -->
+<!-- converted on 26/11/2021 at 17:05 -->
+<statement>
+<p>
+Consider <m>f : A\rightarrow B</m>. Prove that f is injective if and only if <m>X = f^{-1}( f (X))</m> for all
+<m>X \subseteq A</m>.
+</p>
+</statement>
+<hint>
+<p>
+Be careful, the symbol <m>f^{-1}</m> denotes the preimage not the inverse-function. It only denotes the inverse-function when the function is bijective.
+</p>
+<p>
+Also, see <xref ref="thm_img_preimg"/> and its proof.
+</p>
+</hint>
+<solution>
+
+<proof><p>
+This is a biconditional statement, so we have to prove both implications in turn.
+<ul>
+<li>
+<p>
+  Assume that <m>f</m> is injective. Then we need to show <m>X \subseteq f^{-1}( f (X))</m> and <m>f^{-1}( f (X))\subseteq X</m>.
+</p>
+<p>
+First, let <m>a\in X</m>. Then, by definition of image, we see <m>f(a)\in f(X)</m>, which also implies <m>a\in  f^{-1}( f (X))</m>. Therefore <m>X\subseteq  f^{-1}( f (X))</m>.
+</p>
+<p>
+Next, let <m>b\in f^{-1}( f (X))</m>. Then, by definition of preimage, we see that <m>f(b)\in f(X)</m>. Thus, we see that there exists <m>c\in X</m> such that <m>f(c)=f(b)</m>. Moreover, since <m>f</m> is injective, we see that <m>b=c</m>. In particular, <m>b\in X</m>. Therefore <m>f^{-1}( f (X))\subseteq X</m>.
+</p>
+<p>
+Hence we can conclude that if f is injective, then <m>X = f^{-1}( f (X))</m>.
+</p>
+</li>
+<li>
+<p>
+ We are going to use proof by contrapositive:
+<md>
+<mrow>
+  f \text{ not injective} \implies X \neq f^{-1}( f (X) ) \text{ for some } X\subseteq A.
+</mrow>
+</md>
+Assume <m>f</m> is not injective. Then we see that there are <m>x,y\in A</m> such that <m>x\neq y</m> but <m>f(x)=f(y)</m>. Then we see that for the set <m>Y=\set{y}</m>, we get <m>f^{-1}( f (Y))=f^{-1}( \{f(y)\})=\set{x,y}\neq Y</m>.
+</p>
+<p>
+Since the contrapositive is true, we have shown that if <m>X = f^{-1}(f(X))</m> for all <m>X \subseteq A</m> then <m>f</m> is injective.
+</p></li>
+</ul>
+</p></proof>
+
+</solution>
+</exercise>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<exercises>
+  <introduction>
+    <p>
+      <alert>
+      ADR: These exercises are a little problematic since they contain ideas from later in the text <mdash /> divisibility, logical-and, and there is even a for-some lurking in there.
+    </alert>      
+    </p>
+  </introduction>
+  <exercise>
+    <statement>
+      <p>Write the following sets by listing their elements.
+        <ol>
+          <li> <m>A_1=\set{ x\in\mathbb{N} \mid x^2 \lt 2 }</m>.</li>
+          <li> <m>A_2=\set{ x\in\mathbb{Z} \mid x^2 \lt 2 }</m>.</li>
+          <li> <m>A_3=\set{ x\in\mathbb{N} \mid (3\mid x) \text{ and } (x\mid 216) }</m>.</li>
+          <li> <m>A_4=\set{ x\in\mathbb{Z} \mid \dfrac{x+2}{5}\in\mathbb{Z} }</m>.</li>
+          <li> <m>A_5=\set{ a\in B \mid 6\leq 4a+1 \lt 17 }</m>, where <m>B=\set{1,2,3,4,5,6}</m>.</li>
+          <li> <m>A_6=\set{ x\in B \mid 50 \lt xd \lt 100 \text{ for some } d\in D }</m>, where <m>B=\set{ 2,3,5,7,11,13, \ldots }</m> and <m>D=\set{ 5,10 }</m>.</li>
+        </ol>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <ol>
+        <li> <m>A_1=\set{ x\in\mathbb{N} \mid x^2 \lt 2 }=\set{1}</m>.</li>
+        <li> <m>A_2=\set{ x\in\mathbb{Z} \mid x^2 \lt 2 }=\set{-1,0,1}</m>.</li>
+        <li> <m>A_3=\set{ x\in\mathbb{N} \mid (3\mid x)\text{ and } (x\mid 216) }=
+          \set{ 3, 6, 9, 12, 18, 24, 27, 36, 54, 72, 108, 216}</m>.</li>
+        <li> <m>A_4=\set{ x\in\mathbb{Z} \mid \dfrac{x+2}{5}\in\mathbb{Z} }=\set{\ldots, -12, -7, -2, 3,  8, 13, \ldots}</m>.</li>
+        <li> <m>A_5=\set{ a\in B \mid 6\leq 4a+1 \lt 17 }</m>, where <m>B=\set{1,2,3,4,5,6}</m>. Then <m>A_5=\set{2,3}</m></li>
+        <li> <m>A_6=\set{ x\in B \mid 50 \lt xd \lt 100 \text{ for some } d\in D }</m>, where <m>B=\set{ 2,3,5,7,11,13, \ldots }</m>
+          and <m>D=\set{ 5,10 }</m>. Then <m>A_6=\set{7,11,13,17,19}</m>.
+        </li>
+        </ol>
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>Write the following sets in set-builder notation.
+        <ol>
+          <li> <m>A=\set{5,10,15,20,25,\ldots}</m>.</li>
+          <li> <m>B=\set{ \ldots, -\frac{1}{2}, 0,\frac{1}{2}, \frac{2}{5}, \frac{3}{10}, \frac{4}{17},\ldots }</m>.</li>
+          <li> <m>C=\set{2,4,16, 256,65536,\ldots}</m>.</li>
+          <li> <m>D=\set{2,3,4,6,8,9,12,16,18, 24\ldots }</m>.</li>
+        </ol>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        We are going to write the following sets in set builder notation.
+        <ol>
+        <li> <m>A=\set{5,10,15,20,25,\ldots}=\set{5n \mid n\in\mathbb{N}}</m></li>
+        <li> <m>B=\set{ \ldots, -\frac{1}{2}, 0,\frac{1}{2}, \frac{2}{5}, \frac{3}{10}, \frac{4}{17},\ldots }=\set{\frac{m}{m^2+1}  \mid m \in \mathbb{Z}}</m></li>
+        <li> <m>C=\set{2,4,16, 256,65536,\ldots}=\set{n\in\mathbb{N} \mid n=2^{(2^k)} \text{ for some nonnegative integer } k}</m>.</li>
+        <li> <m>D=\set{2,3,4,6,8,9,12,16,18, 24\ldots }=\set{2^a 3^b  \mid (a,b \in \mathbb{Z}) \text{ and } (a,b \ge 0) \text{ but \(a,b\) cannot both be zero}}</m>. </li>
+        </ol>
+
+      </p>
+    </solution>
+  </exercise>
+
+</exercises>

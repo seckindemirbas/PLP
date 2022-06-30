@@ -1,0 +1,110 @@
+<exercise>
+<!-- source latex = 'size of a finite power set question.tex' -->
+<!-- converted on 30/03/2022 at 15:12 -->
+<statement>
+<p>
+Let <m>A</m> be a finite set with <m>|A|=n</m>. Prove that <m>|\pow A|=2^n</m>.
+</p>
+</statement>
+<hint>
+<p>
+You may need to use mathematical induction on the size of <m>A</m>.
+</p>
+</hint>
+<answer>
+<p>
+Let <m>A</m> be a set. We can check the statement for some numbers to see whether it works for, at least, sets with small sizes. This may also give us some ideas as to how to prove it for any size set.
+</p>
+<p>
+We see that if <m>A=\emptyset</m>, then <m>\pow{A}=\set{\emptyset}</m>. This means that <m>|\pow{A}|=1=2^0</m>.
+</p>
+<p>
+Now, assume that <m>|A|=1</m>, e.g. <m>A=\set{1}</m>. Then, we see that <m>\pow{A}=\set{\emptyset, \set{1}}</m>. Thus, <m>|\pow{A}|=2=2^1</m>.
+</p>
+<p>
+Similarly, assume <m>|A|=2</m>, e.g. <m>A=\set{1,2}</m>. Then, we see that <m>\pow{A}=\set{\emptyset, \set{1}, \set{2}, \set{1,2}}</m>. Thus, <m>|\pow{A}|=4=2^2</m>.
+</p>
+<p>
+Finally, if <m>|A|=3</m>, e.g. <m>A=\set{1,2,3}</m>. Then, we see that
+</p>
+<p>
+<m>\pow{A}=\set{\emptyset, \set{1}, \set{2}, \set{3}, \set {1,2},\set{1,3}, \set{2,3}, \set{1,2,3}}</m>. Thus, <m>|\pow{A}|=8=2^3</m>.
+</p>
+<p>
+This suggests that the stamement may, indeed, be true, and since it is a statement on the size of <m>A</m>, induction may be a useful tool.
+</p>
+<p>
+To see how induction may work, we may need to understand how we can count the size of the power set of a set of size <m>n+1</m>, when we know the size for a set of size <m>n</m>. For that, we observe that
+<md>
+<mrow>
+\pow{\set{1,2,3}} \amp =\pow{\set{1,2}}\cup \set{\set{3},\set{1,3}, \set{2,3}, \set{1,2,3}}
+</mrow><mrow>
+ \amp =\pow{\set{1,2}}\cup \set{\emptyset\cup\set{3},\set{1}\cup\set{3}, \set{2}\cup\set{3}, \set{1,2}\cup\set{3}}.
+</mrow>
+</md>
+</p>
+<p>
+This suggests that when we add an element to a set, we double its power set's size, since every subset that contains <m>3</m> is a subset, <m>B</m>, of <m>\set{1,2}</m> union <m>\set{3}</m>.
+</p>
+</answer>
+<solution>
+<proof>
+<p>
+Let <m>A</m> be a finite set. We will prove this statement using induction on the size of <m>A</m>, where <m>|A|=n</m>, for <m>n\in\mathbb N\cup \set{0}</m>.
+</p>
+<p>
+<ul>
+<li>
+<p>
+<em>Base case</em>: We see that if <m>|A|=0</m>, then <m>A=\emptyset</m>. Therefore <m>\pow{A}=\set{\emptyset}</m>. This means that <m>|\pow{A}|=1=2^0</m>. Hence, the statement holds for <m>n=0</m>.
+</p>
+<p>
+Moreover, we see that if <m>|A|=1</m>, then <m>A=\set{a}</m> for some <m>a</m>. Thus, we see that <m>\pow{A}=\set{\emptyset, \set{a}}</m>. Thus, <m>|\pow{A}|=2=2^1</m>. This means that the statement is true for <m>n=1</m> as well.
+</p>
+</li>
+<li>
+<p>
+<em>Inductive step</em>: Assume that the statement is true for <m>k=n</m>, that is, if <m>|A|=n</m>, then we have <m>|\pow A|=2^n</m>.
+</p>
+<p>
+Now, let <m>B</m> be a set with <m>|B|=n+1</m>. Then, we see <m>B=\set{b_1, b_2, b_3, \ldots, b_{n+1}}</m>. Therefore, we see that we can write
+<me>
+B=\set{b_1, b_2, b_3, \ldots, b_{n}}\cup\set{b_{n+1}}=\tilde{B}\cup\set{b_n+1},
+</me>
+where <m>|\tilde{B}|=n</m>.
+</p>
+<p>
+Therefore we know that <m>|\pow{\tilde{B}}|=2^n</m>.
+</p>
+<p>
+Now we can write <m>\pow{B}</m> as a union of all subsets that contain the element <m>b_{n+1}</m>, call <m>\mathcal P</m>, and subsets that don't contain the element <m>b_{n+1}</m>, call <m>\mathcal Q</m>. Moreover, we see that the set of all subsets that don't contain <m>b_{n+1}</m> is the set of all subsets of <m>\tilde{B}</m>, i.e. <m>\mathcal P=\pow{\tilde{B}}</m>.
+</p>
+<p>
+ We also see that a subset, <m>D</m>, of <m>B</m> contains <m>b_{n+1}</m> if and only if <m>D-\set{b_{n+1}}</m> is a subset of <m>\tilde{B}</m>, that is
+<me>
+|\mathcal Q|=|\mathcal P|=|\pow{\tilde{B}}|.
+</me>
+ Thus, since <m>\mathcal P\cap\mathcal Q=\emptyset</m>, we get
+<md>
+<mrow>
+|\pow{B}| \amp =|\mathcal P|+|\mathcal Q|
+</mrow><mrow>
+ \amp |\pow{\tilde{B}}|+|\mathcal Q|
+</mrow><mrow>
+ \amp |\pow{\tilde{B}}|+|\pow{\tilde{B}}|=2|\pow{\tilde{B}}|
+</mrow><mrow>
+ \amp =2.2^n=2^{n+1}.
+</mrow>
+</md>
+</p>
+<p>
+Hence, the statement is true for <m>k=n+1</m>.
+</p></li>
+</ul>
+</p>
+<p>
+Therefore, by mathematical induction, we conclude that if <m>A</m> is a finite set with <m>|A|=n</m>. Prove that <m>|\pow A|=2^n</m>.
+</p>
+</proof>
+</solution>
+</exercise>

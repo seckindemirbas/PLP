@@ -1,0 +1,49 @@
+<exercise xml:id="ex_trans_divisibility">
+<!-- source latex = 'reusing_variables.tex' -->
+<!-- converted on 05/07/2021 at 13:17 -->
+<statement>
+<p>
+Consider the faulty proof below for the following statement:
+</p>
+<p>
+Let <m>a</m>, <m>b</m>, and <m>c</m> be integers. If <m>a\mid b</m> and <m>b\mid c</m>, then <m>a\mid c</m>.
+</p>
+
+<proof><title>Faulty proof</title>
+<p>
+Assume <m>a</m>, <m>b</m>, and <m>c</m> are integers such that <m>a\mid b</m> and <m>b\mid c</m>.
+Since <m>a</m> divides <m>b</m>, we have that <m>b=ka</m> for some <m>k\in\mathbb{Z}</m>.
+Moreover, since <m>b</m> divides <m>c</m>, we have that <m>c=kb</m> for some <m>k\in\mathbb{Z}</m>.
+But then
+<me> c=k(ka)=k^2a, </me>
+Since <m>k</m> is an integer, <m>k^2\in\mathbb{Z}</m>, and it follows that <m>a</m> divides <m>c</m>.
+</p>
+</proof>
+
+
+
+<p>
+Identify any issues with the proof as written above, and then give a correct proof of the statement.
+</p>
+</statement>
+<solution>
+<p>
+The issue with this proof is that we used the variable <m>k</m> in two different situations. In general, the integer multiple that <m>b</m> is of <m>a</m> would be different than the integer multiple that <m>c</m> is of <m>b</m>.
+While the logic of the proof is mostly correct, we end up with the statement <m>c=k^2a</m> (that <m>c</m> is a square multiple of <m>a</m>), which is incorrect.
+For example, if <m>a</m> is positive while <m>c</m> is negative, then we definitely can't find an integer <m>k</m> satisfying <m>c=k^2a</m>.
+</p>
+<p>
+Let's rewrite the proof with these issues resolved:
+</p>
+
+<proof><p>
+Assume <m>a</m>, <m>b</m>, and <m>c</m> are integers such that <m>a\mid b</m> and <m>b\mid c</m>.
+Since <m>a</m> divides <m>b</m>, we have that <m>b=ka</m> for some <m>k\in\mathbb{Z}</m>.
+Moreover, since <m>b</m> divides <m>c</m>, we have that <m>c=\ell b</m> for some <m>\ell\in\mathbb{Z}</m>.
+But then
+<me> c=k(\ell a)=(k\ell)a, </me>
+Since <m>k</m> and <m>\ell</m> are integers, <m>k\ell\in\mathbb{Z}</m>, and it follows that <m>a</m> divides <m>c</m>.
+</p></proof>
+
+</solution>
+</exercise>

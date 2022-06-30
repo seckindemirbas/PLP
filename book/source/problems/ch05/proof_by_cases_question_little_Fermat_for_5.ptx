@@ -1,0 +1,59 @@
+<exercise>
+<!-- source latex = 'proof by cases question little Fermat for 5.tex' -->
+<!-- converted on 12/10/2021 at 12:32 -->
+<statement>
+<p>
+Prove that <m>\forall a\in \mathbb Z</m>, <m>a^5\equiv a \pmod 5</m>.
+</p>
+</statement>
+<hint>
+<p>
+Modular arithmetic makes this much easier.
+</p>
+</hint>
+<solution>
+
+<proof><p>
+ Let <m>a\in\mathbb{Z}</m>. By Euclidean division, the number <m>a</m> can be written uniquely as <m>a=5k+r</m> with <m>r \in \set{0,1,2,3,4}</m>. This means that
+ <me>
+ a \equiv r \pmod5 \qquad \text{ with } r \in \set{0,1,2,3,4}.
+ </me>
+ This means that we can consider five cases <mdash/> one for each value of <m>r</m>:
+<ul>
+<li>
+<p>
+  <m>a\equiv 0\pmod 5</m>: In this case, we see that <m>a^5\equiv 0^5\equiv 0\equiv a \pmod 5</m>.
+</p>
+</li>
+<li>
+<p>
+  <m>a\equiv 1\pmod 5</m>: In this case, we see that <m>a^5\equiv 1^5\equiv 1\equiv a \pmod 5</m>.
+</p>
+</li>
+<li>
+<p>
+ <m>a\equiv 2\pmod 5</m>: In this case, we see that <m>a^5\equiv 2^5\equiv 32\equiv 2\equiv a \pmod 5</m>.
+</p>
+</li>
+<li>
+<p>
+ <m>a\equiv 3\pmod 5</m>: In this case, we see that <m>a^5\equiv 3^5\equiv 243\equiv 3 \equiv a \pmod 5</m>.
+</p>
+</li>
+<li>
+<p>
+ <m>a\equiv 4\pmod 5</m>: In this case, we see that <m>a^5\equiv 4^5\equiv 1024 \equiv 4\equiv a \pmod 5</m>.
+</p></li>
+</ul>
+In each case <m>a^5 \equiv a \pmod 5</m> as required.
+</p></proof>
+
+<p>
+This result generalises to any prime number, <m>p</m>:
+<me>
+  a^p \equiv a \pmod p
+</me>
+and is called Fermat's little theorem. With a little work it can be proved using induction. One can also, with a little work, turn this into a very good test of whether or not a number is prime <mdash/> the interested reader should search-engine their way to the Miller-Rabin test.
+</p>
+</solution>
+</exercise>

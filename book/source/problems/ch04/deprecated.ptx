@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<exercises>
+
+  <exercisegroup>
+    <introduction>
+      <p>
+      Use truth tables to determine whether the following statements are logically equivalent.
+      If the statements are logically equivalent, then use <xref text="type-global" ref="thm-logical-equiv"/> and <xref text="type-global" ref="thm-neg-imp"/> to prove it without truth-tables.
+    </p>
+    </introduction>
+<exercise>
+  <statement>
+    <p>
+    <m>P \lor (\neg Q)</m> and <m>P\implies Q</m>
+    </p>
+  </statement>
+  <answer><p>The statements are not equivalent.</p></answer>
+  <solution>
+    <p>
+      Set <m>P=T, Q=F</m>. Then the first statement is true, while the second is false.
+    </p>
+  </solution>
+</exercise>
+<exercise xml:id="prob-contrapos-bicond">
+  <statement>
+    <p>
+      <m>P\iff Q</m> and <m>(\neg P)\iff (\neg Q)</m>
+    </p>
+  </statement>
+  <answer><p>The statements are logically equivalent.</p></answer>
+  <solution>
+    <p>
+      <md>
+      <mrow>P \iff Q\amp \equiv (P \implies Q) \land (Q \implies P) \amp \text{bicond as imp}</mrow>
+      <mrow> \amp \equiv ( (\neg Q) \implies (\neg P)) \land ((\neg(P) \implies \neg(Q)) \amp \text{contrapos}</mrow>
+      <mrow> \amp \equiv ( (\neg P) \implies (\neg Q)) \land ((\neg(Q) \implies \neg(P)) \amp \text{commute and}</mrow>
+      <mrow> \amp \equiv (\neg P) \iff (\neg Q) \amp \text{imp as bicond}</mrow>
+      </md>
+    </p>
+  </solution>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+    <m>P\implies (Q\lor R)</m> and <m>P\implies ((\neg Q)\implies R)</m>
+    </p>
+  </statement>
+  <answer>
+    <p>
+      These are logically equivalent.
+    </p>
+  </answer>
+  <solution>
+    <p>
+      <md>
+        <mrow> P\implies (Q\lor R) \amp \equiv P\implies (\neg(\neg(Q)) \lor R) \amp \text{double-neg}</mrow>
+        <mrow> \amp \equiv P\implies (\neg(Q) \implies R) \amp \text{or as imp} </mrow>
+      </md>
+    </p>
+  </solution>
+</exercise>
+<exercise xml:id="prob-porqimpliesr">
+  <statement>
+    <p>
+    <m>(P\lor Q)\implies R</m> and <m>(P\implies R)\land(Q\implies R)</m>.
+    </p>
+  </statement>
+  <answer><p>The statements are equivalent.</p></answer>
+  <solution>
+    <p>
+          <md>
+      <mrow>
+            ( (P \lor Q) \implies R )
+            &amp; \equiv (\neg(P \lor Q) \lor R )  &amp; \text{implication as or}
+      </mrow><mrow>
+            &amp; \equiv (\neg P \land \neg Q) \lor R ) &amp; \text{DeMorgan}
+      </mrow><mrow>
+            &amp; \equiv (\neg P \lor R) \land (\neg Q \lor R) &amp; \text{distributive}
+      </mrow><mrow>
+            &amp; \equiv (P \implies R) \land (Q \implies R) &amp; \text{or as implication}
+          </mrow>
+      </md>
+      </p>
+  </solution>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      <m>P\implies (Q\lor R)</m> and <m>(Q\land R)\implies P</m>
+    </p>
+  </statement>
+  <answer>
+    <p>
+      The statements are not logically equivalent.
+    </p>
+  </answer>
+  <solution>
+    <p>Since both are implications, it is easiest to examine when they are false (since that places strong conditions on the truth-values of the hypotheses and conclusions).
+      <ul>
+        <li>The first is false when <m>P=T</m> and <m>Q=F, R=F</m>, and otherwise true.</li>
+        <li>The second is false when <m>P = F</m> and <m>Q=T,R=T</m>, and otherwise true.</li>
+      </ul>
+      Hence these statements do not have the same truth-tables and so are not logically equivalent.
+    </p>
+  </solution>
+</exercise>
+</exercisegroup>
+
+<exercisegroup>
+  <introduction>
+    <p>
+    Use logical equivalences to negate the following statements.
+  </p>
+  </introduction>
+  <exercise>
+    <statement>
+      <p>
+         <m>8</m> is even and <m>5</m> is prime.
+      </p>
+    </statement>
+    <solution>
+      <p>Just use DeMorgan. This gives <q>8 is not even, or 5 is not prime</q>. Since we talking about integers this can be further simplified to <q>8 is odd or 5 is not prime</q>.
+      </p>
+    </solution>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        If <m>n</m> is a multiple of <m>4</m> and <m>5</m>, then it is a multiple of <m>10</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        The statement is of the form <m>(P\land Q) \implies R</m> where
+        <md>
+          <mrow> P: \amp n \text{ is a multiple of 4}</mrow>
+          <mrow> Q: \amp n \text{ is a multiple of 5} </mrow>
+          <mrow> R: \amp n \text{ is a multiple of 10}</mrow>
+        </md>
+        Now we can negate this implication us <xref text="type-global" ref="thm-neg-imp"/> to get
+        <q><m>n</m> is a multiple of 4 and 5, but it is not a multiple of 10</q>.
+      </p>
+    </solution>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        <m>3\leq x\leq 6</m>
+      </p>
+    </statement>
+    <solution>
+      <p>This is really a conjunction in disguise:
+        <me>
+          (3 \leq x) \land (x \leq 6)
+        </me>
+        So the negation of this (via DeMorgan) is
+        <me>
+          (3 \gt x) \lor (x \gt 6).
+        </me>
+      </p>
+    </solution>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+      A real number <m>x</m> is less than <m>-2</m> or greater than <m>2</m> if its square is greater than <m>4</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>This statement is a little bit backwards (somewhat deliberately) and is actually of the form
+        <md>
+          <mrow> P \amp \implies (Q \lor R) \text{ where}</mrow>
+          <mrow> P: \amp x^2 \gt 4 </mrow>
+          <mrow> Q: \amp x\lt -2 </mrow>
+          <mrow> R: \amp x\gt 2 </mrow>
+        </md>
+      Negating things (via <xref text="type-global" ref="thm-neg-imp"/>) gives
+      <md>
+        <mrow> \neg( P \implies (Q \lor R)) \amp \equiv P \land \neg(Q \lor R) </mrow>
+        <mrow> \amp\equiv P \land (\neg Q \land \neg R) </mrow>
+      </md>
+      Now
+      <md>
+      <mrow> \neg Q: \amp x\geq -2 \amp \neg R: \amp x\leq 2 </mrow>
+      </md>
+      so <m>\neg Q \land \neg R</m> can be written neatly as <m>-2 \leq x \leq 2</m>. Hence our negated statement is <q><m>x^2\geq 4</m> and <m>-2 \leq x \leq 2</m></q>.
+      </p>
+    </solution>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        If a function <m>f</m> is differentiable everywhere then whenever <m>x\in\mathbb{R}</m> is a local maximum of <m>f</m> we have <m>f'(x)=0</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>Oof! This is really a double-implication <m>P \implies (Q \implies R)</m> with
+      <md>
+        <mrow>P: \amp f \text{ is differentiable everywhere}</mrow>
+        <mrow>Q: \amp x \text{ is a local maximum of } f</mrow>
+        <mrow>R: \amp f'(x) = 0</mrow>
+      </md>
+      Let's negate carefully (with lots of brackets):
+      <md>
+        <mrow>\neg( P \implies (Q \implies R)) \amp \equiv P \land \neg( Q \implies R)</mrow>
+        <mrow> \amp P \land (Q \land \neg R)</mrow>
+      </md>
+      So <q>The function <m>f</m> is differentiable everywhere, and <m>x</m> is a local maximum of <m>f</m>, but <m>f'(x) \neq 0</m></q>.
+      </p>
+    </solution>
+  </exercise>
+</exercisegroup>
+
+
+
+</exercises>

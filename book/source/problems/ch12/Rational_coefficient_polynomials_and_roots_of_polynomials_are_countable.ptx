@@ -1,0 +1,83 @@
+<exercise>
+<!-- source latex = 'Rational coefficient polynomials and roots of polynomials are countable.tex' -->
+<!-- converted on 30/03/2022 at 15:32 -->
+<statement>
+<p>
+In the following exercises, you may use the result from <xref ref="ex_countable_union"/> and the Fundamental Theorem of Algebra: a degree <m>n</m> polynomial has at most <m>n</m> real solutions.
+</p>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ Let <m>m\in \mathbb{N}</m>. Define <m>P_m</m> to be the set of degree <m>m</m> polynomials with rational coefficients. That is,
+<me>P_m = \set{a_0+a_1x+\cdots+a_mx^m \so a_i \in \mathbb Q \mbox{ for all }i\in \{0,1,\ldots,m\}, \, a_m\neq 0}.</me>
+Show that <m>P_m</m> is countable.
+</p></li>
+<li>
+<p>
+  Now, define <m>P</m> to be the set of all polynomials with rational coefficients. That is,
+  <me>
+    P = \left\{a_0+a_1x+\cdots+a_nx^n \so n \in \mathbb N \;\text{and}\;
+    a_i \in \mathbb Q \;\text{for all}\; i\in \{0,1,\ldots,n\}, \, a_n\neq 0 \right\}.
+  </me>
+Prove that <m>P</m> is countable.
+</p></li>
+<li>
+<p>
+ Define <m>A</m> to be the set of all real numbers that are the roots of a polynomial in <m>P</m>. That is,
+<me>A = \set{x \in \mathbb R \so \exists f \in P\setminus\set{0} \; \text{s.t.}\; f(x)=0 }.</me>
+Prove or disprove: <m>|A|=|P|</m>.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+
+  <proof><title>Proof of (a)</title>
+  <p>
+We will show this by constructing a bijection. Let <m>f: P_m\rightarrow \left(\mathbb Q^{m}\times \left(\mathbb Q \setminus \set{0}\right)\right)</m> be defined by
+<me>f(a_0+a_1x+a_2x^2+\cdots+a_mx^m)=\big((a_0,a_1,a_2,\cdots,a_{m-1}), a_m\big).</me>
+Consider <m>\left((b_0, \dots, b_{m-1}), b_m\right)\in \left(\mathbb Q^{m}\times \left(\mathbb Q \setminus \set{0}\right)\right)</m>. By construction,
+<me>f(b_0+b_1x+b_2x^2+\dots+b_mx^m) = \left((b_0, \dots, b_{m-1}), b_m\right),</me>
+so we see <m>f</m> is surjective.
+</p>
+<p>
+Moreover, let <m>(a_0+a_1x+a_2x^2+\cdots+a_mx^m),(b_0+b_1x+b_2x^2+\cdots+b_mx^m)\in P_m</m> such that <m>f(a_0+a_1x+a_2x^2+\cdots+a_mx^m)=f(b_0+b_1x+b_2x^2+\cdots+b_mx^m)</m>. Then  <m>\big((a_0,a_1,a_2,\cdots,a_{m-1}), a_m\big)=\big((b_0,b_1,b_2,\cdots,b_{m-1}), b_m\big)</m>, and we see that <m>a_i=b_i</m> for all <m>i\in\set{0,1,2,\ldots,m}</m>. Thus,  <m>a_0+a_1x+a_2x^2+\cdots+a_mx^m=b_0+b_1x+b_2x^2+\cdots+b_mx^m</m>, which implies that the function <m>f</m> is injective.
+</p>
+<p>
+Therefore <m>|P_m|=\left|\left(\mathbb Q^{m}\times \left(\mathbb Q \setminus \set{0}\right)\right)\right|</m>. Since the Cartesian product of finitely many countable sets is countable, we have <m>|P_m|=\left|\left(\mathbb Q^{m}\times \left(\mathbb Q \setminus \set{0}\right)\right)\right| = |\mathbb{N}|</m>.
+</p></proof>
+
+<proof><title>Proof of (b)</title>
+  <p> By part (a), <m>|P_m| = |\mathbb{N}|</m>. Notice that <m>P=\bigcup\limits_{m\in\mathbb N}P_m</m>. By exercise <xref ref="ex_countable_union"/>, the union of countably many countable sets is countable. Therefore, <m>|P| = |\mathbb{N}|</m>.
+</p>
+
+</proof>
+
+<proof><title>Proof of (c)</title>
+<p>
+  <em>Claim:</em> <m>|A|=|P|</m>.
+</p>
+<p> Let <m>m\in \mathbb{N}</m>. By part (a), the polynomials of degree <m>m</m> are countable. Therefore, they are in bijection with <m>\mathbb{N}</m>, and we may enumerate them as <m>p_{m, 1}, p_{m,2}, p_{m,3}, \dots</m>. That is, any polynomial in <m>P_m</m> can be described as <m>p_{m,k}</m> for <m>k\in \mathbb{N}</m>, where <m>m</m> refers to the degree of the polynomial and <m>k</m> comes from the enumeration of <m>P_m</m>. We define the set <me>R_{p_{m,k}}=\set{x\in\mathbb R: p_{m,k}(x)=0}</me>
+to be the set of real roots of the polynomial <m>p_{m,k}</m>. By the Fundamental Theorem of Algebra, we know that every polynomial of order <m>m</m> has at most <m>m</m> distinct real roots. Therefore for any <m>k\in\mathbb N</m>, <m>|R_{p_{m,k}}|\leq m</m>, in particular, <m>R_{p_{m,k}}</m> is countable.
+</p>
+<p>
+Thus, we see that <m>A_m=\bigcup\limits_{k\in\mathbb N}R_{p_{m,k}}</m> gives us the set of all possible roots of polynomials of order <m>m</m>. Notice that <m>A_m</m> is the countable union of countable set, and thus, by <xref ref="ex_countable_union"/>, is countable.
+</p>
+<p>
+Again, using <xref ref="ex_countable_union"/>, since <m>A=\bigcup\limits_{m\in\mathbb N} A_m</m>, we see that <m>A</m> is also countable union of countable sets, and hence is countable.
+</p>
+<p>
+Moreover, since any <m>q\in\mathbb Q</m> is a zero of a polynomial with rational coefficients, e.g. <m>f(x)=x-q</m>, we see that <m>\mathbb Q\subseteq A</m>. This implies that <m>A</m> is infinite. Thus, we see that <m>A</m> is countably infinite.
+</p>
+<p>
+Therefore <m>|A|=|P|</m>.
+</p>
+</proof>
+
+<p>
+(This is a very important result. These numbers that are solutions to rational (or equivalently integer) polynomials are called algebraic numbers. As an example we see <m>\sqrt 2</m> is irrational, but is the solution to the equation <m>x^2-2=0</m>. Thus, since the set of algebraic numbers is countable and the set of real numbers is uncountable, we see that there has to be uncountable many real numbers that cannot be written as a solution to a polynomial with rational coefficients. We call such numbers <em>transcendental</em> numbers. For example, <m>\pi</m> is a transcendental number-as one can guess, showing a number is transcendental is generally a very hard question.)
+</p>
+</solution>
+</exercise>

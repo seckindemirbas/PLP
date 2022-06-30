@@ -1,0 +1,219 @@
+<exercise>
+<!-- source latex = 'Induction with derivatives.tex' -->
+<!-- converted on 12/10/2021 at 14:24 -->
+<statement>
+<p>
+Let <m>k\in \mathbb{N}</m>. Compute the <m>k^{\text{th}}</m> derivative of the following functions. Use induction to prove that your answer is correct.
+<ol marker="(a)">
+<li>
+<p>
+ <m>f(x) = x^n</m> for <m>n\in\mathbb{N}</m> with <m>0\leq k\leq n</m>.
+</p></li>
+<li>
+<p>
+ <m>g(x)=x^{-n}</m> for <m>n\in \mathbb{N}</m>.
+</p></li>
+<li>
+<p>
+ <m>h(x) =\frac{1}{\sqrt{9-2x}}</m>.
+</p>
+</li>
+</ol>
+You may use the fact that
+<md>
+<mrow>
+  \frac{d}{dx} x^a = a x^{a-1}
+</mrow>
+</md>
+for any <m>a \in \mathbb{R}</m>.
+</p>
+</statement>
+<hint>
+<p>
+<ul>
+<li>
+<p>
+ Take the first few derivatives and see if you can find a pattern.
+  </p></li>
+<li>
+<p>
+ The factorial will be helpful. Recall that for any <m>n \in \mathbb{N}</m>,
+  <me>
+    n! = n \cdot (n-1) \cdot (n-2) \cdots 2 \cdot 1
+  </me>
+  and also the double-factorial <m>n!!</m>
+  <me>
+    n!! = \begin{cases}
+    n \cdot (n-2) \cdot (n-4) \cdots  2  \amp  \text{when } n \text{ is even}
+    \\
+    n \cdot (n-2) \cdot (n-4) \cdots  3 \cdot 1  \amp  \text{when } n \text{ is odd}
+    \end{cases}
+  </me>
+</p></li>
+</ul>
+</p>
+</hint>
+<answer>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ <m>f(x) = x^n</m> for <m>n\in\mathbb{N}</m> with <m>0\leq k\leq n</m>.
+</p>
+<p>
+    We compute the first few derivatives:
+    <md>
+<mrow>
+        f^{(1)}(x)  \amp = nx^{n-1}
+</mrow><mrow>
+        f^{(2)}(x)  \amp = n(n-1)x^{n-2}
+</mrow><mrow>
+        f^{(3)}(x)  \amp = n(n-1)(n-2)x^{n-3}
+</mrow><mrow>
+        f^{(4)}(x)  \amp = n(n-1)(n-2)(n-3)x^{n-4}
+    </mrow>
+</md>
+    A reasonable guess for the <m>k^{\text{th}}</m> derivative would be
+    <me>f^{(k)} (x) = n(n-1)\dots (n-(k-1))x^{n-k} = \frac{n!}{(n-k)!}x^{n-k}</me>
+</p>
+</li>
+<li>
+<p>
+ <m>g(x)=x^{-n}</m> for <m>n\in \mathbb{N}</m>.
+    <md>
+<mrow>
+        g^{(1)}(x)  \amp = -nx^{-n-1}
+</mrow><mrow>
+        g^{(2)}(x)  \amp = -n(-n-1)x^{-n-2}
+</mrow><mrow>
+        g^{(3)}(x)  \amp = -n(-n-1)(-n-2)x^{-n-3}
+</mrow><mrow>
+        g^{(4)}(x)  \amp = -n(-n-1)(-n-2)(-n-3)x^{-n-4}
+    </mrow>
+</md>
+    A reasonable guess for the <m>k^{\text{th}}</m> derivative would be
+    <me>g^{(k)}(x) = (-1)^k n(n+1)\dots (n+(k-1))x^{n-k} =\frac{(-1)^k (n+(k-1))!}{(n-1)!}x^{-n-k}</me>
+</p>
+
+</li>
+<li>
+<p>
+ <m>h(x)=\frac{1}{\sqrt{9-2x}} = (9-2x)^{-1/2}</m>. This one is a little harder:
+    <md>
+<mrow>
+        h^{(1)}(x)  \amp = -\frac{1}{2}(-2)(9-2x)^{-3/2} = (9-2x)^{-(2(1)+1)/2}
+</mrow><mrow>
+        h^{(2)}(x)  \amp = \frac{-3}{2}(-2)(9-2x)^{-5/2} = 3(9-2x)^{-(2(2)+1)/2}
+</mrow><mrow>
+        h^{(3)}(x)  \amp = (3)\frac{-5}{2}(-2)(9-2x)^{-7/2} = 3\cdot 5(9-2x)^{-(2(3)+1)/2}
+</mrow><mrow>
+        h^{(4)}(x)  \amp = (3\cdot 5)\frac{-7}{2} (-2)(9-2x)^{-9/2} = 3\cdot 5 \cdot 7 (9-2x)^{-(2(4)+1)/2}
+    </mrow>
+</md>
+    A reasonable guess for the <m>k^{\text{th}}</m> derivative would be
+    <me>h^{(k)}(x) = (3)(5) \dots (2(k-1)+1)) (9-2x)^{-(2k+1)/2} = (2k-1)!! (9-2x)^{-(2k+1)/2}</me>
+    where we have used the double factorial <m>\ell !!</m>
+    <me>
+      \ell !! = \begin{cases}
+      \ell  \cdot (\ell -2) \cdots  2  \amp  \text{when } \ell  \text{ is even}
+      \\
+      \ell  \cdot (\ell -2) \cdots  3 \cdot 1  \amp  \text{when } \ell \text{ is odd}
+      \end{cases}.
+    </me>
+</p>
+</li>
+</ol>
+</p>
+</answer>
+<solution>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ <em>Claim:</em> <me>f^{(k)} (x)= \frac{n!}{(n-k)!}x^{n-k}</me>
+</p>
+
+<proof>
+<p>
+    We proceed by induction on <m>k</m>. As a base case, take <m>k=1</m>. Computing the derivative of <m>f</m>, we see <m>f'(x) = nx^{n-1} =\frac{n!}{(n-1)!}x^{n-1}</m>, as desired.
+</p>
+<p>
+    Now assume that the derivative holds for an arbitrary <m>k\in \mathbb{N}</m>:
+    <me>f^{(k)} (x)= \frac{n!}{(n-k)!}x^{n-k}.</me>
+    We would like to show that the claim holds for <m>k+1</m>. We compute <m>f^{(k+1)(x)}</m> by taking one derivative of <m>f^{(k)}(x)</m>.
+    <md>
+<mrow>
+        f^{(k+1)} (x)  \amp = \frac{d}{dx} f^{(k)}(x)
+        </mrow><intertext>By the inductive hypothesis,</intertext><mrow>
+         \amp = \frac{d}{dx} \frac{n!}{(n-k)!}x^{n-k}.
+        </mrow><intertext>We compute the derivative</intertext><mrow>
+         \amp = \frac{n!}{(n-k)!} (n-k) x^{(n-k)-1}.
+        </mrow><intertext>Finally, we rearrange into the desired form</intertext><mrow>
+         \amp = \frac{n!}{(n-(k+1))!} x^{n-(k+1)}.
+    </mrow>
+</md>
+    By the inductive principle, our claim is true.
+</p>
+</proof>
+</li>
+
+<li>
+<p>
+ <em>Claim:</em> <me>g^{(k)}(x) =\frac{(-1)^k (n+(k-1))!}{(n-1)!}x^{-n-k}</me>
+</p>
+
+<proof><p>
+    We proceed by induction on <m>k</m>. As a base case, take <m>k=1</m>. Taking derivatives, we see that <m>g'(x) = -nx^{-n-1} = \frac{(-1)n!}{(n-1)!}x^{-n-1}</m>. Since this is the desired form, the base case is true.
+</p>
+<p>
+    Now, we assume that the derivative holds for an arbitrary <m>k\in \mathbb{N}</m>:
+    <me>g^{(k)}(x) =\frac{(-1)^k (n+(k-1))!}{(n-1)!}x^{-n-k}.</me>
+    We would like to show that the result holds for <m>k+1</m>. We compute
+    <md>
+<mrow>
+        g^{(k+1)(x)}  \amp = \frac{d}{dx}g^{(k)}(x).
+        </mrow><intertext>By the inductive hypothesis:</intertext><mrow>
+         \amp =\frac{d}{dx} \frac{(-1)^k (n+(k-1))!}{(n-1)!}x^{-n-k}.
+        </mrow><intertext>We compute the derivative</intertext><mrow>
+         \amp = \frac{(-1)^k (n+(k-1))!}{(n-1)!} (-n-k) x^{-n-k-1},
+        </mrow><intertext>and rearrange to obtain the desired form</intertext><mrow>
+         \amp =\frac{(-1)^{k+1} (n+k)!}{(n-1)!}  x^{-n-(k+1)}.
+    </mrow>
+</md>
+    By induction, our claim holds.
+</p>
+</proof>
+</li>
+
+<li>
+<p>
+ <em>Claim:</em>  <me>h^{(k)}(x) =  (2k-1)!! (9-2x)^{-(2k+1)/2}</me>
+</p>
+    <proof><p>
+    We prove our claim by induction on <m>k</m>. As a base case, let <m>k=1</m>. By the power rule and the chain rule, we see that <m>h'(x) = \frac{-1}{2}(9-2x)^{-3/2}(-2) = (9-2x)^{-3/2}</m>. Hence, our base case holds.
+</p>
+<p>
+    Now, we assume that the derivative holds for an arbitrary <m>k\in \mathbb{N}</m>:
+    <me>h^{(k)}(x) =  (2k-1)!! (9-2x)^{-(2k+1)/2}</me>
+</p>
+<p>
+    We would like to show that the result holds for <m>k+1</m>. We compute,
+    <md>
+<mrow>
+        h^{(k+1)}(x)  \amp = \frac{d}{dx}h^{(k)}(x).
+        </mrow><intertext>By the inductive hypothesis,</intertext><mrow>
+         \amp = \frac{d}{dx}(2k-1)!! (9-2x)^{-(2k+1)/2}.
+        </mrow><intertext>We take the derivative</intertext><mrow>
+         \amp =(2k-1)!! \frac{-(2k+1)}{2}(-2 ) (9-2x)^{-(2k+1)/2 -1}
+        </mrow><intertext>Finally, we rearrange</intertext><mrow>
+         \amp = (2k+1)!!  (9-2x)^{-(2k+1)/2 -1}
+    </mrow>
+</md>
+    This is the desired form, so our claim holds by the principle of induction.
+  </p></proof>
+
+</li>
+</ol>
+</p>
+</solution>
+</exercise>

@@ -1,0 +1,86 @@
+<exercise>
+<!-- source latex = 'partition sets have same cardinality implies sets have same cardinality.tex' -->
+<!-- converted on 08/03/2022 at 15:00 -->
+<statement>
+<p>
+Let <m>A</m> and <m>B</m> be sets. Let <m>P</m> be a partition of <m>A</m>, and let <m>Q</m> be a partition of <m>B</m>. Suppose that we have a bijection between the partitions, <m>h\colon P\to Q</m>, with the additional property that <m>|X| = |h(X)|</m> for every set <m>X\in P</m>.
+</p>
+<p>
+Prove that the underlying sets, <m>A</m> and <m>B</m>, have the same cardinality.
+</p>
+</statement>
+<hint>
+<p>
+<ul>
+<li>
+<p>
+ The function <m>h</m> is not a from <m>A</m> to <m>B</m>, it is a function from the partition <m>P</m> to the partition <m>Q</m>.
+</p></li>
+<li>
+<p>
+ What does it mean for <m>X</m> and <m>h(X)</m> have the same cardinality?
+</p></li>
+<li>
+<p>
+<xref ref="cor_ec_distinct"/> may be useful.
+</p></li>
+</ul>
+</p>
+</hint>
+<answer>
+<p>
+We saw in <xref ref="ex_union_of_equinumerous"/> that if <m>A_1, A_2, B_1, B_2</m> are any nonempty sets satisfying <m>A_1\cap A_2=\emptyset</m> and <m>B_1\cap B_2=\emptyset</m>, and that <m>|A_1|=|B_1|</m> and <m>|A_2|=|B_2|</m>, then we have <m>|A_1\cup A_2|=|B_1\cup B_2|</m>. The idea in the proof relied on the fact that since <m>|A_1|=|B_1|</m> and <m>|A_2|=|B_2|</m>, there are bijections <m>f:A_1\to B_1</m> and <m>g: A_2\to B_2</m>. Using these functions, we could construct a piecewise function <m>h:A_1\cup A_2 \to B_1\cup B_2</m> that turned out to be a bijection as well.
+</p>
+<p>
+We can see this result as a specific example to this question, where our partitions for the sets <m>A=A_1\cup A_2</m> and <m>B=B_1\cup B_2</m> are given as
+</p>
+<p>
+<me>P=\set{A_1, A_2},
+</me>
+and
+<me>Q=\set{B_1, B_2}.
+</me>
+</p>
+<p>
+Then, we see that <m>F:P\to Q</m>, defined as <m>F(A_1)=B_1</m>, and <m>F(A_2)=B_2</m> is a bijection from <m>P</m> to <m>Q</m>, and moreover <m>|A_1|=|B_1|</m> and <m>|A_2|=|B_2|</m>.
+</p>
+<p>
+This suggests that if we have partitions with more sets in them, we should be able to construct a bijection in a very similar piecewise manner. Also, since sets in a partition are mutually disjoint, and that their union gives the entire set, such a construction would still work.
+</p>
+</answer>
+<solution>
+
+<proof>
+<p>
+For each <m>X\in P</m>, since <m>X</m> and <m>h(X)</m> have the same cardinality, there exists a bijection <m>g_X\colon X\to h(X)</m>. Define <m>f</m> to be the union of all these <m>g_X</m>:
+<me>
+f = \{ (a,b)\colon \text{there exists } X\in P \text{ such that } a\in X \text{ and } b = g_X(a) \}.
+</me>
+Of course, it is not immediately obvious that this is a function, let alone that it is a bijection. We must prove that.
+</p>
+<p>
+We show that <m>f</m> is a function from <m>A</m> to <m>B</m>, that it is surjective, and that it is injective.
+<ul>
+<li>
+<p>
+ For any <m>(a,b)\in f</m>, choose <m>X\in P</m> such that <m>a\in X</m> and <m>b=g_X(a)</m>. Since <m>X\in P</m> and <m>P</m> is a partition of <m>A</m>, we know that <m>X\subset A</m>, and therefore <m>a\in A</m>. Similarly, <m>g_X(a)\in h(X)</m> and <m>h(X)\in Q</m>; since <m>Q</m> is a partition of <m>B</m>, we see that <m>h(X) \subset B</m>, and so <m>b=g_X(a)\in B</m>. This shows that <m>f\subset A\times B</m>.
+</p>
+<p>
+Let <m>a\in A</m> be arbitrary. Since <m>P</m> is a partition of <m>A</m>, there is a unique <m>X\in P</m> with <m>a\in X</m>. Since <m>g_X</m> is a function from <m>X</m> to <m>h(X)</m>, there is a unique <m>b</m> such that <m>g_X(a)=b</m>. This shows that there is a unique <m>b\in B</m> with <m>f(a)=b</m>, and so <m>f</m> is a function.
+</p>
+</li>
+<li>
+<p>
+ Let <m>b\in B</m> be arbitrary. Since <m>Q</m> is a partition of <m>B</m>, there exists <m>Y\in Q</m> with <m>b\in Y</m>. Since <m>h</m> is surjective, there exists <m>X\in P</m> with <m>h(X)=Y</m>, and therefore <m>g_X</m> is a function from <m>X</m> to <m>Y</m>. Since <m>g_X</m> is surjective, there exists <m>a\in X</m> such that <m>g_X(a)=b</m>. By definition, we see that <m>f(a) = b</m>. Therefore <m>f</m> is surjective.
+</p>
+</li>
+<li>
+<p>
+ Let <m>a_1,a_2\in A</m>, and suppose that <m>f(a_1)=f(a_2)</m>. Since <m>Q</m> is a partition of <m>B</m>, there is a unique <m>Y\in Q</m> with <m>f(a_1)=f(a_2)\in Y</m>. Since <m>h\colon P\to Q</m> is injective, there is a unique <m>X\in P</m> with <m>h(X) = Y</m>. This <m>X</m> corresponds to the only function <m>g_X</m> whose codomain is <m>Y</m>, and so we must have <m>a_1,a_2\in X</m> and <m>f(a_1) = g_X(a_1)</m> and <m>f(a_2)=g_X(a_2)</m>. Since <m>g_X</m> is injective, we conclude that <m>a_1=a_2</m>. Therefore <m>f</m> is injective.
+</p></li>
+</ul>
+</p>
+</proof>
+
+</solution>
+</exercise>

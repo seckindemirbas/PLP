@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<exercises xmlns:xi="http://www.w3.org/2001/XInclude">
+<xi:include href="ch09/not_divisible_rel.ptx"/>
+<xi:include href="ch09/diff_x-y.ptx"/>
+<xi:include href="ch09/standard_relations_question.ptx"/>
+<xi:include href="ch09/relation_props_question_with_congruence_mod_4_and_functions_being_same_at_a_point.ptx"/>
+<xi:include href="ch09/equivalence_relations.ptx"/>
+<xi:include href="ch09/divisibility_equiv_rel.ptx"/>
+<xi:include href="ch09/two_sets_are_related_if_a_fixed_element_belongs_to_both_or_none_question.ptx"/>
+<xi:include href="ch09/equiv_rel_mod_5.ptx"/>
+  <xi:include href="ch09/Polynomial_equivalence_relation.ptx"/>
+  <xi:include href="ch09/union_of_relations.ptx"/>
+<xi:include href="ch09/sym_and_trans_does_not_imply_refl.ptx"/>
+<xi:include href="ch09/complement_of_relation.ptx"/>
+<xi:include href="ch09/Sparse_relation_properties.ptx"/>
+<xi:include href="ch09/intersection_of_partitions_is_a_partition_question.ptx"/>
+<xi:include href="ch09/two_elements_in_integers_modulo_6_are_related_if_one_of_them_1_or_5_times_the_other_question.ptx"/>
+<xi:include href="ch09/24_divides_prime_square_minus_1_question.ptx"/>
+<xi:include href="ch09/inverse_elements_mod_p.ptx"/>
+<xi:include href="ch09/generalizing_euclids_lemma.ptx"/>
+<xi:include href="ch09/gcd_basic_properties.ptx"/>
+<xi:include href="ch09/freshmans_dream.ptx"/>
+
+  <!-- <xi:include href="ch09/"/> -->
+
+</exercises>

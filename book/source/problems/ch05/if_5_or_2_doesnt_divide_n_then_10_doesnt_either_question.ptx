@@ -1,0 +1,45 @@
+<exercise>
+<!-- source latex = 'if 5 or 2 doesnt divide n then 10 doesnt either question.tex' -->
+<!-- converted on 06/07/2021 at 10:37 -->
+<statement>
+<p>
+Let <m>n\in\mathbb{Z}</m>. Prove that if <m>5\nmid n</m> or <m>2\nmid n</m>, then <m>10\nmid n</m>.
+</p>
+</statement>
+<hint>
+<p>
+What is the contrapositive of this statement?
+</p>
+</hint>
+<answer>
+<p>
+In this question we see that we have a conditional statement. Hence, we can assume the hypothesis and try to show the conclusion. In other words, we can assume <m>5\nmid n</m> or <m>2\nmid n</m> and try to show that <m>10\nmid n</m>. But, we we have seen before, whenever we have a hypothesis that is an <q>or</q>-statement, we may need to look at cases. Moreover, since each part of the hypothesis is of the form <m>a\nmid b</m>, we may need to look at cases for those as well. This means that if we want to prove this statement using direct proof and cases, it may get very long. Also, when we have lots of cases, the chances of making a mistake go up.
+</p>
+<p>
+However, we can also look at the contrapositive of the statement and see whether it may be easier to prove. For <m>n\in\mathbb Z</m>, the contrapositive of the statement of the statement is:
+<md>
+<mrow>
+\text{if } 10\mid n, \text{ then }  5\mid n \text{ and } 2 \mid n,
+</mrow>
+</md>
+which looks much more promising, since if a number is divisible by <m>10</m>, then it should be divisible by <m>5</m> and <m>2</m>. Let's see how we can put that in a proof.
+</p>
+</answer>
+
+<solution>
+<proof><p>
+We are going to use contrapositive proof. First, let <m>n\in\mathbb Z</m>. Then, we see that the contrapositive is:
+<md>
+<mrow>
+  \text{if } 10\mid n, \text{ then }  5\mid n \text{ and } 2 \mid n,
+</mrow>
+</md>
+where we used the definition of the contrapositive and DeMorgan's Law.
+</p>
+<p>
+Now, assume that <m>10\mid n</m>. Then, we see that <m>n=10k</m> for some <m>k\in\mathbb Z</m>. This implies that <m>n=5(2k)=2(5k)</m>. Since both <m>2k, 5k\in\mathbb Z</m>, we conclude <m>5\mid n</m> and <m>2\mid n</m>. So, the result follows.
+</p>
+</proof>
+
+</solution>
+</exercise>

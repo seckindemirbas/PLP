@@ -1,0 +1,199 @@
+<exercise>
+<!-- source latex = 'define a function on equivalence classes question.tex' -->
+<!-- converted on 06/02/2022 at 13:35 -->
+<statement>
+<p>
+Let <m>\rel</m> be the relation on <m>\mathbb R^2</m> defined by
+<me>
+(x,y)\rel (s,t) \text{ iff } x^2+y^2=s^2+t^2
+</me>
+where <m> (x,y), (s,t) \in \mathbb{R}^2</m>.
+</p>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ Show that <m>\rel</m> is an equivalence relation
+</p>
+</li>
+<li>
+<p>
+ Let <m>\mathcal S</m> be the set of equivalence classes of the relation <m>\rel</m> defined in part (a). Let <m>f</m> be defined by
+<me> f:\mathcal S\to [0,\infty)
+\qquad \text{ with } \qquad
+ f([(x,y)])=\sqrt{x^2+y^2}.
+</me>
+Prove that
+<ul>
+<li>
+<p>
+ <m>f</m> is a function, and, further
+</p></li>
+<li>
+<p>
+ <m>f</m> is bijective.
+</p></li>
+</ul>
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<hint>
+<p>
+<ul>
+<li>
+<p>
+ What do the equivalence classes of <m>\rel</m> look like?
+</p></li>
+<li>
+<p>
+ How can we show that <m>f</m> is, indeed, a function?
+</p></li>
+</ul>
+</p>
+</hint>
+<answer>
+<p>
+When we look at the relation defined in the question, we can easily see that it is reflexive (since equality is reflexive), and symmetric (since equality is symmetric). Moreover, if <m>(x,y)\rel (s,t)</m> and <m>(s,t)\rel (a,b)</m>, we see that <m>x^2+y^2=s^2+t^2=a^2+b^2</m>. Therefore it also is a transitive relation. As we can see, trying to show that this relation is an equivalence relation is not too hard to show.
+</p>
+<p>
+Now, let's try to understand the equivalence classes of this relation. Let <m>(s,t)\in\mathbb R^2</m>. then we see
+<md>
+<mrow>
+[(s,t)] \amp =\set{(x,y)\in\mathbb R^2\colon (s,t)\rel (x,y)}
+</mrow><mrow>
+ \amp =\set{(x,y)\in\mathbb R^2\colon x^2+y^2=s^2+t^2}
+</mrow><mrow>
+ \amp =\set{(x,y)\in\mathbb R^2\colon \sqrt{x^2+y^2}=\sqrt{s^2+t^2}}.
+</mrow>
+</md>
+This means that <m>[(s,t)]</m> is the set of all points on the plane that have the same distance from the origin, that is, the points on the circle, centred at origin of radius <m>\sqrt{s^2+t^2}</m>.
+</p>
+<p>
+This is an important observation in understanding whether <m>f</m> is a function. We know that for <m>f</m> to be a function, we need to show that
+<ul>
+<li>
+<p>
+ <m>f</m> is defined on all its domain <mdash/> this is easy since for any <m>x,y</m> we know that <m>x^2+y^2 \geq 0</m> and so <m>\sqrt{x^2+y^2} \in \mathbb{R}</m> as required.
+  </p></li>
+<li>
+<p>
+ if we input different representatives of the same equivalence class, we get the same result, namely
+<me>
+\Big([(x,y)]=[(s,t)]\Big)\implies f\big([(x,y)]\big)=f\big([(s,t)]\big).
+</me>
+We also know that if <m>[(x,y)]=[(s,t)]</m>, then the points <m>(x,y)</m> and <m>(s,t)</m> are on the same circle centred at the origin. Then, since <m>f</m> takes an equivalence class (which is a circle) and sends it to the radius of the circle, we see that it shouldn't matter which points on the circle we pick as the representative of the equivalence class, we get the same output for <m>f</m>.
+</p></li>
+</ul>
+</p>
+<p>
+This means that <m>f</m> defines a function.
+</p>
+<p>
+Once we see that <m>f</m> is a function we can also easily see that it is surjective since for all <m>z\in [0,\infty)</m>, we can take <m>[(x,y)]=[(0,z)]</m>, and see that
+<me>
+f\big([(x,y)]\big)=f\big([(0,z)]\big)=\sqrt{z^2}=z.
+</me>
+To show the injectivity we remember, again, that <m>f</m> takes the circles centred at the origin and sends them to their radius. This suggests that  if
+<me>
+f\big([(x,y)]\big)=f\big([(s,t)]\big),
+</me>
+ then the radius of the circle defined by <m>[(x,y)]</m> and <m>[(s,t)]</m> must be the same. Since these circles are centred at the origin, we see that they must be the same, that is,
+<me>
+[(x,y)]=[(s,t)],
+</me>
+ which means that <m>f</m> is injective.
+</p>
+</answer>
+<solution>
+
+<proof><p>
+Let <m>\rel</m> be the relation on <m>\mathbb R^2</m> defined as
+<me>
+(x,y)\rel (s,t) \text{ if } x^2+y^2=s^2+t^2.
+</me>
+</p>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ We need to show that this relation is reflexive, symmetric and transitive.
+<ul>
+<li>
+<p>
+{Reflexivity:} Let <m>(x,y)\in\mathbb R^2</m>. Then, we see that since <m>x^2+y^2=x^2+y^2</m> , we get <m>(x,y)\rel(x,y)</m>. Hence <m>\rel</m> is reflexive.
+</p>
+</li>
+<li>
+<p>
+{Symmetry:} Let <m>(x,y),(s,t)\in\mathbb R^2</m> and assume that <m>(x,y)\rel (s,t)</m>. This means <m>x^2+y^2=s^2+t^2</m>. Then, we see that <m>s^2+t^2=x^2+y^2</m>. Hence, we see that <m>(s,t)\rel (x,y)</m>, that is, <m>\rel</m> is symmetric.
+</p>
+</li>
+<li>
+<p>
+{Transitive:}.  Let <m>(x,y),(s,t),(a,b)\in\mathbb R^2</m> and assume that <m>(x,y)\rel (s,t)</m> and <m>(s,t\rel (a,b))</m>. This means <m>x^2+y^2=s^2+t^2</m> and <m>s^2+t^2=a^2+b^2</m> . Then, we see that <m>x^2+y^2=a^2+b^2</m>. Hence, we see that <m>(x,y)\rel (a,b)</m>, that is, <m>\rel</m> is transitive.
+</p>
+</li>
+</ul>
+Hence the relation <m>\rel</m> is an equivalence relation.
+</p>
+</li>
+<li>
+<p>
+ Now,  let <m>\mathcal S</m> be the set of equivalence classes of the relation <m>\rel</m> defined in part (a) and define <m>f:\mathcal S\to (0,\infty)</m>, defined by
+<m>f([(x,y)])=\sqrt{x^2+y^2}.</m>
+</p>
+<p>
+<ul>
+<li>
+<p>
+ <em>Show <m>f</m> is a function:</em> Let <m>[(x,y)] </m> be an equivalence class. Then since <m>x,y \in \mathbb{R}</m> we know that <m>x^2+y^2 \geq 0</m> and so <m>\sqrt{x^2+y^2} \geq 0</m>. Hence <m>f</m> is defined everywhere on its domain. Now let <m>[(x,y)]=[(s,t)]</m>. This means that <m>x^2+y^2=s^2+t^2</m>. Thus, we get
+<me>
+f\big([(x,y)]\big)=\sqrt{x^2+y^2}=\sqrt{s^2+t^2}=f\big([(s,t)]\big).
+</me>
+Therefore, <m>f:\mathcal s\to (0,\infty)</m> defines a function.
+</p>
+</li>
+<li>
+<p>
+ <em>Show <m>f</m> is bijective:</em> We need to show that <m>f</m> is injective and surjective.
+</p>
+<p>
+<ul>
+<li>
+<p>
+ <em>Injective:</em> Let <m>(x,y), (s,t)\in\mathbb R^2</m>, and assume that
+<me>
+f\big([(x,y)]\big)=f\big([(s,t)]\big).
+</me>
+This means that <m>\sqrt{x^2+y^2}=\sqrt{s^2+t^2}</m>, which in turn implies that
+<me>
+x^2+y^2=s^2+t^2.</me>
+Thus, we get <m>(x,y)\rel(s,t)</m>, that is,
+<me>
+[(x,y)]=[(s,t)].
+</me>
+Hence <m>f</m> is injective.
+</p>
+</li>
+<li>
+<p>
+<em>Surjective:</em> Let <m>z\in[0,\infty)</m>. Then, we can take <m>[(x,y)]=[(0,z)]\in\mathcal S</m>, and see that
+<me>
+f\big([(x,y)]\big)=f\big([(0,z)]\big)=\sqrt{z^2}=z.
+</me>
+Hence, <m>f</m> is surjective.
+</p></li>
+</ul>
+Therefore, we see that <m>f:\mathcal S\to [0,\infty)</m> is bijective.
+</p></li>
+</ul>
+</p>
+</li>
+</ol>
+</p>
+</proof>
+
+</solution>
+</exercise>

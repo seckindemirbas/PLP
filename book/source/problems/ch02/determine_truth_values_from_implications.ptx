@@ -1,0 +1,104 @@
+<exercise>
+<!-- source latex = 'determine_truth_values_from_implications.tex' -->
+<!-- converted on 23/06/2021 at 20:50 -->
+<statement>
+<p>
+Let <m>P</m>, <m>Q</m>, and <m>R</m> be statements. Suppose that
+<ul>
+<li>
+<p>
+<q> <m>P\implies (Q\land R)</m> </q>is false, and
+ </p></li>
+<li>
+<p>
+<q> <m>\big((\neg Q)\land R\big) \implies (\neg P)</m></q> is true.
+ </p></li>
+</ul>
+Which of <m>P</m>, <m>Q</m>, and <m>R</m> can you determine are true or false?
+</p>
+</statement>
+<hint>
+<p>
+What is the only situation in which an implication is false?
+</p>
+</hint>
+<answer>
+<p>
+Recall that the only way an implication is false is if its conclusion is false while its hypothesis is true.
+So, <m>P\implies (Q\land R)</m> being false means that <m>Q\land R</m> is false while <m>P</m> is true.
+Note that <m>Q\land R</m> being false means that at least one of <m>Q</m> and <m>R</m> are false
+</p>
+<p>
+Consider the second implication, <m>\big((\neg Q)\land R\big) \implies (\neg P)</m>, which is true.
+Since <m>P</m> is true, the conclusion of this implication, <m>\neg P</m> is false. But this means that the hypothesis,
+<m>(\neg Q)\land R</m> is false, by modus tollens.  More explicitly, if the hypothesis were true while the conclusion is false, then the implication is false,
+but if the hypothesis and conclusion are both false, then the implication is true.
+Therefore, at least one of <m>\neg Q</m> and <m>R</m> are false.
+</p>
+<p>
+We have determined that at least one of <m>Q</m> and <m>R</m> are false, and at least one of <m>\neg Q</m> and <m>R</m> are false.
+In order for both of these conditions to be satisfied, <m>R</m> must be false.
+If <m>R</m> were true, then both <m>Q</m> and <m>\neg Q</m> would necessarily be false, which is impossible!
+</p>
+<p>
+We cannot determine the truth value of <m>Q</m> from the information given.
+While <m>P</m> must be true and <m>R</m> must be false, <m>Q</m> can be true or false. We show how you can verify this:
+</p>
+<p>
+<ul>
+<li>
+<p>
+ Assume <m>Q</m> is false, then <m>Q\land R</m> is false and <m>P</m> is true, so the first implication is false.
+Similarly, <m>(\neg Q) \land R</m> is false, while <m>\neg P</m> is false, so the second implication is true.
+</p></li>
+<li>
+<p>
+ Now assume Q is true, then <m>Q\land R</m> is false and <m>P</m> is true, so the first implication is false.
+Similarly, <m>(\neg Q) \land R</m> is false, while <m>\neg P</m> is false, so the second implication is true.
+</p></li>
+</ul>
+</p>
+
+
+
+
+<p>
+Alternatively, we could determine the answer by analyzing the truth tables of the two implications.
+</p>
+
+<tabular left="minor" right="minor" top="minor" bottom="minor" halign="center">
+<row>
+<cell><m>P</m>  </cell><cell>  <m>Q</m>  </cell><cell>  <m>R</m>   </cell>
+<cell>  <m>P\implies (Q\land R)</m>  </cell><cell>  <m>\big((\neg Q)\land R\big) \implies (\neg P)</m> </cell>
+</row><row>
+<cell> T  </cell><cell>  T   </cell><cell>   T  </cell><cell>  T  </cell><cell>  T</cell>
+</row><row>
+<cell> T  </cell><cell>  T    </cell><cell>  F  </cell><cell>  F  </cell><cell>  T</cell>
+</row><row>
+<cell> T  </cell><cell>  F   </cell><cell>  T   </cell><cell>  F  </cell><cell>  F</cell>
+</row><row>
+<cell> T  </cell><cell>  F   </cell><cell>  F   </cell><cell>  F  </cell><cell>  T</cell>
+</row><row>
+<cell> F  </cell><cell>  T   </cell><cell>  T   </cell><cell>  T  </cell><cell>  T</cell>
+</row><row>
+<cell> F  </cell><cell>  T   </cell><cell>  F   </cell><cell>  T  </cell><cell>  T</cell>
+</row><row>
+<cell> F  </cell><cell>  F   </cell><cell>  T   </cell><cell>  T  </cell><cell>  T</cell>
+</row><row>
+<cell> F  </cell><cell>  F   </cell><cell>  F   </cell><cell>  T  </cell><cell>  T</cell>
+</row>
+</tabular>
+
+<p>
+The second and fourth rows are the only rows where the first implication is false, and the second true.
+In both these rows, <m>P</m> is true and <m>R</m> is false, so the truth values of these statements are determined.
+Since <m>Q</m> is true in the second row, but false in the fourth row, we cannot determine the truth value of <m>Q</m>.
+Either <m>P</m> is true, <m>Q</m> is true, and <m>R</m> is false, or <m>P</m> is true, <m>Q</m> is false, and <m>R</m> is false.
+</p>
+</answer>
+<solution>
+<p>
+<m>P</m> is true and <m>R</m> is false. The truth value of <m>Q</m> cannot be determined from the given information.
+</p>
+</solution>
+</exercise>

@@ -1,0 +1,80 @@
+<exercise>
+<!-- source latex = 'piling stones strong induction question.tex' -->
+<!-- converted on 12/08/2021 at 20:11 -->
+<statement>
+<p>
+Use strong induction to prove the following:
+</p>
+<p>
+Suppose you begin with a pile of <m>n</m> stones <m>(n \geq 2)</m> and split this pile into <m>n</m> separate
+piles of one stone each by successively splitting a pile of stones into two smaller piles.
+Each time you split a pile you multiply the number of stones in each of the two smaller
+piles you form, so that if these piles have <m>p</m> and <m>q</m> stones in them, respectively, you
+compute <m>pq</m>. Show that no matter how you split the piles (eventually into <m>n</m> piles of
+one stone each), the sum of the products computed at each step equals
+<m>\dfrac{n(n - 1)}{2}</m>.
+</p>
+<p>
+For example <mdash/> say with start with <m>5</m> stones and split them as follows:
+<me>
+(5)\rightarrow
+\underbrace{(3)(2)}_{=6}
+\rightarrow
+\underbrace{(2)(1)}_{=2}
+\underbrace{(1)(1)}_{=1}
+\rightarrow
+\underbrace{(1)(1)}_{=1}(1)(1)(1).
+</me>
+</p>
+<p>
+Then, we get, <m>6+2+1+1=10=\frac{5 \times 4}{2}\quad\checkmark</m>.
+</p>
+</statement>
+<hint>
+<p>
+Be careful as to how you can go from <m>k=n+1</m> stones to <m>k\leq n</m> stones in your inductive step and see whether different splittings change the calculations. Try playing this game with <m>5</m> or <m>6</m> stones to get a better understanding of how this works.
+</p>
+</hint>
+<solution>
+
+<proof><p>
+We are going to use mathematical induction.
+<ul>
+<li>
+<p>
+<em>Base Case</em>: We see that for <m>n=2</m>, we have only one way of splitting them, by splitting them into two piles of one stone each. Thus, our number becomes <m>1\times 1=1</m> and we also have <m>\dfrac{2(2-1)}{2}=1</m>. Hence, the statement is true for <m>n=2</m>.
+</p>
+</li>
+<li>
+<p>
+<em>Inductive Step</em>: Let <m>m\geq 2</m>, and assume that the statement is true for all <m>k\leq m</m>. Now, assume we have <m>m+1</m> stones. Then for the first splitting, we have two cases.
+<ul>
+<li>
+<p>
+  <em>Case 1: Splitting into two piles of <m>1</m> and <m>m</m> stones</em>: In this case, we have our first number to be <m>m\times 1=m</m>. Moreover, from the inductive hypothesis, we see that if we keep splitting the pile of <m>m</m> stones we get the number <m>\dfrac{m(m-1)}{2}</m>. Thus, our final number is <m>m+\dfrac{m(m-1)}{2}=\dfrac{(m+1)m}{2}</m>.
+</p>
+<p>
+  Therefore, in this case, the statement is true for <m>n=m+1</m>.
+</p>
+</li>
+<li>
+<p>
+ <em>Case 2: Splitting into two piles of <m>p</m> and <m>q</m> stones, <m>p,q \gt 1</m></em>: In this case, we have our first number to be <m>pq</m>. Moreover, since <m>p,q \gt 1</m>, we have <m>p,q \lt m</m>. Thus, by inductive hypothesis, the number we should get by splitting the two piles into smaller piles are <m>\dfrac{p(p-1)}{2}</m> and <m>\dfrac{q(q-1)}{2}</m>. We also know that <m>q=(m+1)-p</m>, and hence, our final number is
+  <me> \dfrac{p(p-1)}{2}+\dfrac{q(q-1)}{2}+pq= \dfrac{(p^2-p+q+2-q)}{2}+pq=\dfrac{p^2+q^2-(p+q)+2pq}{2},</me>
+  which implies
+  <me> \dfrac{(p+q)^2-(p+q)}{2}=\dfrac{(m+1)^2-(m+1)}{2}=\dfrac{(m+1)m}{2}.</me>
+</p>
+<p>
+  Therefore, in this case, the statement is true for <m>n=m+1</m>.
+</p></li>
+</ul>
+Since both cases hold, the inductive step is true.
+</p></li>
+</ul>
+Hence, we conclude that the statement is true for all <m>n\in\mathbb{N}</m>.
+</p>
+
+</proof>
+
+</solution>
+</exercise>

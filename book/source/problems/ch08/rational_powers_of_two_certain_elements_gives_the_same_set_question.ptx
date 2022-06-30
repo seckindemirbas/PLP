@@ -1,0 +1,61 @@
+<exercise>
+<!-- source latex = 'rational powers of two certain elements gives the same set question.tex' -->
+<!-- converted on 18/08/2021 at 15:15 -->
+<statement>
+<p>
+Suppose <m>x, y \in\mathbb{R}</m> and <m>k \in\mathbb N</m> satisfying, <m>x,y\gt 0</m> and <m> x^k = y</m>. Then prove that  <m>\set{x^a\st a \in \mathbb{Q}}=\set{ y^a\st  a\in\mathbb{Q} }</m>.
+</p>
+</statement>
+<answer>
+<p>
+We want to prove that <m>\set{x^a \st  a\in\mathbb{Q} }=\set{ y^a\st a\in\mathbb{Q} }</m> given that  <m>x, y \in\mathbb{R}</m> and <m>k \in\mathbb N</m> satisfying, <m>x,y \gt 0</m> and <m> x^k = y</m>. At first glance it may look like a difficult question since it has many variables. But, we can simplify this statement and have a better intuition by choosing certain values of <m>x</m> and <m>y</m>.
+</p>
+<p>
+For example, we can take <m>x=\sqrt{3}</m> and <m>y=3</m>, i.e. <m>k=2</m>. Then we see that the statement becomes:
+<me>
+\set{\left(\sqrt{3}\right)^a\st a\in\mathbb{Q} }
+=
+\set{\left(3^{\frac{1}{2}}\right)^a\st a\in\mathbb{Q} }
+=
+\set{3^{\frac{a}{2}}\st a\in\mathbb{Q} }
+=
+\set{ 3^b\st b\in\mathbb{Q} }.
+</me>
+We see that the set on the left and the one on the right are the same sets since for every <m>a\in\mathbb Q</m>, we have <m>b\in\mathbb Q</m> such that <m>b=\frac{a}{2}</m> and for every <m>b\in\mathbb Q</m>, we have <m>a\in\mathbb Q</m> such that <m>a=2b</m>. This definitely does not work if we were forced to take integer <m>a,b</m>.
+</p>
+<p>
+Now if we replace <m>\sqrt 3</m> and <m>3</m> with <m>x</m> and <m>y</m> with <m>x,y \gt 0</m> and <m>x^k = y</m>, same argument would still hold, but instead of <m>k=2</m>, we would have some other <m>k</m>. Namely,
+<me>
+\set{x^a\st  a\in\mathbb{Q} }
+=
+\set{\left(y^{\frac{1}{k}}\right)^a\st a\in\mathbb{Q} }
+=
+\set{y^{\frac{a}{k}}\st a\in\mathbb{Q} }
+=
+\set{ y^b\st b\in\mathbb{Q} }.
+</me>
+</p>
+<p>
+We can now write this neatly up as a proof.
+</p>
+</answer>
+<solution>
+
+<proof><p>
+  This is a set equality, so we need to prove <m>\set{x^a\st a\in\mathbb{Q} }\subseteq\set{ y^a\st a\in\mathbb{Q} }</m> and also the reverse inclusion.
+<ul>
+<li>
+<p>
+ (<m>\subseteq</m>): Let <m>z\in \set{x^a: a\in\mathbb{Q} }</m>. Then we know that <m>z=x^a</m> for some <m>a\in\mathbb Q</m>. Since <m>x^k = y</m>, we know that <m>z = y^{a/k}</m>. Then since <m>a \in \mathbb{Q}</m> and <m>k \in \mathbb{N}</m>, <m>\frac{a}{k} \in \mathbb{Q}</m>. Thus, we see that <m>z\in \set{ y^b: b\in\mathbb{Q} }</m>.
+</p>
+</li>
+<li>
+<p>
+ (<m>\supseteq</m>): Let <m>u\in \set{ y^b: b\in\mathbb{Q} }</m>. Then we see that <m>u=y^b</m> for some <m>b\in\mathbb Q</m>. Since <m>y=x^k</m>, we know that <m>u = y^{bk}</m>. Because <m>b \in \mathbb{Q}</m> and <m>k \in \mathbb{N}</m>, we know that <m>bk \in \mathbb{Q}</m>.  Thus, we see that <m>z\in \set{ x^a: a\in\mathbb{Q} }</m>.
+</p></li>
+</ul>
+Since both inclusions hold, the sets are equal.
+</p></proof>
+
+</solution>
+</exercise>

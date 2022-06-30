@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<exercises>
+
+  <exercisegroup>
+    <introduction>
+    <p>
+      Prove the statements below using mathematical induction.
+    </p>
+    </introduction>
+
+
+    <exercise>
+        <statement>
+          <p>
+            For all <m>n \in \mathbb{N}, 3\mid n^3-n</m>. Extend this to <m>6 \mid n^3-n</m>.
+          </p>
+      </statement>
+      <solution>
+      <p>
+
+      </p>
+      </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            For all <m>n\in \mathbb{N}, \sum_{k=1}^n (2k-1) = k^2</m>. Also try to prove this without induction.
+          </p>
+      </statement>
+      <solution>
+      <p>
+
+      </p>
+      </solution>
+      </exercise>
+
+
+      <exercise>
+        <statement>
+          <p>For all integers <m>n \geq 2</m>:
+            <md>
+            <mrow>
+              \frac{1}{\sqrt{1}+\sqrt{2}}+
+              \frac{1}{\sqrt{2}+\sqrt{3}}+
+              \frac{1}{\sqrt{3}+\sqrt{4}}+
+              \cdots+
+              \frac{1}{\sqrt{n-1}+\sqrt{n}}
+              &amp;= \sqrt{n}-1.
+            </mrow>
+            </md>
+        </p>
+      </statement>
+      <solution>
+        <p>
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+        Let <m>n\in \mathbb{N}</m> so that <m>n \geq 2</m>.
+      Use mathematical induction to prove that
+      <md>
+    <mrow>
+        n! &amp; \leq n^n.
+      </mrow>
+    </md>
+      Recall <m>n! = n \cdot(n-1) \cdot(n-2)\cdots 2 \cdot 1</m>.
+    </p>
+    </statement>
+    <solution>
+    <p>
+
+    </p>
+    </solution>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+      Let <m>n \in \mathbb{N}</m> and <m>x,y \in \mathbb{R}</m> so that <m>x \neq -y</m>.
+      Use induction to prove that <m>(x+y)</m> is a factor of the polynomial <m>x^{2n} - y^{2n}</m>.
+    </p>
+    </statement>
+    <solution>
+    <p>
+
+    </p>
+    </solution>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          Suppose that <m>a_1,a_2,\cdots, a_n</m> are integers.
+          Prove that if <m>p</m> is a prime number so that <m>p| a_1 a_2 \cdots a_n</m> then <m>p</m> divides at least one of the <m>a_i</m>'s.
+    </p>
+    </statement>
+    <solution>
+    <p>
+
+    </p>
+    </solution>
+    </exercise>
+
+  </exercisegroup>
+
+</exercises>

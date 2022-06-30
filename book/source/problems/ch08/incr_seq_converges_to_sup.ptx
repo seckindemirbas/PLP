@@ -1,0 +1,51 @@
+<exercise xml:id="ex_inc_seq_conv_sup">
+<!-- source latex = 'incr_seq_converges_to_sup.tex' -->
+<!-- converted on 19/04/2022 at 12:31 -->
+<statement>
+<p>
+Before completing this question you should look at <xref ref="ex_sup_q1"/> and <xref ref="ex_sup_q2"/>. Let <m>\{a_n\}_{n\in\in\mathbb{N}}</m> be a sequence such that
+<m>a_{n+1}\geq a_n</m> for all <m>n\in \mathbb{N}</m>, and such that
+<me> a = \sup\{a_n:n\in\mathbb{N}\} </me>
+exists as a real number. Show that
+<me> \lim_{n\to\infty}a_n = a. </me>
+</p>
+</statement>
+<hint>
+<p>
+For any <m>\epsilon</m>, we know that <m>a-\epsilon</m> is not an upper bound of the set <m>\{a_n:n\in\mathbb{N}\}</m>.
+</p>
+</hint>
+
+<answer>
+<p>
+By definition, we need to show that given any <m>\epsilon\gt 0</m>, there is some <m>N\in \mathbb{N}</m> such that
+for all <m>n\geq N</m>, <m>|a_n-a|\lt \epsilon</m>. Unravelling the inequality, we need to show
+<me> -\epsilon \lt a_n-a\lt \epsilon\iff a-\epsilon \lt a_n \lt a+\epsilon. </me>
+Since <m>a</m> is the supremum of <m>\{a_n:n\in\mathbb{N}\}</m>, we know that <m>a_n\leq a</m> for all <m>n\in\mathbb{N}</m>.
+So the inequality <m>a_n\lt a+\epsilon</m> is satisfied for all <m>n\in\mathbb{N}</m>. Therefore, we can focus on satisfying the inequality
+<me> a-\epsilon \lt a_n. </me>
+To establish this inequality for sufficiently large <m>n</m>, we need to use the fact that <m>a</m> is the <em>least</em> upper bound of <m>\{a_n:n\in\mathbb{N}\}</m>.
+Since <m>\epsilon \gt 0</m>, we know that <m>a-\epsilon \lt a</m>. Since <m>a-\epsilon\lt a</m> and <m>a</m> is the least upper bound, we know that <m>a-\epsilon</m> is not an upper bound of the set <m>\{a_n:n\in\mathbb{N}\}</m>.
+Therefore, there is some <m>N\in\mathbb{N}</m> such that <m>a-\epsilon \lt a_N</m>. Finally, we just need to use the fact that <m>a_n</m> is increasing to show that <m>a-\epsilon\lt a_n</m> for all <m>n\geq N</m>.
+</p>
+
+
+</answer>
+<solution>
+<proof><p>
+Let <m>\{a_n\}_{n\in\in\mathbb{N}}</m> be a sequence such that
+<m>a_{n+1}\geq a_n</m> for all <m>n\in \mathbb{N}</m>, and such that
+<me> a = \sup\{a_n:n\in\mathbb{N}\} </me>
+exists as a real number. Let <m>\epsilon\gt0</m> be given. Then <m>a-\epsilon\lt a</m>, so <m>a-\epsilon</m> is not an upper bound of the set <m>\{a_n:n\in\mathbb{N}\}</m>.
+Consequently, there is some <m>N\in\mathbb{N}</m> such that <m>a-\epsilon \gt a_N</m>.
+But then for any <m>n\geq N</m>, we have
+<me> a-\epsilon \lt a_N\leq a_n. </me>
+Moreover, since <m>a</m> is an upper bound of the set <m>\{a_n:n\in\mathbb{N}\}</m>, we have
+<me> a_n\leq a\lt a+\epsilon </me>
+for all <m>n\in\mathbb{N}</m>, and particularly, all <m>n\geq N</m>. Adding <m>a</m> to both sides of these inequalities, and putting these two inequalities together, we have
+<me> -\epsilon\lt a_n-a\lt \epsilon </me>
+for all <m>n\geq N</m>. Equivalently, <m>|a_n-a|\lt\epsilon</m> for all <m>n\geq N</m>.
+</p></proof>
+
+</solution>
+</exercise>

@@ -1,0 +1,39 @@
+<exercise>
+<!-- source latex = 'n_fact is more than 3_to_n .tex' -->
+<!-- converted on 12/10/2021 at 14:08 -->
+<statement>
+<p>
+Let <m>n\in \mathbb{N}</m> such that <m>n\geq 7</m>. Prove that <m>n!  \gt  3^n</m>.
+</p>
+</statement>
+
+<!-- <hint></hint> -->
+
+<solution>
+
+<proof><p>
+We prove the result by induction. As a base case, take <m>n = 7</m>. We see that
+<me>7! = 7\cdot 6 \cdots 3\cdot 2 = 5040  \gt  2187 = 3^7,</me>
+hence, our base case is true.
+</p>
+<p>
+Now, we assume that the statement is true for an arbitrary <m>n=k\in \mathbb{N}</m>, and we aim to show the statement for <m>n=k+1</m>. We factor,
+<md>
+<mrow>
+    (k+1)!  \amp = (k+1) \cdot k!
+    </mrow><intertext>By the inductive hypothesis <m>k!  \gt  3^k</m>, so we see</intertext><mrow>
+     \amp  \gt  (k+1) \cdot 3^k
+    </mrow><intertext>Since <m>k \geq 7</m>, we certainly have <m>k+1 \geq 8  \gt  3</m>, therefore</intertext><mrow>
+     \amp  \gt  3 \cdot 3^k
+</mrow><mrow>
+     \amp = 3^{k+1}
+</mrow>
+</md>
+So the inductive step holds.
+</p>
+<p>
+Therefore, by the principle of mathematical induction, <m>n!  \gt  3^n</m> for any <m>n\geq 7</m>.
+</p></proof>
+
+</solution>
+</exercise>

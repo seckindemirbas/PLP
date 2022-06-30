@@ -1,0 +1,44 @@
+<exercise>
+<!-- source latex = 'Things are divisible by 53.tex' -->
+<!-- converted on 12/10/2021 at 14:03 -->
+<statement>
+<p>
+All numbers of the form <m>1007,10017,100117,1001117,10011117,\dots</m> are divisible by <m>53</m>.
+</p>
+</statement>
+<hint>
+<p>
+Notice that every number is of the form
+<me>
+  100 \;\; \underbrace{1\cdots1}_{n\;\;\; 1s} \;\; 7
+</me>
+Also useful is the fact that if <m>d\mid a</m> and <m>d\mid b</m>, then <m>d\mid (a+b)</m>.
+</p>
+</hint>
+<solution>
+
+<proof><p>
+Let <m>n</m> be defined as the number of <m>1</m>'s between <m>100</m> and <m>7</m>. For example, in the <m>n=0</m> case, the number is <m>1007</m> and in the <m>n=4</m> case, the number we are working with is <m>10011117</m>. We proceed by induction on <m>n</m>.
+</p>
+<p>
+For our base case, take <m>n=0</m>. That is, we wish to show that <m>1007</m> is divisible by <m>53</m>. Since <m>1007 = 19\cdot 53</m>, our base case is true.
+</p>
+
+<p>
+We assume that the statement holds true for <m>n=k</m> and wish to prove it for the <m>n=k+1</m> case. Notice that we can write
+<me>
+100\underbrace{1\dots 1}_{\substack{{k+1}
+\\ \text{times}}}7 =
+100\underbrace{1\dots 1}_{\substack{{k}
+\\ \text{times}}}7 +
+901\underbrace{0\dots 0}_{\substack{{n}
+\\ \text{times}}}.
+</me>
+Since <m>901 = 17 \cdot 53</m>, we see that <m>901\underbrace{0\dots 0}_{k} = 17 \cdot 53 \cdot 10^k</m>. Therefore, <m>53\mid 901\underbrace{0\dots 0}_{k}</m>. By the inductive hypothesis, <m>53 \mid 100\underbrace{1\dots 1}_{k}7</m>. Finally, applying the hint tells us that <m>53</m> divides <m>100\underbrace{1\dots 1}_{k+1}7</m>, as required.
+</p>
+<p>
+Since the base case and inductive hypothesis are both true, the result follows.
+</p></proof>
+
+</solution>
+</exercise>

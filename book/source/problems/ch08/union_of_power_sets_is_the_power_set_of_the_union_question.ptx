@@ -1,0 +1,38 @@
+<exercise>
+<!-- source latex = 'union of power sets is the power set of the union question.tex' -->
+<!-- converted on 18/08/2021 at 15:46 -->
+<statement>
+<p>
+Prove or disprove the following statement:
+</p>
+
+<blockquote>
+ <p>
+ If <m>A</m> and <m>B</m> are sets, then <m>\mathcal{P}(A)\cup\mathcal{P}(B) = \mathcal{P}(A\cup B)</m>.
+</p>
+</blockquote>
+
+
+</statement>
+<answer>
+<p>
+We can see that the statement says: <q>the union of the power sets of <m>A</m> and <m>B</m> is the power set of their union</q>. In other words, it claims that every set that is a subset of <m>A</m> or <m>B</m> must be a subset of their union <em>and</em> every subset of the union must be a subset of <m>A</m> or <m>B</m>. We can tell that the first part of the statement is indeed true, that is, every set that is a subset of <m>A</m> or <m>B</m> must be a subset of their union. But, second part of the statement doesn't sound right, since the union of two sets can be <q>bigger</q> than both sets. This would create a problem since we can simply take the union of these two sets as the <q>subset</q> of the union, i.e. the element of the power set of the union. This suggests that we should be able to create a counterexample as long as <m>A\cup B\neq A</m> and <m>A\cup B\neq B</m>.  Let's see how we can create a counterexample.
+</p>
+</answer>
+<solution>
+
+<proof><title>Disproof</title>
+<p> This statement is false. For a counterexample, we can take <m>A=\set{1}</m> and <m>B=\set{2}</m>. Then
+<me>
+\pow{A}\cup \pow{B} = \set{\emptyset, \set{1}, \set{2}}
+\quad
+\text{ but }
+\quad
+\pow{A \cup B} \set{\emptyset, \set{1}, \set{2}, \set{1,2}}
+</me>
+Notice that <m>\set{1,2}\in\mathcal{P}(A\cup B)</m> but <m>\set{1,2} \not\in \mathcal{P}(A)\cup\mathcal{P}(B)</m>. Consequently the inclusion does not hold.
+</p></proof>
+
+
+</solution>
+</exercise>

@@ -1,0 +1,50 @@
+<exercise>
+<!-- source latex = 'if 3 divides n square plus 4n plus 1 then it is 1 mod 3 question.tex' -->
+<!-- converted on 12/07/2021 at 13:43 -->
+<statement>
+<p>
+Let <m>n\in\mathbb Z</m>. Prove that if <m>3\mid (n^2+4n+1)</m>, then <m>n\equiv 1\mod 3</m>.
+</p>
+</statement>
+<hint>
+<p>
+What is the contrapositive of the statement?
+</p>
+</hint>
+<answer>
+<p>
+We see that this is a conditional statement. So, to prove that we can assume the hypothesis and show the conclusion. That is, we assume that <m>3\mid (n^2+4n+1)</m> and try to show that <m>n\equiv 1\mod 3</m>. We see that our assumption means that <m>n^2+4n+1=3m</m> for  some <m>m\in\mathbb Z</m>. From this assumption, we need to get to our conclusion on <m>n</m>. Even though it is not impossible, it will require factoring or taking the square root, and we may need to prove more statements about how those operations affect divisibility by <m>3</m>.
+</p>
+<p>
+Instead, we can look at the contrapositive of the statement and try to have an assumption on the simpler term <m>n</m>. First let <m>n\in\mathbb Z</m>. Then, we see that the contrapositive of the statement is
+<md>
+<mrow>
+\text{if } n\not\equiv 1\mod 3\text{ then } 3\nmid (n^2+4n+1).
+</mrow>
+</md>
+Therefore we assume that <m>n\not\equiv 1\mod 3</m>. This means that we have <m>2</m> cases, <m>n \equiv 0\mod 3</m> or <m>n \equiv 2\mod 3</m>. We see that both of these cases give us nice structure to work on and say something about <m>n^2+4n+1</m>. Let's work this out in a proof.
+</p>
+</answer>
+
+<solution>
+<proof><p>
+We prove the contrapositive. Let <m>n\not\equiv 1\mod 3</m>. Then we see that we have <m>2</m> cases: <m>n=3k</m> or <m>n=3k+2</m> for some <m>k\in\mathbb Z</m>.
+<ul>
+<li>
+<p>
+ <em>Case 1:</em> <m>n=3k</m> for some <m>k\in\mathbb Z</m>. In this case, we see that
+<me>n^2+4n+1=(3k)^2+4(3k)+1=9k^2+12k+1=3(3k^2+4k)+1.</me>
+Hence, since <m>3k^2+4k\in\mathbb Z</m>, we see that <m>3\nmid (n^2+4n+1)</m>.
+</p></li>
+<li>
+<p>
+ <em>Case 2:</em> <m>n=3k+2</m> for some <m>k\in\mathbb Z</m>. In this case, we see that
+<me>n^2+4n+1=(3k+2)^2+4(3k+2)+1=9k^2+12k+4+12k+8+1=3(3k^2+8k+4)+1.</me>
+Since <m>3k^2+8k+4\in\mathbb Z</m>, this implies <m>3\nmid (n^2+4n+1)</m>.
+</p></li>
+</ul>
+Hence the contrapositive holds, and therefore, we see that  if <m>3\mid (n^2+4n+1)</m>, then <m>n\equiv 1\mod 3</m>.
+</p></proof>
+
+</solution>
+</exercise>

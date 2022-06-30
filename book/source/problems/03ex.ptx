@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<exercises xmlns:xi="http://www.w3.org/2001/XInclude">
+
+<xi:include href="ch03/n_even_implies_n_square_plus_3n_plus_5_is_odd_question.ptx"/>
+<xi:include href="ch03/product_of_two_odd_numbers_is_odd.ptx"/>
+<xi:include href="ch03/parity_operations.ptx"/>
+<xi:include href="ch03/Converse_proof.ptx"/>
+<xi:include href="ch03/not_defining_variables.ptx"/>
+<xi:include href="ch03/if_n_divides_a_and_b_it_divides_their_linear_combo.ptx"/>
+<xi:include href="ch03/n_divides_a_and_a_plus_1_question.ptx"/>
+<xi:include href="ch03/if_2_and_3_divides_n_then_6_divides_n_question.ptx"/>
+<xi:include href="ch03/3_divides_n_minus_4_implies_it_divides_n_square_minus_1.ptx"/>
+<xi:include href="ch03/reusing_variables.ptx"/>
+<xi:include href="ch03/2eq1_proof.ptx"/>
+<xi:include href="ch03/floor_function_question.ptx"/>
+<xi:include href="ch03/integer_root_definition_question.ptx"/>
+<xi:include href="ch03/backwards_proof.ptx"/>
+<xi:include href="ch03/flipping_inequalities.ptx"/>
+<xi:include href="ch03/square_root_function_is_increasing_question.ptx"/>
+<xi:include href="ch03/Terse_Proof.ptx"/>
+<xi:include href="ch03/square_root_ineq.ptx"/>
+
+</exercises>

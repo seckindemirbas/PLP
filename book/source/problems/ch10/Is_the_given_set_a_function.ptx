@@ -1,0 +1,45 @@
+<exercise>
+<!-- source latex = 'Is the given set a function.tex' -->
+<!-- converted on 26/11/2021 at 17:01 -->
+<statement>
+<p>
+Is the set <me>
+\theta = \{((x, y), (5y, 4x, x + y)) : x, y \in\mathbb{R}\}
+</me>
+a function? If so, what is its domain and its range?
+</p>
+</statement>
+<hint>
+<p>
+The question asks for the range, not the codomain.
+</p>
+</hint>
+<solution>
+<p>
+The set is a function from <m>\mathbb{R}^2</m> to <m>\mathbb{R}^3</m>.
+</p>
+
+<proof><p>
+We see that for every pair <m>(x,y)\in \mathbb R^2</m>, there is a unique ordered pair
+<m>((x, y), (5y, 4x, x + y))\in\mathbb R^2\times \mathbb R^3</m>. Therefore, <m>\theta</m> defines a function from <m>\mathbb R^2</m> to <m>\mathbb R^3</m>. Moreover, this implies that the domain of <m>\theta</m> is <m>\mathbb R^2</m>.
+</p>
+<p>
+We know that the range of <m>\theta</m> is the set <m>Y\subseteq \mathbb R^3</m> satisfying:
+<md>
+<mrow>
+ Y \amp =\set{(a,b,c)\in\mathbb R^3: (a,b,c)=(5y, 4x, x + y)\text{ for some } (x,y)\in\mathbb R^2}
+</mrow><mrow>
+ \amp =\set{(a,b,c)\in\mathbb R^3: a=5y, b=4x, c=x+y \text{ for some } (x,y)\in\mathbb R^2}
+</mrow><intertext>Writing <m>c</m> in terms of <m>a</m> and <m>b</m>,</intertext><mrow>
+ \amp =\set{(a,b,c)\in\mathbb R^3: a=5y, b=4x, c=a/5+b/4 \text{ for some } (x,y)\in\mathbb R^2}
+</mrow><mrow>
+ \amp =\set{ (a,b,a/5+b/4)\in\mathbb R^3: a=5y, b=4x \text{ for some } (x,y)\in\mathbb R^2}
+</mrow><intertext>Using the fact that <m>\{(5y, 4x) : (x,y)\in \mathbb{R}^2\} = \mathbb{R}^2</m>,</intertext><mrow>
+ \amp =\set{ (a,b,a/5+b/4)\in\mathbb R^3: a,b\in\mathbb R}.
+</mrow>
+</md>
+Hence the range of the function is the plane <m>20z-4a-5b=0</m> in <m>\mathbb{R}^3</m>.
+</p></proof>
+
+</solution>
+</exercise>

@@ -1,0 +1,61 @@
+<exercise>
+<!-- source latex = 'Counterexamples with subsets of domain and range of functions.tex' -->
+<!-- converted on 06/02/2022 at 13:32 -->
+<statement>
+<p>
+Find counterexamples to the following statements:
+<ol marker="(a)">
+<li>
+<p>
+ Given a function <m>f : A\rightarrow B</m> and subsets <m>W,X \subseteq A</m>, we have <m>f (W\cap X) = f (W)\cap f (X)</m>.
+</p>
+</li>
+<li>
+<p>
+ Given a function <m>f : A \rightarrow B</m> and a subset <m>Y \subseteq B</m>, we have <m>f ( f^{-1}(Y)) = Y</m>.
+</p>
+</li>
+</ol>
+Explain your answers.
+</p>
+</statement>
+<hint>
+<p>
+Try to construct counterexamples on small sets (eg. <m>\{1,2,3\}</m>) rather than on <m>\mathbb{R}</m>.
+</p>
+</hint>
+<answer>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ We will try to construct a function <m>f</m> and sets <m>X,W</m> such that <m>f(W\cap X)</m> has few elements, but <m>f(W)</m> and <m>f(X)</m> have many elements in common. One way of accomplishing this is to make <m>W\cap X</m> small (for example, having only one element in common), but designing the function <m>f</m> to produce the same output for distinct elements of <m>X</m> and <m>W</m>.
+</p>
+<p>
+    As a counterexample, take <m>f:\set{-1,0,1}\rightarrow \set{0,1}</m> defined as <m>f(x)=|x|</m> and consider the subsets <m>W=\set{-1,0}</m> and <m>X\set{0,1}</m>. Then we see <m>f (W\cap X)=f(\set{0})=\set{0}</m> and <m>f(W)=f(X)=\set{0,1}</m>. Hence <m>f (W\cap X) =\set{0}\neq \set{0,1}= f (W)\cap f (X)</m>.
+</p>
+</li>
+<li>
+<p>
+ Recall from <xref ref="thm_img_preimg"/>(ii), <m>f(f^{-1}(Y))\subseteq Y</m> for any <m>Y\subseteq B</m>. Therefore we need to find an example where <m>Y</m> is not a subset of <m>f(f^{-1}(Y))</m>. This means that we need to find a function that is not surjective, i.e. not every element of Y is in the range of the function.
+</p>
+<p>
+    As a counterexample, we take <m>f:\set{1,2}\rightarrow\set{1,2,3}</m>, defined as <m>f(x)=x</m> and let  <m>Y=\set{2,3}</m>. Notice that there is no element in the domain that maps to <m>3</m>, so <m>f</m> fails to be surjective.
+</p>
+</li>
+</ol>
+</p>
+</answer>
+<solution>
+  <proof><title>Disproof of (a)</title>
+  <p>
+As a counterexample, take <m>f:\set{-1,0,1}\rightarrow \set{0,1}</m> defined as <m>f(x)=|x|</m> and consider the subsets <m>W=\set{-1,0}</m> and <m>X\set{0,1}</m>. Then we see <m>f (W\cap X)=f(\set{0})=\set{0}</m> and <m>f(W)=f(X)=\set{0,1}</m>. Hence <m>f (W\cap X) =\set{0}\neq \set{0,1}= f (W)\cap f (X)</m>. Thus the statement is false.
+</p></proof>
+
+<proof><title>Disproof of (b)</title>
+<p>
+As a counterexample, take <m>f:\set{1,2}\rightarrow\set{1,2,3}</m>, defined as <m>f(x)=x</m> and let  <m>Y=\set{2,3}</m>. Then we see that <m>f^{-1}(Y)=\set{2}</m>, which implies  <m>f ( f^{-1}(Y)) =\set{2}\neq \set{2,3}= Y</m>. Hence the statement is false.
+</p></proof>
+
+</solution>
+</exercise>

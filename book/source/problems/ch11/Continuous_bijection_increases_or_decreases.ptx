@@ -1,0 +1,90 @@
+<exercise>
+<!-- source latex = 'Continuous bijection increases or decreases.tex' -->
+<!-- converted on 07/12/2021 at 12:33 -->
+<statement>
+<p>
+Recall the <em>Intermediate Value Theorem:</em>
+</p>
+
+
+<blockquote>
+<p>
+Let <m>g: U \to \mathbb{R}</m> where <m>U\subseteq \mathbb{R}</m>. Suppose <m>g</m> is continuous on <m>[a,b]\subseteq U</m>, and
+<me>f(a) \geq c \geq f(b) \quad \text{  OR } \quad f(a) \leq c \leq f(b),</me> then there exists <m>x_0\in [a,b]</m> such that <m>g(x_0) = c</m>.
+</p>
+</blockquote>
+
+
+<p>
+Let <m>f:\mathbb{R}\to \mathbb{R}</m> be a continuous, bijective function. Using the Intermediate Value Theorem, prove that <m>f</m> is strictly increasing or strictly decreasing. See <xref ref="ex_comp_inc_decr"/> for the definitions of strictly increasing and decreasing.
+</p>
+</statement>
+<hint>
+<p>
+What would happen if the function weren't strictly increasing or decreasing?
+</p>
+</hint>
+<solution>
+
+<proof><p>
+    Let <m>f:\mathbb{R}\to \mathbb{R}</m> be a continuous, bijective function.
+</p>
+<p>
+    By way of contradiction, assume that <m>f</m> is neither strictly increasing, nor strictly decreasing.
+</p>
+<p>
+Then there exists <m>x_1, x_2, x_3\in \mathbb{R}</m> with <m>x_1 \lt x_2 \lt x_3</m> such that
+<ol marker="(1)">
+<li>
+<p>
+ <m>f(x_1) \leq f(x_2)</m> and <m>f(x_3)\leq f(x_2)</m> (the function increases and then decreases). Or,
+        </p></li>
+<li>
+<p>
+ <m>f(x_1)\geq f(x_2)</m> and <m>f(x_3) \geq f(x_2)</m> (the function decreases and then increases).
+    </p>
+</li>
+</ol>
+</p>
+<p>
+    First, we consider case (1). In this case, the function increases and then decreases, but we do not have information about how <m>f(x_1)</m> compares to <m>f(x_3)</m>. This gives us two further sub-cases.
+    <ol marker="(i)">
+<li>
+<p>
+ Suppose <m>f(x_1)\leq f(x_3)</m>. We combine this with the inequalities from (1) to find
+        <me>f(x_1)\leq f(x_3)\leq f(x_2).</me>
+        We can regard <m>f(x_3)</m> as the value <m>c</m> in the statement of the Intermediate Value Theorem. Since <m>f</m> is continuous, by the Intermediate Value Theorem, there exists <m>x_0\in [x_1, x_2]</m> such that <m>f(x_0) = f(x_3)</m>. Because <m>x_0 \leq x_2  \lt  x_3</m>, <m>x_0 \neq x_3</m>. This contradicts the assumption that <m>f</m> is injective.
+        </p></li>
+<li>
+<p>
+ Suppose <m>f(x_3)\leq f(x_1)</m>. Combining this with the inequalities from (1) yields
+        <me>f(x_3)\leq f(x_1)\leq f(x_2).</me>
+        We can now regard <m>f(x_1)</m> as the value <m>c</m> in the statement of the Intermediate Value Theorem. Since <m>f</m> is continuous, the Intermediate Value Theorem tells us that there exists <m>x_0\in [x_2, x_3]</m> such that <m>f(x_0) = f(x_1)</m>. Because <m>x_1  \lt x_2 \leq x_0</m>, <m>x_1 \neq x_0</m> and we find that <m>f</m> is not injective.
+    </p>
+</li>
+</ol>
+</p>
+<p>
+    The argument is similar for case (2). We break into two further sub-cases which compares the value of <m>f(x_1)</m> with <m>f(x_3)</m>.
+    <ol marker="(i)">
+<li>
+<p>
+ Suppose <m>f(x_1)\leq f(x_3)</m>. Then the inequalities from (2) tell us
+        <me>f(x_2)\leq f(x_1)\leq f(x_3).</me>
+        We regard <m>f(x_1)</m> as the value <m>c</m> in the statement of the Intermediate Value Theorem. Since <m>f</m> is continuous,  the Intermediate Value Theorem says there exists <m>x_0\in [x_2, x_3]</m> such that <m>f(x_0) = f(x_1)</m>. Notice that <m>x_1 \lt  x_2 \leq x_0</m>, so <m>x_1 \neq x_0</m>. We conclude that <m>f</m> is not injective.
+        </p></li>
+<li>
+<p>
+ Finally, suppose <m>f(x_3)\leq f(x_1)</m>.  <m>f</m> is continuous, and from (2) we know that <me>f(x_2)\leq f(x_3)\leq f(x_1).</me>
+        We regard <m>f(x_3)</m> as the value <m>c</m> in the statement of the Intermediate Value Theorem. By the Intermediate Value Theorem, there exists <m>x_0\in [x_1, x_2]</m> such that <m>f(x_0) = f(x_3)</m>. Because <m>x_3 \gt  x_2 \geq  x_0</m>, we see that <m>x_3\neq x_0</m>, so <m>f</m> is not injective.
+    </p>
+</li>
+</ol>
+    In each of the four cases, we reach the conclusion that <m>f</m> is not injective, contradicting our assumption that <m>f</m> is bijective.
+</p>
+<p>
+    We conclude that <m>f</m> must be strictly increasing or strictly decreasing
+    </p></proof>
+
+</solution>
+</exercise>

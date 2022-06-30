@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<exercises xmlns:xi="http://www.w3.org/2001/XInclude">
+<xi:include href="ch10/Is_the_given_set_a_function.ptx"/>
+<xi:include href="ch10/For_which_a,b_does_the_set_define_a_function.ptx"/>
+<xi:include href="ch10/Find_the_range_of_2x_over_1_plus_x_square_question.ptx"/>
+<xi:include href="ch10/Given_a_function_find_image_and_preimage_of_given_sets.ptx"/>
+<xi:include href="ch10/preimages_of_differences_question.ptx"/>
+<xi:include href="ch10/quadratic_functions_are_neither_injective_nor_surjective_question.ptx"/>
+<xi:include href="ch10/f_of_n_is_less_than_or_equal_to_n_is_injective_question.ptx"/>
+<xi:include href="ch10/specific_quadratic_function_is_bijective_question.ptx"/>
+<xi:include href="ch10/the_set_of_functions_from_A_to_zero_or_one_is_bijective_to_the_power_set_of_A_question.ptx"/>
+<xi:include href="ch10/Check_injective_and_surjective.ptx"/>
+<xi:include href="ch10/f_is_surjective_iff_codomain_minus_the_image_of_a_subset_satisfies_something_question.ptx"/>
+<xi:include href="ch10/If_f_is_injective,_then_f_of_A_minus_B_is_f_of_A_minus_f_of_B.ptx"/>
+<xi:include href="ch10/Show_that_a_given_function_from_N_times_N_to_N_is_bijective.ptx"/>
+<xi:include href="ch10/bijection_between_power_sets.ptx"/>
+<xi:include href="ch10/define_a_function_on_equivalence_classes_question.ptx"/>
+<xi:include href="ch10/function_equiv_class_mod_n_to_remainder.ptx"/>
+<xi:include href="ch10/f_is_injective_iff_f_inverse_of_f_of_X_is_X_.ptx"/>
+<xi:include href="ch10/f_surjective_iff_f_of_f_inverse_of_Y_is_Y.ptx"/>
+<xi:include href="ch10/Composition_of_increasing_and_decreasing_functions.ptx"/>
+<xi:include href="ch10/Function_composition.ptx"/>
+<xi:include href="ch10/Counterexamples_with_subsets_of_domain_and_range_of_functions.ptx"/>
+<xi:include href="ch10/composition_with_injection_and_surjection.ptx"/>
+<xi:include href="ch10/f_compose_g_is_g_compose_f_.ptx"/>
+<xi:include href="ch10/f_is_bijective_iff_f_of_f_is_bijective.ptx"/>
+<xi:include href="ch10/x_plus_1_over_x_plus_2_is_bijective_question.ptx"/>
+<xi:include href="ch10/inverse_of_a_piecewise_function.ptx"/>
+<xi:include href="ch10/f_of_f_of_f_is_bijective_question.ptx"/>
+
+</exercises>

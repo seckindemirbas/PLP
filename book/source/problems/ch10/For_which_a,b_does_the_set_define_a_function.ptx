@@ -1,0 +1,67 @@
+<exercise>
+<!-- source latex = 'For which a,b does the set define a function.tex' -->
+<!-- converted on 26/11/2021 at 17:02 -->
+<statement>
+<p>
+For which values of <m>a,b\in\mathbb N</m> does the set
+<m>\phi=\set{(x,y)\in\mathbb Z\times \mathbb Z: ax+by= 6 }</m> define a function?
+</p>
+</statement>
+<hint>
+<p>
+Remember that a function has to give a valid output for every valid input <mdash/> why does this tell you about the <m>y</m>-values?
+</p>
+</hint>
+<answer>
+<p>
+Let us start by rearranging things a little. We must have <m>ax+by=6</m> which means that
+<me>
+  y = \frac{6-ax}{b}.
+</me>
+So for any given <m>x</m> there is only a single value of <m>y</m>.
+</p>
+<p>
+But we also require that <m>y \in \mathbb{Z}</m>, which means that we must have
+<me>
+  b \mid (6-ax)
+</me>
+for every <m>x \in \mathbb{Z}</m>. Setting <m>x=0</m> immediately tells us that <m>b \mid 6</m>, and so <m>b \in \set{1,2,3,6}</m>.
+<ul>
+<li>
+<p>
+ When <m>b=1</m>, then <m>y=6-ax \in \mathbb{Z}</m> for any <m>a \in \mathbb{N}</m>.
+  </p></li>
+<li>
+<p>
+ When <m>b=2</m>, then <m>y=\frac{6-ax}{2} = 3-\frac{ax}{2}</m> will be an integer for all <m>x</m> provided <m>2 \mid a</m>.
+  </p></li>
+<li>
+<p>
+ When <m>b=3</m>, then <m>y=\frac{6-ax}{3} = 2-\frac{ax}{3}</m> will be an integer for all <m>x</m> provided <m>3 \mid a</m>.
+  </p></li>
+<li>
+<p>
+ And finally, when <m>b=3</m>, then <m>y=\frac{6-ax}{6} = 1-\frac{ax}{6}</m> will be an integer for all <m>x</m> provided <m>6 \mid a</m>.
+</p></li>
+</ul>
+That is, <m>\phi</m> is a function provided <m>b \in \set{1,2,3,6}</m> (that is <m>b \mid 6</m>) and <m>b \mid a</m>.
+</p>
+
+</answer>
+<solution>
+<p>
+<em>Claim:</em> <m>\phi</m> is a function for all <m>a,b \in \mathbb{N}</m> satisfying  <m>b \mid 6</m> and <m>b \mid a</m>.
+</p>
+
+<proof><p>
+For <m>\phi</m> to define a function <m>\forall x\in \mathbb Z</m>, there has to be a unique point <m>y\in\mathbb Z</m> such that <m>(x,y)\in\phi</m>. Let <m>x\in\mathbb Z</m>. Then, by definition of <m>\phi</m>, we see that <m>y=\dfrac{6-ax}{b}</m>, which is uniquely defined for any <m>x\in\mathbb{Z}</m>. Then, we see that for <m>\phi</m> to be a function, <m>\dfrac{6-ax}{b}</m> must be an integer.
+</p>
+<p>
+Since this has to be true for any <m>x\in \mathbb Z</m>, we see that it has to be true for <m>x=0</m>, so <m>b\mid 6</m>. Thus, <m>b\in\set{1,2,3,6}</m>.
+</p>
+<p>
+This also means that for <m>\phi</m> for be a function <m>\dfrac{ax}{b}</m> must also be an integer, that is <m>b \mid ax</m>. Setting <m>x=1</m> tells us that <m>a</m> must be a multiple of <m>b</m> as claimed.
+</p></proof>
+
+</solution>
+</exercise>

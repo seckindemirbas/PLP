@@ -1,0 +1,65 @@
+<exercise>
+<!-- source latex = 'Cartesian products and subsets.tex' -->
+<!-- converted on 30/03/2022 at 15:09 -->
+<statement>
+<p>
+Suppose that <m>A, B\neq \emptyset</m>, and <m>C</m> are sets such that <m>A\subseteq B</m>.
+<ol marker="(a)">
+<li>
+<p>
+ Prove that
+<m>A\times C \subseteq B\times C.</m>
+</p></li>
+<li>
+<p>
+ Suppose we have a strict containment <m>A\subset B</m> instead. What additional constraints do we need (if any) to show that
+<me>A\times C \subset B\times C?</me>
+Prove your claim.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+
+<solution>
+<proof><title>Proof of (a)</title>
+<p> We require two cases.
+<ul>
+<li>
+<p>
+ <em>Case 1:</em> <m>C= \emptyset</m>.
+    By the definition of the Cartesian product, an element of <m>A\times C</m> takes the form <m>(a,c)</m> where <m>a\in A</m> and <m>c\in C = \emptyset</m>. But by the definition of the empty set, no such <m>c</m> exists. Therefore the ordered pair <m>(a,c)</m> cannot exist, and we see that there are no elements in <m>A\times C</m>. Therefore, <m>A\times C = \emptyset</m>. We can similarly argue that <m>B\times C = \emptyset</m>. We conclude that
+    <me>\emptyset = A\times C \subseteq B\times C = \emptyset.</me>
+  </p></li>
+<li>
+<p>
+ <em>Case 2:</em> <m>C\neq \emptyset</m>.
+    Suppose that <m>x\in A\times C</m>. Then by the definition of the Cartesian product, <m>x = (a,c)</m> for some elements <m>a\in A</m> and <m>c\in C</m>. Since <m>A\subseteq B</m>, we also have <m>a\in B</m>. Then by the definition of the Cartesian product, <m>x = (a,c) \in B\times C</m>. We conclude that <m>A\times C \subseteq B\times C.</m>
+ </p></li>
+</ul>
+</p>
+</proof>
+
+
+<p>
+  In order for (b) to be true, we claim that we require that <m>C\neq \emptyset</m>.
+</p>
+<proof><title>Proof of (b)</title>
+  <p>
+First, notice that if <m>C = \emptyset</m>, then by <em>Case 1</em> of the proof of part (a), we would have <m>A\times C = \emptyset = B\times C</m>. Thus, we must require that <m>C\neq \emptyset</m>.
+</p>
+<p>
+Now, we repeat the argument of <em>Case 2</em> from part (a).
+</p>
+<p>
+Suppose that <m>x\in A\times C</m>. Then by the definition of the Cartesian product, <m>x = (a,c)</m> for some elements <m>a\in A</m> and <m>c\in C</m>. Since <m>A\subset B</m>, we also have <m>a\in B</m>. Then by the definition of the Cartesian product, <m>x = (a,c) \in B\times C</m>. Therefore <m>A\times C \subseteq B\times C.</m>
+</p>
+<p>
+It remains to show that <m>B\times C \not\subseteq A\times C</m>. Since <m>A\subset B</m>, there exists an element <m>b\in B</m> such that <m>b \not\in A</m>. Let <m>c\in C</m>, then by the definition of the Cartesian product, <m>(b, c)\in B\times C</m>. However, since <m>b\not\in A</m>, <m>(b, c)\not\in A\times C</m>. We conclude that <m>B\times C \not\subseteq A\times C</m>. Therefore,
+<me>A\times C\subset B\times C,</me>
+as required.
+</p></proof>
+
+
+</solution>
+</exercise>

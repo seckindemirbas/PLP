@@ -1,0 +1,51 @@
+<exercise>
+<!-- source latex = 'set question that says if x is a multiple of mn then it is a m and n.tex' -->
+<!-- converted on 18/08/2021 at 15:32 -->
+<statement>
+<p>
+Prove or disprove the following statement:
+</p>
+
+<blockquote>
+<p>
+  Let  <m>m,n \in\mathbb{Z}</m>. Then <m>\set{x \in\mathbb{Z} : mn\mid  x}\subseteq \set{x \in\mathbb{Z} : m\mid x}\cap\set{x \in\mathbb{Z} : n\mid x}</m>.
+</p>
+</blockquote>
+
+
+</statement>
+<answer>
+<p>
+We see that this is a `prove or disprove' question. This means that we need to figure out whether it is true or not.
+</p>
+<p>
+The statement claims that every element of <m>\set{x \in\mathbb{Z} : mn\mid  x}</m> is an element of <m> \set{x \in\mathbb{Z} : m\mid x}</m> and <m>\set{x \in\mathbb{Z} : n\mid x}</m>. In other words, every multiple of <m>mn</m> is a multiple of <m>m</m> and also a multiple of <m>n</m>. We can easily tell that this statement is true. So, we need to prove it.
+</p>
+<p>
+Of course, we should be extra careful around statements that we can <q>easily</q> decide are true. Sometimes they are very deceptive. As a general rule, we should avoid using words like <q>easily</q> when we do mathematics.
+</p>
+</answer>
+<solution>
+
+<proof><p>
+  Let <m>m,n\in\mathbb Z</m>. Assume that <m>s\in \{x \in\mathbb{Z} : mn\mid  x\}</m>. Then we see that <m>mn\mid s</m> and thus, <m>s=mnk</m> for some <m>k\in\mathbb Z</m>.
+  <ul>
+<li>
+<p>
+ Now since <m>s = m(nk)</m> and <m>nk \in \mathbb{Z}</m>, we know that <m>m \mid s</m>.
+    </p></li>
+<li>
+<p>
+ Similarly, since <m>s=n(mk)</m> and <m>mk \in \mathbb{Z}</m>, we also know that <m>n \mid s</m>.
+  </p></li>
+</ul>
+  Consequently  <m>s\in  \{x \in\mathbb{Z} : n\mid x\}</m> and <m>s\in  \{x \in\mathbb{Z} : m\mid x\}</m>.
+  Since <m>s</m> is an element of both of those sets, it is an element of their intersection. Thus
+<me>
+  \{x \in\mathbb{Z} : mn\mid  x\}\subseteq \{x \in\mathbb{Z} : m\mid x\}\cap\{x \in\mathbb{Z} : n\mid x\}
+</me>
+as required.
+</p></proof>
+
+</solution>
+</exercise>

@@ -1,0 +1,63 @@
+<exercise>
+<!-- source latex = 'log_equiv.tex' -->
+<!-- converted on 18/08/2021 at 14:22 -->
+<statement>
+<p>
+Show that the following pairs of statements are logically equivalent using <xref ref="thm-logical-equiv"/>.
+</p>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ <m>P\iff Q</m> and <m>(\neg P) \iff (\neg Q)</m>
+</p></li>
+<li>
+<p>
+ <m>P\implies(Q\lor R)</m> and <m>P\implies((\neg Q) \implies R)</m>
+</p></li>
+<li>
+<p>
+ <m>(P\lor Q)\implies R</m> and <m>(P\implies R)\land(Q\implies R)</m>
+</p>
+</li>
+</ol>
+</p>
+</statement>
+
+<!-- <hint></hint> -->
+
+<solution>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ Using the biconditional equivalence, we have
+<me> (P\iff Q) \equiv ((P\implies Q)\land (Q\implies P)). </me>
+Then using the contrapositive equivalence, we have
+<me> ((P\implies Q)\land (Q\implies P)) \equiv  \big(((\neg Q)\implies (\neg P))\land ((\neg P)\implies (\neg Q))\big) </me>
+and by commutativity, this is logically equivalent to
+<me> ((\neg P)\implies (\neg Q)) \land ((\neg Q)\implies (\neg P)).</me>
+Finally, by the biconditional equivalence, this is logically equivalent to
+<me> (\neg P) \iff (\neg Q) </me>
+</p>
+</li>
+<li>
+<p>
+ By the implication equivalence and the double negation equivalence, we have
+<me> (P\implies(\neg Q\implies R))\equiv \big(P\implies((\neg(\neg Q))\lor R)\big)\equiv (P\implies(Q\lor R)). </me>
+</p>
+</li>
+<li>
+<p>
+ By the implication equivalence and DeMorgan's law,
+<me> ((P\lor Q)\implies R)\equiv ((\neg(P\lor Q))\lor R) \equiv \big(((\neg P)\land (\neg Q))\lor R\big). </me>
+Then using commutativity and then the distribution law, this is logically equivalent to
+<me> \big(R\lor ((\neg P)\land (\neg Q))\big)\equiv \big((R\lor (\neg P))\land (R\lor (\neg Q))\big) </me>
+Then by commutativity and then the implication equivalence, this is logically equivalent to
+<me> \big(((\neg P)\lor R)\land ((\neg Q) \lor R)\big) \equiv ((P\implies R)\land(Q\implies R)). </me>
+</p>
+</li>
+</ol>
+</p>
+</solution>
+</exercise>

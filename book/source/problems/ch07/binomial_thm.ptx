@@ -1,0 +1,148 @@
+<exercise xml:id="ex_binom_thm">
+<!-- source latex = 'binomial_thm.tex' -->
+<!-- converted on 12/10/2021 at 14:06 -->
+<statement>
+<p>
+Let <m>n,r \in \mathbb{Z}</m> so that <m>0 \leq r \leq n</m>. We define the binomial coefficient
+<me>
+  \binom{n}{r}  = \frac{n!}{(n-r)! r!}.
+</me>
+</p>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ Prove that the binomial coefficients satisfy Pascal's identity:
+  <me>
+    \binom{n+1}{r} = \binom{n}{r} + \binom{n}{r-1}
+    \qquad \text{for } 0 \lt r \leq n
+  </me>
+  </p></li>
+<li>
+<p>
+ and so prove, using induction, the Binomal Theorem:
+  <me>
+    (a+b)^n = \sum_{k=0}^n \binom{n}{k} a^{n-k} b^k
+  </me>
+  for any <m>a,b \in \mathbb{R}</m> and any <m>n \in \mathbb{N}</m>.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<hint>
+<p>
+<ul>
+<li>
+<p>
+ For Pascal's identity, rewrite the binomials as factorials and juggle carefully.
+  </p></li>
+<li>
+<p>
+ For the binomial theorem, expand and group carefully. The following might also be handy
+  <md>
+<mrow>
+    \binom{n}{0} = \binom{n}{n} = 1.
+  </mrow>
+</md>
+  Also, be careful around the edges of your expanded sums.
+</p></li>
+</ul>
+</p>
+</hint>
+<solution>
+<p>
+We prove each result in turn. First, Pascal's identity:
+</p>
+
+<proof><p>
+  Let <m>n,r</m> be as given, then
+  <md>
+<mrow>
+    \binom{n}{r} + \binom{n}{r-1}
+     \amp = \frac{n!}{(n-r)! r!} + \frac{n!}{(n-r+1)! (r-1)!}
+</mrow><mrow>
+     \amp = \frac{n! (n-r+1)}{(n-r+1)! r!} + \frac{n! \cdot r}{(n-r+1)! r!}
+</mrow><mrow>
+     \amp = \frac{n!}{(n-r+1)! r!} \left(n-r+1 + r \right)
+</mrow><mrow>
+     \amp = \frac{n! (n+1)}{(n+1-r)! r!}
+</mrow><mrow>
+     \amp = \frac{(n+1)!}{( (n+1)-r)! r!}
+</mrow><mrow>
+     \amp = \binom{n+1}{r}
+  </mrow>
+</md>
+  as required.
+</p></proof>
+
+<p>
+Next, the Binomial Theorem:
+</p>
+
+<proof><p>
+  Let <m>a,b</m> be as stated, and then we prove the result by induction on <m>n</m>.
+<ul>
+<li>
+<p>
+ When <m>n=1</m> we have that <me>
+  (a+b)^1 = a+b = \binom{1}{0} a + \binom{1}{1} b
+  </me>
+  and so the base case holds.
+  </p></li>
+<li>
+<p>
+ Now assume that the result holds for some <m>n = \ell \in \mathbb{N}</m> and we show that it holds for <m>n = \ell+1</m>. Start with
+  <me>
+    (a+b)^\ell = \sum_{k=0}^\ell \binom{\ell}{k} a^{\ell-k} b^k.
+  </me>
+  Multiplying both sides by <m>(a+b)</m> gives:
+  <md>
+<mrow>
+    (a+b)^{\ell+1}  \amp = (a+b)\sum_{k=0}^\ell \binom{\ell}{k} a^{\ell-k} b^k
+</mrow><mrow>
+     \amp = \sum_{k=0}^\ell \binom{\ell}{k} a^{\ell-k} b^k (a+b)
+</mrow><mrow>
+     \amp = \sum_{k=0}^\ell \binom{\ell}{k} a^{\ell-k+1} b^k + \sum_{k=0}^\ell \binom{\ell}{k} a^{\ell-k} b^{k+1}
+     </mrow><intertext>Extract out the very first and very last terms</intertext><mrow>
+     \amp =
+    \binom{\ell}{0} a^{\ell+1}
+    + \sum_{k=1}^\ell \binom{\ell}{k} a^{\ell-k+1} b^k
+    + \sum_{k=0}^{\ell-1} \binom{\ell}{k} a^{\ell-k} b^{k+1}
+    + \binom{\ell}{\ell} a^0 b^{\ell+1}
+    </mrow><intertext>re-index the second sum to make it start from 0 by replacing <m>k</m> with <m>k-1</m></intertext><mrow>
+     \amp =
+    a^{\ell+1}
+    + \sum_{k=1}^{\ell} \binom{\ell}{k} a^{\ell-k+1} b^{k}
+    + \sum_{k=1}^{\ell} \binom{\ell}{k-1} a^{\ell-k+1} b^{k}
+    + a^0 b^{\ell+1}
+    </mrow><intertext>If we group-together terms with similar powers of <m>a,b</m>, we get</intertext><mrow>
+     \amp =
+    a^{\ell+1}
+    + \sum_{k=1}^{\ell} \left[ \binom{\ell}{k} + \binom{\ell}{k-1} \right] a^{\ell-k+1} b^{k+1}
+    + b^{\ell+1}
+    </mrow><intertext>then, Pascal's identity gives</intertext><mrow>
+     \amp =
+    a^{\ell+1}
+    + \sum_{k=1}^{\ell} \binom{\ell+1}{k} a^{\ell+1-k} b^{k}
+    + b^{\ell+1}
+    </mrow><intertext>Finally, since <m>\binom{\ell+1}{0}=\binom{\ell+1}{\ell+1}=1 </m>, we have</intertext><mrow>
+     \amp =
+    \binom{\ell+1}{0} a^{\ell+1} b^0
+    + \sum_{k=1}^{\ell} \binom{\ell+1}{k} a^{\ell+1-k} b^{k}
+    + \binom{\ell+1}{\ell+1} a^0 b^{\ell+1}
+</mrow><mrow>
+     \amp = \sum_{k=0}^{\ell+1} \binom{\ell+1}{k} a^{\ell+1-k} b^{k}
+  </mrow>
+</md>
+  as required.
+</p>
+<p>
+  Since the base-case and inductive step hold, the result follows by induction.
+</p></li>
+</ul>
+</p>
+</proof>
+
+</solution>
+</exercise>

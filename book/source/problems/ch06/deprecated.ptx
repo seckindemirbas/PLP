@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<exercises>
+  <exercise>
+    <statement>
+      <p>
+        Negate the following statements. Then, for each statement, determine whether the given statement or their negation is true  and justify your answer.
+        <ol>
+        <li> <m>\exists x\in \Bbb Z</m> such that <m>(x \gt 84)</m> and  <m>x\equiv 75 \pmod{84}</m>.
+        </li>
+        <li> <m>\exists x, y\in \Bbb Z</m> such that if <m>1\geq x^2\geq y^2</m>, then <m>x\geq y</m>.
+        </li>
+        <li> <m>\forall z\in\Bbb N</m>, <m>\exists x,y\in\Bbb Z</m> such that <m>z=x^2+y^2</m>.
+        </li>
+        <li> <m>\exists a\in \Bbb R</m> such that <m>a \gt 0</m> and <m>\forall x\in\Bbb R</m>, if <m>x\geq a</m>, then <m>2^{-x} \lt \dfrac{1}{100}</m>.
+        </li>
+        <li> <m>\forall n\in\Bbb R</m>, <m>n</m> is even if and only if <m>n^2</m> is even.
+        </li>
+        </ol>
+      </p>
+    </statement>
+    <solution>
+      <p>Not yet.</p>
+    </solution>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        Let <m>A=\set{n\in\Bbb Z\colon 3\mid n}</m>, <m>B=\set{n\in\Bbb Z\colon 4\nmid n}</m>, and <m>C=\set{n\in\Bbb Z\colon 6\nmid n}</m>. Determine whether the following quantified statements are true or false.
+        <ol marker="(a)">
+        <li> <m>\forall a\in A</m>, <m>\exists b\in B</m> such that <m>a+b\in C</m>.
+        </li>
+        <li> <m>\exists a\in A</m> such that <m>\forall b\in B</m>, <m>a+b\in C</m>.
+        </li>
+        <li> <m>\forall a\in A</m>, <m>\forall b\in B</m>, <m>a+b\in C</m>.
+        </li>
+        <li> <m>\exists a\in A</m> and <m>\exists b\in B</m> such that <m>a+b\in C</m>.
+        </li>
+      </ol>
+      </p>
+    </statement>
+    <solution>
+      <p>Not yet.</p>
+    </solution>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        Let <m>n\in\Bbb Z</m>. Show that <m>2\mid (n^4-7)</m> if and only if <m>4\mid (n^2+3)</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>Not yet.</p>
+    </solution>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+      Prove that <m>\forall a\in \Bbb Z</m>, <m>a^5\equiv a \pmod 5</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>Not yet.</p>
+    </solution>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+      <m>\forall n\in\Bbb N</m>, prove that <m>4\mid (3^n-1)</m> if and only if <m>4\nmid (3^n+1)</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>Not yet.</p>
+    </solution>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+      <m>\forall n\in\Bbb Z</m>, prove that if <m>\exists a,b\in\Bbb Z</m> such that <m>a^2+b^2=n</m>, then <m>n\not\equiv 3\pmod 4</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>Not yet.</p>
+    </solution>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+      <m>\forall n, k\in\Bbb Z</m>, prove that if <m>k\mid (2n+1)</m> and <m>k\mid (4n^2+1)</m>, then <m>k\in\set{-1,1}</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>Not yet.</p>
+    </solution>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        Assume <m>n, a\in\mathbb{Z}</m>. Prove that if <m>n\mid a</m> and <m>n\mid (a+1)</m>, then <m>n=-1</m> or <m>n=1</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>Not yet.</p>
+    </solution>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        In this question, we are going to call a function, <m>f:\mathbb{R}\rightarrow\mathbb{R}</m>, <term>type A</term>, if <m>\forall x\in\Bbb R</m>, <m>\exists y\in\Bbb R</m> such that <m>y\geq x</m> and <m>|f(y)|\geq 1</m>.
+        We also say that a function, <m>g</m>, is <term>type B</term> if <m>\exists x\in\Bbb R</m> such that <m>\forall y\in\Bbb R</m>, if <m>y\geq x</m>, then <m>|f(y)|\geq 1</m>.
+      </p>
+      <p>Prove or find a counterexample for the following statements.
+      <ol marker="(a)">
+      <li> If a function is type A, then it is type B.
+      </li>
+      <li> if a function is type B, then it is type A.
+      </li>
+      </ol>
+      </p>
+    </statement>
+    <solution>
+      <p>
+      </p>
+    </solution>
+  </exercise>
+
+<exercisegroup>
+  <introduction>
+    <p>Prove or disprove the following statements.</p>
+  </introduction>
+  <exercise>
+    <statement>
+      <p>
+        <ol>
+        <li> <m>\forall a \in \mathbb N</m>,<m>\forall b\in\mathbb{N}</m> if <m>b \lt a</m>, then <m>b-b^2 \lt a</m>.
+        </li>
+        <li> <m>\forall p\in\mathbb N</m>, <m>\forall q\in\mathbb{N}</m>, if <m>\sqrt{\dfrac{p}{q}}\in\mathbb N</m>, then <m>\sqrt{p}\in\mathbb N</m> and <m>\sqrt{q}\in\mathbb N</m>.
+        </li>
+        <li> <m>\forall a,b\in\mathbb R</m>, <m>\exists c,d\in\mathbb R</m>, such that if <m>ab\geq cd</m>, then <m>a\geq c</m> and <m>b\geq d</m>.
+        </li>
+        <li> <m>\forall a,b\in\mathbb{N}</m>, if <m>\exists x,y\in\mathbb{Z}</m> and <m>\exists k\in\mathbb{N}</m> such that <m>ax+by=k</m>, then <m>\gcd(a,b)=k</m>.
+        </li>
+        <li> <m>\forall a,b\in\mathbb{Z}</m>, if <m>3\mid (a^2+b^2)</m>, then <m>3\mid a</m> and <m>3\mid b</m>.
+        </li>
+        </ol>
+      </p>
+    </statement>
+    <solution>
+      <p>
+
+      </p>
+    </solution>
+  </exercise>
+</exercisegroup>
+
+
+</exercises>

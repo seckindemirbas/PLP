@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<exercises>
+  <exercisegroup>
+    <introduction>
+    <p>
+      Prove the following statements.
+    </p>
+    </introduction>
+
+    <exercise>
+      <statement>
+        <p>
+          If <m>n</m> is an even integer then <m>n=4k</m> or <m>n=4k+2</m> for some integer <m>k</m>
+        </p>
+      </statement>
+      <answer>
+        <proof>
+          <p>
+            Assume that <m>n</m> is even, and so it can be written as <m>n=2\ell</m> for some integer <m>\ell</m>. Since <m>\ell</m> is an integer, it must be either even or odd. This gives us two cases.
+            <ul>
+              <li>If <m>\ell</m> is even, then <m>\ell=2k</m> for some integer <m>k</m>. Then <m>n = 2(2k) = 4k</m> as required.</li>
+              <li>On the other hand, if <m>\ell</m> is odd, then <m>\ell=2k+1</m> for some integer <m>k</m>. Then <m>n = 2(2k+1) = 4k+2</m> as required.</li>
+            </ul>
+            This gives the desired result.
+          </p>
+        </proof>
+        <p>Or alternatively (via the contrapositive)</p>
+        <proof>
+          <p>
+            We prove the contrapositive. So assume that <m>n \neq 4k</m> and <m>n \neq 4k+2</m>. By Euclidean division we know that every integer <m>n</m> can be written as one of <m>n=4\ell, 4\ell+1, 4\ell+2, 4\ell+3</m> for some choice of integer <m>\ell</m>. By assumption we must have <m>n = 4\ell+1</m> or <m>4\ell+3</m>.
+            <ul>
+              <li>If <m>n = 4\ell+1</m> then <m>n = 2(2\ell)+1</m> and so is odd.</li>
+              <li>If <m>n = 4\ell+3</m> then <m>n = 2(2\ell+1)+1</m> and so is odd.</li>
+            </ul>
+            Since in either case <m>n</m> is odd, we have the required result.
+          </p>
+        </proof>
+      </answer>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          If <m>x \in \mathbb{R}</m> then <m>|x+4| +|x-3| \geq 7</m>
+        </p>
+      </statement>
+      <hint>
+        <p>
+        The key here is to split the hypothesis into 3 cases in order to simplify the absolute-value expressions. Be careful with your inequalities.
+      </p>
+      </hint>
+      <answer>
+        <proof>
+          <p>
+            Assume <m>x\in \mathbb{R}</m>. Consequently we have <m>x \lt -4</m>, <m>-4\leq x \lt 3</m> or <m>x \geq 3</m>.
+            <ul>
+              <li>
+                <p>
+                  If <m>x \lt -4</m> then
+                  <md>
+                    <mrow>|x+4| \amp  = -4-x </mrow>
+                    <mrow>|x-3| \amp = 3-x</mrow>
+                  </md>
+                  and so
+                  <me>
+                    |x+4|+|x-3| = -1-2x
+                  </me>
+                  However, we know that <m>x \lt -4</m>, so
+                  <me>
+                  -1-2x \gt -1+8
+                  </me>
+                  And hence <m>|x+4|+|x-3| = -1-2x \gt 7</m> as required.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Not assume that <m>-4 \leq x \lt 3</m>. Then
+                  <md>
+                    <mrow>|x+4| \amp  = x+4 </mrow>
+                    <mrow>|x-3| \amp = 3-x</mrow>
+                  </md>
+                  and so
+                  <me>
+                    |x+4|+|x-3| = 7
+                  </me>
+                  as required.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Finally, assume that <m>x \geq 3</m>. Then
+                  <md>
+                    <mrow>|x+4| \amp  = x+4 </mrow>
+                    <mrow>|x-3| \amp = x-3</mrow>
+                  </md>
+                  and so
+                  <me>
+                    |x+4|+|x-3| = 2x+1
+                  </me>
+                  Now since <m>x \geq 3</m> we know that
+                  <me>
+                    |x+4|+|x-3| = 2x+1 \geq 7
+                  </me>
+                  as required.
+                </p>
+              </li>
+            </ul>
+            Since the result is true in each case, it is true for all <m>x \in \mathbb{R}</m>.
+          </p>
+        </proof>
+      </answer>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>Let <m>n,a \in \mathbb{Z}</m>. If <m>n\mid a</m> and <m>n \mid (a+1)</m> then <m>n = 1</m> or <m>n=1</m>.
+        </p>
+      </statement>
+      <hint><p>Thinking about differences makes all the difference.</p>
+      </hint>
+      <answer>
+        <proof>
+          <p>Assume that <m>n \mid a</m> and <m>n \mid (a+1)</m>. Then <m>a=nk</m> and <m>(a+1)=n\ell</m> for some integers <m>k,\ell</m>. But then
+          <me>
+            1 = (a+1)-a = n(\ell-k)
+          </me>
+          Hence we must have that <m>n \mid 1</m>. The only possible divisors of <m>1</m> are <m>\pm 1</m>, giving the required result.
+          </p>
+        </proof>
+      </answer>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>If <m>5 \nmid n</m> or <m>2 \nmid n</m> then <m>10 \nmid n</m>.
+        </p>
+      </statement>
+      <answer>
+        <proof>
+          <p>
+            We prove the contrapositive. Assume that <m>10 \mid n</m> and so <m>n = 10k</m> for some integer <m>k</m>. Then <m>n = 2(5k) = 5(2k)</m> and so <m>2 \mid n</m> and <m>5\mid n</m> as required.
+          </p>
+        </proof>
+      </answer>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>Let <m>m,n \in \mathbb{Z}</m>. If <m>(m^2+n^2)</m> is even then <m>m,n</m> have the same parity.
+        </p>
+      </statement>
+      <answer>
+        <p>
+        This is a proof where one would be tempted to use <q>WLOG</q>, but we won't.
+      </p>
+        <proof>
+          <p>We prove the contrapositive, so assume that <m>m,n</m> have different parities. Hence either <m>m</m> is even and <m>n</m> is odd, or <m>m</m> is odd and <m>n</m> is even.
+          <ul>
+            <li>
+              <p>
+                Assume that <m>m</m> is even and <m>n</m> is odd. Hence <m>m=2k, n=2\ell+1</m> for some integers <m>k,\ell</m>. Then
+                <me>
+                  m^2+n^2 = 4k^2+4\ell^2+4\ell+1 = 2(2k^2+2\ell^2+2\ell)+1
+                </me>
+                so that <m>m^2+n^2</m> is odd.
+              </p>
+            </li>
+            <li>
+              <p>
+                Now assume that <m>m</m> is odd and <m>n</m> is even. Hence <m>m=2k+1, n=2\ell</m> for some integers <m>k,\ell</m>. Then
+                <me>
+                  m^2+n^2 = 4k^2+4k+1+4\ell^2 = 2(2k^2+2k+2\ell^2)+1
+                </me>
+                so that <m>m^2+n^2</m> is odd.
+              </p>
+            </li>
+          </ul>
+          In both cases <m>m^2+n^2</m> is odd as required.
+          </p>
+        </proof>
+      </answer>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>Let <m>a \in \mathbb{Z}</m>.  <m>3\mid 5a</m> if and only if <m>3 \mid a</m>.
+        </p>
+      </statement>
+      <answer>
+        <proof>
+          <p>
+            We prove each implication in turn, starting with the back-implication.
+            <ul>
+              <li>
+                <p>
+                  Assume that <m>3 \mid a</m> so <m>a = 3k</m> for some <m>k \in \mathbb{Z}</m>. Then <m>5a = 15k = 3(5k)</m>, and hence <m>3 \mid 5a</m>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  We prove the contrapositive of the forward implication, so assume that <m>3 \nmid a</m>. Consequently, by Euclidean division, we know that <m>a = 3k+1</m> or <m>a=3k+2</m> for some integer <m>k</m>.
+                  <ul>
+                    <li>Assume that <m>a = 3k+1</m> then <m>5a = 15k+5 = 3(5k+1)+2</m>. Hence <m>3 \nmid 5a</m>.</li>
+                    <li>Similarly, assume that <m>a = 3k+2</m>, then <m>5a = 15k+10 = 3(5k+3)+1</m>. So again, <m>3 \nmid 5a</m>.</li>
+                  </ul>
+                  In both cases <m>3 \nmid 5a</m> and so the result follows.
+                </p>
+              </li>
+            </ul>
+          </p>
+        </proof>
+      </answer>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          Let <m>n \in \mathbb{Z}</m>. If <m>4 \nmid (n+1)(n-1)</m> then <m>n</m> is even.
+        </p>
+      </statement>
+    <answer>
+      <proof>
+        <p>
+          We prove the contrapositive. Assume that <m>n</m> is odd. Then <m>n=2k+1</m> for some integer <m>k</m>. Hence
+          <me>
+            (n+1)(n-1) = (2k+2) \cdot 2k = 4(k^2+k)
+          </me>
+          and thus <m>4 \mid (n+1)(n-1)</m> as required.
+        </p>
+      </proof>
+    </answer>
+  </exercise>
+
+<exercise>
+  <statement>
+    <p>
+      Let <m>a,b \in \mathbb{R}</m>. Prove that <m>|ab|= |a||b|</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      The easiest way to prove this is to split the problem into 4 cases.
+    </p>
+    <p>
+      Let <m>a,b \in \mathbb{R}</m>. Then <m>a \geq 0</m> or <m>a\lt 0</m> and similarly <m>b \geq 0</m> or <m>b \lt 0</m>. This gives us 4 cases to check.
+      <ul>
+        <li>When <m>a,b \geq 0</m> we know that <m>|a|=a, |b|=b</m>. We also know that <m>ab \geq 0</m>, so <m>|ab|=ab</m>. Hence <m>|ab|=ab=|a||b|</m>.</li>
+        <li>When <m>a,b \lt 0</m> we know that <m>|a|=-a, |b|=-b</m>. We also know that <m>ab \geq 0</m>, so <m>|ab|=ab</m>. Hence <m>|ab|=(-a)(-b)=ab=|a||b|</m>.</li>
+      <li>Now, when <m>a \geq 0</m> but <m>b \lt 0</m> we know that <m>|a|=a, |b|=-b</m>. We also know that <m>ab \leq 0</m>, so <m>|ab|=-ab</m>. Hence <m>|ab|=a(-b)=-ab=|a||b|</m>.</li>
+      <li>Finally, assume that <m>a \lt 0</m> while <m>b \geq 0</m> we know that <m>|a|=-a, |b|=b</m>. We also know that <m>ab \leq 0</m>, so <m>|ab|=-ab</m>. Hence <m>|ab|=(-a)=-ab=|a||b|</m>.</li>
+    </ul>
+    So in all four cases the result holds.
+    </p>
+
+    <p>
+      We note that one can prove this in other ways. For example, if one has shown that <m>|a|=\sqrt{a^2}</m>, then one can reason as follows.
+      <md>
+        <mrow>|ab| \amp= \sqrt{a^2b^2} </mrow>
+        <mrow> \amp= \sqrt{a^2}\sqrt{b^2} </mrow>
+        <mrow> \amp= |a| |b| </mrow>
+      </md>
+      as required.
+    </p>
+  </solution>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>
+      Let <m>x \in \mathbb{R}</m>. Prove that <m>\Big||x| \Big| = |x|</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+
+    </p>
+  </solution>
+</exercise>
+
+  <exercise>
+    <statement>
+        <p>Let <m>a,b \in \mathbb{R}</m>. Prove that
+        <me>
+        |a|^2 = a^2 \qquad \text{ and } \qquad
+        \sqrt{a^2} = |a|
+        </me>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        We prove each result in turn.
+      </p>
+      <p>
+        Either <m>a \geq 0</m> or <m>a\lt 0</m>
+        <ul>
+          <li>When <m>a \geq 0</m>, we know that <m>|a|=a</m> and so <m>|a|^2 = a^2</m>.</li>
+          <li>When <m>a \lt 0</m>, <m>|a|=-a</m>. Hence <m>|a|^2 = (-a)^2 = (-1)^2 a^2 = a^2</m>.</li>
+        </ul>
+        In both cases the result holds.
+      </p>
+      <p>
+        Now, the numbers <m>+a</m> and <m>-a</m> are both square-roots of <m>a</m>, but the function <m>\sqrt{x}</m> gives the non-negative square-root of <m>x</m>. Thus, if <m>a \geq 0</m>, then <m>\sqrt{a^2}=+a \geq 0</m>, while if <m>a \lt 0</m> then <m>\sqrt{a^2}=-a \gt 0</m>. That is
+        <me>
+          \sqrt{a^2} = \begin{cases} a \amp \text{if } a \geq 0 \\ -a \amp \text{if } a \lt 0 \end{cases}
+        </me>
+        This is precisely the definition of <m>|a|</m>.
+      </p>
+    </solution>
+  </exercise>
+
+<exercise>
+  <statement>
+    <p>
+      Let <m>a,b \in \mathbb{R}</m>, then
+      <me>
+        |a-b| \geq |a|-|b|.
+      </me>
+    </p>
+  </statement>
+  <solution>
+    <p>
+      Let <m>x,y \in \mathbb{R}</m>. The triangle inequality states
+      <me>
+        |x+y| \leq |x|+|y|
+      </me>
+      Rearrange this to give
+      <me>
+        |x+y| - |y| \leq |x|
+      </me>
+      Now we substitute <m>x=a-b, y=b</m>, giving the required
+      <me>
+        |a-b+b| - |b| = |a|-|b| \leq |a-b|.
+      </me>
+    </p>
+  </solution>
+</exercise>
+
+  <exercise>
+    <statement>
+        <p>Let <m>a,b \in \mathbb{R}</m>. Prove the triangle inequality starting from the following equality
+        <me>
+          |a+b|^2 = (a+b)^2
+        </me>
+        You may find the following results useful
+        <ul>
+          <li>If <m>x,y \gt 0</m> and <m>x^2 \leq y^2</m> then <m>x \leq y</m>.</li>
+          <li><m>|xy|=|x||y|</m></li>
+          <li><m>x^2 = |x|^2</m></li>
+        </ul>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Starting from <m>|a+b|^2 = (a+b)^2</m> we have
+        <md>
+          <mrow> |a+b|^2 \amp = (a+b)^2 \amp \text{expand}</mrow>
+          <mrow> \amp = a^2 +2ab + b^2 \amp \text{since } x^2=|x|^2</mrow>
+          <mrow> \amp \leq |a|^2 + |2ab| + |b|^2 \amp \text{since } |x| \geq x</mrow>
+          <mrow> \amp = |a|^2 + 2|a||b| + |b|^2 \amp \text{since } |xy| = |x||y|</mrow>
+          <mrow> \amp = \left(|a| + |b| \right)^2 </mrow>
+        </md>
+        That is <m>|a+b|^2 \leq (|a|+|b|)^2</m>. Now, from the result provided in the statement of the exercise, we can conclude that <m>|a+b| \leq |a|+|b|</m>.
+      </p>
+    </solution>
+  </exercise>
+
+
+  </exercisegroup>
+</exercises>

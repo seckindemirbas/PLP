@@ -1,0 +1,38 @@
+<exercise>
+<!-- source latex = 'if n is not 1 or 2 then it cannot divide m and m plus 2 at the same time question.tex' -->
+<!-- converted on 12/07/2021 at 13:44 -->
+<statement>
+<p>
+Let <m>n,m \in \mathbb{N}</m>. Prove that if <m>n \neq 1</m> and <m>n \neq 2</m>, then <m>n\nmid m</m> or <m>n \nmid (m+2)</m>.
+</p>
+</statement>
+<hint>
+<p>
+What is the contrapositive of the statement?
+</p>
+</hint>
+<answer>
+<p>
+We see that this is a conditional statement. First let <m>n,m\in\mathbb N</m>. So, to prove the statement, we can assume the hypothesis, i.e. <m>n \neq 1</m> and <m>n \neq 2</m> and show that <m>n\nmid m</m> or <m>n \nmid (m+2)</m>. However, the assumption doesn't give us much to work with. We can try to look at cases to create more structure to work with, but unfortunately, it is also not clear what those cases should be.
+</p>
+<p>
+Changing our strategy, we can also look at the contrapositive of the statement:
+<me>
+\text{If } n\mid m \text{ and } n\mid (m+2), \text{ then } n=1 \text{ or } n=2.
+</me>
+Here we see that we assume <m>n\mid m</m> and <m>n\mid (m+2)</m>. Then we can write <m>m=xn</m> and <m>m+2=yn</m>. Now since the result says something about <m>n,1</m> and <m>2</m>, it makes sense to try to use this equations to say something about <m>2</m>. Taking the difference of these gives us
+<me>
+2 = xn-yn = n(x-y)
+</me>
+which implies that <m>n</m> should be able to divide <m>2</m> as well. But we know only natural number divisors of <m>2</m> are <m>1</m> and <m>2</m>, which is just what we wanted to show. Now, let's write this up.
+</p>
+</answer>
+
+<solution>
+<proof><p>
+We prove the contrapositive. Let <m>n,m \in \mathbb{N}</m> and suppose that <m>n|m</m> and <m>n|(m+2)</m>. Then there exists <m>x,y \in \mathbb{N}</m> so that <m>m = xn</m> and <m>m+2 = yn</m>. Combining these we have <m>xn + 2 = yn</m>, and rearranging gives <m>n(y-x) = 2</m> so that <m>n|2</m>. However the only natural numbers dividing <m>2</m> are <m>1</m> and <m>2</m> so that either <m>n =1</m> or <m>n = 2</m>.
+</p>
+</proof>
+
+</solution>
+</exercise>

@@ -1,0 +1,50 @@
+<exercise>
+<!-- source latex = 'intersection of power sets is the power set of the intersection question.tex' -->
+<!-- converted on 18/08/2021 at 15:17 -->
+<statement>
+<p>
+Prove or disprove the following statement:
+</p>
+
+<blockquote>
+<p>
+ If <m>A</m> and <m>B</m> are sets, then <m>\mathcal{P}(A)\cap\mathcal{P}(B) = \mathcal{P}(A\cap B)</m>.
+</p>
+</blockquote>
+
+</statement>
+<hint>
+<p>
+Remember that the power set is the set of subsets. That is
+<me>
+  X \in \pow{A} \iff X \subseteq A.
+</me>
+</p>
+</hint>
+<answer>
+<p>
+We see that since we are dealing with power sets in this question, we may not be able to use Venn diagrams to determine the set equality. This means that to see whether we want to prove or disprove the statement, we need to understand what the statement claims.
+</p>
+<p>
+We can see that the statement says: <q>intersection of the power sets of <m>A</m> and <m>B</m> is the power set of their intersection</q>. In other words, it says that every set that is both a subset of <m>A</m> and <m>B</m> must be a subset of their intersection AND  a subset of their intersection must be a subset of both <m>A</m> and <m>B</m>. This makes more sense. We can tell now that this statement is true. So, we can try to prove it.
+</p>
+</answer>
+<solution>
+
+<proof><p> This is a set equality, so we have to prove <m>\mathcal{P}(A)\cap\mathcal{P}(B) \subseteq \mathcal{P}(A\cap B)</m> and the reverse inclusion,  <m> \mathcal{P}(A)\cap\mathcal{P}(B) \supseteq \mathcal{P}(A\cap B)</m>.
+<ul>
+<li>
+<p>
+ <m>\subseteq</m>: Let <m>X\in \mathcal{P}(A)\cap\mathcal{P}(B) </m>. Then we see that <m>X\in\mathcal{P}(A)</m> and <m>X\in \mathcal{P}(B)</m>. This implies that <m>X\subseteq A</m> and <m>X\subseteq B</m>. Then we see that if <m>z\in X</m>, then <m>z\in A</m> and <m>z\in B</m>, that is <m>z\in A\cap B</m>. Hence, <m>X\subseteq A\cap B</m>. Then we see that <m>X\in \mathcal{P}(A\cap B)</m>.
+</p>
+</li>
+<li>
+<p>
+ <m>\supseteq</m>: Let <m>Y\in \mathcal{P}(A\cap B)</m>. Then we see that <m>Y\subseteq A\cap B</m>. Thus, if <m>t\in Y</m>. then <m>t\in A\cap B</m>. This implies <m>t\in A</m> and <m>t\in B</m>. Thus, we see that <m>Y\subseteq A</m> and <m>Y\subseteq B</m>. This means that <m>Y\in  \mathcal{P}(A)</m> and <m>Y\in \mathcal{P}(B)</m>. Therefore <m>Y\in \mathcal{P}(A)\cap\mathcal{P}(B)</m>.
+</p></li>
+</ul>
+Hence, the result follows.
+</p></proof>
+
+</solution>
+</exercise>

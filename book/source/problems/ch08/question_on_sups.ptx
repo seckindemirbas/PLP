@@ -1,0 +1,181 @@
+<exercise xml:id="ex_sup_q2">
+<!-- source latex = 'question_on_sups.tex' -->
+<!-- converted on 07/12/2021 at 11:52 -->
+<statement>
+<p>
+This question involves the supremum, which we first introduced in a previous exercise, <xref ref="ex_sup_q1"/>.
+We recommend that you complete that question before you attempt this one.
+</p>
+<p>
+Let <m>S\subset\mathbb{R}</m>. We say <m>b\in\mathbb{R}</m> is an <em>upper bound</em> of <m>S</m> if <m>s\leq b</m> for every <m>s\in S</m>. Further, we say <m>a\in\mathbb{R}</m> is the <em>supremum</em> (or the <em>least upper bound</em>) of <m>S</m>, denoted by <m>\sup(S)</m>, if
+<ul>
+<li>
+<p>
+ <m>a</m> is an upper bound for <m>S</m>, and
+</p></li>
+<li>
+<p>
+ if <m>b</m> is an upper bound for <m>S</m>, then <m>a\leq b</m>.
+</p></li>
+</ul>
+</p>
+<p>
+Suppose that <m>S,T</m> are non-empty subsets of <m>\mathbb{R}</m>, and <m>s=\sup(S)</m>, <m>t=\sup(T)</m>, where <m>s,t \in\mathbb{R}</m>.
+<ol marker="(a)">
+<li>
+<p>
+ Show that <m>\sup(S\cup T)=\max\set{s,t}</m>.
+</p></li>
+<li>
+<p>
+ Can you determine <m>\sup(S\cap T)</m>?
+</p></li>
+<li>
+<p>
+ Define <m>S+T=\set{s+t:s\in S, t\in T}</m>. Show that <m>\sup(S+T)=s+t</m>.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<hint>
+<p>
+Suppose we are trying to prove that <m>a</m> is the least upper bound of a set <m>S</m>.
+Then we need prove that the two defining properties of the supremum hold for <m>a</m>. In order to prove the statement <q>if <m>b</m> is an upper bound for <m>S</m>, then <m>a\leq b</m>,</q> it may be easier to show the contrapositive, <q>if <m>b \lt a</m>, then <m>b</m> is not an upper bound for <m>S</m>.</q>  In order to prove that contrapositive, we need to show that for any <m>b \lt a</m>, there is some <m>s\in S</m> so that <m>s \gt b</m>. Then <m>b</m> will not be an upper bound for <m>S</m>, by definition.
+</p>
+</hint>
+<answer>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ We need to show that <m>a=\max\{s,t\}</m> satisfies the following two properties:
+<ul>
+<li>
+<p>
+ <m>a</m> is an upper bound for <m>S\cup T</m>, so <m>x\leq a</m> for all <m>x\in S\cup T</m>, and
+</p></li>
+<li>
+<p>
+ <m>a\leq b</m> for any upper bound <m>b</m> of <m>S\cup T</m>.
+</p></li>
+</ul>
+</p>
+</li>
+<li>
+<p>
+ Let's look at some examples for <m>S</m> and <m>T</m> to see if we can find any patterns.
+<ul>
+<li>
+<p>
+ Say <m>S=(0,2)</m> and <m>T=(0,1)</m>, so that <m>s=2</m> and <m>t=1</m>. Then <m>S\cap T=T</m>, and so <m>\sup(S\cap T)=1=t</m>.
+</p></li>
+<li>
+<p>
+ Suppose <m>S=(0,2)</m> and <m>T=(1,3)</m>, so that <m>s=2</m> and <m>t=3</m>. Then <m>S\cap T=(1,2)</m>, and so <m>\sup(S\cap T)=2=s</m>.
+</p></li>
+</ul>
+From these examples, we may believe that <m>\sup(S\cap T)=\min(S,T)</m>. However, we haven't yet looked at an example where <m>S</m> and <m>T</m> are disjoint.
+<ul>
+<li>
+<p>
+ Say <m>S=(0,1)</m> and <m>T=(1,3)</m>, in which case <m>s=1</m> and <m>t=3</m>. Then <m>S\cap T=\emptyset</m>. What's the least upper bound of the empty set? We claim that any real number is an upper bound for the empty set.
+Indeed, suppose <m>a\in \mathbb{R}</m>. The statement, if <m>s\in\emptyset</m> then <m>s\leq a</m>, is true, since the hypothesis is always false! Since every real number of <m>\emptyset</m> is an upper bound, it can't have a least upper bound.
+</p></li>
+</ul>
+</p>
+</li>
+<li>
+<p>
+ We need to show that <m>a=s+t</m> satisfies the following two properties:
+<ul>
+<li>
+<p>
+ <m>a</m> is an upper bound for <m>S+T</m>.
+</p></li>
+<li>
+<p>
+ If <m>b</m> is an upper bound of <m>S+T</m>, then <m>a\leq b</m>.
+</p></li>
+</ul>
+The second part is trickier to prove, and we'll try to prove the contrapositive instead:
+</p>
+
+<blockquote>
+<p>
+If <m>b \lt a</m>, then <m>b</m> is not an upper bound of <m>S+T</m>.
+</p>
+</blockquote>
+
+<p>
+This means that we need to find some <m>x\in S+T</m> such that <m>x \gt b</m>.
+We want to write <m>b</m> as a sum of two elements, say <m>u</m> and <m>v</m>, that are less than <m>s</m> and <m>t</m> respectively. If we have such an <m>u</m> and <m>v</m>, then they will not be upper bounds for <m>S</m> and <m>T</m>, respectively.
+Then, by definition, there will be <m>c\in S</m> and <m>d\in T</m> so that <m>c \gt u</m> and <m>d \gt v</m>. But then <m>c+d \gt u+v=b</m>, so <m>b</m> would not be an upper bound for <m>S+T</m>.
+</p>
+<p>
+How can we find these elements <m>u</m> and <m>v</m>? There are many choices, but we'll set
+<me>
+  u = s-\epsilon \qquad \text{and} \qquad
+  v = t-\epsilon
+</me>
+where <m>\epsilon = \frac{a-b}{2}</m>. Then
+<me>
+  u+v = s+t-2\epsilon = a-(b-a) = b.
+</me>
+</p>
+
+
+</li>
+</ol>
+</p>
+</answer>
+
+<solution>
+<proof><title>Proof of (a)</title>
+<p>
+Let <m>S,T\subset\mathbb{R}</m>, and <m>s=\sup(S)</m>, <m>t=\sup(T)</m>. Suppose <m>a=\max\{s,t\}</m>. Then for any <m>x \in S \cup T</m> we know that <m>x \in S</m> or <m>x \in T</m>.
+<ul>
+<li>
+<p>
+ If <m>x\in S</m>, then <m>x\leq s\leq a</m>.
+  </p></li>
+<li>
+<p>
+ Similarly,  when <m>x\in T</m>, then <m>x\leq t\leq a</m>.
+</p></li>
+</ul>
+Hence  <m>a</m> is an upper bound for <m>S\cup T</m>.
+</p>
+<p>
+Now let <m>b</m> be any upper bound for <m>S\cup T</m>. By definition, this means that for all <m>x\in S\cup T</m>, <m>x\leq b</m>.
+Since all elements of <m>S</m> and <m>T</m> are also elements of <m>S \cup T</m>, it follows that <m>b</m> is an upper bound for <m>S</m> and <m>T</m>.
+Now, since <m>s</m> and <m>t</m> are the least upper bounds of <m>S</m> and <m>T</m> respectively, we must have <m>s\leq b</m> and <m>t\leq b</m>.
+Hence <m>a=\max\{s,t\}\leq b</m>.
+Thus <m>a</m> is smaller than any upper bound of <m>S \cup T</m>, and so is the least upper bound of <m>S\cup T</m>, as required.
+</p></proof>
+
+<p>
+  For (b), one cannot determine the supremum of the intersection <m>S \cap T</m> from <m>s,t</m>. One requires more detailed information about the sets. See the scratchwork above.
+</p>
+
+<proof><title>Proof of (c)</title>
+<p>
+Let <m>S,T\subset\mathbb{R}</m>, and <m>s=\sup(S)</m>, <m>t=\sup(T)</m>. Let <m>a=s+t</m>.
+</p>
+<p>
+Then <m>a</m> is an upper bound for <m>S\cup T</m>; indeed, for any <m>x\in S+ T</m>, we may write <m>x=y+z</m> for some <m>y\in S</m>, <m>z\in T</m>.
+But by definition of the supremum, <m>y\leq s</m> and <m>z\leq t</m>. Thus <m>x=y+z\leq s+t=a</m>.
+</p>
+<p>
+Next, suppose that <m>b \lt a</m>. Then <m>\epsilon=\frac{a-b}{2}</m> is a positive real number. Hence <m>s-\epsilon</m> and <m>t-\epsilon</m> are not upper bounds for <m>S</m> and <m>T</m> respectively, by definition of the supremum.
+Consequently, there are some <m>c\in S</m>, <m>d\in T</m> such that <m>c \gt s-\epsilon</m> and <m>d \gt t-\epsilon</m>.
+But then
+<me> c+d  \gt  (s-\epsilon) +(t-\epsilon)=a-2\epsilon=a-(a-b)=b, </me>
+and since <m>c+d\in S+T</m>, we see that <m>b</m> is not an upper bound for <m>S+T</m>.
+</p>
+<p>
+Thus <m>a</m> is the least upper bound of <m>S+T</m>, as required.
+</p></proof>
+
+</solution>
+</exercise>

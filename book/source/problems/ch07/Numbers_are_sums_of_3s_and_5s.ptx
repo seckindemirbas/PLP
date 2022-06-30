@@ -1,0 +1,33 @@
+<exercise>
+<!-- source latex = 'Numbers are sums of 3s and 5s.tex' -->
+<!-- converted on 08/11/2021 at 10:52 -->
+<statement>
+<p>
+You go on vacation to a foreign country. The local currency only has <m>3</m> and <m>5</m> dollar bills, and locals will only give items a price <m>p\in \mathbb{N}</m> such that <m>p\geq 8</m>. Assume that you have access to an unlimited supply of <m>3</m> and <m>5</m> dollar bills. Can you buy any souvenir you want? Give a proof or a counterexample.
+</p>
+</statement>
+<hint>
+<p>
+Shops will not be intimidated by excess purchasing power; even though you have lots of money, this fictional mathematical country does not allow you to overpay for an item.
+</p>
+</hint>
+<solution>
+<p>
+<em>Claim:</em> You can buy any souvenir you want!
+</p>
+
+<proof><p>
+We proceed by strong induction. As a base case, we take <m>p=8</m>, <m>p=9</m>, and <m>p=10</m>. Since <m>p=3+5</m>, we can pay for an <m>\$8</m> item with one <m>3</m> dollar bill and one <m>5</m> dollar bill. Similarly, <m>9= 3 \cdot 3 </m>, so we can use three <m>\$3</m> bills to purchase a <m>\$9</m> item, and <m>10 = 2\cdot 5</m>, so we can use two <m>\$5</m> bills to purchase a <m>\$10</m> item.
+</p>
+<p>
+Let <m>n \in \mathbb{N}</m> with <m>n \gt 10</m>. As our inductive hypothesis, we assume that we can pay for items with price <m>p=8, \, p=9, \dots, p=n</m> using only <m>3</m> and <m>5</m> dollar bills. We show that we can purchase an <m>\$(n+1)</m> item.
+</p>
+<p>
+By the inductive hypothesis, we can purchase an <m>\$(n-2)</m> souvenir. That is, there exist natural numbers <m>a, b</m> such that <m>3a+5b = n-2</m>. Adding <m>3</m> to each side, we see <m>3(a+1) + 5b = n+1</m>. Therefore, we can purchase an <m>\$(n+1)</m> souvenir using <m>(a+1)</m> <m>\$3</m> bills and <m>b</m> <m>\$5</m> bills.
+</p>
+<p>
+By the principle of strong mathematical induction, the result follows.
+</p></proof>
+
+</solution>
+</exercise>

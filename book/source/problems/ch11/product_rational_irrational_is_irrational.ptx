@@ -1,0 +1,30 @@
+<exercise>
+<!-- source latex = 'product_rational_irrational_is_irrational.tex' -->
+<!-- converted on 06/02/2022 at 13:48 -->
+<statement>
+<p>
+Let <m>r,x\in\mathbb{R}</m>, with <m>r\neq0</m>. Prove by contradiction that if <m>r</m> is rational and <m>x</m> is irrational, then <m>rx</m> must be irrational.
+</p>
+</statement>
+
+<answer>
+<p>
+Let's assume the conclusion is false, that is, that <m>rx</m> is rational. Then we can write <m>rx=p/q</m> and <m>r=m/n</m> for integers <m>p,q,m,n</m>.
+Using this, we can show that <m>x</m> is rational, which is a contradiction. However, when we write the proof up, we need to be careful to always show that our denominators are non-zero
+</p>
+</answer>
+<solution>
+
+<proof><p>
+Let <m>r,x\in\mathbb{R}</m> with <m>r\neq0</m>. Suppose that <m>r</m> is rational and <m>x</m> is irrational. Assume, toward a contradiction, that <m>rx\in\mathbb{Q}</m>.
+Then there are integers <m>p,q</m>, with <m>q</m> non-zero, such that <m>rx=p/q</m>.
+As <m>r\neq0</m> and rational, there are non-zero integers <m>m,n</m> such that <m>r=m/n</m>.
+Then 
+<me> \frac{p}{q}=rx=\frac{m}{n}x, </me>
+and since <m>m\neq0</m> we have
+<me> x=\frac{pn}{qm}. </me>
+But <m>pn,qm\in\mathbb{Z}</m> and <m>qm\neq0</m>, which contradicts the fact that <m>x</m> is irrational. Thus <m>x\not\in\mathbb{Q}</m>, as required.
+</p></proof>
+
+</solution>
+</exercise>

@@ -1,0 +1,63 @@
+<exercise>
+<!-- source latex = 'power_of_2_greater_than_2n.tex' -->
+<!-- converted on 12/10/2021 at 14:31 -->
+<statement>
+<p>
+Let <m>n\in\mathbb{N}</m>. Using induction, prove that <m>2^n\geq 2n</m>.
+</p>
+</statement>
+
+<!-- <hint></hint> -->
+
+<answer>
+<p>
+We need to prove the statement by induction. Let's take a look at the base case and the inductive step.
+<ul>
+<li>
+<p>
+ Base case: <m>n=1</m>. Then <m>2^n=2= 2n</m>, so <m>2^n\geq 2n</m>.
+</p></li>
+<li>
+<p>
+ Inductive step: Suppose that the inequality holds for <m>n=k</m>, so that <m>2^k\geq 2k</m>. We need to show that
+<m>2^{k+1}\geq 2(k+1)</m>.
+</p>
+<p>
+Note that if we multiply <m>2^k\geq 2k</m> by <m>2</m>, we'll end up with <m>2^{k+1}</m> on the right-hand side,
+which is the right-hand side of the inequality we want to show. So, let's do that to obtain <m>2^{k+1}\geq 4k</m>.
+</p>
+<p>
+Now, we just need to show that <m>4k\geq 2(k+1)</m>, and then we'll have <m>2^{k+1}\geq 2(k+1)</m>, as desired.
+Let's try to simplify the inequality <m>4k\geq 2(k+1)</m> to see why it may be true. Rewrite the inequality as
+<me> 4k\geq 2k+2. </me>
+Subtracting <m>2k</m> from both sides of the inequality, we have <m>2k\geq 2</m>, which after dividing by <m>2</m>, gives <m>k\geq1</m>.
+But we know that <m>k\geq1</m>, since <m>k\in\mathbb{N}</m>.
+</p>
+<p>
+We can reverse all of these steps to show that <m>k\geq 1</m> implies <m>4k\geq 2(k+1)</m>.
+When we write up the formal proof, it's important to start with what we know, namely, that <m>k\geq 1</m>, in order to show the desired inequality, that <m>4k\geq 2(k+1)</m>.
+</p></li>
+</ul>
+</p>
+<p>
+Now we're ready to write up the proof.
+</p>
+</answer>
+
+<solution>
+  <proof>
+<p>
+Let <m>n\in\mathbb{N}</m>. We proceed with induction on <m>n</m>.
+For the base case, suppose <m>n=1</m>. Since <m>2^1=2\cdot 1</m>, we have <m>2^n\geq 2n</m>.
+</p>
+<p>
+Now suppose that the statement is true for <m>n=k</m>; that is, <m>2^k\geq 2k</m>. Multiplying both sides of the inequality by <m>2</m>, we have
+<m>2^{k+1}\geq 4k</m>.
+Rewrite this inequality as <m>2^{k+1}\geq 2k+2k</m>.  Since <m>k\geq 1</m>, we have <m>2k\geq 2</m>, and so
+<me> 2^{k+1}\geq 2k+2k\geq 2k+2=2(k+1) </me>
+and thus the result is established for <m>n=k+1</m>. By induction, <m>2^n\geq 2n</m> holds for any <m>n\in\mathbb{N}</m>.
+</p>
+</proof>
+
+</solution>
+</exercise>

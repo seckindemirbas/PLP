@@ -1,0 +1,16 @@
+<exercise>
+<!-- source latex = 'Irrationals are uncountable.tex' -->
+<!-- converted on 03/03/2022 at 12:40 -->
+<statement>
+<p>
+Prove that the set of all irrational numbers is uncountable. You may assume the fact that the set of real numbers is uncountable.
+</p>
+</statement>
+<solution>
+
+<proof><p>
+Let <m>\mathbb{I}</m> denote the set of irrational numbers. By way of contradiction, assume that <m>\mathbb{I}</m> is countable. Then we see that <m>\mathbb{R}=\mathbb{Q}\cup\mathbb{I}</m>. Since <m>\mathbb{Q}</m> is countable and <m>\mathbb{I}</m> is countable, and the union of countable sets is countable, we conclude that <m>\mathbb{R}</m> is countable, which is a contradiction. Therefore the set of irrational numbers is uncountable.
+</p></proof>
+
+</solution>
+</exercise>

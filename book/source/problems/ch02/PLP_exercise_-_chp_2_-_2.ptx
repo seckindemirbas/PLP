@@ -1,0 +1,43 @@
+<exercise>
+<!-- source latex = 'PLP exercise - chp 2 - 2.tex' -->
+<!-- converted on 23/06/2021 at 20:48 -->
+<statement>
+<p>
+Indicate whether the following are true or false.
+<ol marker="(a)">
+<li>
+<p>
+ If today is Saturday, then it is a weekend.
+    </p></li>
+<li>
+<p>
+ If it is a weekend, then today is Saturday.
+    </p></li>
+<li>
+<p>
+ If the moon is made of cheese, then every cat in this room is purple.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ True. A weekend consists of the days Saturday and Sunday, hence, if it is Saturday, we can conclude that it is the weekend.
+    </p></li>
+<li>
+<p>
+ False. Since a weekend consists of Saturday and Sunday, knowing that it is a weekend is not enough to conclude that it is Saturday.
+    </p></li>
+<li>
+<p>
+ True. The hypothesis is false, so we automatically conclude that the implication is true.
+</p>
+</li>
+</ol>
+</p>
+</solution>
+</exercise>

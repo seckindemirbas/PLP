@@ -1,0 +1,56 @@
+<exercise>
+<!-- source latex = 'quant_mix_1.tex' -->
+<!-- converted on 12/08/2021 at 19:46 -->
+<statement>
+<p>
+Determine whether the following four statements are true or false. Explain your answers.
+<ol marker="(a)">
+<li>
+<p>
+ <m>\exists x\in\mathbb{Z} \text{ s.t. } \exists y\in\mathbb{Z} \text{ s.t. } x+y=3</m>.
+</p></li>
+<li>
+<p>
+ <m>\exists x\in\mathbb{Z} \text{ s.t. } \forall y\in\mathbb{Z}, x+y=3</m>.
+</p></li>
+<li>
+<p>
+ <m>\forall x\in\mathbb{Z}, \exists y\in\mathbb{Z} \text{ s.t. } x+y=3</m>.
+</p></li>
+<li>
+<p>
+ <m>\forall x\in\mathbb{Z}, \forall y\in\mathbb{Z},  x+y=3</m>.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<hint>
+<p>
+If you are unsure if the statement is true or not, then explore its negation <mdash/> it might be easier to understand.
+</p>
+</hint>
+<solution>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ True. We just need to find one example of <m>x,y</m> so that <m>x+y=3</m>. So take <m>x=0,y=3</m>.
+</p></li>
+<li>
+<p>
+ False. We show the negation is true; the negation is <m>\forall x \in \mathbb{Z}, \exists y\in \mathbb{Z} \text{ s.t. } x+y \neq 3</m>. We must be careful to choose <m>x</m> before we choose <m>y</m>. So, let <m>x</m> be any integer, and then set <m>y=-x</m>. Then <m>x+y = 0 \neq 3</m>. Since the negation is true, the original is false.
+</p></li>
+<li>
+<p>
+ True. Let <m>x</m> be any integer and then pick <m>y=3-x</m>. Then <m>x+y=3</m>.
+</p></li>
+<li>
+<p>
+ False. We show the negation is true; the negation is <m>\exists x\in \mathbb{Z} \text{ s.t. }  \exists y\in \mathbb{Z} \text{ s.t. } x+y \neq 3</m>. So we only need one example of <m>x,y</m> so that <m>x+y \neq 3</m>. Pick <m>x=3,y=7</m> then <m>x+y \neq 3</m>. Since the negation is true, the original is false.
+</p>
+</li>
+</ol>
+</p>
+</solution>
+</exercise>

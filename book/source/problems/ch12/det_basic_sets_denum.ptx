@@ -1,0 +1,156 @@
+<exercise>
+<!-- source latex = 'det_basic_sets_denum.tex' -->
+<!-- converted on 08/03/2022 at 14:52 -->
+<statement>
+<p>
+Determine if each of the following sets is denumerable.
+<ol marker="(a)">
+<li>
+<p>
+ The set of irrational numbers, <m>\mathbb{I}</m>
+</p></li>
+<li>
+<p>
+ <m>[0,1]\cap \mathbb{Q}</m>
+</p></li>
+<li>
+<p>
+ <m>\set{\pi+q:q\in\mathbb{Q}}</m>
+</p></li>
+<li>
+<p>
+ <m>\set{a+q:q\in\mathbb{Q}}</m> for some fixed <m>a\in\mathbb{R}</m>
+</p></li>
+<li>
+<p>
+ <m>\set{\pi q:q\in\mathbb{Q}}</m>
+</p></li>
+<li>
+<p>
+ <m>\set{aq:q\in\mathbb{Q}}</m> for some fixed <m>a\in\mathbb{R}</m>
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<hint>
+<p>
+Your answers for (d) or (f) may depend on (a).
+</p>
+</hint>
+
+<answer>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ Since we're trying to figure out whether or not <m>\mathbb{I}</m> is denumerable, let's assume that it is, and see what kind of conclusion we may reach. That is, let's see if under this assumption we reach a contradiction.
+</p>
+
+
+</li>
+<li>
+<p>
+ We know that <me> [0,1]\cap \mathbb{Q}\subset \mathbb{Q}, </me> and
+ that <m>\mathbb{Q}</m> is denumerable. Since any subset of a
+ denumerable set is countable, and the subset is infinite, it must be
+ denumerable.
+</p>
+  
+</li>
+<li>
+<p>
+ The set
+<me> \set{\pi+q:q\in\mathbb{Q}} </me>
+shifts the set of rational numbers by <m>\pi</m>. Intuitively, we think that shifting shouldn't change the size of a set, but of course, we need to prove this by showing that the set is denumerable, like <m>\mathbb{Q}</m>.
+Indeed, we can define a bijection between <m>\set{\pi+q:q\in\mathbb{Q}}</m> and <m>\mathbb{Q}</m>. Since <m>\mathbb{Q}</m> is denumerable, the other is too.
+</p>
+
+</li>
+<li>
+<p>
+ Part (c) is a special case of this, with <m>a=\pi</m>. We need to check that the argument given in part (c) works when <m>a</m> is an arbitrary real number.
+</p>
+
+</li>
+<li>
+<p>
+ The set
+<me> \set{\pi q:q\in\mathbb{Q}} </me>
+scales the set of rational numbers by <m>\pi</m>. In comparison to part (c), it may not be as intuitive that this set has the same size as the rational numbers. However,
+we can define the bijection <m>g(q)=\pi q</m> from the rational numbers to <m>\set{\pi q:q\in\mathbb{Q}}</m>.
+</p>
+
+
+</li>
+<li>
+<p>
+ Part (e) is a special case of this, with <m>a=\pi</m>. We need to check that the argument given in part (e) works when <m>a</m> is an arbitrary real number.
+</p>
+
+</li>
+</ol>
+</p>
+</answer>
+
+<solution>
+  <proof><title>Proof of (a)</title>
+    <p>
+Assume, towards contradiction, that <m>\mathbb{I}</m> is denumerable. Then both <m>\mathbb{I}</m>  and <m>\mathbb{Q}</m> are countable, and by <xref ref="res_count_union_intersect"/>,
+<me> \mathbb{R}=\mathbb{I}\cup\mathbb{Q} </me>
+is countable as well. But this is a contradiction, since the real numbers are uncountable. Hence <m>\mathbb{I}</m> is uncountable.
+</p></proof>
+
+<proof><title>Proof of (b)</title>
+<p>
+ We know that
+<me> [0,1]\cap \mathbb{Q}\subset \mathbb{Q}, </me>
+and that <m>\mathbb{Q}</m> is denumerable. Hence, by <xref ref="thm_countable_subset"/>, <m>[0,1]\cap \mathbb{Q}</m> is countable.
+Moreover, <m>[0,1]\cap \mathbb{Q}</m> is infinite, since it contains the set <m>\set{1/n:n\in\mathbb{N}}</m>. Since the set is countable and infinite, it must be denumerable.
+</p>
+</proof>
+
+<proof><title>Proof of (c)</title>
+<p>
+Let <m>f:\mathbb{Q}\rightarrow\set{\pi+q:q\in\mathbb{Q}}</m> be given by <m>f(q)=\pi+q</m>. This function is surjective: if <m>x\in \set{\pi+q:q\in\mathbb{Q}}</m>, then
+<m>x=\pi+q</m> for some <m>q\in \mathbb{Q}</m>. But then <m>f(q)=x</m>. The function is injective: if <m>f(q)=f(r)</m>, then <m>\pi+q=\pi+r</m>, and so <m>q=r</m>.
+Therefore <m>f</m> is a bijection, and
+<me> |\set{\pi+q:q\in\mathbb{Q}}|=|\mathbb{Q}| </me>
+and as <m>\mathbb{Q}</m> is denumerable, <m>\set{\pi+q:q\in\mathbb{Q}}</m> is as well.
+</p></proof>
+
+<proof><title>Proof of (d)</title>
+<p>
+Let <m>f:\mathbb{Q}\rightarrow\set{a+q:q\in\mathbb{Q}}</m> be given by <m>f(q)=a+q</m>. This function is surjective: if <m>x\in \set{a+q:q\in\mathbb{Q}}</m>, then
+<m>x=a+q</m> for some <m>q\in \mathbb{Q}</m>. But then <m>f(q)=x</m>. The function is injective: if <m>f(q)=f(r)</m>, then <m>a+q=a+r</m>, and so <m>q=r</m>.
+Therefore <m>f</m> is a bijection, and
+<me> |\set{a+q:q\in\mathbb{Q}}|=|\mathbb{Q}| </me>
+and as <m>\mathbb{Q}</m> is denumerable, <m>\set{a+q:q\in\mathbb{Q}}</m> is as well.
+</p></proof>
+
+<proof><title>Proof of (e)</title>
+  <p>
+Let <m>g:\mathbb{Q}\rightarrow\set{\pi q:q\in\mathbb{Q}}</m> be given by <m>g(q)=\pi q</m>. This function is surjective: if <m>x\in \set{\pi q:q\in\mathbb{Q}}</m>, then
+<m>x=\pi q</m> for some <m>q\in \mathbb{Q}</m>. But then <m>g(q)=x</m>. The function is injective: if <m>g(q)=g(r)</m>, then <m>\pi q=\pi r</m>, and so <m>q=r</m>.
+Therefore <m>g</m> is a bijection, and
+<me> |\set{\pi q:q\in\mathbb{Q}}|=|\mathbb{Q}| </me>
+and as <m>\mathbb{Q}</m> is denumerable, <m>\set{\pi q:q\in\mathbb{Q}}</m> is as well.
+</p></proof>
+
+<proof><title>Proof of (f)</title>
+<p>
+  As in the proof of (e), we can define the function <m>g:\mathbb{Q}\rightarrow\set{a q:q\in\mathbb{Q}}</m> by <m>g(q)=a q</m>.
+</p>
+<p>
+The argument for surjectivity is similar as part (e):
+if <m>x\in \set{a q:q\in\mathbb{Q}}</m>, then <m>x=a q</m> for some <m>q\in \mathbb{Q}</m>, and <m>g(q)=x</m>.
+However, we have to be careful with injectivity. Suppose <m>g(q)=g(r)</m>, in which case <m>a q=ar</m>. This implies that <m>q=r</m> as long as <m>a\neq0</m>.
+</p>
+<p>
+Thus, we see that when <m>a\neq0</m>, <m>g</m> is a bijection and <m>\set{a q:q\in\mathbb{Q}}</m> is denumerable.
+If <m>a=0</m>, then <m>\set{a q:q\in\mathbb{Q}}=\set{0}</m>, and so the set is finite, not denumerable.
+</p>
+
+</proof>
+</solution>
+</exercise>

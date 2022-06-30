@@ -1,0 +1,47 @@
+<exercise>
+<!-- source latex = 'backwards_proof.tex' -->
+<!-- converted on 05/07/2021 at 12:55 -->
+<statement>
+<p>
+Consider the faulty proof below for the following statement:
+</p>
+<p>
+Let <m>x</m> be a positive real number. If <m>x \lt 1</m>, then <m>1 \lt \dfrac{3x+2}{5x}</m>.
+</p>
+
+<proof><title>Faulty proof</title>
+<p>
+Let <m>x</m> be positive. Then by multiplying the inequality
+<me> 1 \lt \frac{3x+2}{5x} </me>
+by <m>5x</m>, which is positive, we obtain
+<me> 5x \lt 3x+2 . </me>
+Collecting like terms, we have <m>2x \lt 2</m>, and finally dividing by <m>2</m>, we have <m>x \lt 1</m>.
+</p>
+</proof>
+
+<p>
+Identify any issues with the proof as written above, and then give a correct proof of the statement.
+</p>
+</statement>
+<solution>
+<p>
+The issue with the proof is that it is written in the wrong order <mdash/> we start with the conclusion of the implication, and end up with the hypothesis of the implication.
+Essentially, the proof is backwards. Often, when doing scratch work for proofs involving inequalities, you will end up with a backwards proof. However, when you're writing up the proof formally, always remember to start off with the hypothesis.
+</p>
+<p>
+Here's a correct proof of the statement:
+</p>
+
+<proof>
+<p>
+Let <m>x</m> be positive.
+Assume that <m>x \lt 1</m>.
+Then <m>2x \lt 2</m>, and so <m>5x \lt 3x+2</m>.
+Since <m>x \gt 0</m>, we can divide this inequality by <m>5x</m> to obtain
+<me> 1 \lt \frac{3x+2}{5x}</me>
+which is the desired inequality.
+</p>
+</proof>
+
+</solution>
+</exercise>
