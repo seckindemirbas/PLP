@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- Shamelessly taken from pretext examples -->
+<!-- reveal.js testing publication file    -->
+<!-- Override defaults as much as possible -->
+<publication>
+
+    <revealjs>
+        <appearance theme="black"/>
+        <resources host="cdn"/>
+    </revealjs>
+
+</publication>

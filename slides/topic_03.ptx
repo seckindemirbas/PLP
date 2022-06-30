@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pretext>
+
+<docinfo>
+    <macros>
+      \newcommand{\ds}{\displaystyle}
+      \newcommand{\es}{ {\varnothing}}
+  		\newcommand{\st}{ \;\mid\; }
+  		\newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+  		\newcommand{\set}[1]{ \left\{#1\right\} }
+      \renewcommand{\neg}{\sim}
+      \renewcommand{\text}[1]{\mathsf{\mbox{#1}}}
+    </macros>
+</docinfo>
+
+<slideshow>
+<title>PLP - 3</title>
+<subtitle>Topic 3 <mdash /> And, or &amp; not</subtitle>
+
+<frontmatter>
+<titlepage>
+  <author>
+    <personname>Demirbaş &amp; Rechnitzer</personname>
+    
+  </author>
+</titlepage>
+
+
+</frontmatter>
+
+
+<section>
+  <title>And, or &amp; not</title>
+
+  <slide><title>Negation</title>
+  <p>
+    Given <m>P</m> we can form a new statement with the opposite truth value.
+  </p>
+  <blockquote>
+    <p>
+      It is not the case that <m>P</m>
+    </p>
+  </blockquote>
+
+  <definition>
+    <statement>
+      <p>
+        The <term>negation</term> of a statement <m>P</m> is denoted <m>\neg P</m>.
+        <ul>
+          <li>When <m>P</m> is <em>true</em>, the negation <m>\neg P</m> is <em>false</em>.</li>
+          <li>When <m>P</m> is <em>false</em>, the negation <m>\neg P</m> is <em>true</em>.</li>
+        </ul>
+      </p>
+      <p>
+        The negation is also denoted <m>!P</m> and <m>\lnot P</m>.
+      </p>
+    </statement>
+  </definition>
+  </slide>
+
+  <slide><title>Examples and a table</title>
+  <p>
+    <ul>
+      <li>The negation of <q>It is tuesday</q> is <q>It is <em>not</em> Tuesday</q></li>
+      <li>The negation of <q><m>4 \in A</m></q> is <q><m>4 \not\in A</m></q></li>
+      <li>The negation of <q>4 is even</q> is <q>4 is not even</q> or better <q>4 is odd</q>.</li>
+    </ul>
+  </p>
+  <p>
+    We can summarise what negation does to truth values via a <term>truth table</term>
+  </p>
+  <sidebyside>
+  <tabular  left="minor" right="minor" top="minor" bottom="minor" halign="center">
+    <row>
+      <cell><m>P</m></cell><cell><m>\neg P</m></cell><cell><m>\neg(\neg P)</m></cell>
+    </row>
+    <row>
+      <cell>T</cell>
+      <cell>F</cell>
+      <cell>T</cell>
+    </row>
+    <row>
+      <cell>F</cell>
+      <cell>T</cell>
+      <cell>F</cell>
+    </row>
+  </tabular>
+</sidebyside>
+
+<p>
+  Note
+<ul>
+  <li>the <term>double negation</term> of <m>P</m> has the same truth value as <m>P</m></li>
+  <li>the <term>law of the excluded middle</term>: exactly one of <m>P</m> or <m>(\neg P)</m> is true.</li>
+</ul>
+</p>
+</slide>
+
+<slide><title>Conjunction, and, disjunction, &amp; or</title>
+  <p>
+    We combine statements using <term>and</term> &amp; <term>or</term> to make new statements.
+  </p>
+  <p>
+    The words <q>and</q>, <q>or</q> have precise mathematical meanings
+  </p>
+
+  <definition>
+    <statement>
+      <p>
+        Let
+        <m>P</m>
+        and
+        <m>Q</m>
+        be statements.
+        <ul>
+          <li>
+            <p>
+            The <term>disjunction</term> of <m>P</m> and <m>Q</m> is
+            <q> <m>P</m> <term>or</term> <m>Q</m> </q> and is denoted <m>P \lor Q</m>.
+          </p>
+          <p>
+            <m>P\lor  Q</m> is true when at least one of <m>P,Q</m> is true, else false.
+          </p>
+          </li>
+          <li>
+            <p>
+            The <term>conjunction</term> of <m>P</m> and <m>Q</m> is
+            <q> <m>P</m> <term>and</term> <m>Q</m> </q> and is denoted <m>P \land Q</m>.
+          </p>
+          <p>
+            <m>P\land  Q</m> is true when both <m>P,Q</m> are true, else false.
+          </p>
+          </li>
+        </ul>
+      </p>
+    </statement>
+  </definition>
+  <p>
+    Note: <em>colloquial</em> use of <q>or</q> is often different from this <em>mathematical</em> <q>or</q>
+  </p>
+
+</slide>
+
+<slide><title>Examples and tables</title>
+<p>
+  Let <m>P</m> be <q>8 is even</q> and let <m>Q</m> be <q>15 is prime</q>, then
+  <ul>
+    <li><m>P \lor Q</m> is <q>8 is even or 15 is prime</q></li>
+    <li><m>P \land Q</m> is <q>8 is even and 15 is prime</q></li>
+  </ul>
+  The first is true since <m>P</m> is true, the second is false since <m>Q</m> is false.
+</p>
+<p>
+  A truth table helps summarise:
+</p>
+<sidebyside>
+  <tabular>
+    <row>
+      <cell>
+        <m>P</m>
+      </cell>
+      <cell>
+        <m>Q</m>
+      </cell>
+      <cell>
+        <m>P \lor Q
+        </m>
+      </cell>
+      <cell>
+        <m>P \land Q</m>
+      </cell>
+    </row>
+    <row>
+      <cell>
+        T
+      </cell>
+      <cell>
+        T
+      </cell>
+      <cell>
+        T
+      </cell>
+      <cell>
+        T</cell>
+    </row>
+    <row>
+      <cell>
+        T
+      </cell>
+      <cell>
+        F
+      </cell>
+      <cell>
+        T
+      </cell>
+      <cell>
+        F
+      </cell>
+    </row>
+    <row>
+      <cell>
+        F
+      </cell>
+      <cell>
+        T
+      </cell>
+      <cell>
+        T
+      </cell>
+      <cell>
+        F
+      </cell>
+    </row>
+    <row>
+      <cell>
+        F
+      </cell>
+      <cell>
+        F
+      </cell>
+      <cell>
+        F
+      </cell>
+      <cell>
+        F
+      </cell>
+    </row>
+  </tabular>
+</sidebyside>
+</slide>
+
+<slide><title>Inclusive and exclusive</title>
+<p>
+  Mathematical <q>or</q>or is <term>inclusive</term> <mdash /> <m>P \lor Q</m> is true when <em>at least one</em> statement is true.
+</p>
+<p>
+  Colloquial <q>or</q> is often <term>exclusive</term> <mdash /> <m>P \;\mathrm{xor}\; Q</m> is true when <em>exactly one</em> statement is true.
+</p>
+
+<blockquote>
+  <p>Would you like chicken or beef for dinner?</p>
+</blockquote>
+
+<sidebyside>
+  <tabular>
+    <row>
+    <cell><m>P</m></cell>
+    <cell><m>Q</m></cell>
+    <cell><m>P \lor Q</m></cell>
+    <cell><m>P \; \mathrm{xor}\; Q</m></cell>
+    </row>
+    <row>
+      <cell>T</cell>
+      <cell>T</cell>
+      <cell>T</cell>
+      <cell><term>F</term></cell>
+    </row>
+    <row>
+      <cell>T</cell>
+      <cell>F</cell>
+      <cell>T</cell>
+      <cell>T</cell>
+    </row>
+    <row>
+      <cell>F</cell>
+      <cell>T</cell>
+      <cell>T</cell>
+      <cell>T</cell>
+    </row>
+    <row>
+      <cell>F</cell>
+      <cell>F</cell>
+      <cell>F</cell>
+      <cell>F</cell>
+    </row>
+  </tabular>
+</sidebyside>
+<p>
+  For exclusive-or write <q>Exactly one of <m>P</m> or <m>Q</m></q> or <q><m>P</m> or <m>Q</m> but not both</q>.
+</p>
+</slide>
+</section>
+
+</slideshow>
+</pretext>

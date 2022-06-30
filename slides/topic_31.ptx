@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pretext>
+
+<docinfo>
+    <macros>
+      \require{cancel}
+
+      \newcommand{\ds}{\displaystyle}
+      \newcommand{\es}{ {\varnothing}}
+  		\newcommand{\st}{ \;:\; }
+  		\newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+  		\newcommand{\set}[1]{ \left\{#1\right\} }
+      \newcommand{\Mod}[1]{\;(\mathrm{mod}\; #1)}
+      \newcommand{\rel}{\;R\;}
+  		\newcommand{\nrel}{\;\cancel{R}\;}
+      \renewcommand{\neg}{\sim}
+      \renewcommand{\text}[1]{\mathsf{\mbox{#1}}}
+      \DeclareMathOperator{\gcd}{gcd}
+      \DeclareMathOperator{\lcm}{lcm}
+    </macros>
+    <rename element="proposition" xml:lang="en-US">Result</rename>
+</docinfo>
+
+<slideshow>
+  <title>PLP - 31</title>
+  <subtitle>Topic 31<mdash />Functions</subtitle>
+
+  <frontmatter>
+  <titlepage>
+    <author>
+      <personname>Demirbaş &amp; Rechnitzer</personname>
+      
+    </author>
+  </titlepage>
+
+</frontmatter>
+
+<section><title>Escape from formulae</title>
+<slide><title>A function is not a formula</title>
+<p>
+  We are used to thinking of functions as formulas or (perhaps) algorithms
+  <ul>
+    <li>Give me an input number <m>x</m></li>
+    <li>I do some arithmetic on <m>x</m> or use look-up tables</li>
+    <li>I return to you a numerical result <m>y</m></li>
+  </ul>
+</p>
+<sidebyside widths="40% 20%">
+  <p>
+    Can define functions on other objects (not just numbers):
+    <ul>
+      <li>Input day of the week (in English)</li>
+      <li>Return the first letter</li>
+    </ul>
+    But must be <em>well defined</em>
+    <ul>
+      <li>Any legal input must have an output</li>
+      <li>One input value gives only one output value</li>
+    </ul>
+  </p>
+<image source="figures/day_function1.png"/>
+</sidebyside>
+
+</slide>
+
+<slide><title>Function as a look-up table</title>
+<p>
+  We can summarise the previous function as
+  <md>
+  <mrow>
+    \Big\{ (\text{Sunday}, S), (\text{Monday}, M), \amp (\text{Tuesday}, T), (\text{Wednesday}, W),
+  </mrow>
+  <mrow>  \amp (\text{Thursday}, T), (\text{Friday}, F), (\text{Saturday},S) \Big\}</mrow>
+  </md>
+</p>
+<p>
+  More generally a function <m>f</m>
+  <ul>
+    <li>takes inputs from set <m>A</m> and gives outputs in set <m>B</m></li>
+    <li>can be written as a subset of <m>f \subseteq A \times B</m> <mdash /> a type of <term>relation</term></li>
+  </ul>
+</p>
+<p>
+  Not every subset of <m>A \times B</m> is a function <mdash /> must be <em>well defined</em>
+  <ul>
+    <li>
+      <p>
+        Every input from <m>A</m> must have an output in <m>B</m>
+        <me>
+          \forall a \in A, \exists b \in B \text{ s.t. } (a,b) \in f
+        </me>
+      </p>
+    </li>
+    <li>
+      <p>
+        Exactly one output for a given input
+        <me>
+          (a,b_1) \in f \land (a,b_2) \in f \implies b_1 = b_2
+        </me>
+      </p>
+    </li>
+  </ul>
+</p>
+</slide>
+
+<slide><title>A definition</title>
+<definition>
+  <statement>
+    <p>
+      Let <m>A,B</m> be non-empty sets
+    </p>
+    <p>
+      A <term>function</term> from <m>A</m> to <m>B</m> is a non-empty subset <m>f \subseteq A \times B</m> so that
+      <ul>
+        <li>for every <m>a \in A</m>, there exists a <m>b \in B</m> so that <m>(a,b) \in f</m></li>
+        <li>if <m>(a,b) \in f</m> and <m>(a,c) \in f</m> then <m>b=c</m></li>
+      </ul>
+      The <term>domain</term> of <m>f</m> is <m>A</m>, and the <term>codomain</term> is <m>B</m>
+    </p>
+    <p>
+      If <m>(a,b)\in f</m> we write <m>f(a)=b</m> and say that <m>b</m> is the <term>image</term> of <m>a</m>
+    </p>
+    <p>
+      Finally, the <term>range</term> of <m>f</m> is
+      <me>
+        \mathrm{rng} f = \set{b \in B \text{ s.t. } \exists a \in A \text{ s.t. } f(a)=b}
+      </me>
+      Note that the <term>range</term> is a subset of the <term>codomain</term>
+    </p>
+  </statement>
+</definition>
+</slide>
+
+<slide><title>An example and a non-example</title>
+<p>
+  Consider the sets
+  <md>
+<mrow>
+    f &amp;= \set{ (x,y) \in \mathbb{Z}\times \mathbb{Z} \st 3x+2y=0}
+</mrow><mrow>
+    g &amp;= \set{ (x,y) \in \mathbb{Z}\times \mathbb{Z} \st 3x+y=0}.
+  </mrow>
+</md>
+</p>
+<p>
+  The set <m>f</m> is <em>not a function</em>
+  <ul>
+    <li>it is not defined on all of its domain <m>\mathbb{Z}</m></li>
+    <li>when <m>x=1</m> there is no <m>y \in \mathbb{Z}</m> so that <m>3x+2y=0</m></li>
+  </ul>
+</p>
+<p>
+  The set <m>g</m> is a function
+  <ul>
+    <li>for every <m>x \in \mathbb{Z}</m>, pick <m>y= -3x \in \mathbb{Z}</m>, then <m>(x,y)\in g</m></li>
+    <li><p>
+      if <m>(x,y)\in g</m> and <m>(x,z) \in g</m> then
+      <me>
+        3x+y=0 \qquad \text{ and } \qquad 3x+z=0
+      </me>
+      so <m>y=z</m> as required.
+    </p>
+  </li>
+  </ul>
+</p>
+</slide>
+
+</section>
+
+</slideshow>
+</pretext>

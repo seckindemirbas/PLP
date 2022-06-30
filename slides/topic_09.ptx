@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pretext>
+
+<docinfo>
+    <macros>
+      \newcommand{\ds}{\displaystyle}
+      \newcommand{\es}{ {\varnothing}}
+  		\newcommand{\st}{ \;\mid\; }
+  		\newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+  		\newcommand{\set}[1]{ \left\{#1\right\} }
+      \renewcommand{\neg}{\sim}
+      \renewcommand{\text}[1]{\mathsf{\mbox{#1}}}
+      \DeclareMathOperator{\gcd}{gcd}
+      \DeclareMathOperator{\lcm}{lcm}
+      \newcommand{\Mod}[1]{\;(\mathrm{mod}\; #1)}
+    </macros>
+</docinfo>
+
+<slideshow>
+<title>PLP - 9</title>
+<subtitle>Topic 9 <mdash />More proof examples</subtitle>
+
+<frontmatter>
+<titlepage>
+  <author>
+    <personname>Demirbaş &amp; Rechnitzer</personname>
+    
+  </author>
+</titlepage>
+
+
+</frontmatter>
+
+
+<section>
+  <title>More examples</title>
+
+  <slide><title>A divisibility example</title>
+  <proposition>
+    <statement>
+      <p>
+        Let <m>a,b,c \in \mathbb{Z}</m>. If <m>a \mid b</m> and <m>b \mid c</m> then <m>a \mid c</m>.
+      </p>
+    </statement>
+  </proposition>
+  <p>
+    We start with <term>scratch work</term> and <em>assume the hypothesis is true</em>.
+    <ul>
+      <li>So <m>a \mid b</m> and <m>b \mid c</m></li>
+      <li><em>By definition of divisibility</em>, <m>b=ka</m> and <m>c=\ell b</m> for some <m>k,\ell \in \mathbb{Z}</m></li>
+      <li>We <em>want to show that</em> <m>a \mid c</m>. That is <m>c = n a</m> for some <m>n \in \mathbb{Z}</m>.</li>
+      <li>Since <m>c = \ell b</m> and <m>b = ka</m> we know <m>c=\ell k a</m></li>
+      <li>Since <m>k,\ell \in \mathbb{Z}</m> we know that <m>k \ell \in \mathbb{Z}</m> so we are done!</li>
+    </ul>
+  </p>
+  <p>
+    After <term>scratch work</term> we have to write the proof <em>nice and neat</em> for our <term>reader</term>
+  </p>
+
+</slide>
+
+<slide><title>Cleaning it up</title>
+<p>
+  We need to clean up our <term>scratch work</term>
+  <ul>
+    <li>make sure logic flows correctly</li>
+    <li>no dead-ends, no scribbles, keep presentation neat and tidy</li>
+    <li>skip <em>very</em> obvious steps <mdash /> only if <em>very</em> obvious to the <term>reader</term> (not you)</li>
+    <li>make the text easy to read <mdash />
+    we add <q>hence</q>, <q>we know that</q>, <q>it follows that</q>, etc</li>
+    <li>dot-point form is okay when you are learning how to write proofs</li>
+  </ul>
+</p>
+
+<proof>
+<p>
+  We start by assuming the hypothesis to be true.
+  <ul>
+    <li>Assume that <m>a \mid b</m> and <m>b \mid c</m>, so that <m>b=ka</m> and <m>c=\ell b</m> for some <m>k,\ell \in \mathbb{Z}</m>.</li>
+    <li>It follows that <m>c = k \ell a</m></li>
+    <li>Since <m>k\ell \in \mathbb{Z}</m>, we know that <m>a \mid c</m> as required.</li>
+  </ul>
+</p>
+</proof>
+</slide>
+
+<slide><title>An inequality</title>
+<proposition>
+  <statement>
+    <p>
+      Let <m>x,y \in \mathbb{R}</m> then <m>x^2 + y^2 \geq 2xy</m>.
+    </p>
+  </statement>
+</proposition>
+
+<p>
+  <term>Scratch work:</term>
+  <ul>
+    <li>The implication hiding here is <m>(x,y \in \mathbb{R}) \implies (x^2+y^2 \geq 2xy)</m></li>
+    <li>We don't know much about inequalities, except <m>(x \in \mathbb{R}) \implies (x^2 \geq 0)</m>.</li>
+    <li>
+      <p>
+        Rearrange inequality to make it look like a square?
+        <me>
+          x^2+y^2-2xy \geq 0  \qquad \text{so} \qquad (x-y)^2 \geq 0
+        </me>
+      </p>
+    </li>
+    <li>This is what we want. The square of something is non-negative.</li>
+  </ul>
+</p>
+
+</slide>
+
+<slide><title>Be careful of flow of logic</title>
+  <p>
+    Logic flow in scratch work doesn't always match logic needed for proof.
+    <ul>
+      <li>We started from <term>conclusion</term> <m>x^2+y^2 \geq 2xy</m></li>
+      <li>Reached the <term>fact</term> that <m>(x-y)^2 \geq 0</m></li>
+    </ul>
+    This is backwards <mdash /> very common for proofs of inequalities.
+  </p>
+
+<proof>
+  <p>
+    <ul>
+      <li>Assume that <m>x,y \in \mathbb{R}</m></li>
+      <li>Since the square of any real is non-negative, we know that <m>(x-y)^2 \geq 0</m></li>
+      <li>This implies that <m>x^2 - 2xy + y^2 \geq 0</m></li>
+      <li>From this <m>x^2+y^2 \geq 2xy</m> as required.</li>
+    </ul>
+  </p>
+</proof>
+</slide>
+
+</section>
+
+</slideshow>
+</pretext>

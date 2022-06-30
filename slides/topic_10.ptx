@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pretext>
+
+<docinfo>
+    <macros>
+      \newcommand{\ds}{\displaystyle}
+      \newcommand{\es}{ {\varnothing}}
+  		\newcommand{\st}{ \;\mid\; }
+  		\newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+  		\newcommand{\set}[1]{ \left\{#1\right\} }
+      \renewcommand{\neg}{\sim}
+      \renewcommand{\text}[1]{\mathsf{\mbox{#1}}}
+      \DeclareMathOperator{\gcd}{gcd}
+      \DeclareMathOperator{\lcm}{lcm}
+      \newcommand{\Mod}[1]{\;(\mathrm{mod}\; #1)}
+    </macros>
+</docinfo>
+
+<slideshow>
+<title>PLP - 10</title>
+<subtitle>Topic 10 <mdash />Logical equivalence</subtitle>
+
+<frontmatter>
+<titlepage>
+  <author>
+    <personname>Demirbaş &amp; Rechnitzer</personname>
+    
+  </author>
+</titlepage>
+
+
+</frontmatter>
+
+
+<section>
+  <title>Tautologies and logical equivalence</title>
+
+<slide><title>Tautologies and contradictions</title>
+<p>
+  Statements that are always true turn out to be very useful.
+</p>
+
+<definition><title>Tautologies and contradictions</title>
+<statement>
+<p>A <term>tautology</term> is a statement that is always true</p>
+<p>A <term>contradiction</term> is a statement that is always false.</p>
+</statement>
+</definition>
+<p>
+  The following are examples of tautologies
+  <me>
+    P \lor (\neg P) \qquad \qquad
+    \neg (P \lor Q) \iff ((\neg P) \land (\neg Q))
+  </me>
+</p>
+<p>
+  The following are examples of contradictions
+  <me>
+    P \land (\neg P) \qquad \qquad
+    (P\land Q) \land ( (\neg P) \lor (\neg Q) )
+  </me>
+</p>
+
+</slide>
+
+<slide><title>A very useful tautology</title>
+<p>
+  <ul>
+    <li>The statements <m>P \lor Q</m> and <m>Q \lor P</m> have the same truth-tables.</li>
+    <li>The are <em>not the same</em> but they are <em>equivalent</em></li>
+    <li>
+      <p>
+        We can express this by saying
+        <q><em><m>(P \lor Q) \iff (Q \lor P)</m> is a tautology</em></q>
+      </p>
+    </li>
+  </ul>
+</p>
+
+<definition>
+<statement><p>
+  Two statements <m>R</m> and <m>S</m> are <term>logically equivalent</term> when <q><m>R\iff S</m></q> is a tautology.
+</p>
+<p>In this case we write <m>R \equiv S</m>.</p>
+</statement>
+</definition>
+
+<p>
+  Showing logical equivalence
+  <ul>
+    <li>build the truth tables, or</li>
+    <li>think about when each side is true and false</li>
+  </ul>
+</p>
+</slide>
+
+<slide>
+  <title>A useful equivalence</title>
+<p>
+  Consider <m>(P \implies Q) \equiv (\neg P) \lor Q</m>.
+</p>
+<p>
+  Why are these equivalent <mdash /> when true, when false?
+  <ul>
+    <li><em>Know your truth-tables!</em></li>
+    <li>
+      <term>LHS</term> is false only when <m>(P,Q)</m> = (T,F). Otherwise true.
+    </li>
+    <li>
+      <term>RHS</term> is false when both <m>(\neg P), Q</m> are false, that is <m>(P,Q)</m> = (T,F). Otherwise false.
+    </li>
+  </ul>
+  True at same time, false at same time. So equivalent.
+</p>
+<p>
+  Can also build the truth-tables <mdash /> tedious but works.
+</p>
+<sidebyside>
+  <tabular>
+    <row>
+    <cell><m>P</m> </cell>
+    <cell><m>Q</m></cell>
+    <cell><m>P \implies Q</m></cell>
+    <cell><m>(\neg P) \lor Q</m></cell>
+    </row>
+    <row>
+      <cell>T</cell>
+      <cell>T</cell>
+      <cell>T</cell>
+      <cell>T</cell>
+    </row>
+    <row>
+      <cell>T</cell>
+      <cell>F</cell>
+      <cell>F</cell>
+      <cell>F</cell>
+    </row>
+    <row>
+      <cell>F</cell>
+      <cell>T</cell>
+      <cell>T</cell>
+      <cell>T</cell>
+    </row>
+    <row>
+      <cell>F</cell>
+      <cell>F</cell>
+      <cell>T</cell>
+      <cell>T</cell>
+    </row>
+  </tabular>
+</sidebyside>
+
+</slide>
+
+<slide><title>Useful logical equivalences</title>
+<theorem><title>Logical equivalences</title>
+<statement><p>
+  Let <m>P</m> and <m>Q</m> be statements. Then
+<dl>
+<li><title>Implication</title><p> <m>(P \implies Q) \equiv ( (\neg P)\lor Q) )</m></p></li>
+<li><title>Contrapositive</title> <m>(P\implies Q) \equiv ((\neg Q) \implies (\neg P))</m></li>
+<li><title>Biconditional</title><m>(P \iff Q) \equiv ( (P\implies Q) \land (Q\implies P))</m></li>
+<li><title>Double negation</title> <m>\neg{(\neg{(P)})} \equiv P</m></li>
+<li><title>Commutative laws</title><p>
+<m>P \lor Q \equiv Q \lor P \qquad</m> and
+<m>\qquad P \land Q \equiv Q \land P</m></p>
+</li>
+</dl>
+</p></statement>
+</theorem>
+
+</slide>
+
+<slide><title>Useful logical equivalences 2</title>
+<theorem xml:id="thm-logical-equiv"><title>Logical equivalences</title>
+<statement><p>
+  Let <m>P, Q</m> and <m>R</m> be statements. Then
+<dl>
+<li><title>Associative laws</title><p>
+ <m>P \lor (Q\lor R) \equiv (P \lor Q)\lor R \qquad</m>
+and
+ <m>\qquad P \land (Q\land R) \equiv (P \land Q)\land R</m></p>
+</li>
+<li><title>Distributive laws</title>
+<p><m>P \lor (Q \land R) \equiv (P \lor Q) \land (P \lor R)\qquad </m>
+and  <m>\qquad P \land (Q \lor R) \equiv (P \land Q) \lor (P \land R)</m></p>
+</li>
+<li><title>DeMorgan's laws</title>
+<p><m>\neg{(P \lor Q)} \equiv (\neg{P}) \land (\neg{Q})\qquad </m>
+and
+<m>\qquad \neg{(P \land Q)} \equiv (\neg{P}) \lor (\neg{Q})</m>
+</p></li>
+</dl>
+</p></statement>
+</theorem>
+
+</slide>
+
+<slide><title>Back to the contrapositive</title>
+<p>
+  Show that <m>(P \implies Q) \equiv (\neg Q \implies \neg P)</m> using equivalences
+  <md>
+    <mrow> (P \implies Q) \amp \equiv (\neg P \lor Q) \amp \text{implication as or} </mrow>
+    <mrow> \amp\equiv (Q \lor \neg P) \amp \text{commutes} </mrow>
+    <mrow> \amp \equiv (\neg \neg Q \lor \neg P) \amp \text{double negative} </mrow>
+    <mrow> \amp \equiv (\neg Q \implies \neg P) \amp \text{or as implication} </mrow>
+  </md>
+</p>
+
+<p>
+  Why is this useful a useful equivalence?
+  <ul>
+    <li>Contrapositive is <em>equivalent</em> to the original implication</li>
+    <li>Proving one is true is <em>equivalent</em> as proving the other is true</li>
+    <li>Sometimes the contrapositive is <em>easier</em> to prove than the original</li>
+  </ul>
+</p>
+</slide>
+</section>
+
+</slideshow>
+</pretext>

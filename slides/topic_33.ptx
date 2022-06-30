@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pretext>
+
+<docinfo>
+    <macros>
+      \require{cancel}
+
+      \newcommand{\ds}{\displaystyle}
+      \newcommand{\es}{ {\varnothing}}
+  		\newcommand{\st}{ \;:\; }
+  		\newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+  		\newcommand{\set}[1]{ \left\{#1\right\} }
+      \newcommand{\Mod}[1]{\;(\mathrm{mod}\; #1)}
+      \newcommand{\rel}{\;R\;}
+  		\newcommand{\nrel}{\;\cancel{R}\;}
+      \renewcommand{\neg}{\sim}
+      \renewcommand{\text}[1]{\mathsf{\mbox{#1}}}
+      \DeclareMathOperator{\gcd}{gcd}
+      \DeclareMathOperator{\lcm}{lcm}
+    </macros>
+    <rename element="proposition" xml:lang="en-US">Result</rename>
+</docinfo>
+
+<slideshow>
+  <title>PLP - 33</title>
+  <subtitle>Topic 33<mdash />Injections, surjections and bijections</subtitle>
+
+  <frontmatter>
+  <titlepage>
+    <author>
+      <personname>Demirbaş &amp; Rechnitzer</personname>
+      
+    </author>
+  </titlepage>
+
+
+</frontmatter>
+
+<section>
+  <title>Injections, surjections and bijections</title>
+
+<slide><title>Injections <mdash /> different maps to different</title>
+<definition>
+  <statement>
+    <p>
+      Let <m>f:A \to B</m> be a function.
+    </p>
+    <p>
+      The function <m>f</m> is <term>injective</term> when for all <m>a_1,a_2 \in A</m>
+      <me>
+        (a_1 \neq a_2) \implies f(a_1)\neq f(a_2)
+      </me>
+      Equivalently (by the contrapositive)
+      <me>
+        f(a_1) = f(a_2) \implies a_1 = a_2
+      </me>
+      <term>Injections</term> are also called <term>one-to-one</term> functions.
+    </p>
+  </statement>
+</definition>
+<p>
+  Note: if <m>f</m> is injective then for every <m>b \in B, |f^{-1}(\set{b})| \leq 1</m>.
+</p>
+<p>
+  This is consistent with <m>|A| \leq |B|</m>
+</p>
+</slide>
+
+<slide><title>Injection example</title>
+<proposition>
+  <statement>
+    <p>
+      The function <m>f: \mathbb{R} \to \mathbb{R}</m> defined by <m>f(x)=7x-3</m> is injective
+    </p>
+  </statement>
+</proposition>
+<p>
+  Use <m>f(a_1)=f(a_2) \implies a_1=a_2</m> to prove <mdash /> equalities easier than inequalities.
+</p>
+<proof>
+  <p>
+    Let <m>x,z \in \mathbb{R}</m> and assume that <m>f(x)=f(z)</m>. Then we know that
+    <md>
+      <mrow> 7x-3 \amp= 7z-3 </mrow>
+      <mrow> 7x\amp=7z </mrow>
+      <mrow> x\amp=z </mrow>
+    </md>
+    and hence the function is injective.
+  </p>
+</proof>
+
+</slide>
+
+<slide><title>Surjections <mdash /> everything is mapped to by something</title>
+<definition>
+  <statement>
+    <p>
+      Let <m>g:A \to B</m> be a function.
+    </p>
+    <p>
+      The function <m>g</m> is <term>surjective</term> when
+      <me>
+        \forall b \in B, \exists a \in A \text{ s.t. } g(a)=b
+      </me>
+      <term>Surjections</term> are also called <term>onto</term> functions.
+    </p>
+  </statement>
+</definition>
+<p>
+  Note: if <m>g</m> is surjective then for every <m>b \in B, |g^{-1}(\set{b})| \geq 1</m>.
+</p>
+<p>
+  This is consistent with <m>|A| \geq |B|</m>
+</p>
+</slide>
+
+<slide><title>Surjection example</title>
+<proposition>
+  <statement>
+    <p>
+      The function <m>f: \mathbb{R} \to \mathbb{R}</m> defined by <m>f(x)=7x-3</m> is surjective
+    </p>
+  </statement>
+</proposition>
+<p>
+  Given <m>y \in \mathbb{R}</m>, we need to find <m>x\in \mathbb{R}</m> so that <m>f(x)=y</m>:
+  <me>
+    y=7x-3 \qquad \text{so} \qquad y+3=7x \qquad \text{so} \qquad x = \frac{y+3}{7}.
+  </me>
+</p>
+<proof>
+  <p>
+    Let <m>y \in \mathbb{R}</m> and set <m>x = \frac{y+3}{7} \in \mathbb{R}</m>.
+    Then
+    <me>
+      f(x) = 7x-3 = 7\cdot \frac{y+3}{7}-3 = y+3 -3 = y
+    </me>
+    as required. Hence the function is surjective.
+  </p>
+</proof>
+</slide>
+
+<slide><title>A non-example</title>
+<proposition>
+  <statement>
+    <p>
+      The function <m>f: \mathbb{R} \to \mathbb{R}</m> defined by <m>f(x)=x^2</m> is neither injective nor surjective.
+    </p>
+  </statement>
+</proposition>
+<p>
+  <md>
+    <mrow> \text{not injective } \amp \equiv \exists x_1,x_2 \in A \text{ s.t. } (x_1\neq x_2) \land (f(x_1)=f(x_2))</mrow>
+    <mrow> \text{not surjective} \amp \equiv \exists b \in B \text{ s.t. } \forall a \in A, f(a) \neq b</mrow>
+  </md>
+</p>
+<proof>
+  <p>
+    We prove each claim in turn.
+    <ul>
+      <li>
+        <p>
+          Now let <m>x=1,z=-1</m>. Then since <m>f(x)= 1 = f(z)</m>, the function is not an injection.
+        </p>
+      </li>
+      <li>
+        <p>Let <m>y = -1</m>. For any <m>x \in \mathbb{R}</m> we know <m>f(x)=x^2 \geq 0</m>, so there is no <m>x \in \mathbb{R}</m> so that <m>f(x)=y</m>. So <m>f</m> is not a surjection.
+        </p>
+      </li>
+    </ul>
+  </p>
+</proof>
+
+</slide>
+
+<slide><title>Bijections <mdash /> injective and surjective</title>
+<definition>
+  <statement>
+    <p>
+      Let <m>h:A \to B</m> be a function. The function <m>h</m> is <term>bijective</term> when it is both injective and surjective.
+    </p>
+    <p>
+      <term>Bijections</term> are also called <term>one-to-one correspondences</term>.
+    </p>
+  </statement>
+</definition>
+<p>
+  Note: if <m>h</m> is bijective then
+  <ul>
+    <li>since <m>h</m> is injective we know that for every <m>b \in B, |h^{-1}(\set{b})| \leq 1</m></li>
+    <li>since <m>h</m> is surjective we know that for every <m>b \in B, |h^{-1}(\set{b})| \geq 1</m></li>
+  </ul>
+  and so for every <m>b \in B, |h^{-1}(\set{b})|=1</m>.
+</p>
+<p>
+   This is consistent with <m>|A| = |B|</m>
+</p>
+<p>
+  From work above <m>f: \mathbb{R} \to \mathbb{R}</m> defined by <m>f(x)=7x-3</m> is bijective.
+</p>
+
+</slide>
+
+
+<slide><title>Another <m>x^2</m> example</title>
+<p>
+  Consider the 4 functions
+  <md>
+  <mrow>f :\amp\mathbb{R} \to \mathbb{R} \amp f(x) = x^2</mrow>
+  <mrow>g :\amp\mathbb{R} \to [0,\infty) \amp g(x) = x^2</mrow>
+  <mrow>h :\amp [0,\infty) \to \mathbb{R} \amp g(x) = x^2</mrow>
+  <mrow>\rho :\amp [0,\infty) \to [0,\infty) \amp \rho(x) = x^2</mrow>
+  </md>
+</p>
+<p>
+  Then
+  <ul>
+    <li><m>f</m> is neither injective nor surjective</li>
+    <li><m>g</m> is surjective but not injective</li>
+    <li><m>h</m> is injective but not surjective</li>
+    <li><m>\rho</m> is both injective and surjective</li>
+  </ul>
+  Let's prove the last one carefully.
+</p>
+</slide>
+
+<slide><title>Injective and surjective</title>
+<blockquote>
+  <p><m>\rho : [0,\infty) \to [0,\infty)</m> with <m>\rho(x) = x^2</m> is injective and surjective</p>
+</blockquote>
+<proof>
+  <p>
+    We prove each in turn.
+    <ul>
+      <li>Injection: Let <m>x,z \in [0,\infty)</m> with <m>\rho(x)=\rho(z)</m>. Then we know that <m>x^2=z^2</m> and hence <m>x = \pm z</m>. But since <m>x,z \geq 0</m> we must have <m>x=z</m> as required.
+    </li>
+    <li>Surjection: Let <m>y \geq 0</m> and then set <m>x = \sqrt{y}</m>. Since <m>y \geq 0</m>, we know that <m>x \in \mathbb{R}</m>. Then <m>\rho(x) = x^2 = (\sqrt{y})^2 = y</m>.
+    </li>
+    <!-- <li><p>Surjection (without square-root, but with Calculus-1). Let <m>y \geq 0</m>. Notice that <m>\rho(x)</m> is continuous, so we can use the IVT
+    <ul>
+      <li>If <m>y=0</m> then set <m>x=0</m> and then <m>\rho(0)=0</m> as required</li>
+      <li>If <m>y>0</m> then set <m>q=y+1</m>, notice that <m>\rho(q)=y^2+2y+1</m>  and since <m>y>0</m>, we know that <m>\rho(q)>y</m>. Then by the IVT, there is <m>0 \lt x \lt y+1</m> so that <m>\rho(x)=y</m> as required.</li>
+    </ul></p>
+    </li> -->
+    </ul>
+  </p>
+</proof>
+
+</slide>
+
+</section>
+
+</slideshow>
+</pretext>

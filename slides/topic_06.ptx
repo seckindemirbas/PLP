@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pretext>
+
+<docinfo>
+    <macros>
+      \newcommand{\ds}{\displaystyle}
+      \newcommand{\es}{ {\varnothing}}
+  		\newcommand{\st}{ \;\mid\; }
+  		\newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+  		\newcommand{\set}[1]{ \left\{#1\right\} }
+      \renewcommand{\neg}{\sim}
+      \renewcommand{\text}[1]{\mathsf{\mbox{#1}}}
+    </macros>
+</docinfo>
+
+<slideshow>
+<title>PLP - 6</title>
+<subtitle>Topic 6 <mdash />Converse, contrapositive and biconditional</subtitle>
+
+<frontmatter>
+<titlepage>
+  <author>
+    <personname>Demirbaş &amp; Rechnitzer</personname>
+    
+  </author>
+</titlepage>
+
+
+</frontmatter>
+
+
+<section>
+  <title>Converse, contrapositive and biconditional</title>
+
+  <slide><title>Converse and contrapositive</title>
+  <definition><title>(Converse &amp; contrapositive)</title>
+    <statement>
+      <p>
+        Given the implication <m>P \implies Q</m> we can form
+        <ul>
+          <li>the <term>converse</term>: <m>Q \implies P</m>, and</li>
+          <li>the <term>contrapositive</term>: <m>(\neg Q) \implies (\neg P)</m></li>
+        </ul>
+      </p>
+    </statement>
+  </definition>
+  <sidebyside>
+    <tabular>
+      <row>
+      <cell><m>P</m> </cell>
+      <cell><m>Q</m></cell>
+      <cell><m>P \implies Q</m></cell>
+      <cell><m>Q \implies P</m></cell>
+      <cell><m>(\neg Q) \implies (\neg P)</m></cell>
+      </row>
+      <row>
+        <cell>T</cell>
+        <cell>T</cell>
+        <cell>T</cell>
+        <cell>T</cell>
+        <cell>T</cell>
+      </row>
+      <row>
+        <cell>T</cell>
+        <cell>F</cell>
+        <cell>F</cell>
+        <cell><term>T</term></cell>
+        <cell>F</cell>
+      </row>
+      <row>
+        <cell>F</cell>
+        <cell>T</cell>
+        <cell>T</cell>
+        <cell><term>F</term></cell>
+        <cell>T</cell>
+      </row>
+      <row>
+        <cell>F</cell>
+        <cell>F</cell>
+        <cell>T</cell>
+        <cell>T</cell>
+        <cell>T</cell>
+      </row>
+    </tabular>
+  </sidebyside>
+
+</slide>
+
+<slide><title>Death and Shakespeare</title>
+<blockquote>
+  <p>
+    If he is Shakespeare then he is dead
+  </p>
+</blockquote>
+<p>
+  The <term>contrapositive</term> is the same as the original
+</p>
+<blockquote>
+  <p>
+    If he is not dead then he is not Shakespeare
+  </p>
+</blockquote>
+<p>
+  The <term>converse</term> is <em>not</em> the same as the original
+</p>
+<blockquote>
+  <p>
+    If he is dead then he is Shakespeare
+  </p>
+</blockquote>
+<p>
+  Frequent source of bad logic <mdash /> be careful!
+</p>
+</slide>
+
+<slide><title>Converse</title>
+<p>
+  The converse can lead to interesting results. Once we prove
+</p>
+<blockquote>
+  <p>
+    If <m>n</m> is even then <m>n^2</m> is even
+  </p>
+</blockquote>
+<p>
+  It makes sense to ask if the converse is true
+</p>
+<blockquote>
+  <p>
+    If <m>n^2</m> is even then <m>n</m> is even
+  </p>
+</blockquote>
+<p>
+  Much interesting mathematics comes from considering whether the converse is also true.
+</p>
+</slide>
+
+<slide><title>Biconditional</title>
+<p>
+  We use the <term>biconditional</term> to express <m>(P \implies Q)</m> and <m>(Q \implies P)</m> both true
+</p>
+<definition xml:id="def-biconditional">
+  <title>(Biconditional)</title>
+  <statement>
+    <p>
+      The <term>biconditional</term> is the statement
+      <q>
+        <m>P</m>
+        if and only if
+        <m>Q</m>
+      </q> and is denoted <q><m>P \iff Q</m></q> and <q><m>P</m> iff <m>Q</m></q>.
+    </p>
+    <p>The biconditional is true when
+      <m>P</m>
+      and
+      <m>Q</m>
+      have the same truth value and otherwise false.
+    </p>
+  </statement>
+</definition>
+
+<sidebyside>
+  <tabular>
+    <row>
+    <cell><m>P</m> </cell>
+    <cell><m>Q</m></cell>
+    <cell><m>P \implies Q</m></cell>
+    <cell><m>Q \implies P</m></cell>
+    <cell><m>P \iff Q</m></cell>
+    </row>
+    <row>
+      <cell>T</cell>
+      <cell>T</cell>
+      <cell>T</cell>
+      <cell>T</cell>
+      <cell>T</cell>
+    </row>
+    <row>
+      <cell>T</cell>
+      <cell>F</cell>
+      <cell>F</cell>
+      <cell>T</cell>
+      <cell>F</cell>
+    </row>
+    <row>
+      <cell>F</cell>
+      <cell>T</cell>
+      <cell>T</cell>
+      <cell>F</cell>
+      <cell>F</cell>
+    </row>
+    <row>
+      <cell>F</cell>
+      <cell>F</cell>
+      <cell>T</cell>
+      <cell>T</cell>
+      <cell>T</cell>
+    </row>
+  </tabular>
+</sidebyside>
+
+</slide>
+
+</section>
+
+</slideshow>
+</pretext>

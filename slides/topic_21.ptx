@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pretext>
+
+<docinfo>
+    <macros>
+      \newcommand{\ds}{\displaystyle}
+      \newcommand{\es}{ {\varnothing}}
+  		\newcommand{\st}{ \;\text{s.t.}\; }
+  		\newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+  		\newcommand{\set}[1]{ \left\{#1\right\} }
+      \renewcommand{\neg}{\sim}
+      \renewcommand{\text}[1]{\mathsf{\mbox{#1}}}
+      \DeclareMathOperator{\gcd}{gcd}
+      \DeclareMathOperator{\lcm}{lcm}
+    </macros>
+    <rename element="proposition" xml:lang="en-US">Result</rename>
+</docinfo>
+
+<slideshow>
+  <title>PLP - 21</title>
+  <subtitle>Topic 21<mdash />Generalising induction (a bit)</subtitle>
+
+  <frontmatter>
+  <titlepage>
+    <author>
+      <personname>Demirbaş &amp; Rechnitzer</personname>
+      
+    </author>
+  </titlepage>
+
+
+</frontmatter>
+
+
+<section>
+  <title>Two generalisations of induction</title>
+
+  <slide><title>A generalisation</title>
+
+  <theorem><title>Mathematical induction</title>
+    <statement>
+      <p>
+        Let <m>\ell \in \mathbb{Z}</m> and <m>S = \set{n \in \mathbb{Z}\st n \geq \ell}</m>. Let <m>P(n)</m> be a statement for all <m>n \in S</m>. Then if
+        <ul>
+          <li><m>P(\ell)</m> is true, and</li>
+          <li><m>P(k) \implies P(k+1)</m> is true for all integer <m>k \in S</m>
+          </li>
+        </ul>
+        then <m>P(n)</m> is true for all <m>n \in S</m>.
+      </p>
+    </statement>
+  </theorem>
+
+  <proposition>
+    <statement>
+      <p>
+        For every integer <m>n \geq 5</m>, <m>2^n \geq n^2</m>
+      </p>
+    </statement>
+  </proposition>
+</slide>
+
+<slide><title>Proof</title>
+<proof>
+  <p>
+    We prove the result by induction. Since <m>2^5 = 32 \gt 25 = 5^2</m>, the result holds when <m>n=5</m>. Now assume that <m>k\geq 5</m> and that <m>2^k \geq k^2</m>. Then
+    <md>
+      <mrow>2^{k+1} \amp \geq 2k^2 = k^2+k^2 </mrow>
+      <mrow> \amp \geq k^2 + 5k \amp \text{since } k \geq 5</mrow>
+      <mrow> \amp = k^2 + 2k + 3k </mrow>
+      <mrow> \amp \geq k^2 + 2k +1 \amp \text{since } k \geq 5</mrow>
+    </md>
+    Thus the inductive step holds for <m>k \geq 5</m>.
+  </p>
+  <p>
+    The result follows for all integer <m>n \geq 5</m> by induction.
+  </p>
+</proof>
+
+</slide>
+
+
+<slide><title>Another generalisation</title>
+
+  <theorem><title>Strong mathematical induction</title>
+  <statement>
+    <p>
+      Let <m>\ell \in \mathbb{Z}</m> and <m>S = \set{n \in \mathbb{Z}\st n \geq \ell}</m>. Let <m>P(n)</m> be a statement for all <m>n \in S</m>. Then if
+      <ul>
+        <li><m>P(\ell)</m> is true, and</li>
+        <li><m>\left( P(\ell) \land P(\ell+1) \land P(\ell+2) \land \cdots \land P(k)  \right) \implies P(k+1)</m> is true for all integer <m>k \in S</m>
+        </li>
+      </ul>
+      then <m>P(n)</m> is true for all <m>n \in S</m>.
+    </p>
+  </statement>
+  </theorem>
+
+  <proposition>
+    <statement>
+      <p>
+        Let <m>\theta \in \mathbb{R}</m> be fixed.
+      </p>
+      <p> Let
+        <m>p_0 = 1, p_1 = \cos \theta</m>, and
+        <m>
+          p_n = 2p_1p_{n-1} - p_{n-2}.
+        </m>
+        Then <m>p_n = \cos(n\theta)</m> for all integer <m>n \geq 0</m>.
+      </p>
+    </statement>
+  </proposition>
+
+</slide>
+
+<slide><title>A little trigonometric reminder</title>
+<p>
+  Recall that
+  <me>
+  \cos(a+b) = \cos a \cos b - \sin a \sin b
+  \qquad
+  \cos(a-b) = \cos a \cos b + \sin a \sin b
+  </me>
+</p>
+<proof>
+  <p>
+    We prove the result by strong induction.
+    When <m>n=0</m> we have <m>p_0 = \cos 0 = 1</m> as required. Now assume that
+    <m>
+      p_j = \cos j \theta
+    </m>
+    for <m>j=0,1,2,\dots k</m>. Now consider <m>p_{k+1} = 2p_1 p_{k} - p_{k-1}</m>
+    <md>
+      <mrow> p_{k+1} \amp = 2\cos \theta \cos k\theta - \cos(k-1)\theta</mrow>
+      <mrow> \amp = 2\cos\theta\cos k\theta - \left( \cos k\theta \cos \theta + \sin\theta\sin k\theta \right) </mrow>
+      <mrow> \amp = \cos\theta \cos k\theta - \sin\theta \sin k \theta </mrow>
+      <mrow> \amp = \cos(k+1)\theta </mrow>
+    </md>
+    as required. So the result holds for all integer <m>n \geq 0</m> by strong induction.
+  </p>
+</proof>
+
+
+</slide>
+
+</section>
+
+
+</slideshow>
+</pretext>

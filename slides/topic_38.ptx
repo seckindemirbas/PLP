@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pretext>
+
+<docinfo>
+    <macros>
+      \require{cancel}
+
+      \newcommand{\ds}{\displaystyle}
+      \newcommand{\es}{ {\varnothing}}
+  		\newcommand{\st}{ \;:\; }
+  		\newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+  		\newcommand{\set}[1]{ \left\{#1\right\} }
+      \newcommand{\Mod}[1]{\;(\mathrm{mod}\; #1)}
+      \newcommand{\rel}{\;R\;}
+  		\newcommand{\nrel}{\;\cancel{R}\;}
+      \renewcommand{\neg}{\sim}
+      \renewcommand{\text}[1]{\mathsf{\mbox{#1}}}
+      \DeclareMathOperator{\gcd}{gcd}
+      \DeclareMathOperator{\lcm}{lcm}
+    </macros>
+    <rename element="proposition" xml:lang="en-US">Result</rename>
+</docinfo>
+
+<slideshow>
+  <title>PLP - 38</title>
+  <subtitle>Topic 38<mdash />Two very famous proofs</subtitle>
+
+  <frontmatter>
+  <titlepage>
+    <author>
+      <personname>Demirbaş &amp; Rechnitzer</personname>
+      
+    </author>
+  </titlepage>
+
+
+</frontmatter>
+
+<section>
+  <title>Irrationality of <m>\sqrt{2}</m></title>
+
+<slide><title>Irrationality of <m>\sqrt{2}</m></title>
+<theorem><title>(Hippasus 500BC?)</title>
+  <statement>
+    <p>
+      The real number <m>\sqrt{2}</m> is not rational
+    </p>
+  </statement>
+</theorem>
+<sidebyside widths="60% 25%">
+<p>
+  This is one of the most famous results in mathematics
+  <ul>
+    <li>Existence of <m>\sqrt{2}</m> as a real quantity follows from Pythagoras' Theorem</li>
+    <li>This was first proof that there are reals that are not rational</li>
+    <li>It was, and is, a big deal!</li>
+  </ul>
+</p>
+<image source="figures/hypot.png"/>
+</sidebyside>
+<p>
+  We'll need
+</p>
+<blockquote>
+  <p>Let <m>n \in \mathbb{N}</m>. Then <m>n</m> is even if and only if <m>n^2</m> is even.</p>
+</blockquote>
+
+</slide>
+
+<slide><title>Scratchwork</title>
+<blockquote>
+  <p><m>\sqrt{2}</m> is irrational</p>
+</blockquote>
+<p>
+<term>Scratchwork</term>
+<ul>
+  <li>Do proof by contradiction, so we can write <m>\sqrt{2}=a/b</m> with <m>a,b \in \mathbb{Z}</m></li>
+  <li>Rearrange this to get <m>a = \sqrt{2}b</m></li>
+  <li>Square it to get rid of the <m>\sqrt{\cdot}</m> <m>\qquad</m> <m>a^2 = 2b^2</m></li>
+  <li>But this means <m>a</m> is even. So we can write <m>a=2c</m></li>
+  <li>This tells us <m>2b^2=4c^2</m> and so <m>b^2 = 2c^2</m>.</li>
+  <li>This means that <m>b</m> is even</li>
+  <li>Hold on <mdash /> can't we just make sure <m>a,b</m> have no common factors?</li>
+</ul>
+</p>
+</slide>
+
+<slide><title>Proof</title>
+<blockquote>
+  <p><m>\sqrt{2}</m> is irrational</p>
+</blockquote>
+<proof>
+  <p>
+    Assume, to the contrary, that <m>\sqrt{2} \in \mathbb{Q}</m>. Hence we can write <m>\sqrt{2}=\frac{a}{b}</m>, so that <m>b \neq 0</m> and <m>\gcd(a,b)=1</m>
+  </p>
+  <p>
+    Since <m>\sqrt{2}=\frac{a}{b}</m> and so <m>a^2=2b^2</m>. Thus <m>a^2</m> is even, and so <m>a</m> is even. Hence write <m>a=2c</m> where <m>c \in \mathbb{Z}</m>
+  </p>
+  <p>
+    But now, since <m>a^2=2b^2</m>, we know that <m>4c^2=2b^2</m> and so <m>b^2=2c^2</m>. Hence <m>b^2</m> is even, and so <m>b</m> is even.
+  </p>
+  <p>
+    This gives a contradiction since we assumed that <m>\gcd(a,b)=1</m>. Thus <m>\sqrt{2}</m> is irrational.
+  </p>
+
+</proof>
+
+</slide>
+</section>
+<section><title>Primes are infinite</title>
+<slide><title>Primes forever</title>
+<proposition><title>(Euclid 300BC)</title>
+  <statement>
+    <p>
+      There are an infinite number of primes.
+    </p>
+  </statement>
+</proposition>
+
+<p>
+  We prove this by contradiction, but need the following result along the way
+</p>
+<lemma>
+  <statement>
+    <p>
+      Let <m>n \in \mathbb{N}</m>. If <m>n \geq 2</m> then <m>n</m> is divisible by a prime.
+    </p>
+  </statement>
+</lemma>
+
+</slide>
+
+<slide><title>At least one prime divisior</title>
+<blockquote>
+  <p>Let <m>n \in \mathbb{N}</m>. If <m>n \geq 2</m> then <m>n</m> is divisible by a prime.</p>
+</blockquote>
+<proof>
+  <p>
+    We prove this by strong induction.
+    <ul>
+      <li>Base case: Since <m>2</m> is prime and <m>2 \mid 2</m>, the result holds when <m>n=2</m>.</li>
+      <li><p>
+        Inductive step: Let <m>k \in \mathbb{N}</m> with <m>k \geq 2</m>, and assume that the result holds for all integers <m>2,3,\dots, k</m>.
+        <ul>
+          <li>If <m>k+1</m> is prime then since <m>(k+1) \mid (k+1)</m>, the result holds at <m>n=k+1</m></li>
+          <li>If <m>k+1</m> is not prime, then <m>(k+1)=ab</m> for integers <m>a,b \geq 2</m>. But, by assumption, both <m>a,b</m> have prime divisors, and so <m>a=pc, b=qd</m> where <m>c,d \in \mathbb{N}</m> and <m>p,q</m> prime.
+          Hence <m>(k+1)=pqcd</m> and so the result holds at <m>n=k+1</m>
+          </li>
+        </ul>
+        </p>
+      </li>
+    </ul>
+    Since the base case and inductive step hold, the result follows by induction.
+  </p>
+</proof>
+
+</slide>
+
+<slide><title>Proof of infinite primes</title>
+<blockquote>
+  <p>
+    There are an infinite number of primes.
+  </p>
+</blockquote>
+<proof>
+  <p>
+    Assume, to the contrary, that there is finite list of primes: <m>\set{p_1,p_2,\dots, p_n}</m>.
+  </p>
+  <p>
+    Use this list to construct <m>N = p_1 \cdot p_2 \cdot p_3 \cdots p_n \in \mathbb{N}</m>, and then consider <m>(N+1)</m>.
+    <ul>
+      <li>If <m>(N+1)</m> is prime, then we have found a new prime larger than all on our list <mdash /> contradiction!</li>
+      <li><p>
+        If it is not prime, then (by lemma) <m>(N+1)</m> has some <m>p_k</m> as a divisor.
+      </p>
+      <p>But then <m>p_k \mid N</m> and <m>p_k \mid (N+1)</m>, and so
+      <me>
+        1 = (N+1)-N = (p_k b) - (p_k a) = p_k (b-a) \qquad \text{for some } a,b \in \mathbb{N}
+      </me>
+        which implies that <m>p_k \mid 1</m> <mdash /> contradiction!
+        </p>
+      </li>
+    </ul>
+    So the list cannot be finite.
+  </p>
+</proof>
+</slide>
+</section>
+</slideshow>
+</pretext>

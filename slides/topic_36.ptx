@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pretext>
+
+<docinfo>
+    <macros>
+      \require{cancel}
+
+      \newcommand{\ds}{\displaystyle}
+      \newcommand{\es}{ {\varnothing}}
+  		\newcommand{\st}{ \;:\; }
+  		\newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+  		\newcommand{\set}[1]{ \left\{#1\right\} }
+      \newcommand{\Mod}[1]{\;(\mathrm{mod}\; #1)}
+      \newcommand{\rel}{\;R\;}
+  		\newcommand{\nrel}{\;\cancel{R}\;}
+      \renewcommand{\neg}{\sim}
+      \renewcommand{\text}[1]{\mathsf{\mbox{#1}}}
+      \DeclareMathOperator{\gcd}{gcd}
+      \DeclareMathOperator{\lcm}{lcm}
+    </macros>
+    <rename element="proposition" xml:lang="en-US">Result</rename>
+</docinfo>
+
+<slideshow>
+  <title>PLP - 36</title>
+  <subtitle>Topic 36<mdash />Proof by contradiction</subtitle>
+
+  <frontmatter>
+  <titlepage>
+    <author>
+      <personname>Demirbaş &amp; Rechnitzer</personname>
+      
+    </author>
+  </titlepage>
+
+
+</frontmatter>
+
+<section><title>Proof by contradiction</title>
+
+<slide><title>Hammers and warnings</title>
+<p>
+  <em>Warning 1: </em> when you have a fancy new hammer, it is tempting to see nails everywhere.
+</p>
+
+<p>
+  <em>Warning 2: </em> do not use <term>proof by contradiction</term> for everything.
+</p>
+
+<p>
+  <em>Warning 3: </em> proof by contradiction can be confusing
+  <ul>
+    <li>Assume garbage</li>
+    <li>Deduce something that is always false and so definitely garbage</li>
+    <li>Conclude truth</li>
+  </ul>
+  But two pieces of logic will help everything make sense.
+</p>
+
+</slide>
+<slide><title>Middles and tollens</title>
+<p>
+  <term>Proof by contradiction</term> relies on the <term>Law of the excluded middle</term> and <term>modus tollens</term>
+</p>
+
+<fact><title>Law of the excluded middle</title>
+  <statement>
+    <p>
+        Let <m>P</m> be a statement. Then either <m>P</m> is true or its negation is true.
+        That is
+        <me>
+          P \; \lor \; (\sim P) \text{ is a tautology}
+        </me>
+    </p>
+  </statement>
+</fact>
+
+<definition><title>(Modus tollens)</title>
+  <statement>
+    <p>
+      <term>Modus tollens</term> is the deduction:
+    </p>
+    <blockquote>
+      <p>
+        <m>(P \implies Q)</m> is true and <m>Q</m> is false so <m>P</m> must be false
+      </p>
+    </blockquote>
+  </statement>
+</definition>
+
+</slide>
+
+<slide><title>Structure of a proof-by-contradiction</title>
+<blockquote>
+  <p>The statement <m>P</m> is true</p>
+</blockquote>
+<proof>
+  <p>
+    <ul>
+      <li>We prove the result by contradiction, so assume that <m>(\sim P)</m> is true</li>
+      <li><p>
+        We then prove a chain of implications
+        <md>
+          <mrow> (\sim P) \amp \implies P_1</mrow>
+          <mrow> P_1 \amp \implies P_2 </mrow>
+          <mrow>  \vdots \amp </mrow>
+          <mrow> P_{n-1} \amp \implies P_n </mrow>
+          <mrow> P_n \amp \implies \text{contradiction}</mrow>
+        </md>
+        </p>
+      </li>
+      <li>By modus tollens, <m>(\sim P)</m> must be false, and so <m>P</m> is true.</li>
+    </ul>
+  </p>
+</proof>
+</slide>
+
+<slide><title>A simple example</title>
+<proposition>
+  <statement>
+    <p>
+      There is no smallest positive real number.
+    </p>
+  </statement>
+</proposition>
+<proof>
+  <p>
+    <ul>
+      <li>Assume, to the contrary, that there does exist a smallest positive real number. Denote it <m>q</m></li>
+      <li>Notice that the number <m>r = q/2</m> satisfies <m>0 \lt r \lt q</m></li>
+      <li>Hence <m>r</m> is a positive real number that is smaller than <m>q</m></li>
+      <li>But this contradicts our assumption that <m>q</m> is the smallest positive real number</li>
+      <li>Thus there is no smallest positive real number</li>
+    </ul>
+  </p>
+</proof>
+
+</slide>
+
+<slide><title>What just happened?</title>
+<blockquote>
+  <p>There is no smallest positive real number.</p>
+</blockquote>
+<p>
+  Law of excluded middle tells that <m>P</m> is true or <m>(\sim P)</m> is true.
+  <ul>
+    <li><em>If</em> <m>(\sim P)</m> <em>then</em> we can find the smallest positive real <m>q</m></li>
+    <li><em>If</em> we know <m>q</m> <em>then</em> we can construct a smaller positive real <m>r=q/2</m></li>
+    <li><em>If</em> we have a smaller real <em>then</em> (<m>q</m> is smallest) and (<m>q</m> is not smallest)</li>
+  </ul>
+  Repeated modus tollens tells us that <m>(\sim P)</m> is false, and so <m>P</m> is true.
+</p>
+</slide>
+</section>
+
+
+</slideshow>
+</pretext>

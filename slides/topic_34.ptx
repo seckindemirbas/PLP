@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pretext>
+
+<docinfo>
+    <macros>
+      \require{cancel}
+
+      \newcommand{\ds}{\displaystyle}
+      \newcommand{\es}{ {\varnothing}}
+  		\newcommand{\st}{ \;:\; }
+  		\newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+  		\newcommand{\set}[1]{ \left\{#1\right\} }
+      \newcommand{\Mod}[1]{\;(\mathrm{mod}\; #1)}
+      \newcommand{\rel}{\;R\;}
+  		\newcommand{\nrel}{\;\cancel{R}\;}
+      \renewcommand{\neg}{\sim}
+      \renewcommand{\text}[1]{\mathsf{\mbox{#1}}}
+      \DeclareMathOperator{\gcd}{gcd}
+      \DeclareMathOperator{\lcm}{lcm}
+    </macros>
+    <rename element="proposition" xml:lang="en-US">Result</rename>
+</docinfo>
+
+<slideshow>
+  <title>PLP - 34</title>
+  <subtitle>Topic 34<mdash />Compositions</subtitle>
+
+  <frontmatter>
+  <titlepage>
+    <author>
+      <personname>Demirbaş &amp; Rechnitzer</personname>
+      
+    </author>
+  </titlepage>
+
+
+</frontmatter>
+
+
+<section>
+  <title>Compositions</title>
+
+<slide><title>Chaining functions together</title>
+<sidebyside>
+  <image source="figures/composition.png"/>
+</sidebyside>
+
+<definition>
+<statement><p>
+ Let <m>f: A \to B</m> and <m>g: B \to C</m>.
+</p>
+<p>The <term>composition</term> of <m>f</m> and <m>g</m>, denoted <m>g \circ f</m>, defines a new
+function
+<md>
+<mrow>
+  g\circ f: A \to C &amp;&amp; \left(g\circ f\right)(a) = g\left(f(a)\right) \qquad\forall a \in A
+</mrow>
+</md>
+Note composition is associative: <m>h \circ (g \circ f) = (h \circ g) \circ f</m>.
+</p></statement>
+</definition>
+<p>
+  Be careful of notation <mdash /> read left-to-right but apply right-to-left:
+  <m>
+    (h\circ g \circ f)(x) = h(g(f(x)))
+  </m>
+</p>
+</slide>
+
+<slide><title>Compositions, injections and surjections</title>
+<p>
+  Compositions play nicely with injections and surjections.
+</p>
+<theorem>
+  <statement>
+    <p>
+      Let <m>f:A \to B</m> and <m>g: B \to C</m> be functions.
+      <ul>
+     <li> If <m>f</m> and <m>g</m> are injective then so is <m>g\circ f</m>.
+     </li>
+     <li> If <m>f</m> and <m>g</m> are surjective then so is <m>g\circ f</m>.
+     </li>
+     </ul>
+     Consequently if <m>f,g</m> are bijective then so is <m>g \circ f</m>.
+    </p>
+  </statement>
+</theorem>
+</slide>
+
+<slide><title>Composition of injections</title>
+<p>
+  Use injection property <mdash /> different map to different
+</p>
+<sidebyside width="50%">
+  <image source="figures/composition2.png"/>
+</sidebyside>
+<proof>
+  <p>
+    Let <m>a_1,a_2 \in A</m> so that <m>a_1 \neq a_2</m>.
+  </p>
+  <p>
+    Since <m>f</m> is injective, we know that <m>f(a_1) \neq f(a_2)</m>. And thus since <m>g</m> is injective, we know  that <m>g(f(a_1)) \neq g(f(a_2))</m>.
+  </p>
+  <p>
+    Thus <m>(g\circ f)(a_1) \neq (g \circ f)(a_2)</m> as required.
+  </p>
+</proof>
+
+</slide>
+
+<slide><title>Composition of surjections</title>
+<p>
+  Use surjection property <mdash /> everything is mapped to by something
+</p>
+<sidebyside width="50%">
+  <image source="figures/composition3.png"/>
+</sidebyside>
+<proof>
+  <p>
+    Let <m>c \in C</m>.
+  </p>
+  <p>
+    Since <m>g</m> is surjective, we know that there is <m>b \in B</m> so that <m>g(b)=c</m>. Then since <m>f</m> is surjective, we have some <m>a \in A</m> so that <m>f(a)=b</m>.
+  </p>
+  <p>
+    Thus <m>g(f(a))=g(b)=c</m>, and so  for any <m>c \in C</m> we can find <m>a \in A</m> so that <m>(g\circ f)(a) =c</m> as required.
+  </p>
+</proof>
+
+</slide>
+
+<slide><title>Partial converse</title>
+
+<theorem>
+  <statement>
+    <p>
+      Let <m>f:A \to B</m> and <m>g:B \to C</m> be functions, then
+      <ul>
+        <li>if <m>g \circ f</m> is an injection then <m>f</m> is an injection.</li>
+        <li>if <m>g \circ f</m> is a surjection then <m>g</m> is a surjection.</li>
+      </ul>
+    </p>
+  </statement>
+</theorem>
+
+<p>
+  The proofs of these statements make excellent exercises.
+</p>
+<p>
+  Note that you <em>cannot</em> extend this to a full converse. There exist <m>f,g</m> so that
+  <ul>
+    <li><m>g \circ f</m> is an injection, but <m>g</m> is <em>not</em> injective</li>
+    <li><m>g \circ f</m> is a surjection, but <m>f</m> is <em>not</em> surjective</li>
+  </ul>
+</p>
+
+</slide>
+
+<slide><title>Disproof of full converse</title>
+<p>
+  <ul>
+    <li><m>g \circ f</m> is an injection, but <m>g</m> is <em>not</em> injective</li>
+    <li><m>g \circ f</m> is a surjection, but <m>f</m> is <em>not</em> surjective</li>
+  </ul>
+</p>
+<proof>
+  <p>
+    Consider functions <m>f,g</m> defined by the diagram below.
+  </p>
+  <sidebyside width="50%">
+    <image source="figures/function_drawing3.png"/>
+  </sidebyside>
+  <p>
+    <ul>
+      <li>Since <m>g(f(1)) \neq g(f(2))</m>, <m>g \circ f</m> is injective. But <m>g(4)=g(5)</m>, so <m>g</m> not an injection.</li>
+      <li>Since <m>6=g(f(1)), 7=g(f(2))</m>, <m>g \circ f</m> is surjective. But, <m>f(1),f(2) \neq 5</m> so <m>f</m> is not a surjection.
+      </li>
+    </ul>
+  </p>
+</proof>
+
+</slide>
+</section>
+
+</slideshow>
+</pretext>

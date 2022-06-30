@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pretext>
+
+<docinfo>
+    <macros>
+      \require{cancel}
+
+      \newcommand{\ds}{\displaystyle}
+      \newcommand{\es}{ {\varnothing}}
+  		\newcommand{\st}{ \;:\; }
+  		\newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+  		\newcommand{\set}[1]{ \left\{#1\right\} }
+      \newcommand{\Mod}[1]{\;(\mathrm{mod}\; #1)}
+      \newcommand{\rel}{\;R\;}
+  		\newcommand{\nrel}{\;\cancel{R}\;}
+      \renewcommand{\neg}{\sim}
+      \renewcommand{\text}[1]{\mathsf{\mbox{#1}}}
+      \DeclareMathOperator{\gcd}{gcd}
+      \DeclareMathOperator{\lcm}{lcm}
+    </macros>
+    <rename element="proposition" xml:lang="en-US">Result</rename>
+</docinfo>
+
+<slideshow>
+  <title>PLP - 27</title>
+  <subtitle>Topic 27<mdash />Properties &amp; congruence</subtitle>
+
+  <frontmatter>
+  <titlepage>
+    <author>
+      <personname>Demirbaş &amp; Rechnitzer</personname>
+      
+    </author>
+  </titlepage>
+
+
+</frontmatter>
+
+<section><title>Properties of relations</title>
+
+<slide><title>Too general</title>
+<p>
+  <ul>
+    <li>Definiton of relation is too(?) general</li>
+    <li>Usually require additional properties to be interesting</li>
+  <li><p>
+  Consider <q>is divisible by</q> on integers. Has useful properties
+  <ul>
+    <li>For all <m>n \in \mathbb{Z}</m>, we know <m>n \mid n</m></li>
+    <li>For all <m>a,b,c \in \mathbb{Z}</m>, if <m>a \mid b</m> and <m>b \mid c</m> then <m>a \mid c</m></li>
+  </ul>
+</p>
+</li>
+<li>
+  <p>
+    Notice that <m>\leq</m> on reals has <em>similar</em> properties
+    <ul>
+      <li>For all <m>x \in \mathbb{R}</m>, we know <m>x \leq x</m></li>
+      <li>For all <m>x,y,z \in \mathbb{R}</m>, <m>x \leq y</m> and <m>y\leq z</m> then <m>x \leq z</m></li>
+    </ul>
+  </p>
+</li>
+</ul>
+Such additional <em>structure</em> make those relations more interesting and useful
+</p>
+</slide>
+
+<slide><title>3 useful properties</title>
+<definition>
+  <statement>
+    <p>Let <m>R</m> be a relation on a set <m>A</m>. Then <m>R</m> is
+      <ul>
+        <li> <term>reflexive</term> when <m>\forall a \in A, a \rel a</m> </li>
+        <li> <term>symmetric</term> when <m>\forall a,b, a \rel b \implies b \rel a</m></li>
+        <li> <term>transitive</term> when <m>\forall a,b,c, (a \rel b) \land (b \rel c) \implies a \rel c</m></li>
+      </ul>
+    </p>
+  </statement>
+</definition>
+<sidebyside width="60%">
+  <tabular>
+    <row>
+      <cell>Relations on <m>\mathbb{Z}</m></cell>
+      <cell><m>\lt</m></cell>
+      <cell><m>\leq</m></cell>
+      <cell><m>=</m></cell>
+      <cell><m>\neq </m></cell>
+      <cell><m>\mid</m></cell>
+      <cell><m>\nmid</m></cell>
+    </row>
+    <row>
+      <cell><term>reflexive</term></cell>
+      <cell>F</cell>
+      <cell>T</cell>
+      <cell>T</cell>
+      <cell>F</cell>
+      <cell>T</cell>
+      <cell>F</cell>
+    </row>
+    <row>
+      <cell><term>symmetric</term></cell>
+      <cell>F</cell>
+      <cell>F</cell>
+      <cell>T</cell>
+      <cell>T</cell>
+      <cell>F</cell>
+      <cell>F</cell>
+    </row>
+    <row>
+      <cell><term>transitive</term></cell>
+      <cell>T</cell>
+      <cell>T</cell>
+      <cell>T</cell>
+      <cell>F</cell>
+      <cell>T</cell>
+      <cell>F</cell>
+    </row>
+  </tabular>
+
+</sidebyside>
+</slide>
+
+<slide><title>Pictures</title>
+<sidebyside width="50%">
+  <image source="figures/reflexive.png"/>
+</sidebyside>
+<sidebyside width="50%">
+  <image source="figures/symmetric.png"/>
+</sidebyside>
+<sidebyside width="50%">
+  <image source="figures/transitive.png"/>
+</sidebyside>
+</slide>
+
+<slide><title>Examples <mdash /> good for class</title>
+<p>
+  Let <m>R</m> be the relation <q>is a subset of</q> on <m>\pow{\mathbb{Z}}</m>
+  <!-- <ul>
+    <li><m>R</m> is <term>reflexive</term>, since <m>\forall A, A \subseteq A</m></li>
+    <li><m>R</m> is not symmetric. Let <m>X=\es, Y=\set{1}</m>, then <m>X \subseteq Y</m>, but <m>Y \not\subseteq Y</m>.</li>
+    <li><m>R</m> is <term>transitive</term>, since <m>(A \subseteq B) \land (B \subseteq C) \implies (A \subseteq C)</m></li>
+  </ul> -->
+</p>
+<p>
+  Let <m>R</m> be the relation <q>lives within 10km of</q> on the set of people watching now.
+  <!-- <ul>
+    <li><m>R</m> is <term>reflexive</term>, since a person lives close to themselves.</li>
+    <li><m>R</m> is <term>symmetric</term>, since if person 1 lives close to person 2, then person 2 is close to person 1.</li>
+    <li><p><m>R</m> is not <term>transitive</term>, since just because
+    <ul>
+      <li>person 1 lives close to person 2, and </li>
+      <li>person 2 lives close to person 3,</li>
+      <li>it does not mean that 1 is close to 3.</li>
+  </ul>
+</p>
+</li>
+</ul> -->
+</p>
+</slide>
+</section>
+
+
+
+<section><title>Congruence</title>
+<slide><title>Congruence modulo <m>n</m></title>
+<theorem>
+  <statement>
+    <p>Let <m>n \in \mathbb{N}</m> then the relation of congruence modulo <m>n</m> is reflexive, symmetric and transitive.
+    </p>
+  </statement>
+</theorem>
+<p>
+  <term>Scratch work</term>
+  <ul>
+    <li>Let <m>n</m> be a fixed real number.</li>
+    <li>Recall that <m>a \equiv b \Mod{n}</m> when <m>n \mid (a-b)</m> <mdash /> <em>must</em> know definitions</li>
+    <li>Three things to prove, so three sub-proofs</li>
+    <li><p>This uses
+      <me>
+        P \implies (Q\land R \land S) \equiv (P \implies Q) \land (P \implies R) \land (P \implies S)
+      </me>
+    </p></li>
+  </ul>
+</p>
+</slide>
+
+<slide><title>Reflexive</title>
+<blockquote>
+  <p>congruence modulo <m>n</m> is reflexive</p>
+</blockquote>
+<p>
+  <term>Scratch work</term>
+  <ul>
+    <li>Need to show <m>\forall a \in \mathbb{Z}, n \mid (a - a)</m></li>
+    <li>So let <m>a</m> be any integer, then <m>a-a=0 = n \cdot 0</m></li>
+    <li>Hence <m>n \mid (a-a)</m>.</li>
+  </ul>
+</p>
+
+<proof>
+  <p>
+    Fix <m>n \in \mathbb{N}</m>, and let <m>a \in \mathbb{Z}</m>. Then since <m>(a-a) = n \cdot 0</m>, it follows that <m>n \mid (a-a)</m>. Hence <m>a \equiv a \Mod{n}</m> as required.
+  </p>
+</proof>
+
+</slide>
+
+<slide><title>Symmetric</title>
+<blockquote>
+  <p>congruence modulo <m>n</m> is symmetric</p>
+</blockquote>
+<p>
+  <term>Scratch work</term>
+  <ul>
+    <li>Need to show <m>\forall a,b \in \mathbb{Z}, (n \mid (a-b) ) \implies (n \mid (b-a))</m></li>
+    <li>So let <m>a,b</m> be any integers, and assume that <m>n \mid (a-b)</m></li>
+    <li>Hence <m>a-b = n \cdot k</m> and thus <m>b-a = n(-k)</m></li>
+  </ul>
+</p>
+
+<proof>
+  <p>
+    Fix <m>n \in \mathbb{N}</m>, and let <m>a,b \in \mathbb{Z}</m>. Assume that <m>a \equiv b \Mod{n}</m>, and so <m>(a-b) = n\cdot k</m> for some <m>k \in \mathbb{Z}</m>.
+  </p>
+  <p>
+    This tells us that <m>(b-a)= n(-k)</m> and so <m>n \mid(b-a)</m> and thus <m>b \equiv a \Mod{n}</m> as we needed.
+  </p>
+</proof>
+
+</slide>
+
+
+<slide><title>Transitive</title>
+<blockquote>
+  <p>congruence modulo <m>n</m> is transitive</p>
+</blockquote>
+<p>
+  <term>Scratch work</term>
+  <ul>
+    <li>Need to show <m>\forall a,b,c \in \mathbb{Z}, (n \mid (a-b) ) \land (n \mid (b-c)) \implies (n \mid (a-c))</m></li>
+    <li>So let <m>a,b,c</m> be any integers, and assume that <m>n \mid (a-b)</m> and <m>n \mid(b-c)</m></li>
+    <li>Hence <m>a-b = n \cdot k</m> and <m>b-c = n \cdot \ell</m></li>
+    <li>We need to say something about <m>a-c</m> <mdash /> easy! <m>a-c = n(k+\ell)</m></li>
+  </ul>
+</p>
+
+<proof>
+  <p>
+    Fix <m>n \in \mathbb{N}</m>, and let <m>a,b,c \in \mathbb{Z}</m>. Assume that <m>a \equiv b \Mod{n}</m> and <m>b \equiv c \Mod{n}</m>. So <m>a-b = nk, b-c = n\ell</m> for some <m>k,\ell \in \mathbb{Z}</m>
+  </p>
+  <p>
+    Hence <m>(a-c)= n (k+\ell)</m> and so <m>n \mid(a-c)</m> and thus <m>a \equiv c \Mod{n}</m> as we needed.
+  </p>
+</proof>
+
+</slide>
+
+</section>
+
+
+</slideshow>
+</pretext>

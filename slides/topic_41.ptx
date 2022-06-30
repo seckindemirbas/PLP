@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pretext>
+
+<docinfo>
+    <macros>
+      \require{cancel}
+
+      \newcommand{\ds}{\displaystyle}
+      \newcommand{\es}{ {\varnothing}}
+  		\newcommand{\st}{ \;:\; }
+  		\newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+  		\newcommand{\set}[1]{ \left\{#1\right\} }
+      \newcommand{\Mod}[1]{\;(\mathrm{mod}\; #1)}
+      \newcommand{\rel}{\;R\;}
+  		\newcommand{\nrel}{\;\cancel{R}\;}
+      \renewcommand{\neg}{\sim}
+      \renewcommand{\text}[1]{\mathsf{\mbox{#1}}}
+      \DeclareMathOperator{\gcd}{gcd}
+      \DeclareMathOperator{\lcm}{lcm}
+    </macros>
+    <rename element="proposition" xml:lang="en-US">Result</rename>
+</docinfo>
+
+<slideshow>
+<title>PLP - 41</title>
+<subtitle>Topic 41 <mdash /> Denumerable sets</subtitle>
+
+<frontmatter>
+<titlepage>
+  <author>
+    <personname>Demirbaş &amp; Rechnitzer</personname>
+    
+  </author>
+</titlepage>
+
+
+</frontmatter>
+
+
+<section><title>Denumerable sets</title>
+
+<slide><title>List out the elements</title>
+<p>
+  When a set <m>B</m> is denumerable we can <q>list out</q> its elements.
+  <ul>
+    <li>Since denumerable there is a bijection <m>f: \mathbb{N} \to B</m></li>
+    <li>
+      <p>
+        So we can write <m>B</m> as
+        <md>
+        <mrow>
+          B \amp = \set{ f(1), f(2), f(3), f(4), \dots}
+        </mrow>
+        <mrow>
+          \amp = \set{ b_1, b_2, b_3, b_4, \dots} \amp b_n = f(n)
+        </mrow>
+        </md>
+      </p>
+    </li>
+  </ul>
+</p>
+<p>
+  This list has two nice properties
+  <ul>
+    <li><p>
+      Since <m>f</m> is injective, the list does not repeat
+      <me>
+        k \neq n \implies b_k = f(k) \neq f(n) = b_n
+      </me>
+    </p></li>
+    <li>
+      <p>
+        Since <m>f</m> is surjective, any given <m>y \in B</m> appears at some <em>finite</em> position
+    <me>
+      \forall y \in B, \exists n \in \mathbb{N} \text{ s.t. } y = f(n) = b_n
+    </me>
+      </p>
+    </li>
+  </ul>
+</p>
+</slide>
+
+<slide><title>A list gives a bijection</title>
+<p>
+  Say we can write the elements of <m>B</m> in a <em>nice</em> list
+  <me>
+    B = \set{b_1, b_2, b_3, b_4, \dots}
+  </me>
+  then we can use this to construct a bijection: <m>g: \mathbb{N} \to B</m>.
+</p>
+<p>
+  What does <em>nice</em> mean? First define
+  <me>
+    g:\mathbb{N} \to B \qquad \text{ by } \qquad g(k) = b_k
+  </me>
+  Then the list is <em>nice</em> when
+  <ul>
+    <li>it does not repeat <mdash /> so that <m>g</m> is injective</li>
+    <li>
+      <p>
+        any given element <m>y \in B</m> appears at a finite position
+        <me>
+          \forall y \in B, \exists n \in \mathbb{N} \text{ s.t. }  y = g(n) = b_n
+        </me>
+        so <m>g</m> is surjective
+      </p>
+    </li>
+  </ul>
+  So the construction of such a list proves a bijection from <m>\mathbb{N}</m> to <m>B</m>, and so  <m>B</m> is denumerable.
+</p>
+</slide>
+
+<slide><title>Example 1</title>
+<proposition>
+  <statement>
+    <p>
+      The set of all integers is denumerable.
+    </p>
+  </statement>
+</proposition>
+<p>
+  <term>Scratch</term>
+  <ul>
+    <li>
+      <p>
+      We need to list out all the integers so that
+      <ul>
+        <li>the list does not repeat</li>
+        <li>any given integer appears at a finite position in the list</li>
+      </ul>
+      </p>
+    </li>
+    <li>
+      <p>
+        Try
+        <m>
+          \mathbb{Z} = \set{\dots,-2,-1,0,1,2,\dots}
+        </m>
+        <m>\qquad\qquad\qquad</m> What <m>n \in \mathbb{N}</m> gives <m>f(n)=0</m>?
+      </p>
+    </li>
+    <li>
+      <p>
+        Try
+        <m>
+          \mathbb{Z} = \set{1,2,3,\dots,0,-1,-2,-3,\dots}
+        </m>
+        <m>\qquad\qquad</m> What <m>n \in \mathbb{N}</m> gives <m>f(n)=0</m>?
+      </p>
+    </li>
+    <li>
+      <p>
+        Try again:
+        <m>\mathbb{Z} = \set{0,1,-1,2,-2,3,-3,\dots}</m>
+      </p>
+    </li>
+  </ul>
+</p>
+</slide>
+
+<slide><title>Proof <m>|\mathbb{N}| = |\mathbb{Z}|</m></title>
+<p>
+  List <m>\mathbb{Z} = \set{0,1,-1,2,-2,3,-3,\dots}</m> or equivalently
+  <me>
+    \begin{array}{cccccccc}
+      1 \amp 2 \amp 3 \amp 4 \amp 5 \amp 6 \amp 7 \amp \cdots \\
+      \downarrow \amp \downarrow \amp \downarrow \amp \downarrow \amp \downarrow \amp\downarrow \amp\downarrow \amp \\
+      0 \amp 1 \amp -1 \amp 2 \amp -2 \amp 3 \amp -3 \amp\cdots
+    \end{array}
+  </me>
+</p>
+<proof>
+  <p>
+    List the elements <m>z \in \mathbb{Z}</m> as above, so that
+    <ul>
+      <li>if <m>z\geq 1</m>, then <m>z</m> appears at position <m>2z</m></li>
+      <li>if <m>z \leq 0</m>, then <m>z</m> appears at position <m>1-2z</m></li>
+    </ul>
+    The list then
+    <ul>
+      <li>does not repeat</li>
+      <li>and any given <m>z \in \mathbb{Z}</m> appears at some finite position</li>
+    </ul>
+    and thus the list defines a bijection between <m>\mathbb{N}</m> and <m>\mathbb{Z}</m>.
+  </p>
+</proof>
+</slide>
+
+<slide><title>Nothing between denumerable and finite</title>
+<theorem>
+  <statement>
+    <p>Let <m>A,B</m> be sets with <m>A \subseteq B</m>.
+    If <m>B</m> is denumerable then <m>A</m> is countable.
+    </p>
+  </statement>
+</theorem>
+<p>
+  <term>Proof sketch</term>:
+  <ul>
+    <li>If <m>A</m> is finite then it is countable</li>
+    <li>If <m>A</m> is infinite then it suffices to construct a bijection <m>f: \mathbb{N}\to A</m>.</li>
+    <li>Since <m>B</m> is denumerable, list out its elements <m>B = \set{b_1,b_2,b_3,b_4,b_5,b_6,\dots}</m></li>
+    <li>Since <m>A \subseteq B</m>, delete elements to get
+    <m>A = \set{b_1,{\color{magenta}{b_2}},{\color{magenta}{b_3}},b_4,{\color{magenta}{b_5}},b_6 \dots}</m> <m>\qquad\qquad</m>(example only)</li>
+    <li>Then <m>A = \set{b_1,b_4,b_6, b_9,b_{13},\dots}</m></li>
+    <li>Since the <m>B</m>-list did not repeat, this list does not repeat</li>
+    <li>Since any given <m>a \in A</m> is also in <m>B</m>, that <m>a</m> appears at a finite position (earlier than in <m>B</m>-list)</li>
+    <li>Hence <m>A</m> is denumerable, and so countable</li>
+  </ul>
+</p>
+</slide>
+
+<slide><title>Example</title>
+<proposition>
+  <statement>
+    <p>
+      Let <m>k \in \mathbb{N}</m>, then following sets are denumerable:
+      <me>
+        k\mathbb{Z} = \set{kn \text{ : } n \in \mathbb{Z}}
+        \qquad \text{ and } \qquad
+        k\mathbb{N} = \set{kn \text{ : } n \in \mathbb{N}}
+      </me>
+
+    </p>
+  </statement>
+</proposition>
+<p>
+  We could establish bijections from those sets to <m>\mathbb{Z}</m> or <m>\mathbb{N}</m>, or use previous theorem.
+</p>
+
+<proof>
+  <p>
+    For any <m>k \in \mathbb{N}</m> the sets are subsets of <m>\mathbb{Z}</m>. Since <m>\mathbb{Z}</m> is denumerable, it follows that the sets are countable (by the previous theorem). Further, since the sets are not finite, it follows that they must be denumerable.
+  </p>
+</proof>
+
+</slide>
+
+<slide><title>Union and intersection preserve countable</title>
+<proposition>
+  <statement>
+    <p>
+      Let <m>A,B</m> be countable sets, then
+      <m>A \cap B</m> and <m>A \cup B</m> are all countable.
+    </p>
+  </statement>
+</proposition>
+<p>
+  <term>Proof sketch</term>
+  <ul>
+    <li>If <m>A,B</m> are finite, then all are finite, so countable</li>
+    <li>Since <m>A \cap B \subseteq A</m>, by the previous theorem, this is countable.</li>
+    <li><p>
+      Since <m>A,B</m> countable, <m>B-A</m> is countable. Then list carefully
+      <me>
+        A = \set{a_1,a_2,a_3,\dots} \qquad (B-A) = \set{b_1,b_2,b_3,\dots}
+      </me>
+      then combine the lists by alternating
+      <me>
+        A \cup B = A \cup (B-A) = \set{a_1,b_1,a_2,b_2,a_3,b_3,\dots}
+      </me>
+      If <m>A</m> finite, then <m>A \cup B = \set{a_1,a_2,\dots,a_n,b_1,b_2,b_3,\dots}</m>
+    </p>
+    </li>
+  </ul>
+</p>
+</slide>
+
+<slide><title>Cartesian product preserves countable</title>
+<proposition>
+  <statement>
+    <p>
+      Let <m>A,B</m> be countable sets, then <m>A \times B</m> is countable.
+    </p>
+  </statement>
+</proposition>
+<p>
+  <term>Scratchwork</term> <mdash /> If neither finite then
+  <m>A=\set{a_1,a_2,a_3,\dots}</m> and <m>B=\set{b_1,b_2,b_3,\dots}</m>
+  and so
+  <tabular>
+      <row>
+        <cell><m>\times</m></cell>
+        <cell><m>a_1</m></cell>
+        <cell><m>a_2</m></cell>
+        <cell><m>a_3</m></cell>
+        <cell><m>a_4</m></cell>
+        <cell><m>\cdots</m></cell>
+      </row>
+      <row>
+        <cell><m>b_1</m></cell>
+        <cell><m>(a_1,b_1)</m></cell>
+        <cell><m>(a_2,b_1)</m></cell>
+        <cell><m>(a_3,b_1)</m></cell>
+        <cell><m>(a_4,b_1)</m></cell>
+        <cell><m>\cdots</m></cell>
+      </row>
+      <row>
+        <cell><m>b_2</m></cell>
+        <cell><m>(a_1,b_2)</m></cell>
+        <cell><m>(a_2,b_2)</m></cell>
+        <cell><m>(a_3,b_2)</m></cell>
+        <cell><m>(a_4,b_2)</m></cell>
+        <cell><m>\cdots</m></cell>
+      </row>
+      <row>
+        <cell><m>b_3</m></cell>
+        <cell><m>(a_1,b_3)</m></cell>
+        <cell><m>(a_2,b_3)</m></cell>
+        <cell><m>(a_3,b_3)</m></cell>
+        <cell><m>(a_4,b_3)</m></cell>
+        <cell><m>\cdots</m></cell>
+      </row>
+      <row>
+        <cell><m>b_4</m></cell>
+        <cell><m>(a_1,b_4)</m></cell>
+        <cell><m>(a_2,b_4)</m></cell>
+        <cell><m>(a_3,b_4)</m></cell>
+        <cell><m>(a_4,b_4)</m></cell>
+        <cell><m>\cdots</m></cell>
+      </row>
+      <row>
+        <cell><m>\vdots</m></cell>
+        <cell><m>\vdots</m></cell>
+        <cell><m>\vdots</m></cell>
+        <cell><m>\vdots</m></cell>
+        <cell><m>\vdots</m></cell>
+        <cell><m>\ddots</m></cell>
+      </row>
+    </tabular>
+    Construct list of pairs by careful sweep of the table.
+</p>
+</slide>
+
+<slide><title>Proof</title>
+<proof>
+  <p>Since <m>A,B</m> are denumerable we can construct the following table
+  <tabular>
+      <row>
+        <cell><m>\times</m></cell>
+        <cell><m>a_1</m></cell>
+        <cell><m>a_2</m></cell>
+        <cell><m>a_3</m></cell>
+        <cell><m>\cdots</m></cell>
+      </row>
+      <row>
+        <cell><m>b_1</m></cell>
+        <cell><m>(a_1,b_1)</m></cell>
+        <cell><m>(a_2,b_1)</m></cell>
+        <cell><m>(a_3,b_1)</m></cell>
+        <cell><m>\cdots</m></cell>
+      </row>
+      <row>
+        <cell><m>b_2</m></cell>
+        <cell><m>(a_1,b_2)</m></cell>
+        <cell><m>(a_2,b_2)</m></cell>
+        <cell><m>(a_3,b_2)</m></cell>
+        <cell><m>\cdots</m></cell>
+      </row>
+      <row>
+        <cell><m>b_3</m></cell>
+        <cell><m>(a_1,b_3)</m></cell>
+        <cell><m>(a_2,b_3)</m></cell>
+        <cell><m>(a_3,b_3)</m></cell>
+        <cell><m>\cdots</m></cell>
+      </row>
+      <row>
+        <cell><m>\vdots</m></cell>
+        <cell><m>\vdots</m></cell>
+        <cell><m>\vdots</m></cell>
+        <cell><m>\vdots</m></cell>
+        <cell><m>\ddots</m></cell>
+      </row>
+    </tabular>
+    By sweeping through diagonals <m>\swarrow \swarrow \swarrow</m> we list all the elements of <m>A\times B</m>:
+    <me>
+      A\times B = \Big\{ (a_1,a_1), (a_2,a_1), (a_1,b_2), (a_3,b_1), (a_2,b_2), (a_1,b_3), \dots \Big\}
+    </me>
+    This list does not repeat, and any given <m>(a_k,b_n)</m> appears at finite position, so <m>A \times B</m> is denumerable.
+  </p>
+</proof>
+</slide>
+
+<slide><title>Rationals are denumerable</title>
+<proposition>
+  <statement>
+    <p>
+      The set of all rational numbers <m>\mathbb{Q}</m> is denumerable.
+    </p>
+  </statement>
+</proposition>
+<p>
+  <em>Very strange</em> since <m>\mathbb{Q}</m> is <term>dense</term>: between any two rationals you can always find another rational.
+</p>
+<p>
+  <term>Proof-sketch</term>
+  <ul>
+    <li>Note that any <m>q \in \mathbb{Q}</m> can be written uniquely as <m>q=\frac{a}{b}</m> with <m>a \in \mathbb{Z}, b \in \mathbb{N}</m> and <m>\gcd(a,b)=1</m></li>
+    <li>We can rewrite rationals as <m>P = \set{(a,b) \in \mathbb{Z}\times \mathbb{N} \text{ s.t. } \gcd(a,b)=1}</m></li>
+    <li>There is a bijection <m>f: \mathbb{Q} \to P</m> given by <m>f(a/b)=(a,b)</m>, where <m>a/b</m> is the reduced fraction</li>
+    <li>Since <m>P \subseteq \mathbb{Z} \times \mathbb{N}</m>, we know <m>P</m> is denumerable.</li>
+    <li>Thus since <m>|P|=|\mathbb{Q}|</m> we have that <m>\mathbb{Q}</m> is denumerable also.</li>
+  </ul>
+</p>
+
+</slide>
+</section>
+</slideshow>
+</pretext>

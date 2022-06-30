@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pretext>
+
+<docinfo>
+    <macros>
+      \newcommand{\ds}{\displaystyle}
+      \newcommand{\es}{ {\varnothing}}
+  		\newcommand{\st}{ \;\text{s.t.}\; }
+  		\newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+  		\newcommand{\set}[1]{ \left\{#1\right\} }
+      \renewcommand{\neg}{\sim}
+      \renewcommand{\text}[1]{\mathsf{\mbox{#1}}}
+      \DeclareMathOperator{\gcd}{gcd}
+      \DeclareMathOperator{\lcm}{lcm}
+    </macros>
+    <rename element="proposition" xml:lang="en-US">Result</rename>
+</docinfo>
+
+<slideshow>
+<title>PLP - 14</title>
+<subtitle>Topic 14<mdash />Negating Quantifiers</subtitle>
+
+<frontmatter>
+<titlepage>
+  <author>
+    <personname>Demirbaş &amp; Rechnitzer</personname>
+    
+  </author>
+</titlepage>
+
+</frontmatter>
+
+
+<section>
+  <title>Negating quantifiers</title>
+
+  <slide><title>Negating a quantified statement</title>
+  <blockquote>
+    <p><m>\forall n \in \mathbb{N}, n^2+1 \text{ is prime}</m></p>
+  </blockquote>
+  <p>
+    <ul>
+      <li><m>n=1</m> gives <m>n^2+1 = 2</m> is prime.</li>
+      <li><m>n=2</m> gives <m>n^2+1 = 5</m> is prime.</li>
+      <li><m>n=3</m> gives <m>n^2+1 = 10 = 2\times 5</m> is <em>not</em> prime.</li>
+    </ul>
+    So statement is false. We actually proved that its <term>negation</term> is true:
+  </p>
+  <blockquote>
+    <p><m>\exists n \in \mathbb{N}, n^2+1 \text{ is not prime}</m></p>
+  </blockquote>
+
+</slide>
+
+<slide><title>Negating a quantified statement</title>
+<blockquote>
+  <p><m>\exists n \in \mathbb{N} \st n^2 \lt n</m></p>
+</blockquote>
+<p>
+  <ul>
+    <li><m>n=1</m> gives <m>n^2=1= 1</m></li>
+    <li><m>n=2</m> gives <m>n^2=4 \gt 2</m></li>
+    <li><m>n=3</m> gives <m>n^2=9 \gt 3</m></li>
+  </ul>
+  Looks false, but examples are not enough.
+</p>
+<p>
+  We need to show that <m>n^2 \geq n</m> for every single <m>n \in \mathbb{N}</m>.
+</p>
+<blockquote>
+  <p><m>\forall n \in \mathbb{N}, n^2 \geq n</m></p>
+</blockquote>
+</slide>
+
+<slide><title>Negations</title>
+
+<theorem>
+<statement><p>
+Let <m>P(x)</m> be an open sentence over the domain <m>A</m>, then
+<md>
+<mrow>
+  \neg(\forall x \in A, P(x)) &amp; \quad \equiv \quad \exists x\in A \st \neg(P(x))
+</mrow><mrow>
+  \neg(\exists x \in A \st P(x)) &amp; \quad \equiv \quad \forall x\in A, \neg(P(x))
+</mrow>
+</md>
+Note that the negated statement still has the same <term>domain</term>.
+</p>
+</statement>
+</theorem>
+
+<p><em>Be careful of domains:</em>
+<md>
+  <mrow> \neg(\forall x \in A, P(x)) \amp\not\equiv \forall x \not\in A, P(x)</mrow>
+  <mrow> \neg(\exists x \in A \st P(x)) \amp\not\equiv \exists x \not\in A \st P(x)</mrow>
+</md>
+</p>
+</slide>
+
+<slide><title>Prove or disprove</title>
+<blockquote>
+  <p><m>\exists n \in \mathbb{N} \st 4 \mid (n^2+1)</m></p>
+</blockquote>
+<p>
+  <ul>
+    <li>To prove it true <mdash /> show the <term>reader</term> value of <m>n</m></li>
+    <li>To prove it false <mdash /> show that its negation is true</li>
+  </ul>
+</p>
+<p>
+  <term>scratch work</term> <mdash /> explore some values
+  <ul>
+    <li><m>n=1</m> gives <m>n^2+1 = 2</m> <mdash />nope</li>
+    <li><m>n=2</m> gives <m>n^2+1 = 5</m> <mdash />nope</li>
+    <li><m>n=3</m> gives <m>n^2+1 = 10</m> <mdash />nope</li>
+    <li><m>n=4</m> gives <m>n^2+1 = 17</m> <mdash />nope</li>
+  </ul>
+  Smells false (esp for even <m>n</m>) <mdash /> look at negation
+</p>
+<blockquote>
+  <p><m>\forall n \in \mathbb{N} \st 4 \nmid (n^2+1)</m></p>
+</blockquote>
+</slide>
+
+<slide><title>Prove or disprove  <mdash /> continued</title>
+<blockquote>
+  <p><m>\forall n \in \mathbb{N} \st 4 \nmid (n^2+1)</m></p>
+</blockquote>
+<p>
+  <term>scratch work:</term>
+  <ul>
+    <li>If <m>n</m> is even, then <m>n=2k</m> so <m>n^2+1 = 4k^2+1</m> <mdash /> not divisible by 4.</li>
+    <li>If <m>n</m> is odd then <m>n=2\ell+1</m> so <m>n^2+1 = 4\ell^2 +4\ell+ 2</m> <mdash /> not divisible by 4.
+    </li>
+  </ul>
+</p>
+<proof>
+  <p>
+    We show the statement is false by proving its negation is true. Since <m>n \in \mathbb{N}</m> it is either even or odd.
+    <ul>
+      <li>Assume that <m>n</m> is even, so <m>n=2k</m> and thus <m>n^2+1 = 4k^2 + 1</m></li>
+      <li>Now assume that <m>n</m> is odd, so <m>n=2\ell+1</m> and thus <m>n^2+1 = 4\ell^2 + 4\ell+2</m></li>
+    </ul>
+    In both cases, by Euclidean division, the result is not divisible by 4.
+  </p>
+</proof>
+</slide>
+</section>
+
+
+</slideshow>
+</pretext>

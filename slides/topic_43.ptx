@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pretext>
+
+<docinfo>
+    <macros>
+      \require{cancel}
+
+      \newcommand{\ds}{\displaystyle}
+      \newcommand{\es}{ {\varnothing}}
+  		\newcommand{\st}{ \;:\; }
+  		\newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+  		\newcommand{\set}[1]{ \left\{#1\right\} }
+      \newcommand{\Mod}[1]{\;(\mathrm{mod}\; #1)}
+      \newcommand{\rel}{\;R\;}
+  		\newcommand{\nrel}{\;\cancel{R}\;}
+      \renewcommand{\neg}{\sim}
+      \renewcommand{\text}[1]{\mathsf{\mbox{#1}}}
+      \DeclareMathOperator{\gcd}{gcd}
+      \DeclareMathOperator{\lcm}{lcm}
+    </macros>
+    <rename element="proposition" xml:lang="en-US">Result</rename>
+</docinfo>
+
+<slideshow>
+<title>PLP - 43</title>
+<subtitle>Topic 43 <mdash /> More infinities</subtitle>
+
+<frontmatter>
+<titlepage>
+  <author>
+    <personname>Demirbaş &amp; Rechnitzer</personname>
+    
+  </author>
+</titlepage>
+
+
+</frontmatter>
+
+<section>
+  <title>Cantor's theorem and more infinities</title>
+
+  <slide><title>Comparing different infinities</title>
+  <p>
+    We know that <m>\mathbb{N} \subset \mathbb{R}</m> and we proved that <m>|\mathbb{N}| \neq |\mathbb{R}|</m>. So want to state
+    <me>
+      \aleph_0 = |\mathbb{N}| \lt |\mathbb{R}|= c
+    </me>
+    We can make this precise by extending ideas from finite sets <m>A,B</m>:
+    <ul>
+      <li>If <m>f:A \to B</m> is an injection then <m>|A| \leq |B|</m></li>
+      <!-- <li>If <m>g:A \to B</m> is an surjection then <m>|A| \geq |B|</m></li> -->
+      <li>If <m>h:A \to B</m> is an bijection then <m>|A| = |B|</m></li>
+    </ul>
+  </p>
+
+<definition>
+  <statement>
+    <p>
+      Let <m>A,B</m> be sets.
+      <ul>
+        <li>We write <m>|A| \leq |B|</m> when there is an injection from <m>A</m> to <m>B</m>.</li>
+        <li><p>
+          Further, we write <m>|A| \lt |B|</m> when there is an injection from <m>A</m> to <m>B</m> but no bijection.
+          <me>
+            |A| \lt |B| \qquad \iff \qquad \big(|A| \leq |B|\big) \land \big(|A| \neq |B|\big)
+          </me>
+        </p>
+      </li>
+      </ul>
+    </p>
+  </statement>
+</definition>
+<p>
+  Good exercise: if <m>|A| \leq |B|</m> prove there is a surjection from <m>B</m> to <m>A</m>.
+</p>
+</slide>
+
+<slide><title>Continuum hypothesis</title>
+<ul>
+  <li>
+    <p>
+      Cantor's diagonal argument proves that <me>\aleph_0 = |\mathbb{N}| \lt |\mathbb{R}| =c</me>
+    </p>
+  </li>
+  <li>
+    <p>
+      Is there any infinity between these two? More precisely?
+      <me>
+        \exists A \text{ s.t. } | \mathbb{N} | \lt |A| \lt | \mathbb{R} |
+      </me>
+    </p>
+  </li>
+</ul>
+<conjecture><title>Continuum hypothesis (Cantor 1878)</title>
+  <statement>
+    <p>
+      There is no set <m>A</m> so that <m>\aleph_0 \lt |A| \lt c</m>.
+    </p>
+  </statement>
+</conjecture>
+<p>
+  <ul>
+    <li>Gödel (1940) showed that it cannot be disproved from standard set theory axioms (Zermelo–Fraenkel)</li>
+    <li>Cohen (1963) showed that it cannot be proved from standard set theorem axioms</li>
+    <li>So (technically) not really correct to call it a conjecture</li>
+  </ul>
+</p>
+</slide>
+
+<slide><title>Bigger infinities</title>
+<p>
+  Are there bigger infinities?
+</p>
+<theorem><title>(Cantor's theorem, 1891)</title>
+  <statement>
+    <p>
+      Let <m>A</m> be a set. Then <m>|A| \lt |\pow{A}|</m>
+    </p>
+  </statement>
+</theorem>
+<p>
+  <term>Scratch work</term>
+  <ul>
+    <li><p>
+      Easy to find an injection from <m>A</m> to <m>\pow{A}</m>. Here are two examples
+      <md>
+        <mrow> f:\amp A \to \pow{A} \amp f(a) \amp = \set{a} </mrow>
+        <mrow> h:\amp A \to \pow{A} \amp h(a) \amp = A-\set{a}</mrow>
+      </md>
+      This proves that <m>|A| \leq |\pow{A}|</m>
+    </p>
+  </li>
+  <li>We prove there is no bijection from <m>A</m> to <m>\pow{A}</m> by showing there cannot be a surjection</li>
+  </ul>
+</p>
+</slide>
+
+<slide><title>Good and bad</title>
+<p>
+  To explore, let <m>A=\set{1,2,3}</m> and consider <m>f,h</m> from previous slide.
+  <md>
+  <mrow> f(1) \amp= \set{1} \amp f(2) \amp = \set{2} \amp f(3) \amp = \set{3} </mrow>
+  <mrow> h(1) \amp= \set{2,3} \amp h(2) \amp = \set{1,3} \amp h(3) \amp = \set{1,2} </mrow>
+  </md>
+  Notice that
+  <ul>
+    <li><m>\forall x \in A, x \in f(x)</m></li>
+    <li><m>\forall x \in A, x \not\in h(x)</m></li>
+  </ul>
+</p>
+<p>
+  More generally, if we have any function <m>g:A \to \pow{A}</m> then
+  <ul>
+    <li>if <m>x \in g(x)</m> then call <m>x</m> a <term>good</term> point, and </li>
+    <li>if <m>x \not\in g(x)</m> then call <m>x</m> a <term>bad</term> point</li>
+  </ul>
+  Then build sets of all the good and bad points
+  <me>
+  G = \set{x \in A \text{ s.t. } x \in g(x)} \qquad \text{and} \qquad
+  B = \set{x \in A \text{ s.t. } x \not\in g(x)}
+  </me>
+  Notice that <m>G,B \subseteq A</m> and so <m>G,B \in \pow{A}</m>.
+</p>
+</slide>
+
+<slide><title>The bad set is more interesting</title>
+<proof>
+  <p>
+    Assume, to the contrary that there is a surjection <m>g: A \to \pow{A}</m>
+<ul>
+  <li>Construct the <q>bad</q> set <m>B = \set{x \in A \text{ s.t. } x \not\in g(x)} \subseteq A</m></li>
+  <li>Now since <m>B \in \pow{A}</m> and <m>g</m> is surjective, there must be some <m>b\in A</m> so that <m>g(b)=B</m></li>
+  <li><p>We must have that either <m>b \in B</m> or <m>b \not\in B</m>? Is it <term>good</term> or <term>bad</term>?
+    <ul>
+      <li>When <m>b \in B</m>, by definition of <m>B</m> must have <m>b \not\in B</m> <mdash /> contradiction</li>
+      <li>When <m>b \not\in B</m>, by definition of <m>B</m> must have <m>b \in B</m> <mdash /> contradiction</li>
+    </ul>
+  </p>
+  </li>
+  <li>These contradictions mean there is no <m>b</m> so that <m>g(b)=B</m>, and so <m>g</m> is not surjective</li>
+</ul>
+Then since we have constructed an injection from <m>f:A \to \pow{A}</m>, it follows that <m>|A| \lt |\pow{A}|</m>.
+</p>
+</proof>
+<p>
+  This immediately gives <m>| \mathbb{N} | \lt | \pow{\mathbb{N}}|</m>
+</p>
+<p>
+  With work you can prove that <m>| \pow{\mathbb{N}}| = |\mathbb{R}|</m> <mdash /> see  Cantor-Schröder-Bernstein Theorem
+</p>
+</slide>
+
+<slide><title>Keep going</title>
+<blockquote>
+  <p><m>|A| \lt |\pow{A}|</m> and <m>|\mathbb{N}| \lt |\pow{\mathbb{N}}|</m></p>
+</blockquote>
+<p>
+  Do it again <mdash /> <m>|\mathbb{N}| \lt |\pow{\mathbb{N}}| \lt |\pow{\pow{\mathbb{N}}}|</m>
+</p>
+<p>
+  And again <mdash /> <m>|\mathbb{N}| \lt |\pow{\mathbb{N}}| \lt |\pow{\pow{\mathbb{N}}}| \lt |\pow{\pow{\pow{\mathbb{N}}}}|</m>
+</p>
+
+<corollary>
+  <statement>
+    <p>
+      There are an infinite number of different infinites.
+    </p>
+  </statement>
+</corollary>
+<proof>
+  <p>
+    Starting with <m>\mathbb{N}</m>, Cantor's theorem tells us that <m>\pow{\mathbb{N}}</m> is a larger infinite set.  Then <m>\pow{\pow{\mathbb{N}}}</m> is larger again. By repeatedly taking power sets, you create an infinitely long sequence of larger and larger infinite sets.
+  </p>
+</proof>
+
+</slide>
+
+<slide><title>Start to finish</title>
+<p>
+  Remember where we started:
+  <ul>
+    <li>Basic definitions of sets and subsets</li>
+    <li>Statements, logical operators and truth tables</li>
+  </ul>
+</p>
+<p>
+  Look where we got to:
+  <ul>
+    <li>Diagonal argument <mdash /> there are different types of infinity</li>
+    <li>Cantor's theorem <mdash /> there are an infinite number of different infinities</li>
+  </ul>
+</p>
+<blockquote>
+  <p><term>Congratulations!</term></p>
+</blockquote>
+</slide>
+
+</section>
+</slideshow>
+</pretext>

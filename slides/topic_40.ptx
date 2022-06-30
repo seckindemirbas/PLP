@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pretext>
+
+<docinfo>
+    <macros>
+      \require{cancel}
+
+      \newcommand{\ds}{\displaystyle}
+      \newcommand{\es}{ {\varnothing}}
+  		\newcommand{\st}{ \;:\; }
+  		\newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+  		\newcommand{\set}[1]{ \left\{#1\right\} }
+      \newcommand{\Mod}[1]{\;(\mathrm{mod}\; #1)}
+      \newcommand{\rel}{\;R\;}
+  		\newcommand{\nrel}{\;\cancel{R}\;}
+      \renewcommand{\neg}{\sim}
+      \renewcommand{\text}[1]{\mathsf{\mbox{#1}}}
+      \DeclareMathOperator{\gcd}{gcd}
+      \DeclareMathOperator{\lcm}{lcm}
+    </macros>
+    <rename element="proposition" xml:lang="en-US">Result</rename>
+</docinfo>
+
+<slideshow>
+<title>PLP - 40</title>
+<subtitle>Topic 40 <mdash /> Towards infinite sets</subtitle>
+
+<frontmatter>
+<titlepage>
+  <author>
+    <personname>Demirbaş &amp; Rechnitzer</personname>
+    
+  </author>
+</titlepage>
+
+</frontmatter>
+
+
+<section>
+  <title>Towards infinity</title>
+
+<slide><title>Cardinality comparisons by function</title>
+  <p>
+    In previous lecture we saw for <em>finite</em> sets <m>A,B</m>
+    <ul>
+      <li>If <m>f:A \to B</m> is an injection then <m>|A| \leq |B|</m></li>
+      <li>If <m>g:A \to B</m> is an surjection then <m>|A| \geq |B|</m></li>
+      <li>If <m>h:A \to B</m> is an bijection then <m>|A| = |B|</m></li>
+    </ul>
+    and we use the last one to <em>define</em> equinumerous for <em>any</em> sets
+  </p>
+  <p>
+    Need to prove that this is well defined
+  </p>
+  <theorem>
+    <statement>
+      <p>Let <m>A,B,C</m> be sets, then <q>being equinumerous</q> is an equivalence relation
+      <ul>
+        <li>reflexive: <m>\;\;\, |A|=|A|</m></li>
+        <li>symmetric: <m>|A|=|B| \implies |B|=|A|</m></li>
+        <li>transitive: <m>\;\, |A|=|B|</m> and <m>|B|=|C| \implies |A|=|C|</m></li>
+      </ul>
+      </p>
+    </statement>
+  </theorem>
+</slide>
+
+<slide><title>Equinumerous is an equivalence relation</title>
+<blockquote>
+  <p><q>Being equinumerous</q> is an equivalence relation</p>
+</blockquote>
+<proof>
+  <p>We have to prove that it is reflexive, symmetric and transitive.
+    It suffices to construct appropriate bijections.
+    <ul>
+      <li>The identity <m>i_A: A \to A</m> is a bijection, so <m>|A|=|A|</m></li>
+      <li>If <m>|A|=|B|</m> then there is a bijection <m>f:A\to B</m>. Theorem: since <m>f</m> is a bijection, its inverse <m>f^{-1}:B \to A</m> exists and is also a bijection. Hence <m>|B|=|A|</m>.</li>
+      <li>If <m>|A|=|B|</m> and <m>|B|=|C|</m> then there exist bijections <m>f:A \to B</m> and <m>g: B \to C</m>. Theorem: the composition <m>(g\circ f):A \to C</m> is a bijection. Hence <m>|A|=|C|</m>.</li>
+    </ul>
+  </p>
+</proof>
+<p>
+  Let's put this bijection definition to work on <em>infinite</em> sets
+</p>
+</slide>
+
+<slide><title>Two examples</title>
+<proposition>
+  <statement>
+    <p>
+      Let <m>\mathcal{E}=\set{n \in \mathbb{N} \text{ s.t. } n \text{ is even}}</m> and
+      <m>\mathcal{O}=\set{n \in \mathbb{N} \text{ s.t. } n \text{ is odd}}</m>, then <m>|\mathcal{O}|=|\mathcal{E}|</m>.
+    </p>
+    <p>
+      Further, <m>|\mathbb{N}| = |\mathcal{E}|</m>.
+    </p>
+  </statement>
+</proposition>
+<proof>
+  <p>
+    The function <m>f: \mathcal{O} \to \mathcal{E}</m> defined by <m>f(n)=n+1</m> is a bijection.
+  </p>
+  <p>
+    The function <m>g: \mathbb{N} \to \mathcal{E}</m> defined by <m>g(n)=2n</m> is a bijection.
+  </p>
+</proof>
+<p>
+  <me>
+  \mathcal{E} \subset \mathbb{N} \qquad \text{but} \qquad
+    \begin{array}{cccccccc}
+      1 \amp 2 \amp 3 \amp 4 \amp \dots \\
+      \downarrow \amp \downarrow \amp \downarrow \amp \downarrow \amp \downarrow  \\
+      2 \amp 4 \amp 6 \amp 8 \amp \dots
+    \end{array}
+  </me>
+</p>
+</slide>
+
+<slide><title>Finite and infinite behave very differently</title>
+<p>
+  Consider sets <m>A,B</m> with <m>A \subset B</m>
+  <ul>
+    <li>If <m>A,B</m> are <em>finite</em> then PHP tells us <m>|A| \neq |B|</m> <mdash /> no bijection possible</li>
+    <li>
+      <p>
+        If <m>A,B</m> are <em>infinite</em> then a bijection may be possible
+        <md>
+        <mrow>|\mathcal{E}| \amp=|\mathbb{N}| \amp f:\amp \mathbb{N} \to \mathcal{E} \amp f(n)=2n </mrow>
+        <mrow>|\set{1,4,9,16,\dots}| \amp=|\mathbb{N}| \amp g:\amp \mathbb{N} \to \set{1,4,9,16,\dots} \amp g(n)=n^2 </mrow>
+        </md>
+      </p>
+    </li>
+  </ul>
+</p>
+
+<definition><title>Infinite set</title>
+  <statement>
+    <p>
+      <em>Informal:</em> an infinite set keeps on going: <m>1,2,3,4,\dots</m>
+    </p>
+    <p>
+      <em>Formal:</em> a set <m>A</m> is infinite if there is a bijection from <m>A</m> to a proper subset of <m>A</m>
+    </p>
+  </statement>
+</definition>
+<p>
+  This definition is due to Dedekin, but we will use more precise ones.
+</p>
+</slide>
+
+<slide><title>A first infinity</title>
+<p>
+  First infinite set we meet is the natural numbers.
+</p>
+<definition>
+  <statement>
+    <p>
+      <ul>
+        <li>A set <m>A</m> is called <term>denumerable</term> if there is a bijection <m>f: \mathbb{N} \to A</m></li>
+        <li>We denote the cardinality of any denumerable set by <m>\aleph_0</m> <mdash /> <q>aleph-null</q></li>
+        <li>When a set <m>A</m> is finite or denumerable we say that it is <term>countable</term></li>
+        <li>When a set is not countable it is <term>uncountable</term></li>
+      </ul>
+    </p>
+  </statement>
+</definition>
+
+<p>
+  <ul>
+    <li>Since bijection has bijective inverse <m>f:\mathbb{N} \to A \iff f^{-1}:A \to \mathbb{N}</m></li>
+    <li>We now know that <m>\mathcal{E}, \mathcal{O}, \set{1,4,9,16,\dots}</m> are all denumerable, and so countable</li>
+    <li>Are all subsets of <m>\mathbb{N}</m> countable?</li>
+    <li>Are supersets of <m>\mathbb{N}</m> such as <m>\mathbb{Z}, \mathbb{Q}, \mathbb{R}</m> denumerable?</li>
+    <li>Do uncountable sets exist?</li>
+  </ul>
+</p>
+</slide>
+</section>
+
+</slideshow>
+</pretext>

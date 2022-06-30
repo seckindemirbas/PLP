@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pretext>
+
+<docinfo>
+    <macros>
+      \newcommand{\ds}{\displaystyle}
+      \newcommand{\es}{ {\varnothing}}
+  		\newcommand{\st}{ \;:\; }
+  		\newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+  		\newcommand{\set}[1]{ \left\{#1\right\} }
+      \renewcommand{\neg}{\sim}
+      \renewcommand{\text}[1]{\mathsf{\mbox{#1}}}
+      \DeclareMathOperator{\gcd}{gcd}
+      \DeclareMathOperator{\lcm}{lcm}
+    </macros>
+    <rename element="proposition" xml:lang="en-US">Result</rename>
+</docinfo>
+
+<slideshow>
+  <title>PLP - 22</title>
+  <subtitle>Topic 22<mdash />Subsets and power sets</subtitle>
+
+  <frontmatter>
+  <titlepage>
+    <author>
+      <personname>Demirbaş &amp; Rechnitzer</personname>
+      
+    </author>
+  </titlepage>
+
+
+</frontmatter>
+
+
+<section>
+  <title>Subsets</title>
+
+  <slide><title>Doing more with sets</title>
+  <blockquote>
+    <p>Is the set <m>A</m> contained in the set <m>B</m>?</p>
+  </blockquote>
+
+<definition><title>Subset</title>
+  <statement>
+    <p>
+      Let <m>A,B</m> be sets
+      <ul>
+        <li>
+          We say that <m>A</m> is a <term>subset</term> of <m>B</m> when every element of <m>A</m> is also an element of <m>B</m>.
+      </li>
+      <li>We denote this <m>A \subseteq B</m> and also call <m>B</m> a <term>superset</term> of <m>A</m>. We can also write <m>B \supseteq A</m>.
+      </li>
+      <li> <m>A</m> is a <term>proper subset</term> of <m>B</m> when <m>A \subseteq B</m>, but <m>B</m> contains at least one element that is not in <m>A</m>.
+      </li>
+      <li><p>
+        Finally, two <m>A</m> and <m>B</m> are equal when they are subsets of each other. That is
+        <me>
+          A = B \iff \left( (A\subseteq B) \land (B \subseteq A) \right)
+        </me>
+      </p>
+      </li>
+      </ul>
+
+    </p>
+  </statement>
+</definition>
+  </slide>
+
+  <slide><title>Notes and examples</title>
+  <p>
+    Note that
+    <ul>
+      <li>For all sets <m>A</m>, <m>\es \subseteq A</m> and  <m>A \subseteq A</m></li>
+      <li><m>A \subseteq B \quad
+      \equiv  \quad \forall a \in A, a \in B
+      \quad \equiv \quad (a \in A) \implies (a \in B)</m></li>
+      <li><m>A \not\subseteq B
+      \quad \equiv \quad \exists a \in A \;s.t.\; a \not\in B
+      </m></li>
+    </ul>
+  </p>
+
+  <p>
+    Some examples
+    <ul>
+      <li><m>\set{1,2,7} \not\subseteq \set{1,2,3,4,5}</m></li>
+      <li><m>\set{2n \st n \in \mathbb{Z}} \subseteq \mathbb{Z}</m></li>
+      <li>The subsets of <m>\set{0,1}</m> are
+      <m>
+        \es, \set{0}, \set{1}, \set{0,1}
+      </m>
+      </li>
+    </ul>
+  </p>
+  </slide>
+
+  <slide><title>The set of all subsets</title>
+  <definition>
+  <statement><p>
+   Let <m>A</m> be a set.
+   The <term>power set</term> of <m>A</m>, denoted <m>\mathcal{P}(A)</m>, is the set of all subsets of <m>A</m>.
+  </p></statement>
+  </definition>
+
+  <p>
+    <md>
+    <mrow>\pow{\es} \amp = \set{\es} </mrow>
+    <mrow>\pow{\set{1}} \amp = \set{\es, \set{1}} </mrow>
+    <mrow>\pow{\set{0,1}}\amp= \set{ \es, \set{0}, \set{1}, \set{0,1}} </mrow>
+    <mrow>\pow{\set{0,1,2}}\amp= \set{ \es, \set{0}, \set{1}, \set{2},\set{0,1}, \set{0,2}, \set{1,2}, \set{0,1,2}} </mrow>
+    </md>
+    Not hard to prove that if <m>|A|=n</m> then <m>|\pow{A}| = 2^n</m>.
+  </p>
+  <p>
+     Near end of course we'll prove a <em>very interesting</em> result for infinite sets <m>A</m> and their power sets.
+  </p>
+
+  </slide>
+
+</section>
+
+
+</slideshow>
+</pretext>

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pretext>
+  <docinfo>
+      <macros>
+        \newcommand{\ds}{\displaystyle}
+        \newcommand{\es}{ {\varnothing}}
+    		\newcommand{\st}{ \;\mid\; }
+    		\newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+    		\newcommand{\set}[1]{ \left\{#1\right\} }
+        \renewcommand{\neg}{\sim}
+        \renewcommand{\text}[1]{\mathsf{\mbox{#1}}}
+        \DeclareMathOperator{\gcd}{gcd}
+        \DeclareMathOperator{\lcm}{lcm}
+        \newcommand{\Mod}[1]{\;(\mathrm{mod}\; #1)}
+      </macros>
+  </docinfo>
+
+  <slideshow>
+  <title>PLP - 12</title>
+  <subtitle>Topic 12 <mdash />Proof by cases</subtitle>
+
+  <frontmatter>
+  <titlepage>
+    <author>
+      <personname>Demirbaş &amp; Rechnitzer</personname>
+      
+    </author>
+  </titlepage>
+
+
+  </frontmatter>
+
+
+<section>
+  <title>Proof by cases</title>
+
+  <slide><title>Another equivalence</title>
+  <proposition>
+    <statement>
+      <p>
+        <me>(P \lor Q) \implies R \quad \equiv \quad (P \implies R) \land (Q \implies R)</me>
+      </p>
+    </statement>
+  </proposition>
+<p>
+  You can prove this with a truth-table (tedious) or via equivalences (good exercise).
+</p>
+  <p>
+    Useful because we can split the <term>hypothesis</term> into cases.
+    <md>
+    <mrow>
+      \amp (n \in \mathbb{N}) \implies (n^2+5n-7 \text{ is odd})
+    </mrow>
+    <mrow>
+    \amp(n \text{ is even}) \lor
+    (n \text{ is odd})
+    \implies (n^2+5n-7 \text{ is odd})
+    </mrow>
+    <mrow>
+    \amp
+    \underbrace{(n \text{ is even})
+    \implies (n^2+5n-7 \text{ is odd})}
+    \text{ and  }
+    \underbrace{(n \text{ is odd})
+    \implies (n^2+5n-7 \text{ is odd})}
+    </mrow>
+    </md>
+    We can prove each <term>case</term> in turn <mdash /> <term>proof by cases</term>
+  </p>
+</slide>
+
+<slide><title>Proof by cases</title>
+<proposition>
+  <statement>
+    <p>
+      Let <m>n \in \mathbb{Z}</m> then <m>n^2+5n-7</m> is odd.
+    </p>
+  </statement>
+</proposition>
+<proof>
+  <p>
+    Assume the hypothesis is true, so that <m>n \in \mathbb{Z}</m>. Hence <m>n</m> is even or odd.
+    <ul>
+      <li><em>Case 1:</em> Assume that <m>n</m> is even, so that <m>n=2k</m> for some <m>k \in \mathbb{Z}</m>. Hence <m>n^2+5n-7 = 4k^2+10k-7 = 2(2k^2+5k-4)+1</m>. Thus <m>n^2+5n-7</m> is odd.</li>
+      <li><em>Case 2:</em> Assume that <m>n</m> is odd, so that <m>n=2\ell+1</m> for some <m>\ell \in \mathbb{Z}</m>. Hence <m>n^2+5n-7 = 4\ell^2+4\ell+1 + 10\ell+5-7 = 2(2\ell^2 + 7\ell -1)+1</m>. Thus <m>n^2+5n-7</m> is odd.</li>
+    </ul>
+    Since <m>n^2+5n-7</m> is odd in <em>both cases</em>, the result holds.
+  </p>
+</proof>
+
+</slide>
+
+<slide><title>What can go wrong</title>
+<p>
+  <em>Proof by cases</em> can be tricky
+  <ul>
+    <li>tell the <term>reader</term> that you are doing <term>case analysis</term></li>
+    <li>make sure you get <em>all</em> the cases <mdash /> a common mistake</li>
+    <li><p>
+      cases are often very similar <mdash /> be very careful of skipping steps.
+    </p>
+    <p>
+      <term>without loss of generality</term> or <term>WLOG</term> is a good source of errors
+    </p>
+  </li>
+  </ul>
+</p>
+<p>
+  Dangerous phrases in mathematics
+  <ul>
+    <li>Without loss of generality<ellipsis/></li>
+    <li>Clearly<ellipsis/></li>
+    <li>Obviously<ellipsis/></li>
+    <li>A quick calculation shows that<ellipsis/> </li>
+    <li>It is easy to show that<ellipsis/></li>
+  </ul>
+</p>
+</slide>
+<slide><title>Another example</title>
+<proposition>
+  <statement>
+    <p>
+      Let <m>n \in \mathbb{Z}</m>. If <m>3 \mid n^2</m> then <m>3 \mid n</m>.
+    </p>
+  </statement>
+</proposition>
+<p>
+  <term>Scratch work</term> <mdash />This smells of the contrapositive: <m>(3 \nmid n) \implies (3\nmid n^2)</m>.
+  <ul>
+    <li>Recall <term>Euclidean division</term> <mdash /> every integer <m>n</m> can be written uniquely as
+    <me>
+      n=3a \qquad n=3a+1 \qquad n=3a+2 \qquad \text{for some } a \in \mathbb{Z}
+    </me>
+  </li>
+  <li>If <m>3 \nmid n</m> we must have either <m>n=3a+1</m> or <m>=3a+2</m> <mdash /> our cases.
+  </li>
+  <li>If <m>n=3a+1</m> then <m>n^2 = 9a^2+6a+1 = \dots</m>.</li>
+  <li>If <m>n=3a+2</m> then <m>n^2 = 9a^2+12a+4 = \dots</m>.</li>
+  </ul>
+  Time to write up.
+</p>
+
+
+</slide>
+<slide><title>Write it up nicely</title>
+<blockquote>
+  <p>
+    Let <m>n \in \mathbb{Z}</m>. If <m>3 \mid n^2</m> then <m>3 \mid n</m>.
+  </p>
+</blockquote>
+<proof>
+  <p>
+    We prove the contrapositive, so assume that <m>3 \nmid n</m>. By Euclidean division, we know that <m>n=3a+1</m>  or <m>n=3a+2</m>.
+    <ul>
+      <li><em>Case 1:</em> Let <m>n=3a+1</m>, then <m>n^2=9a^2+6a+1 = 3(3a^2+2a)+1</m> and so is not divisible by 3.</li>
+      <li><em>Case 2:</em> Let <m>n=3a+2</m>,then <m>n^2=9a^2+12a+4 = 3(3a^2+4a+1)+1</m> and so is not divisible by 3.</li>
+    </ul>
+    Since <m>3 \nmid n^2</m> in both cases, the result holds.
+  </p>
+</proof>
+
+</slide>
+
+</section>
+
+</slideshow>
+</pretext>

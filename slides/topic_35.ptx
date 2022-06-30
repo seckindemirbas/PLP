@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pretext>
+
+<docinfo>
+    <macros>
+      \require{cancel}
+
+      \newcommand{\ds}{\displaystyle}
+      \newcommand{\es}{ {\varnothing}}
+  		\newcommand{\st}{ \;:\; }
+  		\newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+  		\newcommand{\set}[1]{ \left\{#1\right\} }
+      \newcommand{\Mod}[1]{\;(\mathrm{mod}\; #1)}
+      \newcommand{\rel}{\;R\;}
+  		\newcommand{\nrel}{\;\cancel{R}\;}
+      \renewcommand{\neg}{\sim}
+      \renewcommand{\text}[1]{\mathsf{\mbox{#1}}}
+      \DeclareMathOperator{\gcd}{gcd}
+      \DeclareMathOperator{\lcm}{lcm}
+    </macros>
+    <rename element="proposition" xml:lang="en-US">Result</rename>
+</docinfo>
+
+<slideshow>
+  <title>PLP - 35</title>
+  <subtitle>Topic 35<mdash />Inverse functions</subtitle>
+
+  <frontmatter>
+  <titlepage>
+    <author>
+      <personname>Demirbaş &amp; Rechnitzer</personname>
+      
+    </author>
+  </titlepage>
+
+</frontmatter>
+
+<section><title>Inverse functions</title>
+<slide><title>Inverses and one-sided inverses</title>
+<definition>
+  <statement>
+    <p>
+      Let <m>f: A \to B</m> and <m>g: B \to A</m> be functions.
+      <ul>
+        <li>If <m>g \circ f = i_A</m> then we say that <m>g</m> is a <term>left-inverse</term> of <m>f</m>.</li>
+        <li>Similarly, if <m>f \circ g = i_B</m> then we say that <m>g</m> is a <term>right-inverse</term> of <m>f</m>.</li>
+        <li>If <m>g</m> is both a <term>left-inverse</term> and <term>right-inverse</term>, then we call it an <term>inverse</term> of <m>f</m>.</li>
+      </ul>
+    </p>
+  </statement>
+</definition>
+<p>
+  Note that one can prove that if <em>an</em> inverse exists, then it is <em>unqiue</em>.
+</p>
+<p>
+  So we can say <em>the</em> inverse and denote it <m>f^{-1}</m>.
+</p>
+</slide>
+
+<slide><title>Left- but not right-inverse</title>
+<p>
+  Consider the functions <m>f,g</m> defined below
+</p>
+<sidebyside width="50%">
+  <image source="figures/function_drawing5.png"/>
+</sidebyside>
+<p>
+  Notice that
+  <m>g(f(1))=1</m> and <m>g(f(2))=2</m>
+  so <m>g</m> is a <term>left-inverse</term> of <m>f</m>.
+</p>
+<p>
+  Then <m>f(g(4))=4,  f(g(5))=5</m> but <m>f(g(6))=5 \neq 6</m>
+  so <m>g</m> is not a <term>right-inverse</term> of <m>f</m>.
+</p>
+<p>
+  The non-injectiveness of <m>g</m> is to blame.
+</p>
+<p>
+  A similar example gives a <term>right-inverse</term> that is not a <term>left-inverse</term> (non-surjectiveness is to blame)
+</p>
+
+</slide>
+
+<slide><title>Existence of one-sided inverses</title>
+<lemma>
+  <statement>
+    <p>
+      Let <m>f:A \to B</m> be a function. Then
+      <ul>
+        <li><m>f</m> has a <term>left-inverse</term> iff <m>f</m> is injective.</li>
+        <li><m>f</m> has a <term>right-inverse</term> iff <m>f</m> is surjective.</li>
+      </ul>
+    </p>
+  </statement>
+</lemma>
+<p>
+  The proofs of these statements make very good exercises. We'll do the forward implications.
+</p>
+</slide>
+
+<slide><title>One sided inverse</title>
+<blockquote>
+  <p>If <m>f</m> has a left-inverse then it is injective</p>
+</blockquote>
+<proof>
+  <p>
+    Assume that <m>f</m> has a left-inverse <m>g</m>, so that <m>g(f(x))=x</m>.
+  </p>
+  <p>
+  Now let <m>a_1,a_2 \in A</m>  so that <m>f(a_1)=f(a_2)</m>. Then we know that <m>g(f(a_1))=g(f(a_2))</m>. But since <m>g</m> is a left-inverse, <m>a_1=g(f(a_1))=g(f(a_2))=a_2</m>. Thus <m>f</m> is injective.
+  </p>
+</proof>
+
+<blockquote>
+  <p>If <m>f</m> has a right-inverse then it is surjective</p>
+</blockquote>
+<proof>
+  <p>
+    Assume that <m>f</m> has a right-inverse <m>g</m>, so that <m>f(g(y))=y</m>.
+  </p>
+  <p>
+    Let <m>b \in B</m> and set <m>a=g(b)</m>. Then <m>f(a)= f(g(b)) = b</m>, since <m>g</m> is a right-inverse. Thus <m>f</m> is surjective.
+  </p>
+</proof>
+
+</slide>
+
+<slide><title>Joining inverses</title>
+<lemma>
+  <statement>
+    <p>
+      Let <m>f:A \to B</m> have a left-inverse <m>g</m> and a right-inverse <m>h</m>. Then <m>g=h</m>.
+    </p>
+  </statement>
+</lemma>
+<proof>
+  <p>
+    Let <m>f,g</m> and <m>h</m> be as stated. Thus
+    <m>g\circ f = i_A</m> and <m>f\circ h = i_B</m>.
+    Then
+    <md>
+      <mrow> g \amp = g \circ i_B = g \circ (f \circ h) </mrow>
+      <mrow> \amp = (g \circ f) \circ h \amp \text{assoc of compositions} </mrow>
+      <mrow> \amp =  i_A \circ h = h</mrow>
+    </md>
+    as required.
+  </p>
+</proof>
+
+</slide>
+
+<slide><title>Existence of inverse</title>
+<theorem>
+  <statement>
+    <p>
+      Let <m>f:A \to B</m>. Then <m>f</m> has an inverse iff <m>f</m> is bijective. Further, that inverse, if it exists, is unique.
+    </p>
+  </statement>
+</theorem>
+
+<proof>
+  <p>
+    <ul>
+      <li>
+        Assume that <m>f</m> has an inverse <m>g</m>. Then <m>g</m> is both a left-inverse and a right-inverse. Lemma: since <m>f</m> has a left-inverse, <m>f</m> is injective, and then since <m>f</m> has a right-inverse, <m>f</m> is surjective. Hence <m>f</m> is bijective.</li>
+      <li>Now assume that <m>f</m> is bijective. Lemma: since <m>f</m> is injective, it has a left inverse, and since <m>f</m> is surjective, it has a right inverse. Lemma: those one-sided inverses are the same function, <m>g</m>. Hence <m>g</m> is an inverse of <m>f</m>.</li>
+      <li><p>
+        Finally, assume that <m>g,h</m> are inverses of <m>f</m>, then
+        <m>
+          g = g \circ (f \circ h) = (g \circ f)\circ h = h
+        </m>.
+        Thus the inverse function is unique.
+      </p>
+    </li>
+    </ul>
+  </p>
+</proof>
+</slide>
+
+<slide><title>Example</title>
+<proposition>
+  <statement>
+    <p>
+      The function <m>f: \mathbb{R} \to \mathbb{R}, f(x)=7x-3</m> is bijective and so has an inverse.
+    </p>
+  </statement>
+</proposition>
+<proof>
+  <p>
+      Previously we showed that <m>f</m> is injective and surjective, and so is bijective. Hence its inverse exists.
+  </p>
+</proof>
+<p>
+  In this case we can find the inverse explicitly:
+  <m>f^{-1}: \mathbb{R} \to \mathbb{R}</m> defined by <m>f^{-1}(y) = \frac{y+3}{7}</m>
+</p>
+<p>
+  Since the function is bijective, enough to prove this is a left-inverse
+  <me>
+    (f^{-1} \circ f)(x) = f^{-1}(7x-3) = \frac{(7x-3)+3}{7} = x
+  </me>
+  as required.
+</p>
+</slide>
+
+</section>
+</slideshow>
+</pretext>

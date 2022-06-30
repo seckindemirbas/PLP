@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pretext>
+
+<docinfo>
+    <macros>
+      \newcommand{\ds}{\displaystyle}
+      \newcommand{\es}{ {\varnothing}}
+  		\newcommand{\st}{ \;\mid\; }
+  		\newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+  		\newcommand{\set}[1]{ \left\{#1\right\} }
+      \renewcommand{\neg}{\sim}
+      \renewcommand{\text}[1]{\mathsf{\mbox{#1}}}
+    </macros>
+</docinfo>
+
+<slideshow>
+  <title>PLP - 2</title>
+  <subtitle>Topic 2 <mdash /> Logical statements</subtitle>
+
+<frontmatter>
+<titlepage>
+  <author>
+      <personname>Demirbaş &amp; Rechnitzer</personname>
+  </author>
+</titlepage>
+
+
+</frontmatter>
+
+
+
+<section>
+  <title>Logical statements</title>
+
+  <slide><title>Proving things from smaller things</title>
+
+  <p>
+    A big part of  mathematics is proving that <term>statements</term> are <term>true</term>.
+  </p>
+
+  <blockquote>
+    <p>The square of an even number is even.</p>
+  </blockquote>
+
+  <p>
+    We do this by
+    <ul>
+      <li>starting from known <em>facts</em> <mdash /> <term>axioms</term>, <term>lemmas</term>, <term>theorems</term></li>
+      <li><em>combine</em> those facts using <term>logic</term> to build new facts</li>
+    </ul>
+  </p>
+
+  <p>
+    So we need to introduce and understand
+    <ul>
+      <li>mathematical sentences that can carry a <term>truth value</term></li>
+      <li>the rules for combining those sentences</li>
+    </ul>
+  </p>
+
+  </slide>
+
+
+
+  <slide><title>Statements</title>
+  <definition><title>(A not so formal definition of statements)</title>
+    <statement>
+      <p>
+        A <term>statement</term> is a sentence that is either <term>true</term> or <term>false</term>.
+      </p>
+      <p>
+        A statement has exactly one of those <term>truth values</term>.
+      </p>
+      <p>
+        Note:
+        <ul>
+          <li>A rigorous definition is way too hard for this course.</li>
+          <li>Typically use <m>P,Q,R</m> to denote statements</li>
+        </ul>
+      </p>
+    </statement>
+  </definition>
+
+  <blockquote>
+    <p>
+      The number
+      <m>\sqrt{2}</m>
+      is not a rational number.
+    </p>
+  </blockquote>
+  <blockquote>
+    <p>
+      The number 17 is even.
+    </p>
+  </blockquote>
+
+  </slide>
+
+  <slide>
+    <title>More statements</title>
+
+    <p>Sentences like</p>
+    <blockquote>
+      <p>
+        The 100th decimal digit of <m>\pi</m> is 7.
+      </p>
+    </blockquote>
+    <p>and</p>
+    <blockquote>
+      <p>
+        Every even integer greater than 2 is the sum of two primes.
+      </p>
+    </blockquote>
+    <p>
+      are statements since we can determine their truth value
+    </p>
+    <p>
+      <ol>
+        <li><m>\pi = 3.1415\dots</m> <mdash /> we can just keep computing and check.</li>
+        <li>This is <term>Goldbach's conjecture</term> <mdash /> truth value unknown, but it must be true or false.</li>
+      </ol>
+    </p>
+
+  </slide>
+
+  <slide><title>Non-statements</title>
+  <p>Sentences like</p>
+  <blockquote>
+    <p>
+      I am tall
+    </p>
+  </blockquote>
+  <p>and</p>
+  <blockquote>
+    <p>
+      This sentence is false
+    </p>
+  </blockquote>
+  <p>
+    are <em>not</em> statements since we cannot decide their truth value
+  </p>
+  <p>
+    <ol>
+      <li>Who is <q>I</q>? What is <q>tall</q>?</li>
+      <li><p>This cannot be true or false
+        <ul>
+          <li>If it is true, then it must be false!</li>
+          <li>If it s false, then it must be true!</li>
+        </ul>
+      </p></li>
+    </ol>
+  </p>
+
+  </slide>
+
+  <slide><title>Open sentences</title>
+  <p>
+    Some sentences contain variables
+  </p>
+  <blockquote>
+    <p>
+      If the integer <m>x</m> is a multiple of 6 then it is even.
+    </p>
+  </blockquote>
+    <blockquote>
+      <p>
+        The integer <m>x</m> is even.
+      </p>
+    </blockquote>
+  <p>
+<ol>
+  <li>This is a statement since it is always true</li>
+  <li>The truth value depends on the variable <m>x</m></li>
+</ol>
+  </p>
+<definition>
+  <statement>
+    <p>
+      An <term>open sentence</term> is a sentence whose truth value depends on the variable(s) it contains.
+    </p>
+    <p>
+      Typically denote it by <m>P(x)</m> and similar.
+    </p>
+  </statement>
+</definition>
+  </slide>
+
+</section>
+
+</slideshow>
+</pretext>

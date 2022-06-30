@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pretext>
+
+<docinfo>
+    <macros>
+      \newcommand{\ds}{\displaystyle}
+      \newcommand{\es}{ {\varnothing}}
+  		\newcommand{\st}{ \;\mid\; }
+  		\newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+  		\newcommand{\set}[1]{ \left\{#1\right\} }
+      \renewcommand{\neg}{\sim}
+      \renewcommand{\text}[1]{\mathsf{\mbox{#1}}}
+    </macros>
+</docinfo>
+
+<slideshow>
+<title>PLP - 5 </title>
+<subtitle>Topic 5 <mdash />Modus ponens and proofs</subtitle>
+
+<frontmatter>
+<titlepage>
+  <author>
+    <personname>Demirbaş &amp; Rechnitzer</personname>
+    
+  </author>
+</titlepage>
+
+
+</frontmatter>
+
+<section><title>Modus ponens <mdash /> towards proofs</title>
+
+<slide>
+  <title>Modus ponens</title>
+  <p>
+    Once we know an implication <m>P \implies Q</m> is true, we want to use it.
+    <ul>
+      <li>If we also know that <m>P</m> is true</li>
+      <li>Then (by our truth table) we must have that <m>Q</m> is true</li>
+    </ul>
+    This deduction very useful and is precisely why we want to prove implications.
+  </p>
+  <definition><title>(Modus ponens)</title>
+    <statement>
+      <p>
+        The deduction:
+      </p>
+      <blockquote>
+        <p>
+          <m>(P \implies Q)</m> and <m>P</m> are true so <m>Q</m> must be true
+        </p>
+      </blockquote>
+      <p>
+        is called <term>modus ponens</term>.
+      </p>
+    </statement>
+  </definition>
+</slide>
+
+<slide><title>Modus ponens and proofs</title>
+<p>
+  Say we need to prove <m>P \implies Q</m> but cannot directly. Instead show that
+  <ul>
+    <li><m>P \implies P_1</m> is true</li>
+    <li><m>P_1 \implies P_2</m> is true</li>
+    <li><m>P_2 \implies P_3</m> is true</li>
+    <li><ellipsis/></li>
+    <li><m>P_n \implies Q</m> is true</li>
+  </ul>
+</p>
+<p>
+  Consider what happens when <m>P</m> is true (we can ignore <m>P</m> is false).
+  <ul>
+    <li><p>
+      When <m>P</m> is true, we can use <em>modus ponens</em>:
+      <ul>
+        <li>Since <m>P</m> is true and <m>P \implies P_1</m> is true, we know <m>P_1</m> is true</li>
+        <li>Since <m>P_1</m> is true, we know that <m>P_2</m> is true</li>
+        <li><ellipsis/></li>
+        <li>Since <m>P_n</m> is true, we know that <m>Q</m> is true</li>
+      </ul>
+    </p>
+    </li>
+    <li>Hence <m>Q</m> cannot be false, so the implication is true!</li>
+  </ul>
+</p>
+</slide>
+
+<slide><title>Typical proof structure</title>
+<proposition>
+  <statement>
+    <p>
+      If <m>P</m> then <m>Q</m>
+    </p>
+  </statement>
+</proposition>
+<proof>
+  <p>
+    <ul>
+      <li>Assume that the hypothesis <m>P</m> is true</li>
+      <li>We see that <m>P</m> implies <m>P_1</m></li>
+      <li>From this we know that <m>P_1</m> implies <m>P_2</m></li>
+      <li> <m>\vdots</m> </li>
+      <li>From <m>P_n</m> we know that <m>Q</m> as required.</li>
+    </ul>
+  </p>
+</proof>
+
+
+</slide>
+
+</section>
+
+</slideshow>
+</pretext>

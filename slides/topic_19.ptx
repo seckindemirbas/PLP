@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pretext>
+
+<docinfo>
+    <macros>
+      \newcommand{\ds}{\displaystyle}
+      \newcommand{\es}{ {\varnothing}}
+  		\newcommand{\st}{ \;\text{s.t.}\; }
+  		\newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+  		\newcommand{\set}[1]{ \left\{#1\right\} }
+      \renewcommand{\neg}{\sim}
+      \renewcommand{\text}[1]{\mathsf{\mbox{#1}}}
+      \DeclareMathOperator{\gcd}{gcd}
+      \DeclareMathOperator{\lcm}{lcm}
+    </macros>
+    <rename element="proposition" xml:lang="en-US">Result</rename>
+</docinfo>
+
+<slideshow>
+  <title>PLP - 18</title>
+  <subtitle>Topic 19<mdash />Proof of induction</subtitle>
+
+  <frontmatter>
+  <titlepage>
+    <author>
+      <personname>Demirbaş &amp; Rechnitzer</personname>
+      
+    </author>
+  </titlepage>
+
+
+</frontmatter>
+
+<section><title>Proof of induction</title>
+
+
+<slide><title>Why does induction work</title>
+<theorem><title>Mathematical induction</title>
+  <statement>
+    <p>
+      For all <m>n\in\mathbb{N}</m> let <m>P(n)</m> be a statement. Then if
+      <ul>
+        <li><m>P(1)</m> is true, and</li>
+        <li><m>P(k) \implies P(k+1)</m> is true for all <m>k \in \mathbb{N}</m>
+        </li>
+      </ul>
+      then <m>P(n)</m> is true for all <m>n \in \mathbb{N}</m>.
+    </p>
+  </statement>
+</theorem>
+<p>
+  We won't give a rigorous proof, but will give a <q>proof sketch</q>
+</p>
+</slide>
+
+<slide><title>A good set and a bad set</title>
+<p>
+  Assume, <m>P(1)</m> is true, and <m>P(k) \implies P(k+1)</m> is true.
+</p>
+<p>
+  Define two sets
+  <ul>
+    <li>
+      <p>
+        <term>Good set</term> <mdash />
+        Let <m>G = \set{n \st P(n) \text{ is true}}</m>. We know <m>1 \in G</m>.
+      </p>
+    </li>
+    <li>
+      <p>
+        <term>Bad set</term> <mdash />
+        Let <m>B = \set{n \st P(n) \text{ is false}}</m>
+      </p>
+    </li>
+  </ul>
+</p>
+<p>
+  Now either <m>B = \es</m> or <m>B \neq \es</m>.
+  <ul>
+    <li>If <m>B \neq \es</m>, let <m>q</m> be the smallest element of <m>B</m></li>
+    <li> Then <m>P(q)</m> is first number that makes <m>P(n)</m> false. </li>
+  <li>We must have <m>P(q-1)</m> is true</li>
+  <li>But <em>by assumption</em> <m>P(q-1) \implies P(q)</m>, so <m>P(q)</m> is true.</li>
+  <li>But then <m>q \not\in B</m>.</li>
+  <li>So there cannot be such an element <m>q</m></li>
+  </ul>
+</p>
+<p>
+  So <m>B = \es</m>, so <m>P(n)</m> is true for all <m>n \in \mathbb{N}</m>
+</p>
+</slide>
+
+<slide><title>Sneaky</title>
+<p>
+  We are doing two sneaky things here
+  <ul>
+    <li>
+      <p>This is a <term>proof by contradiction</term> in disguise</p>
+    </li>
+    <li>
+      <p>We are using the <term>well ordering principle</term> of <m>\mathbb{N}</m></p>
+    </li>
+  </ul>
+</p>
+<definition><title>(The well ordering principle)</title>
+  <statement>
+    <p>A set <m>A</m> is <term>well ordered</term> if every non-empty subset <m>B \subseteq A</m> has a smallest element
+    </p>
+  </statement>
+</definition>
+<p>
+  Notice that <m>\mathbb{N}</m> is well ordered, but <m>\mathbb{Z}, \mathbb{Q}, \mathbb{R}</m> are not.
+</p>
+</slide>
+
+</section>
+</slideshow>
+</pretext>
