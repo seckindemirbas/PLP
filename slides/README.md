@@ -4,7 +4,7 @@
 * The slides are arranged into 43 separate files, roughly topic-by-topic.
 * Each slide-show is called `topic_XX.ptx` and is self-contained.
 * The png images lie in the `figure` subdirectory. Those PNG were created from the svg files used in the book; the conversion was done using [inkscape](https://inkscape.org/).
-
+* we give the html-output as `topic_XX.html` and the associated PDF rendering as `pdf_out/topic_XX.pdf`
 
 ## Compile to HTML / reveal.js
 * At this time the [pretext-cli](https://pretextbook.org/doc/guide/html/processing-CLI.html) does not (officially) support compiling slides, however our build process does still depend on having a working pretext-cli installation.
