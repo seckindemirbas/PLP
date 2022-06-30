@@ -61,14 +61,16 @@ $ cd book
 ```
 * Then run
 ```
-$ pretext build latex 
+$ pretext build latex
+```
+or
 ```
 $ pretext build latex --stringparam latex.font.size 12pt
 ```
 for a slightly larger font.
 * This will take a little time - roughly 8 minutes on a modest linux laptop computer
 * The latex is output to the `output/latex` subdirectory
-* To then compile this latex into PDF run 
+* To then compile this latex into PDF move into that subdirectory and run 
 ```
 pdflatex main.tex
 ```
@@ -78,5 +80,3 @@ latexmk main.tex
 ```
 This latter command takes about 30s on a modest laptop.
 
-
-Sources for the PLP text and exercises here. Files arranged in format compatible with the pretext-cli.
