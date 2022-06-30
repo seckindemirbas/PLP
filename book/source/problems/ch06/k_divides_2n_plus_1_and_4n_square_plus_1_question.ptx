@@ -1,0 +1,38 @@
+<exercise>
+<!-- source latex = 'k divides 2n plus 1 and 4n square plus 1 question.tex' -->
+<!-- converted on 24/06/2021 at 16:26 -->
+<statement>
+<p>
+Prove that for all <m>n, k\in\mathbb Z</m>, if <m>k\mid (2n+1)</m> and <m>k\mid (4n^2+1)</m>, then <m>k\in\set{-1,1}</m>.
+</p>
+</statement>
+<hint>
+<p>
+Try to eliminate <m>n</m>. What does this tell you about <m>k</m>? What else do you know about <m>k</m>?
+</p>
+</hint>
+<solution>
+<proof>
+<p>
+Let <m>n,k\in\mathbb{Z}</m>. Assume <m>k\mid (2n+1)</m> and <m>k\mid(4n^2+1)</m>.  This implies that  <m>2n+1=ka</m> and <m>4n^2+1=kb</m> for some <m>a, b\in\mathbb{Z}</m>. Combining these equations gives
+<md>
+<mrow>
+  k^2a^2  \amp =(2n+1)^2 = 4n^2+4n+1
+</mrow><mrow>
+   \amp = kb+4n = kb+2(ka-1)  \amp  \text{ since }2n=ka-1.
+</mrow>
+</md>
+Hence, if we group all the <m>k</m> terms together, we get
+<md>
+<mrow>
+  2 = kb+2ka-k^2a^2 = k(b+2a-ka^2).
+</mrow>
+</md>
+But this tells us that <m>k \mid 2</m>. The only divisors of <m>2</m> are <m>\pm 1, \pm 2</m>.
+</p>
+<p>
+However, since <m>k \mid 2n+1</m>, we know that <m>k</m> must be odd (if it were even, then <m>2n+1</m> would have to be even). Therefore <m>k</m> must be an odd divisor of <m>2</m>, that is <m>k= \pm 1</m>.
+</p>
+</proof>
+</solution>
+</exercise>

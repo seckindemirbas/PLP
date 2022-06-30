@@ -1,0 +1,81 @@
+<exercise>
+<!-- source latex = '24 divides prime square minus 1 question.tex' -->
+<!-- converted on 08/11/2021 at 11:06 -->
+<statement>
+<p>
+Let <m>n\in\mathbb{Z}</m> and <m>p\geq 5</m> be prime.
+<ol marker="(a)">
+<li>
+<p>
+ Prove, using Bézout's identity that if <m>3\mid n</m> and <m>8\mid n</m>, then <m>24\mid n</m>.
+</p>
+</li>
+<li>
+<p>
+ Use the result in part (a) to show that <m>p^2\equiv 1 \pmod {24}</m>.
+</p>
+
+</li>
+</ol>
+</p>
+</statement>
+<hint>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ Bézout's identity tells you about the greatest common divisor of two numbers. What does it tell you about some of the numbers in the statement of the question? How can you use that information to get an equation for <m>n</m>?
+</p></li>
+<li>
+<p>
+  When a prime is at least 5 what do you know about its remainder when you divide by 3 or 8 or 24? And how can you turn the congruence we want to prove into a statement about divisibility? And how can we use (a) to reduce the number of cases we need to check?
+</p>
+</li>
+</ol>
+</p>
+</hint>
+<solution>
+  <proof><title>Proof of (a)</title>
+<p>
+ Let <m>n\in\mathbb{Z}</m>. Assume that <m>3\mid n</m> and <m>8\mid n</m>. This means that <m>n=3k</m> and <m>n=8l</m> for some <m>k,l\in\mathbb{Z}</m>. Thus, we see <m>8n=24k</m> and <m>3n=24l</m>. Moreover, since <m>\gcd(3,8)=1</m>, by Bézout's identity, we see that <m>\exists x,y\in\mathbb{Z}</m> such that <m>3x+8y=1</m> (we can take x=3, y=-1). Using the <m>x,y</m> in the Bézout's identity, we get <m>3xn=24xl</m> and <m>8yn=24yk</m>. Thus, adding two equations together, we get <m>(3x+8y)n=n=24(xl+yk)</m>. Since <m>(xl+yk)\in\mathbb{Z}</m>, we see <m>24\mid n</m> as desired.
+</p>
+  </proof>
+  
+  <p>
+    We use the result of (a) to prove (b).
+  </p>
+  <proof><title>Proof of (b)</title>
+  <p>
+Assume <m>p</m> is prime. We see that proving <m>p^2\equiv 1 \pmod {24}</m> is equivalent to showing <m>24 \mid (p^2- 1)</m> and thus by part (a), it is enough to show <m>8\mid (p^2-1)</m> and <m>3\mid (p^2-1)</m>.
+</p>
+<p>
+<em>Proof that <m>3\mid (p^2-1)</m></em>: We know, since <m>p </m> is prime, that <m>3\nmid p</m>. Then we see that we have 2 cases <m>p\equiv 1\pmod 3</m> or <m>p\equiv 2 \pmod 3</m>.
+<ul>
+<li>
+<p>
+ <em>Case 1:  <m>p\equiv 1\pmod 3</m>:</em> Then we see that <m>p^2\equiv 1\pmod 3</m>, that is, <m>3\mid (p^2-1)</m>.
+</p></li>
+<li>
+<p>
+ <em>Case 2: <m>p\equiv 2\pmod 3</m>:</em> Then we see that <m>p^2\equiv 4\equiv 1\pmod 3</m>, which again proves <m>3\mid (p^2-1)</m>.
+</p></li>
+</ul>
+</p>
+<p>
+<em>Proof that <m>8\mid (p^2-1)</m></em>: Since <m>p</m> is prime and <m>p\geq 5</m> we know that <m>p</m> is odd. Thus, <m>p=2k+1</m> for some <m>k\in\mathbb{Z}</m>. This means <m>p^2-1=4k(k+1)</m>. Moreover, we see that for <m>k</m> we have two cases: <m>k=2n</m> or <m>k=2n+1</m> for some <m>n\in\mathbb{Z}</m>.
+<ul>
+<li>
+<p>
+  <em>Case 1: <m>k=2n</m></em>: In this case we see that <m>p^2-1=4k(k+1)=8n(k+1)</m>; and since  <m>n(k+1)\in\mathbb{Z}</m>, we see that <m>8\mid (p^2-1)</m>.
+</p></li>
+<li>
+<p>
+ <em>Case 2: <m>k=2n+1</m></em>: In this case we see that <m>p^2-1=4k(k+1)=4(2n+1)(2n+2)=8(n+1)(2n+1)</m>; and since  <m>(n+1)(2n+1)\in\mathbb{Z}</m>, we see that <m>8\mid (p^2-1)</m>.
+</p></li>
+</ul>
+Therefore, <m>3\mid (p^2-1) </m> and <m>8\mid (p^2-1)</m> which implies <m>24\mid (p^2-1)</m>.
+</p>
+</proof>
+
+</solution>
+</exercise>

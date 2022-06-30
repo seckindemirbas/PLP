@@ -1,0 +1,118 @@
+<exercise>
+<!-- source latex = 'showing_basic_sets_denumerable.tex' -->
+<!-- converted on 08/03/2022 at 14:52 -->
+<statement>
+<p>
+Show that each of the following sets are denumerable, by construction a bijection between them and the natural numbers.
+<ol marker="(a)">
+<li>
+<p>
+ <m>\mathbb{N}\cup\{0\}</m>
+</p></li>
+<li>
+<p>
+ <m>\set{5,6,7,8,\dots}</m>
+</p></li>
+<li>
+<p>
+ <m>\set{1,3,3^2,3^3,\dots}</m>
+</p></li>
+<li>
+<p>
+ <m>\mathbb{Z}\setminus\{0\}</m>
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ We can list the elements of this set as <m>\{0,1,2,3,\dots\}</m>. The function corresponding to this list is <m>f:\mathbb{N}\rightarrow\mathbb{N}\cup\{0\}</m> defined by <m>f(n)=n-1</m>.
+This function is well-defined, since <m>n-1\in\mathbb{N}\cup\{0\}</m> whenever <m>n\in\mathbb{N}</m>.
+We need to show that this function is a bijection.
+<ul>
+<li>
+<p>
+ Surjective: Let <m>m\in\mathbb{N}\cup\{0\}</m>. Then <m>m+1\in\mathbb{N}</m>, and <m>f(m+1)=m</m>.
+</p></li>
+<li>
+<p>
+ Injective: If <m>f(m)=f(n)</m>, then <m>m-1=n-1</m>. Hence <m>m=n</m>.
+</p></li>
+</ul>
+Alternatively, we could show that <m>f</m> is a bijection by showing that it has an inverse function. Indeed, its inverse is given by <m>g:\mathbb{N}\cup\{0\}\to\mathbb{N}</m> with <m>g(n)=n+1</m>.
+</p></li>
+<li>
+<p>
+ Let <m>f:\mathbb{N}\rightarrow\{5,6,7,8,\dots\}</m> be defined by <m>f(n)=n+4</m>.
+This function is well-defined, since <m>n+4\in\{5,6,7,8,\dots\}</m> whenever <m>n\in\mathbb{N}</m>.
+We need to show that this function is a bijection.
+<ul>
+<li>
+<p>
+ Surjective: Let <m>m\in\{5,6,7,8,\dots\}</m>. Then <m>m-4\in\mathbb{N}</m>, and <me>f(m-4)=(m-4)+4=m.</me>
+</p></li>
+<li>
+<p>
+ Injective: If <m>f(m)=f(n)</m>, then <m>m+4=n+4</m>. Hence <m>m=n</m>.
+</p></li>
+</ul>
+</p></li>
+<li>
+<p>
+ Let <m>f:\mathbb{N}\rightarrow\set{1,3,3^2,3^3,\dots}</m> be given by <m>f(n)=3^{n-1}</m>.
+We need to show that this function is a bijection.
+<ul>
+<li>
+<p>
+ Surjective: Let <m>a\in\set{1,3,3^2,3^3,\dots}</m>. Then <m>a=3^k</m> for some <m>k\in\{0,1,2,\dots\}</m>. But then <m>k=n-1</m> for some <m>n\in\mathbb{N}</m>, and
+<m>f(n)=3^{n-1}=3^k=a</m>.
+</p></li>
+<li>
+<p>
+ Injective: If <m>f(m)=f(n)</m>, then <m>3^m=3^n</m>. By taking logarithm with base <m>3</m> of each side, we have <m>m=n</m>.
+</p></li>
+</ul>
+</p></li>
+<li>
+<p>
+ We can construct a bijection in a similar fashion as in <xref ref="thm_Z_denum"/>, where we showed that <m>\mathbb{Z}</m> is denumerable.
+We can alternate between the positive and negative integers, listing out the elements of <m>\mathbb{Z}\setminus\{0\}</m> as
+<me> 1, -1, 2, -2, 3, -3,\dots </me>
+So, the odd natural numbers will be set to the positive integers, and the even natural numbers will be sent to the negative integers.
+Define the function <m>f:\mathbb{N}\rightarrow\mathbb{Z}\setminus\{0\}</m> by
+<me>
+f(n)=\left\{\begin{array}{ll}
+\frac{n+1}{2}  \amp  \text{ if \(n\) is odd} \\
+-\frac{n}{2}  \amp  \text{ if \(n\) is even}.
+\end{array}\right.
+</me>
+We show that <m>f</m> is a bijection:
+<ul>
+<li>
+<p>
+ Surjective: Let <m>m\in\mathbb{Z}\setminus\{0\}</m>. First suppose that <m>m\geq1</m>. Then  <m>2m-1</m> is an integer, and <m>2m-1\geq1</m>, so <m>2m-1\in\mathbb{N}</m>.
+Moreover, <m>2m-1</m> is odd, and hence
+<me> f(2m-1)=\frac{(2m-1)+1}{2}=\frac{2m}{2}=m. </me>
+Next suppose that <m>m\leq -1</m>. Then <m>-2m\in\mathbb{N}</m>, and <m>-2m</m> is even. Hence
+<me> f(-2m)=-\frac{-2m}{2}=m. </me>
+</p></li>
+<li>
+<p>
+ Injective: Suppose <m>f(m)=f(n)</m>. First note that this implies both <m>m</m> and <m>n</m> are even, or both <m>m</m> and <m>n</m> are odd. Indeed, if this were not the case, than the sign of <m>f(m)</m> and <m>f(n)</m> would be opposite, meaning they could not be equal.
+If both <m>m</m> and <m>n</m> are even, then
+<me> \frac{m+1}{2}=f(m)=f(n)=\frac{n+1}{2} </me>
+implying <m>m=n</m>. If both <m>m</m> and <m>n</m> are odd, then
+<me> -\frac{m}{2}=f(m)=f(n)=-\frac{n}{2} </me>
+and so <m>m=n</m>.
+</p></li>
+</ul>
+</p>
+</li>
+</ol>
+</p>
+</solution>
+</exercise>

@@ -1,0 +1,37 @@
+<exercise>
+<!-- source latex = 'n even implies n square plus 3n plus 5 is odd question.tex' -->
+<!-- converted on 05/07/2021 at 13:14 -->
+<statement>
+<p>
+If <m>n</m> is even then <m>n^2+3n+5</m> is odd.
+</p>
+</statement>
+<hint>
+<p>
+Think about what does being even mean and how we can use it.
+</p>
+</hint>
+<answer>
+<p>
+We see that this is a conditional statement, and to prove it, we are going to assume that the hypothesis is true and show that the conclusion follows. This means that we assume that <m>n</m> is an even number and show that <m>n^2+3n+5</m> is odd.
+</p>
+<p>
+This means that, we have an assumption and we need to understand what this assumption means by using the definitions and extracting useful exressions, i.e. structures we can work with.
+</p>
+<p>
+In this question, since <m>n</m> is even, we know that <m>n=2k</m> for some <m>k\in\mathbb Z</m>. This is a nice structure and we can build upon it. Now, since we want to show that <m>n^2+3n+5</m> is odd, we can try to see what this expression is equal to given the assumption, <m>n=2k</m>.
+</p>
+<p>
+We see that <m>n^2+3n+5=(2k)^2+3(2k)+5=2(2k^2+3k+2)+1</m>. Then, using the definition of even and odd, we see that <m>n^2+3n+5</m> is an odd number since <m>2k^2+3k+2\in\mathbb{Z}</m>. This is what we wanted to show.
+</p>
+<p>
+Of course, we don't need this much explanation in the actual proof. So, let's clear this up and turn this into a nice proof.
+</p>
+</answer>
+<solution>
+<proof><p>
+Assume <m>n</m> is even. Then we know <m>n=2k</m> for some <m>k\in\mathbb{Z}</m>. Hence, <m>n^2+3n+5=(2k)^2+3(2k)+5=2(2k^2+3k+2)+1</m>. Since <m>2k^2+3k+2\in\mathbb{Z}</m> for <m>k\in\mathbb{Z}</m>, we see  <m>n^2+3n+5</m> is odd.
+</p></proof>
+
+</solution>
+</exercise>

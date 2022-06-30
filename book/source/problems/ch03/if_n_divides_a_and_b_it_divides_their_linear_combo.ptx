@@ -1,0 +1,34 @@
+<exercise>
+<!-- source latex = 'if n divides a and b it divides their linear combo.tex' -->
+<!-- converted on 05/07/2021 at 13:20 -->
+<statement>
+<p>
+Let <m>n,a,b,x,y\in\mathbb{Z}</m>. If <m>n\mid a</m> and <m>n\mid b</m>, then <m>n\mid (ax+by)</m>.
+</p>
+</statement>
+<hint>
+<p>
+Think about what it means for <m>n</m> to divide <m>a</m> and <m>b</m>, and how we can use that information.
+</p>
+</hint>
+
+<answer>
+<p>
+This may look slightly harder then the previous questions since it involves <m>5</m> different variables and a conjunction (an <q>and</q>) statement. But, since this is a conditional statement, our strategy is going to be the same. We are going to assume the hypothesis to be true and show the conclusion.
+</p>
+<p>
+So, we assume that <m>n\mid a</m> and <m>n\mid b</m>. This means that <m>a=nk</m>, and <m>b=n\ell</m> for some <m>k,\ell\in\mathbb Z</m>. Once we have these expressions, we can bo back and try to see what we wanted to prove again.
+</p>
+<p>
+We see that we want to prove that  <m>n\mid (ax+by)</m>. In other words, we want to prove <m>ax+by=nm</m> for some <m>m\in\mathbb Z</m>. Since we know that <m>a=nk</m>, and <m>b=n\ell</m>, we can write <m>ax+by=nkx+n\ell y=n(kx+\ell y)</m>. This is what we wanted to show. Let's write this in a nice proof.
+</p>
+</answer>
+
+<solution>
+
+<proof><p>
+Assume <m>n,a,b,x,y\in\mathbb{Z}</m>, <m>n\mid a</m>, and <m>n\mid b</m>. This implies that <m>a=nk</m> and <m>b=n\ell</m> for some <m>k, \ell\in\mathbb{Z}</m>. Thus, <m>ax+by=nkx+n\ell y=n(kx+\ell y)</m>. Since <m>kx+\ell y\in\mathbb{Z}</m> for <m>k,x,\ell,y\in\mathbb{Z}</m>, then we see <m>n\mid (ax+by)</m>.
+</p></proof>
+
+</solution>
+</exercise>

@@ -1,0 +1,112 @@
+<exercise>
+<!-- source latex = 'sqrt_6_irrational.tex' -->
+<!-- converted on 07/12/2021 at 12:25 -->
+<statement>
+<p>
+Two irrationality proofs.
+<ol marker="(a)">
+<li>
+<p>
+ Prove that <m>\sqrt{6}</m> is an irrational number.
+  </p></li>
+<li>
+<p>
+ Prove that <m>\sqrt{2} + \sqrt{3}</m> is irrational.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<hint>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ Remember that <m>2 \mid 6</m>.
+  </p></li>
+<li>
+<p>
+ The result from (a) can help you with (b). How can we manipulate <m>(\sqrt{2}+\sqrt{3})</m> to somehow get an expression involving <m>\sqrt{6}</m>? Or, alternatively, how can we use that expression to say something about <m>\sqrt{2}</m>?
+</p>
+</li>
+</ol>
+</p>
+</hint>
+<solution>
+
+  <proof><title>Proof of (a)</title>
+  <p>
+  Assume, to the contrary that <m>\sqrt{6}</m> is rational. Then we can write <m>\sqrt{6} = \frac{a}{b}</m> with <m>a \in \mathbb{Z}, b \in \mathbb{N}</m> and <m>\gcd(a,b)=1</m>. Squaring both sides gives us <m> 6 = \frac{a^2}{b^2} </m> and so <m>a^2 =  6b^2</m>. Thus <m>6 \mid a^2</m>. This means that <m>a^2</m> is even, and so <m>a</m> is even.
+</p>
+<p>
+  Since <m>a</m> is even we can write <m>a=2k</m> for some <m>k \in \mathbb{Z}</m>. But then
+  <me>
+    a^2 =4k^2 = 6b^2
+  </me>
+  This implies that <m>2k^2 = 3b^2</m>. This, in turn, implies that <m>3b^2</m> is even, since <m>3</m> is odd, we must have that <m>b^2</m> is even and so <m>b</m> is even. Now we have a contradiction since <m>2</m> divides both <m>a</m> and <m>b</m> but we assumed that <m>\gcd(a,b)=1</m>.
+</p>
+<p>
+  Hence <m>\sqrt{6}</m> is irrational.
+</p></proof>
+
+<p>
+Notice that we did not actually need, as part of the contradiction, to show that <m>6 \mid a \implies 6 \mid b</m>. We only needed that <m>\gcd(a,b) \neq 1</m> and it was sufficient to show that both were even.
+</p>
+
+<p>
+ We give two proofs of (b).
+</p>
+
+<proof><title>First proof of (b)</title><p>
+  Assume, to the contrary that <m>\sqrt{2}+\sqrt{3}</m> is rational. Then we can write
+<me>
+  \sqrt{2} + \sqrt{3} = \frac{a}{b}
+</me>
+where <m>a \in \mathbb{Z}, b\in\mathbb{N}</m> and <m>\gcd(a,b)=1</m>. Squaring both sides of this gives
+<md>
+<mrow>
+  \frac{a^2}{b^2}  \amp = \left( \sqrt{2} + \sqrt{3} \right)^2
+</mrow><mrow>
+   \amp = 2 + 2\sqrt{2}\cdot\sqrt{3} + 3
+</mrow><mrow>
+   \amp = 5 + 2 \sqrt{6}
+</mrow>
+</md>
+Rearranging this further, to isolate <m>\sqrt{6}</m>, gives
+<md>
+<mrow>
+  2\sqrt{6}  \amp  = \frac{a^2}{b^2} - 5
+</mrow><mrow>
+  \sqrt{6}  \amp = \frac{a^2-5b^2}{2b^2}
+</mrow>
+</md>
+which implies that <m>\sqrt{6} \in \mathbb{Q}</m>. This contradicts our result from (a). Thus it follows that <m>\sqrt{2}+\sqrt{3} </m> is irrational as required.
+</p></proof>
+
+
+<proof><title>Second proof of (b)</title><p>
+  Assume, to the contrary, that <m> \sqrt{2}+\sqrt{3} </m> is rational. Hence we can write <m>\sqrt{2}+\sqrt{3} = \frac{a}{b}</m> with <m>a\in\mathbb{Z}, b\in \mathbb{N}</m>.
+  But now rearrange this as
+  <me>
+  \sqrt{3} = \frac{a}{b} - \sqrt{2}.
+  </me>
+  Square both sides to get
+  <me>
+    3 = \frac{a^2}{b^2} - \frac{2a}{b} \sqrt{2} + 2
+  </me>
+  Now isolate <m>\sqrt{2}</m>:
+  <md>
+<mrow>
+  \frac{2a}{b} \sqrt{2}  \amp = \frac{a^2}{b^2} -1  = \frac{a^2-b^2}{b^2}
+</mrow><mrow>
+  \sqrt{2}  \amp = \frac{a^2-b^2}{2ab}
+  </mrow>
+</md>
+  This contradicts the fact that <m>\sqrt{2}</m> is irrational. Thus <m>\sqrt{2}+\sqrt{3}</m> is irrational.
+</p>
+<p>
+  Notice that our manipulations require that <m>a \neq 0</m>, but since <m>\sqrt{2}+\sqrt{3} \neq 0</m>, this is easily verified.
+</p></proof>
+
+</solution>
+</exercise>

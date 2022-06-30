@@ -1,0 +1,37 @@
+<exercise>
+<!-- source latex = 'set question that says if x is a multiple of m and n then it is a mn.tex' -->
+<!-- converted on 12/10/2021 at 13:50 -->
+<statement>
+<p>
+Prove or disprove the following statement:
+</p>
+
+<blockquote>
+<p>
+ If <m>m,n \in\mathbb{N}</m>,
+ then
+ <m>\set{x \in\mathbb{Z} : m\mid x}\cap\set{x \in\mathbb{Z} : n\mid x}\subseteq \set{x \in\mathbb{Z} : mn\mid  x}
+ </m>.
+</p>
+</blockquote>
+
+</statement>
+<answer>
+<p>
+We see that this is a <q>prove or disprove</q> question. This means that we need to figure out whether it is true or not.
+</p>
+<p>
+The statement claims that every element that is both in the sets  <m> \set{x \in\mathbb{Z} : m\mid x}</m> and <m>\set{x \in\mathbb{Z} : n\mid x}</m> must be in <m>\set{x \in\mathbb{Z} : mn\mid  x}</m> as well. In other words, if a number is a multiple of <m>m</m> and also is a multiple of <m>n</m>, then it is also a multiple of <m>mn</m>. This statement doesn't really sound right since <m>m</m> can itself be a multiple of <m>n</m>, and thus, the hypothesis wouldn't give us any more information other than the number being a multiple of <m>m</m> (since it automatically becomes a multiple of <m>n</m> in that situation). This also suggests that we find a counterexample to this statement. Moreover, this suggest what kind of a counterexample would work. Let's see how we can create a counterexample.
+</p>
+</answer>
+<solution>
+
+<proof><title>Disproof</title><p>
+This statement is false. We see that if we take <m>m=n=2</m>, then
+</p>
+<p>
+<m>\{x \in\mathbb{Z} \colon mn\mid  x\}=\set{x\in\mathbb{Z}\colon 4\mid x}</m>, and <m>\{x \in\mathbb{Z} \colon m\mid  x\}\cap\{x \in\mathbb{Z} \colon n\mid  x\}=\{x \in\mathbb{Z} \colon 2\mid  x\}</m>. Thus, since <m>2\in \{x \in\mathbb{Z} \colon 2\mid  x\}</m>, but <m>2\notin \{x \in\mathbb{Z} \colon 4\mid  x\}</m>, we see that the statement is false.
+</p></proof>
+
+</solution>
+</exercise>

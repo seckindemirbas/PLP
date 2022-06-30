@@ -1,0 +1,110 @@
+<exercise>
+<!-- source latex = 'biconditional_question.tex' -->
+<!-- converted on 23/06/2021 at 20:55 -->
+<statement>
+<p>
+Let <m>P</m>, <m>Q</m>, <m>R</m>, and <m>S</m> be statements. Suppose that
+<ul>
+<li>
+<p>
+ <q><m>((P\lor Q)\implies R) \iff (Q\land S) </m></q> is true,
+  </p></li>
+<li>
+<p>
+ <q><m>(P\lor Q)\implies R</m></q> is false, and
+  </p></li>
+<li>
+<p>
+ <m>S</m> is true.
+</p></li>
+</ul>
+Determine the truth values of <m>P</m>, <m>Q</m>, and <m>R</m>.
+</p>
+</statement>
+<hint>
+<p>
+You don't have to use truth tables to determine the answer (although you could).
+</p>
+</hint>
+<answer>
+<p>
+We give a few different approaches.
+<ul>
+<li>
+<p>
+
+If <m>A</m> and <m>B</m> are statements, recall that <m>A\iff B</m> is true only if both <m>A</m> and <m>B</m> are true, or both <m>A</m> and <m>B</m> are false. Applying this with <m>A=(P\lor Q)\implies R</m> and <m>B=Q\land S</m>, and using the fact that <m>(P\lor Q)\implies R</m> is false, we deduce that <m>B=Q\land S</m> must be false. Now, since <m>Q\land S</m> is false but <m>S</m> is true, <m>Q</m> must be false.
+</p>
+<p>
+Finally, we'll use the fact that <m>(P\lor Q)\implies R</m> is false to determine the truth values of <m>P</m> and <m>R</m>.
+Recall that the only way that an implication is false is if its hypothesis is true, but its conclusion is false; in this case, that means the the hypothesis <m>P\lor Q</m> is true, and the conclusion <m>R</m> is false.  But remember that <m>Q</m> is false, so the only way <m>P\lor Q</m> is true is if <m>P</m> is true.
+</p>
+<p>
+We have figured out that <m>P</m> is true, <m>Q</m> is false, and <m>R</m> is false.
+</p>
+</li>
+<li>
+<p>
+ We can also start from the fact that the implication <q><m>(P\lor Q)\implies R</m></q> is false. An implication is only false when its hypothesis is true but its conclusion is false. This immediately tells us that <m>R</m> is false. It also tells us that <m>P \lor Q</m> is true.
+</p>
+<p>
+Since the biconditional is true, but the clause on the left is false, we know that the clause on the right must also be false. That is <m>Q \land S</m> must be false. Since we are told that <m>S</m> is true, we know that <m>Q </m> is false. Putting this together with the fact that <m>P\lor Q</m> is true, we deduce that <m>P</m> is true.
+</p>
+<p>
+So again, we find that <m>P</m> is true, <m>Q</m> is false, and <m>R</m> is false.
+</p>
+
+</li>
+<li>
+<p>
+ Alternatively, we could use truth tables to determine the answer. In the following, we build the truth table of <m>((P\lor Q)\implies R) \iff (Q\land S)</m>, but only include the rows where <m>S</m> is true, since this is given in the question.
+</p>
+
+<tabular left="minor" right="minor" top="minor" bottom="minor" halign="center">
+<row>
+<cell>
+<m>P</m>  </cell><cell>  <m>Q</m>  </cell><cell>  <m>R</m>  </cell><cell> <m>S</m>  </cell><cell>  <m>(P\lor Q)\implies R</m>  </cell><cell>  <m>Q\land S</m>  </cell><cell>  <m>((P\lor Q)\implies R) \iff (Q\land S)</m> </cell>
+</row><row>
+<cell>
+T  </cell><cell>  T   </cell><cell>  T  </cell><cell>  T  </cell><cell>  T  </cell><cell>  T  </cell><cell> T </cell>
+</row><row>
+<cell>
+T  </cell><cell>  T   </cell><cell>  F  </cell><cell>  T  </cell><cell>  F  </cell><cell>  T  </cell><cell> F </cell>
+</row><row>
+<cell>
+T  </cell><cell>  F   </cell><cell>  T  </cell><cell>  T  </cell><cell>  T  </cell><cell>  F  </cell><cell>  F </cell>
+</row><row>
+<cell>
+T  </cell><cell>  F   </cell><cell>  F  </cell><cell>  T  </cell><cell>  F  </cell><cell>  F  </cell><cell>  T </cell>
+</row><row>
+<cell>
+F  </cell><cell>  T   </cell><cell>  T  </cell><cell>  T  </cell><cell>  T  </cell><cell>  T  </cell><cell> T </cell>
+</row><row>
+<cell>
+F  </cell><cell>  T   </cell><cell>  F  </cell><cell>  T  </cell><cell>  F  </cell><cell>  T  </cell><cell> F </cell>
+</row><row>
+<cell>
+F  </cell><cell>  F   </cell><cell>  T  </cell><cell>  T  </cell><cell>  T  </cell><cell>  F  </cell><cell>  F </cell>
+</row><row>
+<cell>
+F  </cell><cell>  F   </cell><cell>  F  </cell><cell>  T  </cell><cell>  T  </cell><cell>  F  </cell><cell>  F </cell>
+</row>
+</tabular>
+
+<p>
+The fourth row is the only row where <m>(P\lor Q)\implies R</m> is false but <m>((P\lor Q)\implies R) \iff (Q\land S)</m> is true. Therefore we
+look to this row to determine the truth values of <m>P</m>, <m>Q</m>, and <m>R</m>: <m>P</m> is true, <m>Q</m> is false, and <m>R</m> is false.
+</p></li>
+</ul>
+</p>
+<p>
+Notice that the second solution is really just a reordering of the steps given in the first question. Since the initial deductions we made from the biconditional being true and the implication being false were independent of each other, we could make these deductions in either order.
+The last solution is different: rather than making logical deductions from the information given, we use the truth table to look at every possible case for the truth values of <m>P</m>, <m>Q</m>, and <m>R</m>, and look for the cases where the conditions given in the question are satisfied.
+</p>
+</answer>
+<solution>
+<p>
+<m>P</m> is true, <m>Q</m> is false, and <m>R</m> is false.
+</p>
+</solution>
+</exercise>

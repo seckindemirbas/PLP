@@ -1,0 +1,46 @@
+<exercise>
+<!-- source latex = 'f surjective iff f of f inverse of Y is Y.tex' -->
+<!-- converted on 26/11/2021 at 17:09 -->
+<statement>
+<p>
+Consider <m>f : A\rightarrow B</m>. Prove that f is surjective if and only if <m>f ( f^{-1}(Y)) = Y</m> for all <m>Y \subseteq B</m>.
+</p>
+</statement>
+<hint>
+<p>
+Be careful, the symbol <m>f^{-1}</m> denotes the preimage not the inverse-function. It only denotes the inverse-function when the function is bijective.
+</p>
+<p>
+Also, see <xref ref="thm_img_preimg"/> and its proof.
+</p>
+</hint>
+<solution>
+
+<proof>
+<p>
+This is a biconditional statement, so we have to prove both implications in turn.
+<ul>
+<li>
+<p>
+
+  Assume that <m>f</m> is surjective. Then we need to show <m>Y \subseteq f( f^{-1} (Y))</m> and <m>f( f^{-1} (Y))\subseteq Y</m>.
+</p>
+<p>
+  First, let <m>b\in Y</m>. Then, since <m>f</m> is surjective, we see that there is <m>a\in A</m> such that <m>f(a)=b</m>. Thus, we see that <m>a\in f^{-1}(Y)</m>, which implies <m>f(a)=b\in f(f^{-1}(Y))</m>. Therefore <m>Y \subseteq f( f^{-1} (Y))</m>.
+</p>
+<p>
+  Next, let <m>b\in f( f^{-1} (Y))</m>. Then, by definition, we see that <m>b=f(a)</m> for some <m>a\in f^{-1}(Y)</m>. Thus, by definition, we see that <m>f(a)=b\in Y</m>. Therefore <m>f( f^{-1} (Y))\subseteq Y</m>.
+</p>
+<p>
+  Hence we can conclude that if f is surjective, then <m>Y = f( f^{-1} (Y))</m>.
+</p>
+</li>
+<li>
+<p>
+ We prove the contrapositive, so assume that <m>f</m> is not surjective. Then we see that there exists <m>b\in B</m> such that there does not exist <m>a\in A</m> with <m>f(a)=b</m>. Hence for the set <m>Y=\set{b}</m>, we get <m>f( f^{-1} (Y))=f( \emptyset )=\emptyset \neq \set{b}=Y</m>. Therefore  if <m>Y = f( f^{-1} (Y))</m>, then <m>f</m> is surjective.
+</p></li>
+</ul>
+</p></proof>
+
+</solution>
+</exercise>

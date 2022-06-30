@@ -1,0 +1,65 @@
+<exercise>
+<!-- source latex = 'Terse Proof.tex' -->
+<!-- converted on 05/07/2021 at 19:58 -->
+<statement>
+<p>
+Consider the faulty proof below for the following statement:
+</p>
+
+<p>
+Let <m>a,b\in \mathbb{R}</m>. If <m>0 \lt a \lt b</m>, then
+<me>\sqrt{ab} \lt \frac{a+b}{2}</me>
+</p>
+
+<proof><title>Faulty proof</title>
+  <p>
+<md>
+<mrow>
+    \sqrt{ab} \amp  \lt  \frac{a+b}{2}
+</mrow><mrow>
+    ab  \amp  \lt  \frac{(a+b)^2}{4}
+</mrow><mrow>
+    4ab  \amp  \lt  a^2+2ab+b^2
+</mrow><mrow>
+    0  \amp  \lt  a^2-2ab+b^2
+</mrow><mrow>
+    0  \amp  \lt  (a-b)^2
+</mrow>
+</md>
+</p></proof>
+
+
+<p>
+Identify any issues with the proof as written above and give a correct proof.
+</p>
+</statement>
+<solution>
+<p>
+There are a few issues with this proof. First of all, the flow of logic in this proof is backwards. The computation presented in the question could be used as scratch work, but is not a proof. A proof should start with a basic fact (here: the square of any nonzero real number is positive), and work towards the desired conclusion. Furthermore, this solution lacks explanation. A good proof should explain the steps taken to reach the conclusion. Our proofs should not only be correct but they should also be easy on the reader. Often, we forget to include extra explanation because our brains are filling in those extra details as we write. Think about the reader - they don't have the same brain as you to fill in those gaps! How can you make it easier for them to understand?
+</p>
+
+<proof><p>
+Let <m>a,b\in \mathbb{R}</m> and <m>0 \lt a \lt b</m>. Then <m>a-b \neq 0</m>, and we know that <m>(a-b)^2 \gt 0</m>. We expand and complete the square to get <m>(a+b)^2</m>,
+<md>
+<mrow>
+0 \amp  \lt  (a-b)^2
+</mrow><mrow>
+ \amp = a^2 -2ab +b^2
+</mrow><mrow>
+ \amp = a^2-2ab+b^2 + 4ab-4ab
+</mrow><mrow>
+ \amp =(a^2+2ab+b^2)-4ab
+</mrow><mrow>
+ \amp =(a+b)^2-4ab
+</mrow>
+</md>
+Therefore <m>4ab \lt  (a+b)^2</m>.
+</p>
+<p>
+We would now like to take square roots. From <xref ref="ex3-sqrt-increasing"/>, the function <m>f(x) = \sqrt{x}</m> is a positive, increasing function when <m>x \gt 0</m> (these two conditions are necessary to ensure that the inequality will not change when we take the square root of each side). Now, taking square roots, we see
+<me>2\sqrt{ab}  \lt  (a+b).</me>
+Dividing by two yields <m>\sqrt{ab}  \lt  \frac{a+b}{2}</m>, as desired.
+</p></proof>
+
+</solution>
+</exercise>

@@ -1,0 +1,62 @@
+<exercise>
+<!-- source latex = 'minus 1 to the n plus 1 over n does not converge to 0 question.tex' -->
+<!-- converted on 24/06/2021 at 16:28 -->
+<statement>
+<p>
+Prove that the sequence <m>(x_n)_{n\in\mathbb{N}}=\left((-1)^n+\dfrac{1}{n}\right)_{n\in\mathbb{N}}</m> does not converge to <m>0</m>.
+</p>
+</statement>
+<hint>
+<p>
+Carefully negate the definition of convergence. Also, explore the first few terms of the sequence.
+</p>
+</hint>
+<answer>
+<p>
+When the sequence
+<m>(x_n)_{n\in\mathbb{N}}=\left((-1)^n+\dfrac{1}{n}\right)_{n\in\mathbb{N}}</m>
+does not converge to <m>0</m> it means that <m>(x_n)</m> satisfies the
+negation of the definition of convergence with <m>L=0</m>. That is <m>
+(x_n) </m> does not converge to <m>0</m> is equivalent to the
+statement
+<me>
+\exists \epsilon\gt 0, \forall N \in\mathbb{N}, \exists n\gt N,   \left|\left((-1)^n+\dfrac{1}{n}\right)-0\right|\geq \epsilon.
+</me>
+</p>
+<p>
+Observe that because of the <m>(-1)^n</m> term in the sequence, it behaves slightly differently when <m>n</m> is even or odd.
+<ul>
+<li>
+<p>
+ For all even <m>k \in \mathbb{N}</m>, we have <m>x_k=(-1)^k+\dfrac{1}{k}=1+\dfrac{1}{k}\gt 1</m>.
+  </p></li>
+<li>
+<p>
+ While for all odd <m>k \in \mathbb{N}</m> with <m>k\geq 3</m>,  <m>x_k=(-1)^k+\dfrac{1}{k}=-1+\dfrac{1}{k}\leq -\dfrac{2}{3}</m>.
+</p></li>
+</ul>
+Thus, for any integer <m>k \geq 2</m>, we know that <m>|x_k-0| = |x_k| \geq \frac{2}{3}</m>.
+</p>
+<p>
+  So take <m>\epsilon = \dfrac{1}{2}</m>, and then for any <m>N \in \mathbb{N}</m>, so that <m>n \gt N</m>, set <m>n = \max\{N,2\}+1</m> and we can make the proof work.
+</p>
+</answer>
+<solution>
+  <proof>
+    <p>
+      Let <m>\epsilon = \dfrac{1}{2}</m>, then for any any <m>N \in \mathbb{N}</m>, so that <m>n \gt N</m>, set <m>n = \max\{N,2\}+1</m>. Then
+      <ul>
+	<li>If <m>n</m> is even, then
+	<m>x_n=(-1)^n+\dfrac{1}{n}=1+\dfrac{1}{n}\gt 1</m>.
+	</li>
+	<li>While, if <m>n</m> is odd then <m>x_n=(-1)^n+\dfrac{1}{n}=-1+\dfrac{1}{n}\leq -\dfrac{2}{3}</m></li>
+      </ul>
+      In either case <m>|x_n-0| = |x_n| \gt \frac{2}{3} \gt
+      \frac{1}{2}=\epsilon</m>.  Therefore, the sequence
+      <m>(x_n)_{n\in\mathbb{N}}=\left((-1)^n+\dfrac{1}{n}\right)_{n\in\mathbb{N}}</m>
+      does not converge to <m>0</m>.
+</p>
+  </proof>
+</solution>
+
+</exercise>

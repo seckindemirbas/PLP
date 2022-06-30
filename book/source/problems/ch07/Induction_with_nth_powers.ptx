@@ -1,0 +1,86 @@
+<exercise>
+<!-- source latex = 'Induction with nth powers.tex' -->
+<!-- converted on 08/11/2021 at 10:42 -->
+<statement>
+<p>
+Let <m>\alpha\in \mathbb{R}</m> such that <m>\alpha+\frac{1}{\alpha} \in \mathbb{Z}</m>. Prove that <m>\alpha^n+\frac{1}{\alpha^n}\in \mathbb{Z}</m> for any <m>n\in \mathbb{N}\cup \{0\}</m>.
+</p>
+</statement>
+<hint>
+<p>
+As a base case, consider <m>n=0</m> and <m>n=1</m>. This means that your inductive hypothesis can include both the <m>n-1</m> and <m>n</m> cases.
+</p>
+</hint>
+<answer>
+<p>
+As scratch work, we want to try to break the <m>n+1</m> case into something involving the previous cases.
+</p>
+<p>
+Rather than trying to factor <m>\alpha^{n+1}+\frac{1}{\alpha^{n+1}}</m>, we attempt to get to it by multiplying the previous cases. We try to multiply the <m>n=1</m> and <m>n</m> cases because this will give a power of <m>n+1</m>
+<me>
+    \left(\alpha^n+\frac{1}{\alpha^n}\right)\left(\alpha + \frac{1}{\alpha}\right) = \alpha^{n+1}+\frac{1}{\alpha^{n+1}} +\alpha^{n-1}+\frac{1}{\alpha^{n-1}}
+</me>
+We now have the term we want in right hand side! Rearranging, we see
+<me>  \alpha^{n+1}+\frac{1}{\alpha^{n+1}} =  \left(\alpha^n+\frac{1}{\alpha^n}\right)\left(\alpha + \frac{1}{\alpha}\right) -\left(\alpha^{n-1}+\frac{1}{\alpha^{n-1}}\right).</me>
+</p>
+<p>
+Since we can write the <m>(n+1)^{\text{st}}</m> case in terms of the <m>n^{\text{th}}</m> and <m>(n-1)^{\text{st}}</m> cases, we should make sure to have two consecutive cases (e.g. <m>n=0,1</m>) in the base case.
+</p>
+
+<p>
+Notice that we are able to use an induction argument with two parts to the base case, since this allows us to have two parts to the inductive hypothesis. Another way of proving this is to notice that for the <m>n+1</m> case we need to reference more than just the previous case, so we can use proof by strong induction.
+</p>
+</answer>
+<solution>
+<p>
+We offer two proofs of the statement. We first use mathematical induction with <m>n=0,\, n=1</m> as the base case.
+</p>
+
+<proof><p>
+Let <m>\alpha</m> be as stated and then we proceed by strong induction.
+</p>
+<p>
+As a base case, we take both <m>n=0</m> and <m>n=1</m>. When <m>n=0</m>, we have <m>\alpha^0 + \frac{1}{\alpha^0} = 2\in \mathbb{Z}</m>, and the <m>n=1</m> case follows directly by assumption.
+</p>
+<p>
+For our inductive hypothesis, we assume that for an arbitrary <m>n=k\in \mathbb{N}</m>,
+<me>
+\alpha^{k-1} +\frac{1}{\alpha^{k-1}}\in \mathbb{Z} \qquad \text{and} \qquad \alpha^k+\frac{1}{\alpha^k}\in \mathbb{Z}
+</me>
+</p>
+<p>
+We wish to show that the statement holds true for <m>n=k+1</m>.
+<me>
+    \alpha^{k+1} + \frac{1}{\alpha^{k+1}} = \left(\alpha^k+\frac{1}{\alpha^k}\right)\left(\alpha + \frac{1}{\alpha}\right) -\left(\alpha^{k-1}+\frac{1}{\alpha^{k-1}}\right)
+</me>
+By assumption, <m>\alpha + \frac{1}{\alpha}\in \mathbb{Z}</m>. Since the product and difference of integers is an integer, we conclude that <m>\alpha^{k+1} + \frac{1}{\alpha^{k+1}} \in \mathbb{Z}</m>.
+</p>
+<p>
+Since both the base case and inductive step are true, the result follows.
+</p></proof>
+
+<p>
+We now appeal to the principle of strong mathematical induction for an alternate proof.
+</p>
+
+<proof><p>
+We proceed by strong induction. As a base case, we take <m>n=0</m>. Then we have <m>\alpha^0 + \frac{1}{\alpha^0} = 2\in \mathbb{Z}</m>.
+</p>
+<p>
+Fix <m>n\in \mathbb{N}</m>. For our inductive hypothesis, we assume that for any <m>m\in \mathbb{N}\cup \{0\}</m> such that <m>m\leq n</m>,
+<me>\alpha^{m} +\frac{1}{\alpha^{m}}\in \mathbb{Z} </me>
+</p>
+<p>
+We wish to show that the statement holds true for <m>n+1</m>.
+<me>
+    \alpha^{n+1} + \frac{1}{\alpha^{n+1}} = \left(\alpha^n+\frac{1}{\alpha^n}\right)\left(\alpha + \frac{1}{\alpha}\right) -\left(\alpha^{n-1}+\frac{1}{\alpha^{n-1}}\right)
+</me>
+By assumption, <m>\alpha + \frac{1}{\alpha}\in \mathbb{Z}</m>. By the inductive hypothesis,
+<me>\alpha^n+\frac{1}{\alpha^n}\in \mathbb{Z} \hspace{10pt} \text{and} \hspace{10pt} \alpha^{n-1}+\frac{1}{\alpha^{n-1}} \in \mathbb{Z}.</me>
+Since the product and difference of integers is an integer, we conclude that
+<me>\alpha^{n+1} + \frac{1}{\alpha^{n+1}} \in \mathbb{Z}.</me>
+By the principle of strong mathematical induction, the result is proven.
+</p></proof>
+
+</solution>
+</exercise>

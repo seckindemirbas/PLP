@@ -1,0 +1,28 @@
+<exercise>
+<!-- source latex = 'Does a set have the cardinality of the naturals.tex' -->
+<!-- converted on 30/03/2022 at 15:33 -->
+<statement>
+<p>
+Suppose <m>A = \{(m, j) \in \mathbb{N} \times \mathbb{R}: j = \pi m\}</m>. Is it true that <m>|\mathbb N| = |A|</m>?
+</p>
+</statement>
+<solution>
+<p>
+<em>Claim:</em> It is true that <m>|A|=|\mathbb{N}|</m>.
+</p>
+
+<proof><p>
+We define a function <m>f:\mathbb{N}\rightarrow A</m> by <m>f(k)=(k,k\pi)</m>.
+</p>
+<p>
+Suppose <m>f(n) = f(\ell)</m> for some <m>n, \ell \in \mathbb{N}</m>. Then <m>(n, n\pi) = (\ell, \ell\pi)</m>, and in particular, the first entries in the pair must match, so <m>n=\ell</m>. Thus, <m>f</m> is injective.
+</p>
+<p>
+Now, consider <m>a\in A</m>. By the definition of <m>A</m>, this element takes the form <m>a = (m, \pi m)</m> for some <m>m\in \mathbb{N}</m>. Therefore <m>f(m) = a</m>, and we see that <m>f</m> is surjective.
+</p>
+<p>
+We conclude that <m>|A|=|\mathbb{N}|</m>.
+</p></proof>
+
+</solution>
+</exercise>

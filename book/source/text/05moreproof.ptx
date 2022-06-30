@@ -1,0 +1,1210 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="ch-moreproof"><title>More proofs</title>
+<introduction>
+<p>
+  Now that we've done a little more logic we should get back to proving things.
+  Consider the following examples which (superficially) look quite similar to those we did back in
+  <xref ref="ch-direct"/>:
+</p>
+<example xml:id="ex-wrong-way1">
+  <statement>
+    <p>
+      Let <m>n</m> be an integer. If <m>3n+7</m> is even then <m>n</m> is odd.
+    </p>
+  </statement>
+  <answer>
+    <p>
+      <ul>
+      <li>As always <mdash/> assume the hypothesis is true.
+        <md>
+      <mrow>
+          3n+7 &amp;= 2k
+        </mrow>
+      </md>
+      </li>
+      <li> Then we try to use this to say something about the conclusion.
+        <md>
+      <mrow>
+          n &amp;= \frac{2k-7}{3}
+        </mrow>
+      </md>
+      </li>
+      <li> And now we are stuck, because it isn't clear that <m>n</m> is an integer and we need to show that
+        <md>
+      <mrow>
+          \frac{2k-7}{3} &amp;= 2\ell +1
+        </mrow>
+      </md>
+        for some integer <m>\ell</m>.
+        This doesn't look so obvious.
+        Though it is surprising how many students will try to claim that one can deduce the parity from here.
+      </li>
+      </ul>
+      Urgh.
+    </p>
+  </answer>
+</example>
+
+<example xml:id="ex-wrong-way2">
+  <statement>
+    <p>
+      If <m>n \in \mathbb{Z}</m> then <m>n^2+5n-7</m> is odd.
+    </p>
+  </statement>
+  <answer>
+    <p>
+      Again, we start as we did previously; assume the hypothesis is true and work towards the conclusion.
+      <ul>
+      <li> Assume the hypothesis is true <mdash/> so <m>n</m> is an integer.
+      </li>
+      <li> Then <m>n^2+5n-7 = 2\ell+1</m> means that we need
+        <md>
+        <mrow>
+            n^2+5n-6 &amp;= 2\ell &amp; \text{and so}
+        </mrow>
+        <mrow>
+            n^2+5n &amp;= 2(\ell+3)
+        </mrow>
+      </md>
+      </li>
+      <li> So<ellipsis/>? Help <mdash /> I'm stuck.
+      </li>
+      </ul>
+      This would be a lot easier if we knew more about the parity of <m>n</m>.
+    </p>
+  </answer>
+</example>
+
+
+<p>
+  In both cases we can make our lives much easier by manipulating the original statement into another form by use of logical equivalences.
+  More precisely
+<md>
+<mrow>
+  (P \implies Q) &amp; \equiv (\neg Q \implies \neg P)
+</mrow><mrow>
+  (P \lor R) \implies Q &amp;\equiv (P \implies Q) \land (R \implies Q)
+</mrow>
+</md>
+In both cases, proving the statement on the left-hand side of the equivalence is completely logically equivalent to proving the statement on the right-hand side of the equivalence.
+So if the statement on the right-hand-side is easier, then we should just do that instead.
+Lets apply these equivalences to the above examples:
+</p>
+
+<p>
+<xref ref="ex-wrong-way1"/> starts with the statement
+</p>
+<blockquote>
+  <p>
+    Let <m>n</m> be an integer. If <m>3n+7</m> is even then <m>n</m> is odd.
+  </p>
+</blockquote>
+<p>
+  The contrapositive of this is then
+</p>
+<blockquote>
+  <p>
+    Let <m>n</m> be an integer. If <m>n</m> is not odd then <m>3n+7</m> is not even.
+  </p>
+</blockquote>
+<p>
+  However since we know that <m>n</m> is an integer, we can clean this up still more
+</p>
+<blockquote>
+  <p>
+    Let <m>n</m> be an integer. If <m>n</m> is even then <m>3n+7</m> is odd.
+  </p>
+</blockquote>
+<p>
+  And now we are at a statement that looks exactly like results we proved in <xref ref="ch-direct"/>. This process of proving the contrapositive of the original statement is called <term>contrapositive proof</term> (not such an inventive term, but quite descriptive).
+</p>
+
+<p>
+  Manipulating <xref ref="ex-wrong-way2"/> requires a little more thought.
+  One of the impediments that we had was that we didn't know about the parity of <m>n</m>.
+  However since <m>n</m> is an integer, we know it must be even or odd. Indeed,
+</p>
+
+<blockquote>
+  <p>
+    (<m>n</m> is an integer) <m>\equiv</m> ( (<m>n</m> is even) or (<m>n</m> is odd))
+  </p>
+</blockquote>
+<p>
+  Hence we can rewrite <xref ref="ex-wrong-way2"/> as
+</p>
+<blockquote>
+<p>
+  If <m>n</m> is even or <m>n</m> is odd, then <m>n^2+3n-9</m> is odd.
+</p>
+</blockquote>
+<p>
+  We can then use the one of the above logical equivalences to rewrite this as
+</p>
+<blockquote>
+<p>
+  (If <m>n</m> is even then <m>n^2+3n-9</m> is odd) and (If <m>n</m> is odd then <m>n^2+3n-9</m> is odd)
+</p>
+</blockquote>
+<p>
+Again, we have arrived at statements that look just like those we proved in <xref ref="ch-direct"/>. This is an example of a <term>proof by cases</term>.
+</p>
+
+</introduction>
+<section><title>Contrapositive</title>
+<p>
+  As we have just seen, when we are presented with an implication to prove we should take a moment to think about the contrapositive of that implication <mdash /> it might be easier!
+  However, it do that we need to be able to <em>contrapose</em> a statement quickly.
+  But that, in turn, requires us to negate statements fluently.
+  Practice is crucial.
+</p>
+
+<p>
+  Once you have this fluency it only takes a moment to write down the contrapositive when you start your scratch work. Then you can assess what looks easier: the original or the contrapositive.
+  If the contrapositive looks easier to prove, then we should proceed down that path.
+  On the other hand, when it looks harder stick with the original.
+</p>
+
+<p>
+  It's time to return to <xref ref="ex-wrong-way1"/> and try out a <term>contrapositive proof</term>.
+</p>
+
+<example><title><xref ref="ex-wrong-way1"/> redux</title>
+<statement>
+<p>
+  Let <m>n</m> be an integer. Prove that if <m>3n+7</m> is even, then <m>n</m> is odd.
+</p>
+</statement>
+<answer>
+<p>  First up, lets write out some scratch work / explorations.
+<ul>
+<li> We got stuck when we tried a direct proof, so write down the contrapositive:
+  <me>
+    (n \text{ is even}) \implies (3n+7 \text{ is odd})
+  </me>
+  This looks easier.
+</li>
+<li> Assume <m>n</m> is even.
+<md>
+<mrow>
+      n \amp =2k
+</mrow><mrow>
+    3n+7 \amp = 6k+7 = 2(3k+3)+1
+</mrow>
+</md>
+</li>
+<li> Since <m>3k+3 \in \mathbb{Z}</m> we are done.</li>
+</ul>
+</p>
+
+<p>
+  Now that we've worked out how to make the proof work, we can write it up nicely.
+  Since we are not using a direct proof we should alert the reader that we are going to prove the contrapositive.
+  Otherwise it can look a little strange <mdash/> I'm not going to assume the hypothesis is true, instead I'm going to assume the conclusion is false.
+  Think about the reader!
+</p>
+</answer>
+<solution>
+  <proof>
+<p>
+    We prove the contrapositive.
+    Assume that <m>n</m> is even and hence <m>n=2k</m> for some integer <m>k</m>.
+    This means that we can write
+    <me>3n+7=6k+7=2(3k+3)+1.</me>
+    Since <m>3k+3\in\mathbb{Z}</m>, it follows that <m>3n+7</m> is odd as required.
+  </p>
+</proof>
+</solution>
+</example>
+
+<remark><title>Warn your reader</title>
+<p>
+  As noted in the example above, when you prove the contrapositive of the result you should warn the reader of what you are going to do. You don't need to write much
+  <ul>
+    <li><q>We prove the contrapositive<ellipsis/></q>,</li>
+    <li><q>Consider the contrapositive<ellipsis/></q>,</li>
+    <li>or even (if, say you are writing a test and running out of time)<q>Do contrapositive<ellipsis/></q></li>
+  </ul>
+  A few words from you can save the reader a lot of confusion <q>Why are they assuming the conclusion is false?</q>, <q>What is going on here?</q>, etc.
+</p>
+</remark>
+
+<p>
+Of course, there can be more than one way to prove things.
+Here is another proof of the same result, this one using a direct proof.
+Is uses a cute little trick that is worth remembering.
+</p>
+
+<example>
+  <title><xref ref="ex-wrong-way1"/> redux redux</title>
+<statement><p>
+  Let <m>n</m> be an integer. If  <m>3n+7</m> is even, then <m>n</m> is odd.
+</p>
+</statement>
+<solution>
+<proof>
+<p>
+  Assume that <m>3n+7</m> is even.
+  Hence <m>3n+7 = 2\ell</m>, where <m>\ell</m> is some integer.
+  Now we can write
+  <md>
+<mrow>
+    n &amp;= (3n+7) - (2n+7)
+</mrow><mrow>
+    &amp;= 2\ell-2n - 7
+</mrow><mrow>
+    &amp;= 2(\ell-n-4)+1
+  </mrow>
+</md>
+  Since <m>\ell-n+4 \in \mathbb{Z}</m> it follows that <m>n</m> is odd.
+</p>
+</proof>
+</solution>
+</example>
+<p>
+  Another similar example<ellipsis/>
+</p>
+<example>
+  <statement>
+    <p>
+      Let <m>n\in\mathbb{Z}</m>. If <m>n^2+4n+5</m> is odd, then <m>n</m> is even.
+    </p>
+  </statement>
+  <answer>
+    <p>
+      The first thing we should do as part of our scratch work is to write down the contrapositive:
+      <me>
+        (n \text{ is not even}) \implies (n^2+4n+5 \text{ is not odd})
+      </me>
+      We've been a little sloppy here <mdash /> we didn't write down the <q>Let <m>n \in \mathbb{Z}</m></q>, but it is scratch work not the actually proof. It is okay to be a <em>little bit</em> sloppy. The integerness of <m>n</m> means that we can simplify this further to
+      <me>
+        (n \text{is odd}) \implies (n^2+4n+5 \text{ is even})
+      </me>
+      This is now straight-forward for us.
+    </p>
+  </answer>
+  <solution>
+    <proof>
+      <p>
+        Let <m>n \in \mathbb{Z}</m> and assume <m>n</m> is odd.
+        Then <m>n = 2k+1</m> for some integer <m>k</m>.
+        Hence
+        <md>
+          <mrow>n^2+4n+5 \amp = (2k+1)^2+4(2k+1)+5 </mrow>
+          <mrow> \amp = 4k^2+4k+1 + 8k + 4 + 5 </mrow>
+          <mrow>  \amp = 4k^2+12k+10 = 2(2k^2+6k+5) </mrow>
+        </md>
+        Since <m>2k^2+6k+5</m> is an integer, we know that <m>n^2+4n+5</m> is even as required.
+      </p>
+    </proof>
+    <p>
+      The above proof can be improved. First up, we forgot to warn the reader <q>we are going to prove the contrapositive</q>. Second, the reader doesn't need to see those boring algebraic manipulations; we can reasonably assume that the reader can do some basic algebra. So with those things in mind, here is a better proof.
+    </p>
+    <proof>
+      <p>
+        We will prove the contrapositive, so let <m>n \in \mathbb{Z}</m> and assume <m>n</m> is odd.
+        Then <m>n = 2k+1</m> for some integer <m>k</m>.
+        Hence
+        <md>
+          <mrow>n^2+4n+5 \amp = 4k^2+12k+10 = 2(2k^2+6k+5) </mrow>
+        </md>
+        and since <m>2k^2+6k+5</m> is an integer, we know that <m>n^2+4n+5</m> is even.
+      </p>
+    </proof>
+  </solution>
+</example>
+
+<p>
+  Let us now prove a simple (but useful) biconditional result. We'll call it a result rather than an example, because we'll need to refer back it later. We could even call it a lemma <mdash /> in fact, let's do that.
+</p>
+
+<lemma xml:id="lem_nodd_iff_n2odd">
+<statement><p>
+ Let <m>n \in \mathbb{Z}</m>, then <m>n^2</m> is odd if and only if <m>n</m> is odd.
+</p></statement>
+</lemma>
+<aside><title>It pays to do some exercises</title>
+<p>
+If you haven't done it already, now is a good time to do (an exercise will be added here)
+<!-- <xref ref="prob-contrapos-bicond"/> -->
+in the exercises. It tells us that the above is logically equivalent to
+<me>
+  (n^2 \text{ is even}) \iff (n \text{ is even})
+</me>
+which is another useful (equivalent) result.
+</p>
+</aside>
+
+<p>
+  We've not proved a biconditional before, so where do we start.
+  Our starting point is to rewrite the biconditional as implications because we know what we have to do to prove those. Recall from <xref ref="thm-logical-equiv"/> that
+  <me>
+    P \iff Q \equiv (P\implies Q) \land (Q \implies P)
+  </me>
+  But how do we prove the conjunction of two implications?
+</p>
+<p>
+  Go back to first principles <mdash /> we want to show that the statement cannot be false. This means that we must show that <em>both</em> implications are true.
+  Hence we have to show that <em>both</em>
+<ul>
+<li> If <m>n^2</m> is odd then <m>n</m> is odd.
+</li>
+<li> If <m>n</m> is odd then <m>n^2</m> is odd.
+</li>
+</ul>
+are true and then it follows that the conjunction is true, and so our original biconditional statement is true.
+Hence our proof consists of two parts (ie sub-proofs).
+</p>
+<p>
+Of course, we have to tell the reader what we are doing. Statements like <q>We prove each implication in turn</q> or <q>We first prove one direction and then the other</q> are good ways to warn the reader what structure to expect. Then you can make this structure very easy to read by using dot-points or other formatting tricks.
+</p>
+
+<proof>
+<p>
+We must show both that if <m>n</m> is odd then <m>n^2</m> is odd, and if <m>n^2</m> is odd then <m>n</m> is odd.
+<ul>
+<li>  Assume <m>n</m> is odd and so <m>x = 2k+1</m> for some <m>k \in \mathbb{Z}</m>.
+Then <m>x^2 = (2k+1)^2 = 4k^2+4k+1 = 2(2k^2+2k)+1</m>. Since <m>2k^2+2k</m> is an integer, it follows that <m>x^2</m> is odd.
+</li>
+<li> To prove that if <m>x^2</m> is odd then <m>x</m> is odd we will show the contrapositive.
+Assume <m>x</m> is even and so <m>x=2k</m>. Then <m>x^2 = 4k^2 = 2(2k^2)</m>. Since <m>2k^2</m> is
+an integer, it follows that <m>x^2</m> is even.
+</li>
+</ul>
+</p>
+</proof>
+
+<p>
+So this is pretty much just what we did for the other proofs, we just had to do it twice.
+First we proved <m>\implies</m> and then we proved <m>\Leftarrow</m>. And we told the reader what we were doing; we didn't leave them to guess.
+</p>
+
+
+
+<p>Parity proofs can get a little dull, so lets prove something a little different. Again, we'll call it a lemma because it might be useful later on.</p>
+
+<lemma>
+<statement><p>
+  Let <m>a,b</m> be non-zero integers. If <m>a \neq \pm b</m> then  <m>a\nmid b</m> or <m>b \nmid a</m>.
+</p></statement>
+</lemma>
+
+<p>
+  Because this result is about divisibility now is a good time to review <xref ref="def-divisible"/>.  Unfortunately that definition tells us what it means for an integer to <em>be</em> divisible by another, but not what is means when one integer is <em>not</em> divisible. However, we can turn that around using the contrapositive. The result then becomes
+</p>
+
+<blockquote>
+<p>
+  If <m>a \mid b</m> and <m>b\mid a</m> then <m>a=\pm b</m>.
+</p>
+</blockquote>
+<p>
+This looks a lot easier. When we assume the hypothesis to be true we can use the definition of divisibility quite directly. This is a good sign that the contrapositive was the right thing to do.
+</p>
+
+<proof>
+<p>
+  <ul>
+<li> Assume <m>a\mid b</m> and <m>b\mid a</m>.
+</li>
+<li> Hence there are integers <m>k,\ell</m> so that <m>b=ka</m> and <m>a=\ell b</m>.
+</li>
+<li> Thus we can write <m>b=ka=k\ell b</m>.
+</li>
+<li> Since <m>b\neq 0</m> we can divide both sides by <m>b</m> to get
+    <md>
+<mrow>
+      k \ell = 1
+    </mrow>
+</md>
+</li>
+<li> Now since <m>k,\ell \in \mathbb{Z}</m> it follows that the only solutions to this are <m>k,l \in \set{1,-1}</m>.
+</li>
+<li> This gives <m>b=\pm a</m> as required.
+</li>
+</ul>
+</p>
+</proof>
+
+<p>
+Of course we can also write this out in proper sentences and not point form.
+Actually, because we wrote things nicely above, we really just need to remove the dots:
+</p>
+<proof>
+<p>
+ Assume <m>a\mid b</m> and <m>b\mid a</m>.
+ Hence there are integers <m>k,\ell</m> so that <m>b=ka</m> and <m>a=\ell b</m>.
+ Thus we can write <m>b=ka=k\ell b</m>.
+ Since <m>b\neq 0</m> we can divide both sides by <m>b</m> to get <m>k\ell = 1</m>.
+ Now since <m>k,\ell \in \mathbb{Z}</m> it follows that the only solutions to this are <m>k,l \in \set{1,-1}</m>.
+ This gives <m>b=\pm a</m> as required.
+</p></proof>
+
+</section>
+
+<section><title>Proofs with cases</title>
+
+<p>
+  Recall <xref ref="lem-porqimpliesr"/>.
+  <me>
+    ((P \lor Q) \implies R) \equiv ( (P \implies R) \land (Q \implies R))
+  </me>
+  This tells us how to structure a proof when the hypothesis is a disjunction. That is, when the hypothesis can be broken into two (or more) cases.
+</p>
+<p>
+  Take another look at <xref ref="ex-wrong-way2"/>. At first glance, the hypothesis is just a single statement <q><m>n</m> is an integer</q>, and it is not immediately obvious that it can be broken into separate cases. However there is a clue in the conclusion,
+  <q><m>n^2+5n-7</m> is odd</q>; it tells us to think about parity. Any integer is either even or it is odd, so we can break the hypothesis into two cases
+  <ul>
+    <li><m>n</m> is even, or</li>
+    <li><m>n</m> is odd.</li>
+  </ul>
+  Because of this, the original statement can be massaged into the form of <xref ref="lem-porqimpliesr"/>.
+  <me>
+    ((n \text{ is even}) \lor (n \text{ is odd}) ) \implies n^2+5n-7 \text{ is odd}
+  </me>
+<xref ref="lem-porqimpliesr"/> then tells us that this is logically equivalent to
+<me>
+(n \text{ is even} \implies n^2+5n-7 \text{ is odd}) \land
+(n \text{ is odd} \implies n^2+5n-7 \text{ is odd}).
+</me>
+</p>
+
+<p>
+  To show that this <em>conjunction</em> is true, we just need to show that both parts are true. That is, our proof will split into two <term>cases</term>.
+  <ol>
+    <li>Prove that <m>(n \text{ is even} \implies n^2+5n-7 \text{ is odd})</m>.</li>
+    <li>Prove that <m>(n \text{ is odd} \implies n^2+5n-7 \text{ is odd})</m>.</li>
+  </ol>
+  This is an example of <term>proof by cases</term>.
+</p>
+<p>
+  Of course, we don't just leap into things and write <q>Proof 1</q> and <q>Proof 2</q>; we need to explain to the reader what is happening. We need to explain that the hypothesis breaks into separate cases, and then we should make it clear where each case starts and where it ends. And, it won't hurt to summarise at the end of the proof that since we have proved all the cases, the result is true. Be nice to your reader <mdash /> an extra sentence or two can make their life much easier.
+</p>
+<aside><title>Self interest?</title>
+<p>Sometimes the <q>reader</q> is a just a device to help us to think about how we are writing, but sometimes the <q>reader</q> is the person who marks your homework, tests and exams. Being nice to the reader can be good for the writer too.</p>
+</aside>
+
+<proof>
+<p>
+Let <m>n \in \mathbb{Z}</m>.
+Since <m>n</m> can be either even or odd, we consider both cases separately.
+<ul>
+<li> Case 1: Assume <m>n</m> is even.
+  Then <m>n = 2k</m> for some <m>k \in \mathbb{Z}</m> and <m>n^2-3n+9 = 4k^2-6k+9 = 2(2k^2-3k+4)+1</m>.
+  Since <m>2k^2-3k+4</m> is an integer, <m>n^2-3n+9</m> is odd.
+</li>
+<li> Case 2: Now assume <m>n</m> is odd, then <m>n=2k+1</m> for some <m>k \in \mathbb{Z}</m> and
+<m>n^2-3n+9 = (4k^2+4k+1)-(6k+3)+9 = 4k^2-2k+7 = 2(2k^2-k+3)+1</m>.
+Since <m>2k^2-k+3</m> is an integer, <m>n^2-3n+9</m> is odd.
+</li>
+</ul>
+Since both cases are true, the result follows.
+</p>
+</proof>
+
+<p>
+  The above shows the very standard structure of <term>proof by cases</term> or <term>proof by case analysis</term>. Of course, not all such proofs consist of just two cases. More generally the structure will be as follows.
+</p>
+<proof>
+<p>
+<ul>
+<li> The hypothesis breaks into <m>N</m> cases.</li>
+<li> Here is my proof of case 1.</li>
+<li> Here is my proof of case 2.</li>
+<li><m>\vdots</m></li>
+<li> Here is my proof of case <m>N</m>.
+</li>
+<li> Since I've proved all <m>N</m> cases the proof is done.
+</li>
+</ul>
+</p>
+</proof>
+<p>
+  One of the hardest parts of case-analysis is to be sure that you have found all the cases. And since each case is really its own proof, it is possible that a single case breaks into several sub-cases, each of which requires its own proof. Case analysis is also sometimes called <term>Proof by exhaustion</term>! As an extreme example, the original proof of <q>The four colour theorem</q> by Appel &amp; Haken in 1976 required the checking of about 1900 different cases.
+  Thankfully that was done by a computer; though that was very controversial at the time.
+</p>
+<aside><title>4 colours by computer</title>
+<p>
+The 4 colour Theorem tells you that any map (eg, a map of countries of the world) can be coloured using no more than 4 colours, so that no two neighbouring regions have the same colour. The interested reader can search-engine their way to many articles on the topic. The original proof by Appel &amp; Haken was one of the first computer-aided proofs. The idea of getting a computer is not without objections <mdash /> if a proof involves so many logical steps that it cannot be verified by a human, then is it really a proof? Again, the interested reader should search-engine their way to articles on philosophical questions that emerge from computer-aided proof.
+</p>
+<p>
+  Note that it is significantly easier to prove that you need no more than 5 colours, and we might even do it at the end of this text (assuming the author gets around to it). No computers are required! The proof actually started as a flawed attempt to prove the 4 colour Theorem by Kempe in 1879 which was rescued a decade later by Heawood as the 5 colour Theorem.
+</p>
+</aside>
+
+<remark><title>Keep cases just in case <q>without loss of generality</q> causes mistakes</title>
+<p>
+  You will have noticed that the two cases in the proof above are <em>very</em> similar.
+  This is not unusual. It is very often the case that the cases in proof by cases are very similar to each other<fn>Enough cases for a luggage related pun if only we could pack one in here. Sorry.</fn>. Many writers will omit one or more of these similar cases and instead write
+  <q>The proof of the second case is similar to the proof of the first, so we omit it</q>. You might also see  <q>Without loss of generality (we will only do the first case)</q>, which busy hard-working mathematicians will contract to <q>WLOG</q>.
+</p>
+<p>
+  <q>WLOG</q> is a notoriously dangerous mathematical phrase<fn>We keep a list. Well <mdash /> we should keep a list.</fn> in mathematics. It sits with phrases such as
+  <ul>
+    <li>Clearly</li>
+    <li>Obviously</li>
+    <li>It is easy to show that</li>
+    <li>A quick calculation shows</li>
+  </ul>
+  Every mathematician has been caught out by one of these. What we thought would be an easy turned out to be much harder due to that little detail we didn't consider.
+</p>
+<blockquote>
+  <p>Premature optimisation is the root of all evil</p>
+</blockquote>
+<aside><title>Dictum attribution</title>
+  <p>
+    This quote is usually attributed to Donald Knuth and is perhaps one of the best rules-of-thumb in programming. Knuth, however referred to it (at least once) as Hoare's dictum, after Tony Hoare. Hoare, however, attributed it to Edsger Dijkstra. Attribution quandaries aside, this makes an important point <mdash /> make it right, not fast.
+  </p>
+  <p>
+    Of course, once it is right, then making it a bit faster is a good idea, but not at the expense of introducing errors. The interested reader should search-engine their way to the full quote and discussions thereof.
+  </p>
+</aside>
+<p>
+  One should be very careful using WLOG (and its siblings).
+  We should be very sure that the cases really are very similar.
+  Indeed, it is much safer (as a general rule for the inexperienced prover) to actually do all those cases in your scratch work. <em>Then</em> determine whether or not they really are similar enough that skipping them is not going to cause any problems. And on then skip them when writting up the proof.
+</p>
+</remark>
+
+
+<p>Here are another couple of results to play with</p>
+
+<lemma>
+<statement><p>
+  If two integers <m>a</m> and <m>b</m> have opposite parities then their sum is odd.
+</p></statement>
+<proof>
+<p>
+  Let <m>a</m> and <m>b</m> be integers and assume they have opposite parities.
+  Now either <m>a</m> is even or <m>a</m> odd; we prove each case in turn.
+  <ul>
+<li> Assume <m>a</m> is even.
+    Since <m>a</m> and <m>b</m> have opposite parities, we know that <m>b</m> is odd.
+    Hence we can write <m>a=2k, b=2\ell+1</m> for some <m>k,\ell \in \mathbb{Z}</m>.
+    This means that <m>a+b=2k+2\ell+1 = 2(k+\ell)+1</m>.
+    Since <m>k+\ell\in\mathbb{Z}</m> we know that <m>a+b</m> is odd.
+</li>
+<li> Now assume <m>a</m> is odd.
+    Since <m>a</m> and <m>b</m> have opposite parities, we know that <m>b</m> is even.
+    Hence we can write <m>a=2k+1, b=2\ell</m> for some <m>k,\ell \in \mathbb{Z}</m>.
+    This means that <m>a+b=2k+2\ell+1 = 2(k+\ell)+1</m>, and since <m>k+\ell\in\mathbb{Z}</m> we know that <m>a+b</m> is odd.
+</li>
+</ul>
+  In both cases, <m>a+b</m> is odd as required.
+</p>
+</proof>
+
+</lemma>
+<p>
+and
+</p>
+<lemma>
+<statement><p>
+  Let <m>a,b \in \mathbb{Z}</m>. The number <m>ab</m> is even if and only if <m>a</m> is even or <m>b</m> is
+   even.
+</p></statement>
+<proof>
+<p>
+  Let <m>a,b</m> be integers.
+  We prove each implication in turn.
+  <ul>
+<li> To prove the forward implication we prove the contrapositive.
+    Hence assume that both <m>a,b</m> are odd.
+    So we can write <m>a=2k+1</m> and <m>b=2\ell+1</m> where <m>k,\ell \in \mathbb{Z}</m>.
+    Now <m>ab = (2k+1)(2\ell+1) = 4k\ell + 2k+2\ell+1 = 2(2k\ell + k + \ell)</m>.
+    Since <m>2k\ell+k+\ell \in \mathbb{Z}</m> we know that <m>ab</m> is odd as required.
+</li>
+<li><p>
+   The reverse implication breaks into two cases.
+    <ul>
+<li> Assume <m>a</m> is even.
+      Then we can write <m>a=2k</m> where <m>k\in\mathbb{Z}</m>.
+      So <m>ab=2kb=2(kb)</m>.
+      Since <m>kb\in\mathbb{Z}</m> it follows that <m>ab</m> is even.
+</li>
+<li> Now assume that <m>b</m> is even.
+      Then we can write <m>b=2\ell</m> where <m>\ell\in\mathbb{Z}</m>.
+      So <m>ab=2a\ell=2(a\ell)</m>.
+      Since <m>a\ell\in\mathbb{Z}</m> it follows that <m>ab</m> is even.
+</li>
+</ul>
+    In either case <m>ab</m> is even as required.
+  </p>
+</li>
+</ul>
+</p>
+</proof>
+</lemma>
+<remark><title>Symmetry and WLOG</title>
+<p>
+  These last two results display a great deal of symmetry.
+  That is, one can swap <m>a</m> and <m>b</m> without changing the result.
+  That symmetry indicates that it may be possible to shorten the proof, by appealing to that symmetry to justify why a case can be skipped.
+  However, correctly identifying such symmetries and their consequences takes practice.
+  Consequently we still recommend that you avoid WLOG-ing when working through this book, and only WLOG once you have spent many more hours proving things.
+</p>
+</remark>
+
+<proposition xml:id="res-div-3">
+<statement><p>
+  Let <m>n \in \mathbb{Z}</m>, then <m>3 \mid n</m> if and only if <m>3 \mid n^2</m>.
+</p></statement>
+</proposition>
+<p>
+  In order to prove this we'll make use of <term>Euclidean division</term>.
+  We stated this at the beginning of <xref ref="ch-direct"/> as <xref ref="fact-euc-div"/>.
+  Please revise it before continuing.
+</p>
+<p>
+  <xref ref="fact-euc-div"/> tells us that every integer <m>n</m> can (by dividing by two) be written <em>uniquely</em> as either
+  <me>
+    n = 2k \qquad \text{ or } \qquad n=2k+1
+  </me>
+  for some integer <m>k</m>. That is, every integer is either even or odd. The same result tells that every integer <m>n</m> can (by dividing by three) be written <em>uniquely</em> as
+  <me>
+    n = 3k \qquad \text{ or } \qquad n=3k+1 \qquad \text{ or } \qquad n=3k+2
+  </me>
+  for some integer <m>k</m>. It is this consequence of Euclidean division that will help us prove our result. Time for some scratch work.
+</p>
+
+<p>
+  It is a biconditional statement so we need to prove both the forward implication and the reverse implication.
+  <ul>
+    <li> <m>(\implies)</m>: Assume <m>3\mid n</m>, so <m>n = 3k</m> where <m>k</m> is some integer.
+    Hence <m>n^2 = 9k^2</m> which is a multiple of 3.
+    Not so bad.
+    </li>
+    <li><p>
+      <m>(\Leftarrow)</m>: If we try assuming that <m>3 \mid n^2</m> we aren't going to get very far, so instead we look at the contrapositive.
+    <me>
+      3 \nmid n \implies 3\nmid n^2
+    </me>
+    Here is where we can use Euclidean division.
+  </p>
+    <p>
+      Any integer <m>n</m> can be written uniquely as one of <m>n=3k, n=3k+1</m> or <m>n=3k+2</m> where <m>k \in \mathbb{Z}</m>.
+      Now, we assume that <m>3 \nmid n</m>, so we cannot have <m>n=3k</m>.
+      Hence we have 2 cases to explore, namely <m>n=3k+1, n=3k+2</m>.
+      <ul>
+        <li>If <m>n=3k+1</m> then <m>n^2=(3k+1)^2=9k^2+6k+1=3(3k^2+2k)+1</m>, and so is not divisible by 3</li>
+        <li>If <m>n=3k+2</m> then <m>n^2=(3k+2)^2=9k^2+12k+4=3(3k^2+4k+1)+1</m>, and so is not divisible by 3</li>
+      </ul>
+      Since both cases work out, we are ready to write things up nicely.
+      </p>
+    </li>
+  </ul>
+</p>
+
+<proof><title>Proof of <xref ref="res-div-3"/></title>
+  <p>
+    We prove each implication in turn.
+    <ul>
+      <li>
+        <p>
+          We start with the forward implication.
+          Assume that <m>3\mid n</m>, so <m>m=3k</m> where <m>k\in\mathbb{Z}</m>.
+          Hence <m>n^2=3(3k^2)</m>, and since <m>3k^2 \in \mathbb{Z}</m> we know that <m>3 \mid n^2</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          To prove the reverse implication we prove the contrapositive.
+          Assume that <m>n</m> is an integer, and that <m>3 \nmid n</m>.
+          Hence (by Euclidean division), we know that either <m>n=3k+1</m> or <m>n=3k+2</m> where <m>k</m> is some integer.
+          <ul>
+            <li>Assume that <m>n=3k+1</m>, then <m>n^2=3(3k^2+2k)+1</m>, and so is not divisible by 3.</li>
+            <li>Similarly, if we assume that <m>n=3k+2</m>, then <m>n^2=3(3k^2+4k+1)+1</m>, and so is not divisible by 3.</li>
+          </ul>
+          In either case we conclude that <m>3\nmid n^2</m> as required.
+        </p>
+      </li>
+    </ul>
+  </p>
+</proof>
+
+<remark><title>The importance of uniqueness</title>
+<p>
+  Notice that in the above scratch work and proof we have used the <em>uniqueness</em> of Euclidean divison to show that <m>n^2</m> is not divisible by 3. Once we have shown (in a case) that <m>n^2 = 3\ell+1</m> for some integer <m>\ell</m>, <xref ref="fact-euc-div"/> tells us that there is no other way to write <m>n^2 = 3q</m> with <m>q \in \mathbb{Z}</m>. Similarly, in the case where we show that <m>n^2=3\ell+2</m>, the uniqueness of Euclidean division means that there is no way for us to write <m>n^2</m> as 3 times an integer.
+</p>
+</remark>
+
+<p>
+  We have now had some practice with direct and contrapositive proofs, as well as proof by cases. It will soon be time to go back and do some more logic; we really need to look at quantifiers. But before that, we should do one two more examples of proof by cases  <mdash/> congruence modulo <m>n</m>, and the triangle inequality.
+</p>
+
+</section>
+
+<section xml:id="sec-congruence"><title>Congruence modulo <m>n</m></title>
+<p>
+  Many results about divisibility of integers involve a fair bit of tedious work involving proof by cases;  <xref ref="res-div-3"/> is a good example of this. In that case we are interested in divisibility by 3 and so we use Euclidean division to separate the integers into 3 cases depending on their remainder. Much of that work can be simplified by introducing congruence.
+</p>
+
+
+<definition xml:id="def-congruent">
+<statement><p>
+  Let <m>a,b \in \mathbb{Z}</m> and <m>n \in \mathbb{N}</m>. We say that <m>a</m> is <term>congruent to <m>b</m> modulo <m>n</m></term> when <m>n\mid(a-b)</m>. The <q>n</q> is refered to as the <term>modulus</term> and we write the congruence as <m>a \equiv b \mod n</m>.
+</p>
+  <p>
+    When <m>n \nmid (a-b)</m> we say that <m>a</m> is not congruent to <m>b</m> modulo <m>n</m>, and write <m>a \not\equiv b \mod n</m>.
+  </p>
+</statement>
+</definition>
+
+<p>
+Some simple examples:
+<ul>
+  <li><m>19</m> is congruent to <m>5</m> modulo 7, since <m>19-5=14 = 2(7)</m>, </li>
+  <li><m>11</m> is congruent to <m>27</m> modulo 4, since  <m>11-27 = -16 = 4(-4)</m>, and </li>
+  <li><m>13</m> is not congruent to <m>7</m> modulo 5 since <m>13-7=6</m> and <m>5 \nmid 6</m>.</li>
+</ul>
+Also notice that congruence nicely extends parity; we can re-express parity as just congruence modulo 2.
+</p>
+
+<proposition>
+  <statement>
+    <p>Let <m>a,b</m> be integers. Then <m>a \equiv b \mod 2</m> if and only if <m>a</m> and <m>b</m> have the same parity.
+    </p>
+  </statement>
+</proposition>
+<proof>
+  <p>
+    We prove both implications in turn. So start by assuming that <m>a \equiv b \mod 2</m>. Then we know that <m>2 \mid (a-b)</m> and thus <m>a-b=2k</m> for some <m>k \in \mathbb{Z}</m>. Now either <m>a</m> is even or odd.
+    <ul>
+      <li>When <m>a</m> is even, we know that <m>a=2\ell</m> for some integer <m>\ell</m>, and thus <m>b=2k+2\ell</m> and so is also even.
+    </li>
+    <li>Similarly when <m>a</m> is odd, we know that <m>a=2m+1</m> for some integer <m>m</m>, and thus <m>b=2k+2m+1</m> and so is also odd.
+    </li>
+    </ul>
+    Thus being congruent modulo 2 implies that they have the same parity.
+  </p>
+  <p>
+    Now assume that <m>a,b</m> have the same parity. Then either they are both even or they are both odd.
+    <ul>
+      <li>When <m>a,b</m> are both even, we can write <m>a=2k, b=2\ell</m> and so <m>a-b = 2(k-\ell)</m>.</li>
+      <li>When <m>a,b</m> are both odd, we can write <m>a=2k+1, b=2\ell+1</m> and so <m>a-b = 2(k-\ell)</m>.</li>
+    </ul>
+    In both cases the difference <m>a-b</m> is divisible by 2 and so <m>a \equiv b \mod 2</m> as required.
+  </p>
+</proof>
+
+<p>
+  Perhaps the main reason that congruence modulo <m>m</m> is so important is that congruence interacts very nicely with basic arithmetic operations. This gives rise to what is known as <term>modular arithmetic</term>.
+</p>
+
+<theorem xml:id="thm-mod-arith"><title>Modular arithmetic</title>
+<statement><p>
+  Let <m>n \in \mathbb{N}</m>, and let <m>a,b,c,d \in \mathbb{Z}</m> so that
+  <md>
+<mrow>
+    a \amp \equiv c \mod n
+    \amp \text{and} \amp \amp
+    b \amp \equiv d \mod n
+  </mrow>
+</md>
+  Then
+  <md>
+  <mrow>
+      a+b \amp \equiv c+d \mod n, \amp
+      a-b \amp \equiv c-d \mod n \amp \amp
+      \text{and}
+  </mrow><mrow>
+    ab \amp \equiv cd \mod n.
+  </mrow>
+</md>
+</p>
+</statement>
+<proof>
+<p>
+  Let <m>n \in \mathbb{N}</m>, and let <m>a,b,c,d \in \mathbb{Z}</m> so that <m>a \equiv c \mod n</m> and <m>b \equiv d \mod n</m>.
+  Hence <m>a=c+nk, b=d+n\ell </m> where <m>k,\ell</m> are integers.
+  <ul>
+    <li> We can write <m> (a+b) = (c+d) + n(k+\ell)</m>, so <m>(a+b)-(c+d)=n(k+\ell)</m>. Hence <m> (a+b) \equiv (c+d) \mod n</m>.
+    </li>
+    <li> Similarly, we can write <m> (a-b) = (c-d) + n(k-\ell)</m>, so <m>(a-b)-(c-d)=n(k-\ell)</m>. Hence <m> (a-b) \equiv (c-d) \mod n</m>.
+    </li>
+<li> Now <m>ab = (c+nk)(d+n\ell) = cd + n(dk+c\ell) + n^2kl</m>. So <m>ab-cd = n(dk+c\ell + nkl)</m>, and hence <m>ab \equiv cd \mod n</m>.
+</li>
+</ul>
+</p>
+</proof>
+
+</theorem>
+
+<p>
+We can now use this result to simplify some of our proof-by-cases proofs. Let's start by reproving <xref ref="res-div-3"/>. And we start that by restating the result in terms of congruences:
+</p>
+
+<proof><title>Another proof of <xref ref="res-div-3"/></title>
+<p>
+We start by restating the result in terms of congruences:
+<me>
+n \equiv 0 \mod 3 \iff n^2 \equiv 0 \mod 3,
+</me>
+and now we prove each implication in turn
+<ul>
+  <li>Assume that <m>n \equiv 0 \mod 3</m>, then by <xref ref="thm-mod-arith"/> we know that <m>n^2 \equiv 0 \mod 3</m> as required.</li>
+  <li><p>We prove the contrapositive of the reverse implication, so assume that <m>n \not\equiv 0 \mod 3</m>. Thus either <m>n \equiv 1 \mod 3</m> or <m>n \equiv 2 \mod 3</m>.
+  <ul>
+    <li>When <m>n \equiv 1 \mod 3</m>, <xref ref="thm-mod-arith"/> tells us that <m>n^2 \equiv 1 \mod 3</m>.</li>
+    <li>Similarly, when <m>n \equiv 2 \mod 3</m>, we know that <m>n^2 \equiv 4 \mod 3</m>. And since <m>4 \equiv 1 \mod 3</m>, this means that <m>n^2 \equiv 1 \mod 3</m>.</li>
+  </ul>
+  So in both cases, <m>n^2 \not\equiv 0 \mod 3</m> as required.
+  </p>
+  </li>
+</ul>
+</p>
+</proof>
+
+<p>
+  Notice we are doing something a little sneaky in the proof. We deduced that since <m>n^2 \equiv 4 \mod 3</m> and <m>4 \equiv 1 \mod 3</m>, we know that <m>n^2 \equiv 1 \mod 3</m>. This is because congruence is <term>transitive</term> <mdash /> a notion we will return to in <xref ref="ch_relations"/>. But since it is quite useful, let's prove it now.
+</p>
+<proposition>
+  <statement>
+    <p>
+      Let <m>n \in \mathbb{N}</m>, and let <m>a,b,c \in \mathbb{Z}</m> so that <m>a \equiv b \mod n</m> and <m>b \equiv c \mod n</m>. Then <m>a \equiv c \mod n</m>.
+    </p>
+  </statement>
+  <proof>
+    <p>
+    Let <m>a,b,c</m> and <m>n</m> be as stated. Then we know that for some <m>k,\ell\in\mathbb{Z}</m>
+    <me>
+      a-b = nk \qquad \text{and} \qquad b-c \equiv 2 \ell.
+    </me>
+    Then <m>(a-b)+(b-c)=a-c = 2(k+\ell)</m> and so <m>a \equiv c \mod n</m>.
+  </p>
+  </proof>
+</proposition>
+
+<p>
+  Here is another example; congruence makes this easier to prove.
+</p>
+<proposition>
+  <statement>
+    <p>Let <m>a,b \in \mathbb{Z}</m>. If <m>3 \nmid a</m> and <m>3 \nmid b</m> then <m>3 \mid (a^2-b^2)</m>.</p>
+  </statement>
+
+<proof>
+  <p>
+    Let <m>3 \nmid a</m> and <m>3 \nmid b</m>. Then, by Euclidean division, we know that <m>a \equiv 1 \mod 3</m> or <m>a \equiv 2 \mod 3</m>.
+    <ul>
+      <li>When <m>a \equiv 1 \mod 3</m>, <m>a^2 \equiv 1 \mod 3</m>.</li>
+      <li>And, when <m>a \equiv 2 \mod 3</m>, <m>a^2 \equiv 4 \mod 3</m>.
+      Since <m>4 \equiv 1 \mod 3</m>, we also have that <m>a^2 \equiv 1 \mod 3</m>.
+      </li>
+    </ul>
+    So in either case <m>a^2 \equiv 1 \mod 3</m>. This also implies that <m>b^2 \equiv 1 \mod 3</m>. Thus <m>a^2 - b^2 \equiv 0 \mod 3</m>. So finally we can conclude that <m>3 \mid (a^2-b^2)</m> as required.
+  </p>
+</proof>
+</proposition>
+
+<p>
+  We will return to congruences and modular arithmetic in <xref ref="sec_congruence_revisited"/>, but now we turn to a very famous inequality.
+</p>
+
+</section>
+
+<section xml:id="sec-abs-triangle"><title>Absolute values and the triangle inequality</title>
+<p>
+  The triangle inequality is a very simple inequality that turns out to be extremely useful. It relates the absolute value of the sum of numbers to the absolute values of those numbers. So before we state it, we should formalise the absolute value function.
+</p>
+<definition xml:id="def-absolute">
+  <statement>
+    <p>
+      Let <m>x \in \mathbb{R}</m>, then the absolute value of <m>x</m> is denoted <m>|x|</m> and is given by
+      <me>
+        |x| = \begin{cases} x \amp \text{if } x \geq 0 \\ -x \amp \text{if } x \lt 0\end{cases}
+      </me>
+    </p>
+  </statement>
+</definition>
+
+<p>
+  How we compute<fn>
+  When we first encounter the absolute value, it is often tempting to think of it a function that  <q>removes the minus sign</q>. Such thinking leads to errors. In particular, if <m>x</m> is a negative number then <m>|x| = -x</m>, and the presence of that minus sign can be very confusing.
+</fn>
+the absolute value of a number depends on whether that number is negative or not <mdash /> it is an example of a piecewise function.
+  <md>
+    <mrow> |8| \amp = 8 </mrow>
+    <mrow> |-5| \amp = -(-5) = 5 </mrow>
+  </md>
+  Since the absolute value is defined in two branches like this, it naturally leads to proofs that require cases. The proof of the triangle inequality is a good example of this. Before we state (and prove) the triangle inequality, let's prove a few useful lemmas that describe some useful properties of the absolute value.
+</p>
+
+<lemma xml:id="lem-absolute1">
+  <statement>
+    <p>
+      Let <m>x \in \mathbb{R}</m>, then <m>|x| \geq 0</m>.
+    </p>
+  </statement>
+</lemma>
+<p>
+  We will split the proof into two cases. The first dealing with <m>x \geq 0</m> and the second with <m>x \lt 0</m>. Doing this allows us to rewrite the absolute value <m>|x|</m> as either <m>x</m> or <m>-x</m>, and so simplify our analysis.
+</p>
+<proof>
+  <p>
+    Let <m>x \in \mathbb{R}</m> so that either <m>x \geq 0</m> or <m>x \lt 0</m>.
+    <ul>
+      <li>When <m>x \geq 0</m>, we know that <m>|x|=x</m>, and so <m>|x| \geq 0</m>.
+      </li>
+      <li>Now assume that <m>x \lt 0</m>. Then <m>|x| = -x</m>. Now since <m>x</m> is negative, it follows that <m>-x</m> is positive, and so <m>|x|= -x \gt 0</m>.
+      </li>
+    </ul>
+    In both cases we have shown that <m>|x| \geq 0</m>.
+  </p>
+</proof>
+
+<p>
+  To prove the next result it is actually convenient to use a more symmetric definition of the absolute value function that splits into three cases:
+  <me>
+    |x| = \begin{cases} x \amp \text{if } x \gt0 \\ 0 \amp \text{if }x=0 \\ -x \amp \text{if } x \lt 0\end{cases}
+  </me>
+  We do this to take advantage of the fact<fn>
+  In computing and in some applications it can be quite useful to have a <q>signed zero</q>. The interested reader should search-engine their way to more information on this topic and the related topic of the extended real number system. You have actually already seen some of the ideas when you studied limits to zero and to <m>\pm \infty</m> in Calculus 1.
+</fn> that <m>-0=0</m>.
+</p>
+
+<lemma xml:id="lem-absolute0">
+  <statement>
+    <p>
+      Let <m>x \in \mathbb{R}</m> then <m>|x|=|-x|</m>.
+    </p>
+  </statement>
+</lemma>
+<proof>
+  <p>
+    Let <m>x \in \mathbb{R}</m>, then either <m>x=0, x\gt 0, x\lt 0</m>.
+    <ul>
+      <li>When <m>x=0</m>, then <m>-x=x=0</m> and <m>|x|=|-x|=0</m>.</li>
+      <li>Now, let <m>x \gt 0</m>. This means that <m>|x|=x</m>. Further <m>-x \lt 0</m> and so <m>|-x|= -(-x) = x = |x|</m>.
+      </li>
+      <li>Finally, let <m>x \lt 0</m>, so that <m>|x|=-x</m>. Additionally, <m>-x \gt 0</m> and so <m>|-x| = (-x)= |x|</m>.</li>
+    </ul>
+    In all three cases the result holds.
+  </p>
+</proof>
+
+<p>
+  We can reuse the basic ideas of this proof to obtain the following
+</p>
+<lemma xml:id="lem-absolute2">
+  <statement>
+    <p>
+      Let <m>x \in \mathbb{R}</m>, then  <m>-|x| \leq x \leq |x|</m>.
+    </p>
+  </statement>
+</lemma>
+<proof>
+  <p>
+    Let <m>x \in \mathbb{R}</m> so that either <m>x \geq 0</m> or <m>x \lt 0</m>.
+    <ul>
+      <li>
+        When <m>x \geq 0</m>, we know that <m>|x|=x</m>. Now since <m>x \geq 0</m>, it follows that <m>-|x| \leq 0 \leq x = |x|</m>.
+      </li>
+      <li>Now assume that <m>x \lt 0</m>. Then <m>|x| = -x</m>, so that <m>-|x| = x</m>. Now since <m>x \lt 0</m> it follows that <m>-|x| = x \lt 0 \leq |x|</m>.
+      </li>
+    </ul>
+    In both cases we have shown that <m>-|x| \leq x \leq |x|</m> as required.
+  </p>
+</proof>
+
+<p>
+  We can extend the above lemma a little to get a very useful result. It tells us how to transform bounds on quantity into bounds on its absolute value and vice-versa.
+</p>
+<lemma xml:id="lem-absolute3">
+  <statement>
+    <p>
+      Let <m>x,y \in \mathbb{R}</m>, then
+      <me>
+        |x| \leq y \iff -y \leq x \leq y
+      </me>
+    </p>
+  </statement>
+</lemma>
+<proof>
+  <p>
+    We prove each implication in turn.
+    <ul>
+      <li>
+        <p>
+          Assume that <m>|x| \leq y</m>. Now either <m>x \geq 0</m> or <m>x \lt 0</m>.
+          <ul>
+            <li>When <m>x \geq 0</m>, we know that <m>|x|=x</m>. Hence <m>y \geq |x|=x \geq 0 \geq -y</m>.</li>
+            <li>On the other hand if <m>x \lt 0</m>, we know that <m>y \geq |x|=-x \gt 0</m>. So, multiplying through by <m>-1</m> we have <m>-y \leq x \lt 0 \leq y</m>.</li>
+          </ul>
+          In both cases we have shown that <m>-y \leq x \leq y</m> as required.
+        </p>
+      </li>
+      <li>
+        <p>
+          Now assume that <m>-y \leq x \leq y</m>. Again, either <m>x \geq 0</m> or <m>x \lt 0</m>.
+          <ul>
+            <li>When <m>x \geq 0</m>, we know that <m>x = |x|</m>. So, by assumption <m>y \geq x = |x|</m>.</li>
+            <li>Now, when <m>x \leq 0</m>, <m>|x|=-x</m>. Transform our assumption <m>y \geq x \geq -y</m>, by multiplying everything by <m>-1</m>, giving <m>-y \leq -x = |x| \leq y</m>.
+          </li>
+          </ul>
+          In both cases we have shown that <m>|x| \leq y</m> as required.
+        </p>
+      </li>
+    </ul>
+  </p>
+</proof>
+
+
+
+<p>
+  Okay, now we can prove our main result; it tells us that the absolute value of the sum of two numbers is smaller<fn>
+This gives a nice counter example to the misquotation of Aristotle about sums and parts that has been worn out from (over/mis)use.
+</fn> than the sum of the absolute values. It is a very simple but turns out to be extremely useful<fn>
+  Mathematicians like results like this one. When we define a new mathematical operation or function, we want to see how it interacts with the ones we already know. When you did Calculus you saw results like this <mdash /> we have just defined limits, how do limits interact with addition, multiplication and division? There are many other examples including  the product rule and the quotient rule and integration by parts. We will see more examples when we get to functions in <xref ref="ch-functions"/>.
+</fn>.
+</p>
+
+<theorem xml:id="thm-triangle"><title>The triangle inequality</title>
+<statement><p>
+  Let <m>x,y \in \mathbb{R}</m>, then
+  <me>
+    |x+y| \leq |x| + |y|.
+  </me>
+</p></statement>
+</theorem>
+<p>
+  The inequality gets its name from a more geometric interpretation<fn>
+  Indeed it was likely first proved by the ancient Greeks, and appears in Book 1 of Euclid's Elements as Proposition 20. The interested reader should search-engine their way to a discussion of Euclid's elements <mdash /> likely one of the most influential books ever written.</fn>. It tells us that the length of the third side of the triangle, <m>C</m>, is bounded by the sum of the lengths of the other two sides, <m>A,B</m>.
+</p>
+
+<image width="33%" source="triangle_inequality"/>
+
+<p>
+  Now, rather than leap into a neat proof of this, we should take some time to explore the problem and the various cases that might arise. Since the values of <m>|x|, |y|</m> and <m>|x+y|</m> all depend on whether each quantity is positive or negative<fn>
+  The pedantic reader will notice that we could have said <q>whether each quantity is non-negative or negative</q>, since we have defined the absolute value function to lump <m>x=0</m> together with <m>x \gt 0</m>. We could have split absolute value function in 3 pieces <m>x \gt 0, x=0, x \lt 0</m> as we did in one of the proofs earlier in the section. While this is nicely symmetric, it does make our proofs longer, since we have to consider 3 cases for each quantity.
+</fn>.
+<ul>
+  <li><p>
+Notice that if both <m>x,y \geq 0</m>, then it is easy to prove since
+<me>
+  |x| + |y| = x+y
+</me>
+</p></li>
+<li><p>
+Similarly, if both <m>x,y \lt 0</m>, then we know that <m>x+y\lt 0</m> and so we have
+<me>
+  |x| + |y| = (-x) + (-y) = -(x+y) = |x+y|
+</me>
+</p></li>
+<li><p>
+  A little more care is required when (say) <m>x \geq 0</m> but <m>y \lt 0</m>. In this case we have
+  <me>
+    |x| + |y| = x + (-y) = x-y
+  </me>
+  and it is not immediately obvious how to relate this to <m>(x+y)</m>.
+  One way to proceed is to break this case into subcases depending on whether <m>(x+y) \geq 0</m> or <m>(x+y) \lt 0</m>. Urgh.
+</p>
+</li>
+</ul>
+</p>
+
+<p>
+  Let us instead take a step back and start again, but this time from assumptions about <m>(a+b)</m>.   Either <m>a+b \geq 0</m> or <m>a+b \lt 0</m>.
+<ul><li><p>
+  In the first case
+  <me>
+    |a+b| = a+b
+  </me>
+  and we know, from our lemma above, that <m>a \leq |a|</m> and <m>b \leq |b|</m>, so
+  <me>
+    |a+b| = a+b \leq |a| + |b|.
+  </me>
+</p></li>
+<li><p>
+  Now, the second case gives
+  <me>
+    |a+b| = -(a+b) = -a - b
+  </me>
+  Our lemma above tells us that <m>-a \leq |a|</m> (and similarly that <m>-b \leq |b|</m>), so
+  <me>
+    |a+b| = (-a) +  (-b) \leq |a| + |b|
+  </me>
+</p>
+</li></ul>
+  Oof! Now we can write it up.
+</p>
+<proof>
+  <p>
+  Let <m>a,b \in \mathbb{R}</m>. Either <m>(a+b) \geq 0</m> or <m>(a+b)\lt 0</m>.
+  <ul>
+    <li>
+      <p>
+        When <m>(a+b) \geq 0</m>, we know that <m>|a+b|= a+b</m>. By <xref ref="lem-absolute2"/>, we know that <m>a \leq |a|</m> and <m>b \leq |b|</m>. Thus <m>|a+b| = a+b \leq |a|+|b|</m>.
+      </p>
+    </li>
+    <li>
+      <p>
+        When <m>(a+b) \lt 0</m>, we have <m>|a+b| = -a-b = (-a)+(-b)</m>. Again, by <xref ref="lem-absolute2"/> <m>-a \leq |-a| = |a|</m> and <m>-b \leq |-b| \leq |b|</m>, and so <m>|a+b| = -(a+b)=(-a)+(-b) \leq |a|+|b| </m>.
+      </p>
+    </li>
+  </ul>
+  In both cases we have that <m>|a+b| \leq |a|+|b|</m> as required.
+  </p>
+</proof>
+<p>
+  This is not the only way to prove this result. We can be a little more sneaky via the inequality in <xref ref="lem-absolute3"/>.
+</p>
+<proof><title>Another proof</title>
+  <p>
+    Let <m>x,y \in \mathbb{R}</m>. Then from <xref ref="lem-absolute2"/>we know that <m>x \leq |x|</m>, and that <m>-x \leq |-x|=|x|</m>, and hence <m>x \geq -|x|</m>. Putting those together we have
+    <me>
+      -|x| \leq x \leq |x|
+    </me>
+    Similarly, we know that <m>-|y| \leq y \leq |y|</m>. Adding these inequalities together gives
+    <me>
+      -|x|-|y| \leq (x+y) \leq |x|+|y|
+    </me>
+    and so, by <xref ref="lem-absolute3"/> above
+    <me>
+      |x+y| \leq |x| + |y|
+    </me>
+    as required.
+  </p>
+</proof>
+
+<p>
+  A useful corollary of the triangle inequality is a bound on the absolute value of the difference of two numbers. This is often called the reverse triangle inequality.
+</p>
+<corollary xml:id="cor-triangle"><title>Reverse triangle inequality</title>
+  <statement>
+    <p>
+      Let <m>x,y \in \mathbb{R}</m> then
+      <me>
+        |x-y| \geq \Big| |x| - |y| \Big|
+      </me>
+    </p>
+  </statement>
+</corollary>
+<proof>
+  <p>
+    From the triangle inequality <m>|x|+|y|\geq |x+y|</m> we can arrive at the following two inequalities, by setting <m>x=a, y=b-a</m> and <m>x=b, y=a-b</m>
+    <md>
+      <mrow>|a| + |b-a| \amp \geq |b|</mrow>
+      <mrow>|b| + |a-b| \amp \geq |a|</mrow>
+    </md>
+    Rearranging these gives
+    <me>
+      |b-a| \geq |b|-|a|
+    </me>
+    and <m>|b|-|a| \geq -|a-b|</m>, which can be rewritten as
+    <me>
+      -(|b|-|a|) \leq |b-a|
+    </me>
+    Putting these together gives
+    <me>
+      -(|b|-|a|) \leq |b-a| \leq |b|-|a|
+    </me>
+    from which the result follows.
+  </p>
+</proof>
+
+</section>
+
+<xi:include href="../problems/05ex.ptx"/>
+
+</chapter>

@@ -1,0 +1,64 @@
+<exercise>
+<!-- source latex = 'cardinality_power_sets_of_equinumerous_sets.tex' -->
+<!-- converted on 30/03/2022 at 15:34 -->
+<statement>
+<p>
+Let <m>A</m> and <m>B</m> be equinumerous sets. Show that <m>|\mathcal{P}(A)|=|\mathcal{P}(B)|</m>.
+</p>
+</statement>
+<hint>
+<p>
+Remember that the sets <m>A</m> and <m>B</m> may be infinite!
+</p>
+</hint>
+<answer>
+<p>
+  Since <m>A</m> and <m>B</m> are equinumerous, there is a bijection <m>f:A\rightarrow B</m>. We can use <m>f</m> to create a bijection from the power set of <m>A</m> to the power set of <m>B</m>.
+Let <m>F:\mathcal{P}(A)\rightarrow \mathcal{P}(B)</m> be defined by
+<me> F(C)=\{f(a):a\in C\}. </me>
+Notice that this function <m>F</m> takes as input a subset of <m>A</m>, and maps it to a subset of <m>B</m>. We need to show that <m>F</m> is surjective and injective.
+</p>
+</answer>
+
+<solution>
+  <proof>
+<p>
+  Since <m>A</m> and <m>B</m> are equinumerous, there is a bijection
+  <m>f:A\rightarrow B</m>. Use this to define
+  <m>F:\mathcal{P}(A)\rightarrow \mathcal{P}(B)</m> where
+<me>
+  F(C)=\{f(a):a\in C\}.
+</me>
+We show that <m>F</m> is surjective and injective.
+<ul>
+<li>
+<p>
+ Surjective: Let <m>D\in\mathcal{P}(B)</m>, so that <m>D\subseteq B</m>. Since <m>f</m> is bijective, it has an inverse <m>f^{-1}:B\rightarrow A</m>, and we may define
+<m>C=\{f^{-1}(b):b\in D\}</m>. Notice that <m>C\in \mathcal{P}(A)</m>, since <m>f^{-1}(b)\in A</m> for all <m>b\in D</m>, meaning that <m>C</m> is a subset of <m>A</m>.
+</p>
+<p>
+We claim that <m>F(C)=D</m>. This is an equality of sets, so we need to show that <m>F(C)\subseteq D</m> and <m>D\subseteq F(C)</m>.
+Let <m>c\in F(C)</m>. By definition, <m>c=f(a)</m> for some <m>a\in C</m>. But since <m>a\in C</m>, there is some <m>b\in D</m> such that <m>a=f^{-1}(b)</m>. Thus
+<me> c = f(a) = f(f^{-1}(b))=b </me>
+giving <m>c=b\in D</m>. So <m>F(C)\subseteq D</m>.
+</p>
+<p>
+Conversely, let <m>d\in D</m>. We need to show that <m>d\in F(C)</m>, or equivalently, that there is some <m>a\in C</m> such that <m>f(a)=d</m>. Using the definition of <m>C</m>,
+we need some <m>b\in D</m> such that <m>f(f^{-1}(b))=d</m>. Of course, <m>b=d</m> will work. Indeed,
+<me> d=f(f^{-1}(d))\in F(C). </me>
+Thus <m>D\subseteq F(C)</m>.
+</p>
+</li>
+<li>
+<p>
+ Injective: Suppose that <m>F(C)=F(E)</m> for some <m>C,E\in \mathcal{P}(A)</m>. We need to show that <m>C=E</m>, which we do by showing each set is a subset of the other.
+</p>
+<p>
+Suppose <m>c\in C</m>. Since <m>f(c)\in F(C)</m> and <m>F(C)=F(E)</m>, we have <m>f(c)\in F(E)</m>. Hence, there is some <m>e\in E</m> such that <m>f(c)=f(e)</m>. But <m>f</m> is injective, so <m>c=e</m>. Thus <m>c\in E</m>, meaning <m>C\subseteq E</m>.
+A similar argument gives <m>E\subseteq C</m>.
+</p></li>
+</ul>
+</p>
+  </proof>
+</solution>
+</exercise>

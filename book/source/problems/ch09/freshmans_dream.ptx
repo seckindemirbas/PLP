@@ -1,0 +1,130 @@
+<exercise>
+<!-- source latex = 'freshmans_dream.tex' -->
+<!-- converted on 06/02/2022 at 13:25 -->
+<statement>
+<p>
+A frequently used but false statement is
+<me>
+  (x+y)^n = x^n + y^n
+</me>
+This is sometimes referred to by mathematicians as the <q>child's binomial theorem</q> (a quick trip to your search engine will turn up other names). One often sees examples of it such as
+<me>
+  \sqrt{x+y} = \sqrt{x}+\sqrt{y} \qquad \text{ and } \qquad
+  (x+y)^2 = x^2 + y^2.
+</me>
+While it is definitely false, there is something here that can be rescued. Notice that if we take <m>x,y \in \mathbb{Z}</m> and let <m>n=2</m>, then
+<me>
+  (x+y)^2 = x^2 + 2xy + y^2
+</me>
+and so if we look at everything modulo 2 we get
+<me>
+  (x+y)^2 \equiv (x^2 + 2xy + y^2) \equiv (x^2+y^2) \pmod 2.
+</me>
+Similarly, with <m>n=3</m> we have
+<me>
+  (x+y)^3 \equiv (x^3 + 3x^2y + 3xy^2 + y^3) \equiv (x^3+y^3) \pmod 3.
+</me>
+Indeed, one can show that for any prime number <m>p</m>, and integers <m>x,y</m> we have
+<me>
+  (x+y)^p \equiv x^p + y^p \pmod p.
+</me>
+Notice that this is not true for non-prime powers:
+<me>
+  (1+3)^4 = 4^4 = 256 \equiv 0 \pmod 4
+</me>
+while
+<me>
+  1^4 + 3^4 = 82 \equiv 2 \pmod 4.
+</me>
+</p>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ Use the recurrence in <xref ref="ex_binom_thm"/> (see Pascal's identity), together with the fact that <m> \binom{n}{0}=\binom{n}{n}=1</m>, to prove that the binomial coefficients <m> \binom{n}{k}</m> are integers.
+  </p></li>
+<li>
+<p>
+ Prove that for prime <m>p</m> and integer <m>0 \lt k \lt p</m> the binomial coefficient <m>\binom{p}{k}</m> is a multiple of <m>p</m>, and so
+  <me>
+    \binom{p}{k} \equiv 0 \pmod p \qquad \text{for } 0 \lt k \lt p.
+  </me>
+  </p></li>
+<li>
+<p>
+ Then using this and the Binomial Theorem (see <xref ref="ex_binom_thm"/>) prove the result
+  <me>
+    (x+y)^p \equiv x^p + y^p \pmod p.
+  </me>
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<hint>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ The recurrence for the binomial coefficients is just adding integers.
+  </p></li>
+<li>
+<p>
+ Think about prime factors.
+  </p></li>
+<li>
+<p>
+ What coefficients in the sum are not divisible by <m>p</m>?
+</p>
+</li>
+</ol>
+</p>
+</hint>
+<solution>
+
+<proof><title>Proof of (a)</title>
+<p>
+  Pascal's identity tells us that every binomial coefficient <m> \binom{n}{r}</m> is either a boundary term <m> \binom{n}{n}=1, \binom{n}{0}=1 </m> or can be written as the sum of two earlier terms <m> \binom{n}{r}=\binom{n-1}{r-1}+\binom{n-1}{r}</m>.  We can use this as the basis of an induction argument.
+  <ul>
+<li>
+<p>
+ Base case: When <m>n=0</m> we have <m> \binom{n}{n}=1 </m>.
+    </p></li>
+<li>
+<p>
+ Inductive step: Assume that <m> \binom{k}{r} \in \mathbb{Z} </m> for all <m>0 \leq r \leq k</m>. Then consider <m> \binom{k+1}{s} </m>. If <m>s = 0, k+1 </m> then, by the boundary conditions, we know that the coefficient is an integer. Otherwise, we can write <m> \binom{k+1}{s} = \binom{k}{s-1}+\binom{k}{s}</m> which is, by hypothesis, the sum of two integers, and so is itself an integer.
+  </p></li>
+</ul>
+  Thus, by mathematical induction, the binomial coefficients are integers.
+  </p></proof>
+
+
+  <proof><title>Proof of (b)</title>
+  <p> Let <m>p</m> be prime and let <m>0 \lt k \lt p</m> be an integer. Then the binomial coefficient
+  <me>
+  \binom{p}{k}  = \frac{p!}{(p-k)! k!}.
+  </me>
+  The numerator contains a factor of <m>p</m>. However, since <m>0 \lt k \lt p</m> the denominator is a product of positive integers that are strictly smaller than <m>p</m>. Thus there is no term in the denominator that can cancel the <em>prime</em> <m>p</m> in the numerator. Thus the binomial coefficient is an integer that is divisible by <m>p</m>.
+</p></proof>
+
+<proof><title>Proof of (c)</title>
+<p>
+  Let <m>x,y</m> and <m>p</m> be as given. Then, by the Binomial Theorem
+  <me>
+  (x+y)^p = x^p + y^p + \sum_{k=1}^{p-1} \binom{p}{k} x^{p-k} y^k
+  </me>
+  Hence it suffices to show that
+  <me>
+    \binom{p}{k} \equiv 0 \pmod p \qquad \text{when } 0 \lt k \lt p
+  </me>
+  This is precisely what we proved above.
+  From this, the result follows since every term in the expansion of <m> (x+y)^p </m>
+  <me>
+  \binom{p}{k} x^{p-k} y^k
+  </me>
+  is a multiple of <m>p</m>, excepting <m>x^p</m> and <m>y^p</m>.
+</p>
+</proof>
+
+</solution>
+</exercise>

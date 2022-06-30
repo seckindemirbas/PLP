@@ -1,0 +1,96 @@
+<exercise>
+<!-- source latex = 'Quantifier set question.tex' -->
+<!-- converted on 24/06/2021 at 16:20 -->
+<statement>
+<p>
+Given the sets,
+<me>A=\set{n\in\mathbb Z\st 3\mid n}, B=\set{n\in\mathbb Z\st 4\nmid n}, \text{ and } C=\set{n\in\mathbb Z\st 6\nmid n}</me>
+determine whether the following statements are true or false, and justify your answer.
+</p>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ <m>\forall a\in A</m>, <m>\exists b\in B</m> such that <m>a+b\in C</m>.
+</p></li>
+<li>
+<p>
+ <m>\exists a\in A</m> such that <m>\forall b\in B</m>, <m>a+b\in C</m>.
+</p></li>
+<li>
+<p>
+ <m>\forall a\in A</m>, <m>\forall b\in B</m>, <m>a+b\in C</m>.
+</p></li>
+<li>
+<p>
+ <m>\exists a\in A</m> and <m>\exists b\in B</m> such that <m>a+b\in C</m>.
+</p>
+
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ <m>\forall a\in A</m>, <m>\exists b\in B</m> such that <m>a+b\in C</m>.
+</p>
+<p>
+This statement is true.
+</p>
+<p>
+Let <m>a\in A</m>. Then we see that <m>a=3k</m> for some <m>k\in\mathbb{Z}</m>. Thus, since <m>k=2n</m> or <m>k=2n+1</m> for some <m>n\in\mathbb{Z}</m>, we see that <m>a=6n</m> or <m>a=6n+3</m> for some <m>n\in\mathbb{Z}</m>. Therefore if we pick <m>b=1\in B</m>, we get, <m>a+b=6n+1</m> or <m>a+b=6n+4</m>. Hence, <m>6\nmid (a+b)</m>.
+</p>
+</li>
+<li>
+<p>
+ <m>\exists a\in A</m> such that <m>\forall b\in B</m>, <m>a+b\in C</m>.
+</p>
+<p>
+This statement is false.
+</p>
+<p>
+It helps to write out the negation: <m>\forall a \in A, \exists b\in B \text{ such that } a+b\notin C</m>. Let <m>a</m> be any element of <m>A</m>, then, as we saw in part (a), we know that <m>a=6n</m> or <m>a=6n+3</m> for some <m>n\in\mathbb{Z}</m>.
+<ul>
+<li>
+<p>
+ If <m>a=6n</m>, then we can pick <m>b=6\in B</m>, and we get <m>a+b=6n+6=6(n+1)</m>. Hence, <m>6\mid (a+b)</m>, that is, <m>(a+b)\notin C</m>.
+</p></li>
+<li>
+<p>
+  Similarly, if <m>a=6n+3</m>, we can pick <m>b=3\in B</m>, and get <m>a+b=6n+6=6(n+1)</m>. Hence,  <m>6\mid (a+b)</m>, that is, <m>(a+b)\notin C</m>.
+</p></li>
+</ul>
+So in either case, we can pick <m>b \in B</m> so that <m>a+b \notin C</m>. Since  the negation is true, the original statement is false.
+</p>
+</li>
+<li>
+<p>
+ <m>\forall a\in A</m>, <m>\forall b\in B</m>, <m>a+b\in C</m>.
+</p>
+<p>
+This statement is false.
+</p>
+<p>
+Again, it helps to write out the negation: <m>\exists a \in A \text{ such that } \exists b\in B\text{ such that } a+b \notin C </m>. So it suffices to find an example of <m>a,b</m> so that <m>a+b \notin C</m>. We can take <m>a=3\in A</m> and <m>b=3\in B</m>; and get <m>a+b=6</m>. This means <m>6\mid (a+b)</m>. Thus, <m>(a+b)\notin C</m>. Since the negation is true, the original statement is false.
+</p>
+</li>
+<li>
+<p>
+ <m>\exists a\in A</m> and <m>\exists b\in B</m> such that <m>a+b\in C</m>.
+</p>
+<p>
+This statement is true.
+</p>
+<p>
+ Since both quantifiers are <q>there exists</q>, we only need an example. We can take <m>a=0\in A</m> and <m>b=1\in B</m>, and get <m>a+b=1</m> and hence, <m>6\nmid (a+b)</m>. Thus, <m>(a+b)\in C</m>.
+</p>
+
+
+</li>
+</ol>
+</p>
+</solution>
+</exercise>

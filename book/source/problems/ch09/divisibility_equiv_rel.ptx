@@ -1,0 +1,44 @@
+<exercise>
+<!-- source latex = 'divisibility equiv rel.tex' -->
+<!-- converted on 26/11/2021 at 16:44 -->
+<statement>
+<p>
+Define a relation on <m>\mathbb{Z}</m> as
+<me>
+a \rel b
+\quad \iff \quad
+3\mid (2a-5b).
+</me>
+Is <m>R</m> an equivalence relation? Prove your answer.
+</p>
+</statement>
+<solution>
+<p>
+We prove that <m>R</m> is indeed an equivalence relation.
+</p>
+
+<proof><p>
+We must show that <m>R</m> is reflexive, symmetric, and transitive.
+<ul>
+<li>
+<p>
+ Reflexive:For any <m>a\in\mathbb{Z}</m>, we have <m>(2a-5a)=3(-a)</m>, which implies <m>3\mid (2a-5a)</m>. Thus <m>a\rel a</m>.
+</p></li>
+<li>
+<p>
+ Symmetric: Let <m>a,b\in\mathbb{Z}</m> and assume <m>a\rel b</m>. Then we see <m>3\mid (2a-5b)</m>, and so <m>2a-5b=3k</m> for some <m>k\in\mathbb{Z}</m>. Then
+<me> 2b-5a = (5b-2a) - 3b-3a = -3k -3b-3a = 3(-k-b-a). </me>
+ Since <m>(-b-a-k)\in\mathbb{Z}</m> we see that <m>3\mid (2b-5a)</m>. Therefore <m>R</m> is symmetric.
+</p></li>
+<li>
+<p>
+ Transitive: Let <m>a,b,c\in\mathbb{Z}</m> and assume <m>a\rel b</m> and <m>b\rel c</m>. Then we see <m>3\mid (2a-5b)</m> and <m>3\mid (2b-5c)</m>, so that <m>2a-5b=3k</m> and <m>2b-5c=3\ell</m> for some <m>k,\ell\in\mathbb{Z}</m>. Then
+<me> 2a-5c = (2a-5b)+3b+(2b-5c) = 3(k+b+\ell) </me>
+ Since <m>(k+b+\ell)\in\mathbb{Z}</m> we see that <m>3\mid (2a-5c)</m>. Therefore <m>R</m> is transitive.
+</p></li>
+</ul>
+Thus <m>R</m> is an equivalence relation.
+</p></proof>
+
+</solution>
+</exercise>

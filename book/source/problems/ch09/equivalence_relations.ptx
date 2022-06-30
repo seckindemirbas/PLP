@@ -1,0 +1,121 @@
+<exercise>
+<!-- source latex = 'equivalence_relations.tex' -->
+<!-- converted on 19/11/2021 at 11:07 -->
+<statement>
+<p>
+For each of the following relations, show that they are equivalence relations, and determine their equivalence classes.
+<ol marker="(a)">
+<li>
+<p>
+ <m>R = \set{((x_1,y_1),(x_2,y_2))\in\mathbb{R}^2\times\mathbb{R}^2:x_1^2+y_1^2=x_2^2+y_2^2}</m>
+</p></li>
+<li>
+<p>
+ Let <m>L</m> be the set of all lines on the Euclidean plane, <m>\mathbb{R}^2</m>. For <m>\ell_1,\ell_2\in L</m>, <m>\ell_1 \rel\ell_2</m> if and only if <m>\ell_1</m> and <m>\ell_2</m> have the same slope, or they are both vertical lines.
+</p></li>
+<li>
+<p>
+ Let <m>R</m> be a relation on <m>\mathbb{Z}^2</m> defined by <m>x \rel y</m> if and only if <m>3\mid x^2-y^2</m>.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+
+<!-- <hint></hint> -->
+
+<solution>
+<p>
+<ol marker="(a)">
+<li>
+
+<proof><p>
+ We show that the relation is reflexive, symmetric, and transitive, and hence an equivalence relation.
+<ul>
+<li>
+<p>
+ It is reflexive, since the equation <m>x_1^2+y_1^2=x_2^2+y_2^2</m> holds when <m>(x_1,y_1)=(x_2,y_2)</m>.
+</p></li>
+<li>
+<p>
+ The relation is symmetric, as if <m>(x_1,y_1)\rel(x_2,y_2)</m>, then we have <m>x_1^2+y_1^2=x_2^2+y_2^2</m>, in which case <m>x_2^2+y_2^2=x_1^2+y_1^2</m>.
+</p></li>
+<li>
+<p>
+ Finally, the relation is transitive, as <m>x_1^2+y_1^2=x_2^2+y_2^2</m> and <m>x_2^2+y_2^2=x_3^2+y_3^2</m> gives <m>x_1^2+y_1^2=x_3^2+y_3^2</m>.
+</p></li>
+</ul>
+</p></proof>
+
+<p>
+Now we need to determine the equivalence classes. Suppose <m>(a,b)\in\mathbb{R}^2</m>. We want to find the equivalence classe that <m>(a,b)</m> belongs to, namely, <m>[(a,b)]</m>.
+Note that <m>(x,y)\in[(a,b)]</m> if and only if <m>x^2+y^2=a^2+b^2</m>. If <m>a^2+b^2=0</m>, then this forces <m>x=y=0</m>. So <m>(0,0)</m> is the only member of its equivalence class. If <m>a^2+b^2\gt0</m>, then the equivalence class of <m>[(a,b)]</m> consists of the points lying on the circle centered around the origin with radius <m>\sqrt{a^2+b^2}</m>.
+This also implies that <m>[(a,b)]=[(0,\sqrt{a^2+b^2})]=[(\sqrt{a^2+b^2},0)]</m>, since <m>(a,b)\rel(0,\sqrt{a^2+b^2})</m> and <m>(a,b)\rel(0,\sqrt{a^2+b^2})</m>. Therefore we can conclude that all equivalence classes can be written as <m>\set{[(0,r)]:r \gt 0}</m>, or <m>\set{[(r,0)]:r \gt 0}</m>.
+</p>
+</li>
+<li>
+
+<proof><p>
+The relation is an equivalence relation:
+<ul>
+<li>
+<p>
+ A line is either vertical or has the same slope as itself, so the relation is reflexive.
+</p></li>
+<li>
+<p>
+ The statement that two lines have the same slope or are both vertical is symmetric, so the relation is symmetric.
+</p></li>
+<li>
+<p>
+ Suppose <m>\ell_1\rel \ell_2</m> and <m>\ell_2\rel \ell_3</m>. Then either both <m>\ell_1</m> and <m>\ell_2</m> are vertical, or they have the same slope. The same is true for the pair <m>\ell_2</m> and <m>\ell_3</m>. If <m>\ell_2</m> is vertical, then both <m>\ell_1</m> and <m>\ell_3</m> are, and <m>\ell_1\rel\ell_3</m>. If <m>\ell_2</m> has slope <m>m</m>, then so do <m>\ell_1</m> and <m>\ell_3</m>, giving <m>\ell_1\rel\ell_3</m>.
+So the relation is transitive.
+</p></li>
+</ul>
+</p></proof>
+
+<p>
+Let <m>\ell\in L</m>, and suppose the slope of <m>\ell</m> is <m>m</m>. Then its equivalence class <m>[\ell]</m> consists of all lines with slope <m>m</m>.
+For any <m>m\in\mathbb{R}</m>, <m>m\geq0</m>, let <m>\ell_m</m> be the line through the origin with slope <m>m</m>. Moreover, let <m>\ell_\infty</m> be the vertical line passing through the origin. Then the set of equivalence classes is <m>\set{[\ell_m]:m\in\mathbb{R},m\geq0}\cup\{[\ell_\infty]\}</m>.
+</p>
+</li>
+<li>
+
+<proof><p>
+The relation is an equivalence relation:
+<ul>
+<li>
+<p>
+ The relation is reflexive, since <m>3\mid (x^2-x^2)</m>.
+</p></li>
+<li>
+<p>
+ The relation is symmetric, since if <m>3\mid (x^2-y^2)</m>, then <m>3\mid (y^2-x^2)</m>.
+</p></li>
+<li>
+<p>
+ The relation is also transitive: suppose <m>3\mid (x^2-y^2)</m> and <m>3\mid (y^2-z^2)</m>.  Then there are <m>k,\ell\in\mathbb{Z}</m> so that <m>x^2-y^2=3k</m> and <m>y^2-z^2=3\ell</m>, and so
+<me> x^2-z^2=(x^2-y^2)+(y^2-z^2)=3(k+\ell). </me>
+Since <m>k+\ell\in\mathbb{Z}</m>, <m>3\mid (x^2-z^2)</m>.
+</p></li>
+</ul>
+</p></proof>
+
+<p>
+Let <m>x\in \mathbb{Z}</m>. Then by the Division Algorithm, <m>x=3q+r</m> for some <m>q\in \mathbb{Z}</m>, and for <m>r\in\set{0,1,2}</m>. Since the relation depends on divisibility by <m>3</m>, it makes sense to examine what happens for the different remainders <m>x=3q</m>, <m>x=3q+1</m>, and <m>x=3q+2</m>.
+In the first case, <m>x^2=(3q)^2=9q^2</m>, which is divisible by <m>3</m>. In the second case,
+<me> x^2=(3q+1)^2=9q^2+6q+1=3(3q^2+2q)+1, </me>
+so <m>x^2</m> has a remainder of <m>1</m> when divided by <m>3</m>.
+In the third case,
+<me> x^2=(3q+2)^2=9q^2+6q+4=3(3q^2+2q+1)+1 </me>
+so again <m>x^2</m> has a remainder of <m>1</m> when divided by <m>3</m>.
+Similar conclusions can be drawn for any other <m>y\in\mathbb{Z}</m>.
+Thus, if <m>3\mid x^2-y^2</m>, then either both <m>x</m> and <m>y</m> are divisible by <m>3</m> (in which case <m>x^2</m> and <m>y^2</m> are divisible by <m>3</m>), or both <m>x</m> and <m>y</m> are not divisible by <m>3</m> (in which case <m>x^2</m> and <m>y^2</m> are both congruent to <m>1</m> mod <m>3</m>).
+So the equivalence relation only has two equivalence classes, namely <m>[0]</m>, which consists of all integers that are congruent to <m>0</m> mod <m>3</m>, and <m>[1]</m>, which consists of all integers that are congruent to <m>1</m> or <m>2</m> mod <m>3</m>.
+</p>
+
+</li>
+</ol>
+</p>
+</solution>
+</exercise>

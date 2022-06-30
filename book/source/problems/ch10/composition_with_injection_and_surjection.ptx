@@ -1,0 +1,41 @@
+<exercise>
+<!-- source latex = 'composition with injection and surjection.tex' -->
+<!-- converted on 27/11/2021 at 15:24 -->
+<statement>
+<p>
+Let <m>A, B</m> be nonempty sets. Let <m>f, h</m> be functions from <m>A</m> to <m>B</m>, and let <m>g</m> be a function from <m>B</m> to <m>A</m>.
+</p>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ Suppose that <m>g</m> is injective. Prove that if <m>g\circ f=g\circ h</m>, then <m>f=h</m>.
+</p>
+</li>
+<li>
+<p>
+ Suppose that <m>g</m> is surjective. Prove that if <m>f \circ g=h\circ g</m>, then <m>f=h</m>.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<hint>
+<p>
+Two functions are equal when they are equal at all points in their domains.
+</p>
+</hint>
+<solution>
+
+  <proof><title>Proof of (a)</title>
+  <p>
+    Assume that <m>g</m> is injective and <m>g\circ f=g\circ h</m>. Then, we know that <m>\forall x\in A</m> we have <m>g\circ f(x)=g\circ h(x)</m>. Since <m>f(x), h(x)\in B</m>, we have, by the definition of function composition, <m>g( f(x))=g( h(x))</m>. Moreover, since <m>g</m> is injective, we conclude <m> f(x)= h(x)</m>. Since this is true for all <m>x\in A</m>, we conclude that  <m>f=h</m>.
+    </p></proof>
+
+  <proof><title>Proof of (b)</title>
+  <p>
+    Assume that <m>g</m> is surjective and  <m>f\circ g=h\circ g</m>. Let <m>x\in A</m>. Since <m>g</m> is a surjective function, we see that <m>\exists y\in B</m> such that <m>g(y)=x</m>. Hence, <m>f\circ g(y)=h\circ g(y)</m>. This implies <m>f(x) = f(g(y)) = h(g(y)) = h(x)</m>. Since this is true for all <m>x\in A</m>, we conclude that  <m>f=h</m>.
+    </p></proof>
+
+</solution>
+</exercise>

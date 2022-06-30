@@ -1,0 +1,97 @@
+<exercise xml:id="ex_bounded_seq">
+<!-- source latex = 'bounded_sequences.tex' -->
+<!-- converted on 19/04/2022 at 12:30 -->
+<statement>
+<p>
+Let <m>\{a_n\}_{n\in\mathbb{N}}</m> be a sequence. We say that a sequence <m>\{a_n\}_{n\in\mathbb{N}}</m> is <em>bounded</em> if there is some <m>M\in\mathbb{R}</m> such that
+<m>|a_n|\leq M</m> for all <m>n\in\mathbb{N}</m>.
+<ol marker="(a)">
+<li>
+<p>
+ Show that if <m>\displaystyle\lim_{n\to\infty}a_n=L</m> for some <m>L\in \mathbb{R}</m>, then <m>\{a_n\}_{n\in\mathbb{N}}</m> is bounded.
+</p>
+</li>
+<li>
+<p>
+ Show that the converse of the statement in (a) is false.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<hint>
+<p>
+Split the sequence at some large <m>N</m>, so that when <m>n\geq N</m>, we know that <m>a_n</m> is really close to <m>L</m>. We can use this to bound <m>|a_n|</m> when <m>n\geq N</m>.
+That leaves us to bound only finitely many of the terms <m>|a_n|</m>, the terms for which <m>n\lt N</m>. While we cannot take the maximum of an infinite set of values, we can find the maximum of a finite set of values and it will be finite.
+See <xref ref="ex_faulty_proof_max"/> which explores this point.
+</p>
+</hint>
+<answer>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ By definition of the limit, we know that for any <m>\epsilon\gt0</m> there is some <m>N_\epsilon\in\mathbb{N}</m> such that
+<me> n\geq N_\epsilon\implies |a_n-L|\lt\epsilon. </me>
+We would like to use the inequality <m>|a_n-L|\lt\epsilon</m> to bound <m>|a_n|</m> from above.
+We can do this by writing <m>|a_n|=|L+(a_n-L)|</m> and applying the triangle inequality.
+Indeed, we have
+<me> |a_n|=|L+(a_n-L)|\leq |L|+|a_n-L|\lt |L|+\epsilon. </me>
+This inequality is true for all <m>n\geq N_\epsilon</m>, where <m>N_\epsilon</m> depends on our choice of <m>\epsilon\gt0</m>.
+We are free to choose <m>\epsilon</m>, so let's take <m>\epsilon=1</m>. So for <m>n\geq N_1</m>, we have
+<me> |a_n-L|\lt 1\implies |a_n|\lt |L|+1. </me>
+</p>
+<p>
+Now, we only have to bound
+<me> |a_1|, |a_2|, \dots, |a_{N_1-1}|. </me>
+But there are only finitely many values here, so
+<me> M_0=\max\{|a_1|, |a_2|, \dots, |a_{N_1-1}|\} </me>
+exists, and is a real number. So for any value of <m>n</m>, we know that <m>|a_n|\leq M_0</m> if <m>1\leq n\lt N_1</m>, or <m>|a_n|\leq |L|+1</m> if <m>n\geq N_1</m>.
+Therefore we may take <m>M=\max\{M_0, |L|+1\}</m>.
+</p>
+
+</li>
+<li>
+<p>
+ We need to find a sequence <m>\{a_n\}_{n\in\mathbb{N}}</m> that is bounded, but does not converge. We can try a sequence that oscillates between two fixed numbers, say the sequence <m>a_n=(-1)^n</m>. This sequence is bounded, as <m>|a_n|\leq 1</m> for all <m>n</m>.
+Intuitively, this sequence shouldn't converge since it doesn't get arbitrarily close to a single number.
+Indeed, in <xref ref="eg_minus_1_to_n_conv"/>, we saw that this sequence doesn't converge to <m>1</m>. But we need to show a bit more than that for the purposes of this question; we need to show that for any <m>L\in\mathbb{R}</m>, the sequence doesn't converge to <m>L</m>.
+</p>
+<p>
+To this end, we'll fix <m>L\in \mathbb{R}</m>. To show that <m>a_n</m> doesn't converge to <m>L</m>, we need to find some <m>\epsilon</m> so that the following is true:
+<me> \forall N\in\mathbb{N}\; \exists n\geq N\; \text{ such that } \; |a_n-L|\geq\epsilon. </me>
+In <xref ref="eg_minus_1_to_n_conv"/>, we saw that for <m>L=1</m> we could take <m>\epsilon=1</m>, because then for any odd <m>n</m>, <m>|a_n-1|=|-1-1|\gt 1</m>.
+</p>
+
+
+</li>
+</ol>
+</p>
+</answer>
+<solution>
+<proof><title>Proof of (a)</title>
+<p>
+Let <m>\{a_n\}_{n\in\mathbb{N}}</m> be a sequence that converges to <m>L\in\mathbb{R}</m>. Then by definition, there is some <m>N_1\in\mathbb{N}</m> such that
+for all <m>n\geq N_1</m>, we have <m>|a_n-L| \lt 1</m>. Therefore for <m>n\geq N_1</m>,
+<me> |a_n|=|L+(a_n-L)|\leq |L|+|a_n-L|\lt |L|+\epsilon. </me>
+Let
+<me> M=\max\{|a_1|,|a_2|, \dots, |a_{N_1-1}|,|L|+\epsilon\}, </me>
+which exists, since we are taking the maximum of only finitely many real numbers. But then
+for all <m>n\in\mathbb{N}</m>, <m>|a_n|\leq M</m>, so <m>\{a_n\}</m> is bounded.
+</p></proof>
+
+<proof><title>Proof of (b)</title>
+  <p>
+Let <m>L\in\mathbb{R}</m>, and take <m>\epsilon=\frac{1}{2}\max\{|1-L|,|-1-L|\}</m>. Note that <m>\epsilon\gt0</m>.
+Let <m>N\in\mathbb{N}</m>. If <m>\epsilon=\frac{1}{2}|1-L|</m>, take <m>n=2N</m>. Then we have <m>n\geq N</m> but
+<me> |a_n-L|=|(-1)^{2N}-L|=|1-L|=2\epsilon\gt \epsilon. </me>
+If <m>\epsilon=\frac{1}{2}|-1-L|</m>, take <m>n=2N+1</m>. Then we have <m>n\geq N</m> but
+<me> |a_n-L|=|(-1)^{2N+1}-L|=|-1-L|=2\epsilon\gt \epsilon. </me>
+In both cases, we have some <m>n\geq N</m> such that <m>|a_n-L|\gt \epsilon</m>, and so <m>a_n</m> does not converge to <m>L</m>.
+As <m>L</m> was an arbitrary real number, <m>a_n</m> does not converge.
+</p>
+</proof>
+
+
+</solution>
+</exercise>

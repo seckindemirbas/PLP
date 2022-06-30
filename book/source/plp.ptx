@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pretext xml:lang="en-US" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <xi:include href="docinfo.ptx" />
+  
+  <book xml:id="plp">
+    <title>PLP - An introduction to mathematical proof</title>
+    <subtitle>Draft edition</subtitle>
+    
+    <xi:include href="frontmatter.ptx" />
+
+    <xi:include href="text/01sets.ptx" />
+    <xi:include href="text/02logic.ptx" />
+    <!-- <xi:include href="text/03proof.ptx" /> -->
+    <!-- <xi:include href="text/04morelogic.ptx" /> -->
+    <!-- <xi:include href="text/05moreproof.ptx" /> -->
+    <!-- <xi:include href="text/06quantifiers.ptx" /> -->
+    <!-- <xi:include href="text/07induction.ptx" /> -->
+    <!-- <xi:include href="text/08moresets.ptx" /> -->
+    <!-- <xi:include href="text/09relations.ptx" /> -->
+    <!-- <xi:include href="text/10functions.ptx" /> -->
+    <!-- <xi:include href="text/11contradictions.ptx" /> -->
+    <!-- <xi:include href="text/12cardinality.ptx" /> -->
+
+    <xi:include href="./backmatter.ptx" />
+  </book>
+</pretext>

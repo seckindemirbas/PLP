@@ -1,0 +1,49 @@
+<exercise>
+<!-- source latex = 'sine_limit.tex' -->
+<!-- converted on 08/11/2021 at 10:39 -->
+<statement>
+<p>
+Let <m>f:\mathbb{R} - \{0\}\rightarrow\mathbb{R}</m> be defined by
+<me> f(x)=6x\sin\left(\frac{1}{x}\right). </me>
+Show that <m>\displaystyle \lim_{x\to0}f(x)=0</m>.
+</p>
+</statement>
+<hint>
+<p>
+Can you bound <m>\sin(1/x)</m> by a simpler function?
+</p>
+</hint>
+<answer>
+<p>
+For a given <m>\epsilon \gt 0</m>, we want to find <m>\delta \gt 0</m> so that the following holds:
+<me> 0 \lt |x-0| \lt \delta \implies |f(x)-0| \lt \epsilon. </me>
+Since <m>x\neq0</m>, the latter inequality is equivalent to
+<me> \left|6x\sin\left(\frac{1}{x}\right)\right| \lt \epsilon. </me>
+We can simplify the inequality we're working with by using the fact that <m>|\sin(\theta)|</m> is always bounded by <m>1</m>. This means that
+<me> \left|6x\sin\left(\frac{1}{x}\right)\right|\leq |6x|. </me>
+You may have seen something like this argument given when discussing the <q>Squeeze theorem</q> or <q>Sandwich theorem</q> in a calculus course.
+</p>
+<p>
+Then, if we have <m>|6x| \lt \epsilon</m>, we'd also have
+<me> \left|6x\sin\left(\frac{1}{x}\right)\right| \lt \epsilon. </me>
+But <m>|6x| \lt \epsilon</m> is satisfied when
+<me> |x| \lt \frac{\epsilon}{6}. </me>
+Therefore, we need <m>\delta\leq \epsilon/6</m>.
+</p>
+<p>
+Now we can write up the formal proof.
+</p>
+</answer>
+<solution>
+<proof>
+<p>
+Let <m>\epsilon \gt 0</m> be given. Take <m>\delta=\epsilon/6</m>. Let <m>x\in\mathbb{R}</m> such that <m>0 \lt |x-0| \lt \delta</m>.
+Since <m>|\sin(\theta)|\leq1</m> for all <m>\theta\in\mathbb{R}</m>, we have
+<me> |f(x)-0|=\left|6x\sin\left(\frac{1}{x}\right)\right|=|6x|\left|\sin\left(\frac{1}{x}\right)\right|\leq |6x|. </me>
+But then by choice of <m>\delta</m>,
+<me> |f(x)-0|\leq 6|x|=6|x-0|\lt 6\delta = 6\cdot \frac{\epsilon}{6}=\epsilon. </me>
+Hence the function <m>f</m> converges to 0 as <m>x \to 0</m>.
+</p></proof>
+
+</solution>
+</exercise>

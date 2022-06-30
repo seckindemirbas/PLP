@@ -1,0 +1,35 @@
+<exercise>
+<!-- source latex = 'If ab is 1 mod n and c is not zero mod n, then ac is nonzero mod n.tex' -->
+<!-- converted on 03/03/2022 at 12:05 -->
+<statement>
+<p>
+Let <m>n\in\mathbb{N}</m>, <m>n\geq 2</m>, and <m>a,b\in\mathbb{Z}</m>. Prove
+that if <m>ab\equiv 1 \pmod{n}</m>, then
+<m>\forall c\in \mathbb{Z}, c\not\equiv 0\pmod{n}</m> we have
+<m>ac\not\equiv 0\pmod{n}</m>.
+</p>
+</statement>
+<solution>
+
+<proof><p>
+Let <m>a,b\in \mathbb{Z}</m> and <m>n\geq 2</m>. By way of contradiction, suppose that there exists an integer <m>c\not\equiv 0 \pmod{n}</m> such that we have both
+<md>
+<mrow>
+    ab \amp \equiv 1 \pmod{n}  \amp  \text{and} \tag{1}
+</mrow><mrow>
+    ac \amp \equiv 0\pmod{n}.  \amp  \tag{2}
+</mrow>
+</md>
+</p>
+<p>
+We consider <m>abc \pmod{n}</m>. On the one hand, we use statement (1) to see that
+<me>(ab)c \equiv c \pmod{n}. \tag{3} </me>
+On the other hand, we use expression (2) to see
+<me>(ac)b \equiv 0(b) \equiv 0 \pmod{n}. \tag{4}</me>
+Therefore, combining statements (3) and (4) we obtain
+<me>c \equiv abc \equiv 0 \pmod{n}.</me>
+This contradicts the assumption that <m>c\not\equiv 0 \pmod{n}</m>.
+</p></proof>
+
+</solution>
+</exercise>

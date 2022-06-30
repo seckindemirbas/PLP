@@ -1,0 +1,47 @@
+<exercise>
+<!-- source latex = 'floor function question.tex' -->
+<!-- converted on 24/06/2021 at 14:47 -->
+<statement>
+<p>
+The <em>floor</em> function, denoted by <m>\lfloor x \rfloor </m>, is defined to be the function that takes a real number <m>x</m> and returns the greatest integer less than or equal to <m>x</m>. This is also sometimes called the <em>greatest integer function</em>. For example,
+<me>
+\lfloor 3.5 \rfloor=3,
+\qquad
+\lfloor -2.5 \rfloor=-3,
+\qquad \text{and} \qquad
+\lfloor 7 \rfloor=7.
+</me>
+Using this definition, prove that
+<me>
+\lfloor x \rfloor=x
+\implies
+x\in\mathbb{Z}</me>,
+and that
+<me>
+x\in\mathbb{Z}
+\implies
+  \lfloor x \rfloor=x.
+</me>
+</p>
+</statement>
+<solution>
+
+<proof><p>
+We prove each implication in turn.
+<ul>
+<li>
+<p>
+ Assume that <m> \lfloor x \rfloor=x</m>. Then, since the floor function, by definition, returns an integer, we see that <m>x= \lfloor x \rfloor \in \mathbb{Z}</m> as required.
+  </p></li>
+<li>
+<p>
+ Now assume that <m>x \in \mathbb{Z}</m>. Then, since the floor function returns the greatest integer less than or equal to <m>x</m>, we know that <m>\lfloor x \rfloor \leq x</m>. Additionally, since <m>x \in \mathbb{Z}</m> and <m>x \leq x</m>, we know that <m>x</m> is an integer less than or equal to <m>x</m>. Now <m>\lfloor x \rfloor</m> is the greatest integer less than or equal to <m>x</m>, so we must have that <m>x \leq \lfloor x \rfloor</m>. Because
+<m>x \leq \lfloor x \rfloor</m> and <m>x \geq \lfloor x \rfloor</m>, we know <m>x = \lfloor x \rfloor</m>.
+  </p></li>
+</ul>
+</p></proof>
+<p>
+  What we are really doing here is proving a <q>biconditional statement</q>. We will see much more on this in the next couple of chapters.
+</p>
+</solution>
+</exercise>

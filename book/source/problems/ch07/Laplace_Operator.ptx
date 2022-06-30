@@ -1,0 +1,93 @@
+<exercise>
+<!-- source latex = 'Laplace Operator.tex' -->
+<!-- converted on 19/11/2021 at 10:54 -->
+<statement>
+<p>
+Let <m>s\in \mathbb{R}</m>, <m>s \gt 0</m>. Suppose <m>f:\mathbb{R}\to \mathbb{R}</m> is a continuous function such that
+<ol marker="(a)">
+<li>
+<p>
+ for any <m>n\in \mathbb{N}</m>, the <m>n^\mathrm{th}</m> derivative <m>f^{(n)}</m> exists and is continuous,
+    </p></li>
+<li>
+<p>
+ the limit <m>\ds \lim_{x\to \infty} e^{-sx}f(x) = 0</m>, and
+    </p></li>
+<li>
+<p>
+ for any <m>n\in \mathbb{N}</m>, <m>\ds \lim_{x\to \infty} e^{-sx}f^{(n)}(x) = 0</m>
+</p>
+</li>
+</ol>
+</p>
+<p>
+From <m>f</m> we can define a new <em>transformed</em> function
+<me>\mathcal{L}\{f\}(s) = \int_0^\infty f(x)e^{-sx} \, \mathrm{d}x.</me>
+</p>
+
+<p>
+Prove that for any <m>k \in \mathbb{N}</m>, that
+<me> \mathcal{L}\left\{f^{(k)}\right\}(s) =  s^k\mathcal{L}\{f\}(x) - \sum_{i=0}^{k-1} s^{k-1-i}f^{(i)}(0)</me>
+</p>
+<p>
+This result tells us that the transform of any derivative is simply related to the transform of the original function. That is, the differential equation in <m>f</m> turns into an algebraic equation in <m>\mathcal{L}(f)</m> This sort of result can come in very handy when studying differential equations.
+</p>
+</statement>
+<hint>
+<p>
+Integrate by parts!
+</p>
+</hint>
+<solution>
+
+<proof><p>
+We proceed by induction on <m>k</m>.
+</p>
+<p>
+As a base case, let <m>k=1</m>. We show that
+<me> \mathcal{L}\{f'\}(s) = s\mathcal{L}\{f\}(s) - f(0)</me>
+using integration by parts. Using the definition of <m>\mathcal{L}\{f'\}(x)</m>, we compute
+<md>
+<mrow>
+    \mathcal{L}\{f'\}(s)  \amp = \int_0^\infty f'(x)e^{-sx} \mathrm{d}x
+    </mrow><intertext>Integrating by parts, we see,</intertext><mrow>
+     \amp = f(x)e^{-sx}\bigg|_{0}^\infty  - \int_0^\infty f(x) (-se^{-sx}) \mathrm{d}x
+</mrow><mrow>
+     \amp = \lim_{t\to \infty} f(t)e^{-st} - f(0) + s\int_0^\infty f(x) e^{-sx} \mathrm{d}x
+    </mrow><intertext>By assumption 2. the first term is <m>0</m>, so we have</intertext><mrow>
+     \amp =-f(0) + s\mathcal{L}\{f\}(s)
+</mrow>
+</md>
+This proves the base case.
+</p>
+<p>
+Now for some <m>k\in \mathbb{N}</m>, we assume that <me> \mathcal{L}\left\{f^{(k)}\right\}(s) =  s^k\mathcal{L}\{f\}(x) - \sum_{i=0}^{k-1} s^{k-1-i}f^{(i)}(0)</me>
+We wish to show that the result holds for <m>k+1</m>. The computation is quite similar to the base case above.
+</p>
+<p>
+We use integration by parts to compute
+<md>
+<mrow>
+    \mathcal{L}\left\{f^{(k+1)}\right\}(s)  \amp = \int_0^{\infty} f^{(k+1)}(x)e^{-sx}\mathrm{d}x
+</mrow><mrow>
+     \amp = f^{(k)}(x)e^{-sx} \bigg|_{0}^{\infty} - \int_0^\infty f^{(k)}(x)(-se^{-sx})\mathrm{d}x
+</mrow><mrow>
+     \amp = \lim_{t\to \infty} f^{(k)}(t)e^{-st} - f^{(k)}(0) + s\mathcal{L}\{f^{(k)}\}(s)
+    </mrow><intertext>By assumption 3. the first term is <m>0</m>, so we have</intertext><mrow>
+     \amp = - f^{(k)}(0) + s\mathcal{L}\{f^{(k)}\}(s).
+    </mrow><intertext>By the inductive hypothesis, </intertext><mrow>
+     \amp = - f^{(k)}(0) + s\left( s^k\mathcal{L}\{f\}(x) - \sum_{i=0}^{k-1} s^{k-1-i}f^{(i)}(0)\right)
+    </mrow><intertext>Expand the bracketed terms</intertext><mrow>
+     \amp = - f^{(k)}(0) +  s^{k+1}\mathcal{L}\{f\}(x) - \sum_{i=0}^{k-1} s^{k-i}f^{(i)}(0)
+    </mrow><intertext>Finally, we absorb <m>f^{(k)}(0)</m> into the sum</intertext><mrow>
+     \amp =s^{k+1}\mathcal{L}\{f\}(x) - \sum_{i=0}^{k} s^{k-i}f^{(i)}(0)
+</mrow>
+</md>
+So the inductive step holds.
+</p>
+<p>
+Since both the base case and inductive step are true, the result follows by induction.
+</p></proof>
+
+</solution>
+</exercise>

@@ -1,0 +1,103 @@
+<exercise>
+<!-- source latex = 'function_equiv_class_mod_n_to_remainder.tex' -->
+<!-- converted on 06/02/2022 at 13:38 -->
+<statement>
+<p>
+Let <m>n\in\mathbb{N}</m> with <m>n\gt 1</m> and let <m>\mathbb{Z}_n</m> be the set of equivalence classes modulo <m>n</m>. For any <m>x\in\mathbb{Z}</m>, let <m>[x]_n \in \mathbb{Z}_n</m> denote its equivalence class modulo <m>n</m>.
+</p>
+<p>
+Define the function <m>f:\mathbb{Z}_n\to \set{0,1,\dots,n-1}</m> by <m>f([x]_n)=r</m>, where <m>r</m> is the remainder of <m>x</m> upon division by <m>n</m>.
+<ol marker="(a)">
+<li>
+<p>
+ Show that <m>f</m> is well-defined, meaning that <m>f</m> is defined on its whole domain and that <m>f</m> does not depend on the choice of representative for each equivalence class; i.e.  <m>[x]_n=[y]_n \implies f([x]_n)=f([y]_n)</m>.
+</p></li>
+<li>
+<p>
+ Show that <m>f</m> is a bijection.
+</p>
+</li>
+</ol>
+This question explains why when dealing with equivalence classes of integers modulo <m>n</m>, we often consider the set of representatives <m>\set{0,1,\dots,n-1}</m> instead.
+</p>
+</statement>
+<hint>
+<p>
+To show that an integer is zero, one can show that it is small and divisible by a bigger integer.
+</p>
+</hint>
+<answer>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ Let <m>[z]_n \in \mathbb{Z}_n</m>. We need to show that <m>f([z]_n) \in \set{0,1,\dots,n-1}</m>. We know that <m>z \in [z]_n</m>, and then by Euclidean division, we know that there exist <m>q,r \in \mathbb{Z}</m> so that <m>z = qn +r</m> and <m>r \in \set{0,1,\dots,n-1}</m>. Hence <m>f([z]_n) = r \in \set{0,1,\dots,n-1}</m> as required.
+</p>
+<p>
+Now suppose that <m>[x]_n=[y]_n</m>. We need to show that <m>f([x]_n)=f([y]_n)</m>. Untangling the definitions, we know that <m>n</m> divides <m>x-y</m>, and we need to show that <m>x</m> and <m>y</m> have the same remainder upon division by <m>n</m>.
+By Euclidean division, we can write <m>x=q_xn+r_x</m> and <m>y=q_yn+r_y</m> for some integers <m>q_x,q_y,r_x,r_y</m> with <m>0\leq r_x,r_y\leq n-1</m>.
+Then <m>x-y=(q_x-q_y)n+(r_x-r_y)</m>. Since <m>n</m> divides <m>x-y</m> and <m>(q_x-q_y)n</m>, we can show from this equation that <m>n</m> divides <m>r_x-r_y</m>.
+Now we can use the restrictions on the size of the remainders, namely that <m>0\leq r_x,r_y\leq n-1</m>, combined with the fact that <m>n\mid r_x-r_y</m> to show that <m>r_x-r_y=0</m>.
+</p>
+</li>
+<li>
+<p>
+ In order to show that <m>f</m> is a bijection, we need to show that <m>f</m> is both injective and surjective.
+</p>
+<p>
+For injectivity, we assume that <m>f([x]_n)=f([y]_n)</m> for some  <m>[x]_n,[y]_n\in\mathbb{Z}_n</m>, and we need to show that <m>[x]_n=[y]_n</m>.
+Note that <m>f([x]_n)=f([y]_n)</m> implies that <m>x</m> and <m>y</m> have the same remainder when divided by <m>n</m>. From this observation, we can show that <m>n</m> divides <m>x-y</m>, and consequently, <m>x</m> and <m>y</m> are congruent modulo <m>n</m>.
+</p>
+<p>
+For surjectivity, we need to show that for any <m>r\in \set{0,1,\dots, n-1}</m>, the codomain of the function, there is some <m>[x]_n\in\mathbb{Z}_n</m> so that <m>f([x]_n)=r</m>. This is the same as saying that there is some <m>x\in\mathbb{Z}</m> so that its remainder upon division by <m>n</m> is <m>r</m>.
+</p>
+
+</li>
+</ol>
+</p>
+</answer>
+<solution>
+<proof><title>Proof of (a)</title>
+<p>
+Let <m>[z]_n \in \mathbb{Z}_n</m>, then we know that <m>z \in [z]_n</m>. By Euclidean division we know that <m>z = qn + r</m> with <m>q \in \mathbb{Z}</m> and <m>r \in \set{0,1,\dots,n-1}</m>. Hence <m>f([x]_n) \in \set{0,1,\dots,n-1}</m> as required.
+</p>
+<p>
+Now let <m>x,y\in\mathbb{Z}</m>, and suppose that <m>[x]_n=[y]_n</m>. Since <m>x,y \in \mathbb{Z}</m>, by Euclidean division, there are integers <m>q_x,q_y</m> and <m>r_x,r_y \in \set{0,1,\dots,n-1}</m>
+<me>
+x=q_xn+r_x \qquad \text{and} \qquad y=q_yn+r_y.
+</me>
+So, by our definition of <m>f</m>,  <m>f([x]_n) = r_x</m> and <m>f([y_n])=r_y</m>.
+</p>
+<p>
+However, since <m>[x]_n=[y]_n</m> we need to show that <m>f([x]_n)=f([y]_n)</m>. That is, we need to show that <m>r_x = r_y</m>. Since <m>[x]_n = [y]_n</m>, we must have that  <m>x</m> and <m>y</m> are congruent modulo <m>n</m>, so <m>n=x-y</m>. That is, there is some <m>k\in\mathbb{Z}</m> so that <m>(x-y)=kn</m>.
+</p>
+<p>
+Hence the equation <m>(x-y)=kn</m> gives
+<me>
+q_xn+r_x-(q_yn+r_y) =kn
+</me>
+and rearranging, we have
+<me> r_x-r_y=n(k+q_y-q_x). </me>
+Thus <m>n\mid r_x-r_y</m>. Notice that since <m>0 \leq r_x,r_y \leq n-1</m>,
+<me>-(n-1)\leq r_x-r_y\leq n-1.</me>
+Equivalently, we can say <m>|r_x-r_y|\lt n</m>. Since <m>n \mid (r_x-r_y)</m> and <m>|r_x-r_y| \lt n</m>, it must be the case that <m>r_x-r_y=0</m>. That is, <m>r_x=r_y</m>, and hence <m>f([x]_n)=f([y]_n)</m>.
+</p></proof>
+
+<proof><title>Proof of (b)</title>
+<p>
+We prove that <m>f</m> is both injective and surjective, and so, bijective.
+</p>
+<p>
+First we prove that <m>f</m> is injective. Suppose that for <m>[x]_n,[y]_n\in\mathbb{Z}_n</m>, we have <m>f([x]_n)=f([y]_n)</m>. Then there is some <m>r\in\set{0,1,\dots,n-1}</m> so that <m>f([x]_n)=f([y]_n)=r</m>.
+By definition of <m>f</m>, we know that <m>r</m> is the remainder when <m>x</m> or <m>y</m> is divided by <m>n</m>. By Euclidean division, there are integers <m>p</m> and <m>q</m> so that <m>x=pn+r</m> and <m>y=qn+r</m>.
+Thus
+<me> x-y=(pn+r)-(qn+r)=(p-q)n </me>
+and since <m>p-q\in\mathbb{Z}</m>, we have that <m>n</m> divides <m>x-y</m>. Therefore <m>x</m> and <m>y</m> are congruent mod <m>n</m>, and so <m>[x]_n=[y]_n</m>. Hence <m>f</m> is injective.
+</p>
+<p>
+Now we prove that <m>f</m> is surjective. Let <m>r\in \set{0,1,\dots, n-1}</m>. Since <m>r</m> is an integer and <m>0\leq r\leq n-1</m>, <m>r</m> is itself its remainder when <m>r</m> is divided by <m>n</m>.
+Therefore <m>f([r]_n)=r</m>, and so <m>f</m> is surjective.
+</p>
+</proof>
+</solution>
+</exercise>

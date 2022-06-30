@@ -1,0 +1,60 @@
+<exercise>
+<!-- source latex = '2eq1_proof.tex' -->
+<!-- converted on 05/07/2021 at 19:55 -->
+<statement>
+<p>
+Consider the faulty proof that <m>2=1</m>.
+</p>
+
+<proof><title>Faulty proof</title>
+  <p>
+Assume that <m>x=y</m>. Then multiplying both sides by <m>x</m> gives
+<md>
+<mrow>
+    x^2  \amp = xy
+</mrow><mrow>
+    \Rightarrow x^2-y^2  \amp = xy - y^2
+</mrow><mrow>
+    \Rightarrow (x+y)(x-y)  \amp = y(x-y)
+</mrow><mrow>
+    \Rightarrow x+y  \amp = y
+</mrow><mrow>
+    \Rightarrow 2y  \amp = y
+</mrow>
+</md>
+Letting <m>x=y=1</m>, we have shown that <m>2=1</m>.
+</p></proof>
+
+<p>
+Identify any issues with the proof as written above.
+</p>
+</statement>
+<solution>
+<p>
+First, this solution is quite terse, and it could benefit from more explanation. Explaining the steps taken in each line could make the error more clear:
+</p>
+<p>
+Assume that <m>x=y</m>. Then
+<md>
+<mrow>
+    x^2  \amp = xy  \amp \text{multiplying by } x
+</mrow><mrow>
+    \Rightarrow x^2-y^2  \amp = xy - y^2  \amp \text{Subtracting } y^2
+</mrow><mrow>
+    \Rightarrow (x+y)(x-y)  \amp = y(x-y)  \amp \text{Factoring}
+</mrow><mrow>
+    \Rightarrow x+y  \amp = y  \amp \text{Dividing by } (x-y)
+</mrow><mrow>
+    \Rightarrow 2y  \amp = y  \amp \text{Using } x=y
+</mrow>
+</md>
+Letting <m>x=y=1</m>, we have shown that <m>2=1</m>.
+</p>
+<p>
+The above proof is now more clear to read, and we notice that in the fourth line, we divide by <m>x-y</m>. We should always take care when we divide; we cannot divide by zero. Recall that we previously assumed that <m>x=y</m>, thus we are dividing by <m>0</m> in the fourth line. This is our logical error, and we can be reassured that <m>2\neq 1</m>.
+</p>
+<p>
+In this proof, a careless division of an equation caused all the problems. Similar problems can arise when we work with inequalities. For example, multiplication or division of an inequality by a negative number will change the sign of the inequality, so we must take extra care to check if quantities are negative or not.
+</p>
+</solution>
+</exercise>

@@ -1,0 +1,2076 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<chapter  xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="chap_cardinality">
+  <title>Cardinality</title>
+  <introduction>
+    <p>
+      This last chapter of the text brings together many of the ideas
+      and techniques that we have learned to make sense of cardinality
+      <mdash/> the size of a set. When a set is finite the cardinality
+      is a very intuitive concept <mdash/> just<fn>The reader is right
+      to be a little skeptical of the use of the word <q>just</q>
+      here; counting up the elements of a finite set can sometimes be
+      quite difficult. Here we have listed out all the elements quite
+      explicitly, but somes a set will be defined more
+      <em>implicitly</em>, and then counting the elements can be quite
+      challenging. The interested reader should search-engine their
+      way to a description of enumerative combinatorics which is the
+      mathematics of counting.</fn> count up the elements:
+      <me>
+	|\set{1,3,7,18,53}| = 5.
+      </me>
+    </p>
+    <p>
+      By carefully describing how we count elements in finite sets in
+      terms of <term>bijections</term> we can extend our understanding
+      of cardinality to infinite sets. This allows us to make sense of
+      statements such as
+      <me>
+	|\mathbb{Q}| = |\mathbb{Z}|
+      </me>
+      which are, to say the least, quite counter-intuitive. This also
+      enables us to prove <xref ref="thm_cantor">Cantor's
+      Theorem</xref>. This result is arguably one of the most
+      important pieces of mathematics that can be proven in
+      undergraduate mathematics. It tells us something fundamental
+      about the nature of infinity: not only are there different sorts
+      of infinities, but there are an infinite number of different
+      infinities!
+    </p>
+  </introduction>
+
+  <section><title>Finite sets</title>
+<introduction>
+<p>
+Consider the following set of place names from Australia:
+</p>
+
+
+<image width="40%" source="count1" />
+
+<p>
+Think about what you do when you <em>count</em> the elements of that set. Now obviously<fn>While it is generally a good idea to avoid this word, it is probably safe to use it here. Clearly it is obviously safe to leave a decision on the use of this word to the reader who may edit their copy of the text accordingly.</fn>
+ there are 6 elements in the set. However, think about how you count up those elements. Indeed, think about how we learn to count when we are very young. Typically we count by pointing at each element in turn (either physically pointing, or just pointing in our mind's eye), and counting off <q>one, two, three,<ellipsis/></q>.
+</p>
+
+
+<image width="40%" source="count2" />
+
+
+<p>
+So what we are really doing here is constructing a function that takes us from the set of objects that we are counting to a subset <m>\set{1,2,3,\dots,n}</m>. This function is both
+<ul>
+<li> injective <mdash/> since different objects will be <em>counted</em> by different numbers, and
+</li>
+<li> surjective <mdash/> since every number is used to <em>count</em> an object.
+</li>
+</ul>
+Hence when we count the objects in a finite set <m>A</m> we are really constructing a bijection from <m>A</m> to a subset of the natural numbers, <m>\set{1,2,3,\dots,n } </m>.
+</p>
+
+<p>
+  Now notice also that if we consider the following two sets<fn>The same set of place names, and a set of <q>interesting</q> colour names.</fn>:
+</p>
+
+<image width="85%" source="count3"/>
+
+<p>
+Then we see that there are the same number of elements in each. We can do this in two ways, one is to count up as we did in the previous figure, but we could also simply establish a bijection between them.
+</p>
+
+
+<image width="66%" source="count4"/>
+
+
+<p>
+These are actually equivalent. If there is a bijection, <m>f</m> from the set of place names to the set <m>\set{1,2,3,4,5,6}</m>, and another <m>g</m> from the set of colours to the set <m>\set{1,2,3,4,5,6} </m>, then <m>g^{-1}</m> is a bijection, and the composition <m>g^{-1} \circ f</m> will be a bijection from the set of place names to the set of colours.  In this way, two sets have the same size when there is a bijection between them.
+</p>
+
+<p>
+In the above discussion we have tried to leverage the language of functions in order to compare the sizes of sets. Using functions allows us to extend the idea of <q>these sets are the same size</q> from finite sets to <em>infinite</em> sets. That is the main aim of this part of the text.
+</p>
+</introduction>
+
+<subsection><title>Equinumerous sets, bijections and pigeons</title>
+<p>
+  Oof! There are a lot of ideas above, so let's set them down slowly, carefully and rigorously.
+</p>
+
+<definition>
+<statement><p>
+ Two sets <m>A,B</m> are said to have the same <term>cardinality</term> (or same <term>cardinal number</term>), written <m>|A| = |B|</m>, if either <m>A=B=\es</m> or there is a bijection from <m>A</m> to <m>B</m>. If <m>A</m> and <m>B</m> have the same cardinality then we say they are <term>equinumerous</term><fn>
+ or <q>numerically equivalent</q>, but <q>equinumerous</q> is a nicer word.</fn>.
+  Finally, if <m>A</m> and <m>B</m> are not equinumerous, we write <m>|A| \neq |B|</m>, and this is equivalent to saying that there is no bijection between them.
+</p></statement>
+</definition>
+
+<p>
+  This definition allows us to understand cardinality in terms of functions; this is critical for our understanding the size of infinite sets.
+  <ul>
+    <li>
+      When we write <m>|A|=n \in \mathbb{N}</m>, we are really stating that there is a bijection
+      <md>
+      <mrow>
+        f: A \to \set{1,2,3,\dots,n}
+      </mrow>
+      </md>
+      From our work on functions (see <xref ref="thm_inv_exists"/>), we know that this also implies that there is a bijection back from <m>\set{1,2,\dots,n}</m> to <m>A</m> <mdash/> just the inverse function <m>f^{-1}</m>.
+    </li>
+    <li>
+      <p>
+      And when <m>A = \es</m> we write <m>|A|=0</m>. This is a special case that we have to treat separately; we cannot define a function with empty domain.
+      </p>
+    </li>
+  </ul>
+</p>
+
+<example><title>Finite non-equinumerous sets</title>
+<p>
+  Say we have two finite sets <m>A,B</m>, so that they are not equal in size, <m>|A| \neq |B|</m>. Then there cannot be a bijection between them. We will shortly prove this in general, but suppose (for the sake of this discussion) that <m>|A|=5</m> and <m>|B|=3</m>. So we can write our sets as
+<md>
+<mrow>
+A &amp;= \set{a_1,a_2,a_3,a_4,a_5}  &amp;
+B &amp;= \set{b_1,b_2,b_3}
+</mrow>
+</md>
+</p>
+<p>
+  First consider trying to construct a function <m>f: A \to B</m>. It is easy to construct a surjection:
+  <me>
+    f(a_1)=b_1, f(a_2)=b_2, f(a_3)=f(a_4)=f(a_5)=b_3.
+  </me>
+  However it is impossible to construct an injection. Once we have assigned <m>f(a_1), f(a_2), f(a_3)</m> to three distinct values in <m>B</m>, it is impossible to assign <m>f(a_4)</m> without repeating one of the values from <m>B</m> <mdash/> making our function non-injective.
+</p>
+
+<p>
+  Now try construct a function <m>g: B \to A</m>. It is easy to construct an injection:
+  <me>
+    g(b_1)=a_1, g(b_2)=a_2, g(b_3)=a_3
+  </me>
+  However it is impossible to construct a surjection. Once we have assigned <m>g(b_1), g(b_2), g(b_3)</m>, there will still be two elements of <m>A</m> that have no preimage in <m>B</m>.
+</p>
+</example>
+
+<p>The reasoning in the previous example is formalised by the <term>Pigeonhole Principle</term><fn>While this is intuitively obvious, mathematicians like to make sure that obvious things are actually true. And if that obvious thing is really useful, then it should get a good name. Dirichlet was the first to formalise this idea in the 19th century and called it (in German) the drawer-principle <mdash/> Schubfachprinzip. Since Dirichlet's father was a postmaster, it is perhaps an imperfect translation of his idea that led to <q>pigeonholes</q> in the sense of a small open drawer or shelf used to sorting or storing letters (slightly antiquated in these days of tweeting (pun!), email, and social media updates). This  imperfect English translation has been imported into other languages, including back into German. No pigeons are involved.
+</fn>.
+</p>
+
+<theorem><title>Pigeonhole principle <mdash/> Dirichlet's Schubfachprinzip</title>
+<statement><p>
+  If <m>n \gt 0</m> objects are placed in <m>k \gt 0</m> boxes then
+  <ul>
+<li> if <m>n \lt k</m> then at least one box has zero objects in it, and
+</li>
+<li> if <m>n \gt k</m> then at least one box has at least two objects in it.
+</li>
+</ul>
+  In the second case, we can be more precise: at least one box contains at least <m>\left\lceil \frac{n}{k} \right\rceil</m> objects, where <m>\lceil x \rceil</m> is the <term>ceiling</term> of <m>x</m> and denotes the smallest integer larger or equal to <m>x</m>.
+</p></statement>
+</theorem>
+
+<proof>
+<p>
+  We prove the contrapositive of the first statement, and then prove the second by contradiction.
+  <ul>
+<li>
+  Assume each box has at least one element in it, then there must be at least <m>k</m> objects. Hence the number of objects is at least as large as the number of boxes.
+</li>
+<li>
+  Assume, to the contrary, that every box contains at most <m>\left\lceil \frac{n}{k} \right\rceil -1</m> objects, then the total number of objects is
+    <md>
+    <mrow>
+      k \cdot \left( \left\lceil \frac{n}{k} \right\rceil -1 \right) &amp;= k \left\lceil \frac{n}{k} \right\rceil - k  \lt  n,
+    </mrow>
+    </md>
+    where we have used the fact that <m> \lceil x \rceil -1  \lt  x \leq \lceil x \rceil</m>. This gives a contradiction. Hence at least one box contains at least
+    <m>\left\lceil \frac{n}{k} \right\rceil</m> objects.
+</li>
+</ul>
+</p>
+</proof>
+
+<p>
+An immediate corollary is the following result for <em>finite</em> sets that formalises the last example.
+</p>
+
+<corollary xml:id="cor_size_func">
+<statement><p>
+  Let <m>A,B</m> be finite sets and let <m>f:A \to B</m> be a function. Then
+  <ul>
+<li> If <m>|A| \gt |B|</m> then <m>f</m> is not an injection.
+</li>
+<li> If <m>|A| \lt |B|</m> then <m>f</m> is not a surjection.
+</li>
+</ul>
+</p></statement>
+</corollary>
+<proof>
+<p>
+  We prove each in turn. Assume that <m>A,B</m> are finite.
+  <ul>
+<li> Assume that <m>|A| \gt |B|</m>. Then when the images of elements of <m>A</m> are placed into <m>B</m> by the function, there must, by the pigeonhole principle, be at least one element of <m>B</m> which is the image of <m>\left\lceil \frac{|A|}{|B|} \right\rceil  \gt  1</m> elements of <m>A</m>. Hence <m>f</m> is not injective.
+</li>
+<li> Assume that <m>|A| \lt |B|</m>. Then when the images of elements of <m>A</m> are placed into <m>B</m> by the function, there must, by the pigeonhole principle, be at least one element of <m>B</m> which is not the image of any element of <m>A</m>. Hence <m>f</m> is not surjective.
+</li>
+</ul>
+</p>
+</proof>
+<p>
+  We should notice the contrapositive of the results in the above corollary. Let <m>A,B</m> be finite sets and <m>f: A \to B</m> be a function, then
+  <ul>
+    <li>if <m>f</m> is an injection then <m>|A| \leq |B|</m>, and</li>
+    <li>if <m>f</m> is a surjection then <m>|A| \geq |B|</m>.</li>
+  </ul>
+</p>
+
+
+<p>
+Notice that one can do much more with the pigeonhole principle than just put objects in boxes <mdash/> a little trip to your favourite search engine will turn up many many examples.
+We'll give a few examples, most quite standard, and one definitely not.
+</p>
+
+<example>
+  <statement>
+<p>
+  Fix <m>n \in \mathbb{N}</m> and let <m>S = \set{1,2,\cdots,2n-1}</m> and let <m>A \subseteq S</m> so that <m>|A|=n+1</m>. Prove that there two elements of <m>A</m> whose sum is <m>2n</m>.
+</p>
+  </statement>
+  <solution>
+<proof>
+  <p>
+    We can write <m>2n</m> as the following sums of pairs from <m>S</m>:
+    <me>
+      2n = (2n-1)+1 = (2n-2)+2 = \cdots = (n+1)+(n-1)
+    </me>
+    Notice that the number <m>n</m> cannot be used in such a pair.
+  </p>
+  <p>
+    So split the set <m>S</m> up into 2 element subsets and <m>\set{n}</m>:
+    <me>
+      \set{1,2n-1}, \set{2,2n-2}, \dots, \set{n-1, n+1}, \set{n}
+    </me>
+    There are <m>n</m> sets in this list. Consequently, when we choose <m>n</m> elements it is possible to choose one element from each of the above subsets, however when we choose one more, we must choose a second element from one of those two element subsets. The two elements from the two element-subset sum to <m>2n</m> as required.
+  </p>
+</proof>
+  </solution>
+</example>
+
+<example>
+  <statement>
+  <p>
+    Let <m>S = \set{1,2,\cdots,20}</m> and let <m>A \subseteq S</m> so that <m>|A|=11</m>. That is, <m>A</m> contains 11 distinct integers from between 1 and 20 (inclusive). Then there exist <m>a,b \in A</m> so that <m>a \mid b</m>.
+  </p>
+  </statement>
+  <solution>
+  <proof>
+    <p>
+      First notice that we can write any natural number as the product of an odd number and a power of 2.
+      <me>
+        \forall n \in \mathbb{N}, \exists k,\ell \in \mathbb{N} \st n=(2k+1)\cdot 2^\ell
+      </me>
+      So we can take any <m>n \in A</m> keep dividing by 2 until you get an odd number. When you do so the resulting odd number must be in the set <m>\set{1,3,5,\cdots, 19}</m>. Since this set contains 10 distinct elements, there must be two numbers in <m>A</m> that result the same odd number in <m>\set{1,3,5,\cdots,19}</m>. We can write these numbers as
+      <me>
+        a = (2k+1)2^i \qquad \text{and} \qquad b = (2k+1)2^j
+      </me>
+      where <m>i \neq j</m>. If <m>i \gt j</m> then <m>b\mid a</m> and if <m>i \lt j</m> then <m>a \mid b</m>. In either case there must be a pair of integers in <m>A</m> for which one divides the other.
+    </p>
+  </proof>
+  </solution>
+</example>
+
+<example><title>Spurious correlations</title>
+<p>
+An excellent illustration of the pigeonhole principle is given by the database of <q>spurious correlations</q> <mdash/> see the fantastic <url href="http://tylervigen.com/spurious-correlations" visual="tylervigen.com/spurious-correlations">website and book by Tyler Vigen</url>.
+</p>
+
+<p>It goes roughly like this <mdash/> consider how many simple (ie not-too wiggly) graphs you can draw whose horizontal axis is the last 100 years. There might be (say) a hundred such <q>simple</q> graphs. Now build a big database of any statistics you can think of <mdash/> diary production in Quebec, deaths by lightning, number of twins born in a particular city, etc etc. There are thousands and thousands of such statistics.
+</p>
+
+<p>Now <mdash/> associate each of these statistics to the curve that best approximates it. Since there are only (say) a hundred such curves, and many thousands of statistics, there must <mdash/> by the pigeonhole principle <mdash/> be at least one curve which corresponds to many statistics. In practice, there are many statistics for each curve. This means that those statistics are correlated. In this way you can see that, say, the number of mathematics PhD's awarded is highly correlated with the quantity of uranium stored at US power plants. Is there any causal link <mdash/> nope<fn>We hope not.</fn>.
+</p>
+
+<p>This can be a source of fun (well, mathematician fun), but it can also create problems. The idea of making use of <q>Big data</q> to solve problems is getting a lot attention. People even announcing that analysis of huge data sets will replace<fn>
+This was a big headline article in Wired magazine in 2008.</fn>
+ the scientific method! However, given enough data, you will find correlations everywhere. Its just a matter of putting objects in boxes <mdash/> the pigeonhole principle at work.
+</p>
+</example>
+
+</subsection>
+<subsection><title>Comparing with functions</title>
+<p>
+  In the previous section we started to link cardinality of sets <m>A,B</m> and the types of functions that can be constructed between them.
+  For example, we saw that
+  <ul>
+    <li>If <m>f:A \to B</m> is an injection then <m>|A| \leq |B|</m>, </li>
+    <li>If <m>g:A \to B</m> is a surjection then <m>|A| \geq |B|</m>, and</li>
+    <li>If <m>h:A \to B</m> is a bijection then <m>|A| = |B|</m></li>
+  </ul>
+  In this section we demonstrate that this way of comparing sizes of sets is well-defined. For example, we should have that equality of cardinality behaves just like equality of integers:
+  <me>
+    |A| = |A|
+  </me>
+  and
+  <me>
+    (|A|=|B|) \implies (|B|=|A|)
+  </me>
+  and
+  <me>
+    (|A|=|B|) \land (|B|=|C|) \implies (|A|=|C|)
+  </me>
+  That is, we need to show that equinumerous is an equivalence relation.
+</p>
+
+
+<theorem xml:id="thm_equinum_equiv_rel">
+<statement><p>
+ Let <m>A</m>, <m>B</m> and <m>C</m> be sets. Then
+ <ul>
+<li> <m>|A| = |A|</m> (reflexive).
+</li>
+<li> If <m>|A| = |B|</m> then <m>|B| = |A|</m> (symmetric).
+</li>
+<li> If <m>|A| = |B|</m> and <m>|B| = |C|</m> then <m>|A| = |C|</m> (transitive).
+</li>
+</ul>
+</p></statement>
+</theorem>
+
+<proof>
+<p>
+ <ul>
+<li> The identity function on <m>A</m>, <m>i_A:A \to A</m> is a bijection and thus <m>|A|=|A|</m>.
+</li>
+<li> Assume <m>|A| = |B|</m>. Then there is a bijection <m>f: A \to B</m>.
+  Since <m>f</m> is bijective the inverse function <m>f^{-1}: B \to A</m> exists and is bijective.
+  Thus there is a bijection from <m>B</m> to <m>A</m> and so <m>|B| = |A|</m>.
+</li>
+<li> Assume <m>|A| = |B|</m> and <m>|B| = |C|</m>, so there are bijections <m>f: A \to B</m> and <m>g: B \to C</m>.
+Since the composition of bijections is bijective, it follows that <m>h:A \to C</m> defined by <m>h = g \circ f</m> is bijective.
+Thus <m>|A| = |C|</m>.
+</li>
+</ul>
+</p></proof>
+
+<p>
+This result is very useful. In order to show that two sets have the same size we can show they are equinumerous with a third set.
+</p>
+
+<remark><title>Cardinality inequalities</title>
+<p>
+  In addition to proving the above properties of equality of
+  cardinalities, we should also prove analogous results for
+  inequalities of cardinalities. In particular, we should also show
+  that
+    <me>
+      |A| \leq |A|
+    </me>
+    and
+    <me>
+      (|A| \leq |B|) \land (|B| \leq |A|) \implies (|A|=|B|)
+    </me>
+    and
+    <me>
+      (|A| \leq |B|) \land ( |B| \leq |C| ) \implies ( |A| \leq |C| )
+    </me>
+    Notice that the first follows immediately since the identity
+    function on <m>A</m> is an injection. The last one follows because the composition
+    of injections is itself an injection (this is exactly <xref ref="thm_comp_inj_surj"/>). The middle one is the
+    Cantor-Schröder-Bernstein theorem and its proof is quite involved
+    <mdash/> see <xref ref="sec_compare_card"/>. It is reasonably easy
+    to prove for finite sets, however. Maybe we'll set that as an
+    exercise.
+  </p>
+</remark>
+
+</subsection>
+
+<subsection><title>Infinite sets are strange.</title>
+
+<p>When we deal with finite sets everything above is pretty clear cut <mdash/> we can put things into a bijection with <m>\set{1,2,\dots,n}</m> for some <m>n \in \mathbb{N}</m>.
+We did exactly this with our place-names and colours example at the start of this chapter. However, when we get to non-finite sets, things get much more interesting and weird.
+</p>
+
+<p>Here is a very telling example. Consider the positive even numbers
+<md>
+<mrow>
+  E = \{2,4,6,8,\dots\}
+</mrow>
+</md>
+Now it is clear that <m>E</m> is a proper subset of <m>\mathbb{N}</m>; it only contains ever second number. So it should<fn>
+<q>Should</q> is another one of those dangerous words like <q>clearly</q> and <q>obviously</q> and <q>just</q>. It should (ha!) set off alarm bells.
+</fn> be half the size.
+But we have to be careful; consider the following function
+<md>
+<mrow>
+  f: \mathbb{N} \to E &amp;&amp; f(n) = 2n
+</mrow>
+</md>
+This function is a bijection from <m>\mathbb{N}</m> to <m>E</m>:
+<ul>
+<li> Injective because if <m>n_1 \neq n_2</m> then <m>f(n_1) = n_1 \neq n_2 = f(n_2)</m>.
+</li>
+<li> Surjective becuase for any <m>b \in E</m>, we know that <m>b=2k</m> for <m>k \in \mathbb{N}</m>, and <m>f(k) = 2k=b </m>.
+</li>
+</ul>
+So the set of natural numbers is equinumerous with a proper subset of the natural numbers!
+No finite set can do this because of the pigeonhole principle, but an infinite set can.
+This is actually one way of defining when a set is infinite:
+</p>
+<definition>
+  <statement>
+    <p>
+      We say that a set <m>A</m> is <term>infinite</term> when there is a bijection between <m>A</m> and a proper subset of <m>A</m>.
+    </p>
+  </statement>
+</definition>
+
+<p>
+This definition was introduced by Dedekind in the late 19th century. Notice that this way of defining infinity does not rely on the natural numbers. When we first learn of the existence of infinity as children it is usually in the context of having learned to count
+<md>
+<mrow>
+  1,2,3,4,\dots
+</mrow>
+</md>
+and we ask ourselves (or our teacher, or our parent<fn>Perhaps repeatedly?</fn>) <mdash/> what is the biggest number? And we realise that we can go on counting forever without stopping. This idea of infinity as being somehow intimately related to the natural numbers is hard to shake. But we will a little later in this chapter.
+</p>
+
+<p>The apparent paradox<fn>
+  It is a veridical paradox. That is, a paradox that seems absurd but is actually true. Another good example, for the paradoxically inclined, is the Monte Hall problem. The interested reader can (and should) search-engine their way to that particular example.
+</fn> in Dedekin's definition of infinite sets goes back at least as far as Galileo, and is often called Galileo's paradox. In his <q>Two new sciences</q> Galileo imagines a conversation between two people, Simplicio and Salviati<fn>
+Salviati is named after one of Galileo's friends, while Simplicio is likely modelled on one of his philosophical opponents, or perhaps is intended to represent Galileo's beliefs early in his lief. Both characters appear in Galileo's work <q>Dialogue Concerning the Two Chief World Systems</q> which discusses the relative merits of the Copernican (heliocentric) and Ptolemaic (geocentric) models of the solar system. That book was subsequently banned by the Catholic Church for over 200 years.</fn>
+. Simplicio brings up the bijection<fn>
+He doesn't call it a bijection <mdash/> that term didn't come into mathematics until the middle of the 20th century with the work of  Bourbaki.</fn>
+ between the natural numbers at the squares:
+<md>
+<mrow>
+  f: \set{1,2,3,\dots} \mapsto \set{1,4,9,\dots} &amp;&amp; f(n) = n^2
+</mrow>
+</md>
+and the apparent paradox of something larger being equinumerous with something smaller. After some discussion Salviati concludes that one cannot compare cardinalities of infinite sets. That restriction stayed until the 19th century work of Cantor and others.
+</p>
+
+<p>Georg Cantor developed modern set theory (especially between about 1874 and 1884) <mdash/> he developed the finer understanding of infinite sets we now have. Before him, there were finite sets, and a somewhat loosely defined idea of infinity. Cantor's work on infinity was not well received by the maths community of the 19th century and a number of  big names in mathematics very publically criticised him <mdash/> <q>corrupter of youth</q> was one of many insults<fn>
+Henri Poincaré called his work on infinities a <q>grave disease</q> infecting the discipline of mathematics, while Leopold Kronecker described Cantor as a charlatan and a renegade as well as the famous epithet <q>corrupter of youth</q> and <q>I don't know what predominates in Cantor's theory <mdash/> philosophy or theology, but I am sure that there is no mathematics there.</q>   Kronecker is reputed to have said that <q>God created the natural numbers; all else is the work of man.</q> <mdash/> making him (arguably) a proponent of mathematical finitism. It's an interesting topic and well worth a quick trip to your favourite search-engine.</fn>
+. It is worth search-engining your way to a biography of him and the intersection between his work on infinity and many ideas in the philosophy of mathematics and theology. Not light stuff to be summarised here in a quick paragraph.
+</p>
+</subsection>
+</section>
+<section><title>Denumerable sets</title>
+<p>
+As described above, our intuitive notion of an infinite set (or any infinite thing), is a process that keeps on going. We never get to the end because we can always take another step. What we are really doing when we think of infinity in this way is setting up a bijection between it and the set of natural numbers. There is some infinite process <mdash/> we start at the beginning (the number 1) and then we take a step <m>n \mapsto n+1</m>, and then another step, and another step and, <ellipsis/>. This is the first type of infinity that we will encounter <mdash/> sets that are in bijection with <m>\mathbb{N}</m>. We call these sets denumerable because we can think of counting off the elements via the bijection.
+</p>
+
+<definition>
+<statement><p>
+  Let <m>A</m> be a set.
+<ul>
+<li> The set <m>A</m> is called <term>denumerable</term> if there is a bijection <m>f: \mathbb{N} \to A</m>.
+</li>
+<li> The cardinal number of a denumerable set is denoted <m>\aleph_0</m> (read <q>aleph naught</q> or <q>aleph null</q>).
+</li>
+<li> The set <m>A</m> is called <term>countable</term> if it is finite <em>or</em> denumerable.
+</li>
+<li> The set <m>A</m> is <term>uncountable</term> if it is not countable.
+</li>
+</ul>
+</p></statement>
+</definition>
+
+<p>
+Notice that
+<ul>
+<li>  At this stage it is not clear that there is something out there that is <q>uncountable</q> <mdash/> the existence of uncountable sets was highly controversial when Cantor proved it in 1874<fn>
+It first appeared in an article called <q>On a Property of the Collection of All Real Algebraic Numbers</q>. He did not use his famous diagonal-argument (we do it a little later in the text); that argument appeared 17 years later in a 1891 paper titled <q>On an elementary question of the theory of manifolds.</q>
+</fn>.
+</li>
+<li> There is a bijection from <m>\mathbb{N} </m> to <m>A</m> if and only if there is a bijection from <m>A</m> to <m>\mathbb{N}</m>.
+</li>
+<li> Finally, a very nice property of denumerable sets is that even though they are infinite, we can still <q>list out the elements</q>.
+</li>
+</ul>
+This last point is both very important and also is a little counter-intuitive, so we'll make it more precise. Consider a denumerable set <m>A</m>. By definition there is a bijection <m>f: \mathbb{N} \to A</m>.
+Now we can think of <m>f</m> as a relation
+<md>
+<mrow>
+  f &amp;= \set{(1,f(1)), (2,f(2)), (3,f(3)), \dots }
+  </mrow>
+<intertext>Hence we can write <m>A</m> as</intertext><mrow>
+  A &amp;= \set{f(1), f(2), f(3), \dots} &amp; \text{or equivalently}
+</mrow><mrow>
+  A &amp;= \set{a_1, a_2, a_3, \dots} &amp; \text{with } a_i = f(i).
+</mrow>
+</md>
+</p>
+<p>
+Notice that this list has a couple of special properties.
+<ul>
+  <li>Since <m>f</m> is injective, our list does not repeat <mdash/> different indices give different elements of <m>A</m>.
+</li>
+<li>
+  Also, since <m>f</m> is surjective, any given element of <m>A</m> <mdash/> say <m>q</m> <mdash/> is mapped to by some integer <m>n_q \in \mathbb{N}</m>. Since <m>n_q</m> is finite, this means that any given element of <m>A</m> appears on the list in some finite position.
+</li>
+</ul>
+We can also go backwards <mdash/> if we can list out the elements of some infinite set <m>B</m>, then <m>B</m> is denumerable. Say we have listed out our elements as  <m>\set{b_1,b_2,b_3,\dots}</m>, so that
+<ul>
+<li> the list does not repeat, and
+</li>
+<li> any given element of <m>B</m> appears at some finite position on the list.
+</li>
+</ul>
+Now we can define a function <m>g:\mathbb{N} \to B</m> by <m>g(j) = b_j</m>. That is, just map any natural number to the element at that position in the list. The two conditions we have placed on the list then mean that <m>g</m> is injective and surjective, so <m>g</m> is a bijection. Hence <m>B</m> is denumerable.
+</p>
+
+<p>
+  Let's formalise this idea that denumerable means listable in a lemma. The proof is given by the argument above.
+</p>
+<lemma>
+  <title>Listing elements of denumerable sets</title>
+  <statement>
+    <p>
+      Let <m>A</m> be a set. If <m>A</m> is denumerable then we can
+      construct an infinite list, <m>a_1, a_2, a_3, \dots</m>, of all its
+      elements so that
+      <ul>
+	<li>the list does not repeat any element of <m>A</m>, and</li>
+	<li>any given element, <m>a \in A</m> appears at some finite position in the list</li>
+      </ul>
+      The converse of this statement is also true. Namely, if we can
+      construct such a list of the elements of <m>A</m>, then <m>A</m>
+      is denumerable.
+    </p>
+  </statement>
+  <proof>
+    <p>
+      Let <m>A</m> be denumerable. Then, by definition, there exists a
+      bijection <m>f: \mathbb{N} \to A</m>. For any <m>n \in
+      \mathbb{N}</m>, define the <m>n^\mathrm{th}</m> element of our
+      list to be <m>a_n = f(n)</m>. Then
+      <ul>
+	<li>Since <m>f</m> is injective, we know that for <m>j \neq k</m>, <m>a_j = f(j) \neq f(k)=a_k</m>. So the items on our list are distinct.</li>
+	<li>Since <m>f</m> is surjective, we know that for any <m>x
+	\in A</m> there exists <m>n \in \mathbb{N}</m> so that
+	<m>f(n)=x</m>. Thus the element <m>x = a_n</m> is the
+	<m>n^\mathrm{th}</m> item on the list, and so appears at a
+	finite position in the list.</li>
+      </ul>
+    </p>
+    <p>
+      Now assume such a list exists. Then for any <m>n \in
+      \mathbb{N}</m> define <m>g(n) = a_n \in A</m>. Since the list is
+      infinite this defines a function <m>g: \mathbb{N} \to A</m>. Then
+      <ul>
+	<li>Let <m>x \in A</m>. By assumption, the element <m>x</m>
+	appears at some finite position in the list. So there is <m>n
+	\in \mathbb{N}</m> so that <m>x = a_n = g(n)</m>. Thus
+	<m>g</m> is surjective.</li>
+	<li>Since the list does not repeat we can take the items from
+	the <m>j^\mathrm{th}</m> and <m>k^\mathrm{th}</m> positions on
+	the list, namely <m>a_j, a_k</m> with <m>j \neq k</m>. Then we
+	know that <m>a_j \neq a_k</m> which in turn gives <m>g(j) \neq
+	g(k)</m>. Thus <m>g</m> is injective. </li>
+      </ul>
+      Hence there is a bijection <m>g: \mathbb{N} \to A</m> and so <m>A</m> is denumerable.
+    </p>
+  </proof>
+</lemma>
+
+
+<p>This infinite-but-listable way of looking at denumerable sets makes it much easier to work with them. Especially because, as we have seen with our even numbers example above, infinite sets are very counter-intuitive. Here is counter-intuitive result that is also a very important result.
+</p>
+
+<theorem xml:id="thm_Z_denum">
+<statement><p>
+ The set of all integers is denumerable.
+</p></statement>
+<proof><title>Proof sketch</title>
+<p>
+  We will sketch out how to prove this result but leave the formal proof to the reader. It suffices to find a <q>nice way</q> to list out all the elements of <m>\mathbb{Z}</m> (since this nice list is really a bijection). We can't just do <m>\mathbb{Z} = \set{\dots, -2,-1,0,1,2, \dots}</m> <mdash/> which each integer appears on the list, it is not clear that any given integer appears at some finite position in the list. This sort of infinite list is typically called bi-infinite, since it extends to infinity in both direction.
+</p>
+
+<p>On the other hand, if we write out the integers as
+<md>
+<mrow>
+  \mathbb{Z} &amp;= \set{0,1,-1,2,-2,\dots}
+</mrow>
+</md>
+then we can see that every integer will appear once, and that any given integer will appear at some finite position in the list. Indeed, this list, carefully described, is a proof of the result.
+</p>
+
+<p>We can, in this case, make the bijection very explicit in this case and define a function
+<md>
+<mrow>
+  f &amp;= \begin{array}{cccccc}
+        1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 &amp; \cdots
+</mrow><mrow>
+        \downarrow &amp; \downarrow &amp; \downarrow &amp; \downarrow &amp; \downarrow &amp; \downarrow
+</mrow><mrow>
+        0 &amp; 1 &amp; -1 &amp; 2 &amp; -2 &amp; \cdots
+       \end{array}
+</mrow>
+</md>
+With a bit of juggling this becomes
+<md>
+<mrow>
+  f(n) &amp;= \begin{cases}
+           \frac{1-n}{2} &amp; n \mbox{ is odd}
+</mrow><mrow>
+           \frac{n}{2} &amp; n \mbox{ is even}
+          \end{cases}
+          = \frac{1 + (-1)^n(2n-1)}{4}
+</mrow>
+</md>
+It is not hard to show this is bijective <mdash/> in fact, we'll make this an exercise.
+</p>
+</proof>
+</theorem>
+
+<p>So again we have produced an example of a strict subset having the same cardinality: <m>\mathbb{N} \subset \mathbb{Z}</m> but <m>|\mathbb{N}| = |\mathbb{Z}|</m>. This is quite general; a subset of a denumerable set is either finite or itself denumerable.
+</p>
+
+<theorem xml:id="thm_countable_subset">
+<statement><p>
+  Let <m>A</m> be a denumerable set and let <m>B \subseteq A</m>. Then <m>B</m> is countable.
+</p></statement>
+</theorem>
+
+<p>
+Now this proof is a little fiddly around the edges so we'll just give a proof sketch. Before we get started with the proof, consider the specific case of <m>A</m> being the set of positive odd numbers, and <m>B</m> being the set of odd prime numbers.
+</p>
+
+
+<image width="66%" source="primes_inside_natural"/>
+
+
+<p>
+On the right-hand side of the figure we've drawn the set of odd primes, <m>B</m>, and the natural numbers and the bijection <m>g</m> between them. On the left-hand side we've given the set of odd numbers, <m>A</m> and next to it we've drawn the set of natural numbers <m>\mathbb{N}</m> and the bijection <m>f</m> between them. Notice that we've drawn some edges in red and some in green. The red edges correspond to the elements of <m>A</m> that are not in <m>B</m>, while the green edges correspond to the elements in <m>A</m> that are in <m>B</m>.  Notice that the red edges stop, while the green edges trace through a set <m>I</m> (described in the proof sketch below), and then another copy of <m>\mathbb{N}</m> and then finally to the set <m>B</m>. Keep this picture in mind when you read the proof sketch below.
+</p>
+
+<proof><title>Actually just a sketch of a proof</title>
+<p>
+  Let <m>B</m> be a subset of a denumerable set <m>A</m>.
+<ul>
+<li> If <m>B</m> is finite then we are done, because a finite set is countable.
+</li>
+<li><p>
+   Assume <m>B</m> is infinite.
+ There is a bijection <m>f: \mathbb{N} \to A</m>, and we can write <m>A = \{a_1,a_2,\dots \}</m> and <m>f(n) = a_n</m>.
+ Now define <m>I = \{n \in \mathbb{N} \so a_n \in B\}</m> <mdash/> ie the indices of elements that are in <m>B</m>. Notice that <m>I \subseteq \mathbb{N}</m> and so we can write the indices in order<fn>
+ This bit actually requires a bit of thought <mdash/> one can use the well-ordering principle to find the smallest thing in the set <m>I</m> and call it <m>i_1</m>.Then remove that from the set and find the next smallest, call it <m>i_2</m>. etc etc.</fn>
+</p>
+
+<p> Hence we can write the set of these indices as <m>I = \set{i_1, i_2, i_3, \dots}</m>. Now define a function <m>g: \mathbb{N} \to B</m> by
+ <md>
+<mrow>
+   g(n) &amp;= a_{i_n}
+ </mrow>
+</md>
+ That is, for any input number <m>n</m>, look up the <m>n^\mathrm{th}</m> index in <m>I</m>, and then return that element of <m>A</m>. By construction that is an element of <m>B</m>.
+</p>
+
+<p> We can trace this though our odd-primes figure above. In that case <m>g(3)=7</m> because <m>i_3 = 4</m> and <m>f(4)=7</m>. Similarly, <m>g(5) = 13</m> since <m>i_5=7</m> and <m>f(7)=13</m>.
+</p>
+</li>
+<li><p>
+   Now that we have this function, we need to prove it is bijective.
+<ul>
+<li> Injective <mdash/> Assume that <m>g(n)=g(m)</m>, then <m>a_{i_n} = a_{i_m}</m>. Since the original function <m>f</m> is bijective, this implies that <m>i_n=i_m</m>. Hence <m>n=m</m>.
+</li>
+<li> Surjective <mdash/> Let <m>b \in B</m>. Then since <m>B \subseteq A</m>, we know <m>b\in A</m>. Since <m>f</m> is surjective, there is some <m>n</m> so that <m>f(n)=a_n=b</m>. Hence <m>n \in I</m>. Hence there is some <m>1 \leq k \leq n</m> so that <m>g(k)=a_n=b</m>.
+</li>
+</ul>
+</p>
+</li>
+<li> Thus there is a bijection from <m>\mathbb{N}</m> to <m>B</m>, and so <m>B</m> is denumerable.
+</li>
+</ul>
+</p>
+</proof>
+
+
+<p>Let's generalise our result above positive even numbers being in bijection with the naturals; we'll also do Galileo's paradox the same way. Using the above theorem we don't have to establish explicit bijections, we just need to show that they are infinite subsets of a denumerable set.
+</p>
+
+<proposition>
+<statement><p>
+ Let <m>k \in \mathbb{N}</m>, then the sets
+  <md>
+<mrow>
+  k \mathbb{Z} &amp;= \set{k n \so n \in \mathbb{Z}} &amp;
+  k \mathbb{N} &amp;= \set{k n \so n \in \mathbb{N}} &amp;
+  &amp;\set{n^2 \so n \in \mathbb{N}}
+  </mrow>
+</md>
+  are denumerable.
+</p></statement>
+</proposition>
+
+<proof>
+<p>
+  Let <m>k \in \mathbb{N}</m>. Then above sets all subsets of <m>\mathbb{Z}</m>. Hence by the previous theorem they are countable. All of the sets are infinite, so they must be denumerable.
+</p></proof>
+
+<p>One can show that the union of denumerable sets is denumerable and that the Cartesian product is too.
+</p>
+
+<proposition xml:id="res_prod_of_denum">
+<statement><p>
+ Let <m>A</m> and <m>B</m> be denumerable sets, then <m>A \times B</m> is denumerable.
+</p></statement>
+</proposition>
+
+<proof>
+<p>
+It suffices to find a bijection from <m>\mathbb{N}</m> to <m>A\times B</m>. Since <m>A</m> and <m>B</m> are
+denumerable we can write <m>A = \set{a_1,a_2,\dots}</m> and <m>B = \set{b_1,b_2,\dots}</m>.
+Construct the following (infinite) table
+<md>
+<mrow>
+  \begin{array}{c|cccc}
+   &amp; b_1 &amp; b_2 &amp; b_3 &amp; \dots
+</mrow><mrow>
+   \hline
+  a_1 &amp; (a_1,b_1) &amp; (a_1,b_2) &amp; (a_1,b_3) &amp; \dots
+</mrow><mrow>
+  a_2 &amp; (a_2,b_1) &amp; (a_2,b_2) &amp; (a_2,b_3) &amp; \dots
+</mrow><mrow>
+  a_3 &amp; (a_3,b_1) &amp; (a_3,b_2) &amp; (a_3,b_3) &amp; \dots
+</mrow><mrow>
+  \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \ddots
+  \end{array}
+</mrow>
+</md>
+We form the function <m>f: \mathbb{N} \to A \times B</m> by sweeping successive diagonals <m>\swarrow \; \swarrow \; \cdots </m>.
+<md>
+<mrow>
+  f(1) &amp;= (a_1,b_1)
+</mrow><mrow>
+  f(2) &amp;= (a_1,b_2) &amp; f(3) &amp;= (a_2,b_1)
+</mrow><mrow>
+  f(4) &amp;= (a_1,b_3) &amp; f(5) &amp;= (a_2,b_2) &amp; f(6) &amp;= (a_3,b_1)
+</mrow><mrow>
+  f(7) &amp;= (a_1,b_4) &amp; f(8) &amp;= (a_2,b_3) &amp; f(9) &amp;= (a_3,b_2) &amp; f(10) &amp;= (a_4,b_1)
+</mrow>
+</md>
+and so forth. Since any given ordered pair is reached eventually (ie after a finite number of diagonal sweeps of finite length), the function is surjective.
+Since we never repeat an ordered pair, the function is injective. Thus <m>f</m> is bijective.
+</p>
+</proof>
+
+<p>
+Notice that if we tried to list out the elements by reading out each column (or each row), then the resulting function would not be surjective <mdash/> it would take an infinite time to reach the second column. Hence the preimage under that function of an element in the second column would not be a natural number.
+</p>
+
+<p>Very similarly we arrive at the following very counter-intuitive result</p>
+<theorem>
+<statement><p>
+ The set of positive rational numbers <m>\mathbb{Q}^+</m> is denumerable.
+</p></statement>
+</theorem>
+<proof>
+<p>
+Form the following table of positive rationals
+<md>
+<mrow>
+  \begin{array}{c|cccc}
+   &amp; 1 &amp; 2 &amp; 3 &amp; \dots
+</mrow><mrow>
+   \hline
+  1 &amp; 1/1 &amp; 1/2 &amp; 1/3 &amp; \dots
+</mrow><mrow>
+  2 &amp; 2/1 &amp; 2/2 &amp; 2/3 &amp; \dots
+</mrow><mrow>
+  3 &amp; 3/1 &amp; 3/2 &amp; 3/3 &amp; \dots
+</mrow><mrow>
+  \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \ddots
+  \end{array}
+</mrow>
+</md>
+List things out in the same sweeping diagonal order  <m>\swarrow \; \swarrow \; \cdots </m> we used previously:
+<md>
+<mrow>
+  \begin{array}{ccccc}
+    \frac{1}{1}, \\[1ex]
+    \frac{1}{2}, &amp;  \frac{2}{2},    \\[1ex]
+    \frac{1}{3}, &amp;  \frac{2}{2},  &amp;  \frac{3}{1},  \\[1ex]
+    \frac{1}{4}, &amp;  \frac{2}{3},  &amp;  \frac{3}{2}, &amp;  \frac{4}{1}, \\[1ex]
+    \frac{1}{5}, &amp;  \frac{2}{4},  &amp;  \frac{3}{3}, &amp;  \frac{4}{2}, &amp; \frac{5}{1},
+</mrow><mrow>
+    \vdots
+  \end{array}
+</mrow>
+</md>
+This list gives a surjective function, since any given positive rational number would appear at some finite positive position on the list. For example, we have <m>f(1)=\frac{1}{1}, f(2)=\frac{1}{2}, f(5)=\frac{2}{2}</m>, and so on. However, the list repeats rationals, so it is not injective.
+</p>
+
+<p>Thankfully this is quite easy to fix, we can simply skip those rationals that have already appeared<fn>
+  Notice that we do not have to be able to do this efficiently, we just need to be able to do it! Mind you, it is not too hard to work out that a given ratio <m>\frac{a}{b}</m> has already appeared on the list when <m>a,b</m> have a common divisor.</fn>:
+<md>
+<mrow>
+  \begin{array}{ccccc}
+    \frac{1}{1}, &amp; \\[1ex]
+    \frac{1}{2}, &amp;  \frac{2}{1},    \\[1ex]
+    \frac{1}{3}, &amp;  \cdot   &amp;  \frac{3}{1},  \\[1ex]
+    \frac{1}{4}, &amp;  \frac{2}{3},  &amp;  \frac{3}{2}, &amp;  \frac{4}{1},  \\[1ex]
+    \frac{1}{5}, &amp;  \cdot &amp;  \cdot &amp;  \cdot &amp; \frac{5}{1},
+  \end{array}
+</mrow>
+</md>
+where we have used a dot to indicate a fraction we have skipped.  Define <m>f: \mathbb{N} \to \mathbb{Q}^+</m> by <m>f(n)</m> is the nth term of the list. So <m>f(1)=\frac{1}{1}, f(3)=\frac{2}{1}, f(5)=\frac{3}{1}, f(7)=\frac{2}{3}</m> and so on.
+</p>
+<p>
+Since every positive rational number appears on the list (at some finite position), <m>f</m> is surjective. Since no number is repeated, <m>f</m> is injective. Thus <m>f</m> is bijective and so <m>|\mathbb{N}| = \mathbb{Q}^+</m>.
+</p>
+</proof>
+<proof><title>An alternative proof</title>
+  <p>
+    We can also prove this result using our previous theorem, by constructing a bijection from <m>\mathbb{Q}^+</m> to an infinite subset of <m>\mathbb{N}\times\mathbb{N}</m>.
+  </p>
+  <p>
+    Recall that we can write any <m>q \in \mathbb{Q}^+</m> uniquely as <m>\frac{a}{b}</m> where <m>a,b</m> are natural numbers with no common divisors. Then we can define <m>f:\mathbb{Q}^+ \to \mathbb{N}\times\mathbb{N}</m> by
+    <md>
+    <mrow> f(q) \amp= (a,b) \amp \text{where } q=\frac{a}{b}
+    </mrow>
+    </md>
+    and <m>a,b \in \mathbb{N}</m> with no common divisors. We claim that this function is an injection.
+  </p>
+  <p>
+    Let <m>p,q \in \mathbb{Q}^+</m> so that <m>p \neq q</m>. Now if <m>f(p)=f(q)=(a,b)</m> we must have <m>p=q=\frac{a}{b}</m>. Thus we must have <m>f(p) \neq f(q)</m>.
+  </p>
+  <p>
+    The injection <m>f</m> can be specialised to a bijection <m>\hat{f}: \mathbb{Q} \to \mathrm{rng}(f)</m> by reducing its codomain to exactly the range of <m>f</m>. Since <m>\mathrm{rng}(f)</m> is an infinite subset of <m>\mathbb{N}\times\mathbb{N}</m>, it must be denumerable. Hence <m>\mathbb{Q}^+</m> is denumerable.
+  </p>
+</proof>
+
+
+<p>Now say that the above order gives
+<md>
+<mrow>
+  \mathbb{Q}^+ = \set{q_1,q_2,q_3,\dots}
+</mrow><mrow>
+  \mathbb{Q}^- = \set{-q_1,-q_2,-q_3,\dots}
+</mrow>
+</md>
+Then we can write
+<md>
+<mrow>
+  \mathbb{Q} &amp;= \set{0} \cup \mathbb{Q}^+ \cup \mathbb{Q}^-
+</mrow><mrow>
+  &amp;= \set{0, q_1, -q_1, q_2, -q_2, \dots}
+</mrow>
+</md>
+And so by using this sneaky way of listing the rationals, we get
+</p>
+
+<corollary>
+<statement><p>
+ The set of all rational numbers is denumerable.
+</p></statement>
+</corollary>
+
+<p>This is really weird. While the natural numbers and the integers feel very similar; there are nice
+discrete unit steps between numbers. The rational numbers, however, appear to be very different objects. Most striking being that they are dense  <mdash/> between any two rationals we can find another rational number.  But despite that, the rationals are the same size as the integers!
+</p>
+
+<p>The trick we used above to prove this corollary is a good one and can be extended to a more general result:
+</p>
+
+<proposition xml:id="res_count_union_intersect">
+<statement><p>
+  Let <m>A,B</m> be countable sets. Then the union <m>A\cup B</m> and intersection <m>A \cap B</m> are also countable.
+</p></statement>
+</proposition>
+<proof>
+<p>
+  <ul>
+<li> The intersection <m>A \cap B \subseteq A</m>, so if <m>A</m> is finite then so is the intersection. While if <m>A</m> is denumerable, then our previous theorem tells us that all its subsets are countable. So we are done.
+</li>
+<li><p> Now consider the union.  Since <m>A,B</m> are countable, we
+can list out their elements as
+    <md>
+      <mrow>
+      A &amp;= \set{a_1,a_2,a_3,\dots} &amp;
+      B &amp;= \set{b_1,b_2,b_3,\dots} &amp;
+    </mrow>
+    </md>
+    Assume, for the moment that <m>A\cap B = \es</m>.
+    <ul>
+<li> If both <m>A,B</m> are finite then their union is finite.
+</li>
+<li> If both <m>A,B</m> are infinite, then write the union as
+      <md>
+<mrow>
+        A \cup B &amp;= \set{a_1, b_1, a_2, b_2, a_3, b_3, \dots}
+      </mrow>
+</md>
+      This listing of the elements of the union demonstrates that the union is denumerable.
+</li>
+<li> If one of <m>A,B</m> is finite, but the other infinite, then we can write
+      <md>
+<mrow>
+        A \cup B &amp;= \set{a_1, b_1, a_2, b_2, a_3, b_3, \dots, a_n, b_n, a_{n+1}, a_{n+2}, a_{n+3}, \dots} &amp; \text{ or}
+</mrow><mrow>
+        A \cup B &amp;= \set{a_1, b_1, a_2, b_2, a_3, b_3, \dots, a_\ell, b_\ell, b_{\ell+1}, b_{\ell+2}, b_{\ell+3}, \dots}
+      </mrow>
+</md>
+      depending on which of <m>A,B</m> are finite. This  demonstrates that the union is denumerable.
+</li>
+    </ul>
+    Thus the union of two disjoint countable sets is countable.
+</p>
+<p>
+  Now assume that <m>A \cap B \neq \es</m>, then write <m>C = B -
+  A</m>, so that
+  <me>
+    C \subseteq B \qquad A \cap C = \es \qquad A\cup C = A \cup B.
+  </me>
+  These are quite straight-forward to prove:
+  <ul>
+    <li>If <m>x \in C</m> then <m>x \in B-A</m> and so <m>x \in B</m>.</li>
+    <li>
+      Let <m>x \in A</m>. Then we must have that <m>x \not\in B-A</m>, and thus <m>x \not\in C</m>. Hence <m>A\cap C</m> must be empty.
+    </li>
+    <li>
+      <p>Since <m>C = B-A = B \cap \bar{A}</m>, we have 
+      <me>
+	A \cup C = A \cup (B \cap \bar{A}) = (A \cup B) \cap (A \cup \bar{A}) = (A \cup B) \cap U = A \cup B
+      </me>
+      where <m>U</m> denotes the universal set.
+      </p>
+    </li>
+  </ul>
+  Now, since <m>B</m> is countable we know that <m>C</m> is
+  countable. The reasoning used for disjoint sets above, then shows
+  that <m>A \cup C</m> is countable, and thus <m>A\cup B</m> is
+  countable.
+</p>
+</li>
+</ul>
+</p>
+</proof>
+
+</section>
+<section xml:id="sec_uncount"><title>Uncountable sets</title>
+
+<p>
+We are now ready to move on to one of the nicest results of the course
+and arguably one of nicest in Mathematics. We will prove that there is
+no bijection between the natural numbers and the reals and so that the
+reals are uncountable. It is due to Georg Cantor. He proved the result
+first in 1873, and again by a simpler method in 1891. We will do the
+second version here, since it is easier. We give Cantor's first proof
+as an <xref ref="sec_cantor_first">optional section</xref> later in
+this chapter.
+</p>
+
+<p>The proof works by a contradiction and also relies on some facts about decimal expansions of real numbers.
+<ul>
+<li><p>
+   Every rational number has a repeating decimal expansion
+<ul>
+<li> eg 1/3 = 0.333333333<ellipsis/>
+</li>
+<li> eg 2/11 = 0.1818181818181<ellipsis/>
+</li>
+</ul>
+</p>
+</li>
+<li><p>
+   Some rational numbers have two repeating expansions
+<ul>
+<li> eg 1/2 = 0.500000<ellipsis/> = 0.499999999<ellipsis/>
+</li>
+<li> eg 1/5 = 0.2<ellipsis/> = 0.1999999999<ellipsis/>
+</li>
+</ul>
+</p>
+</li>
+<li> One can show that a rational number <m>p/q</m> (reduced) has two expansions if only if
+<m>q</m> is a product of powers of 2 and 5. In this case the expansions terminate either with
+9's or 0's.
+</li>
+<li> Every irrational number has a unique (non-repeating) decimal expansion
+</li>
+</ul>
+None of the above is too hard to prove, but we won't do it here. We want to get on to this very important result.
+</p>
+
+<theorem xml:id="thm_diag"><title>Cantor 1891</title>
+<statement><p>
+ The open interval <m>(0,1) = \set{x \in \mathbb{R} \so 0 \lt x \lt 1}</m> is uncountable.
+</p></statement>
+</theorem>
+
+<p>
+  From this result we could prove that all of <m>\mathbb{R}</m> is uncountable by constructing a suitable bijection (which we will do so at the end of this section). Alternatively, and perhaps more usefully, we can argue that because <m>(0,1)</m> is a subset of <m>\mathbb{R}</m>, then <m>\mathbb{R}</m> cannot be denumerable. By our previous theorem, if <m>\mathbb{R}</m> were denumerable, then it could not have an uncountable subset. This observation is a pretty important one, so let us write it down as its own theorem.
+</p>
+
+<theorem>
+<statement><p>
+ Let <m>A,B</m> be sets with <m>A \subseteq B</m>. If <m>A</m> is uncountable then <m>B</m> is uncountable.
+</p></statement>
+</theorem>
+
+<proof>
+<p>
+  Prove the contrapositive. If <m>B</m> is countable, then it is either finite or denumerable.
+If <m>B</m> is finite, then <m>A</m> must be finite. On the other hand if <m>B</m> is denumerable then all its subsets must be denumerable. In either case <m>A</m> must be countable.
+</p>
+</proof>
+
+<p>So <mdash/> how do we prove the uncountability of <m> (0,1)</m>. This comes down to showing that there cannot be a bijection from <m>\mathbb{N}</m> to <m> (0,1) </m>. Showing the non-existence of an object is often most easily done by contradiction and that is the approach we will take (following in Cantor's footsteps).
+</p>
+
+<p>So we assume that <m>(0,1)</m> is denumerable meaning there is some bijection <m>f: \mathbb{N} \to (0,1)</m>.
+But this means that we can make a big list of all the numbers in <m>(0,1)</m> (just like we did with the even numbers or the squares or <ellipsis/> above). For example, we might have:
+<md>
+<mrow>
+  f(1) &amp;= 0.78304492\dots
+</mrow><mrow>
+  f(2) &amp;= 0.21892653\dots
+</mrow><mrow>
+  f(3) &amp;= 0.15206327\dots
+</mrow><mrow>
+  \vdots &amp;
+</mrow>
+</md>
+As we construct our list, if we come across a number in <m>(0,1)</m> that has two expansions (like <m>1/2=0.49999=0.50000</m>) then we write down the expansion that ends in all zeros. To complete the proof we need to find a contradiction. We do so by finding a real number in <m>(0,1)</m> that is not on our list. This implies that <m>f</m> is not a bijection and so <mdash/> contradiction!
+</p>
+
+<p>To build the number we use a very slick argument<fn>
+  Cantor was very very clever. This argument is now called <q>Cantor's diagonal argument</q> and it has been used in many places in mathematics. One famous application of the idea is to show that the Halting Problem is not solvable. The interested reader should search-engine their way to more information.</fn>
+ argument. Consider the figure below.
+</p>
+
+
+<image width="66%" source="diagonal"/>
+
+
+<p>
+We have listed out the (hypothetical) values of each number in our list in order: <m>f(1),f(2),f(3)\dots</m>. For each number we have carefully written out its decimal expansion so that all the digits are arranged neatly in an array. Now ignore the leading <q>0.</q> and focus on those numbers down the diagonal.
+</p>
+
+<p>From those digits down the diagonal, we can construct a new number <m>\Delta</m>:
+<md>
+<mrow>
+  \Delta &amp;= 0. d_1 d_2 d_3 \cdots
+</mrow>
+</md>
+so that
+<ul>
+<li> The first digit <m>d_1</m> is first digit of <m>f(1) </m>.
+</li>
+<li> The second digit <m>d_2</m> is second digit of <m>f(2) </m>.
+</li>
+<li> The third digit  <m>d_3</m> is third digit of <m>f(3) </m>.
+</li>
+<li> <m>\vdots</m>
+</li>
+<li> The <m>n^{th}</m> digit <m>d_n</m> is the <m>n^{th}</m> digit of <m>f(n)</m>.
+</li>
+<li> and so on.
+</li>
+</ul>
+Now because the digits of <m>\Delta</m> agree with some of the digits of each of the <m>f(k)</m>, it is possible that <m>\Delta</m> appears somewhere on our list <mdash/> so this doesn't give us the contradiction. However, Cantor realised that from <m>\Delta</m>, one can construct a number, <m>z</m>, that is definitely not on the list. In particular, construct <m>z</m> so that each digit of <m>z</m> is different from the corresponding digit of <m>\Delta</m>.
+</p>
+
+<p>This means that
+<ul>
+<li> The first digit of <m>z</m> must be different from the first digit of <m>f(1) </m> <mdash/> so <m>z \neq f(1)</m>.
+</li>
+<li> The second digit of <m>z</m> must be different from the second digit of <m>f(2) </m> <mdash/> so <m>z \neq f(2)</m>.
+</li>
+<li> The third digit of <m>z</m> must be different from the third digit of <m>f(3) </m> <mdash/> so <m>z \neq f(3)</m>.
+</li>
+<li> <m>\vdots</m>
+</li>
+<li> The <m>n^{th}</m> digit of <m>z</m> must be different from the <m>n^{th}</m> digit of <m>f(n)</m> <mdash/> so <m>z \neq f(n) </m>.
+</li>
+<li> and so on.
+</li>
+</ul>
+So if we make the digits of <m>z</m> in this way, it follows that our number <m>z</m> cannot be any number of the list since it has a different expansion<fn>
+We should be a little careful about 9's and 0's when we do this <mdash /> and we will avoid those two digits when we do this in our proof.</fn>
+. Contradiction!
+</p>
+
+<p>
+  Let us be more precise about this and make a proof.
+</p>
+
+<proof>
+<p>
+Assume, to the contrary, that <m>(0,1)</m> is countable. Since it is finite, it must be denumerable and so there is a bijection <m>f: \mathbb{N} \to (0,1)</m>.
+Hence we can write <m>(0,1) = \{x_1,x_2,x_3,\dots\}</m> where <m>x_i = f(i)</m>. Now each of these
+<m>x</m>'s has an infinite decimal expansion, so we can write a big array as follows:
+<md>
+<mrow>
+  x_1 &amp;= 0.a_{11} a_{12} a_{13} \cdots,
+</mrow><mrow>
+  x_2 &amp;= 0.a_{21} a_{22} a_{23} \cdots,
+</mrow><mrow>
+  x_3 &amp;= 0.a_{31} a_{32} a_{33} \cdots,
+</mrow><mrow>
+  \vdots &amp;= \vdots
+</mrow>
+</md>
+where each <m>a_{ij} \in \{0,1,\dots,9\}</m>.
+</p>
+
+<p>Now we construct a number <m>z</m> that is not on the list. Write <m>z = 0.b_1 b_2 b_3
+\cdots</m>. And set
+<md>
+<mrow>
+  b_n &amp;= \begin{cases}
+          1 &amp; \mbox{ if } a_{nn} \neq 1\\
+          2 &amp; \mbox{ if } a_{nn} = 1
+         \end{cases}
+</mrow>
+</md>
+and since each digit<fn>
+Note that we could have used any two digits except <m>9</m>, in order to avoid the problem of representing the same number with two different expansions.</fn>
+ of <m>z</m> is either <m>1,2</m> we know that
+ <me>
+   \frac{1}{9}=0.111111\dots \lt z \lt 0.222222\dots = \frac{2}{9}
+ </me>
+ and hence <m>z \in (0,1)</m>.
+</p>
+
+<p>Of course, since <m>f</m> is a bijection, our number <m>z</m> must appear somewhere on our list. So let us assume that it is the <m>k^{th}</m> number on the list, namely that <m>z = x_k</m>. But, by construction, the <m>k^{th}</m> digit of <m>z</m> is not the same as the <m>k^{th}</m> digit of <m>x_k</m>. So <m>z \neq x_k</m>. In this way, there is no <m>k</m> such that <m>z = x_k</m> and <m>z</m> is not in the list <mdash/> a contradiction since <m>f</m> must be a bijection.
+</p>
+
+<p>Hence there is no bijection from <m>\mathbb{N} </m> to the set <m> (0,1) </m>, and thus <m>(0,1)</m> is uncountable.
+</p>
+</proof>
+
+<p>So this Theorem proves that there is more than one type of <m>\infty</m> <mdash/> something that is
+really not at all obvious<fn>
+This is a really beautiful result about the nature of the infinite! The author still finds it incredible that one can prove such a deep statement about the universe in a one term course. Remember, we started out with truth tables, and sets and we've just demonstrated that there is not just one infinity! Amazing!</fn>
+. Let us push through to all reals now.
+</p>
+
+<corollary>
+<statement><p>
+ The set <m>\mathbb{R}</m> of real numbers is uncountable.
+</p></statement>
+</corollary>
+
+<proof>
+<p>
+  If <m>\mathbb{R}</m> were countable, then all its subsets must be denumerable. Since <m>(0,1)</m> is uncountable, it follows that <m>\mathbb{R}</m> is uncountable.
+</p>
+</proof>
+
+<p>Note that the cardinality of the reals is denoted <m>c</m>, for continuum. That is <m>|\mathbb{R}| = c</m>. Since <m>c \neq \aleph_0</m> and <m>\mathbb{N} \subseteq \mathbb{R}</m>, we must have <m>\alpha_0  \lt  c</m>. Of course, to give a concrete meaning to the symbol <q><m> \lt </m></q> in the context of cardinalities of infinite sets, we have to do some work. That is the subject of our next section.
+</p>
+
+
+
+</section>
+<section><title>Comparing cardinalities</title>
+<subsection>
+  <title>Extending to the infinite</title>
+<p>So really all<fn>
+  Mind you we did quite a lot with <q>just</q> this.</fn>
+ we have been able to do so far is show that <m>|A| = |B|</m> and, after borrowing some cunning from Cantor, that <m>|A| \neq |B|</m>. Now we will try to understand and give meaning to <m>|A| \leq |B|</m> and <m>|A| \lt |B|</m>. As before, we will try to translate these statements whose meaning are quite simple for finite sets, into statements about functions. From there we can extend them to make sense of infinite sets. This, in turn, will enable us to prove that there is no biggest set and so there an infinite
+number of infinities!
+</p>
+
+<p>Let us go back to finite sets for a moment. Consider the sets
+<md>
+<mrow>
+  A = \set{a,b,c} &amp;&amp; S =\set{x,y,z,w}
+</mrow>
+</md>
+Of course we know <m>|A| \lt |B|</m>. How can we describe this in terms of functions.
+<ul>
+<li> Is there an injection from <m>A</m> to <m>B</m>? <mdash/> Yes, for example:
+<md>
+<mrow>
+  f(a)&amp;=x  &amp;f(b)&amp;=y &amp; f(c)&amp;=z
+</mrow>
+</md>
+</li>
+<li> Is there a surjection from <m>A</m> to <m>B</m>? <mdash/> No <mdash/> by the pigeonhole principle.
+</li>
+<li> Since there is no surjection there cannot be a bijection.
+</li>
+</ul>
+In fact this was a corollary of the pigeonhole principle <mdash/> <xref ref="cor_size_func"/>.
+</p>
+
+<p>In the same way that extended the equivalence between the existence of bijections and sets being equinumerous, from finite sets to infinite sets, we extend the above ideas from finite sets to all sets.
+</p>
+
+<definition>
+<statement><p>
+ Let <m>A</m> and <m>B</m> be sets.
+<ul>
+<li>
+ We write <m>|A| \leq |B|</m> if there is an injection from <m>A</m> to <m>B</m>.
+</li>
+<li>
+ Further, we use <m>|A| \lt |B|</m> to mean that <m>|A|\leq |B|</m> and <m>|A|\neq |B|</m>.
+</li>
+<li>That is, we write <m>|A| \lt |B|</m> and say A has a smaller cardinality than <m>B</m> if there is an injection from <m>A</m> to <m>B</m> but no bijection.
+</li>
+</ul>
+</p></statement>
+</definition>
+
+<p>So with this definition we can now sensibly<fn>Well <mdash /> perhaps <q>precisely</q> is a better word than <q>sensibly</q>.</fn> state that
+<md>
+<mrow>
+  \aleph_0 = |\mathbb{N}|  \lt  |\mathbb{R}|=c
+</mrow>
+</md>
+There are two different infinities <mdash /> the infinity of the integers, and the larger infinity of the reals.
+</p>
+
+<p>
+  This inequality prompts two questions.
+  <ul>
+    <li><p>
+      Are there more<fn>
+    Once you show that something isn't unique, it is only reasonable to ask <q>Well - how many are there?</q>. This was no small part of the controversy that Cantor's work generated. Some Christian theologians thought his results were challenging the notion that the Christian God is unique and absolute. You can certainly find much interesting reading on the implications of Cantor's work.
+    </fn> infinities?
+      </p>
+    </li>
+    <li>Is there some infinity that lies between <m>\alpha_0</m> and <m>c</m>?</li>
+  </ul>
+  This first question we can answer and will do so shortly. The second question is due to Cantor and remains unanswered; it now stated as a conjecture called the <q>continuum hypothesis</q>.
+</p>
+
+<conjecture><title>The continuum hypothesis</title>
+  <statement>
+    <p>
+      There is no set <m>A</m> such that <m>\aleph_0  \lt  |A|  \lt  c</m>.
+    </p>
+  </statement>
+</conjecture>
+
+<p>
+This is generally believed to be true. It is still an active area of research and people have shown quite a bit about what might happen if this result is true and if it is false. In particular <mdash/> it has been proved that one cannot disprove this using standard set theory (by Gödel 1931). It was then proved that one cannot prove it to be true either (by Cohen 1963).
+</p>
+
+</subsection>
+
+<subsection><title>Cantor's Theorem and infinite infinities</title>
+<p>Back to the number of infinities. One relatively easy result shows that there is a set bigger than the reals. We do this by considering a set and its power set. This result, now known as Cantor's theorem, has very interesting consequences.
+</p>
+
+<theorem xml:id="thm_cantor"><title>Cantor's theorem</title>
+<statement><p>
+ Let <m>A</m> be a set. Then <m>|A|  \lt  |\pow{A}|</m>.
+</p></statement>
+</theorem>
+
+<p>
+  For finite sets this result is quite easy.
+  One can prove (using induction, for example) that if <m>|A|=n</m> then <m>|\pow{A}|=2^n</m>, and that <m>n \lt 2^n</m> for any integer <m>n</m>.
+  For infinite sets things are much less obvious.
+</p>
+
+<p>We start by showing that there is an injection from <m>A</m> to <m>\pow{A}</m>. An easy one is
+<md>
+<mrow>
+  f:A \to \pow{A} &amp;&amp; \text{defined by} &amp;&amp; f(a) &amp;= \set{a}
+</mrow>
+<intertext>
+another one is
+</intertext>
+<mrow> h:A \to \pow{A} \amp\amp \text{defined by } \amp\amp h(a)\amp = A-\set{a}.</mrow>
+</md>
+We can then show there is no bijection by showing that no function from <m>A</m> to its power set can be surjective. We do this using a proof by contradiction.
+</p>
+
+<p>
+  Before we do that, let us study these two functions, <m>f</m> and <m>h</m>, a little more. Consider <m>A=\set{1,2,3}</m>, then we have
+  <md>
+  <mrow>f(1) \amp= \set{1} \amp f(2)\amp=\set{2} \amp f(3)\amp=\set{3} </mrow>
+  <mrow>h(1) \amp= \set{2,3} \amp h(2)\amp=\set{1,3} \amp h(3)\amp=\set{1,2} </mrow>
+  </md>
+  Notice that <m>f,h</m> take elements of <m>A</m> and turn them into subsets of <m>A</m>.
+</p>
+<p>
+  Look a little more closely at <m>f</m> and you see that <m>1 \in f(1)</m>, <m>2 \in f(2)</m> and <m>3 \in f(3)</m>. That is
+  <me>
+    \forall a \in A, a \in f(a)
+  </me>
+  Looking at <m>h</m> we see that <m>1 \not\in h(1), 2 \not\in h(2)</m> and <m>3 \not\in h(3)</m>. That is
+  <me>
+    \forall a \in A, a \not\in h(a)
+  </me>
+</p>
+<p>
+  More generally, if we have some function, <m>g</m>, that takes us from <m>A</m> to its power set,  then we can try to understand which elements map into their image and which do not. In particular, for which <m>x \in A</m> is <m>x \in g(x)</m>, and for which <m>y \in A</m> is <m>y \not\in g(y)</m>. Understanding those sets of elements will be key to the proof.
+</p>
+
+<p>So, assume, to the contrary, that there is a surjection (call it <m>g</m>) from <m>A</m> to its power set. Hence the function <m>g</m> takes an element, <m>x \in A</m> and maps it to a subset of <m>g(x) \subseteq A</m>. As we noted above, it is possible that when we apply <m>g</m> to an element <m>x</m> we'll get a subset of <m>A</m> that <em>contains</em> <m>x</m>.  So now let us say that
+<ul>
+<li> an element <m>x</m> is <q>good</q> if <m>x \in g(x) </m>, and
+</li>
+<li> an element <m>x</m> is <q>bad</q> if <m>x \not\in g(x) </m>.
+</li>
+</ul>
+So we can now define the set of all good elements, <m>G</m>, and the set of all bad elements, <m>B</m>:
+<md>
+<mrow>
+  G &amp;= \set{x \in A \so x \in g(x)}
+</mrow><mrow>
+  B &amp;= \set{x \in A \so x \not\in g(x)}
+</mrow>
+</md>
+Now both of these are subsets of <m>A</m> and so <m>G,B \in \pow{A}</m>.
+Further we see that each element of <m>A</m> must be in exactly one of <m>G,B</m>, and thus
+<me>
+  G \cap B = \es \qquad \text{ and } \qquad G \cup B = A
+</me>
+</p>
+
+<p>
+  As is often the case, the set of good things is not as interesting as the set of bad things.
+  So though we have defined <m>G</m>, we won't use it further.
+  Instead concentrate on <m>B</m>.
+  By assumption <m>g</m> is surjective, so there must be some element of <m>A</m> that maps to <m>B</m>.
+  That is, there should be <m>q \in A</m> so that
+<md>
+<mrow>
+  g(q) &amp;= B
+</mrow>
+</md>
+We get the contradiction<fn>
+This contradiction is reminiscent of Russell's paradox (due to Russell in 1901 and also by Zermelo in 1899). Consider the set of all sets that do not contain themselves. That is
+<m>R = \set{X \so X \not\in X}</m>. One realises the paradox when you try to decide whether <m>R \in R</m> or not. If <m>R \in R</m>, then my definition of the set, it cannot be. While if <m>R \not\in R</m> then, by definition of the set, it must be. There is much of interest here for a reader armed with a good search-engine.
+</fn> by examining whether or not <m>q \in B</m>.
+</p>
+<p>
+  <ul>
+  <li>
+    <p>
+      If <m>q \in B</m>, then since <m>g(q)=B</m> we must have (by definition of <m>G</m>) that <m>q \in G</m>.
+      However, this is a contradiction <mdash /> <m>q \in B</m> and <m>q \not\in B</m>.
+    </p>
+  </li>
+  <li>
+    <p>
+      If <m>q \not\in B</m>, then since <m>g(q)=B</m> we must have (by definition of <m>B</m>) that <m>q \in B</m>.
+      However, this is a contradiction <mdash /> <m>q \not\in B</m> and <m>q \in B</m>.
+    </p>
+  </li>
+</ul>
+In either case we get a contradiction, so no such surjection exists.
+</p>
+
+<proof>
+  <p>
+    We split the proof into three steps.
+    <ul>
+      <li>We show that the result holds when <m>A = \es</m></li>
+      <li>We show that <m>|A| \leq |\pow{A}|</m> by giving an injection from <m>A</m> to <m>\pow{A}</m>.</li>
+      <li>Finally, we show that there cannot be a surjection from <m>A</m> to <m>\pow{A}</m>.</li>
+    </ul>
+  </p>
+<p>
+  Either <m>A</m> is empty or not. If <m>A = \es</m> then <m>0=|A| \lt |\pow{A}|=1</m>. So in what follows we can assume <m>A \neq \es</m>.
+</p>
+
+<p>
+  We now construct an injection <m>f:A \to \pow{A}</m>. Define
+  <me>
+    f(x) = \set{x} \qquad \text{for all } x \in A.
+  </me>
+  To show that this function is injective, let <m>x_1,x_2 \in A</m> and
+  assume <m>f(x_1)=f(x_2)</m>. Then <m>\set{x_1} = \set{x_2}</m> and thus <m>x_1=x_2</m>. So <m>f</m> is injective. Thus <m>|A| \leq |\pow{A}|</m>.
+</p>
+
+<p>
+  We prove there cannot be a bijection between <m>A</m> and <m>\pow{A}</m> by showing that there cannot be a surjection. We do this by contradiction. Assume, to the contrary, that there is a surjection <m>g:A \to \pow{A}</m>.
+  We then partition <m>A</m> into two subsets
+  <me>
+  G  = \set{x \in A \so x \in g(x)}
+  \qquad \text{ and } \qquad
+  B = \set{x \in A \so x \not\in g(x)}.
+  </me>
+  Notice that <m>B \subseteq A</m> and so <m>B \in \pow{A}</m>.
+</p>
+<p>
+  Since <m>g</m> is, by assumption, a surjection, and <m>B</m> is an element of the codomain of <m>g</m>, there must be <m>q \in A</m> so that <m>g(q)=B</m>. Now either <m>q \in B</m> or <m>q \not \in B</m>.
+  <ul>
+    <li>
+      <p>
+        If <m>q \in B</m>, then since <m>g(q)=B</m> we have that <m>q \in g(q)</m>. But then definition of <m>B</m> implies that <m>q \not \in B</m>, giving a contradiction.
+      </p>
+    </li>
+    <li>
+      <p>
+        Similarly, if <m>q \not\in B</m>, then since <m>g(q)=B</m> we have that <m>q \not\in g(q)</m>. But then definition of <m>B</m> implies that <m>q \in B</m>, again giving a contradiction.
+      </p>
+    </li>
+  </ul>
+  In either case we get a contradiction, and so we must conclude that no surjection <m>g</m> can exist. Thus there is no surjection from <m>A \to \pow{A}</m>, and thus there is no bijection from <m>A \to \pow{A}</m>.
+</p>
+
+</proof>
+
+<p>
+  We can immediately apply Cantor's theorem to the natural numbers to see that
+  <me>
+    |\mathbb{N}| \lt | \pow{\mathbb{N}}|
+  </me>
+  so we have 2 infinities! But, of course, we can do it again to get another infinity:
+  <me>
+    |\mathbb{N}| \lt | \pow{\mathbb{N}}| \lt | \pow{\pow{\mathbb{N}}}|
+  </me>
+  and again!
+  <me>
+    |\mathbb{N}| \lt | \pow{\mathbb{N}}| \lt | \pow{\pow{\mathbb{N}}}|
+    \lt | \pow{\pow{\pow{\mathbb{N}}}}|
+  </me>
+  And we can keep going and going to get the following corollary.
+</p>
+
+<corollary xml:id="cor_inf_inf">
+  <statement>
+    <p>
+      There are an infinite number of different infinities.
+    </p>
+  </statement>
+</corollary>
+<proof>
+  <p>
+    Starting with <m>\mathbb{R}</m>, we can form <m>\pow{\mathbb{R}}</m>, which is not equinumerous, by Cantor's theorem.
+    But then we can take the power set of that to obtain a yet larger infinite set <m>\pow{\pow{\mathbb{R}}}</m>.
+    Continuing in this fashion gives an infinitely long sequence of infinite sets none of which are equinumerous.
+  </p>
+</proof>
+
+<p>
+So we have at least a denumerable number of infinites! In fact there are even more than that! But we'll let you search-engine your way to discussions of that result.
+</p>
+
+</subsection>
+<subsection><title>Congratulations are in order</title>
+<p>
+  At this point we invite the reader to take stock of what we <mdash /> ie you! <mdash /> have managed to do by following along the text. We started by looking at very basic ideas of sets, statements and truth-tables, and have now just proved something fundamental and highly-non-trivial about the nature of infinity! This is no small achievement!
+</p>
+</subsection>
+
+<subsection>
+  <title>One more question</title>
+<p>
+  There is one little question left in this section. From <xref ref="thm_diag"/> we know that
+  <me>
+    |\mathbb{N}| \lt |\mathbb{R}|
+  </me>
+  and from <xref ref="thm_cantor"/> we know that
+  <me>
+    |\mathbb{N}| \lt |\pow{\mathbb{N}}|
+  </me>
+  but we have not yet compared
+  <me>
+    |\pow{\mathbb{N}}| \overset{\text{?}}{=} | \mathbb{R} |
+  </me>
+  One can show that these sets are equinumerous, but constructing an explicit bijection between them is quite difficult. Instead one can prove that
+  <me>
+    |\pow{\mathbb{N}}| \leq | \mathbb{R} | \qquad \text{ and }
+    | \mathbb{R} | \leq |\pow{\mathbb{N}}|
+  </me>
+  by finding injections between those sets. However in order to show that the existence of those injections implies the existence of a bijection, ie
+  <me>
+    (|A| \leq |B|) \land (|B| \leq |A|) \implies (|A|=|B|)
+  </me>
+  we need the Cantor-Schröder-Bernstein theorem.
+</p>
+
+<p>
+  The proof of the Cantor-Schröder-Bernstein theorem is quite
+  involved, so <em>the proof</em> is not typically covered in a first
+  course in proof. That being said, the result itself is useful and we
+  do make use of it in some of the exercises for this
+  chapter. Accordingly we encourage the reader to read about the
+  result, skip over the proof, and see how Cantor-Schröder-Bernstein
+  is used to show that <m>| \mathbb{R} | = |\pow{\mathbb{N}}|</m>.
+</p>
+<p>
+  The interested reader is, of course, encouraged to read the proof <mdash/> it is a nice piece of mathematics.
+</p>
+
+</subsection>
+
+</section>
+<section xml:id="sec_compare_card"><title>More comparisons of cardinalties</title>
+<introduction>
+<p>
+At this point, we have given extra meaning to the symbols <q><m>\leq</m></q> and '<m> \lt </m>' so that they can be used to handle cardinalities of infinite sets. In that context do they still behave the same way as they do in the context of (say) comparing real numbers? So, for example, does the following hold:
+</p>
+
+<blockquote>
+<p>
+  if <m>|A|\leq|B|</m> and <m>|B|\leq |A|</m> then <m>|A|=|B|</m>
+</p>
+</blockquote>
+
+<p>
+This is equivalent to
+</p>
+
+<blockquote>
+<p>
+  If there is an injection from <m>A</m> to <m>B</m> and an injection from <m>B</m> to <m>A</m>, then there is a bijection from <m>A</m> to <m>B</m>.
+</p>
+</blockquote>
+
+
+<image width="50%" source="csb1"/>
+
+
+<p>
+  This result is the Cantor-Schröder-Bernstein<fn>
+  This was first published without proof by Cantor in 1887. In the same year it was proved by Dedekind, but not published. Schröder gave a proof sketch in 1896, but it was found to be incorrect. Then in 1897, almost simultaneously, Schröder and Bernstein gave correct proofs. At this time, Bernstein was 19 years old! Dedekin proved it again later that year. Why Dedekin doesn't get more credit for this theorem remains mysterious.</fn>
+ Theorem
+</p>
+
+</introduction>
+<subsection><title>The Cantor-Schröder-Bernstein theorem</title>
+
+<theorem xml:id="thm_CSB"><title>Cantor-Schröder-Bernstein (and also Dedekind)</title>
+<statement><p>
+  Let <m>A,B</m> be sets. If there is an injection <m>f:A \to B</m> and an injection <m>g:B \to A</m>, then there is a bijection <m>h: A \to B</m>. Equivalently, if <m>|A|\leq |B|</m> and <m>|B| \leq |A|</m> then <m>|A| = |B|</m>.
+</p></statement>
+</theorem>
+
+<p>The proof is by no means trivial; we have some work to do. First up <mdash/> let us assume that we have those injections <m>f:A \to B</m> and <m>g:B \to A</m>.
+</p>
+
+
+<image width="75%" source="csb2"/>
+
+
+<p>
+We can think of <m>f</m> injecting a copy of <m>A</m> into <m>B</m> <mdash/> namely <m>f(A)</m>. It is not hard to show that by restricting the codomain we can build a function
+<md>
+<mrow>
+  \hat{f}:A \to f(A) &amp;&amp; \text{defined by } \hat{f}(a) = f(a)
+</mrow>
+</md>
+is a bijection. So that looks like a good place to start making our bijection from <m>A</m> to <m>B</m>. We can similarly restrict the codomain of <m>g</m> to  construct
+<md>
+<mrow>
+  \hat{g}:B \to g(B) &amp;&amp; \text{defined by } \hat{g}(b) = g(b)
+</mrow>
+</md>
+Since this is also a bijection, its inverse is a bijection <mdash/> giving us another bijection
+<md>
+<mrow>
+  \hat{g}^{-1}: g(B) \to B
+</mrow>
+</md>
+This should give us some hope because by restricting codomains we have
+<ul>
+<li> a bijection, <m>\hat{f}</m>, from all of <m>A</m> to some (but not all) of <m>B</m>, and
+</li>
+<li> a bijection, <m>\hat{g}^{-1}</m> from some (but not all) of <m>A</m> to all of <m>B</m>.
+</li>
+</ul>
+So perhaps we can build a bijection from all of <m>A</m> to all of <m>B</m> by carefully choosing between these two depending on our input.
+</p>
+
+<p>To investigate things a bit further, we should think about what happens when we compose <m>f</m> and <m>g</m>.
+Let <m>x \in A</m> and consider the image of <m>x</m> under <m>f</m> <mdash/> we get some element <m>f(x) \in B</m>. We cannot do much with this, but we can apply <m>g</m> to it, giving us <m>g(f(x))</m>. This, in turn, is some element of <m>A</m>, so we can apply <m>f</m> to it, etc etc. In this way, we can think of the trajectory of <m>x</m> under these two injections.
+<md>
+<mrow>
+  x \mapsto f(x) \mapsto g(f(x)) \mapsto f(g(f(x))) \mapsto \cdots
+</mrow>
+</md>
+What we have here is the <em>forward</em> trajectory of <m>x</m> under <m>f</m> and <m>g</m>.
+</p>
+
+
+<image width="100%" source="csb3"/>
+
+
+<p>
+But we could also go backwards. For any <m>x \in A</m>, we can compute the preimage of <m>g^{-1}(\set{x})</m>. Since <m>g</m> is injective, we know that that this set is either empty or contains precisely 1 element (otherwise <m>g</m> would fail to be injective). We can make a similar argument about any <m>y \in B</m>, its preimage <m>f^{-1}(\set{y})</m> is either empty or contains exactly 1 element. Hence we can extend this trajectory backwards via unique preimages <mdash/> unless we get stuck at an element whose preimage is empty.
+</p>
+
+
+<image width="100%" source="csb4"/>
+
+
+<p>
+Each element has a unique forward step along its path by applying <m>f</m> or <m>g</m> as appropriate. Similarly, when we step back along the trajectory, we move to a unique element (due to injectivity) by application of <m>f^{-1}</m> or <m>g^{-1}</m>, or the preimage is empty and cannot move any further back. So two trajectories cannot merge, nor can a trajectory branch:
+</p>
+
+
+<image width="66%" source="csb5"/>
+
+
+<p>
+Because of this, the trajectory of any point <m>x</m> can be of 4 types:
+<ul>
+<li> the trajectory forms an infinite line
+</li>
+<li> the trajectory is a loop
+</li>
+<li> the trajectory goes forward forever, but going backwards we get stuck at an element of <m>A</m>, or
+</li>
+<li> the trajectory goes forward forever, but going backwards we get stuck at an element of <m>B</m>.
+</li>
+</ul>
+</p>
+
+<image width="100%" source="csb6"/>
+
+<p>
+We cannot have more complicated shapes. Let us call the first three types <q>good</q> and the last type <mdash/> that gets stuck at <m>B</m> <mdash/> <q>bad</q>.
+</p>
+
+<p>Now, define a function <m>h: A \to B</m> by
+<md>
+<mrow>
+  h(x) &amp;=
+  \begin{cases}
+    f(x) &amp; \text{ if the trajectory of \(x\) is good, and}
+</mrow><mrow>
+    g^{-1}(x) &amp; \text{ if the trajectory of \(x\) is bad.}
+  \end{cases}
+</mrow>
+</md>
+To see that this is actually function <mdash/> take any element of <m>a \in A</m>. We can always form <m>f(a)</m>, since <m>f</m> is a function. If <m>a</m> lies on a bad trajectory, then we know we can go backwards until we get stuck at some element of <m>B</m> <mdash/> thus the preimage of <m>g^{-1}(a)</m> must contain exactly 1 element <mdash/> which we take to be <m>h(a)</m>.
+</p>
+
+<p>Oof. Now we <q>just</q> have to prove this is a bijection.
+</p>
+
+<proof><title><m>h</m> is a surjection</title>
+<p>
+    Let <m>b \in B</m>. Examine the trajectory on which <m>b</m> lies <mdash/> it is either <q>good</q> or <q>bad</q>.
+    <ul>
+<li> If <m>b</m> lies on a good trajectory, then (by moving back one step along the trajectory) there is some <m>x \in A</m> so that <m>f(x)=y</m>. This <m>x</m> must also lie on a good trajectory and so <m>h(x) = f(x) = y</m>.
+</li>
+<li> If <m>b</m> lies on a bad trajectory, then (by moving forward one step along the trajectory) we set <m>x=g(b)</m>. We know that <m>x</m> also lies on a bad trajectory, so <m>h(x)= g^{-1}(x) = g^{-1}(g(y))= y</m>.
+</li>
+</ul>
+    In either case, by moving forward or backward one step along the trajectory of <m>y</m> we find an <m>x \in A</m> so that <m>h(x)=y</m>.
+</p>
+</proof>
+
+<proof><title><m>h</m> is an injection</title>
+<p>
+    Let <m>a,c \in A</m>, and assume that <m>h(a)=h(c)</m>. Notice that by construction, <m>h(x)</m> lies on the same trajectory as <m>x</m>. Thus <m>a,c,h(a)</m> and <m>h(c)</m> must all lie on the same trajectory. That trajectory is either good or bad.
+    <ul>
+<li> If the trajectory is good, then <m>h(a)=f(a)</m> and <m>h(c)=f(c)</m> and so <m>f(a)=f(c)</m>. Since <m>f</m> is an injection, we know that <m>a=c</m>.
+</li>
+<li> If the trajectory is bad then <m>h(a)=g^{-1}(a)</m> and <m>h(c)=g^{-1}(c)</m>. So <m>g^{-1}(a)=g^{-1}(c)</m> <mdash/> since <m>g</m> is an injection, that preimage contains exactly one element, so we must have <m>a=c</m>.
+</li>
+</ul>
+    In either case, we have that <m>a=c</m>.
+</p>
+</proof>
+
+</subsection>
+<subsection><title>Applications</title>
+
+<p>
+  The Cantor-Schröder-Bernstein theorem makes proving the following results much easier.
+</p>
+
+
+<proposition>
+<statement><p>
+  The sets <m>(0,1), [0,1), (0,1]</m> and <m>[0,1]</m> are all equinumerous.
+</p></statement>
+</proposition>
+<proof>
+  <p>
+    By Cantor-Schröder-Bernstein it suffices to construct injections from <m>(0,1)</m> to <m>[0,1)</m> and vice-versa to show that they are equinumerous.
+    <ul>
+      <li>
+        <p>
+          Let <m>f:(0,1) \to [0,1)</m> be defined by <m>f(x)=x</m>.
+          This is an injection since if <m>x_1 \neq x_2</m> then <m>f(x_1)=x_1 \neq x_2=f(x_2)</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Let <m>g:[0,1) \to (0,1)</m> be defined by <m>g(x) = 0.1(1+x)</m> (there are many similar choices).
+          Again, this is an injection since if <m>x_1 \neq x_2</m> then <m>g(x_1) \neq g(x_2)</m>.
+        </p>
+      </li>
+    </ul>
+  </p>
+  <p>
+    We can then show that the second and third sets are equinumerous via the explicit bijection
+    <md>
+      <mrow>f:\amp[0,1)\to(0,1] \amp f(x)=1-x</mrow>
+    </md>
+    This is injective since if <m>f(x_1)=f(x_2)</m> then <m>1-x_1=1-x_2</m> so <m>x_1=x_2</m>.
+    It is surjective since for any <m>y \in (0,1]</m> pick <m>x=1-y \in [0,1)</m>. Then <m>f(x)= 1-(1-y)=y</m> as required.
+  </p>
+  <p>
+    Finally we can prove that the first and last sets are equinumerous by very similar injections to those we used to prove that the first and second sets are equinumerous.
+    <ul>
+      <li>
+        <p>
+          Let Let <m>f:(0,1) \to [0,1]</m> be defined by <m>f(x)=x</m>. It is (immediately) injective by the same argument used above.
+        </p>
+      </li>
+      <li>
+        <p>
+          Let <m>g:[0,1] \to (0,1)</m> be defined by <m>g(x)=0.1(1+x)</m>. It is injective by similar arguments.
+        </p>
+      </li>
+    </ul>
+    So by CSB we have that <m>|(0,1)|=|[0,1]|</m>.
+  </p>
+</proof>
+
+<p>
+This can also be proved without CSB, but it is definitely more work <mdash /> we'll demonstrate that the first two sets are equinumerous.
+The approach is to split the set <m>(0,1)</m> into the set <m>\set{\frac{n}{n+1} \so n \in \mathbb{N} }</m> and everything else.
+Then things of the form <m>\frac{n}{n+1}</m> are mapped to <m>\frac{n-1}{n}</m>, so that
+<md>
+<mrow>
+f(1/2) &amp;= 0 &amp;
+f(2/3) &amp;= 1/2 &amp;
+f(3/4) &amp;= 2/3 &amp;
+f(4/5) &amp;= 3/4 &amp;
+</mrow>
+</md>
+This way we can map something to 0 while not forgetting or missing any other element.
+</p>
+<proof>
+  <p>
+    Let <m>f:(0,1) \to [0,1)</m> be defined by
+    <me>
+      f(x) =
+      \begin{cases}
+        \frac{n-1}{n} &amp; \text{if } x = \frac{n}{n+1}, n \in \mathbb{N} \\
+        x &amp; \text{ otherwise}
+      \end{cases}
+    </me>
+    We then need to show that this is both injective and surjective.
+  <ul>
+    <li>
+      <p>
+        Injective <mdash/> Let <m>a,b \in (0,1)</m> and assume <m>f(a)=f(b)</m>.
+        If <m>f(a)=f(b) = \frac{n-1}{n}</m> for some <m>n \in \mathbb{N}</m>, then we must have <m>a=\frac{n}{n+1}=b</m>.
+        On the other if <m>f(a)=f(b)</m> is not of this form then <m>f(x)=x</m>, so <m>a=b</m>.
+      </p>
+    </li>
+    <li>
+      <p>
+        Surjective <mdash/> Let <m>y \in (0,1)</m>. If <m>y = \frac{n-1}{n}</m> for some <m>n \in \mathbb{N}</m>, then set <m>x=\frac{n}{n+1}</m>.
+        Otherwise set <m>x=y</m>.
+        In either case <m>f(x)=y</m> as required.
+      </p>
+    </li>
+  </ul>
+</p>
+</proof>
+
+</subsection>
+<subsection><title>Proof that <m>|\pow{\mathbb{N}}| = |\mathbb{R}|</m></title>
+<p>
+  From Cantor's theorem we saw that <m>|\mathbb{N}|\lt \pow{\mathbb{N}}|</m>, and by Cantor's diagonal argument we also saw that <m>|\mathbb{N}|\lt |\mathbb{R}|</m>. It is not unreasonable to ask to compare these two uncountable sets.
+  The following really beautiful result shows that they are actually equinumerous.
+</p>
+<theorem>
+  <statement>
+    <p>
+      The sets <m>\mathbb{R}</m> and <m>\pow{\mathbb{N}}</m> are equinumerous.
+    </p>
+  </statement>
+</theorem>
+<proof>
+  <p>
+      By the Cantor-Schröder-Bernstein theorem it suffices to construct injections from <m>\mathcal{P}(\mathbb{N})</m> to <m>\mathbb{R}</m> and vice-versa.
+    <ul>
+      <li>
+        <p>
+          We define an injection <m>g:\mathcal{P}(\mathbb{N}) \to \mathbb{R}</m>.
+          Let <m>X \in \mathcal{P}(\mathbb{N})</m>, we can then construct <m>y = g(X)</m> by constructing its decimal expansion.
+          In particular, write <m>y = 0.y_1y_2y_3y_4\cdots</m>, and then
+          <me>
+            y_n = \begin{cases} 1 &amp; \text{ if } n\in X \\ 0 &amp; \text{ if } n \not\in X \end{cases}
+          </me>
+          Now if we take <m>X_1,X_2 \in \mathcal{P}</m> with <m>X_1 \neq X_2</m>, then
+          <ul>
+            <li>
+              <p>
+                there is <m>n_1 \in X_1</m> so that <m>n_1 \not\in X_2</m>, or
+              </p>
+            </li>
+            <li>
+              <p>
+                there is <m>n_2 \in X_2</m> so that <m>n_2 \not\in X_1</m>, or both.
+              </p>
+            </li>
+          </ul>
+          In either case, this means that corresponding expansions differ at either <m>y_{n_1}</m> or <m>y_{n_2}</m>, and so <m>g(X_1) \neq g(X_2)</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          It is easier to construct an injection from <m>[0,1)</m> to <m>\pow{\mathbb{N}}</m> rather than from <m>\mathbb{R}</m> to <m>\pow{\mathbb{N}}</m>. However, since we have proved  that <m>|[0,1)|=|(0,1)|=|\mathbb{R}|</m>, we know  there is a bijection between <m>\mathbb{R}</m> and <m>[0,1)</m>. So if we compose that bijection with the injection we are about to construct, we get the required injection from <m>\mathbb{R}</m> to <m>\pow{\mathbb{N}}</m>.
+        </p>
+        <p>
+          Given any <m>x \in [0,1)</m> we write its decimal expansion as <m>x=0.x_1x_2x_3\dots</m>.
+          As noted above we can make this expansion unique by avoiding any expansion that ends in an infinite sequence of 9's. Using this expansion we can define <m>h:[0,1) \to \pow{\mathbb{N}}</m> by
+          <me>
+            h(x) = h(0.x_1x_2x_3\dots) = \set{x_1, 10x_2, 100x_3, \dots, 10^{n-1} x_n, \dots} \subseteq \mathbb{N}
+          </me>
+          So, for example,
+          <md>
+            <mrow> h\left(\frac{1}{4}\right)\amp = h(0.25)= \set{2,50} </mrow>
+            <mrow> h\left(\frac{1}{3}\right)\amp = h(0.333\dots) = \set{3,30,300,3000,\dots} </mrow>
+            <mrow> h\left(\frac{2}{11}\right)\amp = h(0.181818\dots) = \set{1,80,100,8000,\dots} </mrow>
+          </md>
+          Now if <m>x \neq z</m> then their decimal expansions must differ at least one digit.
+          Consequently their images will be different subsets of <m>\mathbb{N}</m>.
+          Hence the function <m>h</m> is an injection from <m>[0,1)</m> to <m>\pow{\mathbb{N}}</m>, and so there is an injection from <m>\mathbb{R}</m> to <m>\pow{\mathbb{N}}</m> as required.
+        </p>
+      </li>
+    </ul>
+  </p>
+</proof>
+</subsection>
+</section>
+
+<section xml:id="sec_cantor_first"><title>(Optional) Cantor's first proof of the uncountability of the reals</title>
+<p>
+  For completeness we include Cantor's first proof that
+  <m>|\mathbb{N}| \lt |\mathbb{R}|</m>. This, proved in 1874, is more
+  involved than his very famous diagonal argument which was published
+  in 1891. Despite this it is still accessible to the tools developed
+  in this text.
+</p>
+
+<p>
+  Like the diagonal argument, this first proof also is a proof by
+  contradiction. We assume the existence of a bijection from
+  <m>\mathbb{N}</m> to an interval of the real-line and then show that
+  this leads to a contradiction.  However, rather than relying on
+  decimal expansions of real numbers, it instead relies on the
+  supremum <mdash/> the least upper bound property. The reader should
+  take a moment to examine <xref ref="ex_sup_q1"/> and <xref
+  ref="ex_sup_q2"/>, and also revise <xref ref="sec_limits"/> before
+  continuing.
+</p>
+
+<axiom><title>Least upper bound property of the reals</title>
+<statement>
+  <p>
+    Let <m>A \subseteq \mathbb{R}</m> be bounded above. That is, there
+    is some <m>M \in \mathbb{R}</m> so that <m>a \leq M</m> for all
+    <m>a \in A</m>. Then the supremum of <m>A</m> exists and is a real
+    number.
+  </p>
+</statement>
+</axiom>
+<p>
+  This is the critical difference between the reals and the rationals
+  <mdash/> the rationals do not satisfy the least upper bound
+  property. For example, one can take the set of truncated decimal
+  expansions of <m>\sqrt{2}</m>:
+  <md>
+    <mrow>\set{1.0, 1.4, 1.41, 1.414, 1.4142, \dots} \amp = \set{\frac{1}{1}, \frac{14}{10}, \frac{141}{100}, \frac{1414}{1000}, \frac{14142}{10000}, \dots}</mrow>
+    <mrow> \amp= \set{ \lfloor 10^n \sqrt{n} \rfloor \cdot 10^{-n} \st n \in \mathbb{N}}</mrow>
+    <mrow> \amp \subseteq \mathbb{Q}</mrow>
+  </md>
+  The least upper bound of this set is <m>\sqrt{2}</m> which is <xref
+  ref="thm_sqrt2_irrat">not a rational number</xref>.
+</p>
+<p>
+  We can use the least upper bound property to prove<fn>
+  This is a nice and intuitive result; in fact it is such a nice result we
+  set it as an <xref ref="ex_inc_seq_conv_sup">exercise</xref>.
+</fn>
+that increasing sequences of real numbers that are bounded above must
+converge to a real limit.
+</p>
+
+<lemma xml:id="lem_bound_increase_cvg">
+  <statement>
+  <p>
+    Let <m>(a_n)</m> be a sequence of real numbers that
+    <ul>
+      <li>is bounded above by some real number <m>M</m>, and </li>
+      <li>satisfies <m>a_k \leq a_{k+1}</m> for all <m>k</m>.</li>
+    </ul>
+    Then the sequence <m>a_n</m> converges as <m>n \to \infty</m>.
+  </p>
+  </statement>
+  <proof>
+    <p>
+      See <xref ref="ex_inc_seq_conv_sup"/>.
+    </p>
+    <!-- <p> -->
+    <!--   Let <m>A = \set{a_n \st n \in \mathbb{N}}</m> and let <m>L = -->
+    <!--   \sup A</m> which exists by the Least Upper Bound -->
+    <!--   property. Further, let <m>\epsilon \gt 0</m>. -->
+    <!-- </p> -->
+    <!-- <p> -->
+    <!--   Since <m>L</m> is the supremum of <m>A</m>, the number -->
+    <!--   <m>L-\epsilon</m> is not an upper bound for <m>A</m>. Thus there -->
+    <!--   is some <m>a_k \in A</m> so that <m>a_k \gt L-\epsilon</m>. Then -->
+    <!--   set <m>N=k</m> and let <m>n \gt N</m>. Since the sequence is -->
+    <!--   increasing, we know that <m>a_n \gt a_k \gt -->
+    <!--   L-\epsilon</m>. Further, since <m>L</m> is an upper bound we -->
+    <!--   know that <m>a_n \leq L</m>. Thus we know that -->
+    <!--   <me> -->
+    <!-- 	|a_n-L| \lt \epsilon -->
+    <!--   </me> -->
+    <!--   Hence <m>a_n \to L</m> as required. -->
+    <!-- </p> -->
+  </proof>
+</lemma>
+
+<p>
+  Now we are ready to get into the proof. Let <m>[a,b]</m> be an
+  interval of the real line with <m>a \lt b</m>. Then assume to the
+  contrary, that there is a bijection
+  <me>
+    g: \mathbb{N} \to [a,b]
+  </me> 
+  This bijection defines an infinite sequence via <m>x_n = g(n)</m>
+  for any <m>n \in \mathbb{N}</m>. Notice that all the terms of this
+  sequence must be distinct since <m>g</m> is injective.
+</p>
+<p>
+  The proof works by finding some <m>q \in [a,b]</m> so that <m>q</m>
+  is not part of the sequence. Hence there is no <m>n \in
+  \mathbb{N}</m> so that <m>g(n)=q</m>, and so <m>g</m> is not surjective and hence not bijective.
+</p>
+
+<p>
+  We construct two new sequences <m>(a_n)</m> and <m>(b_n)</m> from the sequence <m>(x_n)</m>.
+  <ul>
+    <li>
+      Find the first two <m>x_n</m> lying strictly inside the
+      interval, that is <m>a \lt x_n \lt b</m>. These two terms must
+      be distinct and let <m>a_1</m> be the smaller and <m>b_1</m> be
+      the larger.
+    </li>
+    <li>
+      Similarly, find the first two terms of the sequence that lie
+      inside <m>(a_1,b_1)</m> <mdash/> call the smaller <m>a_2</m> and
+      the larger <m>b_2</m>.
+    </li>
+    <li>
+      Keep repeating this to define <m>(a_3,b_3)</m>, <m>(a_4,b_4)</m> and so on.
+    </li>
+  </ul>
+  Notice that
+  <ul>
+    <li>for any <m>n</m> we must have <m>a_n \lt b_n</m>, and </li>
+    <li><p>
+      the sequences of <m>a</m>'s and <m>b</m>'s satisfy
+      <me>
+	a \lt a_1 \lt a_2 \lt a_3 \lt \dots \lt b_3 \lt b_2 \lt b_1 \lt b
+      </me>
+      and so the sequence <m>(a_n)</m> is increasing and bounded above by
+      <m>b</m>, while the sequence <m>(b_n)</m> is decreasing and bounded
+      below by <m>a</m>.
+    </p>
+    </li>
+    <li>
+      the sequences of <m>a</m>'s and <m>b</m>'s may or may not be infinite.
+    </li>
+    <li>
+      for any <m>n</m>, the terms <m>x_1,x_2,\dots, x_{2n}</m> do not lie inside the interval <m>(a_n,b_n)</m>.
+    </li>
+  </ul>
+  This last point can be proved quite readily using induction on <m>n</m>.
+</p>
+<lemma xml:id="lem_xn_exclude">
+  <statement>
+    <p>
+      The interval <m>(a_n,b_n)</m> does not contain the sequence
+      terms <m>x_1,x_2,\dots,x_{2n}</m>.
+    </p>
+  </statement>
+  <proof>
+    <p>
+      We prove the result by induction on <m>n</m>.
+      <ul>
+	<li>
+	  Notice that <m>x_1,x_2</m> must belong to
+	  <m>\set{a,b,a_1,b_1}</m> (by construction). Thus <m>x_1,x_2
+	  \not\in (a_1,b_1)</m> since the open interval exludes the
+	  endpoints.
+	</li>
+	<li>
+	  Now assume that the result holds for <m>n=k</m>, and so
+	  <m>x_1,x_2,\dots x_{2n}</m> are lie outside the interval
+	  <m>(a_n,b_n)</m>. Then either <m>x_{2n+1}, x_{2n+2}</m> lie
+	  outside this interval, or, if they lie inside the interval
+	  they are one or both of <m>a_{n+1},
+	  b_{n+1}</m>. Consequently they lie outside
+	  <m>(a_{n+1},b_{n+1})</m>.
+	</li>
+      </ul>
+      Hence the result holds for all <m>n \in \mathbb{N}</m>.
+    </p>
+  </proof>
+</lemma>
+
+
+
+<p>
+  The sequences <m>(a_n), (b_n)</m> may or may not be infinite. So
+  initially assume that they are finite. That is, the final interval
+  is <m>(a_N, b_N)</m>. Now notice that there cannot be two or more
+  <m>x_n</m> inside the interval <m>(a_N,b_N)</m> because otherwise we
+  would use those to define another interval <m>(a_{N+1},
+  b_{N+1})</m>. Thus there are either zero or one more term of the
+  sequence <m>(x_n)</m> lying inside <m>(a_N,b_N)</m>. But this means
+  that any other number inside <m>(a_N,b_N)</m> is not part of the
+  sequence <m>(x_n)</m>. That is, there is some <m>q \in (a_N,b_N)</m>
+  so that <m>q \neq x_n = g(n)</m> for any <m>n \in \mathbb{N}</m>.
+</p>
+
+<p>
+  Now instead, assume that the sequences of <m>a</m>'s and <m>b</m>'s
+  are infinite. Since the sequence of <m>a</m>'s is increasing and
+  bounded above by <m>b</m>, <xref ref="lem_bound_increase_cvg"/>
+  implies that it converges to a limit. The same argument (applied to
+  <m>-b_n</m>) shows that the sequence of <m>b</m>'s also converges to
+  a limit. So define
+  <me>
+    \lim_{n \to \infty} a_n = \alpha \qquad 
+    \lim_{n \to \infty} b_n = \beta.
+  </me>
+  Notice that we cannot have <m>\beta \lt \alpha</m> (otherwise we
+  would have <m>a_k \gt b_k</m> for some <m>k</m>), and so either
+  <m>\alpha \lt \beta</m> or <m>\alpha = \beta</m>.
+
+  <ul>
+    <li>
+      If <m>\alpha \lt \beta</m>, then every <m>q \in (\alpha,
+      \beta)</m> is not in the sequence of <m>x</m>'s. If <m>q =
+      x_n</m> for some <m>n</m>, then this would contradict <xref
+      ref="lem_xn_exclude"/> above, since it would imply that <m>q =
+      x_n \in (\alpha,\beta) \subseteq (a_n,b_n)</m>.
+    </li>
+    <li>
+      On the other hand, if <m>\alpha=\beta</m>, then <m>q =
+      \alpha</m> is not in the sequence of <m>x</m>'s. If
+      <m>q=\alpha=x_n</m> for some <m>n</m>, then again this would
+      contradict <xref ref="lem_xn_exclude"/> since it would imply
+      that <m>q=x_n =\alpha \in (a_n,b_n)</m>.
+    </li>
+  </ul>
+  Thus even when the sequences of <m>a</m>'s and <m>b</m>'s are
+  infinite, there is always some <m>q \in [a,b]</m> that is not in the
+  sequence of <m>x</m>'s. Hence the function <m>g:\mathbb{N} \to
+  [a,b]</m> is not a surjection, contradicting our initial assumption
+  that it is bijective.
+</p>
+
+
+
+</section>
+
+<xi:include href="../problems/12ex.ptx"/>
+
+</chapter>

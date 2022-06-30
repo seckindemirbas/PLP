@@ -1,0 +1,88 @@
+<exercise>
+<!-- source latex = 'Show that some more sets have the same cardinality.tex' -->
+<!-- converted on 30/03/2022 at 15:24 -->
+<statement>
+<p>
+Show that the two given sets have equal cardinality by describing a bijection from one to
+the other. Describe your bijection with a formula (not as a table).
+<ol marker="(a)">
+<li>
+<p>
+ <m>\mathbb{R}</m> and <m>(\sqrt 2,\infty)</m>
+</p></li>
+<li>
+<p>
+ The set of even integers and the set of odd integers
+</p></li>
+<li>
+<p>
+ <m>\mathbb{Z}</m> and <m>S = \{x  \in\mathbb{R}: \sin x = 1\}</m>
+</p></li>
+<li>
+<p>
+ <m>\{0, 1\}\times\mathbb{N}</m> and <m>\mathbb{Z}</m>
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+
+  <proof><title>Proof of (a)</title>
+  <p>We know that the function <m>g:\mathbb{R}\rightarrow (0,\infty)</m> defined by <m>g(x)=e^x</m> is a bijective function. Using this function we can define a bijection <m>f:\mathbb{R}\rightarrow (\sqrt{2},\infty)</m> as <m>f(x)=g(x)+\sqrt2</m>.
+</p>
+<p>
+To see that <m>f</m> is injective, consider <m>x, y \in \mathbb{R}</m> such that <m>f(x) = f(y)</m>. Then by the definition of <m>f</m>, <m>g(x)+\sqrt{2} = g(y)+\sqrt{2}</m>. Subtracting <m>\sqrt{2}</m> from each side, we see that we must have <m>g(x) = g(y)</m>. By the injectivity of <m>g</m>, we see that <m>x=y</m>, and conclude that <m>f</m> is injective.
+</p>
+
+<p>
+Moreover, consider <m>z\in (\sqrt{2}, \infty)</m>. Then <m>z-\sqrt{2}\in (0, \infty)</m>. Since <m>g</m> is bijective, there exists a value <m>x\in \mathbb{R}</m> such that <m>g(x) = z-\sqrt{2}</m>. Adding <m>\sqrt{2}</m> to each side, we see that <m>z = g(x) + \sqrt{2} = f(x)</m>, so <m>f</m> is surjective.
+</p>
+<p>
+We conclude that <m>|\mathbb{R}| = |(\sqrt{2}, \infty)|</m>.
+</p></proof>
+
+
+<proof><title>Proof of (b)</title>
+<p>
+Let <m>O</m> denote the set of odd integers and <m>E</m> denote the set of even integers. Then we can define the function <m>f:O\rightarrow E</m> as <m>f(x)=x+1</m>.
+</p>
+<p>
+To see that <m>f</m> is injective, consider <m>x,y \in O</m> such that <m>f(x)=f(y)</m>. Then <m>x+1=y+1</m>. Subtracting <m>1</m> from each side, we see that <m>x=y</m>. Also, for any even integer <m>y</m>, we see <m>y-1</m> is odd and <m>f(y-1)=y</m>, which implies that <m>f</m> is surjective. Therefore <m>f</m> is bijective, and we see that <m>|O| = |E|</m>
+</p></proof>
+
+<proof><title>Proof of (c)</title>
+<p>
+We see that <m>S = \{x  \in\mathbb{R}: \sin x = 1\}=\{ x\in\mathbb{R}: x=\pi/2+2\pi n \text{ for some } n\in\mathbb{Z} \}</m>. Thus we can define a bijection <m>f:
+\mathbb{Z}\rightarrow S</m>, where <m>f(k)=\dfrac{\pi}{2}+2\pi k</m>.
+Consider <m>i,j \in \mathbb{Z}</m> such that <m>f(i)=f(j)</m>. Then by the definition of <m>f</m>, <m>\dfrac{\pi}{2}+2\pi i = \dfrac{\pi}{2}+2\pi j</m>. Subtracting <m>\dfrac{\pi}{2}</m> from each side gives <m>2\pi i = 2\pi j</m>. Finally, dividing by <m>2\pi</m>, we see that <m>i=j</m>, so <m>f</m> is injective.
+</p>
+<p>
+Now, consider <m>s\in S</m>. As we noticed above, <m>s = \dfrac{\pi}{2} + 2\pi k</m> for some <m>k\in \mathbb{Z}</m>. Thus, <m>f(k)=s</m>, and we see that <m>f</m> is a surjection.
+</p>
+<p>
+Hence <m>f</m> is bijective, and we conclude that <m>|\mathbb{Z}| = |S|</m>.
+</p>
+</proof>
+
+<proof><title>Proof of (d)</title>
+  <p> Define a function <m>f: \mathbb{Z}\rightarrow \set{0,1} \times\mathbb{N}</m>,  by
+<me>
+f(k)=
+\begin{cases}
+(1,k+1) \amp  \text{ if } k\geq 0
+\\
+(0,-k) \amp  \text{ if } k\leq -1
+\end{cases}
+</me>
+</p>
+<p>
+Then we see that for <m>k,m\in\mathbb{Z}</m>, if <m>f(k)=f(m)</m>, then either <m>k,m\leq -1</m> or <m>k,m\geq 0</m>.  If <m>k,m\geq 0</m> we have <m>(1,k+1)=(1,m+1)</m> in which case <m>k=m</m>. If <m>k,m\leq -1</m> we have <m>(0,-k)=(0,-m)</m>, in which case <m>k=m</m> too. We also see that these two are the only two cases since if <m>k\geq 0</m> and <m>m\leq -1</m> or <m>m\geq 0</m> and <m>k\leq -1</m> we see <m>f(k)\neq f(m)</m>.
+</p>
+<p>
+We also see that <m>f</m> is surjective. If <m>(a,n)\in(0,1)\times\mathbb{N}</m> we have two cases: <m>a=0</m> or <m>a=1</m>. If <m>a=0</m>, we can define <m>k=-n</m> so that <m>f(-k)=(0,n)</m> and if <m>a=1</m>, we ca define <m>k=n-1</m> so that <m>f(k)=(1,n)</m>. We conclude that <m>f</m> is a bijection, and therefore <m>|\set{0,1}\times\mathbb{N}| = |\mathbb{Z}|</m>.
+</p></proof>
+
+
+</solution>
+</exercise>

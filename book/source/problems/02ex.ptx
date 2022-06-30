@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<exercises xmlns:xi="http://www.w3.org/2001/XInclude">
+<xi:include href="ch02/identifying_statements.ptx"/>
+<xi:include href="ch02/PLP_exercise_-_chp_2_-_2.ptx"/>
+<xi:include href="ch02/PLP_exercise_-_chp_2_-_3.ptx"/>
+<xi:include href="ch02/PLP_exercise_-_chp_2_-_1.ptx"/>
+<xi:include href="ch02/writing_statements_in_symbolic_logic_question.ptx"/>
+<xi:include href="ch02/Symbolic_to_English.ptx"/>
+<xi:include href="ch02/truth_table_question2.ptx"/>
+<xi:include href="ch02/truthtable.ptx"/>
+<xi:include href="ch02/implication_question.ptx"/>
+<xi:include href="ch02/PLP_exercise_-_chp_2_-_4.ptx"/>
+<xi:include href="ch02/Contrapositive_question.ptx"/>
+<xi:include href="ch02/chaining_implications.ptx"/>
+<xi:include href="ch02/implication_question2.ptx"/>
+<xi:include href="ch02/determine_truth_values_from_implications.ptx"/>
+<xi:include href="ch02/deducing_truth_values.ptx"/>
+<xi:include href="ch02/biconditional_question.ptx"/>
+
+</exercises>

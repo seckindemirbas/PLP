@@ -1,0 +1,134 @@
+<exercise>
+<!-- source latex = 'Negation of quantified statements question.tex' -->
+<!-- converted on 24/06/2021 at 16:10 -->
+<statement>
+<p>
+Write down the negation of each of the following statements. Then determine whether each statement is true or false. Justify your answers.
+</p>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ <m>\exists x\in \mathbb Z</m> such that <m>(x \gt 84)</m> and  <m>x\equiv 75 \pmod{84}</m>.
+</p></li>
+<li>
+<p>
+ <m>\exists x, y\in \mathbb Z</m> such that if <m>1\geq x^2\geq y^2</m>, then <m>x\geq y</m>.
+</p></li>
+<li>
+<p>
+ <m>\forall z\in\mathbb N</m>, <m>\exists x,y\in\mathbb Z</m> such that <m>z=x^2+y^2</m>.
+</p></li>
+<li>
+<p>
+ <m>\exists a\in \mathbb R</m> such that <m>a \gt 0</m> and <m>\forall x\in\mathbb R</m>, if <m>x\geq a</m>, then <m>2^{-x} \lt \dfrac{1}{100}</m>.
+</p></li>
+<li>
+<p>
+ <m>\forall n\in\mathbb R</m>, <m>n</m> is even if and only if <m>n^2</m> is even.
+</p>
+
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ <m>\exists x\in \mathbb Z</m> such that <m>x \gt 84</m> and  <m>x\equiv 75 \pmod{84}</m>.
+</p>
+<p>
+The negation of this sentence is:
+</p>
+<p>
+<q><m>\forall x\in \mathbb Z</m> such that <m>x \gt 84</m>,  <m>x\not\equiv 75 \pmod{84}</m></q>.
+</p>
+<p>
+Or, equivalently,
+</p>
+<p>
+<q><m>\forall x\in\mathbb{Z}</m>, <m>x \leq 84</m> or <m>x \not\equiv 75 \pmod{84}</m></q>.
+</p>
+<p>
+We see that the original statement is true. For an example, we can take <m>x=159</m> (since <m>159 = 84\times1+75</m>).
+</p>
+</li>
+<li>
+<p>
+ <m>\exists x, y\in \mathbb Z</m> such that if <m>1\geq x^2\geq y^2</m>, then <m>x\geq y</m>.
+</p>
+<p>
+The negation of this sentence is:
+</p>
+<p>
+<q><m>\forall x,y\in \mathbb Z</m>, <m>1\geq x^2\geq y^2</m> and  <m>y \gt x</m></q>.
+</p>
+<p>
+We see that the original statement is true. For an example, we can take <m>x=y=0</m>.
+</p>
+
+</li>
+<li>
+<p>
+ <m>\forall z\in\mathbb N</m>, <m>\exists x,y\in\mathbb Z</m> such that <m>z=x^2+y^2</m>.
+</p>
+<p>
+The negation of this sentence is:
+</p>
+<p>
+<q><m>\exists z\in \mathbb N</m>, <m>\forall x,y\in\mathbb{Z}</m>, <m>z\neq x^2+y^2</m></q>.
+</p>
+<p>
+We see that the negation of the  statement is true. For an example, we can take <m>z=3</m>. Then, there doesn't exist <m>x,y\in\mathbb{Z}</m> such that <m>x^2+y^2=3</m>. Since the negation is true, the original statement is false.
+</p>
+<p>
+If we wanted to give a more formal solution to this problem, we could use the fact that the only way we can have <m>x^2 \leq 3</m> is when <m>x \in \set{-1,0,1}</m>. Thus, in order for <m>x^2+y^2 \leq 3</m> we have only 9 possibilities to check, namely <m>x,y \in \set{-1,0,1}</m>, and none of them work.
+</p>
+
+</li>
+<li>
+<p>
+ <m>\exists a\in \mathbb R</m> such that <m>a \gt 0</m> and <m>\forall x\in\mathbb R</m>, if <m>x\geq a</m>, then <m>2^{-x} \lt \dfrac{1}{100}</m>.
+</p>
+<p>
+The negation of this sentence is:
+</p>
+<p>
+<q><m>\forall a\in \mathbb R</m> such that <m>a \gt 0</m>, <m>\exists x\in\mathbb R</m>,  <m>x\geq a</m> and  <m>2^{-x}\geq \dfrac{1}{100}</m></q>.
+</p>
+<p>
+Or
+</p>
+<p>
+<q><m>\forall a\in \mathbb R</m>, <m>a\leq0</m>; or <m>\exists x\in\mathbb R</m>, <m>x\geq a</m> and  <m>2^{-x}\geq \dfrac{1}{100}</m></q>.
+</p>
+<p>
+We see that the original statement is true. For an example, we can take <m>a=7</m>. Then we see that <m>\dfrac{1}{2^7}=\dfrac{1}{128} \lt \dfrac{1}{100}</m>, and whenever <m>x\geq 7</m>, we get <m>\dfrac{1}{2^x}\leq\dfrac{1}{2^7} \lt \dfrac{1}{100}</m>.
+</p>
+<p>
+Notice that we are implicitly using the fact that the function <m>2^x</m> is an increasing function of <m>x</m>, and so <m>2^{-x}</m> is a decreasing function of <m>x</m>. This is not hard to prove. If we assume that <m>a \lt b</m>, then <m>\Delta = 2^b-2^a = 2^a \left(2^{b-a}-1\right)</m>. And since <m>b-a \gt 0</m>, we know that <m>2^{b-a} \gt 1</m>. Thus <m>\Delta \gt 0</m>, and so <m>2^b \gt 2^a</m>.
+</p>
+</li>
+<li>
+<p>
+ <m>\forall n\in\mathbb R</m>, <m>n</m> is even if and only if <m>n^2</m> is even.
+</p>
+<p>
+The negation of this sentence is:
+</p>
+<p>
+<q><m>\exists n\in \mathbb R</m> such that <m>n</m> is even but <m>n^2</m> is not even; or <m>n^2</m> is even but <m>n</m> is not even.</q>
+</p>
+<p>
+We see that the negation of the statement is true. For an example, we can take <m>n=\sqrt{2}</m>. Then, we see <m>n^2=2</m> is even whereas <m>n</m> is not even since it is not an integer.
+</p>
+
+
+
+</li>
+</ol>
+</p>
+</solution>
+</exercise>

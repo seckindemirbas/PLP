@@ -1,0 +1,51 @@
+<exercise>
+<!-- source latex = 'sym and trans does not imply refl.tex' -->
+<!-- converted on 26/11/2021 at 16:54 -->
+<statement>
+<p>
+Let <m>R</m> be a symmetric and transitive relation on a set <m>A</m>.
+<ol marker="(a)">
+<li>
+<p>
+ Show that <m>R</m> is not necessarily reflexive.
+</p>
+
+
+</li>
+<li>
+<p>
+ Suppose that for every <m>a \in A</m>, there exists <m>b \in A</m> such that <m>a \rel b</m>. Prove that <m>R</m> is
+reflexive.
+</p>
+
+
+</li>
+</ol>
+</p>
+</statement>
+<hint>
+<p>
+For part (a), try looking at examples of relations on a small set, like <m>A=\{1,2,3\}</m>.
+</p>
+</hint>
+<solution>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ Take <m>A=\set{1,2,3}</m> and take the relation <m>R=\set{(1,1),(1,2),(2,1),(2,2)}</m>. Then <m>R</m> is a symmetric and transitive relation, but it's not reflexive, since <m>3\in A</m> but <m>(3,3)\not\in R</m>.
+</p>
+</li>
+</ol>
+
+<proof><title>Proof of (b)</title>
+<p>
+Assume that  for all  <m>a \in A</m>, there exists <m>b \in A</m> such that <m>a \rel b</m>. Let <m>x\in A</m> be arbitrary.
+Then, by the assumption, there is some <m>y\in\ A</m> such that <m>x\rel y</m>. Since <m>R</m> is symmetric, we see that <m>y\rel x</m>. Moreover, since <m>R</m> is transitive and <m>x\rel y</m> and <m>y \rel x</m>, we see <m>x\rel x</m>. As <m>x</m> was arbitrary, <m>R</m> is reflexive.
+</p></proof>
+
+
+
+</p>
+</solution>
+</exercise>

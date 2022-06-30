@@ -1,0 +1,41 @@
+<exercise>
+<!-- source latex = 'Sum of powers of half.tex' -->
+<!-- converted on 12/10/2021 at 14:29 -->
+<statement>
+<p>
+Let <m>n\in \mathbb{N}</m>. Show that <me>\sum_{k=1}^n \frac{1}{2^k}  \lt 1</me>
+</p>
+</statement>
+<hint>
+<p>
+Adding to the end of the series will get you intro trouble. Try adding to the beginning instead. You might have to think about that a little.
+</p>
+</hint>
+<solution>
+
+<proof><p>
+As a base case, we take <m>n=1</m>. The base case is true since <m>\frac{1}{2} \lt 1</m>.
+</p>
+<p>
+Now assume that the statement is true for an arbitrary value <m>n=j\in \mathbb{N}</m>:
+<me>\sum_{k=1}^j \frac{1}{2^k} = \frac{1}{2}+\frac{1}{4} + \cdots + \frac{1}{2^j}  \lt 1.</me>
+Now we consider the desired sum
+<md>
+<mrow>
+    \sum_{k=1}^{j+1} \frac{1}{2^k}  \amp = \frac{1}{2}+\frac{1}{4} + \cdots + \frac{1}{2^j} + \frac{1}{2^{j+1}}
+    </mrow><intertext>We factor <m>\frac{1}{2}</m> from all but the first term to obtain</intertext><mrow>
+     \amp = \frac{1}{2} + \frac{1}{2} \left(\frac{1}{2}+\frac{1}{4} + \cdots + \frac{1}{2^j}\right)
+    </mrow><intertext>By the inductive hypothesis, <m>\frac{1}{2}+\frac{1}{4} + \cdots + \frac{1}{2^j}  \lt 1</m>, therefore</intertext><mrow>
+     \amp  \lt  \frac{1}{2} + \frac{1}{2}(1)
+</mrow><mrow>
+     \amp = 1.
+</mrow>
+</md>
+So the inductive hypothesis is true.
+</p>
+<p>
+By the principle of mathematical induction, we have our desired result.
+</p></proof>
+
+</solution>
+</exercise>

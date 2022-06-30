@@ -1,0 +1,94 @@
+<exercise>
+<!-- source latex = 'f is bijective iff f of f is bijective.tex' -->
+<!-- converted on 07/12/2021 at 12:08 -->
+<statement>
+<p>
+Let <m>A</m> be a nonempty set and  <m>f:A\rightarrow A</m> be a function.
+</p>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ Prove that <m>f</m> is bijective if <m>f\circ f</m> is bijective.
+</p>
+</li>
+<li>
+<p>
+  Let
+<me>
+  f:(0,\infty) \to (0,\infty) \qquad
+  f(x) = \log\left( \dfrac{e^x+1}{e^x-1} \right)
+</me>
+where <m> \log(x) </m> denotes the natural logarithm of <m>x</m>. Use part<nbsp/>(a) to prove that this is a bijective function.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<hint>
+<p>
+<ul>
+<li>
+<p>
+ You may need to show that if <m>f\circ g</m> is injective then <m>g</m> is injective, and then show that if <m>f\circ g</m> is surjective then <m>f</m> is surjective.
+    </p></li>
+<li>
+<p>
+ Combining part (a) with <xref ref="thm_comp_inj_surj"/>, we know that <m>f</m> is bijective if and only if <m>f\circ f</m> is bijective.
+    </p></li>
+<li>
+<p>
+ For part (b), it might help to compute <m>(f\circ f)(x)</m>.
+</p></li>
+</ul>
+</p>
+</hint>
+<solution>
+
+  <proof><title>Proof of (a)</title>
+ <p>
+Assume <m>f\circ f</m> is bijective. Let <m>x,y\in A</m> and assume that <m>f(x)=f(y)</m>. Then, since <m>f</m> is a function, we get <m>(f\circ f)(x)=(f\circ f)(y)</m>. Moreover, since <m>f\circ f</m> is injective we see <m>x=y</m>. Therefore <m>f</m> is injective.
+</p>
+<p>
+Moreover, if <m>b\in A</m>, then we see that since <m>f\circ f</m> is surjective, there exists <m>a\in A</m> such that <m>(f\circ f)(a)=b</m>. Thus, we see that <m>f(f(a))=b</m>, which means that for <m>c=f(a)\in A</m>, we have <m>f(c)=b</m>. Therefore <m>f</m> is surjective.
+</p>
+<p>
+Hence, <m>f</m> is bijective.
+</p>
+  </proof>
+
+  <proof><title>Proof of (b)</title>
+ <p>
+We see that if <m>f(x)=\log\left( \dfrac{e^x+1}{e^x-1} \right)</m>, then
+<md>
+<mrow>
+f\circ f(x) \amp =f(f(x))
+</mrow>
+<intertext>Using the definition of <m>f</m> for the <q>inner</q> function,</intertext>
+<mrow>
+ \amp =f\left( \log\left( \dfrac{e^x+1}{e^x-1} \right) \right)
+</mrow>
+<intertext>Using the definition of <m>f</m> for the <q>outer</q> function,</intertext>
+<mrow>
+ \amp =\log\left( \dfrac{e^{\log\left( \dfrac{e^x+1}{e^x-1} \right)}+1}{e^{\log\left( \dfrac{e^x+1}{e^x-1} \right)}-1} \right)
+</mrow>
+<intertext>We now use the fact that <m>e</m> and <m>\log</m> are inverse functions to obtain,</intertext>
+<mrow>
+ \amp =\log\left( \dfrac{\left(\dfrac{e^x+1}{e^x-1}\right)+1}{ \left(\dfrac{e^x+1}{e^x-1}\right)-1} \right)
+ </mrow>
+<intertext>Simplifying, we see</intertext>
+<mrow>
+ \amp = \log \left(\dfrac{ \left(\dfrac{2e^x}{e^x-1} \right)}{ \left(\dfrac{2}{e^x-1}\right) }\right)
+</mrow><mrow>
+ \amp =\log(e^x)
+</mrow><mrow>
+ \amp =x.
+</mrow>
+</md>
+</p>
+<p>
+Therefore, we see that <m>f\circ f</m> is the identity function, <m>i_{(0,\infty)}</m>. And then by part<nbsp/>(a), since <m>i_{(0,\infty)}</m> is bijective, <m>f</m> is bijective.
+</p></proof>
+
+</solution>
+</exercise>

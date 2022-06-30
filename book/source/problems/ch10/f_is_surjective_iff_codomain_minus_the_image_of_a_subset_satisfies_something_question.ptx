@@ -1,0 +1,59 @@
+<exercise>
+<!-- source latex = 'f is surjective iff codomain minus the image of a subset satisfies something question.tex' -->
+<!-- converted on 27/11/2021 at 15:26 -->
+<statement>
+<p>
+Let <m>f:E\rightarrow F</m> be a function. We recall that for any <m>A\subseteq E</m> the image of <m>A</m> by <m>f</m>, namely <m>f(A)</m>, is defined as
+<md>
+<mrow>
+    f(A)=\{f(x): x\in A\}.
+</mrow>
+</md>
+Show that <m>f</m> is surjective if and only if
+<md>
+<mrow>
+    \forall A\in \mathcal P(E),\  F-f(A)\subseteq f(E-A).
+</mrow>
+</md>
+</p>
+</statement>
+<hint>
+<p>
+For one side of the implication, think about how we can express the surjectivity in terms of the codomain and the range.
+</p>
+</hint>
+
+<solution>
+
+<proof><p>
+Let us prove the two implications in turn.
+<ul>
+<li>
+<p>
+
+First, assume that <m>f</m> is surjective. Let <m>A\in \mathcal P(E)</m>, and let <m>y\in  F-f(A)</m>, so <m>y \not\in f(A)</m>. We need to prove that <m>y \in f(E-A)</m>.
+</p>
+<p>
+Since <m>f</m> is surjective <m>y=f(x)</m> for some <m>x\in F</m>. Now, by definition of the image, if <m>x \in A</m> then <m>f(x) \in f(A)</m>. Since we know, by assumption that <m>f(x)=y\not\in f(A)</m>, it follows (by <xref ref="def_modus_tollens">modus-tollens</xref>) that <m>x \not\in A</m>.
+</p>
+<p>
+Hence <m>x\in E\setminus A</m>, so that <m>y \in f(E\setminus A)</m>.
+Therefore, <m>F\setminus f(A)\subseteq f(E\setminus A)</m> so the first implication is proved.
+</p>
+</li>
+<li>
+<p>
+ Now, assume that <m>\forall A\in \mathcal P(E),\  F\setminus f(A)\subseteq f(E\setminus A)</m>.
+We apply the above with <m>A=\emptyset</m> to get that
+<md>
+<mrow>
+    F\setminus f(\emptyset) \subseteq f(E\setminus \emptyset) \quad \text{so that} \quad F \subseteq f(E).
+</mrow>
+</md>
+This entails that <m>f</m> is surjective. Indeed, let <m>y\in F</m>. By the inclusion above, we have <m>y\in f(E)</m> and so <m>y=f(x)</m> for some <m>x\in E</m>.
+</p></li>
+</ul>
+</p></proof>
+
+</solution>
+</exercise>

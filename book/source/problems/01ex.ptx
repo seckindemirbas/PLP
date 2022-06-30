@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<exercises xmlns:xi="http://www.w3.org/2001/XInclude">
+
+<xi:include href="ch01/write_the_elements_of_the_set_question.ptx"/>
+<xi:include href="ch01/write_sets_in_set_builder_notation_question.ptx"/>
+<xi:include href="ch01/rewriting_sets.ptx"/>
+<xi:include href="ch01/ambiguous_set.ptx"/>
+<xi:include href="ch01/chp_1_-_3_-_poor_notation.ptx"/>
+<xi:include href="ch01/sets_han1.ptx"/>
+<xi:include href="ch01/elements_not_in_sets.ptx"/>
+<xi:include href="ch01/sets_han2.ptx"/>
+<xi:include href="ch01/set_builder.ptx"/>
+
+
+</exercises>

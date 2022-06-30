@@ -1,0 +1,61 @@
+<exercise>
+<!-- source latex = 'quadratic functions are neither injective nor surjective question.tex' -->
+<!-- converted on 26/11/2021 at 17:01 -->
+<statement>
+<p>
+Let <m>f:\mathbb R\to\mathbb  R</m> be the function defined by <m>f(x) = x^2+ax+b</m>, where <m>a,b\in\mathbb R</m>. Determine whether <m>f</m> is injective and/or surjective.
+</p>
+</statement>
+<hint>
+<p>
+Completing squares may help with the answer (to be honest, completing squares will help you with almost everything quadratic functions related, cherish it).
+</p>
+<p>
+Also, try choosing some small <m>a,b</m> values and sketch the function.
+</p>
+</hint>
+<answer>
+<p>
+We see that for any values of <m>a</m> and <m>b</m> this function <m>f(x) = x^2+ax+b</m> is a quadratic function. This means that we wouldn't expect the function to be injective or surjective. Moreover, we see that we can complete the square and get <m>f(x)=\left(x+\frac{a}{2}\right)^2+\left(b-\frac{a^2}{4}\right)</m>. This tells us the minimum of the function (which we can use to show that the function is not surjective) and also the vertex of the graph of the function (which we can use to show that the function is not injective).
+</p>
+</answer>
+<solution>
+
+<proof>
+<p>
+We will show that this function is neither injective nor surjective. First, observe that, by completing the square, we can rewrite the function as
+<me>
+f(x)=\left(x+\frac{a}{2} \right)^2+(b-\frac{a^2}{4}).
+</me>
+</p>
+<p>
+<ul>
+<li>
+<p>
+ <m>f</m> is not injective. Since <m>f</m> can be rewritten as above we see that
+<md>
+<mrow>
+f\left(-1-\frac a2\right) \amp =\left(-1-\frac a2+\frac{a}{2}\right)^2+\left(b-\frac{a^2}{4}\right)
+</mrow><mrow>
+ \amp =1+\left(b-\frac{a^2}{4}\right)
+</mrow><intertext>and also</intertext><mrow>
+f\left(1-\frac a2\right)
+ \amp =\left(1-\frac a2+\frac{a}{2}\right)^2+\left(b-\frac{a^2}{4}\right)
+</mrow><mrow>
+ \amp =1+\left(b-\frac{a^2}{4}\right) = f\left(-1-\frac a2\right)
+</mrow>
+</md>
+Since <m>-1-\frac a2\neq 1-\frac a2</m>, we see that <m>f</m> is not injective.
+</p>
+</li>
+<li>
+<p>
+ <m>f</m> is not surjective. Since <m>f(x)=\left(x+\frac{a}{2}\right)^2+\left(b-\frac{a^2}{4}\right)</m> and since <m>\left(x+\frac{a}{2}\right)^2\geq 0</m> for all <m>x\in\mathbb R</m>, we can conclude that <m>f(x)\geq b-\frac{a^2}{4}</m> for all <m>x\in\mathbb R</m>.
+So if we take <m>y=b-a^2-1 \lt b-a^2\leq b-\frac{a^2}{4} \leq f(x)</m> for all <m>x \in \mathbb{R}</m>. Thus there is no <m>x\in\mathbb R</m> such that <m>f(x)=y</m>, and hence <m>f</m> is not surjective.
+</p></li>
+</ul>
+</p>
+</proof>
+
+</solution>
+</exercise>

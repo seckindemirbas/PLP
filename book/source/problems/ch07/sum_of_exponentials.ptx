@@ -1,0 +1,83 @@
+<exercise>
+<!-- source latex = 'sum of exponentials.tex' -->
+<!-- converted on 08/11/2021 at 10:55 -->
+<statement>
+<p>
+Let <m>n\in\mathbb{N}\cup\{0\}</m>. Show that <m>5</m> divides <m>2^{2n+1}+3^{2n+1}</m>.
+</p>
+</statement>
+
+<!-- <hint></hint> -->
+
+<answer>
+<p>
+We want to prove this statement by induction on <m>n</m>.
+<ul>
+<li>
+<p>
+ Base case: Take <m>n=0</m>. Then <m> 2^{2n+1}+3^{2n+1} =2+3=5, </m>, so the result holds.
+</p></li>
+<li>
+<p>
+ Inductive step: Assume that
+<me> 5\mid \left(2^{2k+1}+3^{2k+1}\right). </me>
+We want to show that
+<me> 5\mid \left( 2^{2(k+1)+1}+3^{2(k+1)+1} \right). </me>
+The assumption tells us that there is some <m>\ell\in\mathbb{Z}</m> such that
+<me> 2^{2k+1}+3^{2k+1} = 5\ell. </me>
+Note that
+<me> 2^{2(k+1)+1}+3^{2(k+1)+1} =4\cdot2^{2k+1}+9\cdot 3^{2k+1}=4(2^{2k+1}+3^{2k+1})+5\cdot 3^{2k+1} </me>
+and so by the inductive hypothesis
+<me> 2^{2(k+1)+1}+3^{2(k+1)+1} =4\cdot 5\ell+5\cdot 3^{2k+1} =5(4\ell+3^{2k+1}). </me>
+Therefore <m>2^{2(k+1)+1}+3^{2(k+1)+1}</m> is divisible by <m>5</m>.
+</p></li>
+<li>
+<p>
+ Another way to prove the inductive step is to consider the difference
+<me> 2^{2(k+1)+1}+3^{2(k+1)+1}-(2^{2k+1}+3^{2k+1}) </me>
+and show that it is divisible by <m>5</m>.
+To this end, let's simplify that difference:
+<md>
+<mrow>
+2^{2(k+1)+1}+3^{2(k+1)+1}-(2^{2k+1}+3^{2k+1})  \amp =3^{2(k+1)+1}-3^{2k+1}+2^{2(k+1)+1}-2^{2k+1}
+</mrow><mrow>
+ \amp =3^2\cdot 3^{2k+1}-3^{2k+1}+2^2\cdot 2^{2k+1}-2^{2k+1}
+</mrow><mrow>
+ \amp =8\cdot 3^{2k+1}+3\cdot2^{2k+1}
+</mrow>
+</md>
+We want to rewrite this expression in terms of <m>2^{2k+1}+3^{2k+1}</m>, so that we can use the inductive hypothesis. We rewrite the expression above as
+<me> 8\cdot 3^{2k+1}+3\cdot2^{2k+1} = 8\cdot (3^{2k+1}+2^{2k+1})-8\cdot 2^{2k+1}+3\cdot2^{2k+1} </me>
+This is equal to
+<me>  8\cdot (3^{2k+1}+2^{2k+1})-5\cdot2^{2k+1}</me>
+which is divisibly by <m>5</m>, since the second term is divisible by <m>5</m>, and the first is by the inductive hypothesis.
+</p>
+
+</li>
+</ul>
+</p>
+<p>
+Now we can write the formal proof.
+</p>
+</answer>
+<solution>
+
+<proof>
+<p>
+Let <m>n\in\mathbb{N}</m>.
+We proceed by induction on <m>n</m>. When <m>n=0</m>, we have
+<me> 2^{2n+1}+3^{2n+1} =2+3=5, </me>
+which is divisible by <m>5</m>. Now suppose that the result holds for <m>n=k</m>, so
+<me> 5\mid \left( 2^{2k+1}+3^{2k+1} \right). </me>
+Then there is some <m>\ell\in\mathbb{Z}</m> such that
+<me> 2^{2k+1}+3^{2k+1} = 5\ell. </me>
+Note that
+<me> 2^{2(k+1)+1}+3^{2(k+1)+1} =4\cdot2^{2k+1}+9\cdot 3^{2k+1}=4(2^{2k+1}+3^{2k+1})+5\cdot 3^{2k+1}. </me>
+Then by the inductive hypothesis
+<me> 2^{2(k+1)+1}+3^{2(k+1)+1} =4\cdot 5\ell+5\cdot 3^{2k+1} =5(4\ell+3^{2k+1}) </me>
+and so <m>5</m> divides <m>2^{2(k+1)+1}+3^{2(k+1)+1}</m>. Therefore, by induction, <m>5</m> divides <m>2^{2n+1}+3^{2n+1}</m> for all <m>n\in\mathbb{N}</m>.
+</p>
+</proof>
+
+</solution>
+</exercise>

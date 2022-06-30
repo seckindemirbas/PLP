@@ -1,0 +1,51 @@
+<exercise>
+<!-- source latex = 'Show N times N is bijective to N using a function.tex' -->
+<!-- converted on 03/03/2022 at 12:37 -->
+<statement>
+<p>
+Let <m>f:\mathbb N\times\mathbb N\to\mathbb N</m> be the function
+<me>
+f(m,n) = 2^{m-1}(2n-1).
+</me>
+Can you use this <m>f</m> to conclude that <m>\mathbb N\times\mathbb N</m> is denumerable?
+</p>
+</statement>
+<answer>
+<p>
+We know that we can use this function to show that <m>\mathbb N\times\mathbb N</m> is denumerable, <em>if</em> it is a bijective function.
+That is, if the function is bijetive, then we can conclude that <m>|\mathbb N|=|\mathbb N\times\mathbb N|</m>, which implies that <m>\mathbb N\times\mathbb N</m> is denumerable.
+But, if the function is <em>not</em> bijective, this wouldn't give us any more information, since just because <m>f</m> is not bijective wouldn't imply <m>|\mathbb N|\neq|\mathbb N\times\mathbb N|</m>.
+</p>
+<p>
+We actually saw that if we have two denumerable sets <m>A, B</m>, then <m>A\times B</m> is also denumerable.
+We proved it using a diagonalization argument (see <xref ref="res_prod_of_denum"/>).
+Applying this result to <m>A=B=\mathbb N</m>, we can immediately see that <m>\mathbb N\times \mathbb N</m> is, indeed, denumerable.
+</p>
+<p>
+So, assuming that we can show <m>f</m> is bijective, this question suggests that we could also show that <m>\mathbb N\times \mathbb N</m> is denumerable directly by finding a bijective function from <m>\mathbb N\times\mathbb N</m> to <m>\mathbb N</m>.
+</p>
+</answer>
+<solution>
+
+<proof><p>
+We show that the function
+<me>
+f(m,n) = 2^{m-1}(2n-1),
+</me>
+is a bijection, and so show that <m>\mathbb N\times\mathbb N</m> is denumerable.
+</p>
+<p>
+We first show that the function is injective. So assume that <m>f(m_1,n_1)=f(m_2,n_2)</m>, then <m>2^{m_1-1}(2n_1-1)=2^{m_2-1}(2n_2-1)</m>. WLOG, assume <m>m_1\geq m_2</m>. Then
+<m>2^{m_1-m_2} (2n_1-1) = 2n_2-1</m>. If <m>m_1\not=m_2</m>, then the left side is even but this contradicts the right side is odd. Thus, <m>m_1=m_2</m>. Then <m>2n_1-1=2n_2-1</m>, hence <m>n_1=n_2</m>. We conclude that <m>f</m> is injective.
+</p>
+<p>
+Now we show that <m>f</m> is also surjective. Let <m>k\in \mathbb N</m>. Then we can write <m>k</m> as a nonnegative power of 2 times an odd number, namely, <m>k = 2^n (2q-1)</m> where <m>n\geq 0</m> is an integer and <m>q\in\mathbb N</m>. To see this expression for <m>k</m> is uniqueness, assume <m>k = 2^{n_1}(2q_1-1)=2^{n_2}(2q_2-1)</m>. WLOG, assume <m>n_1\geq n_2</m>. Then <m>2^{n_1-n_2}(2q_1-1)=2q_2-1</m>. If <m>n_1 \gt n_2</m> then the left side is even but the right side is odd, a contradiction. Thus <m>n_1=n_2</m> and it follows <m>q_1=q_2</m>. Now we have <m>n+1,q\in\mathbb N</m>
+<m>f(n+1,q) = 2^{n}(2q-1)</m>. So <m>f</m> is surjective.
+</p>
+<p>
+Hence, since <m>f</m> is a bijection, we see that <m>\mathbb N\times\mathbb N</m> is denumerable.
+</p>
+</proof>
+
+</solution>
+</exercise>

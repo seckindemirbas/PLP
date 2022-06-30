@@ -1,0 +1,1587 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="ch_induction">
+  <title>Induction</title>
+<introduction>
+<p>
+  In this text we started by doing a little bit of sets and a little logic.
+  The aim of these brief introductions was to get you <mdash /> our reader <mdash /> started proving things as quickly as possible. We continued with a some basic logical equivalence to show us how to prove cases, biconditionals and contrapositives, and how to work with quantified statements. We have put these methods to work on some basic results on parity and divisibility; while those result were not terribly deep, their simplicity made them good places to learn our proof basics. We will soon apply all<fn>We still need to learn about <term>proof by contradiction</term>, but this author likes to leave that topic until the reader has had a chance to practice other proof methods.</fn> of proof skills to more general mathematical problems, but we will first introduce a more specialised, but still extremely useful proof method.
+  <term>Mathematical induction</term> is a method for proving statements of the form
+<md>
+<mrow>
+  \forall n \in \mathbb{N}, P(n).
+</mrow>
+</md>
+</p>
+
+<p>
+  The archetypal induction-proof example is the result
+  <me>
+  \text{For all } n\in\mathbb{N}, 1+2+3+\cdots+n = \frac{n(n+1)}{2}.
+  </me>
+  or, to write it in a slightly more compact way
+  <me>
+    \forall n \in \mathbb{N}, \sum_{k=1}^n k = \frac{n(n+1)}{2}
+  </me>
+</p>
+
+<aside>
+<title>Gauss learns to sum</title>
+<p>
+  Carl Friedrich Gauss (1777 <ndash/> 1855) had a huge impact on many areas of mathematics; the interested reader should search-engine their way to more information. When he was in primary school his teacher (no doubt wanting to occupy their students for a while) set the problem of adding up <m>1+2+\cdots+99+100</m>. Gauss worked this out extremely quickly by realising that you can add numbers in pairs
+  <md>
+  <mrow> 1+100 \amp=101 </mrow>
+  <mrow> 2+99 \amp=101 </mrow>
+  <mrow> 3+98 \amp=101 </mrow>
+  <mrow> \amp \vdots </mrow>
+  </md>
+  There are <m>n/2</m> pairs, each adding to <m>n+1</m>.
+  This trick gives the above result and can be generalised, but best we still learn induction <mdash /> it has uses way beyond sums.
+</p>
+</aside>
+<warning><title>The law of the instrument</title>
+<p>
+Like any tool, induction is not guaranteed to work everywhere.
+However, like any tool, it is useful to have and part of learning to use the tool is to understand when it might help and when it might not.
+There is a tendency when one learns a nice new mathematical method that one tries to apply it to every problem that one comes across.
+This is often summarised as the <term>law of the instrument</term> <mdash/> being the tendency to always use the same tool, even when it isn't the best tool for the job
+<fn>There are also variations of this rule that make reference to hammers <mdash/> when you have a fancy new hammer, everything is a nail.</fn>.
+Anyway, with that caveat, the authors should get on with it and start talking about induction.
+</p>
+</warning>
+</introduction>
+
+<section><title>Induction</title>
+<p>
+  <term>Induction</term>, once you get past some of the technicalities, is a very intuitive idea. This author likes to think of induction like climbing an infinite ladder and an induction argument is really just a proof that we can climb that ladder. The proof is in 3 parts:
+  <ul>
+    <li>If you can step onto the ladder, and</li>
+    <li>from the current step you can reach the next step, then</li>
+    <li>you can climb the ladder as high as you want.</li>
+  </ul>
+</p>
+
+<p>
+  As more concrete mathematical example, say we wish to prove
+  <me>
+    \text{For all } n \in \mathbb{N}, n^2+5n-7 \text{ is odd}.
+  </me>
+  The dedicated reader may recall a very similar example in <xref ref="ch-moreproof"/> and realise that we can do this using proof by cases, however, it is a good example for proof by <q>ladder idea</q>.
+  <ul>
+    <li>
+      <p>
+        Step onto the ladder. When <m>n=1</m> the polynomial is <m>1+5-7 = -1</m> which is odd. So the assertion is true for the very smallest value of <m>n</m>.
+      </p>
+    </li>
+    <li>
+      <p>
+        Climb from one rung to the next. We wish to show that if the assertion is true for the current value of <m>n=k</m>, then it is also true for <m>n=k+1</m>. That is, if we are on the current step, we can move up to the next step. So, to be more precise, we want to show that
+        <me>
+          (k^2+5k-7 \text{ is odd}) \implies ( (k+1)^2+5(k+1)-7 \text{ is odd})
+        </me>
+        So this is just a little direct proof hiding inside our argument.
+        </p>
+        <p><term>Proof:</term>
+            Assume <m>k^2+5k-7 = 2\ell+1</m>. Then
+            <md>
+              <mrow>(k+1)^2+5(k+1)-7 \amp= k^2+2k+1+5k+5-7 </mrow>
+              <mrow> \amp= \underbrace{k^2+5k-7}_{=2\ell+1} + (2k+6) </mrow>
+              <mrow>  \amp= 2(\ell+k+3) + 1. </mrow>
+            </md>
+            Hence <m>(k+1)^2+5(k+1)-7</m> is odd as required.
+        </p>
+    </li>
+    <li>
+      <p>
+        Conclusion. So how do we put these facts together? The first fact guarantees that our result is true for <m>n=1</m>. Then the second fact tells us that since it is true for <m>n=1</m>, it is also true for <m>n=2</m>. But then since it is true for <m>n=2</m>, it true for <m>n=3</m> (by the same fact). Applying that fact again and again gives us <m>n=4, n=5, n=6, \cdots</m>.
+      </p>
+    </li>
+  </ul>
+  Strictly speaking we have to be a bit more careful with that final <q><ellipsis/></q>, but we'll see how to do that below.
+</p>
+<p>
+  This proof method, <term>mathematical induction</term>, is formalised in the next theorem.
+</p>
+
+<theorem><title>The principle of mathematical induction</title>
+<statement><p>
+ For every <m>n \in \mathbb{N}</m> let <m>P(n)</m> be a statement.
+ If
+ <ul>
+<li> <m>P(1)</m> is a true statement, and
+</li>
+<li> the implication <m>P(k) \implies P(k+1)</m> is true for all <m>k \in \mathbb{N}</m>
+</li>
+</ul>
+  then <m>P(n)</m> is true for all <m>n \in \mathbb{N}</m>.
+</p></statement>
+</theorem>
+
+<p>
+  We can't quite give a complete proof of this theorem, though we can give almost everything that is needed. Call this a <q>proof sketch</q> <mdash /> the core ideas are there, but we'll skip over a technicality and also write it a little informally.
+</p>
+<proof><title>Proof-sketch</title>
+<p>
+Start by assuming the hypotheses of the theorem are true.
+That is, we assume that
+<ul>
+  <li><m>P(1)</m> is true, and</li>
+  <li>the implication <m>P(k) \implies P(k+1)</m> is true for all natural numbers <m>k</m>.</li>
+</ul>
+</p>
+
+<p>
+  Then the core idea of the proof is construct two sets
+  <ul>
+    <li>
+      <p>
+        The <q>good</q> set:
+        <me>
+          G = \set{n \in \mathbb{N} \mid P(n) \text{ is true} }
+        </me>
+        This is the set of all <m>n</m>-values for which our statement is true. By assumption, we know that <m>1 \in G</m>, and <m>G \neq \es</m>.
+      </p>
+    </li>
+    <li>
+      <p>
+        The <q>bad</q> set:
+        <me>
+          B = \set{n \in \mathbb{N} \mid P(n) \text{ is false} }.
+        </me>
+        This is the set of all <m>n</m>-values for which our statement is false.
+      </p>
+    </li>
+  </ul>
+  As is often the case, the <q>good</q> isn't as interesting as the <q>bad</q>, and we'll focus on the set <m>B</m>. It is either empty or non-empty.
+</p>
+
+<p>
+  If <m>B</m> is empty, then we are done, because then <m>P(n)</m> must be true for every single <m>n\in \mathbb{N}</m> as required.
+</p>
+<p>
+<ul>
+<li> As <m>B</m> is not empty, we can look for the smallest element in <m>B</m>. And since <m>B</m> is a non-empty set of natural numbers we can always find its smallest smallest element. However we do note that this is not possible for all sets <mdash /> we'll come back to this point shortly.
+</li>
+<li> Let <m>\ell</m> be this smallest number in <m>B</m>.
+</li>
+<li> From the hypothesis in the theorem, we know that <m>\ell \gt 1</m> (since <m>P(1)</m> is true).
+</li>
+<li> By the way we constructed <m>B</m> and <m>\ell</m>, we know that <m>P(n)</m> is true for all <m>1 \leq n  \lt  \ell</m>.
+</li>
+<li>
+  <p>
+     Now we have a problem:
+    <ul>
+<li> we know that <m>P(\ell-1)</m> is true, but
+</li>
+<li> we also know that the implication <m>P(\ell-1) \implies P(\ell)</m> is true (since that is one of the hypotheses).
+</li>
+<li> But if <m>P(\ell-1)</m> is true, and <m>P(\ell)</m> is false, then that implication is false.
+</li>
+</ul>
+</p>
+</li>
+<li> This is a <term>contradiction</term> <mdash/> our assumption is contradicted by <m>P(\ell)</m> being false.
+</li>
+<li> The only way to resolve this situation is to conclude that no such <m>\ell</m> exists <mdash/> that is, <m>B</m> is empty.
+</li>
+</ul>
+Hence we must have <m>P(n)</m> is true for all natural numbers <m>n</m>
+</p>
+</proof>
+
+<p>
+There are two sneaky things going on in this proof.
+Firstly, we are doing a <term>proof by contradiction</term> by stealth; don't worry too much about this yet as we'll return to those proofs later in the text.
+Second, and more important in the short term, is that the proof relies on a delicate point
+</p>
+<blockquote>
+<p>
+  since <m>B</m> is just a non-empty set of natural numbers, we can always find the smallest number in that set.
+</p></blockquote>
+<p>
+We are using here something called the <term>well ordering principle</term>.
+This guarantees us that we can always find the smallest element in a set of natural numbers.
+This is very definitely false for other sets of numbers <mdash/> if we build a set of integers, or rational numbers, or real numbers, then it might not have a minimum.
+</p>
+
+<example><title>Sets without minima</title>
+  <statement>
+    <p>
+      Consider the following sets
+      <md>
+      <mrow>
+        \set{2k \mid k \in \mathbb{Z} } &amp;&amp;
+        \set{\frac{1}{n} \mid n \in \mathbb{N}} &amp;&amp;
+        (0,1) = \set{x \in \mathbb{R} \mid 0  \lt  x  \lt  1}.
+      </mrow>
+      </md>
+      None of these sets have minimum elements; you can always find another element that is smaller.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      Note that this argument requires proof by contradiction and if the reader is confused by the details of this argument, we suggest that they wait until we have covered that topic and then return to this discussion.
+      In fact, making this an example in that section is a good idea and the authors might do exactly that.
+    </p>
+    <p>
+      Consider the set <m>\set{2k \mid k\in\mathbb{Z}}</m>.
+      <ul>
+    <li> Either this set has a minimum or it does not.
+    </li>
+    <li> If it does have a minimum, call that minimum <m>\ell</m>.
+    </li>
+    <li> However, the number <m>\ell-2</m> is also in the set, and <m>\ell-2 \lt \ell</m>.
+    </li>
+    <li> So <m>\ell</m> cannot be the minimum.
+    </li>
+    </ul>
+      So the set cannot have a minimum.
+    </p>
+
+    <p>  Similarly, if <m>(0,1)</m> has a minimum then call it <m>q</m>.
+      But then since <m>0 \lt q \lt 1</m>, we know that <m>0 \lt q/2 \lt q</m>.
+      So <m>q/2</m> is in the set and smaller than <m>q</m>, so <m>q</m> cannot be a minimum.
+      Hence no such minimum exists.
+      The same argument works for the set <m>\set{1/n \mid n\in\mathbb{N}}</m>.
+    </p>
+  </solution>
+</example>
+
+
+
+<p>
+  Now that we are armed with a formal statement of <term>mathematical induction</term>, we should make use of it. The typical first example is the simple summation we saw in the introduction to this chapter. However (arguably) this can give the wrong idea of what induction is.
+  To (hopefully) avoid this potential trap, let us do an example about divisibility.
+</p>
+
+<proposition>
+<statement><p>
+ For every natural number <m>n</m>, <m>3 | (4^{n}-1)</m>.
+</p></statement>
+</proposition>
+<p>
+So our statement is <m>P(n)</m> is <q><m>3 | (4^{n}-1)</m></q>.
+To prove this true for all naturals <m>n</m> using induction, we need to show
+<ul>
+<li> The statement <m>P(1)</m> is true, and
+</li>
+<li> The implications <m>P(k) \implies P(k+1)</m> is true for all <m>k \in \mathbb{N}</m>.
+</li>
+</ul>
+In most cases (but definitely not all), showing that <m>P(1)</m> is true is easy, and proving the inductive step requires work.
+<ul>
+<li> Setting <m>n=1</m> in our statement gives
+  <md>
+<mrow>
+    3|(4^1-1)
+  </mrow>
+</md>
+  which is true (since <m>4-1=3</m>).
+</li>
+<li> Now the harder part <mdash/> the inductive step:
+We have to prove that
+<md>
+<mrow>
+  ( 3 | (4^k-1)) \implies (3|(4^{k+1}-1))
+</mrow>
+</md>
+for all <m>k\in \mathbb{N}</m>.
+That is, the inductive step requires us to prove an implication.
+As we have done many times before (and will do many times in the future), we assume the hypothesis is true and work our way to the conclusion.
+So we start by assuming that <m>3|(4^k-1)</m>, which means that
+<md>
+<mrow>
+	4^k-1 &amp;= 3 \ell &amp; \text{for some } \ell \in\mathbb{Z}
+</mrow>
+</md>
+and we want to arrive at
+<md>
+<mrow>
+  	4^{k+1}-1 &amp;= 3m &amp; \text{so that } \amp\amp 3|(4^{k+1}-1)
+</mrow>
+</md>
+We need to think about how we can construct <m>4^{k+1}-1</m> from <m>4^k-1</m>.
+Multiplying by 4 is a good way to go:
+<md>
+<mrow>
+  4^k-1 &amp;= 3\ell
+  </mrow>
+  <mrow>
+  4^k &amp;= 3\ell+1
+</mrow><mrow>
+  4^{k+1} &amp;= 12\ell +4
+</mrow><mrow>
+  4^{k+1}-1 &amp;= 12\ell +3 = 3(4\ell+1)
+</mrow>
+</md>
+And since <m>4\ell+1 \in \mathbb{Z}</m> we have reached the conclusion we want.
+</li>
+</ul>
+</p>
+
+<p>Now that we know how to prove the base case (that was easy) and we know how to prove the inductive step (not too bad), we can put things together into a proof.
+Remember to  tell the reader what we are doing.
+</p>
+<proof>
+<p>
+ We proceed by induction.
+ <ul>
+<li> Base case <mdash/> When <m>n=1</m> the result is true since <m>3|(4-1)</m>.
+</li>
+<li> Inductive hypothesis <mdash/> Assume <m>P(k)</m> is true.
+Then <m>4^k-1 = 3 \ell</m> for some <m>\ell \in \mathbb{Z}</m>.
+Then
+<md>
+<mrow>
+  4^{k+1}-1 &amp;= 4(4^k)-1
+</mrow><mrow>
+    &amp;= 4(4^k-1)+4-1
+</mrow><mrow>
+    &amp;= 4\cdot 3 \ell +3 = 3( 4\ell +1)
+</mrow>
+</md>
+Thus if <m>P(k)</m> then <m>P(k+1)</m>.
+</li>
+</ul>
+By the principle of mathematical induction the statement is true for all naturals <m>n</m>.
+</p>
+</proof>
+
+<remark><title>Make structure obvious to the reader</title>
+<p>
+  Notice that we are making the structure of the proof very clear.
+We start by telling reader that we are using induction.
+We have then labelled the two conditions <q>base case</q> and <q>inductive hypothesis</q> or <q>inductive step</q>, so that it is very clear how the proof is being constructed.
+We then have a little summarising sentence at the end saying <q>by induction it is true!</q>
+It means that a reader who is familiar with induction can readily check off each part of the induction proof against what they know about induction as they read the proof.
+We make it easy for them to read and verify the proof.
+(This is an especially good idea when someone has to mark your work, not just read it!)
+</p>
+</remark>
+
+<p>
+  We can rewrite our above simple parity example with this same structure. It is good practice.
+</p>
+<example>
+  <statement>
+    <p>
+      For all <m>n \in \mathbb{N}, n^2+5n-7</m> is odd.
+    </p>
+  </statement>
+  <solution>
+    <proof>
+      <p>
+        We use induction to prove the result.
+        <ul>
+          <li>Base case. When <m>n=1</m>, the polynomial gives <m>1+5-7 = -1</m>. Hence the base case is true.</li>
+          <li>
+            <p>
+              Inductive step. Assume that <m>k^2+5k-7</m> is odd, and so <m>k^2+5k-7 = 2\ell</m>. Then
+              <me>(k+1)^2 + 5(k+1)-7 = 2k+6 + (k^2+5k-7) = 2(k+3)+2\ell+1</me>
+              and hence is also odd.
+            </p>
+          </li>
+        </ul>
+        By mathematical induction the result holds for all <m>n \in \mathbb{N}</m>.
+      </p>
+    </proof>
+  </solution>
+</example>
+<aside><title>Extend to all <m>n \in \mathbb{Z}</m></title>
+<p>
+  If we wish to prove this same result by induction but for all integers <m>n</m>, we could split the problem into 3. The first we just did, we could then prove it holds for <m>n=0</m> <mdash />easy! And then for negative integers we could rewrite the result as
+  <me>
+    \forall n \in \mathbb{N}, (-n)^2+5(-n)-7 \text{ is odd}.
+  </me>
+</p>
+</aside>
+
+<p>
+  To avoid doing the very standard summation examples for a touch longer, we'll do an inequality.
+  This particular example is another classic induction problem<fn>Like many of the authors <q>jokes</q> it is an antique and should be handled with care.</fn>.
+</p>
+
+<proposition>
+<statement><p>
+  Let <m>n \in \mathbb{N}</m> and let <m>x\in\mathbb{R}</m> with <m>x \gt -1</m>. Then
+  <me>(1+x)^n \geq 1+nx.</me>
+</p></statement>
+</proposition>
+
+<p>
+If we choose to use induction (and we will), then it is a good idea to clarify what the actual statement is.
+Rewriting things carefully, we can write
+<me>
+  P(n): \text{if } (x \gt -1) \text{ then } (1+x)^n \geq (1+nx).
+</me>
+<ul>
+<li>
+  <p>
+First up, we verify the base case; setting <m>n=1</m> gives
+<md>
+<mrow>
+    (x \gt -1) \implies (1+x)^1 \geq 1+x
+</mrow>
+</md>
+Since <m>(1+x)^1 = 1+x</m>, the conclusion is always true, so the implication is true, and the base case is true.
+</p>
+</li>
+<li>
+  <p>
+Now the induction step.
+We assume that <m>P(k)</m> is true.
+That is
+<md>
+<mrow>
+    (x \gt -1) \implies (1+x)^k \geq 1+kx
+</mrow>
+</md>
+is a true statement, and we then need to prove that
+<md>
+<mrow>
+    (x \gt -1) \implies (1+x)^{k+1} \geq 1+(k+1)x.
+</mrow>
+</md>
+To prove this second implication, we do as we have done so many times, and will do many times in the future, we assume the hypothesis is true.
+So we assume <m>(x \gt -1)</m>.
+From the first implication (and our assumption that <m>x\gt -1</m>) we know that <m>(1+x)^k \geq 1+kx</m>.
+We now need to prove that <m>(1+x)^{k+1}</m> is bigger than <m>1+(k+1)x</m>.
+</p>
+<p>
+A good place to start is to take the inequality we know and try to make it look like the inequality we want.
+<md>
+<mrow>
+  (1+x)^k &amp;\geq 1+kx &amp; \text{multiply by } (1+x)
+</mrow><mrow>
+  (1+x)^{k+1} &amp; \geq (1+kx)(1+x)
+</mrow><mrow>
+  &amp;= 1+(k+1)x + x^2
+  </mrow>
+</md>
+Nearly there, we just need to get rid of this <m>x^2</m> term. We know <m>x^2 \geq 0</m>, so
+<md>
+  <mrow>
+  (1+x)^{k+1} \amp \geq 1+(k+1)x + x^2 \geq 1+(k+1)x
+ </mrow>
+</md>
+as required.
+</p>
+
+<p>But there is a problem: where have we used the assumption <m>x \gt -1</m>?</p>
+
+<p>
+When you are doing mathematics and answering problems, you should keep your eyes open for this sort of thing.
+If you haven't used one of the hypotheses in your proof then there is very likely to be an error somewhere!
+</p>
+
+<p>Now <mdash/> our work above is not actually wrong, but that is more by luck than by design<fn>Of course the author actually designed the example to illustrate this luck. So perhaps it is designed luck?</fn>.
+Where we multiplied by <m>1+x</m> we didn't examine whether quantity is positive or negative.
+When we multiply an inequality by something positive (say <m>+2</m>), then inequality keeps the same sign:
+<md>
+<mrow>
+  2 &amp; \leq 3 &amp; \implies 4 &amp; \leq 6.
+</mrow>
+</md>
+but when we multiply by something negative (say <m>-2</m>), the sign flips:
+<md>
+<mrow>
+  2 &amp; \leq 3 &amp; \implies (-4) &amp; \geq (-6)
+</mrow>
+</md>
+Thankfully since <m>x \gt -1</m>, we know that <m>1+x \gt 0</m> and so we are not multiplying by a negative number.
+We don't have to go back and fix our scratch work, but we should make sure that we highlight this point when we write up the proof. We help our reader understand important subtle details by pointing them out.
+</p>
+</li>
+</ul>
+</p>
+
+<proof>
+<p>
+  We use induction.
+<ul>
+<li> Based case: when <m>n=1</m>, the statement is true since <m>(1+x)^1 = 1+1\cdot x</m>.
+</li>
+<li> Induction step. We assume that <m>x  \gt -1</m>  and that <m>(1+x)^k \geq 1+kx</m>.
+  Since <m>x \gt -1</m>, we know that <m>1+x \gt 0</m> and so multiplying through by <m>1+x</m> doesn't change the sign of the inequality:
+  <md>
+<mrow>
+    (1+x)^k(1+x) &amp;\geq (1+kx)(1+x) \amp \text{factor left and expand right}
+</mrow><mrow>
+    (1+x)^{k+1} &amp; \geq 1+(k+1)x + x^2 &amp;\text{since }x^2\geq 0
+</mrow><mrow>
+    &amp;\geq 1+(k+1)x
+  </mrow>
+</md>
+as required.
+</li>
+</ul>
+So by induction the inequality is true for all <m>n\in\mathbb{N}</m>.
+</p>
+</proof>
+
+
+<p>Now we are ready to do the very standard summation example. But first a warning<fn>A nag?</fn>:
+</p>
+<warning><title>Induction is not summation</title>
+<p>
+  Induction requires us to prove both that
+  <ul>
+<li> the base case, <m>P(1)</m>, is true, and
+</li>
+<li> the inductive hypothesis, <m>P(k)\implies P(k+1)</m>, is true for all <m>k\in\mathbb{N}</m>.
+</li>
+</ul>
+  Mathematical induction is not simply adding the next term to both sides of the equation.
+</p>
+</warning>
+
+<p>
+  With that out of the way:
+</p>
+<proposition xml:id="prop-sum-of-int">
+<statement><p>
+ For every natural number <m>n</m>, <m>\sum_{k=1}^n k = \frac{n(n+1)}{2}</m>
+</p></statement>
+</proposition>
+<p>
+<ul>
+<li> The base case is very easy (as it often is).
+  When <m>n=1</m> we have:
+  <md>
+<mrow>
+    \sum_{k=1}^n k &amp;= \frac{1\cdot 2}{2} &amp; \text{which is}
+</mrow><mrow>
+    1 &amp;= 1 \checkmark.
+  </mrow>
+</md>
+</li>
+<li> As is typical, the inductive step needs a bit more work.
+  We need to prove that
+  <md>
+<mrow>
+    \left( 1 + 2 + \cdots + k = \frac{k(k+1)}{2} \right)
+    &amp; \implies
+    \left( 1 + 2 + \cdots + k + k+1 = \frac{(k+1)(k+2)}{2} \right)
+  </mrow>
+</md>
+  Like most proofs of implications, we start by assuming the hypothesis is true and try to work our way to the conclusion.
+  In this case, it is pretty clear that we can get from the first statement to the second just by adding <m>(k+1)</m> to both sides.
+  Note that <q>adding <m>k+1</m> to both sides</q> is <alert>not</alert> the induction step.
+  The induction step requires us to prove that <m>P(k) \implies P(k+1)</m>, and we prove that <alert>in this particular example</alert> by adding <m>k+1</m> to both sides.
+  This is a very common error (and more than a little frustrating to mark<fn>Be nice to your marker?</fn>).
+</li>
+</ul>
+We are now ready to write things up nicely.
+</p>
+
+<proof>
+<p>
+ We proceed by induction.
+<ul>
+<li> Base case <mdash/> When <m>n=1</m> the statement is true since <m>1 = \frac{1 \cdot 2}{2}</m>.
+</li>
+<li> Inductive hypothesis <mdash/> Assume the statement is true for <m>n=k</m>, that is
+<md>
+<mrow>
+	1 + 2 + \cdots + k &amp;= \frac{k(k+1)}{2}
+</mrow>
+</md>
+Adding <m>k+1</m> to both sides gives
+<md>
+<mrow>
+	1 + 2 + \cdots + k +(k+1) &amp;= \frac{k(k+1)}{2} + (k+1)
+</mrow><mrow>
+	&amp;= \frac{1}{2} \left(k^2+k + 2k +2 \right)
+</mrow><mrow>
+  &amp; = \frac{1}{2} (k+1)(k+2).
+</mrow>
+</md>
+Hence if the statement is true for <m>n=k</m> then it must be true for <m>n=k+1</m>.
+</li>
+</ul>
+By the principle of mathematical induction it is true for all natural numbers <m>n</m>.
+</p>
+</proof>
+
+
+<p>
+  It is a good idea to see a few false induction proofs. Each of these examples contains a flaw.
+</p>
+<example><title>Polynomial primes</title>
+  <statement>
+    <p>
+      For all <m>n \in \mathbb{N}, n^2-n+41</m> is prime.
+    </p>
+    <p>
+      We call the following argument a <q>misproof</q> since it looks like a proof, but is incorrect. In the solution below we explain why it is wrong.
+    </p>
+    <justification>
+      <p>
+        We check the first values of <m>n</m>:
+        <ul>
+          <li><m>n=1</m>: <m>1-1+41 = 41</m> which is prime.</li>
+          <li><m>n=2</m>: <m>4-2+41 = 43</m> which is prime.</li>
+          <li><m>n=3</m>: <m>9-3+41 = 47</m> which is prime.</li>
+          <li><m>n=4</m>: <m>16-4+41 = 53</m> which is prime.</li>
+          <li><m>n=5</m>: <m>25-5+41 = 61</m> which is prime.</li>
+        </ul>
+        Since it is true for the first few values of <m>n</m>, it is true for all <m>n</m>.
+      </p>
+    </justification>
+  </statement>
+  <solution>
+    <p>
+      This is a very wrong proof. <alert>Examples are not proof.</alert>
+    </p>
+    <p>
+      Surprisingly this polynomial does give you prime numbers for <m>n=1,\cdots,40</m>. This was first noticed by Euler<fn>The interested reader should search-engine their way to <q>Euler's lucky numbers</q>. There is actually some quite deep number theory lurking in side that polynomial.</fn>.  However when <m>n=41</m> it is clearly not prime, since it gives <m>41^2-41+41 = 41^2</m>.
+    </p>
+  </solution>
+</example>
+<example><title>Everything you know about 2 is wrong?</title>
+  <statement>
+    <p>
+      For all <m>n \in \mathbb{N}</m>, <m>n+1 \lt n</m>.
+    </p>
+    <p>
+      We give the flawed proof and then explain what is wrong with it in the solutions below.
+    </p>
+    <justification>
+      <p>
+        We prove this by induction. So assume that the statement is true for <m>n=k</m>. That is
+        <me>
+          k+1 \lt k.
+        </me>
+        Then we can write, by adding <m>1</m> to both sides of the above inequality
+        <me>
+          (k+2) \lt (k+1)
+        </me>
+        And thus the statement is true for <m>n=k+1</m>. By mathematical induction, the statement is true for all <m>n \in \mathbb{N}</m>.
+      </p>
+    </justification>
+  </statement>
+  <solution>
+    <p>
+      This proof of the <em>inductive step</em> is perfectly correct. We have correctly shown that
+      <me>
+        (k+1 \lt k) \implies (k+2 \lt k+1)
+      </me>
+      However this is a vacuous statement since the hypothesis is never true. This is the flaw in our proof <mdash /> we did not check the base-case. When <m>n=1</m> the statement is false.
+    </p>
+    <p>
+      Since the base case fails, we cannot use mathematical induction.  Both the base case and the inductive step must be true for an induction proof to work.
+    </p>
+  </solution>
+</example>
+<example>
+  <title>Pólya's colourless horses</title>
+  <statement>
+    <p>
+      This is George Pólya's proof that <q>All horses have the same colour</q>.
+    </p>
+    <p>
+      Again, we'll first give the flawed proof, and then show you where it goes wrong.
+    </p>
+    <justification>
+      <p>
+        We proceed by induction.
+        <ul>
+          <li>Base case: When there is only 1 horse, it has the same colour as itself. So the statement is true when there is exactly 1 horse.</li>
+          <li>
+            <p>
+              Inductive step: We assume the statement is true when there are <m>n=k</m> horses. Now consider a set of <m>n=k+1</m> horses. Exclude one of those horses from the set to obtain a set of <m>k</m> horses. By assumption all those horses have the same colour. Put that excluded horse back into the set and remove another. Now the set again has <m>k</m> horses and so they all have the same colour. This means that all the <m>k+1</m> horses (including the two we temporarily removed) must have the same colour.
+            </p>
+          </li>
+        </ul>
+        By induction the statement is true for all <m>n \in \mathbb{N}</m>.
+      </p>
+    </justification>
+  </statement>
+  
+  <solution>
+    <p>
+      So what is wrong here? There is a subtle error in the inductive step. Remember that the inductive step has to be true for all <m>k \in \mathbb{N}</m>, however it contains the tacit assumption that <m>k</m> is not too small. To see why, step through the argument carefully when <m>k=1</m>.
+    </p>
+    <p>
+      Assume that the statement is true when <m>n=k=1</m>. Then consider a set of <m>n=k+1 = 2</m> horses: call them Alice and Bob<fn>Very traditional names for horses with side-interests in cryptography.</fn>. Now we remove one horse (Alice), and then every horse remaining in the set (which is just Bob) has the same colour. Now we put Alice back and take Bob out. So Alice has the same colour as every horse in the set <mdash /> which is just Alice. At no point do we ever compare the colour of Alice or Bob with a third horse<fn>A stalking horse? A dark horse?</fn>. Consequently we cannot infer any relationship between the colours of equine  Alice or Bob.
+    </p>
+  </solution>
+</example>
+</section>
+
+<section><title>More general inductions</title>
+<subsection xml:id="subsec-extendedinduction">
+  <title>A little more general</title>
+<p>
+There was nothing special about starting at <m>n=1</m> in our proof-sketch of the principle of mathematical induction.
+All that was required was that we could find the smallest integer in a set of natural numbers.
+We can quite readily generalise the proof to other sets of integers <mdash/> as long as we can find the smallest integer in that set.
+So for example, instead of considering <m>P(n)</m> for all natural numbers <m>n</m>, we could consider <m>P(n)</m> for all integer <m>n \geq -3</m>, or all integers <m>n \geq 7</m> and so forth.
+</p>
+
+<p>This idea leads to a slightly more general form of mathematical induction.
+The only differences are that the base case need not be at <m>n=1</m>, and that the inductive step must now be true for all integer <m>k</m> starting from the value in the base case. This is sometimes called <term>extended mathematical induction</term>.
+</p>
+
+<theorem xml:id="thm-extind"><title>Principle of mathematical induction</title>
+<statement><p>
+ For a fixed integer <m>\ell</m>, let <m>S =  \set{n \in \mathbb{Z} \mid n \geq \ell}</m>.
+ For each integer <m>n \in S</m>, let <m>P(n)</m> be a statement.
+ If
+<ul>
+<li> <m>P(\ell)</m> is true, and
+</li>
+<li> if the implication <m>P(k) \implies P(k+1)</m> is true for all <m>k \in S</m>
+</li>
+</ul>
+then <m>P(n)</m> is true for all <m>n \in S</m>.
+</p></statement>
+</theorem>
+
+
+<p>We should put this theorem to work:</p>
+
+<proposition>
+<statement><p>
+ For every integer <m>n\geq 5</m>, <m>2^n \geq n^2</m>.
+</p></statement>
+</proposition>
+
+<p>
+The proof of this result is nearly the same as our previous induction proofs; it consists of a basis case and an inductive step.
+The difference is that the basis step starts at <m>n=5</m>.
+<ul>
+<li> When <m>n=5</m> the inequality is <m>2^5=32 \geq 5^2=25</m>, which is true.
+</li>
+<li> For the inductive step we need to prove that
+  <md>
+<mrow>
+    \left( 2^k  \gt  k^2 \right)
+    &amp; \implies
+    \left( 2^{k+1}  \gt  (k+1)^2 \right)
+  </mrow>
+</md>
+  So we assume the first inequality, <m>2^k \gt k^2</m>, and have to work our way to the second, <m>2^{k+1} \gt (k+1)^2</m>.
+  Multiplying the original inequality by 2 might be a good place to start.
+<md>
+<mrow>
+  2 \cdot 2^k = 2^{k+1}  \gt  2k^2
+</mrow>
+</md>
+So we need to show that <m>2k^2 \geq (k+1)^2</m> or <m>k^2 \geq 2k+1</m>.
+Well since <m>k\geq 5</m> we have <m>k^2 \geq 5k = 2k + 3k</m> and since <m>k \gt 1</m>, <m>3k \gt 1</m> and we are done.
+</li>
+</ul>
+Now we can write it up nicely.
+</p>
+<proof>
+<p>
+We proceed by induction.
+<ul>
+<li> Basis step <mdash/> when <m>n=5</m> we have <m>2^5=32  \gt  5^2=25</m>. Hence the statement is true
+for <m>n=5</m>.
+</li>
+<li> Inductive hypothesis <mdash/> assume <m>2^k \gt k^2</m>. Then <m>2^{k+1}=2 \cdot 2^k  \gt  2k^2</m>. Since
+<m>k \geq 5</m> we have <m>k^2 \geq 5k</m>, and hence
+<me>
+  2^{k+1} \gt 2k^2 = k^2+k^2 = k^2+5k = k^2 +2k +3k.
+</me>
+Now since <m>k \geq 5</m>, we know that <m>3k>1</m>, and so
+<me>
+  2^{k+1} \gt k^2 + 2k +1 = (k+1)^2
+</me>
+Thus if <m>P(k)</m> is true then <m>P(k+1)</m> is true.
+</li>
+</ul>
+By the principle of mathematical induction the statement is true for all <m>n\geq5</m>.
+</p>
+</proof>
+
+<p>
+  It's not a discussion of induction without some summation example.
+</p>
+
+<proposition>
+  <statement>
+    <p>
+      Let <m>a \in \mathbb{Z}</m>, then
+      <me>
+        a + (a+1) + \cdots + n = \sum_{j=a}^n j = \frac{(n+a)(n+1-a)}{2}
+      </me>
+    </p>
+  </statement>
+  <proof>
+    <p>
+      We prove this by induction. When <m>n=a</m> we have <m>\frac{(a+a)(a+1-a)}{2} = a</m> as required, so the base case holds.
+    </p>
+    <p>
+      Now assume that the result holds for <m>n=k</m>. Hence
+      <md>
+      <mrow> a + (a+1) + \cdots + k \amp = \frac{(k+a)(k+1-a)}{2} \amp \text{and so}</mrow>
+      <mrow> a + (a+1) + \cdots + k + (k+1) \amp = \frac{(k+a)(k+1-a)}{2} + (k+1) </mrow>
+      <mrow>  \amp = \frac{1}{2}\left( k^2+3k+2 + a-a^2\right) </mrow>
+      <mrow>  \amp = \frac{1}{2}\left( k+1+a )(k+2-a) \right) </mrow>
+      </md>
+      as required.
+      Since both the base case and induction step hold, the result follows by induction.
+    </p>
+  </proof>
+
+</proposition>
+
+<p>
+  Here is another inequality result
+</p>
+<proposition xml:id="prop-nfactorial2n">
+  <statement>
+    <p>
+      For any integer <m>n \geq 4</m>, <m>n! \gt 2^n</m>.
+    </p>
+  </statement>
+  <proof>
+    <p>
+      We prove the result by induction. When <m>n=4</m> we have
+      <me>
+        4! = 24 \gt 16 = 2^4
+      </me>
+      so the base case is true.
+    </p>
+    <p>
+      Let us now assume that <m>k! \gt 2^k</m>. Then
+      <md>
+        <mrow>k! \amp\gt 2^k </mrow>
+        <mrow>(k+1) k! \amp \gt (k+1)2^k </mrow>
+        <mrow> (k+1)! \amp \gt (2 + (k-1))2^k </mrow>
+        <mrow> \amp = 2^{k+1} + (k-1)2^k \gt 2^{k+1}</mrow>
+      </md>
+      where we have used the fact that <m>(k+1) \gt 0</m> and <m>(k-1) \geq 0</m>.
+    </p>
+    <p>
+      Since both the base case and induction hypothesis are true, the result follows by the principle of mathematical induction.
+    </p>
+  </proof>
+</proposition>
+
+<p>
+  These inequality induction problems tend to be the most tricky of these 3 standard induction
+questions. Induction has its uses way beyond summation, divisibility and inequalities. Here are some more diverse examples.
+</p>
+
+
+<proposition xml:id="prop-egypt">
+  <statement>
+    <p>
+      For any integer <m>n \geq 3</m>, one can always find <m>n</m> distinct natural numbers <m>\set{a_1,a_2,\cdots,a_n}</m> so that
+      <me>
+        1 = \frac{1}{a_1} + \frac{1}{a_2} + \cdots + \frac{1}{a_n}
+      </me>
+      As an example:
+      <me>
+        1 = \frac{1}{2} + \frac{1}{3} + \frac{1}{6}.
+      </me>
+    </p>
+  </statement>
+  <proof>
+    <p>
+      We prove this result by induction. When <m>n=3</m>, the result holds (as was stated above) with the set <m>\set{2,3,6}</m>.
+    </p>
+    <p>
+      Now assume the result holds for <m>n=k</m>. Hence there is a set <m>\set{a_1,a_2,\cdots,a_k}</m> so that
+      <me>
+      1 = \frac{1}{a_1} + \frac{1}{a_2} + \cdots + \frac{1}{a_k}
+      </me>
+      Notice two things. First, none of the <m>a_i</m> can be one, because otherwise the sum would be too large. Second, by dividing by two we get
+      <me>
+        \frac{1}{2} =\frac{1}{2a_1} + \frac{1}{2a_2} + \cdots + \frac{1}{2a_k}
+      </me>
+      So we can make a new set of <m>k+1</m> numbers <m>\set{2, 2a_1, 2a_2, \dots, 2a_k}</m> so that the sum of their reciprocals is
+      <me>
+        \frac{1}{2} + \underbrace{\frac{1}{2a_1} + \frac{1}{2a_2} + \cdots + \frac{1}{2a_k}}_{=\frac{1}{2}} = 1
+      </me>
+      as required.
+    </p>
+    <p>
+      Since the base case is true, and the induction hypothesis is true, the result follows by mathematical induction.
+    </p>
+    <p>
+      Note that instead of dividing everything by two, one could also <q>split</q> the largest number in the set via
+      <me>
+        \frac{1}{x} = \frac{1}{1+x} + \frac{1}{x(x+1)},
+      </me>
+      since
+      <me>
+	\frac{1}{1+x} + \frac{1}{x(x+1)} = \frac{x}{x(1+x)}+ \frac{1}{x(x+1)} = \frac{x+1}{x(x+1)} = \frac{1}{x}.
+      </me>
+    </p>
+  </proof>
+</proposition>
+
+<aside><title>Egyptian fractions</title>
+<p>
+  The result above is an example of writing a rational number as an <term>Egyptian fraction</term>. More generally, an Egyptian fraction is a sum of reciprocals of integers. For example
+  <me>
+    \frac{17}{12} =  \frac{1}{1} + \frac{1}{3} + \frac{1}{12}.
+  </me>
+  The interested reader should work out how to write any given rational number in this way.
+</p>
+</aside>
+
+<p>
+  The next two examples are calculus-flavoured and so we assume some understanding<fn>That is, some standard results from typical Calculus-1 and -2 courses on differential and integral calculus.</fn> of results on derivatives and integrals. Those ideas are not covered in this text (except as a way of constructing some nice examples and exercises).
+</p>
+
+<proposition xml:id="prop-">
+  <statement>
+    <p>
+      Let <m>n \in \mathbb{N}, f(x) = x\log(x)</m> and use <m>f^{(n)}(x)</m> to denote the <m>n^{\mathrm{th}}</m> derivative of <m>f(x)</m>. Then for any <m>n \geq 2</m>
+      <me>
+        f^{(n)}(x) = (-1)^n \frac{(n-2)!}{x^{n-1}}
+      </me>
+      Note that we are using <m>\log x</m> to denote the <term>natural logarithm</term>.
+    </p>
+  </statement>
+  <proof>
+    <p>
+      We prove the result by induction. Let <m>f</m> be as defined in the statement of the result.
+    </p>
+    <p>
+      First note that
+      <md>
+        <mrow> f(x) \amp= x\log x </mrow>
+        <mrow> f'(x)\amp= 1 + \log x </mrow>
+        <mrow> f''(x)\amp= \frac{1}{x} </mrow>
+      </md>
+      and hence the result holds for <m>n=2</m>.
+    </p>
+    <p>
+      Assume the result holds for <m>n=k</m>, then
+      <md>
+        <mrow> \diff{}{x} f^{(k)}(x) \amp = \diff{}{x}(-1)^k \frac{(k-2)!}{x^{k-1}} </mrow>
+        <mrow> \amp= (-1)^k (k-2)! \cdot(-1) (k-1)x^{-k} </mrow>
+        <mrow>  \amp = (-1)^{k+1} \frac{(k-1)!}{x^k} </mrow>
+      </md>
+      as required. Since the base case and inductive step hold, the result follows by induction.
+    </p>
+  </proof>
+
+</proposition>
+
+<proposition xml:id="prop-factorial">
+  <statement>
+    <p>
+      For every integer <m>n \geq 0</m>,
+      <me>
+        n! = \int_0^\infty x^n e^{-x} \dee{x}
+      </me>
+    </p>
+  </statement>
+</proposition>
+<p>
+To prove this result we'll make use of the following fact (which you probably covered in a calculus course).
+</p>
+<fact xml:id="fact-useful-limit">
+  <statement>
+    <p>
+      For any <m>n \in \mathbb{Z}</m>,
+        <me>\lim_{x \to \infty} \frac{x^n}{e^x} = 0.</me>
+    </p>
+  </statement>
+</fact>
+
+<proof><title>Proof of <xref ref="prop-factorial"/></title>
+  <p>
+    We prove this by induction.
+    <ul>
+      <li>
+        <p>
+          When <m>n=0</m> we have
+          <md>
+          <mrow>
+            \int_0^\infty e^{-x} \dee{x} \amp= \left[ -e^{-x} \right]_0^\infty
+          </mrow>
+          <mrow>  \amp = 1 - \lim_{b \to \infty}e^{-b}</mrow>
+          <mrow>  \amp = 1 - 0 = 1 = 0! </mrow>
+          </md>
+          where we have used use <xref ref="fact-useful-limit"/> to evaluate the limit.
+          Hence the base case is true.
+        </p>
+      </li>
+      <li>
+        <p>
+          Assume that the result holds for <m>n=k</m>. Then we evaluate the integral for <m>n=k+1</m> using integration by parts.
+          <md>
+            <mrow>\int_0^\infty x^{k+1} e^{-x}\dee{x}
+              \amp = \left[ -e^{-x}x^{k+1}\right]_0^\infty + \int_0^\infty (k+1)x^k e^{-x}\dee{x}
+            </mrow>
+            <mrow>
+              \amp = (k+1) \int_0^\infty x^k e^{-x} \dee{x} + 0 - \lim_{b\to 0} e^{-x}x^{k+1}
+             </mrow>
+             <mrow>
+               \amp = (k+1) \int_0^\infty x^k e^{-x} \dee{x}
+              </mrow>
+              <mrow>
+                \amp = (k+1) k! = (k+1)!
+              </mrow>
+          </md>
+          as required. Again we have used <xref ref="fact-useful-limit"/> to evaluate the limits.
+        </p>
+      </li>
+    </ul>
+    By the principle of mathematical induction, the result holds for all <m>n \geq 0</m>.
+  </p>
+</proof>
+
+
+</subsection>
+
+<subsection xml:id="subsec-stronginduction">
+  <title>More general and yet equivalent</title>
+  <p>
+    We can generalise induction yet further with a <em>stronger</em> hypothesis in the induction step. In particular, we can set up induction so that we use all of the earlier statements <m>P(\ell), \cdots, P(k)</m> to prove the next <m>P(k+1)</m>. This stronger hypothesis gives the result its name, rather than the actual result being stronger. We have called this a corollary because one can prove it from regular induction (and we will). In fact, it is equivalent to regular induction, which we can show by proving regular induction from strong induction.
+</p>
+
+<corollary xml:id="thm-strongind"><title>Strong induction</title>
+<statement><p>
+ For a fixed integer <m>\ell</m>, let <m>S =  \set{n \in \mathbb{Z} \mid n \geq \ell}</m>.
+ For each integer <m>n \in S</m>, let <m>P(n)</m> be a statement.
+ If
+<ul>
+<li> <m>P(\ell)</m> is true, and
+</li>
+<li> if the implication <m>P(\ell) \land P(\ell+1) \land \cdots \land P(k) \implies P(k+1)</m> is true for all <m>k \in S</m>
+</li>
+</ul>
+then <m>P(n)</m> is true for all <m>n \in S</m>.
+</p>
+</statement>
+<proof>
+  <p>
+    As always, we start by assuming the hypotheses are true and work our way to the conclusion.
+    So assume that <m>P(\ell)</m>  is true, and that <m>P(\ell) \land P(\ell+1) \land \cdots \land P(k) \implies P(k+1)</m> is true for all <m>k \in S</m>.
+  </p>
+  <p>
+    To use regular induction we use a little trick. Let <m>Q(n)</m> be the statement
+    <me>
+      P(\ell),  P(\ell+1), \cdots, P(n)  \text{ are all true}
+    </me>
+    Then since <m>P(1)</m> is true, we know that <m>Q(1)</m> is true. Further, since we know that
+    <me>
+      P(\ell) \land P(\ell+1) \land \cdots \land P(k) \implies P(k+1)
+    </me>
+    then if <m>Q(k)</m> is true, then <m>Q(k+1)</m> is true. Hence <m>Q(k) \implies Q(k+1)</m> is true. By (regular) mathematical induction, we know that <m>Q(n)</m> is true for all <m>n \in S</m>, and so <m>P(n)</m> is true for all <m>n \in S</m> as required.
+    </p>
+</proof>
+</corollary>
+<p>
+  We can actually go further and prove that strong induction implies regular induction. This proves that the two types of induction are actually equivalent to each other. Anything you can prove with one, you can prove with the other; though that does not say the proofs would be equally appealing.
+</p>
+
+<corollary><title>Strong implies weak</title>
+<statement>
+  <p>
+    Strong induction is equivalent to regular induction.
+  </p>
+</statement>
+<proof>
+  <p>
+    We are actually proving here that Strong Induction (<xref ref="thm-strongind"/>) if and only if Mathematical Induction (<xref ref="thm-extind"/>). We have already proved that regular induction implies strong induction in the proof of <xref ref="thm-strongind"/>, so it is sufficient for us to prove that strong induction implies regular induction.
+  </p>
+  <p>
+    Assume the hypothesis of regular induction. That is <m>P(\ell)</m> is true and <m>P(k) \implies P(k+1)</m> for any <m>k\in S</m>. Again a small trick can be used:
+    <me>
+      P(\ell)\land P(\ell+1)\land \cdots \land P(k) \implies P(k)
+    </me>
+    The only way the above can be false is if the hypothesis is true but the conclusion is false. That cannot happen because <m>P(k)</m> appears in the conjunction of the hypothesis (and so must be true) and as the conclusion. Put this above together with the assumption <m>P(k) \implies P(k+1)</m>:
+    <me>
+      P(\ell)\land P(\ell+1)\land \cdots \land P(k) \implies P(k) \implies P(k+1)
+    </me>
+    and we have satisfied the hypotheses of strong induction. Hence <m>P(n)</m> is true for all <m>n \in S</m>.
+  </p>
+</proof>
+</corollary>
+
+<proposition>
+  <statement>
+    <p>
+      Any integer <m>n \geq 12</m> can be written as a sum of
+      <m>3</m>'s and <m>7's</m>. That is we can find non-negative
+      integer <m>a,b</m> so that <m>n=3a+7b</m>.
+    </p>
+  </statement>
+  <proof>
+    <p>
+      We prove this by strong induction.
+      <ul>
+	<li>
+	  When <m>n=12</m>, we can set <m>a=4,b=0</m>. Then since <m>12=3\times 4</m> the result holds.
+	</li>
+	<li>
+	  The inductive step is simpler if we also show that the
+	  result holds for <m>n=13,14</m>. In particular since
+	  <m>13=2\times 3 +7</m> and <m>14 = 2\times 7</m>, the result
+	  is true for <m>n=12,13,14</m>.
+	</li>
+	<li>
+	  Now assume that the result holds for all
+	  <m>n=12,13,14\dots,k</m>, with <m>k\geq 14</m>, and so we
+	  can write <m>k-2 = 3a + 5b</m>. Then it follows that <m>k+1
+	  = 3+(k-2) = 3(a+1)+5b</m> and so has the required form. That
+	  is, since the result holds for all <m>n=12,\dots,k</m>, we
+	  know that it holds for <m>n=k+1</m>.
+	</li>
+      </ul>
+      So by strong induction, the result holds for all integer <m>n \geq 12</m>.
+    </p>
+  </proof>
+</proposition>
+
+<proposition>
+  <statement>
+    <p>
+      Let <m>z \in \mathbb{R}</m> be any real number so that <m>z+z^{-1} \in \mathbb{Z}</m>. Then for any integer <m>n</m>, <m>z^n + z^{-n} \in \mathbb{Z}</m>
+    </p>
+  </statement>
+  <proof>
+    <p>
+      To simplify the discussion, let <m>q_n</m> denote <m>z^n + z^{-n}</m>. By assumption we have that <m>q_1 \in \mathbb{Z}</m>. Further note that <m>q_{-n} = q_n</m> so it is sufficient to prove that <m>q_n \in \mathbb{Z}</m> for all integer <m>n \geq 0</m>; we do so by induction.
+    </p>
+    <p>
+      When <m>n=0</m>, we have
+      <me>
+        z^0 + z^{-0} = q_0 = 2 \in \mathbb{Z}
+      </me>
+      so the result holds.
+    </p>
+    <p>
+      Now assume that the result holds for <m>0 \leq n \leq k</m>. So we know that <m>q_1, q_{k-1}, q_k</m> are integers.
+      Hence
+      <md>
+        <mrow> q_k q_1 \amp = (z^k + z^{-k})(z+z^{-1})</mrow>
+        <mrow> \amp= z^{k+1} + z^{k-1} + z^{1-k} + z^{-k-1}</mrow>
+        <mrow> \amp = \underbrace{z^{k-1}+z^{1-k}}_{=q_{k-1}} + \underbrace{z^{k+1}+z^{-1-k}}_{=q_{k+1}} </mrow>
+      </md>
+      So we have
+      <me>
+        q_{k+1} = q_k q_1 - q_{k-1}
+      </me>
+      Since <m>q_1,q_{k-1},q_k \in \mathbb{Z}</m> we know that <m>q_{k+1} \in \mathbb{Z}</m> as required. The result then follows by mathematical induction.
+    </p>
+  </proof>
+
+</proposition>
+
+<p>
+  A chocolate bar example.
+</p>
+<example><title>Breaking a bar of chocolate</title>
+<p>
+  Say we have a bar of chocolate as shown below <mdash/> a line of
+  <m>n</m> blocks. Prove that it takes <m>n-1</m> breaks to split it
+  into <m>n</m> individual pieces.
+</p>
+<image width="40%" source="choc1"/>
+<p>
+  We prove this by strong induction.
+  <ul>
+    <li>First, when <m>n=1</m>, there is nothing to do; it takes 0 breaks to split it into <m>1</m> block. The result holds.</li>
+    <li>
+      <p>
+	Now assume that the result holds for bars of
+	<m>1,2,\dots,n</m> blocks, and then consider a bar of
+	<m>n+1</m> blocks. Say we split it into two pieces, one of
+	size one of size <m>k</m> and one of size <m>n+1-k</m> (with
+	<m>k=1,2,\dots,n</m>). This takes <m>1</m> break, and we are
+	left with the problem of splitting up the bar of <m>k</m>
+	blocks and the bar of <m>n+1-k</m> blocks (as shown below).
+      </p>
+      <image width="66%" source="choc2"/>
+      <p>
+	However, by assumption, we know that splitting a bar of
+	<m>k</m> blocks takes <m>k-1</m> breaks, and splitting a bar
+	of <m>n+1-k</m> blocks takes <m>n-k</m> breaks. So, in total
+	we'll need <m>1 + k-1 + n-k = n</m> breaks. Notice that this
+	is independent of our choice <m>k</m>. Hence the result holds
+	for a bar of <m>n+1</m> blocks.
+      </p>
+    </li>
+  </ul>
+  By strong induction the result holds for all <m>n</m>.
+</p>
+<p>
+  A slightly higher dimensional analogue of this problem involves
+  cutting a pizza using <m>n</m> straight slices. The interested
+  reader should search-engine their way to the <q>lazy caterer
+  sequence</q>, or (equivalently) the central polygonal numbers. Going
+  up one more dimension one arrives at the <q>cake numbers</q> which
+  define the number of chunks of cake you can make when slicing a cube
+  with <m>n</m>-planes.
+</p>
+</example>
+
+<p>
+  Here is a more gamey example.
+</p>
+
+<example><title>A game of taking away</title>
+<p>
+  Let <m>n</m> be a natural number. Two players place <m>n</m> balls
+  in a box. The players take it in turn removing either one, two or
+  three balls from the box. The player two removes the last ball loses.
+</p>
+<p>
+  So for example, if there are 13 balls in the box, the game could play out as
+  <ul>
+    <li>Player 1 removes 3 balls, leaving 10</li>
+    <li>Player 2 then removes 2 balls, leaving 8</li>
+    <li>Player 1 removes another 3 balls, leaving 5</li>
+    <li>Player 2 removes 2 balls, leaving 3</li>
+    <li>Player 1 removes 2 balls leaving 1</li>
+    <li>Player 2 now must remove the last ball and so loses the game.</li>
+  </ul>
+</p>
+<p>
+  We can prove that if <m>n \equiv 1 \mod 4</m>, then Player 2 can always win (if they are careful). We prove this by strong induction.
+</p>
+<p>
+  When the game starts with <m>n=1=4\times 0 +1</m> balls, Player 1 must remove the only ball from box and so loses.
+</p>
+<p>
+  Now assume that Player 2 can always win when <m>n=4\ell+1</m> for
+  <m>n=1,5,\dots,4\ell+1</m>. Now consider what happens when the box
+  starts with <m>n=4\ell+5</m> balls. Since Player 2 knows how to win if they leave Player 1 with
+    <m>4\ell+1</m> balls, they will respond to Player 1's move by
+    trying to get to <m>4\ell+1</m> balls.
+  <ul>
+    <li>If Player 1 removes 1 ball, then this gives <m>4\ell+4</m>, and so Player 2 takes 3 balls</li>
+    <li>If Player 1 removes 2 balls, then this gives <m>4\ell+3</m>, and so Player 2 takes 2 balls</li>
+    <li>If Player 1 removes 3 balls, then this gives <m>4\ell+2</m>, and so Player 2 takes 1 ball</li>
+  </ul>
+  So, no matter what Player 1 does, Player 2 can choose their move so
+  as to leave Player 1 with <m>4\ell+1</m> balls. From that point, by
+  assumption, Player 2 has a winning strategy. 
+</p>
+<p>
+  So by strong induction, Player 2 has a winning strategy whenever <m>n=4\ell+1</m>.
+</p>
+</example>
+
+
+
+<p>
+  Here are a couple of examples involving the Fibonacci numbers. Even those these are well known we'll take a moment to define them formally.
+</p>
+<definition xml:id="def-fibonacci">
+  <statement>
+    <p>
+      The <term>Fibonacci numbers</term> are defined recursively<fn>i.e. we give the first few Fibonacci numbers, and then we define later Fibonacci numbers in terms of earlier Fibonacci numbers.</fn> by
+      <me>
+        F_0 = 0 \qquad F_1 = 1 \qquad F_{n+1} = F_n + F_{n-1}.
+      </me>
+      The first few Fibonacci numbers are <m>0,1,1,2,3,5,8,13,\dots</m>
+    </p>
+  </statement>
+</definition>
+<p>
+  The Fibonacci numbers have many interesting properties and patterns. They also show up all over mathematics and one can find (via the reader's favourite search engine) many examples of Fibonacci numbers in the <q>real world</q>. We'll start off with an easy result that doesn't require strong induction and then work up towards some harder ones.
+</p>
+
+<proposition xml:id="prop-fib1">
+  <statement>
+    <p>
+      The Fibonacci numbers satisfy
+      <me>
+        \sum_{\ell=1}^n F_\ell = F_{n+2}-1.
+      </me>
+    </p>
+  </statement>
+  <proof>
+    <p>
+      We prove this by induction. When <m>n=1</m> the statement becomes
+      <me>
+        F_1 = F_3-1
+      </me>
+      and since <m>F_1=1, F_3=2</m> it is true.
+    </p>
+    <p>
+      Now assume that the result holds for <m>n=k</m>. That is
+      <me>
+        F_1 + F_2 + \cdots + F_k = F_{k+2}-1
+      </me>
+      Then we have
+      <md>
+        <mrow> F_1 + F_2 + \cdots + F_k + F_{k+1} \amp= F_{k+1}+F_{k+2}-1  </mrow>
+        <mrow> \amp= F_{k+3}-1 </mrow>
+      </md>
+      as required. Since both the base case and inductive step are true, the result follows by induction.
+    </p>
+  </proof>
+</proposition>
+
+<proposition xml:id="prop-fib2">
+  <statement>
+    <p>
+      The Fibonacci numbers satisfy
+      <me>
+      F_{n+1}F_{n-1} - F_n^2 = (-1)^n.
+      </me>
+      This is known as Cassini's identity.
+    </p>
+  </statement>
+  <proof>
+    <p>
+      We prove this by induction. When <m>n=1</m>:
+      <me>
+        F_2 F_0 - F_1^2 = 0 - 1 = -1
+      </me>
+      as required.
+    </p>
+    <p>
+      Now assume that it holds for <m>n=k</m>, so that
+      <me>
+        F_{k+1}F_{k-1} - F_k^2 = (-1)^k
+      </me>
+      Now consider
+      <md>
+      <mrow> F_{k+2}F_k - F_{k+1}^2 \amp = (F_{k+1}+F_k)F_k - (F_k+F_{k-1})F_{k+1} </mrow>
+      <mrow>  \amp= \underbrace{F_{k+1}F_k} + F_k^2 - \underbrace{F_kF_{k+1}} - F_{k-1}F_{k+1} </mrow>
+      <mrow>  \amp= F_k^2 - F_{k-1}F_{k+1} </mrow>
+      <mrow>  \amp = - (F_{k+1}F_{k-1} - F_k^2) </mrow>
+      <mrow>  \amp = (-1)^{k+1} </mrow>
+      </md>
+      as required. Since both the base case and inductive step hold, the result follows by induction.
+    </p>
+  </proof>
+</proposition>
+
+<proposition xml:id="prop-fib3">
+  <statement>
+    <p>
+      Let <m>q \in \mathbb{N}</m>. Then <m>5 \mid F_{5n}</m> for all <m>n \in \mathbb{N}</m>.
+    </p>
+  </statement>
+  <proof>
+    <p>
+      Fix <m>q \in \mathbb{N}</m>. We prove the result by induction. When <m>n=1</m> the result holds since <m>F_5 = 5</m>.
+    </p>
+    <p>
+      Now assume that <m>5 \mid F_{5k}</m>. Now
+      <md>
+        <mrow>F_{5k+5} \amp= F_{5k+4} + F_{5k+3} </mrow>
+        <mrow>  \amp= (F_{5k+3}+F_{5k+2}) + F_{5k+3} = 2F_{5k+3}+F_{5k+2} </mrow>
+        <mrow>  \amp= 2(F_{5k+2}+2F_{5k+1}) + F_{k+2} =3F_{5k+2}+2F_{5k+1} </mrow>
+        <mrow>  \amp= 3(F_{5k+1}+F_{5k})+2F_{5k+1} = 5F_{5k+1}+3F_{5k}</mrow>
+      </md>
+    Now since <m>5\mid F_{5k}</m> it follows that <m>5 \mid F_{5k+5}</m>. The result follows by induction.
+  </p>
+  </proof>
+
+</proposition>
+
+
+<proposition xml:id="prop-fib4">
+  <statement>
+    <p>
+      The Fibonacci numbers satisfy
+      <md>
+      <mrow>  F_{2n-1}\amp = F_n^2 + F_{n-1}^2 \amp \text{ and}</mrow>
+      <mrow> F_{2n} \amp= F_{n+1}^2 - F_{n-1}^2.</mrow>
+      </md>
+    </p>
+  </statement>
+  <proof>
+    <p>
+      Induction is not the easiest way to prove these, but we will press on.
+      The results hold when <m>n=1</m> since
+      <md>
+        <mrow> F_1 \amp = 1 = 1^2+ 0^2 = F_1^2 + F_0^2 </mrow>
+        <mrow> F_2 \amp = 1 = 1^2 - 0^2 = F_2^2 - F_0^2 </mrow>
+      </md>
+    </p>
+    <p>
+      Now assume the result holds for all <m>k \leq n</m>. Now from the recurrence that defines the Fibonacci numbers:
+      <md>
+        <mrow>F_{2k+1} \amp = F_{2k}+F_{2k-1} </mrow>
+        <mrow> \amp= (F_{k+1}^2 - F_{k-1}^2) + (F_k^2 + F_{k-1}^2) \amp \text{by assumption} </mrow>
+        <mrow> \amp= F_{k+1}^2  + F_k^2</mrow>
+      </md>
+      as required. We do similarly for the other equation (though more gymnastics are required).
+      <md>
+        <mrow>F_{2k+2} \amp = F_{2k+1}+F_{2k} </mrow>
+        <mrow> \amp= (F_{k+1}^2 + F_k^2) + (F_{k+1}^2 - F_{k-1}^2) </mrow>
+        <intertext>Try to make the first bracket look like <m>F_{k+2}^2 = (F_{k+1}+F_k)^2</m></intertext>
+        <mrow> \amp= (F_{k+1}^2 \underbrace{+ 2F_{k+1}F_k}_{+} + F_k^2)  + (F_{k+1}^2  - F_{k-1}^2) \underbrace{-2 F_k F_{k+1}}_{-} </mrow>
+        <intertext>Now manipulate the second bracket using difference of squares and then <m>F_{k+1}-F_{k-1}=F_k</m></intertext>
+        <mrow> \amp= (F_{k+1} + F_k)^2 + (F_{k+1}-F_{k-1})(F_{k+1}+F_{k-1})-2F_kF_{k+1}</mrow>
+        <mrow> \amp= F_{k+2}^2 + F_k (F_{k+1}+F_{k-1} -2 F_{k+1})</mrow>
+        <mrow> \amp= F_{k+2}^2 - F_k (F_{k+1} - F_{k-1})</mrow>
+        <mrow> \amp = F_{k+2}^2 - F_k^2 </mrow>
+      </md>
+      as required.
+    </p>
+    <p>
+      Since the base case is true and the inductive step is true, the result follows by induction.
+    </p>
+  </proof>
+
+</proposition>
+
+<p>
+  Next is an important example that proves every integer bigger than
+  <m>2</m> can be written as a product of prime numbers.  This
+  statement is part of the Fundamental Theorem of Arithmetic, which
+  also says that the product is <em>unique</em>.  Proving uniqueness
+  takes more work <mdash/> see <xref ref="sec-unique-fact"/>. This
+  result focuses on proving the <em>existence</em> of at least one
+  factorisation into primes.
+</p>
+
+<p>
+  This is also a really good example of a result that we all know, but
+  we haven't proved. When we do sit down to try to prove such results
+  it can be easy to get confused or disoriented because the result
+  seems so obvious; we've known and worked with the result for years!
+  Some such results may indeed be trivial while some need more
+  work. It is always a good idea to go back to the basic definitions
+  and methods to help work your way to a proof.
+</p>
+
+<example xml:id="ex_exists_prime_fac"><title>There exists a prime factorisation</title>
+  <statement>
+    <p>
+      Let <m>n\in\mathbb{N}</m>, <m>n\geq 2</m>. Then <m>n</m> is a product of prime numbers.
+    </p>
+  </statement>
+  
+    <answer>
+<p>
+Notice that the statement includes the case where <m>n</m> is prime, whence <m>n</m> is the product of a single prime <mdash/> itself! Then, any integer greater than 2 is prime or not prime. If it is not prime, what can we say about its divisors?
+</p>
+<p>
+Let's try to prove the statement using induction on <m>n</m>.
+The base case should be <m>n=2</m>. In this case, the statement is true, since <m>2</m> is prime, and therefore a product of prime numbers (in this case, the product of a single prime number, <m>2</m>).
+Now suppose the result holds for <m>n=k</m>, so that <m>n=k</m> is a product of prime numbers.
+We need to show that <m>k+1</m> is a product of prime numbers. We can try to prove this by considering two cases: <m>k+1</m> is prime, or <m>k+1</m> is not prime, one of which must be true.
+<ul>
+<li>
+<p>
+ <m>k+1</m> is prime: then the result holds for <m>n=k+1</m>, so we're done.
+</p></li>
+<li>
+<p>
+ <m>k+1</m> is not prime: here we can't conclude anything immediately. Instead we'll try to use the inductive hypothesis to show that the result holds.
+By definition, <m>k+1</m> not being prime means that there are <m>a,b\in\mathbb{N}</m>, <m>1 \lt a,b \lt k+1</m>, such that <m>k+1=ab</m>.
+</p>
+<p>
+Now, if we knew <m>a</m> and <m>b</m> could be written as a product of prime numbers, then we'd also have that <m>k+1</m> is a product of prime numbers.
+But we don't know this, since for the inductive hypothesis, we only assumed that <m>n=k</m> could be written as a product of prime numbers.
+Indeed, it is not clear how we can get from <m>n=k</m> to <m>n=k+1</m> in our inductive step since <m>k</m> and <m>k+1</m> don't share common factors other than <m>\pm 1</m> (see <xref ref="ex_n_div_a_aplus1"/>).
+This suggests that we use strong induction instead of regular induction.
+</p>
+</li>
+</ul>
+</p>
+<p>
+Let's try again using strong induction. The base case is the same as before. This time, for the inductive hypothesis, instead of just assuming that
+<m>n=k</m> is a product of prime numbers, we assume that for any <m>2\leq n\leq k</m>, <m>n</m> is a product of prime numbers. We need to show that <m>k+1</m> is a product of prime numbers. Again we can split this into two cases.
+<ul>
+<li>
+<p>
+ <m>k+1</m> is prime: then the result holds for <m>n=k+1</m>, so we're done.
+</p></li>
+<li>
+<p>
+ <m>k+1</m> is not prime: By definition, <m>k+1</m> not being prime means that there are <m>a,b\in\mathbb{N}</m>, <m>1 \lt a,b \lt k+1</m>, such that <m>k+1=ab</m>.
+By the inductive hypothesis, both <m>a</m> and <m>b</m> can be written as a product of prime numbers;
+that is <m>a=p_1\cdots p_r</m> and <m>b=q_1\cdots q_s</m> for prime numbers <m>p_1,\dots,p_r,q_1,\dots,q_s</m>. (Note that these prime numbers are not necessarily distinct, and if <m>a</m> or <m>b</m> were itself prime, then <m>r=1</m> or <m>s=1</m>, respectively.)
+Then
+<me> k+1 = ab=p_1\cdots p_rq_1\cdots q_s </me>
+and so <m>k+1</m> may be written as a product of prime numbers.
+</p></li>
+</ul>
+In either case, we've concluded that <m>k+1</m> is a product of prime numbers, and so the inductive step is complete.
+Let's write up our argument.
+</p>
+    </answer>
+    <solution>
+<proof>
+<p>
+Let <m>n\in\mathbb{N}</m>, <m>n\geq 2</m>. We proceed by strong induction on <m>n</m>. For the base case, suppose <m>n=2</m>.
+Then <m>n</m> is prime, and the result holds.
+</p>
+<p>
+Now suppose that the result holds for all <m>2\leq n\leq k</m>; that is, if <m>n\leq k</m>, then <m>n</m> is a product of prime numbers.
+Either <m>k+1</m> is prime, or not prime. If <m>k+1</m> is prime, then the result holds. So suppose that <m>k+1</m> is not prime.
+Then, by definition, <m>k+1=ab</m> for some <m>a,b\in\mathbb{N}</m>, <m>1 \lt a,b \lt k+1</m>. By the inductive hypothesis, both <m>a</m> and <m>b</m> can be written as a product of prime numbers;
+that is <m>a=p_1\cdots p_r</m> and <m>b=q_1\cdots q_s</m> for prime numbers <m>p_1,\dots,p_r,q_1,\dots,q_s</m>. Then
+<me> k+1 = ab=p_1\cdots p_rq_1\cdots q_s </me>
+and so <m>k+1</m> may be written as a product of prime numbers. Thus the result holds for <m>k+1</m>.
+Thus by strong induction, any <m>n\in\mathbb{N}</m>, <m>n\geq 2</m> is a product of prime numbers.
+</p>
+</proof>
+      
+    </solution>
+</example>
+
+<p>
+  Finally, a nice trigonometric example<fn>
+  We hope the reader didn't think they could avoid trigonometry just because this isn't a calculus text. Take this as a sine of how important the topic is (and its related puns).
+  </fn>.
+  We'll assume that you remember (or can quickly revise) the formulas
+  <md>
+  <mrow> \cos(a+b)\amp=\cos a \cos b - \sin a \sin b </mrow>
+  <mrow> \cos(a-b)\amp=\cos a \cos b + \sin a \sin b </mrow>
+  </md>
+</p>
+
+
+<proposition xml:id="prop-costheta">
+  <statement>
+    <p>
+      Let <m>\theta \in \mathbb{R}</m> be fixed.
+      Let <m>p_0=1</m> and <m>p_1=\cos\theta</m> and define <m>p_n = 2p_1 p_{n-1} - p_{n-2}</m>. Prove that <m>p_n = \cos(n\theta)</m> for all integer <m>n \geq 0</m>.
+    </p>
+  </statement>
+  <proof>
+    <p>
+      We prove the result by induction. When <m>n=0</m> we have <m>p_0 = \cos 0 = 1</m>, so the base case is true. We now turn to the inductive step.
+    </p>
+    <p>
+      Assume that the result hold for <m>n=0,1,\cdots,k</m>. In particular,
+      <md>
+        <mrow> p_1\amp=\cos\theta \amp p_k\amp=\cos k\theta </mrow>
+      </md>
+      Now it suffices to show that <m>p_{k+1} = 2p_1 p_k - p_{k-1} = \cos((k+1)\theta)</m>. Substitute in the values of <m>p_1, p_k, p_{k-1}</m>:
+      <me>
+        p_{k+1} = 2\cos\theta \cos(k\theta) - \cos((k-1)\theta)
+      </me>
+      Recall (from the formulas above) that
+      <md>
+      <mrow>
+	\cos( (k+1)\theta ) \amp = \cos\theta \cos k\theta - \sin\theta\sin k\theta \amp \text{and}
+      </mrow>
+      <mrow>
+      \cos( (k-1)\theta ) \amp = \cos\theta \cos k\theta + \sin\theta\sin k\theta
+      </mrow>
+      </md>
+      so that
+      <me>
+        \cos((k+1)\theta ) + \cos((k-1)\theta) = 2\cos\theta\cos k\theta
+      </me>
+      Substituting this into the expression for <m>p_{k+1}</m> above then gives
+      <me>
+        p_{k+1} = \cos((k+1)\theta)
+      </me>
+      as required.
+    </p>
+  </proof>
+</proposition>
+
+</subsection>
+
+</section>
+
+
+<xi:include href="../problems/07ex.ptx"/>
+
+
+</chapter>

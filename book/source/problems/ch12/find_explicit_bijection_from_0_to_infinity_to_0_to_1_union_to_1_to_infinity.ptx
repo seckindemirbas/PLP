@@ -1,0 +1,90 @@
+<exercise>
+<!-- source latex = 'find explicit bijection from 0 to infinity to 0 to 1 union to 1 to infinity.tex' -->
+<!-- converted on 08/03/2022 at 15:20 -->
+<statement>
+<p>
+Construct an explicit bijection between the sets <m> (0,\infty) </m> and <m> (0,\infty)-\set{1}</m> to show that <m> |(0,\infty)| =|(0, \infty)-\set{1}|</m>.
+</p>
+<p>
+ You must prove that your function is a bijection.
+</p>
+</statement>
+<hint>
+<p>
+The explicit bijection in the proof of <em>{Result 12.5.2</em>} may be useful.
+</p>
+</hint>
+<answer>
+<p>
+We see that if we only want to show that these two sets are equinumerous, our best choice would be to use The Cantor-Schröder-Bernstein theorem.
+We can do that by fiinding two injective functions:
+</p>
+<p>
+<me>
+g_1:(0,\infty)\to (0,\infty)-\set{1},
+</me>
+and
+<me>
+g_2:(0,\infty)-\set{1}\to (0,\infty).
+</me>
+In this case, we see that we can take <m>g_1</m> and <m>g_2</m> defined as <m>g_1(x)=x+1</m>, and <m>g_2(x)=x</m>. We see that these functions are injective which imlplies that <m> |(0,\infty)|= |(0,\infty)-\set{1}|</m>.
+</p>
+<p>
+But, in this question, we want to find an explicit bijection from <m> (0,\infty)</m> to <m>(0,\infty)-\set{1}</m>. The problem with such bijections is that it generally feels almost trivial since the two sets are almost identical. This gives the impression that we should be just take the identity function, or a tiny variation of it to get the bijection.
+</p>
+<p>
+However, this idea fails when we realize that our bijection should send 1 to an element in <m> (0,\infty)-\set{1} </m>, call it <m>y_1</m>. But, then, se see <m>y_1\in (0,\infty)</m> and thus should go to another element in the codomain (different than itself), call it <m>y_2</m>. Then, this <m>y_2</m> should go to another element, and that should go to another, and so on. This means that we cannot take a simple variation of the identity function here, we may need to make a more drastic change to account for this <q>snowball</q> effect.
+</p>
+<p>
+The simplest way to handle this situation is by defining a function that sends <m>1</m> to <m>2</m>, <m>2</m> to <m>3</m>, <m>3</m> to <m>4</m>, and so on, very similar to <q>Hilbert's Hotel Problem</q>. As for elements that are not natural numbers, we can just send them to themselves.
+</p>
+</answer>
+<solution>
+
+<proof>
+<p>
+We can define such a bijection, <m> f:(0,\infty) \to (0,\infty)-\set{1}</m>, as follows:
+</p>
+<p>
+<me>
+f(x)=\left\{
+\begin{array}{lll}
+x+1  \amp  \amp  x\in \mathbb N 
+\\
+x  \amp  \amp  \text{ otherwise}.
+\end{array}
+\right.
+</me>
+</p>
+<p>
+Now, we need to show that <m>f</m> is indeed a bijective function.
+</p>
+<p>
+<em>Show <m>f</m> is surjective:</em>
+Let <m>y\in (0,\infty)-\set{1}= (0,1)\cup (1,\infty)</m>. Then we have 2 cases.
+</p>
+<p>
+<em>Case 1:</em> <m>y\in \mathbb N</m>, <m>y\neq 1</m>, that is, <m>y\geq 2</m>. Then, we see that we can take <m>x=y-1</m> and get <m>f(x)=x+1=y</m>.
+</p>
+<p>
+<em>Case 2:</em> <m>y\notin \mathbb N</m>. Then, we see that we can take <m>x=y</m> and get <m>f(x)=x=y</m>.
+</p>
+<p>
+<em>Show <m>f</m> is injective:</em>
+Let <m>x,y\in (0.\infty)</m>, such that <m>f(x)=f(y)</m>. Then we know that if <m>f(x)\in\mathbb N</m>, then <m>f(y)\in\mathbb N</m>, which implies that <m>x,y \in\mathbb N</m> and since for <m>x,y\notin\mathbb N</m>, we see that <m>f(x)=x\notin\mathbb N</m> and <m>f(y)=y\notin\mathbb N</m>.
+</p>
+<p>
+Hence, we see that <m>x=f(x)-1=f(y)-1=y</m>.
+</p>
+<p>
+Moreover, we see that if <m>f(x),f(y)\notin\mathbb N</m>, we see that <m>x=f(x)=f(y)=y</m>.
+</p>
+<p>
+Therefore <m>f</m> is injective, which in turn implies that <m>f</m> is bijective.
+</p>
+
+
+</proof>
+
+</solution>
+</exercise>

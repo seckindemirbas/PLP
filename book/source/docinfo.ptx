@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<docinfo>
+  <latex-preamble>
+    <package>upgreek</package>
+  </latex-preamble>
+  <macros>
+    \newcommand{\ds}{\displaystyle}
+    \renewcommand{\textcolor}[2]{{\color{#1}{#2}}}
+    
+    \newcommand{\es}{ {\varnothing}}
+    \newcommand{\st}{ \;\mathrm{s.t.}\; }
+    \newcommand{\so}{ \;\mid\; }
+    \newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+    \newcommand{\set}[1]{ \left\{#1\right\} }
+    
+    \renewcommand{\neg}{\sim}
+
+    \newcommand{\rel}[1][R]{\;\mathcal{#1}\;}
+    \newcommand{\nrel}[1][R]{\;\cancel{\mathcal{#1}}\;}
+   
+    \newcommand{\dee}[1]{\mathrm{d}#1}
+    \newcommand{\diff}[2]{\dfrac{\mathrm{d}#1}{\mathrm{d}#2}}
+    
+    \renewcommand{\mod}[1]{\ (\mathrm{mod}\ #1)}
+    \newcommand{\lcm}{\mathrm{lcm}}
+    <!-- so we can use the standard epsilon in some places -->
+    \let\oldepsilon\epsilon
+    <!-- now redefine epsilon with the nice varepsilon -->
+    \renewcommand{\epsilon}{\varepsilon}
+    \newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}
+  </macros>
+
+  <!-- to make referencing Theorem-<n> rather than like latex referencing - just the number -->
+  <cross-references text="type-global"/>
+  
+  <!-- use to replace proposition with result -->
+  <rename element="proposition" xml:lang="en-US">Result</rename>
+  <!-- use to replace answer with scratchwork -->
+  <rename element="answer" xml:lang="en-US">Scratchwork</rename>
+  <rename element="justification" xml:lang="en-US">Misproof</rename>
+  
+</docinfo>

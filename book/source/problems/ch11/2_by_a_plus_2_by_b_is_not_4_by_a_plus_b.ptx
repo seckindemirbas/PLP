@@ -1,0 +1,68 @@
+<exercise>
+<!-- source latex = '2 by a plus 2 by b is not 4 by a plus b.tex' -->
+<!-- converted on 08/03/2022 at 14:50 -->
+<statement>
+<p>
+Let <m>a, b\in \mathbb{R}</m> with <m>a,b \gt 0</m>. Show that
+<me>\frac{2}{a} + \frac{2}{b} \neq \frac{4}{a+b}</me>
+<ol marker="(a)">
+<li>
+<p>
+ using a contradiction, and
+</p></li>
+<li>
+<p>
+ using a direct proof.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<answer>
+<p>
+Consider the expression needed for a proof by contradiction. Let <m>a,b \gt 0</m>. What would it mean for us to have
+<me>\frac{2}{a} + \frac{2}{b} = \frac{4}{a+b}?</me>
+Multiply both sides by <m>ab(a+b)</m> to clear the denominators
+<me>2a^2+2b^2 +4ab=4ab,</me>
+and thus
+<me>a^2+b^2 = 0.</me>
+But since <m>a,b \gt 0</m>, <m>a^2+b^2  \gt 0</m> and we've obtained a contradiction!
+</p>
+<p>
+We can leverage this reasoning into a direct proof too. We leave that to the reader.
+</p>
+</answer>
+<solution>
+
+  <proof><title>Proof of (a)</title>
+  <p>
+        By way of contradiction, suppose there exist <m>a, b\in \mathbb{R}</m> with <m>a,b \gt 0</m> such that
+        <me>\frac{2}{a} + \frac{2}{b} = \frac{4}{a+b}.</me>
+        We rearrange the expression, multiplying both sides by <m>ab</m> to achieve
+        <me>2b+2a = \frac{4ab}{a+b}.</me>
+        Multiplying both sides by <m>a+b</m>, we have
+        <me>4ab+2b^2 + 2a^2 = 4ab.</me>
+        Subtracting <m>4ab</m> from each side and dividing by <m>2</m> yields,
+        <me>a^2+b^2 = 0. </me>
+        This gives a contradiction since <m>a, b\in\mathbb{R}\setminus\{0\}</m> implies <m>a^2+b^2  \gt  0</m>.
+    </p></proof>
+
+    <proof><title>Proof of (b)</title>
+    <p>
+        Recall that the square of a positive real number is positive. Therefore, <m>a^2  \gt 0</m> and <m>b^2 \gt 0</m>, and we must have
+        <me>2a^2+2b^2 \gt 0.</me>
+        We add <m>4ab</m> to each side of our expression
+        <me>2a^2+2b^2+4ab  \gt  4ab</me>
+        and factor the left hand side to obtain
+        <me>(2a+2b)(a+b)  \gt  4ab.</me>
+        Since <m>a,b \gt 0</m>, <m>a+b  \gt  0</m> and we may divide both sides by <m>a+b</m> to achieve
+        <me>2a+2b  \gt  \frac{4ab}{a+b}</me>
+        Finally, since <m>a, b\gt 0</m>, we may divide both sides by <m>ab</m> to obtain
+        <me>\frac{2}{b}+\frac{2}{a}  \gt  \frac{4}{a+b}.</me>
+        In particular,
+        <me>\frac{2}{b}+\frac{2}{a} \neq \frac{4}{a+b}.</me>
+    </p></proof>
+
+
+</solution>
+</exercise>

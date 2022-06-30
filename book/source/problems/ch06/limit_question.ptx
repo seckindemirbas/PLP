@@ -1,0 +1,58 @@
+<exercise>
+<!-- source latex = 'limit_question.tex' -->
+<!-- converted on 12/08/2021 at 19:43 -->
+<statement>
+<p>
+Show that <m>\displaystyle\lim_{x\to1}x^2=1</m>.
+</p>
+</statement>
+
+<answer>
+<p>
+We need to show the following:
+</p>
+<p>
+For any <m>\epsilon \gt 0</m>, there is some <m>\delta \gt 0</m> so that whenever <m>0 \lt |x-1| \lt \delta</m>, we have <m>|x^2-1| \lt \epsilon</m>.
+</p>
+
+<p>
+In order to bound <m>|x^2-1|</m>, we can factor the expression, and try to bound each term.
+<me> |x^2-1|=|(x-1)(x+1)|=|x-1|\cdot|x+1| </me>
+The factor <m>|x-1| \lt \delta</m>, by assumption. But how can we bound the factor <m>|x+1|</m>? The idea is this: as long as <m>x</m> is close to <m>1</m>, say <m>|x-1|\leq 1</m>, then <m>|x+1|</m> can't be too large.
+When we decide how to choose delta, we don't have to make our choice immediately; we can impose several conditions on delta, and then when we have worked out all those conditions, we can make our final choice.
+So, we are going to require that <m>\delta\leq1</m>, to ensure that <m>|1+x|</m> is not too large. To see this assume that <m>|x-1|\leq1 </m>. Then
+<me> -1\leq x-1 \leq1.  </me>
+Adding <m>2</m> to everything, we end up with
+<me> 1\leq x+1 \leq 3. </me>
+In particular, this implies that <m>|x+1|\leq 3</m>.
+</p>
+<p>
+So let's assume that <m>|x-1| \lt \delta</m> and <m>|x-1|\leq 1</m>, the latter implying that <m>|x+1|\leq3</m>. Returning back to the factorization of <m>|x^2-1|</m>, we have
+<me> |x^2-1|=|x+1|\cdot|x-1|  \lt 3\delta </me>
+So we want to choose delta so that
+<me> 3\delta \leq \epsilon </me>
+and so we are going to place another condition on delta, namely that
+<me> \delta \leq \frac{\epsilon}{3}. </me>
+Now we don't immediately set <m>\delta=\epsilon/3</m>, since we also required (above) that <m>\delta\leq1</m>. We can satisfy both of these requirements by setting <m>\delta=\min\{1,\epsilon/3\}</m>.
+</p>
+
+<p>
+With this scratchwork, we're ready to write up the proof.
+</p>
+</answer>
+<solution>
+<proof>
+<p>
+Let <m>\epsilon \gt 0</m> be given. Take <m>\delta=\min\{1,\epsilon/3\}</m>.
+Suppose that <m>x\in\mathbb{R}</m> and <m>0 \lt |x-1| \lt \delta</m>. In particular, <m>|x-1|\leq 1</m>, and so
+<me> -1\leq x-1 \leq1.  </me>
+Adding <m>2</m> to everything, we end up with
+<me> 1\leq x+1 \leq 3. </me>
+In particular, this implies that <m>|x+1|\leq 3</m>.
+Then using this inequality, and the inequality <m>|x-1| \lt \delta\leq\epsilon/3</m>, we have
+<me> |x^2-1|=|x+1|\cdot|x-1|\leq 3\delta\leq 3\cdot\frac{\epsilon}{3}=\epsilon. </me>
+</p>
+</proof>
+
+</solution>
+</exercise>

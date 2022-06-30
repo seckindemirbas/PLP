@@ -1,0 +1,78 @@
+<exercise>
+<!-- source latex = 'standard_relations_question.tex' -->
+<!-- converted on 08/11/2021 at 11:08 -->
+<statement>
+<p>
+For each of the following relations, determine whether or not they are reflexive, symmetric, and transitive.
+<ol marker="(a)">
+<li>
+<p>
+ <m>R = \set{(1,1),(2,2),(3,3),(1,2),(2,1),(1,3),(3,1)}\subseteq\set{1,2,3}\times\set{1,2,3} </m>
+</p></li>
+<li>
+<p>
+ For <m>a,b\in\mathbb{N}</m>, <m>a\rel b</m> if and only if <m>a\mid b</m>.
+</p></li>
+<li>
+<p>
+ <m>R=\set{(x,y)\in\mathbb{R}\times\mathbb{R}:x-y\in\mathbb{Q}}</m>
+</p></li>
+<li>
+<p>
+ For <m>A,B\subseteq\mathbb{R}</m>, <m>A\rel B</m> if and only if <m>A\cap B=\emptyset</m>.
+</p></li>
+<li>
+<p>
+ For functions <m>f,g:\mathbb{R}\rightarrow \mathbb{R}</m>, <m>f\rel g</m> if and only if <m>f-g</m> is linear, that is, there are constants <m>m,b\in\mathbb{R}</m> so that
+<m>f(x)-g(x)=mx+b</m> for all <m>x\in\mathbb{R}</m>. The constants <m>m,b</m> depend on <m>f</m> and <m>g</m>, but not on <m>x</m>.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+
+<!-- <hint></hint> -->
+
+<solution>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ The relation is a subset of <m>S\times S</m>, where <m>S=\{1,2,3\}</m>. Since <m>(i,i)\in R</m> for all <m>i\in S</m>, the relation is reflexive.
+We can also see that the relation is symmetric, since <m>(i,j)\in R</m> whenever <m>(j,i)\in R</m>.
+The relation is not transitive: for example, we have <m>(2,1)\in R</m> and <m>(1,3)\in R</m>, but <m>(2,3)\not\in R</m>.
+</p>
+</li>
+<li>
+<p>
+ The relation is reflexive, since <m>a\mid a</m> for any <m>a\in\mathbb{N}</m>. The relation is not symmetric; for example, <m>2\rel 4</m>, since <m>2\mid 4</m>, but the reverse does not hold, since <m>4\nmid 2</m>.
+The relation is transitive: for any <m>a,b,c\in\mathbb{N}</m>, if <m>a\mid b</m> and <m>b\mid c</m>, then <m>a\mid c</m>, as shown in <xref ref="ex_trans_divisibility"/>.
+</p>
+</li>
+<li>
+<p>
+ For any <m>x\in\mathbb{R}</m>, <m>x-x=0\in\mathbb{Q}</m>, and so the relation is reflexive. For any <m>x,y\in\mathbb{R}</m> such that <m>x-y\in \mathbb{Q}</m>, we have <m>y-x=-(x-y)</m> is in <m>\mathbb{Q}</m> as well. So the relation is symmetric.
+Finally, if <m>x,y,z\in\mathbb{R}</m> so that <m>x-y\in\mathbb{Q}</m> and <m>y-z\in\mathbb{Q}</m>, then <m>x-z=(x-y)-(y-z)</m> is also in <m>\mathbb{Q}</m>, since the sum of two rational numbers is also rational. Thus the relation is transitive.
+</p>
+</li>
+<li>
+<p>
+ The relation is not reflexive since, for example, if <m>A=\set{1}</m> then <m>A \cap A \neq \emptyset</m>. Indeed, it fails for any non-empty set <m>A</m>. The relation is symmetric, since <m>A\cap B=\emptyset</m> if and only if <m>B\cap A=\emptyset</m>.
+The relation is not transitive. For example, if we take <m>A=\set{1,2}</m>, <m>B=\set{3}</m>, and <m>C=\set{1}</m>, then <m>A\cap B=\emptyset</m> and <m>B\cap C=\emptyset</m>, but <m>1\in A\cap C</m>.
+</p>
+</li>
+<li>
+<p>
+ Let <m>f:\mathbb{R}\rightarrow\mathbb{R}</m>. Then <m>f(x)-f(x)=0</m> for all <m>x\in\mathbb{R}</m>, and so <m>f-f</m> is a linear function. Thus the relation is reflexive.
+Now let <m>g:\mathbb{R}\rightarrow\mathbb{R}</m> also. If <m>f(x)-g(x)=mx+b</m> for all <m>x\in\mathbb{R}</m>, then <m>g(x)-f(x)=-mx-b</m> for all <m>x\in\mathbb{R}</m>. Then <m>g-f</m> is also a linear function, so the relation is symmetric.
+Finally let <m>h:\mathbb{R}\rightarrow\mathbb{R}</m>. If <m>f(x)-g(x)=m_1x+b_1</m> and <m>g(x)-h(x)=m_2x+b_2</m> for all <m>x\in\mathbb{R}</m>, then
+<me> f(x)-h(x)=(f(x)-g(x))-(g(x)-h(x))=(m_1-m_2)x+(b_1-b_2) </me>
+for all <m>x\in \mathbb{R}</m>. So <m>f-h</m> is also linear, and thus the relation is transitive.
+</p>
+
+
+</li>
+</ol>
+</p>
+</solution>
+</exercise>

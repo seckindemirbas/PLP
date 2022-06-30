@@ -1,0 +1,63 @@
+<exercise>
+<!-- source latex = '3 divides 5a iff 3 divides a question.tex' -->
+<!-- converted on 06/07/2021 at 10:25 -->
+<statement>
+<p>
+Let <m>a\in\mathbb{Z}</m>. Prove that <m>3\mid 5a</m> if and only if <m>3\mid a</m>.
+</p>
+</statement>
+<hint>
+<p>
+The ideas used in the solution of <xref ref="ex3-2and3-implies-6"/> may be useful.
+</p>
+</hint>
+<answer>
+<p>
+We see that this is a biconditional statement and thus we need to prove both implications in both direction. That is, we need to prove
+<md>
+<mrow>
+(3\mid 5a)\implies(3\mid a) \qquad \text{ and } \qquad (3\mid a)\implies (3\mid 5a).
+</mrow>
+</md>
+ We can see that the second statement should be quite straightforward, as if a number is a multiple of <m>3</m> then <m>5</m> times that number will also be a multiple of <m>3</m>.
+</p>
+<p>
+However, the first statement may be a little more involved. We can try to look at the contrapositive of the statement:
+<md>
+<mrow>
+(3\nmid a)\implies(3\nmid 5a).
+</mrow>
+</md>
+So that we have an assumption on the simple term <m>a</m>. But, this also suggests that we use cases: <m>a=3k+1</m> or <m>a=3k+2</m> for some <m>k\in\mathbb Z</m>. Then, we can calculate <m>5a</m> and show that it is also not divisible by <m>3</m>.
+</p>
+<p>
+We can also try to prove it directly by assuming <m>3\mid 5a</m>, that is, <m>5a=3k</m> for some <m>k\in\mathbb Z</m> and then manipulating this equation to show <m>a=3n</m> for some <m>n\in\mathbb Z</m>. Starting from <m>5a=3k</m>, add <m>a</m> to both sides to get <m>6a=3k+a</m>. Now subtract <m>3k</m> from both sides to get <m>6a-3k=a</m>. That is <m>a=3(2a-k)</m>. Since <m>2a-k \in \mathbb Z</m>, we have shown that <m>3 \mid a</m>. Let's put everything together.
+</p>
+</answer>
+<solution>
+<proof><p>
+ This is a biconditional statement. Hence, we need to prove both implications:
+<md>
+<mrow>
+(3\mid 5a)\implies(3\mid a) \qquad \text{ and } (3\mid a)\implies (3\mid 5a).
+</mrow>
+</md>
+<ul>
+<li>
+<p>
+ <m>(\Leftarrow)</m>: Assume that <m>3\mid a</m>. Then we see that <m>a=3k</m> for some <m>k\in\mathbb Z</m>. Hence, <m>5a=5(3k)=3(5k)</m>. Since <m>5k\in\mathbb Z</m>, we get <m>3\mid 5a</m>.
+</p>
+</li>
+<li>
+<p>
+ <m>(\Rightarrow)</m>: Assume that <m>3\mid 5a</m>. This implies <m>5a=3m</m> for some <m>m\in\mathbb Z</m>. Therefore we see that by adding <m>a</m> to both sides, we get <m>6a=3m+a</m>. Thus, <m>a=6a-3m=3(2a-m)</m>. Since <m>(2a-m)\in\mathbb Z</m>, we see <m>3\mid a</m>.
+</p></li>
+</ul>
+Therefore the result follows.
+</p></proof>
+
+<p>
+Notice that we have indicated to the reader which implication we are proving by starting with <m>(\Leftarrow)</m> or <m>(\Rightarrow)</m>. This is a very simple useful way to help tell the reader what is going on. Always make life easier for your reader.
+</p>
+</solution>
+</exercise>

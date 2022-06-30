@@ -1,0 +1,196 @@
+<exercise xml:id="ex_R_unit_equinumerous">
+<!-- source latex = 'R_and_unit_interval_equinumerous.tex' -->
+<!-- converted on 30/03/2022 at 15:30 -->
+<statement>
+<p>
+Show that <m>\mathbb{R}</m> and <m>(0,1)</m> are equinumerous by giving two different explicit bijections.
+</p>
+</statement>
+<hint>
+<p>
+Try sketching the graph of potential bijections from <m>(0,1)</m> to <m>\mathbb{R}</m>.
+</p>
+</hint>
+<answer>
+<p>
+<ul>
+  <li>
+    <p>
+      <em>First solution</em>: Let's try to find a bijection, say <m>h</m>, from <m>(0,1)</m> to <m>\mathbb{R}</m>. We'll need <m>h</m> to blow up to infinity at some point, and negative infinity at another point.
+Let's try to create <m>h</m> so that
+<me> \lim_{x\to 0^+}h(x)=+\infty, \quad \lim_{x\to 1^-}h(x)=-\infty. </me>
+We know that the function <m>1/x</m> satisfies the first condition, and that the function <m>1/(x-1)</m> satisfies the second condition.
+    </p>
+    <p>
+We can define <m>h</m> to be a piecewise function involving rational functions like these. Suppose we tried to define
+<me> h(x)=\begin{cases}
+			\frac{1}{x}  \amp  \text{if } 0\lt x \leq \frac{1}{2} 
+\\
+			\frac{1}{x-1}  \amp  \text{if } \frac{1}{2}\lt x\lt 1
+			\end{cases} </me>
+This function doesn't quite work, since it jumps from <m>2</m> to <m>-2</m> at <m>x=1/2</m>, and is thus not surjective.
+Let's fix this by defining
+<me> h(x)=\begin{cases}
+			\frac{1}{x}-2  \amp  \text{if } 0\lt x \leq \frac{1}{2} 
+\\
+			\frac{1}{x-1}+2  \amp  \text{if } \frac{1}{2}\lt x\lt 1
+                      \end{cases}
+</me>
+We now need to show that this is a bijection.
+    </p>
+</li>
+  <li><em>Second solution:</em> Instead of working with the piecewise function, we could also try the function <m>y:(0,1)\rightarrow\mathbb{R}</m> defined by
+<me> y(x) = \frac{1}{x}-\frac{1}{1-x}=\frac{1-2x}{x(1-x)} </me>
+which also blows up to positive infinity as <m>x</m> approaches <m>0</m> from the right, and blows up to negative infinity as <m>x</m> approaches <m>1</m> from the left. We need to prove that it is bijective.
+</li>
+<li>
+<p>
+  <em>Third solution</em>: We can show that both sets are equinumerous by showing they are both equinumerous to the interval <m>(1,\infty)</m> via simpler bijections.
+</p>
+</li>
+</ul>
+</p>
+</answer>
+
+<solution>
+  <proof><title>First proof</title>
+  <p>
+    Let <m>h:(0,1) \to \mathbb{R}</m> be defined by
+<me> h(x)=\begin{cases}
+			\frac{1}{x}-2  \amp  \text{if } 0\lt x \leq \frac{1}{2} 
+\\
+			\frac{1}{x-1}+2  \amp  \text{if } \frac{1}{2}\lt x\lt 1
+                      \end{cases}
+</me>
+In order to prove that this is bijective, we show that it has an inverse function, namely 
+<me> h^{-1}(x)=\begin{cases}
+			\frac{1}{x+2}  \amp  \text{if } x\geq0
+\\
+			\frac{1}{x-2}+1  \amp  \text{if } x\lt 0
+                      \end{cases}
+</me>
+It is then a straightforward (and slightly tedious) computation to show that <m>h \circ h^{-1} = id</m> and <m>h^{-1} \circ h = id</m>.
+  </p>
+  </proof>
+<proof><title>Second proof</title>
+<p>
+Let <m>y:(0,1)\rightarrow\mathbb{R}</m> defined by
+<me> y(x) = \frac{1}{x}-\frac{1}{1-x}=\frac{1-2x}{x(1-x)}</me>
+We prove that this is a bijection.
+<ul>
+<li>
+<p>
+ <em>Injective:</em> Suppose that <m>y(a)=y(b)</m>, with <m>a,b\in(0,1)</m>. Then
+<me> \frac{1-2a}{a(1-a)}=\frac{1-2b}{b(1-b)} \implies (1-2a)b(1-b)=(1-2b)a(1-a) </me>
+Expanding and simplifying, we have
+<me> b-b^2+2ab^2=a-a^2+2a^2b. </me>
+We want to show that <m>a=b</m>, so we'd like to rewrite this expression with a factor of <m>a-b</m>. We write
+<md>
+<mrow>
+0  \amp = a-b-(a^2-b^2)+2a^2b-2ab^2 
+</mrow><mrow>
+0  \amp = a-b-(a-b)(a+b)+2ab(a-b) 
+</mrow><mrow>
+0 \amp = (a-b)(1-(a+b)+2ab).
+</mrow>
+</md>
+Now, we need to show that <m>1-(a+b)+2ab\neq0</m>, as then <m>a-b=0</m>. To this end, we'll show that
+<me> 1+2ab\gt a+b. </me>
+We will split the argument into two cases, <m>a+b\leq 1</m> and <m>a+b\gt1</m>, and use the assumption that <m>0\lt a,b\lt 1</m>.
+If <m>a+b\leq 1</m>, then <m>a+b\lt 1+2ab</m>, as <m>a</m> and <m>b</m> are positive.
+If <m>a+b\gt 1</m>, then either <m>a\gt 1/2</m> or <m>b\gt 1/2</m>. Without loss of generality, assume <m>a\gt 1/2</m>, as we may relabel if necessary.
+Then <m>2a\gt 1</m>, and as <m>b\gt0</m>, we also have <m>2ab\gt b</m>. Therefore
+<me> 1+2ab \gt 1+b\gt a+b </me>
+with the last two inequalitiy following from <m>1\gt a</m>.
+In all cases, we have <m>1+2ab\gt a+b</m>, and so <m>1-(a+b)+2ab\neq0</m>.  As mentioned earlier, this implies that <m>a=b</m>, and so <m>y</m> is injective.
+</p>
+</li>
+<li>
+<p>
+ <em>Surjective:</em> Let <m>d\in \mathbb{R}</m>. We need to find <m>c\in(0,1)</m> such that <m>y(c)=d</m>. That is, we need to show that there is such a <m>c</m> that solves the equation
+<me> d=\frac{1-2x}{x(1-x)}. </me>
+This equation simplifies to
+<me> dx^2-(d+2)x+1=0. </me>
+If <m>d=0</m>, then we have the solution <m>x=1/2</m>.
+If <m>d\neq0</m>, by the quadratic formula, the equation has solutions
+<me> x=\frac{d+2\pm\sqrt{(d+2)^2-4d}}{2d}=\frac{d+2\pm\sqrt{d^2+4}}{2d}. </me>
+By <xref ref="ex3-sqrt-increasing"/>, we know that
+<me> \sqrt{d^2+2}\geq \sqrt{d^2}=|d|</me>
+Suppose <m>d\gt0</m>. Then
+<me> d+\sqrt{d^2+4}\geq d+d=2d, </me>
+implying that
+<me> \frac{d+2+\sqrt{d^2+4}}{2d}\geq\frac{2d+2}{2d}\gt1,</me>
+so this candidate for <m>c</m> doesn't work, as this solution lies outside the interval <m>(0,1)</m>. Therefore, we aim to show that
+<me>
+  0 \lt\frac{d+2-\sqrt{d^2+4}}{2d}\lt1.
+  \tag{*}
+</me>
+We'll split the proof of this into the cases <m>d\gt0</m> and <m>d\lt0</m>.
+</p>
+<p>
+First assume <m>d\gt0</m>. Then<nbsp/>(*) is equivalent to the inequality
+<me>
+ 0 \lt d+2-\sqrt{d^2+4}\lt 2d.
+ \tag{**}
+</me>
+By <xref ref="ex_sqrt_sum_ineq"/>, we know that
+<me> \sqrt{d^2+4}\lt \sqrt{d^2}+\sqrt{4}=d+2. </me>
+Therefore
+<me> d+2-\sqrt{d^2+4}\gt d+2-(d+2)= 0. </me>
+Moreover, by <xref ref="ex3-sqrt-increasing"/>, we know that <m>d^2+4\geq 4</m> implies
+<me> \sqrt{d^2+4}\geq \sqrt{4}=2. </me>
+Thus
+<me> d+2-\sqrt{d^2+4}\leq d+2-2 \lt 2d. </me>
+So we have established (**), and so (*), for the case <m>d\gt 0</m>.
+</p>
+<p>
+Now assume <m>d\lt0</m>. Then (*) is equivalent to the inequality
+<me>
+ 0 \gt d+2-\sqrt{d^2+4}\gt 2d.
+ \tag{\(\dagger\)}
+</me>
+By <xref ref="ex_sqrt_sum_ineq"/>, we know that
+<me> \sqrt{d^2+4}\lt \sqrt{d^2}+\sqrt{4}=|d|+2=-d+2. </me>
+Therefore
+<me> d+2-\sqrt{d^2+4}\gt d+2-(-d+2)=2d. </me>
+Moreover, by <xref ref="ex3-sqrt-increasing"/>, we know that <m>d^2+4\geq 4</m> implies
+<me> \sqrt{d^2+4}\geq \sqrt{4}=2\gt 2+d, </me>
+with the last inequality holding as <m>d\lt 0</m>.
+Thus
+<me> d+2-\sqrt{d^2+4}\lt d+2-(2+d)=0. </me>
+So we have established (<m>\dagger</m>), and so (*), for the case <m>d\lt 0</m>.
+</p>
+<p>
+We have found a solution <m>c\in(0,1)</m> to the equation <m>y(c)=d</m> in all cases, and so <m>y</m> is surjective.
+</p>
+</li>
+</ul>
+</p>
+</proof>
+
+<proof><title>Third proof</title>
+<p>
+  We show that both sets are equinumerous to the interval <m>(1,\infty)</m>.
+<ul>
+<li>
+<p>
+ First we find a bijection <m>f:\mathbb{R}\rightarrow(1,\infty)</m>.
+A function that almost works is the exponential function, <m>2^x</m>; the issue is its range is <m>(0,\infty)</m> rather than <m>(1,\infty)</m>. We can resolve this by
+taking <m>f(x)=2^x+1</m>.
+Moreover, we know that <m>f</m> has an inverse, <m>f^{-1}:(1,\infty)\rightarrow\mathbb{R}</m>, given by <m>f^{-1}(x)=\log_2(x-1)</m>. Then by <xref ref="thm_inv_exists"/>, <m>f</m> is bijective.
+Thus <m>\mathbb{R}</m> and <m>(1,\infty)</m> are equinumerous.
+</p>
+</li>
+<li>
+<p>
+ Next, we want to find a bijection <m>g:(1,\infty)\rightarrow(0,1)</m>.  Take <m>g(x)=1/x</m>. This function is well-defined, as for <m>x \gt 1</m>, we have <m>0 \lt 1/x \lt \infty</m>.
+Moreover, its inverse is given by <m>g^{-1}:(0,1)\rightarrow(1,\infty)</m>, with <m>g^{-1}(x)=1/x</m>. Again by <xref ref="thm_inv_exists"/>, <m>g</m> is bijective.
+Thus <m>(1,\infty)</m> and <m>(0,1)</m> are equinumerous.
+</p></li>
+</ul>
+Combining the two statements we proved, and appealing to <xref ref="thm_equinum_equiv_rel"/>, we can conclude that <m>\mathbb{R}</m> and <m>(0,1)</m> are equinumerous, as desired.
+Indeed, the function <m>g(f(x))=1/(2^x+1)</m> is a bijection from <m>\mathbb{R}</m> to <m>(0,1)</m>.
+</p>
+</proof>
+</solution>
+</exercise>

@@ -1,0 +1,48 @@
+<exercise>
+<!-- source latex = 'abs_val_question.tex' -->
+<!-- converted on 12/08/2021 at 19:20 -->
+<statement>
+<p>
+Let <m>x\in\mathbb{R}</m>. Show that if <m>|x-1| \lt 1</m>, then <m>|x^2-1| \lt 3</m>. You may use the following result without proof:
+ <me> |ab|=|a|\cdot|b| \text{ for any } a,b\in\mathbb{R}. </me>
+</p>
+</statement>
+
+<answer>
+<p>
+We assume the hypothesis is true and then try to reach the conclusion. So we assume <m>|x-1| \lt 1</m> and then we have to bound <m>|x^2-1|</m>.
+In order to bound <m>|x^2-1|</m>, we can factor the expression, and try to bound each term.
+<me> |x^2-1|=|(x-1)(x+1)|=|x-1|\cdot|x+1| </me>
+The factor <m>|x-1| \lt 1</m>, by assumption. But how can we bound the factor <m>|x+1|</m>? We'll need to use the inequality <m>|x-1| \lt 1</m> again.
+</p>
+<p>
+Recall that <m>|x-1| \lt 1 </m> is equivalent to the inequality
+<me> -1 \lt x-1 \lt 1.  </me>
+Adding <m>2</m> to everything, we end up with
+<me> 1 \lt x+1 \lt 3. </me>
+In particular, this implies that <m>|x+1| \lt 3</m>.
+</p>
+<p>
+There is a slicker way to obtain this inequality: we'll use a common trick, where we <q>add zero in a fancy way,</q> in order to introduce the term <m>x-1</m>. Then, we'll use the triangle inequality and the bound <m>|x-1| \lt 1</m>.
+<me> |x+1| = |(x-1)+2| \leq |x-1|+|2| \lt 1+2=3. </me>
+</p>
+<p>
+With this scrap work, we're ready to write up the proof of the statement. Remember to be careful with the logic of the proof! We need to start by assuming the hypothesis, <m>|x-1| \lt 1</m>, and show the conclusion is true, that <m>|x^2-1| \lt 3</m>.
+</p>
+</answer>
+
+<solution>
+<proof>
+<p>
+Let <m>x\in\mathbb{R}</m>, and suppose that <m>|x-1| \lt 1</m>. Then
+<me> |x^2-1|=|(x-1)(x+1)|=|x-1|\cdot|x+1|. </me>
+Using the inequality <m>|x-1| \lt 1</m>, we therefore have
+<me> |x^2-1| \lt 1\cdot|x+1|. </me>
+However,using the triangle inequality, and again the bound <m>|x-1| \lt 1</m>, we have
+<me> |x+1|= |(x-1)+2| \leq |x-1|+|2| \lt 1+2=3. </me>
+Putting everything together, we see that <m>|x^2-1| \lt 3</m>, as required.
+</p>
+</proof>
+
+</solution>
+</exercise>

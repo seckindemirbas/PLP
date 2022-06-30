@@ -1,0 +1,88 @@
+<exercise>
+<!-- source latex = 'FTA_existence.tex' -->
+<!-- converted on 12/10/2021 at 14:28 -->
+<statement>
+<p>
+Let <m>n\in\mathbb{N}</m>, <m>n\geq 2</m>. Show that <m>n</m> is a product of prime numbers.
+</p>
+<p>
+This statement is part of the Fundamental Theorem of Arithmetic, which more specifically says that <m>n</m> can be written <em>uniquely</em> as a product of prime numbers. Proving that uniqueness takes more work; this question focuses on proving the <em>existence</em> of at least one factorisation into primes.
+</p>
+</statement>
+<hint>
+<p>
+That this is a really good example of a result that we all know, but we haven't proved. When we do sit down to try to prove such results it can be easy to get confused or disoriented because the result seems so obvious; we've known and worked with the result for years! Some such results may indeed be trivial while some need more work. It is always a good idea to go back to the basic definitions and methods to help work your way to a proof.
+</p>
+<p>
+Notice that the statement includes the case where <m>n</m> is prime, whence <m>n</m> is the product of a single prime <mdash/> itself! Then, any integer greater than 2 is prime or not prime. If it is not prime, what can we say about its divisors?
+</p>
+</hint>
+
+<answer>
+<p>
+Let's try to prove the statement using induction on <m>n</m>.
+The base case should be <m>n=2</m>. In this case, the statement is true, since <m>2</m> is prime, and therefore a product of prime numbers (in this case, the product of a single prime number, <m>2</m>).
+Now suppose the result holds for <m>n=k</m>, so that <m>n=k</m> is a product of prime numbers.
+We need to show that <m>k+1</m> is a product of prime numbers. We can try to prove this by considering two cases: <m>k+1</m> is prime, or <m>k+1</m> is not prime, one of which must be true.
+<ul>
+<li>
+<p>
+ <m>k+1</m> is prime: then the result holds for <m>n=k+1</m>, so we're done.
+</p></li>
+<li>
+<p>
+ <m>k+1</m> is not prime: here we can't conclude anything immediately. Instead we'll try to use the inductive hypothesis to show that the result holds.
+By definition, <m>k+1</m> not being prime means that there are <m>a,b\in\mathbb{N}</m>, <m>1 \lt a,b \lt k+1</m>, such that <m>k+1=ab</m>.
+</p>
+<p>
+Now, if we knew <m>a</m> and <m>b</m> could be written as a product of prime numbers, then we'd also have that <m>k+1</m> is a product of prime numbers.
+But we don't know this, since for the inductive hypothesis, we only assumed that <m>n=k</m> could be written as a product of prime numbers.
+Indeed, it is not clear how we can get from <m>n=k</m> to <m>n=k+1</m> in our inductive step since <m>k</m> and <m>k+1</m> don't share common factors other than <m>\pm 1</m> (see <xref ref="ex_n_div_a_aplus1"/>).
+This suggests that we use strong induction instead of regular induction.
+</p>
+</li>
+</ul>
+</p>
+<p>
+Let's try again using strong induction. The base case is the same as before. This time, for the inductive hypothesis, instead of just assuming that
+<m>n=k</m> is a product of prime numbers, we assume that for any <m>2\leq n\leq k</m>, <m>n</m> is a product of prime numbers. We need to show that <m>k+1</m> is a product of prime numbers. Again we can split this into two cases.
+<ul>
+<li>
+<p>
+ <m>k+1</m> is prime: then the result holds for <m>n=k+1</m>, so we're done.
+</p></li>
+<li>
+<p>
+ <m>k+1</m> is not prime: By definition, <m>k+1</m> not being prime means that there are <m>a,b\in\mathbb{N}</m>, <m>1 \lt a,b \lt k+1</m>, such that <m>k+1=ab</m>.
+By the inductive hypothesis, both <m>a</m> and <m>b</m> can be written as a product of prime numbers;
+that is <m>a=p_1\cdots p_r</m> and <m>b=q_1\cdots q_s</m> for prime numbers <m>p_1,\dots,p_r,q_1,\dots,q_s</m>. (Note that these prime numbers are not necessarily distinct, and if <m>a</m> or <m>b</m> were itself prime, then <m>r=1</m> or <m>s=1</m>, respectively.)
+Then
+<me> k+1 = ab=p_1\cdots p_rq_1\cdots q_s </me>
+and so <m>k+1</m> may be written as a product of prime numbers.
+</p></li>
+</ul>
+In either case, we've concluded that <m>k+1</m> is a product of prime numbers, and so the inductive step is complete.
+Let's write up our argument.
+</p>
+
+</answer>
+<solution>
+
+<proof>
+<p>
+Let <m>n\in\mathbb{N}</m>, <m>n\geq 2</m>. We proceed by strong induction on <m>n</m>. For the base case, suppose <m>n=2</m>.
+Then <m>n</m> is prime, and the result holds.
+</p>
+<p>
+Now suppose that the result holds for all <m>2\leq n\leq k</m>; that is, if <m>n\leq k</m>, then <m>n</m> is a product of prime numbers.
+Either <m>k+1</m> is prime, or not prime. If <m>k+1</m> is prime, then the result holds. So suppose that <m>k+1</m> is not prime.
+Then, by definition, <m>k+1=ab</m> for some <m>a,b\in\mathbb{N}</m>, <m>1 \lt a,b \lt k+1</m>. By the inductive hypothesis, both <m>a</m> and <m>b</m> can be written as a product of prime numbers;
+that is <m>a=p_1\cdots p_r</m> and <m>b=q_1\cdots q_s</m> for prime numbers <m>p_1,\dots,p_r,q_1,\dots,q_s</m>. Then
+<me> k+1 = ab=p_1\cdots p_rq_1\cdots q_s </me>
+and so <m>k+1</m> may be written as a product of prime numbers. Thus the result holds for <m>k+1</m>.
+Thus by strong induction, any <m>n\in\mathbb{N}</m>, <m>n\geq 2</m> is a product of prime numbers.
+</p>
+</proof>
+
+</solution>
+</exercise>

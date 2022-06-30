@@ -1,0 +1,60 @@
+<exercise>
+<!-- source latex = 'triangle inequality with multiple numbers using induction question.tex' -->
+<!-- converted on 12/08/2021 at 20:13 -->
+<statement>
+<p>
+Let <m>a_1, a_2, \ldots</m> be real numbers. Prove, using induction, that for all <m>n\in\mathbb N</m>,
+<me> \left| \sum_{k=1}^n a_k \right|\leq \sum_{k=1}^n|a_k|. </me>
+You may assume the triangle inequality, <m>|x+y|\leq |x|+|y|</m> for all real numbers <m>x</m> and <m>y</m>.
+</p>
+</statement>
+<solution>
+<p>
+This is a generalization of the triangle inequality to arbitrary sets of finitely many real numbers. This proof is a standard way of generalizing statements that are stated for only two elements to arbitrary number of elements. This will also come up in later chapters when we discuss the union and intersection of multiple sets.
+</p>
+
+<proof>
+<p>
+We are going to prove this statement using induction.
+</p>
+<p>
+<ul>
+<li>
+<p>
+<em>Base case:</em> We see that for <m>n=1</m> we have the statement <m>a_1\leq a_1</m>, which is true for all real numbers. Moreover for <m>n=2</m> the statement is:
+</p>
+<p>
+<q>Let <m>a_1, a_2</m> be real numbers. Then we have <m> \left| \sum_{k=1}^2 a_k \right|=|a_1+a_2|\leq |a_1|+|a_2| =\sum_{k=1}^2|a_k|</m>.</q>
+</p>
+<p>
+This is the triangle inequality (see <xref ref="thm-triangle"/>) which we proved in <xref ref="sec-abs-triangle"/>.
+</p>
+</li>
+<li>
+<p>
+<em>Inductive step: </em> Assume that this statement is true for <m>m=n\geq 2</m>. This means that whenever <m>a_1, a_2, \ldots a_n\in\mathbb R</m>, then we have
+ <me>\left| \sum_{k=1}^n a_k \right|\leq\sum_{k=1}^n|a_k|.</me>
+ Now assume that we have some set of <m>n+1</m> real numbers, <m>b_1, b_2, \ldots b_n, b_{n+1}\in\mathbb R</m>. Then we see
+ <md>
+<mrow>
+ \left| \sum_{k=1}^{n+1} b_k\right| \amp =\left| \left(\sum_{k=1}^n b_k\right)+b_{n+1}\right|
+</mrow><mrow>
+  \amp \leq \left| \left(\sum_{k=1}^n b_k\right)\right|+|b_{n+1}|
+  \amp  \text{by Triangle Inequality}
+</mrow><mrow>
+  \amp \leq \sum_{k=1}^n|b_k|+|b_{n+1}|
+  \amp  \text{by induction hypothesis}
+</mrow><mrow>
+  \amp \leq \sum_{k=1}^{n+1}|b_k|.
+ </mrow>
+</md>
+ Hence the statement is true for <m>m=n+1</m>.
+</p></li>
+</ul>
+</p>
+<p>
+ Therefore, by induction, the statement is true for all <m>n\in\mathbb N</m>.
+</p></proof>
+
+</solution>
+</exercise>

@@ -1,0 +1,144 @@
+<exercise>
+<!-- source latex = 'Discrete metric sequence convergence question to push.tex' -->
+<!-- converted on 24/06/2021 at 16:24 -->
+<statement>
+<p>
+Typically, we define the distance between two real numbers via the absolute value function: <m>d(x,y)=|x-y|</m>. This means that we can see the distance as a function on real numbers that takes two numbers and gives us a non-negative number as the distance. This helps us generalize the definition of a <q>distance</q>.  However a function needs to satisfy more than being non-negative to be called a <q>distance</q>.
+</p>
+<p>
+Indeed, we define a <em>distance</em> (or <em>metric</em>)  on <m>\mathbb{R}</m>,  as a function <m>d:\mathbb{R}\times\mathbb{R}\rightarrow [0,\infty)</m>, that satisfies the properties,
+</p>
+<p>
+<ul>
+<li>
+<p>
+ <m>\forall x, y\in\mathbb{R}</m>, <m>d(x,y)=0</m> if and only if <m>x=y</m>.
+</p></li>
+<li>
+<p>
+ <m>\forall x,y\in\mathbb{R}</m>, <m>d(x,y)=d(y,x)</m>.
+</p></li>
+<li>
+<p>
+ <m>\forall x,y, z\in\mathbb{R}</m>, <m>d(x,y)\leq d(x,z)+d(z,y)</m> (this property is also known as, as you guessed it, the <q>triangle inequality</q>).
+</p>
+</li>
+</ul>
+Now, we can define the function <m>D:\mathbb{R}\times\mathbb{R}\rightarrow [0,\infty)</m>, as,
+<md>
+<mrow>
+D(x,y)=\left\{
+\begin{array}{ll}
+1 \amp  \text{if } x\neq y \\
+0 \amp  \text{if } x=y
+\end{array}
+\right.
+</mrow>
+</md>
+</p>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ We see that <m>D</m> satisfies the first two properties. Show that <m>D</m> satisfies the triangle inequality to conclude that <m>D</m> is a distance.
+</p></li>
+<li>
+<p>
+ Given a distance function, <m>d</m>, we can define sequence convergence as follows,
+</p>
+<p>
+A sequence <m>(x_n)_{n\in\mathbb{N}}</m> converges to a number <m>L</m> if and only if <m>\forall \epsilon\gt 0</m>, <m>\exists N\in\mathbb{N}</m> such that <m>\forall n\gt N</m>, <m>d(x_n,L)\lt \epsilon</m>.
+</p>
+<p>
+Using this definition and the distance function, <m>D</m>, as above, show that a sequence <m>(x_n)_{n\in\mathbb{N}}</m> converges to <m>L</m> implies that the set <m>\set{ n\in\mathbb{N}: x_n\neq L }</m> is finite.
+</p>
+
+</li>
+</ol>
+</p>
+</statement>
+<hint>
+<p>
+For part (b), try some of the sequences we have seen that converge with the Euclidean distance, and see whether they converge under this new distance? Choosing your <m> \epsilon </m> satisfying <m>0\lt \epsilon\lt 1</m>, would be very useful in understanding the convergence of a sequence.
+</p>
+</hint>
+<answer>
+<p>
+This particular distance function is known as the <q>discrete distance</q> or the <q>discrete metric</q>. Proving (a) is straight-forward by case analysis with either <m>x=z</m> or <m>x \neq z</m>.
+</p>
+<p>
+  Now, (b) looks like a complicated question since the distance that is given in the definition is not the standard distance function (where the distance between two points is defined as the absolute value of their difference). It also forces the reader to parse a new definition carefully and rework their understanding of the topic at hand.
+</p>
+<p>
+Now, let's try to see how we can prove this statememt.
+</p>
+<p>
+First, we see that this is a conditional statement. This means that we can start by assuming the hypothesis and trying to show the conclusion. That is, assume that <m>(x_n)_{n\in\mathbb{N}}</m> converges to <m>L</m>, and try to show that the set <m>\set{ n\in\mathbb{N}: x_n\neq L }</m> is finite.
+</p>
+<p>
+Since <m>(x_n)_{n\in\mathbb{N}}</m> converges to <m>L</m>, we know that
+</p>
+<p>
+ <me>\forall \epsilon\gt 0, \exists N_0\in\mathbb{N}\text{ such that } \forall n\geq N_0, D(x_n,L)\lt \epsilon.</me>
+</p>
+<p>
+Hence, since this is true for all  <m>\forall \epsilon\gt 0</m>, we know that this should also work for <m>\epsilon=1/2</m> (any <m>\epsilon</m> strictly between <m>0</m> and <m>1</m> would work here).
+So, for <m>\epsilon=1/2</m>, we should be able to find an <m>N_\epsilon\in\mathbb N</m>, such that <m>\forall n\gt N_\epsilon</m>,  we have <m>D(x_n,L)\lt \epsilon=1/2</m>.
+</p>
+<p>
+Now, if we recall that the distance function <m>D</m> only takes values <m>0</m> or <m>1</m>, this means that <m>D(x_n,L)=0\lt\epsilon=1/2\lt 1</m>.
+</p>
+<p>
+We see that this is what we needed to show, since this means that <m>\forall n\gt N_\epsilon</m>, we have <m>x_n=L</m>. So the only <m>x_n \neq L</m> must occur for <m>n \leq N_\epsilon</m>, and that is a finite set.
+</p>
+<p>
+Let's clean this up and write in a proof.
+</p>
+</answer>
+
+<solution>
+<proof><title>Proof of (a)</title>
+<p>
+ We are going to show that <m>D</m> is a distance, by showing that it satisfies triangle inequality. Since the function <m>D</m> is defined piecewise, we see that we would need to prove this statement using cases.
+</p>
+<p>
+  Let <m>x,y,z \in\mathbb R</m>. Now either <m>x=z</m> or <m>x \neq z</m>, so we have two cases to check.
+</p>
+<p>
+<ul>
+<li>
+<p>
+ <em>Case 1:</em> If <m>x = z</m> then <m>D(x,z) = 0</m>. Since <m>D(x,y),D(y,z) \geq 0 = D(x,z)</m>, we know that <m>D(x,y) \leq D(x,y) + D(y,z)</m>.
+</p>
+</li>
+<li>
+<p>
+<em>Case 2:</em> If <m>x \neq z</m> then <m>D(x,z) = 1</m>. So we must show that <m>D(x,y) + D(y,z) \geq 1</m>. Now either <m>x = y</m> or <m>x\neq y</m>; this gives us two sub-cases to check.
+</p>
+<p>
+<ul>
+<li>
+<p>
+<em>Case 2a:</em> If <m>x = y</m> then we must have <m>y \neq z</m> since <m>x \neq z</m>. But then <m>D(x,y) + D(y,z) = 0+1=1 = D(x,z)</m>.
+</p>
+</li>
+<li>
+<p>
+<em>Case 2b:</em> If <m>x \neq y</m> then <m>D(x,y) = 1</m>. Now we don't know if <m>y = z</m> or <m>y \neq z</m>, but it doesn't matter, we know that <m>D(y,z) \geq 0</m>. Putting this together we have that <m>D(x,y)+D(y,z) = 1 + D(y,z) \geq 1 = D(x,z)</m>.
+</p></li>
+</ul>
+So in both sub-cases, <m>D(x,z) \leq D(x,y) + D(y,z)</m> as required.
+</p></li>
+</ul>
+So <m>D</m> satisfies the triangle inequality and therefore it is a distance.
+</p>
+</proof>
+
+
+<proof>
+<p>
+ Assume that <m>x_n \rightarrow L</m>. Let <m>\epsilon = 1/2</m>. Then, by definition there is some <m>N \in\mathbb N</m> s.t. for all <m>n \gt N</m> we must have <m>D(x_n,L)\lt 1/2</m>. By definition of <m>D(x,y)</m> it follows that we must have <m>D(x_n,L) = 0</m> and so <m>x_n = L</m>. Hence when <m>x_n \neq L</m> we have <m>n \lt N</m>. Thus, the set <m>\set{ n\in\mathbb{N}: x_n\neq L}</m> is finite.
+</p>
+</proof>
+</solution>
+</exercise>

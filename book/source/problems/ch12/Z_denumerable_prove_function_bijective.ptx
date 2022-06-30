@@ -1,0 +1,54 @@
+<exercise>
+<!-- source latex = 'Z_denumerable_prove_function_bijective.tex' -->
+<!-- converted on 08/03/2022 at 15:23 -->
+<statement>
+<p>
+<xref ref="thm_Z_denum"/> states that <m>\mathbb{Z}</m> is denumerable. We claimed that <m>f:\mathbb{N}\rightarrow\mathbb{Z}</m> given by
+<me>
+f(n)=\begin{cases}
+\frac{1-n}{2}  \amp  n \text{ is odd} 
+\\
+\frac{n}{2}  \amp  n \text{ is even}
+\end{cases}
+</me>
+is a bijection. Prove this now.
+</p>
+</statement>
+<solution>
+<proof>
+<p>
+First we should check that <m>f</m> is well-defined; in particular, if <m>n\in\mathbb{N}</m>, then <m>f(n)\in\mathbb{Z}</m>.
+If <m>n</m> is odd, then <m>2</m> divides <m>1-n</m>, and so
+<me> f(n)=\frac{1-n}{2}\in\mathbb{Z}. </me>
+If <m>n</m> is even, then <m>2</m> divides <m>n</m>, and so
+<me> f(n)=\frac{n}{2}\in\mathbb{Z}. </me>
+</p>
+<p>
+Now we need to check that <m>f</m> is a bijection.
+<ul>
+<li>
+<p>
+ Surjective: Let <m>m\in\mathbb{Z}</m>. First suppose that <m>m\leq0</m>.
+Since <m>m</m> is an integer, <m>1-2m\in\mathbb{Z}</m>. Moreover, since  <m>-2m\geq 0</m>, we have <m>1-2m\geq 1</m>. Thus <m>1-2m\in\mathbb{N}</m>.
+Furthermore,<m>1-2m=2(-m)+1</m> is odd, and hence
+<me> f(1-2m)=\frac{1-(1-2m)}{2}=\frac{2m}{2}=m. </me>
+Next suppose that <m>m\geq1</m>. Then <m>2m\in\mathbb{N}</m>, and <m>2m</m> is even. Hence
+<me> f(2m)=\frac{2m}{2}=m. </me>
+</p></li>
+<li>
+<p>
+ Injective: Suppose <m>f(m)=f(k)</m>. If <m>f(m)=f(k)</m> is non-positive, then both <m>m</m> and <m>k</m> are odd, since <m>f(\ell)\gt0</m> for even <m>\ell</m>.
+In this case, we have
+<me> \frac{1-m}{2}=f(m)=f(k)=\frac{1-k}{2} </me>
+implying <m>m=k</m>.
+</p>
+<p>
+If <m>f(m)=f(k)</m> is positive, then both <m>m</m> and <m>k</m> are even, since <m>f(\ell)\leq0</m> for odd <m>\ell</m>. In this case,
+<me> \frac{m}{2}=f(m)=f(k)=\frac{k}{2} </me>
+and so <m>m=k</m>. We have reached this conclusion in all cases, so <m>f</m> is injective.
+</p></li>
+</ul>
+</p>
+</proof>
+</solution>
+</exercise>

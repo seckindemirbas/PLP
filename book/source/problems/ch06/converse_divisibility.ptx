@@ -1,0 +1,50 @@
+<exercise>
+<!-- source latex = 'converse_divisibility.tex' -->
+<!-- converted on 18/08/2021 at 14:51 -->
+<statement>
+<p>
+Let <m>n,a,b\in\mathbb{Z}</m>. We know that if <m>n\mid a</m> or <m>n\mid b</m>, then <m>n\mid ab</m>. Is the converse true as well?
+</p>
+</statement>
+
+
+<answer>
+<p>
+The converse of the statement is:
+</p>
+
+<blockquote>
+<p>
+For any <m>n,a,b\in\mathbb{Z}</m>, if <m>n\mid ab</m>, then <m>n\mid a</m> or <m>n\mid b</m>.
+</p>
+</blockquote>
+
+<p>
+While the negation of this statement is:
+</p>
+
+<blockquote>
+<p>
+There are some <m>n,a,b\in\mathbb{Z}</m> such that <m>n\mid ab</m> but <m>n\nmid a</m> and <m>n\nmid b</m>.
+</p>
+</blockquote>
+
+
+<p>
+We can test some values of <m>n</m>, <m>a</m>, and <m>b</m> to see if the converse or its negation is true.
+Suppose <m>n=4</m>. We can factor <m>n=2\cdot 2</m>. This means is we take <m>a=b=2</m>, then <m>n=ab</m> and so <m>n\mid ab</m>.
+But <m>4\nmid 2</m>, so <m>n\nmid a</m> and <m>n\nmid b</m>. Therefore we see that the converse of the original statement is false. Now we write up a formal disproof.
+</p>
+</answer>
+<solution>
+<proof>
+<p>
+Let <m>n=4</m>, <m>a=2</m>, and <m>b=2</m>. Since <m>4\mid 4</m>,
+<me> n\mid a\cdot b </me>
+but <m>4\nmid 2</m> and so <m>n\nmid a</m> and <m>n\nmid b</m>.
+Therefore we see that the statement, if <m>n\mid ab</m>, then <m>n\mid a</m> or <m>n\mid b</m>, does not hold for all <m>n,a,b,\in\mathbb{Z}</m>.
+</p>
+</proof>
+
+</solution>
+</exercise>

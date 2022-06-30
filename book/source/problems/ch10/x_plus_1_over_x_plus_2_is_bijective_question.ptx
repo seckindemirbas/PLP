@@ -1,0 +1,94 @@
+<exercise>
+<!-- source latex = 'x plus 1 over x plus 2 is bijective question.tex' -->
+<!-- converted on 07/12/2021 at 12:03 -->
+<statement>
+<p>
+Prove that the function
+<me> f : \mathbb R-\set{-2}\rightarrow\mathbb R-\set{1}, \text{ defined by } f(x)=\dfrac{x+1}{x+2} </me>
+ is bijective and find its inverse.
+</p>
+</statement>
+
+<!-- <hint></hint> -->
+
+<answer>
+<p>
+We have to show the function is both injective and surjective.
+<ul>
+<li>
+<p>
+ Injective: Assume that <m>f(x)=f(z)</m> and show that <m>x=z</m>; this requires some simple manipulations of polynomials.
+  </p></li>
+<li>
+<p>
+ Surjective: Given some <m>y</m> in the codomain we have to find an <m>x</m> in the domain so that <m>f(x)=y</m>. Our proof does not have to contain how we found that <m>x</m>-value, just that it is in the domain and that it satisfies <m>f(x)=y</m>. To find the <m>x</m> we solve
+  <md>
+<mrow>
+    y  \amp = \dfrac{x+1}{x+2}
+</mrow><mrow>
+    (x+2)y  \amp = x+1
+</mrow><mrow>
+    xy-x  \amp = 1-2y
+</mrow><mrow>
+    x  \amp = \frac{1-2y}{y-1} = -2 - \frac{1}{y-1}
+  </mrow>
+</md>
+  where we have done a little partial fractions at the last step.
+</p>
+<p>
+  Notice that since <m>y \neq 1</m> we know that <m>x \in \mathbb{R}</m>, and since <m>\frac{1}{y-1} \neq 0 </m>, we know that <m>x \neq -2</m>.
+</p></li>
+</ul>
+</p>
+<p>
+This gives us the result we wanted. Now, we can write the proof.
+</p>
+</answer>
+<solution>
+
+<proof>
+<p>
+Let  <m>f : \mathbb R-\set{-2}\rightarrow\mathbb R=\set{1}</m>, be  defined by <m>f(x)=\dfrac{x+1}{x+2}</m>. Then we want to show that <m>f</m> is both injetive and surjective.
+</p>
+<p>
+<ul>
+<li>
+<p>
+ Injective: Assume that <m>a,z\in\mathbb \mathbb R-\set{-2}</m>, and <m>f(x)=f(z)</m>. Then
+<md>
+<mrow>
+  \dfrac{x+1}{x+2}  \amp =\dfrac{z+1}{z+2}  \amp  \text{since }x,z \neq -2
+</mrow><mrow>
+  (z+2)(x+1)  \amp = (x+2)(z+1)  \amp  \text{expand}
+</mrow><mrow>
+  xz+z+2x+2  \amp = xz+x+2x+2  \amp  \text{cancel}
+</mrow><mrow>
+  x  \amp  = z
+</mrow>
+</md>
+Hence <m>x=z</m> and so <m>f</m> is injective.
+</p>
+</li>
+<li>
+<p>
+ Surjective: Let <m>y\in\mathbb R-\set{1}</m>. Then set <m>x= -2+\frac{1}{1-y}</m>. Since <m>y \neq 1</m> we know that <m>x \in \mathbb{R}</m>. And since <m>\frac{1}{1-y} \neq 0</m>, we know that <m>x \neq -2</m>. Hence <m>x</m> lies in the domain of the function. Then we verify that <m>f(x)=y</m> as follows:
+<md>
+<mrow>
+  f(x)  \amp = \frac{x+1}{x+2}
+</mrow><mrow>
+   \amp = \dfrac{-1 +\frac{1}{1-y}}{\frac{1}{1-y}}
+</mrow><mrow>
+   \amp = \frac{y-1+1}{1} = y
+</mrow>
+</md>
+as required. Hence, <m>f</m> is surjective.
+</p></li>
+</ul>
+Therefore <m>f</m> is bijective.
+</p>
+<p>
+Since it is bijective it has an inverse, denoted <m>f^{-1}</m>, such that <m>f^{-1}:\mathbb R-\set{1}\rightarrow \mathbb R-\set{-2}</m>. Our proof of surjectiveness shows that for <m>x=\dfrac{2y-1}{1-y}</m>, we have <m>f(x)=f\left(\dfrac{2y-1}{1-y}\right)=y</m>, which in turn implies that <m>f^{-1}(y)=\dfrac{2y-1}{1-y}</m>.
+</p></proof>
+
+</solution>
+</exercise>

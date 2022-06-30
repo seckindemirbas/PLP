@@ -1,0 +1,82 @@
+<exercise>
+<!-- source latex = 'sum of cubes from 1 to n is greater than fourth of n to the 4 question.tex' -->
+<!-- converted on 12/08/2021 at 20:06 -->
+<statement>
+<p>
+Prove that <m>\sum\limits_{j=1}^n j^3\gt \frac{1}{4}n^4</m> for all <m>n\in\mathbb N</m>.
+</p>
+</statement>
+<hint>
+<p>
+Be careful when you expand <m> (n+1)^3 </m> and <m> (n+1)^4 </m>.
+</p>
+</hint>
+
+<answer>
+<p>
+In this question we want to prove that an inequality is true for all <m>n\in\mathbb N</m>. This suggests that induction may be a good method. However, in general, proving inequalities using induction may be a little harder than proving equalities or formulas. The reason for that is the fact that to prove the inductive step, we may need to manipulate the inequality, add or subtract terms, etc. We should also be very careful to make sure that our logic flows correctly in the proof of the inductive step; start from the assumption and reach the conclusion.
+</p>
+<p>
+If we look at this question, and try to understand how we can handle the inductive step, we would assume that
+<me>
+\sum\limits_{j=1}^n j^3\gt\frac{1}{4}n^4,
+</me>
+and try to show
+<me>
+\sum\limits_{j=1}^{n+1} j^3\gt\frac{1}{4}(n+1)^4.
+</me>
+We see that (based on our assumption)
+<me>
+\sum\limits_{j=1}^{n+1} j^3=\sum\limits_{j=1}^n j^3+(n+1)^3\gt\frac{1}{4}n^4+(n+1)^3.
+</me>
+But, <m>\frac{1}{4}n^4+(n+1)^3\neq \frac{1}{4}(n+1)^4</m>.
+</p>
+<p>
+To complete the proof, we need to show that
+<me>\frac{1}{4}n^4+(n+1)^3\gt \frac{1}{4}(n+1)^4=\frac{1}{4}n^4+n^3+\frac{3}{2}n^2+n+\frac{1}{4},</me>
+which requires just a little careful algebra.
+</p>
+</answer>
+<solution>
+
+<proof>
+<p>
+We are going to prove this statement using induction.
+</p>
+<p>
+<ul>
+<li>
+<p>
+<em>Base case</em>: We see that <m>\sum\limits_{j=1}^1 j^3=1\gt\frac{1}{4}=\frac{1}{4}n^4</m>. Thus, the statement is true for <m>n=1</m>.
+</p>
+</li>
+<li>
+<p>
+<em>Inductive step</em>: Assume that the statement is true for <m>n=k</m> for some <m>k\geq 1</m>, that is,
+</p>
+<p>
+<m>\sum\limits_{j=1}^k j^3\gt\frac{1}{4}k^4</m>. Then, we see,
+</p>
+<p>
+<md>
+<mrow>
+\sum\limits_{j=1}^{k+1} j^3 \amp =\sum\limits_{j=1}^k j^3+(k+1)^3 
+</mrow><mrow>
+ \amp  \gt\frac{1}{4}k^4+(k+1)^3  \amp  \text{by assumption}
+</mrow><mrow>
+ \amp =\frac{1}{4}k^4+k^3+3k^2+3k+1
+</mrow><mrow>
+ \amp =\frac{1}{4}(k+1)^4+\left(\frac 32k^2+2k+1\right)
+</mrow><mrow>
+ \amp \gt\frac{1}{4}(k+1)^4,
+</mrow>
+</md>
+since <m>\frac{3}{2}k^2+2k+1 \gt 0</m> for all <m>k\in\mathbb N</m>. This means that the statement is true for <m>n=k+1</m>.
+</p></li>
+</ul>
+Therefore, by mathematical induction, we see that the statement is true for all <m>n\in\mathbb N</m>.
+</p>
+</proof>
+
+</solution>
+</exercise>

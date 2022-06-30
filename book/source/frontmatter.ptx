@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<frontmatter xml:id="frontmatter" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <titlepage>
+    <author>
+      <personname>Seçkin Demirbaş</personname>
+      <department>Department of Mathematics</department>
+      <institution>University of British Columbia</institution>
+      <email>s.demirbas@math.ubc.ca</email>
+    </author>
+    
+    <author>
+      <personname>Andrew Rechnitzer</personname>
+      <department>Department of Mathematics</department>
+      <institution>University of British Columbia</institution>
+      <email>andrewr@math.ubc.ca</email>
+    </author>
+    
+    <credit>
+      <title>Exercises for PLP</title>
+      <author>
+	<personname>Hannah Kohut</personname>
+	<department>Department of Mathematics</department>
+	<institution>University of British Columbia</institution>
+	<email>kohut@math.ubc.ca</email>
+      </author>
+      <author>
+	<personname>Charlotte Trainor</personname>
+	<department>Department of Mathematics</department>
+	<institution>University of British Columbia</institution>
+	<email>ctrainor@math.ubc.ca</email>
+      </author>
+    </credit>
+    <date>
+      <today />
+    </date>
+  </titlepage>
+  
+  <colophon>
+    
+    <credit>
+      <role>Source files</role>
+      <entity>
+	The source files for the text are available from <url
+	href="https://github.com/seckindemirbas/PLP"
+	visual="github.com/seckindemirbas/PLP">this repository</url>
+	under the Creative Commons
+	Attribution-NonCommercial-ShareAlike 4.0 International
+	License.  You can view a copy of the license <url
+	href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+	visual="creativecommons.org/licenses/by-nc-sa/4.0">here</url>.
+      </entity>
+    </credit>
+
+    <website>
+      <name>
+	<c>PLP</c>
+      </name>
+      <address>https://personal.math.ubc.ca/~PLP/</address>
+    </website>
+    
+    
+    <copyright>
+      <year>2018 <ndash/> 2022</year>
+      <holder>Seçkin Demirbaş, Andrew Rechnitzer</holder>
+    </copyright>
+    
+    
+  </colophon>
+  <dedication>
+    <p>
+      For our students and all the colleagues and scholars who have freely shared their knowledge with us <mdash/> SD &amp; AR.
+    </p>
+
+    <p>
+      To Elyse for all her love, support, and help with my LaTeX problems <mdash/> SD.
+    </p>
+
+    <p>
+      To Zoe, Sebastian and Locke; thank you for all your patience and understanding <mdash/> AR.
+    </p>
+
+  </dedication>
+  
+  <acknowledgement>
+    <p>
+      A great many of the exercises in this text come from test and
+      exam problems in first year courses at UBC Mathematics over the
+      last couple of decades.  The authors would like to acknowledge
+      the contributions of the many people who collaborated to produce
+      these. A very big thanks must go to Hannah Kohut and Charlotte
+      Trainor who wrote the vast majority of the statements, hints and
+      solutions for the exercises in the text; this book would not
+      have been possible without their efforts. Their work was funded
+      by UBC's Open Educational Resources Fund, and by the UBC
+      Mathematics Department. 
+    </p>
+    
+    <p>
+      The authors would also like to acknowledge that the land UBC
+      Vancouver Campus is on is the traditional, ancestral, and
+      unceded territory of the
+      <!-- xwməθkwəy̓əm -->
+      <!-- <foreign xml:lang="hur">xwməθkwəy̓əm</foreign> -->
+      <m>\text{x}^\text{w}\text{mə}\uptheta\text{k}^\text{w}\text{ə}\overset{,}{\text{y}}\text{əm}</m>
+      (Musqueam) People. Learn
+      more about <url
+      href="http://aboriginal.ubc.ca/community-youth/musqueam-and-ubc/"
+      visual="aboriginal.ubc.ca/community-youth/musqueam-and-ubc/">UBC’s
+      relationship with the Musqueam Nation</url>.
+    </p>
+    
+  </acknowledgement>
+  
+  <preface>
+    <p>
+      The main idea of this text is to teach you how to write correct and <em>clear</em> mathematical proofs.
+      In order to learn to prove things we will study some basic analysis.
+      We will prove many things about the basic properties of numbers sets and functions <mdash/> like
+    </p>
+    
+    <blockquote><p>There are more real numbers than integers.</p></blockquote>
+    
+    <p>
+      In order to make sense of this statement we need to understand how to extend the idea of <q>more</q> from the context of finite quantities, where we are used to <q>more</q> and <q>less</q>, to the domain of infinite quantities.
+      We'll have to define ideas about sets and functions, manipulate and combine them with logic.
+      Along the way we will need to think hard about how to communicate the mathematics that we are doing, so that you, and others, can follow what we are doing.
+    </p>
+    
+    <p>
+      Hence, a critical part of this subject is to learn to communicate mathematics <mdash/> not just do mathematics.
+      Mathematics is not simply number crunching or using formulas <mdash/> this is using mathematics.
+      Mathematics is also about understanding and reasoning and most importantly <em>proving</em> things.
+      Neither of these aspects is more important than the other.
+      Up until now you have mostly done the former, and the aim of this text is to help you get better at the latter.
+    </p>
+    
+    <p>
+      It is crucial that we are able to explain to others why what we know is true is actually true <mdash/> this is what proofs are for.
+      Think of the proof as a dialog between you and the reader <mdash/> you have to make every (reasonable) effort to be clear, precise and accurate.
+      Always think of the reader when you are writing.
+      It is important to argue and write well <mdash/> it is a useful skill both at university and beyond in the so-called <q>real world</q>.
+    </p>
+
+        <p>
+      The authors have spend a lot of time reading other people's work (mostly student work, but also articles written by professional mathematicians with years of experience) and puzzling over the lines written on the page <mdash/> sometimes legible, sometimes not (especially in exams).
+      And finally after sweating for ages you realise what they were trying to say.
+      In some circumstances one can, of course, contact the writer and ask them <q>What did you mean?</q>
+      However, this is frequently not the case <mdash/> all one has is what is written on the page.
+    </p>
+
+    <blockquote>
+      <p>
+	So that's what he meant! Then why didn't he say so?
+      </p>
+      <attribution>Frank Harary</attribution>
+    </blockquote>
+        
+    <p>
+      When you do mathematics (and other activities) there is a huge difference between reading and doing.
+      This is especially the case with proofs.
+      So while reading the text is a good way to learn some ideas and get a feeling for some of the stuff, it is really no substitute for <em>doing</em> the exercises.
+      That is where you will really learn.
+    </p>
+
+    <blockquote>
+    <p>
+      I write to discover what I know
+    </p>
+    <attribution>Flannery O'Connor</attribution>
+    </blockquote>
+        
+    <p>
+      Behind every proof you read (and you write) lies a good bit of work.
+      You cannot generally look at a problem and write out the proof all fine first go.
+      You need to do some rough work to map out the structure of the proof and the details.
+      Then <em>after</em> this you write out the proof nicely and neatly.
+      Making sure that you present you work well forces you to think about what you are writing down.
+      The investment in your hard work writing, pays off for the people reading your work.
+    </p>
+
+    <blockquote>
+      <p>
+	Easy reading is damned hard writing.
+      </p>
+      <attribution>Nathaniel Hawthorne</attribution>
+    </blockquote>
+
+    <p>
+      Learning to write proofs takes time and effort. But the rewards are well worth it.
+    </p>
+    
+    <attribution>
+      <line>Seçkin Demirbaş and Andrew Rechnitzer</line>
+    </attribution>
+    
+</preface>
+
+</frontmatter>

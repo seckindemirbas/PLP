@@ -1,0 +1,45 @@
+<exercise xml:id="ex3-2and3-implies-6">
+<!-- source latex = 'if 2 and 3 divides n then 6 divides n question.tex' -->
+<!-- converted on 05/07/2021 at 13:06 -->
+<statement>
+<p>
+Let <m>a\in \mathbb{Z}</m>. If <m>3\mid a</m> and <m>2\mid a</m>, then <m>6\mid a</m>.
+</p>
+</statement>
+<hint>
+<p>
+Think about how we can get from <m>2</m> and <m>3</m> to <m>6</m>.
+</p>
+</hint>
+<answer>
+<p>
+This is a conditional statement. To prove this, we need to assume that the hypothesis is true and show that the conclusion follows. This means that we assume <m>3\mid a</m> and <m>2\mid a</m> and show that <m>6\mid a</m>.
+</p>
+<p>
+This is <q>one of those questions</q> where our previous knowledge may be misleading. We may want to say that since <m>6=3\cdot 2</m>, then if <m>a</m> is divisible by <m>2</m> and <m>3</m>, it should be divisible by <m>6</m>. But this would be a wrong chain of implications. Even though the result is true in this instance, it may be wrong if we change the numbers a little. For example, if we change <m>3</m> by <m>4</m>, that is, <q>If <m>4\mid a</m> and <m>2\mid a</m>, then <m>8\mid a</m></q>, even though the previous chain of implications doesn't change, the result doesn't follow anymore (for an example you can see the statement is false for <m>a=4</m> ).
+</p>
+<p>
+It is always preferable to use the definitions and the results we have proven to prove these statements. Let's see what we can do.
+</p>
+<p>
+Assume <m>3\mid a</m> and <m>2\mid a</m>, that is, <m>a=2k</m> and <m>a=3m</m> for some <m>k,m\in\mathbb Z</m>. Since we want to show that <m>6\mid a</m>, we can multiply both sides of the equation <m>a=2k</m> by <m>3</m> and both sides of the equation <m>a=3m</m> by <m>2</m> and get <m>3a=6k</m> and <m>2a=6m</m>. Then, subtracting the second form the first, we get <m>a=3a-2a=6k-6m=6(k-m)</m>, which is the desired result. Now, we can write this nicely in a proof.
+</p>
+
+<p>
+Alternatively, assuming <m>a=2k</m> and <m>a=3m</m> for some <m>k,m\in\mathbb Z</m>, we can try to show that <m>m=2\ell</m> for some <m>\ell\in\mathbb Z</m>. We can do this by writing, <m>a=2k=3m</m>, and hence, <m>2k-2m=2(k-m)=m</m>. Therefore <m>a=3m=6(k-m)</m>, and the result follows.
+</p>
+
+</answer>
+<solution>
+<proof><title>First proof</title><p>
+Let <m>a\in\mathbb{Z}</m>. Assume that <m>2\mid a</m> and <m>3\mid a</m>. This implies <m>a=2k</m> some some <m>k\in\mathbb{Z}</m> and <m>a=3m</m> for some <m>m\in\mathbb{Z}</m>. Thus, we see <m>3a=6k</m> and <m>2a=6m</m>. Hence, <m>a=3a-2a=6k-6m=6(k-m)</m>.Therefore, since <m>(k-m)\in\mathbb{Z}</m> for <m>k,m\in\mathbb{Z}</m>, we see <m>6\mid a</m>.
+</p></proof>
+
+
+<proof><title>Alternative proof</title>
+<p>
+Let <m>a\in\mathbb{Z}</m>. Assume that <m>2\mid a</m> and <m>3\mid a</m>. This implies <m>a=2k</m> some some <m>k\in\mathbb{Z}</m> and <m>a=3m</m> for some <m>m\in\mathbb{Z}</m>. Thus, we see <m>a=2k=3m</m>, and hence, <m>2k-2m=2(k-m)=m</m>. This implies <m>a=3m=6(k-m)</m>. Therefore, since <m>(k-m)\in\mathbb{Z}</m> for <m>k,m\in\mathbb{Z}</m>, we see <m>6\mid a</m>.
+</p></proof>
+
+</solution>
+</exercise>

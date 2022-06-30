@@ -1,0 +1,42 @@
+<exercise>
+<!-- source latex = 'a number cannot be 2 mod 6 and 7 mod 9 question.tex' -->
+<!-- converted on 07/12/2021 at 12:29 -->
+<statement>
+<p>
+Prove that there is no integer <m>a</m> that simulataneously satisfies
+<me>
+  a \equiv 2 \mod 6 \qquad \text{and} \qquad
+  a \equiv 7 \mod 9.
+</me>
+</p>
+</statement>
+<hint>
+<p>
+If <m>a</m> were to satisfy both congruences, then we get 2 equations. Combining them helps.
+</p>
+</hint>
+<answer>
+<p>
+Proof by contradiction can be a useful tool for proving statements where we want to show the <em>non-existence</em> of an object satisfying certain conditions. This is because when we assume for a contradiction that such an object exists, then we would have some structure we can work with and, hopefully, get a contradiction with our prior assumptions or knowledge.
+</p>
+</answer>
+<solution>
+
+<proof>
+<p>
+Assume for a contradiction that such an integer <m>a</m> exists. Then the first congruence implies that <m>a=6k+2</m> for some integer <m>k</m>. Similarly, the second congruence implies that <m>a=9\ell+7</m> for some integer <m>\ell</m>. Thus we have
+<me>
+6k+2 = 9\ell+7.
+</me>
+We can rewrite this as
+<me>
+6k-9\ell=3(2k-3\ell) = 5.
+</me>
+Therefore, since <m>2k+3\ell\in\mathbb Z</m>, we conclude that <m>3 \mid 5</m>, which is a contradiction.
+</p>
+<p>
+Hence, there is no integer <m>a</m> so that <m>a \equiv 2 \mod 6</m> and <m>a \equiv 7 \mod 9</m>.
+</p></proof>
+
+</solution>
+</exercise>

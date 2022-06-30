@@ -1,0 +1,61 @@
+<exercise>
+<!-- source latex = 'chaining_implications.tex' -->
+<!-- converted on 23/06/2021 at 20:49 -->
+<statement>
+<p>
+Let <m>m\in\mathbb{N}</m>. Then two true statements are:
+<md>
+<mrow>
+\text{If }\amp m \text{ is odd, then } m^2 \text{ is odd.}
+</mrow><mrow>
+\text{If }\amp m \text{ is even, then } m^2 \text{ is divisible by 4.}
+</mrow>
+</md>
+Construct the contrapositive of each implication to give a total of four different implications.
+Which combinations can you chain together (so that the conclusion of the first is the hypothesis of the second), and what new implications do these combinations form?
+</p>
+</statement>
+
+<solution>
+<p>
+Let <m>P=</m> <q><m>m^2</m> is even,</q> <m>Q=</m> <q><m>m</m> is even,</q> and <m>R=</m> <q><m>m^2</m> is divisible by 4.</q>
+</p>
+<p>
+The statement  <q>If <m>m</m> is odd, then <m>m^2</m> is odd</q> converts to <m>(\neg Q)\implies (\neg P).</m>
+Its contrapositive is <m>\neg(\neg P)\implies \neg(\neg Q)</m>, which is the same as <m>P\implies Q</m>.
+In words, the contrapositive is <q>If <m>m^2</m> is even, then <m>m</m> is even.</q>
+Since an implication and its contrapositive have the same truth table, and <m>(\neg Q)\implies (\neg P)</m> is true,
+<m>P\implies Q</m> is also true.
+</p>
+<p>
+The statement <q>If <m>m</m> is even, then <m>m^2</m> is divisible by 4</q> converts to <m>Q\implies R</m>.
+Its contrapositive is <m>(\neg R)\implies (\neg Q)</m>, or <q>If <m>m^2</m> is not divisible by 4, then <m>m</m> is odd.</q>
+</p>
+<p>
+We have the four distinct implications, <m> P\implies Q</m>, <m>(\neg Q)\implies (\neg P)</m>, <m> Q\implies R</m>, and <m>(\neg R)\implies (\neg Q)</m>.
+</p>
+<p>
+Chaining the implications <m>P\implies Q</m> and <m>Q\implies R</m>, we end up with the implication <m>P\implies R</m>, or
+</p>
+
+<blockquote>
+<p>
+<q>If <m>m^2</m> is even, then <m>m^2</m> is divisible by 4.</q>
+</p>
+</blockquote>
+
+<p>
+Chaining the implications <m>(\neg R)\implies (\neg Q)</m> and <m>(\neg Q)\implies (\neg P)</m>, we end up with the implication <m>(\neg R)\implies (\neg P)</m>, or
+</p>
+
+<blockquote>
+<p>
+<q>If <m>m^2</m> is not divisible by 4, then <m>m^2</m> is odd.</q>
+</p>
+</blockquote>
+
+<p>
+Notice that this implication is the contrapositive of the other implication we formed.
+</p>
+</solution>
+</exercise>

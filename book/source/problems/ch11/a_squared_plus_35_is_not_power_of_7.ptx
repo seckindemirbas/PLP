@@ -1,0 +1,63 @@
+<exercise>
+<!-- source latex = 'a squared plus 35 is not power of 7.tex' -->
+<!-- converted on 06/02/2022 at 13:52 -->
+<statement>
+<p>
+Prove that there do not exist <m>a,n\in\mathbb N</m> such that <m>a^2 + 35 = 7^n.</m>
+</p>
+</statement>
+<hint>
+<p>
+<ul>
+<li>
+<p>
+ This may look like an induction question, but it's not!
+</p>
+</li>
+<li>
+<p>
+ <xref ref="lem-euclid">Euclid's lemma</xref> should be useful, which tells us that if a prime <m>p</m> divides <m>ab</m>, then <m>p\mid a</m> or <m>p\mid b</m>.
+</p>
+</li>
+<li>
+<p>
+ What power of <m>7</m> divides <m>35</m>?
+</p></li>
+</ul>
+</p>
+</hint>
+<answer>
+<p>
+We'll prove this by contradiction by first assuming that there are some <m>a,n\in\mathbb N</m> satisfying the equation.
+Writing <m>a^2=7^n-35</m>, we can show that <m>a^2</m> is divisible by <m>7</m>. By Euclid's lemma, this implies that <m>7\mid a</m>.
+Then <m>7^2\mid a^2</m>. Notice that <m>7\mid 35</m>, but <m>7^2\nmid 35</m>. If we also had <m>7^2\mid 7^n</m>, then that would imply <m>7^2</m> divides <m>35=7^n-a^2</m>, which is a contradiction.
+So we have a contradiction in the case <m>n\geq 2</m>. Now we just need to show that the case <m>n=1</m> also leads to a contradiction. In this case, we have the equation <m>a^2+35=7</m>. This is imposible, since <m>a^2+35\geq 35</m>.
+</p>
+
+</answer>
+<solution>
+
+<proof><p>
+Assume for a contradiction that there exist <m>a,n\in\mathbb N</m> such that <m>a^2 + 35 = 7^n</m>.
+ Then we can write <m>a^2=7(7^{n-1}-5)</m>, and as <m>n\in\mathbb N</m>, we have that <m>7^{n-1}-5\in\mathbb Z</m>; thus <m>7\mid a^2</m>. Since <m>7</m> is prime, by Euclid's lemma, we have <m>7\mid a</m>.
+ Thus, <m>a=7m</m> for some <m>m\in\mathbb Z</m>. Plugging this into the original equation, we obtain
+  <me> 7^2m^2+35=7^n. </me>
+ Now, we have two cases for <m>n</m>, either <m>n=1</m> or <m>n \geq 2</m>.
+<ul>
+<li>
+<p>
+ If <m>n=1</m>, then the equation becomes <m>7^2m^2+35=7</m>. But <m>7^2m^2+35\geq 35</m>, so this is a contradiction.
+</p>
+</li>
+<li>
+<p>
+ Now assume that <m>n\geq 2</m>. Rewrite the equation as
+<me> 7^2(7^{n-2}-m^2)=7^n-7m^2=35. </me>
+Since <m>n-2\geq0</m>, we have <m>7^{n-2}-m^2\in\mathbb Z</m>, implying that <m>7^2\mid 35</m>. This is a contradiction.
+</p></li>
+</ul>
+Either case leads to a contradiction, and thus are no <m>a,n\in\mathbb N</m> such that <m>a^2 + 35 = 7^n.</m>
+</p></proof>
+
+</solution>
+</exercise>

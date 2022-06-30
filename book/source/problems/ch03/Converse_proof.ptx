@@ -1,0 +1,33 @@
+<exercise>
+<!-- source latex = 'Converse proof.tex' -->
+<!-- converted on 05/07/2021 at 13:01 -->
+<statement>
+<p>
+Consider the faulty proof below for the following statement:
+</p>
+<p>
+<md>
+<mrow>
+  \text{Show that if } x+y \text{ is odd, then either } x \text{ or } y \text{ is odd, but not both}.
+</mrow>
+</md>
+</p>
+
+<proof><title>Faulty proof</title>
+<p>
+Assume that either <m>x</m> or <m>y</m> is odd, but not both. Assume that <m>x</m> is odd and <m>y</m> is even (otherwise, switch <m>x</m> and <m>y</m> in the following argument). By the definitions of odd and even numbers, we know that <m>x=2n+1</m> and <m>y=2m</m> for some <m>n,m \in \mathbb{Z}</m>. Then
+<me>x + y = (2n+1) + (2m)=2 (n+m) + 1.</me>
+Since <m>n, m \in \mathbb{Z}</m> and the sum of integers is also an integer, we see that <m>n+m\in \mathbb{Z}</m>, so that <m>x+y</m> fits the definition of an odd number.
+</p>
+</proof>
+
+<p>
+Identify any issues with the proof as written above.
+</p>
+</statement>
+<solution>
+<p>
+We have accidentally proven the converse rather than the desired statement. We started by assuming the conclusion, and ended up showing that the hypothesis is true. A correct proof can be given by using cases or proving the contrapositive <xref ref="ch-moreproof"/>.
+</p>
+</solution>
+</exercise>

@@ -1,0 +1,69 @@
+<exercise xml:id="ex_inv_mod_p">
+<!-- source latex = 'inverse_elements_mod_p.tex' -->
+<!-- converted on 19/11/2021 at 11:16 -->
+<statement>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ Let <m>p</m> be a prime number, and suppose that <m>n\in\mathbb{Z}</m> is such that <m>n\not\equiv0\mod{p}</m>. Show that there is some <m>k\in\mathbb{Z}</m> so that <m>nk\equiv1\mod{p}</m>.
+</p></li>
+<li>
+<p>
+ Find an example to show that (a) may not be true if <m>p</m> is not prime. That is, find some composite number <m>p</m> and <m>n\in\mathbb{Z}</m>, <m>n\not\equiv0\mod{p}</m> such that <m>nk\not\equiv1\mod{p}</m> for all <m>k\in\mathbb{Z}</m>.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<hint>
+<p>
+Try using Bézout's identity.
+</p>
+</hint>
+<answer>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ We want to show that <m>nk\equiv1\mod{p}</m>. Then by definition, we want to show that <m>p\mid nk-1</m>, that is, there's some <m>\ell\in\mathbb{Z}</m> such that <m>p\ell=nk-1</m>. Let's rewrite this equation as <m>1=kn+(-\ell)p</m>.
+This equation may look familiar from Bézout's identity, which tells us that if <m>a,b\in \mathbb{Z}</m>, with at least one of them non-zero, then there are some <m>x,y\in\mathbb{Z}</m> so that <m>ax+by=\gcd(a,b)</m>.
+In order to show that there is some <m>\ell\in\mathbb{Z}</m> so that <m>1=kn+(-\ell)p</m>, it suffices, by Bézout's identity, to show that <m>\gcd(n,p)=1</m>.
+</p>
+<p>
+To show that <m>\gcd(n,p)=1</m>, we'll use the hypothesis that <m>n\not\equiv0\mod{p}</m>. By definition, this means that <m>p\nmid (n-0)</m>, so <m>p\nmid n</m>. Since <m>p</m> is prime, its only divisors are <m>1</m> and <m>p</m>. Since <m>p</m> isn't a divisor of <m>n</m>, we must have <m>\gcd(n,p)=1</m>.
+</p>
+<p>
+Now we can write the proof.
+</p>
+</li>
+<li>
+<p>
+ Let's try to find such an <m>n</m> when <m>p</m> is not prime; we'll use <m>p=4</m> since it is a small composite number. We need to choose <m>n</m> so that <m>\gcd(n,p)\neq1</m>; if <m>n</m> is such that <m>\gcd(n,p)=1</m>, then we could use Bézout's identity as in part (a) to find some <m>k</m> with <m>nk\equiv1\mod{p}</m>.
+So let's try <m>n=2</m>. We need to check that <m>nk\not\equiv1\pmod{4}</m> for each <m>k\in\set{0,1,2,3}</m>, since these represent all equivalence classes mod <m>4</m>. We have
+<me> 2\cdot0\equiv0\pmod{4}, \quad 2\cdot1\equiv2\pmod{4}, \quad 2\cdot2\equiv0\pmod{4}, \quad 2\cdot3\equiv2\pmod{4}, </me>
+so there is no <m>k\in\mathbb{Z}</m> with <m>2k\equiv1\mod{4}</m>.
+</p>
+<p>
+We chose <m>n=2</m> because then <m>nk</m> is always an even number, however in order to have <m>nk \equiv 1 \mod{4}</m>, we need <m>nk</m> to be odd. Since a number cannot be even and odd at the same time, that cannot happen.
+</p>
+
+</li>
+</ol>
+</p>
+</answer>
+<solution>
+<proof><title>Proof of (a)</title>
+<p>
+Let <m>p</m> be a prime number, and suppose that <m>n\in\mathbb{Z}</m> is such that <m>n\not\equiv0\mod{p}</m>.  Then <m>p\nmid (n-0)</m>, so <m>p\nmid n</m>. Since <m>p</m> is prime, its only divisors are <m>1</m> and <m>p</m>, and as <m>p</m> isn't a divisor of <m>n</m>, we have <m>\gcd(n,p)=1</m>.
+Then, by Bézout's identity, there are some <m>k,\ell\in\mathbb{Z}</m> so that <m>nk+\ell p=1</m>. Rearranging, we have <m>\ell p=1-nk</m>, and so <m>p\mid (1-nk)</m>. Then, by definition, <m>nk\equiv 1\mod{p}</m>.
+</p>
+</proof>
+
+<p>For (b), take <m>p=4</m> and set <m>n=2</m>. Then for any <m>k</m>, we know that <m>nk</m> is even, and so <m>nk-1</m> is odd. Since <m>nk-1</m> is odd it is not divisible by 4. Thus <m>nk \not\equiv 1 \mod{4}</m>.
+</p>
+
+</solution>
+
+
+</exercise>

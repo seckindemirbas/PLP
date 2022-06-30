@@ -1,0 +1,85 @@
+<exercise>
+<!-- source latex = 'transitivity_of_cardinality_leq.tex' -->
+<!-- converted on 30/03/2022 at 15:36 -->
+<statement>
+<p>
+Let <m>A</m>, <m>B</m>, and <m>C</m> be sets.
+<ol marker="(a)">
+<li>
+<p>
+ Suppose that <m>|A|\leq |B|</m> and <m>|B|\leq |C|</m>. Show that <m>|A|\leq |C|</m>.
+</p></li>
+<li>
+  <blockquote>
+<p>
+ Show that the following statement is equivalent to the <xref ref="thm_CSB">Cantor-Schröeder-Bernstein</xref>:
+</p>
+  </blockquote>
+
+<p>
+Suppose that <m>|A|\leq |B|\leq |C|</m>, and that <m>|A|=|C|</m>. Then <m>|A|=|B|=|C|</m>.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<answer>
+<p>
+  <ol marker="(a)">
+<li>
+<p>
+ By definition, we know that there is an injection from <m>A</m> to <m>B</m>, and from <m>B</m> to <m>C</m>. We need to use these to create an injection from <m>A</m> to <m>C</m>.
+</p>
+</li>
+<li>
+<p>
+ We need to prove that the statement given in the question implies the Cantor-Schröeder-Bernstein Theorem,
+and conversely, that the Cantor-Schröeder-Bernstein Theorem implies the given statement.
+</p>
+<p>
+To prove the first implication, we assume that the statement given in the question is true; that is,
+if <m>|A|\leq |B|\leq |C|</m> and <m>|A|=|C|</m>, then <m>|A|=|B|=|C|</m>. When we take <m>A=C</m>, we have the statement of the Cantor-Schroeder-Bernstein Theorem.
+</p>
+<p>
+To prove the converse, we need to use the Cantor-Schröeder-Bernstein Theorem to establish the given statement:
+</p>
+
+<blockquote>
+<p>
+If <m>|A|\leq |B|\leq |C|</m> and <m>|A|=|C|</m>, then <m>|A|=|B|=|C|</m>.
+</p>
+</blockquote>
+
+<p>
+We'll try to prove that <m>|B|=|C|</m>. By <xref ref="thm_CSB"/>, we can do this by showing that <m>|B|\leq |C|</m> and <m>|C|\leq |B|</m>. The first is given by the statement of the problem. The second we will have to deduce from the assumption that <m>|A|=|C|</m>.
+</p>
+</li>
+  </ol>
+</p>
+</answer>
+
+<solution>
+  <proof><title>Proof of (a)</title>
+    <p>
+Let <m>A</m>, <m>B</m> and <m>C</m> be sets such that <m>|A|\leq |B|</m> and <m>|B|\leq |C|</m>. Then, by definition, there are injections <m>f:A\rightarrow B</m> and <m>g:B\rightarrow C</m>.
+By <xref ref="thm_comp_inj_surj"/>, the function <m>g\circ f:A\rightarrow C</m> is an injection. Thus, by definition, <m>|A|\leq |C|</m>.
+</p></proof>
+
+
+<proof><title>Proof of (b)</title>
+<p>
+First assume that whenever sets <m>A</m>, <m>B</m>, and <m>C</m> satisfy <m>|A|\leq |B|\leq |C|</m> and <m>|A|=|C|</m>, then we also have <m>|A|=|B|=|C|</m>.
+Let <m>S</m> and <m>T</m> be set such that <m>|S|\leq |T|</m> and <m>|T|\leq |S|</m>.  Then applying the previous statement with <m>A=C=S</m> and <m>B=T</m>, we see that <m>|S|=|T|</m>.
+This is precisely the statement of <xref ref="thm_CSB">Cantor-Schröeder-Bernstein</xref>.
+</p>
+
+<p>
+Conversely, let <m>A</m>, <m>B</m> and <m>C</m> be sets such that <m>|A|\leq |B|</m> and <m>|B|\leq |C|</m>, and <m>|A|=|C|</m>.
+Since <m>|A|=|C|</m>, there is a bijection, say <m>h</m>, from <m>C</m> to <m>A</m>. But <m>h</m> is also an injection, so <m>|C|\leq |A|</m>. Combining this with the inequality <m>|A|\leq |B|</m>, we have <m>|C|\leq |B|</m>, by part (a).
+Therefore <m>|B|\leq |C|</m> and <m>|C|\leq |B|</m>, implying by <xref ref="thm_CSB">Cantor-Schröeder-Bernstein</xref> that <m>|B|=|C|</m>.
+</p>
+
+</proof>
+
+</solution>
+</exercise>

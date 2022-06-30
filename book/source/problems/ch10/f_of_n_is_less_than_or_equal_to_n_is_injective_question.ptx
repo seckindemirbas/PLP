@@ -1,0 +1,51 @@
+<exercise>
+<!-- source latex = 'f of n is less than or equal to n is injective question.tex' -->
+<!-- converted on 26/11/2021 at 17:03 -->
+<statement>
+<p>
+Determine all functions <m>f:\mathbb N \rightarrow \mathbb N</m> that are injective and such that for all <m>n\in \mathbb N</m> we have <m>f(n)\leq n</m>.
+</p>
+</statement>
+<hint>
+<p>
+Can you determine <m>f(n)</m> for small <m>n\in\mathbb N</m>?
+</p>
+</hint>
+<answer>
+<p>
+We see that the condition in the question tells us that <m>f(n)\leq n</m> for all <m>n\in\mathbb N</m> and that <m>f</m> is an injective function. If we want to understand the function, we see that for large <m>n\in\mathbb N</m>, say <m>n=1000000</m>, we have <m>f(1000000)\leq 1000000</m>. This tells us that <m>f(1000000)</m> has <m>1000000</m> different options. If we also want to consider that <m>f</m> is an injective function, it may not be clear as to which of those options <m>f(1000000)</m> can take.
+</p>
+<p>
+Instead, we can try to understand what happens to <m>f</m> when <m>n\in\mathbb N</m> is small. This will give us fewer options for <m>f(n)</m> and maybe we can even figure out some values of <m>f</m>.
+</p>
+<p>
+Now, if we check <m>n=1</m>, we see <m>f(1)\leq 1</m>. Since <m>f:\mathbb N \rightarrow \mathbb N</m>, this tells us that <m>f(1)=1</m>. Similarly, if we check <m>n=2</m>, we see that <m>f(2)\leq 2</m>. This means that <m>f(2)=1</m> or <m>f(2)=2</m>. But, since <m>f</m> is injective, we see that <m>f(2)\neq 1</m>. Thus <m>f(2)=2</m>.
+</p>
+<p>
+This suggests that if we keep going like this, we will end up with <m>f(n)=n</m>. But, we also realize that if we want to <q>keep going like this</q>, we need to apply induction. Moreover, since we want to know something about the values of the function at any point to be able to determine the next one since we want to make sure that the function is injective, we may need strong induction.
+</p>
+</answer>
+<solution>
+
+<proof><p>
+First we see that the function defined by <m>g(n)=n</m> satisfies the properties above.
+</p>
+<p>
+Then, let us prove that any function <m>f</m> that satisfies the above has to be equal to <m>g</m>.
+Let us prove this using strong induction on the property <m>P(n): f(n)=n</m>.
+<ul>
+<li>
+<p>
+ Base case: <m>n=1</m>. Since <m>f(1)\leq 1</m> and <m>f(1)\in \mathbb N</m>, then <m>f(1)=1</m>.
+    </p></li>
+<li>
+<p>
+ Induction step: assume that <m>f(k)=k</m> for all <m>k\le n</m>. By assumption, <m>f(n+1)\in \{1,2,3,\dots ,n+1\}</m>. We cannot have <m>f(n+1)=k</m> for any <m>k\leq n</m> by injectivity of <m>f</m>, because we already have <m>f(k)=k</m> and <m>k\neq n+1</m>.
+    Hence the only possible value is <m>f(n+1)=n+1</m>.
+</p></li>
+</ul>
+In the end, we conclude by strong induction that for all <m>n\in \mathbb N</m> we have <m>f(n)=n</m>.
+</p></proof>
+
+</solution>
+</exercise>

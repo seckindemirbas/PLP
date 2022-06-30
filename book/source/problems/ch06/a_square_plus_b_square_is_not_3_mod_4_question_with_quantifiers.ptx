@@ -1,0 +1,46 @@
+<exercise>
+<!-- source latex = 'a square plus b square is not 3 mod 4 question with quantifiers.tex' -->
+<!-- converted on 24/06/2021 at 16:22 -->
+<statement>
+<p>
+For all <m>n\in\mathbb Z</m>, prove that if there exists <m>a,b\in\mathbb Z</m> such that <m>a^2+b^2=n</m>, then <m>n\not\equiv 3\pmod 4</m>.
+</p>
+</statement>
+<hint>
+  <p>
+    What can you say about <m>a^2</m> modulo 4 for all <m>a \in \mathbb{Z}</m>?
+  </p>
+</hint>
+<solution>
+<proof>
+<p>
+We are going to use proof by contrapositive. We see that the expression <m>\forall n\in\mathbb Z</m>, comes before the conditional statement starts, and hence is not a part of it. Thus, we see that the contrapositive of the statement is:
+</p>
+
+<blockquote>
+<p>
+ <m>\forall n\in\mathbb Z</m>, if <m>n\equiv 3\pmod 4</m>, then  <m>\forall a,b\in\mathbb Z</m>, we have <m>a^2+b^2\neq n</m>.
+</p>
+</blockquote>
+
+<p>
+Now, let <m>n\in\mathbb Z</m> and assume that <m>n\equiv 3 \pmod 4</m>. To prove the statement, we are going to use <m>3</m> cases: <m>a</m> and <m>b</m> are both even,  <m>a</m> and <m>b</m> are both odd, and only one of <m>a</m> or <m>b</m> is even.
+<ul>
+<li>
+<p>
+  <em>Case 1:  <m>a</m> and <m>b</m> are both even:</em> In this case, we know that <m>a=2k</m> and <m>b=2\ell</m> for some <m>k,\ell\in\mathbb{Z}</m>. Hence, we see that <m>a^2=4k^2</m> and <m>b^2=4\ell^2</m>. Thus, <m>a^2+b^2=4k^2+4\ell^2=4(k^2+\ell^2)</m>. Since <m>k^2+\ell^2\in\mathbb Z</m> we see <m>4\mid (a^2+b^2)</m>. Therefore <m>(a^2+b^2)\equiv 0\pmod 4</m>.
+</p></li>
+<li>
+<p>
+ <em>Case 2:  <m>a</m> and <m>b</m> are both odd:</em> Then, we know that <m>a=2k+1</m> and <m>b=2\ell+1</m> for some <m>k,\ell\in\mathbb{Z}</m>. In this case, we see that <m>a^2=4k^24k+1</m> and <m>b^2=4\ell^2+4\ell+1</m>. Thus, <m>a^2+b^2=4k^2+4k+1+4\ell^2+4\ell+1=4(k^2+k+\ell^2+\ell)+2</m>. Since <m>k^2+k+\ell^2+\ell\in\mathbb Z</m> we see <m>4\mid (a^2+b^2-2)</m>. Therefore <m>(a^2+b^2)\equiv 2\pmod 4</m>.
+</p></li>
+<li>
+<p>
+ <em>Case 3:  only one of <m>a</m> or <m>b</m> is even:</em> For this case, WLOG, we can assume that <m>a</m> is odd and <m>b</m> is even. Then, we know that <m>a=2k+1</m> and <m>b=2\ell</m> for some <m>k,\ell\in\mathbb{Z}</m>. This implies that <m>a^2=4k^24k+1</m> and <m>b^2=4\ell^2</m>. Thus, <m>a^2+b^2=4k^2+4k+1+4\ell^2=4(k^2+k+\ell^2)+1</m>. Since <m>k^2+k+\ell^2+\in\mathbb Z</m> we see <m>4\mid (a^2+b^2-1)</m>. Therefore <m>(a^2+b^2)\equiv 1\pmod 4</m>.
+</p></li>
+</ul>
+ Hence, there does not exist <m>a,b\in\mathbb{Z}</m>, where <m>(a^2+b^2)\equiv 3\pmod 4</m>. Therefore there does not exist <m>a,b\in\mathbb{Z}</m>, where <m>a^2+b^2= n</m>.
+</p>
+</proof>
+</solution>
+</exercise>

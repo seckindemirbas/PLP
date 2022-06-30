@@ -1,0 +1,58 @@
+<exercise>
+<!-- source latex = 'find explicit bijection from minus inf to minus sqrt29 to R.tex' -->
+<!-- converted on 03/03/2022 at 12:39 -->
+<statement>
+<p>
+Prove that <m>(-\infty, -\sqrt{29})</m> and <m>\mathbb{R}</m> are
+equinumerous by constructing an explicit bijection between them.
+</p>
+</statement>
+<hint>
+<p>
+Can you think of a bijection from <m>(0,\infty)</m> to <m>\mathbb R</m> How
+can we use that function in this question?
+</p>
+</hint>
+<answer>
+<p>
+The hints suggests that we think about a bijection from <m>(0,\infty)</m>
+to <m>\mathbb R</m>. We see that the easiest of such function is
+<m>f(x)=\log(x)</m>. But, we also realize that the set given to us is not
+<m>(0,\infty)</m>, but <m>(-\infty, -\sqrt{29})</m>. This may look like a
+big problem, but it is a problem we can easily overcome. First observe
+that we can take <m>g(x)=\log(-x)</m>, instead of <m>f</m>, it becomes a
+bijective function (at least intuitively, we need to show that such
+changes preserve bijectivity) from <m>(-\infty,0)</m> to <m>\mathbb
+R</m>. Then, we can finalize our construction by shifting <m>g</m> by
+<m>\sqrt{29}</m> to the left, i.e. by defining
+<m>h(x)=\log(-x-\sqrt{29})</m>. This function, <m>h</m>, should be a
+bijection from <m>(-\infty, -\sqrt{29})</m> to <m>\mathbb R</m>.
+</p>
+<p>
+Now, of course, we need to show that <m>h</m> is indeed a bijection. We
+can do this either by showing that it is injective and surjective, or
+by showing that it has both a left and a right inverse. Since we know
+how to find the inverse of the <m>\log</m> function, the second way may
+be easier.
+</p>
+</answer>
+<solution>
+
+<proof>
+<p>
+Let <m>f (x) = \log (-x- \sqrt{29})</m>. We then construct a function <m>g (y)= -e^{y}-\sqrt{29}</m>. Note that <m>f</m> has domain <m>(-\infty, -\sqrt{29})</m> and <m>g</m> has domain <m>\mathbb{R}</m>. Now
+<me>
+\forall y\in \mathbb R,\quad  f (g(y)) = \log (e^{y}+\sqrt{29} - \sqrt{29}) = y,
+</me>
+ and
+<me>
+\forall x\in (-\infty, -\sqrt{29}),\quad g(f(x)) = -e ^{\log (-x- \sqrt{29})}- \sqrt{29} = - (-x- \sqrt{29})- \sqrt{29}=x.
+</me>
+</p>
+<p>
+We conclude that <m>f \circ g</m> and <m>g \circ f</m> are both identity functions (on <m>\mathbb{R}</m> and <m>(-\infty, -\sqrt{29})</m>, respectively), and so <m>f</m> has a two-sided inverse, which means that it is a bijection. Therefore, <m>(-\infty, -\sqrt{29})</m> and <m>\mathbb{R}</m> are equinumerous.
+</p>
+</proof>
+
+</solution>
+</exercise>

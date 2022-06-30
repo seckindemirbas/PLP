@@ -1,0 +1,76 @@
+<exercise>
+<!-- source latex = 'complement_of_relation.tex' -->
+<!-- converted on 26/11/2021 at 16:53 -->
+<statement>
+<p>
+Let <m>R</m> be a relation on a nonempty set <m>A</m>. Then <m>\overline{R}= (A \times A) - R</m> is also a relation on <m>A</m>. Prove or
+disprove each of the following statements:
+<ol marker="(a)">
+<li>
+<p>
+ If <m>R</m> is reflexive, then <m>\overline{R}</m> is reflexive.
+</p>
+</li>
+<li>
+<p>
+ If <m>R</m> is symmetric, then <m>\overline{R}</m> is symmetric.
+</p>
+</li>
+<li>
+<p>
+ If <m>R</m> is transitive, then <m>\overline{R}</m> is transitive.
+</p>
+
+</li>
+</ol>
+</p>
+</statement>
+<hint>
+<p>
+Try some simple examples on small sets. Also, modus-tollens might help.
+</p>
+</hint>
+<solution>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ This statement is false.
+</p>
+
+<proof><p>
+Let <m>a\in A</m>. Then, we see that if <m>R</m> is reflexive, then <m>(a,a)\in R</m>. Thus, <m>(a,a)\notin \overline{R}</m>. Therefore <m>\overline{R}</m> is not reflexive.
+</p></proof>
+
+<p>
+One can make a more explicit counter-example by considering the set <m>A= \set{1}</m> and <m>R = \set{(1,1)}</m>. Then <m>\bar{R}=\emptyset</m>. While <m>\bar{R}</m> is a relation it is not reflexive since <m>(1,1) \not\in \bar{R}</m>.
+</p>
+</li>
+<li>
+<p>
+ This statement is true.
+</p>
+
+<proof><p>
+Let <m>a,b\in A</m>. Assume <m>R</m> is symmetric and assume that <m>(a,b)\in \overline{R}</m>. By definition, we see that <m>(a,b)\notin R</m>. Since <m>R</m> is symmetric we know that if <m>(b,a)\in R</m>, then <m>(a,b)\in R</m>. The contrapositive of this statement implies that if <m>(a,b)\notin R</m>, then <m>(b,a)\notin R</m>. Hence, <m>(b,a)\in\overline{R}</m>. Therefore <m>\overline{R}</m> is symmetric.
+</p></proof>
+
+<p>
+Notice that we are using modus-tollens in this proof. We know that <m>(a,b) \in R \implies (b,a) \in R</m>, and that <m>(b,a) \not\in R</m>, so we conclude <m>(a,b) \not \in R</m>.
+</p>
+</li>
+<li>
+<p>
+ This statement is false.
+</p>
+
+<proof><p>
+For a counterexample, we can take <m>A=\set{1,2}</m> and <m>R=\set{(1,1),(2,2)}</m>. Notice that <m>R</m> is the <q>equality</q> relation, and it is transitive. Then the complementary relation <m>\overline{R}=\set{(1,2),(2,1)}</m>. Since <m>(1,2)\in\overline{R}</m> and <m>(2,1)\in\overline{R}</m> but <m>(1,1)\not\in \overline{R}</m>, we see that <m>\overline{R}</m> is not transitive.
+</p></proof>
+
+
+</li>
+</ol>
+</p>
+</solution>
+</exercise>

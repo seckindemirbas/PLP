@@ -1,0 +1,57 @@
+<exercise>
+<!-- source latex = '1 by 2x.1 minus x.is at least 2 for specific x.tex' -->
+<!-- converted on 03/03/2022 at 11:59 -->
+<statement>
+<p>
+Let <m>x\in (0,1)</m>. Show that
+<me> \frac{1}{2x(1-x)}\geq 2</me>
+<ol marker="(a)">
+<li>
+<p>
+ by contradiction, and
+    </p></li>
+<li>
+<p>
+ by a direct proof.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<answer>
+<p>
+Let's explore the inequality a little bit before we leap into proving it. Notice that because <m>x \in (0,1)</m> we know that the denominator is positive. Therefore we can rearrange the inequality to give <me>1 \geq 4x-4x^2,</me> which we can rearrange further to give us <me>(2x-1)^2=4x^2-4x-1 \geq 0.</me> This looks good because it tells us that a square is non-negative and we know that squares are non-negative. That smells like the direct proof, what about contradiction?
+</p>
+<p>
+We need to have <m>x</m> so that the opposite inequality holds. That is <me>\frac{1}{2x(1-x)}  \lt  2,</me> but this gives us (by similar reasoning) that <me>1  \lt  4x-4x^2</me> and so <me>(2x-1)^2= 4x^2-4x+1 \lt 0.</me> This smells like a contradiction since it tells us a square is negative.
+</p>
+</answer>
+<solution>
+
+  <proof><title>Proof of (a)</title>
+  <p>
+By way of contradiction, suppose there exists a value <m>x\in (0,1)</m> such that
+<me>\frac{1}{2x(1-x)} \lt  2.</me>
+Note that <m>2x(1-x) \gt 0</m> because <m>x\in (0,1)</m>. Therefore multiplying both sides by <m>2x(1-x)</m> gives
+<me>1  \lt  4x(1-x) = 4x - 4x^2. \tag{1}</me>
+Now, subtracting <m>4x-4x^2</m> from both sides of (1) yields
+<me>4x^2 - 4x +1 =(2x-1)^2 \lt 0.</me>
+This gives a contradiction because the square of a real number is non-negative.
+</p></proof>
+
+
+<proof><title>Proof of (b)</title>
+<p>
+Assume <m>x\in (0,1)</m>. Then <m>2x-1 \in \mathbb{R}</m> as well. We use the fact that the square of a real number is non-negative to see
+<me>(2x-1)^2 \geq 0.</me>
+Expanding, we have
+<me>4x^2-4x+1 \geq 0.</me>
+Now, we subtract <m>4x^2+4x</m> from each side to obtain
+<me>1 \geq 4x - 4x^2 = 4x(1-x).</me>
+Finally, by assumption, we chose <m>x\in (0,1)</m>. This means  <m>x(1-x)  \gt  0</m>. Thus, dividing both sides by <m>2x(1-x)</m>, we have
+<me>\frac{1}{2x(1-x)} \geq 2,</me>
+as desired.
+</p></proof>
+
+</solution>
+</exercise>

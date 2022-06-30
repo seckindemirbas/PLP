@@ -1,0 +1,60 @@
+<exercise>
+<!-- source latex = 'quant_mix_4.tex' -->
+<!-- converted on 12/08/2021 at 19:47 -->
+<statement>
+<p>
+Determine whether the following four statements are true or false. Explain your answers.
+<ol marker="(a)">
+<li>
+<p>
+ <m>\forall y\in  \mathbb{R}, \forall z\in \mathbb{R}, \exists x\in
+\mathbb{R} \text{ s.t. }  x+y=z</m>.
+</p></li>
+<li>
+<p>
+ <m>\exists x\in \mathbb{R} \text{ s.t. } \forall y\in  \mathbb{R}, \forall z\in
+\mathbb{R}, x+y=z</m>.
+</p></li>
+<li>
+<p>
+ <m>\forall x\in \mathbb{R}, \exists y \in \mathbb{R} \text{ s.t. } \exists z \in
+\mathbb{R} \text{ s.t. } \text{if }z \gt y \text{ then } z \gt x+y</m>.
+</p></li>
+<li>
+<p>
+ <m>\forall x\in \mathbb{R}, \exists y \in \mathbb{R} \text{ s.t. } \forall z \in
+\mathbb{R}, \text{ if }z \gt y \text{ then } z \gt x+y</m>.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<hint>
+<p>
+Be careful of the order of quantifiers; make sure you pick variables in the correct order.
+</p>
+</hint>
+<solution>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ True. Let <m>y,z</m> be any real numbers, and then pick <m>x=z-y</m> (which is a real). Then <m>x+y = z-y+y = z</m> as required.
+</p></li>
+<li>
+<p>
+ False. The negation of the statement is  <m>\forall x\in \mathbb{R}, \exists y \in \mathbb{R} \text{ s.t. } \exists z \in \mathbb{R} \text{ s.t. } x+y \neq z</m>. So let <m>x</m> be any real number and then set <m>y=-x</m> and <m>z=1</m>. Then <m>x+y = x-y = 0 \neq 1 = z</m>. Since the negation is true, the original is false.
+</p></li>
+<li>
+<p>
+ True. Recall that when the hypothesis is false the implication is true. So let <m>x</m> be any real number and set <m>y=1, z=0</m>. Then <m>z = 0 \lt 1 =y</m>, so the hypothesis is false, making the implication true.
+</p></li>
+<li>
+<p>
+ False. The negation is <m>\exists x \in \mathbb{R} \text{ s.t. } \forall y \in \mathbb{R}, \exists z \in \mathbb{R} \text{ s.t. } (z \gt y) \land (z \leq x+y)</m>. So pick <m>x=2</m> and then let <m>y</m> be any real number. Now set <m>z=y+1</m>, then <m>z =y+1 \gt y</m> and <m>z = y+1 \leq y+2 = x+y</m>. Since the negation is true, the original is false.
+</p>
+</li>
+</ol>
+</p>
+</solution>
+</exercise>

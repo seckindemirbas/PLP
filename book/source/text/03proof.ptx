@@ -1,0 +1,859 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<chapter xml:id="ch-direct" xmlns:xi="http://www.w3.org/2001/XInclude"><title>Direct proofs</title>
+
+<introduction>
+<p>
+  Before we get to actually proving things we should spend a little time looking at how we name and prioritise mathematical statements. Not all things we want to prove are created equal and as a consequence they get different names.
+  <dl>
+    <li>
+      <title>Axioms</title>
+      <p>
+        Axioms are
+        these are statements we accept as true without proof. Clearly they are very important since all our work hangs on them.
+      </p>
+    </li>
+    <li><title>Facts</title>
+    <p>
+      We can also state some things as facts
+      <mdash/>
+      these might be provable from axioms, but for the purposes of our text we don't want to go to the trouble (effort?) of proving them.
+    </p>
+    </li>
+  </dl>
+In this text we will use the following as an axiom.
+</p>
+  <axiom xml:id="ax-ints">
+    <statement>
+      <p>
+        Let
+        <m>n</m>
+        and
+        <m>m</m>
+        be integers. Then the following numbers are also integers
+        <md>
+          <mrow>
+            -n, \amp\amp n+m, \amp\amp n-m \amp\amp\text{ and } \amp\amp nm.
+          </mrow>
+        </md>
+      </p>
+    </statement>
+  </axiom>
+<p>
+The authors are going to assume that you are familiar with the above properties and we do not need to delve deeper into them. The following is a statement that can be proved from the standard axioms of real numbers <mdash /> we are not going to prove that, but we will use it. So we'll state it as a fact.
+</p>
+  <fact xml:id="fact-square-nonneg">
+    <statement>
+      <p>
+        Let
+        <m>x</m>
+        be a real number. Then
+        <m>x^2 \geq 0</m>.
+      </p>
+    </statement>
+  </fact>
+<aside>
+  <title>Axioms of real numbers</title>
+  <p>
+The real numbers have an interesting history and you might be surprised to know that the first rigorous definition was only written down in 1871 by Georg Cantor <mdash /> about 2 centuries after calculus was discovered by Newton and Leibniz! We'll discuss Cantor quite a bit later in the text. Your favourite search-engine can direct you to the axioms of the real numbers.
+</p>
+  </aside>
+<p>Another useful fact is Euclidean Divison, also called the division algorithm by some texts. It will come in very handy when we discuss even and odd numbers (for example).
+</p>
+  <fact xml:id="fact-euc-div">
+    <title>Euclidean division</title>
+    <statement>
+      <p>
+        Given integers
+        <m>a,b</m>
+        with
+        <m>b>0</m>, we can always find unique integers
+        <m>q,r</m>
+        so that
+        <me>
+          a = bq+r
+        </me>
+        with
+        <m>0\leq r &lt; b</m>.
+      </p>
+    </statement>
+  </fact>
+
+  <p>
+    So axioms and facts are slightly odd in that we don't have to prove them, but lets move onto statements that we do prove to be true.
+<dl>
+    <li>
+      <title>Theorems</title>
+      <p>
+      A Theorem is a true statement that is important and interesting
+      <mdash/>
+      Pythagorous' theorem for example. Or Euclid's theorem stating that there are an infinite number of prime numbers. Also, it is sometimes the case that implicit in the use of the word
+      <q>Theorem</q>
+      is that this is a result that we will use later to build other interesting results.
+    </p>
+    </li>
+
+    <li><title>Corollary</title>
+    <p>
+      A Corollary is a true statement that is a consequence of a previous theorem. Of course, this makes almost everything a corollary of something else, but we tend to only use the term when the corollary is a useful (and fairly immediate?) consequence of
+      a theorem.
+    </p>
+    </li>
+    <li>
+      <title>Lemma</title>
+      <p>
+      A Lemma is a true statement that by itself might not be so interesting, but will help us build a more important result (such as a theorem). It is a helping result or a stepping stone to a bigger result<fn>Indeed, the German word for Lemma is <q>Hilfssatz</q> <mdash /> a helping result</fn>. You will occasionally see lemma pluralised as <q>lemmata</q>.
+    </p>
+    </li>
+    <li>
+      <title>Result and Proposition</title>
+      <p>
+      Otherwise we might just call a true statement a <q>Result</q> (especially if it is just an exercise or an example) or perhaps, if a little more important, a <q>Proposition</q>.
+    </p>
+    </li>
+  </dl>
+</p>
+</introduction>
+
+<section><title>Trivialities and vacuousness</title>
+  <p>
+  As we said previously, most of the statements we want to prove are of the form <m>P \implies Q</m>.
+Before we get into proofs of more substance, we'll look at <term>trivial proofs</term> and <term>vacuous proofs</term>. These are two special cases that don't show up very often but you should know what they are. Recall that when we wrote out the truth table for <m>P \implies Q</m> there were two observations we made:
+<ul>
+<li> If <m>P</m> is false, then <m>P \implies Q</m> is always true, independent of the truth value of <m>Q</m>.
+</li>
+<li> If <m>Q</m> is true, then <m>P \implies Q</m> is always true, independent of the truth value of <m>P</m>.
+</li>
+</ul>
+The first of these is <term>vacuously true</term> <mdash />  and the second is <term>trivially true</term>. They are both direct consequences of the truth table of the implication; no work is required. The results are of little use and so mathematicians use the dismissive terms <term>trivial</term> and <term>vacuous</term>. Consider:
+</p>
+
+<proposition>
+  <statement><p>
+    Let <m>x \in \mathbb{R}</m>. If <m>8</m> is prime then <m>x^3=17</m>.
+  </p>
+</statement>
+</proposition>
+
+<p>
+  So <m>P(x): </m> 8 is prime, and <m>Q(x): x^3=17</m>.
+A quick check shows that the hypothesis is false, so the result is vacuous.
+Of course we need to explain this to the reader in our proof otherwise its not a proof. It is safe to assume (in the context of writing a proof) that the reader knows their truth-tables. We don't have to explain everything in every proof.
+</p>
+<proof>
+<p>
+  Since <m>8=2\times4</m> it is not prime, the hypothesis is false and thus the implications is always true.
+</p>
+</proof>
+<p>
+  Now providing the reader knows what a prime number is, and that they recall the truth-table of the implication, then we have clearly demonstrated that the hypothesis is false and so the implication must be true. Thus the reader is now convinced, and all is good.
+</p>
+<aside>
+  <title>Prime number?</title>
+  <p>
+  Now the authors are being a little bit sloppy here <mdash /> we have assumed that the reader knows the definition of <term>prime</term>. While this is quite a basic notion of number, this author has been surprised by the very non-standard definitions of <term>prime number</term> that some students have been taught at school. Consequently we'll define prime numbers carefully in the next section.
+</p>
+</aside>
+
+<p>
+This is an example of a vacuous proof <mdash/> it is true because the hypothesis is always false.
+Notice that we cannot use modus ponens with such an implication because the hypothesis will never be true; the implication is true but in a rather useless way.
+</p>
+
+<p>
+  Despite this being a vacuous proof, we can learn something useful from how it is formatted.
+  It is customary to tell the reader <q>the proof starts here</q> and <q>the proof finishes there</q>, so that they know that all the necessary logic and mathematics is contained within that chunk of text.
+  Typically we'll start a proof by writing <q>Proof:</q> (maybe underlined) and then finish it with a little square <q><m>\square</m></q>.
+  The little square denotes <q>End of proof</q> or <q>QED</q> = <q>quod erat demonstrandum</q> = <q>which was to be demonstrated</q>.
+  It is perhaps a little pompous to write <q>QED</q> for such a little proof, so it is far more typical to see the little square.
+  Some texts will use a little diamond <q><m>\blacklozenge</m></q> or <q><m>\lozenge</m></q>, or a little filled in square <q><m>\blacksquare</m></q>. Some online-texts will simply enclose the whole proof in a box. In the HTML version of this text we'll enclose the proof in a box and also end it with a little square, while the PDF version of the text will simply have a little square.
+</p>
+
+<p>Let's look at another example.</p>
+<proposition>
+  <statement><p>
+ Let <m>n \in \mathbb{Z}</m>. If <m>n^2  \lt  0</m> then <m>n^3 \gt 8</m>.
+</p></statement>
+</proposition>
+<p>
+  Before writing anything down we should really read the hypothesis and conclusion very carefully.
+Notice that the hypothesis is saying something false.
+We know that the square of a number cannot be negative (we stated this as <xref ref="fact-square-nonneg"/>), so the hypothesis is false.
+</p>
+<proof>
+<p>
+ The square of any real number is not negative; since the hypothesis is false, the statement
+  is true.
+</p>
+</proof>
+<p>
+The authors made an assumption about our reader in that proof <mdash /> we've assumed that the reader knows <xref ref="fact-square-nonneg"/> well and so doesn't need to be reminded of it in the proof. We could choose to make this more explicit depending on our audience and the context. If you are in doubt as to what your readers know, you should put in more details.
+</p>
+<proof><title>A slightly more explicit proof</title>
+<p>
+  By <xref ref="fact-square-nonneg"/> we know that the square of any real number is not negative. Since the hypothesis is false, the statement is true.
+</p>
+</proof>
+
+
+<p>
+  There are related (and similarly quite useless) results which come from the conclusion being true independent of the hypothesis.
+  For example:
+</p>
+<proposition>
+  <statement><p>
+ Let <m>x \in \mathbb{R}</m>. If <m>x \lt 3</m> then <m>17</m> is prime.
+</p></statement>
+<proof>
+<p>
+ Since 17 is a prime number the conclusion is always true. Hence the statement is true.
+</p>
+</proof>
+</proposition>
+<aside><title>Primes and sieves</title>
+<p>
+Here it would be sufficient to show that 17 is not divisible by 2,3 and 5. More generally to show that a number <m>n</m> is prime it suffices to show that it is not divisible by any prime smaller than <m>\sqrt{n}</m> <mdash /> this is (essentially) the sieve of Eratosthenese. Eratosthenese was also the first person to calculate the circumference of the Earth, invented the leap-day, was the chief librarian at the Library of Alexandria, and invented the study of geography! There are now much more efficient ways for large numbers and a quick bit of search-engineing will direct you to some of them. Anyway, a quick bit of arithmetic gives us <m>17=8 \times2+1 = 5\times 3 + 2 = 3 \times 5 +2</m>, so by Euclidean division (remember <xref ref="fact-euc-div"/>), 17 is not divisible by 2, 3 or 5 and hence must be prime.
+</p>
+</aside>
+<p>
+  This is an example of a trivial proof.
+  We could put in more details to prove that 17 really is prime
+  but we are going to assume that our reader knows their times-tables and the first few primes.
+  Notice that since the conclusion is always true, we cannot use modus tollens with this result.
+  Again, the result is true but in a useless way.
+</p>
+
+<p>Here is another one.</p>
+<proposition>
+  <statement><p>
+ Let <m>x \in \mathbb{R}</m>. If <m>x \lt 0</m> then <m>x^2+1  \gt  0</m>.
+</p></statement>
+</proposition>
+
+<p>
+  So now this looks a little harder but we can again look at this statement and see what is going on. The square of any number is always bigger or equal to zero (again <xref ref="fact-square-nonneg"/> is lurking here), so if we add 1 to it then it is definitely bigger than 0. We just need to translate this into mathematical language: Take any real number. Its square is bigger or equal to zero, so when we add 1, it is strictly bigger than 0.
+</p>
+<proof>
+<p>
+ Let <m>x\in\mathbb{R}</m>. Then <m>x^2 \geq 0</m>. Hence <m>x^2+1 \geq 1  \gt  0</m>. Since the conclusion is always true, the statement is always true.
+</p>
+</proof>
+
+<p>
+  Enough with the vacuous trivialities, it is high time we looked at some real results.
+</p>
+</section>
+
+<section><title>Direct proofs</title>
+<p>
+  A lot of the examples we will see shortly will involve even and odd numbers. Let us define these
+formally so we have a clear and solid base for our proofs.
+</p>
+
+<definition>
+<statement><p>
+  An integer <m>n</m> is <term>even</term> if <m>n=2k</m> for some <m>k \in \mathbb{Z}</m>.
+</p></statement>
+</definition>
+<p>
+So since <m>14=2\times 7</m> and <m>7 \in \mathbb{Z}</m>, we know that <m>14</m> is even. Similarly <m>-22 = 2 \times (-11)</m> and <m>(-11) \in \mathbb{Z}</m>, so <m>-22</m> is even.
+</p>
+<aside>
+  <title>0 is even</title>
+  <p>This author has encountered students who  were taught that <m>0</m> is neither even nor odd <mdash /> this is false. Since <m>0 = 2 \times 0</m> and <m>0 \in \mathbb{Z}</m>, it follows that <m>0</m> is most definitely even.
+</p>
+</aside>
+
+<p>When we first encounter <q>even</q> we learn that a number that is not even is <q>odd</q>.
+At that time we have not yet encountered fractions or reals, so implicitly we thought all numbers were integers.
+But we know about rationals and reals (and maybe even complex numbers), so we should define odd numbers a little more carefully.
+</p>
+<definition>
+<statement><p>
+  An integer <m>n</m> is <term>odd</term> if <m>n=2\ell+1</m> for some <m>\ell \in \mathbb{Z}</m>.
+</p></statement>
+</definition>
+<p>
+Since <m>13=2\times6+1</m> and <m>6\in\mathbb{Z}</m> we know that 13 is odd. Similarly, <m>-21</m> is odd because <m>-21 = 2\times(-11)+1</m> and <m>-11 \in \mathbb{Z}</m>.
+</p>
+
+<p>
+  We should make a few observations about definitions before we move on to prove something.
+<dl>
+<li>
+  <title>The word <q>If</q></title>
+  <p>
+  Notice that in both definitions we use the word <q>if</q> when we really mean <q>if and only if</q>.
+  If a number <m>n</m> is even then it can be written as <m>n=2k</m> for some integer <m>k</m>.
+  AND if we can write <m>n=2\ell</m> for some integer <m>\ell</m>, then we say that <m>n</m> is even.
+  This becomes quite cumbersome, so it is convention that we write <q>if</q> in this context in definitions instead of writing <q>if and only if</q>.
+  We can safely assume that our reader knows this convention.
+</p>
+</li>
+<li>
+  <title>Find it easily</title>
+  <p>
+   Also we should make sure our definition is clear on the page.
+  We declare it with <q>Definition:</q>!
+  It is poor writing to hide important definitions inside the middle of an otherwise undistinguished paragraph (though this does happen from time to time).
+  Some writers will put the key word being defined in inverted commas, or italics, or bold or underline, to further highlight it.
+  If the definition is of an important object or property, then the reader should be able to find it and read it very easily.
+</p>
+</li>
+<li>
+  <title>Number it</title>
+  <p>
+   We have numbered<fn>
+   Assigning numbers to results, lemmas, theorems and so on is standard practice in mathematical writing.
+   Unfortunately the topic of numbering equations is much less settled.
+   This author has gotten into some strongly worded <q>discussions</q> with their coauthors on exactly this topic.
+   Some authors like to number all equations, some like to only number the equations that get referenced inside the same document, and some like to number only the important equations.
+   See <url href="http://www.ai.mit.edu/courses/6.899/papers/mermin.pdf" visual="www.ai.mit.edu/courses/6.899/papers/mermin.pdf">these</url> <url href="http://www.ams.org/notices/199508/hwang.pdf" visual="www.ams.org/notices/199508/hwang.pdf">papers</url> for an good discussion of numbering, Samaritans, Fisher, Occam and Fisher-Occam.
+   It is also a good illustration of how mathematicians like a good argument over tiny details.
+  </fn>
+ the definition so that we can refer to it easily (if necessary).
+ </p>
+</li>
+<li>
+  <title><q>For some</q> is coming</title>
+  <p>
+  We have also used the phrase <q>for some</q> in both definitions.
+  We haven't yet covered quantifiers in any sort of detail, but we will do so in <xref ref="ch-quantifiers"/> after a little more logic and some more proofs.
+</p>
+</li>
+</dl>
+</p>
+
+<definition>
+<statement><p>
+  We say that two integers have the <term>same parity</term> if they are both even or they are both odd.
+  Otherwise we say that the numbers have <term>opposite parities</term>.
+</p></statement>
+</definition>
+
+<p>For a little more practice with definitions, lets extend the idea of <q>evenness</q> (being divisible by two):
+</p>
+<definition xml:id="def-divisible">
+<statement><p>
+  Let <m>n</m> and <m>k</m> be integers.
+  We say that <m>k</m> <term>divides</term> <m>n</m> if we can find an integer <m>\ell</m> so that <m>n=\ell k</m>.
+  In this case we write <m>k \mid n</m> and say that <m>k</m> is a <term>divisor</term> of <m>n</m> and that <m>n</m> is a <term>multiple</term> of <m>k</m>.
+</p></statement>
+</definition>
+<p>
+There is nothing in this definition that you haven't seen before (we hope), but it is worth looking at its structure since it is very typical.
+<ul>
+<li> We start by defining the objects and symbols in our definition (this will necessarily build on previous definitions).
+</li>
+<li> We then define our main property <term>divides</term>.
+</li>
+<li> We follow up with some additional properties related to the main one.
+</li>
+<li> We have also used <q>if</q> in the definition in the way that we highlighted previously <mdash/> we really mean <q>if and only if</q>.
+</li>
+</ul>
+</p>
+
+<p>
+  Finally, lets do one more definition related to divisibility <mdash /> primes.
+</p>
+<definition xml:id="def-prime">
+  <statement>
+    <p>
+      Let <m>n</m> be a natural number strictly greater than one. We say that <m>n</m> is <term>prime</term> if it cannot be written as the product of two smaller natural numbers.
+      Equivalently <m>n</m> is prime when the only natural numbers that divide it are are 1 and itself.
+    </p>
+    <p>
+      If a natural number strictly greater than 1 is not prime then we say that it is <term>composite</term>. Finally, the number 1 is neither prime nor composite.
+    </p>
+  </statement>
+</definition>
+<aside><title>Primality of 1</title>
+<p>The primality of the number 1 has not always been as clear as it is today. Indeed, many mathematicians in the 19th century considered 1 to be prime and there are lists of prime-numbers published as late as the 1950's that have 1 as the first prime. Today, however, mathematicians treat 1 as a <term>unit</term> <mdash /> a special case that is neither prime nor composite. One very good reason for doing so is that a great many results about prime numbers becomes substantially simpler and cleaner to state if 1 is not prime.
+</p>
+<p>
+  The interested reader can search engine their way to some interesting articles on this topic including <url href="https://cs.uwaterloo.ca/journals/JIS/VOL15/Caldwell2/cald6.html" visual="cs.uwaterloo.ca/journals/JIS/VOL15/Caldwell2/cald6.html">this one</url>.
+</p>
+</aside>
+<remark>
+  <title>The importance of being strict or equal</title>
+<p>
+ Notice in the above definition the emphasis we have placed on <em>strictly greater than one</em>.
+ We really want the reader to realise that we mean <q><m>\gt</m></q> and not <q><m>\geq</m></q>.
+ In general, when writing inequalities in words (rather than symbols) it is a good idea to be very explicit so as to avoid possible confusion:
+ <ul>
+   <li><m>a\lt b</m>: <q><m>a</m> <em>strictly</em> less than <m>b</m></q></li>
+   <li><m>a\leq b</m>: <q><m>a</m> less than <em>or equal to</em> <m>b</m></q></li>
+ </ul>
+If we were to write <q><m>a</m> less than <m>b</m></q> we may leave the reader confused as to whether or not <m>a</m> is allowed to be equal to <m>b</m>.
+</p>
+</remark>
+
+<p>Let us go back to one of our first examples, and now that we have the right definitions and have done the required logic, we can prove it.
+</p>
+<proposition xml:id="res-first-proof">
+  <statement><p>
+  If <m>n</m> is even then <m>n^2</m> is even.
+</p></statement>
+</proposition>
+<p>
+Lets think through our truth table again:
+<ul>
+<li> If the hypothesis is false, the implication is true <mdash/> no work required.
+</li>
+<li> If the hypothesis is true, then the implication will be true or false depending on the truth value of the conclusion <mdash/> work required!
+</li>
+</ul>
+Just as we will many many times in the future, <em>we start by assuming the hypothesis is true</em>.
+</p>
+<blockquote>
+<p>
+  Assume <m>n</m> is an even number.
+</p>
+</blockquote>
+<p>
+What are we trying to get to?
+</p>
+
+
+<blockquote>
+<p>
+  <m>n^2</m> is an even number.
+</p>
+</blockquote>
+
+<aside>
+  <title>Know your definitions</title>
+  <p>
+    It is very important to know definitions precisely. We cannot prove involving an object or property unless we can rigorously and carefully define it. The authors will likely nag you again and again about this.
+  </p>
+  <p>
+    If you have trouble memorising definitions, then we recommend you search-engine your way to some memorisation tips and tricks. You could also nag the authors back about producing nice auxillary materials that, say, could be easily reviewed on flash-cards or a phone.
+  </p>
+</aside>
+
+<p>
+At this point we know where we will start and where we need to end up, so a good next step is to flesh out what both the hypothesis and conclusion mean.
+<ul>
+<li> If <m>n</m> is an even number then we can write it as <m>n=2k</m>, where <m>k</m> is an integer.
+</li>
+<li> If <m>n^2</m> is an even number then we can write it as <m>n^2=2\ell</m>, where <m>\ell</m> is an integer.
+</li>
+</ul>
+</p>
+<remark xml:id="rem-not-equal"><title>Not all even numbers are equal</title>
+<p>
+  Notice here that our result involves two even numbers, <m>n</m> and <m>n^2</m>. When I have invoked the definition of even, I have been careful to write <m>n=2k</m> and <m>n^2=2\ell</m> using <em>different symbols</em>. This is important because it helps us to avoid making any <em>additional</em> assumptions about those numbers. Maybe we'll end up showing they are the same, and maybe we won't.
+</p>
+<p>
+  If we were to <em>accidentally</em> use the same symbols (and the authors know you won't do this after this warning), then we would have
+  <ul>
+    <li><m>n</m> is even, so <m>n=2k</m></li>
+    <li><m>n^2</m> is even, so <m>n^2=2k</m></li>
+    <li>But then <m>n^2=n</m> which means <m>n^2-n = 0</m></li>
+    <li>Factoring this gives <m>n(n-1)=0</m> and so <m>n=0,1</m></li>
+  </ul>
+  So by reusing the symbol <q><m>k</m></q>, we have inadvertently assumed that <m>n=0,1</m>, which is definitely not the result as stated.
+</p>
+</remark>
+
+<p>Now since we know that <m>n=2k</m>, we also know that <m>n^2=(2k)(2k)=4k^2</m>.
+From this we know <m>n^2=4k^2 = 2(2k^2)</m>.
+Since <m>k</m> is an integer, <m>k^2</m> is an integer and <m>2k^2</m> is an intger.
+So we've shown that <m>n^2</m> can be written as twice and integer.
+In other words, we shown that it is even <mdash/> exactly what we needed to do.
+</p>
+
+
+<p>But we're not done.
+We have (in our work above) worked out <alert>how</alert> to prove our result, but we still need to write it up nicely.
+In this way proving a result really breaks into two parts
+<dl>
+<li>
+  <title>Scratch work</title>
+  <p>
+   Scratch work or proof-strategy or exploration or <ellipsis/> <mdash/> this is typically the difficult part, trying to work out what is going on, what does the hypothesis mean, what does the conclusion mean, how do we get from one to the other.
+  What is the idea or path of the proof.
+</p>
+</li>
+<li>
+  <title>Write-up</title>
+  <p>
+  Once we have all the ideas and parts we still need to write things up nicely.
+  This is typically easier than the scratch work, but it is non-trivial.
+  We'll still need to work to make sure our presentation is clear, precise and easy to follow.
+</p>
+</li>
+</dl>
+Let's write more nicely (and quite explicitly) with dot-points.
+</p>
+<proof>
+<p>
+  <ul>
+<li> Assume <m>n</m> is even.
+</li>
+<li> So we can write <m>n=2k</m>, where <m>k \in \mathbb{Z}</m>.
+</li>
+<li> But now, <m>n^2 = 4k^2</m>.
+</li>
+<li> This in turn implies that <m>n^2=2(2k^2)</m>.
+</li>
+<li> Since <m>2k^2</m> is an integer, it follows that <m>n^2</m> is even.
+</li>
+</ul>
+</p>
+</proof>
+
+<p>
+Notice that we don't prove that <m>2k^2 \in \mathbb{Z}</m>, nor do we have to explain basic facts about multiplication (as stated in <xref ref="ax-ints"/>);  it is sufficiently obvious<fn>Well known to those that know it well, as this author's PhD supervisor says.</fn> that we can assume the reader will follow. Recall that back at the start of this chapter we warned you that we would make such assumptions about our (hypothetical) reader when writing our proofs.
+</p>
+
+<p>Also notice the structure of the proof.
+<ul>
+<li> <m>P</m> is true <mdash/> where <m>P</m> is <q><m>n</m> is even</q>.
+</li>
+<li><p> <m>P \implies P_1</m> is true <mdash/> where <m>P_1</m> is <q><m>n=2k</m> for some <m>k\in\mathbb{Z}</m></q>.
+</p>
+<p>This follows from the definition of even.</p>
+</li>
+<li><p> <m>P_1 \implies P_2</m> is true <mdash/> where <m>P_2</m> is <q><m>n^2=4k^2</m></q>.</p>
+  <p>This is a basic fact about multiplication. To be more specific, <q>if <m>a=b</m> then <m>ac=bc</m></q>.
+</p>
+</li>
+<li><p><m>P_2 \implies P_3</m> is true <mdash/> where <m>P_3</m> is <q><m>n^2</m> is twice an integer</q>.</p>
+<p>We are really using the fact that <m>4=2\times2</m> and that multiplication is associative; we can expect the reader to understand this<fn>
+  Or they can quickly recall (or search-engine towards recalling) that the associativity of multiplication is just the fact that <m>a \times (b \times c) = (a\times b)\times c</m>.
+</fn>.
+</p>
+</li>
+<li><p><m>P_3 \implies Q</m> is true.</p>
+<p>This is just the definition of even again.</p>
+</li>
+</ul>
+So we have really shown
+<md>
+<mrow>
+  (P \implies P_1) \land (P_1 \implies P_2) \land (P_2 \implies P_3) \land (P_3 \implies Q)
+</mrow>
+</md>
+And since we assume <m>P</m> is true, <m>P_1</m> is true (modus ponens is our friend).
+Since <m>P_1</m> is true, <m>P_2</m> is true.
+And so forth until we conclude that <m>Q</m> is true.
+Hence we have shown that when <m>P</m> is true, we must have that <m>Q</m> is true.
+</p>
+<p>
+This sort of proof in which we start by assuming the hypothesis is true and then work towards the conclusion is called a <term>direct proof</term>.
+</p>
+
+<p>Now of course, when we actually prove something we don't go into this level of lurid detail.
+But for a first proof its not a bad idea to really see what is going.
+Let's write the proof more compactly, and a little more naturally:
+</p>
+<proof>
+<p>
+  Assume <m>n</m> is even.
+  Hence we can write <m>n=2k</m> where <m>k \in \mathbb{Z}</m>.
+  Then <m>n^2=4k^2=2(2k^2)</m>. Since <m>2k^2 \in \mathbb{Z}</m> it follows that <m>n^2</m> is even.
+</p></proof>
+<p>
+You can see there are some standard phrases that get used again and again
+<ul>
+<li> Hence<ellipsis/>
+</li>
+<li> It follows that<ellipsis/>
+</li>
+<li> So<ellipsis/>
+</li>
+<li> This implies that<ellipsis/>
+</li>
+<li> We can now write<ellipsis/>
+</li>
+</ul>
+These serve to make the proof more legible and flow a little more naturally.
+</p>
+
+<proposition>
+  <statement><p>
+ Let <m>n</m> be an integer. If <m>n</m> is odd then <m>2n+7</m> is also odd.
+</p></statement>
+</proposition>
+<p>
+We don't leap into the proof; we start with scratch work.
+<ul>
+<li> Assume the hypothesis is true (if it is false, there is nothing to be done).
+</li>
+<li> The hypothesis means that <m>n=2k+1</m> for some integer <m>k</m>.
+</li>
+<li> The conclusion means that <m>2n+7 = 2\ell+1</m> for some <m>\ell \in \mathbb{Z}</m>.
+</li>
+<li> But if <m>n=2k+1</m>, then <m>2n+7 = 2(2k+1)+7 = 4k+9 = 2(2k+4)+1</m>.
+</li>
+<li> Since <m>2k+4 \in \mathbb{Z}</m>, <m>2n+7</m> is odd.
+</li>
+</ul>
+So we've got the idea, lets write it up.
+</p>
+
+<proof>
+<p>
+  Assume that <m>n</m> is an odd integer and so <m>n=2k+1</m> for some <m>k \in \mathbb{Z}</m>. So
+  <md>
+<mrow>
+  2n + 7 &amp;= 2(2k+1)+7 = 4k+9 = 2(2k+4)+1.
+  </mrow>
+</md>
+  Since <m>k</m> is an integer, <m>2k+4</m> is also an integer and so <m>2n+7</m> is odd.
+</p></proof>
+
+<p>Another one <mdash/> this one for you </p>
+
+<proposition xml:id="res_n_odd_nsquare_odd">
+  <statement><p>
+  If <m>n</m> is odd then <m>n^2</m> is odd.
+</p></statement>
+</proposition>
+<p>
+Do your scratch work before you write up the proof <mdash/> even if you see the way to prove it.
+Writing the scratch work really helps to formulate your ideas and makes writing out the proof much easier.
+</p>
+<proof>
+<p>
+  Assume that <m>n</m> is an odd integer and so <m>n=2k+1</m> for some <m>k \in \mathbb{Z}</m>. So
+  <md>
+<mrow>
+  n^2 = (2k+1)^2 = 4k^2+4k+1 = 2(2k^2+2k)
+  </mrow>
+</md>
+  Since <m>k</m> is an integer, <m>2k^2+2k</m> is also an integer and so <m>n^2</m> is odd.
+</p></proof>
+</section>
+
+<section><title>Proofs of inequalities</title>
+<p>
+  Not all mathematics involves integers, nor do all proofs involve equalities.
+  So we should do a few examples of inequalities involving real numbers.
+  This isn't just for variety, but does illustrate an important point about how our scratch work can often be quite different in logical structure from the final proof.
+</p>
+
+<proposition>
+  <statement>
+    <p>
+      Let <m>x,y\in \mathbb{R}</m>. Then <m>x^2+y^2 \geq 2xy</m>.
+    </p>
+  </statement>
+</proposition>
+  <p>
+    As always we start with some scratch work.
+    We don't know too many facts about inequalities <mdash /> well, we do, but we haven't stated too many of them as facts or axioms in this text.
+    We do know that <m>x^2 \geq 0</m> no matter which real number we take for <m>x</m> <mdash /> this was stated as <xref ref="fact-square-nonneg"/>.
+    So it would suffice to rearrange our inequality to make it look like the square of something.
+    <me>
+        x^2 + y^2 - 2xy \geq 0
+    </me>
+    But this is precisely <m>(x-y)^2 \geq 0</m>, which follows from the fact that we are squaring something.
+  </p>
+  <p>
+    So we see a way to prove things.
+    But we should be very careful of the logical order here <mdash /> how does the truth flow from one statement to another.
+    Look at the structure of what we have done above.
+    <ul>
+      <li>
+        <p>
+          We started from the conclusion <m>x^2+y^2 \geq 2xy</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          We finished at the fact that the square of any real number is non-negative.
+        </p>
+      </li>
+    </ul>
+    This order is <alert>not correct</alert>.
+    We know that we must finish at the conclusion, not start at it.
+    But we can reorder our work to give it the correct logical flow:
+    <ul>
+      <li>
+        <p>
+          Start from the fact that the square of a real number is non-negative.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(x-y)</m> is a real, so its square is non-negative.
+        </p>
+      </li>
+      <li>
+        <p>
+          Expand this expression and rearrange it
+        </p>
+      </li>
+      <li>
+        <p>
+          Arrive at the conclusion.
+        </p>
+      </li>
+    </ul>
+  </p>
+  <p>
+    This is quite common when we prove inequalities; the logical flow in scratch work is often the reverse of what is required for the proof.
+    We typically start at the inequality we want to prove and then work our way to something we know <mdash /> a fact, an axiom, a previous result or theorem.
+    To then present the proof we must start at the axiom, fact or theorem, and then work our way to the result.
+    We can now write things up nicely:
+  </p>
+<proof>
+  <p>
+    Let <m>x,y</m> be real numbers.
+    Hence <m>(x-y)^2 \geq 0</m>.
+    Expanding this gives <m>x^2-2xy+y^2 \geq 0</m>.
+    This can then be rewritten as <m>x^2+y^2 \geq 2xy</m> and so gives the required result.
+  </p>
+</proof>
+
+<p>
+  That was very illustrative (which is, of course, why we include this topic).
+  Our scratch work can look very different from the final write up of the proof.
+  We should do a couple more, but first a useful fact about inequalities, multiplication and division.
+</p>
+
+<fact>
+  <statement>
+    <p>
+    Let <m>a,b,c \in \mathbb{R}</m> with <m>a \geq b</m>.
+    <ul>
+      <li>
+        <p>
+          If <m>c \gt 0</m> then <m>ac \geq bc</m> and <m>a/c \geq b/c</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          If <m>c \lt 0</m> then <m>ac \leq bc</m> and <m>a/c \leq b/c</m>.
+        </p>
+      </li>
+    </ul>
+    </p>
+  </statement>
+</fact>
+<p>
+  In proofs we will often need to combine inequalities together to
+  make new inequalities. Very frequently we will make use of the fact
+  that if <m>a \gt b</m> and <m>b \gt c</m> then we know that <m>a \gt
+  c</m>. This is the <term>transitivity</term> of <q><m>\gt</m></q> (see
+  <xref ref="sec_prop_rel"/>). For example, if we know <m>a \gt
+  b \gt 0</m> and <m>c \gt d \gt 0</m>, then by multiplying the first
+  inequality by <m>c</m> we get <m> ac \gt bc</m>.  Similarly,
+  multiplying the second inequality by <m>b</m> we get <m> bc \gt bd
+  </m>.  These two inequalities together imply that <m>ac \gt
+  bd</m>. 
+</p>
+
+
+<proposition>
+  <statement>
+    <p>
+      Let <m>x \in \mathbb{R}</m>. If <m>x \geq 4</m> then <m>x^2-3x+7 \geq 11</m>.
+    </p>
+  </statement>
+</proposition>
+<p>
+  This one isn't too bad and we should break things into pieces.
+  <ul>
+    <li>
+      <p>
+        We know that <m>x \geq 4 \gt 0</m>, so then multiplying this
+        by <m>x</m> gives us <m>x^2 \geq 4x</m>, and similarly,
+        multiplying it by <m>4</m> gives us <m>4x \gt 16</m>. Hence
+        Hence we know that <m>x^2 \geq 16</m>.
+      </p>
+    </li>
+    <li>
+      <p>
+        Similarly, since we know <m>x \geq 4</m> we know that <m>3x \geq 12</m>.
+        Ah <mdash />now there is a problem <mdash /> we about to try to take the difference of inequalities. Bad.
+      </p>
+    </li>
+    <li>
+      <p>
+        Instead, go back and write <m>x^2-3x = x(x-3)</m>.
+        Then since <m>x \geq 4, (x-3) \geq 1</m>.	
+        Hence <m>x^2-3x=x(x-3) \geq x</m>.
+	So, because <m>x \geq 4</m> we know that <m>x^2 -3x \geq 4</m>.
+      </p>
+    </li>
+    <li>
+      <p>
+	Adding <m>7</m> to both sides then gives us <m>x^2-3x+7 \geq 4+7 = 11</m>.
+      </p>
+    </li>
+  </ul>
+  We should now carefully check the flow of logic.
+  We do indeed start with the hypothesis <m>x \geq 4</m> and arrive at the conclusion.
+  The order is good!
+  Time to write it up.
+</p>
+<proof>
+  <p>
+    Let <m>x \geq 4</m> be a real number.
+    Then we know that <m>x-3 \geq 1</m>, and so <m>x(x-3) \geq 4</m>.
+    Thus <m>x(x-3)+7 = x^2-3x+7 \geq 11</m> as required.
+  </p>
+</proof>
+<p>
+    In this case the logical flow in our scratch work matched the flow required for the proof.
+    This is different from the previous example.
+    There is not a hard rule that holds for all results.
+    We need to be able to look at our scratch work, see the logical flow and determine how to translate that into a correct proof.
+</p>
+
+<p>
+  At the end of <xref ref="ch-moreproof"/> we'll prove the triangle
+  inequality. We can't do this just yet as it requires requires the
+  development of a bit little more logical machinery.
+</p>
+
+</section>
+
+
+<section><title>A quick visit to disproofs</title>
+<p>
+Lets look a little way ahead and think about how we might prove an implication to be false.
+Consider
+</p>
+<blockquote>
+<p>
+  If <m>n \in \mathbb{N}</m> then <m>2^n+1</m> is prime.
+</p></blockquote>
+
+<p>How is our theorem true <mdash/> the conclusion must be true every time the hypothesis is true.
+Hiding in this is that it must be true every single time the hypothesis is true.
+</p>
+
+<p>So how could our theorem be false?
+We need the hypothesis to be true while the conclusion is false.
+But to be more precise <mdash/> it only has to fail <alert>once</alert>.
+So lets explore a few values of <m>n</m>:
+<ul>
+<li> <m>n=1</m> then <m>2^n+1 = 2+1 = 3</m> which is prime.
+</li>
+<li> <m>n=2</m> then <m>2^n+1 = 4+1 = 5</m> which is prime.
+</li>
+<li> <m>n=3</m> then <m>2^n+1 = 8+1 = 9 = 3\times 3</m> which is not prime.
+</li>
+</ul>
+So since there is a value of <m>n</m> that makes the hypothesis true, but the conclusion false, the implication is false. We are hiding here the idea of <term>quantifiers</term>
+</p>
+<blockquote>
+<p>
+  For all <m>n</m>, <m>P(n)</m>
+</p></blockquote>
+<blockquote>
+<p>
+  There exists <m>n</m>, <m>P(n)</m>
+</p></blockquote>
+<p>
+We'll come back to these in <xref ref="ch-quantifiers"/>, but after we've done a little more logic.
+</p>
+
+</section>
+<xi:include href="../problems/03ex.ptx"/>
+
+</chapter>

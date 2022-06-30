@@ -1,0 +1,141 @@
+<exercise>
+<!-- source latex = 'Set of infinite sequences of integers is uncountable.tex' -->
+<!-- converted on 08/03/2022 at 15:02 -->
+<statement>
+<p>
+Prove or disprove: The set <m>\set{(a_1, a_2, a_3, \ldots): a_i \in\mathbb{Z}}</m> of infinite sequences of integers is
+countably infinite.
+</p>
+</statement>
+
+<hint>
+<p>
+<ul>
+<li>
+<p>
+ Any <m>x\in \mathbb{R}</m> can be written as <m>x_0.x_1x_2x_3x_4\dots</m> where <m>x_0\in \mathbb{Z}</m> and <m>x_i\in \set{0, 1, \dots, 9}</m> for <m>i\geq 0.</m> For example, if <m>x=3.141592\dots</m> then
+<md>
+<mrow>
+    x_0  \amp =3  \amp 
+    x_1  \amp =1  \amp 
+    x_2  \amp =4  \amp 
+    x_3  \amp =1 
+</mrow><mrow>
+    x_4  \amp = 5  \amp 
+    x_5  \amp = 9  \amp 
+    x_6  \amp = 2  \amp 
+    \cdots
+</mrow>
+</md>
+</p></li>
+<li>
+<p>
+ We need to be careful! Notice that <m>0.25000000\dots = 0.24999999\dots</m>.
+</p></li>
+</ul>
+</p>
+</hint>
+
+
+<solution>
+<p>
+<em>Claim:</em> The statement is not true.
+</p>
+<proof><title>Proof using decimals</title>
+  <p>
+    Let <m>\mathcal{A} = \set{(a_1, a_2, a_3, \ldots): a_i
+    \in\mathbb{Z}}</m>, and consider
+    <me>
+      \mathcal{B}=\set{(b_1, b_2, b_3, \dots): b_i\in \{0, 1, \dots,
+      9\} \text{ and} \not\exists k\in \mathbb{N} \text{ s.t. } b_n =
+      9 \,\forall \,n \gt k }\subset \mathcal{A}.
+    </me>
+    That is, infinite sequences of natural numbers from <m>0</m> to
+    <m>9</m> which do not end in infinitely many consecutive
+    <m>9</m>'s. We will first show that <m>\mathcal{B}</m> is
+    uncountable by constructing a bijection from <m>\mathcal{B}</m> to
+    <m>[0,1)</m>. Define <m>f: \mathcal{B}\to [0,1)</m> by <me>f((b_1,
+    b_2, b_3, b_4, b_5, \dots)) = 0.b_1b_2b_3b_4b_5\dots.</me> This
+    functions takes the <m>i^{th}</m> coordinate of <m>(b_1, b_2, b_3,
+    b_4, b_5, \dots)</m> and sends it to the <m>i^{th}</m> decimal
+    place following <m>0</m>. For example
+    <me>
+      f((1,2,3,4,5,6, \dots))= 0.123456\dots.
+    </me>
+</p>
+<p>
+  To see that <m>f</m> is injective, let <m>x= (x_1, x_2, x_3,
+  \dots)</m> and <m>y=(y_1, y_2, y_3, \dots)</m> be elements of
+  <m>\mathcal{B}</m> and suppose that <m>f(x) = f(y)</m>. Then
+  <me>
+    0.x_1x_2x_3\dots = 0.y_1y_2y_3\dots.
+  </me>
+  Since our sequence does not terminate in 9's, each real number in <m>[0,1)</m> has a unique decimal representation, and we must have
+<md>
+<mrow>
+    x_1  \amp = y_1  \amp 
+    x_2  \amp =y_2  \amp 
+    x_3  \amp = y_3  \amp  \cdots
+</mrow>
+</md>
+Therefore <m>x=y</m> and <m>f</m> is injective. It remains to show that <m>f</m> is surjective. Suppose <m>s\in [0,1)</m>. Then <m>s</m> takes the form
+<me>
+  0.s_1s_2s_3s_4s_5\dots
+</me>
+where <m>s_j\in \{0, 1, \dots, 9\}</m>. Since
+<me>
+  f((s_1, s_2, s_3, s_4, s_5, \dots)) = 0.s_1s_2s_3s_4s_5\dots
+</me>
+we have found an element of <m>\mathcal{B}</m> mapping to <m>s</m>, so
+<m>f</m> is surjective. Therefore, <m>|\mathcal{B}| = |[0,1)|</m>, so
+<m>\mathcal{B}</m> is uncountable. Since <m>\mathcal{B} \subset
+\mathcal{A}</m>, <m>\mathcal{A}</m> is uncountable as well.
+</p>
+</proof>
+
+<proof><title>Alternative proof</title>
+<p>
+We are going to prove this set is uncountable by showing that it has
+an uncountable subset. Let <m>\mathcal{A} = \set{(a_1, a_2, a_3,
+\ldots): a_i \in\mathbb{Z}}</m>, and let <m>\mathcal{C}=\{(c_1, c_2,
+c_3, \ldots): c_i \in\set{0,1}\}</m>. Then, we see that
+<m>\mathcal{C}\subset \mathcal{A}</m>. Now, we can show that
+<m>\mathcal{C}</m> is uncountable by finding a bijection from
+<m>\mathcal{C}</m> to <m>\mathcal{P}(\mathbb{N})</m>.
+</p>
+<p>
+We can define the bijection <m>f</m> as follows:
+</p>
+<p>
+<md>
+<mrow>
+f:\mathcal{C} \amp \rightarrow \mathcal{P}(\mathbb{N})
+</mrow><mrow>
+f(c_1, c_2, c_3, \ldots) \amp =\{ k\in\mathbb{N}: c_k=1 \}.
+</mrow>
+</md>
+for example,  <m>f(0,1,0,1,0,0,0,0,\ldots)=\{2,4\}</m>.
+</p>
+<p>
+We see that <m>f</m> is surjective since for any <m> X\subseteq\mathbb{N}</m>, we can construct the sequence <m>(x_1, x_2, x_3, \ldots)</m>, where <m>x_k=1</m> if <m>k\in X</m> and <m>0</m> otherwise. Then, <m>f(x_1, x_2, x_3,\ldots)=X</m>.
+</p>
+<p>
+  We also see that <m>f</m> is injective since if <m>(a_1, a_2, a_3,
+  \ldots)\neq (b_1, b_2, b_3, \ldots)</m>, then <m>\exists
+  m\in\mathbb{N}</m> such that <m>a_m=1</m> and <m>b_m=0</m>, in which
+  case <m>m\in f(a_1, a_2, a_3, \ldots)</m> and <m>m\notin f(b_1, b_2,
+  b_3, \ldots)</m>, or <m>a_m=0</m> and <m>b_m=1</m>, in which case
+  <m>m\notin f(a_1, a_2, a_3, \ldots)</m> and <m>m\in f(b_1, b_2, b_3,
+  \ldots)</m>. In both cases, we see <m> f(a_1, a_2, a_3, \ldots)\neq
+  f(b_1, b_2, b_3, \ldots)</m>. We conclude that <m>f</m> is a
+  bijection. Therefore we see that <m>|\mathcal{C}|=|
+  \mathcal{P}(\mathbb{N})|</m>, which means <m>\mathcal{C}</m> is
+  uncountable. Thus, <m>\mathcal{A}</m> is uncountable too.
+</p>
+</proof>
+
+<p>
+  Note: We can also use a diagonal argument directly to show that the set <m>\{(a_1, a_2, a_3, \ldots): a_i \in\mathbb Z\}</m> is uncountable.
+</p>
+</solution>
+</exercise>

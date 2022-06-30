@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<exercises xmlns:xi="http://www.w3.org/2001/XInclude">
+<xi:include href="ch06/3_divides_n_cube_minus_n_question.ptx"/>
+<xi:include href="ch06/k_divides_2n_plus_1_and_4n_square_plus_1_question.ptx"/>
+<xi:include href="ch06/a_square_plus_b_square_is_not_3_mod_4_question_with_quantifiers.ptx"/>
+<xi:include href="ch06/3_divides_a_square_plus_b_square_implies_3_divides_a_and_b_question.ptx"/>
+<xi:include href="ch06/converse_divisibility.ptx"/>
+<xi:include href="ch06/sum_functions_odd.ptx"/>
+<xi:include href="ch06/quant_mix_1.ptx"/>
+<xi:include href="ch06/quant_mix_2.ptx"/>
+<xi:include href="ch06/Quantifier_set_question_with_primes.ptx"/>
+<xi:include href="ch06/Quantifier_set_question.ptx"/>
+<xi:include href="ch06/quant_mix_3.ptx"/>
+<xi:include href="ch06/quant_mix_4.ptx"/>
+<xi:include href="ch06/type_A_type_B_functions_question_from_homework.ptx"/>
+<xi:include href="ch06/Negation_of_quantified_statements_question.ptx"/>
+<xi:include href="ch06/prove_or_disprove_quantified_statements_question.ptx"/>
+<xi:include href="ch06/linear_limit.ptx"/>
+<xi:include href="ch06/limit_question.ptx"/>
+<xi:include href="ch06/limit_1_on_n_squared.ptx"/>
+<xi:include href="ch06/sine_limit.ptx"/>
+<xi:include href="ch06/minus_1_to_the_n_plus_1_over_n_does_not_converge_to_0_question.ptx"/>
+<xi:include href="ch06/sequence_limit.ptx"/>
+<xi:include href="ch06/infinite_limits.ptx"/>
+<xi:include href="ch06/bounded_sequences.ptx"/>
+<xi:include href="ch06/unbounded_incr_seq_goes_to_infinity.ptx"/>
+
+<xi:include href="ch06/Discrete_metric_sequence_convergence_question_to_push.ptx"/>
+
+</exercises>
