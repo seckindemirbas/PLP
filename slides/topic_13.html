@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-30T16:07:00-07:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>PLP - 13</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reset.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/theme/black.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/plugin/math/math.js"></script><style>
+ul {
+  display: block !important;
+}
+.sbsrow {
+  display: flex; !important;
+}
+.reveal img {
+  border: 0.5px !important;
+  border-radius: 2px 10px 2px;
+  padding: 4px;
+}
+.definition,.theorem,.activity {
+  border-width: 0.5px;
+  border-style: solid;
+  border-radius: 2px 10px 2px;
+  padding: 1%;
+  margin-bottom: 2em;
+}
+.definition {
+  background: #00608010;
+}
+.theorem {
+  background: #ff000010;
+}
+.proof {
+  background: #ffffff90;
+}
+.activity {
+  background: #60800010;
+}
+dfn {
+  font-weight: bold;
+}
+.pretext-content ol.no-marker,
+.pretext-content ul.no-marker,
+.pretext-content li.no-marker {
+    list-style-type: none;
+}
+
+.pretext-content ol.decimal {
+    list-style-type: decimal;
+}
+.pretext-content ol.lower-alpha {
+    list-style-type: lower-alpha;
+}
+.pretext-content ol.upper-alpha {
+    list-style-type: upper-alpha;
+}
+.pretext-content ol.lower-roman {
+    list-style-type: lower-roman;
+}
+.pretext-content ol.upper-roman {
+    list-style-type: upper-roman;
+}
+.pretext-content ul.disc {
+    list-style-type: disc;
+}
+.pretext-content ul.square {
+    list-style-type: square;
+}
+.pretext-content ul.circle {
+    list-style-type: circle;
+}
+.pretext-content ol.no-marker,
+.pretext-content ul.no-marker {
+    list-style-type: none;
+}
+.pretext-content .cols1 li,
+.pretext-content .cols2 li,
+.pretext-content .cols3 li,
+.pretext-content .cols4 li,
+.pretext-content .cols5 li,
+.pretext-content .cols6 li {
+    float: left;
+    padding-right:2em;
+}
+          </style>
+
+                <link href="plp_styling.css" rel="stylesheet"/>
+                </head>
+<body><div class="reveal pretext-content">
+<div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(  \newcommand{\ds}{\displaystyle}
+  \newcommand{\es}{ {\varnothing}}
+\newcommand{\st}{ \;\text{s.t.}\; }
+\newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+\newcommand{\set}[1]{ \left\{#1\right\} }
+  \renewcommand{\neg}{\sim}
+  \renewcommand{\text}[1]{\mathsf{\mbox{#1}}}
+  \DeclareMathOperator{\gcd}{gcd}
+  \DeclareMathOperator{\lcm}{lcm}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="slides">
+<section><section><h1>PLP - 13</h1>
+<h2>Topic 13—Quantifiers</h2>
+<table>
+<tr><th align="center" style="border-bottom: 0px;">Demirbaş &amp; Rechnitzer</th></tr>
+<tr><td align="center" style="border-bottom: 0px;"></td></tr>
+<tr><td align="center"></td></tr>
+</table></section></section><section><section><h1>Quantifiers</h1></section><section><h3>Back to open sentences</h3>
+<div align="left"> <blockquote class="blockquote" id="blockquote-1"><p>The number <span class="process-math">\(x^2\)</span> is non-negative</p></blockquote> <p>This is an <em class="emphasis">open sentence</em>. One can prove this to be true for <em class="emphasis">all real <span class="process-math">\(x\)</span></em>.</p> <blockquote class="blockquote" id="blockquote-2"><p>For every <span class="process-math">\(x \in \mathbb{R}\text{,}\)</span> the number <span class="process-math">\(x^2\)</span> is non-negative.</p></blockquote> <p><ul id="p-4" class="disc">
+<li>The extra text “<em class="emphasis">For every <span class="process-math">\(x \in \mathbb{R}\)</span></em>” adds scope.</li>
+<li>It is an example of a <dfn class="terminology">quantifier</dfn>
+</li>
+<li>Adding quantifiers to an <dfn class="terminology">open sentence</dfn> turns it into a <dfn class="terminology">statement</dfn>
+</li>
+</ul></p>
+</div></section><section><h3>An example</h3>
+<div align="left"> <p>Consider the open sentence “<span class="process-math">\(P(x): x^2 -5x +4 = 0\)</span>” — when is it true?<ul class="disc">
+<li>
+<span class="process-math">\(P(0)\)</span> is false</li>
+<li>
+<span class="process-math">\(P(1)\)</span> is true</li>
+<li>
+<span class="process-math">\(P(2)\)</span> is false, and so on</li>
+</ul>To decide truth values we need to decide <em class="emphasis">from what set do we take <span class="process-math">\(x\)</span></em>?</p> <p>Eg. consider the truth values of <span class="process-math">\(P(x)\)</span> over the set <span class="process-math">\(S = \set{0,1,2,3,4}\text{.}\)</span><div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+P(1), P(4) \text{ are true, but } P(0), P(2), P(3) \text{ are false}
+\end{equation*}
+</div>Summarise this as<ul class="disc">
+<li>
+<span class="process-math">\(P(x)\)</span> is true <em class="emphasis">for some</em> <span class="process-math">\(x \in S\)</span>
+</li>
+<li>
+<span class="process-math">\(P(x)\)</span> is not true <em class="emphasis">for all</em> <span class="process-math">\(x \in S\)</span>
+</li>
+</ul>the extra text “<em class="emphasis">for some</em>” and “<em class="emphasis">for all</em>” are <dfn class="terminology">quantifiers</dfn>.</p>
+</div></section><section><h3>Universal and existential</h3>
+<div align="left"> <div class="boxed definition">
+<h3>Definition:
+	</h3>
+<p><ul id="p-7" class="disc">
+<li>
+<p>The <dfn class="terminology">universal quantifier</dfn> is denoted <span class="process-math">\(\forall\)</span> and is  read as “for all” or “for every”.</p>
+<p>“<span class="process-math">\(\forall x\in A, P(x)\)</span>” is true provided <span class="process-math">\(P(x)\)</span> is true for <em class="emphasis">every</em> <span class="process-math">\(x\in A\)</span> and otherwise false.</p>
+</li>
+<li>
+<p>The <dfn class="terminology">existential quantifier</dfn> is denoted <span class="process-math">\(\exists\)</span> and is read as “there exists”.</p>
+<p>“<span class="process-math">\(\exists x\in A \text{ so that } P(x)\)</span>” is true when <em class="emphasis">at least one</em>  <span class="process-math">\(x\in A\)</span> makes <span class="process-math">\(P(x)\)</span> true, and otherwise false.</p>
+</li>
+</ul></p>
+</div> <p>So our example becomes<div class="displaymath process-math" data-contains-math-knowls="" id="md-1">
+\begin{align*}
+\exists x \in S \st x^2-5x+4=0 \amp\amp \text{true}\\
+\forall x \in S, x^2-5x+4=0 \amp\amp \text{false}
+\end{align*}
+</div>The “<em class="emphasis">s.t.</em>” and “<em class="emphasis">,</em>”  separate the quantifier and open sentence — helps the <dfn class="terminology">reader</dfn></p>
+</div></section><section><h3>Examples — true</h3>
+<div align="left"> <p><ul id="p-13" class="disc"><li>
+<p><span class="process-math">\(\exists n \in \mathbb{Z} \st \frac{7n-6}{3} \in \mathbb{Z}\)</span></p>
+<p>True — set <span class="process-math">\(n=3\text{.}\)</span> Then <span class="process-math">\(n \in \mathbb{Z}\text{,}\)</span> <span class="process-math">\(\frac{7n-6}{3} = \frac{21-6}{3} = 5 \in \mathbb{Z}\text{.}\)</span></p>
+<p>To show <dfn class="terminology"><span class="process-math">\(\exists\)</span></dfn> is true we just need 1 value that makes it true.</p>
+</li></ul></p> <p><ul id="p-17" class="disc"><li>
+<p><span class="process-math">\(\forall n \in \mathbb{Z}, n^2+1 \in \mathbb{N}\)</span></p>
+<p>True. Let <span class="process-math">\(n\)</span> be <em class="emphasis">any</em> integer. Hence <span class="process-math">\(n^2 + 1 \in \mathbb{Z}\text{.}\)</span> Since <span class="process-math">\(n\)</span> is real, we know <span class="process-math">\(n^2+1 \geq 1\text{.}\)</span> Hence <span class="process-math">\(n^2 + 1 \in \mathbb{N}\text{.}\)</span></p>
+<p>To show <dfn class="terminology"><span class="process-math">\(\forall\)</span></dfn> is true we must show it is true <em class="emphasis">generically</em>.</p>
+</li></ul></p> <p><dfn class="terminology">You cannot prove universal quantifiers using examples</dfn></p>
+</div></section><section><h3>Examples — false</h3>
+<div align="left"> <p><ul id="p-22" class="disc"><li>
+<p><span class="process-math">\(\forall n \in \mathbb{Z} \st \frac{7n-6}{3} \in \mathbb{Z}\)</span></p>
+<p>False — set <span class="process-math">\(n=1\text{.}\)</span> Then <span class="process-math">\(n \in \mathbb{Z}\text{,}\)</span> but <span class="process-math">\(\frac{7n-6}{3} = \frac{1}{3} = \not\in \mathbb{Z}\text{.}\)</span></p>
+<p>To show <dfn class="terminology"><span class="process-math">\(\forall\)</span></dfn> is false we just need 1 value that makes it false.</p>
+</li></ul></p> <p><ul id="p-26" class="disc"><li>
+<p><span class="process-math">\(\exists n \in \mathbb{Z} \st -n^2 \in \mathbb{N}\)</span></p>
+<p>False. Let <span class="process-math">\(n\)</span> be <em class="emphasis">any</em> integer. Then since <span class="process-math">\(n \in \mathbb{R}\)</span> we know that <span class="process-math">\(n^2 \geq 0\text{,}\)</span> so <span class="process-math">\(-n^2 \leq 0\text{.}\)</span> Hence <span class="process-math">\(-n^2 \not\in\mathbb{N}\text{.}\)</span></p>
+<p>To show <dfn class="terminology"><span class="process-math">\(\exists\)</span></dfn> is false we must show it is false <em class="emphasis">generically</em>.</p>
+</li></ul></p> <p><dfn class="terminology">You cannot disprove existential quantifiers using examples</dfn></p>
+</div></section><section><h3>Reading quantifiers</h3>
+<div align="left"> <p><dl id="p-31" class="description-list">
+<div>
+<dt><span class="process-math">\(\exists x \in A, P(x)\)</span></dt>
+<dd><p><ul id="p-32" class="disc">
+<li>There exists <span class="process-math">\(x\)</span> in <span class="process-math">\(A\)</span> so that <span class="process-math">\(P(x)\)</span> is true.</li>
+<li>There is at least one <span class="process-math">\(x\)</span> in <span class="process-math">\(A\)</span> so that <span class="process-math">\(P(x)\)</span> is true.</li>
+<li>
+<span class="process-math">\(P(x)\)</span> is true for at least one value of <span class="process-math">\(x\)</span> from <span class="process-math">\(A\)</span>
+</li>
+<li>We can find an <span class="process-math">\(x\)</span> in <span class="process-math">\(A\)</span> so that <span class="process-math">\(P(x)\)</span> is true.</li>
+<li>…</li>
+</ul></p></dd>
+</div>
+<div>
+<dt><span class="process-math">\(\forall x \in A, P(x)\)</span></dt>
+<dd><p><ul id="p-33" class="disc">
+<li>For all <span class="process-math">\(x\)</span> in <span class="process-math">\(A\text{,}\)</span> <span class="process-math">\(P(x)\)</span> is true.</li>
+<li>For every <span class="process-math">\(x\)</span> in <span class="process-math">\(A\text{,}\)</span> <span class="process-math">\(P(x)\)</span> is true.</li>
+<li>No matter which <span class="process-math">\(x\)</span> we choose from <span class="process-math">\(A\text{,}\)</span> <span class="process-math">\(P(x)\)</span> is true.</li>
+<li>Every choice of <span class="process-math">\(x\)</span> from <span class="process-math">\(A\)</span> makes <span class="process-math">\(P(x)\)</span> true.</li>
+<li><em class="emphasis"><span class="process-math">\((x\in A) \implies P(x)\)</span></em></li>
+<li>…</li>
+</ul></p></dd>
+</div>
+</dl></p>
+</div></section></section>
+</div>
+</div></body>
+<script>
+Reveal.initialize({
+  controls: true,
+  controlsTutorial: true,
+  controlsLayout: 'bottom-right',
+  controlsBackArrows: 'faded',
+  navigationMode: 'default',
+  progress: false,
+  center: false,
+  hash: true,
+  transition: 'fade',
+  width: "100%",
+  height: "100%",
+  margin: "0.025",
+  math: {
+    mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+    config: 'TeX-AMS_HTML-full',
+    // other options are passed into MathJax.Hub.Config()
+    tex2jax: {
+      inlineMath:  [['\\(','\\)']],
+      displayMath: [],
+    }
+  },
+  plugins: [ RevealMath ]
+});
+</script>
+</html>

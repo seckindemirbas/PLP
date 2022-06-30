@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-30T16:10:04-07:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>PLP - 27</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reset.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/theme/black.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/plugin/math/math.js"></script><style>
+ul {
+  display: block !important;
+}
+.sbsrow {
+  display: flex; !important;
+}
+.reveal img {
+  border: 0.5px !important;
+  border-radius: 2px 10px 2px;
+  padding: 4px;
+}
+.definition,.theorem,.activity {
+  border-width: 0.5px;
+  border-style: solid;
+  border-radius: 2px 10px 2px;
+  padding: 1%;
+  margin-bottom: 2em;
+}
+.definition {
+  background: #00608010;
+}
+.theorem {
+  background: #ff000010;
+}
+.proof {
+  background: #ffffff90;
+}
+.activity {
+  background: #60800010;
+}
+dfn {
+  font-weight: bold;
+}
+.pretext-content ol.no-marker,
+.pretext-content ul.no-marker,
+.pretext-content li.no-marker {
+    list-style-type: none;
+}
+
+.pretext-content ol.decimal {
+    list-style-type: decimal;
+}
+.pretext-content ol.lower-alpha {
+    list-style-type: lower-alpha;
+}
+.pretext-content ol.upper-alpha {
+    list-style-type: upper-alpha;
+}
+.pretext-content ol.lower-roman {
+    list-style-type: lower-roman;
+}
+.pretext-content ol.upper-roman {
+    list-style-type: upper-roman;
+}
+.pretext-content ul.disc {
+    list-style-type: disc;
+}
+.pretext-content ul.square {
+    list-style-type: square;
+}
+.pretext-content ul.circle {
+    list-style-type: circle;
+}
+.pretext-content ol.no-marker,
+.pretext-content ul.no-marker {
+    list-style-type: none;
+}
+.pretext-content .cols1 li,
+.pretext-content .cols2 li,
+.pretext-content .cols3 li,
+.pretext-content .cols4 li,
+.pretext-content .cols5 li,
+.pretext-content .cols6 li {
+    float: left;
+    padding-right:2em;
+}
+          </style>
+
+                <link href="plp_styling.css" rel="stylesheet"/>
+                </head>
+<body><div class="reveal pretext-content">
+<div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(  \require{cancel}
+
+  \newcommand{\ds}{\displaystyle}
+  \newcommand{\es}{ {\varnothing}}
+\newcommand{\st}{ \;:\; }
+\newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+\newcommand{\set}[1]{ \left\{#1\right\} }
+  \newcommand{\Mod}[1]{\;(\mathrm{mod}\; #1)}
+  \newcommand{\rel}{\;R\;}
+\newcommand{\nrel}{\;\cancel{R}\;}
+  \renewcommand{\neg}{\sim}
+  \renewcommand{\text}[1]{\mathsf{\mbox{#1}}}
+  \DeclareMathOperator{\gcd}{gcd}
+  \DeclareMathOperator{\lcm}{lcm}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="slides">
+<section><section><h1>PLP - 27</h1>
+<h2>Topic 27—Properties &amp; congruence</h2>
+<table>
+<tr><th align="center" style="border-bottom: 0px;">Demirbaş &amp; Rechnitzer</th></tr>
+<tr><td align="center" style="border-bottom: 0px;"></td></tr>
+<tr><td align="center"></td></tr>
+</table></section></section><section><section><h1>Properties of relations</h1></section><section><h3>Too general</h3>
+<div align="left"> <p><ul id="p-1" class="disc">
+<li>Definiton of relation is too(?) general</li>
+<li>Usually require additional properties to be interesting</li>
+<li><p>Consider “is divisible by” on integers. Has useful properties<ul class="circle">
+<li>For all <span class="process-math">\(n \in \mathbb{Z}\text{,}\)</span> we know <span class="process-math">\(n \mid n\)</span>
+</li>
+<li>For all <span class="process-math">\(a,b,c \in \mathbb{Z}\text{,}\)</span> if <span class="process-math">\(a \mid b\)</span> and <span class="process-math">\(b \mid c\)</span> then <span class="process-math">\(a \mid c\)</span>
+</li>
+</ul></p></li>
+<li><p>Notice that <span class="process-math">\(\leq\)</span> on reals has <em class="emphasis">similar</em> properties<ul class="circle">
+<li>For all <span class="process-math">\(x \in \mathbb{R}\text{,}\)</span> we know <span class="process-math">\(x \leq x\)</span>
+</li>
+<li>For all <span class="process-math">\(x,y,z \in \mathbb{R}\text{,}\)</span> <span class="process-math">\(x \leq y\)</span> and <span class="process-math">\(y\leq z\)</span> then <span class="process-math">\(x \leq z\)</span>
+</li>
+</ul></p></li>
+</ul>Such additional <em class="emphasis">structure</em> make those relations more interesting and useful</p>
+</div></section><section><h3>3 useful properties</h3>
+<div align="left"> <div class="boxed definition">
+<h3>Definition:
+	</h3>
+<p>Let <span class="process-math">\(R\)</span> be a relation on a set <span class="process-math">\(A\text{.}\)</span> Then <span class="process-math">\(R\)</span> is<ul class="disc">
+<li>
+<dfn class="terminology">reflexive</dfn> when <span class="process-math">\(\forall a \in A, a \rel a\)</span>
+</li>
+<li>
+<dfn class="terminology">symmetric</dfn> when <span class="process-math">\(\forall a,b, a \rel b \implies b \rel a\)</span>
+</li>
+<li>
+<dfn class="terminology">transitive</dfn> when <span class="process-math">\(\forall a,b,c, (a \rel b) \land (b \rel c) \implies a \rel c\)</span>
+</li>
+</ul></p>
+</div> <div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div style="flex:100%;vertical-align:top;"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Relations on <span class="process-math">\(\mathbb{Z}\)</span>
+</td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\lt\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\leq\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(=\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\neq \)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\mid\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\nmid\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><dfn class="terminology">reflexive</dfn></td>
+<td class="l m b0 r0 l0 t0 lines">F</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">F</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">F</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><dfn class="terminology">symmetric</dfn></td>
+<td class="l m b0 r0 l0 t0 lines">F</td>
+<td class="l m b0 r0 l0 t0 lines">F</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">F</td>
+<td class="l m b0 r0 l0 t0 lines">F</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><dfn class="terminology">transitive</dfn></td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">F</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">F</td>
+</tr>
+</table></div></div>
+</div></section><section><h3>Pictures</h3>
+<div align="left"> <div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div style="flex:100%;vertical-align:top;"><img src="figures/reflexive.png"></div></div> <div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div style="flex:100%;vertical-align:top;"><img src="figures/symmetric.png"></div></div> <div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div style="flex:100%;vertical-align:top;"><img src="figures/transitive.png"></div></div>
+</div></section><section><h3>Examples — good for class</h3>
+<div align="left"> <p>Let <span class="process-math">\(R\)</span> be the relation “is a subset of” on <span class="process-math">\(\pow{\mathbb{Z}}\)</span> </p> <p>Let <span class="process-math">\(R\)</span> be the relation “lives within 10km of” on the set of people watching now. </p>
+</div></section></section><section><section><h1>Congruence</h1></section><section><h3>Congruence modulo <span class="process-math">\(n\)</span>
+</h3>
+<div align="left"> <div class="theorem"><div>
+<h3>Theorem:
+      </h3>
+<p>Let <span class="process-math">\(n \in \mathbb{N}\)</span> then the relation of congruence modulo <span class="process-math">\(n\)</span> is reflexive, symmetric and transitive.</p>
+</div></div> <p><dfn class="terminology">Scratch work</dfn><ul class="disc">
+<li>Let <span class="process-math">\(n\)</span> be a fixed real number.</li>
+<li>Recall that <span class="process-math">\(a \equiv b \Mod{n}\)</span> when <span class="process-math">\(n \mid (a-b)\)</span> — <em class="emphasis">must</em> know definitions</li>
+<li>Three things to prove, so three sub-proofs</li>
+<li><p>This uses<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+P \implies (Q\land R \land S) \equiv (P \implies Q) \land (P \implies R) \land (P \implies S)
+\end{equation*}
+</div></p></li>
+</ul></p>
+</div></section><section><h3>Reflexive</h3>
+<div align="left"> <blockquote class="blockquote" id="blockquote-1"><p>congruence modulo <span class="process-math">\(n\)</span> is reflexive</p></blockquote> <p><dfn class="terminology">Scratch work</dfn><ul class="disc">
+<li>Need to show <span class="process-math">\(\forall a \in \mathbb{Z}, n \mid (a - a)\)</span>
+</li>
+<li>So let <span class="process-math">\(a\)</span> be any integer, then <span class="process-math">\(a-a=0 = n \cdot 0\)</span>
+</li>
+<li>Hence <span class="process-math">\(n \mid (a-a)\text{.}\)</span>
+</li>
+</ul></p> <article class="hiddenproof" id="proof-1"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
+<p>Fix <span class="process-math">\(n \in \mathbb{N}\text{,}\)</span> and let <span class="process-math">\(a \in \mathbb{Z}\text{.}\)</span> Then since <span class="process-math">\((a-a) = n \cdot 0\text{,}\)</span> it follows that <span class="process-math">\(n \mid (a-a)\text{.}\)</span> Hence <span class="process-math">\(a \equiv a \Mod{n}\)</span> as required.</p></article>
+</div></section><section><h3>Symmetric</h3>
+<div align="left"> <blockquote class="blockquote" id="blockquote-2"><p>congruence modulo <span class="process-math">\(n\)</span> is symmetric</p></blockquote> <p><dfn class="terminology">Scratch work</dfn><ul class="disc">
+<li>Need to show <span class="process-math">\(\forall a,b \in \mathbb{Z}, (n \mid (a-b) ) \implies (n \mid (b-a))\)</span>
+</li>
+<li>So let <span class="process-math">\(a,b\)</span> be any integers, and assume that <span class="process-math">\(n \mid (a-b)\)</span>
+</li>
+<li>Hence <span class="process-math">\(a-b = n \cdot k\)</span> and thus <span class="process-math">\(b-a = n(-k)\)</span>
+</li>
+</ul></p> <article class="hiddenproof" id="proof-2"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
+<p>Fix <span class="process-math">\(n \in \mathbb{N}\text{,}\)</span> and let <span class="process-math">\(a,b \in \mathbb{Z}\text{.}\)</span> Assume that <span class="process-math">\(a \equiv b \Mod{n}\text{,}\)</span> and so <span class="process-math">\((a-b) = n\cdot k\)</span> for some <span class="process-math">\(k \in \mathbb{Z}\text{.}\)</span></p>
+<p>This tells us that <span class="process-math">\((b-a)= n(-k)\)</span> and so <span class="process-math">\(n \mid(b-a)\)</span> and thus <span class="process-math">\(b \equiv a \Mod{n}\)</span> as we needed.</p></article>
+</div></section><section><h3>Transitive</h3>
+<div align="left"> <blockquote class="blockquote" id="blockquote-3"><p>congruence modulo <span class="process-math">\(n\)</span> is transitive</p></blockquote> <p><dfn class="terminology">Scratch work</dfn><ul class="disc">
+<li>Need to show <span class="process-math">\(\forall a,b,c \in \mathbb{Z}, (n \mid (a-b) ) \land (n \mid (b-c)) \implies (n \mid (a-c))\)</span>
+</li>
+<li>So let <span class="process-math">\(a,b,c\)</span> be any integers, and assume that <span class="process-math">\(n \mid (a-b)\)</span> and <span class="process-math">\(n \mid(b-c)\)</span>
+</li>
+<li>Hence <span class="process-math">\(a-b = n \cdot k\)</span> and <span class="process-math">\(b-c = n \cdot \ell\)</span>
+</li>
+<li>We need to say something about <span class="process-math">\(a-c\)</span> — easy! <span class="process-math">\(a-c = n(k+\ell)\)</span>
+</li>
+</ul></p> <article class="hiddenproof" id="proof-3"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
+<p>Fix <span class="process-math">\(n \in \mathbb{N}\text{,}\)</span> and let <span class="process-math">\(a,b,c \in \mathbb{Z}\text{.}\)</span> Assume that <span class="process-math">\(a \equiv b \Mod{n}\)</span> and <span class="process-math">\(b \equiv c \Mod{n}\text{.}\)</span> So <span class="process-math">\(a-b = nk, b-c = n\ell\)</span> for some <span class="process-math">\(k,\ell \in \mathbb{Z}\)</span></p>
+<p>Hence <span class="process-math">\((a-c)= n (k+\ell)\)</span> and so <span class="process-math">\(n \mid(a-c)\)</span> and thus <span class="process-math">\(a \equiv c \Mod{n}\)</span> as we needed.</p></article>
+</div></section></section>
+</div>
+</div></body>
+<script>
+Reveal.initialize({
+  controls: true,
+  controlsTutorial: true,
+  controlsLayout: 'bottom-right',
+  controlsBackArrows: 'faded',
+  navigationMode: 'default',
+  progress: false,
+  center: false,
+  hash: true,
+  transition: 'fade',
+  width: "100%",
+  height: "100%",
+  margin: "0.025",
+  math: {
+    mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+    config: 'TeX-AMS_HTML-full',
+    // other options are passed into MathJax.Hub.Config()
+    tex2jax: {
+      inlineMath:  [['\\(','\\)']],
+      displayMath: [],
+    }
+  },
+  plugins: [ RevealMath ]
+});
+</script>
+</html>

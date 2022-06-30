@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-30T16:06:13-07:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>PLP - 9</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reset.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/theme/black.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/plugin/math/math.js"></script><style>
+ul {
+  display: block !important;
+}
+.sbsrow {
+  display: flex; !important;
+}
+.reveal img {
+  border: 0.5px !important;
+  border-radius: 2px 10px 2px;
+  padding: 4px;
+}
+.definition,.theorem,.activity {
+  border-width: 0.5px;
+  border-style: solid;
+  border-radius: 2px 10px 2px;
+  padding: 1%;
+  margin-bottom: 2em;
+}
+.definition {
+  background: #00608010;
+}
+.theorem {
+  background: #ff000010;
+}
+.proof {
+  background: #ffffff90;
+}
+.activity {
+  background: #60800010;
+}
+dfn {
+  font-weight: bold;
+}
+.pretext-content ol.no-marker,
+.pretext-content ul.no-marker,
+.pretext-content li.no-marker {
+    list-style-type: none;
+}
+
+.pretext-content ol.decimal {
+    list-style-type: decimal;
+}
+.pretext-content ol.lower-alpha {
+    list-style-type: lower-alpha;
+}
+.pretext-content ol.upper-alpha {
+    list-style-type: upper-alpha;
+}
+.pretext-content ol.lower-roman {
+    list-style-type: lower-roman;
+}
+.pretext-content ol.upper-roman {
+    list-style-type: upper-roman;
+}
+.pretext-content ul.disc {
+    list-style-type: disc;
+}
+.pretext-content ul.square {
+    list-style-type: square;
+}
+.pretext-content ul.circle {
+    list-style-type: circle;
+}
+.pretext-content ol.no-marker,
+.pretext-content ul.no-marker {
+    list-style-type: none;
+}
+.pretext-content .cols1 li,
+.pretext-content .cols2 li,
+.pretext-content .cols3 li,
+.pretext-content .cols4 li,
+.pretext-content .cols5 li,
+.pretext-content .cols6 li {
+    float: left;
+    padding-right:2em;
+}
+          </style>
+
+                <link href="plp_styling.css" rel="stylesheet"/>
+                </head>
+<body><div class="reveal pretext-content">
+<div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(  \newcommand{\ds}{\displaystyle}
+  \newcommand{\es}{ {\varnothing}}
+\newcommand{\st}{ \;\mid\; }
+\newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+\newcommand{\set}[1]{ \left\{#1\right\} }
+  \renewcommand{\neg}{\sim}
+  \renewcommand{\text}[1]{\mathsf{\mbox{#1}}}
+  \DeclareMathOperator{\gcd}{gcd}
+  \DeclareMathOperator{\lcm}{lcm}
+  \newcommand{\Mod}[1]{\;(\mathrm{mod}\; #1)}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="slides">
+<section><section><h1>PLP - 9</h1>
+<h2>Topic 9 —More proof examples</h2>
+<table>
+<tr><th align="center" style="border-bottom: 0px;">Demirbaş &amp; Rechnitzer</th></tr>
+<tr><td align="center" style="border-bottom: 0px;"></td></tr>
+<tr><td align="center"></td></tr>
+</table></section></section><section><section><h1>More examples</h1></section><section><h3>A divisibility example</h3>
+<div align="left"> <div class="theorem"><div>
+<h3>Proposition:
+      </h3>
+<p>Let <span class="process-math">\(a,b,c \in \mathbb{Z}\text{.}\)</span> If <span class="process-math">\(a \mid b\)</span> and <span class="process-math">\(b \mid c\)</span> then <span class="process-math">\(a \mid c\text{.}\)</span></p>
+</div></div> <p>We start with <dfn class="terminology">scratch work</dfn> and <em class="emphasis">assume the hypothesis is true</em>.<ul class="disc">
+<li>So <span class="process-math">\(a \mid b\)</span> and <span class="process-math">\(b \mid c\)</span>
+</li>
+<li>
+<em class="emphasis">By definition of divisibility</em>, <span class="process-math">\(b=ka\)</span> and <span class="process-math">\(c=\ell b\)</span> for some <span class="process-math">\(k,\ell \in \mathbb{Z}\)</span>
+</li>
+<li>We <em class="emphasis">want to show that</em> <span class="process-math">\(a \mid c\text{.}\)</span> That is <span class="process-math">\(c = n a\)</span> for some <span class="process-math">\(n \in \mathbb{Z}\text{.}\)</span>
+</li>
+<li>Since <span class="process-math">\(c = \ell b\)</span> and <span class="process-math">\(b = ka\)</span> we know <span class="process-math">\(c=\ell k a\)</span>
+</li>
+<li>Since <span class="process-math">\(k,\ell \in \mathbb{Z}\)</span> we know that <span class="process-math">\(k \ell \in \mathbb{Z}\)</span> so we are done!</li>
+</ul></p> <p>After <dfn class="terminology">scratch work</dfn> we have to write the proof <em class="emphasis">nice and neat</em> for our <dfn class="terminology">reader</dfn></p>
+</div></section><section><h3>Cleaning it up</h3>
+<div align="left"> <p>We need to clean up our <dfn class="terminology">scratch work</dfn><ul class="disc">
+<li>make sure logic flows correctly</li>
+<li>no dead-ends, no scribbles, keep presentation neat and tidy</li>
+<li>skip <em class="emphasis">very</em> obvious steps — only if <em class="emphasis">very</em> obvious to the <dfn class="terminology">reader</dfn> (not you)</li>
+<li>make the text easy to read — we add “hence”, “we know that”, “it follows that”, etc</li>
+<li>dot-point form is okay when you are learning how to write proofs</li>
+</ul></p> <article class="hiddenproof" id="proof-1"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
+<p>We start by assuming the hypothesis to be true.<ul class="disc">
+<li>Assume that <span class="process-math">\(a \mid b\)</span> and <span class="process-math">\(b \mid c\text{,}\)</span> so that <span class="process-math">\(b=ka\)</span> and <span class="process-math">\(c=\ell b\)</span> for some <span class="process-math">\(k,\ell \in \mathbb{Z}\text{.}\)</span>
+</li>
+<li>It follows that <span class="process-math">\(c = k \ell a\)</span>
+</li>
+<li>Since <span class="process-math">\(k\ell \in \mathbb{Z}\text{,}\)</span> we know that <span class="process-math">\(a \mid c\)</span> as required.</li>
+</ul></p></article>
+</div></section><section><h3>An inequality</h3>
+<div align="left"> <div class="theorem"><div>
+<h3>Proposition:
+      </h3>
+<p>Let <span class="process-math">\(x,y \in \mathbb{R}\)</span> then <span class="process-math">\(x^2 + y^2 \geq 2xy\text{.}\)</span></p>
+</div></div> <p><dfn class="terminology">Scratch work:</dfn><ul class="disc">
+<li>The implication hiding here is <span class="process-math">\((x,y \in \mathbb{R}) \implies (x^2+y^2 \geq 2xy)\)</span>
+</li>
+<li>We don't know much about inequalities, except <span class="process-math">\((x \in \mathbb{R}) \implies (x^2 \geq 0)\text{.}\)</span>
+</li>
+<li><p>Rearrange inequality to make it look like a square?<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+x^2+y^2-2xy \geq 0  \qquad \text{so} \qquad (x-y)^2 \geq 0
+\end{equation*}
+</div></p></li>
+<li>This is what we want. The square of something is non-negative.</li>
+</ul></p>
+</div></section><section><h3>Be careful of flow of logic</h3>
+<div align="left"> <p>Logic flow in scratch work doesn't always match logic needed for proof.<ul class="disc">
+<li>We started from <dfn class="terminology">conclusion</dfn> <span class="process-math">\(x^2+y^2 \geq 2xy\)</span>
+</li>
+<li>Reached the <dfn class="terminology">fact</dfn> that <span class="process-math">\((x-y)^2 \geq 0\)</span>
+</li>
+</ul>This is backwards — very common for proofs of inequalities.</p> <article class="hiddenproof" id="proof-2"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
+<p><ul id="p-10" class="disc">
+<li>Assume that <span class="process-math">\(x,y \in \mathbb{R}\)</span>
+</li>
+<li>Since the square of any real is non-negative, we know that <span class="process-math">\((x-y)^2 \geq 0\)</span>
+</li>
+<li>This implies that <span class="process-math">\(x^2 - 2xy + y^2 \geq 0\)</span>
+</li>
+<li>From this <span class="process-math">\(x^2+y^2 \geq 2xy\)</span> as required.</li>
+</ul></p></article>
+</div></section></section>
+</div>
+</div></body>
+<script>
+Reveal.initialize({
+  controls: true,
+  controlsTutorial: true,
+  controlsLayout: 'bottom-right',
+  controlsBackArrows: 'faded',
+  navigationMode: 'default',
+  progress: false,
+  center: false,
+  hash: true,
+  transition: 'fade',
+  width: "100%",
+  height: "100%",
+  margin: "0.025",
+  math: {
+    mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+    config: 'TeX-AMS_HTML-full',
+    // other options are passed into MathJax.Hub.Config()
+    tex2jax: {
+      inlineMath:  [['\\(','\\)']],
+      displayMath: [],
+    }
+  },
+  plugins: [ RevealMath ]
+});
+</script>
+</html>

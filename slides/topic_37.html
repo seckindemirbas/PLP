@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-30T16:12:28-07:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>PLP - 37</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reset.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/theme/black.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/plugin/math/math.js"></script><style>
+ul {
+  display: block !important;
+}
+.sbsrow {
+  display: flex; !important;
+}
+.reveal img {
+  border: 0.5px !important;
+  border-radius: 2px 10px 2px;
+  padding: 4px;
+}
+.definition,.theorem,.activity {
+  border-width: 0.5px;
+  border-style: solid;
+  border-radius: 2px 10px 2px;
+  padding: 1%;
+  margin-bottom: 2em;
+}
+.definition {
+  background: #00608010;
+}
+.theorem {
+  background: #ff000010;
+}
+.proof {
+  background: #ffffff90;
+}
+.activity {
+  background: #60800010;
+}
+dfn {
+  font-weight: bold;
+}
+.pretext-content ol.no-marker,
+.pretext-content ul.no-marker,
+.pretext-content li.no-marker {
+    list-style-type: none;
+}
+
+.pretext-content ol.decimal {
+    list-style-type: decimal;
+}
+.pretext-content ol.lower-alpha {
+    list-style-type: lower-alpha;
+}
+.pretext-content ol.upper-alpha {
+    list-style-type: upper-alpha;
+}
+.pretext-content ol.lower-roman {
+    list-style-type: lower-roman;
+}
+.pretext-content ol.upper-roman {
+    list-style-type: upper-roman;
+}
+.pretext-content ul.disc {
+    list-style-type: disc;
+}
+.pretext-content ul.square {
+    list-style-type: square;
+}
+.pretext-content ul.circle {
+    list-style-type: circle;
+}
+.pretext-content ol.no-marker,
+.pretext-content ul.no-marker {
+    list-style-type: none;
+}
+.pretext-content .cols1 li,
+.pretext-content .cols2 li,
+.pretext-content .cols3 li,
+.pretext-content .cols4 li,
+.pretext-content .cols5 li,
+.pretext-content .cols6 li {
+    float: left;
+    padding-right:2em;
+}
+          </style>
+
+                <link href="plp_styling.css" rel="stylesheet"/>
+                </head>
+<body><div class="reveal pretext-content">
+<div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(  \require{cancel}
+
+  \newcommand{\ds}{\displaystyle}
+  \newcommand{\es}{ {\varnothing}}
+\newcommand{\st}{ \;:\; }
+\newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+\newcommand{\set}[1]{ \left\{#1\right\} }
+  \newcommand{\Mod}[1]{\;(\mathrm{mod}\; #1)}
+  \newcommand{\rel}{\;R\;}
+\newcommand{\nrel}{\;\cancel{R}\;}
+  \renewcommand{\neg}{\sim}
+  \renewcommand{\text}[1]{\mathsf{\mbox{#1}}}
+  \DeclareMathOperator{\gcd}{gcd}
+  \DeclareMathOperator{\lcm}{lcm}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="slides">
+<section><section><h1>PLP - 37</h1>
+<h2>Topic 37—Proof by contradiction — examples</h2>
+<table>
+<tr><th align="center" style="border-bottom: 0px;">Demirbaş &amp; Rechnitzer</th></tr>
+<tr><td align="center" style="border-bottom: 0px;"></td></tr>
+<tr><td align="center"></td></tr>
+</table></section></section><section><section><h1>Examples</h1></section><section><h3>No integer solutions</h3>
+<div align="left"> <div class="theorem"><div>
+<h3>Proposition:
+      </h3>
+<p>There are no integers <span class="process-math">\(a,b\)</span> so that <span class="process-math">\(2a+4b=1\text{.}\)</span></p>
+</div></div> <p><dfn class="terminology">Scratchwork:</dfn><ul class="disc">
+<li>The negation is <span class="process-math">\(\exists a,b \in \mathbb{Z} \text{ s.t. } 2a+4b=1\)</span>
+</li>
+<li>If we assume the result is false, then we have some <span class="process-math">\(a,b\)</span> so that <span class="process-math">\(2a+4b=1\)</span>
+</li>
+<li>But dividing this by 2 gives <span class="process-math">\(a+2b=\frac{1}{2}\)</span>
+</li>
+<li>This cannot happen, since <span class="process-math">\(a,b \in \mathbb{Z}\)</span> we must have <span class="process-math">\(a+2b \in \mathbb{Z}\)</span>
+</li>
+<li>Contradiction!</li>
+</ul></p>
+</div></section><section><h3>Proof</h3>
+<div align="left"> <blockquote class="blockquote" id="blockquote-1"><p>There are no integers <span class="process-math">\(a,b\)</span> so that <span class="process-math">\(2a+4b=1\text{.}\)</span></p></blockquote> <article class="hiddenproof" id="proof-1"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
+<p><ul id="p-4" class="disc">
+<li>Assume, to the contrary, that the result is false</li>
+<li>So there are <span class="process-math">\(a,b \in \mathbb{Z}\)</span> so that <span class="process-math">\(2a+4b=1\)</span>
+</li>
+<li>Dividing this by <span class="process-math">\(2\)</span> gives <span class="process-math">\(a+2b = \frac{1}{2}\)</span>
+</li>
+<li>However this cannot happen since the sum of integers is an integer</li>
+<li>Hence there cannot be such integers <span class="process-math">\(a,b\)</span> and so the result holds.</li>
+</ul></p></article>
+</div></section><section><h3>No integer solutions #2</h3>
+<div align="left"> <div class="theorem"><div>
+<h3>Proposition:
+      </h3>
+<p>There are no integers <span class="process-math">\(a,b\)</span> so that <span class="process-math">\(a^2-4b=3\)</span></p>
+</div></div> <p><dfn class="terminology">Scratchwork</dfn><ul class="disc">
+<li>Assume, to the contrary, that we can find <span class="process-math">\(a,b \in \mathbb{Z}\)</span> with <span class="process-math">\(a^2-4b=3\)</span>
+</li>
+<li>Write as <span class="process-math">\(a^2=3+4b\)</span> and notice that the RHS is odd, so the LHS must also be odd</li>
+<li>But this means that <span class="process-math">\(a\)</span> is odd (we proved this!)</li>
+<li><p>Hence we can write <span class="process-math">\(a=2k+1\)</span> and so we have<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+3 = a^2 - 4b = (2k+1)^2-4b = 4k^2+4k+1-4b = 4(k^2+k-b)+1
+\end{equation*}
+</div></p></li>
+<li>This implies that <span class="process-math">\(3 \equiv 1 \text{ mod }4\)</span> — contradiction!</li>
+</ul></p>
+</div></section><section><h3>Proof</h3>
+<div align="left"> <blockquote class="blockquote" id="blockquote-2"><p>There are no integers <span class="process-math">\(a,b\)</span> so that <span class="process-math">\(a^2-4b=3\)</span></p></blockquote> <article class="hiddenproof" id="proof-2"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
+<p>Assume, to the contrary that there are integers <span class="process-math">\(a,b\)</span> so that <span class="process-math">\(a^2-4b=3\text{.}\)</span></p>
+<p>Rewrite this as <span class="process-math">\(a^2=4b+3\text{.}\)</span> Since the RHS is odd, the LHS must be odd, and consequently <span class="process-math">\(a\)</span> is odd. So write <span class="process-math">\(a=2k+1\)</span> for some <span class="process-math">\(k \in \mathbb{Z}\text{.}\)</span></p>
+<p>Then notice that<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+3 = a^2-4b = 4(k^2+k-b)+1
+\end{equation*}
+</div>which implies that <span class="process-math">\(3 \equiv 1 \text{ mod } 4\)</span> which is a contradiction. Thus the result follows.</p></article>
+</div></section><section><h3>Irrational numbers</h3>
+<div align="left"> <div class="boxed definition">
+<h3>Definition:
+	</h3>
+<p>Let <span class="process-math">\(q\)</span> be a real number.<ul class="disc">
+<li><p>We say that <span class="process-math">\(q\)</span> is <dfn class="terminology">rational</dfn> if we can write it <span class="process-math">\(q = \frac{a}{b}\)</span> with <span class="process-math">\(a,b \in \mathbb{Z}\)</span> and <span class="process-math">\(b \neq 0\text{.}\)</span><div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\exists a\in\mathbb{Z} \text{ s.t. } \exists b \in \mathbb{Z}-\set{0} \text{ s.t. } q =\frac{a}{b}
+\end{equation*}
+</div></p></li>
+<li><p>We say that <span class="process-math">\(q\)</span> is <dfn class="terminology">irrational</dfn> when it is not rational.<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\forall a\in\mathbb{Z}, \forall b \in \mathbb{Z}-\set{0}, q \neq \frac{a}{b}
+\end{equation*}
+</div></p></li>
+<li>To denote the set of irrational numbers use <span class="process-math">\(\mathbb{I} = \mathbb{R} - \mathbb{Q}\text{.}\)</span>
+</li>
+</ul></p>
+</div>
+</div></section><section><h3>Irrational example</h3>
+<div align="left"> <div class="theorem"><div>
+<h3>Proposition:
+      </h3>
+<p>If <span class="process-math">\(x \in \mathbb{Q}\)</span> and <span class="process-math">\(y \in \mathbb{I}\)</span> then <span class="process-math">\(x+y \in \mathbb{I}\text{.}\)</span></p>
+</div></div> <p><dfn class="terminology">Scrathwork</dfn><ul class="disc">
+<li>Assume negation: <span class="process-math">\(\exists x \in \mathbb{Q} \text{ s.t. }  \exists y \in \mathbb{I} \text{ s.t. } x+y \not\in \mathbb{I}\)</span>
+</li>
+<li>But since <span class="process-math">\(x,y \in \mathbb{R}\)</span> we know <span class="process-math">\(x+y \in \mathbb{R}\text{,}\)</span> so we have <span class="process-math">\(x+y \in \mathbb{Q}\)</span>
+</li>
+<li><p>Now since <span class="process-math">\(x, (x+y) \in \mathbb{Q}\text{,}\)</span> we can write <span class="process-math">\(x=a/b\)</span> and <span class="process-math">\((x+y)=c/d\)</span> with <span class="process-math">\(a,b,c,d \in \mathbb{Z}\text{.}\)</span></p></li>
+<li>But this means <span class="process-math">\(y=(x+y)-x = \frac{c}{d}-\frac{a}{b} = \frac{bc-ad}{bd} \in \mathbb{Q}\)</span>
+</li>
+<li>So we have <span class="process-math">\(y \in \mathbb{Q}\)</span> and <span class="process-math">\(y \not\in \mathbb{Q}\)</span> — contradiction!</li>
+</ul></p>
+</div></section><section><h3>Proof</h3>
+<div align="left"> <blockquote class="blockquote" id="blockquote-3"><p>If <span class="process-math">\(x \in \mathbb{Q}\)</span> and <span class="process-math">\(y \in \mathbb{I}\)</span> then <span class="process-math">\(x+y \in \mathbb{I}\text{.}\)</span></p></blockquote> <article class="hiddenproof" id="proof-3"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
+<p>Assume, to the contrary, that there is <span class="process-math">\(x \in \mathbb{Q}\)</span> and <span class="process-math">\(y \in \mathbb{I}\)</span> so that <span class="process-math">\(x+y \in \mathbb{Q}\text{.}\)</span></p>
+<p>This implies that <span class="process-math">\(x = \frac{a}{b}\)</span> and <span class="process-math">\((x+y) = \frac{c}{d}\)</span> with <span class="process-math">\(a,b,c,d \in \mathbb{Z}\)</span> and <span class="process-math">\(b,d \neq 0\text{.}\)</span></p>
+<p>From this we see that <span class="process-math">\(y = (x+y)-x = \frac{c}{d}-\frac{a}{b} = \frac{bc-ad}{bd}\)</span> and hence <span class="process-math">\(y \in \mathbb{Q}\text{.}\)</span></p>
+<p>This contradicts our assumption that <span class="process-math">\(y \in \mathbb{I}\text{,}\)</span> and so the result follows.</p></article>
+</div></section></section>
+</div>
+</div></body>
+<script>
+Reveal.initialize({
+  controls: true,
+  controlsTutorial: true,
+  controlsLayout: 'bottom-right',
+  controlsBackArrows: 'faded',
+  navigationMode: 'default',
+  progress: false,
+  center: false,
+  hash: true,
+  transition: 'fade',
+  width: "100%",
+  height: "100%",
+  margin: "0.025",
+  math: {
+    mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+    config: 'TeX-AMS_HTML-full',
+    // other options are passed into MathJax.Hub.Config()
+    tex2jax: {
+      inlineMath:  [['\\(','\\)']],
+      displayMath: [],
+    }
+  },
+  plugins: [ RevealMath ]
+});
+</script>
+</html>

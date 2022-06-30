@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-30T16:09:53-07:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>PLP - 26</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reset.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/theme/black.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/plugin/math/math.js"></script><style>
+ul {
+  display: block !important;
+}
+.sbsrow {
+  display: flex; !important;
+}
+.reveal img {
+  border: 0.5px !important;
+  border-radius: 2px 10px 2px;
+  padding: 4px;
+}
+.definition,.theorem,.activity {
+  border-width: 0.5px;
+  border-style: solid;
+  border-radius: 2px 10px 2px;
+  padding: 1%;
+  margin-bottom: 2em;
+}
+.definition {
+  background: #00608010;
+}
+.theorem {
+  background: #ff000010;
+}
+.proof {
+  background: #ffffff90;
+}
+.activity {
+  background: #60800010;
+}
+dfn {
+  font-weight: bold;
+}
+.pretext-content ol.no-marker,
+.pretext-content ul.no-marker,
+.pretext-content li.no-marker {
+    list-style-type: none;
+}
+
+.pretext-content ol.decimal {
+    list-style-type: decimal;
+}
+.pretext-content ol.lower-alpha {
+    list-style-type: lower-alpha;
+}
+.pretext-content ol.upper-alpha {
+    list-style-type: upper-alpha;
+}
+.pretext-content ol.lower-roman {
+    list-style-type: lower-roman;
+}
+.pretext-content ol.upper-roman {
+    list-style-type: upper-roman;
+}
+.pretext-content ul.disc {
+    list-style-type: disc;
+}
+.pretext-content ul.square {
+    list-style-type: square;
+}
+.pretext-content ul.circle {
+    list-style-type: circle;
+}
+.pretext-content ol.no-marker,
+.pretext-content ul.no-marker {
+    list-style-type: none;
+}
+.pretext-content .cols1 li,
+.pretext-content .cols2 li,
+.pretext-content .cols3 li,
+.pretext-content .cols4 li,
+.pretext-content .cols5 li,
+.pretext-content .cols6 li {
+    float: left;
+    padding-right:2em;
+}
+          </style>
+
+                <link href="plp_styling.css" rel="stylesheet"/>
+                </head>
+<body><div class="reveal pretext-content">
+<div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(  \require{cancel}
+
+  \newcommand{\ds}{\displaystyle}
+  \newcommand{\es}{ {\varnothing}}
+\newcommand{\st}{ \;:\; }
+\newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+\newcommand{\set}[1]{ \left\{#1\right\} }
+  \newcommand{\Mod}[1]{\;(\mathrm{mod}\; #1)}
+  \newcommand{\rel}{\;R\;}
+\newcommand{\nrel}{\;\cancel{R}\;}
+  \renewcommand{\neg}{\sim}
+  \renewcommand{\text}[1]{\mathsf{\mbox{#1}}}
+  \DeclareMathOperator{\gcd}{gcd}
+  \DeclareMathOperator{\lcm}{lcm}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="slides">
+<section><section><h1>PLP - 26</h1>
+<h2>Topic 26—Relations</h2>
+<table>
+<tr><th align="center" style="border-bottom: 0px;">Demirbaş &amp; Rechnitzer</th></tr>
+<tr><td align="center" style="border-bottom: 0px;"></td></tr>
+<tr><td align="center"></td></tr>
+</table></section></section><section><section><h1>Relations</h1></section><section><h3>Relationships</h3>
+<div align="left"> <p><ul id="p-1" class="disc">
+<li><p>Many expressions in mathematics describe <em class="emphasis">relationships</em> between objects<ul class="circle">
+<li>
+<span class="process-math">\(a=b\)</span> — the objects <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> are equal.</li>
+<li>
+<span class="process-math">\(a \lt b\)</span> — the number <span class="process-math">\(a\)</span> is strictly less than the number <span class="process-math">\(b\text{.}\)</span>
+</li>
+<li>
+<span class="process-math">\(a \in B\)</span> — the object <span class="process-math">\(a\)</span> is a member of the set <span class="process-math">\(B\text{.}\)</span>
+</li>
+<li>
+<span class="process-math">\(A \subseteq B\)</span> — the set <span class="process-math">\(A\)</span> is a subset of the set <span class="process-math">\(B\text{.}\)</span>
+</li>
+<li>
+<span class="process-math">\(a \mid b\)</span> — the number <span class="process-math">\(a\)</span> is a divisor of the number <span class="process-math">\(b\text{.}\)</span>
+</li>
+</ul></p></li>
+<li><p>Focus on (say) divisibility — we can think of the symbol “<span class="process-math">\(|\)</span>” as an operator on <em class="emphasis">pairs</em> of integers.<ul class="circle">
+<li>we write <span class="process-math">\(a \mid b\)</span> when <span class="process-math">\(a\)</span> divides <span class="process-math">\(b\)</span>
+</li>
+<li>and write <span class="process-math">\(a \nmid b\)</span> when <span class="process-math">\(a\)</span> does not divide <span class="process-math">\(b\)</span>
+</li>
+</ul></p></li>
+<li><p>Divisibility naturally defines a subset of <span class="process-math">\(\mathbb{N} \times \mathbb{N}\text{:}\)</span><div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+R = \set{(a,b) \in \mathbb{N}\times \mathbb{N} \st a \text{ divides }b}
+\end{equation*}
+</div></p></li>
+</ul></p>
+</div></section><section><h3>Relation as subset of Cartesian product</h3>
+<div align="left"> <p>Consider divisibility on the set <span class="process-math">\(A = \set{1,2,4,8}\)</span><div class="displaymath process-math" data-contains-math-knowls="" id="md-1">
+\begin{align*}
+1\mid 1 &amp;&amp; 1\mid 2 &amp;&amp; 1\mid 4 &amp;&amp; 1\mid 8\\
+\color{magenta}{2\nmid 1} &amp;&amp; 2\mid 2 &amp;&amp; 2\mid 4 &amp;&amp; 2 \mid 8\\
+\color{magenta}{4\nmid 1} &amp;&amp; \color{magenta}{4\nmid 2} &amp;&amp; 4\mid 4 &amp;&amp; 4\mid 8\\
+\color{magenta}{8\nmid 1} &amp;&amp; \color{magenta}{8\nmid 2} &amp;&amp; \color{magenta}{8\nmid 4} &amp;&amp; 8 \mid 8
+\end{align*}
+</div></p> <p>Can <em class="emphasis">define</em> the relation as subset of <span class="process-math">\(A\times A\text{:}\)</span><div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+R = \set{(1,1), (1,2), (1,4), (1,8), (2,2),(2,4),(2,8), (4,4),(4,8),(8,8)}
+\end{equation*}
+</div>And we can write <span class="process-math">\(x\; R \; y\)</span> when <span class="process-math">\((x,y) \in R\)</span></p>
+</div></section><section><h3>Relations</h3>
+<div align="left"> <div class="boxed definition">
+<h3>Definition:
+	</h3>
+<p>Let <span class="process-math">\(A\)</span> be a set.<ul class="disc">
+<li>A <dfn class="terminology">relation</dfn>, <span class="process-math">\(R\text{,}\)</span> on <span class="process-math">\(A\)</span> is a subset <span class="process-math">\(R \subseteq A \times A\text{.}\)</span>
+</li>
+<li>If <span class="process-math">\((x,y) \in R\)</span> we write <span class="process-math">\(x \rel y\text{,}\)</span> and otherwise write <span class="process-math">\(x \nrel y\)</span>
+</li>
+</ul></p>
+</div> <p>Examples<ul class="disc">
+<li>
+<span class="process-math">\(R = \set{(x,x) \st x \in \mathbb{R} }\)</span> is “<span class="process-math">\(=\)</span>”  on the reals</li>
+<li>
+<span class="process-math">\(S = \set{(x,y) \in \mathbb{Z}^2 \st x-y \in \mathbb{N}}\)</span> is “<span class="process-math">\(\gt\)</span>” on integers.</li>
+<li><p>Let <span class="process-math">\(B\)</span> be a set, then<ul class="circle">
+<li>
+<span class="process-math">\(R = \es\)</span> is the <dfn class="terminology">trivial relation</dfn> on <span class="process-math">\(B\)</span>
+</li>
+<li>
+<span class="process-math">\(S = B\times B\)</span> is the <dfn class="terminology">universal relation</dfn> on <span class="process-math">\(B\)</span>
+</li>
+</ul></p></li>
+</ul></p>
+</div></section><section><h3>Draw the relation</h3>
+<div align="left"> <p><ul id="p-10" class="disc">
+<li>Consider the set <span class="process-math">\(A = \set{1,2,4,8}\)</span> and divisibility.</li>
+<li>Draw node for each <span class="process-math">\(a \in A\text{.}\)</span>
+</li>
+<li>If <span class="process-math">\(a \rel b\)</span> then draw arrow <span class="process-math">\(a \to b\)</span>
+</li>
+</ul></p> <div class="sbsrow" style="margin-left:27.5%;margin-right:27.5%;"><div style="flex:100%;vertical-align:top;"><img src="figures/divRelation.png"></div></div>
+</div></section></section>
+</div>
+</div></body>
+<script>
+Reveal.initialize({
+  controls: true,
+  controlsTutorial: true,
+  controlsLayout: 'bottom-right',
+  controlsBackArrows: 'faded',
+  navigationMode: 'default',
+  progress: false,
+  center: false,
+  hash: true,
+  transition: 'fade',
+  width: "100%",
+  height: "100%",
+  margin: "0.025",
+  math: {
+    mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+    config: 'TeX-AMS_HTML-full',
+    // other options are passed into MathJax.Hub.Config()
+    tex2jax: {
+      inlineMath:  [['\\(','\\)']],
+      displayMath: [],
+    }
+  },
+  plugins: [ RevealMath ]
+});
+</script>
+</html>

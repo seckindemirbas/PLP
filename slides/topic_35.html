@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-30T16:12:01-07:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>PLP - 35</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reset.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/theme/black.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/plugin/math/math.js"></script><style>
+ul {
+  display: block !important;
+}
+.sbsrow {
+  display: flex; !important;
+}
+.reveal img {
+  border: 0.5px !important;
+  border-radius: 2px 10px 2px;
+  padding: 4px;
+}
+.definition,.theorem,.activity {
+  border-width: 0.5px;
+  border-style: solid;
+  border-radius: 2px 10px 2px;
+  padding: 1%;
+  margin-bottom: 2em;
+}
+.definition {
+  background: #00608010;
+}
+.theorem {
+  background: #ff000010;
+}
+.proof {
+  background: #ffffff90;
+}
+.activity {
+  background: #60800010;
+}
+dfn {
+  font-weight: bold;
+}
+.pretext-content ol.no-marker,
+.pretext-content ul.no-marker,
+.pretext-content li.no-marker {
+    list-style-type: none;
+}
+
+.pretext-content ol.decimal {
+    list-style-type: decimal;
+}
+.pretext-content ol.lower-alpha {
+    list-style-type: lower-alpha;
+}
+.pretext-content ol.upper-alpha {
+    list-style-type: upper-alpha;
+}
+.pretext-content ol.lower-roman {
+    list-style-type: lower-roman;
+}
+.pretext-content ol.upper-roman {
+    list-style-type: upper-roman;
+}
+.pretext-content ul.disc {
+    list-style-type: disc;
+}
+.pretext-content ul.square {
+    list-style-type: square;
+}
+.pretext-content ul.circle {
+    list-style-type: circle;
+}
+.pretext-content ol.no-marker,
+.pretext-content ul.no-marker {
+    list-style-type: none;
+}
+.pretext-content .cols1 li,
+.pretext-content .cols2 li,
+.pretext-content .cols3 li,
+.pretext-content .cols4 li,
+.pretext-content .cols5 li,
+.pretext-content .cols6 li {
+    float: left;
+    padding-right:2em;
+}
+          </style>
+
+                <link href="plp_styling.css" rel="stylesheet"/>
+                </head>
+<body><div class="reveal pretext-content">
+<div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(  \require{cancel}
+
+  \newcommand{\ds}{\displaystyle}
+  \newcommand{\es}{ {\varnothing}}
+\newcommand{\st}{ \;:\; }
+\newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+\newcommand{\set}[1]{ \left\{#1\right\} }
+  \newcommand{\Mod}[1]{\;(\mathrm{mod}\; #1)}
+  \newcommand{\rel}{\;R\;}
+\newcommand{\nrel}{\;\cancel{R}\;}
+  \renewcommand{\neg}{\sim}
+  \renewcommand{\text}[1]{\mathsf{\mbox{#1}}}
+  \DeclareMathOperator{\gcd}{gcd}
+  \DeclareMathOperator{\lcm}{lcm}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="slides">
+<section><section><h1>PLP - 35</h1>
+<h2>Topic 35—Inverse functions</h2>
+<table>
+<tr><th align="center" style="border-bottom: 0px;">Demirbaş &amp; Rechnitzer</th></tr>
+<tr><td align="center" style="border-bottom: 0px;"></td></tr>
+<tr><td align="center"></td></tr>
+</table></section></section><section><section><h1>Inverse functions</h1></section><section><h3>Inverses and one-sided inverses</h3>
+<div align="left"> <div class="boxed definition">
+<h3>Definition:
+	</h3>
+<p>Let <span class="process-math">\(f: A \to B\)</span> and <span class="process-math">\(g: B \to A\)</span> be functions.<ul class="disc">
+<li>If <span class="process-math">\(g \circ f = i_A\)</span> then we say that <span class="process-math">\(g\)</span> is a <dfn class="terminology">left-inverse</dfn> of <span class="process-math">\(f\text{.}\)</span>
+</li>
+<li>Similarly, if <span class="process-math">\(f \circ g = i_B\)</span> then we say that <span class="process-math">\(g\)</span> is a <dfn class="terminology">right-inverse</dfn> of <span class="process-math">\(f\text{.}\)</span>
+</li>
+<li>If <span class="process-math">\(g\)</span> is both a <dfn class="terminology">left-inverse</dfn> and <dfn class="terminology">right-inverse</dfn>, then we call it an <dfn class="terminology">inverse</dfn> of <span class="process-math">\(f\text{.}\)</span>
+</li>
+</ul></p>
+</div> <p>Note that one can prove that if <em class="emphasis">an</em> inverse exists, then it is <em class="emphasis">unqiue</em>.</p> <p>So we can say <em class="emphasis">the</em> inverse and denote it <span class="process-math">\(f^{-1}\text{.}\)</span></p>
+</div></section><section><h3>Left- but not right-inverse</h3>
+<div align="left"> <p>Consider the functions <span class="process-math">\(f,g\)</span> defined below</p> <div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div style="flex:100%;vertical-align:top;"><img src="figures/function_drawing5.png"></div></div> <p>Notice that <span class="process-math">\(g(f(1))=1\)</span> and <span class="process-math">\(g(f(2))=2\)</span> so <span class="process-math">\(g\)</span> is a <dfn class="terminology">left-inverse</dfn> of <span class="process-math">\(f\text{.}\)</span></p> <p>Then <span class="process-math">\(f(g(4))=4,  f(g(5))=5\)</span> but <span class="process-math">\(f(g(6))=5 \neq 6\)</span> so <span class="process-math">\(g\)</span> is not a <dfn class="terminology">right-inverse</dfn> of <span class="process-math">\(f\text{.}\)</span></p> <p>The non-injectiveness of <span class="process-math">\(g\)</span> is to blame.</p> <p>A similar example gives a <dfn class="terminology">right-inverse</dfn> that is not a <dfn class="terminology">left-inverse</dfn> (non-surjectiveness is to blame)</p>
+</div></section><section><h3>Existence of one-sided inverses</h3>
+<div align="left"> <div class="theorem"><div>
+<h3>Lemma:
+      </h3>
+<p>Let <span class="process-math">\(f:A \to B\)</span> be a function. Then<ul class="disc">
+<li>
+<span class="process-math">\(f\)</span> has a <dfn class="terminology">left-inverse</dfn> iff <span class="process-math">\(f\)</span> is injective.</li>
+<li>
+<span class="process-math">\(f\)</span> has a <dfn class="terminology">right-inverse</dfn> iff <span class="process-math">\(f\)</span> is surjective.</li>
+</ul></p>
+</div></div> <p>The proofs of these statements make very good exercises. We'll do the forward implications.</p>
+</div></section><section><h3>One sided inverse</h3>
+<div align="left"> <blockquote class="blockquote" id="blockquote-1"><p>If <span class="process-math">\(f\)</span> has a left-inverse then it is injective</p></blockquote> <article class="hiddenproof" id="proof-1"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
+<p>Assume that <span class="process-math">\(f\)</span> has a left-inverse <span class="process-math">\(g\text{,}\)</span> so that <span class="process-math">\(g(f(x))=x\text{.}\)</span></p>
+<p>Now let <span class="process-math">\(a_1,a_2 \in A\)</span>  so that <span class="process-math">\(f(a_1)=f(a_2)\text{.}\)</span> Then we know that <span class="process-math">\(g(f(a_1))=g(f(a_2))\text{.}\)</span> But since <span class="process-math">\(g\)</span> is a left-inverse, <span class="process-math">\(a_1=g(f(a_1))=g(f(a_2))=a_2\text{.}\)</span> Thus <span class="process-math">\(f\)</span> is injective.</p></article> <blockquote class="blockquote" id="blockquote-2"><p>If <span class="process-math">\(f\)</span> has a right-inverse then it is surjective</p></blockquote> <article class="hiddenproof" id="proof-2"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
+<p>Assume that <span class="process-math">\(f\)</span> has a right-inverse <span class="process-math">\(g\text{,}\)</span> so that <span class="process-math">\(f(g(y))=y\text{.}\)</span></p>
+<p>Let <span class="process-math">\(b \in B\)</span> and set <span class="process-math">\(a=g(b)\text{.}\)</span> Then <span class="process-math">\(f(a)= f(g(b)) = b\text{,}\)</span> since <span class="process-math">\(g\)</span> is a right-inverse. Thus <span class="process-math">\(f\)</span> is surjective.</p></article>
+</div></section><section><h3>Joining inverses</h3>
+<div align="left"> <div class="theorem"><div>
+<h3>Lemma:
+      </h3>
+<p>Let <span class="process-math">\(f:A \to B\)</span> have a left-inverse <span class="process-math">\(g\)</span> and a right-inverse <span class="process-math">\(h\text{.}\)</span> Then <span class="process-math">\(g=h\text{.}\)</span></p>
+</div></div> <article class="hiddenproof" id="proof-3"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
+<p>Let <span class="process-math">\(f,g\)</span> and <span class="process-math">\(h\)</span> be as stated. Thus <span class="process-math">\(g\circ f = i_A\)</span> and <span class="process-math">\(f\circ h = i_B\text{.}\)</span> Then<div class="displaymath process-math" data-contains-math-knowls="" id="md-1">
+\begin{align*}
+g \amp = g \circ i_B = g \circ (f \circ h) \\
+\amp = (g \circ f) \circ h \amp \text{assoc of compositions} \\
+\amp =  i_A \circ h = h
+\end{align*}
+</div>as required.</p></article>
+</div></section><section><h3>Existence of inverse</h3>
+<div align="left"> <div class="theorem"><div>
+<h3>Theorem:
+      </h3>
+<p>Let <span class="process-math">\(f:A \to B\text{.}\)</span> Then <span class="process-math">\(f\)</span> has an inverse iff <span class="process-math">\(f\)</span> is bijective. Further, that inverse, if it exists, is unique.</p>
+</div></div> <article class="hiddenproof" id="proof-4"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
+<p><ul id="p-20" class="disc">
+<li>Assume that <span class="process-math">\(f\)</span> has an inverse <span class="process-math">\(g\text{.}\)</span> Then <span class="process-math">\(g\)</span> is both a left-inverse and a right-inverse. Lemma: since <span class="process-math">\(f\)</span> has a left-inverse, <span class="process-math">\(f\)</span> is injective, and then since <span class="process-math">\(f\)</span> has a right-inverse, <span class="process-math">\(f\)</span> is surjective. Hence <span class="process-math">\(f\)</span> is bijective.</li>
+<li>Now assume that <span class="process-math">\(f\)</span> is bijective. Lemma: since <span class="process-math">\(f\)</span> is injective, it has a left inverse, and since <span class="process-math">\(f\)</span> is surjective, it has a right inverse. Lemma: those one-sided inverses are the same function, <span class="process-math">\(g\text{.}\)</span> Hence <span class="process-math">\(g\)</span> is an inverse of <span class="process-math">\(f\text{.}\)</span>
+</li>
+<li><p>Finally, assume that <span class="process-math">\(g,h\)</span> are inverses of <span class="process-math">\(f\text{,}\)</span> then <span class="process-math">\(g = g \circ (f \circ h) = (g \circ f)\circ h = h
+\text{.}\)</span> Thus the inverse function is unique.</p></li>
+</ul></p></article>
+</div></section><section><h3>Example</h3>
+<div align="left"> <div class="theorem"><div>
+<h3>Proposition:
+      </h3>
+<p>The function <span class="process-math">\(f: \mathbb{R} \to \mathbb{R}, f(x)=7x-3\)</span> is bijective and so has an inverse.</p>
+</div></div> <article class="hiddenproof" id="proof-5"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
+<p>Previously we showed that <span class="process-math">\(f\)</span> is injective and surjective, and so is bijective. Hence its inverse exists.</p></article> <p>In this case we can find the inverse explicitly: <span class="process-math">\(f^{-1}: \mathbb{R} \to \mathbb{R}\)</span> defined by <span class="process-math">\(f^{-1}(y) = \frac{y+3}{7}\)</span></p> <p>Since the function is bijective, enough to prove this is a left-inverse<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+(f^{-1} \circ f)(x) = f^{-1}(7x-3) = \frac{(7x-3)+3}{7} = x
+\end{equation*}
+</div>as required.</p>
+</div></section></section>
+</div>
+</div></body>
+<script>
+Reveal.initialize({
+  controls: true,
+  controlsTutorial: true,
+  controlsLayout: 'bottom-right',
+  controlsBackArrows: 'faded',
+  navigationMode: 'default',
+  progress: false,
+  center: false,
+  hash: true,
+  transition: 'fade',
+  width: "100%",
+  height: "100%",
+  margin: "0.025",
+  math: {
+    mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+    config: 'TeX-AMS_HTML-full',
+    // other options are passed into MathJax.Hub.Config()
+    tex2jax: {
+      inlineMath:  [['\\(','\\)']],
+      displayMath: [],
+    }
+  },
+  plugins: [ RevealMath ]
+});
+</script>
+</html>

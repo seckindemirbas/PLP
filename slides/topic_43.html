@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-30T16:14:02-07:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>PLP - 43</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reset.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/theme/black.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/plugin/math/math.js"></script><style>
+ul {
+  display: block !important;
+}
+.sbsrow {
+  display: flex; !important;
+}
+.reveal img {
+  border: 0.5px !important;
+  border-radius: 2px 10px 2px;
+  padding: 4px;
+}
+.definition,.theorem,.activity {
+  border-width: 0.5px;
+  border-style: solid;
+  border-radius: 2px 10px 2px;
+  padding: 1%;
+  margin-bottom: 2em;
+}
+.definition {
+  background: #00608010;
+}
+.theorem {
+  background: #ff000010;
+}
+.proof {
+  background: #ffffff90;
+}
+.activity {
+  background: #60800010;
+}
+dfn {
+  font-weight: bold;
+}
+.pretext-content ol.no-marker,
+.pretext-content ul.no-marker,
+.pretext-content li.no-marker {
+    list-style-type: none;
+}
+
+.pretext-content ol.decimal {
+    list-style-type: decimal;
+}
+.pretext-content ol.lower-alpha {
+    list-style-type: lower-alpha;
+}
+.pretext-content ol.upper-alpha {
+    list-style-type: upper-alpha;
+}
+.pretext-content ol.lower-roman {
+    list-style-type: lower-roman;
+}
+.pretext-content ol.upper-roman {
+    list-style-type: upper-roman;
+}
+.pretext-content ul.disc {
+    list-style-type: disc;
+}
+.pretext-content ul.square {
+    list-style-type: square;
+}
+.pretext-content ul.circle {
+    list-style-type: circle;
+}
+.pretext-content ol.no-marker,
+.pretext-content ul.no-marker {
+    list-style-type: none;
+}
+.pretext-content .cols1 li,
+.pretext-content .cols2 li,
+.pretext-content .cols3 li,
+.pretext-content .cols4 li,
+.pretext-content .cols5 li,
+.pretext-content .cols6 li {
+    float: left;
+    padding-right:2em;
+}
+          </style>
+
+                <link href="plp_styling.css" rel="stylesheet"/>
+                </head>
+<body><div class="reveal pretext-content">
+<div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(  \require{cancel}
+
+  \newcommand{\ds}{\displaystyle}
+  \newcommand{\es}{ {\varnothing}}
+\newcommand{\st}{ \;:\; }
+\newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+\newcommand{\set}[1]{ \left\{#1\right\} }
+  \newcommand{\Mod}[1]{\;(\mathrm{mod}\; #1)}
+  \newcommand{\rel}{\;R\;}
+\newcommand{\nrel}{\;\cancel{R}\;}
+  \renewcommand{\neg}{\sim}
+  \renewcommand{\text}[1]{\mathsf{\mbox{#1}}}
+  \DeclareMathOperator{\gcd}{gcd}
+  \DeclareMathOperator{\lcm}{lcm}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="slides">
+<section><section><h1>PLP - 43</h1>
+<h2>Topic 43 — More infinities</h2>
+<table>
+<tr><th align="center" style="border-bottom: 0px;">Demirbaş &amp; Rechnitzer</th></tr>
+<tr><td align="center" style="border-bottom: 0px;"></td></tr>
+<tr><td align="center"></td></tr>
+</table></section></section><section><section><h1>Cantor's theorem and more infinities</h1></section><section><h3>Comparing different infinities</h3>
+<div align="left"> <p>We know that <span class="process-math">\(\mathbb{N} \subset \mathbb{R}\)</span> and we proved that <span class="process-math">\(|\mathbb{N}| \neq |\mathbb{R}|\text{.}\)</span> So want to state<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\aleph_0 = |\mathbb{N}| \lt |\mathbb{R}|= c
+\end{equation*}
+</div>We can make this precise by extending ideas from finite sets <span class="process-math">\(A,B\text{:}\)</span><ul class="disc">
+<li>If <span class="process-math">\(f:A \to B\)</span> is an injection then <span class="process-math">\(|A| \leq |B|\)</span>
+</li>
+<li>If <span class="process-math">\(h:A \to B\)</span> is an bijection then <span class="process-math">\(|A| = |B|\)</span>
+</li>
+</ul></p> <div class="boxed definition">
+<h3>Definition:
+	</h3>
+<p>Let <span class="process-math">\(A,B\)</span> be sets.<ul class="disc">
+<li>We write <span class="process-math">\(|A| \leq |B|\)</span> when there is an injection from <span class="process-math">\(A\)</span> to <span class="process-math">\(B\text{.}\)</span>
+</li>
+<li><p>Further, we write <span class="process-math">\(|A| \lt |B|\)</span> when there is an injection from <span class="process-math">\(A\)</span> to <span class="process-math">\(B\)</span> but no bijection.<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+|A| \lt |B| \qquad \iff \qquad \big(|A| \leq |B|\big) \land \big(|A| \neq |B|\big)
+\end{equation*}
+</div></p></li>
+</ul></p>
+</div> <p>Good exercise: if <span class="process-math">\(|A| \leq |B|\)</span> prove there is a surjection from <span class="process-math">\(B\)</span> to <span class="process-math">\(A\text{.}\)</span></p>
+</div></section><section><h3>Continuum hypothesis</h3>
+<div align="left"> <ul class="disc">
+<li><p>Cantor's diagonal argument proves that<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\aleph_0 = |\mathbb{N}| \lt |\mathbb{R}| =c
+\end{equation*}
+</div></p></li>
+<li><p>Is there any infinity between these two? More precisely?<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\exists A \text{ s.t. } | \mathbb{N} | \lt |A| \lt | \mathbb{R} |
+\end{equation*}
+</div></p></li>
+</ul> <article class="conjecture theorem-like" id="conjecture-1"><h4 class="heading">
+<span class="type">Conjecture</span><span class="space"> </span><span class="codenumber">2</span><span class="period">.</span><span class="space"> </span><span class="title">Continuum hypothesis (Cantor 1878).</span>
+</h4>
+<p>There is no set <span class="process-math">\(A\)</span> so that <span class="process-math">\(\aleph_0 \lt |A| \lt c\text{.}\)</span></p></article> <p><ul id="p-8" class="disc">
+<li>Gödel (1940) showed that it cannot be disproved from standard set theory axioms (Zermelo–Fraenkel)</li>
+<li>Cohen (1963) showed that it cannot be proved from standard set theorem axioms</li>
+<li>So (technically) not really correct to call it a conjecture</li>
+</ul></p>
+</div></section><section><h3>Bigger infinities</h3>
+<div align="left"> <p>Are there bigger infinities?</p> <div class="theorem"><div>
+<h3>Theorem:
+      (Cantor's theorem, 1891).</h3>
+<p>Let <span class="process-math">\(A\)</span> be a set. Then <span class="process-math">\(|A| \lt |\pow{A}|\)</span></p>
+</div></div> <p><dfn class="terminology">Scratch work</dfn><ul class="disc">
+<li><p>Easy to find an injection from <span class="process-math">\(A\)</span> to <span class="process-math">\(\pow{A}\text{.}\)</span> Here are two examples<div class="displaymath process-math" data-contains-math-knowls="" id="md-1">
+\begin{align*}
+f:\amp A \to \pow{A} \amp f(a) \amp = \set{a} \\
+h:\amp A \to \pow{A} \amp h(a) \amp = A-\set{a}
+\end{align*}
+</div>This proves that <span class="process-math">\(|A| \leq |\pow{A}|\)</span></p></li>
+<li>We prove there is no bijection from <span class="process-math">\(A\)</span> to <span class="process-math">\(\pow{A}\)</span> by showing there cannot be a surjection</li>
+</ul></p>
+</div></section><section><h3>Good and bad</h3>
+<div align="left"> <p>To explore, let <span class="process-math">\(A=\set{1,2,3}\)</span> and consider <span class="process-math">\(f,h\)</span> from previous slide.<div class="displaymath process-math" data-contains-math-knowls="" id="md-2">
+\begin{align*}
+f(1) \amp= \set{1} \amp f(2) \amp = \set{2} \amp f(3) \amp = \set{3} \\
+h(1) \amp= \set{2,3} \amp h(2) \amp = \set{1,3} \amp h(3) \amp = \set{1,2} 
+\end{align*}
+</div>Notice that<ul class="disc">
+<li><span class="process-math">\(\displaystyle \forall x \in A, x \in f(x)\)</span></li>
+<li><span class="process-math">\(\displaystyle \forall x \in A, x \not\in h(x)\)</span></li>
+</ul></p> <p>More generally, if we have any function <span class="process-math">\(g:A \to \pow{A}\)</span> then<ul class="disc">
+<li>if <span class="process-math">\(x \in g(x)\)</span> then call <span class="process-math">\(x\)</span> a <dfn class="terminology">good</dfn> point, and</li>
+<li>if <span class="process-math">\(x \not\in g(x)\)</span> then call <span class="process-math">\(x\)</span> a <dfn class="terminology">bad</dfn> point</li>
+</ul>Then build sets of all the good and bad points<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+G = \set{x \in A \text{ s.t. } x \in g(x)} \qquad \text{and} \qquad
+B = \set{x \in A \text{ s.t. } x \not\in g(x)}
+\end{equation*}
+</div>Notice that <span class="process-math">\(G,B \subseteq A\)</span> and so <span class="process-math">\(G,B \in \pow{A}\text{.}\)</span></p>
+</div></section><section><h3>The bad set is more interesting</h3>
+<div align="left"> <article class="hiddenproof" id="proof-1"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
+<p>Assume, to the contrary that there is a surjection <span class="process-math">\(g: A \to \pow{A}\)</span><ul class="disc">
+<li>Construct the “bad” set <span class="process-math">\(B = \set{x \in A \text{ s.t. } x \not\in g(x)} \subseteq A\)</span>
+</li>
+<li>Now since <span class="process-math">\(B \in \pow{A}\)</span> and <span class="process-math">\(g\)</span> is surjective, there must be some <span class="process-math">\(b\in A\)</span> so that <span class="process-math">\(g(b)=B\)</span>
+</li>
+<li><p>We must have that either <span class="process-math">\(b \in B\)</span> or <span class="process-math">\(b \not\in B\text{?}\)</span> Is it <dfn class="terminology">good</dfn> or <dfn class="terminology">bad</dfn>?<ul class="circle">
+<li>When <span class="process-math">\(b \in B\text{,}\)</span> by definition of <span class="process-math">\(B\)</span> must have <span class="process-math">\(b \not\in B\)</span> — contradiction</li>
+<li>When <span class="process-math">\(b \not\in B\text{,}\)</span> by definition of <span class="process-math">\(B\)</span> must have <span class="process-math">\(b \in B\)</span> — contradiction</li>
+</ul></p></li>
+<li>These contradictions mean there is no <span class="process-math">\(b\)</span> so that <span class="process-math">\(g(b)=B\text{,}\)</span> and so <span class="process-math">\(g\)</span> is not surjective</li>
+</ul>Then since we have constructed an injection from <span class="process-math">\(f:A \to \pow{A}\text{,}\)</span> it follows that <span class="process-math">\(|A| \lt |\pow{A}|\text{.}\)</span></p></article> <p>This immediately gives <span class="process-math">\(| \mathbb{N} | \lt | \pow{\mathbb{N}}|\)</span></p> <p>With work you can prove that <span class="process-math">\(| \pow{\mathbb{N}}| = |\mathbb{R}|\)</span> — see  Cantor-Schröder-Bernstein Theorem</p>
+</div></section><section><h3>Keep going</h3>
+<div align="left"> <blockquote class="blockquote" id="blockquote-1"><p><span class="process-math">\(|A| \lt |\pow{A}|\)</span> and <span class="process-math">\(|\mathbb{N}| \lt |\pow{\mathbb{N}}|\)</span></p></blockquote> <p>Do it again — <span class="process-math">\(|\mathbb{N}| \lt |\pow{\mathbb{N}}| \lt |\pow{\pow{\mathbb{N}}}|\)</span></p> <p>And again — <span class="process-math">\(|\mathbb{N}| \lt |\pow{\mathbb{N}}| \lt |\pow{\pow{\mathbb{N}}}| \lt |\pow{\pow{\pow{\mathbb{N}}}}|\)</span></p> <div class="theorem"><div>
+<h3>Corollary:
+      </h3>
+<p>There are an infinite number of different infinites.</p>
+</div></div> <article class="hiddenproof" id="proof-2"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
+<p>Starting with <span class="process-math">\(\mathbb{N}\text{,}\)</span> Cantor's theorem tells us that <span class="process-math">\(\pow{\mathbb{N}}\)</span> is a larger infinite set.  Then <span class="process-math">\(\pow{\pow{\mathbb{N}}}\)</span> is larger again. By repeatedly taking power sets, you create an infinitely long sequence of larger and larger infinite sets.</p></article>
+</div></section><section><h3>Start to finish</h3>
+<div align="left"> <p>Remember where we started:<ul class="disc">
+<li>Basic definitions of sets and subsets</li>
+<li>Statements, logical operators and truth tables</li>
+</ul></p> <p>Look where we got to:<ul class="disc">
+<li>Diagonal argument — there are different types of infinity</li>
+<li>Cantor's theorem — there are an infinite number of different infinities</li>
+</ul></p> <blockquote class="blockquote" id="blockquote-2"><p><dfn class="terminology">Congratulations!</dfn></p></blockquote>
+</div></section></section>
+</div>
+</div></body>
+<script>
+Reveal.initialize({
+  controls: true,
+  controlsTutorial: true,
+  controlsLayout: 'bottom-right',
+  controlsBackArrows: 'faded',
+  navigationMode: 'default',
+  progress: false,
+  center: false,
+  hash: true,
+  transition: 'fade',
+  width: "100%",
+  height: "100%",
+  margin: "0.025",
+  math: {
+    mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+    config: 'TeX-AMS_HTML-full',
+    // other options are passed into MathJax.Hub.Config()
+    tex2jax: {
+      inlineMath:  [['\\(','\\)']],
+      displayMath: [],
+    }
+  },
+  plugins: [ RevealMath ]
+});
+</script>
+</html>

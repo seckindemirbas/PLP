@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-30T16:04:56-07:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>PLP - 2</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reset.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/theme/black.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/plugin/math/math.js"></script><style>
+ul {
+  display: block !important;
+}
+.sbsrow {
+  display: flex; !important;
+}
+.reveal img {
+  border: 0.5px !important;
+  border-radius: 2px 10px 2px;
+  padding: 4px;
+}
+.definition,.theorem,.activity {
+  border-width: 0.5px;
+  border-style: solid;
+  border-radius: 2px 10px 2px;
+  padding: 1%;
+  margin-bottom: 2em;
+}
+.definition {
+  background: #00608010;
+}
+.theorem {
+  background: #ff000010;
+}
+.proof {
+  background: #ffffff90;
+}
+.activity {
+  background: #60800010;
+}
+dfn {
+  font-weight: bold;
+}
+.pretext-content ol.no-marker,
+.pretext-content ul.no-marker,
+.pretext-content li.no-marker {
+    list-style-type: none;
+}
+
+.pretext-content ol.decimal {
+    list-style-type: decimal;
+}
+.pretext-content ol.lower-alpha {
+    list-style-type: lower-alpha;
+}
+.pretext-content ol.upper-alpha {
+    list-style-type: upper-alpha;
+}
+.pretext-content ol.lower-roman {
+    list-style-type: lower-roman;
+}
+.pretext-content ol.upper-roman {
+    list-style-type: upper-roman;
+}
+.pretext-content ul.disc {
+    list-style-type: disc;
+}
+.pretext-content ul.square {
+    list-style-type: square;
+}
+.pretext-content ul.circle {
+    list-style-type: circle;
+}
+.pretext-content ol.no-marker,
+.pretext-content ul.no-marker {
+    list-style-type: none;
+}
+.pretext-content .cols1 li,
+.pretext-content .cols2 li,
+.pretext-content .cols3 li,
+.pretext-content .cols4 li,
+.pretext-content .cols5 li,
+.pretext-content .cols6 li {
+    float: left;
+    padding-right:2em;
+}
+          </style>
+
+                <link href="plp_styling.css" rel="stylesheet"/>
+                </head>
+<body><div class="reveal pretext-content">
+<div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(  \newcommand{\ds}{\displaystyle}
+  \newcommand{\es}{ {\varnothing}}
+\newcommand{\st}{ \;\mid\; }
+\newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+\newcommand{\set}[1]{ \left\{#1\right\} }
+  \renewcommand{\neg}{\sim}
+  \renewcommand{\text}[1]{\mathsf{\mbox{#1}}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="slides">
+<section><section><h1>PLP - 2</h1>
+<h2>Topic 2 — Logical statements</h2>
+<table>
+<tr><th align="center" style="border-bottom: 0px;">Demirbaş &amp; Rechnitzer</th></tr>
+<tr><td align="center" style="border-bottom: 0px;"></td></tr>
+<tr><td align="center"></td></tr>
+</table></section></section><section><section><h1>Logical statements</h1></section><section><h3>Proving things from smaller things</h3>
+<div align="left"> <p>A big part of  mathematics is proving that <dfn class="terminology">statements</dfn> are <dfn class="terminology">true</dfn>.</p> <blockquote class="blockquote" id="blockquote-1"><p>The square of an even number is even.</p></blockquote> <p>We do this by<ul class="disc">
+<li>starting from known <em class="emphasis">facts</em> — <dfn class="terminology">axioms</dfn>, <dfn class="terminology">lemmas</dfn>, <dfn class="terminology">theorems</dfn>
+</li>
+<li>
+<em class="emphasis">combine</em> those facts using <dfn class="terminology">logic</dfn> to build new facts</li>
+</ul></p> <p>So we need to introduce and understand<ul class="disc">
+<li>mathematical sentences that can carry a <dfn class="terminology">truth value</dfn>
+</li>
+<li>the rules for combining those sentences</li>
+</ul></p>
+</div></section><section><h3>Statements</h3>
+<div align="left"> <div class="boxed definition">
+<h3>Definition:
+	(A not so formal definition of statements).</h3>
+<p>A <dfn class="terminology">statement</dfn> is a sentence that is either <dfn class="terminology">true</dfn> or <dfn class="terminology">false</dfn>.</p>
+<p>A statement has exactly one of those <dfn class="terminology">truth values</dfn>.</p>
+<p>Note:<ul class="disc">
+<li>A rigorous definition is way too hard for this course.</li>
+<li>Typically use <span class="process-math">\(P,Q,R\)</span> to denote statements</li>
+</ul></p>
+</div> <blockquote class="blockquote" id="blockquote-2"><p>The number <span class="process-math">\(\sqrt{2}\)</span> is not a rational number.</p></blockquote> <blockquote class="blockquote" id="blockquote-3"><p>The number 17 is even.</p></blockquote>
+</div></section><section><h3>More statements</h3>
+<div align="left"> <p>Sentences like</p> <blockquote class="blockquote" id="blockquote-4"><p>The 100th decimal digit of <span class="process-math">\(\pi\)</span> is 7.</p></blockquote> <p>and</p> <blockquote class="blockquote" id="blockquote-5"><p>Every even integer greater than 2 is the sum of two primes.</p></blockquote> <p>are statements since we can determine their truth value</p> <p><ol id="p-15" class="decimal">
+<li>
+<span class="process-math">\(\pi = 3.1415\dots\)</span> — we can just keep computing and check.</li>
+<li>This is <dfn class="terminology">Goldbach's conjecture</dfn> — truth value unknown, but it must be true or false.</li>
+</ol></p>
+</div></section><section><h3>Non-statements</h3>
+<div align="left"> <p>Sentences like</p> <blockquote class="blockquote" id="blockquote-6"><p>I am tall</p></blockquote> <p>and</p> <blockquote class="blockquote" id="blockquote-7"><p>This sentence is false</p></blockquote> <p>are <em class="emphasis">not</em> statements since we cannot decide their truth value</p> <p><ol id="p-21" class="decimal">
+<li>Who is “I”? What is “tall”?</li>
+<li><p>This cannot be true or false<ul class="disc">
+<li>If it is true, then it must be false!</li>
+<li>If it s false, then it must be true!</li>
+</ul></p></li>
+</ol></p>
+</div></section><section><h3>Open sentences</h3>
+<div align="left"> <p>Some sentences contain variables</p> <blockquote class="blockquote" id="blockquote-8"><p>If the integer <span class="process-math">\(x\)</span> is a multiple of 6 then it is even.</p></blockquote> <blockquote class="blockquote" id="blockquote-9"><p>The integer <span class="process-math">\(x\)</span> is even.</p></blockquote> <p><ol id="p-26" class="decimal">
+<li>This is a statement since it is always true</li>
+<li>The truth value depends on the variable <span class="process-math">\(x\)</span>
+</li>
+</ol></p> <div class="boxed definition">
+<h3>Definition:
+	</h3>
+<p>An <dfn class="terminology">open sentence</dfn> is a sentence whose truth value depends on the variable(s) it contains.</p>
+<p>Typically denote it by <span class="process-math">\(P(x)\)</span> and similar.</p>
+</div>
+</div></section></section>
+</div>
+</div></body>
+<script>
+Reveal.initialize({
+  controls: true,
+  controlsTutorial: true,
+  controlsLayout: 'bottom-right',
+  controlsBackArrows: 'faded',
+  navigationMode: 'default',
+  progress: false,
+  center: false,
+  hash: true,
+  transition: 'fade',
+  width: "100%",
+  height: "100%",
+  margin: "0.025",
+  math: {
+    mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+    config: 'TeX-AMS_HTML-full',
+    // other options are passed into MathJax.Hub.Config()
+    tex2jax: {
+      inlineMath:  [['\\(','\\)']],
+      displayMath: [],
+    }
+  },
+  plugins: [ RevealMath ]
+});
+</script>
+</html>

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-30T16:11:11-07:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>PLP - 32</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reset.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/theme/black.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/plugin/math/math.js"></script><style>
+ul {
+  display: block !important;
+}
+.sbsrow {
+  display: flex; !important;
+}
+.reveal img {
+  border: 0.5px !important;
+  border-radius: 2px 10px 2px;
+  padding: 4px;
+}
+.definition,.theorem,.activity {
+  border-width: 0.5px;
+  border-style: solid;
+  border-radius: 2px 10px 2px;
+  padding: 1%;
+  margin-bottom: 2em;
+}
+.definition {
+  background: #00608010;
+}
+.theorem {
+  background: #ff000010;
+}
+.proof {
+  background: #ffffff90;
+}
+.activity {
+  background: #60800010;
+}
+dfn {
+  font-weight: bold;
+}
+.pretext-content ol.no-marker,
+.pretext-content ul.no-marker,
+.pretext-content li.no-marker {
+    list-style-type: none;
+}
+
+.pretext-content ol.decimal {
+    list-style-type: decimal;
+}
+.pretext-content ol.lower-alpha {
+    list-style-type: lower-alpha;
+}
+.pretext-content ol.upper-alpha {
+    list-style-type: upper-alpha;
+}
+.pretext-content ol.lower-roman {
+    list-style-type: lower-roman;
+}
+.pretext-content ol.upper-roman {
+    list-style-type: upper-roman;
+}
+.pretext-content ul.disc {
+    list-style-type: disc;
+}
+.pretext-content ul.square {
+    list-style-type: square;
+}
+.pretext-content ul.circle {
+    list-style-type: circle;
+}
+.pretext-content ol.no-marker,
+.pretext-content ul.no-marker {
+    list-style-type: none;
+}
+.pretext-content .cols1 li,
+.pretext-content .cols2 li,
+.pretext-content .cols3 li,
+.pretext-content .cols4 li,
+.pretext-content .cols5 li,
+.pretext-content .cols6 li {
+    float: left;
+    padding-right:2em;
+}
+          </style>
+
+                <link href="plp_styling.css" rel="stylesheet"/>
+                </head>
+<body><div class="reveal pretext-content">
+<div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(  \require{cancel}
+
+  \newcommand{\ds}{\displaystyle}
+  \newcommand{\es}{ {\varnothing}}
+\newcommand{\st}{ \;:\; }
+\newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+\newcommand{\set}[1]{ \left\{#1\right\} }
+  \newcommand{\Mod}[1]{\;(\mathrm{mod}\; #1)}
+  \newcommand{\rel}{\;R\;}
+\newcommand{\nrel}{\;\cancel{R}\;}
+  \renewcommand{\neg}{\sim}
+  \renewcommand{\text}[1]{\mathsf{\mbox{#1}}}
+  \DeclareMathOperator{\gcd}{gcd}
+  \DeclareMathOperator{\lcm}{lcm}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="slides">
+<section><section><h1>PLP - 32</h1>
+<h2>Topic 32—Images and preimages</h2>
+<table>
+<tr><th align="center" style="border-bottom: 0px;">Demirbaş &amp; Rechnitzer</th></tr>
+<tr><td align="center" style="border-bottom: 0px;"></td></tr>
+<tr><td align="center"></td></tr>
+</table></section></section><section><section><h1>Images and preimages</h1></section><section><h3>Functions and subsets</h3>
+<div align="left"> <p>How do functions interact with subsets of the domain and codomain?</p> <div class="boxed definition">
+<h3>Definition:
+	</h3>
+<p>Let <span class="process-math">\(f:A \to B\)</span> be a function and let <span class="process-math">\(C \subseteq A\)</span> and <span class="process-math">\(D \subseteq B\)</span><ul class="disc">
+<li>The <dfn class="terminology">image</dfn> of <span class="process-math">\(C\)</span> in <span class="process-math">\(B\)</span> is <span class="process-math">\(f(C) = \set{f(x) \text{ s.t. } x \in C}\)</span>
+</li>
+<li>The <dfn class="terminology">preimage</dfn> of <span class="process-math">\(D\)</span> in <span class="process-math">\(A\)</span> is <span class="process-math">\(f^{-1}(D) = \set{x \in A \text{ s.t. } f(x)\in D}\)</span>
+</li>
+</ul></p>
+</div> <p><em class="emphasis">WARNING</em> — Be careful with preimages:<ul class="disc">
+<li>
+<span class="process-math">\(f^{-1}(x)\)</span> is not <span class="process-math">\(\left(f(x)\right)^{-1}\)</span> or <span class="process-math">\(\frac{1}{f(x)}\)</span>
+</li>
+<li>The preimage <span class="process-math">\(f^{-1}\)</span> is <em class="emphasis">not</em> the inverse function.</li>
+<li>When extra conditions satisfied the inverse function exists and we use the same notation</li>
+</ul>When you see <span class="process-math">\(f^{-1}\)</span> think “<em class="emphasis">preimage</em>” — when you know inverse exists then “inverse function”.</p>
+</div></section><section><h3>A sketch of images and preimages</h3>
+<div align="left"> <div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div style="flex:100%;vertical-align:top;"><img src="figures/function_imgpreimg.png"></div></div>
+</div></section><section><h3>An example — images</h3>
+<div align="left"> <p>Let <span class="process-math">\(f: \mathbb{R} \to \mathbb{R}\)</span> be defined by <span class="process-math">\(f(x)=x^2\text{.}\)</span> Then<ul class="disc">
+<li><span class="process-math">\(\displaystyle f([0,4]) = [0,16]\)</span></li>
+<li><span class="process-math">\(\displaystyle f([-3,-1] \cup [1,2]) = [1,9]\)</span></li>
+</ul></p> <div class="sbsrow" style="margin-left:17%;margin-right:17%;"><div style="flex:100%;vertical-align:top;"><img src="figures/parabola1.png"></div></div> <p><ul id="p-5" class="disc">
+<li>If <span class="process-math">\(0 \leq x \leq 4\)</span> then <span class="process-math">\(0 \leq x^2 \leq 16\)</span>
+</li>
+<li>
+<p>If <span class="process-math">\(1 \leq x \leq 2\)</span> then <span class="process-math">\(1 \leq x^2 \leq 4\text{.}\)</span> And if <span class="process-math">\(-3 \leq x \leq -1\)</span> then <span class="process-math">\(1 \leq x^2 \leq 9\text{.}\)</span></p>
+<p>So if <span class="process-math">\(x \in [-3,-1] \cup [1,2]\)</span> then <span class="process-math">\(x^2 \in [1,9]\text{.}\)</span></p>
+</li>
+</ul></p>
+</div></section><section><h3>An example — preimages</h3>
+<div align="left"> <p>Let <span class="process-math">\(f: \mathbb{R} \to \mathbb{R}\)</span> be defined by <span class="process-math">\(f(x)=x^2\text{.}\)</span> Then<ul class="disc">
+<li><span class="process-math">\(\displaystyle f^{-1}(\set{0,1}) = \set{-1,0,1}\)</span></li>
+<li><span class="process-math">\(\displaystyle f^{-1}([1,4]) = [-2,-1] \cup [1,2]\)</span></li>
+</ul></p> <div class="sbsrow" style="margin-left:17%;margin-right:17%;"><div style="flex:100%;vertical-align:top;"><img src="figures/parabola2.png"></div></div> <p><ul id="p-9" class="disc">
+<li>
+<p>If <span class="process-math">\(x^2=0\)</span> then <span class="process-math">\(x=0\text{.}\)</span> And if <span class="process-math">\(x^2=1\)</span> then <span class="process-math">\(x=\pm 1\)</span></p>
+<p>So if <span class="process-math">\(x^2 \in \set{0,1}\)</span> then <span class="process-math">\(x \in \set{-1,0,1}\)</span></p>
+</li>
+<li>
+<p>If <span class="process-math">\(1 \leq x^2\)</span> then <span class="process-math">\(x \leq -1\)</span> or <span class="process-math">\(x \geq 1\text{.}\)</span> If <span class="process-math">\(x^2 \leq 4\)</span> then <span class="process-math">\(-2 \leq x \leq 2\text{.}\)</span></p>
+<p>So if <span class="process-math">\(x^2 \in [1,4]\)</span> then <span class="process-math">\(x \in [-2,-1]\)</span> or <span class="process-math">\(x \in [1,2]\text{.}\)</span></p>
+</li>
+</ul></p>
+</div></section><section><h3>Images, preimages and set operations</h3>
+<div align="left"> <p>Images and preimages interact (mostly) nicely with subset, intersection and union.</p> <div class="theorem"><div>
+<h3>Theorem:
+      </h3>
+<p>Let <span class="process-math">\(f:A \to B\)</span> and <span class="process-math">\(C \subseteq A\)</span> and <span class="process-math">\(D \subseteq B\text{.}\)</span> Then<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+C \subseteq f^{-1}(f(C)) \qquad \text{ and } \qquad f(f^{-1}(D)) \subseteq D
+\end{equation*}
+</div>Now let <span class="process-math">\(C_1,C_2 \subseteq A\)</span> and <span class="process-math">\(D_1,D_2 \subseteq B\text{.}\)</span> Then<div class="displaymath process-math" data-contains-math-knowls="" id="md-1">
+\begin{align*}
+f(C_1 \cap C_2) \amp \subseteq f(C_1) \cap f(C_2) \amp
+f(C_1 \cup C_2) \amp = f(C_1) \cup f(C_2)\\
+f^{-1}(D_1 \cap D_2) \amp = f^{-1}(D_1) \cap f^{-1}(D_2) \amp
+f^{-1}(D_1 \cup D_2) \amp = f^{-1}(D_1) \cup f^{-1}(D_2)
+\end{align*}
+</div></p>
+</div></div> <p>Make good problems — test lots of skills</p>
+</div></section><section><h3>Proof 1</h3>
+<div align="left"> <blockquote class="blockquote" id="blockquote-1"><p><span class="process-math">\(f^{-1}(D_1 \cup D_2) = f^{-1}(D_1) \cup f^{-1}(D_2)\)</span></p></blockquote> <p>We use <span class="process-math">\(x \in f^{-1}(D) \iff f(x) \in D\)</span></p> <article class="hiddenproof" id="proof-1"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
+<p><span class="process-math">\(LHS \subseteq RHS\text{:}\)</span>  Let <span class="process-math">\(x \in f^{-1}(D_1 \cup D_2)\text{,}\)</span> so <span class="process-math">\(f(x) \in D_1 \cup D_2\text{.}\)</span></p>
+<p>Hence <span class="process-math">\(f(x) \in D_1\)</span> or <span class="process-math">\(f(x) \in D_2\text{.}\)</span><ul class="disc">
+<li>when <span class="process-math">\(f(x)\in D_1\)</span> we know <span class="process-math">\(x \in f^{-1}(D_1)\)</span>
+</li>
+<li>when <span class="process-math">\(f(x)\in D_2\)</span> we know <span class="process-math">\(x \in f^{-1}(D_2)\)</span>
+</li>
+</ul>In either case we know that <span class="process-math">\(x \in f^{-1}(D_1) \cup f^{-1}(D_2)\text{.}\)</span></p>
+<p>Other inclusion is similar.</p></article>
+</div></section><section><h3>Proof 2</h3>
+<div align="left"> <blockquote class="blockquote" id="blockquote-2"><p><span class="process-math">\(f(C_1 \cap C_2) \subseteq f(C_1) \cap f(C_2)\)</span></p></blockquote> <p>We use<div class="displaymath process-math" data-contains-math-knowls="" id="md-2">
+\begin{align*}
+x \in C \amp \implies f(x) \in f(C)
+\amp \text{and}\amp\amp
+y \in f(C) \amp \implies \exists x \in C \text{ s.t. } y=f(x) \in f(C)
+\end{align*}
+</div></p> <article class="hiddenproof" id="proof-2"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
+<p>Let <span class="process-math">\(y \in f(C_1 \cap C_2)\text{.}\)</span></p>
+<p>This means that there is some <span class="process-math">\(x \in C_1\cap C_2\)</span> so that <span class="process-math">\(f(x)=y\text{.}\)</span> Then<ul class="disc">
+<li>since <span class="process-math">\(x \in C_1\text{,}\)</span> we know that <span class="process-math">\(y=f(x)\in f(C_1)\)</span>
+</li>
+<li>since <span class="process-math">\(x \in C_2\text{,}\)</span> we know that <span class="process-math">\(y=f(x)\in f(C_2)\)</span>
+</li>
+</ul>Hence <span class="process-math">\(y \in f(C_1) \cap f(C_2)\text{.}\)</span></p></article>
+</div></section><section><h3>Reverse inclusion is false</h3>
+<div align="left"> <blockquote class="blockquote" id="blockquote-3"><p><span class="process-math">\(f(C_1) \cap f(C_2) \not\subseteq f(C_1 \cap C_2)\)</span></p></blockquote> <p>Consider <span class="process-math">\(f: \mathbb{R} \to \mathbb{R}\)</span> defined by <span class="process-math">\(f(x)=x^2\text{.}\)</span><ul class="disc">
+<li>Let <span class="process-math">\(C_1 = \set{-1}\text{,}\)</span> so <span class="process-math">\(f(C_1) = \set{1}\)</span>
+</li>
+<li>Let <span class="process-math">\(C_2 = \set{1}\text{,}\)</span> so <span class="process-math">\(f(C_2) = \set{1}\)</span>
+</li>
+<li>Then <span class="process-math">\(f(C_1) \cap f(C_2) = \set{1}\)</span> but <span class="process-math">\(f(C_1 \cap C_2) = f(\es) = \es\)</span>
+</li>
+</ul></p> <p>Notice also that this shows <span class="process-math">\(f(x)\in f(C)\)</span> does <em class="emphasis">not</em> imply <span class="process-math">\(x \in C\)</span><ul class="disc">
+<li>Set <span class="process-math">\(x=-1\)</span> and <span class="process-math">\(C=\set{1}\)</span>
+</li>
+<li>Then <span class="process-math">\(f(x)=1\in \set{1}=f(C)\)</span> but <span class="process-math">\(x \not\in C\text{.}\)</span>
+</li>
+</ul></p> <p>These fail because there are <span class="process-math">\(x_1 \neq x_2\)</span> so that <span class="process-math">\(f(x_1) = f(x_2)\text{.}\)</span></p>
+</div></section><section><h3>Proof 3</h3>
+<div align="left"> <blockquote class="blockquote" id="blockquote-4"><p><span class="process-math">\(C \subseteq f^{-1}(f(C))\)</span></p></blockquote> <article class="hiddenproof" id="proof-3"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
+<p>Let <span class="process-math">\(x \in C\text{.}\)</span><ul class="disc">
+<li>Since <span class="process-math">\(x \in C\text{,}\)</span> we know that <span class="process-math">\(f(x) \in f(C)\)</span>
+</li>
+<li>To make logic clearer we write <span class="process-math">\(D = f(C)\text{,}\)</span> so that <span class="process-math">\(f(x) \in D\)</span>
+</li>
+<li>Since <span class="process-math">\(f(x) \in D\text{,}\)</span> we know that <span class="process-math">\(x \in f^{-1}(D)\)</span>
+</li>
+<li>But since <span class="process-math">\(D=f(C)\)</span> this means that <span class="process-math">\(x \in f^{-1}(f(C))\)</span> as required.</li>
+</ul></p></article> <p>Reverse inclusion is false. Let <span class="process-math">\(f: \mathbb{R} \to \mathbb{R}\)</span> with <span class="process-math">\(f(x)=x^2\text{.}\)</span><ul class="disc">
+<li>Let <span class="process-math">\(C = \set{2}\text{.}\)</span> Then <span class="process-math">\(f(C) = \set{4}\)</span>
+</li>
+<li>But <span class="process-math">\(f^{-1}(\set{4}) = \set{-2,2}\)</span> — since <span class="process-math">\(f(2)=f(-2)=4\text{.}\)</span>
+</li>
+<li>Thus <span class="process-math">\(f^{-1}(f(\set{2}))=\set{-2,2} \not\subseteq \set{2}=C\)</span>
+</li>
+</ul></p>
+</div></section></section>
+</div>
+</div></body>
+<script>
+Reveal.initialize({
+  controls: true,
+  controlsTutorial: true,
+  controlsLayout: 'bottom-right',
+  controlsBackArrows: 'faded',
+  navigationMode: 'default',
+  progress: false,
+  center: false,
+  hash: true,
+  transition: 'fade',
+  width: "100%",
+  height: "100%",
+  margin: "0.025",
+  math: {
+    mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+    config: 'TeX-AMS_HTML-full',
+    // other options are passed into MathJax.Hub.Config()
+    tex2jax: {
+      inlineMath:  [['\\(','\\)']],
+      displayMath: [],
+    }
+  },
+  plugins: [ RevealMath ]
+});
+</script>
+</html>
