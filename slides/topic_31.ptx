@@ -47,22 +47,18 @@
   </ul>
 </p>
 <sidebyside widths="40% 20%">
-<paragraphs>
   <p>
     Can define functions on other objects (not just numbers):
     <ul>
       <li>Input day of the week (in English)</li>
       <li>Return the first letter</li>
     </ul>
-  </p>
-  <p>
     But must be <em>well defined</em>
     <ul>
       <li>Any legal input must have an output</li>
       <li>One input value gives only one output value</li>
     </ul>
   </p>
-</paragraphs>
 <image source="figures/day_function1.png"/>
 </sidebyside>
 
