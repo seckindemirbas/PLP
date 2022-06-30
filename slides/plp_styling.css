@@ -1,0 +1,10 @@
+dfn, dt {
+  font-weight: bold;
+  color: #fa3de7;
+}
+.reveal h3,h4 {
+  color: #00bfff;
+}
+.blockquote, .emphasis {
+  color: #00ced1;
+}
