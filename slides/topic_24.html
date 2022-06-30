@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-30T16:09:18-07:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>PLP - 24</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reset.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/theme/black.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/plugin/math/math.js"></script><style>
+ul {
+  display: block !important;
+}
+.sbsrow {
+  display: flex; !important;
+}
+.reveal img {
+  border: 0.5px !important;
+  border-radius: 2px 10px 2px;
+  padding: 4px;
+}
+.definition,.theorem,.activity {
+  border-width: 0.5px;
+  border-style: solid;
+  border-radius: 2px 10px 2px;
+  padding: 1%;
+  margin-bottom: 2em;
+}
+.definition {
+  background: #00608010;
+}
+.theorem {
+  background: #ff000010;
+}
+.proof {
+  background: #ffffff90;
+}
+.activity {
+  background: #60800010;
+}
+dfn {
+  font-weight: bold;
+}
+.pretext-content ol.no-marker,
+.pretext-content ul.no-marker,
+.pretext-content li.no-marker {
+    list-style-type: none;
+}
+
+.pretext-content ol.decimal {
+    list-style-type: decimal;
+}
+.pretext-content ol.lower-alpha {
+    list-style-type: lower-alpha;
+}
+.pretext-content ol.upper-alpha {
+    list-style-type: upper-alpha;
+}
+.pretext-content ol.lower-roman {
+    list-style-type: lower-roman;
+}
+.pretext-content ol.upper-roman {
+    list-style-type: upper-roman;
+}
+.pretext-content ul.disc {
+    list-style-type: disc;
+}
+.pretext-content ul.square {
+    list-style-type: square;
+}
+.pretext-content ul.circle {
+    list-style-type: circle;
+}
+.pretext-content ol.no-marker,
+.pretext-content ul.no-marker {
+    list-style-type: none;
+}
+.pretext-content .cols1 li,
+.pretext-content .cols2 li,
+.pretext-content .cols3 li,
+.pretext-content .cols4 li,
+.pretext-content .cols5 li,
+.pretext-content .cols6 li {
+    float: left;
+    padding-right:2em;
+}
+          </style>
+
+                <link href="plp_styling.css" rel="stylesheet"/>
+                </head>
+<body><div class="reveal pretext-content">
+<div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(  \newcommand{\ds}{\displaystyle}
+  \newcommand{\es}{ {\varnothing}}
+\newcommand{\st}{ \;:\; }
+\newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+\newcommand{\set}[1]{ \left\{#1\right\} }
+  \renewcommand{\neg}{\sim}
+  \renewcommand{\text}[1]{\mathsf{\mbox{#1}}}
+  \DeclareMathOperator{\gcd}{gcd}
+  \DeclareMathOperator{\lcm}{lcm}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="slides">
+<section><section><h1>PLP - 24</h1>
+<h2>Topic 24—Set proofs</h2>
+<table>
+<tr><th align="center" style="border-bottom: 0px;">Demirbaş &amp; Rechnitzer</th></tr>
+<tr><td align="center" style="border-bottom: 0px;"></td></tr>
+<tr><td align="center"></td></tr>
+</table></section></section><section><section><h1>Proving things</h1></section><section><h3>Writing set operations as statements</h3>
+<div align="left"> <p>Let <span class="process-math">\(A,B\)</span> be sets.<dl class="description-list">
+<div>
+<dt>Subset and equality</dt>
+<dd><p><ul id="p-2" class="disc">
+<li><span class="process-math">\((A \subseteq B) \quad \equiv \quad (\forall x\in A, x\in B) \quad \equiv \quad( x\in A \implies x\in B)\text{.}\)</span></li>
+<li><span class="process-math">\(\displaystyle (A = B) \quad \equiv \quad \left( (A \subseteq B) \land (B \subseteq A) \right) \quad \equiv \quad \left((x \in
+A) \iff (x \in B) \right)\)</span></li>
+</ul></p></dd>
+</div>
+<div>
+<dt>Intersection and union</dt>
+<dd><p><ul id="p-3" class="disc">
+<li><span class="process-math">\(\displaystyle (x \in A \cap B) \quad \equiv \quad \left( x\in A \land x\in B \right)\)</span></li>
+<li><span class="process-math">\(\displaystyle (x \in A \cup B) \quad \equiv \quad \left( x\in A \lor x\in B \right)\)</span></li>
+</ul></p></dd>
+</div>
+<div>
+<dt>Complement and difference</dt>
+<dd><p><ul id="p-4" class="disc">
+<li><span class="process-math">\(\displaystyle (x \in \bar{A}) \quad \equiv \quad (x \not\in A) \quad \equiv \quad \neg(x \in A)\)</span></li>
+<li><span class="process-math">\(\displaystyle (x \in A - B) \quad \equiv \quad \left( (x \in A) \land (x \not\in B)\right) \quad \equiv \quad \left((x \in A) \land \neg(x \in  B) \right)\)</span></li>
+</ul></p></dd>
+</div>
+</dl></p>
+</div></section><section><h3>A subset example</h3>
+<div align="left"> <div class="theorem"><div>
+<h3>Proposition:
+      </h3>
+<p>Let <span class="process-math">\(A = \set{n \in \mathbb{Z} \st 6\mid n}\)</span> and <span class="process-math">\(B = \set{n \in \mathbb{Z} \st 2\mid n}\text{,}\)</span> then <span class="process-math">\(A \subseteq B\)</span></p>
+</div></div> <p><dfn class="terminology">Scratch work</dfn> <p><ul id="p-7" class="disc">
+<li>We need to prove <span class="process-math">\(a \in A \implies a \in B\)</span>
+</li>
+<li>So assume that <span class="process-math">\(a \in A\text{.}\)</span> Hence <span class="process-math">\(a\)</span> is an integer divisible by 6</li>
+<li>This means <span class="process-math">\(a = 6k\)</span> for some <span class="process-math">\(k \in \mathbb{Z}\text{.}\)</span>
+</li>
+<li>We need to show that <span class="process-math">\(a \in B\)</span> which means we need to show that <span class="process-math">\(2 \mid a\)</span>
+</li>
+<li>But since <span class="process-math">\(a = 6k\text{,}\)</span> we know <span class="process-math">\(a=2 \cdot 3k\)</span> so, <span class="process-math">\(2 \mid a\)</span> as required.</li>
+</ul></p></p>
+</div></section><section><h3>Write it up nicely</h3>
+<div align="left"> <blockquote class="blockquote" id="blockquote-1"><p><span class="process-math">\(A =\set{n \in \mathbb{Z} \st 6 \mid n} \subseteq
+\set{n \in \mathbb{Z} \st 2 \mid n} = B\)</span></p></blockquote> <article class="hiddenproof" id="proof-1"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
+<p><ul id="p-9" class="disc">
+<li>Let the sets <span class="process-math">\(A,B\)</span> be as stated and assume that <span class="process-math">\(a \in A\text{.}\)</span>
+</li>
+<li>Hence we know that <span class="process-math">\(6 \mid a\)</span> and so <span class="process-math">\(a = 6k\)</span>
+</li>
+<li>This implies that <span class="process-math">\(a = 2 (3k)\)</span> and so <span class="process-math">\(2 \mid a\)</span>
+</li>
+<li>By the definition of the set <span class="process-math">\(B\text{,}\)</span> <span class="process-math">\(a \in B\)</span>
+</li>
+<li>So <span class="process-math">\(A \subseteq B\)</span> as required</li>
+</ul></p></article>
+</div></section><section><h3>Another example</h3>
+<div align="left"> <div class="theorem"><div>
+<h3>Proposition:
+      </h3>
+<p>Let <span class="process-math">\(A,B,C\)</span> be sets. If <span class="process-math">\(A\subseteq B\)</span> and <span class="process-math">\(B \subseteq C\)</span> then <span class="process-math">\(A \subseteq C\text{.}\)</span></p>
+</div></div> <p><dfn class="terminology">Scratch work</dfn><ul class="disc">
+<li><p>What do we assume? That <span class="process-math">\(A\subseteq B\)</span> and <span class="process-math">\(B \subseteq C\text{.}\)</span></p></li>
+<li><p>What do we need to prove? <span class="process-math">\(A \subseteq C\text{,}\)</span> that is <span class="process-math">\(\qquad (x \in A) \implies (x \in C)\)</span></p></li>
+<li><p>A problem — what do we assume? Either <span class="process-math">\(x \in A\)</span> or <span class="process-math">\(x \not \in A\text{.}\)</span><ul class="circle">
+<li>
+<p>If <span class="process-math">\(x \in A\)</span> then since <span class="process-math">\(A \subseteq B\text{,}\)</span> <span class="process-math">\(x \in B\text{.}\)</span></p>
+<p>Then since <span class="process-math">\(x \in B\)</span> and <span class="process-math">\(B \subseteq C\text{,}\)</span> <span class="process-math">\(x \in C\)</span></p>
+</li>
+<li>If <span class="process-math">\(x \not\in A\)</span> then the implication “<span class="process-math">\((x \in A) \implies (x \in C)\)</span>” is true.</li>
+</ul></p></li>
+</ul></p>
+</div></section><section><h3>Write it up</h3>
+<div align="left"> <blockquote class="blockquote" id="blockquote-2"><p><span class="process-math">\((A \subseteq B) \land (B \subseteq C) \implies (A \subseteq C)\)</span></p></blockquote> <article class="hiddenproof" id="proof-2"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
+<p><ul id="p-18" class="disc">
+<li>Assume that <span class="process-math">\(A \subseteq B\)</span> and <span class="process-math">\(B \subseteq C\text{.}\)</span>
+</li>
+<li>Further let <span class="process-math">\(x \in A\)</span>
+</li>
+<li>Since <span class="process-math">\(A \subseteq B\text{,}\)</span> we know that <span class="process-math">\(x \in B\)</span>
+</li>
+<li>Then similarly, since <span class="process-math">\(B \subseteq C\text{,}\)</span> we know that <span class="process-math">\(x \in C\)</span>
+</li>
+<li>Hence <span class="process-math">\(A \subseteq C\)</span> as required</li>
+</ul></p></article>
+</div></section><section><h3>A distributive result</h3>
+<div align="left"> <div class="theorem"><div>
+<h3>Proposition:
+      </h3>
+<p>Let <span class="process-math">\(A,B,C\)</span> be sets, then <span class="process-math">\(A \cup (B\cap C) = (A\cup C) \cap (A\cup B)\text{.}\)</span></p>
+</div></div> <p><dfn class="terminology">Scratch work</dfn></p> <div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div style="flex:100%;vertical-align:top;"><img src="figures/AcupBcapC.png"></div></div>
+</div></section><section><h3>Just do one inclusion</h3>
+<div align="left"> <blockquote class="blockquote" id="blockquote-3"><p><span class="process-math">\(A \cup (B\cap C) \subseteq (A\cup C) \cap (A\cup B)\)</span></p></blockquote> <p><ul id="p-22" class="disc">
+<li>We have to prove <dfn class="terminology">LHS</dfn> is a subset of <dfn class="terminology">RHS</dfn>
+</li>
+<li>Let <span class="process-math">\(x \in \)</span> <dfn class="terminology">LHS</dfn>. Hence <span class="process-math">\(x \in A\)</span> or <span class="process-math">\(x \in B \cap C\text{.}\)</span>
+</li>
+<li><p>So we have 2 cases to consider<ul class="circle">
+<li>Assume <span class="process-math">\(x \in A\text{.}\)</span> Then <span class="process-math">\(x \in A \cup C\)</span> and <span class="process-math">\(x \in A \cup B\)</span>
+</li>
+<li>
+<p>Now assume <span class="process-math">\(x \in B \cap C\text{,}\)</span> then <span class="process-math">\(x \in B\)</span> and <span class="process-math">\(x \in C\)</span></p>
+<p>Since <span class="process-math">\(x \in B\text{,}\)</span> we know <span class="process-math">\(x \in B \cup A\text{.}\)</span></p>
+<p>Similarly <span class="process-math">\(x \in C\text{,}\)</span> so <span class="process-math">\(x \in C \cup A\text{.}\)</span></p>
+</li>
+</ul></p></li>
+<li>In both cases, <span class="process-math">\(x \in A\cup B\)</span> and <span class="process-math">\(x \in A \cup C\text{,}\)</span> so <span class="process-math">\(x \in \)</span> <dfn class="terminology">RHS</dfn> as required</li>
+</ul></p>
+</div></section><section><h3>Write it up</h3>
+<div align="left"> <blockquote class="blockquote" id="blockquote-4"><p><span class="process-math">\(A \cup (B\cap C) \subseteq (A\cup C) \cap (A\cup B)\)</span></p></blockquote> <article class="hiddenproof" id="proof-3"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
+<p>Let <span class="process-math">\(x \in A \cup (B\cap C)\text{,}\)</span> so that <span class="process-math">\(x \in A\)</span> or <span class="process-math">\(x \in B\cap C\text{.}\)</span> We consider each case separately.<ul class="disc">
+<li>Assume that <span class="process-math">\(x \in A\text{,}\)</span> then we know that <span class="process-math">\(x \in A \cup B\text{.}\)</span> Simiarly, we have <span class="process-math">\(x \in A \cup C\text{.}\)</span>
+</li>
+<li>
+<p>Now assume that <span class="process-math">\(x \in B\cap C\text{,}\)</span> so that <span class="process-math">\(x \in B\)</span> and <span class="process-math">\(x \in C\text{.}\)</span></p>
+<p>Since <span class="process-math">\(x \in B\)</span> it follows that <span class="process-math">\(x \in B \cup A\text{.}\)</span> Similarly, because <span class="process-math">\(x \in C\text{,}\)</span> <span class="process-math">\(x \in C \cup A\text{.}\)</span></p>
+</li>
+</ul>In both cases, <span class="process-math">\(x \in (A \cup B)\)</span> and <span class="process-math">\(x \in (A \cup C)\text{.}\)</span> Hence <span class="process-math">\(x \in (A\cup C) \cap (A\cup B)\)</span> as required.</p></article>
+</div></section></section>
+</div>
+</div></body>
+<script>
+Reveal.initialize({
+  controls: true,
+  controlsTutorial: true,
+  controlsLayout: 'bottom-right',
+  controlsBackArrows: 'faded',
+  navigationMode: 'default',
+  progress: false,
+  center: false,
+  hash: true,
+  transition: 'fade',
+  width: "100%",
+  height: "100%",
+  margin: "0.025",
+  math: {
+    mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+    config: 'TeX-AMS_HTML-full',
+    // other options are passed into MathJax.Hub.Config()
+    tex2jax: {
+      inlineMath:  [['\\(','\\)']],
+      displayMath: [],
+    }
+  },
+  plugins: [ RevealMath ]
+});
+</script>
+</html>

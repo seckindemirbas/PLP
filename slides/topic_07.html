@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-30T16:05:50-07:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>PLP - 7</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reset.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/theme/black.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/plugin/math/math.js"></script><style>
+ul {
+  display: block !important;
+}
+.sbsrow {
+  display: flex; !important;
+}
+.reveal img {
+  border: 0.5px !important;
+  border-radius: 2px 10px 2px;
+  padding: 4px;
+}
+.definition,.theorem,.activity {
+  border-width: 0.5px;
+  border-style: solid;
+  border-radius: 2px 10px 2px;
+  padding: 1%;
+  margin-bottom: 2em;
+}
+.definition {
+  background: #00608010;
+}
+.theorem {
+  background: #ff000010;
+}
+.proof {
+  background: #ffffff90;
+}
+.activity {
+  background: #60800010;
+}
+dfn {
+  font-weight: bold;
+}
+.pretext-content ol.no-marker,
+.pretext-content ul.no-marker,
+.pretext-content li.no-marker {
+    list-style-type: none;
+}
+
+.pretext-content ol.decimal {
+    list-style-type: decimal;
+}
+.pretext-content ol.lower-alpha {
+    list-style-type: lower-alpha;
+}
+.pretext-content ol.upper-alpha {
+    list-style-type: upper-alpha;
+}
+.pretext-content ol.lower-roman {
+    list-style-type: lower-roman;
+}
+.pretext-content ol.upper-roman {
+    list-style-type: upper-roman;
+}
+.pretext-content ul.disc {
+    list-style-type: disc;
+}
+.pretext-content ul.square {
+    list-style-type: square;
+}
+.pretext-content ul.circle {
+    list-style-type: circle;
+}
+.pretext-content ol.no-marker,
+.pretext-content ul.no-marker {
+    list-style-type: none;
+}
+.pretext-content .cols1 li,
+.pretext-content .cols2 li,
+.pretext-content .cols3 li,
+.pretext-content .cols4 li,
+.pretext-content .cols5 li,
+.pretext-content .cols6 li {
+    float: left;
+    padding-right:2em;
+}
+          </style>
+
+                <link href="plp_styling.css" rel="stylesheet"/>
+                </head>
+<body><div class="reveal pretext-content">
+<div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(  \newcommand{\ds}{\displaystyle}
+  \newcommand{\es}{ {\varnothing}}
+\newcommand{\st}{ \;\mid\; }
+\newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+\newcommand{\set}[1]{ \left\{#1\right\} }
+  \renewcommand{\neg}{\sim}
+  \renewcommand{\text}[1]{\mathsf{\mbox{#1}}}
+  \DeclareMathOperator{\gcd}{gcd}
+  \DeclareMathOperator{\lcm}{lcm}
+  \newcommand{\Mod}[1]{\;(\mathrm{mod}\; #1)}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="slides">
+<section><section><h1>PLP - 7</h1>
+<h2>Topic 7 —Statement types and some definitions</h2>
+<table>
+<tr><th align="center" style="border-bottom: 0px;">Demirbaş &amp; Rechnitzer</th></tr>
+<tr><td align="center" style="border-bottom: 0px;"></td></tr>
+<tr><td align="center"></td></tr>
+</table></section></section><section><section><h1>After logic but before proofs</h1></section><section><h3>Types of statements</h3>
+<div align="left"> <dl class="description-list">
+<div>
+<dt>axiom</dt>
+<dd><p>Statements we accept as true without proof.</p></dd>
+</div>
+<div>
+<dt>fact</dt>
+<dd><p>Statements we accept as true, but we won't bother proving for this course</p></dd>
+</div>
+</dl> <article class="axiom theorem-like" id="axiom-1"><h4 class="heading">
+<span class="type">Axiom</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span>
+</h4>
+<p>Let <span class="process-math">\(m,n\)</span> be integers then <span class="process-math">\(-n, m+n, m-n\)</span> and <span class="process-math">\(m\cdot n\)</span> are also integers.</p></article> <div class="definition">
+<h3>Fact:
+	</h3>Let <span class="process-math">\(x \in \mathbb{R}\text{.}\)</span> Then <span class="process-math">\(x^2 \geq 0\text{.}\)</span>
+</div>
+</div></section><section><h3>Types of statements</h3>
+<div align="left"> <dl class="description-list">
+<div>
+<dt>theorem</dt>
+<dd><p>An important true statement — Pythagorous' theorem</p></dd>
+</div>
+<div>
+<dt>corollary</dt>
+<dd><p>A true statement that follows from a previous theorem</p></dd>
+</div>
+<div>
+<dt>lemma</dt>
+<dd><p>A true statement that helps us prove a more important result</p></dd>
+</div>
+<div>
+<dt>result, proposition</dt>
+<dd><p>True statements we prove (esp as exercises) we'll call results, or propositions (if more important)</p></dd>
+</div>
+</dl>
+</div></section><section><h3>Useful definitions</h3>
+<div align="left"> <div class="boxed definition">
+<h3>Definition:
+	Even and odd numbers.</h3>
+<p>An integer <span class="process-math">\(n\)</span> is <dfn class="terminology">even</dfn> if <span class="process-math">\(n=2k\)</span> for some <span class="process-math">\(k \in \mathbb{Z}\text{.}\)</span></p>
+<p>An integer <span class="process-math">\(n\)</span> is <dfn class="terminology">odd</dfn> if <span class="process-math">\(n=2\ell+1\)</span> for some <span class="process-math">\(\ell \in \mathbb{Z}\text{.}\)</span></p>
+<p>If two integers are <em class="emphasis">both even</em> or <em class="emphasis">both odd</em> odd, then they have the  <dfn class="terminology">same parity</dfn>, else <dfn class="terminology">opposite parity</dfn>.</p>
+</div> <p>Note:<ul class="disc">
+<li>
+<p>The use of <em class="emphasis">if</em> in a definition is really <em class="emphasis">iff</em>.</p>
+<p>We mean “<span class="process-math">\(n\)</span> is even” if and only if “<span class="process-math">\(n=2k\)</span> for some <span class="process-math">\(k \in \mathbb{Z}\)</span>”</p>
+</li>
+<li>The number 0 is even (some students are taught otherwise).</li>
+</ul></p>
+</div></section><section><h3>Some more useful definitions</h3>
+<div align="left"> <div class="boxed definition">
+<h3>Definition:
+	(Divisibility).</h3>
+<p>Let <span class="process-math">\(n,k \in \mathbb{Z}\text{.}\)</span> We say <span class="process-math">\(k\)</span> <dfn class="terminology">divides</dfn> <span class="process-math">\(n\)</span> if there is <span class="process-math">\(\ell \in \mathbb{Z}\)</span> so that <span class="process-math">\(n=\ell k\text{.}\)</span></p>
+<p>In this case we write <span class="process-math">\(k \mid n\)</span> and say that <span class="process-math">\(k\)</span> is a <dfn class="terminology">divisor</dfn> of <span class="process-math">\(n\)</span> and that <span class="process-math">\(n\)</span> is a <dfn class="terminology">multiple</dfn> of <span class="process-math">\(k\text{.}\)</span></p>
+</div> <div class="boxed definition">
+<h3>Definition:
+	(Prime, composite and 1).</h3>
+<p>Let <span class="process-math">\(n \in \mathbb{N}\text{.}\)</span> We say that <span class="process-math">\(n\)</span> is <dfn class="terminology">prime</dfn> when it has <em class="emphasis">exactly</em> two positive divisors, 1 and itself.</p>
+<p>If <span class="process-math">\(n\)</span> has more than two positive divisors then we say that it is <dfn class="terminology">composite</dfn>.</p>
+<p>Finally, the number 1 is neither prime nor composite.</p>
+</div>
+</div></section><section><h3>GCD, LCM and Euclid</h3>
+<div align="left"> <div class="boxed definition">
+<h3>Definition:
+	(GCD and LCM).</h3>
+<p>Let <span class="process-math">\(a,b\)</span> be integers<ul class="disc">
+<li>The <dfn class="terminology">greatest common divisor</dfn> of <span class="process-math">\(a,b\)</span> is the largest positive integer that divides both <span class="process-math">\(a,b\)</span>
+</li>
+<li>The <dfn class="terminology">least common multiple</dfn> of <span class="process-math">\(a,b\)</span> is the smallest positive integer divisible by both <span class="process-math">\(a,b\)</span>
+</li>
+<li>We denote these <span class="process-math">\(\gcd(a,b)\)</span> and <span class="process-math">\(\lcm(a,b)\)</span>
+</li>
+</ul></p>
+</div> <div class="definition">
+<h3>Fact:
+	(Euclidean division).</h3>
+<p>Let <span class="process-math">\(a,b \in \mathbb{Z}\)</span> with <span class="process-math">\(b \gt 0\text{,}\)</span> then there exist unique <span class="process-math">\(q,r \in \mathbb{Z}\)</span> so that<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+a = bq+r \qquad \text{ with } 0 \leq r \lt b
+\end{equation*}
+</div></p>
+</div>
+</div></section><section><h3>Congruence modulo <span class="process-math">\(n\)</span>
+</h3>
+<div align="left"> <div class="boxed definition">
+<h3>Definition:
+	</h3>
+<p>Let <span class="process-math">\(a,b \in \mathbb{Z}\)</span> and <span class="process-math">\(n \in \mathbb{N}\text{.}\)</span></p> We say that <span class="process-math">\(a\)</span> is <dfn class="terminology">congruent to</dfn> <span class="process-math">\(b\)</span> <dfn class="terminology">modulo</dfn> <span class="process-math">\(n\)</span> when <span class="process-math">\(n\mid(a-b)\text{.}\)</span> <p>The “n” is refered to as the <dfn class="terminology">modulus</dfn> and we write the congruence as <span class="process-math">\(a \equiv b \Mod{n}\text{.}\)</span></p>
+<p>When <span class="process-math">\(n \nmid (a-b)\)</span> we say that <span class="process-math">\(a\)</span> is not congruent to <span class="process-math">\(b\)</span> modulo <span class="process-math">\(n\text{,}\)</span> and write <span class="process-math">\(a \not\equiv b \Mod{n}\text{.}\)</span></p>
+</div> <p>For example:<div class="displaymath process-math" data-contains-math-knowls="" id="md-1">
+\begin{align*}
+5 \amp\equiv 1 \Mod{4}
+\amp 17 \amp \equiv 1 \Mod{4}
+\amp 3 \amp\not\equiv 9 \Mod{4}
+\end{align*}
+</div></p>
+</div></section></section>
+</div>
+</div></body>
+<script>
+Reveal.initialize({
+  controls: true,
+  controlsTutorial: true,
+  controlsLayout: 'bottom-right',
+  controlsBackArrows: 'faded',
+  navigationMode: 'default',
+  progress: false,
+  center: false,
+  hash: true,
+  transition: 'fade',
+  width: "100%",
+  height: "100%",
+  margin: "0.025",
+  math: {
+    mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+    config: 'TeX-AMS_HTML-full',
+    // other options are passed into MathJax.Hub.Config()
+    tex2jax: {
+      inlineMath:  [['\\(','\\)']],
+      displayMath: [],
+    }
+  },
+  plugins: [ RevealMath ]
+});
+</script>
+</html>

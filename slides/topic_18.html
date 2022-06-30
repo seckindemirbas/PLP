@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-30T16:08:06-07:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>PLP - 18</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reset.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/theme/black.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/plugin/math/math.js"></script><style>
+ul {
+  display: block !important;
+}
+.sbsrow {
+  display: flex; !important;
+}
+.reveal img {
+  border: 0.5px !important;
+  border-radius: 2px 10px 2px;
+  padding: 4px;
+}
+.definition,.theorem,.activity {
+  border-width: 0.5px;
+  border-style: solid;
+  border-radius: 2px 10px 2px;
+  padding: 1%;
+  margin-bottom: 2em;
+}
+.definition {
+  background: #00608010;
+}
+.theorem {
+  background: #ff000010;
+}
+.proof {
+  background: #ffffff90;
+}
+.activity {
+  background: #60800010;
+}
+dfn {
+  font-weight: bold;
+}
+.pretext-content ol.no-marker,
+.pretext-content ul.no-marker,
+.pretext-content li.no-marker {
+    list-style-type: none;
+}
+
+.pretext-content ol.decimal {
+    list-style-type: decimal;
+}
+.pretext-content ol.lower-alpha {
+    list-style-type: lower-alpha;
+}
+.pretext-content ol.upper-alpha {
+    list-style-type: upper-alpha;
+}
+.pretext-content ol.lower-roman {
+    list-style-type: lower-roman;
+}
+.pretext-content ol.upper-roman {
+    list-style-type: upper-roman;
+}
+.pretext-content ul.disc {
+    list-style-type: disc;
+}
+.pretext-content ul.square {
+    list-style-type: square;
+}
+.pretext-content ul.circle {
+    list-style-type: circle;
+}
+.pretext-content ol.no-marker,
+.pretext-content ul.no-marker {
+    list-style-type: none;
+}
+.pretext-content .cols1 li,
+.pretext-content .cols2 li,
+.pretext-content .cols3 li,
+.pretext-content .cols4 li,
+.pretext-content .cols5 li,
+.pretext-content .cols6 li {
+    float: left;
+    padding-right:2em;
+}
+          </style>
+
+                <link href="plp_styling.css" rel="stylesheet"/>
+                </head>
+<body><div class="reveal pretext-content">
+<div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(  \newcommand{\ds}{\displaystyle}
+  \newcommand{\es}{ {\varnothing}}
+\newcommand{\st}{ \;\text{s.t.}\; }
+\newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+\newcommand{\set}[1]{ \left\{#1\right\} }
+  \renewcommand{\neg}{\sim}
+  \renewcommand{\text}[1]{\mathsf{\mbox{#1}}}
+  \DeclareMathOperator{\gcd}{gcd}
+  \DeclareMathOperator{\lcm}{lcm}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="slides">
+<section><section><h1>PLP - 18</h1>
+<h2>Topic 18—Induction</h2>
+<table>
+<tr><th align="center" style="border-bottom: 0px;">Demirbaş &amp; Rechnitzer</th></tr>
+<tr><td align="center" style="border-bottom: 0px;"></td></tr>
+<tr><td align="center"></td></tr>
+</table></section></section><section><section><h1>Induction</h1></section><section><h3>Induction</h3>
+<div align="left"> <p><dfn class="terminology">Mathematical induction</dfn> is a specialised technique for proving<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\forall n \in \mathbb{N}, P(n)
+\end{equation*}
+</div></p> <p>It breaks the proof into 2 simpler steps<dl class="description-list">
+<div>
+<dt>base case</dt>
+<dd><p>prove that <span class="process-math">\(P(1)\)</span> is true</p></dd>
+</div>
+<div>
+<dt>inductive step</dt>
+<dd><p>show that <span class="process-math">\(P(k) \implies P(k+1)\)</span></p></dd>
+</div>
+</dl></p> <p><ul id="p-5" class="disc">
+<li>
+<dfn class="terminology">base case</dfn> <span class="process-math">\(=\)</span> step onto bottom rung of ladder</li>
+<li>
+<dfn class="terminology">inductive step</dfn> <span class="process-math">\(=\)</span> from the current rung you can reach the next rung</li>
+<li>so you can climb the ladder as high as you want</li>
+</ul></p>
+</div></section><section><h3>An example</h3>
+<div align="left"> <div class="theorem"><div>
+<h3>Proposition:
+      </h3>
+<p>For all <span class="process-math">\(n \in \mathbb{N}\text{,}\)</span> <span class="process-math">\(n^2+5n-7\)</span> is odd</p>
+</div></div> <p><dfn class="terminology">scratch work</dfn><ul class="disc">
+<li>
+<dfn class="terminology">base case</dfn> when <span class="process-math">\(n=1\)</span> we have <span class="process-math">\(1+5-7 = -1\)</span> which is odd</li>
+<li><p><dfn class="terminology">inductive step</dfn> need to prove<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+(k^2+5k-7 \text{ is odd}) \implies ( (k+1)^2+5(k+1)-7 \text{ is odd})
+\end{equation*}
+</div></p></li>
+<li>The inductive step is a sub-proof inside our proof</li>
+</ul></p>
+</div></section><section><h3>Inductive step “sub proof”</h3>
+<div align="left"> <blockquote class="blockquote" id="blockquote-1"><p><span class="process-math">\(\forall k \in \mathbb{N}, (k^2+5k-7 \text{ is odd}) \implies ( (k+1)^2+5(k+1)-7 \text{ is odd})\)</span></p></blockquote> <p><dfn class="terminology">scratch work</dfn><ul class="disc">
+<li>so we assume <span class="process-math">\(k^2+5k-7 = 2\ell+1\)</span>
+</li>
+<li>need to show <span class="process-math">\((k^2+2k+1)+5(k+1)-7 = \underbrace{(k^2+5k-7)}_{2\ell+1}+(2k+6)\)</span> is odd.</li>
+<li><p>Since <span class="process-math">\(k^2+5k-7 = 2\ell+1\)</span> we know<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+(k+1)^2+5(k+1)-7 = 2(\ell+k+3)+1
+\end{equation*}
+</div>and since <span class="process-math">\(\ell+k+3 \in \mathbb{Z}\)</span> we are done.</p></li>
+</ul></p> <p>Of course we still need to put the two parts of the proof together.</p>
+</div></section><section><h3>Principle of mathematical induction</h3>
+<div align="left"> <div class="theorem"><div>
+<h3>Theorem:
+      Mathematical induction.</h3>
+<p>For all <span class="process-math">\(n\in\mathbb{N}\)</span> let <span class="process-math">\(P(n)\)</span> be a statement. Then if<ul class="disc">
+<li>
+<span class="process-math">\(P(1)\)</span> is true, and</li>
+<li>
+<span class="process-math">\(P(k) \implies P(k+1)\)</span> is true for all <span class="process-math">\(k \in \mathbb{N}\)</span>
+</li>
+</ul>then <span class="process-math">\(P(n)\)</span> is true for all <span class="process-math">\(n \in \mathbb{N}\text{.}\)</span></p>
+</div></div> <p><dfn class="terminology">Warnings</dfn><ul class="disc">
+<li>Induction <em class="emphasis">is not</em> “adding the next term to both sides”</li>
+<li>Induction <em class="emphasis">does not</em> prove all statements — <dfn class="terminology">the law of the instrument</dfn>
+</li>
+<li>Tell your <dfn class="terminology">reader</dfn> if you use induction in your proof</li>
+</ul></p>
+</div></section><section><h3>Completing our proof</h3>
+<div align="left"> <blockquote class="blockquote" id="blockquote-2"><p>For all <span class="process-math">\(n \in \mathbb{N}\text{,}\)</span> <span class="process-math">\(n^2+5n-7\)</span> is odd</p></blockquote> <article class="hiddenproof" id="proof-1"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
+<p><em class="emphasis">We prove the result by induction.</em><ul class="disc">
+<li>Base case: When <span class="process-math">\(n=1\)</span> we have <span class="process-math">\(1+5-7=-1\)</span> which is odd.</li>
+<li><p>Inductive step: Assume that <span class="process-math">\(k^2+5k-7\)</span> is odd, so we can write<div class="displaymath process-math" data-contains-math-knowls="" id="md-1">
+\begin{align*}
+k^2+5k-7 \amp = 2\ell+1 \text{ for some } \ell \in \mathbb{Z} \text{ and so}\\
+(k+1)^2+5(k+1)-7 \amp= 2(\ell+k+3)+1 
+\end{align*}
+</div>and since <span class="process-math">\(\ell+k+3 \in \mathbb{Z}\text{,}\)</span> it follows that <span class="process-math">\((k+1)^2+5(k+1)-7\)</span> is odd.</p></li>
+</ul>Since the base case and inductive step hold, the result follows <em class="emphasis">by induction</em>.</p></article>
+</div></section><section><h3>Another example</h3>
+<div align="left"> <div class="theorem"><div>
+<h3>Proposition:
+      </h3>
+<p>For every natural number <span class="process-math">\(n\text{,}\)</span> <span class="process-math">\(3 \mid (4^n-1)\)</span></p>
+</div></div> <p><dfn class="terminology">Scratch work</dfn><ul class="disc">
+<li>When <span class="process-math">\(n=1\text{,}\)</span> easy <span class="process-math">\(3 \mid (4-1)\)</span>
+</li>
+<li>Assume <span class="process-math">\(3 \mid (4^k-1)\text{,}\)</span> so <span class="process-math">\(4^k-1 = 3\ell\text{.}\)</span>
+</li>
+<li><p>Writing <span class="process-math">\(4^k = 3\ell+1\)</span> shows<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+4^{k+1} = 12\ell+4 \qquad \text{ so }\qquad 4^{k+1}-1 = 12 \ell +3
+\end{equation*}
+</div>done!</p></li>
+</ul></p>
+</div></section><section><h3>Write it up nicely</h3>
+<div align="left"> <blockquote class="blockquote" id="blockquote-3"><p>For every natural number <span class="process-math">\(n\text{,}\)</span> <span class="process-math">\(3 \mid (4^n-1)\)</span></p></blockquote> <article class="hiddenproof" id="proof-2"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
+<p>We prove the result by induction.<ul class="disc">
+<li>Base case: When <span class="process-math">\(n=1\)</span> we have <span class="process-math">\(3\mid(4-1)\text{,}\)</span> so the result holds.</li>
+<li><p>Inductive step: Assume that <span class="process-math">\(3 \mid (4^k-1)\text{,}\)</span> so <span class="process-math">\(4^k = 3 \ell+1\)</span> for some <span class="process-math">\(\ell \in \mathbb{Z}\text{.}\)</span> Then<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+4^{k+1}-1 = 4(3\ell+1)-1 = 3(4\ell +1)
+\end{equation*}
+</div>and so <span class="process-math">\(3 \mid (4^{k+1}-1)\)</span> as required.</p></li>
+</ul>Since the base case and inductive step hold, the result follows by induction.</p></article>
+</div></section></section>
+</div>
+</div></body>
+<script>
+Reveal.initialize({
+  controls: true,
+  controlsTutorial: true,
+  controlsLayout: 'bottom-right',
+  controlsBackArrows: 'faded',
+  navigationMode: 'default',
+  progress: false,
+  center: false,
+  hash: true,
+  transition: 'fade',
+  width: "100%",
+  height: "100%",
+  margin: "0.025",
+  math: {
+    mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+    config: 'TeX-AMS_HTML-full',
+    // other options are passed into MathJax.Hub.Config()
+    tex2jax: {
+      inlineMath:  [['\\(','\\)']],
+      displayMath: [],
+    }
+  },
+  plugins: [ RevealMath ]
+});
+</script>
+</html>

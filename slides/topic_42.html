@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-30T16:13:50-07:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>PLP - 42</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reset.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/theme/black.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/plugin/math/math.js"></script><style>
+ul {
+  display: block !important;
+}
+.sbsrow {
+  display: flex; !important;
+}
+.reveal img {
+  border: 0.5px !important;
+  border-radius: 2px 10px 2px;
+  padding: 4px;
+}
+.definition,.theorem,.activity {
+  border-width: 0.5px;
+  border-style: solid;
+  border-radius: 2px 10px 2px;
+  padding: 1%;
+  margin-bottom: 2em;
+}
+.definition {
+  background: #00608010;
+}
+.theorem {
+  background: #ff000010;
+}
+.proof {
+  background: #ffffff90;
+}
+.activity {
+  background: #60800010;
+}
+dfn {
+  font-weight: bold;
+}
+.pretext-content ol.no-marker,
+.pretext-content ul.no-marker,
+.pretext-content li.no-marker {
+    list-style-type: none;
+}
+
+.pretext-content ol.decimal {
+    list-style-type: decimal;
+}
+.pretext-content ol.lower-alpha {
+    list-style-type: lower-alpha;
+}
+.pretext-content ol.upper-alpha {
+    list-style-type: upper-alpha;
+}
+.pretext-content ol.lower-roman {
+    list-style-type: lower-roman;
+}
+.pretext-content ol.upper-roman {
+    list-style-type: upper-roman;
+}
+.pretext-content ul.disc {
+    list-style-type: disc;
+}
+.pretext-content ul.square {
+    list-style-type: square;
+}
+.pretext-content ul.circle {
+    list-style-type: circle;
+}
+.pretext-content ol.no-marker,
+.pretext-content ul.no-marker {
+    list-style-type: none;
+}
+.pretext-content .cols1 li,
+.pretext-content .cols2 li,
+.pretext-content .cols3 li,
+.pretext-content .cols4 li,
+.pretext-content .cols5 li,
+.pretext-content .cols6 li {
+    float: left;
+    padding-right:2em;
+}
+          </style>
+
+                <link href="plp_styling.css" rel="stylesheet"/>
+                </head>
+<body><div class="reveal pretext-content">
+<div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(  \require{cancel}
+
+  \newcommand{\ds}{\displaystyle}
+  \newcommand{\es}{ {\varnothing}}
+\newcommand{\st}{ \;:\; }
+\newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+\newcommand{\set}[1]{ \left\{#1\right\} }
+  \newcommand{\Mod}[1]{\;(\mathrm{mod}\; #1)}
+  \newcommand{\rel}{\;R\;}
+\newcommand{\nrel}{\;\cancel{R}\;}
+  \renewcommand{\neg}{\sim}
+  \renewcommand{\text}[1]{\mathsf{\mbox{#1}}}
+  \DeclareMathOperator{\gcd}{gcd}
+  \DeclareMathOperator{\lcm}{lcm}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="slides">
+<section><section><h1>PLP - 42</h1>
+<h2>Topic 42 — Uncountable sets</h2>
+<table>
+<tr><th align="center" style="border-bottom: 0px;">Demirbaş &amp; Rechnitzer</th></tr>
+<tr><td align="center" style="border-bottom: 0px;"></td></tr>
+<tr><td align="center"></td></tr>
+</table></section></section><section><section><h1>Uncountable</h1></section><section><h3>Can we find anything bigger?</h3>
+<div align="left"> <p>So if <span class="process-math">\(A,B\)</span> are denumerable, then<ul class="disc">
+<li>
+<span class="process-math">\(A \cup B\)</span> is denumerable</li>
+<li>
+<span class="process-math">\(A \times B\)</span> is denumerable</li>
+</ul>Further if <span class="process-math">\(C_1,C_2,C_3,\dots\)</span> are all denumerable, then for any fixed <span class="process-math">\(n \in \mathbb{N}\)</span><ul class="disc">
+<li>
+<span class="process-math">\(C_1 \cup C_2 \cup \cdots \cup C_n\)</span> is denumerable</li>
+<li>
+<span class="process-math">\(C_1 \times C_2 \times \cdots \times C_n\)</span> is denumerable</li>
+</ul>How can we find anything bigger?</p> <p>We will prove the interval <span class="process-math">\((0,1)\)</span> is uncountable, and so <span class="process-math">\(\mathbb{R}\)</span> is uncountable.</p>
+</div></section><section><h3>Useful facts about decimal expansions</h3>
+<div align="left"> <div class="definition">
+<h3>Fact:
+	</h3>
+<p><ul id="p-3" class="disc">
+<li><p>Every rational number has a repeating decimal expansion<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+1/3 = 0.333333\dots \qquad \qquad 2/11 = 0.181818\dots
+\end{equation*}
+</div></p></li>
+<li><p>Some rationals have two repeating expansions<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+1/2 = 0.500000\dots = 0.499999\dots
+\end{equation*}
+</div>This only happens when the denominator <span class="process-math">\(b\)</span> of the reduced fraction <span class="process-math">\(a/b\)</span> is a product of 2's and 5's. In that case the two expansions terminate with 0's or 9's.</p></li>
+<li>Every irrational number has a unique non-repeating decimal expansion.</li>
+</ul></p>
+</div>
+</div></section><section><h3>Cantor's diagonal argument</h3>
+<div align="left"> <div class="theorem"><div>
+<h3>Proposition:
+      (Cantor 1891).</h3>
+<p>The open interval <span class="process-math">\((0,1)=\set{x\in \mathbb{R} \text{ s.t. } 0 \lt x \lt 1}\)</span> is uncountable.</p>
+</div></div> <p><dfn class="terminology">Proof sketch</dfn><ul class="disc">
+<li>We prove the result by contradiction. Assume that <span class="process-math">\((0,1)\)</span> is countable.</li>
+<li>Since it is infinite, it is denumerable, and so there is a bijection <span class="process-math">\(f: \mathbb{N} \to (0,1)\)</span>
+</li>
+<li><p>We can use this bijection to list <em class="emphasis">all</em> the numbers in <span class="process-math">\((0,1)\)</span> <div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(f(1)\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(0.78304492\dots\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(f(2)\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(0.21892653\dots\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(f(3)\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(0.15206327\dots\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\vdots\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\vdots\)</span></td>
+</tr>
+</table></div> If two expansions then choose expansion that ends in 0's.</p></li>
+</ul></p>
+</div></section><section><h3>The diagonal is the key</h3>
+<div align="left"> <p>Arrange the expansions in a big array and consider the diagonal</p> <div class="sbsrow" style="margin-left:1.25%;margin-right:1.25%;">
+<div style="flex:35.8974358974359%;vertical-align:top;"><img src="figures/diagonal.png"></div>
+<div style="flex:61.5384615384615%;vertical-align:top;"><p><ul id="p-10" class="disc">
+<li>Denote the <span class="process-math">\(k^{th}\)</span> digit of <span class="process-math">\(f(n)\)</span> as <span class="process-math">\(f_{n,k}\)</span>
+</li>
+<li>The diagonal <span class="process-math">\(\Delta = 0.d_1d_2d_3d_4\dots\)</span>
+</li>
+<li>The <span class="process-math">\(n^{th}\)</span> digit <span class="process-math">\(d_n = f_{n,n}\)</span>
+</li>
+<li><p>Create a new number <span class="process-math">\(z=0.z_1z_2z_3z_4\dots\)</span> via<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+z_n = \begin{cases} 1 \amp \text{if } d_n \neq 1 \\ 2 \amp \text{if } d_n =1 \end{cases}
+\end{equation*}
+</div>Chosen so that <span class="process-math">\(\forall n\in\mathbb{N}, z_n \neq d_n = f_{n,n}\text{.}\)</span></p></li>
+</ul></p></div>
+</div> <p>We know <span class="process-math">\(0.111111\dots \leq z \leq 0.222222\dots\text{,}\)</span> so <span class="process-math">\(z\)</span> must be somewhere in the table.<ul class="disc">
+<li>If <span class="process-math">\(z = f(k)\)</span> then must have <span class="process-math">\(z_k = f_{k,k}\text{.}\)</span> But <span class="process-math">\(f_{k,k} = d_k \neq z_{k}\)</span> by construction.</li>
+<li>Hence <span class="process-math">\(z\)</span> is not in the table, so contradicts assumption that <span class="process-math">\(f\)</span> is a bijection.</li>
+</ul>So <span class="process-math">\((0,1)\)</span> is uncountable.</p>
+</div></section><section><h3>The reals are uncountable</h3>
+<div align="left"> <div class="theorem"><div>
+<h3>Corollary:
+      </h3>
+<p>The set of all real numbers is uncountable. Additionally <span class="process-math">\(|(0,1)| = |\mathbb{R}| = c\text{.}\)</span></p>
+</div></div> <article class="hiddenproof" id="proof-1"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
+<p>We proved earlier that if a set <span class="process-math">\(B\)</span> is countable, then any subset <span class="process-math">\(A\)</span> is countable. Hence (by the contrapositive), if the subset <span class="process-math">\(A\)</span> is uncountable, then the superset <span class="process-math">\(B\)</span> is uncountable.</p>
+<p>So since <span class="process-math">\((0,1) \subset \mathbb{R}\)</span> is uncountable and <span class="process-math">\((0,1)\subseteq \mathbb{R}\text{,}\)</span> we know that <span class="process-math">\(\mathbb{R}\)</span> is uncountable.</p>
+<p>To show that the sets are equinumerous, it is sufficient to show that the function<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+g:(0,1) \to \mathbb{R} \qquad g(x) = \frac{1}{1-x} - \frac{1}{x}
+\end{equation*}
+</div>is a bijection. This is a good exercise.</p></article>
+</div></section></section>
+</div>
+</div></body>
+<script>
+Reveal.initialize({
+  controls: true,
+  controlsTutorial: true,
+  controlsLayout: 'bottom-right',
+  controlsBackArrows: 'faded',
+  navigationMode: 'default',
+  progress: false,
+  center: false,
+  hash: true,
+  transition: 'fade',
+  width: "100%",
+  height: "100%",
+  margin: "0.025",
+  math: {
+    mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+    config: 'TeX-AMS_HTML-full',
+    // other options are passed into MathJax.Hub.Config()
+    tex2jax: {
+      inlineMath:  [['\\(','\\)']],
+      displayMath: [],
+    }
+  },
+  plugins: [ RevealMath ]
+});
+</script>
+</html>

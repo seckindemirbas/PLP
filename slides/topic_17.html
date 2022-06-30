@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-30T16:07:56-07:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>PLP - 17</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reset.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/theme/black.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/plugin/math/math.js"></script><style>
+ul {
+  display: block !important;
+}
+.sbsrow {
+  display: flex; !important;
+}
+.reveal img {
+  border: 0.5px !important;
+  border-radius: 2px 10px 2px;
+  padding: 4px;
+}
+.definition,.theorem,.activity {
+  border-width: 0.5px;
+  border-style: solid;
+  border-radius: 2px 10px 2px;
+  padding: 1%;
+  margin-bottom: 2em;
+}
+.definition {
+  background: #00608010;
+}
+.theorem {
+  background: #ff000010;
+}
+.proof {
+  background: #ffffff90;
+}
+.activity {
+  background: #60800010;
+}
+dfn {
+  font-weight: bold;
+}
+.pretext-content ol.no-marker,
+.pretext-content ul.no-marker,
+.pretext-content li.no-marker {
+    list-style-type: none;
+}
+
+.pretext-content ol.decimal {
+    list-style-type: decimal;
+}
+.pretext-content ol.lower-alpha {
+    list-style-type: lower-alpha;
+}
+.pretext-content ol.upper-alpha {
+    list-style-type: upper-alpha;
+}
+.pretext-content ol.lower-roman {
+    list-style-type: lower-roman;
+}
+.pretext-content ol.upper-roman {
+    list-style-type: upper-roman;
+}
+.pretext-content ul.disc {
+    list-style-type: disc;
+}
+.pretext-content ul.square {
+    list-style-type: square;
+}
+.pretext-content ul.circle {
+    list-style-type: circle;
+}
+.pretext-content ol.no-marker,
+.pretext-content ul.no-marker {
+    list-style-type: none;
+}
+.pretext-content .cols1 li,
+.pretext-content .cols2 li,
+.pretext-content .cols3 li,
+.pretext-content .cols4 li,
+.pretext-content .cols5 li,
+.pretext-content .cols6 li {
+    float: left;
+    padding-right:2em;
+}
+          </style>
+
+                <link href="plp_styling.css" rel="stylesheet"/>
+                </head>
+<body><div class="reveal pretext-content">
+<div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(  \newcommand{\ds}{\displaystyle}
+  \newcommand{\es}{ {\varnothing}}
+\newcommand{\st}{ \;\text{s.t.}\; }
+\newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+\newcommand{\set}[1]{ \left\{#1\right\} }
+  \renewcommand{\neg}{\sim}
+  \renewcommand{\text}[1]{\mathsf{\mbox{#1}}}
+  \DeclareMathOperator{\gcd}{gcd}
+  \DeclareMathOperator{\lcm}{lcm}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="slides">
+<section><section><h1>PLP - 17</h1>
+<h2>Topic 17—Disproofs</h2>
+<table>
+<tr><th align="center" style="border-bottom: 0px;">Demirbaş &amp; Rechnitzer</th></tr>
+<tr><td align="center" style="border-bottom: 0px;"></td></tr>
+<tr><td align="center"></td></tr>
+</table></section></section><section><section><h1>Disproofs</h1></section><section><h3>Disproving a statement</h3>
+<div align="left"> <p>To disprove the statement <span class="process-math">\(P\text{,}\)</span> we prove that <span class="process-math">\((\neg P)\)</span> is true.<dl class="description-list">
+<div>
+<dt>universal quantifier</dt>
+<dd><p>Since<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\neg(\forall x, P(x)) \qquad \equiv \qquad \exists x \st \neg P(x)
+\end{equation*}
+</div>our disproof can be a <dfn class="terminology">counter example</dfn></p></dd>
+</div>
+<div>
+<dt>existential quantifier</dt>
+<dd>
+<p>Since<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\neg(\exists x \st P(x)) \qquad \equiv \qquad \forall x, \neg P(x)
+\end{equation*}
+</div>we have to work harder to show that <span class="process-math">\((\neg P(x))\)</span> is true <em class="emphasis">for all</em> <span class="process-math">\(x\text{.}\)</span></p>
+<p>Counter examples <em class="emphasis">do not</em> disprove existential quantifiers</p>
+</dd>
+</div>
+</dl></p>
+</div></section><section><h3>Disprove a universal quantifier</h3>
+<div align="left"> <blockquote class="blockquote" id="blockquote-1"><p>For every <span class="process-math">\(n \in \mathbb{N}\text{,}\)</span> <span class="process-math">\(2^n-1\)</span> or <span class="process-math">\(2^n+1\)</span> is prime.</p></blockquote> <p><dfn class="terminology">scratch work</dfn> — smells false<ul class="disc">
+<li>
+<span class="process-math">\(n=1\)</span> gives <span class="process-math">\(1,3\qquad\)</span> and <span class="process-math">\(\qquad n=2\)</span> gives <span class="process-math">\(3,5\)</span>
+</li>
+<li>
+<span class="process-math">\(n=3\)</span> gives <span class="process-math">\(7,9\qquad\)</span> and <span class="process-math">\(\qquad n=4\)</span> gives <span class="process-math">\(15,17\)</span>
+</li>
+<li>
+<span class="process-math">\(n=5\)</span> gives <span class="process-math">\(31, 33\qquad\)</span>  and <span class="process-math">\(\qquad n=6\)</span> gives <span class="process-math">\(63,65\)</span>
+</li>
+</ul></p> <article class="hiddenproof" id="proof-1"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
+<p>Pick <span class="process-math">\(n=6\text{.}\)</span> Since neither <span class="process-math">\(2^n-1=63\)</span> or <span class="process-math">\(2^n+1=65\)</span> are prime, the statement is false.</p></article> <p>Our counter-example proves “<span class="process-math">\(\exists n \in \mathbb{N} \st  \text{ neither } 2^n-1, 2^n+1 \text{ are prime}\text{.}\)</span>”</p>
+</div></section><section><h3>Another example</h3>
+<div align="left"> <blockquote class="blockquote" id="blockquote-2"><p>For all <span class="process-math">\(a,b,c \in \mathbb{N}\text{,}\)</span> if <span class="process-math">\((a \mid bc)\)</span> then <span class="process-math">\((a \mid c)\)</span> or <span class="process-math">\((a \mid b)\)</span></p></blockquote> <p><dfn class="terminology">scratch work</dfn> — again smells false.<ul class="disc">
+<li>Since is universal quantifier, a counter example is sufficient</li>
+<li>Negation is “<span class="process-math">\(\exists a,b,c \st (a \mid bc) \land (a\nmid b \land a \nmid c)\)</span>”</li>
+<li>Something about prime-factors feels like the right thing here</li>
+<li>Pick <span class="process-math">\(a=4\)</span> and <span class="process-math">\(b=2, c=2\text{.}\)</span> Then <span class="process-math">\((4 \mid 2\cdot 2)\)</span> but <span class="process-math">\(4 \nmid 2\text{.}\)</span>
+</li>
+</ul></p> <article class="hiddenproof" id="proof-2"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
+<p>The statement is false. Let <span class="process-math">\(a=4\)</span> and <span class="process-math">\(b=c=2\text{.}\)</span> Then <span class="process-math">\(a \mid bc\)</span> but <span class="process-math">\(a \nmid b\)</span> and <span class="process-math">\(a \nmid c\text{.}\)</span></p></article>
+</div></section><section><h3>Disproving an existential quantifier</h3>
+<div align="left"> <blockquote class="blockquote" id="blockquote-3"><p>There exist prime numbers <span class="process-math">\(p,q\)</span> so that <span class="process-math">\(p-q=999\)</span></p></blockquote> <p>Typically this is much harder. Sometimes we can reduce to a finite number of cases.</p> <p><dfn class="terminology">scratch work</dfn><ul class="disc">
+<li>Since odd-odd = even, we must have that <span class="process-math">\(q=2\)</span>
+</li>
+<li>Then since <span class="process-math">\(1001 = 7\times 11 \times 13\text{,}\)</span> no such primes exist</li>
+</ul></p> <article class="hiddenproof" id="proof-3"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
+<p>This is false. Either <span class="process-math">\(q\)</span> is even or odd.<ul class="disc">
+<li>If <span class="process-math">\(q\)</span> is even, then <span class="process-math">\(q=2\text{.}\)</span> Since <span class="process-math">\(999+2 =1001\)</span> is divisible by 7 it is not prime.</li>
+<li>Now assume that <span class="process-math">\(q\)</span> is odd. Then we must have that <span class="process-math">\(q=2k+1\)</span> for some <span class="process-math">\(k\in \mathbb{Z}\text{.}\)</span> But then <span class="process-math">\(p=2k+1000\)</span> which is divisible by 2 and so not prime.</li>
+</ul>Hence no such primes exist.</p></article>
+</div></section></section>
+</div>
+</div></body>
+<script>
+Reveal.initialize({
+  controls: true,
+  controlsTutorial: true,
+  controlsLayout: 'bottom-right',
+  controlsBackArrows: 'faded',
+  navigationMode: 'default',
+  progress: false,
+  center: false,
+  hash: true,
+  transition: 'fade',
+  width: "100%",
+  height: "100%",
+  margin: "0.025",
+  math: {
+    mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+    config: 'TeX-AMS_HTML-full',
+    // other options are passed into MathJax.Hub.Config()
+    tex2jax: {
+      inlineMath:  [['\\(','\\)']],
+      displayMath: [],
+    }
+  },
+  plugins: [ RevealMath ]
+});
+</script>
+</html>

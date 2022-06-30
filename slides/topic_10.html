@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-30T16:06:24-07:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>PLP - 10</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reset.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/theme/black.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/plugin/math/math.js"></script><style>
+ul {
+  display: block !important;
+}
+.sbsrow {
+  display: flex; !important;
+}
+.reveal img {
+  border: 0.5px !important;
+  border-radius: 2px 10px 2px;
+  padding: 4px;
+}
+.definition,.theorem,.activity {
+  border-width: 0.5px;
+  border-style: solid;
+  border-radius: 2px 10px 2px;
+  padding: 1%;
+  margin-bottom: 2em;
+}
+.definition {
+  background: #00608010;
+}
+.theorem {
+  background: #ff000010;
+}
+.proof {
+  background: #ffffff90;
+}
+.activity {
+  background: #60800010;
+}
+dfn {
+  font-weight: bold;
+}
+.pretext-content ol.no-marker,
+.pretext-content ul.no-marker,
+.pretext-content li.no-marker {
+    list-style-type: none;
+}
+
+.pretext-content ol.decimal {
+    list-style-type: decimal;
+}
+.pretext-content ol.lower-alpha {
+    list-style-type: lower-alpha;
+}
+.pretext-content ol.upper-alpha {
+    list-style-type: upper-alpha;
+}
+.pretext-content ol.lower-roman {
+    list-style-type: lower-roman;
+}
+.pretext-content ol.upper-roman {
+    list-style-type: upper-roman;
+}
+.pretext-content ul.disc {
+    list-style-type: disc;
+}
+.pretext-content ul.square {
+    list-style-type: square;
+}
+.pretext-content ul.circle {
+    list-style-type: circle;
+}
+.pretext-content ol.no-marker,
+.pretext-content ul.no-marker {
+    list-style-type: none;
+}
+.pretext-content .cols1 li,
+.pretext-content .cols2 li,
+.pretext-content .cols3 li,
+.pretext-content .cols4 li,
+.pretext-content .cols5 li,
+.pretext-content .cols6 li {
+    float: left;
+    padding-right:2em;
+}
+          </style>
+
+                <link href="plp_styling.css" rel="stylesheet"/>
+                </head>
+<body><div class="reveal pretext-content">
+<div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(  \newcommand{\ds}{\displaystyle}
+  \newcommand{\es}{ {\varnothing}}
+\newcommand{\st}{ \;\mid\; }
+\newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+\newcommand{\set}[1]{ \left\{#1\right\} }
+  \renewcommand{\neg}{\sim}
+  \renewcommand{\text}[1]{\mathsf{\mbox{#1}}}
+  \DeclareMathOperator{\gcd}{gcd}
+  \DeclareMathOperator{\lcm}{lcm}
+  \newcommand{\Mod}[1]{\;(\mathrm{mod}\; #1)}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="slides">
+<section><section><h1>PLP - 10</h1>
+<h2>Topic 10 —Logical equivalence</h2>
+<table>
+<tr><th align="center" style="border-bottom: 0px;">Demirbaş &amp; Rechnitzer</th></tr>
+<tr><td align="center" style="border-bottom: 0px;"></td></tr>
+<tr><td align="center"></td></tr>
+</table></section></section><section><section><h1>Tautologies and logical equivalence</h1></section><section><h3>Tautologies and contradictions</h3>
+<div align="left"> <p>Statements that are always true turn out to be very useful.</p> <div class="boxed definition">
+<h3>Definition:
+	Tautologies and contradictions.</h3>
+<p>A <dfn class="terminology">tautology</dfn> is a statement that is always true</p>
+<p>A <dfn class="terminology">contradiction</dfn> is a statement that is always false.</p>
+</div> <p>The following are examples of tautologies<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+P \lor (\neg P) \qquad \qquad
+\neg (P \lor Q) \iff ((\neg P) \land (\neg Q))
+\end{equation*}
+</div></p> <p>The following are examples of contradictions<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+P \land (\neg P) \qquad \qquad
+(P\land Q) \land ( (\neg P) \lor (\neg Q) )
+\end{equation*}
+</div></p>
+</div></section><section><h3>A very useful tautology</h3>
+<div align="left"> <p><ul id="p-6" class="disc">
+<li>The statements <span class="process-math">\(P \lor Q\)</span> and <span class="process-math">\(Q \lor P\)</span> have the same truth-tables.</li>
+<li>The are <em class="emphasis">not the same</em> but they are <em class="emphasis">equivalent</em>
+</li>
+<li><p>We can express this by saying “<em class="emphasis"><span class="process-math">\((P \lor Q) \iff (Q \lor P)\)</span> is a tautology</em>”</p></li>
+</ul></p> <div class="boxed definition">
+<h3>Definition:
+	</h3>
+<p>Two statements <span class="process-math">\(R\)</span> and <span class="process-math">\(S\)</span> are <dfn class="terminology">logically equivalent</dfn> when “<span class="process-math">\(R\iff S\)</span>” is a tautology.</p>
+<p>In this case we write <span class="process-math">\(R \equiv S\text{.}\)</span></p>
+</div> <p>Showing logical equivalence<ul class="disc">
+<li>build the truth tables, or</li>
+<li>think about when each side is true and false</li>
+</ul></p>
+</div></section><section><h3>A useful equivalence</h3>
+<div align="left"> <p>Consider <span class="process-math">\((P \implies Q) \equiv (\neg P) \lor Q\text{.}\)</span></p> <p>Why are these equivalent — when true, when false?<ul class="disc">
+<li><em class="emphasis">Know your truth-tables!</em></li>
+<li>
+<dfn class="terminology">LHS</dfn> is false only when <span class="process-math">\((P,Q)\)</span> = (T,F). Otherwise true.</li>
+<li>
+<dfn class="terminology">RHS</dfn> is false when both <span class="process-math">\((\neg P), Q\)</span> are false, that is <span class="process-math">\((P,Q)\)</span> = (T,F). Otherwise false.</li>
+</ul>True at same time, false at same time. So equivalent.</p> <p>Can also build the truth-tables — tedious but works.</p> <div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div style="flex:100%;vertical-align:top;"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(P\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(Q\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(P \implies Q\)</span></td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\((\neg P) \lor Q\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">F</td>
+<td class="l m b0 r0 l0 t0 lines">F</td>
+<td class="l m b0 r0 l0 t0 lines">F</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">F</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">F</td>
+<td class="l m b0 r0 l0 t0 lines">F</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+</tr>
+</table></div></div>
+</div></section><section><h3>Useful logical equivalences</h3>
+<div align="left"> <div class="theorem"><div>
+<h3>Theorem:
+      Logical equivalences.</h3>
+<p>Let <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\)</span> be statements. Then<dl class="description-list">
+<div>
+<dt>Implication</dt>
+<dd><p><span class="process-math">\(\displaystyle (P \implies Q) \equiv ( (\neg P)\lor Q) )\)</span></p></dd>
+</div>
+<div>
+<dt>Contrapositive</dt>
+<dd><span class="process-math">\((P\implies Q) \equiv ((\neg Q) \implies (\neg P))\)</span></dd>
+</div>
+<div>
+<dt>Biconditional</dt>
+<dd><span class="process-math">\((P \iff Q) \equiv ( (P\implies Q) \land (Q\implies P))\)</span></dd>
+</div>
+<div>
+<dt>Double negation</dt>
+<dd><span class="process-math">\(\neg{(\neg{(P)})} \equiv P\)</span></dd>
+</div>
+<div>
+<dt>Commutative laws</dt>
+<dd><p><span class="process-math">\(P \lor Q \equiv Q \lor P \qquad\)</span> and <span class="process-math">\(\qquad P \land Q \equiv Q \land P\)</span></p></dd>
+</div>
+</dl></p>
+</div></div>
+</div></section><section><h3>Useful logical equivalences 2</h3>
+<div align="left"> <div class="theorem"><div>
+<h3>Theorem:
+      Logical equivalences.</h3>
+<p>Let <span class="process-math">\(P, Q\)</span> and <span class="process-math">\(R\)</span> be statements. Then<dl class="description-list">
+<div>
+<dt>Associative laws</dt>
+<dd><p><span class="process-math">\(P \lor (Q\lor R) \equiv (P \lor Q)\lor R \qquad\)</span> and <span class="process-math">\(\qquad P \land (Q\land R) \equiv (P \land Q)\land R\)</span></p></dd>
+</div>
+<div>
+<dt>Distributive laws</dt>
+<dd><p><span class="process-math">\(P \lor (Q \land R) \equiv (P \lor Q) \land (P \lor R)\qquad \)</span> and  <span class="process-math">\(\qquad P \land (Q \lor R) \equiv (P \land Q) \lor (P \land R)\)</span></p></dd>
+</div>
+<div>
+<dt>DeMorgan's laws</dt>
+<dd><p><span class="process-math">\(\neg{(P \lor Q)} \equiv (\neg{P}) \land (\neg{Q})\qquad \)</span> and <span class="process-math">\(\qquad \neg{(P \land Q)} \equiv (\neg{P}) \lor (\neg{Q})\)</span></p></dd>
+</div>
+</dl></p>
+</div></div>
+</div></section><section><h3>Back to the contrapositive</h3>
+<div align="left"> <p>Show that <span class="process-math">\((P \implies Q) \equiv (\neg Q \implies \neg P)\)</span> using equivalences<div class="displaymath process-math" data-contains-math-knowls="" id="md-1">
+\begin{align*}
+(P \implies Q) \amp \equiv (\neg P \lor Q) \amp \text{implication as or} \\
+\amp\equiv (Q \lor \neg P) \amp \text{commutes} \\
+\amp \equiv (\neg \neg Q \lor \neg P) \amp \text{double negative} \\
+\amp \equiv (\neg Q \implies \neg P) \amp \text{or as implication} 
+\end{align*}
+</div></p> <p>Why is this useful a useful equivalence?<ul class="disc">
+<li>Contrapositive is <em class="emphasis">equivalent</em> to the original implication</li>
+<li>Proving one is true is <em class="emphasis">equivalent</em> as proving the other is true</li>
+<li>Sometimes the contrapositive is <em class="emphasis">easier</em> to prove than the original</li>
+</ul></p>
+</div></section></section>
+</div>
+</div></body>
+<script>
+Reveal.initialize({
+  controls: true,
+  controlsTutorial: true,
+  controlsLayout: 'bottom-right',
+  controlsBackArrows: 'faded',
+  navigationMode: 'default',
+  progress: false,
+  center: false,
+  hash: true,
+  transition: 'fade',
+  width: "100%",
+  height: "100%",
+  margin: "0.025",
+  math: {
+    mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+    config: 'TeX-AMS_HTML-full',
+    // other options are passed into MathJax.Hub.Config()
+    tex2jax: {
+      inlineMath:  [['\\(','\\)']],
+      displayMath: [],
+    }
+  },
+  plugins: [ RevealMath ]
+});
+</script>
+</html>

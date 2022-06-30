@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-30T16:09:02-07:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>PLP - 23</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reset.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/theme/black.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/plugin/math/math.js"></script><style>
+ul {
+  display: block !important;
+}
+.sbsrow {
+  display: flex; !important;
+}
+.reveal img {
+  border: 0.5px !important;
+  border-radius: 2px 10px 2px;
+  padding: 4px;
+}
+.definition,.theorem,.activity {
+  border-width: 0.5px;
+  border-style: solid;
+  border-radius: 2px 10px 2px;
+  padding: 1%;
+  margin-bottom: 2em;
+}
+.definition {
+  background: #00608010;
+}
+.theorem {
+  background: #ff000010;
+}
+.proof {
+  background: #ffffff90;
+}
+.activity {
+  background: #60800010;
+}
+dfn {
+  font-weight: bold;
+}
+.pretext-content ol.no-marker,
+.pretext-content ul.no-marker,
+.pretext-content li.no-marker {
+    list-style-type: none;
+}
+
+.pretext-content ol.decimal {
+    list-style-type: decimal;
+}
+.pretext-content ol.lower-alpha {
+    list-style-type: lower-alpha;
+}
+.pretext-content ol.upper-alpha {
+    list-style-type: upper-alpha;
+}
+.pretext-content ol.lower-roman {
+    list-style-type: lower-roman;
+}
+.pretext-content ol.upper-roman {
+    list-style-type: upper-roman;
+}
+.pretext-content ul.disc {
+    list-style-type: disc;
+}
+.pretext-content ul.square {
+    list-style-type: square;
+}
+.pretext-content ul.circle {
+    list-style-type: circle;
+}
+.pretext-content ol.no-marker,
+.pretext-content ul.no-marker {
+    list-style-type: none;
+}
+.pretext-content .cols1 li,
+.pretext-content .cols2 li,
+.pretext-content .cols3 li,
+.pretext-content .cols4 li,
+.pretext-content .cols5 li,
+.pretext-content .cols6 li {
+    float: left;
+    padding-right:2em;
+}
+          </style>
+
+                <link href="plp_styling.css" rel="stylesheet"/>
+                </head>
+<body><div class="reveal pretext-content">
+<div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(  \newcommand{\ds}{\displaystyle}
+  \newcommand{\es}{ {\varnothing}}
+\newcommand{\st}{ \;:\; }
+\newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+\newcommand{\set}[1]{ \left\{#1\right\} }
+  \renewcommand{\neg}{\sim}
+  \renewcommand{\text}[1]{\mathsf{\mbox{#1}}}
+  \DeclareMathOperator{\gcd}{gcd}
+  \DeclareMathOperator{\lcm}{lcm}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="slides">
+<section><section><h1>PLP - 23</h1>
+<h2>Topic 23—Set operations</h2>
+<table>
+<tr><th align="center" style="border-bottom: 0px;">Demirbaş &amp; Rechnitzer</th></tr>
+<tr><td align="center" style="border-bottom: 0px;"></td></tr>
+<tr><td align="center"></td></tr>
+</table></section></section><section><section><h1>Set operations</h1></section><section><h3>Union and intersection</h3>
+<div align="left"> <div class="boxed definition">
+<h3>Definition:
+	</h3>
+<p>Let <span class="process-math">\(A, B\)</span> be sets. The <dfn class="terminology">union</dfn> of <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> is<div class="displaymath process-math" data-contains-math-knowls="" id="md-1">
+\begin{align*}
+A \cup B &amp;= \{x \st x\in A \text{ or } x \in B \}
+\end{align*}
+</div></p>
+</div> <div class="boxed definition">
+<h3>Definition:
+	</h3>
+<p>The <dfn class="terminology">intersection</dfn> of sets <span class="process-math">\(A\)</span> and <span class="process-math">\(B\text{,}\)</span> is<div class="displaymath process-math" data-contains-math-knowls="" id="md-2">
+\begin{align*}
+A \cap B &amp;= \{ x \st x\in A \text{ and } x \in B \}
+\end{align*}
+</div>If the intersection <span class="process-math">\(A \cap B = \es\text{,}\)</span> then we say that <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are <dfn class="terminology">disjoint</dfn>.</p>
+</div>
+</div></section><section><h3>Notes and examples</h3>
+<div align="left"> <p><ul id="p-3" class="disc">
+<li><p>Please use <dfn class="terminology">correct notation</dfn><div class="displaymath process-math" data-contains-math-knowls="" id="md-3">
+\begin{align*}
+A \cup B \amp= \text{ unions of sets} \amp
+A \cap B \amp= \text{ intersection of sets}\\
+P \lor Q \amp = \text{ disjunction of statements}
+\amp
+P \land Q \amp= \text{ conjunction of statements}
+\end{align*}
+</div></p></li>
+<li>There are <em class="emphasis">parallels</em> between set operations and logical operations but they are <em class="emphasis">not</em> the same</li>
+<li><p>Let <span class="process-math">\(A = \set{1,2,3,4}, B = \set{p \st p \text{ is prime}}\)</span> and <span class="process-math">\(C=\set{4,5,6,7}\)</span><div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+A \cup C = \set{1,2,3,4,5,6,7}
+\qquad
+A \cap B = \set{2,3}
+\qquad
+B \cap C = \set{5,7}
+\end{equation*}
+</div></p></li>
+</ul></p>
+</div></section><section><h3>Visualising things</h3>
+<div align="left"> <p>We can picture union and intersection using <dfn class="terminology">Venn diagrams</dfn></p> <div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
+<div style="flex:47.3684210526316%;vertical-align:top;"><img src="figures/union.png"></div>
+<div style="flex:47.3684210526316%;vertical-align:top;"><img src="figures/intersection.png"></div>
+</div>
+</div></section><section><h3>Another operation</h3>
+<div align="left"> <div class="boxed definition">
+<h3>Definition:
+	</h3>
+<p>Let <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> be sets. Then the <dfn class="terminology">difference</dfn>, <span class="process-math">\(A - B\)</span> is<div class="displaymath process-math" data-contains-math-knowls="" id="md-4">
+\begin{align*}
+A - B &amp;= \{ x \in A \st x \notin B \}
+\end{align*}
+</div></p>
+</div> <div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div style="flex:100%;vertical-align:top;"><img src="figures/setdifference.png"></div></div>
+</div></section><section><h3>Universals and complements</h3>
+<div align="left"> <div class="boxed definition">
+<h3>Definition:
+	</h3>
+<p>Given a <dfn class="terminology">universal set</dfn> <span class="process-math">\(U\)</span> and <span class="process-math">\(A \subset U\text{,}\)</span>  the <dfn class="terminology">complement</dfn> of <span class="process-math">\(A\)</span> is<div class="displaymath process-math" data-contains-math-knowls="" id="md-5">
+\begin{align*}
+\bar{A} \amp = \{ x \in U \st x \notin A\}
+\amp \text{or equivalently} \amp
+\amp x \in \bar{A} \iff x \not\in A
+\end{align*}
+</div>The universal set is the set from which we draw elements in the current <em class="emphasis">context</em></p>
+</div> <div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div style="flex:100%;vertical-align:top;"><img src="figures/complement.png"></div></div>
+</div></section><section><h3>Notes and examples</h3>
+<div align="left"> <p><ul id="p-9" class="disc">
+<li>Compl-e-ment vs Compl-i-ment</li>
+<li>
+<span class="process-math">\(A - B\)</span> also written <span class="process-math">\(A \setminus B\)</span> and is called the <dfn class="terminology">relative complement of</dfn> <span class="process-math">\(B\)</span> in <span class="process-math">\(A\)</span>
+</li>
+<li>We have <span class="process-math">\(A - B = A \cap \bar{B}\)</span>
+</li>
+</ul></p> <p><ul id="p-10" class="disc"><li><p>Let <span class="process-math">\(U= \mathbb{N}, A = \set{1,2,3,4}, B = \set{p \st p \text{ is prime}}\)</span> and <span class="process-math">\(C=\set{4,5,6,7}\)</span><div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+A  - C = \set{1,2,3}
+\qquad
+A - B = \set{1,4}
+\qquad
+\bar{A} = \set{n \in \mathbb{N} \st n \geq 5}
+\end{equation*}
+</div></p></li></ul></p>
+</div></section><section><h3>Ordered pairs</h3>
+<div align="left"> <p>Sets don't care about order, but many applications need <em class="emphasis">pairs</em> of objects.</p> <div class="boxed definition">
+<h3>Definition:
+	</h3>
+<p>An <dfn class="terminology">ordered pair</dfn> of elements is an <em class="emphasis">ordered</em> list of two elements.</p>
+<p>The ordered pair of two elements <span class="process-math">\(a,b\)</span> is written <span class="process-math">\((a,b)\)</span> and satisfies<ul class="disc">
+<li>
+<span class="process-math">\((a,b) = (c,d)\)</span> only when <span class="process-math">\((a=c)\)</span> and <span class="process-math">\((b=d)\text{,}\)</span> and</li>
+<li>
+<span class="process-math">\((a,b) \neq (b,a)\)</span> unless <span class="process-math">\((a=b)\text{.}\)</span>
+</li>
+</ul></p>
+</div> <p><dfn class="terminology">Warning</dfn><ul class="disc">
+<li>use correct notation: <span class="process-math">\(\set{1,3}\)</span> is a set, <span class="process-math">\((1,3)\)</span> is an ordered pair</li>
+<li>we sometimes use <span class="process-math">\((1,3) = \set{x \in \mathbb{R} \st 1 \lt x \lt 3}\)</span> — give your <dfn class="terminology">reader</dfn> context</li>
+</ul></p>
+</div></section><section><h3>Cartesian product</h3>
+<div align="left"> <div class="boxed definition">
+<h3>Definition:
+	Cartesian product.</h3>
+<p>The <dfn class="terminology">Cartesian product</dfn> of sets <span class="process-math">\(A,B\)</span> is<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+A \times B = \set{ (a,b) \st a\in A, b\in B}
+\end{equation*}
+</div>Note for <span class="process-math">\(A,B\neq \es\text{,}\)</span> <span class="process-math">\(A\times B \neq B \times A\)</span> unless <span class="process-math">\(A=B\text{.}\)</span></p>
+</div> <p>Let <span class="process-math">\(A = \set{a,b,c}\)</span> and <span class="process-math">\(B=\set{1,2}\)</span> then<div class="displaymath process-math" data-contains-math-knowls="" id="md-6">
+\begin{align*}
+A\times B &amp;= \set{ (a,1), (a,2), (b,1), (b,2), (c,1), (c,2)}
+\end{align*}
+</div></p>
+</div></section></section>
+</div>
+</div></body>
+<script>
+Reveal.initialize({
+  controls: true,
+  controlsTutorial: true,
+  controlsLayout: 'bottom-right',
+  controlsBackArrows: 'faded',
+  navigationMode: 'default',
+  progress: false,
+  center: false,
+  hash: true,
+  transition: 'fade',
+  width: "100%",
+  height: "100%",
+  margin: "0.025",
+  math: {
+    mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+    config: 'TeX-AMS_HTML-full',
+    // other options are passed into MathJax.Hub.Config()
+    tex2jax: {
+      inlineMath:  [['\\(','\\)']],
+      displayMath: [],
+    }
+  },
+  plugins: [ RevealMath ]
+});
+</script>
+</html>

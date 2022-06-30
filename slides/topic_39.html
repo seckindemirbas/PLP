@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-30T16:12:59-07:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>PLP - 39</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reset.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/theme/black.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/plugin/math/math.js"></script><style>
+ul {
+  display: block !important;
+}
+.sbsrow {
+  display: flex; !important;
+}
+.reveal img {
+  border: 0.5px !important;
+  border-radius: 2px 10px 2px;
+  padding: 4px;
+}
+.definition,.theorem,.activity {
+  border-width: 0.5px;
+  border-style: solid;
+  border-radius: 2px 10px 2px;
+  padding: 1%;
+  margin-bottom: 2em;
+}
+.definition {
+  background: #00608010;
+}
+.theorem {
+  background: #ff000010;
+}
+.proof {
+  background: #ffffff90;
+}
+.activity {
+  background: #60800010;
+}
+dfn {
+  font-weight: bold;
+}
+.pretext-content ol.no-marker,
+.pretext-content ul.no-marker,
+.pretext-content li.no-marker {
+    list-style-type: none;
+}
+
+.pretext-content ol.decimal {
+    list-style-type: decimal;
+}
+.pretext-content ol.lower-alpha {
+    list-style-type: lower-alpha;
+}
+.pretext-content ol.upper-alpha {
+    list-style-type: upper-alpha;
+}
+.pretext-content ol.lower-roman {
+    list-style-type: lower-roman;
+}
+.pretext-content ol.upper-roman {
+    list-style-type: upper-roman;
+}
+.pretext-content ul.disc {
+    list-style-type: disc;
+}
+.pretext-content ul.square {
+    list-style-type: square;
+}
+.pretext-content ul.circle {
+    list-style-type: circle;
+}
+.pretext-content ol.no-marker,
+.pretext-content ul.no-marker {
+    list-style-type: none;
+}
+.pretext-content .cols1 li,
+.pretext-content .cols2 li,
+.pretext-content .cols3 li,
+.pretext-content .cols4 li,
+.pretext-content .cols5 li,
+.pretext-content .cols6 li {
+    float: left;
+    padding-right:2em;
+}
+          </style>
+
+                <link href="plp_styling.css" rel="stylesheet"/>
+                </head>
+<body><div class="reveal pretext-content">
+<div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(  \require{cancel}
+
+  \newcommand{\ds}{\displaystyle}
+  \newcommand{\es}{ {\varnothing}}
+\newcommand{\st}{ \;:\; }
+\newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+\newcommand{\set}[1]{ \left\{#1\right\} }
+  \newcommand{\Mod}[1]{\;(\mathrm{mod}\; #1)}
+  \newcommand{\rel}{\;R\;}
+\newcommand{\nrel}{\;\cancel{R}\;}
+  \renewcommand{\neg}{\sim}
+  \renewcommand{\text}[1]{\mathsf{\mbox{#1}}}
+  \DeclareMathOperator{\gcd}{gcd}
+  \DeclareMathOperator{\lcm}{lcm}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="slides">
+<section><section><h1>PLP - 39</h1>
+<h2>Topic 39 — Cardinality of finite sets</h2>
+<table>
+<tr><th align="center" style="border-bottom: 0px;">Demirbaş &amp; Rechnitzer</th></tr>
+<tr><td align="center" style="border-bottom: 0px;"></td></tr>
+<tr><td align="center"></td></tr>
+</table></section></section><section><section><h1>Finite sets and pigeons</h1></section><section><h3>Size of a finite set</h3>
+<div align="left"> <p>We defined <span class="process-math">\(|A|\)</span> to be the number of elements in <span class="process-math">\(A\)</span></p> <div class="sbsrow" style="margin-left:35%;margin-right:35%;"><div style="flex:100%;vertical-align:top;"><img src="figures/count2.png"></div></div> <p>When we count the elements in <span class="process-math">\(A\)</span> we count off “one, two, three, … six”</p> <p>We build a function <span class="process-math">\(f: A \to \set{1,2,\dots,6}\)</span> so that<ul class="disc">
+<li>Injective — <em class="emphasis">different</em> objects counted by <em class="emphasis">different</em> numbers</li>
+<li>Surjective — each number is used to count an object</li>
+</ul>So that function is a <em class="emphasis">bijection</em>.</p>
+</div></section><section><h3>Equal cardinalities and bijections</h3>
+<div align="left"> <div class="boxed definition">
+<h3>Definition:
+	</h3>
+<p>Let <span class="process-math">\(A,B\)</span> be sets. They have the same <dfn class="terminology">cardinality</dfn> if <span class="process-math">\(A=B=\es\)</span> or if there is a bijection from <span class="process-math">\(A\)</span> to <span class="process-math">\(B\text{.}\)</span></p>
+<p>In this case we write <span class="process-math">\(|A|=|B|\)</span> and say the sets are <dfn class="terminology">equinumerous</dfn>.</p>
+<p>If <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are not equinumerous, so no bijection between them, then we write <span class="process-math">\(|A| \neq |B|\)</span></p>
+</div> <p><ul id="p-7" class="disc">
+<li>Special case: <span class="process-math">\(A = \es\)</span> we write <span class="process-math">\(|A|=0\text{.}\)</span> No bijection between empty sets.</li>
+<li>Finite: <span class="process-math">\(|A|=n \in \mathbb{N}\)</span> then have a bijection <span class="process-math">\(f:A \to \set{1,2,\dots,n}\text{.}\)</span>
+</li>
+<li><p>If <span class="process-math">\(|A|=n=|B|\)</span> then we have<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+f:A \to \set{1,\dots,n} \qquad g:B \to \set{1,\dots, n} \qquad \text{so} \qquad
+(g^{-1} \circ f): A \to B
+\end{equation*}
+</div></p></li>
+<li>Definition in terms of bijection allows us to handle infinite sets.</li>
+</ul></p>
+</div></section><section><h3>Finite non-equinumerous sets</h3>
+<div align="left"> <p>Consider <span class="process-math">\(A = \set{a_1,a_2,a_3,a_4,a_5}\)</span> and <span class="process-math">\(B = \set{b_1,b_2,b_3}\)</span></p> <div class="sbsrow" style="margin-left:35%;margin-right:35%;"><div style="flex:100%;vertical-align:top;"><img src="figures/pigeon1.png"></div></div> <p><ul id="p-10" class="disc">
+<li>Since <span class="process-math">\(5=|A| \neq |B|=3\text{,}\)</span> so no bijection between them</li>
+<li>Easy to build a surjection <span class="process-math">\(f:A \to B\)</span>
+</li>
+<li><p>But cannot build an injection <span class="process-math">\(g:A \to B\text{:}\)</span><div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+g(a_1)=b_1 \qquad g(a_2)=b_2 \qquad g(a_3)=b_3 \qquad g(a_4)=? \qquad g(a_5)=?
+\end{equation*}
+</div></p></li>
+<li>Use the pigeonhole principle to formalise this.</li>
+</ul></p>
+</div></section><section><h3>Pigeonhole principle</h3>
+<div align="left"> <div class="theorem"><div>
+<h3>Theorem:
+      (Dirichlet).</h3>
+<p>If <span class="process-math">\(n\)</span> objects are placed in <span class="process-math">\(k\)</span> boxes then<ul class="disc">
+<li>If <span class="process-math">\(n \lt k\)</span> then at least one box has zero objects in it</li>
+<li>If <span class="process-math">\(n \gt k\)</span> then at least one box has at least two objects in it</li>
+</ul></p>
+<p>Can refine <span class="process-math">\(n \gt k\)</span> case: at least one box has at least <span class="process-math">\(\lceil n/k \rceil\)</span> objects in it.</p>
+</div></div> <article class="hiddenproof" id="proof-1"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
+<p>Prove contrapositive of each:<ul class="disc">
+<li>Assume each box contains at least one object, then total number of objects <span class="process-math">\(n \geq k\text{.}\)</span>
+</li>
+<li>Assume each box contains at most one object, then the total number of objects <span class="process-math">\(n \leq k\text{.}\)</span>
+</li>
+</ul></p></article>
+</div></section><section><h3>Finite non-equinumerous sets — continued</h3>
+<div align="left"> <div class="theorem"><div>
+<h3>Corollary:
+      </h3>
+<p>Let <span class="process-math">\(A,B\)</span> be <em class="emphasis">finite</em> sets and let <span class="process-math">\(f:A \to B\text{.}\)</span> Then<ul class="disc">
+<li>If <span class="process-math">\(|A| \gt |B|\)</span> then <span class="process-math">\(f\)</span> is not an injection <span class="process-math">\(\qquad \qquad\)</span> If <span class="process-math">\(f\)</span> is an injection then <span class="process-math">\(|A| \leq |B|\)</span>
+</li>
+<li>If <span class="process-math">\(|A| \lt |B|\)</span> then <span class="process-math">\(f\)</span> is not a surjection <span class="process-math">\(\qquad \qquad\)</span> If <span class="process-math">\(f\)</span> is a surjection then <span class="process-math">\(|A| \geq |B|\)</span>
+</li>
+</ul></p>
+</div></div> <article class="hiddenproof" id="proof-2"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
+<p>We prove each point in turn.<ul class="disc">
+<li>Assume that <span class="process-math">\(|A| \gt |B|\text{.}\)</span> Then, by PHP, when the images of elements of <span class="process-math">\(A\)</span> are placed into <span class="process-math">\(B\)</span> by the function, at least one element of <span class="process-math">\(B\)</span> is the image of two elements of <span class="process-math">\(A\text{.}\)</span> Hence there are <span class="process-math">\(a_1,a_2 \in A\)</span> so that <span class="process-math">\(f(a_1)=f(a_2)\text{,}\)</span> and so <span class="process-math">\(f\)</span> is not injective.</li>
+<li>Now assume that <span class="process-math">\(|A| \lt |B|\text{.}\)</span> Then, by PHP, when the images of elements of <span class="process-math">\(A\)</span> are placed into <span class="process-math">\(B\)</span> by the function, at least one element of <span class="process-math">\(B\)</span> is not the image of any element of <span class="process-math">\(A\text{.}\)</span> That is, there is <span class="process-math">\(b \in B\)</span> so that for every <span class="process-math">\(a \in A\text{,}\)</span> <span class="process-math">\(f(a) \neq b\text{,}\)</span> and so <span class="process-math">\(f\)</span> is not surjective.</li>
+</ul></p></article>
+</div></section><section><h3>Pigeon flavoured example</h3>
+<div align="left"> <div class="theorem"><div>
+<h3>Proposition:
+      </h3>
+<p>There exist two powers of 3 whose difference is divisible by 220.</p>
+</div></div> <article class="hiddenproof" id="proof-3"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
+<p><ul id="p-18" class="disc">
+<li><p>Consider the sequence of <span class="process-math">\(221\)</span> numbers<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+3^0, 3^1, 3^2, 3^3, \dots, 3^{219}, 3^{220}
+\end{equation*}
+</div>and compute their remainders when divided by 220.</p></li>
+<li>There are at most <span class="process-math">\(220\)</span> possible remainders, but 221 numbers in the sequence</li>
+<li>Hence two numbers have the same remainder: <span class="process-math">\(3^i=220k +r, 3^j=220\ell +r\)</span>
+</li>
+<li>So their difference is a multiple of 220 as required</li>
+</ul>Checking remainders modulo 220 you can quickly find that <span class="process-math">\(220 \mid (3^{20}-3^0)\)</span></p></article>
+</div></section><section><h3>Pigeon flavoured example #2</h3>
+<div align="left"> <div class="theorem"><div>
+<h3>Proposition:
+      </h3>
+<p>Place 5 points in an equilateral triangle of side-length 1. There is a pair at distance no greater than 0.5</p>
+</div></div> <article class="hiddenproof" id="proof-4"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
+<div class="sbsrow" style="margin-left:5%;margin-right:5%;">
+<div style="flex:44.4444444444444%;vertical-align:top;"><p><ul id="p-21" class="disc">
+<li>Split the triangle into 4 sub-triangles as shown</li>
+<li>The subtriangle side-length is <span class="process-math">\(\frac{1}{2}\)</span>
+</li>
+<li>One sub-triangle must contain 2 points</li>
+<li>So those points are at distance <span class="process-math">\(\leq \frac{1}{2}\)</span>
+</li>
+</ul></p></div>
+<div style="flex:44.4444444444444%;vertical-align:top;"><img src="figures/pigeon2.png"></div>
+</div></article>
+</div></section><section><h3>Big data <span class="process-math">\(\implies\)</span> spurious correlations</h3>
+<div align="left"> <p>Consider<ul class="disc">
+<li>How many function “shapes” you can draw</li>
+<li>How many time-series data sets exist</li>
+<li>By PHP, each “shape” will fit many data-sets</li>
+<li>Those data-sets appear correlated</li>
+</ul></p> <div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div style="flex:100%;vertical-align:top;"><img src="figures/spurious.png"></div></div> <p>Search-engine your way to “Spurious Correlations” by Tyler Vigen</p>
+</div></section></section>
+</div>
+</div></body>
+<script>
+Reveal.initialize({
+  controls: true,
+  controlsTutorial: true,
+  controlsLayout: 'bottom-right',
+  controlsBackArrows: 'faded',
+  navigationMode: 'default',
+  progress: false,
+  center: false,
+  hash: true,
+  transition: 'fade',
+  width: "100%",
+  height: "100%",
+  margin: "0.025",
+  math: {
+    mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+    config: 'TeX-AMS_HTML-full',
+    // other options are passed into MathJax.Hub.Config()
+    tex2jax: {
+      inlineMath:  [['\\(','\\)']],
+      displayMath: [],
+    }
+  },
+  plugins: [ RevealMath ]
+});
+</script>
+</html>

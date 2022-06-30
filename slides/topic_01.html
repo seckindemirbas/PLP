@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-30T16:04:38-07:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>PLP - 1</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reset.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/theme/black.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/plugin/math/math.js"></script><style>
+ul {
+  display: block !important;
+}
+.sbsrow {
+  display: flex; !important;
+}
+.reveal img {
+  border: 0.5px !important;
+  border-radius: 2px 10px 2px;
+  padding: 4px;
+}
+.definition,.theorem,.activity {
+  border-width: 0.5px;
+  border-style: solid;
+  border-radius: 2px 10px 2px;
+  padding: 1%;
+  margin-bottom: 2em;
+}
+.definition {
+  background: #00608010;
+}
+.theorem {
+  background: #ff000010;
+}
+.proof {
+  background: #ffffff90;
+}
+.activity {
+  background: #60800010;
+}
+dfn {
+  font-weight: bold;
+}
+.pretext-content ol.no-marker,
+.pretext-content ul.no-marker,
+.pretext-content li.no-marker {
+    list-style-type: none;
+}
+
+.pretext-content ol.decimal {
+    list-style-type: decimal;
+}
+.pretext-content ol.lower-alpha {
+    list-style-type: lower-alpha;
+}
+.pretext-content ol.upper-alpha {
+    list-style-type: upper-alpha;
+}
+.pretext-content ol.lower-roman {
+    list-style-type: lower-roman;
+}
+.pretext-content ol.upper-roman {
+    list-style-type: upper-roman;
+}
+.pretext-content ul.disc {
+    list-style-type: disc;
+}
+.pretext-content ul.square {
+    list-style-type: square;
+}
+.pretext-content ul.circle {
+    list-style-type: circle;
+}
+.pretext-content ol.no-marker,
+.pretext-content ul.no-marker {
+    list-style-type: none;
+}
+.pretext-content .cols1 li,
+.pretext-content .cols2 li,
+.pretext-content .cols3 li,
+.pretext-content .cols4 li,
+.pretext-content .cols5 li,
+.pretext-content .cols6 li {
+    float: left;
+    padding-right:2em;
+}
+          </style>
+
+                <link href="plp_styling.css" rel="stylesheet"/>
+                </head>
+<body><div class="reveal pretext-content">
+<div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(  \newcommand{\ds}{\displaystyle}
+  \newcommand{\es}{ {\varnothing}}
+\newcommand{\st}{ \;\mid\; }
+\newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+\newcommand{\set}[1]{ \left\{#1\right\} }
+  \renewcommand{\neg}{\sim}
+  \renewcommand{\text}[1]{\mathsf{\mbox{#1}}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="slides">
+<section><section><h1>PLP - 1</h1>
+<h2>Topic 1 — Introduction to Sets</h2>
+<table>
+<tr><th align="center" style="border-bottom: 0px;">Demirbaş &amp; Rechnitzer</th></tr>
+<tr><td align="center" style="border-bottom: 0px;"></td></tr>
+<tr><td align="center"></td></tr>
+</table></section></section><section><section><h1>Introduction to sets</h1></section><section><h3>Getting started with sets</h3>
+<div align="left"> <p>We need tools to understand collections of objects</p> <div class="boxed definition">
+<h3>Definition:
+	(A not so formal definition of sets).</h3>
+<p>A <dfn class="terminology">set</dfn> is a collection of objects.</p>
+<p>The objects are referred to as <dfn class="terminology">elements</dfn> or <dfn class="terminology">members</dfn> of the set.</p>
+</div> <p>Informal because<ul class="disc">
+<li>is simple and intuitive</li>
+<li>rigorous definition is way harder than we need</li>
+<li>we just want to get on with things</li>
+</ul></p>
+</div></section><section><h3>Quick aside on conventions and notation</h3>
+<div align="left"> <p>Mathematics has many conventions / traditions<ul class="disc">
+<li>not firm rules, but</li>
+<li>make it easier for the <dfn class="terminology">reader</dfn> to understand</li>
+</ul></p> <p>Use<ul class="disc">
+<li>Capitals for sets: <span class="process-math">\(A,B,C,X,Y\)</span>
+</li>
+<li>Lowercase for elements: <span class="process-math">\(a,b,c,x,y\)</span>
+</li>
+</ul></p> <p>Similarly, use<ul class="disc">
+<li>
+<span class="process-math">\(i,j,k,\ell,m,n\)</span> to denote integers</li>
+<li>
+<span class="process-math">\(x,y,z,w\)</span> to denote real numbers</li>
+</ul></p>
+</div></section><section><h3>A set answers only one question</h3>
+<div align="left"> <p><ul id="p-8" class="disc">
+<li>
+<p>There is only one question we can ask a set:</p>
+<blockquote class="blockquote" id="blockquote-1"><p>“Is this object in the set”</p></blockquote>
+<p>and the set will answer</p>
+<blockquote class="blockquote" id="blockquote-2"><p>“yes” or “no”</p></blockquote>
+</li>
+<li>
+<p>Example: let <span class="process-math">\(E\)</span> be the set of all positive even numbers.</p>
+<blockquote class="blockquote" id="blockquote-3"><p>The number <span class="process-math">\(4\)</span> is in <span class="process-math">\(E\text{,}\)</span> but <span class="process-math">\(3\)</span> is not in <span class="process-math">\(E\text{.}\)</span></p></blockquote>
+</li>
+<li>The set <span class="process-math">\(E\)</span> does no know anything else about <span class="process-math">\(3,4\text{.}\)</span>
+</li>
+</ul></p>
+</div></section><section><h3>Some notation</h3>
+<div align="left"> <p>Mathematicians use a lot of shorthand and notation — please use standard notation.</p> <div class="boxed definition">
+<h3>Definition:
+	(Some shorthand notation).</h3>
+<p><ul id="p-16" class="disc">
+<li>If <span class="process-math">\(a\)</span> is an element of the set <span class="process-math">\(A\)</span> we write <span class="process-math">\(a \in A\text{.}\)</span>
+</li>
+<li>If <span class="process-math">\(b\)</span> is not an element of the set <span class="process-math">\(B\)</span> we write <span class="process-math">\(b \not\in B\)</span>
+</li>
+</ul>Note “<span class="process-math">\(\varepsilon\)</span>” is <em class="emphasis">not</em> the same as “<span class="process-math">\(\in\)</span>”</p>
+</div> <p><ul id="p-17" class="disc"><li><p>Back to <span class="process-math">\(E\text{.}\)</span> We know that<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+4 \in E \qquad \text{and} \qquad 3 \not\in E
+\end{equation*}
+</div>but “<span class="process-math">\(4 \varepsilon E\)</span>” is the product of <span class="process-math">\(4, \varepsilon\)</span> and <span class="process-math">\(E\)</span> — <em class="emphasis">garbage!</em></p></li></ul></p>
+</div></section><section><h3>Describing a set</h3>
+<div align="left"> <p>When we define a set it must be very clear.<ul class="disc">
+<li>“Let <span class="process-math">\(A\)</span> be the set of even integers between 1 and 13.” — nice and clear.</li>
+<li>“Let <span class="process-math">\(B\)</span> be the set of tall people at UBC.” — not clear.</li>
+</ul></p> <p>If only a few elements — just list them all inside <em class="emphasis">braces</em><div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\text{Let }C = \set{1,2,3,4}.
+\end{equation*}
+</div><ul class="disc">
+<li>Since a set only cares about membership, the order does not matter:<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+C = \set{1,2,3,4}  = \set{2,3,1,4} = \set{4,1,2,3}
+\end{equation*}
+</div>
+</li>
+<li>Repetition does not matter<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\set{1,2,3,4} = \set{1,2,2,3,4,1,4,2,2,1}
+\end{equation*}
+</div>
+</li>
+<li>Be nice to the <dfn class="terminology">reader</dfn> — ordered and no repeats.</li>
+</ul></p>
+</div></section><section><h3>Describing a slightly larger set</h3>
+<div align="left"> <p>Use “<span class="process-math">\(\dots\)</span>” as shorthand for the skipped elements:<ul class="disc">
+<li>
+<span class="process-math">\(C = \set{1,2,3,\dots,40}\)</span> the set of all integers between 1 and 40 (inclusive).</li>
+<li>
+<span class="process-math">\(A = \set{1,4,9,16,\dots}\)</span> the set of all positive square integers</li>
+</ul></p> <p>Be careful —  <span class="process-math">\(B = \set{3,5,7,\dots }\)</span> is what set?<ul class="disc">
+<li>all odd primes, or</li>
+<li>all odd numbers bigger than 1, or</li>
+<li>primes that are 1 less than a power of 2, or <span class="process-math">\(\dots\)</span> ???</li>
+</ul></p> <p>Definitions must be precise<ul class="disc">
+<li>If the definition is vague then it is not a set</li>
+<li>Help your <dfn class="terminology">reader</dfn> — don't assume that “they get what I mean”</li>
+</ul></p>
+</div></section><section><h3>The most fundamental set contains nothing</h3>
+<div align="left"> <div class="boxed definition">
+<h3>Definition:
+	(Empty set).</h3>
+<p><ul id="p-24" class="disc">
+<li>The <dfn class="terminology">empty set</dfn> is the set which contains no elements.</li>
+<li>It is denoted <span class="process-math">\(\es\)</span> and <span class="process-math">\(\es = \set{}\)</span>
+</li>
+<li>For any object <span class="process-math">\(x\)</span> we know <span class="process-math">\(x \not \in \es\)</span>
+</li>
+</ul></p>
+</div> <p><ul id="p-25" class="disc">
+<li>The empty set is like an empty bag — it is not nothing.</li>
+<li>The set <span class="process-math">\(A = \set{\es}\)</span> is not empty, it contains 1 element.</li>
+<li>The set <span class="process-math">\(B = \set{\es, \set{\es}}\)</span> contains 2 elements.</li>
+</ul></p>
+</div></section><section><h3>Defining sets by a rule</h3>
+<div align="left"> <p>For larger, complicated sets easier to define them using a rule.<ul class="disc">
+<li>All even numbers <span class="process-math">\(E = \set{x \text{ so that } x \text{ is even}}\)</span>
+</li>
+<li>“so that” shortened <span class="process-math">\(\set{x \text{ s.t. } x \text{ is even}}
+= \set{x \st x \text{ is even}}
+= \set{x \text{ : } x \text{ is even}}\)</span>
+</li>
+</ul>This is <dfn class="terminology">set builder</dfn> notation<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+S = \set{ \text{expression} : \text{rule} }
+\end{equation*}
+</div><ul class="disc">
+<li><span class="process-math">\(\displaystyle A = \set{n^2 \st n \text{ is a whole number}} = \set{0,1,4,9,36,\dots}\)</span></li>
+<li><span class="process-math">\(\displaystyle B = \set{a \in A \st a \lt 12} = \set{0, 1, 4, 9}\)</span></li>
+<li><span class="process-math">\(\displaystyle C = \set{a \in A \st \text{ and } a+1 \text{ is prime}} = \set{1,4,16,36,100,\dots}\)</span></li>
+</ul>It is important that the rule is clear — help your <dfn class="terminology">reader</dfn>.</p>
+</div></section><section><h3>A tour of other important sets</h3>
+<div align="left"> <div class="boxed definition">
+<h3>Definition:
+	(Important sets of numbers).</h3>
+<p><ul id="p-27" class="disc">
+<li>
+<dfn class="terminology">Natural numbers</dfn> (or positive integers) <span class="process-math">\(\mathbb{N} = \set{1,2,3,\dots }\)</span> — note <span class="process-math">\(0 \not\in \mathbb{N}\)</span>
+</li>
+<li>
+<dfn class="terminology">Integers</dfn> <span class="process-math">\(\mathbb{Z} = \set{\dots,-2,-1,0,1,2,\dots}\)</span>
+</li>
+<li>
+<dfn class="terminology">Rational numbers</dfn> (fractions) <span class="process-math">\(\mathbb{Q} = \set{ \frac{a}{b} \st a \in \mathbb{Z}, b \in \mathbb{N} }\)</span>
+</li>
+<li>
+<dfn class="terminology">Real numbers</dfn> <span class="process-math">\(\mathbb{R}\)</span>
+</li>
+</ul>All are denoted using <dfn class="terminology">blackboard bold</dfn> letters</p>
+</div> <p>Please use correct notation: <span class="process-math">\(N \neq \mathbb{N}, Z \neq \mathbb{Z}\text{.}\)</span></p> <p>We might also see<ul class="disc"><li>
+<dfn class="terminology">Irrational numbers</dfn> <span class="process-math">\(\mathbb{I}\)</span> = real numbers that are not rational.</li></ul>We will prove that <span class="process-math">\(\sqrt{2} \in \mathbb{I}\text{.}\)</span></p>
+</div></section><section><h3>Cardinality</h3>
+<div align="left"> <div class="boxed definition">
+<h3>Definition:
+	</h3>
+<p><ul id="p-30" class="disc">
+<li>We write <span class="process-math">\(|S|\)</span> to denote the <dfn class="terminology">cardinality</dfn> of <span class="process-math">\(S\text{.}\)</span>
+</li>
+<li>For a finite set <span class="process-math">\(S\text{,}\)</span> the cardinality is the number of elements in <span class="process-math">\(S\text{.}\)</span>
+</li>
+</ul></p>
+</div> <p>Examples<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+|\es| = 0 \qquad |\set{1,2,3}| = 3 \qquad | \set{\es, \set{1,2}}| = 2
+\end{equation*}
+</div>For infinite sets things become very strange.<ul class="disc">
+<li><span class="process-math">\(\displaystyle |\mathbb{N}| = | \mathbb{Z}| = |\mathbb{Q}|\)</span></li>
+<li><span class="process-math">\(\displaystyle |\mathbb{Z}|  \lt  | \mathbb{R}|\)</span></li>
+</ul>We will prove these.</p>
+</div></section></section>
+</div>
+</div></body>
+<script>
+Reveal.initialize({
+  controls: true,
+  controlsTutorial: true,
+  controlsLayout: 'bottom-right',
+  controlsBackArrows: 'faded',
+  navigationMode: 'default',
+  progress: false,
+  center: false,
+  hash: true,
+  transition: 'fade',
+  width: "100%",
+  height: "100%",
+  margin: "0.025",
+  math: {
+    mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+    config: 'TeX-AMS_HTML-full',
+    // other options are passed into MathJax.Hub.Config()
+    tex2jax: {
+      inlineMath:  [['\\(','\\)']],
+      displayMath: [],
+    }
+  },
+  plugins: [ RevealMath ]
+});
+</script>
+</html>

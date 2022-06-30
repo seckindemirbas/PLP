@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-30T16:09:35-07:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>PLP - 25</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reset.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/theme/black.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/plugin/math/math.js"></script><style>
+ul {
+  display: block !important;
+}
+.sbsrow {
+  display: flex; !important;
+}
+.reveal img {
+  border: 0.5px !important;
+  border-radius: 2px 10px 2px;
+  padding: 4px;
+}
+.definition,.theorem,.activity {
+  border-width: 0.5px;
+  border-style: solid;
+  border-radius: 2px 10px 2px;
+  padding: 1%;
+  margin-bottom: 2em;
+}
+.definition {
+  background: #00608010;
+}
+.theorem {
+  background: #ff000010;
+}
+.proof {
+  background: #ffffff90;
+}
+.activity {
+  background: #60800010;
+}
+dfn {
+  font-weight: bold;
+}
+.pretext-content ol.no-marker,
+.pretext-content ul.no-marker,
+.pretext-content li.no-marker {
+    list-style-type: none;
+}
+
+.pretext-content ol.decimal {
+    list-style-type: decimal;
+}
+.pretext-content ol.lower-alpha {
+    list-style-type: lower-alpha;
+}
+.pretext-content ol.upper-alpha {
+    list-style-type: upper-alpha;
+}
+.pretext-content ol.lower-roman {
+    list-style-type: lower-roman;
+}
+.pretext-content ol.upper-roman {
+    list-style-type: upper-roman;
+}
+.pretext-content ul.disc {
+    list-style-type: disc;
+}
+.pretext-content ul.square {
+    list-style-type: square;
+}
+.pretext-content ul.circle {
+    list-style-type: circle;
+}
+.pretext-content ol.no-marker,
+.pretext-content ul.no-marker {
+    list-style-type: none;
+}
+.pretext-content .cols1 li,
+.pretext-content .cols2 li,
+.pretext-content .cols3 li,
+.pretext-content .cols4 li,
+.pretext-content .cols5 li,
+.pretext-content .cols6 li {
+    float: left;
+    padding-right:2em;
+}
+          </style>
+
+                <link href="plp_styling.css" rel="stylesheet"/>
+                </head>
+<body><div class="reveal pretext-content">
+<div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(  \newcommand{\ds}{\displaystyle}
+  \newcommand{\es}{ {\varnothing}}
+\newcommand{\st}{ \;:\; }
+\newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+\newcommand{\set}[1]{ \left\{#1\right\} }
+  \renewcommand{\neg}{\sim}
+  \renewcommand{\text}[1]{\mathsf{\mbox{#1}}}
+  \DeclareMathOperator{\gcd}{gcd}
+  \DeclareMathOperator{\lcm}{lcm}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="slides">
+<section><section><h1>PLP - 25</h1>
+<h2>Topic 25—More set proofs</h2>
+<table>
+<tr><th align="center" style="border-bottom: 0px;">Demirbaş &amp; Rechnitzer</th></tr>
+<tr><td align="center" style="border-bottom: 0px;"></td></tr>
+<tr><td align="center"></td></tr>
+</table></section></section><section><section><h1>Cartesian and power set proofs</h1></section><section><h3>A Cartesian example</h3>
+<div align="left"> <div class="theorem"><div>
+<h3>Proposition:
+      </h3>
+<p>Let <span class="process-math">\(A,B,C\)</span> be sets, then <span class="process-math">\(A \times (B\cup C) = (A\times B) \cup (A\times C)\text{.}\)</span></p>
+</div></div> <p><dfn class="terminology">Scratch work</dfn><ul class="disc">
+<li>We'll start with <span class="process-math">\(A \times (B \cup C) \supseteq (A\times B) \cup (A\times C) \)</span>
+</li>
+<li>Since cartesian product, assume <span class="process-math">\((x,y) \in \)</span> <dfn class="terminology">RHS</dfn>
+</li>
+<li><p>So <span class="process-math">\((x,y) \in A \times B\)</span> or <span class="process-math">\((x,y) \in A \times C\)</span><ul class="circle">
+<li>Case 1: When <span class="process-math">\((x,y) \in A \times B\text{,}\)</span> <span class="process-math">\(x\in A\)</span> and <span class="process-math">\(y \in B\text{.}\)</span> Hence <span class="process-math">\(y \in B \cup C\)</span>
+</li>
+<li>Case 2: When <span class="process-math">\((x,y) \in A \times C\text{,}\)</span> <span class="process-math">\(x\in A\)</span> and <span class="process-math">\(y \in C\text{.}\)</span> Hence <span class="process-math">\(y \in C \cup B\)</span>
+</li>
+</ul></p></li>
+<li>In both cases, <span class="process-math">\(x \in A\)</span> and <span class="process-math">\(y \in B\cup C\text{,}\)</span> so <span class="process-math">\((x,y) \in \)</span> <dfn class="terminology">LHS</dfn>.</li>
+</ul></p>
+</div></section><section><h3>Continuing Cartesian example</h3>
+<div align="left"> <blockquote class="blockquote" id="blockquote-1"><p><span class="process-math">\(A \times (B\cup C) = (A\times B) \cup (A\times C)\)</span></p></blockquote> <p><dfn class="terminology">Scratch work</dfn> continued<ul class="disc">
+<li>No do <span class="process-math">\(A \times (B \cup C) \subseteq (A\times B) \cup (A\times C) \)</span>
+</li>
+<li>Assume <span class="process-math">\((x,y) \in \)</span> <dfn class="terminology">LHS</dfn>
+</li>
+<li><p>Then <span class="process-math">\(x \in A\)</span> and <span class="process-math">\(y \in B \cup C\)</span> , so <span class="process-math">\(y \in B\)</span> or <span class="process-math">\(y \in C\)</span><ul class="circle">
+<li>Case 1: When <span class="process-math">\(y \in B\text{,}\)</span> we know that <span class="process-math">\((x,y) \in A \times B\text{,}\)</span> so <span class="process-math">\((x,y) \in (A\times B) \cup (A \times C)\)</span>
+</li>
+<li>Case 2: When <span class="process-math">\(y \in C\text{,}\)</span> we know that <span class="process-math">\((x,y) \in A \times C\text{,}\)</span> so <span class="process-math">\((x,y) \in (A\times C) \cup (A \times B)\)</span>
+</li>
+</ul></p></li>
+<li>In both cases, <span class="process-math">\((x,y) \in \)</span> <dfn class="terminology">RHS</dfn>
+</li>
+</ul></p> <p>You can write this up nicely.</p>
+</div></section><section><h3>Power set warm-up</h3>
+<div align="left"> <div class="theorem"><div>
+<h3>Proposition:
+      </h3>
+<p><div class="displaymath process-math" data-contains-math-knowls="" id="md-1">
+\begin{align*}
+X \subseteq A \amp \implies X \subseteq A \cup B\\
+X \subseteq A \cap B \amp \implies X \subseteq A \\
+(X \subseteq A) \land (X \subseteq B) \amp \iff X \subseteq A \cap B
+\end{align*}
+</div></p>
+</div></div> <article class="hiddenproof" id="proof-1"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
+<p><ul id="p-9" class="disc">
+<li>Let <span class="process-math">\(X \subseteq A\text{.}\)</span> Assume that <span class="process-math">\(x \in X\text{,}\)</span> which implies that <span class="process-math">\(x \in A\text{.}\)</span> Hence <span class="process-math">\(x \in A \cup B\text{.}\)</span>
+</li>
+<li>Now let <span class="process-math">\(X \subseteq A \cap B\)</span> and assume <span class="process-math">\(x \in X\text{.}\)</span> Hence <span class="process-math">\(x \in A \cap B\)</span> and so <span class="process-math">\(x \in A\text{.}\)</span>
+</li>
+<li>Let <span class="process-math">\(X \subseteq A\)</span> and <span class="process-math">\(X \subseteq B\text{,}\)</span> and assume <span class="process-math">\(x \in X\text{.}\)</span> Then <span class="process-math">\(x \in A\)</span> and <span class="process-math">\(x \in B\text{,}\)</span> so <span class="process-math">\(x \in A \cap B\text{.}\)</span>
+</li>
+<li>Finally let <span class="process-math">\(X \subseteq A \cap B\text{.}\)</span> Since <span class="process-math">\(A\cap B \subseteq A\)</span> we know <span class="process-math">\(X \subseteq A\text{.}\)</span> Similar reasoning gives <span class="process-math">\(X \subseteq B\text{.}\)</span>
+</li>
+</ul></p></article>
+</div></section><section><h3>A power set example</h3>
+<div align="left"> <div class="theorem"><div>
+<h3>Proposition:
+      </h3>
+<p>Let <span class="process-math">\(A,B\)</span> be sets then <span class="process-math">\(\pow{A}\cup\pow{B} \subseteq \pow{A\cup B}\text{.}\)</span> The reverse inclusion does not hold.</p>
+</div></div> <p><dfn class="terminology">Scratch work</dfn><ul class="disc">
+<li>There are two things to prove here. Start with the inclusion.</li>
+<li>Is equivalent to <span class="process-math">\(X \in \pow{A}\cup\pow{B} \implies X \in \pow{A\cup B}\text{.}\)</span>
+</li>
+<li>So let <span class="process-math">\(X \in \pow{A} \cup \pow{B}\text{.}\)</span> Means <span class="process-math">\(X\subseteq A\)</span> or <span class="process-math">\(X \subseteq B\)</span>
+</li>
+<li>Now if <span class="process-math">\(X \subseteq A\)</span> then <span class="process-math">\(X \subseteq A \cup B\)</span> and so <span class="process-math">\(X \in \pow{A \cup B}\text{.}\)</span>
+</li>
+<li>The case <span class="process-math">\(X \subseteq B\)</span> will be similar.</li>
+</ul></p>
+</div></section><section><h3>Disproof of reverse inclusion</h3>
+<div align="left"> <blockquote class="blockquote" id="blockquote-2"><p><span class="process-math">\(\pow{A\cup B} \subseteq \pow{A} \cup \pow{B}\)</span></p></blockquote> <p><dfn class="terminology">Scratch work</dfn><ul class="disc">
+<li>Since this is really “For all sets <span class="process-math">\(A,B\)</span> …” so disproof can be counter-example</li>
+<li>Notice that <span class="process-math">\(X \in RHS\)</span> then <span class="process-math">\(X \subseteq A\)</span> or <span class="process-math">\(X \subseteq B\text{.}\)</span>
+</li>
+<li>While a set in <span class="process-math">\(LHS\)</span> could could contain elements from both <span class="process-math">\(A,B\)</span>
+</li>
+<li>Try to construct very small <span class="process-math">\(A,B\)</span> to illustrate this.</li>
+<li>Let <span class="process-math">\(A=\set{1}, B=\set{2}\text{,}\)</span> then <span class="process-math">\(\set{1,2} \in LHS\)</span> but not in <span class="process-math">\(RHS\text{.}\)</span>
+</li>
+</ul></p>
+</div></section><section><h3>Proof of result</h3>
+<div align="left"> <article class="hiddenproof" id="proof-2"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
+<p>We first prove the inclusion and then show the reverse inclusion does not hold.<ul class="disc">
+<li><p>Let <span class="process-math">\(X \in \pow{A} \cup \pow{B}\text{.}\)</span> Hence <span class="process-math">\(X \subseteq A\)</span> or <span class="process-math">\(X \subseteq B\text{.}\)</span> If <span class="process-math">\(X \subseteq A\)</span> then (as shown previously) <span class="process-math">\(X \subseteq A \cup B\text{.}\)</span> Similarly if <span class="process-math">\(X \subseteq B\)</span> then <span class="process-math">\(X \subseteq B \cup A\text{.}\)</span> This implies that <span class="process-math">\(X \in \pow{A\cup B}\)</span> as required.</p></li>
+<li>We disprove the reverse inclusion with a counter example. Let <span class="process-math">\(A = \set{1}, B = \set{2}\)</span> and <span class="process-math">\(X = \set{1,2}\text{.}\)</span> Then <span class="process-math">\(X \in \pow{A\cup B}\text{,}\)</span> however <span class="process-math">\(X \not \in \pow{A} \cup \pow{B}\text{.}\)</span> Hence <span class="process-math">\(\pow{A\cup B} \not\subseteq \pow{A}\cup\pow{B}\text{.}\)</span>
+</li>
+</ul></p></article>
+</div></section><section><h3>Another power set result</h3>
+<div align="left"> <div class="theorem"><div>
+<h3>Proposition:
+      </h3>
+<p>Let <span class="process-math">\(A,B\)</span> be sets, then <span class="process-math">\(\pow{A}\cap\pow{B} = \pow{A \cap B}\text{.}\)</span></p>
+</div></div> <p><dfn class="terminology">Scratch work</dfn><ul class="disc">
+<li>There are two inclusions to prove here.</li>
+<li>Assume that <span class="process-math">\(X \in LHS\text{,}\)</span> then <span class="process-math">\(X \in \pow{A}\)</span> and <span class="process-math">\(X \in \pow{B}\text{.}\)</span>
+</li>
+<li>Hence <span class="process-math">\(X \subseteq A\)</span> and <span class="process-math">\(X \subseteq B\)</span> — and we showed this means <span class="process-math">\(X \subseteq A \cap B\)</span>
+</li>
+<li>Thus <span class="process-math">\(X \in RHS\)</span>
+</li>
+<li>Now let <span class="process-math">\(Y \in RHS\text{,}\)</span> so <span class="process-math">\(Y \subseteq A \cap B\)</span> — we showed this means <span class="process-math">\(Y \subseteq A\)</span> and <span class="process-math">\(Y \subseteq B\)</span>
+</li>
+<li>So <span class="process-math">\(Y \in LHS\)</span> as required.</li>
+</ul></p>
+</div></section><section><h3>Write it up nicely</h3>
+<div align="left"> <blockquote class="blockquote" id="blockquote-3"><p><span class="process-math">\(\pow{A}\cap\pow{B} = \pow{A \cap B}\)</span></p></blockquote> <article class="hiddenproof" id="proof-3"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
+<p>We prove each inclusion in turn.<ul class="disc">
+<li><p>Assume that <span class="process-math">\(X \in LHS\text{.}\)</span> Then <span class="process-math">\(X \in \pow{A}\)</span> and <span class="process-math">\(X \in \pow{B}\text{,}\)</span> and so <span class="process-math">\(X \subseteq A\)</span> and <span class="process-math">\(X \subseteq B\text{.}\)</span> Hence <span class="process-math">\(X \subseteq A \cap B\text{,}\)</span> and thus <span class="process-math">\(X \in RHS\text{.}\)</span></p></li>
+<li><p>Now assume that <span class="process-math">\(Y \in RHS\text{.}\)</span> Then <span class="process-math">\(Y \in \pow{A \cap B}\)</span> and so <span class="process-math">\(Y \subseteq A \cap B\text{.}\)</span> This means that <span class="process-math">\(Y \subseteq A\)</span> and <span class="process-math">\(Y \subseteq B\text{.}\)</span> Hence <span class="process-math">\(Y \in \pow{A}\)</span> and <span class="process-math">\(Y \in \pow{B}\)</span> and thus <span class="process-math">\(Y \in LHS\text{.}\)</span></p></li>
+</ul></p></article>
+</div></section></section>
+</div>
+</div></body>
+<script>
+Reveal.initialize({
+  controls: true,
+  controlsTutorial: true,
+  controlsLayout: 'bottom-right',
+  controlsBackArrows: 'faded',
+  navigationMode: 'default',
+  progress: false,
+  center: false,
+  hash: true,
+  transition: 'fade',
+  width: "100%",
+  height: "100%",
+  margin: "0.025",
+  math: {
+    mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+    config: 'TeX-AMS_HTML-full',
+    // other options are passed into MathJax.Hub.Config()
+    tex2jax: {
+      inlineMath:  [['\\(','\\)']],
+      displayMath: [],
+    }
+  },
+  plugins: [ RevealMath ]
+});
+</script>
+</html>

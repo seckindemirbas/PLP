@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-30T16:06:47-07:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>PLP - 12</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reset.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/theme/black.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/plugin/math/math.js"></script><style>
+ul {
+  display: block !important;
+}
+.sbsrow {
+  display: flex; !important;
+}
+.reveal img {
+  border: 0.5px !important;
+  border-radius: 2px 10px 2px;
+  padding: 4px;
+}
+.definition,.theorem,.activity {
+  border-width: 0.5px;
+  border-style: solid;
+  border-radius: 2px 10px 2px;
+  padding: 1%;
+  margin-bottom: 2em;
+}
+.definition {
+  background: #00608010;
+}
+.theorem {
+  background: #ff000010;
+}
+.proof {
+  background: #ffffff90;
+}
+.activity {
+  background: #60800010;
+}
+dfn {
+  font-weight: bold;
+}
+.pretext-content ol.no-marker,
+.pretext-content ul.no-marker,
+.pretext-content li.no-marker {
+    list-style-type: none;
+}
+
+.pretext-content ol.decimal {
+    list-style-type: decimal;
+}
+.pretext-content ol.lower-alpha {
+    list-style-type: lower-alpha;
+}
+.pretext-content ol.upper-alpha {
+    list-style-type: upper-alpha;
+}
+.pretext-content ol.lower-roman {
+    list-style-type: lower-roman;
+}
+.pretext-content ol.upper-roman {
+    list-style-type: upper-roman;
+}
+.pretext-content ul.disc {
+    list-style-type: disc;
+}
+.pretext-content ul.square {
+    list-style-type: square;
+}
+.pretext-content ul.circle {
+    list-style-type: circle;
+}
+.pretext-content ol.no-marker,
+.pretext-content ul.no-marker {
+    list-style-type: none;
+}
+.pretext-content .cols1 li,
+.pretext-content .cols2 li,
+.pretext-content .cols3 li,
+.pretext-content .cols4 li,
+.pretext-content .cols5 li,
+.pretext-content .cols6 li {
+    float: left;
+    padding-right:2em;
+}
+          </style>
+
+                <link href="plp_styling.css" rel="stylesheet"/>
+                </head>
+<body><div class="reveal pretext-content">
+<div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(  \newcommand{\ds}{\displaystyle}
+  \newcommand{\es}{ {\varnothing}}
+\newcommand{\st}{ \;\mid\; }
+\newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+\newcommand{\set}[1]{ \left\{#1\right\} }
+  \renewcommand{\neg}{\sim}
+  \renewcommand{\text}[1]{\mathsf{\mbox{#1}}}
+  \DeclareMathOperator{\gcd}{gcd}
+  \DeclareMathOperator{\lcm}{lcm}
+  \newcommand{\Mod}[1]{\;(\mathrm{mod}\; #1)}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="slides">
+<section><section><h1>PLP - 12</h1>
+<h2>Topic 12 —Proof by cases</h2>
+<table>
+<tr><th align="center" style="border-bottom: 0px;">Demirbaş &amp; Rechnitzer</th></tr>
+<tr><td align="center" style="border-bottom: 0px;"></td></tr>
+<tr><td align="center"></td></tr>
+</table></section></section><section><section><h1>Proof by cases</h1></section><section><h3>Another equivalence</h3>
+<div align="left"> <div class="theorem"><div>
+<h3>Proposition:
+      </h3>
+<p><div class="displaymath process-math" data-contains-math-knowls="" id="p-1">
+\begin{equation*}
+(P \lor Q) \implies R \quad \equiv \quad (P \implies R) \land (Q \implies R)
+\end{equation*}
+</div></p>
+</div></div> <p>You can prove this with a truth-table (tedious) or via equivalences (good exercise).</p> <p>Useful because we can split the <dfn class="terminology">hypothesis</dfn> into cases.<div class="displaymath process-math" data-contains-math-knowls="" id="md-1">
+\begin{align*}
+\amp (n \in \mathbb{N}) \implies (n^2+5n-7 \text{ is odd})\\
+\amp(n \text{ is even}) \lor
+(n \text{ is odd})
+\implies (n^2+5n-7 \text{ is odd})\\
+\amp
+\underbrace{(n \text{ is even})
+\implies (n^2+5n-7 \text{ is odd})}
+\text{ and  }
+\underbrace{(n \text{ is odd})
+\implies (n^2+5n-7 \text{ is odd})}
+\end{align*}
+</div>We can prove each <dfn class="terminology">case</dfn> in turn — <dfn class="terminology">proof by cases</dfn></p>
+</div></section><section><h3>Proof by cases</h3>
+<div align="left"> <div class="theorem"><div>
+<h3>Proposition:
+      </h3>
+<p>Let <span class="process-math">\(n \in \mathbb{Z}\)</span> then <span class="process-math">\(n^2+5n-7\)</span> is odd.</p>
+</div></div> <article class="hiddenproof" id="proof-1"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
+<p>Assume the hypothesis is true, so that <span class="process-math">\(n \in \mathbb{Z}\text{.}\)</span> Hence <span class="process-math">\(n\)</span> is even or odd.<ul class="disc">
+<li>
+<em class="emphasis">Case 1:</em> Assume that <span class="process-math">\(n\)</span> is even, so that <span class="process-math">\(n=2k\)</span> for some <span class="process-math">\(k \in \mathbb{Z}\text{.}\)</span> Hence <span class="process-math">\(n^2+5n-7 = 4k^2+10k-7 = 2(2k^2+5k-4)+1\text{.}\)</span> Thus <span class="process-math">\(n^2+5n-7\)</span> is odd.</li>
+<li>
+<em class="emphasis">Case 2:</em> Assume that <span class="process-math">\(n\)</span> is odd, so that <span class="process-math">\(n=2\ell+1\)</span> for some <span class="process-math">\(\ell \in \mathbb{Z}\text{.}\)</span> Hence <span class="process-math">\(n^2+5n-7 = 4\ell^2+4\ell+1 + 10\ell+5-7 = 2(2\ell^2 + 7\ell -1)+1\text{.}\)</span> Thus <span class="process-math">\(n^2+5n-7\)</span> is odd.</li>
+</ul>Since <span class="process-math">\(n^2+5n-7\)</span> is odd in <em class="emphasis">both cases</em>, the result holds.</p></article>
+</div></section><section><h3>What can go wrong</h3>
+<div align="left"> <p><em class="emphasis">Proof by cases</em> can be tricky<ul class="disc">
+<li>tell the <dfn class="terminology">reader</dfn> that you are doing <dfn class="terminology">case analysis</dfn>
+</li>
+<li>make sure you get <em class="emphasis">all</em> the cases — a common mistake</li>
+<li>
+<p>cases are often very similar — be very careful of skipping steps.</p>
+<p><dfn class="terminology">without loss of generality</dfn> or <dfn class="terminology">WLOG</dfn> is a good source of errors</p>
+</li>
+</ul></p> <p>Dangerous phrases in mathematics<ul class="disc">
+<li>Without loss of generality…</li>
+<li>Clearly…</li>
+<li>Obviously…</li>
+<li>A quick calculation shows that…</li>
+<li>It is easy to show that…</li>
+</ul></p>
+</div></section><section><h3>Another example</h3>
+<div align="left"> <div class="theorem"><div>
+<h3>Proposition:
+      </h3>
+<p>Let <span class="process-math">\(n \in \mathbb{Z}\text{.}\)</span> If <span class="process-math">\(3 \mid n^2\)</span> then <span class="process-math">\(3 \mid n\text{.}\)</span></p>
+</div></div> <p><dfn class="terminology">Scratch work</dfn> —This smells of the contrapositive: <span class="process-math">\((3 \nmid n) \implies (3\nmid n^2)\text{.}\)</span><ul class="disc">
+<li>Recall <dfn class="terminology">Euclidean division</dfn> — every integer <span class="process-math">\(n\)</span> can be written uniquely as<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+n=3a \qquad n=3a+1 \qquad n=3a+2 \qquad \text{for some } a \in \mathbb{Z}
+\end{equation*}
+</div>
+</li>
+<li>If <span class="process-math">\(3 \nmid n\)</span> we must have either <span class="process-math">\(n=3a+1\)</span> or <span class="process-math">\(=3a+2\)</span> — our cases.</li>
+<li>If <span class="process-math">\(n=3a+1\)</span> then <span class="process-math">\(n^2 = 9a^2+6a+1 = \dots\text{.}\)</span>
+</li>
+<li>If <span class="process-math">\(n=3a+2\)</span> then <span class="process-math">\(n^2 = 9a^2+12a+4 = \dots\text{.}\)</span>
+</li>
+</ul>Time to write up.</p>
+</div></section><section><h3>Write it up nicely</h3>
+<div align="left"> <blockquote class="blockquote" id="blockquote-1"><p>Let <span class="process-math">\(n \in \mathbb{Z}\text{.}\)</span> If <span class="process-math">\(3 \mid n^2\)</span> then <span class="process-math">\(3 \mid n\text{.}\)</span></p></blockquote> <article class="hiddenproof" id="proof-2"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
+<p>We prove the contrapositive, so assume that <span class="process-math">\(3 \nmid n\text{.}\)</span> By Euclidean division, we know that <span class="process-math">\(n=3a+1\)</span>  or <span class="process-math">\(n=3a+2\text{.}\)</span><ul class="disc">
+<li>
+<em class="emphasis">Case 1:</em> Let <span class="process-math">\(n=3a+1\text{,}\)</span> then <span class="process-math">\(n^2=9a^2+6a+1 = 3(3a^2+2a)+1\)</span> and so is not divisible by 3.</li>
+<li>
+<em class="emphasis">Case 2:</em> Let <span class="process-math">\(n=3a+2\text{,}\)</span>then <span class="process-math">\(n^2=9a^2+12a+4 = 3(3a^2+4a+1)+1\)</span> and so is not divisible by 3.</li>
+</ul>Since <span class="process-math">\(3 \nmid n^2\)</span> in both cases, the result holds.</p></article>
+</div></section></section>
+</div>
+</div></body>
+<script>
+Reveal.initialize({
+  controls: true,
+  controlsTutorial: true,
+  controlsLayout: 'bottom-right',
+  controlsBackArrows: 'faded',
+  navigationMode: 'default',
+  progress: false,
+  center: false,
+  hash: true,
+  transition: 'fade',
+  width: "100%",
+  height: "100%",
+  margin: "0.025",
+  math: {
+    mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+    config: 'TeX-AMS_HTML-full',
+    // other options are passed into MathJax.Hub.Config()
+    tex2jax: {
+      inlineMath:  [['\\(','\\)']],
+      displayMath: [],
+    }
+  },
+  plugins: [ RevealMath ]
+});
+</script>
+</html>

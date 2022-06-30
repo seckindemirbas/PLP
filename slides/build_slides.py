@@ -9,6 +9,28 @@ import sys
 # use pretext xsl from the install of the pretext-cli
 from pretext.static import core_xsl
 
+
+def insert_user_css(filename, css_file_name):
+    # insert link to user css at the end of the head.
+    # this is a bit hacky but works
+    lines = []
+    # read in lines
+    with open(filename, "r") as fh:
+        for line in fh:
+            # if the line is the end of the header put in user css link
+            if line.find("</head>") != -1:
+                lines.append(
+                    f"""
+                <link href="{css_file_name}" rel="stylesheet"/>
+                """
+                )
+            lines.append(line)
+    # now write the file back with the new content.
+    with open(filename, "w") as fh:
+        for line in lines:
+            fh.write(line)
+
+
 if len(sys.argv) != 2:
     print("Need source ptx:", sys.argv)
     quit()
@@ -25,7 +47,13 @@ sourceStem = sourceFile.stem
 html_out_file = sourceStem + ".html"
 
 print("Reading in XSL transforms")
+
+# use this if you have a pretext-cli install
 pretext_xsl_dir = Path(core_xsl(as_path=True))
+# else set to path to your local pretext install
+
+
+
 xsltFile = pretext_xsl_dir / "pretext-revealjs.xsl"
 xslt = ET.parse(xsltFile)
 transform = ET.XSLT(xslt)
@@ -56,6 +84,10 @@ print("Writing HTML")
 with open(html_out_file, "w") as fh:
     fh.write(str(htmlSource))
 print("HTML written")
+
+# now insert a link to user-css to style the resulting html more
+insert_user_css(html_out_file, "plp_styling.css")
+
 
 # comment out "quit" below if you want to build the pdfs too
 # uses 'decktape' to covert reveal.js to pdf

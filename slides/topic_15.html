@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-30T16:07:26-07:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>PLP - 15</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reset.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/theme/black.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/plugin/math/math.js"></script><style>
+ul {
+  display: block !important;
+}
+.sbsrow {
+  display: flex; !important;
+}
+.reveal img {
+  border: 0.5px !important;
+  border-radius: 2px 10px 2px;
+  padding: 4px;
+}
+.definition,.theorem,.activity {
+  border-width: 0.5px;
+  border-style: solid;
+  border-radius: 2px 10px 2px;
+  padding: 1%;
+  margin-bottom: 2em;
+}
+.definition {
+  background: #00608010;
+}
+.theorem {
+  background: #ff000010;
+}
+.proof {
+  background: #ffffff90;
+}
+.activity {
+  background: #60800010;
+}
+dfn {
+  font-weight: bold;
+}
+.pretext-content ol.no-marker,
+.pretext-content ul.no-marker,
+.pretext-content li.no-marker {
+    list-style-type: none;
+}
+
+.pretext-content ol.decimal {
+    list-style-type: decimal;
+}
+.pretext-content ol.lower-alpha {
+    list-style-type: lower-alpha;
+}
+.pretext-content ol.upper-alpha {
+    list-style-type: upper-alpha;
+}
+.pretext-content ol.lower-roman {
+    list-style-type: lower-roman;
+}
+.pretext-content ol.upper-roman {
+    list-style-type: upper-roman;
+}
+.pretext-content ul.disc {
+    list-style-type: disc;
+}
+.pretext-content ul.square {
+    list-style-type: square;
+}
+.pretext-content ul.circle {
+    list-style-type: circle;
+}
+.pretext-content ol.no-marker,
+.pretext-content ul.no-marker {
+    list-style-type: none;
+}
+.pretext-content .cols1 li,
+.pretext-content .cols2 li,
+.pretext-content .cols3 li,
+.pretext-content .cols4 li,
+.pretext-content .cols5 li,
+.pretext-content .cols6 li {
+    float: left;
+    padding-right:2em;
+}
+          </style>
+
+                <link href="plp_styling.css" rel="stylesheet"/>
+                </head>
+<body><div class="reveal pretext-content">
+<div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(  \newcommand{\ds}{\displaystyle}
+  \newcommand{\es}{ {\varnothing}}
+\newcommand{\st}{ \;\text{s.t.}\; }
+\newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+\newcommand{\set}[1]{ \left\{#1\right\} }
+  \renewcommand{\neg}{\sim}
+  \renewcommand{\text}[1]{\mathsf{\mbox{#1}}}
+  \DeclareMathOperator{\gcd}{gcd}
+  \DeclareMathOperator{\lcm}{lcm}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="slides">
+<section><section><h1>PLP - 15</h1>
+<h2>Topic 15—Nested Quantifiers</h2>
+<table>
+<tr><th align="center" style="border-bottom: 0px;">Demirbaş &amp; Rechnitzer</th></tr>
+<tr><td align="center" style="border-bottom: 0px;"></td></tr>
+<tr><td align="center"></td></tr>
+</table></section></section><section><section><h1>Nested quantifiers</h1></section><section><h3>Nested quantifiers</h3>
+<div align="left"> <p><em class="emphasis">Quantifiers do not commute</em><div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\forall x, \exists y \st P(x,y) \quad \not\equiv \quad \exists y \st \forall x, P(x,y)
+\end{equation*}
+</div></p> <p>Consider:</p> <blockquote class="blockquote" id="blockquote-1"><p><span class="process-math">\(\forall z \in \mathbb{Z}, \exists w \in \mathbb{N} \st z^2 \lt w\)</span></p></blockquote> <p>Must do quantifiers <em class="emphasis">in order</em> — like a 2 player game:<ul class="disc">
+<li>Player 1: picks the value of <span class="process-math">\(z\)</span> first</li>
+<li>Player 2: knows what Player 1 did, and chooses <span class="process-math">\(w\)</span>
+</li>
+</ul>So<ul class="disc">
+<li>Player 1 picks some integer <span class="process-math">\(z\)</span>
+</li>
+<li>Player 2 needs <span class="process-math">\(w\)</span> to be big enough so that <span class="process-math">\(w \gt z^2\)</span> — pick <span class="process-math">\(w=z^2+1\)</span>
+</li>
+</ul></p>
+</div></section><section><h3>Nested quantifiers</h3>
+<div align="left"> <blockquote class="blockquote" id="blockquote-2"><p><span class="process-math">\(\forall z \in \mathbb{Z}, \exists w \in \mathbb{N} \st z^2 \lt w\)</span></p></blockquote> <article class="hiddenproof" id="proof-1"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
+<p><ul id="p-6" class="disc">
+<li>Let <span class="process-math">\(z\)</span> be any integer.</li>
+<li>Now choose <span class="process-math">\(w = z^2+1\text{.}\)</span>
+</li>
+<li>We know that <span class="process-math">\(w \in \mathbb{Z}\)</span> and that <span class="process-math">\(w \geq 1\text{,}\)</span> so <span class="process-math">\(w\in\mathbb{N}\text{.}\)</span>
+</li>
+<li>Further we know that <span class="process-math">\(w \gt z^2\)</span> so the statement is true.</li>
+</ul></p></article> <p><ul id="p-7" class="disc">
+<li>Player 1 picks <em class="emphasis">any</em> <span class="process-math">\(z \in \mathbb{Z}\)</span> — universal quantifier</li>
+<li>Player 2 picks <em class="emphasis">a single</em> <span class="process-math">\(w\)</span> based on that choice — existential quantifier</li>
+<li>We verify that <span class="process-math">\(w \in \mathbb{N}\text{.}\)</span>
+</li>
+<li>We confirm that the inequality holds.</li>
+</ul></p>
+</div></section><section><h3>The other way around</h3>
+<div align="left"> <blockquote class="blockquote" id="blockquote-3"><p><span class="process-math">\(\exists w \in \mathbb{N} \st \forall z \in \mathbb{Z}, z^2 \lt w\)</span></p></blockquote> <p>Must do quantifiers <em class="emphasis">in order</em> — like a 2 player game:<ul class="disc">
+<li>Player 1: chooses <em class="emphasis">one</em> value of <span class="process-math">\(w\)</span> first</li>
+<li>Player 2: knows what Player 1 did, but must check <em class="emphasis">all</em> <span class="process-math">\(z\)</span>
+</li>
+</ul></p> <p><dfn class="terminology">Scratch work</dfn><ul class="disc">
+<li>P1 picks <span class="process-math">\(w=1\text{,}\)</span> but then <span class="process-math">\(z=2\)</span> is too big</li>
+<li>P1 picks <span class="process-math">\(w=2\text{,}\)</span> but then <span class="process-math">\(z=3\)</span> is too big</li>
+<li>P1 picks <span class="process-math">\(w=3\text{,}\)</span> but then <span class="process-math">\(z=4\)</span> is too big</li>
+</ul>Smells false, so check the negation.</p>
+</div></section><section><h3>Look at negation</h3>
+<div align="left"> <blockquote class="blockquote" id="blockquote-4"><p><span class="process-math">\(\forall w \in \mathbb{N}, \exists z \in \mathbb{Z} \st z^2 \geq w\)</span></p></blockquote> <p><ul id="p-12" class="disc">
+<li>Player 1 picks <em class="emphasis">any</em> <span class="process-math">\(w \in \mathbb{N}\)</span>
+</li>
+<li>Player 2 chooses <em class="emphasis">one</em> <span class="process-math">\(z \in \mathbb{Z}\text{.}\)</span> What worked above?</li>
+</ul></p> <article class="hiddenproof" id="proof-2"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
+<p>We prove the statement is false by showing the negation is true.<ul class="disc">
+<li>Let <span class="process-math">\(w \in \mathbb{N}\text{.}\)</span>
+</li>
+<li>Now choose <span class="process-math">\(z = w+1 \in \mathbb{Z}\)</span>
+</li>
+<li>Then <span class="process-math">\(z^2 = w^2 + 2w + 1 \gt w\)</span> since <span class="process-math">\(w^2 \geq 0\)</span> and <span class="process-math">\(w \geq 1\text{.}\)</span>
+</li>
+</ul>Since the negation is true, the original statement is false.</p></article>
+</div></section><section><h3>Another nested example</h3>
+<div align="left"> <blockquote class="blockquote" id="blockquote-5"><p><span class="process-math">\(\forall x\in \mathbb{R}, \exists y\in\mathbb{R} \st xy=x+y\)</span></p></blockquote> <p><dfn class="terminology">Scratch work</dfn><ul class="disc">
+<li>P1 picks any <span class="process-math">\(x\)</span> they want.</li>
+<li>P2 needs to pick <span class="process-math">\(y\)</span> so that <span class="process-math">\(xy=x+y\)</span>
+</li>
+<li>We can solve that <span class="process-math">\(xy-y=x\)</span> so <span class="process-math">\(y = \frac{x}{x-1}\)</span>
+</li>
+</ul>So is this true?</p> <p>What happens when <span class="process-math">\(x=1\text{?}\)</span></p>
+</div></section><section><h3>Another nested example — negation</h3>
+<div align="left"> <blockquote class="blockquote" id="blockquote-6"><p><span class="process-math">\(\exists x\in \mathbb{R} \st \forall y\in\mathbb{R}, xy \neq x+y\)</span></p></blockquote> <p><dfn class="terminology">Scratch work</dfn>. Failed last time when <span class="process-math">\(x=1\text{.}\)</span><ul class="disc">
+<li>P1 picks <span class="process-math">\(x=1\text{.}\)</span>
+</li>
+<li>Then no matter what <span class="process-math">\(y \in\mathbb{R}\)</span> we have <span class="process-math">\(y \neq y+1\text{.}\)</span>
+</li>
+</ul></p> <article class="hiddenproof" id="proof-3"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
+<p>The statement is false. Pick <span class="process-math">\(x=1\text{.}\)</span> Then no matter what <span class="process-math">\(y \in \mathbb{R}\)</span> we choose, we have <span class="process-math">\(y \neq y+1\)</span> as required. Since the negation is true, the original statement is false.</p></article>
+</div></section><section><h3>Another one</h3>
+<div align="left"> <blockquote class="blockquote" id="blockquote-7"><p><span class="process-math">\(\forall x\in \mathbb{R}, \exists y\in\mathbb{R} \st (y \neq 0) \implies xy=1\)</span></p></blockquote> <p><dfn class="terminology">Scratch work</dfn><ul class="disc">
+<li>P1 <em class="emphasis">first</em> picks one value of <span class="process-math">\(x\)</span>
+</li>
+<li>P2 then picks <span class="process-math">\(y\)</span> to make the implication true.</li>
+<li>If the hypothesis is false, implication is true. P2 just picks <span class="process-math">\(y=0\text{.}\)</span>
+</li>
+</ul></p> <article class="hiddenproof" id="proof-4"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
+<p>We prove the statement is true. Pick any <span class="process-math">\(x \in \mathbb{R}\text{,}\)</span> and then set <span class="process-math">\(y=0\text{.}\)</span> Since the hypothesis of the implication is false, the implication is always true.</p></article>
+</div></section><section><h3>A similar one</h3>
+<div align="left"> <blockquote class="blockquote" id="blockquote-8"><p><span class="process-math">\(\exists x\in \mathbb{R} \st \forall y\in\mathbb{R}, (y \neq 0) \implies xy=1\)</span></p></blockquote> <p><dfn class="terminology">Scratch work</dfn><ul class="disc">
+<li>P1 <em class="emphasis">first</em> picks one value of <span class="process-math">\(x\)</span>
+</li>
+<li>P2 then picks <span class="process-math">\(y\)</span> to make the implication true.</li>
+<li>Implication is false when (H,C) = (T,F) — can that happen?</li>
+<li>Sure <span class="process-math">\(x=1\)</span> then pick <span class="process-math">\(y=2\)</span>
+</li>
+</ul>Better look at the negation.</p> <p><dfn class="terminology">Recall:</dfn> <span class="process-math">\(\neg(P \implies Q) \equiv (P \land \neg(Q))\)</span></p>
+</div></section><section><h3>A similar one — negated</h3>
+<div align="left"> <blockquote class="blockquote" id="blockquote-9"><p><span class="process-math">\(\forall x\in \mathbb{R}, \exists y\in\mathbb{R} \st (y \neq 0) \land xy \neq 1\)</span></p></blockquote> <p><dfn class="terminology">Scratch work</dfn><ul class="disc">
+<li>P1 picks <em class="emphasis">any</em> <span class="process-math">\(x\)</span>
+</li>
+<li>P2 knows <span class="process-math">\(x\text{,}\)</span> so based on that picks <span class="process-math">\(y \neq 0\)</span> so that <span class="process-math">\(xy \neq 1\text{.}\)</span>
+</li>
+<li>If P2 picks <span class="process-math">\(y=1\)</span> that will work nicely unless <span class="process-math">\(x=1\)</span>
+</li>
+<li>If P1 has picked <span class="process-math">\(x=1\)</span> then <span class="process-math">\(P2\)</span> can pick <span class="process-math">\(x=2\)</span>
+</li>
+</ul></p> <article class="hiddenproof" id="proof-5"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
+<p>We show the statement is false by proving the negation is true. Pick any <span class="process-math">\(x \in \mathbb{R}\text{.}\)</span> Either <span class="process-math">\(x=1\)</span> or <span class="process-math">\(x\neq 1\)</span><ul class="disc">
+<li>If <span class="process-math">\(x=1\)</span> then set <span class="process-math">\(y=2\text{.}\)</span>
+</li>
+<li>If <span class="process-math">\(x\neq 1\)</span> then set <span class="process-math">\(y=1\text{.}\)</span>
+</li>
+</ul>In both cases, <span class="process-math">\(y\neq 0\)</span> and <span class="process-math">\(xy\neq 1\)</span> as required.</p></article>
+</div></section></section>
+</div>
+</div></body>
+<script>
+Reveal.initialize({
+  controls: true,
+  controlsTutorial: true,
+  controlsLayout: 'bottom-right',
+  controlsBackArrows: 'faded',
+  navigationMode: 'default',
+  progress: false,
+  center: false,
+  hash: true,
+  transition: 'fade',
+  width: "100%",
+  height: "100%",
+  margin: "0.025",
+  math: {
+    mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+    config: 'TeX-AMS_HTML-full',
+    // other options are passed into MathJax.Hub.Config()
+    tex2jax: {
+      inlineMath:  [['\\(','\\)']],
+      displayMath: [],
+    }
+  },
+  plugins: [ RevealMath ]
+});
+</script>
+</html>

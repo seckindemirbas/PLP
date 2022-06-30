@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-30T16:08:53-07:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>PLP - 22</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reset.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/theme/black.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/plugin/math/math.js"></script><style>
+ul {
+  display: block !important;
+}
+.sbsrow {
+  display: flex; !important;
+}
+.reveal img {
+  border: 0.5px !important;
+  border-radius: 2px 10px 2px;
+  padding: 4px;
+}
+.definition,.theorem,.activity {
+  border-width: 0.5px;
+  border-style: solid;
+  border-radius: 2px 10px 2px;
+  padding: 1%;
+  margin-bottom: 2em;
+}
+.definition {
+  background: #00608010;
+}
+.theorem {
+  background: #ff000010;
+}
+.proof {
+  background: #ffffff90;
+}
+.activity {
+  background: #60800010;
+}
+dfn {
+  font-weight: bold;
+}
+.pretext-content ol.no-marker,
+.pretext-content ul.no-marker,
+.pretext-content li.no-marker {
+    list-style-type: none;
+}
+
+.pretext-content ol.decimal {
+    list-style-type: decimal;
+}
+.pretext-content ol.lower-alpha {
+    list-style-type: lower-alpha;
+}
+.pretext-content ol.upper-alpha {
+    list-style-type: upper-alpha;
+}
+.pretext-content ol.lower-roman {
+    list-style-type: lower-roman;
+}
+.pretext-content ol.upper-roman {
+    list-style-type: upper-roman;
+}
+.pretext-content ul.disc {
+    list-style-type: disc;
+}
+.pretext-content ul.square {
+    list-style-type: square;
+}
+.pretext-content ul.circle {
+    list-style-type: circle;
+}
+.pretext-content ol.no-marker,
+.pretext-content ul.no-marker {
+    list-style-type: none;
+}
+.pretext-content .cols1 li,
+.pretext-content .cols2 li,
+.pretext-content .cols3 li,
+.pretext-content .cols4 li,
+.pretext-content .cols5 li,
+.pretext-content .cols6 li {
+    float: left;
+    padding-right:2em;
+}
+          </style>
+
+                <link href="plp_styling.css" rel="stylesheet"/>
+                </head>
+<body><div class="reveal pretext-content">
+<div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(  \newcommand{\ds}{\displaystyle}
+  \newcommand{\es}{ {\varnothing}}
+\newcommand{\st}{ \;:\; }
+\newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+\newcommand{\set}[1]{ \left\{#1\right\} }
+  \renewcommand{\neg}{\sim}
+  \renewcommand{\text}[1]{\mathsf{\mbox{#1}}}
+  \DeclareMathOperator{\gcd}{gcd}
+  \DeclareMathOperator{\lcm}{lcm}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="slides">
+<section><section><h1>PLP - 22</h1>
+<h2>Topic 22—Subsets and power sets</h2>
+<table>
+<tr><th align="center" style="border-bottom: 0px;">Demirbaş &amp; Rechnitzer</th></tr>
+<tr><td align="center" style="border-bottom: 0px;"></td></tr>
+<tr><td align="center"></td></tr>
+</table></section></section><section><section><h1>Subsets</h1></section><section><h3>Doing more with sets</h3>
+<div align="left"> <blockquote class="blockquote" id="blockquote-1"><p>Is the set <span class="process-math">\(A\)</span> contained in the set <span class="process-math">\(B\text{?}\)</span></p></blockquote> <div class="boxed definition">
+<h3>Definition:
+	Subset.</h3>
+<p>Let <span class="process-math">\(A,B\)</span> be sets<ul class="disc">
+<li>We say that <span class="process-math">\(A\)</span> is a <dfn class="terminology">subset</dfn> of <span class="process-math">\(B\)</span> when every element of <span class="process-math">\(A\)</span> is also an element of <span class="process-math">\(B\text{.}\)</span>
+</li>
+<li>We denote this <span class="process-math">\(A \subseteq B\)</span> and also call <span class="process-math">\(B\)</span> a <dfn class="terminology">superset</dfn> of <span class="process-math">\(A\text{.}\)</span> We can also write <span class="process-math">\(B \supseteq A\text{.}\)</span>
+</li>
+<li>
+<span class="process-math">\(A\)</span> is a <dfn class="terminology">proper subset</dfn> of <span class="process-math">\(B\)</span> when <span class="process-math">\(A \subseteq B\text{,}\)</span> but <span class="process-math">\(B\)</span> contains at least one element that is not in <span class="process-math">\(A\text{.}\)</span>
+</li>
+<li><p>Finally, two <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are equal when they are subsets of each other. That is<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+A = B \iff \left( (A\subseteq B) \land (B \subseteq A) \right)
+\end{equation*}
+</div></p></li>
+</ul></p>
+</div>
+</div></section><section><h3>Notes and examples</h3>
+<div align="left"> <p>Note that<ul class="disc">
+<li>For all sets <span class="process-math">\(A\text{,}\)</span> <span class="process-math">\(\es \subseteq A\)</span> and  <span class="process-math">\(A \subseteq A\)</span>
+</li>
+<li><span class="process-math">\(\displaystyle A \subseteq B \quad
+\equiv  \quad \forall a \in A, a \in B
+\quad \equiv \quad (a \in A) \implies (a \in B)\)</span></li>
+<li><span class="process-math">\(\displaystyle A \not\subseteq B
+\quad \equiv \quad \exists a \in A \;s.t.\; a \not\in B\)</span></li>
+</ul></p> <p>Some examples<ul class="disc">
+<li><span class="process-math">\(\displaystyle \set{1,2,7} \not\subseteq \set{1,2,3,4,5}\)</span></li>
+<li><span class="process-math">\(\displaystyle \set{2n \st n \in \mathbb{Z}} \subseteq \mathbb{Z}\)</span></li>
+<li>The subsets of <span class="process-math">\(\set{0,1}\)</span> are <span class="process-math">\(\es, \set{0}, \set{1}, \set{0,1}\)</span>
+</li>
+</ul></p>
+</div></section><section><h3>The set of all subsets</h3>
+<div align="left"> <div class="boxed definition">
+<h3>Definition:
+	</h3>
+<p>Let <span class="process-math">\(A\)</span> be a set. The <dfn class="terminology">power set</dfn> of <span class="process-math">\(A\text{,}\)</span> denoted <span class="process-math">\(\mathcal{P}(A)\text{,}\)</span> is the set of all subsets of <span class="process-math">\(A\text{.}\)</span></p>
+</div> <p><div class="displaymath process-math" data-contains-math-knowls="" id="md-1">
+\begin{align*}
+\pow{\es} \amp = \set{\es} \\
+\pow{\set{1}} \amp = \set{\es, \set{1}} \\
+\pow{\set{0,1}}\amp= \set{ \es, \set{0}, \set{1}, \set{0,1}} \\
+\pow{\set{0,1,2}}\amp= \set{ \es, \set{0}, \set{1}, \set{2},\set{0,1}, \set{0,2}, \set{1,2}, \set{0,1,2}} 
+\end{align*}
+</div>Not hard to prove that if <span class="process-math">\(|A|=n\)</span> then <span class="process-math">\(|\pow{A}| = 2^n\text{.}\)</span></p> <p>Near end of course we'll prove a <em class="emphasis">very interesting</em> result for infinite sets <span class="process-math">\(A\)</span> and their power sets.</p>
+</div></section></section>
+</div>
+</div></body>
+<script>
+Reveal.initialize({
+  controls: true,
+  controlsTutorial: true,
+  controlsLayout: 'bottom-right',
+  controlsBackArrows: 'faded',
+  navigationMode: 'default',
+  progress: false,
+  center: false,
+  hash: true,
+  transition: 'fade',
+  width: "100%",
+  height: "100%",
+  margin: "0.025",
+  math: {
+    mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+    config: 'TeX-AMS_HTML-full',
+    // other options are passed into MathJax.Hub.Config()
+    tex2jax: {
+      inlineMath:  [['\\(','\\)']],
+      displayMath: [],
+    }
+  },
+  plugins: [ RevealMath ]
+});
+</script>
+</html>

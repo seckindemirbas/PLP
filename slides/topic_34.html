@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-30T16:11:48-07:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>PLP - 34</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reset.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/theme/black.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/plugin/math/math.js"></script><style>
+ul {
+  display: block !important;
+}
+.sbsrow {
+  display: flex; !important;
+}
+.reveal img {
+  border: 0.5px !important;
+  border-radius: 2px 10px 2px;
+  padding: 4px;
+}
+.definition,.theorem,.activity {
+  border-width: 0.5px;
+  border-style: solid;
+  border-radius: 2px 10px 2px;
+  padding: 1%;
+  margin-bottom: 2em;
+}
+.definition {
+  background: #00608010;
+}
+.theorem {
+  background: #ff000010;
+}
+.proof {
+  background: #ffffff90;
+}
+.activity {
+  background: #60800010;
+}
+dfn {
+  font-weight: bold;
+}
+.pretext-content ol.no-marker,
+.pretext-content ul.no-marker,
+.pretext-content li.no-marker {
+    list-style-type: none;
+}
+
+.pretext-content ol.decimal {
+    list-style-type: decimal;
+}
+.pretext-content ol.lower-alpha {
+    list-style-type: lower-alpha;
+}
+.pretext-content ol.upper-alpha {
+    list-style-type: upper-alpha;
+}
+.pretext-content ol.lower-roman {
+    list-style-type: lower-roman;
+}
+.pretext-content ol.upper-roman {
+    list-style-type: upper-roman;
+}
+.pretext-content ul.disc {
+    list-style-type: disc;
+}
+.pretext-content ul.square {
+    list-style-type: square;
+}
+.pretext-content ul.circle {
+    list-style-type: circle;
+}
+.pretext-content ol.no-marker,
+.pretext-content ul.no-marker {
+    list-style-type: none;
+}
+.pretext-content .cols1 li,
+.pretext-content .cols2 li,
+.pretext-content .cols3 li,
+.pretext-content .cols4 li,
+.pretext-content .cols5 li,
+.pretext-content .cols6 li {
+    float: left;
+    padding-right:2em;
+}
+          </style>
+
+                <link href="plp_styling.css" rel="stylesheet"/>
+                </head>
+<body><div class="reveal pretext-content">
+<div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(  \require{cancel}
+
+  \newcommand{\ds}{\displaystyle}
+  \newcommand{\es}{ {\varnothing}}
+\newcommand{\st}{ \;:\; }
+\newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+\newcommand{\set}[1]{ \left\{#1\right\} }
+  \newcommand{\Mod}[1]{\;(\mathrm{mod}\; #1)}
+  \newcommand{\rel}{\;R\;}
+\newcommand{\nrel}{\;\cancel{R}\;}
+  \renewcommand{\neg}{\sim}
+  \renewcommand{\text}[1]{\mathsf{\mbox{#1}}}
+  \DeclareMathOperator{\gcd}{gcd}
+  \DeclareMathOperator{\lcm}{lcm}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="slides">
+<section><section><h1>PLP - 34</h1>
+<h2>Topic 34—Compositions</h2>
+<table>
+<tr><th align="center" style="border-bottom: 0px;">Demirbaş &amp; Rechnitzer</th></tr>
+<tr><td align="center" style="border-bottom: 0px;"></td></tr>
+<tr><td align="center"></td></tr>
+</table></section></section><section><section><h1>Compositions</h1></section><section><h3>Chaining functions together</h3>
+<div align="left"> <div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div style="flex:100%;vertical-align:top;"><img src="figures/composition.png"></div></div> <div class="boxed definition">
+<h3>Definition:
+	</h3>
+<p>Let <span class="process-math">\(f: A \to B\)</span> and <span class="process-math">\(g: B \to C\text{.}\)</span></p>
+<p>The <dfn class="terminology">composition</dfn> of <span class="process-math">\(f\)</span> and <span class="process-math">\(g\text{,}\)</span> denoted <span class="process-math">\(g \circ f\text{,}\)</span> defines a new function<div class="displaymath process-math" data-contains-math-knowls="" id="md-1">
+\begin{align*}
+g\circ f: A \to C &amp;&amp; \left(g\circ f\right)(a) = g\left(f(a)\right) \qquad\forall a \in A
+\end{align*}
+</div>Note composition is associative: <span class="process-math">\(h \circ (g \circ f) = (h \circ g) \circ f\text{.}\)</span></p>
+</div> <p>Be careful of notation — read left-to-right but apply right-to-left: <span class="process-math">\((h\circ g \circ f)(x) = h(g(f(x)))\)</span></p>
+</div></section><section><h3>Compositions, injections and surjections</h3>
+<div align="left"> <p>Compositions play nicely with injections and surjections.</p> <div class="theorem"><div>
+<h3>Theorem:
+      </h3>
+<p>Let <span class="process-math">\(f:A \to B\)</span> and <span class="process-math">\(g: B \to C\)</span> be functions.<ul class="disc">
+<li>If <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> are injective then so is <span class="process-math">\(g\circ f\text{.}\)</span>
+</li>
+<li>If <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> are surjective then so is <span class="process-math">\(g\circ f\text{.}\)</span>
+</li>
+</ul>Consequently if <span class="process-math">\(f,g\)</span> are bijective then so is <span class="process-math">\(g \circ f\text{.}\)</span></p>
+</div></div>
+</div></section><section><h3>Composition of injections</h3>
+<div align="left"> <p>Use injection property — different map to different</p> <div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div style="flex:100%;vertical-align:top;"><img src="figures/composition2.png"></div></div> <article class="hiddenproof" id="proof-1"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
+<p>Let <span class="process-math">\(a_1,a_2 \in A\)</span> so that <span class="process-math">\(a_1 \neq a_2\text{.}\)</span></p>
+<p>Since <span class="process-math">\(f\)</span> is injective, we know that <span class="process-math">\(f(a_1) \neq f(a_2)\text{.}\)</span> And thus since <span class="process-math">\(g\)</span> is injective, we know  that <span class="process-math">\(g(f(a_1)) \neq g(f(a_2))\text{.}\)</span></p>
+<p>Thus <span class="process-math">\((g\circ f)(a_1) \neq (g \circ f)(a_2)\)</span> as required.</p></article>
+</div></section><section><h3>Composition of surjections</h3>
+<div align="left"> <p>Use surjection property — everything is mapped to by something</p> <div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div style="flex:100%;vertical-align:top;"><img src="figures/composition3.png"></div></div> <article class="hiddenproof" id="proof-2"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
+<p>Let <span class="process-math">\(c \in C\text{.}\)</span></p>
+<p>Since <span class="process-math">\(g\)</span> is surjective, we know that there is <span class="process-math">\(b \in B\)</span> so that <span class="process-math">\(g(b)=c\text{.}\)</span> Then since <span class="process-math">\(f\)</span> is surjective, we have some <span class="process-math">\(a \in A\)</span> so that <span class="process-math">\(f(a)=b\text{.}\)</span></p>
+<p>Thus <span class="process-math">\(g(f(a))=g(b)=c\text{,}\)</span> and so  for any <span class="process-math">\(c \in C\)</span> we can find <span class="process-math">\(a \in A\)</span> so that <span class="process-math">\((g\circ f)(a) =c\)</span> as required.</p></article>
+</div></section><section><h3>Partial converse</h3>
+<div align="left"> <div class="theorem"><div>
+<h3>Theorem:
+      </h3>
+<p>Let <span class="process-math">\(f:A \to B\)</span> and <span class="process-math">\(g:B \to C\)</span> be functions, then<ul class="disc">
+<li>if <span class="process-math">\(g \circ f\)</span> is an injection then <span class="process-math">\(f\)</span> is an injection.</li>
+<li>if <span class="process-math">\(g \circ f\)</span> is a surjection then <span class="process-math">\(g\)</span> is a surjection.</li>
+</ul></p>
+</div></div> <p>The proofs of these statements make excellent exercises.</p> <p>Note that you <em class="emphasis">cannot</em> extend this to a full converse. There exist <span class="process-math">\(f,g\)</span> so that<ul class="disc">
+<li>
+<span class="process-math">\(g \circ f\)</span> is an injection, but <span class="process-math">\(g\)</span> is <em class="emphasis">not</em> injective</li>
+<li>
+<span class="process-math">\(g \circ f\)</span> is a surjection, but <span class="process-math">\(f\)</span> is <em class="emphasis">not</em> surjective</li>
+</ul></p>
+</div></section><section><h3>Disproof of full converse</h3>
+<div align="left"> <p><ul id="p-17" class="disc">
+<li>
+<span class="process-math">\(g \circ f\)</span> is an injection, but <span class="process-math">\(g\)</span> is <em class="emphasis">not</em> injective</li>
+<li>
+<span class="process-math">\(g \circ f\)</span> is a surjection, but <span class="process-math">\(f\)</span> is <em class="emphasis">not</em> surjective</li>
+</ul></p> <article class="hiddenproof" id="proof-3"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
+<p>Consider functions <span class="process-math">\(f,g\)</span> defined by the diagram below.</p>
+<div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div style="flex:100%;vertical-align:top;"><img src="figures/function_drawing3.png"></div></div>
+<p><ul id="p-19" class="disc">
+<li>Since <span class="process-math">\(g(f(1)) \neq g(f(2))\text{,}\)</span> <span class="process-math">\(g \circ f\)</span> is injective. But <span class="process-math">\(g(4)=g(5)\text{,}\)</span> so <span class="process-math">\(g\)</span> not an injection.</li>
+<li>Since <span class="process-math">\(6=g(f(1)), 7=g(f(2))\text{,}\)</span> <span class="process-math">\(g \circ f\)</span> is surjective. But, <span class="process-math">\(f(1),f(2) \neq 5\)</span> so <span class="process-math">\(f\)</span> is not a surjection.</li>
+</ul></p></article>
+</div></section></section>
+</div>
+</div></body>
+<script>
+Reveal.initialize({
+  controls: true,
+  controlsTutorial: true,
+  controlsLayout: 'bottom-right',
+  controlsBackArrows: 'faded',
+  navigationMode: 'default',
+  progress: false,
+  center: false,
+  hash: true,
+  transition: 'fade',
+  width: "100%",
+  height: "100%",
+  margin: "0.025",
+  math: {
+    mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+    config: 'TeX-AMS_HTML-full',
+    // other options are passed into MathJax.Hub.Config()
+    tex2jax: {
+      inlineMath:  [['\\(','\\)']],
+      displayMath: [],
+    }
+  },
+  plugins: [ RevealMath ]
+});
+</script>
+</html>

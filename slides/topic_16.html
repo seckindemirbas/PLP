@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-30T16:07:44-07:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>PLP - 16</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reset.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/theme/black.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/plugin/math/math.js"></script><style>
+ul {
+  display: block !important;
+}
+.sbsrow {
+  display: flex; !important;
+}
+.reveal img {
+  border: 0.5px !important;
+  border-radius: 2px 10px 2px;
+  padding: 4px;
+}
+.definition,.theorem,.activity {
+  border-width: 0.5px;
+  border-style: solid;
+  border-radius: 2px 10px 2px;
+  padding: 1%;
+  margin-bottom: 2em;
+}
+.definition {
+  background: #00608010;
+}
+.theorem {
+  background: #ff000010;
+}
+.proof {
+  background: #ffffff90;
+}
+.activity {
+  background: #60800010;
+}
+dfn {
+  font-weight: bold;
+}
+.pretext-content ol.no-marker,
+.pretext-content ul.no-marker,
+.pretext-content li.no-marker {
+    list-style-type: none;
+}
+
+.pretext-content ol.decimal {
+    list-style-type: decimal;
+}
+.pretext-content ol.lower-alpha {
+    list-style-type: lower-alpha;
+}
+.pretext-content ol.upper-alpha {
+    list-style-type: upper-alpha;
+}
+.pretext-content ol.lower-roman {
+    list-style-type: lower-roman;
+}
+.pretext-content ol.upper-roman {
+    list-style-type: upper-roman;
+}
+.pretext-content ul.disc {
+    list-style-type: disc;
+}
+.pretext-content ul.square {
+    list-style-type: square;
+}
+.pretext-content ul.circle {
+    list-style-type: circle;
+}
+.pretext-content ol.no-marker,
+.pretext-content ul.no-marker {
+    list-style-type: none;
+}
+.pretext-content .cols1 li,
+.pretext-content .cols2 li,
+.pretext-content .cols3 li,
+.pretext-content .cols4 li,
+.pretext-content .cols5 li,
+.pretext-content .cols6 li {
+    float: left;
+    padding-right:2em;
+}
+          </style>
+
+                <link href="plp_styling.css" rel="stylesheet"/>
+                </head>
+<body><div class="reveal pretext-content">
+<div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(  \newcommand{\ds}{\displaystyle}
+  \newcommand{\es}{ {\varnothing}}
+\newcommand{\st}{ \;\text{s.t.}\; }
+\newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+\newcommand{\set}[1]{ \left\{#1\right\} }
+  \renewcommand{\neg}{\sim}
+  \renewcommand{\text}[1]{\mathsf{\mbox{#1}}}
+  \DeclareMathOperator{\gcd}{gcd}
+  \DeclareMathOperator{\lcm}{lcm}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="slides">
+<section><section><h1>PLP - 16</h1>
+<h2>Topic 16—Existence proofs</h2>
+<table>
+<tr><th align="center" style="border-bottom: 0px;">Demirbaş &amp; Rechnitzer</th></tr>
+<tr><td align="center" style="border-bottom: 0px;"></td></tr>
+<tr><td align="center"></td></tr>
+</table></section></section><section><section><h1>Existence proofs</h1></section><section><h3>An example</h3>
+<div align="left"> <blockquote class="blockquote" id="blockquote-1"><p>There exist integers <span class="process-math">\(x,y\)</span> so that <span class="process-math">\(x^3-y^2=13\text{.}\)</span></p></blockquote> <article class="hiddenproof" id="proof-1"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
+<p>Consider <span class="process-math">\(x=17\)</span> and <span class="process-math">\(y=70\text{.}\)</span> Since <span class="process-math">\(17^3-70^2 = 4913-4900 = 13\)</span> we are done.</p></article> <p>Why is this sufficient?<ul class="disc">
+<li>The statement is “<span class="process-math">\(\exists x,y \in \mathbb{N} \st x^3-y^2=13\)</span>”</li>
+<li>So to prove it true we only need to give at least one instance that makes it true</li>
+<li>We <em class="emphasis">do not</em> have to explain how we found that example</li>
+</ul>This is a <dfn class="terminology">constructive</dfn> proof.</p>
+</div></section><section><h3>Another example</h3>
+<div align="left"> <blockquote class="blockquote" id="blockquote-2"><p>There exists <span class="process-math">\(x \in \left[0,\frac{\pi}{2} \right]\)</span> so that <span class="process-math">\(\cos(x)=x\)</span></p></blockquote> <article class="hiddenproof" id="proof-2"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
+<p>Let <span class="process-math">\(f(x)=\cos(x)-x\text{.}\)</span> Note that <span class="process-math">\(f(0)=1 \gt 0\)</span> and <span class="process-math">\(f\left(\frac{\pi}{2}\right)=-\frac{\pi}{2} \lt 0\)</span> and that <span class="process-math">\(f(x)\)</span> is a continuous function. Then by the <em class="emphasis">Intermediate Value Theorem</em>, we know that there exists a point <span class="process-math">\(c \in \left(0, \frac{\pi}{2}\right)\)</span> so that <span class="process-math">\(f(c)=0\text{.}\)</span> From this we know that <span class="process-math">\(\cos(c) = c\)</span> as required.</p></article> <p>Why is this sufficient?<ul class="disc">
+<li>To prove this we only need to <em class="emphasis">infer</em> that an example exists</li>
+<li>We <em class="emphasis">do not</em> have to give the example explicitly</li>
+</ul>This is a <dfn class="terminology">non-constructive</dfn> proof.</p>
+</div></section><section><h3>Existence proofs</h3>
+<div align="left"> <p>Proofs of existence results fall into 2 broad categories<dl class="description-list">
+<div>
+<dt>constructive proofs</dt>
+<dd>
+<p>in which a specific example is given explicitly and verified</p>
+<p>an explanation of <em class="emphasis">how</em> the example was found is <em class="emphasis">not required</em></p>
+</dd>
+</div>
+<div>
+<dt>non-constructive proofs</dt>
+<dd><p>in which the existence is <em class="emphasis">inferred</em> but an example is not explicitly stated</p></dd>
+</div>
+</dl></p>
+</div></section><section><h3>Uniqueness proof</h3>
+<div align="left"> <p>After demonstrating that a required object exists, one often also wants uniqueness</p> <blockquote class="blockquote" id="blockquote-3"><p>There exists a unique <span class="process-math">\(x\)</span> so that <span class="process-math">\(P(x)\)</span></p></blockquote> <p>A simple way to approach such proofs is<ul class="disc">
+<li>Let <span class="process-math">\(x,y\)</span> be objects so that <span class="process-math">\(P(x)\)</span> and <span class="process-math">\(P(y)\)</span> are true</li>
+<li>Do <em class="emphasis">stuff</em> to show that <span class="process-math">\(x=y\)</span>
+</li>
+</ul>The <em class="emphasis">fun</em> is in working out what <em class="emphasis">stuff</em> is.</p>
+</div></section><section><h3>An example</h3>
+<div align="left"> <blockquote class="blockquote" id="blockquote-4"><p>The equation <span class="process-math">\(ax=b\)</span> with <span class="process-math">\(a,b \in \mathbb{R}\)</span> and <span class="process-math">\(a \neq 0\)</span> has a unique real solution.</p></blockquote> <article class="hiddenproof" id="proof-3"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
+<p>First note that since <span class="process-math">\(a \neq 0\text{,}\)</span> we can solve the equation by choosing <span class="process-math">\(x=\frac{b}{a} \in \mathbb{R}\text{.}\)</span> Thus a solution exists.</p>
+<p>Now assume that numbers <span class="process-math">\(r,s\)</span> both satisfy the equation. Hence<div class="displaymath process-math" data-contains-math-knowls="" id="md-1">
+\begin{align*}
+ar \amp=b \amp as=b  \amp \amp \text{ and so}\\
+ar \amp= as \amp \amp\amp \text{ and since } a\neq 0 \\
+r\amp=s
+\end{align*}
+</div>So both solutions are in fact equal and the solution must be unique.</p></article>
+</div></section></section>
+</div>
+</div></body>
+<script>
+Reveal.initialize({
+  controls: true,
+  controlsTutorial: true,
+  controlsLayout: 'bottom-right',
+  controlsBackArrows: 'faded',
+  navigationMode: 'default',
+  progress: false,
+  center: false,
+  hash: true,
+  transition: 'fade',
+  width: "100%",
+  height: "100%",
+  margin: "0.025",
+  math: {
+    mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+    config: 'TeX-AMS_HTML-full',
+    // other options are passed into MathJax.Hub.Config()
+    tex2jax: {
+      inlineMath:  [['\\(','\\)']],
+      displayMath: [],
+    }
+  },
+  plugins: [ RevealMath ]
+});
+</script>
+</html>

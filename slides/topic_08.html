@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-30T16:06:03-07:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>PLP - 8</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reset.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/theme/black.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/plugin/math/math.js"></script><style>
+ul {
+  display: block !important;
+}
+.sbsrow {
+  display: flex; !important;
+}
+.reveal img {
+  border: 0.5px !important;
+  border-radius: 2px 10px 2px;
+  padding: 4px;
+}
+.definition,.theorem,.activity {
+  border-width: 0.5px;
+  border-style: solid;
+  border-radius: 2px 10px 2px;
+  padding: 1%;
+  margin-bottom: 2em;
+}
+.definition {
+  background: #00608010;
+}
+.theorem {
+  background: #ff000010;
+}
+.proof {
+  background: #ffffff90;
+}
+.activity {
+  background: #60800010;
+}
+dfn {
+  font-weight: bold;
+}
+.pretext-content ol.no-marker,
+.pretext-content ul.no-marker,
+.pretext-content li.no-marker {
+    list-style-type: none;
+}
+
+.pretext-content ol.decimal {
+    list-style-type: decimal;
+}
+.pretext-content ol.lower-alpha {
+    list-style-type: lower-alpha;
+}
+.pretext-content ol.upper-alpha {
+    list-style-type: upper-alpha;
+}
+.pretext-content ol.lower-roman {
+    list-style-type: lower-roman;
+}
+.pretext-content ol.upper-roman {
+    list-style-type: upper-roman;
+}
+.pretext-content ul.disc {
+    list-style-type: disc;
+}
+.pretext-content ul.square {
+    list-style-type: square;
+}
+.pretext-content ul.circle {
+    list-style-type: circle;
+}
+.pretext-content ol.no-marker,
+.pretext-content ul.no-marker {
+    list-style-type: none;
+}
+.pretext-content .cols1 li,
+.pretext-content .cols2 li,
+.pretext-content .cols3 li,
+.pretext-content .cols4 li,
+.pretext-content .cols5 li,
+.pretext-content .cols6 li {
+    float: left;
+    padding-right:2em;
+}
+          </style>
+
+                <link href="plp_styling.css" rel="stylesheet"/>
+                </head>
+<body><div class="reveal pretext-content">
+<div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(  \newcommand{\ds}{\displaystyle}
+  \newcommand{\es}{ {\varnothing}}
+\newcommand{\st}{ \;\mid\; }
+\newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+\newcommand{\set}[1]{ \left\{#1\right\} }
+  \renewcommand{\neg}{\sim}
+  \renewcommand{\text}[1]{\mathsf{\mbox{#1}}}
+  \DeclareMathOperator{\gcd}{gcd}
+  \DeclareMathOperator{\lcm}{lcm}
+  \newcommand{\Mod}[1]{\;(\mathrm{mod}\; #1)}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="slides">
+<section><section><h1>PLP - 8</h1>
+<h2>Topic 8 —A first proof</h2>
+<table>
+<tr><th align="center" style="border-bottom: 0px;">Demirbaş &amp; Rechnitzer</th></tr>
+<tr><td align="center" style="border-bottom: 0px;"></td></tr>
+<tr><td align="center"></td></tr>
+</table></section></section><section><section><h1>A first proof</h1></section><section><h3>A first result</h3>
+<div align="left"> <p>Our very first result will be</p> <div class="theorem"><div>
+<h3>Proposition:
+      </h3>
+<p>Let <span class="process-math">\(n\)</span> be an integer. If <span class="process-math">\(n\)</span> is even then <span class="process-math">\(n^2\)</span> is even</p>
+</div></div> <p>We want to show this implication is always true.<ul class="disc">
+<li>When <em class="emphasis">hypothesis is false</em> (<span class="process-math">\(n\)</span> is not even) then implication is true — no work required!</li>
+<li>So <em class="emphasis">assume hypothesis is true</em> — <span class="process-math">\(n\)</span> is an even number.</li>
+<li>…</li>
+<li>So <span class="process-math">\(n^2\)</span> must be an even number</li>
+</ul></p> <p>Clearly we need to understand <dfn class="terminology">even</dfn> — we need the definition.</p> <p><dfn class="terminology">Important</dfn> — memorise definitions</p>
+</div></section><section><h3>Continuing</h3>
+<div align="left"> <div class="theorem"><div>
+<h3>Proposition:
+      </h3>
+<p>Let <span class="process-math">\(n\)</span> be an integer. If <span class="process-math">\(n\)</span> is even then <span class="process-math">\(n^2\)</span> is even</p>
+</div></div> <p><ul id="p-7" class="disc">
+<li><p>Start by <em class="emphasis">assuming the hypothesis is true:</em> so we assume that <span class="process-math">\(n\)</span> is even.</p></li>
+<li>
+<em class="emphasis">By the definition of even</em> we know that <span class="process-math">\(n=2k\)</span> for some integer <span class="process-math">\(k\text{.}\)</span>
+</li>
+<li>But then, <span class="process-math">\(n^2 = (2k)^2 = 4k^2 = 2(2k^2)\text{.}\)</span>
+</li>
+<li>Since <span class="process-math">\(k \in \mathbb{Z}\)</span> we know <em class="emphasis">by an axiom</em> that <span class="process-math">\(2k^2 \in \mathbb{Z}\text{.}\)</span>
+</li>
+<li>So <em class="emphasis">by the definition of even</em> we know that <span class="process-math">\(n^2\)</span> is even</li>
+</ul></p>
+</div></section><section><h3>What just happened?</h3>
+<div align="left"> <p>What have we done? We showed all these implications<ul class="disc">
+<li>(<span class="process-math">\(n\)</span> is even) <span class="process-math">\(\implies\)</span> (<span class="process-math">\(n=2k\)</span> for some integer <span class="process-math">\(k\)</span>)</li>
+<li>(<span class="process-math">\(n=2k\)</span> for some integer <span class="process-math">\(k\)</span>) <span class="process-math">\(\implies\)</span> (<span class="process-math">\(n^2 = 4k^2\)</span>)</li>
+<li>(<span class="process-math">\(n^2 = 4k^2\)</span>) <span class="process-math">\(\implies\)</span> (<span class="process-math">\(n^2\)</span> is two times an integer)</li>
+<li>(<span class="process-math">\(n^2\)</span> is two times an integer) <span class="process-math">\(\implies\)</span> (<span class="process-math">\(n^2\)</span> is even)</li>
+</ul>So when we assume <span class="process-math">\(n\)</span> is even, we can use <dfn class="terminology">modus ponens</dfn> to see that<ul class="disc">
+<li>(<span class="process-math">\(n=2k\)</span>) is true</li>
+<li>(<span class="process-math">\(n^2=4k^2\)</span>) is true</li>
+<li>(<span class="process-math">\(n^2\)</span> is two times an integer) is true</li>
+<li>(<span class="process-math">\(n^2\)</span> is even) is true</li>
+</ul>So when the <dfn class="terminology">hypothesis</dfn> is true, <dfn class="terminology">the conclusion</dfn> must be true, and so the <dfn class="terminology">implication</dfn> is true!</p> <p>Our first proof! — nearly.</p>
+</div></section><section><h3>Cleaning up</h3>
+<div align="left"> <p>When “doing” proofs we nearly always separate <dfn class="terminology">scratch work</dfn> from the <dfn class="terminology">proof</dfn>.<dl class="description-list">
+<div>
+<dt>Scratch work</dt>
+<dd><p>All our draft work — the <dfn class="terminology">reader</dfn> doesn't need to see this.</p></dd>
+</div>
+<div>
+<dt>The proof</dt>
+<dd><p>The cleaned up work, neatly formatted, so easy for the <dfn class="terminology">reader</dfn> to follow</p></dd>
+</div>
+</dl></p> <article class="hiddenproof" id="proof-1"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
+<p><ul id="p-14" class="disc">
+<li>Assume that <span class="process-math">\(n\)</span> is an even number.</li>
+<li>Hence we know that <span class="process-math">\(n=2k\)</span> for some <span class="process-math">\(k \in \mathbb{Z}\text{.}\)</span>
+</li>
+<li>It follows that <span class="process-math">\(n^2 = 4k^2 = 2(2k^2)\)</span>
+</li>
+<li>Since <span class="process-math">\(2k^2\)</span> is an integer, it follows that <span class="process-math">\(n^2\)</span> is even</li>
+</ul></p></article>
+</div></section></section>
+</div>
+</div></body>
+<script>
+Reveal.initialize({
+  controls: true,
+  controlsTutorial: true,
+  controlsLayout: 'bottom-right',
+  controlsBackArrows: 'faded',
+  navigationMode: 'default',
+  progress: false,
+  center: false,
+  hash: true,
+  transition: 'fade',
+  width: "100%",
+  height: "100%",
+  margin: "0.025",
+  math: {
+    mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+    config: 'TeX-AMS_HTML-full',
+    // other options are passed into MathJax.Hub.Config()
+    tex2jax: {
+      inlineMath:  [['\\(','\\)']],
+      displayMath: [],
+    }
+  },
+  plugins: [ RevealMath ]
+});
+</script>
+</html>
