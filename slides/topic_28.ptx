@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pretext>
+
+<docinfo>
+    <macros>
+      \require{cancel}
+
+      \newcommand{\ds}{\displaystyle}
+      \newcommand{\es}{ {\varnothing}}
+  		\newcommand{\st}{ \;:\; }
+  		\newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+  		\newcommand{\set}[1]{ \left\{#1\right\} }
+      \newcommand{\Mod}[1]{\;(\mathrm{mod}\; #1)}
+      \newcommand{\rel}{\;R\;}
+  		\newcommand{\nrel}{\;\cancel{R}\;}
+      \renewcommand{\neg}{\sim}
+      \renewcommand{\text}[1]{\mathsf{\mbox{#1}}}
+      \DeclareMathOperator{\gcd}{gcd}
+      \DeclareMathOperator{\lcm}{lcm}
+    </macros>
+    <rename element="proposition" xml:lang="en-US">Result</rename>
+</docinfo>
+
+<slideshow>
+  <title>PLP - 28</title>
+  <subtitle>Topic 28<mdash />Equivalence relations &amp; classes</subtitle>
+
+  <frontmatter>
+  <titlepage>
+    <author>
+      <personname>Demirbaş &amp; Rechnitzer</personname>
+      
+    </author>
+  </titlepage>
+
+
+</frontmatter>
+
+
+<section><title>Equivalence relations</title>
+<slide><title>Equivalence relations</title>
+<p>
+  Important class of relations are those that are similar to <q><m>=</m></q>
+</p>
+<definition>
+  <statement>
+    <p>
+      Let <m>R</m> be a relation on the set <m>A</m>.
+    </p>
+    <p> We call <m>R</m> an <term>equivalence relation</term> when it is reflexive, symmetric and transitive.
+    </p>
+  </statement>
+</definition>
+<p>
+  Examples
+  <ul>
+    <li><q>has same parity as</q></li>
+    <li><q>is congruent to</q></li>
+    <li><q>has same birthday as</q></li>
+  </ul>
+  Weaker than equality <mdash /> can be equivalent without being equal
+</p>
+</slide>
+
+<slide><title>Pictures</title>
+<p>
+  Let <m>A = \set{0,1,2,\dots,10}</m> and consider congruence modulo 4.
+</p>
+<p>
+  And similarly with <q>has the same parity as</q>
+</p>
+<sidebyside width="40%">
+  <image source="figures/congruentEg.png"/>
+  <image source="figures/equivParity.png"/>
+</sidebyside>
+<sidebyside width="40%">
+</sidebyside>
+
+<p>
+  Notice that elements of <m>A</m> fall into connected subsets <mdash /> <term>equivalence classes</term>
+</p>
+</slide>
+
+<slide><title>Equivalence classes</title>
+<definition>
+<statement><p>
+  Let <m>R</m> be an equivalence relation on <m>A</m>.
+</p>
+<p> The <term>equivalence class</term> of <m>x \in A</m> (with respect to <m>R</m>) is
+<me>
+  [x] = \set{a \in A \st a \rel x}
+</me>
+</p></statement>
+</definition>
+<p>
+  In our congruent modulo 4 example
+  <md>
+    <mrow> [0]\amp = \set{0,4,8} = [4] = [8]
+      \amp
+      [1] \amp  = \set{1,5,9} = [5] = [9]
+      </mrow>
+    <mrow> [2] \amp = \set{2,6,10}  = [6] = [10]
+    \amp
+    [3] \amp = \set{3,7} = [7]
+    </mrow>
+  </md>
+</p>
+</slide>
+
+<slide><title>No equivalence class is empty</title>
+<lemma>
+  <statement>
+    <p>
+      Let <m>R</m> be an equivalence relation on <m>A</m>.
+    </p>
+    <p>
+      For any <m>a \in A</m>, <m>a \in [a]</m>
+    </p>
+  </statement>
+</lemma>
+<proof>
+  <p>
+    Assume <m>R</m> is an equivalence relation on <m>A</m>, and let <m>a \in A</m>.
+  </p>
+  <p>
+    Since <m>R</m> is reflexive, we know that <m>a \rel a</m>. Hence (by definition),
+    <m>a \in [a]</m> as required.
+  </p>
+</proof>
+
+</slide>
+
+<slide><title>Equality of equivalence classes</title>
+<theorem>
+  <statement>
+    <p>Suppose <m>R</m> is an equivalence relation on <m>A</m>, and let <m>a,b \in A</m>. Then
+      <me>
+        [a]=[b] \iff a \rel b
+      </me>
+    </p>
+  </statement>
+</theorem>
+
+<p>
+  <term>Scratch work</term>
+  <ul>
+    <li>Have to prove both directions</li>
+    <li>Assume <m>[a]=[b]</m>, then we need to show <m>a \rel b</m></li>
+    <li>We know (from above lemma) that <m>a \in [a]</m>, so <m>a \in [b]</m></li>
+    <li>Definition of <m>[b]=\set{x \in A \st x \rel b}</m>, so <m>a \rel b</m></li>
+  </ul>
+</p>
+</slide>
+
+<slide><title>Continuing</title>
+<blockquote>
+  <p><m>[a]=[b] \iff a \rel b</m></p>
+</blockquote>
+<p>
+  <term>Scratch work continued</term>
+  <ul>
+    <li>Now assume that <m>a \rel b</m>. We need to show <m>[a] \subseteq [b]</m> and <m>[b]\subseteq [a]</m></li>
+    <li>So let <m>x \in [a]</m>, which tells us that <m>x \rel a</m></li>
+    <li><p>
+      We know that <m>R</m> is transitive, so
+      <me>
+        (x \rel a) \land (a \rel b) \implies (x \rel b)
+      </me>
+      so <m>x \in [b]</m>
+    </p>
+    </li>
+    <li>The other inclusion is similar, but we use symmetry of <m>R</m> to get <m>b \rel a</m>.</li>
+  </ul>
+</p>
+</slide>
+
+<slide><title>Proof</title>
+<proof>
+  <p>We prove each implication in turn
+    <ul>
+      <li><p>Assume <m>a \rel b</m>. We prove that <m>[a] \subseteq [b]</m> and leave the other inclusion to the reader. Let <m>x \in [a]</m>, so that <m>x \rel a</m>. Since <m>R</m> is transitive, and <m>a \rel b</m>, we know that <m>x \rel b</m>. Hence <m>x \in [b]</m> as required. The other inclusion is similar, but also uses symmetry of <m>R</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Now assume that <m>[a]=[b]</m>. By the lemma above, we know that <m>a \in [a]</m>, and so <m>a \in [b]</m>. By definition of the equivalence class of <m>b</m>, this tells us that <m>a \rel b</m>.
+        </p>
+      </li>
+    </ul>
+
+  </p>
+</proof>
+
+</slide>
+
+</section>
+
+
+</slideshow>
+</pretext>

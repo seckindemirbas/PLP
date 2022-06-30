@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pretext>
+
+<docinfo>
+    <macros>
+      \newcommand{\ds}{\displaystyle}
+      \newcommand{\es}{ {\varnothing}}
+  		\newcommand{\st}{ \;:\; }
+  		\newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+  		\newcommand{\set}[1]{ \left\{#1\right\} }
+      \renewcommand{\neg}{\sim}
+      \renewcommand{\text}[1]{\mathsf{\mbox{#1}}}
+      \DeclareMathOperator{\gcd}{gcd}
+      \DeclareMathOperator{\lcm}{lcm}
+    </macros>
+    <rename element="proposition" xml:lang="en-US">Result</rename>
+</docinfo>
+
+<slideshow>
+  <title>PLP - 25</title>
+  <subtitle>Topic 25<mdash />More set proofs</subtitle>
+
+  <frontmatter>
+  <titlepage>
+    <author>
+      <personname>Demirbaş &amp; Rechnitzer</personname>
+      
+    </author>
+  </titlepage>
+
+
+</frontmatter>
+
+<section><title>Cartesian and power set proofs</title>
+<slide><title>A Cartesian example</title>
+<proposition>
+  <statement>
+    <p>
+      Let <m>A,B,C</m> be sets, then <m>A \times (B\cup C) = (A\times B) \cup (A\times C)</m>.
+    </p>
+  </statement>
+</proposition>
+<p>
+  <term>Scratch work</term>
+  <ul>
+    <li>We'll start with <m>A \times (B \cup C) \supseteq (A\times B) \cup (A\times C) </m></li>
+    <li>Since cartesian product, assume <m>(x,y) \in </m> <term>RHS</term></li>
+    <li><p>
+      So <m>(x,y) \in A \times B</m> or <m>(x,y) \in A \times C</m>
+      <ul>
+        <li>Case 1: When <m>(x,y) \in A \times B</m>, <m>x\in A</m> and <m>y \in B</m>. Hence <m>y \in B \cup C</m></li>
+        <li>Case 2: When <m>(x,y) \in A \times C</m>, <m>x\in A</m> and <m>y \in C</m>. Hence <m>y \in C \cup B</m></li>
+      </ul>
+    </p>
+    </li>
+    <li>In both cases, <m>x \in A</m> and <m>y \in B\cup C</m>, so <m>(x,y) \in </m> <term>LHS</term>.</li>
+  </ul>
+</p>
+</slide>
+
+<slide><title>Continuing Cartesian example</title>
+<blockquote>
+  <p><m>A \times (B\cup C) = (A\times B) \cup (A\times C)</m></p>
+</blockquote>
+<p>
+  <term>Scratch work</term> continued
+  <ul>
+    <li>No do <m>A \times (B \cup C) \subseteq (A\times B) \cup (A\times C) </m></li>
+    <li>Assume <m>(x,y) \in </m> <term>LHS</term></li>
+    <li><p>
+      Then <m>x \in A</m> and <m>y \in B \cup C</m> , so <m>y \in B</m> or <m>y \in C</m>
+      <ul>
+        <li>Case 1: When <m>y \in B</m>, we know that <m>(x,y) \in A \times B</m>, so <m>(x,y) \in (A\times B) \cup (A \times C)</m>
+        </li>
+        <li>Case 2: When <m>y \in C</m>, we know that <m>(x,y) \in A \times C</m>, so <m>(x,y) \in (A\times C) \cup (A \times B)</m>
+        </li>
+      </ul>
+    </p>
+    </li>
+    <li>In both cases, <m>(x,y) \in </m> <term>RHS</term></li>
+  </ul>
+</p>
+
+<p>
+  You can write this up nicely.
+</p>
+</slide>
+
+<slide><title>Power set warm-up</title>
+<proposition>
+  <statement>
+    <p>
+      <md>
+        <mrow>X \subseteq A \amp \implies X \subseteq A \cup B</mrow>
+        <mrow>X \subseteq A \cap B \amp \implies X \subseteq A </mrow>
+        <mrow>(X \subseteq A) \land (X \subseteq B) \amp \iff X \subseteq A \cap B</mrow>
+      </md>
+    </p>
+  </statement>
+</proposition>
+<proof>
+  <p>
+    <ul>
+      <li>Let <m>X \subseteq A</m>. Assume that <m>x \in X</m>, which implies that <m>x \in A</m>. Hence <m>x \in A \cup B</m>.</li>
+      <li>Now let <m>X \subseteq A \cap B</m> and assume <m>x \in X</m>. Hence <m>x \in A \cap B</m> and so <m>x \in A</m>.</li>
+    <li>Let <m>X \subseteq A</m> and <m>X \subseteq B</m>, and assume <m>x \in X</m>. Then <m>x \in A</m> and <m>x \in B</m>, so <m>x \in A \cap B</m>.</li>
+    <li>Finally let <m>X \subseteq A \cap B</m>. Since <m>A\cap B \subseteq A</m> we know <m>X \subseteq A</m>. Similar reasoning gives <m>X \subseteq B</m>.
+  </li>
+    </ul>
+  </p>
+</proof>
+
+</slide>
+
+<slide><title>A power set example</title>
+<proposition>
+  <statement>
+    <p>
+      Let <m>A,B</m> be sets then <m>\pow{A}\cup\pow{B} \subseteq \pow{A\cup B}</m>.
+      The reverse inclusion does not hold.
+  </p>
+  </statement>
+</proposition>
+<p>
+  <term>Scratch work</term>
+  <ul>
+    <li>There are two things to prove here. Start with the inclusion.</li>
+    <li>Is equivalent to <m>X \in \pow{A}\cup\pow{B} \implies X \in \pow{A\cup B}</m>.</li>
+    <li>So let <m>X \in \pow{A} \cup \pow{B}</m>. Means <m>X\subseteq A</m> or <m>X \subseteq B</m></li>
+    <li>Now if <m>X \subseteq A</m> then <m>X \subseteq A \cup B</m> and so <m>X \in \pow{A \cup B}</m>.</li>
+    <li>The case <m>X \subseteq B</m> will be similar.</li>
+  </ul>
+</p>
+</slide>
+
+<slide><title>Disproof of reverse inclusion</title>
+<blockquote>
+  <p><m>\pow{A\cup B} \subseteq \pow{A} \cup \pow{B}</m></p>
+</blockquote>
+<p>
+  <term>Scratch work</term>
+  <ul>
+    <li>Since this is really <q>For all sets <m>A,B</m> <ellipsis/> </q> so disproof can be counter-example</li>
+    <li> Notice that <m>X \in RHS</m> then <m>X \subseteq A</m> or <m>X \subseteq B</m>.</li>
+    <li>While a set in <m>LHS</m> could could contain elements from both <m>A,B</m></li>
+    <li>Try to construct very small <m>A,B</m> to illustrate this.</li>
+    <li>Let <m>A=\set{1}, B=\set{2}</m>, then <m>\set{1,2} \in LHS</m> but not in <m>RHS</m>.</li>
+  </ul>
+</p>
+</slide>
+
+<slide><title>Proof of result</title>
+<proof>
+    <p>We first prove the inclusion and then show the reverse inclusion does not hold.
+      <ul>
+        <li>
+          <p>Let <m>X \in \pow{A} \cup \pow{B}</m>. Hence <m>X \subseteq A</m> or <m>X \subseteq B</m>. If <m>X \subseteq A</m> then (as shown previously) <m>X \subseteq A \cup B</m>. Similarly if <m>X \subseteq B</m> then <m>X \subseteq B \cup A</m>. This implies that <m>X \in \pow{A\cup B}</m> as required.
+          </p>
+        </li>
+        <li>We disprove the reverse inclusion with a counter example. Let <m>A = \set{1}, B = \set{2}</m> and <m>X = \set{1,2}</m>. Then <m>X \in \pow{A\cup B}</m>, however <m>X \not \in \pow{A} \cup \pow{B}</m>. Hence <m>\pow{A\cup B} \not\subseteq \pow{A}\cup\pow{B}</m>.
+        </li>
+      </ul>
+</p>
+</proof>
+</slide>
+
+<slide><title>Another power set result</title>
+<proposition>
+  <statement>
+    <p>
+      Let <m>A,B</m> be sets, then <m>\pow{A}\cap\pow{B} = \pow{A \cap B}</m>.
+    </p>
+  </statement>
+</proposition>
+<p>
+<term>Scratch work</term>
+<ul>
+  <li>There are two inclusions to prove here.</li>
+  <li>Assume that <m>X \in LHS</m>, then <m>X \in \pow{A}</m> and <m>X \in \pow{B}</m>.</li>
+  <li>Hence <m>X \subseteq A</m> and <m>X \subseteq B</m> <mdash/> and we showed this means <m>X \subseteq A \cap B</m></li>
+  <li>Thus <m>X \in RHS</m></li>
+  <li>Now let <m>Y \in RHS</m>, so <m>Y \subseteq A \cap B</m> <mdash /> we showed this means <m>Y \subseteq A</m> and <m>Y \subseteq B</m></li>
+  <li>So <m>Y \in LHS</m> as required.</li>
+</ul>
+</p>
+</slide>
+
+<slide><title>Write it up nicely</title>
+<blockquote>
+  <p><m>\pow{A}\cap\pow{B} = \pow{A \cap B}</m></p>
+</blockquote>
+<proof>
+  <p>
+    We prove each inclusion in turn.
+    <ul>
+      <li>
+        <p>
+          Assume that <m>X \in LHS</m>. Then <m>X \in \pow{A}</m> and <m>X \in \pow{B}</m>, and so <m>X \subseteq A</m> and <m>X \subseteq B</m>. Hence <m>X \subseteq A \cap B</m>, and thus <m>X \in RHS</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Now assume that <m>Y \in RHS</m>. Then <m>Y \in \pow{A \cap B}</m> and so <m>Y \subseteq A \cap B</m>. This means that <m>Y \subseteq A</m> and <m>Y \subseteq B</m>. Hence <m>Y \in \pow{A}</m> and <m>Y \in \pow{B}</m> and thus <m>Y \in LHS</m>.
+        </p>
+      </li>
+    </ul>
+  </p>
+</proof>
+</slide>
+
+</section>
+
+</slideshow>
+</pretext>

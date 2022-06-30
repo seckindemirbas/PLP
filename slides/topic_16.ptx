@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pretext>
+
+<docinfo>
+    <macros>
+      \newcommand{\ds}{\displaystyle}
+      \newcommand{\es}{ {\varnothing}}
+  		\newcommand{\st}{ \;\text{s.t.}\; }
+  		\newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+  		\newcommand{\set}[1]{ \left\{#1\right\} }
+      \renewcommand{\neg}{\sim}
+      \renewcommand{\text}[1]{\mathsf{\mbox{#1}}}
+      \DeclareMathOperator{\gcd}{gcd}
+      \DeclareMathOperator{\lcm}{lcm}
+    </macros>
+    <rename element="proposition" xml:lang="en-US">Result</rename>
+</docinfo>
+
+<slideshow>
+  <title>PLP - 16</title>
+  <subtitle>Topic 16<mdash />Existence proofs</subtitle>
+
+  <frontmatter>
+  <titlepage>
+    <author>
+      <personname>Demirbaş &amp; Rechnitzer</personname>
+      
+    </author>
+  </titlepage>
+
+</frontmatter>
+
+<section><title>Existence proofs</title>
+
+<slide><title>An example</title>
+<blockquote>
+  <p>There exist integers <m>x,y</m> so that <m>x^3-y^2=13</m>.</p>
+</blockquote>
+<proof>
+  <p>
+    Consider <m>x=17</m> and <m>y=70</m>. Since <m>17^3-70^2 = 4913-4900 = 13</m> we are done.
+  </p>
+</proof>
+<p>
+  Why is this sufficient?
+  <ul>
+    <li>The statement is <q><m>\exists x,y \in \mathbb{N} \st x^3-y^2=13</m></q></li>
+    <li>So to prove it true we only need to give at least one instance that makes it true</li>
+    <li>We <em>do not</em> have to explain how we found that example</li>
+  </ul>
+  This is a <term>constructive</term> proof.
+</p>
+</slide>
+
+<slide><title>Another example</title>
+<blockquote>
+  <p>There exists <m>x \in \left[0,\frac{\pi}{2} \right]</m> so that <m>\cos(x)=x</m></p>
+</blockquote>
+
+<proof>
+  <p>
+    Let <m>f(x)=\cos(x)-x</m>. Note that <m>f(0)=1 \gt 0</m> and <m>f\left(\frac{\pi}{2}\right)=-\frac{\pi}{2} \lt 0</m> and that <m>f(x)</m> is a continuous function. Then by the <em>Intermediate Value Theorem</em>, we know that there exists a point <m>c \in \left(0, \frac{\pi}{2}\right)</m> so that <m>f(c)=0</m>. From this we know that <m>\cos(c) = c</m> as required.
+  </p>
+</proof>
+<p>
+  Why is this sufficient?
+  <ul>
+    <li>To prove this we only need to <em>infer</em> that an example exists</li>
+    <li>We <em>do not</em> have to give the example explicitly</li>
+  </ul>
+  This is a <term>non-constructive</term> proof.
+</p>
+
+</slide>
+
+<slide><title>Existence proofs</title>
+<p>
+  Proofs of existence results fall into 2 broad categories
+  <dl>
+    <li>
+      <title>constructive proofs</title>
+      <p>
+        in which a specific example is given explicitly and verified
+      </p>
+      <p>
+        an explanation of <em>how</em> the example was found is <em>not required</em>
+      </p>
+    </li>
+    <li><title>non-constructive proofs</title>
+      <p>
+        in which the existence is <em>inferred</em> but an example is not explicitly stated
+      </p>
+    </li>
+  </dl>
+</p>
+</slide>
+
+<slide><title>Uniqueness proof</title>
+<p>
+  After demonstrating that a required object exists, one often also wants uniqueness
+</p>
+<blockquote>
+  <p>There exists a unique <m>x</m> so that <m>P(x)</m></p>
+</blockquote>
+<p>
+  A simple way to approach such proofs is
+  <ul>
+    <li>Let <m>x,y</m> be objects so that <m>P(x)</m> and <m>P(y)</m> are true</li>
+    <li>Do <em>stuff</em> to show that <m>x=y</m></li>
+  </ul>
+  The <em>fun</em> is in working out what <em>stuff</em> is.
+</p>
+
+</slide>
+
+<slide><title>An example</title>
+<blockquote>
+  <p>The equation <m>ax=b</m> with <m>a,b \in \mathbb{R}</m> and <m>a \neq 0</m> has a unique real solution.</p>
+</blockquote>
+<proof>
+  <p>
+    First note that since <m>a \neq 0</m>, we can solve the equation by choosing <m>x=\frac{b}{a} \in \mathbb{R}</m>. Thus a solution exists.
+  </p>
+  <p>
+    Now assume that numbers <m>r,s</m> both satisfy the equation. Hence
+    <md>
+      <mrow> ar \amp=b \amp as=b  \amp \amp \text{ and so}</mrow>
+      <mrow> ar \amp= as \amp \amp\amp \text{ and since } a\neq 0 </mrow>
+      <mrow> r\amp=s</mrow>
+    </md>
+    So both solutions are in fact equal and the solution must be unique.
+  </p>
+</proof>
+
+</slide>
+
+</section>
+
+</slideshow>
+</pretext>

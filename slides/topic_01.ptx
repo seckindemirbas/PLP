@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pretext>
+
+<docinfo>
+    <macros>
+      \newcommand{\ds}{\displaystyle}
+      \newcommand{\es}{ {\varnothing}}
+  		\newcommand{\st}{ \;\mid\; }
+  		\newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+  		\newcommand{\set}[1]{ \left\{#1\right\} }
+      \renewcommand{\neg}{\sim}
+      \renewcommand{\text}[1]{\mathsf{\mbox{#1}}}
+    </macros>
+</docinfo>
+
+<slideshow>
+<title>PLP - 1</title>
+<subtitle>Topic 1 <mdash /> Introduction to Sets</subtitle>
+
+<frontmatter>
+<titlepage>
+  <author>
+      <personname>Demirbaş &amp; Rechnitzer</personname>
+  </author>
+</titlepage>
+
+
+</frontmatter>
+
+
+<section>
+  <title>Introduction to sets</title>
+
+  <slide><title>Getting started with sets</title>
+  <p>
+    We need tools to understand collections of objects
+  </p>
+
+    <definition><title>(A not so formal definition of sets)</title>
+    <statement>
+      <p>
+        A <term>set</term> is a collection of objects.
+      </p>
+      <p>
+        The objects are referred to as <term>elements</term> or <term>members</term> of the set.
+      </p>
+  </statement>
+    </definition>
+
+  <p>
+    Informal because
+    <ul>
+      <li>is simple and intuitive</li>
+      <li>rigorous definition is way harder than we need</li>
+      <li>we just want to get on with things</li>
+    </ul>
+    </p>
+  </slide>
+
+  <slide>
+  <title>Quick aside on conventions and notation</title>
+  <p>
+    Mathematics has many conventions / traditions
+    <ul>
+      <li>not firm rules, but</li>
+      <li>make it easier for the <term>reader</term> to understand</li>
+    </ul>
+  </p>
+
+  <p>
+    Use
+    <ul>
+      <li>Capitals for sets: <m>A,B,C,X,Y</m></li>
+      <li>Lowercase for elements: <m>a,b,c,x,y</m></li>
+    </ul>
+  </p>
+
+  <p>
+    Similarly, use
+    <ul>
+      <li><m>i,j,k,\ell,m,n</m> to denote integers</li>
+      <li><m>x,y,z,w</m> to denote real numbers</li>
+    </ul>
+  </p>
+  </slide>
+
+<slide>
+  <title>A set answers only one question</title>
+<p>
+  <ul>
+    <li>
+      <p>
+  There is only one question we can ask a set:
+  </p>
+  <blockquote>
+  <p><q>Is this object in the set</q></p>
+  </blockquote>
+  <p>
+  and the set will answer
+  </p>
+  <blockquote>
+    <p>
+      <q>yes</q> or <q>no</q>
+    </p>
+  </blockquote>
+</li>
+
+<li>
+  <p>
+    Example: let <m>E</m> be the set of all positive even numbers.
+  </p>
+  <blockquote>
+    <p>
+      The number <m>4</m> is in <m>E</m>, but <m>3</m> is not in <m>E</m>.
+    </p>
+  </blockquote>
+</li>
+<li>The set <m>E</m> does no know anything else about <m>3,4</m>.</li>
+</ul>
+</p>
+
+</slide>
+
+<slide>
+  <title>Some notation</title>
+<p>
+  Mathematicians use a lot of shorthand and notation <mdash /> please use standard notation.
+</p>
+
+<definition><title>(Some shorthand notation)</title>
+  <statement>
+    <p>
+      <ul>
+        <li>If <m>a</m> is an element of the set <m>A</m> we write <m>a \in A</m>.</li>
+        <li>If <m>b</m> is not an element of the set <m>B</m> we write <m>b \not\in B</m></li>
+      </ul>
+      Note <q><m>\varepsilon</m></q> is <em>not</em> the same as <q><m>\in</m></q>
+    </p>
+  </statement>
+</definition>
+
+<p>
+  <ul>
+    <li>
+      <p>
+        Back to <m>E</m>. We know that
+        <me>
+          4 \in E \qquad \text{and} \qquad 3 \not\in E
+        </me>
+        but <q><m>4 \varepsilon E</m></q> is the product of <m>4, \varepsilon</m> and <m>E</m> <mdash /> <em>garbage!</em>
+      </p>
+    </li>
+  </ul>
+</p>
+</slide>
+
+<slide>
+  <title>Describing a set</title>
+<p>
+  When we define a set it must be very clear.
+  <ul>
+    <li> <q>Let <m>A</m> be the set of even integers between 1 and 13.</q> <mdash/> nice and clear.
+    </li>
+    <li> <q>Let <m>B</m> be the set of tall people at UBC.</q> <mdash/> not clear.
+    </li>
+  </ul>
+</p>
+
+<p>
+  If only a few elements <mdash /> just list them all inside <em>braces</em>
+  <me>
+    \text{Let }C = \set{1,2,3,4}.
+  </me>
+
+  <ul>
+    <li>Since a set only cares about membership, the order does not matter:
+      <me>
+        C = \set{1,2,3,4}  = \set{2,3,1,4} = \set{4,1,2,3}
+      </me>
+    </li>
+    <li>Repetition does not matter
+      <me>
+        \set{1,2,3,4} = \set{1,2,2,3,4,1,4,2,2,1}
+      </me>
+    </li>
+    <li>Be nice to the <term>reader</term> <mdash /> ordered and no repeats.</li>
+  </ul>
+  </p>
+</slide>
+
+<slide>
+  <title>Describing a slightly larger set</title>
+  <p>Use <q><m>\dots</m></q> as shorthand for the skipped elements:
+  <ul>
+  <li> <m>C = \set{1,2,3,\dots,40}</m> the set of all integers between 1 and 40 (inclusive).
+  </li>
+  <li> <m>A = \set{1,4,9,16,\dots}</m> the set of all positive square integers
+  </li>
+  </ul>
+</p>
+<p>
+  Be careful <mdash />  <m>B = \set{3,5,7,\dots }</m> is what set?
+  <ul>
+  <li> all odd primes, or</li>
+  <li> all odd numbers bigger than 1, or </li>
+  <li> primes that are 1 less than a power of 2, or <m>\dots</m> ???</li>
+  </ul>
+</p>
+<p>
+  Definitions must be precise
+  <ul>
+    <li>If the definition is vague then it is not a set</li>
+    <li>Help your <term>reader</term> <mdash /> don't assume that <q>they get what I mean</q></li>
+  </ul>
+  </p>
+</slide>
+
+<slide><title>The most fundamental set contains nothing</title>
+<definition><title>(Empty set)</title>
+<statement><p>
+  <ul>
+    <li>The <term>empty set</term> is the set which contains no elements.</li>
+    <li>It is denoted <m>\es</m> and <m>\es = \set{}</m></li>
+    <li>For any object <m>x</m> we know <m>x \not \in \es</m></li>
+  </ul>
+</p></statement>
+</definition>
+<p>
+  <ul>
+    <li>The empty set is like an empty bag <mdash /> it is not nothing.</li>
+    <li>The set <m>A = \set{\es}</m> is not empty, it contains 1 element.</li>
+    <li>The set <m>B = \set{\es, \set{\es}}</m> contains 2 elements.</li>
+  </ul>
+</p>
+</slide>
+
+<slide><title>Defining sets by a rule</title>
+<p>
+  For larger, complicated sets easier to define them using a rule.
+  <ul>
+    <li>All even numbers <m>E = \set{x \text{ so that } x \text{ is even}}</m></li>
+    <li><q>so that </q> shortened <m>\set{x \text{ s.t. } x \text{ is even}}
+    = \set{x \st x \text{ is even}}
+    = \set{x \text{ : } x \text{ is even}}
+    </m></li>
+  </ul>
+  This is <term>set builder</term> notation
+  <me>
+    S = \set{ \text{expression} : \text{rule} }
+  </me>
+  <ul>
+    <li><m>A = \set{n^2 \st n \text{ is a whole number}} = \set{0,1,4,9,36,\dots}</m></li>
+    <li><m>B = \set{a \in A \st a \lt 12} = \set{0, 1, 4, 9}</m></li>
+    <li><m>C = \set{a \in A \st \text{ and } a+1 \text{ is prime}} = \set{1,4,16,36,100,\dots}</m></li>
+  </ul>
+  It is important that the rule is clear <mdash /> help your <term>reader</term>.
+</p>
+
+</slide>
+
+
+<slide><title>A tour of other important sets</title>
+
+<definition><title>(Important sets of numbers)</title>
+  <statement>
+    <p>
+      <ul>
+      <li> <term>Natural numbers</term> (or positive integers) <m>\mathbb{N} = \set{1,2,3,\dots }</m> <mdash/> note <m>0 \not\in \mathbb{N}</m>
+
+      </li>
+      <li> <term>Integers</term> <m>\mathbb{Z} = \set{\dots,-2,-1,0,1,2,\dots}</m>
+      </li>
+      <li> <term>Rational numbers</term> (fractions) <m>\mathbb{Q} = \set{ \frac{a}{b} \st a \in \mathbb{Z}, b \in \mathbb{N} }</m>
+      </li>
+      <li> <term>Real numbers</term> <m>\mathbb{R}</m>
+      </li>
+      </ul>
+      All are denoted using <term>blackboard bold</term> letters
+    </p>
+  </statement>
+</definition>
+<p>
+  Please use correct notation: <m>N \neq \mathbb{N}, Z \neq \mathbb{Z}</m>.
+</p>
+
+<p>
+  We might also see
+  <ul>
+    <li> <term>Irrational numbers</term> <m>\mathbb{I}</m> = real numbers that are not rational.
+    </li>
+  </ul>
+  We will prove that <m>\sqrt{2} \in \mathbb{I}</m>.
+</p>
+</slide>
+
+<slide>
+  <title>Cardinality</title>
+  <definition>
+  <statement><p>
+    <ul>
+      <li>We write <m>|S|</m> to denote the <term>cardinality</term> of <m>S</m>.</li>
+      <li>For a finite set <m>S</m>, the cardinality is the number of elements in <m>S</m>.</li>
+    </ul>
+  </p></statement>
+  </definition>
+
+<p>
+  Examples
+  <me>
+    |\es| = 0 \qquad |\set{1,2,3}| = 3 \qquad | \set{\es, \set{1,2}}| = 2
+  </me>
+  For infinite sets things become very strange.
+  <ul>
+  <li> <m>|\mathbb{N}| = | \mathbb{Z}| = |\mathbb{Q}|</m></li>
+  <li> <m>|\mathbb{Z}|  \lt  | \mathbb{R}|</m></li>
+  </ul>
+  We will prove these.
+</p>
+</slide>
+</section>
+
+</slideshow>
+</pretext>

@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pretext>
+
+<docinfo>
+    <macros>
+      \require{cancel}
+
+      \newcommand{\ds}{\displaystyle}
+      \newcommand{\es}{ {\varnothing}}
+  		\newcommand{\st}{ \;:\; }
+  		\newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+  		\newcommand{\set}[1]{ \left\{#1\right\} }
+      \newcommand{\Mod}[1]{\;(\mathrm{mod}\; #1)}
+      \newcommand{\rel}{\;R\;}
+  		\newcommand{\nrel}{\;\cancel{R}\;}
+      \renewcommand{\neg}{\sim}
+      \renewcommand{\text}[1]{\mathsf{\mbox{#1}}}
+      \DeclareMathOperator{\gcd}{gcd}
+      \DeclareMathOperator{\lcm}{lcm}
+    </macros>
+    <rename element="proposition" xml:lang="en-US">Result</rename>
+</docinfo>
+
+<slideshow>
+<title>PLP - 39</title>
+<subtitle>Topic 39 <mdash /> Cardinality of finite sets</subtitle>
+
+<frontmatter>
+<titlepage>
+  <author>
+    <personname>Demirbaş &amp; Rechnitzer</personname>
+    
+  </author>
+</titlepage>
+
+
+</frontmatter>
+
+<section>
+  <title>Finite sets and pigeons</title>
+
+  <slide><title>Size of a finite set</title>
+  <p>
+    We defined <m>|A|</m> to be the number of elements in <m>A</m>
+  </p>
+    <sidebyside width="30%">
+      <image source="figures/count2.png"/>
+    </sidebyside>
+    <p>
+      When we count the elements in <m>A</m> we count off <q>one, two, three, <ellipsis/> six </q>
+    </p>
+    <p>
+      We build a function <m>f: A \to \set{1,2,\dots,6}</m> so that
+      <ul>
+        <li>Injective <mdash /> <em>different</em> objects counted by <em>different</em> numbers</li>
+        <li>Surjective <mdash /> each number is used to count an object</li>
+      </ul>
+      So that function is a <em>bijection</em>.
+    </p>
+  </slide>
+
+  <slide><title>Equal cardinalities and bijections</title>
+  <definition>
+    <statement>
+      <p>
+        Let <m>A,B</m> be sets. They have the same <term>cardinality</term> if <m>A=B=\es</m> or if there is a bijection from <m>A</m> to <m>B</m>.
+      </p>
+      <p>
+        In this case we write <m>|A|=|B|</m> and say the sets are <term>equinumerous</term>.
+      </p>
+      <p>
+        If <m>A</m> and <m>B</m> are not equinumerous, so no bijection between them, then we write <m>|A| \neq |B|</m>
+      </p>
+    </statement>
+  </definition>
+  <p>
+    <ul>
+      <li>Special case: <m>A = \es</m> we write <m>|A|=0</m>. No bijection between empty sets.</li>
+      <li>Finite: <m>|A|=n \in \mathbb{N}</m> then have a bijection <m>f:A \to \set{1,2,\dots,n}</m>.</li>
+      <li><p>If <m>|A|=n=|B|</m> then we have
+      <me>
+        f:A \to \set{1,\dots,n} \qquad g:B \to \set{1,\dots, n} \qquad \text{so} \qquad
+        (g^{-1} \circ f): A \to B
+      </me>
+    </p>
+    </li>
+    <li>Definition in terms of bijection allows us to handle infinite sets.</li>
+    </ul>
+  </p>
+  </slide>
+
+  <slide><title>Finite non-equinumerous sets</title>
+  <p>
+    Consider <m>A = \set{a_1,a_2,a_3,a_4,a_5}</m> and <m>B = \set{b_1,b_2,b_3}</m>
+  </p>
+  <sidebyside width="30%">
+    <image source="figures/pigeon1.png"/>
+  </sidebyside>
+  <p>
+    <ul>
+      <li>Since <m>5=|A| \neq |B|=3</m>, so no bijection between them</li>
+      <li>Easy to build a surjection <m>f:A \to B</m></li>
+    <li><p>
+      But cannot build an injection <m>g:A \to B</m>:
+    <me>
+      g(a_1)=b_1 \qquad g(a_2)=b_2 \qquad g(a_3)=b_3 \qquad g(a_4)=? \qquad g(a_5)=?
+    </me>
+    </p>
+    </li>
+    <li>Use the pigeonhole principle to formalise this.</li>
+    </ul>
+  </p>
+  </slide>
+
+<slide><title>Pigeonhole principle</title>
+<theorem><title>(Dirichlet)</title>
+  <statement>
+    <p>
+      If <m>n</m> objects are placed in <m>k</m> boxes then
+      <ul>
+        <li>If <m>n \lt k</m> then at least one box has zero objects in it</li>
+        <li>If <m>n \gt k</m> then at least one box has at least two objects in it</li>
+      </ul>
+    </p>
+    <p>
+      Can refine <m>n \gt k</m> case: at least one box has at least <m>\lceil n/k \rceil</m> objects in it.
+    </p>
+  </statement>
+</theorem>
+<proof>
+  <p>
+    Prove contrapositive of each:
+    <ul>
+      <li>Assume each box contains at least one object, then total number of objects <m>n \geq k</m>.</li>
+      <li>Assume each box contains at most one object, then the total number of objects <m>n \leq k</m>.</li>
+    </ul>
+  </p>
+</proof>
+
+</slide>
+
+<slide><title>Finite non-equinumerous sets <mdash /> continued</title>
+<corollary>
+  <statement>
+    <p>
+      Let <m>A,B</m> be <em>finite</em> sets and let <m>f:A \to B</m>. Then
+      <ul>
+        <li>If <m>|A| \gt |B|</m> then <m>f</m> is not an injection
+        <m>\qquad \qquad</m>
+        If <m>f</m> is an injection then <m>|A| \leq |B|</m>
+        </li>
+        <li>If <m>|A| \lt |B|</m> then <m>f</m> is not a surjection
+        <m>\qquad \qquad</m>
+        If <m>f</m> is a surjection then <m>|A| \geq |B|</m>
+      </li>
+      </ul>
+    </p>
+  </statement>
+</corollary>
+<proof>
+  <p>
+    We prove each point in turn.
+    <ul>
+      <li>Assume that <m>|A| \gt |B|</m>. Then, by PHP, when the images of elements of <m>A</m> are placed into <m>B</m> by the function, at least one element of <m>B</m> is the image of two elements of <m>A</m>. Hence there are <m>a_1,a_2 \in A</m> so that <m>f(a_1)=f(a_2)</m>, and so <m>f</m> is not injective.</li>
+      <li>Now assume that <m>|A| \lt |B|</m>. Then, by PHP, when the images of elements of <m>A</m> are placed into <m>B</m> by the function, at least one element of <m>B</m> is not the image of any element of <m>A</m>. That is, there is <m>b \in B</m> so that for every <m>a \in A</m>,
+      <m>f(a) \neq b</m>, and so <m>f</m> is not surjective.</li>
+    </ul>
+  </p>
+</proof>
+</slide>
+
+<slide><title>Pigeon flavoured example</title>
+<proposition>
+  <statement>
+    <p>
+      There exist two powers of 3 whose difference is divisible by 220.
+    </p>
+  </statement>
+</proposition>
+<proof>
+  <p>
+  <ul>
+    <li>
+      <p>
+      Consider the sequence of <m>221</m> numbers
+      <me>
+        3^0, 3^1, 3^2, 3^3, \dots, 3^{219}, 3^{220}
+      </me>
+        and compute their remainders when divided by 220.
+    </p>
+    </li>
+    <li>There are at most <m>220</m> possible remainders, but 221 numbers in the sequence</li>
+    <li>Hence two numbers have the same remainder: <m>3^i=220k +r, 3^j=220\ell +r</m></li>
+    <li>So their difference is a multiple of 220 as required</li>
+  </ul>
+  Checking remainders modulo 220 you can quickly find that <m>220 \mid (3^{20}-3^0)</m>
+</p>
+</proof>
+</slide>
+
+<slide><title>Pigeon flavoured example #2</title>
+<proposition>
+  <statement>
+    <p>
+      Place 5 points in an equilateral triangle of side-length 1. There is a pair at distance no greater than 0.5
+    </p>
+  </statement>
+</proposition>
+<proof>
+  <sidebyside width="40%">
+    <p>
+      <ul>
+        <li>Split the triangle into 4 sub-triangles as shown</li>
+        <li>The subtriangle side-length is <m>\frac{1}{2}</m></li>
+        <li>One sub-triangle must contain 2 points</li>
+        <li>So those points are at distance <m>\leq \frac{1}{2}</m></li>
+      </ul>
+    </p>
+    <image source="figures/pigeon2.png"/>
+  </sidebyside>
+</proof>
+</slide>
+
+<slide><title>Big data <m>\implies</m> spurious correlations</title>
+<p>
+  Consider
+  <ul>
+    <li>How many function <q>shapes</q> you can draw</li>
+    <li>How many time-series data sets exist</li>
+    <li>By PHP, each <q>shape</q> will fit many data-sets</li>
+    <li>Those data-sets appear correlated</li>
+  </ul>
+
+</p>
+
+<sidebyside width="90%">
+  <image source="figures/spurious.png"/>
+</sidebyside>
+<p>
+  Search-engine your way to <q>Spurious Correlations</q> by Tyler Vigen
+</p>
+</slide>
+</section>
+
+
+</slideshow>
+</pretext>

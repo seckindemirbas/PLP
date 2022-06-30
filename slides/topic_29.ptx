@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pretext>
+
+<docinfo>
+    <macros>
+      \require{cancel}
+
+      \newcommand{\ds}{\displaystyle}
+      \newcommand{\es}{ {\varnothing}}
+  		\newcommand{\st}{ \;:\; }
+  		\newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+  		\newcommand{\set}[1]{ \left\{#1\right\} }
+      \newcommand{\Mod}[1]{\;(\mathrm{mod}\; #1)}
+      \newcommand{\rel}{\;R\;}
+  		\newcommand{\nrel}{\;\cancel{R}\;}
+      \renewcommand{\neg}{\sim}
+      \renewcommand{\text}[1]{\mathsf{\mbox{#1}}}
+      \DeclareMathOperator{\gcd}{gcd}
+      \DeclareMathOperator{\lcm}{lcm}
+    </macros>
+    <rename element="proposition" xml:lang="en-US">Result</rename>
+</docinfo>
+
+<slideshow>
+  <title>PLP - 29</title>
+  <subtitle>Topic 29<mdash />Set partitions</subtitle>
+
+  <frontmatter>
+  <titlepage>
+    <author>
+      <personname>Demirbaş &amp; Rechnitzer</personname>
+      
+    </author>
+  </titlepage>
+
+
+</frontmatter>
+
+
+<section>
+  <title>Set partitions</title>
+
+<slide><title>Equivalence classes <mdash /> equal or disjoint</title>
+<sidebyside width="40%">
+  <image source="figures/congruentEg.png"/>
+</sidebyside>
+<corollary >
+  <statement>
+    <p>
+      Let <m>R</m> be an equivalence class on <m>A</m> and <m>a,b \in A</m>. Then
+      <me>
+        [a]=[b] \qquad \text{ or } \qquad [a] \cap [b] = \es
+      </me>
+    </p>
+  </statement>
+</corollary>
+</slide>
+
+<slide><title>Equal or disjoint</title>
+<blockquote>
+  <p><m>[a]=[b]</m> or <m>[a] \cap [b] = \es</m></p>
+</blockquote>
+<proof>
+  <p>
+    Let <m>a,b \in A</m> and consider the intersection <m>C = [a] \cap [b]</m>. Either <m>C=\es</m> or <m>C \neq \es</m>.
+    <ul>
+      <li>If <m>C =\es</m> we are done.</li>
+      <li><p>
+        So now assume that <m>C \neq \es</m>, which means there is some <m>c \in C</m>. Hence <m>c \in [a]</m> and <m>c \in [b]</m>. Thus <m>c \rel a</m> and <m>c \rel b</m>.
+      </p>
+        <p>
+          By symmetry we know <m>a \rel c</m>, and then transitivity gives <m>a \rel b</m>. The previous theorem then implies <m>[a]=[b]</m> as needed.
+        </p>
+      </li>
+    </ul>
+  </p>
+</proof>
+</slide>
+
+<slide><title>Cutting up a set</title>
+  <sidebyside width="40%">
+  <image source="figures/partition.png"/>
+  </sidebyside>
+<definition>
+  <statement>
+    <p>
+      A <term>partition</term> of the set <m>A</m> is a set, <m>\mathcal{P}</m>, of non-empty subsets of <m>A</m> so that
+      <ul>
+        <li>if <m>x \in A</m> then there is <m>X \in \mathcal{P}</m> with <m>x \in X</m></li>
+        <li>if <m>X,Y \in \mathcal{P}</m> then either <m>X \cap Y = \es</m> or <m>X=Y</m></li>
+      </ul>
+      Elements of <m>\mathcal{P}</m> are <term>parts</term> or <term>pieces</term> of the partition.
+    </p>
+  </statement>
+</definition>
+</slide>
+
+<slide><title>Equivalence classes are a partition</title>
+<theorem>
+  <statement>
+    <p>
+      Let <m>R</m> be an equivalence relation on <m>A</m>.
+    </p>
+    <p>
+      The set of equivalence classes of <m>R</m> forms a set partition.
+    </p>
+  </statement>
+</theorem>
+
+<p>
+  <term>Scratch work</term>
+  <ul>
+    <li>Let <m>\mathcal{P} = \set{[x] \st x \in A}</m></li>
+    <li><p>
+      Need to show that every <m>x \in A</m> belongs to some <m>X \in \mathcal{P}</m>
+    </p>
+    <p>
+      We already proved that each <m>x</m> belongs to <m>[x]</m>.
+    </p>
+  </li>
+  <li><p>
+    Need to show that for each <m>X,Y \in \mathcal{P}</m>, either <m>X \cap Y=\es</m> or <m>X=Y</m>
+  </p>
+  <p>We just proved this!</p>
+</li>
+  </ul>
+</p>
+
+</slide>
+
+<slide><title>Proof</title>
+<blockquote>
+<p>
+  Equivalence classes form a set partition
+</p>
+</blockquote>
+<proof>
+  <p>
+    Let <m>\mathcal{P} = \set{[x] \st x \in A}</m>.
+    <ul>
+      <li>Let <m>x \in A</m> then we proved previously that <m>x \in [x]</m>. Since <m>[x] \in \mathcal{P}</m>, we know that <m>x</m> is in some piece of the partition.</li>
+      <li>Let <m>X,Y \in \mathcal{P}</m>. By the previous corollary we know that either <m>X=Y</m> or <m>X \cap Y = \es</m>.</li>
+    </ul>
+    Thus <m>\mathcal{P}</m> forms a set partition.
+  </p>
+</proof>
+
+<p>
+  We can go further <mdash /> a set partition can define an equivalence relation.
+</p>
+
+</slide>
+
+<slide><title>A set partition gives an equivalence relation</title>
+<theorem>
+  <statement>
+    <p>
+      Let <m>\mathcal{P}</m> be a set partition of <m>A</m>. Now define a relation by
+      <me>
+        x \rel y \qquad \iff \qquad \exists X \in \mathcal{P} \text{ s.t. } x,y \in X
+      </me>
+      then <m>R</m> is an equivalence relation.
+    </p>
+  </statement>
+</theorem>
+
+<p>
+  <term>Scratch work / proof sketch</term> <mdash /> a good exercise
+  <!-- <ul>
+    <li>Reflexive: Let <m>x \in A</m>. Since <m>\mathcal{P}</m> is a set partition we know that <m>x \in X</m> for some <m>X \in \mathcal{P}</m>. Then <m>x</m> is in the same piece as itself, <m>x \rel x</m>.
+    </li>
+    <li>Symmetric: Assume that <m>x \rel y</m>. Then <m>x,y</m> belong to the same part. Thus <m>y \rel x</m>.
+    </li>
+    <li>Transitive: Assume that <m>x \rel y</m> and <m>y \rel z</m>. Then <m>x,y</m> belong some <m>X \in \mathcal{P}</m>, and <m>y,z</m> are in some <m>Y \in \mathcal{P}</m>. We must have <m>X=Y</m>, so <m>x,z \in X</m> and thus <m>x \rel z</m>.
+    </li>
+  </ul> -->
+</p>
+
+</slide>
+
+</section>
+
+
+</slideshow>
+</pretext>

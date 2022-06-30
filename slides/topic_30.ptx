@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pretext>
+
+<docinfo>
+    <macros>
+      \require{cancel}
+
+      \newcommand{\ds}{\displaystyle}
+      \newcommand{\es}{ {\varnothing}}
+  		\newcommand{\st}{ \;:\; }
+  		\newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+  		\newcommand{\set}[1]{ \left\{#1\right\} }
+      \newcommand{\Mod}[1]{\;(\mathrm{mod}\; #1)}
+      \newcommand{\rel}{\;R\;}
+  		\newcommand{\nrel}{\;\cancel{R}\;}
+      \renewcommand{\neg}{\sim}
+      \renewcommand{\text}[1]{\mathsf{\mbox{#1}}}
+      \DeclareMathOperator{\gcd}{gcd}
+      \DeclareMathOperator{\lcm}{lcm}
+    </macros>
+    <rename element="proposition" xml:lang="en-US">Result</rename>
+</docinfo>
+
+<slideshow>
+  <title>PLP - 30</title>
+  <subtitle>Topic 30<mdash />Integers modulo <m>n</m></subtitle>
+
+  <frontmatter>
+  <titlepage>
+    <author>
+      <personname>Demirbaş &amp; Rechnitzer</personname>
+      
+    </author>
+  </titlepage>
+
+
+</frontmatter>
+
+<section>
+  <title>Integers modulo <m>n</m></title>
+
+<slide><title>Partition and equivalence classes</title>
+<p>
+  <ul>
+    <li>
+      <p>
+        The equivalence relation <q><m>\equiv \Mod{n}</m></q> gives a partition of <m>\mathbb{Z}</m>:
+        <me>
+          \set{[0], [1], [2], \dots, [n-1]}
+        </me>
+      </p>
+    </li>
+    <li>These equivalence classes are called the <term>integers mod <m>n</m></term></li>
+    <li>They have nice arithmetic properties</li>
+  </ul>
+</p>
+
+<theorem>
+  <statement>
+    <p>
+      Let <m>n \in \mathbb{N}</m> and let <m>a,b \in \set{0,1,\dots,n-1}</m>.
+    </p>
+    <p>
+      If <m>x \in [a]</m> and <m>y \in [b]</m> then
+      <me>
+        x+y \in [a+b] \qquad \text{ and } \qquad x\cdot y \in [a\cdot b]
+      </me>
+    </p>
+  </statement>
+</theorem>
+
+</slide>
+
+<slide><title>Arithmetic modulo <m>n</m></title>
+<blockquote>
+  <p><m>(x \in [a]) \land (y \in [b]) \implies (x+y \in [a+b]) \land (x\cdot y \in [a\cdot b])</m></p>
+</blockquote>
+<p>
+<term>Scratch work</term>
+<ul>
+  <li><p>
+    Since <m>x \in [a], y \in [b]</m> we know that <m>n \mid (x-a)</m> and <m>n \mid (y-b)</m>, so
+    <me>
+      x = a + nk \qquad \text{ and } \qquad y = b + n \ell
+    </me>
+  </p>
+  </li>
+  <li><p>
+    This means that
+    <md>
+      <mrow> x+y \amp = a + b + n(k+\ell) \amp  xy \amp = ab + n(bk+a\ell) + n^2k\ell</mrow>
+    </md>
+  </p>
+  </li>
+  <li><p>
+    Which gives
+    <me>
+    n \mid \left( (x+y)-(a+b)\right) \qquad \text{ and } \qquad
+    n \mid \left(x\cdot y- a \cdot b \right)
+    </me>
+  </p>
+  </li>
+</ul>
+</p>
+</slide>
+
+<slide><title>Proof</title>
+<proof>
+  <p>
+    Let <m>n,a,b,x,y</m> be as stated. Then since <m>x \in [a]</m> and <m>y \in [b]</m>, we know that
+    <me>
+      x = a + nk
+      \qquad \text{and} \qquad
+      y = b + n\ell \qquad \text{ for some } k,\ell \in \mathbb{Z}
+    </me>
+    From this we have
+    <md>
+      <mrow> x+y \amp = a + b + n(k+\ell) \amp  xy \amp = ab + n(bk+a\ell) + n^2k\ell</mrow>
+    </md>
+    and so
+    <me>
+    n \mid \left( (x+y)-(a+b)\right) \qquad \text{ and } \qquad
+    n \mid \left(x\cdot y- a \cdot b \right)
+    </me>
+    This shows that <m>x+y \in [a+b]</m> and <m>x\cdot y \in [a\cdot b]</m> as required.
+  </p>
+</proof>
+
+</slide>
+
+<slide><title>Modular arithmetic</title>
+<definition>
+  <statement>
+    <p>
+      Let <m>n \in \mathbb{N}</m> and consider the equivalence classes of congruence modulo <m>n</m>.
+    </p>
+    <p>
+      The <term>integers modulo <m>n</m></term> is the set
+      <me>
+        \mathbb{Z}_n = \set{[0], [1], [2], \dots, [n-1]}
+      </me>
+      The elements of <m>\mathbb{Z}_n</m> can be added and multiplied by the rule
+      <me>
+        [a]+[b] = [a+b] \qquad [a]\cdot [b] = [a\cdot b]
+      </me>
+    </p>
+  </statement>
+</definition>
+</slide>
+
+</section>
+
+</slideshow>
+</pretext>

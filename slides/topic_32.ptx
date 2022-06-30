@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pretext>
+
+<docinfo>
+    <macros>
+      \require{cancel}
+
+      \newcommand{\ds}{\displaystyle}
+      \newcommand{\es}{ {\varnothing}}
+  		\newcommand{\st}{ \;:\; }
+  		\newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+  		\newcommand{\set}[1]{ \left\{#1\right\} }
+      \newcommand{\Mod}[1]{\;(\mathrm{mod}\; #1)}
+      \newcommand{\rel}{\;R\;}
+  		\newcommand{\nrel}{\;\cancel{R}\;}
+      \renewcommand{\neg}{\sim}
+      \renewcommand{\text}[1]{\mathsf{\mbox{#1}}}
+      \DeclareMathOperator{\gcd}{gcd}
+      \DeclareMathOperator{\lcm}{lcm}
+    </macros>
+    <rename element="proposition" xml:lang="en-US">Result</rename>
+</docinfo>
+
+<slideshow>
+  <title>PLP - 32</title>
+  <subtitle>Topic 32<mdash />Images and preimages</subtitle>
+
+  <frontmatter>
+  <titlepage>
+    <author>
+      <personname>Demirbaş &amp; Rechnitzer</personname>
+      
+    </author>
+  </titlepage>
+
+
+</frontmatter>
+
+<section>
+  <title>Images and preimages</title>
+<slide><title>Functions and subsets</title>
+<p>
+  How do functions interact with subsets of the domain and codomain?
+</p>
+<definition>
+  <statement>
+    <p>
+      Let <m>f:A \to B</m> be a function and let <m>C \subseteq A</m> and <m>D \subseteq B</m>
+      <ul>
+        <li>The <term>image</term> of <m>C</m> in <m>B</m> is <m>f(C) = \set{f(x) \text{ s.t. } x \in C}</m></li>
+        <li>The <term>preimage</term> of <m>D</m> in <m>A</m> is <m>f^{-1}(D) = \set{x \in A \text{ s.t. } f(x)\in D}</m></li>
+      </ul>
+    </p>
+  </statement>
+</definition>
+
+<p>
+  <em>WARNING</em> <mdash /> Be careful with preimages:
+  <ul>
+  <li><m>f^{-1}(x)</m> is not <m>\left(f(x)\right)^{-1}</m> or <m>\frac{1}{f(x)}</m></li>
+  <li>The preimage <m>f^{-1}</m> is <em>not</em> the inverse function.</li>
+  <li>When extra conditions satisfied the inverse function exists and we use the same notation</li>
+</ul>
+  When you see <m>f^{-1}</m> think <q><em>preimage</em></q> <mdash /> when you know inverse exists then <q>inverse function</q>.
+</p>
+</slide>
+
+<slide><title>A sketch of images and preimages</title>
+<sidebyside width="90%">
+  <image source="figures/function_imgpreimg.png"/>
+</sidebyside>
+
+</slide>
+
+<slide><title>An example <mdash /> images</title>
+<p>
+  Let <m>f: \mathbb{R} \to \mathbb{R}</m> be defined by <m>f(x)=x^2</m>. Then
+  <ul>
+    <li><m>f([0,4]) = [0,16]</m></li>
+    <li><m>f([-3,-1] \cup [1,2]) = [1,9]</m></li>
+  </ul>
+</p>
+<sidebyside width="66%">
+  <image source="figures/parabola1.png"/>
+</sidebyside>
+<p>
+  <ul>
+    <li>If <m>0 \leq x \leq 4</m> then <m>0 \leq x^2 \leq 16</m></li>
+    <li><p>
+      If <m>1 \leq x \leq 2</m> then <m>1 \leq x^2 \leq 4</m>. And if <m>-3 \leq x \leq -1</m> then <m>1 \leq x^2 \leq 9</m>.
+    </p>
+    <p>
+     So if <m>x \in [-3,-1] \cup [1,2]</m> then <m>x^2 \in [1,9]</m>.
+   </p>
+   </li>
+  </ul>
+</p>
+</slide>
+
+<slide><title>An example <mdash /> preimages</title>
+<p>
+  Let <m>f: \mathbb{R} \to \mathbb{R}</m> be defined by <m>f(x)=x^2</m>. Then
+  <ul>
+    <li><m>f^{-1}(\set{0,1}) = \set{-1,0,1}</m></li>
+    <li><m>f^{-1}([1,4]) = [-2,-1] \cup [1,2]</m></li>
+  </ul>
+</p>
+<sidebyside width="66%">
+  <image source="figures/parabola2.png"/>
+</sidebyside>
+
+<p>
+  <ul>
+    <li>
+      <p>If <m>x^2=0</m> then <m>x=0</m>. And if <m>x^2=1</m> then <m>x=\pm 1</m></p>
+      <p>So if <m>x^2 \in \set{0,1}</m> then <m>x \in \set{-1,0,1}</m></p>
+    </li>
+    <li><p>If <m>1 \leq x^2</m> then <m>x \leq -1</m> or <m>x \geq 1</m>. If <m>x^2 \leq 4</m> then <m>-2 \leq x \leq 2</m>.</p>
+    <p>
+      So if <m>x^2 \in [1,4]</m> then <m>x \in [-2,-1]</m> or <m>x \in [1,2]</m>.
+    </p>
+    </li>
+  </ul>
+</p>
+
+</slide>
+
+<slide><title>Images, preimages and set operations</title>
+<p>
+  Images and preimages interact (mostly) nicely with subset, intersection and union.
+</p>
+<theorem>
+  <statement>
+    <p>
+      Let <m>f:A \to B</m> and <m>C \subseteq A</m> and <m>D \subseteq B</m>. Then
+      <me>
+        C \subseteq f^{-1}(f(C)) \qquad \text{ and } \qquad f(f^{-1}(D)) \subseteq D
+      </me>
+      Now let <m>C_1,C_2 \subseteq A</m> and <m>D_1,D_2 \subseteq B</m>. Then
+      <md>
+        <mrow>
+          f(C_1 \cap C_2) \amp \subseteq f(C_1) \cap f(C_2) \amp
+          f(C_1 \cup C_2) \amp = f(C_1) \cup f(C_2)
+        </mrow>
+        <mrow>
+          f^{-1}(D_1 \cap D_2) \amp = f^{-1}(D_1) \cap f^{-1}(D_2) \amp
+          f^{-1}(D_1 \cup D_2) \amp = f^{-1}(D_1) \cup f^{-1}(D_2)
+        </mrow>
+      </md>
+    </p>
+  </statement>
+</theorem>
+<p>
+  Make good problems <mdash /> test lots of skills
+</p>
+</slide>
+
+<slide><title>Proof 1</title>
+<blockquote>
+  <p><m>f^{-1}(D_1 \cup D_2) = f^{-1}(D_1) \cup f^{-1}(D_2)</m> </p>
+</blockquote>
+<p>
+  We use <m>x \in f^{-1}(D) \iff f(x) \in D</m>
+</p>
+
+<proof>
+  <p>
+    <m>LHS \subseteq RHS</m>:  Let <m>x \in f^{-1}(D_1 \cup D_2)</m>, so <m>f(x) \in D_1 \cup D_2</m>.
+  </p>
+  <p>
+    Hence <m>f(x) \in D_1</m> or <m>f(x) \in D_2</m>.
+    <ul>
+      <li>when <m>f(x)\in D_1</m> we know <m>x \in f^{-1}(D_1)</m></li>
+      <li>when <m>f(x)\in D_2</m> we know <m>x \in f^{-1}(D_2)</m></li>
+    </ul>
+    In either case we know that <m>x \in f^{-1}(D_1) \cup f^{-1}(D_2)</m>.
+  </p>
+  <p>
+    Other inclusion is similar.
+  </p>
+</proof>
+
+</slide>
+
+
+<slide><title>Proof 2</title>
+<blockquote>
+  <p><m>f(C_1 \cap C_2) \subseteq f(C_1) \cap f(C_2)</m> </p>
+</blockquote>
+<p>
+  We use
+  <md>
+  <mrow> x \in C \amp \implies f(x) \in f(C)
+  \amp \text{and}\amp\amp
+  y \in f(C) \amp \implies \exists x \in C \text{ s.t. } y=f(x) \in f(C)</mrow>
+  </md>
+</p>
+
+<proof>
+  <p>
+    Let <m>y \in f(C_1 \cap C_2)</m>.
+  </p>
+  <p>
+    This means that there is some <m>x \in C_1\cap C_2</m> so that <m>f(x)=y</m>. Then
+    <ul>
+      <li>since <m>x \in C_1</m>, we know that <m>y=f(x)\in f(C_1)</m></li>
+      <li>since <m>x \in C_2</m>, we know that <m>y=f(x)\in f(C_2)</m></li>
+    </ul>
+    Hence <m>y \in f(C_1) \cap f(C_2)</m>.
+  </p>
+</proof>
+</slide>
+
+<slide><title>Reverse inclusion is false</title>
+<blockquote>
+  <p><m>f(C_1) \cap f(C_2) \not\subseteq f(C_1 \cap C_2)</m></p>
+</blockquote>
+<p>
+  Consider <m>f: \mathbb{R} \to \mathbb{R}</m> defined by <m>f(x)=x^2</m>.
+  <ul>
+    <li>Let <m>C_1 = \set{-1}</m>, so <m>f(C_1) = \set{1}</m></li>
+    <li>Let <m>C_2 = \set{1}</m>, so <m>f(C_2) = \set{1}</m></li>
+    <li>Then <m> f(C_1) \cap f(C_2) = \set{1}</m> but <m>f(C_1 \cap C_2) = f(\es) = \es</m></li>
+  </ul>
+</p>
+<p>
+  Notice also that this shows <m>f(x)\in f(C)</m> does <em>not</em> imply <m>x \in C</m>
+  <ul>
+  <li>Set <m>x=-1</m> and <m>C=\set{1}</m></li>
+  <li>Then <m>f(x)=1\in \set{1}=f(C)</m> but <m>x \not\in C</m>.</li>
+</ul>
+</p>
+<p>
+  These fail because there are <m>x_1 \neq x_2</m> so that <m>f(x_1) = f(x_2)</m>.
+</p>
+</slide>
+
+<slide><title>Proof 3</title>
+<blockquote>
+  <p><m>C \subseteq f^{-1}(f(C))</m></p>
+</blockquote>
+<proof>
+  <p>
+    Let <m>x \in C</m>.
+    <ul>
+      <li>Since <m>x \in C</m>, we know that <m>f(x) \in f(C)</m></li>
+      <li>To make logic clearer we write <m>D = f(C)</m>, so that <m>f(x) \in D</m></li>
+      <li>Since <m>f(x) \in D</m>, we know that <m>x \in f^{-1}(D)</m></li>
+      <li>But since <m>D=f(C)</m> this means that <m>x \in f^{-1}(f(C))</m> as required.</li>
+    </ul>
+  </p>
+</proof>
+<p>
+  Reverse inclusion is false. Let <m>f: \mathbb{R} \to \mathbb{R}</m> with <m>f(x)=x^2</m>.
+  <ul>
+    <li>Let <m>C = \set{2}</m>. Then <m>f(C) = \set{4}</m></li>
+    <li>But <m>f^{-1}(\set{4}) = \set{-2,2}</m> <mdash /> since <m>f(2)=f(-2)=4</m>.</li>
+    <li>Thus <m>f^{-1}(f(\set{2}))=\set{-2,2} \not\subseteq \set{2}=C</m></li>
+  </ul>
+</p>
+
+</slide>
+</section>
+
+
+</slideshow>
+</pretext>

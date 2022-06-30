@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pretext>
+
+<docinfo>
+    <macros>
+      \newcommand{\ds}{\displaystyle}
+      \newcommand{\es}{ {\varnothing}}
+  		\newcommand{\st}{ \;\text{s.t.}\; }
+  		\newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+  		\newcommand{\set}[1]{ \left\{#1\right\} }
+      \renewcommand{\neg}{\sim}
+      \renewcommand{\text}[1]{\mathsf{\mbox{#1}}}
+      \DeclareMathOperator{\gcd}{gcd}
+      \DeclareMathOperator{\lcm}{lcm}
+    </macros>
+    <rename element="proposition" xml:lang="en-US">Result</rename>
+</docinfo>
+
+<slideshow>
+  <title>PLP - 18</title>
+  <subtitle>Topic 18<mdash />Induction</subtitle>
+
+  <frontmatter>
+  <titlepage>
+    <author>
+      <personname>Demirbaş &amp; Rechnitzer</personname>
+      
+    </author>
+  </titlepage>
+
+
+</frontmatter>
+
+<section><title>Induction</title>
+
+<slide><title>Induction</title>
+<p>
+  <term>Mathematical induction</term> is a specialised technique for proving
+  <me>\forall n \in \mathbb{N}, P(n)</me>
+</p>
+<p>
+  It breaks the proof into 2 simpler steps
+  <dl>
+    <li>
+      <title>base case</title>
+      <p>prove that <m>P(1)</m> is true</p>
+    </li>
+    <li>
+      <title>inductive step</title>
+      <p>show that <m>P(k) \implies P(k+1)</m></p>
+    </li>
+  </dl>
+</p>
+<p>
+  <ul>
+    <li><term>base case </term> <m>=</m> step onto bottom rung of ladder</li>
+    <li><term>inductive step</term> <m>=</m> from the current rung you can reach the next rung</li>
+    <li>so you can climb the ladder as high as you want</li>
+  </ul>
+</p>
+
+</slide>
+
+<slide><title>An example</title>
+<proposition>
+  <statement>
+    <p>For all <m>n \in \mathbb{N}</m>, <m>n^2+5n-7</m> is odd</p>
+  </statement>
+</proposition>
+<p>
+  <term>scratch work</term>
+  <ul>
+    <li><term>base case</term> when <m>n=1</m> we have <m>1+5-7 = -1</m> which is odd</li>
+    <li><p><term>inductive step</term> need to prove
+    <me>
+      (k^2+5k-7 \text{ is odd}) \implies ( (k+1)^2+5(k+1)-7 \text{ is odd})
+    </me>
+  </p></li>
+    <li>The inductive step is a sub-proof inside our proof</li>
+  </ul>
+</p>
+</slide>
+
+<slide><title>Inductive step <q>sub proof</q></title>
+<blockquote>
+  <p><m>\forall k \in \mathbb{N}, (k^2+5k-7 \text{ is odd}) \implies ( (k+1)^2+5(k+1)-7 \text{ is odd})</m></p>
+</blockquote>
+<p>
+  <term>scratch work</term>
+  <ul>
+    <li>so we assume <m>k^2+5k-7 = 2\ell+1</m></li>
+    <li>need to show <m>(k^2+2k+1)+5(k+1)-7 = \underbrace{(k^2+5k-7)}_{2\ell+1}+(2k+6)</m> is odd.</li>
+    <li><p>
+      Since <m>k^2+5k-7 = 2\ell+1</m> we know
+      <me>
+        (k+1)^2+5(k+1)-7 = 2(\ell+k+3)+1
+      </me>
+      and since <m>\ell+k+3 \in \mathbb{Z}</m> we are done.
+    </p>
+  </li>
+  </ul>
+</p>
+<p>
+  Of course we still need to put the two parts of the proof together.
+</p>
+</slide>
+
+<slide><title>Principle of mathematical induction</title>
+<theorem><title>Mathematical induction</title>
+  <statement>
+    <p>
+      For all <m>n\in\mathbb{N}</m> let <m>P(n)</m> be a statement. Then if
+      <ul>
+        <li><m>P(1)</m> is true, and</li>
+        <li><m>P(k) \implies P(k+1)</m> is true for all <m>k \in \mathbb{N}</m>
+        </li>
+      </ul>
+      then <m>P(n)</m> is true for all <m>n \in \mathbb{N}</m>.
+    </p>
+  </statement>
+</theorem>
+<p>
+  <term>Warnings</term>
+  <ul>
+    <li>Induction <em>is not</em> <q>adding the next term to both sides</q></li>
+    <li>Induction <em>does not</em> prove all statements <mdash /> <term>the law of the instrument</term></li>
+    <li>Tell your <term>reader</term> if you use induction in your proof</li>
+  </ul>
+</p>
+
+</slide>
+
+<slide><title>Completing our proof</title>
+<blockquote>
+  <p>For all <m>n \in \mathbb{N}</m>, <m>n^2+5n-7</m> is odd</p>
+</blockquote>
+<proof>
+  <p>
+    <em>We prove the result by induction.</em>
+    <ul>
+      <li>Base case: When <m>n=1</m> we have <m>1+5-7=-1</m> which is odd.</li>
+      <li><p>
+        Inductive step: Assume that <m>k^2+5k-7</m> is odd, so we can write
+      <md>
+        <mrow>k^2+5k-7 \amp = 2\ell+1 \text{ for some } \ell \in \mathbb{Z} \text{ and so}</mrow>
+        <mrow>(k+1)^2+5(k+1)-7 \amp= 2(\ell+k+3)+1 </mrow>
+      </md>
+      and since <m>\ell+k+3 \in \mathbb{Z}</m>, it follows that <m>(k+1)^2+5(k+1)-7</m> is odd.
+        </p>
+      </li>
+    </ul>
+    Since the base case and inductive step hold, the result follows <em>by induction</em>.
+  </p>
+</proof>
+</slide>
+
+<slide><title>Another example</title>
+<proposition>
+  <statement>
+    <p>For every natural number <m>n</m>, <m>3 \mid (4^n-1)</m></p>
+  </statement>
+</proposition>
+<p>
+  <term>Scratch work</term>
+  <ul>
+    <li>When <m>n=1</m>, easy <m>3 \mid (4-1)</m></li>
+    <li>Assume <m>3 \mid (4^k-1)</m>, so <m>4^k-1 = 3\ell</m>.</li>
+    <li><p>
+      Writing <m>4^k = 3\ell+1</m> shows
+      <me>
+        4^{k+1} = 12\ell+4 \qquad \text{ so }\qquad 4^{k+1}-1 = 12 \ell +3
+      </me>
+      done!
+    </p>
+    </li>
+  </ul>
+</p>
+</slide>
+
+<slide><title>Write it up nicely</title>
+<blockquote>
+  <p>For every natural number <m>n</m>, <m>3 \mid (4^n-1)</m></p>
+</blockquote>
+<proof>
+  <p>
+    We prove the result by induction.
+    <ul>
+      <li>Base case: When <m>n=1</m> we have <m>3\mid(4-1)</m>, so the result holds.</li>
+      <li><p>
+        Inductive step: Assume that <m>3 \mid (4^k-1)</m>, so <m>4^k = 3 \ell+1</m> for some <m>\ell \in \mathbb{Z}</m>. Then
+      <me>
+        4^{k+1}-1 = 4(3\ell+1)-1 = 3(4\ell +1)
+      </me>
+      and so <m>3 \mid (4^{k+1}-1)</m> as required.
+        </p>
+      </li>
+    </ul>
+    Since the base case and inductive step hold, the result follows by induction.
+  </p>
+</proof>
+
+</slide>
+
+</section>
+
+
+</slideshow>
+</pretext>

@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pretext>
+
+<docinfo>
+    <macros>
+      \newcommand{\ds}{\displaystyle}
+      \newcommand{\es}{ {\varnothing}}
+  		\newcommand{\st}{ \;\text{s.t.}\; }
+  		\newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+  		\newcommand{\set}[1]{ \left\{#1\right\} }
+      \renewcommand{\neg}{\sim}
+      \renewcommand{\text}[1]{\mathsf{\mbox{#1}}}
+      \DeclareMathOperator{\gcd}{gcd}
+      \DeclareMathOperator{\lcm}{lcm}
+    </macros>
+    <rename element="proposition" xml:lang="en-US">Result</rename>
+</docinfo>
+
+<slideshow>
+<title>PLP - 15</title>
+<subtitle>Topic 15<mdash />Nested Quantifiers</subtitle>
+
+<frontmatter>
+<titlepage>
+  <author>
+    <personname>Demirbaş &amp; Rechnitzer</personname>
+    
+  </author>
+</titlepage>
+
+</frontmatter>
+
+<section>
+  <title>Nested quantifiers</title>
+
+  <slide><title>Nested quantifiers</title>
+  <p>
+    <em>Quantifiers do not commute</em>
+    <me>\forall x, \exists y \st P(x,y) \quad \not\equiv \quad \exists y \st \forall x, P(x,y)</me>
+  </p>
+  <p>
+    Consider:
+  </p>
+  <blockquote>
+  <p>
+    <m>\forall z \in \mathbb{Z}, \exists w \in \mathbb{N} \st z^2 \lt w</m>
+  </p>
+  </blockquote>
+  <p>
+    Must do quantifiers <em>in order</em> <mdash /> like a 2 player game:
+    <ul>
+      <li>Player 1: picks the value of <m>z</m> first</li>
+      <li>Player 2: knows what Player 1 did, and chooses <m>w</m></li>
+    </ul>
+    So
+    <ul>
+      <li>Player 1 picks some integer <m>z</m></li>
+      <li>Player 2 needs <m>w</m> to be big enough so that <m>w \gt z^2</m> <mdash /> pick <m>w=z^2+1</m></li>
+    </ul>
+  </p>
+</slide>
+
+<slide><title>Nested quantifiers</title>
+<blockquote>
+<p>
+  <m>\forall z \in \mathbb{Z}, \exists w \in \mathbb{N} \st z^2 \lt w</m>
+</p>
+</blockquote>
+<proof>
+  <p>
+<ul>
+  <li>Let <m>z</m> be any integer.</li>
+  <li>Now choose <m>w = z^2+1</m>.</li>
+  <li>We know that <m>w \in \mathbb{Z}</m> and that <m>w \geq 1</m>, so <m>w\in\mathbb{N}</m>.</li>
+  <li>Further we know that <m>w \gt z^2</m> so the statement is true.</li>
+</ul>
+  </p>
+</proof>
+<p>
+  <ul>
+    <li>Player 1 picks <em>any</em> <m>z \in \mathbb{Z}</m> <mdash /> universal quantifier</li>
+    <li>Player 2 picks <em>a single</em> <m>w</m> based on that choice <mdash /> existential quantifier</li>
+    <li>We verify that <m>w \in \mathbb{N}</m>.</li>
+    <li>We confirm that the inequality holds.</li>
+  </ul>
+</p>
+</slide>
+
+<slide><title>The other way around</title>
+<blockquote>
+<p>
+  <m>\exists w \in \mathbb{N} \st \forall z \in \mathbb{Z}, z^2 \lt w</m>
+</p>
+</blockquote>
+<p>
+  Must do quantifiers <em>in order</em> <mdash /> like a 2 player game:
+  <ul>
+    <li>Player 1: chooses <em>one</em> value of <m>w</m> first</li>
+    <li>Player 2: knows what Player 1 did, but must check <em>all</em> <m>z</m></li>
+  </ul>
+</p>
+<p>
+  <term>Scratch work</term>
+  <ul>
+    <li>P1 picks <m>w=1</m>, but then <m>z=2</m> is too big</li>
+    <li>P1 picks <m>w=2</m>, but then <m>z=3</m> is too big</li>
+    <li>P1 picks <m>w=3</m>, but then <m>z=4</m> is too big</li>
+  </ul>
+  Smells false, so check the negation.
+</p>
+
+</slide>
+<slide><title>Look at negation</title>
+<blockquote>
+<p>
+  <m>\forall w \in \mathbb{N}, \exists z \in \mathbb{Z} \st z^2 \geq w</m>
+</p>
+</blockquote>
+<p>
+<ul>
+  <li>Player 1 picks <em>any</em> <m>w \in \mathbb{N}</m></li>
+  <li>Player 2 chooses <em>one</em> <m>z \in \mathbb{Z}</m>. What worked above? </li>
+</ul>
+</p>
+<proof>
+  <p>
+    We prove the statement is false by showing the negation is true.
+    <ul>
+      <li>Let <m>w \in \mathbb{N}</m>.</li>
+      <li>Now choose <m>z = w+1 \in \mathbb{Z}</m></li>
+      <li>Then <m>z^2 = w^2 + 2w + 1 \gt w</m> since <m>w^2 \geq 0</m> and <m>w \geq 1</m>.</li>
+    </ul>
+    Since the negation is true, the original statement is false.
+  </p>
+</proof>
+</slide>
+
+<slide><title>Another nested example</title>
+  <blockquote>
+    <p><m>\forall x\in \mathbb{R}, \exists y\in\mathbb{R} \st xy=x+y</m></p>
+  </blockquote>
+<p>
+  <term>Scratch work</term>
+  <ul>
+    <li>P1 picks any <m>x</m> they want.</li>
+    <li>P2 needs to pick <m>y</m> so that <m>xy=x+y</m></li>
+    <li>We can solve that <m>xy-y=x</m> so <m>y = \frac{x}{x-1}</m></li>
+  </ul>
+  So is this true?
+</p>
+<p>
+  What happens when <m>x=1</m>?
+</p>
+
+</slide>
+
+<slide><title>Another nested example <mdash /> negation</title>
+  <blockquote>
+    <p><m>\exists x\in \mathbb{R} \st \forall y\in\mathbb{R}, xy \neq x+y</m></p>
+  </blockquote>
+<p>
+  <term>Scratch work</term>. Failed last time when <m>x=1</m>.
+  <ul>
+    <li>P1 picks <m>x=1</m>.</li>
+    <li>Then no matter what <m>y \in\mathbb{R}</m> we have <m>y \neq y+1</m>.</li>
+  </ul>
+</p>
+<proof>
+  <p>
+    The statement is false. Pick <m>x=1</m>. Then no matter what <m>y \in \mathbb{R}</m> we choose, we have <m>y \neq y+1</m> as required. Since the negation is true, the original statement is false.
+  </p>
+</proof>
+</slide>
+
+<slide><title>Another one</title>
+<blockquote>
+  <p><m>\forall x\in \mathbb{R}, \exists y\in\mathbb{R} \st (y \neq 0) \implies xy=1</m></p>
+</blockquote>
+<p>
+  <term>Scratch work</term>
+  <ul>
+    <li>P1 <em>first</em> picks one value of <m>x</m></li>
+    <li>P2 then picks <m>y</m> to make the implication true.</li>
+    <li>If the hypothesis is false, implication is true. P2 just picks <m>y=0</m>.</li>
+  </ul>
+</p>
+
+<proof>
+  <p>
+    We prove the statement is true. Pick any <m>x \in \mathbb{R}</m>, and then set <m>y=0</m>.
+    Since the hypothesis of the implication is false, the implication is always true.
+  </p>
+</proof>
+
+</slide>
+
+<slide><title>A similar one</title>
+<blockquote>
+  <p><m>\exists x\in \mathbb{R} \st \forall y\in\mathbb{R}, (y \neq 0) \implies xy=1</m></p>
+</blockquote>
+<p>
+  <term>Scratch work</term>
+  <ul>
+    <li>P1 <em>first</em> picks one value of <m>x</m></li>
+    <li>P2 then picks <m>y</m> to make the implication true.</li>
+    <li>Implication is false when (H,C) = (T,F) <mdash /> can that happen?</li>
+    <li>Sure <m>x=1</m> then pick <m>y=2</m></li>
+  </ul>
+  Better look at the negation.
+</p>
+<p>
+  <term>Recall: </term> <m>\neg(P \implies Q) \equiv (P \land \neg(Q))</m>
+</p>
+</slide>
+
+<slide><title>A similar one <mdash /> negated</title>
+<blockquote>
+  <p><m>\forall x\in \mathbb{R}, \exists y\in\mathbb{R} \st (y \neq 0) \land xy \neq 1</m></p>
+</blockquote>
+<p>
+  <term>Scratch work</term>
+  <ul>
+    <li>P1 picks <em>any</em> <m>x</m></li>
+    <li>P2 knows <m>x</m>, so based on that picks <m>y \neq 0</m> so that <m>xy \neq 1</m>.</li>
+    <li>If P2 picks <m>y=1</m> that will work nicely unless <m>x=1</m></li>
+    <li>If P1 has picked <m>x=1</m> then <m>P2</m> can pick <m>x=2</m></li>
+  </ul>
+</p>
+<proof>
+  <p>
+    We show the statement is false by proving the negation is true. Pick any <m>x \in \mathbb{R}</m>. Either <m>x=1</m> or <m>x\neq 1</m>
+    <ul>
+      <li>If <m>x=1</m> then set <m>y=2</m>.</li>
+      <li>If <m>x\neq 1</m> then set <m>y=1</m>.</li>
+    </ul>
+    In both cases, <m>y\neq 0</m> and <m>xy\neq 1</m> as required.
+  </p>
+</proof>
+
+</slide>
+
+</section>
+
+</slideshow>
+</pretext>

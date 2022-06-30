@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pretext>
+
+<docinfo>
+    <macros>
+      \require{cancel}
+
+      \newcommand{\ds}{\displaystyle}
+      \newcommand{\es}{ {\varnothing}}
+  		\newcommand{\st}{ \;:\; }
+  		\newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+  		\newcommand{\set}[1]{ \left\{#1\right\} }
+      \newcommand{\Mod}[1]{\;(\mathrm{mod}\; #1)}
+      \newcommand{\rel}{\;R\;}
+  		\newcommand{\nrel}{\;\cancel{R}\;}
+      \renewcommand{\neg}{\sim}
+      \renewcommand{\text}[1]{\mathsf{\mbox{#1}}}
+      \DeclareMathOperator{\gcd}{gcd}
+      \DeclareMathOperator{\lcm}{lcm}
+    </macros>
+    <rename element="proposition" xml:lang="en-US">Result</rename>
+</docinfo>
+
+<slideshow>
+<title>PLP - 42</title>
+<subtitle>Topic 42 <mdash /> Uncountable sets</subtitle>
+
+<frontmatter>
+<titlepage>
+  <author>
+    <personname>Demirbaş &amp; Rechnitzer</personname>
+    
+  </author>
+</titlepage>
+
+
+</frontmatter>
+
+<section><title>Uncountable</title>
+<slide><title>Can we find anything bigger?</title>
+<p>
+  So if <m>A,B</m> are denumerable, then
+  <ul>
+    <li><m>A \cup B</m> is denumerable</li>
+    <li><m>A \times B</m> is denumerable</li>
+  </ul>
+  Further if <m>C_1,C_2,C_3,\dots</m> are all denumerable, then for any fixed <m>n \in \mathbb{N}</m>
+  <ul>
+    <li><m>C_1 \cup C_2 \cup \cdots \cup C_n</m> is denumerable</li>
+    <li><m>C_1 \times C_2 \times \cdots \times C_n</m> is denumerable</li>
+  </ul>
+  How can we find anything bigger?
+</p>
+<p>We will prove the interval <m>(0,1)</m> is uncountable, and so <m>\mathbb{R}</m> is uncountable.</p>
+</slide>
+
+<slide><title>Useful facts about decimal expansions</title>
+<fact>
+  <statement>
+    <p>
+      <ul>
+        <li>
+          <p>
+            Every rational number has a repeating decimal expansion
+            <me>
+              1/3 = 0.333333\dots \qquad \qquad 2/11 = 0.181818\dots
+            </me>
+          </p>
+        </li>
+        <li><p>
+          Some rationals have two repeating expansions
+          <me>
+            1/2 = 0.500000\dots = 0.499999\dots
+          </me>
+          This only happens when the denominator <m>b</m> of the reduced fraction <m>a/b</m> is a product of 2's and 5's. In that case the two expansions terminate with 0's or 9's.
+        </p>
+        </li>
+        <li>Every irrational number has a unique non-repeating decimal expansion.
+        </li>
+      </ul>
+    </p>
+  </statement>
+</fact>
+</slide>
+
+<slide><title>Cantor's diagonal argument</title>
+<proposition><title>(Cantor 1891)</title>
+  <statement>
+    <p>
+      The open interval <m>(0,1)=\set{x\in \mathbb{R} \text{ s.t. } 0 \lt x \lt 1}</m> is uncountable.
+    </p>
+  </statement>
+</proposition>
+<p>
+  <term>Proof sketch</term>
+  <ul>
+    <li>We prove the result by contradiction. Assume that <m>(0,1)</m> is countable.</li>
+    <li>Since it is infinite, it is denumerable, and so there is a bijection <m>f: \mathbb{N} \to (0,1)</m></li>
+    <li><p>
+      We can use this bijection to list <em>all</em> the numbers in <m>(0,1)</m>
+    <tabular>
+      <row>
+        <cell><m>f(1)</m></cell><cell><m>0.78304492\dots</m></cell>
+      </row>
+      <row>
+        <cell><m>f(2)</m></cell><cell><m>0.21892653\dots</m></cell>
+      </row>
+      <row>
+        <cell><m>f(3)</m></cell><cell><m>0.15206327\dots</m></cell>
+      </row>
+      <row>
+        <cell><m>\vdots</m></cell>
+        <cell><m>\vdots</m></cell>
+      </row>
+    </tabular>
+    If two expansions then choose expansion that ends in 0's.
+  </p>
+  </li>
+  </ul>
+</p>
+</slide>
+
+<slide><title>The diagonal is the key</title>
+<p>
+  Arrange the expansions in a big array and consider the diagonal
+</p>
+<sidebyside widths="35% 60%">
+  <image source="figures/diagonal.png"/>
+  <p>
+    <ul>
+      <li>Denote the <m>k^{th}</m> digit of <m>f(n)</m> as <m>f_{n,k}</m></li>
+      <li>The diagonal <m>\Delta = 0.d_1d_2d_3d_4\dots</m></li>
+      <li>The <m>n^{th}</m> digit <m>d_n = f_{n,n}</m></li>
+      <li><p>
+        Create a new number <m>z=0.z_1z_2z_3z_4\dots</m> via
+        <me>
+          z_n = \begin{cases} 1 \amp \text{if } d_n \neq 1 \\ 2 \amp \text{if } d_n =1 \end{cases}
+        </me>
+        Chosen so that <m>\forall n\in\mathbb{N}, z_n \neq d_n = f_{n,n}</m>.
+      </p>
+    </li>
+    </ul>
+  </p>
+</sidebyside>
+<p>
+  We know <m>0.111111\dots \leq z \leq 0.222222\dots</m>, so <m>z</m> must be somewhere in the table.
+  <ul>
+    <li>If <m>z = f(k)</m> then must have <m>z_k = f_{k,k}</m>. But <m>f_{k,k} = d_k \neq z_{k}</m> by construction.</li>
+    <li>Hence <m>z</m> is not in the table, so contradicts assumption that <m>f</m> is a bijection.</li>
+  </ul>
+  So <m>(0,1)</m> is uncountable.
+</p>
+</slide>
+
+<slide><title>The reals are uncountable</title>
+<corollary>
+  <statement>
+    <p>
+      The set of all real numbers is uncountable. Additionally <m>|(0,1)| = |\mathbb{R}| = c</m>.
+    </p>
+  </statement>
+</corollary>
+<proof>
+  <p>
+    We proved earlier that if a set <m>B</m> is countable, then any subset <m>A</m> is countable.
+    Hence (by the contrapositive), if the subset <m>A</m> is uncountable, then the superset <m>B</m> is uncountable.
+  </p>
+  <p>
+    So since <m>(0,1) \subset \mathbb{R}</m> is uncountable and <m>(0,1)\subseteq \mathbb{R}</m>, we know that <m>\mathbb{R}</m> is uncountable.
+  </p>
+  <p>
+    To show that the sets are equinumerous, it is sufficient to show that the function
+    <me>
+      g:(0,1) \to \mathbb{R} \qquad g(x) = \frac{1}{1-x} - \frac{1}{x}
+    </me>
+    is a bijection. This is a good exercise.
+  </p>
+</proof>
+</slide>
+</section>
+
+</slideshow>
+</pretext>

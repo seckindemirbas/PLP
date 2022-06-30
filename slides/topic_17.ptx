@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pretext>
+
+<docinfo>
+    <macros>
+      \newcommand{\ds}{\displaystyle}
+      \newcommand{\es}{ {\varnothing}}
+  		\newcommand{\st}{ \;\text{s.t.}\; }
+  		\newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+  		\newcommand{\set}[1]{ \left\{#1\right\} }
+      \renewcommand{\neg}{\sim}
+      \renewcommand{\text}[1]{\mathsf{\mbox{#1}}}
+      \DeclareMathOperator{\gcd}{gcd}
+      \DeclareMathOperator{\lcm}{lcm}
+    </macros>
+    <rename element="proposition" xml:lang="en-US">Result</rename>
+</docinfo>
+
+<slideshow>
+  <title>PLP - 17</title>
+  <subtitle>Topic 17<mdash />Disproofs</subtitle>
+
+  <frontmatter>
+  <titlepage>
+    <author>
+      <personname>Demirbaş &amp; Rechnitzer</personname>
+      
+    </author>
+  </titlepage>
+
+</frontmatter>
+
+<section><title>Disproofs</title>
+
+<slide><title>Disproving a statement</title>
+  <p>
+    To disprove the statement <m>P</m>, we prove that <m>(\neg P)</m> is true.
+    <dl>
+      <li>
+        <title>universal quantifier</title>
+        <p>Since
+          <me>
+            \neg(\forall x, P(x)) \qquad \equiv \qquad \exists x \st \neg P(x)
+          </me>
+          our disproof can be a <term>counter example</term>
+        </p>
+      </li>
+      <li><title>existential quantifier</title>
+        <p>
+          Since
+          <me>
+            \neg(\exists x \st P(x)) \qquad \equiv \qquad \forall x, \neg P(x)
+          </me>
+          we have to work harder to show that <m>(\neg P(x))</m> is true <em>for all</em> <m>x</m>.
+        </p>
+        <p>
+          Counter examples <em>do not</em> disprove existential quantifiers
+        </p>
+      </li>
+    </dl>
+  </p>
+
+</slide>
+
+<slide><title>Disprove a universal quantifier</title>
+  <blockquote>
+    <p>For every <m>n \in \mathbb{N}</m>, <m>2^n-1</m> or <m>2^n+1</m> is prime.</p>
+  </blockquote>
+  <p>
+    <term>scratch work</term> <mdash /> smells false
+    <ul>
+      <li><m>n=1</m> gives <m>1,3\qquad</m> and <m>\qquad n=2</m> gives <m>3,5</m></li>
+      <li><m>n=3</m> gives <m>7,9\qquad</m> and <m> \qquad n=4</m> gives <m>15,17</m></li>
+      <li><m>n=5</m> gives <m>31, 33\qquad</m>  and <m>\qquad n=6</m> gives <m>63,65</m></li>
+    </ul>
+  </p>
+  <proof>
+    <p>
+      Pick <m>n=6</m>. Since neither <m>2^n-1=63</m> or <m>2^n+1=65</m> are prime, the statement is false.
+    </p>
+  </proof>
+<p>
+  Our counter-example proves <q><m>\exists n \in \mathbb{N} \st  \text{ neither } 2^n-1, 2^n+1 \text{ are prime}</m>.</q>
+</p>
+</slide>
+
+<slide><title>Another example</title>
+<blockquote>
+  <p>For all <m>a,b,c \in \mathbb{N}</m>, if <m>(a \mid bc)</m> then <m>(a \mid c)</m> or <m>(a \mid b)</m></p>
+</blockquote>
+<p>
+  <term>scratch work</term> <mdash /> again smells false.
+  <ul>
+    <li>Since is universal quantifier, a counter example is sufficient</li>
+    <li>Negation is <q><m>\exists a,b,c \st (a \mid bc) \land (a\nmid b \land a \nmid c)</m></q></li>
+    <li>Something about prime-factors feels like the right thing here</li>
+    <li>Pick <m>a=4</m> and <m>b=2, c=2</m>. Then <m>(4 \mid 2\cdot 2)</m> but <m>4 \nmid 2</m>.</li>
+  </ul>
+</p>
+<proof>
+  <p>
+    The statement is false. Let <m>a=4</m> and <m>b=c=2</m>. Then <m>a \mid bc</m> but <m>a \nmid b</m> and <m>a \nmid c</m>.
+  </p>
+</proof>
+
+</slide>
+
+<slide><title>Disproving an existential quantifier</title>
+<blockquote>
+  <p>There exist prime numbers <m>p,q</m> so that <m>p-q=999</m></p>
+</blockquote>
+<p>
+  Typically this is much harder. Sometimes we can reduce to a finite number of cases.
+</p>
+<p>
+  <term>scratch work</term>
+  <ul>
+    <li>Since odd-odd = even, we must have that <m>q=2</m></li>
+    <li>Then since <m>1001 = 7\times 11 \times 13</m>, no such primes exist</li>
+  </ul>
+</p>
+<proof>
+  <p>
+    This is false. Either <m>q</m> is even or odd.
+    <ul>
+      <li>If <m>q</m> is even, then <m>q=2</m>. Since <m>999+2 =1001</m> is divisible by 7 it is not prime.</li>
+      <li>Now assume that <m>q</m> is odd. Then we must have that <m>q=2k+1</m> for some <m>k\in \mathbb{Z}</m>. But then <m>p=2k+1000</m> which is divisible by 2 and so not prime.
+      </li>
+    </ul>
+    Hence no such primes exist.
+  </p>
+</proof>
+</slide>
+
+</section>
+</slideshow>
+</pretext>

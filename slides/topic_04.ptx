@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pretext>
+
+<docinfo>
+    <macros>
+      \newcommand{\ds}{\displaystyle}
+      \newcommand{\es}{ {\varnothing}}
+  		\newcommand{\st}{ \;\mid\; }
+  		\newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+  		\newcommand{\set}[1]{ \left\{#1\right\} }
+      \renewcommand{\neg}{\sim}
+      \renewcommand{\text}[1]{\mathsf{\mbox{#1}}}
+    </macros>
+</docinfo>
+
+<slideshow>
+<title>PLP - 4</title>
+<subtitle>Topic 04 <mdash /> The conditional</subtitle>
+
+<frontmatter>
+<titlepage>
+  <author>
+    <personname>Demirbaş &amp; Rechnitzer</personname>
+    
+  </author>
+</titlepage>
+
+
+</frontmatter>
+
+
+
+<section>
+  <title>Conditional</title>
+
+  <slide><title>Conditional</title>
+  <p>
+    Many interesting mathematical statements are <term>conditionals</term>
+  </p>
+  <blockquote>
+    <p>
+      If <m>f(x)</m> is differentiable then <m>f(x)</m> is continuous
+    </p>
+  </blockquote>
+  <definition><title>Conditional</title>
+    <statement>
+      <p>
+        Given <m>P</m> and <m>Q</m>, the
+        <term>conditional</term>
+        is the statement <q>if <m>P</m> then <m>Q</m></q> and is denoted <q><m>P \implies Q</m></q>.
+      </p>
+      <p>
+        Also called <term>implication</term> and the <term>hypothesis</term> is <m>P</m>, and the <term>conclusion</term> is <m>Q</m>.
+      </p>
+      <p>
+        Implication <m>P \implies Q</m> is true except when <m>(P,Q)=(T,F)</m>.
+      </p>
+    </statement>
+  </definition>
+  <p>
+    <ul>
+      <li>please use correct notation <mdash /> <q><m>\rightarrow</m></q> is <em>not</em> <q><m>\implies</m></q></li>
+      <li>order matters <q><m>Q \implies P</m></q> is <em>not</em> <q><m>P \implies Q</m></q></li>
+      <li>        Read <q><m>P \implies Q</m></q> as
+              <q>If <m>P</m> then <m>Q</m></q>,
+              <q><m>P</m> implies <m>Q</m></q>,
+              <q>Whenever <m>P</m> then also <m>Q</m></q>.
+</li>
+    </ul>
+  </p>
+</slide>
+
+<slide><title>Truth table of the conditional</title>
+<p>
+  Important to <em>memorise</em> this table
+</p>
+<sidebyside>
+  <tabular>
+    <row>
+    <cell><m>P</m></cell>
+    <cell><m>Q</m></cell>
+    <cell><m>P \implies Q</m></cell>
+    <!-- <cell><m>(\neg P) \lor Q</m></cell> -->
+    </row>
+    <row>
+      <cell>T</cell>
+      <cell>T</cell>
+      <cell>T</cell>
+      <!-- <cell>T</cell> -->
+    </row>
+    <row>
+      <cell>T</cell>
+      <cell>F</cell>
+      <cell>F</cell>
+      <!-- <cell>F</cell> -->
+    </row>
+    <row>
+      <cell>F</cell>
+      <cell>T</cell>
+      <cell>T</cell>
+      <!-- <cell>T</cell> -->
+    </row>
+    <row>
+      <cell>F</cell>
+      <cell>F</cell>
+      <cell>T</cell>
+      <!-- <cell>T</cell> -->
+    </row>
+  </tabular>
+</sidebyside>
+<p>
+  Note that
+  <ul>
+    <li>When <m>Q</m> is true, the implication is always true</li>
+    <li>When <m>P</m> is false, the implication is always true</li>
+    <!-- <li>The statements <m>P \implies Q</m> and <m>(\neg P) \lor Q</m> have the same truth tables.</li> -->
+  </ul>
+</p>
+</slide>
+
+<slide><title>Examples</title>
+<sidebyside>
+  <tabular>
+    <row>
+    <cell><m>P</m> </cell>
+    <cell><m>Q</m></cell>
+    <cell><m>P \implies Q</m></cell>
+    </row>
+    <row>
+      <cell>T</cell>
+      <cell>T</cell>
+      <cell>T</cell>
+    </row>
+    <row>
+      <cell>T</cell>
+      <cell>F</cell>
+      <cell>F</cell>
+    </row>
+    <row>
+      <cell>F</cell>
+      <cell>T</cell>
+      <cell>T</cell>
+    </row>
+    <row>
+      <cell>F</cell>
+      <cell>F</cell>
+      <cell>T</cell>
+    </row>
+  </tabular>
+</sidebyside>
+<p>
+  <ul>
+    <li>If 8 is even then 17 is prime <mdash /> true</li>
+    <li>If 8 is even then 4 is prime <mdash /> false</li>
+    <li>If 4 is prime then 8 is even <mdash /> true (but<ellipsis/>)</li>
+    <li>If 6 is prime then 19 is even <mdash /> true (but<ellipsis/>)</li>
+  </ul>
+</p>
+
+</slide>
+
+<slide><title>Explaining the table</title>
+<sidebyside>
+  <tabular>
+    <row>
+    <cell>it rains</cell>
+    <cell>roads get wet</cell>
+    <cell>If it rains then roads get wet</cell>
+    </row>
+    <row>
+      <cell>T</cell>
+      <cell>T</cell>
+      <cell>T</cell>
+    </row>
+    <row>
+      <cell>T</cell>
+      <cell>F</cell>
+      <cell>F</cell>
+    </row>
+    <row>
+      <cell>F</cell>
+      <cell>T</cell>
+      <cell>T</cell>
+    </row>
+    <row>
+      <cell>F</cell>
+      <cell>F</cell>
+      <cell>T</cell>
+    </row>
+  </tabular>
+</sidebyside>
+<p>
+  Do one by one:
+  <ul>
+    <li>(T,T): it rained and roads got wet <mdash /> implication is true.</li>
+    <li>(T,F): it rained and but roads are dry <mdash /> <em>it is false!</em></li>
+    <li>(F,T): it is sunny and roads got wet <mdash /> implication is not false</li>
+    <li>(F,F): it is sunny and roads are dry <mdash /> implication is not false</li>
+  </ul>
+  Last two mean that implication <em>is true unless you prove it false</em>.
+</p>
+
+</slide>
+
+<slide><title>What do we need to prove?</title>
+<p>
+  When we <em>prove</em> an implication <q><m>P \implies Q</m></q> we want to show it is <em>always true and never false</em>.
+  <ul>
+    <li>When <m>P</m> is false <em>no work needed</em> <mdash /> we know <q><m>P \implies Q</m></q> is true</li>
+    <li>When <m>P</m> is true <em>work required</em> <mdash /> truth of <q><m>P \implies Q</m></q> depends on truth of <m>Q</m></li>
+  </ul>
+  In a proof we do not have to consider the case <q><m>P</m> is false</q>.
+</p>
+
+<p>
+  Structure of most proofs:
+  <ul>
+    <li>Assume the <term>hypothesis</term> is true</li>
+    <li>Do <q>stuff</q></li>
+    <li>Show that the <term>conclusion</term> must also be true</li>
+    <li>So the case  <m>\text{T} \implies \text{F}</m> cannot happen</li>
+  </ul>
+  Since the implication cannot be false, it must be true!
+</p>
+
+</slide>
+
+<slide><title>What about open sentences?</title>
+
+<p>
+  A note on proofs of conditionals containing open sentences:
+</p>
+<blockquote>
+  If <m>f(x)</m> is continuous then <m>f(x)</m> is differentiable.
+</blockquote>
+<p>
+  We still want this true no matter what, so
+  <ul>
+    <li>we assume the hypothesis is true <mdash /> assume that <m>f(x)</m> is <em>any</em> continuous function</li>
+    <li>then work our way to showing that <m>f(x)</m> must be differentiable</li>
+  </ul>
+</p>
+
+<p>
+  This example is false: <m>f(x)=|x|</m> is continuous, but it is not differentiable.
+</p>
+
+</slide>
+
+</section>
+
+</slideshow>
+</pretext>

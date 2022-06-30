@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pretext>
+
+<docinfo>
+    <macros>
+      \newcommand{\ds}{\displaystyle}
+      \newcommand{\es}{ {\varnothing}}
+  		\newcommand{\st}{ \;\mid\; }
+  		\newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+  		\newcommand{\set}[1]{ \left\{#1\right\} }
+      \renewcommand{\neg}{\sim}
+      \renewcommand{\text}[1]{\mathsf{\mbox{#1}}}
+      \DeclareMathOperator{\gcd}{gcd}
+      \DeclareMathOperator{\lcm}{lcm}
+      \newcommand{\Mod}[1]{\;(\mathrm{mod}\; #1)}
+    </macros>
+</docinfo>
+
+<slideshow>
+<title>PLP - 7</title>
+<subtitle>Topic 7 <mdash />Statement types and some definitions</subtitle>
+
+<frontmatter>
+<titlepage>
+  <author>
+    <personname>Demirbaş &amp; Rechnitzer</personname>
+    
+  </author>
+</titlepage>
+
+
+</frontmatter>
+
+
+<section>
+  <title>After logic but before proofs</title>
+
+
+  <slide><title>Types of statements</title>
+  <dl>
+    <li>
+      <title>axiom</title>
+      <p>
+        Statements we accept as true without proof.
+      </p>
+    </li>
+    <li><title>fact</title>
+      <p>Statements we accept as true, but we won't bother proving for this course</p>
+    </li>
+  </dl>
+
+  <axiom>
+    <statement>
+      <p>
+        Let <m>m,n</m> be integers then
+        <m>-n, m+n, m-n</m> and <m>m\cdot n</m> are also integers.
+      </p>
+    </statement>
+  </axiom>
+
+<fact>
+  <statement>
+    Let <m>x \in \mathbb{R}</m>. Then <m>x^2 \geq 0</m>.
+  </statement>
+</fact>
+
+  </slide>
+
+  <slide><title>Types of statements</title>
+  <dl>
+    <li>
+      <title>theorem</title>
+      <p>
+        An important true statement <mdash /> Pythagorous' theorem
+      </p>
+    </li>
+    <li><title>corollary</title>
+      <p>A true statement that follows from a previous theorem</p>
+    </li>
+    <li><title>lemma</title>
+      <p>A true statement that helps us prove a more important result</p>
+    </li>
+    <li><title>result, proposition</title>
+    <p>True statements we prove (esp as exercises) we'll call results, or propositions (if more important)</p>
+    </li>
+  </dl>
+  </slide>
+
+  <slide><title>Useful definitions</title>
+  <definition><title>Even and odd numbers</title>
+    <statement>
+      <p>
+        An integer <m>n</m> is <term>even</term> if <m>n=2k</m> for some <m>k \in \mathbb{Z}</m>.
+      </p>
+      <p>
+        An integer <m>n</m> is <term>odd</term> if <m>n=2\ell+1</m> for some <m>\ell \in \mathbb{Z}</m>.
+      </p>
+      <p>
+        If two integers are <em>both even</em> or <em>both odd</em> odd, then they have the  <term> same parity</term>, else <term>opposite parity</term>.
+      </p>
+    </statement>
+  </definition>
+  <p>
+    Note:
+    <ul>
+      <li><p>The use of <em>if</em> in a definition is really <em>iff</em>.</p>
+      <p>We mean <q><m>n</m> is even</q> if and only if <q><m>n=2k</m> for some <m>k \in \mathbb{Z}</m></q></p>
+    </li>
+    <li>The number 0 is even (some students are taught otherwise).</li>
+    </ul>
+  </p>
+  </slide>
+
+  <slide>
+    <title>Some more useful definitions</title>
+    <definition><title>(Divisibility)</title>
+    <statement><p>
+      Let <m>n,k \in \mathbb{Z}</m>.
+      We say <m>k</m> <term>divides</term> <m>n</m> if there is <m>\ell \in \mathbb{Z}</m> so that <m>n=\ell k</m>.
+    </p>
+    <p>
+      In this case we write <m>k \mid n</m> and say that <m>k</m> is a <term>divisor</term> of <m>n</m> and that <m>n</m> is a <term>multiple</term> of <m>k</m>.
+    </p></statement>
+    </definition>
+
+    <definition><title>(Prime, composite and 1)</title>
+      <statement>
+        <p>
+          Let <m>n \in \mathbb{N}</m>. We say that <m>n</m> is <term>prime</term> when it has <em>exactly</em> two positive divisors, 1 and itself.
+        </p>
+        <p>
+          If <m>n</m> has more than two positive divisors then we say that it is <term>composite</term>.
+        </p>
+        <p>
+          Finally, the number 1 is neither prime nor composite.
+        </p>
+      </statement>
+    </definition>
+
+  </slide>
+  <slide>
+  <title>GCD, LCM and Euclid </title>
+    <definition><title>(GCD and LCM)</title>
+      <statement>
+        <p>Let <m>a,b</m> be integers
+        <ul>
+          <li>The <term>greatest common divisor</term> of <m>a,b</m> is the largest positive integer that divides both <m>a,b</m></li>
+          <li>The <term>least common multiple</term> of <m>a,b</m> is the smallest positive integer divisible by both <m>a,b</m></li>
+          <li>We denote these <m>\gcd(a,b)</m> and <m>\lcm(a,b)</m></li>
+        </ul>
+      </p>
+      </statement>
+    </definition>
+    <fact><title>(Euclidean division)</title>
+    <p>
+      Let <m>a,b \in \mathbb{Z}</m> with <m>b \gt 0</m>, then there exist unique <m>q,r \in \mathbb{Z}</m> so that
+      <me>
+        a = bq+r \qquad \text{ with } 0 \leq r \lt b
+      </me>
+    </p>
+    </fact>
+  </slide>
+
+<slide><title>Congruence modulo <m>n</m></title>
+<definition>
+<statement>
+  <p>
+  Let <m>a,b \in \mathbb{Z}</m> and <m>n \in \mathbb{N}</m>.
+  </p>
+  We say that <m>a</m> is <term>congruent to</term> <nbsp/> <m>b</m> <nbsp/> <term>modulo</term> <nbsp/> <m>n</m> when <m>n\mid(a-b)</m>.
+  <p>
+    The <q>n</q> is refered to as the <term>modulus</term> and we write the congruence as <m>a \equiv b \Mod{n}</m>.
+  </p>
+  <p>
+    When <m>n \nmid (a-b)</m> we say that <m>a</m> is not congruent to <m>b</m> modulo <m>n</m>, and write <m>a \not\equiv b \Mod{n}</m>.
+  </p>
+</statement>
+</definition>
+<p>
+  For example:
+  <md>
+    <mrow> 5 \amp\equiv 1 \Mod{4}
+    \amp 17 \amp \equiv 1 \Mod{4}
+    \amp 3 \amp\not\equiv 9 \Mod{4}
+    </mrow>
+  </md>
+</p>
+</slide>
+
+  </section>
+
+
+</slideshow>
+</pretext>

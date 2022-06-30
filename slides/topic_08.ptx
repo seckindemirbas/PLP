@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pretext>
+
+<docinfo>
+    <macros>
+      \newcommand{\ds}{\displaystyle}
+      \newcommand{\es}{ {\varnothing}}
+  		\newcommand{\st}{ \;\mid\; }
+  		\newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+  		\newcommand{\set}[1]{ \left\{#1\right\} }
+      \renewcommand{\neg}{\sim}
+      \renewcommand{\text}[1]{\mathsf{\mbox{#1}}}
+      \DeclareMathOperator{\gcd}{gcd}
+      \DeclareMathOperator{\lcm}{lcm}
+      \newcommand{\Mod}[1]{\;(\mathrm{mod}\; #1)}
+    </macros>
+</docinfo>
+
+<slideshow>
+<title>PLP - 8</title>
+<subtitle>Topic 8 <mdash />A first proof</subtitle>
+
+<frontmatter>
+<titlepage>
+  <author>
+    <personname>Demirbaş &amp; Rechnitzer</personname>
+    
+  </author>
+</titlepage>
+
+
+</frontmatter>
+
+
+<section>
+  <title>A first proof</title>
+
+<slide><title>A first result</title>
+  <p>
+    Our very first result will be
+  </p>
+  <proposition>
+    <statement>
+      <p>Let <m>n</m> be an integer. If <m>n</m> is even then <m>n^2</m> is even</p>
+    </statement>
+  </proposition>
+  <p>
+    We want to show this implication is always true.
+    <ul>
+      <li>When <em>hypothesis is false</em> (<m>n</m> is not even) then implication is true <mdash /> no work required!</li>
+      <li>So <em>assume hypothesis is true</em> <mdash /> <m>n</m> is an even number.</li>
+      <li><ellipsis/></li>
+      <li>So <m>n^2</m> must be an even number</li>
+    </ul>
+  </p>
+  <p>
+    Clearly we need to understand <term>even</term> <mdash /> we need the definition.
+  </p>
+  <p>
+    <term>Important</term> <mdash /> memorise definitions
+  </p>
+</slide>
+
+
+<slide><title>Continuing</title>
+<proposition>
+  <statement>
+    <p>Let <m>n</m> be an integer. If <m>n</m> is even then <m>n^2</m> is even</p>
+  </statement>
+</proposition>
+<p>
+  <ul>
+    <li><p>
+      Start by <em>assuming the hypothesis is true:</em> so we assume that <m>n</m> is even.
+      </p>
+    </li>
+    <li><em>By the definition of even</em> we know that <m>n=2k</m> for some integer <m>k</m>.
+    </li>
+    <li>But then, <m>n^2 = (2k)^2 = 4k^2 = 2(2k^2)</m>.</li>
+    <li>Since <m>k \in \mathbb{Z}</m> we know <em>by an axiom</em> that <m>2k^2 \in \mathbb{Z}</m>. </li>
+    <li>So <em>by the definition of even</em> we know that <m>n^2</m> is even</li>
+  </ul>
+</p>
+</slide>
+
+<slide><title>What just happened?</title>
+<p>
+  What have we done? We showed all these implications
+  <ul>
+    <li>(<m>n</m> is even) <m>\implies</m> (<m>n=2k</m> for some integer <m>k</m>)</li>
+    <li>(<m>n=2k</m> for some integer <m>k</m>) <m>\implies</m> (<m>n^2 = 4k^2</m>) </li>
+    <li>(<m>n^2 = 4k^2</m>) <m>\implies</m> (<m>n^2</m> is two times an integer)</li>
+    <li> (<m>n^2</m> is two times an integer) <m>\implies</m> (<m>n^2</m> is even)</li>
+  </ul>
+  So when we assume <m>n</m> is even, we can use <term>modus ponens</term> to see that
+  <ul>
+    <li>(<m>n=2k</m>) is true</li>
+    <li>(<m>n^2=4k^2</m>) is true</li>
+    <li>(<m>n^2</m> is two times an integer) is true</li>
+    <li>(<m>n^2</m> is even) is true</li>
+  </ul>
+  So when the <term>hypothesis</term> is true, <term>the conclusion</term> must be true, and so the <term>implication</term> is true!
+</p>
+<p>
+  Our first proof! <mdash /> nearly.
+</p>
+</slide>
+
+<slide><title>Cleaning up</title>
+<p>
+When <q>doing</q> proofs we nearly always separate <term>scratch work</term> from the <term>proof</term>.
+<dl>
+  <li><title>Scratch work</title>
+    <p>
+      All our draft work <mdash /> the <term>reader</term> doesn't need to see this.
+    </p>
+  </li>
+  <li><title>The proof</title>
+  <p>The cleaned up work, neatly formatted, so easy for the <term>reader</term> to follow</p>
+</li>
+</dl>
+</p>
+
+<proof>
+<p>
+  <ul>
+    <li>Assume that <m>n</m> is an even number.</li>
+    <li>Hence we know that <m>n=2k</m> for some <m>k \in \mathbb{Z}</m>.</li>
+    <li>It follows that <m>n^2 = 4k^2 = 2(2k^2)</m></li>
+    <li>Since <m>2k^2</m> is an integer, it follows that <m>n^2</m> is even</li>
+  </ul>
+</p>
+</proof>
+
+</slide>
+
+</section>
+
+
+</slideshow>
+</pretext>

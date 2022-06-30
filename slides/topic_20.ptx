@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pretext>
+
+<docinfo>
+    <macros>
+      \newcommand{\ds}{\displaystyle}
+      \newcommand{\es}{ {\varnothing}}
+  		\newcommand{\st}{ \;\text{s.t.}\; }
+  		\newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+  		\newcommand{\set}[1]{ \left\{#1\right\} }
+      \renewcommand{\neg}{\sim}
+      \renewcommand{\text}[1]{\mathsf{\mbox{#1}}}
+      \DeclareMathOperator{\gcd}{gcd}
+      \DeclareMathOperator{\lcm}{lcm}
+    </macros>
+    <rename element="proposition" xml:lang="en-US">Result</rename>
+</docinfo>
+
+<slideshow>
+  <title>PLP - 20</title>
+  <subtitle>Topic 20<mdash />More induction</subtitle>
+
+  <frontmatter>
+  <titlepage>
+    <author>
+      <personname>Demirbaş &amp; Rechnitzer</personname>
+      
+    </author>
+  </titlepage>
+
+
+</frontmatter>
+
+
+<section>
+  <title>More examples</title>
+
+  <slide><title>An inequality</title>
+  <proposition>
+    <statement>
+      <p>
+        Let <m>x \gt -1</m>, then for all <m>n \in \mathbb{N}</m>, <m>(1+x)^n \geq 1+nx</m>
+      </p>
+    </statement>
+  </proposition>
+  <p>
+    <term>Scratch work</term>
+    <ul>
+      <li>When <m>n=1</m> we have <m>(1+x) = 1+x</m>, so all good</li>
+      <li><p>Assume that <m>(1+x)^k \geq (1+kx)</m>, so
+        <md>
+          <mrow> (1+x)^{k+1}\amp = (1+x)\cdot(1+x)^{k} </mrow>
+          <mrow> \amp \geq (1+x)(1+kx) = 1+(k+1)x+kx^2 </mrow>
+          <mrow>\amp \geq 1+(k+1)x \amp \text{ since }x^2\geq 0</mrow>
+        </md>
+      </p>
+      </li>
+    </ul>
+    Where did we use <m>x \gt -1</m>?
+  </p>
+
+  </slide>
+
+<slide><title>Write it up nicely</title>
+<proof>
+  <p>We proceed by induction. Assume that <m>x \gt -1</m>.
+    <ul>
+      <li>Base case: When <m>n=1</m> we have <m>(1+x)=(1+x)</m>, as required</li>
+      <li><p>
+        Inductive step: Assume that the result holds for <m>n=k</m>, so <m>(1+x)^k \geq (1+kx)</m>. Then
+      <md>
+        <mrow>(1+x)^{k+1} \amp \geq (1+x)(1+kx) \amp\text{since }1+x \gt 0 </mrow>
+        <mrow> \amp=1+(k+1)x+kx^2 </mrow>
+        <mrow> \amp\geq 1+(k+1)x \amp \text{since } kx^2 \geq 0</mrow>
+      </md>
+      and so the result holds for <m>n=k+1</m>
+        </p>
+      </li>
+      By induction the result holds for all <m>n \in \mathbb{N}</m>.
+    </ul>
+  </p>
+</proof>
+</slide>
+
+<slide><title>Another example</title>
+<proposition>
+  <statement>
+    <p>
+      For all <m>n \in \mathbb{N}</m>, <m>1+3+\cdots+(2n-1) = n^2</m>.
+    </p>
+  </statement>
+</proposition>
+
+<p>
+  <term>Scratch work</term>
+  <ul>
+    <li>Base case: When <m>n=1</m> we have <m>(2-1)=1^2</m>.</li>
+    <li>Inductive step: Assume <m>1+3+\cdots+(2k-1)=k^2</m> then
+    <md>
+      <mrow> 1+3+\cdots+(2k-1) + (2k+1) \amp = k^2+(2k+1) </mrow>
+      <mrow> \amp = (k+1)^2 </mrow>
+    </md>
+    as required.
+  </li>
+  </ul>
+</p>
+<p>
+  <term>Warning</term> do not think <q><em>add the next term</em></q>. It is <q><em><m>P(k)\implies P(k+1)</m></em></q>
+</p>
+</slide>
+
+<slide><title>Write it up</title>
+<proof>
+  <p>
+    We prove the result by induction.
+    <ul>
+      <li>Base case: when <m>n=1</m>, we have <m>(2-1)=1^2</m>, as required.</li>
+      <li>Inductive step: assume that <m>1+3+\cdots+(2k-1) = k^2</m>, but then
+      <me>
+        1+3+\cdots+ (2k-1) + (2k+1)  = k^2+2k+1 = (k+1)^2
+      </me>
+      Hence the inductive step holds.
+      </li>
+    </ul>
+    So by induction the result holds for all <m>n \in \mathbb{N}</m>.
+  </p>
+</proof>
+
+<p>
+  <term>Warning</term> inductive step is not <q><em>add the next term</em></q>. It is <q><em><m>P(k)\implies P(k+1)</m></em></q>
+</p>
+
+</slide>
+
+</section>
+
+</slideshow>
+</pretext>

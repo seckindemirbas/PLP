@@ -57,12 +57,11 @@ with open(html_out_file, "w") as fh:
     fh.write(str(htmlSource))
 print("HTML written")
 
-# uncomment this "quit" if you want to build the pdfs too
+# comment out "quit" below if you want to build the pdfs too
 # uses 'decktape' to covert reveal.js to pdf
 # assumes that you have working pretext-cli install and
 # also decktape installed through npm as per instructions here
 # https://github.com/astefanutti/decktape
-
 quit()
 
 # run NPM to get the bin path for decktape

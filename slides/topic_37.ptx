@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pretext>
+
+<docinfo>
+    <macros>
+      \require{cancel}
+
+      \newcommand{\ds}{\displaystyle}
+      \newcommand{\es}{ {\varnothing}}
+  		\newcommand{\st}{ \;:\; }
+  		\newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+  		\newcommand{\set}[1]{ \left\{#1\right\} }
+      \newcommand{\Mod}[1]{\;(\mathrm{mod}\; #1)}
+      \newcommand{\rel}{\;R\;}
+  		\newcommand{\nrel}{\;\cancel{R}\;}
+      \renewcommand{\neg}{\sim}
+      \renewcommand{\text}[1]{\mathsf{\mbox{#1}}}
+      \DeclareMathOperator{\gcd}{gcd}
+      \DeclareMathOperator{\lcm}{lcm}
+    </macros>
+    <rename element="proposition" xml:lang="en-US">Result</rename>
+</docinfo>
+
+<slideshow>
+  <title>PLP - 37</title>
+  <subtitle>Topic 37<mdash />Proof by contradiction <mdash /> examples</subtitle>
+
+  <frontmatter>
+  <titlepage>
+    <author>
+      <personname>Demirbaş &amp; Rechnitzer</personname>
+      
+    </author>
+  </titlepage>
+
+
+</frontmatter>
+
+
+<section>
+  <title>Examples</title>
+
+<slide><title>No integer solutions</title>
+<proposition>
+  <statement>
+    <p>
+      There are no integers <m>a,b</m> so that <m>2a+4b=1</m>.
+    </p>
+  </statement>
+</proposition>
+<p>
+  <term>Scratchwork:</term>
+  <ul>
+    <li>The negation is <m>\exists a,b \in \mathbb{Z} \text{ s.t. } 2a+4b=1</m></li>
+    <li>If we assume the result is false, then we have some <m>a,b</m> so that <m>2a+4b=1</m></li>
+    <li>But dividing this by 2 gives <m>a+2b=\frac{1}{2}</m></li>
+    <li>This cannot happen, since <m>a,b \in \mathbb{Z}</m> we must have <m>a+2b \in \mathbb{Z}</m></li>
+    <li>Contradiction!</li>
+  </ul>
+</p>
+
+</slide>
+
+<slide><title>Proof</title>
+<blockquote>
+  <p>
+    There are no integers <m>a,b</m> so that <m>2a+4b=1</m>.
+  </p>
+</blockquote>
+<proof>
+  <p>
+    <ul>
+      <li>Assume, to the contrary, that the result is false</li>
+      <li>So there are <m>a,b \in \mathbb{Z}</m> so that <m>2a+4b=1</m></li>
+      <li>Dividing this by <m>2</m> gives <m>a+2b = \frac{1}{2}</m></li>
+      <li>However this cannot happen since the sum of integers is an integer</li>
+      <li>Hence there cannot be such integers <m>a,b</m> and so the result holds.</li>
+    </ul>
+  </p>
+</proof>
+
+</slide>
+
+<slide><title>No integer solutions #2</title>
+<proposition>
+  <statement>
+    <p>
+      There are no integers <m>a,b</m> so that <m>a^2-4b=3</m>
+    </p>
+  </statement>
+</proposition>
+<p>
+  <term>Scratchwork</term>
+  <ul>
+    <li>Assume, to the contrary, that we can find <m>a,b \in \mathbb{Z}</m> with <m>a^2-4b=3</m></li>
+    <li>Write as <m>a^2=3+4b</m> and notice that the RHS is odd, so the LHS must also be odd</li>
+    <li>But this means that <m>a</m> is odd (we proved this!)</li>
+    <li><p>
+      Hence we can write <m>a=2k+1</m> and so we have
+      <me>
+        3 = a^2 - 4b = (2k+1)^2-4b = 4k^2+4k+1-4b = 4(k^2+k-b)+1
+      </me>
+      </p>
+    </li>
+    <li>This implies that <m>3 \equiv 1 \text{ mod }4</m> <mdash /> contradiction!</li>
+  </ul>
+</p>
+</slide>
+
+<slide><title>Proof</title>
+<blockquote>
+  <p>There are no integers <m>a,b</m> so that <m>a^2-4b=3</m></p>
+</blockquote>
+<proof>
+  <p>
+    Assume, to the contrary that there are integers <m>a,b</m> so that <m>a^2-4b=3</m>.
+  </p>
+  <p>
+    Rewrite this as <m>a^2=4b+3</m>. Since the RHS is odd, the LHS must be odd, and consequently <m>a</m> is odd. So write <m>a=2k+1</m> for some <m>k \in \mathbb{Z}</m>.
+  </p>
+  <p>
+    Then notice that
+    <me>
+      3 = a^2-4b = 4(k^2+k-b)+1
+    </me>
+    which implies that <m>3 \equiv 1 \text{ mod } 4</m> which is a contradiction. Thus the result follows.
+  </p>
+</proof>
+
+</slide>
+
+<slide><title>Irrational numbers</title>
+<definition>
+  <statement>
+    <p>
+      Let <m>q</m> be a real number.
+      <ul>
+        <li><p>
+          We say that <m>q</m> is <term>rational</term> if we can write it <m>q = \frac{a}{b}</m> with <m>a,b \in \mathbb{Z}</m> and <m>b \neq 0</m>.
+          <me>
+            \exists a\in\mathbb{Z} \text{ s.t. } \exists b \in \mathbb{Z}-\set{0} \text{ s.t. } q =\frac{a}{b}
+          </me>
+        </p>
+        </li>
+        <li><p>
+          We say that <m>q</m> is <term>irrational</term> when it is not rational.
+          <me>
+          \forall a\in\mathbb{Z}, \forall b \in \mathbb{Z}-\set{0}, q \neq \frac{a}{b}
+          </me>
+        </p>
+        </li>
+        <li>
+          To denote the set of irrational numbers use <m>\mathbb{I} = \mathbb{R} - \mathbb{Q}</m>.
+        </li>
+    </ul>
+    </p>
+  </statement>
+</definition>
+
+</slide>
+
+<slide><title>Irrational example</title>
+<proposition>
+  <statement>
+    <p>
+      If <m>x \in \mathbb{Q}</m> and <m>y \in \mathbb{I}</m> then <m>x+y \in \mathbb{I}</m>.
+    </p>
+  </statement>
+</proposition>
+<p>
+<term>Scrathwork</term>
+<ul>
+  <li>Assume negation: <m>\exists x \in \mathbb{Q} \text{ s.t. }  \exists y \in \mathbb{I} \text{ s.t. } x+y \not\in \mathbb{I}</m></li>
+  <li>But since <m>x,y \in \mathbb{R}</m> we know <m>x+y \in \mathbb{R}</m>, so we have <m>x+y \in \mathbb{Q}</m></li>
+  <li><p>
+    Now since <m>x, (x+y) \in \mathbb{Q}</m>, we can write <m>x=a/b</m> and <m>(x+y)=c/d</m> with <m>a,b,c,d \in \mathbb{Z}</m>.
+  </p>
+</li>
+<li>But this means <m>y=(x+y)-x = \frac{c}{d}-\frac{a}{b} = \frac{bc-ad}{bd} \in \mathbb{Q}</m></li>
+<li>So we have <m>y \in \mathbb{Q}</m> and <m>y \not\in \mathbb{Q}</m> <mdash /> contradiction!</li>
+</ul>
+</p>
+
+</slide>
+
+<slide><title>Proof</title>
+<blockquote>
+  <p>If <m>x \in \mathbb{Q}</m> and <m>y \in \mathbb{I}</m> then <m>x+y \in \mathbb{I}</m>.</p>
+</blockquote>
+<proof>
+    <p>
+      Assume, to the contrary, that there is <m>x \in \mathbb{Q}</m> and <m>y \in \mathbb{I}</m> so that <m>x+y \in \mathbb{Q}</m>.
+    </p>
+    <p>
+      This implies that <m>x = \frac{a}{b}</m> and <m>(x+y) = \frac{c}{d}</m> with <m>a,b,c,d \in \mathbb{Z}</m> and <m>b,d \neq 0</m>.
+    </p>
+    <p>From this we see that
+      <m>
+        y = (x+y)-x = \frac{c}{d}-\frac{a}{b} = \frac{bc-ad}{bd}
+      </m>
+      and hence <m>y \in \mathbb{Q}</m>.
+    </p>
+    <p>
+      This contradicts our assumption that <m>y \in \mathbb{I}</m>, and so the result follows.
+    </p>
+</proof>
+</slide>
+
+</section>
+
+</slideshow>
+</pretext>

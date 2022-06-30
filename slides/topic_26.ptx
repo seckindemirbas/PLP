@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pretext>
+
+<docinfo>
+    <macros>
+      \require{cancel}
+
+      \newcommand{\ds}{\displaystyle}
+      \newcommand{\es}{ {\varnothing}}
+  		\newcommand{\st}{ \;:\; }
+  		\newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+  		\newcommand{\set}[1]{ \left\{#1\right\} }
+      \newcommand{\Mod}[1]{\;(\mathrm{mod}\; #1)}
+      \newcommand{\rel}{\;R\;}
+  		\newcommand{\nrel}{\;\cancel{R}\;}
+      \renewcommand{\neg}{\sim}
+      \renewcommand{\text}[1]{\mathsf{\mbox{#1}}}
+      \DeclareMathOperator{\gcd}{gcd}
+      \DeclareMathOperator{\lcm}{lcm}
+    </macros>
+    <rename element="proposition" xml:lang="en-US">Result</rename>
+</docinfo>
+
+<slideshow>
+  <title>PLP - 26</title>
+  <subtitle>Topic 26<mdash />Relations</subtitle>
+
+  <frontmatter>
+  <titlepage>
+    <author>
+      <personname>Demirbaş &amp; Rechnitzer</personname>
+      
+    </author>
+  </titlepage>
+
+
+</frontmatter>
+
+<section>
+  <title>Relations</title>
+
+<slide><title>Relationships</title>
+<p>
+<ul><li>
+<p>
+  Many expressions in mathematics describe <em>relationships</em> between objects
+  <ul>
+    <li> <m>a=b</m> <mdash/> the objects <m>a</m> and <m>b</m> are equal.</li>
+  <li> <m>a \lt b</m> <mdash/> the number <m>a</m> is strictly less than the number <m>b</m>.
+  </li>
+  <li> <m>a \in B</m> <mdash/> the object <m>a</m> is a member of the set <m>B</m>.
+  </li>
+  <li> <m>A \subseteq B</m> <mdash/> the set <m>A</m> is a subset of the set <m>B</m>.
+  </li>
+  <li> <m> a \mid b</m> <mdash/> the number <m>a</m> is a divisor of the number <m>b</m>.
+  </li>
+  <!-- <li> <m>a \equiv b \mod n</m> <mdash/> the number <m>a</m> is congruent to <m>b</m>  modulo <m>n</m>.  </li> -->
+</ul>
+</p></li>
+<li><p>
+  Focus on (say) divisibility <mdash /> we can think of the symbol <q><m>|</m></q> as an operator on <em>pairs</em> of integers.
+  <ul>
+    <li>we write <m>a \mid b</m> when <m>a</m> divides <m>b</m></li>
+    <li>and write <m>a \nmid b</m> when <m>a</m> does not divide <m>b</m></li>
+  </ul>
+</p></li>
+<li><p>
+  Divisibility naturally defines a subset of <m>\mathbb{N} \times \mathbb{N}</m>:
+  <me>
+    R = \set{(a,b) \in \mathbb{N}\times \mathbb{N} \st a \text{ divides }b}
+  </me>
+</p></li>
+</ul></p>
+
+</slide>
+
+<slide><title>Relation as subset of Cartesian product</title>
+<p>
+  Consider divisibility on the set <m>A = \set{1,2,4,8}</m>
+  <md>
+  <mrow>
+    1\mid 1 &amp;&amp; 1\mid 2 &amp;&amp; 1\mid 4 &amp;&amp; 1\mid 8
+  </mrow><mrow>
+    \color{magenta}{2\nmid 1} &amp;&amp; 2\mid 2 &amp;&amp; 2\mid 4 &amp;&amp; 2 \mid 8
+  </mrow><mrow>
+    \color{magenta}{4\nmid 1} &amp;&amp; \color{magenta}{4\nmid 2} &amp;&amp; 4\mid 4 &amp;&amp; 4\mid 8
+  </mrow><mrow>
+    \color{magenta}{8\nmid 1} &amp;&amp; \color{magenta}{8\nmid 2} &amp;&amp; \color{magenta}{8\nmid 4} &amp;&amp; 8 \mid 8
+  </mrow>
+  </md>
+</p>
+<p>
+  Can <em>define</em> the relation as subset of <m>A\times A</m>:
+  <me>
+    R = \set{(1,1), (1,2), (1,4), (1,8), (2,2),(2,4),(2,8), (4,4),(4,8),(8,8)}
+  </me>
+  And we can write <m>x\; R \; y</m> when <m>(x,y) \in R</m>
+</p>
+</slide>
+
+<slide><title>Relations</title>
+<definition>
+  <statement><p>
+  Let <m>A</m> be a set.
+  <ul>
+    <li>A <term>relation</term>, <m>R</m>, on <m>A</m> is a subset <m>R \subseteq A \times A</m>.</li>
+    <li>If <m>(x,y) \in R</m> we write <m>x \rel y</m>, and otherwise write <m>x \nrel y</m></li>
+  </ul>
+</p>
+</statement>
+</definition>
+<p>
+  Examples
+  <ul>
+    <li><m>R = \set{(x,x) \st x \in \mathbb{R} }</m> is <q><m>=</m></q>  on the reals</li>
+    <li><m>S = \set{(x,y) \in \mathbb{Z}^2 \st x-y \in \mathbb{N}}</m> is <q><m>\gt</m></q> on integers.</li>
+    <li><p>Let <m>B</m> be a set, then
+  <ul>
+    <li><m>R = \es</m> is the <term>trivial relation</term> on <m>B</m></li>
+    <li><m>S = B\times B</m> is the <term>universal relation</term> on <m>B</m></li>
+  </ul>
+</p>
+</li>
+</ul>
+</p>
+</slide>
+
+<slide><title>Draw the relation</title>
+<p>
+<ul>
+  <li>Consider the set <m>A = \set{1,2,4,8}</m> and divisibility.</li>
+  <li>Draw node for each <m>a \in A</m>.</li>
+  <li>If <m>a \rel b</m> then draw arrow <m>a \to b</m></li>
+</ul>
+</p>
+<sidebyside width="45%">
+  <image source="figures/divRelation.png"/>
+</sidebyside>
+</slide>
+
+</section>
+
+
+</slideshow>
+</pretext>

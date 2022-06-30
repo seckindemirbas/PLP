@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pretext>
+  <docinfo>
+      <macros>
+        \newcommand{\ds}{\displaystyle}
+        \newcommand{\es}{ {\varnothing}}
+    		\newcommand{\st}{ \;\mid\; }
+    		\newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+    		\newcommand{\set}[1]{ \left\{#1\right\} }
+        \renewcommand{\neg}{\sim}
+        \renewcommand{\text}[1]{\mathsf{\mbox{#1}}}
+        \DeclareMathOperator{\gcd}{gcd}
+        \DeclareMathOperator{\lcm}{lcm}
+        \newcommand{\Mod}[1]{\;(\mathrm{mod}\; #1)}
+      </macros>
+  </docinfo>
+
+  <slideshow>
+  <title>PLP - 11</title>
+  <subtitle>Topic 11 <mdash />Contrapositive proof</subtitle>
+
+  <frontmatter>
+  <titlepage>
+    <author>
+      <personname>Demirbaş &amp; Rechnitzer</personname>
+      
+    </author>
+  </titlepage>
+
+
+  </frontmatter>
+
+
+<section>
+  <title>Contrapositive proof</title>
+
+<slide><title>Try the contrapositive</title>
+  <proposition>
+    <statement>
+      <p>
+        Let <m>n \in \mathbb{Z}</m>. If <m>n^2</m> is even then <m>n</m> is even.
+      </p>
+    </statement>
+  </proposition>
+  <p>
+    <term>Scratch work</term>
+    <ul>
+      <li><em>Assume hypothesis is true</em> so <m>n^2</m> is even</li>
+      <li>Hence <m>n^2 = 2k</m> for some integer <m>k</m></li>
+      <li>So <m>n = \sqrt{2k}</m> and so <ellipsis/></li>
+    </ul>
+    Not sure where to go? Try the <term>contrapositive</term>
+  </p>
+</slide>
+
+<slide><title>Try the contrapositive 2</title>
+<blockquote>
+  <p>Let <m>n \in \mathbb{Z}</m>. If <m>n^2</m> is even then <m>n</m> is even.</p>
+</blockquote>
+<p>
+  <term>Scratch work</term>
+  <ul>
+    <li>Form the contrapositive: If <m>n</m> is not even then <m>n^2</m> is not even</li>
+    <li>Since <m>n \in \mathbb{Z}</m>: If <m>n</m> is odd then <m>n^2</m> is odd</li>
+    <li>Now we know what to do <mdash /> just tell the <term>reader</term> that you are proving the contrapositive.</li>
+  </ul>
+</p>
+
+<proof>
+  <p>
+    <em>We prove the contrapositive:</em> if <m>n</m> is odd then <m>n^2</m> is odd.
+    <ul>
+      <li>Assume that <m>n</m> is odd.</li>
+      <li>Hence <m>n = 2\ell+1</m> and so <m>n^2 = 4\ell^2+4\ell+1 = 2(2\ell^2+2\ell)+1</m>.</li>
+      <li>Since <m>2\ell^2+2\ell \in \mathbb{Z}</m>, it follows that <m>n^2</m> is odd.</li>
+    </ul>
+    Since the contrapositive it true, the original statement is true.
+  </p>
+</proof>
+
+</slide>
+
+<slide><title>Another example</title>
+<proposition>
+  <statement>
+    <p>
+      Let <m>n \in \mathbb{Z}</m>. If <m>3n+7</m> is odd then <m>n</m> is even.
+    </p>
+  </statement>
+</proposition>
+<p>
+  <term>Scratch work</term>
+  <ul>
+    <li>Assume <m>3n+7</m> is odd, so <m>3n+7=2\ell +1</m></li>
+    <li>Then <m>3n=2\ell-6</m> and <m>n = \frac{2\ell-6}{3}</m> which is<ellipsis/> <term>stuck</term></li>
+    <li>Start again with <em>contrapositive</em>: If <m>n</m> is odd then <m>3n+7</m> is even.</li>
+    <li>Then <m>n=2k+1</m> so <m>3n+7 = 6k+3+7 = 2(3k+5)</m> which is even.</li>
+  </ul>
+  Write it up nicely.
+</p>
+</slide>
+
+<slide><title>Write up the proof</title>
+<proof>
+  <p>
+    We prove the contrapositive. Assume that <m>n</m> is odd, so <m>n=2k+1</m> for some <m>k \in \mathbb{Z}</m>. Then <m>3n+7 = 2(3k+5)</m> and since <m>3k+5 \in \mathbb{Z}</m> it follows that <m>3n+7</m> is even.
+  </p>
+  <p>
+    Since the contrapositive is true, the result holds.
+  </p>
+</proof>
+<p>
+  Usually more than 1 way to prove things.  A direct proof:
+</p>
+<proof>
+  <p>
+    Let <m>3n+7</m> be odd, so <m>3n+7=2k+1</m> for some <m>k \in \mathbb{Z}</m>. But then
+    <me>
+      3n = 2k-6 \qquad \text{ and so } \qquad n = 2k-6-2n = 2(k-3-n)
+    </me>
+    Now since <m>k-3-n \in \mathbb{Z}</m> it follows that <m>n</m> is even.
+  </p>
+</proof>
+
+</slide>
+
+</section>
+
+</slideshow>
+</pretext>

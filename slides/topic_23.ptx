@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pretext>
+
+<docinfo>
+    <macros>
+      \newcommand{\ds}{\displaystyle}
+      \newcommand{\es}{ {\varnothing}}
+  		\newcommand{\st}{ \;:\; }
+  		\newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+  		\newcommand{\set}[1]{ \left\{#1\right\} }
+      \renewcommand{\neg}{\sim}
+      \renewcommand{\text}[1]{\mathsf{\mbox{#1}}}
+      \DeclareMathOperator{\gcd}{gcd}
+      \DeclareMathOperator{\lcm}{lcm}
+    </macros>
+    <rename element="proposition" xml:lang="en-US">Result</rename>
+</docinfo>
+
+<slideshow>
+  <title>PLP - 23</title>
+  <subtitle>Topic 23<mdash />Set operations</subtitle>
+
+  <frontmatter>
+  <titlepage>
+    <author>
+      <personname>Demirbaş &amp; Rechnitzer</personname>
+      
+    </author>
+  </titlepage>
+
+
+</frontmatter>
+
+<section><title>Set operations</title>
+
+<slide><title>Union and intersection</title>
+
+<definition>
+<statement><p>
+ Let <m>A, B</m> be sets.
+ The <term>union</term> of <m>A</m> and <m>B</m> is
+<md>
+<mrow>
+  A \cup B &amp;= \{x \st x\in A \text{ or } x \in B \}
+</mrow>
+</md>
+</p></statement>
+</definition>
+
+<definition>
+<statement><p>
+ The <term>intersection</term> of sets <m>A</m> and <m>B</m>, is
+  <md>
+<mrow>
+   A \cap B &amp;= \{ x \st x\in A \text{ and } x \in B \}
+  </mrow>
+</md>
+  If the intersection <m>A \cap B = \es</m>, then we say that <m>A</m> and <m>B</m> are <term>disjoint</term>.
+</p></statement>
+</definition>
+</slide>
+
+<slide><title>Notes and examples</title>
+<p>
+  <ul>
+    <li><p>
+      Please use <term>correct notation</term>
+      <md>
+      <mrow>
+        A \cup B \amp= \text{ unions of sets} \amp
+        A \cap B \amp= \text{ intersection of sets}
+        </mrow>
+        <mrow>
+        P \lor Q \amp = \text{ disjunction of statements}
+           \amp
+          P \land Q \amp= \text{ conjunction of statements}
+          </mrow>
+      </md>
+    </p></li>
+    <li>There are <em>parallels</em> between set operations and logical operations but they are <em>not</em> the same
+  </li>
+  <li>
+    <p>
+      Let <m>A = \set{1,2,3,4}, B = \set{p \st p \text{ is prime}}</m> and <m>C=\set{4,5,6,7}</m>
+      <me>
+        A \cup C = \set{1,2,3,4,5,6,7}
+        \qquad
+        A \cap B = \set{2,3}
+        \qquad
+        B \cap C = \set{5,7}
+      </me>
+    </p>
+  </li>
+  </ul>
+</p>
+</slide>
+
+<slide><title>Visualising things</title>
+<p>
+  We can picture union and intersection using <term>Venn diagrams</term>
+</p>
+<sidebyside width="45%">
+  <image source="figures/union.png" /> <image source="figures/intersection.png" />
+</sidebyside>
+
+</slide>
+
+<slide><title>Another operation</title>
+
+<definition>
+<statement><p>
+  Let <m>A</m> and <m>B</m> be sets.
+  Then the <term>difference</term>, <m>A - B</m> is
+  <md>
+<mrow>
+    A - B &amp;= \{ x \in A \st x \notin B \}
+  </mrow>
+</md>
+</p></statement>
+</definition>
+
+<sidebyside width="50%">
+<image source="figures/setdifference.png"/>
+</sidebyside>
+
+</slide>
+
+<slide><title>Universals and complements</title>
+<definition>
+<statement><p>
+ Given a <term>universal set</term> <m>U</m> and <m>A \subset U</m>,  the <term>complement</term>
+of <m>A</m> is
+<md>
+<mrow>
+  \bar{A} \amp = \{ x \in U \st x \notin A\}
+  \amp \text{or equivalently} \amp
+  \amp x \in \bar{A} \iff x \not\in A
+</mrow>
+</md>
+The universal set is the set from which we draw elements in the current <em>context</em>
+</p></statement>
+</definition>
+
+<sidebyside width="50%">
+<image source="figures/complement.png"/>
+</sidebyside>
+
+</slide>
+
+<slide><title>Notes and examples</title>
+<p>
+  <ul>
+    <li>Compl-e-ment vs Compl-i-ment</li>
+    <li><m>A - B</m> also written <m>A \setminus B</m> and is called the <term>relative complement of</term> <m>B</m> in <m>A</m></li>
+    <li>We have <m>A - B = A \cap \bar{B}</m></li>
+  </ul>
+</p>
+<p>
+  <ul>
+    <li>
+      <p>
+        Let <m>U= \mathbb{N}, A = \set{1,2,3,4}, B = \set{p \st p \text{ is prime}}</m> and <m>C=\set{4,5,6,7}</m>
+        <me>
+          A  - C = \set{1,2,3}
+          \qquad
+          A - B = \set{1,4}
+          \qquad
+          \bar{A} = \set{n \in \mathbb{N} \st n \geq 5}
+        </me>
+      </p>
+    </li>
+  </ul>
+</p>
+
+</slide>
+
+<slide><title>Ordered pairs</title>
+<p>
+  Sets don't care about order, but many applications need <em>pairs</em> of objects.
+</p>
+<definition>
+<statement><p>
+ An <term>ordered pair</term> of elements is an <em>ordered</em> list of two elements.
+</p>
+<p>
+  The ordered pair of two elements <m>a,b</m> is written <m>(a,b)</m> and satisfies
+ <ul>
+<li> <m>(a,b) = (c,d)</m> only when <m>(a=c)</m> and <m>(b=d)</m>, and
+</li>
+<li> <m>(a,b) \neq (b,a)</m> unless <m>(a=b)</m>.
+</li>
+</ul>
+</p></statement>
+</definition>
+<p>
+  <term>Warning</term>
+  <ul>
+    <li>use correct notation: <m>\set{1,3}</m> is a set, <m>(1,3)</m> is an ordered pair</li>
+    <li>we sometimes use <m>(1,3) = \set{x \in \mathbb{R} \st 1 \lt x \lt 3}</m> <mdash /> give your <term>reader</term> context</li>
+  </ul>
+</p>
+
+</slide>
+
+<slide><title>Cartesian product</title>
+<definition><title>Cartesian product</title>
+  <statement>
+    <p>The <term>Cartesian product</term> of sets <m>A,B</m> is
+        <me>
+          A \times B = \set{ (a,b) \st a\in A, b\in B}
+        </me>
+      Note for <m>A,B\neq \es</m>, <m>A\times B \neq B \times A</m> unless <m>A=B</m>.
+    </p>
+  </statement>
+</definition>
+<p>
+  Let <m>A = \set{a,b,c}</m> and <m>B=\set{1,2}</m> then
+<md>
+<mrow>
+  A\times B &amp;= \set{ (a,1), (a,2), (b,1), (b,2), (c,1), (c,2)}
+</mrow>
+</md>
+</p>
+
+</slide>
+
+</section>
+
+
+
+</slideshow>
+</pretext>

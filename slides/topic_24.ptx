@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pretext>
+
+<docinfo>
+    <macros>
+      \newcommand{\ds}{\displaystyle}
+      \newcommand{\es}{ {\varnothing}}
+  		\newcommand{\st}{ \;:\; }
+  		\newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+  		\newcommand{\set}[1]{ \left\{#1\right\} }
+      \renewcommand{\neg}{\sim}
+      \renewcommand{\text}[1]{\mathsf{\mbox{#1}}}
+      \DeclareMathOperator{\gcd}{gcd}
+      \DeclareMathOperator{\lcm}{lcm}
+    </macros>
+    <rename element="proposition" xml:lang="en-US">Result</rename>
+</docinfo>
+
+<slideshow>
+  <title>PLP - 24</title>
+  <subtitle>Topic 24<mdash />Set proofs</subtitle>
+
+  <frontmatter>
+  <titlepage>
+    <author>
+      <personname>Demirbaş &amp; Rechnitzer</personname>
+      
+    </author>
+  </titlepage>
+
+
+</frontmatter>
+
+
+
+<section><title>Proving things</title>
+
+<slide><title>Writing set operations as statements</title>
+
+<p>
+Let <m>A,B</m> be sets.
+<dl>
+<li><title>Subset and equality</title><p>
+<ul>
+<li> <m>(A \subseteq B) \quad \equiv \quad (\forall x\in A, x\in B) \quad \equiv \quad( x\in A \implies x\in B)</m>.
+</li>
+<li> <m>(A = B) \quad \equiv \quad \left( (A \subseteq B) \land (B \subseteq A) \right) \quad \equiv \quad \left((x \in
+  A) \iff (x \in B) \right)</m>
+</li>
+</ul>
+</p>
+</li>
+<li><title>Intersection and union</title>
+<p>
+<ul>
+<li> <m>(x \in A \cap B) \quad \equiv \quad \left( x\in A \land x\in B \right)</m>
+</li>
+<li> <m>(x \in A \cup B) \quad \equiv \quad \left( x\in A \lor x\in B \right)</m>
+</li>
+</ul>
+</p>
+</li>
+<li><title>Complement and difference</title>
+<p>
+<ul>
+<li> <m>(x \in \bar{A}) \quad \equiv \quad (x \not\in A) \quad \equiv \quad \neg(x \in A)</m>
+</li>
+<li> <m>(x \in A - B) \quad \equiv \quad \left( (x \in A) \land (x \not\in B)\right) \quad \equiv \quad \left((x \in A) \land \neg(x \in  B) \right)</m>
+</li>
+</ul>
+</p>
+</li>
+</dl>
+</p>
+
+</slide>
+
+
+<slide><title>A subset example</title>
+<proposition>
+  <statement>
+    <p>
+      Let <m>A = \set{n \in \mathbb{Z} \st 6\mid n}</m>
+      and
+      <m>B = \set{n \in \mathbb{Z} \st 2\mid n}</m>, then <m>A \subseteq B</m>
+    </p>
+  </statement>
+</proposition>
+<p>
+  <term>Scratch work</term>
+  <p>
+    <ul>
+      <li>We need to prove <m>a \in A \implies a \in B</m></li>
+      <li>So assume that <m>a \in A</m>. Hence <m>a</m> is an integer divisible by 6</li>
+      <li>This means <m>a = 6k</m> for some <m>k \in \mathbb{Z}</m>.</li>
+      <li>We need to show that <m>a \in B</m> which means we need to show that <m>2 \mid a</m></li>
+      <li>But since <m>a = 6k</m>, we know <m>a=2 \cdot 3k</m> so, <m>2 \mid a</m> as required.</li>
+    </ul>
+  </p>
+</p>
+
+</slide>
+
+<slide><title>Write it up nicely</title>
+<blockquote>
+<p><m>
+A =\set{n \in \mathbb{Z} \st 6 \mid n} \subseteq
+\set{n \in \mathbb{Z} \st 2 \mid n} = B
+</m>
+</p>
+</blockquote>
+<proof>
+<p>
+  <ul>
+    <li>Let the sets <m>A,B</m> be as stated and assume that <m>a \in A</m>.</li>
+    <li>Hence we know that <m>6 \mid a</m> and so <m>a = 6k</m></li>
+    <li>This implies that <m>a = 2 (3k)</m> and so <m>2 \mid a</m></li>
+    <li>By the definition of the set <m>B</m>, <m>a \in B</m></li>
+    <li>So <m>A \subseteq B</m> as required</li>
+  </ul>
+</p>
+</proof>
+
+</slide>
+
+<slide><title>Another example</title>
+<proposition>
+  <statement>
+    <p>
+      Let <m>A,B,C</m> be sets. If <m>A\subseteq B</m> and <m>B \subseteq C</m> then <m>A \subseteq C</m>.
+    </p>
+  </statement>
+</proposition>
+<p>
+  <term>Scratch work</term>
+  <ul>
+    <li>
+      <p>
+        What do we assume? That <m>A\subseteq B</m> and <m>B \subseteq C</m>.
+      </p>
+    </li>
+    <li><p>What do we need to prove? <m>A \subseteq C</m>, that is
+    <m>
+      \qquad (x \in A) \implies (x \in C)
+    </m>
+    </p>
+    </li>
+    <li><p>
+  A problem <mdash /> what do we assume? Either <m>x \in A</m> or <m>x \not \in A</m>.
+  <ul>
+    <li>
+      <p>
+      If <m>x \in A</m> then since <m>A \subseteq B</m>, <m>x \in B</m>.
+    </p>
+      <p>
+        Then since <m>x \in B</m> and <m>B \subseteq C</m>, <m>x \in C</m>
+      </p>
+  </li>
+  <li>
+    If <m>x \not\in A</m> then the implication <q><m>(x \in A) \implies (x \in C)</m></q> is true.
+</li>
+  </ul>
+</p>
+</li>
+</ul>
+</p>
+</slide>
+
+<slide><title>Write it up</title>
+<blockquote>
+<p><m>(A \subseteq B) \land (B \subseteq C) \implies (A \subseteq C)</m></p>
+</blockquote>
+<proof>
+<p>
+  <ul>
+    <li>Assume that <m>A \subseteq B</m> and <m>B \subseteq C</m>.</li>
+    <li>Further let <m>x \in A</m></li>
+    <li>Since <m>A \subseteq B</m>, we know that <m>x \in B</m></li>
+    <li>Then similarly, since <m>B \subseteq C</m>, we know that <m>x \in C</m></li>
+    <li>Hence <m>A \subseteq C</m> as required</li>
+  </ul>
+</p>
+</proof>
+
+</slide>
+
+<slide><title>A distributive result</title>
+<proposition>
+  <statement>
+    <p>
+      Let <m>A,B,C</m> be sets, then <m>A \cup (B\cap C) = (A\cup C) \cap (A\cup B)</m>.
+    </p>
+  </statement>
+</proposition>
+<p>
+  <term>Scratch work</term>
+</p>
+<sidebyside width="100%">
+  <image source="figures/AcupBcapC.png"/>
+</sidebyside>
+
+</slide>
+
+<slide><title>Just do one inclusion</title>
+<blockquote>
+  <p><m>A \cup (B\cap C) \subseteq (A\cup C) \cap (A\cup B)</m></p>
+</blockquote>
+<p>
+  <ul>
+    <li>We have to prove <term>LHS</term> is a subset of <term>RHS</term></li>
+    <li>Let <m>x \in </m> <term>LHS</term>. Hence <m>x \in A</m> or <m>x \in B \cap C</m>.</li>
+    <li><p>
+      So we have 2 cases to consider
+      <ul>
+        <li>Assume <m>x \in A</m>. Then <m>x \in A \cup C</m> and <m>x \in A \cup B</m></li>
+        <li><p>
+          Now assume <m>x \in B \cap C</m>, then <m>x \in B</m> and <m>x \in C</m>
+        </p>
+        <p>
+          Since <m>x \in B</m>, we know <m>x \in B \cup A</m>.
+        </p>
+        <p>
+          Similarly <m>x \in C</m>, so <m>x \in C \cup A</m>.
+        </p>
+      </li>
+      </ul>
+    </p>
+    </li>
+    <li>In both cases, <m>x \in A\cup B</m> and <m>x \in A \cup C</m>, so <m>x \in </m> <term>RHS</term> as required</li>
+  </ul>
+</p>
+</slide>
+
+<slide><title>Write it up</title>
+<blockquote>
+  <p><m>A \cup (B\cap C) \subseteq (A\cup C) \cap (A\cup B)</m></p>
+</blockquote>
+<proof>
+  <p>
+    Let <m>x \in A \cup (B\cap C)</m>, so that <m>x \in A</m> or <m>x \in B\cap C</m>. We consider each case separately.
+    <ul>
+      <li>Assume that <m>x \in A</m>, then we know that <m>x \in A \cup B</m>. Simiarly, we have <m>x \in A \cup C</m>.</li>
+      <li><p>
+        Now assume that <m>x \in B\cap C</m>, so that <m>x \in B</m> and <m>x \in C</m>.
+      </p>
+      <p>
+        Since <m>x \in B</m> it follows that <m>x \in B \cup A</m>. Similarly, because <m>x \in C</m>, <m>x \in C \cup A</m>.
+      </p></li>
+    </ul>
+    In both cases, <m>x \in (A \cup B)</m> and <m>x \in (A \cup C)</m>. Hence <m>x \in (A\cup C) \cap (A\cup B)</m> as required.
+  </p>
+</proof>
+
+</slide>
+
+</section>
+
+</slideshow>
+</pretext>

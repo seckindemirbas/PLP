@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pretext>
+
+<docinfo>
+    <macros>
+      \newcommand{\ds}{\displaystyle}
+      \newcommand{\es}{ {\varnothing}}
+  		\newcommand{\st}{ \;\text{s.t.}\; }
+  		\newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+  		\newcommand{\set}[1]{ \left\{#1\right\} }
+      \renewcommand{\neg}{\sim}
+      \renewcommand{\text}[1]{\mathsf{\mbox{#1}}}
+      \DeclareMathOperator{\gcd}{gcd}
+      \DeclareMathOperator{\lcm}{lcm}
+    </macros>
+    <rename element="proposition" xml:lang="en-US">Result</rename>
+</docinfo>
+
+<slideshow>
+<title>PLP - 13</title>
+<subtitle>Topic 13<mdash />Quantifiers</subtitle>
+
+<frontmatter>
+<titlepage>
+  <author>
+    <personname>Demirbaş &amp; Rechnitzer</personname>
+    
+  </author>
+</titlepage>
+
+</frontmatter>
+
+
+<section>
+  <title>Quantifiers</title>
+
+<slide><title>Back to open sentences</title>
+<blockquote>
+  <p>The number <m>x^2</m> is non-negative</p>
+</blockquote>
+<p>
+  This is an <em>open sentence</em>. One can prove this to be true for <em>all real <m>x</m></em>.
+</p>
+<blockquote>
+  <p>For every <m>x \in \mathbb{R}</m>, the number <m>x^2</m> is non-negative.</p>
+</blockquote>
+<p>
+  <ul>
+    <li>The extra text <q><em>For every <m>x \in \mathbb{R}</m></em></q> adds scope.</li>
+    <li>It is an example of a <term>quantifier</term></li>
+    <li>Adding quantifiers to an <term>open sentence</term> turns it into a <term>statement</term></li>
+  </ul>
+</p>
+</slide>
+
+<slide><title>An example</title>
+<p>
+  Consider the open sentence <q><m>P(x): x^2 -5x +4 = 0</m></q> <mdash /> when is it true?
+  <ul>
+    <li><m>P(0)</m> is false</li>
+    <li><m>P(1)</m> is true</li>
+    <li><m>P(2)</m> is false, and so on</li>
+  </ul>
+  To decide truth values we need to decide <em>from what set do we take <m>x</m></em>?
+</p>
+<p>
+  Eg. consider the truth values of <m>P(x)</m> over the set <m>S = \set{0,1,2,3,4}</m>.
+  <me>
+    P(1), P(4) \text{ are true, but } P(0), P(2), P(3) \text{ are false}
+  </me>
+  Summarise this as
+  <ul>
+    <li><m>P(x)</m> is true <em>for some</em> <m>x \in S</m></li>
+    <li><m>P(x)</m> is not true <em>for all</em> <m>x \in S</m></li>
+  </ul>
+  the extra text <q><em>for some</em></q> and <q><em>for all</em></q> are <term>quantifiers</term>.
+</p>
+</slide>
+
+<slide><title>Universal and existential</title>
+<definition>
+<statement><p>
+  <ul>
+    <li><p>
+      The <term>universal quantifier</term> is denoted <m>\forall</m> and is  read as <q>for all</q> or <q>for every</q>.</p>
+      <p>
+        <q><m>\forall x\in A, P(x)</m></q> is true provided <m>P(x)</m> is true for <em>every</em> <m>x\in A</m> and otherwise false.
+      </p>
+  </li>
+  <li><p> The <term>existential quantifier</term> is denoted <m>\exists</m> and is read as <q>there exists</q>.
+</p>
+<p>
+  <q><m>\exists x\in A \text{ so that } P(x)</m></q> is true when <em>at least one</em>  <m>x\in A</m> makes <m>P(x)</m> true, and otherwise false.
+</p>
+</li>
+</ul>
+</p></statement>
+</definition>
+<p>
+  So our example becomes
+  <md>
+  <mrow> \exists x \in S \st x^2-5x+4=0 \amp\amp \text{true}</mrow>
+  <mrow> \forall x \in S, x^2-5x+4=0 \amp\amp \text{false}</mrow>
+  </md>
+  The <q><em>s.t.</em></q> and <q><em>,</em></q>  separate the quantifier and open sentence <mdash /> helps the <term>reader</term>
+</p>
+</slide>
+
+<slide><title>Examples <mdash /> true</title>
+<p>
+  <ul>
+    <li>
+      <p>
+        <m>\exists n \in \mathbb{Z} \st \frac{7n-6}{3} \in \mathbb{Z}</m>
+      </p>
+      <p>
+        True <mdash /> set <m>n=3</m>. Then <m>n \in \mathbb{Z}</m>,
+        <m>\frac{7n-6}{3} = \frac{21-6}{3} = 5 \in \mathbb{Z}</m>.
+      </p>
+      <p>
+        To show <term><m>\exists</m></term> is true we just need 1 value that makes it true.
+      </p>
+    </li>
+  </ul>
+</p>
+<p>
+  <ul>
+    <li>
+      <p>
+        <m>\forall n \in \mathbb{Z}, n^2+1 \in \mathbb{N}</m>
+      </p>
+      <p>
+        True. Let <m>n</m> be <em>any</em> integer. Hence <m>n^2 + 1 \in \mathbb{Z}</m>. Since <m>n</m> is real, we know <m>n^2+1 \geq 1</m>. Hence <m>n^2 + 1 \in \mathbb{N}</m>.
+      </p>
+      <p>
+        To show <term><m>\forall</m></term> is true we must show it is true <em>generically</em>.
+      </p>
+    </li>
+  </ul>
+</p>
+
+<p>
+  <term>You cannot prove universal quantifiers using examples</term>
+</p>
+
+</slide>
+
+<slide><title>Examples <mdash /> false</title>
+<p>
+  <ul>
+    <li>
+      <p>
+        <m>\forall n \in \mathbb{Z} \st \frac{7n-6}{3} \in \mathbb{Z}</m>
+      </p>
+      <p>
+        False <mdash /> set <m>n=1</m>. Then <m>n \in \mathbb{Z}</m>, but
+        <m>\frac{7n-6}{3} = \frac{1}{3} = \not\in \mathbb{Z}</m>.
+      </p>
+      <p>
+        To show <term><m>\forall</m></term> is false we just need 1 value that makes it false.
+      </p>
+    </li>
+  </ul>
+</p>
+<p>
+  <ul>
+    <li>
+      <p>
+        <m>\exists n \in \mathbb{Z} \st -n^2 \in \mathbb{N}</m>
+      </p>
+      <p>
+        False. Let <m>n</m> be <em>any</em> integer. Then since <m>n \in \mathbb{R}</m> we know that <m>n^2 \geq 0</m>, so <m>-n^2 \leq 0</m>. Hence <m>-n^2 \not\in\mathbb{N}</m>.
+      </p>
+      <p>
+        To show <term><m>\exists</m></term> is false we must show it is false <em>generically</em>.
+      </p>
+    </li>
+  </ul>
+</p>
+<p>
+  <term>You cannot disprove existential quantifiers using examples</term>
+</p>
+
+</slide>
+
+<slide><title>Reading quantifiers</title>
+  <p>
+    <dl>
+      <li>
+        <title><m>\exists x \in A, P(x)</m></title>
+        <p>
+          <ul>
+          <li> There exists <m>x</m> in <m>A</m> so that <m>P(x)</m> is true.
+          </li>
+          <li> There is at least one <m>x</m> in <m>A</m> so that <m>P(x)</m> is true.
+          </li>
+          <li> <m>P(x)</m> is true for at least one value of <m>x</m> from <m>A</m>
+          </li>
+          <li> We can find an <m>x</m> in <m>A</m> so that <m>P(x)</m> is true.
+          </li>
+          <li> <ellipsis/>
+          </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <title><m>\forall x \in A, P(x)</m></title>
+        <p>
+          <ul>
+          <li> For all <m>x</m> in <m>A</m>, <m>P(x)</m> is true.
+          </li>
+          <li> For every <m>x</m> in <m>A</m>, <m>P(x)</m> is true.
+          </li>
+          <li> No matter which <m>x</m> we choose from <m>A</m>, <m>P(x)</m> is true.
+          </li>
+          <li> Every choice of <m>x</m> from <m>A</m> makes <m>P(x)</m> true.
+          </li>
+          <li><em><m>(x\in A) \implies P(x)</m></em></li>
+          <li> <ellipsis/>
+          </li>
+          </ul>
+        </p>
+      </li>
+    </dl>
+  </p>
+</slide>
+
+</section>
+</slideshow>
+</pretext>
