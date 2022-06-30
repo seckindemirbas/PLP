@@ -1,0 +1,70 @@
+<exercise>
+<!-- source latex = 'type A type B functions question from homework.tex' -->
+<!-- converted on 24/06/2021 at 16:30 -->
+<statement>
+<p>
+Let <m>f:\mathbb{R}\rightarrow\mathbb{R}</m> and <m>g:\mathbb{R}\to \mathbb{R}</m> be functions. For just this question,
+<ul>
+<li>
+<p>
+ we call <m>f</m> <em>type A</em>, if <m>\forall x\in\mathbb R</m>, <m>\exists y\in\mathbb R</m> such that <m>y\geq x</m> and <m>|f(y)|\geq 1</m>, and
+  </p></li>
+<li>
+<p>
+ we say that <m>g</m> is <em>type B</em> if <m>\exists x\in\mathbb R</m> such that <m>\forall y\in\mathbb R</m>, if <m>y\geq x</m>, then <m>|f(y)|\geq 1</m>.
+</p></li>
+</ul>
+Prove or find a counterexample for the following statements.
+<ol marker="(a)">
+<li>
+<p>
+ If a function is type A, then it is type B.
+</p></li>
+<li>
+<p>
+ If a function is type B, then it is type A.
+</p>
+
+</li>
+</ol>
+</p>
+</statement>
+<hint>
+<p>
+Start with a few simple functions you know well. Sketch them and try to decide if they are type A or type B or neither. Also, you should write out the negations of these definitions; what does it mean if a function is not type A? what does it mean if it is not type B?
+</p>
+</hint>
+<solution>
+<p>
+Notice that to prove either (a) or (b) to be true, we must show that they work for any functions that satisfy the hypotheses. But to show they are false, it is sufficient to find counter-examples.
+</p>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ Disproof: This statement is false. Consider the function <m>f(x)=\sin(x)</m>. We show that this is type A but not type B.
+  <ul>
+<li>
+<p>
+ To see that <m>f</m> is type A, let <m>x</m> be any real number. Since sine is a periodic function with period <m>2\pi</m> and that <m>\sin(\pi/2)=1</m>, we know that there is some point <m>y \in (x,x+2\pi)</m> so that <m>f(y)=1</m>. Hence sine is a type A function.
+    </p></li>
+<li>
+<p>
+ To see that <m>f</m> is not type B, first consider the negation of the definition.  A function <m>g</m> is not type B when
+    <me>
+    \forall x \in \mathbb{R}, \exists y \in \mathbb{R} \text{ such that } (y \geq x) \land (|g(y)|\lt 1).
+    </me>
+    So let <m>x</m> be any real number, and then (using similar reasoning to the above), we know that there will be <m>y \in (x, x+2\pi)</m> so that <m>f(y)=\sin(y)=0</m> (just pick the smallest integer multiple of <m>\pi</m> that is larger than <m>x</m>). Thus sine is not type B.
+  </p></li>
+</ul>
+</p>
+</li>
+<li>
+<p>
+ Proof. We show that any function that is type B is also type A. So assume that the function <m>h</m> is type B. Hence, there is some <m>t \in \mathbb{R}</m> so that when <m>y \geq t</m> then <m>|h(y)| \geq 1</m>. Now, let <m>x \in \mathbb{R}</m>, and then set <m>y = \max\{x,t\}</m>. Since <m>h</m> is type B and <m>y \geq t</m>, it follows that <m>|h(y)| \geq 1</m>. Thus <m>h</m> is type A.
+</p>
+</li>
+</ol>
+</p>
+</solution>
+</exercise>

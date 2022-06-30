@@ -1,0 +1,43 @@
+<exercise>
+<!-- source latex = 'elements_not_in_sets.tex' -->
+<!-- converted on 12/07/2021 at 13:03 -->
+<statement>
+<p>
+Show that each of the numbers
+<me> a=2, \qquad b=8, \qquad \text{and} \qquad c=-12 </me>
+do not belong to any of the following sets:
+<md>
+<mrow>
+A \amp =\set{-\frac{1}{n}\st n\in\mathbb{N}} \amp  \;  \amp B=\set{x\in\mathbb{R} \st x\geq0, \; x^2 \gt 100} 
+</mrow><mrow>
+C \amp =\set{\{2\}, \{8\}, \{-12\}} \amp  \;  \amp D=\set{4k\st k\in\mathbb{N}, \; k \text{ odd}}
+</mrow>
+</md>
+</p>
+</statement>
+<solution>
+<p>
+<ul>
+<li>
+<p>
+ The only integer that belongs to <m>A</m> is <m>-1</m>, so all of the numbers listed are not elements of <m>A</m>.
+</p>
+</li>
+<li>
+<p>
+ The numbers <m>2</m> and <m>8</m> do not belong to <m>B</m> because their squares do not exceed 100; <m>-12</m> is not an element of <m>B</m> because it is negative.
+</p>
+</li>
+<li>
+<p>
+ The elements of <m>C</m> are the set containing <m>2</m>, the set containing <m>8</m>, and the set containing <m>-12</m>. <m>C</m> itself does not actually have the elements <m>2</m>, <m>8</m>, and <m>-12</m>.
+</p>
+</li>
+<li>
+<p>
+ The number <m>2</m> does not belong to <m>D</m> because it is not a multiple of <m>4</m>,  <m>8</m> does not belong to <m>D</m> because it is not an <em>odd</em> multiple of <m>4</m>, and <m>-12</m> does not belong to <m>D</m> because it is not a <em>positive</em> multiple of <m>4</m>.
+</p></li>
+</ul>
+</p>
+</solution>
+</exercise>

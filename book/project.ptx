@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <targets>
+    <target name="html">
+      <format>html</format>
+      <source>source/plp.ptx</source>
+      <publication>publication.ptx</publication>
+      <output-dir>output/html</output-dir>
+    </target>
+    <target name="latex">
+      <format>latex</format>
+      <source>source/plp.ptx</source>
+      <publication>publication.ptx</publication>
+      <output-dir>output/latex</output-dir>
+      <stringparam key="latex.font.size" value="12pt"/>
+    </target>
+  </targets>
+  <executables>
+      <latex>latex</latex>
+      <pdflatex>pdflatex</pdflatex>
+      <xelatex>xelatex</xelatex>
+      <pdfsvg>pdf2svg</pdfsvg>
+      <pdfpng>convert</pdfpng>
+      <pdfeps>pdftops</pdfeps>
+      <pdfcrop>pdf-crop-margins</pdfcrop>
+    </executables>
+</project>

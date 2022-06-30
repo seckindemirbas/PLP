@@ -1,0 +1,34 @@
+<exercise>
+<!-- source latex = 'if A is B difference C then B is A union C question.tex' -->
+<!-- converted on 18/08/2021 at 15:02 -->
+<statement>
+<p>
+Prove or disprove the following statement:
+</p>
+<blockquote>
+<p>
+Suppose <m>A</m>, <m>B</m> and <m>C</m> are sets. If <m>A = B-C</m>, then <m>B = A \cup C</m>.
+</p>
+</blockquote>
+
+
+</statement>
+<hint>
+<p>
+Revise the definition of set-differences and then try to make a small example.
+</p>
+</hint>
+<answer>
+<p>
+At a first glance, this statement looks like a true statement. It is because it sounds like it is saying: <q>if I remove elements of <m>C</m> from <m>B</m> and then add them back again, I get back to <m>B</m></q>. But unfortunately it is not exactly what it says. What it says is: <q>if I remove all elements of <m>C</m> from <m>B</m> and add <em>all</em> the elements of <m>C</m> to it, then you get back to <m>B</m></q>. Now, we see that this doesn't have to be true since the set <m>C</m> may contain element that were not in <m>B</m> in the first place. So those elements wouldn't have been removed when we took the difference, and would be added on top when we took the union. So, as long as the set <m>C</m> has an element that is not in <m>B</m>, we will have a counterexample. Let's see how we can create such a counterexample for this statement.
+</p>
+</answer>
+<solution>
+
+<proof><title>Disproof</title>
+<p>
+  This statement is false. To see this let <m>A=B=\set{1}</m> and <m>C=\set{2}</m>. Then notice that <m>A=B-C</m>, but <m>A\cup C=\set{1,2}\neq\set{1}=B</m>.
+</p></proof>
+
+</solution>
+</exercise>

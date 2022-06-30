@@ -1,0 +1,43 @@
+<exercise>
+<!-- source latex = 'implication_question2.tex' -->
+<!-- converted on 23/06/2021 at 20:47 -->
+<statement>
+<p>
+In <xref ref="ch-contradictions"/>, we will prove that the following implication is true for <m>p=2</m>:
+<md>
+<mrow>
+\text{If } p \text{ is prime, then } \sqrt{p} \text{ is irrational.}
+</mrow>
+</md>
+In fact, this implication is true for any prime number <m>p</m>.
+</p>
+<p>
+Write out the contrapositive, converse, and inverse of this implication.
+Can you determine whether any of these are true or false statements from the fact that the original implication is true?
+</p>
+</statement>
+<solution>
+<p>
+Let <m>P=</m> <q><m>p</m> is prime</q> and <m>Q=</m> <q><m>\sqrt{p}</m> is irrational.</q>
+<ul>
+<li>
+The contrapositive of <m>P\implies Q</m> is <m>\neg Q\implies \neg P</m>, or <q>If <m>\sqrt{p}</m> is rational, then <m>p</m> is not prime.</q>
+</li>
+<li>
+The converse of <m>P\implies Q</m> is <m>Q\implies P</m>, or <q>If <m>\sqrt{p}</m> is irrational, then <m>p</m> is prime.</q>
+</li>
+<li>
+The inverse of <m>P\implies Q</m> is <m>\neg P \implies \neg Q</m>, <q>If <m>p</m> is not prime, then <m>\sqrt{p}</m> is rational.</q>
+</li>
+</ul>
+</p>
+
+<p>
+Since the truth tables of the implication and its contrapositive are the same, the contrapositive is also a true statement.
+Since the truth tables of the converse and inverse differ from that of the original implication, we cannot determine
+whether or not the converse and inverse are true statements from the information provided
+(although they are indeed false, as evidenced by the fact that <m>\sqrt{6}</m> is irrational;
+this is something you could prove using the tools developed later on in this book).
+</p>
+</solution>
+</exercise>

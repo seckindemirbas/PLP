@@ -1,0 +1,42 @@
+<exercise>
+<!-- source latex = 'generalizing_euclids_lemma.tex' -->
+<!-- converted on 26/11/2021 at 16:53 -->
+<statement>
+<p>
+Let <m>a,b,d\in\mathbb Z</m> such that <m>d\mid ab</m>. Show that the integer, <m> \frac{d}{\gcd(a,d)} </m>, divides <m>b</m>.
+</p>
+</statement>
+<hint>
+<p>
+Try modifying the proof of <xref ref="lem-euclid">Euclid's lemma</xref>.
+</p>
+</hint>
+<answer>
+<p>
+<xref ref="lem-euclid"/> proves the statement in the special case that <m>\gcd(a,d)=1</m>. We'll try to modify the proof of that lemma.
+Bézout's identity tells us that there are <m>x,y\in\mathbb Z</m> so that
+<me> \gcd(a,d)=xa+yd. </me>
+We can rewrite this as
+<me> 1 = x\cdot \frac{a}{\gcd(a,d)}+y\cdot\frac{d}{\gcd(a,d)} </me>
+since <m>\gcd(a,d)</m> divides both <m>a</m> and <m>d</m>.
+Now multiplying the entire equation by <m>b</m>, we have
+<me> b=  x\cdot \frac{ab}{\gcd(a,d)}+yb\cdot\frac{d}{\gcd(a,d)}. </me>
+The last step is to use that <m>d\mid ab</m> in order to show that this equation implies that <m>d/\gcd(a,d)</m> divides <m>b</m>.
+</p>
+
+</answer>
+<solution>
+<proof><p>
+Let <m>a,b,d\in\mathbb Z</m> such that <m>d\mid ab</m>.
+By Bézout's lemma, there are some <m>x,y\in \mathbb Z</m> such that <m>\gcd(a,d)=xa+yd</m>. Multiplying the equation by <m>b</m>, we have <m>b\gcd(a,d)=xab+ydb</m>. Since <m>d\mid ab</m>, there is some <m>k\in \mathbb Z</m> so that <m>ab=kd</m>.
+Hence
+<me> b\gcd(a,d)=xab+ydb=xkd+ydb=d(xk+yb). </me>
+Now <m>\gcd(a,d)\mid d</m>, and so there is some <m>\ell\in\mathbb Z</m> so that <m>\ell\gcd(a,d)= d</m>. But then
+<me> b\gcd(a,d)=\ell\gcd(a,d)(xk+yb) </me>
+and as <m>\gcd(a,d)\neq0</m>,
+<me> b=\ell(xk+yb).</me>
+Since <m>xk+yb\in\mathbb Z</m>, we have <m>\ell \mid b</m>. But <m>\ell=d/\gcd(a,d)</m>, and so <m>d/\gcd(a,d)</m> divides <m>b</m>, as required.
+</p></proof>
+
+</solution>
+</exercise>

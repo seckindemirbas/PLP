@@ -1,0 +1,129 @@
+<exercise xml:id="ex_infinite_limits">
+<!-- source latex = 'infinite_limits.tex' -->
+<!-- converted on 30/03/2022 at 15:49 -->
+<statement>
+<p>
+Let <m>(s_n)_{n\in\mathbb{N}}</m> be a sequence. We say that <m>\displaystyle\lim_{n\to\infty}s_n=+\infty</m> if the following holds:
+<md>
+  <mrow>
+    \forall M\gt0, \exists N\in\mathbb{N} \text{ such that } \amp
+  </mrow>
+  <mrow>
+\amp    \forall n\in\mathbb{N}, n\geq N\implies s_n\geq M.
+  </mrow>
+</md>
+</p>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ In words, explain what the definition above means.
+</p>
+</li>
+<li>
+<p>
+ Negate the statement above in order to describe what  <m>\displaystyle\lim_{n\to\infty}s_n\neq+\infty</m> means.
+</p>
+</li>
+<li>
+<p>
+ Show that <m>\displaystyle\lim_{n\to\infty}\sqrt{n}=+\infty</m>
+</p>
+</li>
+<li>
+<p>
+ Show that <m>\displaystyle\lim_{n\to\infty}(-1)^n\sqrt{n}\neq+\infty</m>
+</p>
+</li>
+<li>
+<p>
+ Show that <m>\displaystyle\lim_{n\to\infty}(n^2-100n)=+\infty</m>
+</p>
+
+</li>
+</ol>
+</p>
+</statement>
+<answer>
+ <p>
+  <ul>
+    <li><p>(c):
+ Let <m>M\gt 0</m>. We need to find some <m>N\in \mathbb{N}</m> so that whenever <m>n\geq N</m>, we have <m>\sqrt{n}\geq M</m>.
+But we know that <m>\sqrt{n}\geq M</m> if <m>n\geq M^2</m>, by <xref ref="ex3-sqrt-increasing"/>. Therefore we can take <m>N=M^2</m>.
+</p>
+ </li>
+ <li>
+<p>(d): 
+ We need to show that there is some <m>M\gt0</m>, so that for any <m>N\in\mathbb{N}</m>, there's some <m>n\geq N</m> such that <m>(-1)^n\sqrt{n}\lt M</m>.
+But if <m>n</m> is odd, then <m>(-1)^n\sqrt{n}</m> is negative, so <m>(-1)^n\sqrt{n}\lt M</m>.  Thus we could actually take <m>M</m> to be any positive number, but for the purposes of the proof, we just need to fix a particular value of <m>M</m>.
+For example, we can take <m>M=1</m>.
+</p>
+ </li>
+ <li>
+<p>(e): 
+ Let <m>M\gt 0</m>. We need to find some <m>N\in \mathbb{N}</m> so that whenever <m>n\geq N</m>, we have <m>n^2-100n\geq M</m>.
+Factoring the expression on the lefthand side of the inequality, we have
+<me> n(n-100)\geq M. </me>
+Notice that if <m>n-100\geq 1</m>, then
+<me> n(n-100)\geq n\cdot1=n. </me>
+So if <m>n\geq 101</m> and <m>n\geq M</m> we would have
+<me> n^2-100n =n(n-100)\geq n\geq M, </me>
+as desired. So we need <m>M</m> to satisfy both <m>n\geq M</m> and <m>n\geq 101</m>;
+therefore we can take <m>N=\max\{M,101\}</m>.
+</p>
+ </li>
+  </ul>
+ </p>
+</answer>
+
+<solution>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ The symbolic statement
+<me> \forall M\gt0, \exists N\in\mathbb{N} \text{ such that } \forall n\in\mathbb{N}, n\geq N\implies s_n\geq M </me>
+means that for all <m>M\gt0</m>, there is some <m>N\in\mathbb{N}</m> so that for all <m>n\in\mathbb{N}</m>, if <m>n\geq N</m>, then we have <m>s_n\geq M</m>.
+So, <m>s_n</m> can be made arbitrarily large (larger than <m>M</m>, where <m>M</m> is given), by taking <m>n</m> large enough (larger than <m>N</m>, where the choice of <m>N</m> depends on <m>M</m>).
+</p>
+</li>
+<li>
+<p>
+ The negation of the statement is
+<me> \exists M\gt0 \text{ such that } \forall N\in\mathbb{N}, \exists n\in \mathbb{N} \text{ such that } n\geq N \text{ and } s_n\lt M. </me>
+This means that there is some <m>M\gt 0</m> so that no matter how large we take <m>N</m>, there's some <m>n\geq N</m> with <m>s_n\lt M</m>.
+This doesn't necessarily mean that all the terms are bounded by some fixed number, but rather, that we can always find some `small' value.
+</p>
+</li>
+</ol>
+</p>
+
+<proof><title>Proof of (c)</title>
+<p>
+Let <m>M\gt 0</m>. Take <m>N=M^2</m>. Let <m>n\in\mathbb{N}</m>, and suppose <m>n\geq N</m>. Then <m>n\geq M^2</m>, and so <m>\sqrt{n}\geq M</m>.
+Therefore
+<me>\displaystyle\lim_{n\to\infty}\sqrt{n}=+\infty.</me>
+</p></proof>
+
+
+<proof><title>Proof of (d)</title>
+<p>
+Take <m>M=1</m>, and let <m>N\in \mathbb{N}</m>. If <m>N</m> is odd, then
+<me> (-1)^N\sqrt{N}\lt0\lt M. </me>
+ If <m>N</m> is even, then <m>N+1</m> is odd, and
+ <me>(-1)^{N+1}\sqrt{N+1}\lt0\lt M. </me>
+Thus in any case, there is some <m>n\geq N</m> with <m>(-1)^n\sqrt{n}\lt M</m>. Therefore
+<me>\displaystyle\lim_{n\to\infty}(-1)^n\sqrt{n}\neq+\infty.</me>
+</p>
+</proof>
+
+<proof><title>Proof of (e)</title>
+<p>
+Let <m>M\gt 0</m>. Take <m>N=\max\{M,101\}</m>. Let <m>n\in\mathbb{N}</m>, and suppose <m>n\geq N</m>. Since <m>n\geq N\geq 101</m>, we have <m>n-100\geq 1</m>. Thus
+<me> n^2-100n=n(n-100)\geq n \geq N \geq M. </me>
+Therefore
+<me>\displaystyle\lim_{n\to\infty}(n^2-100n)=+\infty.</me>
+</p></proof>
+
+</solution>
+</exercise>

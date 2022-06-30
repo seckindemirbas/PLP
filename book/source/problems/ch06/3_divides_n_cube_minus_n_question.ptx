@@ -1,0 +1,44 @@
+<exercise>
+<!-- source latex = '3 divides n cube minus n question.tex' -->
+<!-- converted on 05/07/2021 at 10:58 -->
+<statement>
+<p>
+Prove that for all <m>n\in\mathbb Z</m>, <m>3\mid (n^3-n)</m>.
+</p>
+</statement>
+<hint>
+<p>
+You can think about the division algorithm and cases for <m>n</m>. Also try factoring things.
+</p>
+</hint>
+<answer>
+<p>
+We see that this statement is a universal statement. Since we don't have any information on <m>n</m> other than being an integer, we see that we don't really have a useful assumption on <m>n</m>. For example, if <m>n</m> were even, then we could say <m>n=2m</m> for some <m>m\in\mathbb Z</m>. But in this question, <m>n</m> is just an integer, which is a broad assumption without much structure.
+</p>
+<p>
+One strategy to create such structure is to divide our assumption into cases. This may create extra steps, but eventually may help us have <q>something</q> that we can work with. In this example, since we are trying to prove a statement on divisibility by <m>3</m>, it would make sense to look at cases that makes use of division algorithm and divisibility by <m>3</m>.
+</p>
+</answer>
+<solution>
+<proof><p> Let <m>n\in\mathbb{Z}</m>. Notice that <m>n^3-n = n(n-1)(n+1)</m>, so it is sufficient to show that <m>3\mid n(n-1)(n+1)</m>. By division algorithm we see that we have <m>3</m> cases: <m>n=3k</m>, <m>n=3k+1</m> or <m>n=3k+2</m> for some <m>k\in\mathbb Z</m>.
+<ul>
+<li>
+<p>
+  Case 1: <m>n=3k</m>. In this case we have <m>n^3-n=n(n-1)(n+1)=3k(3k-1)(3k+1)</m>. Then, since <m>k(3k-1)(3k+1)\in\mathbb Z</m> we can conclude <m>3\mid (n^3-n)</m>.
+</p>
+</li>
+<li>
+<p>
+ Case 2: <m>n=3k+1</m>. Now we have <m>n^3-n=n(n-1)(n+1)=(3k+1)(3k)(3k+2)</m>. Then, since <m>k(3k+1)(3k+2)\in\mathbb Z</m> we get <m>3\mid (n^3-n)</m>.
+</p>
+</li>
+<li>
+<p>
+ Case 3: <m>n=3k+2</m>. Finally <m>n^3-n=n(n-1)(n+1)=(3k+2)(3k+1)(3k+3)=3(3k+2)(3k+1)(k+1)</m>. Then, since <m>(3k+2)(3k+1)(k+1)\in\mathbb Z</m> we have <m>3\mid (n^3-n)</m>.
+</p></li>
+</ul>
+Hence, for all <m>n\in\mathbb Z</m>, <m>3\mid (n^3-n)</m>.
+</p></proof>
+
+</solution>
+</exercise>

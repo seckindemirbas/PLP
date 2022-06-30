@@ -1,0 +1,53 @@
+<exercise>
+<!-- source latex = 'if square root of k is not integer then it is irrational question.tex' -->
+<!-- converted on 07/12/2021 at 12:28 -->
+<statement>
+<p>
+Prove that if <m>k</m> is a positive integer and <m>\sqrt{k}</m>  is not an integer, then <m>\sqrt{k}</m> is irrational.
+</p>
+</statement>
+<hint>
+<p>
+Prove this by contradiction, but negate the statement carefully. Then, to get more information, Bézout's identity could be very useful.
+</p>
+</hint>
+
+<!-- <answer></answer> -->
+
+<solution>
+
+<proof><p>
+Assume for a contradiction that <m>k</m> is a positive integer, <m>\sqrt{k}</m> is not an integer, but that <m>\sqrt k</m> is rational. Then we see that <m>\sqrt k=\dfrac{a}{b}</m> for some <m>a\in\mathbb Z</m> and <m>b\in\mathbb N</m>, where <m>\gcd(a,b)=1</m>.  This gives us two equations:
+<ul>
+<li>
+<p>
+ By rearranging the expression for <m>\sqrt{k}</m> we have
+  <me>kb^2 = a^2.</me>
+  </p></li>
+<li>
+<p>
+ At the same time, since <m>\gcd(a,b)=1</m>, Bézout's identity implies that there exists integers <m>x,y</m> so that
+  <me>
+    ax +by =1.
+  </me>
+</p></li>
+</ul>
+We can link these two equations together by multiplying the the second by <m>a</m> and then substituing in the first gives
+<me>
+  kb^2x + aby = a.
+</me>
+Factoring this then gives
+<me>
+  b (kbx + ay) = a
+</me>
+and since <m>kbx + ay \in \mathbb{Z}</m>, this implies that <m>b \mid a</m>.
+</p>
+<p>
+We know that <m>\gcd(a,b)=1</m> and so if <m>b \mid a</m>, we must have that <m>b=1</m>. This, in turn, implies that we can write <m>\sqrt{k} = \frac{a}{b} = a \in \mathbb{Z}</m>. This contradicts our assumption that <m>k</m> is not an integer.
+</p>
+<p>
+Therefore the statement is true.
+</p></proof>
+
+</solution>
+</exercise>

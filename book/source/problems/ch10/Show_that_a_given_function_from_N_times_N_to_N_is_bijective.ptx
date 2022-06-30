@@ -1,0 +1,45 @@
+<exercise>
+<!-- source latex = 'Show that a given function from N times N to N is bijective.tex' -->
+<!-- converted on 07/12/2021 at 12:23 -->
+<statement>
+<p>
+Consider the function <me>
+f: \mathbb N\times\mathbb N\rightarrow \mathbb N
+\qquad
+\text{where}
+\qquad
+f(x,y) = 2^{x-1}(2y-1).
+</me>
+Prove that <m>f</m> is bijective.
+</p>
+</statement>
+<hint>
+<p>
+Think how an integer factors.
+</p>
+</hint>
+<solution>
+
+<proof><p>
+We will show that <m>f</m> is injective and then that it is surjective.
+</p>
+<p>
+To prove that <m>f</m> is injective, let <m>(a,b),(c,d)\in\mathbb N \times \mathbb{N}</m> and assume that <m>f(a,b)=f(c,d)</m>. Without loss of generality, let us further assume that <m>a\geq c</m>; the case that <m>a \lt c</m> is very similar.
+</p>
+<p>
+Using the definition of the function, we see that <m>2^{a-1}(2b-1)=2^{c-1}(2d-1)</m>, which implies
+<me>2^{a-c}(2b-1)=(2d-1).</me>
+Notice that the right hand side of this expression, <m>(2d-1)</m>, is odd. On the other hand, the left hand side of the expression has a factor of <m>2^{a-c}</m> and <m>a-c\geq 0</m>. Therefore, we must have <m>a-c=0</m> (so that <m>2^{a-c}=1</m>), otherwise the left hand side will be even. Thus, <m>a=c</m>. Hence, we get <m>(2b-1)=(2d-1)</m>, that is, <m>b=d</m>. Hence <m>(a,b)=(c,d)</m>, and we see that <m>f</m> is injective.
+</p>
+
+<p>
+To prove that <m>f</m> is surjective, let <m>n \in\mathbb N</m>. Then, we know that <m>n </m> has a unique prime factorisation. We can write the factorisation as  <m>n=2^{a_1}3^{a_2}5^{a_3}7^{a_4}\cdots p_m^{a_m}</m> for some <m>m\in\mathbb N</m> where <m>a_i\in\mathbb N\cup \set{0}</m> for all <m>i\in\set{1,2,3,\cdots, m}</m>.
+</p>
+<p>
+Since the product of odd numbers is odd, we see that <m>3^{a_2}5^{a_3}7^{a_4}\cdots p_m^{a_m}</m> is odd. Thus, there exists <m> \ell\in\mathbb{Z} </m> such that <m>3^{a_2}5^{a_3}7^{a_4}\cdots p_m^{a_m}=2 \ell-1</m>. Note that since that product of primes is positive and odd, we know that <m>\ell \geq 1</m> and so <m>\ell \in \mathbb{N}</m>.
+Similarly, since <m>a_1 \geq 0</m>, we know that <m>k = a_1+1 \in \mathbb{N} </m> and so we can write <m> n=2^{k-1} (2\ell-1)=f(k,\ell) </m> with <m>k,\ell \in \mathbb{N}</m>.
+ Therefore <m>f</m> is surjective.
+</p></proof>
+
+</solution>
+</exercise>

@@ -1,0 +1,81 @@
+<exercise>
+<!-- source latex = 'rewriting_sets.tex' -->
+<!-- converted on 23/06/2021 at 19:43 -->
+<statement>
+<p>
+In each of the following parts, a set is defined in one of three ways:  (1) listing elements between braces, (2) using set builder notation, or (3) describing in words. Rewrite each set in the two forms of which it is not already given.
+For example, since the set in part (a) is given by method (1), write the same set using methods (2) and (3). As another example, since the set in part (c) is given by method (2), write the same set using methods (1) and (3).
+<ol marker="(a)">
+<li>
+<p>
+ <m>A=\set{0, 2, 4, 6, \dots, 100}</m>
+</p></li>
+<li>
+<p>
+ <m>B=\set{3, 9, 27, 81, \dots}</m>
+</p></li>
+<li>
+<p>
+ <m>C=\set{m \st m\in\mathbb{Z}, \; |m|\leq 3}</m>
+</p></li>
+<li>
+<p>
+ <m>D=\set{4k+1 \st k\in\mathbb{Z}}</m>
+</p></li>
+<li>
+<p>
+ The set <m>E</m> of all numbers that are the reciprocal of a natural number.
+</p></li>
+<li>
+<p>
+ The set <m>F</m> of all integers that are two more than a (possibly negative) multiple of 5.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ We can write <m>A</m> in set builder notation in the following two equivalent ways:
+<me> A=\set{m\st m\in\mathbb{Z}, \; 0\leq m\leq 100, \; m\text{ is even}} = \set{2k\st k\in\mathbb{Z}, \; 0\leq k\leq 50} </me>
+We could also describe it in words by saying that <m>A</m> is the set of all even non-negative integers that are at most 100.
+</p></li>
+<li>
+<p>
+  We can write <m>B</m> in set builder notation as follows:
+<me> B = \set{3^n \st n\in\mathbb{N}} </me>
+Also, <m>B</m> is the set of all positive integer powers of three.
+</p></li>
+<li>
+<p>
+ The set <m>C</m> is given in set builder notation. Listing out its elements,
+<me> C=\set{-3, -2, -1, 0, 1, 2, 3} </me>
+Also, <m>C</m> is the set of all integers that are at most three in absolute value.
+</p></li>
+<li>
+<p>
+ Listing out the elements of <m>D</m>, we have
+<me> D =\set{\dots,-11, -7, -3, 1, 5, 9, 13, \dots} </me>
+Since the elements of <m>D</m> <q>go off</q> to both positive and negative infinity, we have ellipsis at the beginning and end of the set.
+We can describe the set in words by saying that <m>D</m> is the set of all integers that are one more than a (possibly negative) multiple of four.
+Alternatively, we could describe <m>D</m> as the set of all integers that have a remainder of one when divided by four.
+</p></li>
+<li>
+<p>
+ The set <m>E</m> is described in words. The set <m>E</m> can be given by listing elements, and using set builder notation, as follows:
+<me> E = \set{1, \frac{1}{2}, \frac{1}{3}, \frac{1}{4},\dots}=\set{\frac{1}{n}\st n\in\mathbb{N}} </me>
+</p></li>
+<li>
+<p>
+ The set <m>F</m> can be given by listing elements, and using set builder notation, as follows:
+<me> F = \set{\dots,-18, -13, -8, -3, 2, 7, 12, 17, 22,\dots}=\set{5k+2 \st k\in\mathbb{Z}}</me>
+</p>
+
+</li>
+</ol>
+</p>
+</solution>
+</exercise>

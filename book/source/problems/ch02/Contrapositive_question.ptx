@@ -1,0 +1,90 @@
+<exercise>
+<!-- source latex = 'Contrapositive question.tex' -->
+<!-- converted on 12/10/2021 at 12:25 -->
+<statement>
+<p>
+Write the contrapositive of the following statements.
+<ol marker="(a)">
+<li>
+<p>
+ If <m>n</m> is a multiple of <m>4</m> and <m>6</m>, then it is a multiple of <m>24</m>.
+    </p></li>
+<li>
+<p>
+ If <m>n</m> is not a multiple of <m>10</m>, then it is a multiple of <m>2</m> but is not a multiple of <m>5</m>.
+    </p></li>
+<li>
+<p>
+ A real number <m>x</m> is less than <m>-2</m> or greater than <m>2</m> if its square is greater than <m>4</m>.
+    </p></li>
+<li>
+<p>
+ <m>(x\in \mathbb{R}) \implies (x^2\in \mathbb{R})\land (x^2\geq 0)</m>.
+    </p></li>
+<li>
+<p>
+ <m>(x\in \mathbb{N}) \implies \neg (x^2=0)</m>.
+    </p></li>
+<li>
+<p>
+ <m>x\in \set{3k:k\in \mathbb{Z}} \implies x\in \set{6k:k\in \mathbb{Z}}</m>
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ If <m>n</m> is not a multiple of <m>24</m>, then it is not a multiple of <m>4</m> or <m>6</m>.
+    </p></li>
+<li>
+<p>
+ We give two ways of writing this; they are quite similar.
+    <ul>
+<li>
+<p>
+ If <m>n</m> is not a multiple of <m>2</m>, but it is a multiple of <m>5</m>, then <m>n</m> is a multiple of 10.
+    </p></li>
+<li>
+<p>
+ If <m>n</m> is a multiple of <m>5</m> and not a multiple of <m>2</m>, then <m>n</m> is a multiple of 10.
+    </p></li>
+</ul>
+    </p></li>
+<li>
+<p>
+ First we rearrange the original statement to be in a format where we can more easily identify the hypothesis and the conclusion:
+    <ul>
+<li>
+<p>
+  If <m>x</m> is a real number whose square is greater than <m>4</m>, then <m>x</m> is less than <m>-2</m> or greater than <m>2</m>.
+    </p></li>
+</ul>
+    We should also make sure we are careful with the inequalities. In the given statement these are strict, <m>x \lt -2</m>, <m>x \gt 2</m>, so when we form the contrapositive they will be inclusive, <m>x \geq -2</m>, <m>x \leq 2</m>.  So the contrapositive is
+    <ul>
+<li>
+<p>
+ If <m>x</m> is between <m>-2</m> and <m>2</m> (inclusive), then the square of <m>x</m> is less than or equal to <m>4</m>.
+    </p></li>
+</ul>
+    </p></li>
+<li>
+<p>
+ <m>(x^2\not \in \mathbb{R}) \lor (x^2 \lt 0) \implies x\not \in \mathbb{R}</m>.
+    </p></li>
+<li>
+<p>
+ <m>x^2=0\implies x\not\in \mathbb{N}</m>.
+    </p></li>
+<li>
+<p>
+  <m>x \not\in \set{6k:k\in \mathbb{Z}} \implies x\not\in \set{3k:k\in \mathbb{Z}}.</m>
+</p>
+</li>
+</ol>
+</p>
+</solution>
+</exercise>

@@ -1,0 +1,81 @@
+<exercise>
+<!-- source latex = 'deducing_truth_values.tex' -->
+<!-- converted on 30/06/2021 at 13:46 -->
+<statement>
+<p>
+Let <m>P</m>, <m>Q</m>, <m>R</m>, and <m>S</m> be statements. Suppose that
+<ul>
+<li>
+<p>
+ <m>S</m> is true,
+</p></li>
+<li>
+<p>
+<q> <m> \big( R\lor(\neg P)\big) \implies \big(Q\land (\neg S)\big)</m></q> is true, and
+</p></li>
+<li>
+<p>
+ <q><m> P \iff \big(Q\lor (\neg S) \big) </m></q> is true.
+</p></li>
+</ul>
+Determine the truth values of <m>P</m>, <m>Q</m>, and <m>R</m>.
+</p>
+</statement>
+<hint>
+<p>
+Is the conclusion of the implication true or false? What does that tell you?
+</p>
+</hint>
+<answer>
+<p>
+Since <m>S</m> is true, <m>\neg S</m> is false, and consequently the conclusion of the implication, <m>Q\land (\neg S)</m>, is false.
+But since the implication is true, its hypothesis <m> R\lor(\neg P)</m> must also be false. If the hypothesis were true while the
+conclusion were false, then the implication would be false.
+</p>
+<p>
+Since <m> R\lor(\neg P)</m> is false, both <m>R</m> and <m>\neg P</m> are false. So <m>R</m> is false while <m>P</m> is true.
+</p>
+<p>
+Finally, we use that <m> P \iff \big(Q\lor (\neg S) \big) </m> is true. Since <m>P</m> is true, <m>Q\lor (\neg S) </m> must also be true.
+But <m>\neg S</m> is false, so <m>Q</m> must be true.
+</p>
+<p>
+We have deduced that <m>P</m> and <m>Q</m> are true while <m>R</m> is false.
+</p>
+<p>
+Alternatively, we could solve this question by analyzing the truth tables of the implication and biconditional. We only include the rows where <m>S</m> is true, since this is given in the question.
+</p>
+
+<tabular left="minor" right="minor" top="minor" bottom="minor" halign="center">
+<row>
+<cell><m>P</m>  </cell><cell>  <m>Q</m>  </cell><cell>  <m>R</m>  </cell><cell> <m>S</m>  </cell><cell>  <m> R\lor(\neg P)</m>  </cell>
+<cell>   <m>\big( R\lor(\neg P)\big) \implies \big(Q\land (\neg S)\big)</m>  </cell><cell>  <m> P \iff \big(Q\lor (\neg S) \big) </m> </cell>
+</row><row>
+<cell>T  </cell><cell>  T   </cell><cell>  T  </cell><cell>  T  </cell><cell>  T  </cell><cell>  F  </cell><cell> T</cell>
+</row><row>
+<cell>T  </cell><cell>  T   </cell><cell>  F  </cell><cell>  T  </cell><cell>  F  </cell><cell>  T  </cell><cell> T</cell>
+</row><row>
+<cell>T  </cell><cell>  F   </cell><cell>  T  </cell><cell>  T  </cell><cell>  T  </cell><cell>  F  </cell><cell>  F</cell>
+</row><row>
+<cell>T  </cell><cell>  F   </cell><cell>  F  </cell><cell>  T  </cell><cell>  F  </cell><cell>  T  </cell><cell>  F</cell>
+</row><row>
+<cell>F  </cell><cell>  T   </cell><cell>  T  </cell><cell>  T  </cell><cell>  T  </cell><cell>  F  </cell><cell> F</cell>
+</row><row>
+<cell>F  </cell><cell>  T   </cell><cell>  F  </cell><cell>  T  </cell><cell>  T  </cell><cell>  F  </cell><cell> F</cell>
+</row><row>
+<cell>F  </cell><cell>  F   </cell><cell>  T  </cell><cell>  T  </cell><cell>  T  </cell><cell>  F  </cell><cell>  T</cell>
+</row><row>
+<cell>F  </cell><cell>  F   </cell><cell>  F  </cell><cell>  T  </cell><cell>  T  </cell><cell>  F  </cell><cell>  T</cell>
+</row>
+</tabular>
+
+<p>
+The only row in which the implication and biconditional are true is row 2, so we look at this row to discern the truth values of <m>P</m>, <m>Q</m>, and <m>R</m>: <m>P</m> is true, <m>Q</m> is true, and <m>R</m> is false.
+</p>
+</answer>
+<solution>
+<p>
+<m>P</m> is true, <m>Q</m> is true, and <m>R</m> is false.
+</p>
+</solution>
+</exercise>

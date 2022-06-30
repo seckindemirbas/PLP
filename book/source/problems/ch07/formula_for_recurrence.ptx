@@ -1,0 +1,39 @@
+<exercise>
+<!-- source latex = 'formula_for_recurrence.tex' -->
+<!-- converted on 08/11/2021 at 10:43 -->
+<statement>
+<p>
+Let <m>a_0,a_1,a_2,\dots</m> be a sequence recursively defined as <m>a_0=2</m>, <m>a_1=1</m>, and
+<me> a_n = a_{n-1}+6a_{n-2} \quad \text{for } n\geq 2.</me>
+Prove by induction that
+<me> a_n = (-2)^n+3^n \quad \text{for all } n\geq0. </me>
+</p>
+</statement>
+
+<!-- <hint></hint> -->
+
+<answer>
+<p>
+We want to prove this statement by induction on <m>n</m>. Since <m>a_0</m> and <m>a_1</m> are not given by the recurrence relation, we'll prove that the formula is satisfied for <m>n=0</m> and <m>n=1</m> in the base case.
+When <m>n\geq 2</m>, we have to use the recurrence relation <m>a_n = a_{n-1}+6a_{n-2}</m> to prove that the formula holds. We can do this by plugging in the formula for <m>a_{n-1}</m> and <m>a_{n-2}</m>.
+Consequently, for the inductive hypothesis, we need to rely on the statement for <m>n-1</m> and <m>n-2</m>, not just <m>n-1</m>. Therefore we need to use strong induction.
+</p>
+
+
+</answer>
+<solution>
+<proof>
+<p>
+Let <m>n\in\mathbb{N}</m>.
+We proceed with strong induction on <m>n</m>. The result holds for <m>n=0</m> and <m>n=1</m>, since
+<me> a_0=2=(-2)^0+3^0, \quad a_1=1=(-2)^1+3^1. </me>
+Now suppose that <m>k\geq 1</m> and for all <m>n\leq k</m>, we have <m>a_n=(-2)^n+3^n</m>.
+Then by the recurrence for the sequence, and the inductive hypothesis, we have
+<me> a_{k+1}=a_k+6a_{k-1}=(-2)^k+3^k+6\left((-2)^{k-1}+3^{k-1}\right) </me>
+We can rewrite this as
+<me> a_{k+1}=(-2)^k+3^k-3(-2)^{k}+2\cdot 3^{k}=-2\cdot (-2)^k+3\cdot 3^k=(-2)^{k+1}+3^{k+1} </me>
+Therefore the result holds for <m>n=k+1</m>, and so, by strong induction, all <m>n\in\mathbb{N}\cup\{0\}</m>.
+</p></proof>
+
+</solution>
+</exercise>

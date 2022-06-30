@@ -1,0 +1,43 @@
+<exercise>
+<!-- source latex = 'preimages of differences question.tex' -->
+<!-- converted on 27/11/2021 at 15:22 -->
+<statement>
+<p>
+Let <m>A, B</m> be sets and <m>f:A\to B</m> be a function from <m>A</m>to <m>B</m>. Then prove that if <m>E</m> and <m>F</m> are subsets of <m>B</m>, then
+<me>f^{-1}(E-F) = f^{-1}(E)-f^{-1}(F).</me>
+</p>
+<p>
+Remember that since we do not know whether or not <m>f</m> is a bijection, <m>f^{-1}</m> denotes the preimage of <m>f</m> not its inverse.
+</p>
+</statement>
+<hint>
+<p>
+Recall that
+<me>
+  x \in f^{-1}(D) \iff f(x) \in D.
+</me>
+Also, <xref ref="def_modus_tollens">modus tollens</xref> can help you.
+</p>
+</hint>
+
+<solution>
+
+<proof><p>
+We have to prove that <m>LHS \subseteq RHS</m> and <m>RHS \subseteq LHS</m>.
+<ul>
+<li>
+<p>
+ Let <m>x \in LHS</m>. Then, by definition of the preimage, we know that <m>f(x) \in E-F</m>. Since <m>x \in E</m>, we know that <m>x \in f^{-1}(E)</m>. Similarly since we know (via <xref ref="def_modus_tollens">modus tollens</xref>) that <m>f(x) \not \in f(F)</m> implies <m> x \not\in f^{-1}(F) </m>. Hence <m>x \in f^{-1}(E)-f^{-1}(F) = RHS</m>.
+</p>
+</li>
+<li>
+<p>
+ Now let <m>x \in RHS</m>, so that <m>x \in f^{-1}(E)</m> and <m>x \not\in f^{-1}(F)</m>. Since <m>x\in f^{-1}(E)</m>, the definition of the preimage implies that <m>f(x) \in E</m>. Similarly (again via <xref ref="def_modus_tollens">modus tollens</xref>) since <m>x \not\in f^{-1}(F)</m>, it follows that <m>f(x) \not\in F</m>.
+    So <m>f(x)\in E-F</m> and the definition of preimage implies that <m>x\in f^{-1}(E-F) = LHS</m>.
+</p></li>
+</ul>
+We now conclude: <m>f^{-1}(E)-f^{-1}(F)= f^{-1}(E-F)</m>
+</p></proof>
+
+</solution>
+</exercise>

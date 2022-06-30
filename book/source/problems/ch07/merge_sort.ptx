@@ -1,0 +1,91 @@
+<exercise>
+<!-- source latex = 'merge_sort.tex' -->
+<!-- converted on 19/11/2021 at 10:51 -->
+<statement>
+<p>
+For <m>n \in \mathbb{N}</m>, consider the recurrence
+<me>
+  T(1)=1 \qquad\text{and for } n \geq 2 \qquad T(n) = 2 T\left( \left\lfloor \frac{n}{2}  \right\rfloor \right) + n
+</me>
+The first few values of <m>T(n)</m> are
+<me>
+  1, 4, 5, 12, 13, 16, 17, 32, 33, \dots
+</me>
+Use strong induction to prove that for <m>n \geq 1 </m>, <m> T(n) </m> satisfies the bound
+<me>
+    T(n) \leq  n \log_2 n + n.
+</me>
+</p>
+<p>
+Note that the logarithm has base 2, and that the floor function, <m> \lfloor x\rfloor</m>, gives the largest integer smaller or equal to <m>x</m>.
+</p>
+<p>
+Recurrences such as this one appear very frequently in the analysis of <q>divide and conquer</q> algorithms. That class of algorithms (roughly speaking) work by repeatedly splitting a larger problem into smaller pieces until they can be solved trivially. The interested reader should search-engine their way to more information.
+</p>
+</statement>
+<hint>
+<p>
+You can simplify the analysis of the floor function by studying even and odd values separately.
+</p>
+</hint>
+<solution>
+
+<proof><p>
+  We prove the result by strong induction.
+  <ul>
+<li>
+<p>
+ When <m>n=1</m> we have <m>T(1)=1</m> and since <m>1 \log_2 1 +1 = 1</m>, the result holds.
+    </p></li>
+<li>
+<p>
+ Now assume that the result holds for all <m>1 \leq k \leq \ell</m> and we wish to show that it holds for <m>k= \ell+1</m>. Since the recurrence is slightly different for even or odd <m>k=\ell+1</m>, we split into two cases.
+    <ul>
+<li>
+<p>
+ Assume that <m>k=\ell+1 = 2j</m>, then
+      <md>
+<mrow>
+        T(k)  \amp = 2T(j) + k 
+</mrow><mrow>
+         \amp  \leq 2\left( j \log_2(j) + j \right) + k 
+</mrow><mrow>
+         \amp  = 2j \log_2(j) + 2j + k 
+</mrow><mrow>
+         \amp = k \log_2\left(\frac{2j}{2}\right) + 2k 
+</mrow><mrow>
+         \amp = k \left( \log_2(k) - \log_2(2) \right) +2k 
+</mrow><mrow>
+         \amp = k\log_2(k) + k,
+       </mrow>
+</md>
+       since <m> \log_2(2) = 1</m>.
+       </p></li>
+<li>
+<p>
+ Now assume that <m>k=\ell+1 = 2j+1</m>, then
+       <md>
+<mrow>
+         T(k)  \amp = 2T(j) + k 
+</mrow><mrow>
+          \amp  \leq 2\left( j \log_2(j) + j \right) + k 
+</mrow><mrow>
+          \amp  = 2j \log_2(j) + 2j + k 
+</mrow><mrow>
+          \amp = k \log_2\left(\frac{2j}{2}\right) + 2k-1 
+</mrow><mrow>
+          \amp = k\log_2(k) + k-1 \lt k\log_2(k)+k
+        </mrow>
+</md>
+        where again we have used <m> \log_2(2) = 1</m>.
+    </p></li>
+</ul>
+    In both cases the inductive step holds.
+  </p></li>
+</ul>
+  Since both the base case and inductive step are true, the result follows by induction.
+</p>
+</proof>
+
+</solution>
+</exercise>

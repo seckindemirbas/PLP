@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<exercises>
+<exercisegroup>
+<introduction>
+  <p>
+  Prove the following statements
+  </p>
+</introduction>
+<exercise>
+  <statement>
+    <p>
+      If <m>n</m> is even then <m>n^2+3n+5</m> is odd.
+    </p>
+  </statement>
+  <answer>
+    <proof>
+      <p>
+        Assume <m>n</m> is even. Then we know <m>n=2k</m> for some <m>k\in\mathbb{Z}</m>.
+        Hence, <m>n^2+3n+5=(2k)^2+3(2k)+5=2(2k^2+3k+2)+1</m>.
+        Since <m>2k^2+3k+2\in\mathbb{Z}</m> for <m>k\in\mathbb{Z}</m>, we see  <m>n^2+3n+5</m> is odd.
+      </p>
+    </proof>
+  </answer>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      The product of two odd numbers is odd.
+    </p>
+  </statement>
+  <answer>
+    <proof>
+    <p>
+      Assume <m>n,m</m> are odd integers. Then we know <m>n=2k+1</m> and
+      <m>m=2l+1</m> for some <m>k,l\in\mathbb{Z}</m>. Thus, <m>nm=(2k+1)(2l+1)=2(2kl+k+l)+1</m>. Therefore, since <m>2kl+k+l\in\mathbb{Z}</m> for <m>k,l\in\mathbb{Z}</m>, we see <m>nm</m> is odd.
+    </p>
+  </proof>
+  </answer>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      Let <m>n,a,b,x,y\in\mathbb{Z}</m>. If <m>n\mid a</m> and <m>n\mid b</m>, then <m>n\mid (ax+by)</m>.
+    </p>
+  </statement>
+  <answer>
+    <proof>
+    <p>
+      Assume <m>n,a,b,x,y\in\mathbb{Z}</m>, <m>n\mid a</m>, and <m>n\mid b</m>.
+      This implies that <m>a=nk</m> and <m>b=nl</m> for some <m>k,l\in\mathbb{Z}</m>.
+      Thus, <m>ax+by=nkx+nly=n(kx+ly)</m>. Since <m>kx+ly\in\mathbb{Z}</m> for <m>k,x,l,y\in\mathbb{Z}</m>, then we see <m>n\mid (ax+by)</m>.
+    </p>
+    </proof>
+  </answer>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      Let <m>n\in\mathbb{Z}</m>. If <m>3\mid (n-4)</m>, then <m>3\mid (n^2-1)</m>.
+    </p>
+  </statement>
+  <answer>
+    <proof>
+    <p>
+      Assume that <m>n\in\mathbb{Z}</m> and <m>3\mid (n-4)</m>.
+      Then we see that <m>(n-4)=3k</m> for some <m>k\in\mathbb{Z}</m>.
+      Thus, <m>n=3k+4</m>, which implies <m>n^2-1= (3k+4)^2-1=(9k^2+24k+16)-1= 3(3k^2+8k+5)</m>. Therefore, since <m>3k^2+8k+5\in\mathbb{Z}</m> for <m>k\in\mathbb{Z}</m>, we see <m>3\mid (n^2-1)</m>.
+    </p>
+  </proof>
+  </answer>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      Let <m>a\in \mathbb{Z}</m>. If <m>3\mid a</m> and <m>2\mid a</m>, then <m>6\mid a</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      Let <m>a\in\mathbb{Z}</m>.
+      Assume that <m>2\mid a</m> and <m>3\mid a</m>.
+      This implies <m>a=2k</m>for some <m>k\in\mathbb{Z}</m> and <m>a=3m</m> for some <m>m\in\mathbb{Z}</m>.
+      Thus, we see <m>3a=6k</m> and <m>2a=6m</m>.
+      Hence, <m>a=3a-2a=6k-6m=6(k-m)</m>, and therefore, since <m>(k-m)\in\mathbb{Z}</m> for <m>k,l\in\mathbb{Z}</m>, we see tjat <m>6\mid a</m>.
+    </p>
+  </solution>
+</exercise>
+
+<exercise>
+  <statement>
+      <p>Let <m>a,b \in \mathbb{R}</m> with <m>a,b \gt 0</m>. Prove that
+      <me>
+        a \lt b \qquad \implies \qquad a^2 \lt b^2
+      </me>
+      Also prove that the converse holds.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      Assume that <m>0 \gt a \leq b</m>. Since <m>a,b</m> are both positive we can multiply these this inequality by both and preserve the sign of the inequality, giving:
+      <me>
+        a^2 \leq ab \qquad \text{ and } ab \leq b^2
+      </me>
+      Putting these together we get <m>a^2 \leq ab \leq b^2</m> as required.
+    </p>
+    <p>
+      Now assume that <m>a^2 \leq b^2</m>. Rearrange this to get
+      <me>
+        0 \leq b^2 - a^2 = (b-a)(b+a)
+      </me>
+      Since <m>a,b \gt 0</m> we know that <m>b+a\gt 0</m> and so we can divide both sides of the inequality by that to get
+      <me>
+        \frac{0}{b+a} = 0  \leq (b-a)
+      </me>
+      Hence we must have <m>a \leq b</m> as required.
+    </p>
+  </solution>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>
+      Let <m>x \in \mathbb{R}</m>. If <m>x \lt 0</m> then <m>x + \frac{1}{x} \lt -1</m>
+    </p>
+  </statement>
+  <hint><p>Try multiplying the inequality in the conclusion by <m>x</m>.</p></hint>
+  <answer>
+    <proof>
+      <p>Let <m>x \in \mathbb{R}</m>, and assume that <m>x\lt 0</m>. Then
+      <me>
+        (x+1)^2 \geq 0
+      </me>
+      and so
+      <me>
+        (x+1)^2 \gt x
+      </me>
+      Expanding this gives
+      <md>
+        <mrow>x^2+2x+1 \amp\gt x \amp \text{ and so}</mrow>
+        <mrow>x^2 +1 \amp \gt -x </mrow>
+      </md>
+      Dividing both sides by <m>x</m> gives (since <m>x\lt 0</m>)
+      <me>
+        x + \frac{1}{x} \lt -1
+      </me>
+      as required.
+      </p>
+    </proof>
+  </answer>
+  <solution>
+    <p>
+      We assume that <m>x \lt 0</m>. Then the conclusion is
+    <me>
+      x+\frac{1}{x} \lt -1.
+    </me>
+    As per the hint, multiply this by <m>x</m> (remembering that <m>x</m> is negative, so the inequality switches around):
+    <me>
+      x^2 + 1 \gt -x
+    </me>
+    or equivalently
+    <me>
+      x^2 + x +1 \gt 0
+    </me>
+    We should try to make this look like a square. We can do this by adding <m>x</m> to both sides:
+    <me>
+      x^2+2x+1 \gt x.
+    </me>
+    This is
+    <me>
+      (x+1)^2 \gt x
+    </me>
+    We know that a square is always non-negative, so
+    <me>
+      (x+1)^2 \geq 0
+    </me>
+    and we also know that <m>0 \gt x</m> and so we are done. Well <mdash /> except that our scratchwork is backwards.
+    </p>
+  </solution>
+</exercise>
+
+
+</exercisegroup>
+
+<exercise>
+  <statement>
+    <p>
+      Recall that:
+      <ul>
+        <li>
+          <p>
+          <em>The Mean Value Theorem</em> states that if we have a function <m>f</m> which is continuous in the interval <m>[a,b]</m> and differentiable in <m>(a,b)</m>, then whenever <m>x_1,x_2\in[a,b]</m> and <m>x_1\neq x_2</m>, we have a point <m>c\in(x_1,x_2)</m> such that
+          <me> f(x_2)-f(x_1) = f'(c) (x_2-x_1)</me>.
+          </p>
+        </li>
+        <li>
+          <p> a function, <m>g</m>, is <em>strictly increasing</em> if whenever we have <m>x_1 \lt x_2</m> we also have <m>g(x_1) \lt g(x_2)</m>.</p>
+        </li>
+      </ul>
+      Use The Mean Value Theorem to show that if <m>f</m> is a differentiable function and the derivative of <m>f</m> is positive everywhere, then <m>f</m> is a strictly increasing function.
+    </p>
+
+  </statement>
+  <answer>
+    <proof>
+      <p>
+      Assume that <m>f</m> is a differentiable function and its derivative is positive everywhere. Also assume that <m>x_1, x_2\in\mathbb{R}</m> and <m>x_1 \lt x_2</m>.
+      </p>
+      <p>
+       By <em>The Mean Value Theorem</em>, we know that <m>f(x_2)-f(x_1) = f'(c)(x_2-x_1)</m> for some <m>c\in(x_1,x_2)</m>. Since the derivative is positive everywhere, we know that <m>f'(c) \gt 0</m>, and since <m>x_2 \gt x_1</m> we also know that <m>(x_2-x_1)\gt 0</m>. Hence <m>f(x_2)-f(x_1) = f'(c)(x_2-x_1) \gt 0 </m> and <m>f(x_2)\gt f(x_1)</m>.
+      </p>
+
+      <p>Therefore <m>f</m> is a strictly increasing function.</p>
+      </proof>
+  </answer>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>
+      <alert>Definition:</alert> We call a number <m>n</m> an <term>integer root</term> when  <m>n^k=m</m> for some <m>k\in \mathbb{N}</m> and <m>m \in \mathbb{Z}</m>.
+    </p>
+
+    <p>Use this definition to show that if <m>a</m> and <m>b</m> are integer roots, then so is <m>ab</m>.
+    </p>
+  </statement>
+  <hint>
+    <p>Notice that every integer <m>t</m> is an integer root since we can take <m>k=1</m> and <m>m=t</m> as given in the definition. But an integer root does not have to be an integer, since numbers such as <m>\sqrt[3]{7}</m> is an integer root; take <m>k=3</m> and <m>m=7</m> as given in the definition.
+    </p>
+  </hint>
+  <answer>
+    <proof>
+      <p>Assume that <m>a, b</m> are integer roots, then, by definition, there are natural numbers <m>k,l</m> and integers <m>m,s</m> such that <m>a^k=n</m> and <m>b^l=m</m>.
+      Therefore we see that <m>(ab)^{kl}=n^lm^k</m>.
+      Since <m>kl\in\mathbb{N}</m> and <m>n^lm^k\in\mathbb{Z}</m>, we see that <m>ab</m> is also an integer root.
+      </p>
+    </proof>
+  </answer>
+</exercise>
+</exercises>

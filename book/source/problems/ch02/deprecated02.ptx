@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<exercises>
+<exercise>
+<statement>
+  <p>
+    Rewrite the logical operator XOR (exclusive or) using using only
+    <m>\neg, \lor, \land</m>
+    and brackets.
+  </p>
+</statement>
+<hint>
+  <p>
+    A truth table might help.</p>
+</hint>
+<answer>
+  <p>
+    Either
+    <m>(P \lor Q) \land (\neg P \lor \neg Q)</m>
+    or
+    <m>(P \land \neg Q) \lor (Q \land \neg P)</m>
+    are correct.
+  </p>
+</answer>
+<solution>
+      <p>Compute the truth table</p>
+    <sidebyside>
+      <tabular left="minor" right="minor" top="minor" bottom="minor" halign="center">
+    <row>
+      <cell> <m>P</m> </cell><cell> <m>Q</m> </cell><cell> <m>P XOR Q</m> </cell><cell> <m>(P \lor Q) \land (\neg P \lor \neg Q)</m>  </cell><cell> <m>(P \land \neg Q) \lor (Q \land \neg P)</m></cell>
+    </row><row>
+    <cell> T </cell><cell> T </cell><cell> F </cell><cell> F </cell><cell> F</cell>
+    </row><row>
+    <cell> T </cell><cell> F </cell><cell> T </cell><cell> T </cell><cell> T</cell>
+    </row><row>
+    <cell> F </cell><cell> T </cell><cell> T </cell><cell> T </cell><cell> T</cell>
+    </row><row>
+    <cell> F </cell><cell> F </cell><cell> F </cell><cell> F </cell><cell> F </cell>
+    </row>
+    </tabular>
+    </sidebyside>
+    </solution>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          Write the following sentences in symbolic logic notation and determine whether they are true or false. Make sure to note which statements/open sentences are denoted with which letter.
+        </p>
+        <p>For example, the sentence <q>The car is red and blue but not green</q> can be written as
+        <md>
+          <mrow>\amp (P\land Q)\land (\neg R) \amp \text{ where}</mrow>
+          <mrow>\amp P: \text{ The car is red} \amp </mrow>
+          <mrow>\amp Q: \text{ The car is blue} \amp </mrow>
+          <mrow>\amp R: \text{ The car is green} \amp </mrow>
+        </md>
+        Also, the truth value of this sentence depends on the car, so it is an open sentence, not a statement.
+      </p>
+    <p>
+    <ol>
+    <li>  <m>8</m> is even and <m>5</m> is prime.
+    </li>
+    <li>   If <m>n</m> is a multiple of <m>4</m> and <m>5</m>, then it is a multiple of <m>10</m>.
+    </li>
+    <li>  <m>3\leq x\leq 6</m>. </li>
+    <li> A real number <m>x</m> is less than <m>-2</m> or greater than <m>2</m> if its square is greater than <m>4</m>.
+    </li>
+    <li>  If a function <m>f</m> is differentiable everywhere then whenever <m>x\in\mathbb{R}</m> is a local maximum of <m>f</m> we have <m>f'(x)=0</m>.
+    </li>
+    </ol>
+  </p>
+  </statement>
+  <answer>
+    <p>
+    <ol>
+    <li>
+      <p><m>P\land Q</m> where  P: <q><m>8</m> is even</q>, and  Q: <q><m>5</m> is prime</q>.
+      This statement is true.
+    </p>
+    </li>
+    <li> <p><m>(P\land Q)\implies R</m> where P: <q><m>n</m> is a multiple of 4</q>, Q: <q><m>n</m> is a multple of 5</q>, and R: <q><m>n</m> is a multiple of 10</q>.
+    This statement is true.
+  </p>
+    </li>
+    <li> <p> <m>P\land Q</m> where P: <q><m>x\geq 3</m></q>, and Q: <q><m>x\leq 6</m></q>. This is an open sentence.
+    </p>
+    </li>
+    <li>
+      <p> <m>R\implies (P\lor Q)</m> where P: <q><m>x</m> is less than <m>-2</m></q>,  Q: <q><m>x</m> greater than <m>2</m></q>, and R: <q><m>x^2</m> is greater than <m>4</m></q>. This statement is true.
+      </p>
+    </li>
+    <li>
+      <p>
+        <m>P\implies (Q\implies R)</m> where P: <q><m>f</m> is differentiable everywhere</q>, Q: <q><m>x</m> is a local maximum of <m>f</m></q>,  R: <q><m>f'(x)=0</m></q>. This statement is true.
+      </p>
+    </li>
+  </ol>
+</p>
+  </answer>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>In this chapter you learned<fn>You can remind yourself by looking up <xref ref="def-converse-contrapositive">Definition</xref> and <xref ref="rem-cci">Remark</xref>.</fn> about the contrapositive, converse and inverse, and about contraposition, conversion and inversion. We also remarked that the inverse is the converse of the contrapositive (ie if we contrapose and the convert an implication we get the inverse of that implication). Please complete the following table of what happens when we <em>compose</em> the operations of contraposition, conversion and inversion.
+    </p>
+    <sidebyside>
+      <tabular left="minor" right="minor" top="minor" bottom="minor" halign="center">
+        <row>
+          <cell><m>\circ</m></cell>
+          <cell>contraposition</cell>
+          <cell>conversion</cell>
+          <cell>inversion</cell>
+        </row>
+        <row>
+          <cell>contraposition</cell>
+          <cell></cell><cell></cell><cell></cell>
+        </row>
+        <row>
+          <cell>conversion</cell>
+          <cell></cell><cell></cell><cell></cell>
+        </row>
+        <row>
+          <cell>inversion</cell>
+          <cell></cell><cell></cell><cell></cell>
+        </row>
+      </tabular>
+    </sidebyside>
+  </statement>
+  <answer>
+    <sidebyside>
+      <tabular left="minor" right="minor" top="minor" bottom="minor" halign="center">
+        <row>
+          <cell><m>\circ</m></cell>
+          <cell>contraposition</cell>
+          <cell>conversion</cell>
+          <cell>inversion</cell>
+        </row>
+        <row>
+          <cell>contraposition</cell>
+          <cell>original</cell><cell>inverse</cell><cell>converse</cell>
+        </row>
+        <row>
+          <cell>conversion</cell>
+          <cell>inverse</cell><cell>original</cell><cell>contrapositive</cell>
+        </row>
+        <row>
+          <cell>inversion</cell>
+          <cell>converse</cell><cell>contrapositve</cell><cell>original</cell>
+        </row>
+      </tabular>
+    </sidebyside>
+  </answer>
+</exercise>
+</exercises>

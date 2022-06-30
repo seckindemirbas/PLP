@@ -1,0 +1,71 @@
+<exercise>
+<!-- source latex = 'no_smallest_pos_rat_irrat.tex' -->
+<!-- converted on 06/02/2022 at 13:51 -->
+<statement>
+<p>
+Prove each of the following statements:
+<ol marker="(a)">
+<li>
+<p>
+ There is no smallest positive rational number.
+</p></li>
+<li>
+<p>
+ There is no smallest positive irrational number.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<hint>
+<p>
+Try adapting the proof of <xref ref="res_no_smallest_pos_real"/>.
+</p>
+</hint>
+<answer>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ We'll prove the statement by contradiction, and assume that there is some smallest positive rational number, say <m>r</m>.
+We'll try to find a positive rational number that's strictly less than <m>r</m>. Let's consider <m>r/2</m>, which we know satisfies the inequality <m>0\lt r/2\lt r</m>.
+This inequality isn't enough though; we also need to show that <m>r/2</m> is a rational number, and then we'll have reached a contradiction.
+</p>
+
+
+</li>
+<li>
+<p>
+ The proof is very similar to part (a). We'll assume that we have a smallest positive irrational number, say <m>r</m>. We'll try to show that <m>r/2</m> is irrational.
+We can prove this statement by using contradiction as well: assume that <m>r/2</m> is rational, and show this contradicts the assumption that <m>r</m> is irrational.
+</p>
+
+
+</li>
+</ol>
+</p>
+</answer>
+
+<solution>
+  <proof><title>Proof of (a)</title>
+  <p>
+Assume, for a contradiction, that <m>r\in\mathbb{Q}</m> is the smallest positive rational number.
+Then there are <m>a,b\in\mathbb{Z}</m>, <m>b\neq0</m>, such that <m>r=a/b</m>. Thus
+<me> \frac{r}{2} = \frac{a}{2b}</me>
+and as <m>a,2b\in\mathbb{Z}</m> with <m>2b\neq0</m>, we have that <m>r/2</m> is rational. But as <m>r\gt 0</m>,
+<me> 0\lt \frac{r}{2}\lt r, </me>
+so <m>r/2</m> is a positive rational number smaller than <m>r</m>. This contradicts our assumption on <m>r</m>, and so there is no smallest positive rational number.
+</p></proof>
+
+<proof><title>Proof of (b)</title>
+<p>
+Assume, for a contradiction, that <m>r\in\mathbb{R}</m> is the smallest positive irrational number.
+We claim that <m>r/2</m> is also irrational. If this were not the case, then there would be <m>a,b\in\mathbb{Z}</m> with <m>b\neq0</m> such that
+<m>r/2=a/b</m>. But then
+<me> r=\frac{2a}{b}</me>
+and as <m>2a,b\in\mathbb{Z}</m> with <m>b\neq0</m>, we have that <m>r</m> is rational. This is a contradiction, and so <m>r/2</m> must be irrational. Since <m>r\gt0</m>,
+<me> 0\lt \frac{r}{2}\lt r, </me>
+so <m>r/2</m> is a positive irrational number smaller than <m>r</m>. This contradicts our assumption on <m>r</m>, and so there is no smallest positive irrational number.
+</p></proof>
+</solution>
+</exercise>

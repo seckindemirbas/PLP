@@ -1,0 +1,60 @@
+<exercise xml:id="ex_distributive_law">
+<!-- source latex = 'distributive_law.tex' -->
+<!-- converted on 08/11/2021 at 10:42 -->
+<statement>
+<p>
+The <em>distributive law</em> says that for any real numbers <m>a,b,c</m>, we have
+<me> a\cdot(b+c)=a\cdot b+a\cdot c. </me>
+Use induction to show that for any <m>n\geq 2</m> and any real numbers <m>a,b_1,b_2\dots,b_n</m>
+<me> a\cdot(b_1+b_2+\dots+b_n)=a\cdot b_1+a\cdot b_2+\dots+a\cdot b_n. </me>
+</p>
+</statement>
+
+<!-- <hint></hint> -->
+
+
+<answer>
+ <p>
+We want to prove this statement by induction on <m>n</m>.
+<ul>
+<li>
+<p>
+ Base case: Take <m>n=2</m>. Then the distributive law gives the result in this case.
+</p></li>
+<li>
+<p>
+ Inductive step: Assume that the result holds for <m>n=k</m>, and let <m>a,b_1,\dots,b_k,b_{k+1}</m> be real numbers.
+The inductive step tells us that
+<me> a\cdot(b_1+b_2+\dots+b_k)=a\cdot b_1+a\cdot b_2+\dots+a\cdot b_k, </me>
+which we want to use to show that
+<me> a\cdot(b_1+b_2+\dots+b_k+b_{k+1})=a\cdot b_1+a\cdot b_2+\dots+a\cdot b_k+a\cdot b_{k+1}. </me>
+We want to consider the sum <m>b_1+b_2+\dots+b_k+b_{k+1}</m> as the sum of two elements, <m>b_1+b_2+\dots+b_k</m> and <m>b_{k+1}</m>.
+Then the distributive law tells us that
+<me> a\cdot((b_1+b_2+\dots+b_k)+b_{k+1})=a\cdot(b_1+b_2+\dots+b_k)+a\cdot b_{k+1}. </me>
+Then we can apply the inductive hypothesis to obtain the desired result.
+</p></li>
+</ul>
+</p>
+<p>
+Now we can write the formal proof up:
+</p>
+</answer>
+<solution>
+  <proof>
+<p>
+Let <m>n\in\mathbb{N}</m>.
+We proceed by induction on <m>n</m>. When <m>n=2</m>, the result holds by the distributive law. Now assume the result holds for <m>n=k</m>, and suppose that
+<m>a,b_1,b_2,\dots,b_k,b_{k+1}</m> are real numbers. Then
+<me> a\cdot(b_1+b_2+\dots+b_k+b_{k+1})=a\cdot((b_1+b_2+\dots+b_k)+b_{k+1})=a\cdot(b_1+b_2+\dots+b_k)+a\cdot b_{k+1} </me>
+by the distributive law. But by inductive hypothesis,
+<me>a\cdot(b_1+b_2+\dots+b_k)+a\cdot b_{k+1}=a\cdot b_1+a\cdot b_2+\dots+a\cdot b_k+a\cdot b_{k+1}. </me>
+and so
+<me> a\cdot(b_1+b_2+\dots+b_k+b_{k+1})=a\cdot b_1+a\cdot b_2+\dots+a\cdot b_k+a\cdot b_{k+1}. </me>
+Therefore, the result holds for any <m>n\in\mathbb{N}</m>, <m>n\geq 2</m>.
+</p></proof>
+
+<p>
+This proof gives us a general strategy on how we may use induction to extend a result between two objects to a result between any finite number of objects.
+</p>
+</solution>
+</exercise>

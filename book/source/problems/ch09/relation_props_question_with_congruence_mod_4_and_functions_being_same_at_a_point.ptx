@@ -1,0 +1,109 @@
+<exercise>
+<!-- source latex = 'relation props question with congruence mod 4 and functions being same at a point.tex' -->
+<!-- converted on 19/11/2021 at 11:11 -->
+<statement>
+<p>
+Determine whether the following relations are reflexive, symmetric and transitive. Prove your answers.
+</p>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ On the set <m>X</m> of all functions <m>\mathbb R\rightarrow \mathbb R</m>, we define the relation:
+<me>
+f\rel g
+\text{ if there exists }
+x\in \mathbb R
+\text{ such that }
+f(x)= g(x).
+</me>
+</p>
+</li>
+<li>
+<p>
+ Let <m>\rel[S]</m> be a relation on <m>\mathbb Z</m> defined by:
+<me> x\rel[S] y \text { if } xy\equiv 0\pmod 4. </me>
+</p>
+
+</li>
+</ol>
+</p>
+</statement>
+
+<!-- <hint></hint> -->
+
+<answer>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+
+For the first relation, we see that the definition of the relation is symmetric with respect to <m>f</m> and <m>g</m>. This suggests that the relation is symmetric as well. Also, we can see that it is reflexive, since a function is equal to itself at every point. However we see that it may not be transitive since for two functions to be related, they have to be same at a point, and if we have <m>f\rel g</m> and <m>g\rel h</m>, we may have two different points <m>x \neq y\in\mathbb R</m> such that <m>f(x)=g(x)</m> and <m>g(y)=h(y)</m>, but this does not mean that  <m>f</m> and <m>h</m> are equal anywhere. But of course, we will need to find a counterexample to show that the relation is not transitive when we are writing the proof. Simply saying that we can find <m>f,g, h</m> and <m>x,y\in\mathbb R</m> satisfying the condition above is not enough.
+</p>
+</li>
+<li>
+<p>
+ For the second relation, we see that it is symmetric since the definition of the relation is symmetric with respect to <m>x</m> and <m>y</m>. But, we can also see that is is not reflexive since <m>(1,1)\notin\ \rel[S]</m> and also not transitive since every integer is related to <m>0</m>, that is, we can take <m>(1,0)\in\rel[S]</m>, <m>(0,1)\in\rel[S]</m>, but we see that <m>(1,1)\notin\rel[S]</m> as mentioned.
+</p>
+
+</li>
+</ol>
+</p>
+</answer>
+<solution>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+Let <m>\rel</m> be a relation on the set <m>X</m> of all functions <m>\mathbb R\rightarrow \mathbb R</m>, defined as:
+<me>
+f\rel g
+\text{ if there exists }
+x\in \mathbb R
+\text{ such that }
+f(x)= g(x).
+</me>
+<ul>
+<li>
+<p>
+  We see that by definition of the relation, it is reflexive.
+</p></li>
+<li>
+<p>
+ Moreover, if <m>f\rel g</m>, then we know that <m>\exists x\in \mathbb R</m> such that <m>f(x)=g(x)</m>. But, this also means that <m>g(x)=f(x)</m>. Hence the relation is also symmetric.
+</p></li>
+<li>
+<p>
+ But, the relation is not transitive. For a counterexample, let <m>f</m>, <m>g</m> and <m>h</m> such that  <m>f(x)=0</m>, <m>g(x)=x</m> and <m>h(x)=1</m>. We have
+<m>f\rel g</m> and <m>g\rel h</m> but it is not true that <m>f\rel h</m>.
+ </p></li>
+</ul>
+</p></li>
+<li>
+<p>
+
+Let <m>\rel[S]</m> be a relation on <m>\mathbb Z</m> defined by:
+<me> x\rel[S] y \text { if } xy\equiv 0\pmod 4. </me>
+<ul>
+<li>
+<p>
+ We see that <m>(1,1)\notin \rel[S]</m>, since <m>1\cdot 1=1\not\equiv 0\pmod 4</m>. Therefore, the relation is not reflexive.
+</p>
+</li>
+<li>
+<p>
+ This relation is symmetric since if <m>xy\equiv 0\pmod 4</m>, then <m>yx=xy\equiv 0\pmod 4</m>, that is, if <m>(x,y)\in \rel[S]</m>, then <m>(y,x)\in \rel[S]</m>.
+</p>
+</li>
+<li>
+<p>
+ This relation is not transitive. For a counterexample, we can take, <m>a=1, b=0</m>, and  <m>c=1</m>. Then, we see that <m>(1,0), (0,1)\in \rel[S]</m>, whereas, <m>(1,1)\notin \rel[S]</m>.
+</p>
+</li>
+</ul>
+</p>
+</li>
+</ol>
+</p>
+</solution>
+</exercise>

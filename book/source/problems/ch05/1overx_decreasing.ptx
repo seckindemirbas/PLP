@@ -1,0 +1,48 @@
+<exercise>
+<!-- source latex = '1overx_decreasing.tex' -->
+<!-- converted on 18/08/2021 at 14:28 -->
+<statement>
+<p>
+We say that a function <m>f</m> is <em>decreasing</em> on its domain <m>D</m> if for all <m>x,y\in D</m>, whenever <m>x\leq y</m>, we have <m>f(x)\geq f(y)</m>.  Explain why the following statement is false:
+</p>
+<p>
+Let <m>f:\mathbb{R}-\{0\}\to\mathbb{R}</m> be defined by <m>f(x)=1/x</m>. Then <m>f</m> is decreasing.
+</p>
+<p>
+Rewrite the statement to make it true by changing the domain of the function <m>f</m>. Then prove your statement.
+</p>
+</statement>
+<hint>
+<p>
+Try sketching the function.
+</p>
+</hint>
+<answer>
+<p>
+The statement as written is false, which we can see by looking at the value of the function for a negative point in the domain, say <m>x=-1,</m> and then at a positive point in the domain, say <m>y=1</m>.
+Then <m>x\leq y</m> but <m>f(-1)=-1\lt 1=f(1)</m>. So <m>f</m> is not decreasing on all of <m>\mathbb{R} - \{0\}</m>.  We will not run into this issue if we instead restrict the domain of the function to <m>(0,\infty)</m>.
+</p>
+<p>
+Let's rewrite the statement as this: Let <m>f:(0,\infty)\to\mathbb{R}</m> be defined by <m>f(x)=1/x</m>. Then <m>f</m> is decreasing.
+</p>
+<p>
+We are going to take <m>0\lt x\lt y</m> and we want to show that <m>1/x\gt 1/y</m>. To do this start from <m>x\lt y</m> and then divide both sides by <m>xy</m> (which is strictly positive).
+This gives <m>1/y  \lt  1/x</m> as required. Notice that this argument fails precisely when <m>xy</m> is negative, and that happens when <m>x</m> and <m>y</m> have opposite signs - exactly as we saw in our counter-example above.
+</p>
+</answer>
+
+<solution>
+<proof>
+<p>
+Let <m>x,y\in(0,\infty)</m> and suppose that <m>x\leq y</m>. Since both <m>x</m> and <m>y</m> and positive, we can divide this equation by <m>xy</m> to obtain
+<me> f(y)=\frac{1}{y}\leq \frac{1}{x}=f(x). </me>
+Therefore <m>f</m> is decreasing.
+</p>
+</proof>
+
+<p>
+We could have instead restricted <m>f</m> to the domain <m>(a,\infty)</m> for any <m>a \gt 0</m>, or to the domain <m>(-\infty,b)</m> for any <m>b \lt 0</m>, and also obtained a decreasing function.
+So even though the function is decreasing on <m>(-\infty,0)</m> and also on <m>(0,\infty)</m>, it is not decreasing; in order to show that a function is decreasing, we have to look at the function and its domain as a whole.
+</p>
+</solution>
+</exercise>

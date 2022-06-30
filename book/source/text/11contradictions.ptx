@@ -1,0 +1,554 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<chapter  xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="ch-contradictions"><title>Proof by contradiction</title>
+<introduction>
+<p>
+Proof by contradiction is another general proof technique like direct proofs and the contrapositive proofs. When you first encounter proof by contradiction it can seem rather mysterious:
+<ul>
+  <li>Assume to be true something we know is false, then</li>
+  <li>prove garbage, then </li>
+  <li>from this deduce truth!</li>
+</ul>
+But after you get the hang of it, proof by contradiction becomes indispensable.
+</p>
+<warning><title>Not everything is a nail</title>
+<p>
+  One of the reasons that the authors have left this topic until quite late in the text is that we find that students try to use this method for <em>everything</em>. Remember, contradiction is just another method in our toolbox and just because we have a shiny new hammer, not every result is a nail<fn>
+    Remember the Law of the Instrument (or look it up with your favourite search engine).
+  </fn>. Please do not forget the other proof techniques.
+</p>
+</warning>
+
+<p>
+  With that warning out of the way, what is proof by contradiction and how does it differ from other techniques?  Well, roughly speaking, when we use proof by contradiction, we do not seek to prove a statement <m>P</m> to be true, but rather we prove that <m>(\neg P)</m> is false.This might seem to be a delicate and pedantic distinction, but it does make the structure of the resulting proof very different from direct and contrapositive proofs.
+</p>
+<p>
+  Once we know that <m>(\neg P)</m> is false we can deduce that <m>P</m> is true. To do so we rely on the <term>law of the excluded middle</term><fn>Being middle child, one of the authors finds it difficult to not think of the law of the excluded middle as being some sort of analysis of birth-order and family dynamics. The interested reader should continue to the next section of the text in which we discuss it further. <q>It</q> being the law of the excluded middle and not anything to do with middle-child syndrome.</fn> which states that a statement must either be true or its negation must be true:
+<md>
+<mrow>
+  (P \lor (\neg P)) &amp; \text{ is a tautology}
+</mrow>
+</md>
+and also <term>modus tollens</term><fn>or <q>denying the consequent</q> as it is known in less latin moments.</fn>.
+Remember modus ponens is:
+<md>
+<mrow>
+  \left( (P \implies Q) \land P \right) \implies Q
+</mrow>
+</md>
+Modus tollens is (roughly speaking) applying modus ponens to the contrapositive:
+<md>
+<mrow>
+  \left( (P \implies Q) \land \neg Q \right) \implies (\neg P)
+</mrow>
+</md>
+So if we know that an implication <m>P \implies Q</m> is true, and the conclusion <m>Q</m> is false, then the hypothesis <m>P</m> must be false<fn>The skeptical reader should take a quick glimps at the truth table to see why this is so.</fn>.
+</p>
+<p>
+So how do we put these things together to make a proof by contradiction?
+</p>
+</introduction>
+
+<section><title>Structure of a proof by contradiction</title>
+<p>
+Say we wish to prove a statement <m>P</m> to be true. Since
+<me>(P \lor (\neg P)) \text{ is a tautology,}
+</me>
+either we must have <m>P</m> is true or <m>(\neg P)</m> is true.
+<ul>
+<li> Tell the reader something like <q>We will prove this by contradiction</q> otherwise the next step looks like a mistake.
+</li>
+<li> We assume that <m>(\neg P)</m> is true, and then show that this leads to a falsehood <mdash /> a contradiction <mdash /> garbage.
+</li>
+<li> That is, we will construct a change of implications like:
+  <md>
+<mrow>
+    (\neg{P}) &amp; \implies P_1 &amp; \text{ and}
+</mrow><mrow>
+P_1 &amp; \implies P_2 &amp; \text{and}
+</mrow><mrow>
+P_2 &amp; \implies P_3 &amp; \text{and}
+</mrow><mrow>
+    &amp; \vdots
+</mrow><mrow>
+    P_{n-1} &amp; \implies P_n &amp; \text{and}
+</mrow><mrow>
+    P_n &amp; \implies \text{CONTRADICTION}
+  </mrow>
+</md>
+</li>
+<li> The contradiction is a statement that is always false <mdash/> for example
+<me>R \land (\neg R)</me>. But which contradiction do we aim for? Let's discuss that shortly.
+</li>
+<li> Since the contradiction is false, and all of those implications are true, we must have <m>P_n</m> is false (modus tollens).
+</li>
+<li> Similarly, since <m>P_n</m> is false, we know <m>P_{n-1}</m> is false (again, modus tollens).
+</li>
+<li> Keep on moving back up the chain of implications, and we see that <m>(\neg P)</m> must be false.
+</li>
+<li> Thus<fn>By the law of the excluded middle</fn> <m>P</m> is true.
+</li>
+</ul>
+  When when we write this up neatly for the reader we arrive at a proof that looks like the following:
+</p>
+<proof><title>Generic proof-by-contradiction proof</title>
+<p>
+  We prove this result by contradiction. So assume, to the contrary <m>(\neg{P})</m>.
+<ul>
+<li> A chain of implications showing that <q><m>(\neg P) \implies</m> contradiction</q>.</li>
+</ul>
+Thus we conclude that <m>(\neg P)</m> is false, and so <m>P</m> is true.
+</p></proof>
+
+<warning><title>What contradiction should we aim for?</title>
+<p>
+  As we warned earlier, once you are comfortable with the logic of proof by contradiction, it becomes tempting to use if everywhere. However, we caution the reader to use this method after first trying a direct or contrapositive proof.
+  One very good reason for this caution is that a direct or contrapositive proof has a well defined starting point:
+  <ul><li>the hypothesis is true,</li></ul>
+  and a well defined end point:
+  <ul><li>the conclusion is true.</li></ul>
+  By exploring the conclusion in our scratch work we can work out how to make the proof work.
+</p>
+<p>
+  Proof by contradiction starts clearly enough
+  <ul><li>the statement is false,</li></ul>
+  but in contrast with direct and contrapositive proofs, it is not clear what statement we need to generate the contradiction. We know we need <em>some</em> contradiction, but <em>which</em> contradiction we should reach? How do we know where to aim? This can make it much harder.
+</p>
+<p>
+  We can generate a contradiction for our proof by contradiction is to show that one of our assumptions is both true and false. For example, when we start a proof by contradiction, we assume that the result is actually false and this, in turn, requires us to make an assumption, say, <m>Q</m>. <em>One</em> way we can generate a contradiction is to reach a conclusion <m>(\neg Q)</m>. However this is not the <em>only</em> way to generate a contradiction.
+</p>
+</warning>
+
+<p>Let us do a small example, in which the contradiction is quite easy to find.</p>
+
+<proposition xml:id="res_no_smallest_pos_real">
+<statement><p>
+  There is no smallest positive real number.
+</p></statement>
+</proposition>
+
+<p>
+Proof by contradiction can work very nicely for results of this form <q>There is no smallest <m>X</m></q> or <q>There is no largest <m>X</m></q> (where <m>X</m> is some interesting mathematical object). We can construct the proof by
+<ul>
+  <li>assume that there is a smallest <m>X</m>, call it <m>X_1</m>, then</li>
+  <li>use <m>X_1</m> to construct an even smaller <m>X</m>, call it <m>X_2</m></li>
+</ul>
+but then we have
+<ul>
+  <li><m>X_1</m> is the smallest possible <m>X</m>, and at the same time</li>
+  <li><m>X_2</m> is smaller that <m>X_1</m></li>
+</ul>
+This gives us a contradiction of the form
+<me>Q \land \neg Q.</me>
+Let's apply this approach to the above result.
+</p>
+
+<p>Our scratch work should look something like this:
+<ul>
+<li> We'll try a proof by contradiction
+</li>
+<li> The negation of the result is <q>There is a smallest positive real number</q>.
+</li>
+<li> Hence we assume there is a smallest positive real number <mdash/> call it <m> r</m>.
+</li>
+<li> But now the number <m> r/2</m> is a positive real number and <m> r/2  \lt  r</m>.
+</li>
+<li> Contradiction!</li>
+</ul>
+</p>
+
+<proof><title>Proof of <xref ref="res_no_smallest_pos_real"/></title>
+<p>
+  We prove this result by contradiction.
+  Assume the result is false, so there is some smallest positive real number <m>r</m>.
+  But then <m>0  \lt  r/2  \lt  r</m>, making <m>r/2</m> is a smaller positive real number.
+  This contradicts our assumption that <m> r</m> was the smallest positive real number.
+  Hence the result must be true.
+</p>
+</proof>
+
+</section>
+
+<section><title>Some examples</title>
+<introduction>
+<p>
+  We'll start with a couple of good warm-up examples.
+</p>
+<example><title>No integer solutions</title>
+  <statement>
+    <p>
+      There are no integers <m>a,b</m> so that <m>2a+4b=1</m>.
+    </p>
+  </statement>
+<answer>
+<p>
+  Now notice that this result hides some universal quantifiers:
+  <me>
+    \forall a,b \in \mathbb{Z}, 2a+4b \neq 1
+  </me>
+  To prove this using a contradiction we need to assume the negation of this statement. That is, we will assume that
+  <me>
+    \exists a,b \in \mathbb{Z} \st 2a+4b=1.
+  </me>
+  So let <m>a,b</m> be integers so that <m>2a+4b=1</m>. But from this we have (after a quick division by 2)
+  <me>
+    a + 2b = \frac{1}{2}
+  </me>
+  and this is sufficient to get a contradiction; <m>a \in \mathbb{Z}</m> and <m>2b \in \mathbb{Z}</m> so their sum must be an integer. We just need to write this up nicely<fn>and, of course, make sure we warn the reader that we are using proof by contradiction.</fn>.
+</p>
+</answer>
+<solution>
+<proof>
+  <p>
+    Assume, to the contrary, that there exist integers <m>a,b</m> so that <m>2a+4b=1</m>. This implies that
+    <me>
+      a + 2b = \frac{1}{2}
+    </me>
+    which gives a contradiction because the sum of integers is also an integer. Consequently, there can be no such integer <m>a,b</m> and the result follows.
+  </p>
+</proof>
+</solution>
+</example>
+
+<example><title>Another no integer solutions</title>
+  <statement>
+    <p>
+      There are no integers <m>a,b</m> so that <m>a^2-4b=3</m>.
+    </p>
+  </statement>
+<solution>
+<proof>
+  <p>
+    Assume, to the contrary that <m>a,b</m> are integers so that <m>a^2-4b=3</m>. Hence <m>a^2=4b+3</m>. Consequently <m>a</m> must be odd (otherwise the LHS is even while the RHS is odd). So we can write <m>a=2k+1</m> for some integer <m>k</m>. Hence
+    <me>
+      (2k+1)^2 = 4b+3
+    </me>
+    and so
+    <me>
+      4k^2+4k+1 = 4b+3
+    </me>
+    which means that
+    <me>
+      4(k^2+k-b) = 2.
+    </me>
+    And since <m>k^2+k-b \in \mathbb{Z}</m>, this implies that <m>2</m> is divisible by 4. This is clearly false and so we have arrived at a contradiction. Thus there can be no such integers <m>a,b</m> and the result holds.
+  </p>
+</proof>
+</solution>
+</example>
+
+<p>Time for something a bit more substantial <mdash/> a result about irrational numbers. Recall the definition of rational and irrational numbers.</p>
+
+<definition>
+<statement><p>
+  Let <m>q</m> be a real number. We say that <m>q</m> is rational if it can be written <m>q = \frac{a}{b}</m> where <m>a,b \in \mathbb{Z}</m> with <m>b \neq 0</m>. If <m>q</m> is not rational we call it irrational.  We will denote the set of irrational numbers as <m>\mathbb{I}</m>, and note that <m>\mathbb{I} = \mathbb{R} - \mathbb{Q}</m>.
+</p>
+
+</statement>
+</definition>
+
+<p>
+  We note that the notation, <m>\mathbb{I}</m>, is not standard, and some authors will use <m>\mathbb{P}</m> or <m>\mathbb{K}</m>. Unfortunately there is no widely accepted standard notation for the set of irrational numbers. When you do make use of a particular notation for irrational numbers<fn>and we do recommend using <m>\mathbb{I}</m> for this course</fn>, and you are unsure if your reader knows that notation, we recommend that you devote a quick short sentence clarifying to explain.
+</p>
+
+<p>Thus a number <m>q</m> is irrational when (writing it with quantifiers)
+<md>
+<mrow>
+  \forall a,b\in \mathbb{Z}, \left( \frac{a}{b} \neq q \right).
+</mrow>
+</md>
+So a good way to reach a contradiction when working with irrational numbers, is to show that a number that you have assumed to be irrational can actually be written as a ratio of integers. We use exactly this approach for the next result.
+</p>
+
+<proposition xml:id="res_rat_plus_irrat">
+<statement><p>
+ The sum of a rational number and an irrational number is irrational.
+</p></statement>
+</proposition>
+<p>
+  We start by assuming that the result is actually false and then work our way to a contradiction <mdash /> namely that the number we assumed to be irrational is actually rational. It pays, especially when starting out with proof by contradiction, to write statements carefully with  with quantifiers, so that we can also write down the negation carefully. The original statement is
+<me>
+  \forall x \in \mathbb{Q}, \forall y \in \mathbb{I}, x+y \in \mathbb{I}
+</me>
+and its negation is
+<me>
+  \exists x \in \mathbb{Q} \st \exists y \in \mathbb{I} \st x+y \not\in \mathbb{I}
+</me>
+We can simplify this a bit because we know that <m>x+y \in \mathbb{R}</m>, so if it is not irrational, it must be rational:
+<me>
+  \exists x \in \mathbb{Q} \st \exists y \in \mathbb{I} \st x+y \in \mathbb{Q}.
+</me>
+Now we assume <em>this</em> statement is true. And hence we can find a rational number, <m>x = \frac{a}{b}</m>, and an irrational number, <m>y</m>, and their sum <m>x+y</m> is rational.
+One way we could get the contradiction, is to leverage the facts we have (by assumption)
+<me>
+  x \in \mathbb{Q} \qquad y \in \mathbb{I} \qquad \text{and} \qquad x+y \in \mathbb{Q}
+</me>
+to reach a contradiction; in this example we'll show that <m>y \in \mathbb{Q}</m>.
+</p>
+<p>
+Since <m>x\in \mathbb{Q}</m> we know that there are integers <m>a,b</m> so that
+  <me>
+    x  = \frac{a}{b}.
+  </me>
+similarly since <m>x+y\in \mathbb{Q}</m> we know that there are integers <m>c,d</m> so that
+<me>
+  x + y = \frac{c}{d}.
+</me>
+But now we can use these to obtain more information about <m>y</m>:
+<md>
+<mrow>
+  y \amp = (x+y) - x
+</mrow><mrow>
+   \amp = \frac{c}{d}- \frac{a}{b} = \frac{ca-bd}{bd}
+</mrow>
+</md>
+But since all of <m>a,b,c,d \in \mathbb{Z}</m>, we've just shown that <m>y</m> is rational <mdash/> contradiction!
+</p>
+
+<p>Time to write it up. When we do so we should definitely be careful and show that those denominators are not zero.</p>
+
+<proof><title>Proof of <xref ref="res_rat_plus_irrat"/></title>
+<p>
+  We prove the result by contradiction.
+  Assume that the result is false, and so there is a rational number <m>x</m> and an irrational number <m>y</m> whose sum <m>z=x+y</m> is rational.
+  Since <m>x</m> and <m>z</m> are rational, <m>x = a/b</m> and <m>z=c/d</m> for some <m>a,b,c,d \in \mathbb{Z}</m> with <m>b,d \neq 0</m>. But now
+<md>
+<mrow>
+  y &amp;= z-x = \frac{ac-bd}{bd}
+</mrow>
+</md>
+with <m>bd \neq 0</m> and so <m>y</m> must be rational.
+This contradicts our assumption that <m>y</m> was irrational.
+Hence the result is true.
+</p></proof>
+
+<p>
+  When we use proof by contradiction to prove an implication, we just have to negate carefully. Say our statement <m>P</m> is of the form
+<md>
+<mrow>
+  P \equiv \Big( \forall x \in S, Q(x) \implies R(x) \Big)
+</mrow>
+</md>
+Our proof by contradiction needs us to prove that the negation of this statement implies a contradiction. So negating carefully:
+<md>
+  <mrow> (\neg P) \amp \equiv \neg\Big(\forall x \in S, Q(x) \implies R(x) \Big) </mrow>
+  <mrow> \amp \equiv \exists x\in S \st \neg\Big( Q(x) \implies R(x)\Big)</mrow>
+  <mrow> \amp \equiv \exists x\in S \st  \Big(Q(x) \land \neg{R(x)} \Big)</mrow>
+</md>
+So our proof will start by assuming the existence of some <m>x \in S</m> such that <m>Q(x)</m> is true and <m>R(x)</m> is false. Of course, we should make sure that we alert the reader that we are using proof by contradiction. We might say <q>Suppose the statement is false</q> or something similar. Here is example of this in action:
+</p>
+
+<proposition>
+<statement><p>
+ Let <m>a,b \in \mathbb{Z}</m> with <m>a \geq 2</m>. Then <m>a</m> does not divide <m>b</m> or <m>a</m> does not divide <m>b+1</m>.
+</p></statement>
+</proposition>
+
+<p>
+  This statement has an implication hiding inside and can be written as
+  <me>
+  \forall a,b \in \mathbb{Z}, \Big[ (a \geq 2) \implies \big( (a \nmid b) \lor (a \nmid(b+1) ) \big) \Big]
+  </me>
+  so when we negate it we obtain
+  <me>
+    \exists a,b \in \mathbb{Z} \st \Big[ (a \geq 2) \land \big( (a \mid b) \land (a \mid (b+1)) \big) \Big]
+  </me>
+  We'll start<fn>Of course, we'll warn the reader that it is a proof by contradiction before we get too far along. Be kind to your reader.</fn>  our proof by assuming that we can find such integers <m>a,b</m>, so that <m>a \geq 2</m> and <m>a \mid b</m> and <m>a \mid (b+1)</m>. From this we'll reach a contradiction.
+</p>
+
+<proof>
+<p>
+ Assume, to the contrary, that there is some <m>a,b \in \mathbb{Z}</m> so that <m>a \geq 2</m> and <m>a</m> divides both <m>b</m> and <m>b+1</m>. This then implies that there exists <m>k,\ell \in \mathbb{Z}</m> such that <m>b=ak</m> and <m>(b+1) = a\ell</m>.
+</p>
+<p>
+ But then <m>1 = (b+1)-b = (\ell-k) a</m>.
+ Since <m>\ell -k \in \mathbb{Z}</m> this implies that <m>a</m> divides <m>1</m>. This means that <m>a=1</m> or <m>a=-1</m>. This contradicts our assumption that <m>a \geq 2</m>.
+ Hence the result is true.
+</p>
+</proof>
+
+<p>
+  This is not the only way to prove the above result and we could give a quick contrapositive proof which as some similarities with our proof above.
+</p>
+<proof>
+  <p>
+    We prove the contrapositive. So let <m>a,b \in \mathbb{Z}</m> and assume that <m>a \mid b</m> and <m>a \mid (b+1)</m>. Then we know that <m>b = ak, (b+1)=a\ell</m> for some <m>k,\ell \in \mathbb{Z}</m>. But then this tells us that
+    <me>
+      1 = (b+1)-b = a (k-\ell)
+    </me>
+    and so <m>a \mid 1</m>. However the only divisors of <m>1</m> are <m>1,-1</m>. And thus we know that <m>a \lt 2</m> as required.
+  </p>
+</proof>
+
+</introduction>
+<subsection><title>The irrationality of <m>\sqrt{2}</m></title>
+
+<p>
+  The existence of a real quantity whose square is <m>2</m> follows directly from applying Pythagoras's Theorem to the following simple triangle.
+</p>
+
+  <image width="30%" source="hypot"/>
+
+<p>
+  It is, however, much less obvious that <m>\sqrt{2}</m> cannot be expressed as the ratio of two integers; that result is one of the most famous in mathematics. Its proof, and so the proof of the existence of irrational numbers, is generally attributed to a member of the Pythagorean school in the 5th century BC, typically  Hippasus of Metapontum. The evidence that exists linking Hippasus to the discovery of irrational numbers suggests that he was not praised for his work, but, rather, that he was expelled from his school. Some accounts indicate that he was even drowned as punishment! At the time the Pythagorean school thought that the positive integers numbers were somehow fundamental and beautiful and <em>natural</em>. The natural numbers were almost mystical objects and could be deployed to explain the universe. That such a simple and beautiful geometric object <mdash /> the hypotenuse of a right-angle triangle <mdash /> could not be expressed as the ratio of natural numbers was truly shocking. In some sense, it broke the link between number and the world.
+</p>
+
+<theorem xml:id="thm_sqrt2_irrat">
+<statement><p>
+  The number <m>\sqrt{2}</m> is not rational.
+</p></statement>
+</theorem>
+
+<p>
+We prove this result by finding a contradiction <mdash /> that <m>\sqrt{2}</m> is both rational and irrational. The same proof can be made to work (with minor adjustments) for any prime number. A key part of the proof is understanding that when we write a rational number
+<me>
+  q = \frac{a}{b}
+</me>
+that we can insist that <m>a,b</m> do not have common factors. If we do have a representation <m>q = \frac{c}{d}</m> where <m>\gcd(c,d) \gt 1</m>, then we can divide both numerator and denominator by that common factor and set
+<me>
+  q = \dfrac{c}{d} = \frac{c/\gcd(c,d)}{d/gcd(c,d)} = \frac{a}{b}
+</me>
+where the new numerator and denominator, <m>a,b</m> have no common factors. In this way, the resulting <m>a,b</m> are the <em>smallest</em> integers whose ratio represents that rational number.
+Using this idea, our proof works by assuming that <m>\sqrt{2}</m> is rational and so can be represented by a smallest <m>a,b</m> (ie with no common factors). We then obtain a contradiction by showing that the numerator and denominator do have a common factor. Along the way we will make use of a result we proved earlier<fn><xref ref="lem_nodd_iff_n2odd"/> is logically equivalent to the statement <q> The number <m>n^2</m> is even iff <m>n</m> is even</q> (just take the contrapositive of both implications).
+</fn>.
+</p>
+
+<blockquote>
+<p>
+  Let <m>n \in \mathbb{Z}</m>. Then <m>n^2</m> is even if and only if <m>n</m> is even.
+</p></blockquote>
+
+
+<proof>
+<p>
+  We prove the result by contradiction, and so assume that <m>\sqrt{2}</m> is rational.
+  Thus we can write <m>\sqrt{2} = \frac{a}{b}</m> where <m>a,b \in \mathbb{Z}</m> and <m>a</m> and <m>b</m> have <em>no common factors</em>.
+  Hence <m>2 = \frac{a^2}{b^2}</m>, which can be rewritten as <m>2b^2 = a^2</m>.
+</p>
+
+<p>This implies that <m>a^2</m> is even and so (by the above fact) <m>a</m> must be even.
+  Thus we can write <m>a = 2 c</m> for some <m>c \in \mathbb{Z}</m>.
+</p>
+
+<p>  Substituting <m>a=2c</m> into <m>2b^2=a^2</m> we find <m>2 b^2 = 4 c^2</m>, which implies <m>b^2 = 2 c^2</m>.Hence <m>b^2</m> is even and so <m>b</m> must be even.
+</p>
+
+<p>  Since both <m>a</m> and <m>b</m> are even, they must have a common factor of <m>2</m>.
+  This contradicts our assumption that <m>a</m> and <m>b</m> have no common factors.
+  Hence the result is true and <m>\sqrt{2} \not\in\mathbb{Q}</m>.
+</p></proof>
+
+
+<p>
+  Here is another result with a similar proof.
+</p>
+<proposition>
+  <statement>
+    <p>Let <m>a,b,c</m> be odd integers. Then the polynomial <m>ax^2 + bx + c</m> has no rational zeros.
+    </p>
+  </statement>
+</proposition>
+<proof>
+  <p>
+      Assume, to the contrary, that there are odd <m>a,b,c</m> and rational <m>x</m> so that <m>ax^2+bx+c=0</m>. Since <m>x</m> is rational, we know that <m>x=\frac{k}{n}</m> for some integers <m>k,n</m> with <m>n \neq 0</m>. Further, we can assume that <m>k,n</m> have no common factors; if they do have common factors, remove them. Then
+      <me>
+        a\left(\frac{k}{n}\right)+b\left(\frac{k}{n}\right)+c = 0
+      </me>
+      and so (multiplying through by <m>n^2</m>)
+      <me>
+        ak^2+bkn+cn^2 =0
+      </me>
+      Now consider the parity of <m>k</m> and <m>n</m>. There are four possibilities
+      <ul>
+        <li>If <m>k,n</m> are both odd, then since <m>a,b,c</m> are odd, the LHS is also odd, and so cannot equal zero.</li>
+        <li>If <m>k</m> is even and <m>n</m> is odd, then <m>ak^2</m> and <m>bkn</m> are even, and <m>cn^2</m> is odd. Hence the LHS is odd and so cannot equal zero.</li>
+        <li>Similarly, if <m>n</m> is even and <m>k</m> is odd, then <m>bkn</m> and <m>cn^2</m> are even and <m>ak^2</m> is odd. Again this implies the LHS is odd and so cannot equal zero.</li>
+        <li>Finally, if <m>k,n</m> are both even, then this contradicts our assumption that <m>k,n</m> have no common factors.</li>
+      </ul>
+      Thus there cannot exist such <m>k,n</m> and hence there is no such rational <m>x</m>.
+  </p>
+</proof>
+
+<remark><title>Pythagoras' Theorem</title>
+<p>There are a great many proofs of this famous theorem, but here is a pictorial argument that the authors particularly like (and we include here for completeness<fn>and because we can! We hope the reader will agree that it is pretty cool.</fn>). It is attributed to the 12th century mathematician and astronomer Bhaskara<fn>
+Bhāskara, made many contributions to mathematics, including understanding some of the central ideas of differential calculus around 500 years before Newton and Leibniz. The interested reader should use their search engine to discover more. We note that Bhāskara is also known as Bhāskara II to distinguish him from Bhāskara I. Bhāskara I was  a 7th Century mathematician and astronomer, who amongst other acheivements helped to develop the positional notation we use for representing numbers including a circle symbol for zero. He is also worth a trip to your favourite search engine.
+Both Bhāskara have satellites named after them by the Indian Space Research Organisation.
+</fn>.
+Construct a right-angle triangle with sides <m>a,b,c</m>, and then make another 3 copies, each rotated by 90 degrees, and then rearrange those triangles as shown on the right.
+</p>
+
+<image width="66%" source="hypot2"/>
+
+<p>
+Now notice that the outer-square has area <m>(a+b)^2</m>, and the inner rotated square has area <m>c^2</m>. The four triangles have total area <m>2ab</m>. Equating the areas gives <m>(a+b)^2 = c^2+2ab</m>. But since <m>(a+b)^2 = a^2+b^2+2ab</m>, subtracting <m>2ab</m> from each side gives
+<me>
+  c^2 = a^2+b^2.
+</me>
+
+</p>
+</remark>
+
+
+</subsection>
+<subsection xml:id="ssec_inf_primes"><title>The infinitude of primes</title>
+
+<p>Here is wonderful result about a fundamental property of numbers <mdash /> that there are an infinite number of primes. The first recorded proof of this is due to Euclid in his Elements<fn>
+This 13 book work on mathematics has been called the most famous and influential textbook in history. Indeed, it was <em>the</em> standard textbook for university students for many centuries. The interested reader should search-engine their way to more information.
+</fn> from around 300 BC. The result does not rely on unique prime factorisations, but it does require the fact that every integer greater than 1 has a prime divisor. We prove this first via strong induction <mdash/> in fact we did this back in <xref ref="ex_exists_prime_fac"/>.
+</p>
+
+<proposition>
+<statement><p>
+  Let <m>n \in \mathbb{N}</m> so that <m>n \geq 2</m>. Then <m>n</m> is divisible by a prime number.
+</p></statement>
+
+<proof>
+  <p>
+  See <xref ref="ex_exists_prime_fac"/>.    
+  </p>
+</proof>
+</proposition>
+
+<p>
+  Armed with this result, we can prove that the set of primes is not finite.
+</p>
+<theorem><title>Euclid <mdash/> 300 BC</title>
+<statement><p>
+ There are infinitely many primes.
+</p></statement>
+</theorem>
+<p>
+We will prove this using a <q>proof by contradiction</q>. We assume that there are
+only a finite number of primes and then deduce a contradiction. If there are a finite
+number of primes, we can list them out <m>\set{p_1,p_2, \dots p_r}</m> and we can form the
+new number <m>N = p_1 p_2 \dots p_r</m> <mdash/> Now <m>N+1</m> is not on our list and it is
+not divisible by any of the primes. This will be the source of the contradiction (with a
+little more work).
+</p>
+
+<proof>
+<p>
+Assume there are an finite number of primes. Since the primes are finite, we can write a finite list containing all of them <mdash /> <m>p_1, p_2, \dots, p_n</m>. Now let <m>N = (p_1 p_2 \dots p_r)</m> be a product of all the primes. Since the list of primes is finite, we know that <m>N</m> is finite. Now either <m>N+1</m> is prime or not.
+<ul>
+<li> If <m>N+1</m> is prime then since <m>N+1</m> is bigger than all the primes on the list, <m>N+1</m> is not in our list of prime numbers. This gives a contradiction since our list was assumed to be <em>all</em> the primes.
+</li>
+<li><p>
+  If <m>N+1</m> is not prime then, by the above result, it must be divisible by one of the primes in our list <mdash /> say  <m>p_k \mid (N+1)</m>. Hence we can write <m>N+1 = p_k a</m> for some <m>a \in \mathbb{N}</m>. Similarly we can write <m>N = p_k b</m> for some <m>b \in \mathbb{N}</m>. But then
+  <me>1 = (N+1) - N = p_k (a-b).</me>
+  This implies that <m>1</m> is divisible by <m>p_k</m> which is clearly false.
+</p>
+<p>
+Thus <m>N+1</m> is not divisible by any prime on our list and so there must be some prime that is not contained in our list. Again this gives a contradiction since our list as assumed to contain <em>all</em> primes.
+</p>
+</li>
+</ul>
+In both cases a contradiction is obtained and hence the result is true.
+</p>
+</proof>
+</subsection>
+
+</section>
+
+
+<xi:include href="../problems/11ex.ptx"/>
+
+</chapter>

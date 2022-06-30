@@ -1,0 +1,43 @@
+<exercise>
+<!-- source latex = 'Cartesian product with empty set.tex' -->
+<!-- converted on 30/03/2022 at 15:13 -->
+<statement>
+<p>
+Let <m>A</m> be a set. Prove or disprove the following statements. If the statement is false in general, determine if there are any sets for which the statement is true.
+<ol marker="(a)">
+<li>
+<p>
+ <m>A\times \emptyset \subseteq A.</m>
+    </p></li>
+<li>
+<p>
+ <m>A\times \emptyset = A.</m>
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ <em>Claim:</em> The statement is true.
+ </p>
+    <proof><p>
+    By the definition of the Cartesian product, an element of <m>A\times \emptyset</m> takes the form <m>(a,b)</m> where <m>a\in A</m> and <m>b\in \emptyset</m>. But by the definition of the empty set, no such <m>b</m> exists. Therefore the ordered pair <m>(a,b)</m> cannot exist, and we see that there are no elements in <m>A\times \emptyset</m>. Therefore, <m>A\times \emptyset = \emptyset</m>. Hence, <m>A\times \emptyset \subseteq A</m>.
+    </p></proof>
+</li>
+<li>
+<p>
+ <em>Claim:</em> The statement is false for general sets <m>A</m>. It is, however, true when A<m>=\emptyset</m>.
+ </p>
+    <proof><p>
+    We saw in part (a), that <m>A\times \emptyset = \emptyset</m>. Therefore <m>A \subseteq A\times \emptyset = \emptyset</m> if and only if <m>A = \emptyset</m>. Thus, <m>A\times \emptyset = A</m> if and only if <m>A = \emptyset</m>.
+    </p></proof>
+
+</li>
+</ol>
+</p>
+</solution>
+</exercise>

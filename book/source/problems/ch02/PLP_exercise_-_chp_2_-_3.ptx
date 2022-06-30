@@ -1,0 +1,64 @@
+<exercise>
+<!-- source latex = 'PLP exercise - chp 2 - 3.tex' -->
+<!-- converted on 05/07/2021 at 19:37 -->
+<statement>
+<p>
+Indicate whether the following are true or false. Explain your answers.
+<ol marker="(a)">
+<li>
+<p>
+ If <m>x</m> is even, then <m>x\in \{2n : n\in \mathbb{N}\}</m>.
+    </p></li>
+<li>
+<p>
+ If <m>x</m> is prime, then <m>x= 2k+1</m> for some <m>k\in \mathbb{Z}</m>.
+    </p></li>
+<li>
+<p>
+ If <m>x\in \{3k : k\in \mathbb{Z}\}</m> then <m>x\in \{6k : k\in \mathbb{Z}\}</m>.
+    </p></li>
+<li>
+<p>
+ If <m>x\in \{6k : k\in \mathbb{Z}\}</m> then <m>x\in \{3k : k\in \mathbb{Z}\}</m>.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ False. Recall that we can also read this statement as <q>whenever <m>x</m> is an even number, it is also twice a natural number .</q> Notice that the set in the conclusion is the set of positive even numbers, so taking a negative even number, such as <m>x=-2</m>, we see that there is no <m>n\in\mathbb N</m> such that <m>x= 2n</m>.
+    </p>
+</li>
+<li>
+<p>
+ False. The statement can also be read as <q>every prime number is odd,</q> but <m>2</m> is an even prime number, so the statement must be false.
+</p>
+</li>
+<li>
+<p>
+ False. This statement can be read as <q>every multiple of <m>3</m> is a multiple of <m>6</m>.</q>  The number <m>3</m> is a multiple of <m>3</m> (in particular, <m>3=3\cdot 1</m>), but it is not a multiple of <m>6</m>.
+</p>
+</li>
+
+<li>
+<p>
+ True. This statement can be read as <q>every multiple of <m>6</m> is a multiple of <m>3</m>.</q> Here is a brief proof of our claim:
+</p>
+
+<proof><p>
+ Suppose that <m>x\in \{6k : k\in \mathbb{Z}\}</m>. By definition, we may write <m>x = 6k</m> for some <m>k\in \mathbb{Z}</m>. Factoring the <m>6</m> yields <m>x = 3(2k)</m>. Since <m>2k</m> is an integer, we have shown that we can write <m>x</m> as a multiple of <m>3</m>. Hence we may conclude that <m>x\in \{3k : k\in \mathbb{Z}\}</m>, as desired.
+</p>
+</proof>
+
+<p>
+  We will do many more proofs like this in <xref ref="ch-direct"/>.
+</p>
+</li>
+</ol>
+</p>
+</solution>
+</exercise>

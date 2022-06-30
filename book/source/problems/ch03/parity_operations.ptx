@@ -1,0 +1,132 @@
+<exercise>
+<!-- source latex = 'parity_operations.tex' -->
+<!-- converted on 12/10/2021 at 12:28 -->
+<statement>
+<p>
+We have already seen a proof that the product of two odd numbers is also odd.
+We'll now look at the remaining cases for the parity of a product or sum of two integers.
+</p>
+<p>
+For each of the following cases, determine if the resulting number is even or odd, and prove your statement:
+<ol marker="(a)">
+<li>
+<p>
+ the sum of two odd numbers;
+</p></li>
+<li>
+<p>
+ the sum of two even numbers;
+</p></li>
+<li>
+<p>
+ the sum of an even and an odd number;
+</p></li>
+<li>
+<p>
+ the product of two even numbers;
+</p></li>
+<li>
+<p>
+ the product of an even and an odd number.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+
+<!-- <hint></hint> -->
+<answer>
+<p>
+Let's consider the first case: the sum of two odd numbers. We're trying to determine the parity of <m>m+n</m>, where both <m>m</m> and <m>n</m> are odd.
+Since they're both odd, we know that <m>m=2k+1</m> and <m>n=2\ell+1</m> for some integers <m>k,\ell</m>. Then we can write
+<me> m+n = (2k+1)+(2\ell+1)=2k+2\ell+2. </me>
+We want to write <m>m+n</m> in either the form <m>2p</m> or <m>2p+1</m> for some integer <m>p</m>, which is possible depending on whether or not there is a factor of <m>2</m> in <m>m+n</m>, respectively.
+In this case, we can factor out a <m>2</m>:
+<me> m+n = 2(k+\ell+1) </me>
+and so <m>m+n</m> is even. Note also that here we use the fact that <m>k+\ell+1</m> is an integer, since both <m>k</m> and <m>\ell</m> are integers.
+</p>
+<p>
+With this scratch work we can write a formal proof to the statement, <q>the sum of two odd numbers is even.</q>
+The solutions to the remaining parts can be determined using the same logic: first, we'll suppose that <m>m</m> and <m>n</m> are two integers whose parity is given.
+We can then write out <m>m</m> in the form <m>2k</m> if its even, or <m>2k+1</m> if its odd, and similarly for <m>n</m> (although we should be careful not to reuse the variable <m>k</m> in our expression for <m>n</m>). Using these expressions we can then obtain an expression for <m>m+n</m> or <m>mn</m>.
+Then we manipulate this expression so that it's either in the form <m>2p</m> or <m>2p+1</m>, where <m>p</m> is an integer, to determine if it is even or odd.
+</p>
+</answer>
+<solution>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ The sum of two odd numbers is even.
+</p>
+
+<proof>
+<p>
+Let <m>m,n</m> be two odd numbers. Then there are some <m>k,\ell\in\mathbb{Z}</m> such that <m>m=2k+1</m> and <m>n=2\ell+1</m>, and so
+<me> m+n = (2k+1)+(2\ell+1) =2(k+\ell+1). </me>
+Since <m>k,\ell\in\mathbb{Z}</m>, we also have that <m>k+\ell+1</m> is an integer, and thus <m>m+n</m> is even.
+</p>
+</proof>
+
+</li>
+<li>
+<p>
+ The sum of two even numbers is even.
+</p>
+
+<proof>
+<p>
+Let <m>m,n</m> be two even numbers. Then there are some <m>k,\ell\in\mathbb{Z}</m> such that <m>m=2k</m> and <m>n=2\ell</m>, and so
+<me> m+n = (2k)+(2\ell) =2(k+\ell). </me>
+Since <m>k,\ell\in\mathbb{Z}</m>, we also have that <m>k+\ell</m> is an integer, and thus <m>m+n</m> is even.
+</p>
+</proof>
+
+</li>
+<li>
+<p>
+ The sum of an even number and an odd number is odd.
+</p>
+
+<proof>
+<p>
+Let <m>m</m> be an even number and <m>n</m> be an odd number. Then there are some <m>k,\ell\in\mathbb{Z}</m> such that <m>m=2k</m> and <m>n=2\ell+1</m>, and so
+<me> m+n = (2k)+(2\ell+1) =2(k+\ell)+1. </me>
+Since <m>k,\ell\in\mathbb{Z}</m>, we also have that <m>k+\ell</m> is an integer, and thus <m>m+n</m> is odd.
+</p>
+</proof>
+
+</li>
+<li>
+<p>
+ The product of two even numbers is even.
+</p>
+
+<proof>
+<p>
+Let <m>m,n</m> be two even numbers. Then there are some <m>k,\ell\in\mathbb{Z}</m> such that <m>m=2k</m> and <m>n=2\ell</m>, and so
+<me> mn = (2k)(2\ell) =2(2k\ell). </me>
+Since <m>k,\ell\in\mathbb{Z}</m>, we also have that <m>2k\ell</m> is an integer, and thus <m>mn</m> is even.
+</p>
+</proof>
+
+</li>
+<li>
+<p>
+ The product of an even number and an odd number is even.
+</p>
+
+<proof>
+<p>
+Let <m>m</m> be an even number and <m>n</m> be an odd number. Then there are some <m>k,\ell\in\mathbb{Z}</m> such that <m>m=2k</m> and <m>n=2\ell+1</m>, and so
+<me> mn = (2k)(2\ell+1) =2( 2k\ell+k)). </me>
+Since <m>k,\ell\in\mathbb{Z}</m>, we also have that <m> 2k\ell+k)</m> is an integer, and thus <m>mn</m> is even.
+</p>
+</proof>
+
+
+</li>
+</ol>
+</p>
+</solution>
+</exercise>

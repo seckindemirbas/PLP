@@ -1,0 +1,134 @@
+<exercise>
+<!-- source latex = 'Given a function find image and preimage of given sets.tex' -->
+<!-- converted on 06/02/2022 at 13:41 -->
+<statement>
+<p>
+Consider the following functions and their images and preimages.
+<ol marker="(a)">
+<li>
+<p>
+ Consider the function <m>f :\{1,2,3,4,5,6,7\}\rightarrow \{0,1,2,3,4,5,6,7,8,9\}</m> given as
+    <me>f =\{(1,3),(2,8),(3,3),(4,1),(5,2),(6,4),(7,6)\}.</me>
+</p>
+<p>
+    Find: <m>f\big(\{1,2,3\}\big)</m>, <m>f\big(\{4,5,6,7\}\big)</m>, <m>f(\emptyset)</m>, <m>f^{-1}\big(\{0,5,9\}\big)</m> and <m>f^{-1}\big(\{0,3,5,9\}\big)</m>.
+</p>
+</li>
+<li>
+<p>
+ Let <m>g:\mathbb{R}\to \mathbb{R}</m> be defined by <m>g(x) = 4x^2-x-3</m>.
+</p>
+<p>
+    Find: <m> g\left(\set{\frac{1}{8}}\right), g^{-1}(\set{0}), \, g((-1, 0)\cup [3, 4]),\,  \text{ and, } g^{-1}([-10, -5))</m>.
+</p>
+</li>
+<li>
+<p>
+ Define <m>h:\mathbb{R}\to \mathbb{R}</m> by <m>h(t) = \sin(2\pi t)</m>.
+</p>
+<p>
+    Find: <m>h\left(\mathbb{Z}\right), \, h\left(\set{\frac{1}{4}, \frac{7}{2}, \frac{19}{4}, 22} \right),\, h^{-1}(\set{1}),\, \text{and } h^{-1}([0,1))</m>.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ We see that the function can be written as <m>f :\{1,2,3,4,5,6,7\}\rightarrow \{0,1,2,3,4,5,6,7,8,9\} </m> defined by
+  <md>
+<mrow>
+    f(1) \amp =3 \amp
+    f(2) \amp = 8 \amp
+</mrow><mrow>
+    f(3) \amp = 3 \amp
+    f(4) \amp = 1
+</mrow><mrow>
+    f(5)  \amp = 2 \amp
+    f(6)  \amp = 4
+</mrow><mrow>
+    f(7)  \amp = 6.
+</mrow>
+</md>
+</p>
+<p>
+Therefore, we compute
+<md>
+<mrow>
+    f\big(\{1,2,3\}\big) \amp =\set{3,8},
+</mrow><mrow>
+    f\big(\{4,5,6,7\}\big) \amp =\set{1,2,4,6},
+</mrow><mrow>
+    f(\emptyset) \amp =\emptyset
+</mrow><mrow>
+    f^{-1}\big(\{0,5,9\}\big) \amp =\emptyset, \text{ and}
+</mrow><mrow>
+    f^{-1}\big(\{0,3,5,9\}\big) \amp =\set{1,3}.
+</mrow>
+</md>
+</p>
+</li>
+<li>
+<p>
+
+We begin by writing the function <m>g</m> in a few ways. Below, we have written the quadratic in standard form, factored form, and vertex form, respectively.
+<me>g(x) = 4x^2-x-3 = (4x+3)(x-1) = \frac{1}{16}(8x-1)^2 - \frac{49}{16}.</me>
+</p>
+<p>
+From the vertex form of <m>g(x)</m>, we see that the function is symmetric around <m>x=\frac{1}{8}</m>. 
+Then plugging in <m>\frac{1}{8}</m> to <m>g(x)</m>, we find
+<me>g\left(\set{\frac{1}{8}}\right) = \set{-\frac{49}{16}}.</me>
+</p>
+<p>
+Moreover, from the factored form of <m>g(x)</m>, we see that
+<me>g^{-1}(\set{0}) = \set{-\frac{3}{4}, 1}.</me>
+</p>
+<p>
+In particular, the previous two computations tell us that <m>g(x)</m> has a minimum when <m>x = \frac{1}{8}</m>. Therefore, <m>g(x)</m> is decreasing on the interval <m>\left(-\infty, \frac{1}{8}\right)</m> and increasing on <m>\left(\frac{1}{8}, \infty\right)</m>. With this in mind, we compute
+<md>
+<mrow>
+    g((-1, 0)\cup [3, 4])  \amp = g((-1, 0)) \cup g([3,4])
+</mrow><mrow>
+     \amp = \left(g(0), g(-1)\right) \cup [g(3), g(4)]
+</mrow><mrow>
+     \amp = (-3, 2) \cup [30, 57].
+</mrow>
+</md>
+</p>
+<p>
+Finally, since <m>g(x)</m> has a minimum when <m>x = \frac{1}{8}</m>, and <m>g\left(\frac{1}{8}\right) = -\frac{49}{16}</m>, we find
+<me>g^{-1}([-10, -5)) = \emptyset.</me>
+</p>
+</li>
+<li>
+<p>
+  First, we notice that <m>h(t)</m> is <m>1</m>-periodic, that is the function satisfies <m>h(t)=h(t+1)</m>. We use this fact to compute
+<md>
+  <mrow>h(\mathbb{Z}) \amp = h(\set{0}) = \set{0} \text{ and}</mrow>
+  <mrow>h\left(\set{\frac{1}{4}, \frac{7}{2}, \frac{19}{4}, 22} \right) \amp = h\left(\set{\frac{1}{4}, \frac{1}{2}, \frac{3}{4}, 1} \right)
+  </mrow>
+  <mrow>
+    \amp = \set{h\left(\frac{1}{4}\right), h\left(\frac{1}{2}\right), h\left(\frac{3}{4}\right), h(1)} = \set{-1, 0, 1}.
+  </mrow>
+</md>
+</p>
+<p>
+To find the desired preimages, we first find the preimage of <m>h</m> for <m>t\in [0,1)</m>, and then use <m>1</m>-periodicity to find the preimage for <m>t\in \mathbb{R}</m>.
+</p>
+<p>
+For <m>t\in [0,1)</m>, <m> h^{-1}(\set{1}) = \set{\frac{1}{4}}</m>. Therefore for <m>t\in \mathbb{R}</m>,
+<me>h^{-1}(\set{1}) = \set{\frac{1}{4}+k: k\in \mathbb{Z}}.</me>
+</p>
+<p>
+Finally, for <m>t\in [0,1)</m>, <m>h^{-1}([0,1)) = \left[0, \frac{1}{4}\right) \cup \left(\frac{1}{4}, \frac{1}{2}\right]</m>. Therefore for <m>t\in \mathbb{R}</m>,
+<me>h^{-1}([0,1)) = \bigcup_{k\in \mathbb{Z}}\left(\left[k,k+ \frac{1}{4}\right) \cup \left(k+\frac{1}{4}, k+\frac{1}{2}\right]\right).</me>
+</p>
+
+</li>
+</ol>
+</p>
+</solution>
+</exercise>

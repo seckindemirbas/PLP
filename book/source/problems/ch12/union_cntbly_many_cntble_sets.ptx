@@ -1,0 +1,212 @@
+<exercise xml:id="ex_countable_union">
+<!-- source latex = 'union_cntbly_many_cntble_sets.tex' -->
+<!-- converted on 08/03/2022 at 14:57 -->
+<statement>
+<p>
+Consider the following questions about countable unions of countable sets.
+<ol marker="(a)">
+<li>
+<p>
+ Let <m>A_1,A_2,A_3,\dots</m> be denumerable sets, and suppose that <m>A_m\cap A_n=\emptyset</m> whenever <m>m\neq n</m>. Show that
+<me> \bigcup_{n=1}^\infty A_n </me>
+is denumerable as well.
+</p></li>
+<li>
+<p>
+ Now suppose <m>A_1,A_2,A_3,\dots</m> are countable sets, and suppose that <m>A_m\cap A_n=\emptyset</m> whenever <m>m\neq n</m>. Show that
+<me> \bigcup_{n=1}^\infty A_n </me>
+is countable as well.
+</p></li>
+<li>
+<p>
+ Redo part (b), but without the assumption that <m>A_m\cap A_n=\emptyset</m> whenever <m>m\neq n</m>.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<hint>
+<p>
+Try using the diagonal sweeping argument given in the proof of <xref ref="res_prod_of_denum"/>.
+For part (c), try defining new sets <m>B_n</m> such that
+<me> \bigcup_{n=1}^\infty A_n=\bigcup_{n=1}^\infty B_n </me>
+and <m>B_n\cap B_m=\emptyset</m> for <m>m\neq n</m>. Then apply part (b).
+</p>
+</hint>
+
+<answer>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ Since each <m>A_n</m> is denumerable, we can list the elements of each set, like
+<me> A_n=\set{a_{n1},a_{n2},a_{n3},\dots}. </me>
+We can then construct an infinite table, where the <m>n^{th}</m> row of the table lists the elements of <m>A_n</m>.
+Then, just as in the proof of <xref ref="res_prod_of_denum"/>, we can construction a bijection from the natural numbers to the elements of the table
+by sweeping over successive diagonals.
+</p>
+</li>
+<li>
+<p>
+  This part differs to part (a), as the sets <m>A_n</m> may be finite or denumerable. In particular, it's possible that some of the <m>A_n</m> are the empty set.
+</p>
+<p>
+Initially, suppose that only finitely many of the sets <m>A_n</m> are non-empty. We'll return to the other possibility shortly. By relabeling if necessary, we may assume that the first <m>N</m> sets, <m>A_1,\dots,A_N</m> are non-empty, and <m>A_n=\emptyset</m> for <m>n\gt N</m>.
+Then
+<me> \bigcup_{n=1}^NA_n = \bigcup_{n=1}^\infty A_n. </me>
+We are now only taking the union over a finite number of sets, and we need to show that it is countable. <xref ref="res_count_union_intersect"/> tells us that the union of two countable sets is again countable.
+To get that the union of <m>N</m> countable sets is also countable, we'll need to apply induction.
+</p>
+</li>
+<li>
+<p>
+  We would like to define sets <m>B_n</m> such that
+<me> \bigcup_{n=1}^\infty A_n=\bigcup_{n=1}^\infty B_n </me>
+and <m>B_m\cap B_n=\emptyset</m> for <m>m\neq n</m>. That way we may apply part (b) to get the desired result.
+</p>
+<p>
+Let <m>B_1=A_1</m>. Then, let <m>B_2</m> consist of all elements of <m>A_2</m> that are not also elements of <m>A_1</m>. That way <m>A_1\cup A_2= B_1\cup B_2</m>, and <m>B_1\cap B_2=\emptyset</m>, by construction.
+Next, we would define <m>B_3</m> to be all elements of <m>A_3</m> that are not elements of <m>A_1</m> or <m>A_2</m>.  Another way of writing this is
+<me> B_3 = A_3\setminus(A_1\cup A_2). </me>
+We proceed in this manner to define <m>B_n</m> for all <m>n\in\mathbb{N}</m>.
+We need to show that the union of all the sets <m>B_n</m> is equal to the union of all the sets <m>A_n</m>, and that the sets <m>B_n</m> satisfy the conditions of part (b).
+</p>
+
+
+</li>
+</ol>
+</p>
+
+</answer>
+<solution>
+
+  <proof><title>Proof of (a)</title>
+  <p>
+Let <m>A_1,A_2,A_3,\dots</m> be denumerable sets, and suppose that <m>A_m\cap A_n=\emptyset</m> whenever <m>m\neq n</m>.
+Since each <m>A_n</m> is denumerable, we have
+<me> A_n=\set{a_{n1},a_{n2},a_{n3},\dots}. </me>
+We can construct the following infinite table:
+<me>
+\begin{array}{c|cccc}
+A_1  \amp  a_{11},  \amp a_{12},  \amp a_{13}, \amp \cdots 
+\\
+A_2  \amp  a_{21},  \amp a_{22},  \amp a_{23}, \amp \cdots 
+\\
+A_3  \amp  a_{31},  \amp a_{32},  \amp a_{33}, \amp \cdots 
+\\
+\vdots  \amp  \vdots \amp  \vdots \amp  \vdots \amp  \ddots
+\end{array}
+</me>
+Define the function <m>f:\mathbb{N}\rightarrow \cup_{n=1}^\infty A_n</m> as
+<me>
+\begin{array}{cccc}
+f(1)=a_{11}  \amp   \amp   \amp   
+\\
+f(2)=a_{12}  \amp  f(3)=a_{21} \amp   \amp   
+\\
+f(3)=a_{13}  \amp  f(4)=a_{22}  \amp  f(5)=a_{31} \amp  
+\\
+f(6)=a_{14}  \amp  f(7)=a_{23}  \amp  f(8)=a_{32}  \amp  f(9)=a_{41}
+\end{array}
+</me>
+and so on. Since every element <m>a_{nk}</m> is eventually reached (it will be reached after a finite number of diagonal sweeps, and each of these diagonal sweeps has finite length), <m>f</m> is surjective.
+The assumption that <m>A_m\cap A_n=\emptyset</m> whenever <m>m\neq n</m> implies that there are no repeated elements in the table. The diagonal sweeping counts every element in the table only once, and so <m>f</m> is injective.
+</p></proof>
+
+
+<proof><title>Proof of (b)</title>
+<p>
+We claim that <m>A_1\cup\cdots \cup A_k</m> is countable for each <m>k\in\mathbb{N}</m>. This is the case for <m>k=1</m>, by assumption.
+Suppose that it is true for <m>k=n</m>. Then
+<me> A_1\cup \cdots\cup A_n\cup A_{n+1}=\left(A_1\cup \cdots\cup A_n\right)\cup A_{n+1} </me>
+is the union of two countable sets, and so countable itself, by <xref ref="res_count_union_intersect"/>. Thus the result holds for <m>k=n+1</m>.
+Thus by induction, the result holds for all <m>k\in\mathbb{N}</m>, and in particular, for <m>k=N</m>.
+</p>
+<p>
+Now assume that there are infinitely many sets that are non-empty. By removing the empty sets, and relabeling if necessary, we may assume that <m>A_n\neq\emptyset</m> for all <m>n\in\mathbb{N}</m>.
+The argument to prove that the union of these sets is countable is similar to part (a). We can construct a table with the <m>n^{th}</m> row listing the elements of <m>A_n</m>.
+There is at least one element in every row, but some rows may have only finitely many elements.
+</p>
+<p>
+We can construct a bijection <m>f:\mathbb{N}\rightarrow\cup_{n=1}^\infty A_n</m> by sweeping over diagonals of the table. However, some positions in the table may be empty.
+For example, suppose that <m>|A_1|=2</m> and <m>|A_2|=1</m>, and the table looks like
+<me>
+\begin{array}{c|cccc}
+A_1  \amp  a_{11},  \amp a_{12}  \amp   \amp  
+\\
+A_2  \amp  a_{21}  \amp   \amp  \amp  
+\\
+A_3  \amp  a_{31},  \amp a_{32},  \amp a_{33}, \amp \cdots 
+\\
+A_4  \amp  a_{41},  \amp a_{42},  \amp a_{43}, \amp \cdots 
+\\
+\vdots  \amp  \vdots \amp  \vdots \amp  \vdots \amp  \ddots
+\end{array}
+</me>
+Then <m>f</m> would be given by
+<me>
+\begin{array}{cccc}
+f(1)=a_{11}  \amp    
+\\
+f(2)=a_{12}  \amp  f(3)=a_{21} 
+\\
+f(4)=a_{13}  \amp   
+\\
+f(5)=a_{32}  \amp  f(6)=a_{41} 
+\end{array}
+</me>
+and so on and so on. Notice that the first column of our table contains no empty spaces, because each set <m>A_n</m> is non-empty.
+We need to make sure that we don't pass over infinitely many empty spaces in the table one after another. If this were the case, <m>f(n)</m> would be defined for only finitely many <m>n\in\mathbb{N}</m>, and we wouldn't reach every element in the table.
+Indeed this cannot happen. Each diagonal sweep starts from a (possibly empty) spot in the topmost row and moves to the leftmost column in a finite number of steps. Since the leftmost column contains no empty spaces, each diagonal sweep reaches a non-empty space in the table after a finite number of steps.
+</p>
+</proof>
+
+<proof><title>Proof of (c)</title>
+<p>
+Let <m>A_1,A_2,A_3,\dots</m> be countable sets. Let <m>B_1=A_1</m>. For <m>n\gt 1</m>, let
+<me> B_n = A_n \setminus\left(\cup_{m=1}^{n-1} A_m\right). </me>
+We claim that
+<me>
+\bigcup_{n=1}^\infty A_n=\bigcup_{n=1}^\infty B_n
+</me>
+and that <m>B_n\cap B_m=\emptyset</m> for <m>n\neq m</m>.
+First we show (1). Suppose that
+<me> x\in \bigcup_{n=1}^\infty A_n. </me>
+Let
+<me> N = \min\{n:x\in A_n\}. </me>
+Then <m>N</m> exists, since <m>\{n:x\in A_n\}</m> is non-empty (as <m>x</m> is an element of the union, so must be in some <m>A_n</m>), and a subset of the natural numbers (so it has a minimum).
+Then
+<me> x\not\in \bigcup_{m=1}^{N-1} A_m </me>
+as <m>x\not\in A_m</m> for <m>1\leq m\leq N-1</m> by choice of <m>N</m>.
+Combining this with the fact that <m>x\in A_N</m>, we have
+<me> x\in B_N = A_N\setminus\left(\cup_{m=1}^{N-1} A_m\right). </me>
+</p>
+<p>
+Therefore
+<me> x\in B_N\subset \bigcup_{n=1}^\infty B_n. </me>
+Conversely, suppose
+<me> y\in \bigcup_{n=1}^\infty B_n.</me>
+Then there is some <m>n</m> such that
+<me> y\in B_n = A_n \setminus\left(\cup_{m=1}^{n-1} A_m\right) </me>
+implying that <m>y\in A_n</m>.
+Thus (1) is established.
+</p>
+<p>
+Now we show that the sets <m>B_n</m> are disjoint. Let <m>m\neq n</m>. Without loss of generality, we may assume that <m>m\lt n</m>, as we may relabel if necessary.  Then
+<me>B_m\subset A_m\subset \bigcup_{k=1}^{n-1} A_k. </me>
+So, when choosing elements of <m>A_n</m> to include in <m>B_n</m>, we leave out any elements that appear in <m>B_m</m>. That is,
+<me> B_m\cap B_n =B_m \cap \left(A_n\setminus \left(\cup_{k=1}^{n-1} A_k \right)\right) </me>
+is empty.
+</p>
+<p>
+Finally, for all <m>n\in\mathbb{N}</m>, <m>B_n\subset A_n</m>, and so <m>|B_n|\leq |A_n|</m>. Since <m>A_n</m> is countable, <m>B_n</m> is countable as well.
+</p>
+<p>
+By part (b),  <m>\cup_{n=1}^\infty B_n </m>
+is countable, and hence by (1),
+<m> \bigcup_{n=1}^\infty A_n </m>
+is countable as well.
+</p></proof>
+
+</solution>
+</exercise>

@@ -1,0 +1,2236 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<chapter  xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="ch_relations"><title>Relations</title>
+<introduction>
+<p>
+A great number of equations that we see in mathematics tell us about the relationship between two objects.
+For example
+<ul>
+<li> <m>a \lt b</m> <mdash/> the number <m>a</m> is strictly less than the number <m>b</m>.
+</li>
+<li> <m>a|b</m> <mdash/> the number <m>a</m> is a divisor of the number <m>b</m>.
+</li>
+<li> <m>a=b</m> <mdash/> the quantities <m>a</m> and <m>b</m> are equal.
+</li>
+<li> <m>a \in B</m> <mdash/> the object <m>a</m> is a member of the set <m>B</m>.
+</li>
+<li> <m>a \equiv b \mod n</m> <mdash/> <m>a</m> and <m>b</m> have the same remainder when divided by <m>n</m>.
+</li>
+</ul>
+We haven't seen this last one yet, but we will soon <mdash/> it is a way of generalising the notions of odd and even numbers.
+</p>
+
+<p>These symbols
+<me>
+  \lt \qquad | \qquad = \qquad \in \qquad \equiv
+</me>
+  all encode relationships between objects.
+Of course, all the relationships we've stated above are quite different however, there is something to be gained from developing a general theory of how <term>relations</term> behave and underline what they have in common.
+</p>
+
+<p>Consider the symbol that we use to denote divisibility.
+We say that
+<md>
+<mrow>
+  a | b  &amp; \iff b=ak \text{ where } k\in \mathbb{Z}
+</mrow>
+</md>
+You can think of <q><m>|</m></q> as some sort of operator that takes two objects and declares some relationship between them.
+Here, both of those objects come from the same set <mdash/> namely the integers.
+</p>
+
+<p>Similarly, the symbol we use to denote set membership
+<md>
+<mrow>
+  a \in B
+</mrow>
+</md>
+tells us that the object <m>a</m> lies inside the object <m>B</m>.
+Again, this symbol <q><m>\in</m></q> can be an operator that takes two objects and declares a relationship between them.
+In this case, in contrast with the previous case, the objects need not come from the same set <mdash/> <m>a</m> could be an integer and <m>B</m> a subset of integers.
+</p>
+
+<p>In each case, the symbol is declaring a relationship between two objects.
+</p>
+
+<p>One more.
+Consider the set <m>A= \set{1,2,4,8} </m>, and all the comparisons we can make between those numbers using <q>is divisible by</q>.
+Now since there are 4 numbers, we can make <m>4^2</m> comparisons:
+<md>
+<mrow>
+  1\mid 1 &amp;&amp; 1\mid 2 &amp;&amp; 1\mid 4 &amp;&amp; 1\mid 8
+</mrow><mrow>
+  2\nmid 1 &amp;&amp; 2\mid 2 &amp;&amp; 2\mid 4 &amp;&amp; 2 \mid 8
+</mrow><mrow>
+  4\nmid 1 &amp;&amp; 4\nmid 2 &amp;&amp; 4\mid 4 &amp;&amp; 4\mid 8
+</mrow><mrow>
+  8\nmid 1 &amp;&amp; 8\nmid 2 &amp;&amp; 8\nmid 4 &amp;&amp; 8 \mid 8
+</mrow>
+</md>
+Notice a couple of things here:
+<ul>
+<li> The comparisons require an ordered pair of numbers,
+</li>
+<li> When the relation is true we use <q><m>|</m></q>, and when it is false, we just draw a line through it and write <q><m>\nmid</m></q>.
+</li>
+<li> The valid comparisons are just a set of ordered pairs <mdash/> in particular it forms a subset of <m>A\times A</m>.
+</li>
+</ul>
+We could form a similar set of comparisons using the <q>is less than</q> relation:
+<md>
+<mrow>
+  1 \nless 1 &amp;&amp; 1  \lt  2 &amp;&amp; 1 \lt  4 &amp;&amp; 1 \lt  8
+</mrow><mrow>
+  2\nless 1 &amp;&amp; 2 \nless 2 &amp;&amp; 2 \lt  4 &amp;&amp; 2  \lt  8
+</mrow><mrow>
+  4\nless 1 &amp;&amp; 4\nless 2 &amp;&amp; 4\nless 4 &amp;&amp; 4  \lt  8
+</mrow><mrow>
+  8\nless 1 &amp;&amp; 8\nless 2 &amp;&amp; 8\nless 4 &amp;&amp; 8 \nless 8
+</mrow>
+</md>
+or with the rather silly <q>starts with an earlier letter when written in German</q>
+comparison<fn>
+For the non-germanophone or those without ready access to dictionary or online translation service: 1 = ein, 2=zwei, 4=vier, 8=acht.
+</fn>.
+We don't have a ready symbol for this comparison, so we'll just use <m>\rel</m> and put a slash through it, <m>\nrel</m>, to show when the comparison does not hold.
+<md>
+<mrow>
+  1 \nrel 1 &amp;&amp; 1 \rel 2 &amp;&amp; 1 \rel 4 &amp;&amp; 1 \nrel 8
+</mrow><mrow>
+  2 \nrel 1 &amp;&amp; 2 \nrel 2 &amp;&amp; 2 \nrel 4 &amp;&amp; 2 \nrel 8
+</mrow><mrow>
+  4 \nrel 1 &amp;&amp; 4 \rel 2 &amp;&amp; 4 \nrel 4 &amp;&amp; 4 \nrel 8
+</mrow><mrow>
+  8 \rel 1 &amp;&amp; 8 \rel 2 &amp;&amp; 8 \rel 4 &amp;&amp; 8 \nrel 8
+</mrow>
+</md>
+In each case the pairs of numbers that satisfy the relation form a subset of <m>A \times A</m>.
+</p>
+
+<p>Since this set is small and finite we could also represent the relation pictorially.
+Consider the following figure
+</p>
+
+<figure xml:id="fig_silly_rel"><caption>A pictorial depiction of a silly relation</caption>
+<image width="40%" source="sillyRelation"/>
+</figure>
+
+<p>
+The dots here denote the elements of the set <m>A = \set{1,2,3,4}</m>, and an arrow from <m>x</m> to <m>y</m> denotes <m>x \rel y</m>. This can be a handy way to visualise things, but really only works when the underlying set is small.
+</p>
+
+<p>Looking at the above pairs, it should be clear that we can specifiy or <em>define</em> the relation using the subset:
+<md>
+<mrow>
+  R = \set{ (1,2), (1,4), (4,2), (8,1), (8,2), (8,4) }.
+</mrow>
+</md>
+More generally we can define <em>any</em> relation in this way.
+This leads us to the formal definition of relation in the next section.
+</p>
+</introduction>
+
+<section><title>Relations</title>
+<definition xml:id="def_relation_simple">
+<statement><p>
+Let <m>A</m> be a set.
+Then a relation, <m>R</m>, on <m>A</m> is a subset <m>R \subseteq A \times A</m>.
+If the ordered pair <m>(x,y)\in R</m>, we denote this as <m>x \rel y</m>, while if <m>(x,y)\notin R</m> we write <m>x \nrel y</m>.
+</p></statement>
+</definition>
+
+<p>
+  So while we introduced relations in this chapter by starting with relations you already knew <mdash /> like <q>is a divisor of</q> and <q>is an element of</q> <mdash /> the above defines relations as subsets. This allows us much more flexibility and we can use set-builder notation to define specific relations. For example
+<md>
+<mrow>
+  R &amp;= \set{ (x,x) \in \mathbb{R}\times \mathbb{R} \so x\in \mathbb{R}}
+</mrow>
+</md>
+is the relation <q>=</q> on the set of real numbers.
+While
+<md>
+<mrow>
+  S &amp;= \set{ (x,y) \in \mathbb{Z}\times\mathbb{Z} \so x-y \in \mathbb{N}}
+</mrow>
+</md>
+is the relation <q><m> \gt </m></q> on the set of integers.
+</p>
+
+
+<p>The definition of relation allows us to take any subset of <m>A \times A</m> to be a relation. For example,
+<ul>
+<li> <m>R = \es </m> gives the relation in which <m>x \nrel y</m> for all <m>x,y \in A</m>.
+</li>
+<li> <m>R =  A\times A </m> gives the relation in which <m>x \rel y</m> for all <m>x,y \in A</m>.
+</li>
+</ul>
+The first of these is sometimes called the <term>empty relation</term>, while the latter is called the <term>universal relation</term>. Unsurprisingly, the vast majority of other subsets <m>R \subset A \times A</m>, won't be particularly interesting or useful or have especially natural or nice definitions. We will, shortly, start to impose additional requirements or properties onto the relations in order to make them more useful and interesting.
+</p>
+
+<p>
+For a great many purposes, we define relationships between objects coming from the same set.
+However, there are situations in which we want to describe relationships between objects from different sets.
+For example the relation <q>is an element of</q>, one object will be an element, while the other will be a set. Or, as another example, we could have a set of children and a set of parents, with the relation <q>is a child of</q>.
+Consequently, the above definition is often generalised as follows:
+</p>
+
+<definition xml:id="def_relation_gen"><title>Definition <xref ref="def_relation_simple"/> generalised</title>
+<statement><p>
+  Let <m>A,B</m> be sets.
+Then a relation, <m>R</m>, between <m>A</m> and <m>B</m> is a subset <m>R \subseteq A \times B</m>.
+  If the ordered pair <m>(x,y)\in R</m>, we denote this as <m>x \rel y</m>, while if <m>(x,y)\notin R</m> we write <m>x \nrel y</m>.
+</p></statement>
+</definition>
+
+<p>
+Though the above generalisation will be important when we start to consider <term>functions</term>,  most of what we will do in this chapter concerns relations that compare elements from a single set, rather than between two sets.
+</p>
+
+</section>
+
+<section xml:id="sec_prop_rel"><title>Properties of relations</title>
+
+<p>
+Since a relation on <m>A</m> is just a subset of <m>A \times A</m>, there are a huge number of possible relations on any given set.
+As noted above, the vast majority of these will unstructured and be neither useful nor interesting.
+Typically we require relations to have some additional structure.
+</p>
+
+<p>Consider the relation <q>is divisible by</q> on the set of integers. This has some very useful properties:
+<ul>
+<li> For every <m>n \in \mathbb{Z}</m>, it is always true that <m>n \mid n</m>,
+</li>
+<li> If <m>a\mid b</m> and <m>b \mid c</m> then we must have <m>a \mid c</m>.
+</li>
+</ul>
+The relation <q>is less than</q> on the set of reals, on the other hand, satisfies the second of these, but not the first.  These properties (and others) are useful and interesting so let's formalise them.
+</p>
+
+<definition>
+<statement><p>
+    Let <m>R</m> be a relation on a set <m>A</m>.
+    <ul>
+<li> We say that the relation <m>R</m> is <term>reflexive</term> when <m>a \rel a</m> for every <m>a \in A</m>.
+</li>
+<li> The relation <m>R</m> is <term>symmetric</term> when for any <m>a,b \in A</m>, <m>a \rel b</m> implies <m>b \rel a</m>.
+</li>
+<li> The relation <m>R</m> is <term>transitive</term> when for any <m>a,b,c \in A</m>, <m>a \rel b</m> and <m>b \rel c</m> implies <m>a \rel c</m>.
+</li>
+</ul>
+Notice that in the definition of transitive we do not require that <m>a,b,c</m> are different.
+</p></statement>
+</definition>
+
+<p>
+Notice that we can write these using quantifiers quite nicely:
+<md>
+<mrow>
+  &amp; \text{reflexive: }&amp;&amp; \forall a \in A, (a \rel a)
+</mrow><mrow>
+  &amp; \text{symmetric: }&amp;&amp; \forall a,b \in A, (a \rel b) \implies (b\rel a)
+</mrow><mrow>
+  &amp; \text{transitive: }&amp;&amp; \forall a,b,c \in A,  (a \rel b) \land (b\rel c) \implies (a \rel c)
+</mrow>
+</md>
+We can visualise these using dot-arrow diagrams (as in <xref ref="fig_silly_rel"/>).  Note that these diagrams are not supposed to represent the entire relation, but rather just enough to illustrate the definitions.
+<ul>
+<li><p> Reflexive:</p>
+<image  width="40%" source="reflexive"/>
+<p>Every element <m>x</m> must have a loop from <m>x</m> back to itself.</p>
+</li>
+<li><p> Symmetric:</p>
+  <image width="80%" source="symmetric"/>
+<p>
+  If there is an arc from <m>x</m> to <m>y</m> then there must also be an arc from <m>y</m> to <m>x</m>.
+</p>
+</li>
+<li><p> Transitive:</p>
+  <image width="80%" source="transitive"/>
+<p>
+  If there is an arc from <m>x</m> to <m>y</m> and another from <m>y</m> to <m>z</m> then there must also be an arc from <m>x</m> to <m>z</m>.
+</p>
+</li>
+</ul>
+With a little work (and some proofs!) we can show that the following table holds for the relations  <m> \lt , \leq, =, \mid  </m> on the set of integers.
+</p>
+
+<tabular width="95%" left="minor" right="minor" top="minor" bottom="minor" halign="center">
+<row>
+<cell> R </cell><cell> <m> \lt </m> </cell><cell> <m>\leq </m></cell><cell> <m>= </m> </cell><cell> <m> \mid </m> </cell>
+</row>
+<row>
+<cell>  Reflexive </cell><cell> false </cell><cell> true </cell><cell> true </cell><cell> true </cell>
+</row>
+<row>
+<cell>  Symmetric </cell><cell> false </cell><cell> false </cell><cell> true </cell><cell> false </cell>
+</row>
+<row>
+<cell>
+  Transitive </cell><cell> true </cell><cell> true </cell><cell> true </cell><cell> true</cell>
+</row>
+</tabular>
+
+
+<example>
+  <statement>
+<p>
+  Let <m>R</m> be the relation <q>has the same parity as</q> on the set of integers. This relation is defined by
+  <md>
+<mrow>
+    R &amp;= \set{(a,b) \in \mathbb{Z}\times \mathbb{Z} \so a,b \text{ both even or } a,b \text{ both odd}}
+</mrow><mrow>
+    &amp;= \set{(a,b) \in \mathbb{Z}\times \mathbb{Z} \so 2 \mid (a-b)}
+  </mrow>
+</md>
+  Notice that the second definition is equivalent to the first since
+  <md>
+<mrow>
+    (a,b \text{ have same parity}) \iff ( 2\mid(a-b)).
+  </mrow>
+</md>
+  Prove that this relation is reflexive, symmetric and transitive.
+</p>
+  </statement>
+  <answer>
+<p>  We explore each in turn:
+  <ul>
+<li> Reflexive.
+    We need to show that for every single <m>a \in \mathbb{Z}</m> that <m>a \rel a</m>.
+    Hence we need to show that for every integer <m>a</m>, that <m>a</m> has the same parity as <m>a</m>.
+    This is pretty obvious, but to write it a little more mathematically <mdash/> since <m>a-a = 0</m> and <m>2|0</m>, we know that <m>a \rel a</m>.
+</li>
+<li> Symmetric.
+    We need to show that if <m>a \rel b</m> then <m>b \rel a</m>.
+    So we start by assuming that <m>a \rel b</m>, so <m> 2 \mid (a-b)</m>.
+    We need to show that <m> 2 \mid (b-a) </m>.
+    This, again, is quite obvious, but we can make it more mathematical by saying something like <mdash/> since <m> 2 \mid (a-b)</m> we know that <m> a-b=2 k</m>, so <m> b-a = 2(-k)</m>, and thus <m> 2 \mid (b-a) </m>
+</li>
+<li> Transitive.
+    We need to show that if <m>a\rel b</m> and <m>b \rel c</m> then <m> a\rel c</m>.
+    So we assume that <m>a \rel b</m> and <m> b\rel a</m>.
+    This means that <m> 2\mid(a-b)</m> and <m> 2\mid (b-c)</m>.
+    So there are integers <m>k,\ell</m> so that
+    <md>
+<mrow>
+      a-b &amp;= 2k &amp; b-c &amp;= 2\ell.
+    </mrow>
+</md>
+    Now we need to show something about <m>a-c</m>.
+    It is easy to isolate <m>a = 2k+b</m> and <m>c=2\ell+b</m>, so <m> a-c = 2k-2\ell </m>.
+    Hence <m> 2\mid (a-c)</m> as we need.
+</li>
+</ul>
+  We are not done until we write it up nicely. So we do that now.
+</p>
+  </answer>
+  <solution>
+<proof>
+<p>
+  Let the relation be as defined in the statement.
+  We prove each property in turn.
+  <ul>
+<li> Reflexive <mdash/> Let <m>a \in \mathbb{Z}</m>. Since <m>a-a = 0</m> and <m> 2\mid 0</m>, we know that <m>a \rel a</m>.
+</li>
+<li> Symmetric <mdash/> Let <m>a,b\in \mathbb{Z}</m> so that <m>a \rel b</m>. We know that <m>2 \mid a-b</m> and so we can write <m>a-b = 2k</m> for some <m>k \in \mathbb{Z}</m>. But then <m>b-a=2(-k)</m>, and so <m>2\mid (b-a)</m> and thus <m>b \rel a</m>.
+</li>
+<li> Transitive <mdash/> Let <m>a,b,c\in \mathbb{Z}</m> with <m>a\rel b</m> and <m>b \rel c</m>. Thus we know that <m>a-b = 2k</m> and <m> b-c = 2\ell</m> for some integer <m>k,\ell </m>. But then <m>a-c = 2(k-\ell)</m> and thus <m> 2\mid (a-c)</m>. Hence <m>a \rel c</m> as required.
+</li>
+</ul>
+</p>
+</proof>
+  </solution>
+</example>
+
+<p>More examples:</p>
+<example>
+<p>
+  Let <m>A</m> be the set of students at UBC, and consider the relation <q>attended highschool with</q>.
+  <ul>
+<li> Reflexive <mdash/> It is reflexive since every student went to highschool with themselves.
+</li>
+<li> Symmetric <mdash/> It is symmetric, because if student <m>a</m> went to highschool with <m>b</m>, then <m>b</m> went to the same highschool as <m>a</m>.
+</li>
+<li> Transitive <mdash/> It is not transitive, just because <m>a</m> went to school with <m>b</m> and <m>b</m> went to school with <m>c</m>, it does not mean that <m>a</m> went to school with <m>c</m>.
+    It is possible that <m>b</m> went to two different highschools, one they attended with <m>a</m> and the second they attended with <m>c</m>.
+</li>
+</ul>
+</p></example>
+
+<p>
+Another student flavoured example.
+</p>
+
+<example>
+<p>
+  Let <m>A</m> be the set of students in the student union building at 1pm, and let <m>R</m> be the relation <q>is within 2 metres of</q>.
+  <ul>
+<li> Reflexive <mdash/> It is reflexive since each student is less than 2m from themselves.
+</li>
+<li> Symmetric <mdash/> It is symmetric, because if student <m>a</m> is less than 2m from student <m>b</m>, then <m>b</m> is less then 2m from <m>a</m>.
+</li>
+<li> Transitive <mdash/> It is not transitive, just because <m>a</m> is 2m from <m>b</m> and <m>b</m> is 2m <m>c</m>, it does not mean that <m>a</m> is 2m from <m>c</m>.
+    If the the students are arranged in a line with 1.5m between each of them, then <m>a</m> is 3m from <m>c</m>.
+</li>
+</ul>
+</p></example>
+
+<example>
+<p>
+  Let <m>R</m> be the relation <q>is a subset of</q> on the set of all subsets of the integers.
+  <ul>
+<li> Reflexive <mdash/> The relation is reflexive since for all sets <m>X</m>, we have <m>X \subseteq X</m>.
+</li>
+<li> Symmetric <mdash/> The relation is not symmetric. Let <m>X = \es, Y = \set{1} </m>, then <m>X \subseteq Y</m> but <m>Y \not\subseteq X</m>.
+</li>
+<li> Transitive <mdash/> The relation is transitive. Assume <m>A \subseteq B</m> and <m>B \subseteq C</m>. Now let <m>a \in A</m>. Since <m>A \subseteq B</m> we know <m>a \in B</m>. And since <m>B \subseteq C</m>, we know <m>a \in C</m>. Hence <m>A \subseteq C</m> as required.
+</li>
+</ul>
+</p></example>
+
+
+<p>These aren't the only interesting properties of relations.
+Here are some others we won't really use, except maybe for some examples and exercises.
+<ul>
+<li> A relation is <term>total</term> (also called <term>connex</term>) when
+  <md>
+<mrow>
+    \forall a,b \in A, (a\rel b) \lor (b \rel a).
+  </mrow>
+</md>
+  The relation <m>\leq </m> on the set of reals is total.
+</li>
+<li> A relation is <term>trichotomous</term> when
+  <md>
+<mrow>
+    \forall a,b \in A, \text{ exactly one of }(a\rel b) \text{ or } (b \rel a) \text{ or } (a=b).
+  </mrow>
+</md>
+  The relation <m> \lt </m> is trichotomous.
+</li>
+<li> A relation is <term>anti-symmetric</term> when
+  <md>
+<mrow>
+    \forall a,b \in A, (a\rel b) \land (b \rel a) \implies a=b.
+  </mrow>
+</md>
+  The relation <m>\subseteq</m> is anti-symmetric, so is <m>\mid </m> on natural numbers.
+  However <m>\mid </m> is not anti-symmetric on the set of all integers.
+  If <m>b=-a</m>, then <m>a\mid b</m> and <m>b \mid a</m>, but <m>a \neq b</m>.
+</li>
+
+<li>A relation is <term>dense</term> when
+<me>
+  \forall a,b \in A, \exists c \in A \st (a \rel c) \land (c \rel b).
+</me>
+</li>
+</ul>
+</p>
+
+<p>
+  One very important relation on the integers is congruence - recall <xref ref="def-congruent"/>. It is not hard to prove that congruence has nice properties.
+</p>
+
+<theorem xml:id="thm_congrent_er">
+<statement><p>
+  Let <m>n \in \mathbb{N}</m> then congruence modulo <m>n</m> is reflexive, symmetric and transitive.
+</p></statement>
+</theorem>
+<proof>
+<p>
+  Let <m>n</m> be a fixed natural number. We prove each of the properties in turn.
+  <ul>
+<li> Reflexive <mdash/> Let <m>a \in \mathbb{Z}</m>.
+    Then since <m>a-a=0</m> and <m>n\mid 0</m>, we know that <m>a \equiv a \mod n</m>.
+</li>
+<li> Symmetric <mdash/> Let <m>a,b \in \mathbb{Z}</m> and assume that <m>a \equiv b \mod n</m>.
+    Hence we know that <m>n \mid (a-b)</m>, and so we can write <m>a-b=n k</m> for some integer <m>k</m>.
+    Thus <m>b-a = n(-k)</m> and so <m>n \mid (b-a)</m> and <m>b \equiv a \mod n</m>.
+</li>
+<li> Transitive <mdash/> Let <m>a,b,c \in \mathbb{Z}</m> and assume that <m>a \equiv b \mod n</m> and <m>b\equiv c \mod n</m>.
+    This implies that <m>n \mid (a-b)</m> and <m>n \mid (b-c)</m>, and so we can write <m>(a-b)=nk, (b-c=n\ell)</m> for some integers <m>k,l</m>.
+    Consequently <m>(a-c) = (a-b)+(b-c) = n(k+\ell)</m> and <m>n \mid (a-c)</m>.
+    Hence <m>a \equiv c \mod n</m>.
+</li>
+</ul>
+</p>
+</proof>
+
+<p>
+  Notice that one immediate consequence of this theorem is that since congruence modulo <m>n</m> is symmetric, we can be a little bit more relaxed when discussing it. In particular, in the examples above we have been very careful to say
+  <ul>
+    <li><q><m>19</m> is congruent to <m>5</m> modulo 7</q></li>
+    <li><q><m>11</m> is congruent to <m>27</m> modulo 4</q></li>
+    <li><q><m>13</m> is congruent to <m>7</m> modulo 5</q></li>
+  </ul>
+  where there is a definite <em>first</em> number and a definite <em>second</em> number in the relation. However since congruence is symmetric, we can instead say
+  <ul>
+    <li><q><m>19</m> and <m>5</m> <em>are</em> congruent modulo 7</q></li>
+    <li><q><m>11</m> and <m>27</m> <em>are</em> congruent modulo 4</q></li>
+    <li><q><m>13</m> and <m>7</m> <em>are not</em> congruent modulo 5</q></li>
+  </ul>
+  where the order of the two numbers in the relation no longer matters. Of course we must still be careful with the modulus; we cannot mix that up with the other numbers.
+</p>
+
+<p>
+We will return to congruences in more detail shortly.
+</p>
+
+
+<p>
+Another example:
+</p>
+
+<example xml:id="eg_rel_frac"><title>Fractions</title>
+<p>
+  Let <m>F</m> be the set of all fractions:
+  <me>
+    F = \set{ \frac{a}{b} \so a,b \in \mathbb{Z}, b \neq 0}.
+  </me>
+  Consider the following fractions that are <em>different</em> elements of <m>F</m>:
+  <me>
+    \frac{2}{4}\qquad \frac{3}{6} \qquad \frac{-7}{-14} \qquad \frac{9}{18}
+  </me>
+  All of these are just different ways of writing <q>one half</q> and so correspond to the same single element of <m>\mathbb{Q}</m>.
+  We typically avoid this duplication by <em>representing</em> each rational number by a single reduced fraction. This is an example of an <term>equivalence class</term>, but we will get to those in the next section.
+</p>
+
+<p>
+  But before that, let us formalise how two fractions are related. We've been doing that since primary school <mdash /> they are related when they are the same rational number. That is
+  <me>
+    \frac{a}{b} \rel \frac{c}{d} \iff \frac{a}{b} = \frac{c}{d}
+  </me>
+  Notice the <q><m>=</m></q> in the equation on the right <em>does not</em> mean that the fractions are <em>identical</em> rather it means that they represent the same number. We can make this condition a little more comfortable by writing it as
+  <me>
+    \frac{a}{b} \rel \frac{c}{d} \iff ad = bc
+  </me>
+  Let us show that this relation is reflexive, symmetric and transitive.
+</p>
+
+  <proof>
+    <p>
+    We show that the relation on the set of fractions defined above is reflexive, symmetric and transitive.
+    <ul>
+      <li>
+        <p>Reflexive <mdash /> Let <m>\frac{a}{b} \in F</m>. Then since <m>ab=ab</m>, it follows that <m>\frac{a}{b} \rel \frac{a}{b}</m>. Hence the relation is reflexive.
+      </p>
+      </li>
+      <li><p>
+        Symmetric <mdash /> Let <m>\frac{a}{b}, \frac{c}{d} \in F</m>. Assume that <m>\frac{a}{b}\rel \frac{c}{d}</m>. Hence <m>ad=bc</m>, and so <m>bc=ad</m>. Thus
+        <m>\frac{c}{d}\rel \frac{a}{b}</m>. So the relation is symmetric.
+      </p></li>
+      <li><p>
+        Transitive <mdash /> Let <m>\frac{a}{b}, \frac{c}{d}, \frac{x}{y} \in F</m>. Assume that <m>\frac{a}{b}\rel \frac{c}{d}</m> and <m>\frac{c}{d} \rel \frac{e}{f}</m>. Hence we know that
+        <me>
+          ad=bc \qquad \text{ and } \qquad cf=de.
+        </me>
+        Multiply the first of these equations by <m>f</m> and the second by <m>b</m>. This gives
+        <me>
+          adf=bcf \qquad \text{ and } \qquad bcf = deb
+        </me>
+        Using the transitivity of equality we know that
+        <me>
+          adf = deb
+        </me>
+        and since <m>d \neq 0</m> we have
+        <me>
+          af = eb
+        </me>
+        Thus <m>\frac{a}{b} \rel \frac{e}{f}</m> and so the relation is transitive.
+        </p></li>
+    </ul>
+    </p>
+  </proof>
+
+</example>
+
+</section>
+<section>
+  <title>Equivalence relations and equivalence classes</title>
+  <shorttitle>Equivalence relations &amp; classes</shorttitle>
+<p>
+An important class of relations are those that are similar to <q>=</q>.
+We know that <q>is equal to</q> is reflexive, symmetric and transitive.
+Any relation that has these properties acts something like equality does <mdash/> we call these relations equivalence relations.
+</p>
+
+<definition>
+<statement><p>
+  Let <m>R</m> be a relation on a set <m>A</m>. If <m>R</m> is reflexive, symmetric and transitive then <m>R</m> is an equivalence relation.
+</p></statement>
+</definition>
+
+<p>From our work in the previous section we know that the following relations are equivalence relations
+<ul>
+<li> <q>is equal to</q>
+</li>
+<li> <q>has same parity as</q>
+</li>
+<li> <q>is congruent to</q>
+</li>
+</ul>
+Notice that these other two relations are weaker than equality <mdash/> the underlying objects do not have to be the same in order to be equivalent.
+</p>
+
+<example>
+<p>
+  Let <m>A</m> be the set of students at a particular university. Show that the relation <q>has the same birthday as</q> is an equivalence relation.
+</p>
+
+<proof>
+<p>
+    We need to prove that the relation is reflexive, symmetric and transitive; we prove each in turn.
+    <ul>
+<li> Reflexive <mdash/> Since any person has the same birthday as themselves, the relation is reflexive.
+</li>
+<li> Symmetric <mdash/> Let <m>a</m> have the same birthday as <m>b</m>.
+      Then <m>b</m> has the same birthday as <m>a</m>.
+      Hence the relation is symmetric.
+</li>
+<li> Transitive <mdash/> Let <m>a</m> have the same birthday as <m>b</m> and <m>b</m> have the same birthday as <m>c</m>. Then it follows that <m>a</m> and <m>c</m> must be born on the same day of the year.
+      Hence <m>a</m> has the same birthday as <m>c</m>.
+</li>
+</ul>
+  </p></proof>
+</example>
+
+<p>Consider now the set <m>A = \set{0,1,2,3,\dots,10}</m> and consider congruence modulo 4.
+As we have done a few times, we'll draw a picture of the relation on this set.
+Not, there could, potentially be a lot of arrows in this figure.
+To save some space, we can take advantage of the fact that congruence is reflexive, and so we know that if there is an arrow from <m>a</m> to <m>b</m>, there must be one back from <m>b</m> to <m>a</m>.
+So, instead of drawing two arrows between <m>a</m> and <m>b</m>, we'll just draw a single arc.
+</p>
+
+<image width="40%" source="congruentEg"/>
+
+<p>
+We can do exactly the same thing, but now with the relation <q>has the same parity as</q>
+</p>
+
+<image width="40%" source="equivParity"/>
+
+<p>
+In each case we should notice that the set of nodes in the pictures fall into a small number of subsets, in which each node is connected to every other node.
+These connected subsets are examples of equivalence classes.
+</p>
+
+<definition>
+<statement><p>
+  Given an equivalence relation <m>R</m> defined on a set <m>A</m>, we define the equivalence class of <m>x \in A</m> (with respect to <m>R</m>) to be the set of elements related to <m>x</m>:
+ <md>
+<mrow>
+   [x] &amp;= \set{ y \in A \;:\; y \rel x }
+ </mrow>
+</md>
+ This is sometimes also written as <q><m>E_x</m></q>.
+</p></statement>
+</definition>
+
+
+<p>So in our <q>congruent modulo 4</q> example above, the equivalence classes are
+<md>
+<mrow>
+  [0] &amp;= \set{0,4,8} &amp; [1]&amp;= \set{1,5,9} &amp; [2] &amp;= \set{2,6,10} &amp; [3] = \set{3,7}
+</mrow><mrow>
+  [4] &amp;= \set{0,4,8} &amp; [5]&amp;= \set{1,5,9} &amp; [6] &amp;= \set{2,6,10} &amp; [7] = \set{3,7}
+</mrow><mrow>
+  [8] &amp;= \set{0,4,8} &amp; [9]&amp;= \set{1,5,9} &amp; [10] &amp;= \set{2,6,10}
+</mrow>
+</md>
+while in our <q>has the same parity as</q> example we get
+<md>
+<mrow>
+  [0] &amp;= \set{0,2,4,6,8,10} &amp; [1]&amp;= \set{1,3,5,7,9}
+</mrow><mrow>
+  [2] &amp;= \set{0,2,4,6,8,10} &amp; [3]&amp;= \set{1,3,5,7,9}
+</mrow><mrow>
+  [4] &amp;= \set{0,2,4,6,8,10} &amp; [5]&amp;= \set{1,3,5,7,9}
+</mrow><mrow>
+  [6] &amp;= \set{0,2,4,6,8,10} &amp; [7]&amp;= \set{1,3,5,7,9}
+</mrow><mrow>
+  [8] &amp;= \set{0,2,4,6,8,10} &amp; [9]&amp;= \set{1,3,5,7,9}
+</mrow><mrow>
+  [10] &amp;= \set{0,2,4,6,8,10}
+</mrow>
+</md>
+First notice that there are no empty equivalence classes.
+This follows from the fact that equivalence relations are reflexive:
+</p>
+
+<lemma xml:id="lem_ec_nonempt">
+<statement><p>
+  Let <m>R</m> be an equivalence relation on a set <m>A</m>.
+  Then for any <m>x \in A</m>, <m>x \in [x]</m>.
+</p></statement>
+</lemma>
+
+<proof>
+<p>
+  Let <m>x \in A</m>.
+  We know that <m>R</m> is reflexive, so <m>x \rel x</m>.
+  Since we define
+  <md>
+<mrow>
+    [x] &amp;= \set{a \in A \;:\; a \rel x}
+  </mrow>
+</md>
+  we must have that <m>x \in [x]</m>.
+</p>
+</proof>
+
+<p>
+Also notice that there is a lot of repetition in our lists of equivalence classes.
+Indeed, we could have been listed them as:
+<md>
+<mrow>
+  [0]=[4]=[8] &amp;= \set{0,4,8} &amp; [1]=[5]=[9] &amp;= \set{1,5,9}
+</mrow><mrow>
+ [2]=[6]=[10] &amp;= \set{2,6,10} &amp; [3]=[7] = \set{3,7}
+</mrow>
+</md>
+In fact it looks exactly like
+<md>
+<mrow>
+  [x]=[y] \iff x \rel y
+</mrow>
+</md>
+This is an important (and true!) result, so let's call it a theorem and prove it.
+</p>
+
+<theorem xml:id="thm_equiv_class">
+<statement><p>
+  Let <m>R</m> be an equivalence relation on <m>A</m> and let <m>x,y \in A</m>. Then
+  <md>
+<mrow>
+    x \rel y \iff [x]=[y]
+  </mrow>
+</md>
+</p></statement>
+</theorem>
+
+<proof>
+<p>
+  We prove each implication in turn.
+<ul>
+<li><p> (<m>\Leftarrow</m>) Assume <m>[x] = [y]</m>.
+    From our lemma above, we know <m>x \in [x]</m>.
+    Hence <m>x \in [y]</m>.
+    But we define <m> [y]= \set{a \in A \;:\; a \rel y}</m>, and since <m>x</m> is in this set we know that <m>x \rel y</m> as required.
+  </p>
+</li>
+<li><p> (<m>\Rightarrow</m>) Assume <m>x \rel y</m>.
+    In order to prove that <m>[x] = [y]</m>, we prove that each is a subset of the other.
+    <ul>
+<li> Let <m>a \in [x]</m>, and so <m>a \rel x</m>.
+      Now since <m>x \rel y</m> and <m>R</m> is transitive, we know that <m>a \rel y</m>.
+      Consequently <m>a \in [y]</m>, and thus <m>[x] \subseteq [y]</m>.
+</li>
+<li> Now let <m>b \in [y]</m>, so <m>b \rel y</m>.
+      Since <m>R</m> is symmetric, we know that <m>y \rel x</m>, and because of transitivity, this implies that <m>b \rel x</m>.
+      Hence <m>b \in [x]</m> and so <m>[y] \subseteq [x]</m>
+</li>
+</ul>
+    Thus <m>[x] = [y]</m>.
+  </p>
+</li>
+</ul>
+</p>
+</proof>
+
+<remark><title>Representing classes <mdash /> be kind</title>
+<p>
+  This result tells us that given any two related elements <m>x \rel y</m>, their equivalence classes are the same.
+  This can help us choose how we might represent an equivalence class to our reader;
+  since <m>[x]=[y]</m>, we might as well choose to write it using which ever of <m>x</m> and <m>y</m> is simpler for the reader.
+  That is, we'll write the class using its simplest <term>representative</term>.
+</p>
+<p>
+  In the above example we saw that <m>[0]=[4]=[8]</m>, <m>[1]=[5]=[9]</m> and so forth,  so when discussing these classes we should pick to represent them as
+  <me>
+    [0] \qquad [1] \qquad [2] \qquad \text{and} \qquad [3].
+  </me>
+  In general it is a good idea to be kind to your reader (and yourself) by representing your equivalence classes using simple members of those equivalence classes.
+</p>
+</remark>
+
+
+<p>
+We can push the above theorem further to show that any two equivalence classes are disjoint or equal. Equivalence classes cannot overlap <q>just a little</q> <mdash /> it is all or nothing.
+We'll call this result a corollary.
+</p>
+
+
+<corollary xml:id="cor_ec_distinct">
+<statement><p>
+  Let <m>R</m> be an equivalence class on <m>A</m> and let <m>x,y \in A</m>.
+  Then either <m>[x] = [y]</m> or <m>[x] \cap [y] = \es </m>.
+</p></statement>
+</corollary>
+
+<proof>
+<p>
+  Let <m>R</m> be an equivalence class on <m>A</m> and let <m>x,y \in A</m>.
+  Now form the set <m>B = [x] \cap [y]</m>.
+  Either this set is empty or not.
+</p>
+
+<p>  <ul>
+<li> If <m>B = \es</m> then there is nothing left to prove.
+</li>
+<li> On the other hand, if <m>B</m> is non-empty, then there must be some element <m>a \in B</m>.
+    Hence <m>b \in [x]</m>, so <m>b \rel x</m> and by symmetry of <m>R</m> we know <m>x \rel b</m>.
+    Now, since <m>b\in [y]</m>, we have <m>b \rel y</m>.
+    By transitivity of <m>R</m>, <m>x \rel y</m>.
+    The previous theorem then ensures that <m>[x] = [y]</m> as required.
+</li>
+</ul>
+</p>
+</proof>
+
+<p>
+  Before we go on, let us look at some more examples of equivalence classes.
+</p>
+
+
+<example>
+  <p>
+    Let <m>R</m> be congruence modulo <m>5</m> on the set of integers.
+    We know from Theorem <xref ref="thm_congrent_er"/> above, that this is an equivalence relation.
+    Now, using Euclidean division <xref ref="fact-euc-div"/>, and dividing by <m>5</m>, we see that any integer <m>n</m> can be written as
+    <me>
+      n=5q+r \qquad \text{ where } r \in \set{0,1,2,3,4}
+    </me>
+    Hence <m>n-r = 5q</m>. So <m>n</m> must be congruent to one of <m>0,1,2,3,4</m> modulo 5. Thus our equivalence classes are exactly
+    <me>
+      [0] \qquad [1] \qquad [2] \qquad [3] \qquad [4].
+    </me>
+  </p>
+</example>
+
+
+<example>
+  <statement>
+    <p>Let <m>S</m> be the set of all students at University of British Columbia. We define a relation on <m>S</m> by
+  <me>
+    a \rel b \qquad \iff \qquad \text{$a$ has the same age as $b$}.
+  </me>
+    Now this definition is still a little sloppy around the edges. To make it more precise:
+    <ul>
+      <li><m>S</m> is the set of all students enrolled on the 1st of October 2019.</li>
+      <li>By <q>age</q> we mean the age in years rounded down to the nearest integer.</li>
+    </ul>
+    Show that this defines an equivalence relation and determine the equivalence classes.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      We'll first show that this is reflexive, symmetric and transitive and then look at the equivalence classes.
+    </p>
+
+    <p>
+      <ul>
+        <li>Reflexive <mdash /> Let <m>a</m> be a student. Then since <m>a</m> has the same age as <m>a</m>, it follows that <m>a \rel a</m> as required.</li>
+        <li>Symmetric <mdash /> Let <m>a,b</m> be students so that <m>a</m> has the same age as <m>b</m>. This means that <m>b</m> has the same age as <m>a</m> and hence <m>b \rel a</m> as required.</li>
+        <li>Transitive <mdash /> Let <m>a,b,c</m> be students so that <m>a</m> has the same age as <m>b</m> and <m>b</m> has the same age as <m>c</m>. Then <m>a</m> has the same age as <m>c</m> and so <m>a \rel c</m>. Hence the relation is transitive.</li>
+      </ul>
+    </p>
+
+    <p>
+      The equivalence classes are just sets of students with the same age (in years rounded to nearest integer). So there will be an equivalence class full of 18 year-olds, another of 19 year-olds, and so on. We should be a little careful, there may<fn>See <url href="https://www.cbc.ca/news/canada/british-columbia/oldest-youngest-ubc-student-1.5283736" visual="www.cbc.ca/news/canada/british-columbia/oldest-youngest-ubc-student-1.5283736">here</url>.</fn> be a very small number of 15 year-olds, 16 year-olds and on up to 75 year old students.
+    </p>
+  </solution>
+</example>
+
+<example>
+  <statement>
+    <p>
+      Let <m>R</m> be a relation defined on <m>\mathbb{R}^2</m> by
+      <me>
+        (a,b) \rel (c,d) \iff a+d=c+b
+      </me>
+      Show that is is an equivalence relation and determine its equivalence classes.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      We first show that it is an equivalence relation and then we'll look at its equivalence classes.
+    </p>
+
+    <p>
+      <ul>
+        <li>Reflexive <mdash /> Let <m>(a,b) \in \mathbb{R}^2</m>, then since <m>a+b=a+b</m>, it follows that <m>(a,b) \rel (a,b)</m>. Hence the relation is reflexive.
+        </li>
+        <li><p>
+          Symmetric <mdash /> Let <m>(a,b), (c,d) \in \mathbb{R}^2</m> and assume that
+          <m>(a,b) \rel (c,d)</m>. This implies that <m>a+d=c+b</m>. Since equality is symmetric, we know that <m>c+b=a+d</m> and so <m>(c,d) \rel (a,b)</m>.
+        </p>
+        </li>
+        <li>
+          <p>
+            Transitive <mdash /> Let <m>(a,b), (c,d), (e,f) \in \mathbb{R}^2</m> and assume that
+            <me>
+              (a,b) \rel (c,d) \qquad \text{ and } \qquad (c,d) \rel (a,b).
+            </me>
+            Hence we know that
+            <me>
+              a+d=c+b \qquad  \text{ and } c+f = e+d.
+            </me>
+            Rearrange the second of these to give <m>c = e+d-f</m>. Substitute this into the first to get
+            <md>
+              <mrow> a+d \amp=c+b </mrow>
+              <mrow> \amp=\underbrace{e+d-f}_{=c}+b \amp \text{ and so}</mrow>
+              <mrow> a+f\amp=e+b. </mrow>
+            </md>
+            Hence <m>(a,b)\rel (e,f)</m> as required.
+          </p>
+        </li>
+      </ul>
+    </p>
+    <p>
+      So what do the equivalence classes look like? Theorem <xref ref="thm_equiv_class"/> tells us that two elements are in the same equivalence class if and only if they satisfy the relation.
+      So let <m>(a,b) \in \mathbb{R}^2</m> and let us examine its equivalence class. The pair <m>(x,y) \in [(a,b)]</m> if and only if <m>(a,b) \rel (x,y)</m> . That is we must have
+      <m>a+y=x+b</m>
+      <me>
+        y=x+(b-a).
+      </me>
+      Hence the equivalence class of <m>(a,b)</m> is the set of points lying on the line with gradient 1 that passes through <m>(a,b)</m>.
+    </p>
+  </solution>
+</example>
+
+
+<!-- <example><title>Continuing <xref ref="eg_rel_frac"/></title>
+
+  HOW DO WE DO THIS KEEPING GCD and LCM issues out of it?
+
+  <statement>
+    <p>What are the equivalence classes of the relation defined on the set of fractions in Example <xref ref="eg_rel_frac"/>?
+    </p>
+  </statement>
+  <solution>
+    <p>
+      Theorem <xref ref="thm_equiv_class"/> tells us that two elements are in the same equivalence class if and only if they satisfy the relation. So let <m>\frac{a}{b} \in F</m> and let us compute its equivalence class.
+      <me>
+        \frac{c}{d} \in \left[ \frac{a}{b}\right] \iff \frac{c}{d} \rel \frac{a}{b}.
+      </me>
+      Hence we must have that <m>ad=bc</m>. Now things get a little difficult, this tells us that
+      <me>
+        d = b \times \frac{c}{a}
+      </me>
+      however, from this it is hard to enforce the condition that <m>d \in \mathbb{Z}</m>.
+    </p>
+
+    <p>
+      Think about how we typically write down fractions.
+      We do not usually write <m>\frac{3}{6}</m>, but instead write <m>\frac{1}{2}</m>. Similarly, we don't write <m>\frac{4}{12}</m>, we write <m>{1}{3}</m>. We try to write the fractions so that the numerator and denominator are as small as possible.
+
+
+      At the risk of being a little relaxed, I'm going to add the further assumption that <m>\frac{a}{b}</m> is the <em>smallest</em>
+    </p>
+  </solution>
+</example> -->
+
+
+
+<p>Our results above tell us that an equivalence relation cuts a set up into non-empty disjoint pieces, such as is depicted below.
+</p>
+
+<image width="60%" source="partition"/>
+
+<p>
+  Here we have coloured the different equivalence classes and you can
+  think of the dots in the different subsets as being some elements in
+  those equivalence classes. Notice there is no overlap between the
+  subsets, and the entire set is covered by the subsets <mdash/> no
+  piece is missing. This separation<fn>Alternatively, we might say
+  that such a <em>partitioning</em> of a set is called a set
+  partition. However that sentence is a bit self-referential. At any rate, the term <term>set partition</term> is another on point naming by mathematicians.
+</fn>
+  of a set into disjoint pieces  is called a set partition.
+</p>
+
+<definition xml:id="def_partition">
+<statement><p>
+  A partition of a set <m>A</m> is a collection <m>\mathcal{P}</m> of non-empty subsets of <m>A</m>, so that
+  <ul>
+<li> if <m>x \in A</m> then there exists <m>X \in \mathcal{P}</m> so that <m>x \in X</m>, and
+</li>
+<li> if <m>X,Y \in \mathcal{P}</m>, then either <m>X \cap Y = \es</m> or <m>X = Y</m>
+</li>
+</ul>
+  The elements of <m>\mathcal{P}</m> are then called blocks, parts or pieces of the partition.
+</p>
+
+<p>  An equivalent definition is that a partition of a set <m>A</m> is a collection <m>\mathcal{P}</m> of non-empty subsets of <m>A</m>, so that
+  <ul>
+<li> <m>\ds \bigcup_{X \in \mathcal{P}} X = A</m>, and
+</li>
+<li> if <m>X,Y \in \mathcal{P}</m>, then either <m>X \cap Y = \es</m> or <m>X = Y</m>
+</li>
+</ul>
+Where the union <m>\ds \bigcup_{X \in \mathcal{P}} X</m> is the union of all the sets in the partition <m>\mathcal{P}</m>.
+</p>
+
+</statement>
+</definition>
+
+<p>
+   Consider our equivalence class examples above, and notice that in each case the equivalence classes form partitions of the underlying set. Rather than just <q>notice</q> let us do one (new) example more explicitly.
+</p>
+
+
+
+<p>
+  Given an equivalence relation we can prove that it equivalence classes form a set partition.
+</p>
+<theorem>
+<statement><p>
+  Let <m>R</m> be an equivalence relation on <m>A</m>. The set of equivalence classes of <m>R</m> forms a set partition of <m>A</m>.
+</p></statement>
+</theorem>
+
+<proof>
+<p>
+  Let <m>\mathcal{P} = \set{[x] \so x\in A}</m> be the set of equivalence classes.
+  <ul>
+<li> Let <m>x \in A</m>. Then by Lemma<nbsp/><xref ref="lem_ec_nonempt"/> above we know that <m>x \in [x]</m>, and by definition <m>[x] \in \mathcal{P}</m>. Hence for any <m>x \in A, x \in X</m> for some <m>X \in \mathcal{P}</m>.
+</li>
+<li> Let <m>X,Y \in \mathcal{P}</m>. Then by Corollary<nbsp/><xref ref="cor_ec_distinct"/>, we know that either <m>X=Y</m> or <m>X \cap Y= \es</m>.
+</li>
+</ul>
+  Hence the set of equivalence classes forms a set partition.
+</p>
+</proof>
+
+<p>So an equivalence relation gives equivalence classes that define a set partition.
+We can also go backwards.
+A set partition can be used to define equivalence classes that in turn define an equivalence relation.
+To be more precise, take a set partition <m>\mathcal{P}</m> of a set <m>A</m>.
+For any two elements <m>x,y \in A</m> we can define
+<md>
+<mrow>
+  x \rel y \iff x,y \text{ are elements of the same part of the partition }\mathcal{P}
+</mrow>
+</md>
+It is not too hard to prove that this relation is an equivalence relation.
+</p>
+
+
+<theorem>
+<statement><p>
+  Let <m>\mathcal{P}</m> be a set partition on the set <m>A</m>, and define a relation <m>R</m> by
+  <md>
+<mrow>
+    x \rel y \iff \big( x,y \in X \text{ for some } X \in \mathcal{P} \big)
+  </mrow>
+</md>
+  That is <m>x \rel y</m> if and only if they belong to the same piece of the partition.
+</p>
+
+<p>  Then the relation <m>R</m> is an equivalence relation.
+</p>
+</statement>
+</theorem>
+
+<proof>
+<p>
+  We need to show that <m>R</m> is reflexive, symmetric and transitive.
+  <ul>
+<li> Reflexive <mdash/> Let <m>x \in A</m>. Since <m>\mathcal{P}</m> is a set partition, we know that <m>x</m> is an element of some piece of the partition. Hence <m>x </m> is in the same piece of the partition as itself, and so <m>x \rel x</m> as required.
+</li>
+<li> Symmetric <mdash/> Let <m>x \rel y</m>, so we know that <m>x, y</m> lie in the same piece of the partition. Hence we must also have <m>y \rel x</m>.
+</li>
+<li> Transitive <mdash/> Let <m>x \rel y</m> and <m>y \rel z</m>. Then there must be <m>X,Y \in \mathcal{P}</m> so that <m>x,y \in X</m> and <m>y,z \in Y</m>. Hence <m>X \cap Y \neq \es</m> (since it contains <m>y</m>. Since <m>\mathcal{P}</m> is a partition, we know that <m>X \cap Y = \es</m> or <m>X=Y</m>. Hence <m>X=Y</m> and so <m>x,z \in X</m>. Thus <m>x \rel z</m> as required.
+</li>
+</ul>
+</p>
+</proof>
+
+</section>
+<section xml:id="sec_congruence_revisited"><title>Congruence revisited</title>
+<p>
+One very important relation is congruence modulo <m>n</m>. It is not too hard to show that it is an equivalence relation, and its equivalence classes have some very useful properties. The reader should quickly revisit <xref ref="sec-congruence"/>, <xref ref="def-congruent"/> and <xref ref="thm-mod-arith"/>.
+</p>
+
+<p>
+By Theorem<nbsp/><xref ref="thm_congrent_er"/>, congruence modulo <m>n</m> is an equivalence relation and so has equivalence classes. For example, if we fix the modulus as <m>4</m>, then we can write down the four equivalence classes of integers modulo 4:
+  <md>
+  <mrow>
+  [0]\amp =\set{\dots,-8,-4,0,4,8,\dots} \amp
+  [1]\amp=\set{\dots,-7,-3,1,5,9,\dots}
+  </mrow><mrow>
+  [2]\amp=\set{\dots,-6,-2,2,6,10,\dots} \amp
+  [3]\amp=\set{\dots,-5,-1,3,7,11,\dots}
+  </mrow>
+</md>
+  Notice that we are <em>representing</em> each equivalence class by the smallest non-negative integer in that class.
+</p>
+
+<warning><title>Modulo relation and operator</title>
+<p>
+  Many of you who have programmed will have encountered the modulo operator; it is usually denoted by the percentage sign, <q> % </q>.
+  This operator is more correctly called the <q>integer remainder operator</q>.
+  In particular,  if (via Euclidean division) we know that <m>a = kn+r</m> where <m>0\leq r  \lt  n</m>, then
+  <md>
+<mrow>
+    a \% n &amp;= r
+  </mrow>
+</md>
+  When we represent the equivalence classes modulo <m>n</m> we typically<fn>
+  This author has gotten into difficulties in a piece of research when their coauthor (for very valid reasons) instead chose to represent equivalence classes by the integer closest to zero.
+</fn> represent them by the smallest non-negative member of the equivalence class, which is the remainder when divided by <m>n</m>.
+  This can lead to a confusion between the equivalence classes and the remainders.
+</p>
+
+<p>So while equivalence classes modulo <m>n</m> are related to the effect of this integer remainder operator % <mdash/> they are not the same. You should avoid thinking of <q>modulo <m>n</m></q> as an operation that is done on integers.
+</p>
+</warning>
+<p>
+  One reason that this equivalence relation, congruence modulo <m>m</m>, is so important is that its equivalence classes interact very nicely with arithmetic giving rise to <term>modular arithmetic</term>. We saw this idea back in <xref ref="thm-mod-arith"/>. Let us rewrite that result in terms of equivalence classes.
+</p>
+
+
+<theorem xml:id="thm-mod-arith-redux"><title>Modular arithmetic redux</title>
+<statement><p>
+  Let <m>n \in \mathbb{N}</m>, and let <m>a,b,c,d \in \mathbb{Z}</m> so that
+  <me>
+    c \in [a] \qquad \text{and} \qquad d \in [b],
+  </me>
+  where <m>[x]</m> denotes the equivalence class of <m>a</m> under congruence modulo <m>n</m>.
+  Then
+  <md>
+  <mrow>
+      c+d \amp \in [a+b],  \amp c-d \amp \in [a-b]  \amp \text{and}
+  </mrow><mrow>
+    c\cdot d \amp \in  [a\cdot b]
+  </mrow>
+  </md>
+</p>
+</statement>
+<proof>
+  <p>
+    The proof of this statement is essentially identical to the proof of <xref ref="thm-mod-arith"/>.
+  </p>
+</proof>
+</theorem>
+
+<p>
+  As an illustration of this result, consider the numbers 5 and 7. When we multiply them together we get 35. But now, think about these numbers modulo 4, and the equivalence classes they lie in:
+  <me>
+    5 \in [1] \qquad 7 \in [3] \qquad 35 \in [3]
+  </me>
+  The above theorem tells us that since <m>5 \equiv 1 \mod 4</m> and <m>7 \equiv 3 \mod 4</m>, their product
+  <me>
+    \underbrace{35}_{5\times 7} \equiv \underbrace{3}_{3 \times 1} \mod 4
+  </me>
+  Notice that this will hold no matter which elements of <m>[1]</m> and <m>[3]</m> we multiply together, we will always get an element of <m>[3]</m>.
+  This suggests (with a little bending of notation and avoiding any confusion with cartesian products):
+  <me>
+    [1] \cdot [3] = [3]
+  </me>
+  and similarly
+  <me>
+    [1] + [3] = [4] = [0].
+  </me>
+  This can be made to work more generally, but first we should define things carefully and then prove things carefully.
+</p>
+
+<definition xml:id="def-mod-arith">
+  <statement>
+    <p>
+      Let <m>n \in \mathbb{N}</m>, and let <m>a,b \in \mathbb{Z}</m>. Then we define the following arithmetic operations on the equivalence classes modulo <m>n</m>:
+      <md>
+      <mrow>[a]+[b] \amp= [a+b]</mrow>
+      <mrow>[a]-[b] \amp= [a-b]</mrow>
+      <mrow>[a] \cdot [b] \amp= [a \cdot b]</mrow>
+      </md>
+      where we have used <q><m>\cdot</m></q> to denote multiplication to avoid confusion with the cartesian product of sets.
+    </p>
+  </statement>
+</definition>
+
+<p>
+  There is a small problem with this definition <mdash /> we need to make sure that it makes sense and is <term>well defined</term> and that our choice of representative elements <m>a,b</m> does not change the results <m>[a+b],[a-b], [a\cdot b]</m>. For example, in our modulo 4 example, we know that
+  <me>
+    [1]=[5]=[-3] \qquad \text{ and } [3]=[7]=[-1]
+  </me>
+  so we need to be sure that
+  <me>
+    \underbrace{[1]+[3]}_{[4]} = \underbrace{[5]+[7]}_{[12]} = \underbrace{[-3]+[-1]}_{[-4]} = [0]
+  </me>
+  Thankfully, this is a simple corollary of <xref ref="thm-mod-arith"/> (or <xref ref="thm-mod-arith-redux"/>).
+</p>
+
+<corollary xml:id="cor-mod-arith">
+  <title>Modular arithmetic</title>
+  <statement>
+    <p>
+      Let <m>n \in \mathbb{N}</m>, and let <m>a,b \in \mathbb{Z}</m>. Then the sets
+      <me>
+        [a + b] \qquad  [a - b] \qquad [a\cdot b]
+      </me>
+      are well defined and do not depend on the choice of representative elements.
+    </p>
+  </statement>
+<proof>
+  <p>
+    Let <m>a,b,n</m> be as in the statement of the result, and let <m>c \in [a], d\in [b]</m>.
+  </p>
+  <p>
+    By definition <m>[c]+[d] = [c+d]</m>. It suffices to show that <m>[c+d]=[a+b]</m>. By Theorem <xref ref="thm-mod-arith"/>, we know that <m>c+d \in [a+b]</m> and so by Corollary <xref ref="cor_ec_distinct"/> <m>[c+d]=[a+b]</m> as required.
+  </p>
+  <p>The same argument shows that <m>[c]-[d] = [c-d]=[a-b]</m>, and that <m>[c] \cdot [d] = [c\times d] = [a \cdot b]</m>.
+  </p>
+</proof>
+
+</corollary>
+
+
+<p>
+This result turns out to be very useful. It tells us that
+<me>
+  [7] \cdot [9] = [3] \cdot [1] = [3 \cdot 1] = [3].
+</me>
+Of course, that one is easy enough to check in our head:
+<me>
+  7 \times 9 = 63 \qquad \text{and}  \qquad 63 \equiv 3 \mod 4.
+</me>
+But (minutely) less easy:
+<me>
+  [19] \cdot [11] = [3] \cdot [3] = [9] = [1]
+</me>
+(which is true since <m>19 \times 11 = 209 = 208 + 1 = 52\times 4 + 1</m>).
+</p>
+
+<p>
+Now, just before we switch gears to modulo 10, we should make some notation to emphasise the modulus so that we don't mix equivalence classes from different equivalence relations<fn>
+In some situations it is very helpful to mix results from different moduli, but one does it very deliberately, and not by accident. For a good example of carefully mixing moduli, see <xref ref="eg-CRT"/> below.
+</fn>.
+We can rewrite the above equivalence classes with the modulus as a subscript:
+<me>
+  [7]_4 \cdot [9]_4 = [3]_4
+</me>
+This makes it much easier to talk about different modulii without confusing the reader. Of course, if the modulus is clear by context, then we don't need the subscript.
+</p>
+
+<p>
+  Another, more complicated one,
+  For example, let <m>a=17321289, b=23492871</m> and we compute their product as
+  <me>
+  17321289 \times 23492871 = 406926808030718.
+  </me>
+  If you look at this for amoment, you realise that the product is wrong <mdash /> the last number definitely should not be an <q>8</q>.
+  We can show this by computing the product modulo 10:
+  <me>
+    [17321289]_{10} \cdot [23492871]_{10} = [9]_{10} \cdot [1]_{10} = [9]_{10}.
+  </me>
+  This is a very simple example of using modular arithmetic as a way of error-checking.
+  Some simple techniques based on modular arithmetic are often used in credit-card numbers and similar.
+</p>
+
+<example><title>Checking long numbers <mdash /> Luhn algorithm</title>
+    <p>
+      The author is going to assume that everyone has had to either write down a telephone number or a credit card number and messed it up. Very common mistakes are
+      <ul>
+        <li>Single digit error: <m>1 \mapsto 2</m></li>
+        <li>Transposition: <m>12 \mapsto 21</m></li>
+        <li>Phonetic errors: <m>60 \mapsto 16</m></li>
+      </ul>
+      Everyone has dialed a wrong number<fn>I think? Well, the author definitely has</fn>, but thankfully, credit card numbers have some built-in checks that prevent simple errors like the above. In particular, a credit card has a <q>check digit</q>.
+    </p>
+
+    <p>
+      Since people rarely mess transcribing up the first or last digit of a long number, one can exploit the last digit to check up on the others. So say you have a long number (like a credit card or phone number), that you want to protect against simple errors, then you should append a single special digit to the end of that number. For example, say we have the first 8 digits of a number <q>31415926</q> and we want to make sure that it can be checked when copied down by someone else. A really simple check is to sum up the digits modulo ten:
+      <me>
+        3+1+4+1+5+9+2+6 = 31 \equiv 1 \mod 10
+      </me>
+      So we can append <q>1</q> to the end of the number to get <q>31415926<alert>1</alert></q>.
+    </p>
+    <p>
+      Now when we read it out to a friend over the phone, they copy down <q>313159261</q>. They can then compute the check number:
+      <me>
+        3+1+3+1+5+9+2+6 = 30 \equiv 0 \mod 10
+      </me>
+      Since <m>0 \neq 1</m> they know there is an error. This will proof against a single-digit substitution error, but it will not be safe against a transposition. If they wrote down <q>314<alert>51</alert>9261</q> then the check gives
+      <me>
+        3+1+4+5+1+9+2+6 = 31 \equiv 1 \mod 10
+      </me>
+      So the error goes undetected.
+    </p>
+    <p>
+      However there is a better way. The Luhn algorithm<fn>Named for the computer scientist Hans Peter Luhn (1896<ndash />1964).</fn> is used in many applications including in credit cards.
+      <ul>
+        <li>Start with our number <m>3,1,4,1,5,9,2,6</m>.</li>
+        <li>Double every second digit (starting from the rightmost): <m>3,2,4,2,5,18,2,12</m>. Notice that our list of digits becomes longer</li>
+        <li>Now sum <em>all</em>:
+        <me>
+          3+2+4+2+5+(1+8)+2+(1+2) = 30
+        </me></li>
+        <li>Multiply the result by 9 and compute the result modulo ten:
+          <me>
+            30 \times 9 = 270 \equiv 0 \mod 10
+          </me>
+        </li>
+        <li>Append the result as the check digit: <q>31415926<alert>0</alert></q></li>
+      </ul>
+    </p>
+    <p>
+      Let us try this against the two transcription errors above:
+      <ul>
+        <li><q>31<alert>3</alert>159260</q> becomes <q>3,2,3,2,5,18,2,12</q> which gives
+        <me>
+          3+2+3+3+2+5+(1+8)+2+(1+2) = 32.
+        </me>
+        Multiply by 9 to get <m>32\times 9 = 288</m> giving check-digit <q>8</q>. Error detected!
+        </li>
+        <li><q>314<alert>51</alert>9261</q> becomes <q>3,2,4,10,1,18,2,12</q> which gives
+        <me>
+          3+2+4+(1+0)+1+(1+8)+2+(1+2) = 25.
+        </me>
+        Multiply by 9 to get <m>225</m> giving check-digit <q>5</q>. Error detected!
+      </li>
+      </ul>
+      This is not too hard to do by hand, but it is very easy for a computer.
+    </p>
+    <p>
+      This is not perfect, some errors will go undetected. The interested reader should search-engine their way to more information.
+    </p>
+</example>
+
+<example xml:id="eg-CRT"><title>Chinese remainder theorem</title>
+<p>
+  You can push this idea further, and instead of doing arithmetic with very large numbers, you can do the same arithmetic modulo several different primes and then reconstruct the big-number result using the results modulo each prime. The piece of mathematics that tells you how to reconstruct the result is called the Chinese Remainder Theorem. It was first stated in the 3rd century AD by the Chinese mathematician Sunzi, but the first real method for this reconstruction is due to Aryabhata (an Indian mathematician of the 6th century AD). It seems to have been rediscovered a few times and seems to have entered European mathematics via Fibonacci in the 12th century. It's not quite clear when it got its name, but perhaps sometime between 1850 and 1930?
+</p>
+
+<p>We won't do the Chinese remainder theorem in this course (its a good one to do in a number theory course), but we'll do a few more applications of congruences.
+</p>
+
+</example>
+
+<example><title>No integer solutions</title>
+  <statement>
+<p>
+  Show that the equation
+  <md>
+<mrow>
+    x^2 - 4y^2 &amp;= 3
+  </mrow>
+</md>
+  has no integer solutions.
+</p>
+  </statement>
+  <answer>
+<p>  A sneaky way to look at this is to realise that if there is an integer solution, then if you look at that solution modulo, say <m>7</m>, then it will still be a solution. ie
+  <md>
+<mrow>
+    (x^2 - 4y^2) \mod 7 &amp;= 3 \mod 7.
+  </mrow>
+</md>
+  Hence if we can prove that the equation has no solution modulo (again say) 7, then it cannot have a solution over the integers (by taking the contrapositive). Notice that the converse is very false <mdash/> just because we can find a solution modulo 7, does not mean there is an integer solution.
+</p>
+
+<p>  Now, because one of the coefficients in the equation is a 4, it simplifies considerably modulo 4. In particular
+  <md>
+<mrow>
+    4y^2 \mod 4 = 0
+  </mrow>
+</md>
+  no matter what <m>y</m> we put in. So modulo 4 the equation simplifies to
+  <md>
+<mrow>
+    (x^2 - 4y^2)\mod 4 &amp;= x^2 \mod 4 = 3 \mod 4
+  </mrow>
+</md>
+  So now we look at squares modulo 4.
+  <md>
+<mrow>
+    0^2 \mod 4 &amp;= 0 &amp;
+    1^2 \mod 4 &amp;= 1 &amp;
+    2^2 \mod 4 &amp;= 0
+</mrow><mrow>
+    3^2 \mod 4 &amp;= 1 &amp;
+    4^2 \mod 4 &amp;= 0 &amp;
+    5^2 \mod 4 &amp;= 1
+</mrow>
+</md>
+  So <mdash/> it looks like squares modulo 4 are either 0 or 1, depending on their parity. If this is true then we are done <mdash/> there is no solution modulo 4, so there cannot be an integer solution.
+</p>
+  </answer>
+  <solution>
+<proof>
+<p>
+    The equation either has a solution <m>x,y \in \mathbb{Z}</m> or it does not. If the equation does have a solution, then <m>x</m> is either even or odd.
+    <ul>
+<li> If <m>x</m> is even then <m>x=2k</m> for some <m>k \in \mathbb{Z}</m>, and so
+      <md>
+<mrow>
+        x^2 - 4y^2 &amp;= 4(k^2-y^2)
+      </mrow>
+</md>
+      and so <m>x^2-4y^2 \equiv 0 \mod 4</m>.
+</li>
+<li> On the other hand, if <m>x</m> is odd, then <m>x=2k+1</m> for some <m>k \in \mathbb{Z}</m> and so
+      <md>
+<mrow>
+        x^2 - 4y^2 &amp;= 4k^2+4k+1-4y^2 = 4(k^2+4k-y^2) + 1
+      </mrow>
+</md>
+      and so <m>x^2 - 4y^2 \equiv 1 \mod 4</m>.
+</li>
+</ul>
+    In either case <m>x^2-4y^2</m> is not congruent to 3 modulo 4. Hence there cannot be a solution.
+  </p>
+</proof>
+  </solution>
+</example>
+
+
+
+<p>
+  Now, noticeably absent from Theorem <xref ref="thm-mod-arith"/> above is any discussion of division.
+  Consider the equation <m>x = \frac{13}{2}</m>; here we are really solving the equation
+  <m>2x=13</m>.
+  Consider this equation modulo <m>4</m> <mdash /> find any <m>x</m> so that
+  <me>
+    [2]_4 \cdot [x]_4 =[1]_4
+  </me>
+  (since <m>[13]_4 = [1]_4</m>).
+  Similarly modulo 5 we get:
+  <me>
+    [2]_5 \cdot [x]_5 = [1]_5.
+  </me>
+  We can try to solve these equations by brute-force by just writing out the multiplication tables modulo 4 and 5:
+</p>
+
+<sidebyside>
+  <tabular>
+    <row>
+      <cell><m>\cdot</m></cell>
+      <cell>[0]</cell><cell>[1]</cell><cell>[2]</cell><cell>[3]</cell>
+    </row>
+    <row>
+      <cell>[0]</cell>
+      <cell>[0]</cell><cell>[0]</cell><cell>[0]</cell><cell>[0]</cell>
+    </row>
+    <row>
+      <cell>[1]</cell>
+      <cell>[0]</cell><cell>[1]</cell><cell>[2]</cell><cell>[3]</cell>
+    </row>
+    <row>
+      <cell>[2]</cell>
+      <cell>[0]</cell><cell>[2]</cell><cell>[0]</cell><cell>[2]</cell>
+    </row>
+    <row>
+      <cell>[3]</cell>
+      <cell>[0]</cell><cell>[3]</cell><cell>[2]</cell><cell>[1]</cell>
+    </row>
+  </tabular>
+
+  <tabular>
+    <row>
+      <cell><m>\cdot</m></cell>
+      <cell>[0]</cell><cell>[1]</cell><cell>[2]</cell><cell>[3]</cell><cell>[4]</cell>
+    </row>
+    <row>
+      <cell>[0]</cell>
+      <cell>[0]</cell><cell>[0]</cell><cell>[0]</cell><cell>[0]</cell><cell>[0]</cell>
+    </row>
+    <row>
+      <cell>[1]</cell>
+      <cell>[0]</cell><cell>[1]</cell><cell>[2]</cell><cell>[3]</cell><cell>[4]</cell>
+    </row>
+    <row>
+      <cell>[2]</cell>
+      <cell>[0]</cell><cell>[2]</cell><cell>[4]</cell><cell>[1]</cell><cell>[3]</cell>
+    </row>
+    <row>
+      <cell>[3]</cell>
+      <cell>[0]</cell><cell>[3]</cell><cell>[1]</cell><cell>[4]</cell><cell>[2]</cell>
+    </row>
+    <row>
+      <cell>[4]</cell>
+      <cell>[0]</cell><cell>[4]</cell><cell>[3]</cell><cell>[2]</cell><cell>[1]</cell>
+    </row>
+  </tabular>
+</sidebyside>
+<p>
+    Now - we see that modulo 5 we have a solution since:
+    <me>
+      [2]_5 \cdot [3]_5 = [1]_5
+    </me>
+    but modulo 4 there is no solution since
+    <me>
+      [2]_4 \cdot [x]_4 = [0]_4 \text{ or } [2]_4.
+    </me>
+    The existence of solutions to the equation
+    <me>
+      [a]_n \cdot [x]_n = [1]_n
+    </me>
+    depends on the divisors of <m>a</m> and <m>n</m>.
+</p>
+
+<lemma>
+  <statement>
+    <p>
+      Let <m>a \in \mathbb{Z}, n \in \mathbb{N}</m>. If <m>d>1</m> divides both <m>a,n</m> then the equation
+      <me>
+        [a]_n \cdot [x]_n = [1]_n
+      </me>
+      does not have a solution.
+    </p>
+  </statement>
+  <proof>
+    <p>
+      Say that the equation
+      <me>
+        [a]_n \cdot [x]_n = [1]_n
+      </me>
+      has a solution <m>x=b</m>. Then for some <m>k \in \mathbb{Z}</m>
+      <me>
+        ab + kn = 1.
+      </me>
+      Now if, <m>d>1</m> divides both <m>a,n</m> the left-hand side is divisible by <m>d</m>. However this does not make sense because the right-hand side is only divisible by <m>\pm 1</m>. Hence no such solution can exist.
+    </p>
+  </proof>
+</lemma>
+<remark><title>Bezout and Euclid</title>
+<p>
+  The converse of this lemma states that if <m>a,n</m> have no common divisors, then the equation has a solution. To prove this we need to show that if <m>a,n</m> have no common divisors, then
+  we can find <m>b,k</m> so that
+  <me>
+    ab + kn =1.
+  </me>
+  This is (essentially) Bezout's identity. The values <m>b,k</m> can be computed using the extended Euclidean algorithm. We will discuss all of this in the optional section below.
+</p>
+</remark>
+
+
+<example><title>Pseudo random numbers</title>
+<p>
+Consider the following sequence of numbers
+<me>
+  1,10,7,8,4,9,0,3,2,\dots
+</me>
+The numbers bounce around and look fairly ``random''. However, they are not actually random at all; they satisfy the simple relation
+<me>
+  x_{k+1} \equiv (7 x_k + 3) \mod{11},
+</me>
+or, using the % operator (ie integer remainder operator)
+<me>
+  x_{k+1} = (7x_k+3)\% 11.
+</me>
+This is an example of a linear congruent generator; the next term in the sequence is determined by a simple linear equation involving a congruence:
+<me>
+  x_{k+1} = a x_k + c \mod n
+</me>
+If one chooses <m>a</m> and <m>c</m> carefully, then the resulting sequence of numbers will look quite random. However, since the numbers are not actually random, they are usually called <term>pseudo random</term> numbers.
+</p>
+
+<p>Many computer algorithms for generating pseudo random numbers are based on this idea. Of course, one does need to be quite careful and make sure that your pseudo-random numbers are actually fairly random. For example, if we choose <m>a=7, c=5, n=11</m> in the above, then we get the sequence
+<me>
+  1,1,1,1,\dots
+</me>
+since <m>7\cdot 1 + 5 = 12 \equiv 1 \mod{11}</m>. Not very random at all.
+</p>
+<p>
+There is a lot of interesting mathematics to be found in generating pseudo-random numbers and testing their randomness; we recommend that the interested reader take a trip to their favourite search engine.
+</p>
+</example>
+
+</section>
+
+<section xml:id="sec-euclid">
+  <title>Greatest divisors, Bézout and the Euclidean algorithm</title>
+  <p>
+  In our (brief) discussion above of division in modular arithmetic we came across the problem of computing <term>common divisors</term>.
+  You probably first came across the question of computing common divisors when trying to simplify fractions:
+  <me>
+    \frac{6}{15} = \frac{3\times 2}{3 \times 5} = \frac{2}{5}
+  </me>
+  We can simplify this fraction because <m>3</m> is a divisor of both <m>6</m> and <m>15</m>.
+  In this context we typically want to find the <term>greatest common divisor</term> of the numerator and denominator and then factor that out.
+</p>
+
+<definition xml:id="def-gcd-lcm">
+  <statement>
+    <p>Let <m>a,b \in \mathbb{Z}</m> be non-zero. Then
+    <ul>
+      <li>
+        <p>
+          The <term>greatest common divisor</term> of <m>a,b</m>, denoted <m>\gcd(a,b)</m>, is the largest positive integer that divides both <m>a</m> and <m>b</m>.
+        </p>
+      </li>
+      <li>
+          If <m>\gcd(a,b)=1</m> then we say that <m>a</m> and <m>b</m> are <term>coprime</term>, or <term>relatively prime</term>.
+      </li>
+      <li>
+        <p>
+          The <term>least common multiple</term> of <m>a,b</m>, denoted <m>\lcm(a,b)</m>, is the smallest positive integer that is divisible by both <m>a</m> and <m>b</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          By symmetry, <m>\gcd(a,b)=\gcd(b,a)</m> and <m>\lcm(a,b)=\lcm(b,a)</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Finally, <q>greatest common divisor</q> and <q>least common multiple</q> are frequently abbreviated to <term>gcd</term> and <term>lcm</term>.
+        </p>
+      </li>
+    </ul>
+    </p>
+  </statement>
+</definition>
+
+<remark><title>What about zero?</title>
+<p>
+  Notice that in the above defintion if <m>a,b</m> are non-zero then
+  the <m>\gcd(a,b)</m> and <m>\lcm(a,b)</m> are well-defined. We
+  should note that since <m>0 \times a = 0</m>, the definition extends
+  to
+  <me>
+    \gcd(a,0)=a.
+  </me>
+  When both <m>a,b</m> are zero then there is no greatest common
+  divisor since <m>0 \times n = 0</m> for any <m>n</m>. That being
+  said, in some contexts<fn>Many computer algebra systems define
+  <m>\gcd(0,0)=0</m>.</fn> <m>\gcd(0,0)</m> is <em>defined</em> to be
+  zero.
+</p>
+<p>
+  For non-zero <m>a</m>, the <m>\lcm(a,0)</m> is not well defined
+  since we cannot divide by zero. However, in some contexts
+  <m>\lcm(a,0)</m> is <em>defined</em> to be zero since the only
+  common multiple of <m>a</m> and <m>0</m> is zero.
+</p>
+
+<p>
+  With all of that said, we will only consider <m>\gcd(a,b)</m> when at least one of <m>a,b</m> are non-zero, and only consider <m>\lcm(a,b)</m> when <m>a,b</m> are both non-zero.
+</p>
+</remark>
+
+<remark>
+  <p>
+    Notice that by definition if <m>c</m> divides both <m>a,b</m> then <m>c \leq \gcd(a,b)</m>:
+    <me>
+      (c \mid a) \land (c \mid b) \implies c \leq \gcd(a,b).
+    </me>
+     Similarly, if <m>a</m> and <m>b</m> divide <m>m</m> then <m>\lcm(a,b) \leq m</m>:
+     <me>
+       (a \mid m) \land (b\mid m) \implies m \geq \lcm(a,b).
+     </me>
+  </p>
+</remark>
+
+<p>
+  When <m>a,b</m> are small numbers it is not too hard to compute the gcd by hand, typically by thinking about factors.
+  However, there is a much better (and faster) way called Euclid's algorithm.
+  It is based on the following observation.
+</p>
+
+<lemma xml:id="lem-euc">
+  <statement>
+    <p>
+      Let <m>a,b \in \mathbb{N}</m>, with <m>a\geq b</m>
+      <md>
+        <mrow>\gcd(a,0) \amp= a </mrow>
+        <mrow>\gcd(a,b) \amp= \gcd(b, a-b).</mrow>
+      </md>
+      Finally, if <m>a = q b + r</m> for some <m>q,r \in \mathbb{Z}</m>, then
+      <me>
+        \gcd(a,b) = gcd(b,r).
+      </me>
+    </p>
+  </statement>
+</lemma>
+
+<remark><title>Antisymmetry helping equality</title>
+  <p>
+    To prove the remaining two points we take advantage of the fact that the relation <q><m>\leq</m></q> is antisymmetric. That is
+    <me>
+      (x \leq y) \land (y \leq x) \implies x=y
+    </me>
+    This means that we can break down the proof of an equality into proofs of two (potentially easier) inequalities.
+    We have already done this proving set equalities using
+    <me>
+      (A \subseteq B) \land (B \subseteq A) \implies A=B.
+    </me>
+  </p>
+</remark>
+<proof><title>Proof of <xref ref="lem-euc"/></title>
+  <p>
+    We prove each point in turn.
+    <ul>
+      <li>
+        <p>
+          Since <m>a=a \cdot 1</m> and <m>0 = a \cdot 0</m>, it follows that <m>a</m> is a divisor of both <m>a,0</m>. No number larger than <m>a</m> can divide <m>a</m>, so <m>a</m> must be the greatest common divisor.
+        </p>
+      </li>
+    </ul>
+  </p>
+  <p>
+    As noted above, it is sufficient to show that (say) <m>\gcd(a,b) \geq \gcd(b,a-b)</m> and <m>\gcd(a,b) \leq \gcd(b,a-b)</m> in order to prove that <m>\gcd(a,b)=\gcd(b,a-b)</m>.
+    <ul>
+      <li>
+        <p>We start by showing that <m>\gcd(a,b) \leq \gcd(b,a-b)</m>.
+        To do this, we prove that <m>\gcd(a,b)</m> divides both <m>b</m> and <m>(a-b)</m>, and hence is a common divisor of <m>b</m> and <m>(a-b)</m>. Since it is a common divisor, it cannot be bigger than the largest common divisor (by definition).
+      </p>
+       <p>
+         Let <m>d = \gcd(a,b)</m>. Since <m>d \mid a</m> and <m>d \mid
+         b</m>, we can write <m>a=kd, b=\ell d</m> for some <m>k,\ell
+         \in \mathbb{Z}</m>. Thus <m>b-a = d(k-\ell)</m> and so it
+         follows that <m>d \mid (a-b)</m>. Hence <m>d</m> is a divisor
+         of <m>b</m> and <m>a-b</m>, and so it must be no bigger than
+         the gcd of <m>b, a-b</m>.
+        <me>
+          d \leq \gcd(b, a-b).
+        </me>
+        </p>
+        <p>
+          Now let us reuse this argument, but now starting from <m>c =
+          \gcd(b,a-b)</m>. Since <m>c \mid b</m> and <m>c \mid
+          (b-a)</m>, there are <m>k,\ell \in \mathbb{Z}</m> so that
+          <m>b=ck, (b-a)=c\ell</m>. It follows that <m>a = b-(b-a) =
+          c(k-\ell)</m> and thus <m>c \mid a</m>. And because <m>c
+          \mid a</m> and <m>c \mid b</m> we have
+          <me>
+            c \leq \gcd(a,b)
+          </me>
+        </p>
+        <p>
+          But now we have both
+          <me>
+            \gcd(a,b) \leq \gcd(b,a-b) \qquad \text{and} \qquad
+            \gcd(b,a-b) \leq \gcd(a,b)
+          </me>
+          and hence <m>\gcd(a,b)=\gcd(b,a-b)</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          That <m>\gcd(a,b)=\gcd(b,r)</m> follows by a nearly identical argument. If <m>d \mid a</m> and <m>d \mid b</m>, then
+          <me>
+            d \mid (a-qb) = r
+          </me>
+          Hence <m>d</m> divides both <m>b</m> and <m>r</m>, and hence
+          <me>
+            d \leq \gcd(b,r).
+          </me>
+          And since <m>c = \gcd(b,r)</m> divides both <m>b</m> and <m>r</m>, it must also satisfy
+          <me>
+            d \mid (qb+r) = a
+          </me>
+          Thus <m>c</m> divides both <m>b</m> and <m>a</m>, and so
+          <me>
+            c \leq \gcd(a,b)
+          </me>
+          Since <m>\gcd(a,b) \leq \gcd(b,r)</m> and <m>\gcd(b,r) \leq \gcd(a,b)</m>, we must have that they are equal.
+        </p>
+      </li>
+    </ul>
+  </p>
+</proof>
+
+
+
+<p>
+  Now why is this useful? Well, say <m>a \gt b</m>, then we can compute
+  <me>
+    \gcd(a,b) = \gcd(b,a-b)
+  </me>
+  and now the number <m>a-b</m> is smaller than <m>a</m>.  If we keep repeating this, then the numbers in our gcd keep getting smaller and smaller until we have to compute a really simple gcd.
+  This is even faster if we write <m>a = qb+r</m>, because then
+  <me>
+    \gcd(a,b) = \gcd(b,r).
+  </me>
+For example
+  <md>
+    <mrow>\gcd(268, 120) \amp = \gcd(120,28)
+      \amp\text{since } 28 \amp=268-2\times120
+      </mrow>
+    <mrow> \amp= \gcd(28,8) \amp \text{since } 8 \amp = 120 - 4 \times 28 </mrow>
+    <mrow> \amp = \gcd(8,4) \amp \text{since } 4 \amp = 28 -  3\times 8 </mrow>
+    <mrow> \amp = \gcd(4, 0) \amp \text{since } 0 \amp = 8 -  2\times 4  </mrow>
+    <mrow> \amp = 4 </mrow>
+  </md>
+  This method of computing the gcd is known as the Euclidean algorithm.
+</p>
+
+<algorithm xml:id="alg-euc"><title>The Euclidean algorithm</title>
+  <statement>
+    <p>Let <m>a,b \in \mathbb{Z}</m> with <m>|a|\geq |b|</m> and at least one of <m>a,b</m> non-zero. Then <m>\gcd(a,b)</m> can be computing using the following steps:
+    <ol>
+      <li>If <m>b=0</m> then the gcd is <m>a</m>, otherwise go on to (2)</li>
+      <li>Compute the remainder of <m>a</m> divided by <m>b</m>, that is <m>a = qb + r</m> with <m>0 \leq r \lt |b|</m>.</li>
+      <li>Go back to (1) with <m>(a,b)</m> replaced by <m>(b,r)</m>.</li>
+    </ol>
+    </p>
+  </statement>
+
+  <proof>
+    <p>Assume <m>a,b \in \mathbb{Z}</m> as stated.
+    <ul>
+      <li>If <m>b=0</m> then we are done since <m>\gcd(a,0)=a</m> by Lemma <xref ref="lem-euc"/>.</li>
+      <li>So now we can assume that <m>b\neq 0</m>. By <xref ref="fact-euc-div"/> we know that
+      <me>
+        a = qb+r \qquad \text{with } 0 \leq r \lt |b|.
+      </me>
+      By Lemma <xref ref="lem-euc"/> we know that <m>\gcd(a,b) = \gcd(a,r)</m>. Hence computing <m>\gcd(b,r)</m> is the same as computing <m>\gcd(a,b)</m>.
+      </li>
+      <li>Since <m>0 \lt r \lt |b|</m> it follows that the value of <m>r</m> will be <em>strictly</em> smaller in each iteration. Further, since <m>r</m> is an integer, it follows that <m>r</m> will become zero in a finite number of iterations.
+      </li>
+    </ul>
+    Hence the algorithm described will terminate in a finite number of steps and give the gcd.
+    </p>
+  </proof>
+
+</algorithm>
+
+<p>
+  Let's do another one:
+  <md>
+    <mrow>\gcd(869, 442) \amp= \gcd(442, 427) \amp \text{since } 869=442+427</mrow>
+    <mrow> \amp=\gcd(427, 15) \amp \text{since } 442=427+15</mrow>
+    <mrow>  \amp=\gcd(15, 7) \amp \text{since } 427 = 15\cdot 28 + 7 </mrow>
+    <mrow>  \amp=\gcd(7,1) \amp \text{since } 15 = 2\cdot 7 + 1</mrow>
+    <mrow>  \amp=\gcd(1,0) \amp \text{since } 7 = 7\cdot 1 + 0</mrow>
+    <mrow>  \amp= 1 </mrow>
+  </md>
+  Now notice that at each stage we take linear combinations of the arguments of the gcd to make new arguments.
+  <md>
+    <mrow>427 \amp= 869-442 </mrow>
+    <mrow> 15\amp=442-427 </mrow>
+    <mrow> 7 \amp=427-28\cdot 15 </mrow>
+    <mrow> 1 \amp= 15 - 2 \cdot 7 </mrow>
+  </md>
+  If we substitute these equations into each other, then we can write our result as some linear combination of our starting arguments. Let <m>a=869, b=442</m>, then:
+  <md>
+    <mrow> 427 \amp = 869-442 = a-b</mrow>
+    <mrow> 15 \amp = 442-427 = b - \underbrace{(a-b)}_{=427} = 2b-a </mrow>
+    <mrow> 7 \amp = 427- 28 \cdot 15 = \underbrace{(a-b)}_{=427} - 28\underbrace{(2b-a)}_{=15} = 29a - 57b</mrow>
+    <mrow> 1 \amp = 15-2\cdot 7 = \underbrace{(2b-a)}_{=15} - 2\underbrace{(29a-75b)}_{=7} = 116b - 59a </mrow>
+  </md>
+  That is
+  <me>
+    \gcd(869,442) = 1 = 116\cdot 442 - 59\cdot 869.
+  </me>
+  That one can write the gcd in this way is quite general and is known as Bézout's Lemma.
+</p>
+
+<lemma xml:id="lem-bezout"><title>Bézout's Lemma</title>
+  <statement>
+    <p>Let <m>a,b \in \mathbb{Z}</m> so that at least one of <m>a,b</m> is non-zero.
+    Then there exist <m>x,y \in \mathbb{Z}</m> so that
+    <me>
+      \gcd(a,b) = ax + by.
+    </me>
+    </p>
+  </statement>
+  <proof xml:id="proof-bezout">
+    <p>
+      Essentially one follows the Euclidean algorithm backwards just as we have in the example above. However one can also prove this using an induction-like argument which is nearly the same thing.
+    </p>
+    <p>
+      Consider an execution of the Euclidean algorithm starting from <m>a,b</m>. It builds a finite sequence of equations of the form:
+      <md>
+        <mrow>a \amp= q_1 b +  r_1 </mrow>
+        <mrow>b \amp = q_2 r_1 + r_2 </mrow>
+        <mrow>r_1 \amp = q_3 r_2 + r_3 </mrow>
+        <mrow>r_2 \amp = q_4 r_3 + r_4 </mrow>
+        <mrow>  \vdots \amp= \vdots </mrow>
+        <mrow> r_{n-1} \amp= q_{n+1} r_n + 0 </mrow>
+      </md>
+      where the gcd will be <m>r_n</m>.
+      We now prove that for each <m>i</m>, there exist <m>x_i,y_i \in \mathbb{Z}</m> so that <m>r_i = ax_i + by_i</m>, using an induction-style proof.
+    </p>
+      <p>
+        Notice that when <m>i=1</m> we have
+        <me>
+          r_1 = a - q_1 b
+        </me>
+        so we have <m>x_1=1, y_1 = -q_1</m>. Similarly, when <m>i=2</m> we have
+        <me>
+          r_2 = b - q_2 r_1 = b - q_2(a-q_1b) = (1 + q_1q_2) b - q_2 a
+        </me>
+        Hence <m>x_2 =-q_2, y_2 = 1+q_1q_2</m>.
+      </p>
+      <p>
+        Now for general <m>i</m> we have that
+        <me>
+          r_{i+1} = r_{i-1} - q_{i+1} r_{i}
+        </me>
+        So if <m>r_i = x_i a + y_i b</m> and <m>r_{i-1} = x_{i-1}a + y_{i-1}b</m>, then
+        <me>
+          r_{i+1} = (x_{i-1} a + y_{i-1} b) - q_{i+1}(x_{i}a + y_{i}b)
+            = a(x_{i-1} - q_{i+1}x_{i} ) + b(y_{i-1} - q_{i+1}y_{i}).
+        </me>
+        Hence
+        <me>
+          x_{i+1} = x_{i-1} - q_{i+1} x_{i} \qquad
+          y_{i+1} = y_{i-1} - q_{i+1} y_{i}.
+        </me>
+        So using this recurrence and our starting values of <m>(x_1,y_1), (x_2, y_2)</m> we can find integer <m>(x_3,y_3), (x_4, y_4)</m> and so on up to <m>(x_n, y_n)</m>. And hence we can write <m>gcd(a,b) = x_n a + y_n b</m> with <m>x_n,y_n \in \mathbb{Z}</m>.
+      </p>
+      <p>
+        Notice that if we set
+        <me>
+          (x_0,y_0) = (0,1) \qquad \text{ and } (y_0, y_1)=(1,-q_1)
+        </me>
+        then our recurrence gives us
+        <md>
+        <mrow>
+          x_2 \amp = 0 - q_2 \cdot 1 = -q_2  \amp
+          y_2 \amp = 1 - q_2 \cdot(-q_1) = 1 + q_1q_2
+          </mrow>
+        </md>
+        as required.
+      </p>
+  </proof>
+
+</lemma>
+
+<p>
+  In the proof of the above lemma we give a construction of a recurrence that gives us the needed <m>x,y</m> to express <m>\gcd(a,b) = ax + by</m>. By combining that recurrence and the Euclidean algorithm we get the <term>extended Euclidean algorithm</term>.
+</p>
+
+<algorithm xml:id="alg-x-euc"><title>The extended Euclidean algorithm</title>
+  <statement>
+    <p>Let <m>a,b \in \mathbb{Z}</m> with <m>|a|\geq |b|</m> and at least one of <m>a,b</m> non-zero. Then <m>\gcd(a,b)</m> can be computed using the following steps:
+    <ol>
+      <li>If <m>b=0</m> then the gcd is <m>a</m> else go on to (2)</li>
+      <li>Compute the remainder of <m>a</m> divided by <m>b</m>, that is <m>a = qb + r</m> with <m>0 \leq r \lt |b|</m>.</li>
+      <li>Go back to (1) with <m>(a,b)</m> replaced by <m>(b,r)</m>.</li>
+    </ol>
+    In the process of computing this we obtain a sequence of <m>n</m> quotients <m>q_i</m> and remainders <m>r_i</m>. Define sequences <m>x_i,y_i</m> by the inital values
+    <me>
+      x_0=0, x_1=1 \qquad \text{and} \qquad y_0=0, y_1=-q_1
+    </me>
+    and then for <m>k \geq 1</m>:
+    <md>
+      <mrow>x_{k+1} = x_{k-1} - q_{k+1} x_{k}</mrow>
+      <mrow>y_{k+1} = y_{k-1} - q_{k+1} y_{k}</mrow>
+    </md>
+    Then
+    <me>
+      \gcd(a,b) = a x_n + b y_n.
+    </me>
+    </p>
+  </statement>
+  <proof>
+    <p>
+      This follows quite directly from <xref ref="proof-bezout"/> of Bézout's lemma above.
+    </p>
+  </proof>
+
+</algorithm>
+<p>
+  Returning to our example of <m>\gcd(869, 442)</m> above, we had
+    <md>
+      <mrow> q_1\amp=1 \amp q_2 \amp=1 \amp q_3=\amp28 \amp q_4\amp=2 </mrow>
+    </md>
+  which gives <m>x_0=0, x_1=1</m> and <m>y_0=1, y_1=-1</m>
+  <md>
+    <mrow> x_2 \amp=0 - 1 = -1 \amp
+    x_3 \amp= 1 - 28 \cdot (-1) = 29 \amp
+    x_4 \amp= -1 - 2 \cdot 29 = - 59
+    </mrow>
+    <mrow> y_2 \amp= 1 - 1\cdot(-1)= 2 \amp
+    y_3 \amp = -1 - 28 \cdot 2 = -57 \amp
+    y_4 \amp = 2 - 2\cdot(-57) = 116 \amp
+     </mrow>
+  </md>
+  and we can verify that
+  <me>
+    -59\cdot 869 + 116 \cdot 442 = -51271  + 51272 = 1
+  </me>
+  as required.
+</p>
+<p>
+  Bézout's turns out to be a useful result because it allows one to express <m>\gcd(a,b)</m> as a simple equation in <m>a,b</m> which is then easier to manipulate.
+  As an example of its utility, consider the following lemma about division which we attribute to Euclid.
+  This feels like it should be <q>obvious</q>, but it turns out to be not so easy to prove without invoking unique prime-factorisations of integers <mdash /> the Fundamental Theorem of Arithmetic. Unfortunately that result is harder to prove than this one.  We'll get around to proving the Fundamental Theorem of Arithmetic, but not just yet.
+</p>
+
+<lemma xml:id="lem-euclid"><title>Euclid's lemma</title>
+  <statement>
+    <p>
+      Let <m>a,b,p \in \mathbb{Z}</m> so that <m>p</m> is prime, and <m>p \mid ab</m>. If <m>p \nmid b</m> then <m>p \mid a</m>.
+    </p>
+    <p>
+      More generally let <m>a,b,d \in \mathbb{Z}</m> so that <m>d \mid ab</m>. If <m>\gcd(d,b)=1</m> then <m>d \mid a</m>.
+    </p>
+    <p>
+
+    </p>
+  </statement>
+  <proof><title>Via Bézout</title>
+      <p>
+      Notice that the second statement implies the first statement, since by definition the only divisors of <m>p</m> are <m>1,p</m>, and so if <m>p \nmid b</m> then <m>\gcd(p,b) = 1</m>.
+    </p>
+    <p>
+      By assumption, we know that <m>d \mid ab</m>, so we can write <m>ab = dk</m> for some <m>k \in \mathbb{Z}.</m>
+
+      Bézout's lemma allows us to write an equation linking <m>b,d</m>. In particular, it guarantees that there are <m>x,y \in \mathbb{Z}</m> so that
+      <me>
+        1 = dx + by
+      </me>
+      Multiply this expression by <m>a</m> to get
+      <me>
+        a = adx + aby
+      </me>
+      But since <m>ab = dk</m>, we have
+      <me>
+        a = d(ax + ky)
+      </me>
+      and so <m>d \mid a</m> as required.
+    </p>
+  </proof>
+
+  <proof><title>Implicitly Bézout</title>
+    <p>
+      Here is an alternative proof <mdash /> it does not use Bézout's lemma explicitly, but some of the ideas are similar. Let <m>p \mid ab</m> and assume that <m>p \nmid b</m>. Then form the set
+      <me>
+        S = \set{x \in \mathbb{N} \so p \mid xa}
+      </me>
+      We know that <m>S</m> is non-empty since <m>b \in S</m>. Further, we also know that <m>S \subseteq \mathbb{N}</m> and so obeys the well-ordering principle that we saw back in Chapter <xref ref="ch_induction"/> on induction. It implies that <m>S</m> must have a smallest element, <m>z</m>. If we can show that <m>z=1</m> we are done because we have shown that <m>p \mid a</m>. We first that <m>z</m> divides all elements in <m>S</m>.
+    </p>
+    <p>
+      Let <m>x \in S</m>, then by Euclidean division we know that
+      <me>
+        x = qz + r \qquad \text{with } 0 \leq r \lt z
+      </me>
+      But we know that <m>p \mid xa</m> and <m>xa = aqz+ra</m>.
+      Rewrite this as
+      <me>
+        ra = xa-azq
+      </me>
+      Now by definition of <m>S</m>, we know that <m>p \mid xa</m> and <m>p \mid az</m>, so <m>p \mid ra</m>.
+      If <m>r \neq 0</m> we have a problem because now <m>p \mid ra</m> and <m>r \lt z</m> which contradicts <m>z</m> being minimal. Hence we must have <m>r=0</m> and so <m>z \mid x</m>.
+    </p>
+    <p>
+      How do we now use this to show that <m>z=1</m>? Since <m>p \mid pa</m>, we know that <m>p \in S</m>. Similarly, since <m>p \mid ba</m>, we know that <m>b \in S</m>. Hence <m>z \mid p</m> and <m>z \mid b</m>. The only divisors of <m>p</m> are <m>1</m> and <m>p</m> and since <m>p \nmid b</m>, we must have <m>z=1</m>.  So finally, we know that <m>p \mid a</m> as required.
+    </p>
+  </proof>
+
+</lemma>
+
+<remark><title>Euclid without Bézout</title>
+<p>
+  Since Euclid lived around 300BC in ancient Greece and Egypt, and Bézout lived in 18th century France, it is pretty clear that there must be a way to prove the above without using Bézout's lemma. The interested reader should look at <url href="https://web.nmsu.edu/~davidp/euclid.pdf" visual="web.nmsu.edu/~davidp/euclid.pdf">this excellent discussion of Euclid's proof</url> by David Pengelley and Fred Richman, and other good articles <url href="https://web.nmsu.edu/~davidp/fractions-monthly-final.pdf" visual="web.nmsu.edu/~davidp/fractions-monthly-final.pdf">here</url> and <url href="http://people.math.harvard.edu/~mazur/preprints/Eva.pdf" visual="people.math.harvard.edu/~mazur/preprints/Eva.pdf">here</url>.
+</p>
+</remark>
+<proof><title>Closer to Euclid</title>
+  <p>
+    The proof we give here is closer to Euclid's original proof. The key to that proof is the fact that if we have a fraction <m>\frac{a}{b}</m>  and then we find the smallest fraction equivalent to that, call if <m>\frac{x}{y}</m> (ie where <m>x</m> is as small as possible), then there must be some <m>n</m> so that <m>a=nx</m> and <m>b=ny</m>. Now this feels quite obvious. Obvious until you have to prove it.
+  </p>
+  <p>
+    We follow the clever argument given <url href="http://people.math.harvard.edu/~mazur/preprints/Eva.pdf" visual="people.math.harvard.edu/~mazur/preprints/Eva.pdf">in this excellent article</url> by Barry Mazur. Since the fractions <m>\frac{a}{b}</m> and <m>\frac{x}{y}</m> are equal, we know that
+    <me>
+      ay = bx.
+    </me>
+    If <m>a=x</m> then <m>n=1</m> and we are done. So choose <m>n</m> to be the largest integer so that <m>a \gt nx</m>. Indeed we must have <m>a-nx \geq x</m> (otherwise we would pick <m>n</m> to be larger). And since <m>x = \frac{y}{b} a</m>
+    <me>
+      nx = \frac{ny}{b} a
+    </me>
+    and so we must also have that <m>ny \gt b</m>.
+  </p>
+  <p>
+    Now consider the fraction <m>\ds \frac{a-nx}{b-ny}</m>. One can quickly verify by cross-multiplication that
+    <me>
+      \frac{a-nx}{b-ny} = \frac{x}{y}.
+    </me>
+    So we have a new fraction that is also equal to <m>\frac{a}{b}</m> and <m>{x}{y}</m>. But now, since <m>\frac{x}{y}</m> was minimal, we must have <m>a-nx \geq x</m>, and at the same time, we choose <m>n</m> so that <m>a-nx \leq x</m>. Thus we must have <m>a-nx = x</m>. In other words
+    <me>
+      a = x(n+1).
+    </me>
+    and so <m>a</m> is a multiple of <m>x</m>. Substituting this back into <m>ay=bx</m> shows that
+    <me>
+      b = y(n+1)
+    </me>
+    also.
+  </p>
+  <p>
+    This result implies that if we have
+    <me>
+      \frac{a}{b}=\frac{c}{d}=r
+    </me>
+    then there is a unique smallest fraction <m>\frac{x}{y}=r</m> so that
+    <md>
+      <mrow> a \amp=kx \amp b\amp=ky </mrow>
+      <mrow> c \amp=nx \amp d\amp=ny </mrow>
+    </md>
+    for some integers <m>k,n</m>. That is, the two fractions <m>\frac{a}{b}, \frac{c}{d}</m> reduce to the same<fn>
+    This actually turns out to be a subtle point which is false in other contexts. In particular one can come up with perfectly well behaved sets of numbers, such as
+    <m>
+      \mathbb{Z}[\sqrt{-5}] = \set{a+b\sqrt{-5} \so a,b \in \mathbb{Z}}
+    </m>
+    where this result is no longer true. The interested reader should search-engine their way to discussions of <q>unique factorisation domains</q> and non-examples.
+    </fn>
+     fraction <m>\frac{x}{y}</m>.
+  </p>
+
+  <p>
+    Now let us go back and use this to prove that if <m>p \mid ab</m> and <m>p \nmid b</m> then <m>p \mid a</m>. Since <m>p \mid ab</m>, we know that <m>ab = pc</m>. Hence we have
+    <me>
+      \frac{a}{p} = \frac{c}{b}.
+    </me>
+    From the above, we know that there exist <m>k,n,x,y</m> so that
+    <md>
+      <mrow>a \amp= kx \amp c\amp= nx </mrow>
+      <mrow>p \amp= ky \amp b\amp= ny</mrow>
+    </md>
+    But we know that <m>p</m> is prime, so either <m>(k,y)=(p,1)</m> or <m>(k,y)=(1,p)</m>. The first case implies that <m>p \mid a</m>, while the second implies that <m>p \mid b</m>. Since <m>p \nmid b</m> by assumption, we know that <m>p \mid a</m>. And we are done.
+  </p>
+
+</proof>
+
+
+
+<p>
+  Here is another example of how Bézout's lemma can be very useful to prove a very useful<fn>and obvious until you have to prove it!</fn> result linking the gcd and lcm.
+</p>
+
+<lemma xml:id="lem-">
+  <statement>
+    <p>The gcd and lcm satisfy the equation
+      <me>
+        \gcd(a,b) \cdot \lcm(a,b) = |a \cdot b|.
+      </me>
+    </p>
+  </statement>
+</lemma>
+<proof>
+  <p>
+    Let <m>d = \gcd(a,b)</m> and let <m>L = \frac{|ab|}{d}</m>. We need to show that both
+    <ul>
+      <li><m>L</m> is a common multiple of <m>a,b</m>, and</li>
+      <li>any other common multiple of <m>a,b</m> is at least as large as <m>L</m>.</li>
+    </ul>
+    We know that, by definition, <m>d \mid a</m> and <m>d \mid b</m>. Hence
+    <me>
+      a = dk \qquad \text{ and } b = dn
+    </me>
+    which gives <m>|ab| = |d^2 kn|</m>
+    and so
+    <me>
+      L = \frac{|ab|}{d} = |dkn| = |a n| = |b k|.
+    </me>
+    Thus <m>a \mid L</m> and <m>b \mid L</m> as required.
+  </p>
+  <p>
+    Let <m>M</m> be a common multiple of <m>a,b</m>. It suffices to show that <m>L \mid M</m> since this means that <m>|L| \leq |M|</m>.
+    Since <m>M</m> is a common multiple of <m>a,b</m> we know that
+    <me>
+      M = a p = bq
+    </me>
+    for some integer <m>p,q</m>.
+    Now since <m>dL = ab</m>, it is easier to compare <m>dM</m> and <m>dL</m>, and we do that via Bézout's lemma.
+    Recall from Bézout's lemma that there are <m>x,y \in \mathbb{Z}</m> so that:
+    <me>
+      d = ax + by
+    </me>
+    This means that
+    <md>
+      <mrow> dM \amp = aMx + bMy</mrow>
+      <mrow> \amp = a(\underbrace{bq}_{=M}) x + b (\underbrace{ap}_{=M}) y</mrow>
+      <mrow> \amp = ab (qx + py)</mrow>
+    </md>
+    and thus <m>dL \mid dM</m>.
+    Hence <m>L \mid M</m> and so <m>|L| \leq |M|</m>.
+    This means that <m>L</m> is the least common multiple of <m>a,b</m>.
+  </p>
+</proof>
+
+</section>
+
+<section xml:id="sec-unique-fact">
+  <title>Uniqueness of prime factorisation</title>
+  <p>
+    Prime numbers follow very quickly when we learn about multiplication. Soon after that<fn>
+    If this author is remembering back that far correctly<ellipsis/>
+  </fn>
+  we realise that every positive integer can be written as a product of primes.
+    <me>
+      30 = 5 \times 3 \times 2
+    </me>
+    While we can shuffle those numbers around
+    <me>
+      30 = 2 \times 5 \times 3 = 3 \times 2 \times 5 = \text{ etc}
+    </me>
+    those products will still contain the same number of each prime. Hence we can write it <em>uniquely</em> by putting the primes in order, smallest to largest:
+    <me>
+      30 = 2 \times 3 \times 5.
+    </me>
+    This <term>unique factorisation</term> of integers<fn>
+    Of course we have to make exceptions for zero and one, which are not primes. We also have to agree that when we factor a negative integer we just put a <q><m>(-1)\times</m></q> and then factor the absolute value as usual.
+    </fn>
+     into primes is called the <q>Fundamental theorem of arithmetic</q>, and seems so obvious to us that it is hard to imagine that one even has to prove it! However, while it feels obvious, it needs a proof.
+   </p>
+
+   <p>
+     The history of the theorem is not quite as direct as one might think<fn>The interested reader can find out more about the history of this result using their favourite search-engine. A very good starting point is <url href="https://core.ac.uk/download/pdf/81978891.pdf" visual="core.ac.uk/download/pdf/81978891.pdf">this article</url>. It certainly surprises this author that the first explicit formal statement and proof of this fact comes a full century after Newton and Leibniz developed calculus.</fn>.
+     The result follows quite directly from the results of Euclid we discussed in the previous section, but does not actually appear explicitly in <url href="https://en.wikipedia.org/wiki/Euclid%27s_Elements" visual="wikipedia.org/wiki/Euclid's_Elements">Euclid's Elements</url>.
+     The 13th Century Persian mathematician al-Farisi<fn>
+     Kamal al-Din al-Farisi (1265 <ndash /> 1318) was a Persian mathematician and physicist who is also famous for his mathematically rigorous description of the formation of rainbows.
+   </fn>
+   proved that numbers can be decomposed as products of primes, but not the uniqueness of that decomposition.
+   Prestet, Euler and Lagrange<fn>
+   Jean Prestet (1648<ndash />1690), Leonard Euler (1707 <ndash /> 1783) and Joseph-Louis Lagrange (1736 <ndash />1813). The latter was born Giuseppe Ludovico De la Grange Tournier. Your favourite search engine will get you to much more information, especially about Euler and Lagrange.
+  </fn>
+    all seem to have been very close to writing it down, but it was actually Gauss<fn>
+    Johann Carl Friedrich Gauss (1777 <ndash /> 1855) made an incredible number of contributions to mathematics and physics. Indeed, we have already come across him in this text back when we were busy computing <m>1+2+\cdot+n</m>. His history is well worth a quick trip to your favourite search engine.
+    </fn>
+    who first wrote it down explicitly in 1801.
+  </p>
+
+  <theorem xml:id="thm-FTA"><title>The fundamental theorem of arithmetic</title>
+    <statement>
+      <p>
+        If <m>n \gt 1</m> is an integer, then it can be written as a product of primes in exactly one way (up to permutations of the primes).
+      </p>
+    </statement>
+  </theorem>
+  <p>
+    With our work in the previous section we are ready to prove this result. It follows quite directly from Euclid's lemma <xref ref="lem-euclid"/>. Recall that this tells us that
+    <me>
+      (p \mid ab) \implies (p\mid a) \lor  (p \mid b).
+    </me>
+  </p>
+  <proof>
+    <p>
+      Let <m>n \in \mathbb{Z}</m> so that <m>n \geq 2</m>. We use induction to prove that <m>n</m> can be decomposed as a product of primes. We then show that this decomposition is unqiue.
+    </p>
+    <p>
+      We proceed to show the existence of a prime factorisation by <xref ref="subsec-stronginduction">strong induction</xref>.
+      <ul>
+        <li>Base case. Since <m>n=2</m> is prime, it is trivially written as a product of primes.</li>
+        <li>Inductive step. Assume that the result holds for all integers <m>2 \leq k \lt n</m>. If <m>n</m> is prime the result holds since the factorisation is trivial. On the other hand, if <m>n</m> is not prime, then (by definition) it can be written as
+        <me>
+        n = ab \qquad \text{with } 1 \lt a,b \lt n.
+        </me>
+        Since <m>a,b \lt n</m> we know, by assumption, that
+        <me>
+          a = p_1 p_2 \cdots p_k \qquad \text{ and } \qquad b = q_1 q_2 \cdots q_\ell
+        </me>
+        where the <m>p_i, q_j</m> are all primes. Hence
+        <me>
+          n=ab=p_1 p_2 \cdots p_k  \cdot  q_1 q_2 \cdots q_\ell
+        </me>
+        is a product of primes as requried.
+      </li>
+      </ul>
+    </p>
+    <p>
+      We must now show that the decomposition is unique.
+      A very standard way to show the uniqueness of a mathematical object is to assume there are two of them and show that the two must be equal.
+      So, let us assume that we can write (please forgive recycling of <m>p</m>'s and <m>q</m>'s from just above):
+      <me>
+        n = p_1 p_2 \cdots p_k = q_1 q_2 \cdots q_\ell
+      </me>
+      If there are any common prime factors between the sides, then divide through by them. Now either that cancels all the factors (in which case we are done), or we are left with an expression as above but with <em>no</em> common factors on each side. Well then take the smallest remaining prime on either side, call it <m>z</m>. Since <m>z</m> divides one side, it must, by Euclid's lemma, divide one of the factors on the other. However, since all the factors are prime, the factor <m>z</m> must be on both sides. But this cannot happen since we removed all the common factors. Thus the two factorisations of <m>n</m> must actually be the same.
+    </p>
+  </proof>
+</section>
+
+<xi:include href="../problems/09ex.ptx"/>
+
+</chapter>

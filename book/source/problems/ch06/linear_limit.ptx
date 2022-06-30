@@ -1,0 +1,39 @@
+<exercise>
+<!-- source latex = 'linear limit.tex' -->
+<!-- converted on 08/11/2021 at 10:39 -->
+<statement>
+<p>
+Show that <m>\displaystyle\lim_{x\to 4}\left(-3x+5 \right)=-7</m>.
+</p>
+</statement>
+
+<!-- <hint></hint> -->
+
+<answer>
+<p>
+Suppose that <m>\epsilon \gt 0</m> is given. We need to find some <m>\delta \gt 0</m> so that
+<me> 0 \lt |x-4| \lt \delta \implies |-3x+5-(-7)| \lt \epsilon. </me>
+We can simplify the inequality on the right-hand side as
+<me> |-3x+12| \lt \epsilon. </me>
+Moreover, we can factor out <m>|-3|</m> from the absolute value, and we'll end up with a factor of <m>|x-4|</m>:
+<me> 3|x-4| \lt \epsilon. </me>
+So in order to satisfy the initial implication, we need to find <m>\delta \gt 0</m> so that
+<me> 0 \lt |x-4| \lt \delta\implies   3|x-4| \lt \epsilon.</me>
+From this, we see that this implication will be satisfied when <m>\delta \leq \epsilon/3</m>. So let's just take <m>\delta = \epsilon/3</m>.
+</p>
+<p>
+Now we can write up the formal proof.
+</p>
+</answer>
+<solution>
+<proof>
+<p>
+Let <m>\epsilon \gt 0</m>. Take <m>\delta=\epsilon/3</m>, and suppose that <m>x\in\mathbb{R}</m> so that <m>0 \lt |x-4| \lt \delta</m>. Then
+<me> |-3x+5-(-7)|=|-3x+12|=|-3(x-4)|=|-3||x-4|=3|x-4|. </me>
+Using the inequality, <m>|x-4| \lt \delta</m>, we then have
+<me> |-3x+5-(-7)|=3|x-4| \lt 3\cdot \delta=3\cdot\frac{\epsilon}{3}=\epsilon </me>
+as required.
+</p></proof>
+
+</solution>
+</exercise>

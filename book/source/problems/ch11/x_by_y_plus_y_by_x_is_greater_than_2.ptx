@@ -1,0 +1,140 @@
+<exercise>
+<!-- source latex = 'x by y plus y by x is greater than 2.tex' -->
+<!-- converted on 03/03/2022 at 12:02 -->
+<statement>
+<p>
+Consider the following statement: For all <m>x, y\in \mathbb{R}</m> with <m>x, y  \gt 0</m> and <m>x\neq y</m>
+<me>\frac{x}{y}+\frac{y}{x}  \gt  2.</me>
+<ol marker="(a)">
+<li>
+<p>
+ Prove the statement directly.
+    </p></li>
+<li>
+<p>
+ Prove the statement by contradiction.
+    </p></li>
+<li>
+<p>
+ How does the statement change if we remove the assumption <m>x\neq y</m> ? That is:
+    For all <m>x, y\in \mathbb{R}</m> with <m>x, y  \gt 0</m>, what can we say about <m>\frac{x}{y}+\frac{y}{x}</m>?
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<answer>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ Let's try to rearrange the inequality in the statement to achieve something more obvious.
+    <md>
+<mrow>
+  \frac{x}{y}+\frac{y}{x}  \amp  \gt  2.
+</mrow>
+<intertext>We give the left hand side a common denominator</intertext>
+<mrow>
+  \frac{x^2+y^2}{xy}  \amp  \gt 2.
+</mrow>
+<intertext>
+  Now we multiply both sides by <m>xy</m>. This won't change the sign of our inequality because <m>x, y \gt 0</m>, so <m>xy \gt 0</m>
+</intertext>
+<mrow>
+  x^2+y^2  \amp  \gt  2xy.
+</mrow>
+<intertext>
+  We now subtract <m>2xy</m> from both sides of the equation and see if the resulting quadratic equation has any nice properties
+</intertext>
+<mrow>
+  x^2-2xy+y^2  \amp  \gt 0.
+</mrow>
+<intertext>
+  We factor the left hand side
+</intertext>
+<mrow>
+  (x-y)^2  \amp \gt 0.
+</mrow>
+</md>
+    Since we assumed that <m>x \neq y</m>, we know that <m>x-y \neq 0</m>, and the square of any non-zero real must be positive. Therefore we've reached an obvious fact! To write the direct proof, we start with the obvious fact and work backwards through the steps above until we reach the desired result.
+</p></li>
+<li>
+</li>
+<li>
+<p>
+ We check what happens when <m>x=y</m>. When <m>x=y</m>, <m>\frac{x}{y} = \frac{y}{x} = 1</m>. Thus,
+    <me>\frac{x}{y} + \frac{y}{x} = 2.</me>
+    We'll alter the statement to read:
+</p>
+<p>
+    For all <m>x, y\in \mathbb{R}</m> with <m>x, y  \gt 0</m>
+<me>\frac{x}{y}+\frac{y}{x} \geq 2.</me>
+</p>
+
+</li>
+</ol>
+</p>
+</answer>
+<solution>
+
+  <proof><title>Proof of (a)</title>
+<p>
+Recall that the square of any non-zero real number is positive. Since <m>x\neq y,</m> we know <m>x-y \neq 0,</m> so we have
+<me>(x-y)^2 \gt 0.</me>
+We expand the left hand side to achieve
+<me>x^2-2xy+y^2  \gt 0,</me>
+and add <m>2xy</m> to each side, giving
+<me>x^2+y^2 \gt 2xy.</me>
+</p>
+<p>
+Now, by assumption <m>x, y \gt 0</m>, hence <m>xy \gt 0</m> and we may divide both sides by <m>xy</m> without changing the sign of the inequality
+<me>\frac{x^2}{xy}+\frac{y^2}{xy}  \gt  2.</me>
+Simplifying gives the desired result
+<me>\frac{x}{y} + \frac{y}{x} \gt 2.</me>
+</p></proof>
+
+
+<proof><title>Proof of (b)</title>
+<p>
+By way of contradiction, suppose that there exist values <m>x, y\in \mathbb{R}</m> with <m>x, y  \gt 0</m> and <m>x\neq y</m> such that
+<me>\frac{x}{y}+\frac{y}{x} \leq 2.</me>
+Since <m>x, y \gt 0</m>, we have <m>xy \gt 0</m>. Therefore, multiplying both sides by <m>xy</m>, we see
+<me>x^2 + y^2 \leq 2xy.</me>
+Subtracting <m>2xy</m> from each side gives
+<me>x^2-2xy+y^2 = (x-y)^2 \leq 0 \tag{1}</me>
+On the other hand, <m>x-y\in \mathbb{R}</m> implies that <m>(x-y)^2 \geq 0</m>. Combined with (1), we see
+<me>(x-y)^2=0,</me>
+and thus we have <m>x=y</m>. This yields a contradiction since we assumed <m>x \neq y</m>.
+</p></proof>
+
+
+<proof><title>Proof of (c)</title>
+<p>
+ <em>Claim:</em> For all <m>x, y\in \mathbb{R}</m> with <m>x, y  \gt 0</m>
+<me>\frac{x}{y}+\frac{y}{x} \geq 2.</me>
+</p>
+<p>
+We prove the claim using two cases.
+</p>
+<p>
+<em>Case 1: <m>x=y</m>.</em>
+</p>
+<p>
+If <m>x=y</m>, then <m>\frac{x}{y} = \frac{y}{x} = 1</m>. Therefore
+<me>\frac{x}{y}+ \frac{y}{x} = 1+1 = 2.</me>
+</p>
+<p>
+<em>Case 2: <m>x\neq y</m>.</em>
+</p>
+<p>
+By either of the previous parts, we have
+<me>\frac{x}{y}+ \frac{y}{x}  \gt  2.</me>
+</p>
+<p>
+Combining cases 1 and 2, we conclude that for all <m>x, y\in \mathbb{R}</m> with <m>x, y  \gt 0</m>
+<me>\frac{x}{y}+\frac{y}{x} \geq 2.</me>
+</p>
+</proof>
+
+</solution>
+</exercise>

@@ -1,0 +1,62 @@
+<exercise>
+<!-- source latex = 'diff_of_powsets.tex' -->
+<!-- converted on 12/10/2021 at 13:59 -->
+<statement>
+<p>
+Let <m>A</m> and <m>B</m> be sets. Prove or disprove the following statements:
+<ul>
+<li>
+<p>
+ <m>\pow{A - B} \subseteq \pow{A} - \pow{B}</m>, and
+  </p></li>
+<li>
+<p>
+ <m>\pow{A} - \pow{B} \subseteq \pow{A - B}</m>.
+</p></li>
+</ul>
+</p>
+</statement>
+<hint>
+<p>
+Try some small examples of sets <m>A,B</m> to gain some intuition.
+</p>
+</hint>
+<answer>
+<p>
+Both statements are false.  In the first case, notice that the empty set is an element of every power set. This means that the empty set is in the left-hand side, but not in the right-hand side.
+</p>
+<p>
+The second statement is a little harder to disprove. Think about what happens when <m>A</m> and <m>B</m> have some, but not all, elements in common. For example, <m>A = \set{1,2}</m> and <m>B = \set{2,3}</m>, so that <m>A-B = \set{1}</m>.  Then <m>\set{1,2} </m> is in the left-hand side, but not in the right-hand side. We can simplify this counter-example a little further, since we don't actually need <q><m>3</m></q> to make it work.
+</p>
+</answer>
+<solution>
+
+<p>
+We give a disproof of both statements.
+</p>
+
+<proof><title>Disproof</title><p>
+Both statements are false. We disprove each in turn.
+</p>
+<p>
+<ul>
+<li>
+<p>
+ Let <m>A = \set{1}</m> and <m>B = \set{2}</m>. Then <m>\emptyset</m> is an element of <m>\pow{A}, \pow{B}</m> and <m>\pow{A-B}</m>. But this means that <m>\emptyset \in \pow{A-B}</m> but <m>\emptyset \not\in \pow{A}-\pow{B}</m>. Hence the first inclusion does not hold.
+</p>
+</li>
+<li>
+<p>
+ Now let <m>A = \set{1,2}, B = \set{2}</m>. Then
+  <me>
+  \pow{A} - \pow{B} = \set{\emptyset, \set{1}, \set{1,2}}
+  \quad\text{but}\quad
+  \pow{A-B} = \set{\emptyset, \set{1}}.
+  </me>
+  Hence <m>\set{1,2} \in LHS</m> but <m>\set{1,2} \not\in RHS</m>. So the second inclusion does not hold.
+</p></li>
+</ul>
+</p></proof>
+
+</solution>
+</exercise>

@@ -1,0 +1,141 @@
+<exercise>
+<!-- source latex = 'Find the range of 2x over 1 plus x square question.tex' -->
+<!-- converted on 07/12/2021 at 12:04 -->
+<statement>
+<p>
+Let <m>f :\mathbb R\rightarrow \mathbb R</m> be a function which is defined by <m>f(x)=\dfrac{2x}{1+x^2}</m>. Show that <m>f(\mathbb R)=[-1,1]</m>.
+</p>
+</statement>
+<hint>
+<p>
+How do we show that two sets are equal?
+</p>
+</hint>
+<answer>
+<p>
+As part of our proof we need to prove that <m>f(x) \in [-1,1]</m>. To do this let us start with the inequality we wish to prove, namely
+<md>
+<mrow>
+  -1 \leq \frac{2x}{1+x^2} \leq 1
+</mrow>
+</md>
+Now since <m>x \in \mathbb{R}</m> we know that <m>x^2 \geq 0</m> and so <m>1+x^2 \geq 1</m>. Hence, we have
+<md>
+<mrow>
+  -1-x^2 \leq 2x \leq 1+x^2
+</mrow>
+</md>
+Subtracting <m>2x</m> from everything gives
+<md>
+<mrow>
+  -1-2x-x^2  \amp \leq 0 \leq 1-2x+x^2 
+</mrow><mrow>
+  -(1+x)^2  \amp  \leq 0 \leq (1-x)^2
+</mrow>
+</md>
+which we know to be true. In our proof we will use this chain of reasoning, but in reverse; starting from what we know is true and going back to the inequality we need.
+</p>
+<p>
+We will also need to show that given <m>y \in [-1,1]</m> that <m>y \in f(\mathbb{R})</m>. That is, there is some <m>x \in \mathbb{R}</m> so that <m>f(x)=y</m>. Our proof doesn't have to explain how we found that <m>x</m>-value, just that it works. Let us find it now:
+<md>
+<mrow>
+  y  \amp = f(x) = \frac{2x}{1+x^2} 
+</mrow><mrow>
+  yx^2 -2x +y  \amp = 0 
+</mrow><mrow>
+  x  \amp = \frac{2 \pm \sqrt{4-4y^2}}{2y} = \frac{2 \pm 2\sqrt{1-y^2}}{2y}
+</mrow>
+</md>
+This looks like it should work since <m>-1 \leq y \leq 1</m> and so <m>0 \leq y^2 \leq 1</m>, but we might have a problem when <m>y=0</m>. However, when <m>y=0</m> we can just take <m>x=0</m>.
+</p>
+</answer>
+<solution>
+
+<proof><p>
+Let <m>f</m> be defined as above. To show that
+<md>
+<mrow>
+  f(\mathbb{R}) = [-1,1]
+</mrow>
+</md>
+we prove each side is included in the other.
+</p>
+<p>
+<ul>
+<li>
+<p>
+ <m> f(\mathbb{R}) \subseteq [-1,1] </m>:  Let <m>y\in f(\mathbb R)</m>. Then, by  definition, we know that there is a <m>x\in\mathbb R</m>, such that <m>y=f(x)=\dfrac{2x}{1+x^2}</m>.
+</p>
+<p>
+Now, for all <m>x \in \mathbb{R}</m> we know that
+<md>
+<mrow>
+  (1+2x+x^2) = (1+x)^2  \amp \geq 0   \amp  \text{and} \amp  \amp 
+  (1-2x+x^2) = (1-x)^2  \amp \geq 0
+</mrow>
+</md>
+We can rearrange this to give
+<md>
+<mrow>
+  1+x^2  \amp  \geq -2x  \amp  \text{and}  \amp  \amp 
+  1+x^2  \amp  \geq 2x
+</mrow>
+</md>
+Combining these gives us
+<md>
+<mrow>
+  -(1+x^2)  \amp  \leq 2x \leq 1+x^2
+</mrow>
+</md>
+Since <m>1+x^2 \geq 1</m> we can divide both sides of this inequality by <m>1+x^2</m> to get
+<md>
+<mrow>
+  -1  \amp  \leq \frac{2x}{1+x^2} \leq 1
+</mrow>
+</md>
+which is precisely the result we require. Thus <m>f(\mathbb{R}) \subseteq [-1,1]</m>.
+</p>
+
+</li>
+<li>
+<p>
+ <m>[-1,1]\subseteq f(\mathbb R)</m>: Let <m>y\in[-1,1]</m>. We need to show that <m>f \in f(\mathbb R)</m>. That is, we need to find <m>x\in\mathbb R</m>, such that <m>f(x)=\dfrac{2x}{1+x^2}=y</m>.  Now, either <m>y=0</m> or <m>y \neq 0</m>.
+<ul>
+<li>
+<p>
+ When <m>y=0</m>, set <m>x=0</m> and then note that <m>f(0)=0</m> as required.
+  </p></li>
+<li>
+<p>
+ When <m>y \neq 0</m> set
+  <md>
+<mrow>
+      x  \amp = \frac{1 + \sqrt{1-y^2}}{y}.
+  </mrow>
+</md>
+  Since <m>y \neq 0</m> and <m>y \in [-1,1]</m>, the above is a real number. Then we verify that
+  <md>
+<mrow>
+    f(x)  \amp = \dfrac{ \frac{2+2\sqrt{1-y^2}}{y} }{\left(\frac{1+\sqrt{1-y^2}}{y}\right)^2 +1}   \amp  \text{multiply by }y^2
+</mrow><mrow>
+     \amp = \dfrac{2y + 2y\sqrt{1-y^2}}{\left(1+\sqrt{1-y^2} \right)^2+y^2}  \amp  \text{expand}
+</mrow><mrow>
+     \amp = \dfrac{2y + 2y\sqrt{1-y^2}}{\left(1+2\sqrt{1-y^2} +1-y^2\right)+y^2} 
+</mrow><mrow>
+     \amp = \dfrac{2y + 2y\sqrt{1-y^2}}{2+2\sqrt{1-y^2}} 
+</mrow><mrow>
+     \amp = y
+  </mrow>
+</md>
+</p></li>
+</ul>
+Thus <m>y \in f(\mathbb{R})</m> and so <m>[-1,1]\subseteq f(\mathbb R)</m>.
+</p>
+</li>
+</ul>
+Thus, we see that <m>f(\mathbb R)=[-1,1]</m>.
+</p>
+</proof>
+
+</solution>
+</exercise>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This file contains all of the "backmatter" material  -->
+<!-- We show examples of how to have hints to divisional  -->
+<!-- excercies appear in a section, and then their        -->
+<!-- solutions in the next.  Then there is an appendix    -->
+<!-- with all notation generated, and finally the index.  -->
+<backmatter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="backmatter">
+  <title>Backmatter</title>
+  
+  <solutions xml:id="app_hint" divisional="hint">
+    <title>Hints for Exercises</title>
+  </solutions>
+  <solutions xml:id="app_answ" divisional="answer">
+    <title>Scratchwork for Exercises</title>
+  </solutions>
+  <solutions xml:id="app_soln" divisional="solution">
+    <title>Solutions to Exercises</title>
+  </solutions>
+  
+  <colophon>
+    <p>
+      This book was authored in <pretext />.
+    </p>
+  </colophon>
+</backmatter>
+

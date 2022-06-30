@@ -1,0 +1,61 @@
+<exercise>
+<!-- source latex = 'if 5 does not divide m then m square is 1 or minus 1 mod 5 question.tex' -->
+<!-- converted on 12/07/2021 at 13:54 -->
+<statement>
+<p>
+Let <m>m\in\mathbb{Z}</m>. Prove that if <m>5\nmid m</m>, then <m>m^2\equiv 1 \mod{5}</m> or <m>m^2\equiv -1 \mod{5}</m>.
+</p>
+</statement>
+
+<answer>
+<p>
+We see that this is a conditional statement. As we did before we can try to prove it directly by assuming the hypothesis and proving the conclusion. This means that we assume <m>5\nmid m</m> and show that <m>m^2\equiv 1 \mod{5}</m> or <m>m^2\equiv -1 \mod{5}</m>.
+</p>
+<p>
+Since the hypothesis is <m>5\nmid m</m>, this suggests we may need to use cases to prove the result. Once we divide the proof into cases, the rest becomes quite straightforward.
+</p>
+<p>
+We could also think about looking at the contrapositive of this statement. This may make sense since the conclusion of the statement is an <q>or</q>-statement. We see that the contrapositive of the statement is:
+<md>
+<mrow>
+\text{if  } m^2\not\equiv 1 \mod{5} \text{ and } m^2\not\equiv -1 \mod{5}, \text{ then }5\mid m.
+</mrow>
+</md>
+This still suggests that we use case, and, on top of that, we would have assumptions on the more conplex term, <m>m^2</m>, instead of the simpler term, <m>m</m>. Therefore, using direct proof with cases may be easier in this question. Let's write the proof using cases.
+</p>
+</answer>
+
+<solution>
+<proof><p>
+Assume that <m>5\nmid m</m>. By the division algorithm, there are four cases for <m>m</m>: <m>m=5k+1</m>, <m>m=5k+2</m>, <m>m=5k+3</m>, or <m>m=5k+4</m> for some <m>k\in\mathbb Z</m>.
+</p>
+<p>
+<ul>
+<li>
+<p>
+
+<em>Case 1</em>: <m>m=5k+1</m> for some <m>k\in\mathbb Z</m>. In this case, we have <m>m^2=25k^2+10k+1</m>. Thus, we see <m>m^2-1=5(5k^2+2k)</m>. Since <m>(5k^2+2k)\in\mathbb Z</m>, we see <m>5\mid (m^2-1)</m>, that is <m>m^2\equiv 1 \mod{5}</m>.
+</p></li>
+<li>
+<p>
+
+<em>Case 2</em>:  <m>m=5k+2</m> for some <m>k\in\mathbb Z</m>. In this case, we have <m>m^2=25k^2+20k+4</m>. Thus, we see <m>m^2+1=5(5k^2+2k+1)</m>. Since <m>(5k^2+2k+1)\in\mathbb Z</m>, we see <m>5\mid (m^2+1)</m>, that is <m>m^2\equiv -1 \mod{5}</m>.
+</p></li>
+<li>
+<p>
+
+<em>Case 3</em>:  <m>m=5k+3</m> for some <m>k\in\mathbb Z</m>. In this case, we have <m>m^2=25k^2+30k+9</m>. Thus, we see <m>m^2+1=5(5k^2+2k+2)</m>. Since <m>(5k^2+2k+2)\in\mathbb Z</m>, we see <m>5\mid (m^2+1)</m>, that is <m>m^2\equiv -1 \mod{5}</m>.
+</p></li>
+<li>
+<p>
+
+<em>Case 4</em>:  <m>m=5k+4</m> for some <m>k\in\mathbb Z</m>. In this case, we have <m>m^2=25k^2+40k+16</m>. Thus, we see <m>m^2-1=5(5k^2+2k+3)</m>. Since <m>(5k^2+2k+3)\in\mathbb Z</m>, we see <m>5\mid (m^2-1)</m>, that is <m>m^2\equiv 1 \mod{5}</m>.
+</p></li>
+</ul>
+</p>
+<p>
+Therefore,  if <m>5\nmid m</m>, then <m>m^2\equiv 1 \mod{5}</m> or <m>m^2\equiv -1 \mod{5}</m>.
+</p></proof>
+
+</solution>
+</exercise>

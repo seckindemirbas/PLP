@@ -1,0 +1,49 @@
+<exercise xml:id="ex3-sqrt-increasing">
+<!-- source latex = 'square root function is increasing question.tex' -->
+<!-- converted on 12/07/2021 at 13:11 -->
+<statement>
+<p>
+Let <m>x,y</m> be positive real numbers. Without using Calculus, prove that
+<me> (x \gt y) \implies (\sqrt{x} \gt \sqrt{y}) </me>
+</p>
+</statement>
+<hint>
+<p>
+Try writing the inequality in a different way, the difference of squares might help.
+</p>
+</hint>
+<answer>
+<p>
+It is a common (and easy to make) mistake to apply any operation on an inequality and implicitly assuming that the operation keeps the order of the inequality. Namely, if <m>f(x)</m> is a function and we know <m>x\lt y</m>, we may want to say <m>f(x)\lt f(y)</m>. Unfortunately this is not always true, and we have to be careful. This reasoning would only be true if the function <m>f</m> is an increasing function in the given domain; and this question tells us that <m>f(x)=\sqrt{x}</m> is, indeed, an increasing function.
+</p>
+<p>
+We see that what we want to prove in this question is a conditional statement. So, we can assume the hypothesis and try to show the conclusion. So, we assume <m>x\gt y</m> and try to show that <m>\sqrt{x} \gt \sqrt{y}</m>. Since we cannot simply take the square roots of both sides (because of the above argument), we need to find a different way to prove the conclusion.
+</p>
+<p>
+We see that we can rewrite the hypothesis as
+<m>x-y\gt 0</m>. We also know that
+<me>\underbrace{x-y}_{\gt 0}=(\sqrt{x})^2-\sqrt{y})^2=(\sqrt{x}-\sqrt{y})\underbrace{(\sqrt{x}+\sqrt{y})}_{\gt 0},</me>
+where we have factored the difference of squares: <m> a^2-b^2 = (a-b)(a+b) </m>. This tells us that <m>\sqrt{x}-\sqrt{y}\gt 0</m>, which is what we wanted to show. Now, we can write this nicely in a proof.
+</p>
+</answer>
+
+<solution>
+<proof><p>
+ Assume that <m> 0 \lt y \lt x </m>. This means that <m>x-y\gt 0</m>.
+ Then, since <m>x,y\gt 0</m>,  we can factor the expression <m>x-y</m> and get
+<me>
+(\sqrt{x}-\sqrt{y})(\sqrt{x}+\sqrt{y}) \gt 0
+</me>
+and since the square root function is nonnegative, and <m>x,y\gt 0</m>, we also know that <m>\sqrt{y} + \sqrt{x} \gt 0</m>. So  dividing both sides of the inequality by <m>\sqrt{x}+\sqrt{y}</m> gives
+    <me> \sqrt{x}-\sqrt{y} \gt 0</me>
+Hence we conclude that <m>\sqrt{x}\gt  \sqrt{y}</m> as required.
+</p></proof>
+
+<p>
+It is a good extension of this exercise to think how you might extend this to the slightly more general result:
+<me>
+  x \geq y \geq 0 \implies \sqrt{x} \geq \sqrt{y}.
+</me>
+</p>
+</solution>
+</exercise>

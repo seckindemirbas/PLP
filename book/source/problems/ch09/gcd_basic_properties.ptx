@@ -1,0 +1,109 @@
+<exercise>
+<!-- source latex = 'gcd_basic_properties.tex' -->
+<!-- converted on 26/11/2021 at 16:45 -->
+<statement>
+<p>
+Let <m>a,b\in\mathbb{Z}</m>, at least one of which is non-zero.
+<ol marker="(a)">
+<li>
+<p>
+ Suppose that <m>d</m> divides both <m>a</m> and <m>b</m>. Show that <m>d\mid\gcd(a,b)</m>.
+</p></li>
+<li>
+<p>
+ Let <m>m\in \mathbb{N}</m>. Show that <m>\gcd(ma,mb)=m\gcd(a,b)</m>.
+</p></li>
+<li>
+<p>
+ Let <m>c\in \mathbb{Z}</m>, <m>c\neq0</m>. Show that the statement
+<me>
+\gcd(ac,b)=\gcd(a,b)\cdot\gcd(c,b)
+</me>
+does not hold in general.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<hint>
+<p>
+<ul>
+<li>
+<p>
+ For part (a), try using Bézout's identity.
+  </p></li>
+<li>
+<p>
+ For part (b), we can show that the two quantities are equal by showing that <m>m\gcd(a,b)\leq \gcd(ma,mb)</m> and <m>\gcd(ma,mb)\leq m\gcd(a,b)</m>. Also, for any <m>d,e\in\mathbb N</m>, one way to show that <m>d\leq e</m> is to prove that <m>d\mid e</m>.
+  </p></li>
+<li>
+<p>
+ For part (c), some small numbers will help you build a counter-example.
+</p></li>
+</ul>
+</p>
+</hint>
+
+<answer>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ Bézout's identity tells us that there are <m>x,y\in\mathbb Z</m> so that <m>\gcd(a,b)=ax+by</m>. This equation implies that any divisor of both <m>a</m> and <m>b</m> must divide <m>\gcd(a,b)</m>. 
+</p>
+</li>
+<li>
+<p>
+ We will try to show that <m>m\gcd(a,b)\leq \gcd(ma,mb)</m> and <m>\gcd(ma,mb)\leq m\gcd(a,b)</m>.
+</p>
+<p>
+We claim that <m>m\gcd(a,b)\mid \gcd(ma,mb)</m>. We know that <m>d=\gcd(a,b)</m> divides both <m>a</m> and <m>b</m>; from this, we will be able to show that <m>md</m> divides both <m>ma</m> and <m>mb</m>.Then <m>md\leq \gcd(a,b)</m>.
+</p>
+<p>
+Now let's consider the converse, <m>\gcd(ma,mb)\leq m\gcd(a,b)</m>. Now <m>m</m> divides both <m>ma</m> and <m>mb</m>, so by part (a), <m>m\mid \gcd(ma,mb)</m>. Then there is some <m>e\in\mathbb Z</m> so that <m>me=\gcd(ma,mb)</m>. To prove that <m>\gcd(ma,mb)\leq m\gcd(a,b)</m>, we can show that <m>e\leq\gcd(a,b)</m>.
+Let's try to prove that <m>e</m> divides both <m>a</m> and <m>b</m>.  By definition of <m>\gcd(ma,mb)</m> there are <m>u,v\in\mathbb Z</m> so that <m>meu=\gcd(ma,mb)u=ma</m> and <m>mev=\gcd(ma,mb)v=ma</m>; then we can cancel the factors of <m>m</m> to get that <m>e\mid a</m> and <m>e\mid b</m>.
+</p>
+
+
+</li>
+<li>
+<p>
+ Take <m>a=b=c=2</m>. Then <m>gcd(a,b)=\gcd(c,b)=\gcd(ac,b)=2</m>, and so <m>\gcd(ac,b)\neq \gcd(a,b)\cdot\gcd(c,b)</m>.
+</p>
+
+
+</li>
+</ol>
+</p>
+
+</answer>
+<solution>
+
+<proof><title>Proof of (a)</title>
+<p>
+Let <m>a,b\in\mathbb{Z}</m>, at least one of which is non-zero.  Moreover, suppose <m>d\in \mathbb Z</m> divides both <m>a</m> and <m>b</m>. Then there are <m>k,\ell\in\mathbb Z</m> such that <m>a=kd</m> and <m>b=\ell d</m>. By Bézout's identity, there are <m>x,y\in\mathbb Z</m> such that
+<me> \gcd(a,b)= ax+by=kdx+\ell dy=d(kx+\ell y). </me>
+Since <m>kx+\ell y\in\mathbb Z</m>, <m>d\mid \gcd(a,b)</m>.
+</p></proof>
+
+
+<proof><title>Proof of (b)</title>
+<p>
+Let <m>a,b\in\mathbb{Z}</m>, at least one of which is non-zero, and let <m>m\in\mathbb N</m>. Let <m>d=\gcd(a,b)</m>. Then <m>d\mid a</m> and <m>d\mid b</m>, and so there are <m>k,\ell\in\mathbb Z</m> so that <m>a=k d</m> and <m>b=\ell d</m>. Multiplying
+both equations through by <m>m</m>, we have <m>ma=k(md)</m> and <m>mb=\ell(md)</m>. Therefore <m>md\mid ma</m> and <m>md\mid mb</m>. Hence <m>md\leq \gcd(ma,mb)</m>.
+</p>
+<p>
+Note that <m>m</m> divides both <m>ma</m> and <m>mb</m>, so by part (a), <m>m\mid \gcd(ma,mb)</m>. Suppose that <m>e\in \mathbb Z</m> is such that <m>me=\gcd(ma,mb)</m>. Since <m>me\mid ma</m> and <m>me \mid mb</m>, there are <m>u,v\in\mathbb Z</m> so that <m>ma=meu</m> and <m>mb=mev</m>.
+But <m>m\neq0</m>, implying that <m>a=ue</m> and <m>b=ve</m>, so <m>e</m> is a common divisor of <m>a</m> and <m>b</m>. Therefore <m>e\leq \gcd(a,b)</m>. Since <m>m \gt 0</m>, we have <m>\gcd(ma,mb)=me\leq m\gcd(a,b)</m>.
+As we have already shown the reverse inequality, we conclude that <m>\gcd(ma,mb)=m\gcd(a,b)</m>, as required.
+</p>
+</proof>
+
+<p>
+  For (c) set <m>a=b=c=2</m>. Then <m>gcd(a,b)=\gcd(c,b)=\gcd(ac,b)=2</m>, and so <m>\gcd(ac,b)\neq \gcd(a,b)\cdot\gcd(c,b)</m>.
+</p>
+
+</solution>
+
+
+</exercise>

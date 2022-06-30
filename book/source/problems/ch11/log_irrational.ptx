@@ -1,0 +1,171 @@
+<exercise>
+<!-- source latex = 'log_irrational.tex' -->
+<!-- converted on 03/03/2022 at 11:56 -->
+<statement>
+<p>
+Consider the following questions about the irrationality of logarithmic values.
+<ol marker="(a)">
+<li>
+<p>
+ Prove that <m>5^k</m> is odd for all <m>k\in\mathbb{N}</m>.
+</p></li>
+<li>
+<p>
+ Prove that <m>\log_2(5)</m> is irrational.
+</p></li>
+<li>
+<p>
+ Determine for which <m>n\in\mathbb{N}</m> is <m>\log_2(n)</m> irrational. Prove your answer.
+You may assume the following statement:
+</p>
+
+<blockquote>
+<p>
+For any <m>n\in\mathbb{N}</m>, there is some <m>a\in \mathbb{Z}</m>, <m>a\geq 0</m> and <m>b\in \mathbb{Z}</m> that is odd, so that <m>n=2^ab</m>.
+</p>
+</blockquote>
+
+</li>
+</ol>
+</p>
+<p>
+For this question, you may assume the following properties about the logarithm:
+<ul>
+<li>
+<p>
+ if <m>x\gt1</m>, then <m>\log_2(x)\gt0</m>;
+</p></li>
+<li>
+<p>
+ for any <m>x,y\gt0</m>,
+<me> \log_2(xy)=\log_2(x)+\log_2(y); </me>
+</p></li>
+</ul>
+</p>
+</statement>
+<answer>
+
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ We know that the product of two odd numbers is odd, from <xref ref="ex_product_of_odd"/>. From this, we know that if <m>5^k</m> is odd, then <m>5^{k+1}</m> will be too.
+So we can prove the statement for all <m>k</m> by using induction.
+</p>
+
+
+</li>
+<li>
+<p>
+  We'll prove the statement by contradiction, by assuming that the statement is false, that is, <m>\log_2(5)</m> is rational. Since <m>\log_2(5)=m/n</m> we know that
+  <m>5 = 2^{m/n}</m> and so <m>5^n=2^m</m>. But this means that <m>5^n</m> is even which gives a contradiction. We need to be a little careful with the signs of <m>m,n</m>.
+</p>
+
+
+</li>
+<li>
+<p>
+ Let <m>n\in\mathbb{N}</m>. As given in the question, there is some <m>a\in \mathbb{Z}</m>, <m>a\geq 0</m> and <m>b\in \mathbb{Z}</m> that is odd, so that <m>n=2^ab</m>.
+We know that
+<me> \log_2(n)=\log_2(2^ab)=\log_2(2^a)+\log_2(b)=a+\log_2(b). </me>
+Since <m>a</m> is an integer, and so rational, the rationality or irrationality of <m>\log_2(n)</m> will depend on that of <m>\log_2(b)</m>.
+Indeed, we know that
+<ul>
+<li>
+<p>
+ the sum of two rational numbers is also rational (see, for example, <xref ref="ex_sum_of_rats"/>);
+</p></li>
+<li>
+<p>
+ the sum of a rational and an irrational number is irrational (by <xref ref="res_rat_plus_irrat"/>).
+</p></li>
+</ul>
+This implies, respectively, that
+<ul>
+<li>
+<p>
+ <m>\log_2(n)</m> is rational if <m>\log_2(b)</m> is rational;
+</p></li>
+<li>
+<p>
+ <m>\log_2(n)</m> is irrational if <m>\log_2(b)</m> is irrational.
+</p></li>
+</ul>
+We can try to adapt the argument from part (b) to show that <m>\log_2(b)</m> is irrational, since (b) is a special case of this, with <m>b=5</m>.
+However, in part (b), we used the fact that <m>\log_2(5)\gt0</m>, which is only true for <m>\log_2(b)</m> if <m>b\neq 1</m>.
+We can try to prove that <m>\log_2(b)</m> is irrational when <m>b\neq 1</m> and <m>b</m> is odd.
+</p>
+
+<p>
+The last case to analyze is if <m>b=1</m>. Then <m>\log_2(b)=0</m>, and hence it is rational.
+To summarize, we have shown that
+<ul>
+<li>
+<p>
+ if <m>b=1</m>, then <m>\log_2(b)</m> is rational, and so <m>\log_2(n)</m> is rational;
+</p></li>
+<li>
+<p>
+ if <m>b\neq1</m>, then <m>\log_2(b)</m> is irrational, and so <m>\log_2(n)</m> is irrational.
+</p></li>
+</ul>
+These two statements imply that for <m>n\in\mathbb{N}</m>, <m>\log_2(n)</m> is irrational if and only if <m>n</m> is not a power of <m>2</m>.
+</p>
+</li>
+</ol>
+</p>
+</answer>
+
+<solution>
+  <proof><title>Proof of (a)</title>
+  <p>
+Let <m>k\in\mathbb{N}</m>. If <m>k=1</m>, then <m>5^k=5</m> is odd, establishing the base case.
+Assume that <m>5^k</m> is odd for <m>k=m</m>. Then <m>5^{m+1}=5^m\cdot 5</m> is the product of two odd numbers, and so odd.
+Thus, by induction <m>5^k</m> is odd for all <m>k\in\mathbb{N}</m>.
+</p></proof>
+
+<proof><title>Proof of (b)</title>
+<p>
+Assume, towards contradiction, that <m>\log_2(5)</m> is rational. Then there are integers <m>m,n</m> with <m>n\neq 0</m> such that
+<me> \log_2(5)=\frac{m}{n}. </me>
+Moreover, since <m>\log_2(5)\gt 0</m>, we may assume that <m>m</m> and <m>n</m> are positive. This equation implies that <m>2^{m/n}=5</m>, and so <m>2^m=5^n</m>.
+Since <m>m \gt 0</m>, we have that <m>2\mid 5^n</m>. However, this contradicts part (a), which tells us that <m>5^n</m> is odd.
+Hence our initial assumption is false, and so <m>\log_2(5)</m> is irrational.
+</p>
+</proof>
+
+<proof><title>Proof of (c)</title>
+<p>
+  Since <m>2^0 = 1</m> we know that <m>\log_2(1) = 0</m> is rational.
+</p>
+
+<p>
+Let <m>b\in\mathbb{N}</m>, <m>b\neq1</m>, be odd. Assume, towards contradiction, that <m>\log_2(b)</m> is rational.
+Then there are integers <m>m,n</m> with <m>n\neq 0</m> such that
+<me> \log_2(b)=\frac{m}{n}. </me>
+Moreover, since <m>\log_2(b)\gt0</m>, we may assume that <m>m</m> and <m>n</m> are positive. This equation implies that <m>2^{m/n}=b</m>, and so <m>2^m=b^n</m>.
+Since <m>m \gt 0</m>, we have that <m>2\mid b^n</m>.
+</p>
+<p>
+However, we claim that <m>b^k</m> is odd for all <m>k\in\mathbb{N}</m>, and so for <m>k=n</m>.  Indeed, the statement holds for <m>k=1</m>, since <m>b</m> is odd.
+Assume that <m>b^k</m> is odd. Then <m>b^{k+1}=b^k\cdot b</m> is the product of two odd numbers, and so odd itself.
+By induction, <m>b^k</m> is odd for all <m>k\in\mathbb{N}</m>.
+</p>
+<p>
+Thus we have shown that simultaneously <m>2\mid b^n</m> and that <m>b^n</m> is odd, a contradiction. Thus <m>\log_2(b)</m> is irrational.
+</p>
+
+<p>
+  Thus <m>\log_2(b)</m> with <m>b</m> odd is rational when <m>b=1</m> and irrational for <m>b \gt 1</m>.
+</p>
+
+<p>
+  Finally, consider any natural number <m>n = 2^a b</m> with <m>b</m> odd. Then if <m>b=1</m>, so <m>n=2^a</m> then we know that <m>\log_2(n)=a</m> is rational. While if <m>b</m> is odd and greater than <m>1</m>, then <m>\log_2(n) = a + \log b</m>, where <m>\log_2(b)</m> is irrational. Since the sum of a rational and irrational is irrational, we know that <m>\log_2(n)</m> is irrational.
+</p>
+
+</proof>
+
+</solution>
+
+
+</exercise>

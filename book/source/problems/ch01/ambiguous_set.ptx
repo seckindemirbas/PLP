@@ -1,0 +1,19 @@
+<exercise>
+<!-- source latex = './ambiguous_set.tex' -->
+<!-- converted on 23/06/2021 at 19:59 -->
+<statement>
+<p>
+Consider the following ill-defined set: <m>S=\set{2, 4,\dots}</m>.
+Show that the definition of <m>S</m> is ambiguous by providing two different ways that you could interpret its definition.
+</p>
+</statement>
+<solution>
+<p>
+The set is ill-defined because we haven't written out enough elements to determine the set's <q>rule</q>.
+We could, for example, interpret this set as the set of all positive even integers,
+<me> \set{2, 4, 6, 8,\dots}, </me>
+or the the set of all positive integer powers of two,
+<me> \set{2, 4, 8, 16,\dots}. </me>
+</p>
+</solution>
+</exercise>

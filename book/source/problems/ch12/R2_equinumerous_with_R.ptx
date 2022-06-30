@@ -1,0 +1,122 @@
+<exercise>
+<!-- source latex = 'R2_equinumerous_with_R.tex' -->
+<!-- converted on 08/03/2022 at 15:22 -->
+<statement>
+<p>
+Show that the following pairs of sets are equinumerous.
+<ol marker="(a)">
+<li>
+<p>
+ <m>(0,1)\times(0,1)</m> and <m>(0,1)</m>
+</p></li>
+<li>
+<p>
+ <m>\mathbb{R}^2</m> and <m>\mathbb{R}</m>
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<hint>
+<p>
+For part (a), try to define an injection from each set to the other; you can then use <xref ref="thm_CSB">Cantor-Schröder-Bernstein</xref> to infer there is a bijection between the sets.
+For the function from <m>(0,1)\times(0,1)</m> to <m>(0,1)</m>, consider the decimal representation of elements in <m>(0,1)</m>.
+</p>
+</hint>
+<answer>
+<p>
+<ol marker="(a)">
+  <li>
+    <p>
+      <xref ref="thm_CSB">Cantor-Schröder-Bernstein</xref> tells us that
+    it is enough to find an injection from <m>(0,1) \to (0,1)^2</m>
+    and then another injection back. The first injection is easy, we
+    can take, say, the function <m>f:(0,1) \to (0,1)^2</m> defined by
+    <m>f(x) = (x,1/2)</m>.
+    </p>
+    <p>
+      The injection back is harder; we need to make a pair of reals
+      <m>(a,b)</m> to a single real <m>c</m>. A nice <q>trick</q> uses
+      the decimal expansions of <m>a,b</m>. In particular, we can
+      write <m>a = 0.a_1a_2a_3\dots, b=0.b_1b_2b_3\dots</m>. We can
+      then interleave these expansions to create a new number <m>c =
+      0.a_1b_1a_2b_2a_3b_3\dots</m>. Some care is required to ensure
+      that this mapping is injective.
+    </p>
+  </li>
+  <li>
+    We already know that <m>|(0,1)| = |\mathbb{R}|</m> and so we know
+    that there is a bijection between these sets. We can then leverage
+    that bijection to construct a bijection between
+    <m>(0,1)\times(0,1)</m> and <m>\mathbb{R}^2</m>. Then part (a)
+    tells us that <m>|(0,1)\times(0,1)| = |(0,1)|</m>. And then again
+    we can use <m>|(0,1)|=|R|</m>. Putting all these together gives us
+    the required result.
+  </li>
+</ol>
+</p>
+</answer>
+
+<solution>
+<proof><title>Proof of (a)</title>
+<p>
+ We will prove this statement using <xref
+ ref="thm_CSB">Cantor-Schröder-Bernstein</xref>, defining an injection
+ from <m>(0,1)</m> to <m>(0,1)\times(0,1)</m>, and another injection
+ in the reverse direction.  This is easier than trying to define an
+ explicit bijection from one set to the other; as we will see, the
+ fact that some numbers have two distinct decimal representations
+ causes trouble if we tried that approach instead.
+</p>
+
+<p>
+First let's define an injection <m>f:(0,1)\rightarrow (0,1)\times(0,1)</m>. We can take
+<me> f(x)=(x,1/2), </me>
+so that <m>f</m> maps the interval <m>(0,1)</m> onto a strip contained in the square <m>(0,1)\times(0,1)</m>.
+</p>
+<p>
+Next, we try to define an injection  <m>g:(0,1)\times(0,1)\rightarrow (0,1)</m>. This direction is trickier.
+In <xref ref="sec_uncount"/>, we saw that any element <m>a\in (0,1)</m> can be written as a decimal expansion,
+<me> a = 0.a_1a_2a_3\dots \quad a_i\in\{0,1,\dots,9\}. </me>
+Moreover, we discussed that this representation is unique, with the exception of numbers whose digits are eventually all zero or nine, such as
+<me> 1/2 = 0.5000\dots = 0.4999\dots </me>
+In these cases, we choose the representation ending in all zeros. Therefore, none of the decimal expansions will end in all repeating nines.
+</p>
+<p>
+Let <m>(a,b)\in (0,1)\times(0,1)</m>, which we write as
+<me> (a,b)=(0.a_1a_2a_3\dots, 0.b_1b_2b_3\dots). </me>
+We want to map this to a single element in <m>(0,1)</m>. We'll identify this element by its own decimal representation, which will be defined in terms of the digits <m>a_i</m> and <m>b_i</m>.
+Since there are infinitely digits in the expansions of <m>a</m> and <m>b</m>, we'll need to combine their digits by going back and forth between the <m>a_i</m> and <m>b_i</m>.
+Define
+<me> g((a,b))=0.a_1b_1a_2b_2a_3b_3\dots </me>
+We need to check that this map is injective.
+</p>
+<p>
+Injectivity will follow in most cases by the uniqueness of the decimal representation. However, we need to be careful for numbers that have two representations, like <m>1/2</m>.
+In such a case, one of these representations ends in repeating nines. In order for <m>0.a_1b_1a_2b_2a_3b_3\dots</m> to end in repeating nines, the digit expansions chosen for <m>a</m> and <m>b</m> would also need to end in repeating nines.
+But this can't happen, since we already made the choice to not use any decimal expansions ending in all nines, opting for the expansion ending in zeros instead.
+</p>
+<p>
+Notice that the function <m>g</m> isn't a surjective. For example, the element
+<me> (0.5, 0.1119191919\dots) </me>
+is not in the range of <m>g</m>; indeed, if it were, then we would need <m>b=0.1999\dots</m>, but for this number we use the representation <m>0.200\dots</m> instead.
+</p>
+</proof>
+
+<proof><title>Proof of (b)</title>
+<p>
+ From <xref ref="ex_R_unit_equinumerous"/>, we know that <m>|(0,1)|=|\mathbb{R}|</m>. So there is a bijection <m>h:(0,1)\to\mathbb{R}</m>.
+We can use <m>h</m> to form a bijection <m>H</m> from <m>(0,1)\times(0,1)</m> to <m>\mathbb{R}\times\mathbb{R}</m>. Indeed, let
+<me> H((x,y))=(h(x),h(y)). </me>
+Since <m>h</m> is invertible, <m>H</m> is as well; namely,
+<me> H^{-1}((x,y))=(h^{-1}(x),h^{-1}(y)). </me>
+Thus <m>H</m> is indeed bijective. Therefore
+<me> |(0,1)\times(0,1)|=|\mathbb{R}\times\mathbb{R}|. </me>
+From part (a), we know that
+<me> |(0,1)|=|(0,1)\times(0,1)| </me>
+and we also already know that <m>|(0,1)|=|\mathbb{R}|</m>. Putting all these cardinality equalities together, we have <m>|\mathbb{R}^2|=|\mathbb{R}|</m>, as desired.
+</p>
+</proof>
+
+</solution>
+</exercise>

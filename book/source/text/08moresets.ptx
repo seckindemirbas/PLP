@@ -1,0 +1,1850 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude"><title>Return to sets</title>
+<introduction>
+  <p>
+As we mentioned early, we have changed the order of topics a little in
+this text so that we can get to proving things as quickly as possible
+and get you more comfortable with basic proof methods.  This meant
+that we skipped several basic aspects of sets that we should now
+cover.  Thankfully we can now do a bit more with these basic bits of
+set theory <mdash/> indeed we can prove some things!
+</p>
+</introduction>
+<section><title>Subsets</title>
+<p>
+When we defined sets way back at the beginning of the course, we saw that the only thing we can ask a set is
+</p>
+
+<blockquote>
+<p>
+  Is this object in the set?
+</p>
+</blockquote>
+<p>and the set can only respond to us with either</p>
+<blockquote>
+<p>
+  Yes.
+</p>
+</blockquote>
+<p>
+  or
+</p>
+<blockquote>
+<p>
+  No.
+</p>
+</blockquote>
+
+<p>
+  We can make this simple structure much more interesting by enriching it using some of the logic we have learned.
+  Consider the sets
+<md>
+<mrow>
+  A &amp;= \set{1,2,3} &amp; B&amp;=\set{0,1,2,3,4}.
+</mrow>
+</md>
+We see that every single element of <m>A</m> is contained in the set <m>B</m>.
+So rather than asking one-by-one whether or not individual elements of <m>A</m> are contained in <m>B</m>, we can instead ask if all the elements of <m>A</m> are contained in <m>B</m>.
+Equivalently, we can ask <q>Is <m>A</m> contained in <m>B</m></q>.
+This is the idea of <m>A</m> being a subset of <m>B</m>.
+</p>
+<definition>
+<statement><p>
+Let <m>A</m> and <m>B</m> be sets.
+<ul>
+<li>  We say that <m>A</m> is a <term>subset</term> of <m>B</m> if every element of <m>A</m> is also an element of <m>B</m>.
+  We denote this <m>A \subseteq B</m>.
+</li>
+<li> If <m>A</m> is not a subset of <m>B</m>, then we denote this as <m>A \not\subseteq B</m>.
+</li>
+<li> Further, if <m>A</m> is a subset of <m>B</m> but there is at least one element of <m>B</m> that is not in <m>A</m> then we say that <m>A</m> is a <term>proper subset</term> of <m>B</m>.
+  We denote this by <m>A \subset B</m>.
+</li>
+<li> If <m>A \subseteq B</m> then <m>B</m> is a <term>superset</term> of <m>A</m> which we can write as <m>B \supseteq A</m>.
+  Similarly, if <m>A \subset B</m> then <m>B</m> is a <term>proper superset</term> of <m>A</m> which write as <m>B \supset A</m>
+</li>
+</ul>
+Finally,
+<ul>
+<li> Two sets <m>A</m> and <m>B</m> are equal if <m>A</m> is a subset of <m>B</m> and <m>B</m> is a subset of <m>A</m>.
+  That is
+  <md>
+<mrow>
+    (A = B) &amp; \equiv ((A \subseteq B) \land (B\subseteq A))
+  </mrow>
+</md>
+</li>
+</ul>
+</p></statement>
+</definition>
+<p>
+Some things to note
+<ul>
+<li> The empty set is a subset of every set. That is, for any set <m>A</m>, we always have that <m>\es \subseteq A</m>.
+</li>
+<li> That <m>A \subseteq B</m> is equivalent to saying that if we take any element of <m>A</m> then it is also an element of <m>B</m>. That is
+<md>
+<mrow>
+  (A \subseteq B) \equiv (\forall a \in A, a \in B) \equiv (a \in A \implies a \in B).
+</mrow>
+</md>
+</li>
+<li> If <m>A \not\subseteq B</m>, then there is at least one element of <m>A</m> that is not in <m>B</m>.
+That is
+<md>
+<mrow>
+  \left(A \not\subseteq B\right) &amp; \equiv \left( \exists a \in A \st a \not\in B \right)
+</mrow>
+</md>
+</li>
+<li> Since two sets are equal when they are subsets of each other, we prove set equality using a two part proof. The first part proving that <m>A\subseteq B</m> and then the second part showing that <m>B\subseteq A</m>.
+</li>
+</ul>
+</p>
+
+<example>
+<p>
+Let <m>S = \{1,2\}</m>. What are all the subsets of <m>S</m>?
+<ul>
+<li> The subsets are <m>\es, \{1\}, \{2\}, \{1,2\}</m>.
+</li>
+</ul>
+</p>
+</example>
+
+<proposition>
+<statement><p>
+  Let <m>A = \set{n\in \mathbb{Z} \so 6|n}</m> and <m>B = \set{n \in \mathbb{Z} \so 2|n}</m>. Then <m>A \subseteq B</m>.
+</p></statement>
+</proposition>
+<p>
+First lets write a few elements of these sets
+<md>
+<mrow>
+  A &amp;= \set{\dots, -18,-12,-6,0,6,12,18,\dots} &amp; B &amp;=\set{\dots,-6,-4,-2,0,2,4,6,\dots}
+</mrow>
+</md>
+The result we are trying to prove is that <m>A \subseteq B</m>.
+This is equivalent to showing that if <m>a \in A</m> then <m>a \in B</m> (which is essentially saying that if an integer is divisible by 6 then it is divisible by 2).
+Hence to prove the result we are going to assume that <m>a\in A</m> and then work our way to proving that <m>a \in B</m>.
+<ul>
+<li> First up we make sure that the reader knows we are going to take <m>A,B</m> to be the sets in the statement of the result.
+</li>
+<li> Assume <m>a\in A</m>.
+</li>
+<li> Then this means that <m>a</m> is an integer that is divisible by 6.
+  That is <m>a=6\ell</m> for some <m>\ell \in \mathbb{Z}</m>.
+</li>
+<li> We need to show that <m>a \in B</m>. This is equivalent to showing that we can write <m>a=2k</m> where <m>k</m> is some integer.
+</li>
+<li> But we know that <m>a=6\ell = 2(3\ell)</m> and since <m>3\ell \in \mathbb{Z}</m> we are done.
+</li>
+</ul>
+Of course, we aren't really done until we write thing up nicely.
+</p>
+
+<proof>
+<p>
+  Let <m>A,B</m> be the sets defined in the result.
+  Assume that <m>a\in A</m>.
+  Hence we can write <m>a=6\ell</m> where <m>\ell \in \mathbb{Z}</m>.
+  But now since <m>6\ell = 2(3\ell)</m> and <m>3\ell</m> is an integer, we know that <m>a \in B</m>.
+  Thus <m>A\subseteq B</m>.
+</p>
+</proof>
+
+<p>
+The following result expresses that being a subset is a transitive relation.
+We'll see much more about transitivity in the near future.
+</p>
+<proposition>
+<statement><p>
+    Let <m>A,B,C</m> be sets. Then if <m>A\subseteq B</m> and <m>B \subseteq C</m> then <m>A\subseteq C</m>.
+</p></statement>
+</proposition>
+
+<p>
+We should start by breaking things down carefully because there are a few nested implications hidden inside this result.
+<ul>
+<li> The hypothesis is <m>A\subseteq B</m> and <m>B\subseteq C</m>.
+  We can, in turn, write this as
+  <md>
+<mrow>
+    (a \in A \implies a \in B) \land (b \in B \implies b \in C)
+  </mrow>
+</md>
+</li>
+<li> The conclusion says <m>A \subseteq C</m>.
+  This can similarly be written as
+  <md>
+<mrow>
+    a\in A \implies a\in C.
+  </mrow>
+</md>
+</li>
+<li> Since we are trying to prove an implication, we start by assuming the hypothesis is true.
+  So we assume that
+  <md>
+<mrow>
+    (a \in A \implies a \in B) \land (b \in B \implies b \in C)
+  </mrow>
+</md>
+  Notice this we do <em>not</em> assume that <m>a\in A</m> and <m>b\in B</m>, rather we are assuming that the above implications are both true<fn>
+  And, as you have now memorised, an implication is only false when its hypothesis is true and its conclusion false.
+</fn>.
+</li>
+<li>
+<p>
+  Now we want to prove that the conclusion is true, namely that
+  <md>
+    <mrow>
+    a\in A \implies a \in C.
+    </mrow>
+  </md>
+  This we can do by assuming that the hypothesis is true and showing
+  the conclusion.<fn>
+  Equivalently, we know that either <m>a \in A</m> or <m>a \not\in A</m>. When <m>a \in A</m> we have precisely this case. On the other hand, if <m>a \not\in A</m> then the implication <m>(a\in A) \implies (a \in C)</m> is true since the hypothesis is false. So it is only when <m>a \in A</m> that there is work to do.
+</fn>
+That is, assume that <m>a \in A</m> and then work
+towards showing that <m>a \in C</m>. 
+</p>
+</li>
+<li>
+<p>
+  Since now we have assumed that <m>a \in A</m> and <m>a \in A \implies a \in B</m>, we know that <m>a \in B</m>. And then, in turn, our assumption that <m>a \in B \implies a \in C</m>, we know that <m>a \in C</m>. Precisely what we need!
+</p>
+</li>
+</ul>
+Oof!
+The above analysis becomes much easier with practice.
+</p>
+
+<proof>
+<p>
+  Assume that <m>A\subseteq B</m> and <m>B \subseteq C</m>.
+  We wish to show that now <m>A \subseteq C</m>, so let <m>a \in A</m>.
+  Since we know that <m>A \subseteq B</m>, we know that <m>a \in B</m>.
+  And since we know that <m>B \subseteq C</m>, we know that <m>a\in C</m>.
+  Hence we have shown that <m>A \subseteq C</m>.
+</p>
+</proof>
+<p>
+So even though our scratch work took some twists and turns, our proof is quite succinct.
+</p>
+
+
+<p>
+Once you start thinking about subsets of a set <m>A</m>, it is quite natural to ask<fn>
+Well, the author thinks it is a natural question and hopes you think it is one too.
+</fn> <q>What are all the subsets of a given set?</q>
+The resulting <em>set of sets</em> is called the <term>power set</term>.
+This set will be very important when we look at the cardinality of sets, particularly the cardinality of infinite sets.
+But first, we should really give it a precise definition.
+</p>
+
+
+<definition>
+<statement><p>
+ Let <m>A</m> be a set.
+ The <term>power set</term> of <m>A</m>, denoted <m>\mathcal{P}(A)</m>, is the set of all subsets of <m>A</m>.
+</p></statement>
+</definition>
+
+<p>
+Note that the elements of <m>\pow{A}</m> are themselves sets, and
+<md>
+<mrow>
+    X \in \pow{A} \iff X \subseteq A.
+</mrow>
+</md>
+When we get to the chapter on cardinality we'll prove that if <m>A</m> is a finite set with <m>|A| = n</m> then <m>|\mathcal{P}(A)| = 2^n</m>.
+We will also prove an important result about the power set of an infinite set.
+</p>
+
+<example>
+  <p>
+ What are <m>\pow{\set{1,2,3}}, \pow{\es}</m> and <m>\pow{\pow{\es}}</m>?
+ <md>
+<mrow>
+  \pow{\set{1,2,3}} &amp;= \set{\es, \set{1},\set{2},\set{3},\set{1,2},\set{1,3},\set{2,3},\set{1,2,3}}
+</mrow><mrow>
+  \pow{\es} &amp;= \{ \es \}
+</mrow><mrow>
+  \pow{\pow{\es}} &amp;= \pow{\{ \es \}} = \{ \es, \{ \es \} \}
+  </mrow>
+</md>
+</p>
+</example>
+
+
+<proposition xml:id="res_subset_trans">
+<statement><p>
+  Let <m>A,B</m> be sets.
+  Then <m>A \subseteq B</m> if and only if <m>\pow{A} \subseteq \pow{B}</m>.
+</p></statement>
+</proposition>
+<p>
+Since this is a biconditional we need to prove both directions.
+Lets start with the forward implication and then turn to the converse.
+<ul>
+<li> We want to show that <m>A\subseteq B \implies \pow{A} \subseteq \pow{B}</m>.
+</li>
+<li> So we assume that <m>A\subseteq B</m> and we want to prove that <m>\pow{A} \subseteq \pow{B}</m>.
+</li>
+<li> This is equivalent to showing that <m>X \in \pow{A} \implies X \in \pow{B}</m> <mdash/> note that <m>X</m> is now itself a set (which is why<fn>The power of good notational conventions!</fn> we've used a capital <m>X</m> rather than a lower case <m>x</m> ).
+</li>
+<li> So just as was the case in the previous proof, we assume that the hypothesis, <m>X\in\pow{A}</m> is true.  This means that <m>X \subseteq A</m>.
+</li>
+<li> But our previous<fn>We could refer to this by number as well <mdash /> that is probably a good idea if the result isn't so close by within the document. However, it is just up there so referring to it as <q>previous result</q> is fine.
+</fn> result <mdash /> <xref ref="res_subset_trans"/> <mdash /> tells us that if <m>X \subseteq A</m> and <m>A\subseteq B</m> then <m>X \subseteq B</m>.
+</li>
+<li> This, in turn, implies that <m>X \in \pow{B}</m>, and so <m>\pow{A} \subseteq \pow{B}</m>.
+</li>
+</ul>
+Okay, now lets look at the converse.
+<ul>
+<li> We want to show that <m>\pow{A} \subseteq \pow{B} \implies A\subseteq B</m>.
+</li>
+<li> So we assume that <m>\pow{A} \subseteq \pow{B}</m>.
+</li>
+<li> But now <m>A \in \pow{A}</m>, and so <m>A \in \pow{B}</m>.
+</li>
+<li> Hence <m>A</m> must be a subset of <m>B</m> <mdash/> by definition of the power set.
+</li>
+</ul>
+As always, once the scratch work is done, its time to write up.
+</p>
+
+<proof>
+<p>
+  We prove each implication in turn.
+  <ul>
+<li> Assume that <m>A \subseteq B</m>, and let <m>X\in \pow{A}</m>.
+    Hence <m>X \subseteq A</m>.
+    By our result above, this, in turn, implies that <m>X \subseteq B</m>.
+    By the definition of the power set, this tells us that <m>X \in \pow{B}</m>.
+    Thus we have shown that <m>\pow{A}\subseteq\pow{B}</m>.
+</li>
+<li> Now turn to the converse and assume that <m>\pow{A}\subseteq\pow{B}</m>.
+    Since <m>A\in\pow{A}</m>, this implies that <m>A\in\pow{B}</m>.
+    But, by the definition of the power set, this tells us that <m>A \subseteq B</m>, and we are done.
+</li>
+</ul>
+  Since we have proved both implications we have proved the result.
+</p>
+</proof>
+
+<p>We can think of forming the power set as an operation on a set.
+Since it is the only operation we have discussed so far, we could keep applying it to see what sorts of things we get.
+That is, what is the power set of a power set of a power set of a<ellipsis/>
+This is not an entirely silly idea, and we will look at this when we get to the chapter on cardinality, but exploring other set operations is a better use of our time at present.
+</p>
+
+</section>
+
+<section><title>Set operations</title>
+<p>
+The first two set operations we'll discuss are union and intersection.
+Rather than having more discursive blurb, the authors should get on with it and just define them.
+</p>
+
+<definition>
+<statement><p>
+ Let <m>A</m> and <m>B</m> be sets.
+ The <term>union</term> of <m>A</m> and <m>B</m>, denoted <m>A \cup B</m>, is the set of all elements in <m>A</m> or <m>B</m>.
+<md>
+<mrow>
+  A \cup B &amp;= \{x \so x\in A \text{ or } x \in B \}
+</mrow>
+</md>
+</p></statement>
+</definition>
+
+<p>
+A couple of things to note here.
+First <mdash/> the symbol <q> <m>\cup</m> </q> is not the letter <q>u</q>.
+Second <mdash/> we are using the word <q>or</q> in the definition in its inclusive mathematical sense.
+Indeed we could rewrite the above definition as
+<md>
+<mrow>
+  (x\in A \cup B) &amp; \iff (x \in A) \lor (x \in B)
+</mrow>
+</md>
+We'll draw some pictures to help illustrate things shortly.
+But first, another definition.
+</p>
+
+<definition>
+<statement><p>
+ Let <m>A</m> and <m>B</m> be sets.
+ The <term>intersection</term> of <m>A</m> and <m>B</m>, denoted <m>A \cap B</m>, to be the set of elements that belong to both <m>A</m> and <m>B</m>.
+  <md>
+<mrow>
+   A \cap B &amp;= \{ x \so x\in A \text{ and } x \in B \}
+  </mrow>
+</md>
+  If the intersection <m>A \cap B = \es</m>, then we say that <m>A</m> and <m>B</m> are disjoint.
+</p></statement>
+</definition>
+<p>
+Again, the symbol <q> <m>\cap</m> </q> is not an upside-down letter <q>u</q>, and we are using the word <q>and</q> in this definition in its precise mathematical meaning.
+Just as we rewrote the definition of union, we can rewrite the definition of intersection as
+<md>
+<mrow>
+  (x\in A \cap B) &amp; \iff (x \in A) \land (x \in B)
+</mrow>
+</md>
+Indeed there are many parallels between how the operators union and intersection act on sets and how the logical operators <q>or</q> and <q>and</q> act on mathematical statements.
+These parallel are reinforced by the similarity in notations.
+</p>
+
+<warning><title>The right notation in the right place.</title>
+<p>
+Please be careful to not confuse set and logical operations.
+When <m>A</m> and <m>B</m> are sets, we cannot take their conjunction or disjunction: <q><m>A \lor B</m></q> <q><m>A\land B</m></q> do not make sense.
+Similarly, if <m>P</m> and <m>Q</m> are statements we cannot take their union or intersection: <q><m>P\cup Q</m></q> and <q><m>P \cap Q</m></q> do not make sense.
+</p>
+</warning>
+
+<example xml:id="ex_simple_cupcap">
+<p>
+Let <m>A = \{1,2,3,4 \}</m>, <m>B = \{p : p \mbox{ is prime} \}</m>, <m>C = \{5,7,9\}</m> and <m>D = \{\mbox{even positive integers}\}</m>.
+Then
+<md>
+<mrow>
+  A \cap B &amp;= \set{2,3}
+</mrow><mrow>
+  B \cap D &amp;= \set{2}
+</mrow><mrow>
+  A \cup C &amp;= \set{1,2,3,4,5,7,9}
+</mrow><mrow>
+  A \cap C &amp;= \es
+</mrow>
+</md>
+</p>
+</example>
+
+<p>
+We can visualise the operations of union and intersection using a Venn diagram<fn>
+John Venn was a 19th century English logician and mathematician.
+He introduced <q>Eulerian circles</q> (which later became to be known as Venn diagrams) in a paper <q>On the Diagrammatic and Mechanical Representation of Propositions and Reasoning</q>. He also built a machine to bowl cricket balls.
+</fn>.
+These diagrams might seem like an obvious and simple idea, however it is much more recent than the cartesian plane.
+Venn diagrams are 19th century mathematics, while the cartesian plane is 17th century mathematics<fn>Or, if you look into the history a little more, 14th century.</fn>.
+</p>
+
+<sidebyside width="45%">
+  <image source="union" /> <image source="intersection" />
+</sidebyside>
+
+
+<remark><title>Long equations, sides, and short-hands</title>
+<p>
+  Some of the results we want to prove (like the one coming shortly) involve showing that a long expression on one side of an equality is actually the same as the long expression on the other side.
+  To ease both the writer and the reader of the resulting calculations, we refer to the   expressions on either side<fn>
+  This is, because mathematics is most commonly written sinistrodextrally (left-to-right). Though of course, we could use similar shorthand if we wrote dextrosinistrally or even boustrophedonically! It seems unlikely that anyone would write mathematics vertically.
+  And yes, this footnote is here mostly just to use the word <q>boustrophedonically</q>.
+  </fn>
+  as <q>the left-hand side</q> and <q>the right-hand side</q>.
+  In typical mathematician style, even this is too long and they are almost always contracted further to <q>LHS</q> and <q>RHS</q>.
+  This shorthand allows us to avoid writing (and reading) chunks of text (with the associated potential errors), but, perhaps more importantly, allows us to indicate that one side of an equation remains fixed unchanged while we work on the other.
+</p>
+</remark>
+
+<p>
+Here is a good example adapted from one in <url href="https://www.people.vcu.edu/~rhammack/BookOfProof/" visual="www.people.vcu.edu/~rhammack/BookOfProof/"><q>The book of proof</q> by Richard Hammack</url>.
+</p>
+
+<example>
+<statement>
+<p>
+  Let
+  <md>
+<mrow>
+    A &amp;= \set{n \in \mathbb{Z} \;:\; 15|n}&amp;
+    B &amp;= \set{n \in \mathbb{Z} \;:\; 3|n}&amp;
+    C &amp;= \set{n \in \mathbb{Z} \;:\; 5|n}
+  </mrow>
+</md>
+  Prove that <m>A = B \cap C</m>.
+</p>
+</statement>
+
+<answer>
+<p>So <mdash/> scratch work first.
+  To prove the equality we need to show that the LHS is a subset of the RHS and vice versa.
+  So we start by proving that  <m>A \subseteq B\cap C</m>.
+  <ul>
+<li> Let <m>a \in A</m>, so <m>a</m> is an integer divisible by 15.
+</li>
+<li> Hence we can write <m>a=15k</m>.
+</li>
+<li> We now need to show that <m>a\in B</m> and <m>a\in C</m>, so that <m>a \in B\cap C</m>.
+</li>
+<li> Well, since <m>a=15k</m> we know that <m>a=3(5k)</m>, and because <m>5k \in \mathbb{Z}</m>, <m>a</m> is divisible by 3.
+    Hence <m>a \in B</m>.
+</li>
+<li> Similarly, since <m>a=15k</m> we know that <m>a=5(3k)</m>, and because <m>3k \in \mathbb{Z}</m>, <m>a</m> is divisible by 5.
+    Hence <m>a \in C</m>.
+</li>
+<li> Since <m>a \in B</m> and <m>a\in C</m>, we know that <m>a\in B\cap C</m>.
+</li>
+</ul>
+  Thus <m>A\subseteq B\cap C</m>.
+</p>
+
+<p>  Now we must argue that  <m>B \cap C \subseteq A</m>.
+  <ul>
+<li> Let <m>x\in B\cap C</m>.
+    Notice that we're calling it <m>x</m> rather than <m>b</m> or <m>c</m> since that is a more neutral letter, while <m>b</m> or <m>c</m> suggest that the element might belong to <m>B</m> or <m>C</m> but not both.
+</li>
+<li> Since <m>x\in B \cap C</m> we know that <m>x\in B</m> and that <m>x\in C</m>.
+</li>
+<li> Because <m>x\in B</m>, <m>x=3k</m> for some integer <m>k</m>.
+</li>
+<li> Similarly, because <m>x\in C</m>, we know that <m>x=5\ell</m> for some integer <m>\ell</m>.
+    Notice that we did not write <m>x=5k</m> since we have already used <m>k</m> to express that <m>x</m> is divisible by 3.
+</li>
+<li> This implies that <m>x=3k=5\ell</m>, and we are close to being done.
+</li>
+<li><p> Since <m>5\ell=3k</m> we know that <m>5\ell</m> is divisible by 3.
+We'd like to show that <m>\ell</m> is a multiple by 3 (which would make sense because 3 and 5 are prime numbers<fn>This proof can be made a bit more direct if we make use of the fact that every integer has a unique prime factorisation, but we haven't proved that yet.</fn>).
+Perhaps the easiest way to do this is to investigate what happens if <m>\ell</m> is a multiple of 3 or not.
+There are 3 possibilities, <m>\ell = 3j, 3j+1, 3j+2</m>, for some integer <m>j</m> (we are using Euclidean division here).
+<ul>
+  <li> If <m>\ell = 3j</m> then <m>5\ell = 15j</m> which is precisely what we want.</li>
+  <li> If <m>\ell = 3j+1</m> then <m>5\ell = 15j+5 = 3(5j+1)+2</m>, and so <m>5\ell</m> is not divisible by 3.
+  But this contradicts the fact that <m>x \in B</m>.</li>
+  <li> Similarly <m>\ell = 3j+2</m> then <m>5\ell = 15j+10 = 3(5j+3)+1</m>, and so <m>5\ell</m> is not divisible by 3.
+  Again this contradicts the fact that <m>x \in B</m>.</li>
+</ul>
+  Hence the only possibility is that <m>\ell</m> is a multiple of 3.
+  Thus we can write <m>x=5\ell = 5\cdot 3 \cdot j</m> for some integer <m>j</m>.
+  </p>
+</li>
+<li> Hence <m>x</m> is divisible by 15 and <m>x\in A</m>.
+</li>
+</ul>
+  Thus <m>B\cap C \subseteq A</m>.
+</p>
+
+<p>
+  Oof!
+  Everything is there, we just have to write it up nicely.
+</p>
+</answer>
+<solution>
+<proof>
+<p>
+Let <m>A,B,C</m> be defined as above.
+We prove the equality by first proving that the LHS is a subset of the RHS and then vice-versa.
+<ul>
+<li> Let <m>a \in A</m>.
+  Then <m>a=15m</m> for some <m>m\in \mathbb{Z}</m>.
+  This means that <m>a=3(5m)</m> and <m>a=5(3m)</m>.
+  Since both <m>3m,5m \in \mathbb{Z}</m>, it follows that <m>a\in B</m> and <m>a\in C</m>.
+  Thus <m>a\in B\cap C</m> as required.
+</li>
+<li><p>
+  Now let <m>x\in B\cap C</m>.
+  Then <m>x=3k</m> and <m>x=5\ell</m> for some integers <m>k,\ell</m>, so we must have that <m>3k=5\ell</m>.
+  Since <m>\ell \in \mathbb{Z}</m> we know it can be written as <m>\ell=3j, 3j+1</m> or <m>3j+2</m> (by Euclidean division).
+  <ul>
+    <li>If <m>\ell=3j</m> for some integer <m>j</m>, then <m>x=5\ell=15j</m> and so is a multiple of 15.</li>
+    <li>
+      If <m>\ell=3j+1</m> then <m>x=15j+5 = 3(5j+1)+2</m>, while if <m>\ell=3j+2</m> then <m>x=15j+10 = 3(5j+3)+1</m>.
+      In either of these cases, we contradict our assumption that <m>x</m> is a multiple of 3.
+    </li>
+  </ul>
+  Hence we must have that <m>\ell=3j</m>.
+  Hence <m>x=5\ell=5\cdot3j = 15(j)</m> for some integer <m>j</m>, and so <m>x</m> is divisible by 15.
+  Hence <m>x\in A</m> as required.
+</p>
+</li>
+</ul>
+So we have shown that <m>A=B\cap C</m>.
+</p>
+</proof>
+<p>
+  Here is an alternative way to show that <m>B \cap C \subseteq A</m>. It relies on the fact that <m>5 = 6-1</m>.
+</p>
+<proof><title>Alternate proof</title>
+<p>
+  Assume that <m>x \in B \cap C</m>, and so <m>x \in B</m> and <m>x
+  \in C</m>. Then we know that there are <m>k, \ell \in \mathbb{Z}</m>
+  so <m>x=3k</m> and <m>x=5\ell</m>. Thus we know that <m>3k=5\ell</m>. From this
+  <md>
+    <mrow>3k \amp = 6\ell -\ell \amp \text{and thus}</mrow>
+    <mrow>\ell \amp = 6\ell-3k = 3(2\ell-k)</mrow>
+  </md>
+  That is, <m>\ell</m> must be divisible by <m>3</m>. But now <m>x =
+  5\ell = 15(2\ell-k)</m> and so is divisible by 15. Thus <m>x \in
+  A</m> as required.  
+</p>
+</proof>
+</solution>
+</example>
+
+<p>
+  Given two sets <m>A,B</m> we sometimes might need to construct a new set which contains all the elements of <m>A</m> that are not in <m>B</m>.
+  This is the set-difference.
+</p>
+
+<definition>
+<statement><p>
+  Let <m>A</m> and <m>B</m> be sets.
+  Then the <term>difference</term>, <m>A - B</m> (which is also written <m>A \setminus B</m>) is the elements in <m>A</m> that are not in <m>B</m>
+  <md>
+<mrow>
+    A - B &amp;= \{ x \in A \so x \notin B \}
+  </mrow>
+</md>
+  This new set is sometimes called the <q><term>relative complement</term> of <m>B</m> in <m>A</m></q>.
+</p></statement>
+</definition>
+<p>
+Another picture:
+</p>
+
+<image width="50%" source="setdifference"/>
+
+<example>
+<p>
+If we reuse the sets we just defined in the example <xref ref="ex_simple_cupcap"/> then,
+<md>
+<mrow>
+  A - D &amp;= \{1,3\}
+</mrow><mrow>
+  C - A &amp;= \{5,7,9\}
+</mrow>
+</md>
+</p>
+</example>
+
+<p>
+To define our next set operation we first need the <term>univeral set</term> <m>U</m>.
+This is the set from which we are taking objects to make our sets <mdash /> it (essentially) tells us what domain we are working in.
+For many of our results <m>U</m> will be the set of natural numbers, for some other results <m>U</m> might be the set of reals.
+It depends on context.
+But given the universal set we can define our last operation.
+</p>
+
+<definition>
+<statement><p>
+ Given a <term>universal set</term> <m>U</m> and a set <m>A \subset U</m>, we define the <term>complement</term>
+of <m>A</m>, denoted <m>\bar{A}</m> to be the set of elements not in <m>A</m>.
+<md>
+<mrow>
+  \bar{A} &amp;= \{ x \in U | x \notin A\}
+</mrow>
+</md>
+or equivalently:
+<md>
+<mrow>
+  x \in \bar{A} \iff x \not\in A
+</mrow>
+</md>
+</p></statement>
+</definition>
+<p>
+Note
+<ul>
+<li> While it is a nice thing to say, <q>compl-I-ment</q> is not the same as <q>compl-E-ment</q>.
+</li>
+<li> The complement acts on sets in much the same way that negation acts on logical statements.
+  The complement of the complement is the original set:
+   <me>\bar{\bar{A}}=A. </me>
+</li>
+<li><p> We can express <m>A - B</m> using the complement as
+  <me>
+    A - B = A \cap \bar{B}
+  </me>
+</p>
+</li>
+</ul>
+Another descriptive picture:
+</p>
+
+
+<image width="50%" source="complement"/>
+
+
+<example>
+  <statement>
+<p>
+ Let <m>U = \set{1,2,\dots,20}</m>, <m>A = \set{2,3,5,7,11,13,17,19}</m> and <m>B = \set{2,4,6,8,10,12,14,16,18,20}</m>.
+Determine the following sets
+<md>
+<mrow>
+  \bar{B} \qquad A-B \qquad A \cap \bar{B} \qquad \bar{\bar{B}}
+</mrow>
+</md>
+</p>
+  </statement>
+  <solution>
+    <p>
+      We can just chug through the definitions carefully to get
+      <md>
+	<mrow>
+	  \bar{B} &amp;= \set{1,3,5,7,9,11,13,15,17,19}
+	  </mrow><mrow>
+	  A-B &amp;= \set{3,5,7,11,13,17,19 }
+	  </mrow><mrow>
+	  A\cap\bar{B} &amp;= \set{3,5,7,11,13,17,19 } = A - B
+	  </mrow><mrow>
+	  \bar{\bar{B}} &amp;= B
+	</mrow>
+      </md>
+    </p>
+  </solution>
+ 
+</example>
+
+
+</section>
+
+<section>
+  <title>Cartesian products of sets</title>
+
+<p>
+Now when we were defining sets we used lists <m>A = \set{1,2,3}</m> and the order in which we put things in the list didn't matter.
+On some occasions we really need to put things into some order; we need a way to write an ordered pair of elements in which one of the pair is the <em>first</em> and the other is the <em>second</em>.
+Coordinates of points, <m>(x,y)</m>, in the plane are a very good example of this: the first number is the <m>x</m>-coordinate (horizontal position) and the second is the <m>y</m>-coordinate (vertical position), and we should not mix them up<fn>
+Mind you, people rarely call the parts of an <m>x,y</m>-coordinate by their correct names.
+The <m>x</m> (ie the first of the pair) is called the <term>abscissa</term> and its use goes back at least as far as Fibonacci.
+The <m>y</m> (the second of the pair) is the <term>ordinate</term>.
+These terms are not so common in modern English and people typically just call them <m>x</m>-coordinate and <m>y</m>-coordinate (which is a little jarring to the ear of the pedant).
+</fn>.
+The point <m>(1,13)</m> on the plane is not the same as the point <m>(13,1)</m>.
+We are used to this notation, <q> <m>(x,y)</m> </q>, but we should define it before we go any further.
+</p>
+
+<definition>
+<statement><p>
+ An <term>ordered pair</term> of elements is an ordered list of two elements.
+ We write this as <m>(a,b)</m> with round brackets rather than braces.
+ Ordered pairs have the properties that
+ <ul>
+<li> <m>(a,b) \neq (b,a)</m> unless <m>a=b</m>, and</li>
+<li> <m>(a,b) = (c,d)</m> only when <m>(a=c)</m> and <m>(b=d)</m>.</li>
+</ul>
+</p></statement>
+</definition>
+
+<p>
+Given two sets <m>A,B</m>, the set of all possible ordered pairs is the <term>Cartesian product</term> of those sets. To be more precise:
+</p>
+<definition><title>Cartesian products</title>
+<statement><p>
+ Let <m>A,B</m> be sets. The <term>Cartesian product</term>,or just <term>product</term>, of <m>A</m> and <m>B</m> is the set of all ordered pairs <m>(a,b)</m> such that <m>a \in A</m> and <m>b \in B</m>.
+ We write this as <m>A \times B</m>.
+<md>
+<mrow>
+  A \times B = \set{ (a,b) : a\in A \text{ and } b \in B }
+</mrow>
+</md>
+Note that <m>A \times B \neq B \times A</m>, unless <m>A=B</m>.
+</p></statement>
+</definition>
+
+<example>
+<p>
+  If we set <m>A = \set{a,b,c}</m> and <m>B=\set{1,2}</m> then
+<md>
+<mrow>
+  A\times B &amp;= \set{ (a,1), (a,2), (b,1), (b,2), (c,1), (c,2)}
+</mrow>
+</md>
+</p>
+</example>
+
+<p>So we are used to playing with cartesian products in the context of functions <mdash/> <m>\mathbb{R} \times \mathbb{R}</m> is the whole <term>cartesian plane</term><fn>
+While this is named for the French mathematician and philosopher Rene Descartes (1596 <ndash /> 1650), it was also invented by Pierre de Fermat (1601 <ndash /> 1665), and even earlier by Nicole Oresme (1325 <ndash /> 1382). Fermat is famous for writing his <q>Last Theorem</q> in the margin of a book, and Oresme was the first to prove that the infinite series <m>1+\frac{1}{2}+\frac{1}{3}+\frac{1}{4}+\cdots </m> does not converge.
+</fn> and functions we are used to are just subsets of this.
+For example, the parabola <m>y=x^2</m> is the set
+<md>
+<mrow>
+  \set{ (x,y) \in \mathbb{R} \times \mathbb{R} \so y=x^2}
+</mrow>
+</md>
+which is a subset of <m>\mathbb{R} \times \mathbb{R}</m>.
+</p>
+
+</section>
+
+<section>
+  <title>Some set-flavoured results</title>
+
+<p>
+There are quite a few standard results that describe how the set operations defined above interact with each other.
+We'll state some of the more important ones as a theorem (or two (or three)).
+But first, let us summarise what we have learned above.
+</p>
+
+<remark><title>A set of results about sets seen earlier</title>
+<p>
+  Let <m>A,B</m> be sets. Then
+  <ul>
+    <li>
+      <m>(A \subseteq B) \equiv (\forall x\in A, x\in B) \equiv( x\in A \implies x\in B)</m>.
+    </li>
+    <li>
+      <m>(A = B) \equiv \left( (A \subseteq B) \land (B \subseteq A) \right) \equiv \left((x \in
+      A) \iff (x \in B) \right)</m>
+    </li>
+    <li>
+      <m>(x \in A \cap B) \equiv \left( (x\in A) \land (x\in B) \right)</m>
+    </li>
+    <li>
+      <m>(x \in A \cup B) \equiv \left( (x\in A) \lor (x\in B) \right)</m>
+    </li>
+    <li>
+      <m>(x \in \bar{A}) \equiv (x \not\in A) \equiv \neg(x \in A)</m>
+    </li>
+    <li>
+      <m>(x \in A - B) \equiv \left( (x \in A) \land (x \not\in B)\right) \equiv \left( (x \in A) \land \neg(x \in
+  B) \right)</m>
+    </li>
+</ul>
+</p>
+</remark>
+<p>
+Using these we can prove the following theorems
+</p>
+<theorem><title>DeMorgan's laws</title>
+<statement><p>
+  Let <m>A,B</m> be sets contained in a universal set <m>U</m>.
+  Then
+  <md>
+<mrow>
+    \overline{A \cap B} &amp;= \bar{A} \cup \bar{B}
+</mrow><mrow>
+    \overline{A \cup B} &amp;= \bar{A} \cap \bar{B}
+  </mrow>
+</md>
+</p></statement>
+</theorem>
+
+<theorem><title>Distributive laws</title>
+<statement><p>
+  Let <m>A,B,C</m> be sets then
+  <md>
+<mrow>
+    A \cup (B \cap C) &amp;= (A\cup C) \cap (A \cup B)
+</mrow><mrow>
+    A \cap (B \cup C) &amp;= (A\cap C) \cup (A \cap B)
+  </mrow>
+</md>
+  and
+  <md>
+<mrow>
+    A \times (B \cap C) &amp;= (A\times C) \cap (A \times B)
+</mrow><mrow>
+    A \times (B \cup C) &amp;= (A\times C) \cup (A \times B)
+  </mrow>
+</md>
+</p></statement>
+</theorem>
+
+<p>
+The above are not so hard to understand.
+You can see that the distributive laws for sets look very much like the distributive laws for additional and multiplication.
+Laws for set differences are less obvious and we certainly wouldn't expect you to remember them. However they do make very good exercises!
+And, as you'll see in the examples below, a quick sketch of Venn diagrams can help a lot. <alert>But</alert> a Venn diagram is not a proof
+<fn>
+  The Venn diagram is good scratch work for a proof, but really what one is doing is showing that for a particular choice of sets (ie the ones drawn) everything works out. To be a proof it has to work for every choice.
+</fn>.
+</p>
+
+<theorem xml:id="thm_set_diff"><title>Set differences</title>
+<statement><p>
+  Let <m>A,B,C</m> be sets contained in a universal set <m>U</m>.
+  Then
+  <md>
+<mrow>
+    A-B &amp;= A \cap \bar{B}
+</mrow><mrow>
+    A-(B\cap C) &amp;= (A-B)\cup(A-C)
+</mrow><mrow>
+    A-(B\cup C) &amp;= (A-B)\cap(A-C)
+</mrow><mrow>
+    A-(B-C) &amp;= (A \cap C)-(A-B)
+</mrow><mrow>
+    A-(B \cap C) &amp;= (A-B) \cup (A-C)
+</mrow><mrow>
+    A-(B \cup C) &amp;= (A-B) \cap (A-C)
+  </mrow>
+</md>
+</p></statement>
+</theorem>
+
+<p>
+  When we prove the above theorems we'll make use of some simple little results that follow quite directly from the definitions of our set operations.
+  Rather than explaining those results again and again in each proof (where the reader has to check the reasoning each time), we'll put them in a separate little result of their own.
+  Since it is a helpful result we'll call it a lemma.
+</p>
+
+<lemma>
+<statement><p>
+ Let <m>A, B</m> be sets.
+ <ul>
+<li> If <m>x \in A</m> then <m>x \in A \cup B</m>.
+</li>
+<li> If <m>x \in A\cap B</m> then <m>x \in A</m>.
+</li>
+<li> If <m>x \not\in A \cup B</m> then <m>x \not\in A</m> and <m>x \not\in B</m>.
+</li>
+<li> If <m>x \not\in A \cap B</m> then <m>x \not\in A</m> or <m>x \not\in B</m>.
+</li>
+</ul>
+  The contrapositives of these statements also turn out to be useful in certain circumstances, so we state them explicitly.
+  <ul>
+<li> If <m>x \not\in A \cup B</m> then <m>x\not\in A</m>
+</li>
+<li> If <m>x \not\in A</m> then <m>x\not\in A \cap B</m>
+</li>
+<li> If <m>x \in A</m> and <m>x\in B</m> then <m>x \in A \cap B</m>.
+</li>
+<li> If <m>x \in A</m> or <m>x\in B</m> then <m>x \in A \cup B</m>.
+</li>
+</ul>
+</p></statement>
+</lemma>
+<p>
+These are straight forward to prove using the logic we know and the definitions of union and intersection.
+</p>
+
+<proof>
+<p>
+We prove each in order.
+<ul>
+<li> Assume <m>x \in A</m>.
+   Then <m>x\in A</m> or <m>x\in B</m>.
+   Hence <m>x \in A\cup B</m>.
+</li>
+<li> Assume <m>x \in A \cap B</m>.
+   Hence <m>x \in A</m> and <m>x\in B</m>.
+   Thus we have that <m>x\in A</m> as required.
+</li>
+<li> The contrapositive of the statement is the definition of intersection, so the statement is true.
+</li>
+<li> The contrapositive of the statement is the definition of union, so the statement is true.
+</li>
+</ul>
+</p>
+</proof>
+
+<remark><title>Careful choice of <m>B</m></title>
+<p>
+Take a careful look at the first of the statements in the lemma above. Observe that the hypothesis does not mention the set <m>B</m> that is in the conclusion.
+This is a useful observation.
+It means that we can apply the result by choosing <m>B</m> to be some set we are interested in.
+That is:
+</p>
+<blockquote>
+<p>
+  If <m>x \in A</m> then <m>x</m> is in the union of <m>A</m> and <em>any set we choose</em>.
+</p></blockquote>
+<p>
+and similarly the second (its contrapositive) says
+</p>
+<blockquote>
+<p>
+  If <m>x\not\in A</m> then <m>x</m> is not in the intersection of <m>A</m> and <em>any set we choose</em>.
+</p>
+</blockquote>
+</remark>
+
+
+<p>Okay, primed with these results let's prove one of DeMorgan's laws</p>
+
+<example>
+  <statement>
+<p>
+  Let <m>A,B</m> be sets included in a universal set <m>U</m>, then <m>\overline{A \cap B} = \bar{A} \cup \bar{B}</m>.
+</p>
+  </statement>
+  <answer>
+<p>  First we should draw a Venn diagram describing the sets <m>\overline{A\cap B}, \bar{A}</m> and <m>\bar{B}</m>:
+</p>
+
+<image width="100%" source="notAcapB"/>
+
+<p>
+  Again, note that though Venn diagrams are useful tools for to understand and explore problems like these, they are not proofs.
+  You should think of them as tools to help your scratch work.
+</p>
+
+<p>
+  Its an equality so we have to prove that the LHS is a subset of the RHS and vice-versa.
+  Let's do those in order.
+<ul>
+<li> Assume <m>x\in \overline{A\cap B}</m>.
+</li>
+<li> By definition of set complement this means that <m>x \not\in (A\cap B)</m>.
+</li>
+<li><p>
+   Now our helpful lemma comes to our aid.
+    It tells that this implies that <m>x \notin A</m> or <m>x\not\in B</m>.
+    <ul>
+    <li> If <m>x\not\in A</m> then <m>x \in \bar{A}</m>.
+    As per our helpful lemma, if <m>x</m> is an element of a particular set, then it is an element of the union of that set and any other set we choose.
+    Hence, if <m>x\in \bar{A}</m> then <m>x\in \bar{A}\cup\bar{B}</m>.
+    </li>
+    <li> Similarly, if <m>x\not\in B</m> then <m>x\in\bar{B}</m>, and so <m>x \in \bar{B}\cup\bar{A}</m>.
+    </li>
+    </ul>
+  </p>
+</li>
+<li> In either case <m>x\in\bar{A}\cup\bar{B}</m> as required.
+</li>
+</ul>
+  And the other inclusion:
+  <ul>
+  <li><p>
+   Assume <m>x\in\bar{A} \cup \bar{B}</m>.
+    Hence <m>x\in\bar{A}</m> or <m>x\in\bar{B}</m>.
+    <ul>
+    <li> If <m>x\in\bar{A}</m> then <m>x\not\in A</m>.
+    As above, our helpful lemma comes to our aid.
+    If we know that <m>x</m> is not an element of a particular set, then it is not in the intersection of that set and any other set we choose.
+    Hence, if <m>x \not\in A</m> then <m>x\not\in A\cap B</m>.
+    </li>
+    <li> If <m>x\in\bar{B}</m> then <m>x\not\in B</m>, and by a similar argument, <m>x\not\in A\cap B</m>.
+    </li>
+    </ul>
+  </p>
+</li>
+<li> In either case <m>x\not\in A\cap B</m>, so <m>x\in\overline{A\cap B}</m> as required.
+</li>
+</ul>
+  Now we can write this as a proper proof.
+</p>
+  </answer>
+  <solution>
+<proof>
+<p>
+    We first prove that <m>\overline{A\cap B} \subset \bar{A}\cup\bar{B}</m> and then the reverse inclusion.
+    <ul>
+      <li> Let <m>x \in \overline{A\cap B}</m>, and hence <m>x\not\in (A \cap B)</m>.
+      This implies that <m>x\not\in A</m> or <m>x\not\in B</m>.
+      If <m>x \not\in A</m> then <m>x \in \bar{A}</m>, and so <m>x \in\bar{A} \cup \bar{B}</m>.
+      Similarly, if <m>x \not\in B</m> then <m>x \in \bar{B}</m>, and so <m>x \in\bar{B} \cup \bar{A}</m>.
+      In either case, <m>x\in \bar{A} \cup \bar{B}</m> as required.
+</li>
+<li> Now assume that <m>x\in \bar{A} \cup \bar{B}</m>, so <m>x\in \bar{A}</m> or <m>x \in \bar{B}</m>.
+      If <m>x \in \bar{A}</m> then <m>x\not\in A</m>, and so <m>x\not\in A \cap B</m>.
+      Similarly if <m>x \in \bar{B}</m> then <m>x\not\in B</m>, and so <m>x\not\in B \cap A</m>.
+      In either case <m>x\not\in A\cap B</m>, and so <m>x\in \overline{A\cap B}</m>.
+</li>
+</ul>
+    Since we have shown both inclusions, <m>\overline{A\cap B} = \bar{A}\cup\bar{B}</m>
+  </p>
+</proof>
+  </solution>
+</example>
+
+<p>
+What about a distributive law or two?
+</p>
+
+<example>
+  <statement>
+    <p>
+      Let <m>A,B,C</m> be non-empty sets, then <m>A \times (B\cup C) = (A\times B) \cup (A\times C)</m>.
+    </p>
+    <p>
+      Notice that this result still holds when the sets are allowed to be empty, but the proof of the result is a little messier and involves more cases.
+    </p>
+  </statement>
+<answer>
+<p>Unfortunately it isn't so easy to draw a useful picture here<fn>
+  Well <ellipsis/> I guess we could draw <m>A,B,C</m> as one-dimensional sets lying on different axes, and then the product would be some rectangular region in the plane? Something like that might work. A good exercise for the eager reader.
+</fn>, but thankfully this isn't too hard to prove.
+    It is a set-equality, so we need to prove the LHS is a subset of the RHS and vice-versa.
+    <ul>
+<li> Let <m>p \in A \times (B\cup C)</m>. Notice that since <m>A,B,C</m> are non-empty, we know that <m>p</m> exists. 
+      Since the LHS is the cartesian product of two sets, this element <m>p</m> is really an ordered pair of elements.
+      It is probably a bit easier to follow what is going to happen if we make this clear from the start.
+      With this in mind, let us restart things.
+</li>
+<li> Let <m> (x,y) \in A \times (B \cup C) </m>.
+</li>
+<li> This means that <m>x\in A</m> and <m>y \in B\cup C</m>.
+</li>
+<li><p>
+   Hence <m>y \in B</m> or <m>y \in C</m>.
+      <ul>
+      <li> Let <m>y \in B</m>, then since <m>x \in A</m>, we know that <m>(x,y) \in A \times B</m>.
+              Thus <m>(x,y) \in (A\times B) \cup \text{(any set we choose)}</m>, and so <m>(x,y) \in (A\times B) \cup (A \times C)</m>.
+      </li>
+      <li> Similarly, let <m>y\in C</m>.
+              Since <m>y\in C</m> and <m>x \in A</m>, we know that <m>(x,y)\in A\times C</m>, and so <m>(x,y) \in (A\times B) \cup (A\times C)</m>.
+      </li>
+      </ul>
+    </p>
+</li>
+<li> So <m>(x,y) \in RHS</m>.
+</li>
+</ul>
+    And the other way around<ellipsis/>
+    <ul>
+<li><p>
+   Let <m>(x,y) \in  (A\times B) \cup (A\times C)</m>, so <m>(x,y) \in (A\times B)</m> or <m>(x,y) \in (A\times C)</m>. Again, since <m>A,B,C</m> are non-empty we know that such an <m>(x,y)</m> exists.
+      <ul>
+<li> If <m>(x,y) \in (A\times B)</m> then <m>x\in A</m> and <m>y \in B</m>.
+        Hence <m>y \in B\cup \text{(any set we choose)}</m>, and so <m>y\in B\cup C</m>.
+</li>
+<li> Similarly, if <m>(x,y) \in A \times C</m> then <m>x \in A</m> and <m>y \in C</m>.
+        Hence <m>y \in C \cup B</m>.
+</li>
+</ul>
+</p>
+</li>
+<li> In either case <m>x \in A</m> and <m>y \in B \cup C</m>, so <m>(x,y) \in LHS</m>.
+</li>
+</ul>
+</p>
+
+<p>
+  Now we clean it up and make it a proof.
+</p>
+
+</answer>
+<solution>
+<proof>
+<p>
+      We prove each inclusion in turn.  Assume that <m>(x,y) \in A
+      \times (B\cup C )</m>, so that <m>x \in A</m> and <m>y \in B\cup
+      C</m>. Since the sets are non-empty, such a <m>(x,y)</m> exists.
+      Since <m>y \in B\cup C</m>, we know that <m>y \in B</m> or <m>y
+      \in C</m>.
+      <ul>
+<li> If <m>y\in B</m>, then since <m>x\in A</m>, we know that <m>(x,y) \in A \times B</m>.
+</li>
+<li> Similarly, if <m>y\in C</m> we know that <m>(x,y) \in A \times C</m>.
+</li>
+</ul>
+      In both cases we have that <m>(x,y) \in (A \times B) \cup (A \times C)</m>, and so <m>LHS \subseteq RHS</m>.
+</p>
+
+<p> Now assume that <m>(x,y) \in RHS</m>, so <m>(x,y) \in A \times
+B</m> or <m>(x,y)\in A\times C</m>. Again, since the sets are
+non-empty, such an <m>(x,y)</m> exists.
+      <ul>
+<li> If <m>(x,y) \in A \times B</m>, then <m>x\in A</m> and <m>y\in B</m>.
+        Hence <m>y \in B \cup C</m>.
+</li>
+<li> Similarly, if <m>(x,y) \in A \times C</m>, then <m>x \in A</m> and <m>y \in C</m>.
+        Thus <m>y \in C \cup B</m>.
+</li>
+</ul>
+      In either case we know that <m>x \in A</m> and <m>y \in B\cup C</m>, so <m>(x,y) \in A \times (B\cup C)</m> as required.
+  </p>
+</proof>
+</solution>
+</example>
+
+
+<p>A more challenging distributive law.</p>
+
+<example>
+  <statement>
+    <p>
+      Let <m>A,B,C</m> be sets, then <m>A \cup (B\cap C) = (A\cup C) \cap (A\cup B)</m>.
+    </p>
+  </statement>
+  <answer>  
+<p>  Again, a picture helps.</p>
+
+
+<image width="100%" source="AcupBcapC"/>
+
+
+<p>
+  Lets prove the inclusions one at a time.
+  First LHS is a subset of the RHS.
+<ul>
+<li><p>
+   Let <m>x \in A\cup(B\cap C)</m>, so that <m>x\in A</m> or <m>x\in(B\cap C)</m>.
+    <ul>
+    <li> Assume <m>x\in A</m>.
+    </li>
+    <li> Hence <m>x \in A\cup B</m> and <m>x\in A \cup C</m> (again because we know that if <m>x \in A</m> then it is in the union of <m>A</m> and any set we choose).
+    </li>
+    <li> Thus <m>x \in (A\cup B) \cap (A\cup C)</m>.
+    </li>
+    </ul>
+</p>
+</li>
+<li>
+  <p> On the other hand, assume that <m>x\in B\cap C</m>
+    <ul>
+    <li> Hence <m>x\in B</m> and <m>x \in C</m>.
+    </li>
+    <li> Since <m>x\in B</m>, we know that <m>x\in B \cup A</m>.
+    </li>
+    <li> Similarly, since <m>x \in C</m>, we know that <m>x \in C \cup A</m>
+    </li>
+    <li> Because both <m>x\in A\cup B</m> and <m>x \in A\cup C</m>, we have that <m>x \in (A\cup B) \cap (A\cup C)</m>.
+    </li>
+    </ul>
+  </p>
+</li>
+<li> In both cases, <m>x \in (A\cup B) \cap (A\cup C)</m>.
+</li>
+</ul>
+  Now we prove that the RHS is a subset of the LHS.
+<ul>
+<li> Let <m>x \in (A\cup B) \cap (A\cup C)</m>, so that <m>x \in A\cup B</m> and <m>x \in A \cup C</m>.
+</li>
+<li>
+  <p> At this point it is a good idea to explore the 4 possibilities that this suggests.
+    <ul>
+    <li> <m>(x \in A) \land (x\in A)</m> <mdash/> this is easy because we have that <m>x \in A \cup \text{(any set we choose)}</m>
+    </li>
+    <li> <m>(x \in A) \land (x\in C) </m> <mdash/> this is also easy because we have that <m>x \in A \cup \text{(any set we choose)}</m>
+    </li>
+    <li> <m>(x \in B) \land (x\in A)</m> <mdash/> similarly we have that <m>x \in A \cup \text{(any set we choose)}</m>
+    </li>
+    <li> <m>(x \in B) \land (x\in C)</m> <mdash/> not too hard because <m>x \in B \cap C</m>
+    </li>
+    </ul>
+    So these four possibilities really break down into two cases.
+    Either <m>x\in A</m> or <m>x\not\in A</m>.
+    <ul>
+    <li> If <m>x \in A</m>, then we know that <m>x \in A \cup \text{anything}</m> and so <m>x \in A \cup(B\cap C)</m>.
+    </li>
+    <li> Otherwise, if <m>x \not\in A</m> then we must have that <m>x\in B</m> and <m>x \in C</m>, so <m>x\in B\cap C</m>.
+          Then since <m>x \in B\cap C</m>, we also have that <m>x \in (B\cap C) \cup A</m>.
+    </li>
+    </ul>
+  </p>
+</li>
+<li> In either case we have that <m>x \in A \cup (B \cap C)</m>.
+</li>
+</ul>
+</p>
+  </answer>
+  <solution>
+  <proof>
+<p>
+    We prove each inclusion in turn.
+    Start by assuming that <m>x \in A \cup(B \cap C)</m>.
+    Then <m>x \in A</m> or <m>x \in B \cap C</m>.
+    We consider each case in turn.
+    <ul>
+<li> Assume <m>x \in A</m>.
+   Then <m>x \in A \cup B</m> and <m>x \in A \cup C</m> and so <m>x \in RHS</m>.
+</li>
+<li> Assume now that <m>x \in B \cap C</m>.
+   Then <m>x \in B</m> and <m>x \in C</m>, so <m>x \in B \cup A</m> and <m>x \in C \cup A</m>.
+   Thus <m>x \in RHS</m>.
+</li>
+</ul>
+   In either case we have <m>x\in RHS</m>.
+</p>
+
+<p>   Now assume that <m>x \in (A\cup B) \cap (A\cup C)</m>, and so <m>x\in A\cup B</m> and <m>x\in A \cup C</m>.
+    <ul>
+<li> If <m>x\in A</m> then <m>x\in A \cup (B \cap C)</m>.
+</li>
+<li> If <m>x\not\in A</m> then since <m>x\in A \cup B</m>, we must have <m>x \in B</m>.
+    Similarly since <m>x\in A \cup C</m> we have <m>x\in C</m>. Since <m>x\in B</m> and <m>x \in C</m>,
+    <m>x \in B\cap C</m>. Thus <m>x \in A \cup (B\cap C)</m>.
+</li>
+</ul>
+    Thus if <m>x\in LHS</m> then <m>x \in RHS</m>. and so <m>LHS \subseteq RHS</m>.
+</p>
+</proof>
+  </solution>
+</example>
+
+
+<p>
+  We'll prove that <m>A-(B\cap C) = (A-B)\cup(A-C)</m> using the distributive and DeMorgans laws.
+</p>
+
+<example>
+  <statement>
+<p>
+  Let <m>A,B,C</m> be sets included in a universal set <m>U</m>.
+  Show that
+  <md>
+<mrow>
+    A-(B\cap C) &amp;= (A-B) \cup (A-C).
+</mrow>
+  </md>
+</p>
+  </statement>
+  <answer>
+    <p>      
+      A picture can help us understand this
+    </p>
+
+<image width="100%" source="AminusBcapC"/>
+
+<p>
+  Let us start with the LHS and we'll use DeMorgan's laws and distributive laws to arrive at the RHS.
+  <md>
+<mrow>
+    A - (B\cap C) &amp;= A \cap \overline{(B\cap C)} &amp; \text{set-difference as intersection}
+</mrow><mrow>
+    &amp;= A \cap (\bar{B} \cup \bar{C}) &amp; \text{DeMorgan}
+</mrow><mrow>
+    &amp;= (A \cap \bar{B}) \cup (A \cap \bar{C}) &amp; \text{distributive}
+</mrow><mrow>
+    &amp;= (A-B) \cup (A-C) &amp; \text{intersection as set-difference}
+  </mrow>
+</md>
+  That is much much easier than proving it from first principles <mdash/> that is proving it as we proved the couple of examples above.
+  Of course, this argument things requires that we have already done the hard work of proving those other results.
+</p>
+
+<p>  Now the above calculation is all but a proof, we just need a few words.
+  Also, we probably don't need to annotate our calculation as we have done above <mdash/> though it wouldn't hurt.
+  If we don't then we should, at a minimum, tell the reader what set laws we have used.
+</p>
+
+  </answer>
+<solution>
+<proof>
+<p>
+    Let <m>A,B,C</m> be sets, then
+    <md>
+<mrow>
+      A - (B\cap C) &amp;= A \cap \overline{(B\cap C)}
+</mrow><mrow>
+      &amp;= A \cap (\bar{B} \cup \bar{C})
+</mrow><mrow>
+      &amp;= (A \cap \bar{B}) \cup (A \cap \bar{C})
+</mrow><mrow>
+      &amp;= (A-B) \cup (A-C)
+    </mrow>
+</md>
+    where we have used DeMorgans' laws, the distributive law and the fact that <m>A-B = A\cap\bar{B}</m>.
+  </p>
+</proof>
+</solution>
+</example>
+
+<p>
+A couple more examples.
+</p>
+
+<example>
+  <statement>
+    <p>
+      Let <m>A,B</m> be sets included in a universal set <m>U</m>.
+      Show that
+      <md>
+    <mrow>
+      (A\cup B) - (A \cap B) \amp = (A-B) \cup (B-A).
+      </mrow>
+    </md>
+    This quantity is called the symmetric difference of <m>A</m> and <m>B</m> and is sometimes denoted <m>A \Delta B</m>.
+    </p>
+  </statement>
+  <answer>
+  <p>
+    So we can start by trying to rewrite set differences as intersections and see what happens.
+    Actually, we should start by drawing a picture of what is happening.
+  </p>
+
+  <image width="100%" source="symmdiff" />
+
+  <p>
+    Now lets try
+    <md>
+      <mrow> (A\cup B) - (A\cap B)\amp = (A\cup B) \cap \overline{(A \cap B)} \amp \text{DeMorgan it} </mrow>
+      <mrow> \amp = (A\cup B)\cap (\bar{A} \cup \bar{B}) \amp \text{Distribute} </mrow>
+      <mrow> \amp = \big(A \cap (\bar{A} \cup \bar{B}) \big)  \cup \big(B \cap (\bar{A} \cup \bar{B})\big) \amp \text{expand more}</mrow>
+      <mrow> \amp =
+      (A\cap \bar{A}) \cup (A \cap \bar{B}) \cup (B \cap \bar{A}) \cup (B \cap \bar{B}) \amp \text{now clean up}
+      </mrow>
+      <mrow> \amp =
+      \es \cup (A \cap \bar{B}) \cup (B \cap \bar{A}) \cup \es \amp \text{rewrite}
+      </mrow>
+      <mrow> \amp =
+      (A - B) \cup (B-A)
+      </mrow>
+    </md>
+    Oof! Here we have used that <m>C \cap \bar{C} = \es</m> and <m>C \cup \es = C</m> for any set <m>C</m>.
+  </p>
+  <p>
+    What if we try starting with the right and work to the left?
+    <md>
+      <mrow>(A-B) \cup (B-A) \amp= (A \cap \bar{B}) \cup (B \cap \bar{A} ) \amp \text{expand}</mrow>
+      <mrow> \amp = \big( (A\cap \bar{B})\cup B \big) \cap \big( (A \cap \bar{B}) \cup \bar{A} \big)  \amp \text{expand more}</mrow>
+      <mrow> \amp = \big( (A \cup B) \cap (B\cap \bar{B}) \big) \cap  \big( (A\cup \bar{A})\cap (\bar{B} \cup \bar{A}) \big)  \amp \text{clean up}</mrow>
+      <mrow>  \amp = \big( (A\cup B)\cap U) \cap \big( U \cap (\bar{B} \cup \bar{A} )\big)  \amp \text{clean more}</mrow>
+      <mrow>  \amp = (A\cup B) \cap (\bar{B} \cup \bar{A} )  \amp \text{deMorgan it}</mrow>
+      <mrow>  \amp = (A\cup B)\cap \overline{(A\cap B)} </mrow>
+      <mrow>  \amp = (A\cup B) - (A\cap B)</mrow>
+    </md>
+    Not much difference really. Here we have used that <m>C \cup \bar{C} = U</m> and <m>C \cap U = C</m>.
+  </p>
+  </answer>
+  <solution>
+  <proof>
+    <p>Let <m>A,B</m> be sets. Then
+    <md>
+      <mrow> (A\cup B) - (A\cap B)\amp = (A\cup B) \cap \overline{(A \cap B)} \amp \text{DeMorgans law} </mrow>
+      <mrow> \amp = (A\cup B)\cap (\bar{A} \cup \bar{B}) \amp \text{distributive law} </mrow>
+      <mrow> \amp = \big(A \cap (\bar{A} \cup \bar{B}) \big)  \cup \big(B \cap (\bar{A} \cup \bar{B})\big) \amp \text{distributive law again}</mrow>
+      <mrow> \amp =
+      (A\cap \bar{A}) \cup (A \cap \bar{B}) \cup (B \cap \bar{A}) \cup (B \cap \bar{B})
+      </mrow>
+      <mrow> \amp =
+      \es \cup (A \cap \bar{B}) \cup (B \cap \bar{A}) \cup \es
+      </mrow>
+      <mrow> \amp =
+      (A - B) \cup (B-A) \amp\text{as required}.
+      </mrow>
+    </md>
+    Notice that in the last couple of steps we have used the following two facts
+    <md>
+      <mrow>C \cap \bar{C} \amp = \es \amp\text{ and } \amp \amp C \cup \es \amp = C </mrow>
+    </md>
+    for any set <m>C</m>.
+    </p>
+  </proof>
+
+  <p>
+  We can also prove this result from first principles <mdash /> by showing each side is a subset of the other.
+  We don't present any scratch work here, rather we just leap into the proof. You can see that it is not really any cleaner than the proof we have presented above, but it is always worth seeing things from a  different perspective.
+</p>
+
+<proof>
+<p>
+  We start by proving the left-hand side is a subset of the right-hand side and then the reverse inclusion.
+  We also make use of the following two facts
+  <md>
+    <mrow> (x \not\in A\cap B) \amp \implies (x \not\in A) \lor (x \not\in B)
+    \amp \text{and}\amp\amp
+   (x\not\in A)\amp \implies (x \not\in A \cap B)</mrow>
+  </md>
+  which are simply the contrapositives of the following statements
+  <md>
+    <mrow> (x\in A)\land (x\in B) \amp \implies (x\in A\cap B)
+    \amp\text{and}\amp\amp
+    (x\in A\cap B) \amp \implies (x\in A) </mrow>
+  </md>
+  <ul>
+    <li>
+      <p>
+        Assume <m>x \in LHS</m>, so <m>x \in (A\cup B)</m> and <m>x \not\in (A\cap B)</m>.
+        This second fact implies that <m>x \not\in A</m> or <m>x \not\in B</m>.
+        <ul>
+          <li> If <m>x \not \in A</m> then since <m>x \in A \cup B</m>, it follows that we must have <m>x \in B</m>.
+          Since <m>x \in B</m> and <m>x \not\in A</m>, we have that <m>x \in B-A</m>.
+          </li>
+          <li> Similarly, if <m>x \not\in B</m> then since <m>x \in A \cup B</m>, we must have <m>x \in A</m>.
+          Hence <m>x \in A-B</m>.
+          </li>
+        </ul>
+        In either case <m>x \in (A-B) \cup (B-A)</m>, so <m>LHS \subseteq RHS</m>.
+      </p>
+    </li>
+    <li>
+      <p>
+        Now assume that <m>x \in RHS</m>, so <m>x \in A-B</m> or <m>x \in B-A</m>.
+        <ul>
+          <li>If <m>x \in A-B</m>, then <m>x\in A</m> but <m>x \not\in B</m>.
+          Since <m>x\in A</m>, <m>x \in A\cup B</m>.
+          And since <m>x \not\in B</m>, we know that <m>x \not\in B \cap A</m>.
+          Hence <m>x \in (A\cup B) - (A \cap B)</m>.
+          </li>
+          <li>Similarly, if <m>x \in B-A</m>, then <m>x\in B</m> but <m>x \not\in A</m>.
+            Since <m>x\in B</m>, <m>x \in B\cup A</m>.
+            And since <m>x \not\in A</m>, we know that <m>x \not\in A \cap B</m>.
+            Hence <m>x \in (A\cup B) - (A \cap B)</m>.
+          </li>
+        </ul>
+        Thus we know that <m>RHS \subseteq LHS</m>. Consequently <m>LHS=RHS</m> as required.
+      </p>
+    </li>
+  </ul>
+</p>
+</proof>
+  </solution>
+
+</example>
+
+<example>
+  <statement>
+<p>
+  Let <m>A,B,C</m> be sets included in a universal set <m>U</m>. Prove that <m>A-(B-C) = (A\cap C) \cup (A-B)</m>.
+</p>
+  </statement>
+  <answer>
+<p>  Again, we start with a picture of what is going on: </p>
+
+
+<image width="100%" source="AminusBminusC"/>
+
+<p>
+  And now we should play around with some of what we already know
+  <md>
+<mrow>
+    A - (B-C) &amp;= A \cap \overline{(B-C)}  &amp; \text{set difference as intersection}
+</mrow><mrow>
+    &amp;= A \cap \overline{B \cap \bar{C}} &amp; \text{set difference as intersection}
+</mrow><mrow>
+    &amp;= A \cap (\bar{B} \cup \bar{\bar{C}}) &amp; \text{DeMorgan}
+</mrow><mrow>
+    &amp;= A \cap (\bar{B} \cup C) &amp; \text{double complement}
+</mrow><mrow>
+    &amp;= (A \cap \bar{B}) \cup (A \cap C) &amp; \text{distributive law}
+</mrow><mrow>
+    &amp;= (A \cap C) \cup (A - B) &amp; \text{intersection as set difference}
+  </mrow>
+</md>
+  oof!
+</p>
+  </answer>
+<solution>
+<proof>
+<p>
+    Let <m>A,B,C</m> be sets as given in the statement of the result.
+    Then
+<md>
+<mrow>
+  A - (B-C) &amp;= A \cap \overline{(B-C)}
+</mrow><mrow>
+  &amp;= A \cap \overline{B \cap \bar{C}}
+</mrow><mrow>
+  &amp;= A \cap (\bar{B} \cup C)
+</mrow><mrow>
+  &amp;= (A \cap \bar{B}) \cup (A \cap C)
+</mrow><mrow>
+  &amp;= (A \cap C) \cup (A - B)
+</mrow>
+</md>
+where we have used the fact that <m>A-B = A\cap\bar{B}</m>, DeMorgans laws and distributive laws.
+  </p>
+
+</proof>
+</solution>
+</example>
+
+</section>
+
+<section><title>Indexed sets</title>
+<p>
+  Our usual set notation works well when we have a small number of sets; if our work involves three sets, we can just denote them <m>A,B</m> and <m>C</m>. However, this quickly becomes inconvenient when we have even a moderate number of sets; what should we use to denote the <m>17^\mathrm{th}</m> set? One solution it to use indices to distinguish between sets:
+  <me>
+    A_1, A_2, A_3, \dots
+  </me>
+  More generally, our indices do not need to be natural numbers, but instead come from any set. So, for example, we could define a family of sets indexed by elements of another set <m>S</m>
+  <me>
+    \set{ A_\alpha \st \alpha \in S}
+  </me>
+  In this context<fn>
+  We hope the reader will forgive the authors for not making a formal definition here.
+  </fn>
+  we call <m>S</m> the <term>indexing set</term>, and the sets <m>A_\alpha</m> the <term>indexed sets</term>. Typically, the indexing set is a subset of the natural numbers.
+</p>
+
+<p>
+  Now, recall that we defined the intersection of sets <m>A</m> and <m>B</m> to be the set of all elements that are in both sets. Similarly the union of <m>A</m> and <m>B</m> is the set of all elements that are in at least one of the sets. It is not hard to extend this to the intersection and union of three sets:
+  <me>
+    A \cap B \cap C = \set{x \st x \text{ is every one of }A,B,C}
+  </me>
+  and
+  <me>
+    A \cup B \cup C = \set{x \st x \text{ is in at least one of }A,B,C}
+  </me>
+  Writing the intersection and union this way, shows how we can extend them to intersections and unions of large numbers of sets. Indeed we define,
+</p>
+<definition xml:id="def-indexedsets1">
+  <statement>
+    <p>
+      Let <m>N \in \mathbb{N}</m> and let <m>A_1, A_2, \dots, A_{N}</m> be a collection of sets. We define the intersection of <m>A_1, A_2, \dots, A_{N}</m> as
+      <me>
+        \bigcap_{k=1}^N A_k = \set{x \st x \in A_j \text{ for all } j \in \set{1,2,\dots,N} }.
+      </me>
+      We similarly define their union to be
+      <me>
+        \bigcup_{k=1}^N A_k = \set{x \st x \in A_j \text{ for some } j \in \set{1,2,,\dots,M} }.
+      </me>
+    </p>
+  </statement>
+</definition>
+
+<p>
+This notation is very useful when we have to work with lots of sets<fn>As you can see, this notation is very similar to the <m>\Sigma, \Pi</m> notation we use to denote sums and products.
+</fn>. We can generalise it further. For example, these unions and intersections need not start at index 1. Nor do they need to be unions and intersections over finite collections of sets.
+</p>
+
+<definition xml:id="def-indexedsets2">
+  <statement>
+    <p>
+      Let <m>m,M \in \mathbb{N}</m> with <m>m \leq M</m>, and let <m>A_k</m> be a set for all <m>k=m,m+1,\dots,M</m>. Then
+      <md>
+      <mrow> \bigcap_{k=m}^M A_k \amp= \set{x \st \forall j \in \set{m,m+1,\dots,M}, x \in A_j } </mrow>
+      <mrow> \bigcup_{k=m}^M A_k \amp= \set{x \st \exists j \in \set{m,m+1,\dots,M} \text{ s.t. } x \in A_j } </mrow>
+      </md>
+    </p>
+    <p>
+      Further, let <m>B_m, B_{m+1}, B_{m+2},\dots</m> be sets, then
+      <md>
+      <mrow> \bigcap_{k=m}^\infty B_k \amp = \set{x \st \forall j \in \mathbb{N} \text{ with } j \geq m, x \in A_j } </mrow>
+      <mrow> \bigcup_{k=m}^\infty B_k \amp = \set{x \st \exists j \in \mathbb{N} \text{ with } j \geq m \text{ s.t. } x \in A_j } </mrow>
+      </md>
+    </p>
+  </statement>
+</definition>
+
+<p>
+  These definitions tell us that if <m>x \in \bigcap_{n=m}^\infty A_n</m>, then <m>x \in A_k</m> for every single <m>k \geq m</m>.
+  On the other hand, if we know that <m>x \not \in \bigcap_{n=m}^\infty A_n</m>, then there must be at least one index <m>k \geq m</m> so that <m>x \not\in A_k</m>.
+  Similarly,  if <m>x \in \bigcup_{n=m}^\infty A_n</m>, then there is at least one index <m>k \geq m</m> so that <m>x \in A_k</m>.
+  And if <m>x \not\in x \in \bigcup_{n=m}^\infty A_n</m>, then <m>x \not\in A_k</m> for every single <m>k \geq m</m>.
+</p>
+
+<example>
+  <statement>
+    <p>
+      Consider the indexed sets, <m>A_n=\left( -\dfrac 1n,\dfrac 1n \right)</m> for <m>n\in\mathbb{N}</m>. So that, for example,
+      <me>
+      A_2=\left( -\dfrac 12,\dfrac 12\right)
+      \qquad \text{ and }\qquad
+      A_{27}=\left( -\dfrac {1}{27},\dfrac {1}{27} \right).
+      </me>
+      Then
+      <me>
+         0 \in \bigcap_{n=1}^\infty A_n
+      </me>
+      but
+      <me>
+        \dfrac{1}{e} \not\in \bigcap_{n=1}^\infty A_n.
+      </me>
+      The first of these is true since <m>0 \in A_n=\left(-\dfrac
+      1n,\dfrac 1n\right)</m> for all <m>n \in \mathbb{N}</m>. The
+      second follows<fn>We are assuming that we can assume that
+      <m>e = 2.71828\dots</m>. It is not too hard to show that <m>2 \lt e \lt 3</m>, but it does take some calculus.</fn> since <m>e \lt 3</m> and so
+      <m>\frac{1}{e} \gt \frac{1}{3}</m> and so <m>\frac{1}{e} \not\in
+      A_3</m>; since it is not in one of the sets, it cannot be in the
+      intersection of those sets.
+    </p>
+    <p>
+      Actually we have something a little stronger here. We have <m>\frac 1e\notin \left(-\frac 1n,\frac 1n\right)</m> for any <m>n\geq 3</m>. But since we want to show that <m>\frac 1e</m> is not in the intersection, it is enough to show that it is not in at least one of the intersecting sets.
+    </p>
+  </statement>
+</example>
+
+<p>
+  In general, we don't have to take our indices from the natural numbers. We can index sets with rational numbers, real number, matrices, colours <mdash /> just about any set. For example, for any real number <m>x \in (0,10)</m> we can define
+  <me>
+    A_x = [-x,x^2] = \set{t \in \mathbb{R} \st -x \leq t \leq x^2}.
+  </me>
+  So that <m>A_5 = [5,25]</m> and <m>A_\pi = [-\pi, \pi^2]</m>. So the <m>A_x</m> are a family of  sets indexed by real numbers. Sometimes we might need to take the union and intersection of all the sets in such a family, and so we we generalise the notation even more.
+</p>
+
+<definition xml:id="def-indexedsets3">
+  <statement>
+    <p>
+      Let <m>\mathcal{S}</m> be a set, and let <m>A_s</m> be a set for all <m>s \in \mathcal{S}</m>. Then we can define the intersection and union over all of these sets:
+      <me>
+        \bigcap_{s \in \mathcal{S} } A_s = \set{x \st \forall s \in \mathcal{S}, x \in A_s},
+      </me>
+      and
+      <me>
+      \bigcup_{s \in \mathcal{S} } A_s = \set{x \st \exists s \in \mathcal{S} \text{ s.t. } x \in A_s},
+      </me>
+    </p>
+  </statement>
+</definition>
+<remark>
+<p>
+  When we do have sets indexed by the natural numbers, say <m>A_m, A_{m+1}, A_{m+2}, \dots</m> etc, it can be convenient to write their intersection and union as
+  <me>
+    A_m\cap A_{m+1}\cap A_{m+2}\cap \cdots \qquad \text{and} \qquad
+    A_m\cup A_{m+1}\cup A_{m+2}\cup \cdots
+  </me>
+  It is arguably better to avoid this notation in favour of the more precise notation above. We should make sure that things are clear for our reader.
+</p>
+<p>
+  A more subtle, but very important point, is that when sets are indexed by real numbers it can, in fact, be impossible to write the union or intersection of those sets in this way. This is because the real numbers are not <term>countable</term>. There is simply no way to write out the real numbers in an ordered list in this way. The interested reader should jump ahead to <xref ref="chap_cardinality"/> for more on the uncountability of the reals.
+</p>
+</remark>
+
+<example>
+  <statement>
+    <p>
+      Determine whether or not the following statements are true or false.
+<ol marker="(a)">
+  <li><m>\ds \bigcap\limits_{n=1}^\infty \left(-\dfrac 1n,\dfrac 1n\right)=\emptyset</m></li>
+  <li><m>\ds 3\in \bigcup\limits_{n=3}^\infty \left(2+\dfrac 1n,3-\dfrac 1n\right]</m></li>
+  <li><p>Given the indexed sets <m>A_x=[-x,x^2]</m>, for <m>x\in\mathbb R, x>0</m>, we have
+  <me>
+  0\in \bigcap\limits_{x\in (0,1)} A_x.
+  </me></p>
+  </li>
+  <li><p>
+    Given the indexed sets <m>A_y=\big(-e^y,1-\frac 1y\big]</m>, for <m>y\in\mathbb R</m>, we have
+    <me>
+    1\in \bigcup\limits_{y\in (1,\infty)} A_y.
+    </me>
+  </p></li>
+  <li><m>\ds [-1,0)\subseteq \bigcup\limits_{n=2}^\infty \left[-1, -\dfrac 1n\right]</m></li>
+  <li><m>\ds \bigcap\limits_{n=5}^\infty \left[0, 1+\dfrac 1n\right)\subseteq [0,1)</m></li>
+</ol>
+    </p>
+  </statement>
+  <solution>
+    <p>
+<ol marker="(a)">
+  <li xml:id="ex-ind-set-a">
+    <p>This statement is false since for all <m>n\in\mathbb N</m>, we have <m>\ds 0\in \left(-\dfrac 1n,\dfrac 1n\right)</m>. Therefore <m>\ds \bigcap\limits_{n=1}^\infty \left(-\dfrac 1n,\dfrac 1n\right)\neq\emptyset</m>.
+    </p>
+    <p>
+      Notice that we see that our indexed sets are getting smaller and smaller as <m>n</m> grows larger and larger. We also see that
+      <me>
+       \bigcap_{n=1}^k \left(-\dfrac 1n,\dfrac 1n\right)=\left(-\dfrac 1k,\dfrac 1k\right).
+    </me>
+      One might take this to suggest that we can understand <m>\ds \bigcap\limits_{n=1}^\infty \left(-\dfrac 1n,\dfrac 1n\right)</m>, by just looking at what happens to <m>A_k</m> as <m>k</m> goes to infinity. This is a dangerous line of reasoning. Since <m>-\frac{1}{k}</m> and <m>\frac{1}{k}</m> both go to <m>0</m> as <m>k</m> goes to infinity, we are tempted to say that
+      <m>\ds \bigcap\limits_{n=1}^\infty \left(-\dfrac 1n,\dfrac 1n\right)=(0,0)=\emptyset</m>.
+      But we have already shown the intersection is not empty since it contains <m>0</m>. It is important to use the definitions carefully to determine what the intersections or unions contain.
+    </p>
+  </li>
+  <li>
+    <p> We see that this statement is false since in order for <m>3</m> to be in <m>\ds \bigcup\limits_{n=3}^\infty \left(2+\dfrac 1n,3-\dfrac 1n\right]</m>, it must be in at least one of the sets <m>\left(2+\dfrac 1n,3-\dfrac 1n\right]</m> for <m>n\in\set{3,4,5,\ldots}</m>.
+  </p>
+  <p>
+     But, we see that for all <m>n\in\set{3,4,5,\ldots}</m>, <m>3-\dfrac 1n \lt 3</m>, which implies that <m>\ds 3\notin \left(2+\dfrac 1n,3-\dfrac 1n\right]</m> for any <m>n\in\set {3,4,5,\ldots}</m>. Therefore <m>\ds 3\notin \bigcup\limits_{n=3}^\infty \left(2+\dfrac 1n,3-\dfrac 1n\right]</m>.
+    </p>
+  </li>
+  <li>
+    <p> We see that for all <m>x\in(0,1)</m>, we have <m>-x \lt 0</m> and <m>x^2 \gt 0</m>.
+      Thus, this statement is true since we have <m>0\in [-x,x^2]</m>, for all <m>x\in(0,1)</m>.
+    </p>
+  </li>
+<li>
+  <p> This statement is false since for all <m>y\in (1,\infty)</m>, we see <m>1-\dfrac 1n \lt 1</m>, and hence <m>\ds 1\notin \big(-e^y,1-\frac 1y\big]</m> for any <m>y\in (1,\infty)</m>.
+  </p>
+</li>
+
+<li>
+  <p>This statement is true. To show it let <m>x\in[-1,0)</m>.
+    Then, all we have to do is to show that <m>x\in \left[-1, -\dfrac 1n\right]</m> for at least one <m>n\in\set{2,3,4,\ldots}</m>.
+    For that, it is sufficient to show that <m>x\leq -\dfrac 1n</m> for some <m>n\in\set{2,3,4,\ldots}</m> (since we already know that <m>x \geq -1</m>).
+</p>
+<p>
+    We can find such <m>n</m> by choosing <m>N=\ceil{\frac {1}{|x|}}</m>, where <m>\ceil{t}</m> denotes the ceiling function <mdash /> ie the first integer greater or equal to <m>t</m>. By using the ceiling function we are really just rounding up the value of <m>\frac {1}{|x|}</m>.
+    With that choice of <m>N</m>, we know that <m>x\leq -\dfrac 1N</m> and hence <m>\ds x\in [-1, \frac 1N]</m>. Therefore <m>\ds [-1,0)\subseteq \bigcup\limits_{n=2}^\infty \left[-1, -\dfrac 1n\right]</m>.
+  </p>
+</li>
+<li>
+  <p>
+    Since <m>1+\dfrac 1n</m> goes to <m>1</m> as <m>n</m> goes to infinity, it is tempting to say that the statement is true. Unfortunately<fn>Well, actually it is fortunate. The authors have constructed this example with precisely that in mind. The reader should not give in to the temptation of a quick limit to solve all their set problems.</fn>, this it not correct.
+  </p>
+  <p>
+    This statement is actually false because, similar to the argument we used in <xref ref="ex-ind-set-a"/>, <m>\ds 1\in \bigcap\limits_{n=5}^\infty \left[0, 1+\dfrac 1n\right)</m>.
+    Thus, <m>\ds 1\in \bigcap\limits_{n=5}^\infty \left[0, 1+\dfrac 1n\right)</m>, but <m>\ds 1\notin [0,1)</m>. Therefore <m>\ds \bigcap\limits_{n=5}^\infty \left[0, 1+\dfrac 1n\right)\not\subseteq [0,1)</m>.
+  </p>
+</li>
+</ol>
+    </p>
+  </solution>
+</example>
+
+<p>
+  Before we go on to the next example, let's prove a useful lemma.
+</p>
+<lemma xml:id="lem_lim_pos_x_zero">
+  <statement>
+    <p>
+      Let <m>x \in \mathbb{R}</m>. If for all <m>k \in \mathbb{N}</m>, <m>x \lt \frac{1}{k}</m> then <m>x \leq 0</m>.
+    </p>
+  </statement>
+  <proof>
+    <p>
+      We prove the contrapositive of this statement. Namely, if <m>x
+      \gt 0</m> then there is some <m>k \in \mathbb{N}</m> so that
+      <m>x \geq \frac{1}{k}</m>. So assume that <m>x \gt 0</m>. Then
+      <m>0 \lt \frac{1}{x} \leq \ceil{\frac{1}{x}} = \ell</m>, where
+      <m>\ell \in \mathbb{N}</m>. Then <m>x \geq \frac{1}{\ell}</m> as
+      required.
+    </p>
+  </proof>
+</lemma>
+
+
+
+<example>
+  <statement>
+    <p>
+    For <m>k\in\mathbb N</m> let <m>A_k</m> be the intervals <m> A_k=[\frac{1}{k+1},1+\frac{1}{k+1})</m>.
+    <ol marker="(a)">
+      <li>Show that <m>\bigcup_{k=1}^\infty A_k=(0,\frac32)</m>.</li>
+      <li>Show that <m>\bigcap_{k=1}^\infty A_k=[\frac12,1]</m></li>
+    </ol>
+    </p>
+  </statement>
+  <solution>
+    <proof><title>Proof of (a)</title>
+    <p>
+        Let us show the two inclusions in turn.
+        <ul>
+          <li>
+            <p>Let <m>x\in\bigcup_{k=1}^\infty A_k</m>. Then <m>x\in A_k</m> for some <m>k\in \mathbb N</m> so that <m>\frac{1}{k+1} \lt x \lt 1 + \frac{1}{k+1}</m> from which we get that <m>0 \lt x \lt \frac{3}{2}</m>, so that <m>x\in (0,\frac32)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Now let <m>x\in(0,\frac32)</m>. Then let us consider two cases, <m>x\geq \frac{1}{2}</m> or <m>x \lt \frac12</m>.
+              <ol>
+                <li>First case:
+                    Suppose that <m>x\geq \frac{1}{2}</m>. Then because of the assumption on <m>x</m> we have <m>\frac12\leq x \lt \frac32</m>, and so <m>x\in A_1</m>, so <m>x\in\bigcup_{k=1}^\infty A_k</m>.
+                </li>
+                <li>Second case:
+                  Suppose that <m>x \lt \frac12</m>. Then let if we let <m>n=\ceil{\frac1x}</m> then we have <m>\frac1x \lt n+1</m> and so <m>x \gt \frac{1}{n+1}</m>. This is enough to show that <m>x\in A_n</m> with <m>n\in \mathbb N</m> and so <m>x\in\bigcup_{k=1}^\infty A_k</m>.
+                 </li>
+              </ol>
+            </p>
+          </li>
+        </ul>
+    </p>
+    </proof>
+    <proof><title>Proof of (b)</title>
+      <p>
+        Again, we prove the two inclusions in turn.
+	<ul>
+	  <li>
+	    <p>
+	    Let <m>x\in\bigcap_{k=1}^\infty A_k</m>.  Then for any
+	    <m>k\in \mathbb N</m> we have <m>x\in A_k</m> so that the
+	    inequality <m>\frac{1}{k+1}\leq x \lt 1+\frac{1}{k+1}</m>
+	    holds for any <m>k\in \mathbb N</m>.  In particular,
+	    <m>x\geq \frac{1}{2}</m>.
+	    </p>
+	    <p>
+	      Now we can use <xref ref="lem_lim_pos_x_zero"/> to show
+	      that <m>x \leq 1</m>. Since we know that <m>x-1 \leq
+	      \frac{1}{k+1}</m>, <xref ref="lem_lim_pos_x_zero"/>
+	      implies that <m>x-1 \leq 0</m> and hence <m>x \leq
+	      1</m>. 
+	    </p>
+	    <p>
+	      So we have now shown that <m>x \geq \frac{1}{2}</m> and <m>x \leq 1</m> and thus <m>x \in [\frac{1}{2},1]</m>.
+	    </p>	    
+  </li>
+  <li>
+    Now let <m>x\in[\frac12,1]</m>. So <m>\frac12 \leq x \leq 1</m>. Let <m>k\in \mathbb N</m>, we can check that <m>\frac{1}{k+1} \leq \frac{1}{2}</m> and <m>1+\frac{1}{k+1} \gt 1</m>, hence <m>\frac{1}{k+1}\leq x \lt 1 + \frac{1}{k+1}</m> so <m>x\in A_k</m>.
+    In the end, for any <m>k\in \mathbb N</m> we have <m>x\in A_k</m>, so that <m>x\in\bigcap_{k=1}^\infty A_k</m>.
+  </li>
+</ul>
+      </p>
+      </proof>
+  </solution>
+  </example>
+
+
+
+</section>
+
+<xi:include href="../problems/08ex.ptx"/>
+
+</chapter>

@@ -1,0 +1,108 @@
+<exercise>
+<!-- source latex = 'implication_question.tex' -->
+<!-- converted on 23/06/2021 at 20:48 -->
+<statement>
+<p>
+In each of the following situations, determine whether or not it was raining on the given day, or explain why you cannot determine whether or not it was raining.
+For each situation we give you two pieces of information that are true; one is an implication and one is a statement.
+<ol marker="(a)">
+<li>
+<p>
+ If it rains, then I bring an umbrella to work. I brought an umbrella to work on Monday.
+</p></li>
+<li>
+<p>
+ If it rains, then I bring an umbrella to work. I did not bring an umbrella to work on Tuesday.
+</p></li>
+<li>
+<p>
+ Whenever I am late for work, it rains. I was late to work on Wednesday.
+</p></li>
+<li>
+<p>
+ Whenever I am late for work, it rains. I was not late to work on Thursday.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<hint>
+<p>
+Carefully determine what is the hypothesis and what is the conclusion of each implication, and then refer to the truth table of the implication.
+</p>
+</hint>
+<answer>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ We cannot determine whether or not it was raining on Monday.
+</p></li>
+<li>
+<p>
+ It was not raining on Tuesday.
+</p></li>
+<li>
+<p>
+ It was raining on Wednesday.
+</p></li>
+<li>
+<p>
+ We cannot determine whether or not it was raining on Thursday.
+</p>
+</li>
+</ol>
+</p>
+</answer>
+<solution>
+<p>
+Recall the truth table of the implication:
+</p>
+
+<tabular left="minor" right="minor" top="minor" bottom="minor" halign="center">
+<row>
+<cell><m>P</m></cell><cell><m>Q</m></cell><cell><m>P\implies Q</m></cell>
+</row><row>
+<cell> T  </cell><cell>  T  </cell><cell>  T  </cell>
+</row><row>
+<cell> T  </cell><cell>  F  </cell><cell>  F  </cell>
+</row><row>
+<cell>F  </cell><cell>  T  </cell><cell>  T  </cell>
+</row><row>
+<cell>F  </cell><cell>  F  </cell><cell>  T  </cell>
+</row>
+</tabular>
+
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ We cannot determine whether or not it was raining on Monday.
+The conclusion of the implication (<m>Q=</m> <q>I brought an umbrella to work</q>) is true, which means that the hypothesis (<m>P=</m> <q>it's raining</q>) may be true or false, while the implication remains true.
+See the first and third rows of the truth table.
+</p></li>
+<li>
+<p>
+ It was not raining on Tuesday.
+Because the conclusion of the implication if false, the hypothesis must also be false.
+If the hypothesis were true, then the implication would be false.
+See the second and fourth rows of the truth table.
+</p></li>
+<li>
+<p>
+ It was raining on Wednesday.
+Because the hypothesis of the implication (<m>P=</m> <q>I am late for work</q>) is true, the conclusion (<m>Q=</m> <q>it's raining</q>) must also be true.
+If the conclusion were false, then the implication would also be false.
+See the first and second rows of the truth table.
+</p></li>
+<li>
+<p>
+ We cannot determine whether or not it was raining on Thursday.
+The hypothesis of the implication is false, which means that the conclusion may be true or false, while the implication remains true.
+See the third and fourth rows of the truth table.
+</p>
+</li>
+</ol>
+</p>
+</solution>
+</exercise>

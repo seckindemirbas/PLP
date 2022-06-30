@@ -1,0 +1,143 @@
+<exercise xml:id="ex2-trans-eng-to-logic">
+<!-- source latex = 'writing statements in symbolic logic question.tex' -->
+<!-- converted on 05/07/2021 at 10:19 -->
+<statement>
+<p>
+Write the following sentences in symbolic logic notation. Make sure to note which statements/open sentences are denoted with which letter.
+</p>
+<p>
+<em>Example</em>: The sentence, <q>The car is red and blue but not green</q> can be written as <m>(P\land Q)\land (\neg R)</m>), where
+<m>P</m>: <q>The car is red</q>, <m>Q</m>:  <q>The car is blue</q>, and <m>R</m>:  <q>The car is green</q>. Also, the truth value of this sentence depends on the car, so it is an open sentence, not a statement.
+</p>
+<p>
+ <ol marker="(a)">
+<li>
+<p>
+ <m>8</m> is even and <m>5</m> is prime.
+</p></li>
+<li>
+<p>
+ If <m>n</m> is a multiple of <m>4</m> and <m>6</m>, then it is a multiple of <m>24</m>.
+</p></li>
+<li>
+<p>
+ If <m>n</m> is a not a multiple of <m>10</m>, then it is a multiple of <m>2</m> but is not a multiple of <m>5</m>.
+</p></li>
+<li>
+<p>
+ <m>3\leq x\leq 6</m>.
+</p></li>
+<li>
+<p>
+ A real number <m>x</m> is less than <m>-2</m> or greater than <m>2</m> if its square is greater than <m>4</m>.
+</p></li>
+<li>
+<p>
+ If a function <m>f</m> is differentiable everywhere then whenever <m>x\in\mathbb{R}</m> is a local maximum of <m>f</m> we have <m>f'(x)=0</m>.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<ol marker="(a)">
+<li>
+
+<p>
+This sentence can be written as <m>P\land Q</m> for
+<md>
+<mrow>
+P: \amp  \quad 8 \text{ is even },
+</mrow><mrow>
+Q: \amp  \quad 5 \text{ is prime}.
+</mrow>
+</md>
+This is a statement.
+</p>
+</li>
+<li>
+<p>
+
+This sentence can be written as <m>(P\land Q)\implies R</m> for
+<md>
+<mrow>
+P: \amp  \quad n \text{ is a multiple of } 4,
+</mrow><mrow>
+Q: \amp  \quad n \text{ is a multple of } 6,
+</mrow><mrow>
+R: \amp  \quad n \text{ is a multiple of } 24.
+</mrow>
+</md>
+Even though <m>P</m>, <m>Q</m> and <m>R</m> are open sentences, this sentence is a conditional statement.
+</p>
+</li>
+<li>
+<p>
+
+This sentence can be written as <m>\neg P\implies \big(Q\land (\neg R)\big)</m> for
+<md>
+<mrow>
+P: \amp  \quad n \text{ is a multiple of } 10,
+</mrow><mrow>
+Q: \amp  \quad n \text{ is a multiple of } 2,
+</mrow><mrow>
+R: \amp  \quad n \text{ is a multiple of } 5.
+</mrow>
+</md>
+This is a statement.
+</p>
+</li>
+<li>
+<p>
+
+This expression can be written as <m>P\land Q</m> for
+<md>
+<mrow>
+P: \amp  \quad x\geq 3,
+</mrow><mrow>
+Q: \amp  \quad  x\leq 6.
+</mrow>
+</md>
+This is an open sentence.
+</p>
+</li>
+<li>
+<p>
+
+This sentence can be written as <m>R\implies (P\lor Q)</m> for
+<md>
+<mrow>
+P: \amp  \quad x \text{ is less than } -2,
+</mrow><mrow>
+Q: \amp  \quad x \text{ is greater than } 2,
+</mrow><mrow>
+R: \amp  \quad x^2 \text{ is greater than } 4.
+</mrow>
+</md>
+This is a statement.
+</p>
+
+</li>
+<li>
+<p>
+
+This sentence can be written as <m>P\implies (Q\implies R)</m> for
+<md>
+<mrow>
+P: \amp  \quad f(x) \text{ is differentiable everywhere},
+</mrow><mrow>
+Q: \amp  \quad x \text{ is a local maximum of } f(x),
+</mrow><mrow>
+R: \amp  \quad f'(x)=0.
+</mrow>
+</md>
+This is a statement.
+</p>
+
+
+</li>
+</ol>
+</p>
+</solution>
+</exercise>

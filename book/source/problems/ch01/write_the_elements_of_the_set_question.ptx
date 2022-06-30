@@ -1,0 +1,124 @@
+<exercise>
+<!-- source latex = 'write the elements of the set question.tex' -->
+<!-- converted on 30/06/2021 at 13:42 -->
+<statement>
+<p>
+Write the following sets by listing their elements.
+</p>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ <m>A_1=\set{ x\in\mathbb{N}\st x^2 \lt 2 }</m>.
+</p></li>
+<li>
+<p>
+ <m>A_2=\set{ x\in\mathbb{Z}\st x^2 \lt 2 }</m>.
+</p></li>
+<li>
+<p>
+ <m>A_3=\set{ x\in\mathbb{N}\st x=3k=\frac{216}{m} \text{ for some } k,m\in\mathbb N }</m>.
+</p></li>
+<li>
+<p>
+ <m>A_4=\set{ x\in\mathbb{Z}\st \dfrac{x+2}{5}\in\mathbb{Z} }</m>.
+</p></li>
+<li>
+<p>
+ <m>A_5=\set{ a\in B\st 6\leq 4a+1 \lt 17 }</m>, where <m>B=\set{1,2,3,4,5,6}</m>.
+</p></li>
+<li>
+<p>
+ <m>A_6=\set{ x\in B\st 50 \lt xd \lt 100 \text{ for some } d\in D }</m>, where <m>B=\set{ 2,3,5,7,11,13, \ldots }</m> is the set of primes and <m>D=\set{ 5,10 }</m>.
+</p></li>
+<li>
+<p>
+ <m>A_7=\set{n\in \mathbb Z\st n^2-5n-16\leq n}</m>.
+</p>
+
+
+</li>
+</ol>
+</p>
+</statement>
+
+<answer>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ <m>A_1</m> is the set of all natural numbers whose square is less than <m>2</m>. We see that there is only one natural number satisfying that condition, which is <m>1</m>.
+</p>
+<p>
+Thus, <m>A_1=\set{1}</m>.
+</p></li>
+<li>
+<p>
+  We see that this set looks very similar to <m>A_1</m>. But we see that it is differrent in that we now are looking at the set of all <em>integers</em> whose square is less than <m>2</m>, not natural numbers. In this case, we see that we have <m>3</m> numbers satisfying the condition, namely <m>-1</m>, <m>0</m>, and <m>1</m>.
+</p>
+<p>
+Thus, <m>A_2=\set{-1,0,1}</m>.
+</p></li>
+<li>
+<p>
+ <m>A_3</m> is the set of all natural numbers that are multiples of <m>3</m> and also divisors of <m>216</m>.
+</p>
+<p>
+Therefore, <m>A_3=\set{ 3, 6, 9, 12, 18, 24, 27, 36, 54, 72, 108, 216}</m>.
+</p></li>
+<li>
+<p>
+ <m>A_4</m> is the set of all integers <m>x</m> such that if we add <m>2</m> and divide the result by <m>5</m> we still get an integer
+</p>
+<p>
+So, we see that <m>A_4=\set{\ldots, -12, -7, -2, 3,  8, 13, \ldots}</m>.
+</p></li>
+<li>
+<p>
+ We see that <m>A_5</m> is the set of all elements <m>a</m> in <m>B</m> such that <m>6\leq 4a+1 \lt 1</m>. So, all we need to do is to check which elements of <m>B</m> satisfy this condition.
+</p>
+<p>
+Then, we see <m>A_5=\set{2,3}</m>.
+</p></li>
+<li>
+<p>
+ We see that the set <m>A_6</m> is the set of all elements of <m>B</m> whose product with at least one element of <m>D</m> is between <m>50</m> and <m>100</m>, exclusive. So, to find the elements of <m>A_6</m>, we need to calculate the products of elements of <m>B</m> with elements of <m>D</m>.
+</p>
+<p>
+Once we calculate that we see, <m>A_6=\set{7,11,13,17,19}</m>.
+</p>
+</li>
+<li>
+<p>
+ <m>A_7</m> is the set of all integers <m>n</m> satisfying the inequality <m>n^2-5n-16\leq n</m>, or in other words, <m>n^2-6n-16\leq 0</m>. If we factor the expression on the left, we see that we want to find the integers satisfying <m>(n+2)(n-8)\leq 0</m>. Then, we see that for this inequality to be valid, we need to have <m>n\in[-2,8]</m>.
+</p>
+<p>
+Therefore, <m>A_7=\set{-2,-1,0,1,2,3,4,5,6,7,8 }</m>.
+</p>
+
+</li>
+</ol>
+</p>
+</answer>
+<solution>
+<p>
+<md>
+<mrow>
+  A_1  \amp = \set{1} 
+</mrow><mrow>
+  A_2  \amp = \set{-1,0,1} 
+</mrow><mrow>
+  A_3  \amp = \set{ 3, 6, 9, 12, 18, 24, 27, 36, 54, 72, 108, 216}
+</mrow><mrow>
+  A_4  \amp = \set{\ldots, -12, -7, -2, 3,  8, 13, \ldots}
+</mrow><mrow>
+  A_5  \amp = \set{2,3}
+</mrow><mrow>
+  A_6  \amp = \set{7,11,13,17,19}
+</mrow><mrow>
+  A_7  \amp = \set{-2,-1,0,1,2,3,4,5,6,7,8 }
+</mrow>
+</md>
+</p>
+</solution>
+</exercise>

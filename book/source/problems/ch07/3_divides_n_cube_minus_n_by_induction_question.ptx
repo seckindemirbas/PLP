@@ -1,0 +1,37 @@
+<exercise>
+<!-- source latex = '3 divides n cube minus n by induction question.tex' -->
+<!-- converted on 12/08/2021 at 20:41 -->
+<statement>
+<p>
+Prove, using induction, that <m>\forall n\in\mathbb N</m>, <m>3\mid (n^3-n)</m>.
+</p>
+</statement>
+<solution>
+<p>
+We have seen this statement before where we used cases to prove it. In this question, we are asked to use induction instead. This tells us that we can prove statements like this in more than one way.
+</p>
+
+<proof><p>
+We are going to use mathematical induction.
+<ul>
+<li>
+<p>
+<em>Base Case</em>: We see that for <m>n=1</m>, the stament is  <q><m>3\mid (1^3-1)=0</m></q>. Hence, we see that this statement is true for <m>n=1</m>.
+</p>
+</li>
+<li>
+<p>
+<em>Inductive Step</em>: Let <m>k\geq 1</m>, and assume that the statement is true for <m>n=k</m>, that is, <m>3\mid (k^3-k)</m>. Then we see that <m>k^3-k=3m</m> for some <m>m\in\mathbb{Z}</m>. Thus,
+</p>
+<p>
+<me> (k+1)^3-(k+1)=k^3+3k^2+3k+1-k-1=(k^3-k)+3(k^2+k)=3(m+k^2+k), </me>
+</p>
+<p>
+and since <m>(m+k^2+k)\in\mathbb{Z}</m>, we see <m>3\mid \big((k+1)^3-(k+1)\big)</m>.
+</p></li>
+</ul>
+Therefore the statement is true for <m>n=k+1</m>, and hence, by induction, it is true for all <m>n\in\mathbb{N}</m>.
+</p></proof>
+
+</solution>
+</exercise>

@@ -1,0 +1,69 @@
+<exercise>
+<!-- source latex = 'proofbycases_divby4.tex' -->
+<!-- converted on 12/08/2021 at 19:30 -->
+<statement>
+<p>
+Let <m>n\in\mathbb{Z}</m>. Show that <m>(n^2-1)(n^2+2n)</m> is divisible by <m>4</m>.
+</p>
+</statement>
+<hint>
+<p>
+Try proving by cases.
+</p>
+</hint>
+<answer>
+<p>
+In order to show that <m>(n^2-1)(n^2+2n)</m> is divisible by <m>4</m>, we need to show that <m>(n^2-1)(n^2+2n)=4k</m> for some <m>k\in\mathbb{Z}</m>.  This looks complicated, so we should split it into cases!
+</p>
+
+
+<p>
+Factoring the expression, we have
+<me> (n^2-1)(n^2+2n)=(n-1)(n+1)n(n+2) </me>
+This is a product of four consecutive terms! Using this factorization, we could do the proof by looking at four cases <m>n=4k</m>, <m>4k+1</m>, <m>4k+2</m> and <m>4k+3</m>. That will work, but can we complete the proof in fewer cases?
+</p>
+<p>
+Since the polynomial is the product of two factors, it would be sufficient to show that both are even, or that one of them is divisible by 4. This suggests that we might get away with considering the parity of <m>n</m> <mdash/> what happens when <m>n</m> is even, and when <m>n</m> is odd. Lets try that first.
+</p>
+<p>
+<ul>
+<li>
+<p>
+ In order to show that <m>(n^2-1)(n^2+2n)</m> is divisible by <m>4</m>, we need only show one of these factors is divisible by <m>4</m>.
+</p></li>
+<li>
+<p>
+ When <m>n</m> is even <m>n^2</m> is even, so <m>n^2-1</m> is odd, and not divisible by <m>4</m>. We will need to show that <m>n^2+2n</m> is divisible by <m>4</m> in this case. That isn't too hard to show.
+</p></li>
+<li>
+<p>
+ When <m>n</m> is odd <m>n^2</m> is odd, and so <m>n^2+2n</m> is odd, and not divisible by <m>4</m>. We will need to show that <m>n^2-1</m> is divisible by <m>4</m> in this case.  Since <m>n</m> is odd, we know <m>n=2k+1</m>, so <m>n^2-1 = 4k^2+4k+1-1</m>, so this isn't too hard.
+</p></li>
+</ul>
+</p>
+</answer>
+
+<solution>
+<proof><p>
+Let <m>n\in\mathbb{Z}</m>. We consider the cases that <m>n</m> is odd and <m>n</m> is even. First suppose that <m>n</m> is even, so that <m>n=2k</m> for some <m>k\in\mathbb{N}</m>.
+Then
+<me> n^2+2n=(2k)^2+2(2k)=4k^2+4k=4(k^2+k) </me>
+and so
+<me> (n^2-1)(n^2+2n)= 4(k^2+k)(n^2-1). </me>
+Since <m>k,n\in\mathbb{Z}</m>, <m>(k^2+k)(n^2-1)\in\mathbb{Z}</m>, and thus <m>(n^2-1)(n^2+2n)</m> is divisible by <m>4</m>.
+</p>
+<p>
+Next suppose that <m>n</m> is odd, so that <m>n=2k+1</m> for some <m>k\in\mathbb{N}</m>.
+Then
+<me> n^2-1=(2k+1)^2-1=4k^2+4k+1-1=4(k^2+k)</me>
+and so
+<me> (n^2-1)(n^2+2n)= 4(k^2+k)(n^2+2n). </me>
+Since <m>k,n\in\mathbb{Z}</m>, <m>(k^2+k)(n^2+2n)\in\mathbb{Z}</m>, and thus <m>(n^2-1)(n^2+2n)</m> is divisible by <m>4</m>.
+</p>
+<p>
+We have proved the statement in all cases, and so the statement holds for all <m>n\in\mathbb{N}</m>.
+</p>
+</proof>
+
+</solution>
+</exercise>

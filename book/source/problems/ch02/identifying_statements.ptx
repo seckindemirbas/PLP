@@ -1,0 +1,71 @@
+<exercise>
+<!-- source latex = 'identifying_statements.tex' -->
+<!-- converted on 23/06/2021 at 20:47 -->
+<statement>
+<p>
+Determine whether or not each of the following is a statement or an open sentence. If it is a statement, determine if it is true or false.
+<ol marker="(a)">
+<li>
+<p>
+ If 13 is prime, then 6 is also prime.
+</p></li>
+<li>
+<p>
+ If 6 is prime, then 13 is also prime.
+</p></li>
+<li>
+<p>
+ <m>f(3)=2</m>
+</p></li>
+<li>
+<p>
+ 13 is prime and 6 is prime.
+</p></li>
+<li>
+<p>
+ 13 is prime or 6 is prime.
+</p></li>
+<li>
+<p>
+ The circle's radius is equal to 1.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ This is a statement, and it is an implication.
+Since the hypothesis of the implication is true, but the conclusion is false, the full statement is false.
+</p></li>
+<li>
+<p>
+ This is a statement.
+Since the hypothesis of the implication is false, the full statement is automatically true.
+</p></li>
+<li>
+<p>
+ This is an open sentence, since it is true or false depending on the function <m>f</m>.
+</p></li>
+<li>
+<p>
+ This is a statement, and a conjunction of the statement <q>13 is prime</q> and the statement <q>6 is prime.</q>
+Since the first is true, but the second is false, the conjunction is false.
+</p></li>
+<li>
+<p>
+ This is a statement, and a disjunction of the statement <q>13 is prime</q> and the statement <q>6 is prime.</q>
+Since the first is true, but the second is false, the disjunction is true.
+</p></li>
+<li>
+<p>
+ This is an open sentence, since it is true or false depending on the circle.
+</p>
+</li>
+</ol>
+</p>
+</solution>
+</exercise>

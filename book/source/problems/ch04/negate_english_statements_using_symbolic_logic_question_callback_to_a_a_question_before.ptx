@@ -1,0 +1,209 @@
+<exercise>
+<!-- source latex = 'negate english statements using symbolic logic question_callback to a a question before.tex' -->
+<!-- converted on 05/07/2021 at 10:52 -->
+<statement>
+<p>
+Use the logical equivalences given in <xref ref="thm-logical-equiv"/> and <xref ref="thm-neg-imp"/> to negate the following sentences.
+</p>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ <m>8</m> is even and <m>5</m> is prime.
+</p></li>
+<li>
+<p>
+ If <m>n</m> is a multiple of <m>4</m> and <m>6</m>, then it is a multiple of <m>24</m>.
+</p></li>
+<li>
+<p>
+ If <m>n</m> is a not a multiple of <m>10</m>, then it is a multiple of <m>2</m> but is not a multiple of <m>5</m>.
+</p></li>
+<li>
+<p>
+  <m>3\leq x\leq 6</m>.
+</p></li>
+<li>
+<p>
+ A real number <m>x</m> is less than <m>-2</m> or greater than <m>2</m> if its square is greater than <m>4</m>.
+</p></li>
+<li>
+<p>
+  If a function <m>f</m> is differentiable everywhere then whenever <m>x\in\mathbb{R}</m> is a local maximum of <m>f</m> we have <m>f'(x)=0</m>.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<hint>
+<p>
+Refer back to <xref ref="ex2-trans-eng-to-logic"/> and use <xref ref="thm-logical-equiv"/>.
+</p>
+</hint>
+<solution>
+<p>
+In this question, first we are going to write the sentences in symbolic logic, then negate them using the <xref ref="thm-logical-equiv"/> and finally we will rewrite these negations in English.
+</p>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+  This sentence can be written as <m>P\land Q</m> for
+<md>
+<mrow>
+P: \amp \quad 8  \text{ is even}
+</mrow><mrow>
+Q: \amp \quad 5  \text{ is prime}.
+</mrow>
+</md>
+So, its negation is:
+<me>
+{\neg} (P\land Q)\equiv ({\neg} P)\lor ({\neg} Q)
+</me>
+Here, we used DeMorgan's law. Then, the negation can be rewritten as:
+<md>
+<mrow>
+  \text{8 is not even or 5 is not prime}.
+</mrow>
+</md>
+</p>
+</li>
+<li>
+<p>
+   This sentence can be written as <m>(P\land Q)\implies R</m> for
+<md>
+<mrow>
+P:  \amp \quad n \text{ is a multiple of } 4,
+</mrow><mrow>
+Q:  \amp \quad n \text{ is a multple of } 6,
+</mrow><mrow>
+R:  \amp \quad n \text{ is a multiple of } 24.
+</mrow>
+</md>
+Then its negation is:
+<me>
+{\neg}\left( (P\land Q)\Rightarrow R\right)\equiv {\neg}\left( {\neg} (P\land Q) \lor R  \right)\equiv (P\land Q)\land {\neg} R.
+</me>
+Here, we used the equivalence of implication, DeMorgan's law and double negation. Then, the negation can be rewritten as:
+<md>
+<mrow>
+n \text{ is a multiple of 4 and 6, but it is not a multiple of 24.}
+</mrow>
+</md>
+</p>
+</li>
+<li>
+<p>
+ This sentence can be written as <m>(\neg P)\implies \big(Q\land (\neg R)\big)</m> for
+<md>
+<mrow>
+P: \amp \quad n \text{ is a multiple of } 10,
+</mrow><mrow>
+Q: \amp \quad n \text{ is a multiple of } 2,
+</mrow><mrow>
+R: \amp \quad n \text{ is a multiple of } 5.
+</mrow>
+</md>
+</p>
+<p>
+Then, we see that the negation is:
+<md>
+<mrow>
+\neg\!\left(\neg P\implies \big(Q\land (\neg R)\big)\right) \amp \equiv\ \neg\!\left(\neg(\neg P)\lor \big(Q\land(\neg R)\big)\right)
+</mrow><mrow>
+ \amp \equiv (\neg P)\land \neg\big(Q\land (\neg R)\big)
+</mrow><mrow>
+ \amp \equiv (\neg P)\land \big((\neg Q) \lor R\big)
+</mrow><mrow>
+ \amp \equiv \big((\neg P)\land (\neg Q)\big)\lor \big( (\neg P)\land R \big).
+</mrow>
+</md>
+Here, first we used the equivalence of implication. Then DeMorgan's law and double negation, and finally distribution law. This means that we can rewrite the negation as:
+<md>
+<mrow>
+ \amp n \text{ is not a multiple of 10 and } n  \text{ is not a multiple of 2, or }
+</mrow><mrow>
+ \amp n  \text{ is not a multiple of 10 and } n \text{ is a multiple of 5.}
+</mrow>
+</md>
+</p>
+</li>
+<li>
+<p>
+  This expression can be written as <m>P\land Q</m> for
+<md>
+<mrow>
+P: \amp  \quad x \geq 3,
+</mrow><mrow>
+Q: \amp  \quad x\leq 6.
+</mrow>
+</md>
+Then its negation is:
+<me>
+{\neg} (P\land Q)\equiv ({\neg} P)\lor ({\neg} Q).
+</me>
+Here we used DeMorgan's law. Therefore, the negation can be rewritten as:
+<md>
+<mrow>
+   x \lt 3 \text{ or } x \gt 6.
+</mrow>
+</md>
+</p>
+</li>
+<li>
+<p>
+ This sentence can be written as <m>R\implies (P\lor Q)</m> for
+<md>
+<mrow>
+P: \amp \quad x \text{ is less than -2},
+</mrow><mrow>
+Q: \amp \quad x \text{ greater than 2},
+</mrow><mrow>
+R: \amp \quad x^2 \text{ is greater than 4}.
+</mrow>
+</md>.
+Then its negation is:
+<me>
+{\neg} (R\Rightarrow ( Q\lor P))\equiv {\neg} \left({\neg} R\lor ( Q\lor P)\right)\equiv R\land (({\neg} Q)\land ({\neg} P)).
+</me>
+Here, first we used the equivalence of implication. Then DeMorgan's law and double negation. Thus, the negation can be rewritten as:
+<md>
+<mrow>
+ \amp \text{The square of a real number } x \text{ is greater than 4 and }
+</mrow><mrow>
+ \amp  x  \text{ is greater than or equal to -2, and less than or equal to 2}.
+</mrow>
+</md>
+</p>
+</li>
+<li>
+<p>
+  This sentence can be written as <m>P\implies (Q\implies R)</m> for
+<md>
+<mrow>
+P:  \amp \quad f \text{ is differentiable everywhere},
+</mrow><mrow>
+Q:  \amp \quad x \text{ is a local maximum of } f,
+</mrow><mrow>
+R:  \amp \quad f'(x)=0.
+</mrow>
+</md>
+Here, first we used the equivalence of implication. Then DeMorgan's law and double negation. Then its negation is:
+<me>
+{\neg} (P\Rightarrow ( Q\Rightarrow R))\equiv {\neg} \left({\neg} P\lor ({\neg} Q\lor R)\right)\equiv P\land (Q\land ({\neg} R)).
+</me>
+Here, first we used the equivalence of implication twice. Then DeMorgan's law and double negation. Hence, the negation can be rewritten as:
+<md>
+<mrow>
+ \amp \text{A function } f \text{ is differentiable everywhere and } x\in\mathbb{R} \text{ is a local maximum of } f,
+</mrow><mrow>
+ \amp \text{ but } f'(x)\neq 0.
+</mrow>
+</md>
+</p>
+
+</li>
+</ol>
+</p>
+</solution>
+</exercise>

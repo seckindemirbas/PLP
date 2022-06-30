@@ -1,0 +1,139 @@
+<exercise>
+<!-- source latex = 'index_set_question.tex' -->
+<!-- converted on 19/11/2021 at 10:55 -->
+<statement>
+<p>
+Prove that
+<ol marker="(a)">
+<li>
+<p>
+ <m> \ds \bigcup_{n=3}^\infty \left(\frac{1}{n},1-\frac{1}{n}\right) = (0,1) </m>
+</p></li>
+<li>
+<p>
+ <m> \ds \bigcap_{n=1}^\infty \left(-\frac{1}{n}, 1+\frac{1}{n}\right)=[0,1] </m>
+</p>
+
+</li>
+</ol>
+</p>
+</statement>
+<hint>
+<p>
+Recall that
+<ul>
+<li>
+<p>
+  <m>x \in \bigcup_{i \in I} A_i</m> if and only if there is some <m>i \in I</m> so that <m>x \in A_i</m>, and
+  </p></li>
+<li>
+<p>
+  <m>x \in \bigcap_{i \in I} A_i</m> if and only if for every <m>i \in I</m> we have <m>x \in A_i</m>.
+</p></li>
+</ul>
+</p>
+</hint>
+<answer>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ In order to show that the two sets are equal, we need to show that each is a subset of the other. First, we need to show that
+<me> x\in \bigcup_{n=3}^\infty \left(\frac{1}{n},1-\frac{1}{n}\right) \implies x\in (0,1). </me>
+This direction is more straightforward to prove, as <m>(1/n,1-1/n)\subset (0,1)</m> for all <m>n\in\mathbb{N}</m>, <m>n\geq 3</m>.
+Then, we need to show that
+<me> y\in (0,1) \implies y\in \bigcup_{n=3}^\infty \left(\frac{1}{n},1-\frac{1}{n}\right). </me>
+This direction is trickier. For <m>y\in (0,1)</m>, we need to find some <m>N\in\mathbb{N}</m> so that
+<me> \frac{1}{N}\leq y \leq 1 - \frac{1}{N}. </me>
+The inequality <m>1/N\leq y</m> implies that we need <m>N\geq 1/y</m>. The inequality <m>y\leq 1-1/N</m> implies that we need <m>N\geq 1/(1-y)</m>. So we need to take <m>N</m> bigger than both <m>1/y</m> and <m>1/(1-y)</m>; for example, we can set <m>N = \max\left\{\left\lceil\frac{1}{y} \right\rceil, \left\lceil \frac{1}{1-y}  \right\rceil \right\}+1</m>
+</p>
+<p>
+With this scratchwork, we can write up the proof.
+</p>
+
+
+</li>
+<li>
+<p>
+ Similarly as the previous part, we need to show each of the sets is a subset of the other. First, we need to show that
+<me> x\in [0,1] \implies x\in \bigcap_{n=1}^\infty \left(-\frac{1}{n}, 1+\frac{1}{n}\right) </me>
+This direction is fairly straightforward, since <m>[0,1]\subseteq (-1/n,1+1/n)</m> for all <m>n\in\mathbb{N}</m>.
+The trickier part is showing that
+<me> y \in \bigcap_{n=1}^\infty \left(-\frac{1}{n}, 1+\frac{1}{n}\right)  \implies y\in [0,1]. </me>
+</p>
+<p>
+We can prove this by contrapositive, that is, instead prove
+<me> y\not\in[0,1]\implies y\not\in\bigcap_{n=1}^\infty \left(-\frac{1}{n}, 1+\frac{1}{n}\right).</me>
+If <m>y\not\in[0,1]</m>, then either <m>y \lt 0</m> or <m>y \gt 1</m>.
+If <m>y \lt 0</m>, then we could find some <m>N\in\mathbb{N}</m> so that <m>y \lt -1/N</m>. But then <m>y\not\in (-1/N,1+1/N)</m>, which means that <m>y\not\in \cap_{n=1}^\infty(-1/n,1+1/n)</m>.
+If <m>y \gt 1</m>, then we could find some <m>N\in\mathbb{N}</m> so that <m>1+1/N \lt y</m>. Indeed, by rearranging, we see that this inequality will hold as long as <m>N\gt 1/(y-1)</m>. From here, we can similarly show the desired result.
+</p>
+
+<p>
+Now we can write the proof.
+</p>
+
+</li>
+</ol>
+</p>
+</answer>
+
+<solution>
+<proof><title>Proof of (a)</title>
+<p>
+We show that each side is included in the other.
+<ul>
+<li>
+<p>
+
+Suppose <m>x\in \cup_{n=3}^\infty (1/n,1-1/n)</m>. Then <m>x\in (1/n,1-1/n)</m> for some <m>n\in\mathbb{N}</m>. Since <m>0\lt 1/n</m> and <m>1-1/n\lt 1</m>, we also have <m>x\in (0,1)</m>.
+Therefore the LHS is a subset of <m>(0,1)</m>.
+</p>
+</li>
+<li>
+<p>
+
+Suppose <m>y\in (0,1)</m>. Let <m>N_1=\left\lceil\frac{1}{y} \right\rceil+1</m> and <m>N_1=\left\lceil\frac{1}{1-y} \right\rceil+1</m>. Take <m>N=\max\{N_1,N_2\}</m>. Then
+<me> \frac{1}{1-y}\lt N_2\leq N. </me>
+Multiplying the inequality through by <m>1-y</m>, which is positive as <m>y \lt 1</m>, and dividing by <m>N</m>, we have <m>1/N\lt 1-y</m>, from which we may obtain <m>y\lt 1-1/N</m>.
+Moreover, <m>N\geq N_1</m> implies that
+<me> \frac{1}{N}\leq \frac{1}{N_1}\lt y. </me>
+Thus <m>y\in (1/N,1-1/N)</m> and so <m>y</m> is an element of the LHS. This gives us the reverse inclusion as well.
+</p></li>
+</ul>
+Since both inclusions hold, we can conclude
+<me> \bigcup_{n=3}^\infty \left(\frac{1}{n},1-\frac{1}{n}\right) = (0,1) </me>
+as required.
+</p>
+</proof>
+
+<proof><title>Proof of (b)</title>
+<p>
+We prove each side is included in the other.
+</p>
+<p>
+<ul>
+<li>
+<p>
+ Suppose <m>x\in[0,1]</m>. Then for any <m>n\in\mathbb{N}</m>,
+<me> -\frac{1}{n}\lt 0 \leq x\leq 1 \lt 1+\frac{1}{n}. </me>
+So <m>x\in \cap_{n=1}^\infty (-1/n,1+1/n)</m>, and therefore <m>[0,1]</m> is a subset of the LHS.
+</p>
+
+</li>
+<li>
+<p>
+ Conversely, suppose <m>y\not\in[0,1]</m>. If <m>y\lt0</m>, then <m> N= \left\lceil\frac{1}{|y|}\right\rceil+1</m> is a natural number, and <m>y\lt -1/N</m>. But then <m>y\not\in (-1/N,1+1/N)</m>. Therefore <m>y</m> is not an element of the LHS.
+</p>
+<p>
+If <m>y\gt 1</m>, then <m>N= \left\lceil\frac{1}{y-1}\right\rceil+1</m> is a natural number, and we'd have <m>N\gt 1/(y-1)</m>. Multiplying through by <m>y-1</m>, which is positive as <m>y \gt 1</m>, and dividing by <m>N</m>, we'd obtain <m>y-1\gt 1/N</m>. But then <m>y\gt 1+1/N</m>, and so <m>y\not\in (-1/N,1+1/N)</m>. So in either case we have that <m>y</m> is not an element of the LHS.
+Thus, by contrapositive, we have
+<me> \bigcap_{n=1}^\infty (-1/n,1+1/n)\subseteq[0,1]. </me>
+</p>
+</li>
+</ul>
+ As we have proved the reverse inclusion as well, the two sets are equal.
+</p></proof>
+
+</solution>
+</exercise>

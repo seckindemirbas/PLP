@@ -1,0 +1,92 @@
+<exercise>
+<!-- source latex = 'chp 1 - 3 - poor notation.tex' -->
+<!-- converted on 05/07/2021 at 19:29 -->
+<statement>
+<p>
+Consider the set 
+<me>
+\set{2n+1: n \in \mathbb{N}}.
+</me>
+Explain what is wrong with each of the expressions below and why they should not be used to denote this set.
+<ol marker="(a)">
+<li>
+<p>
+ <m>A=\set{2k+1}</m>
+    </p></li>
+<li>
+<p>
+ <m>B=\set{2j+1 : j \in N}</m>.
+    </p></li>
+<li>
+<p>
+ <m>c=\set{2\ell+1: \ell \in \mathbb{N}}</m>
+    </p></li>
+<li>
+<p>
+ <m>D=\set{2k+1 : n \in \mathbb{N}}</m>
+    </p></li>
+<li>
+<p>
+ <m>E=\set{2m+1 : m \oldepsilon \mathbb{N}}</m>
+    </p></li>
+<li>
+<p>
+ <m>F=\set{2N+1 : N \in \mathbb{N}}</m>
+    </p></li>
+<li>
+<p>
+ <m>G=\set{2m+1 : m \varepsilon \mathbb{N}}</m>
+    </p></li>
+<li>
+<p>
+ H = {2n+1 : n in N}
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<hint>
+<p>
+Pay close attention to notation! For part (h), this is an issue you would only come across if you are typing your math in a program such as LaTeX.
+</p>
+</hint>
+<solution>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ We have not specified what the variable <m>k</m> is, so this set is ambiguous. For example, one person might assume that <m>k</m> is a constant, while another person assumes <m>k\in \mathbb{R}</m>. Neither of these gives the desired set.
+    </p></li>
+<li>
+<p>
+ We have used the letter <m>N</m> rather than the symbol <m>\mathbb{N}</m>, which indicates the natural numbers.
+    </p></li>
+<li>
+<p>
+ We use the letter <m>c</m> to represent this set. It is more conventional to use capital letters to denote sets.
+    </p></li>
+<li>
+<p>
+ We have used the letter <m>k</m> to write the set elements <m>2k+1</m>, and then we have stated that another variable <m>n</m> is a natural number. Because of this, the variable <m>k</m> is not defined, and the set is ambiguous.
+    </p></li>
+<li>
+<p>
+ We have used the Greek letter epsilon (<m>\oldepsilon</m>) rather than the <q>element of</q> symbol <m>\in</m>.
+    </p></li>
+<li>
+<p>
+ We have used capital letters to denote elements of the set. It is more conventional to use lowercase letters for set elements when possible.
+    </p></li>
+<li>
+<p>
+ We have used the Greek letter epsilon (<m>\varepsilon</m>) rather than the <q>element of</q> symbol <m>\in</m>. Note that this is the same issue as part (e), but is included twice because of the two representations of epsilon.
+    </p></li>
+<li>
+<p>
+ This is an issue you would encounter if you are typing up math using a program such as LaTeX. We have written this set using normal text, rather than in math mode. In LaTeX, one uses dollar signs (e.g. <q>$x$</q>) or backslash with parentheses (e.g. <q>\(x\)</q>)around their math. This produces italicized math characters such as <q><m>x</m></q> instead of <q>x.</q>  Notice that in the set, none of the letters are italicized, and the word <q>in</q> is used, rather than the symbol <q><m>\in</m></q>. This is very sloppy, and makes it more difficult for the reader to follow. When typing, you should always be careful about mixing up text and mathematics. Make sure you type characters deliberately to avoid confusion.
+</p>
+</li>
+</ol>
+</p>
+</solution>
+</exercise>

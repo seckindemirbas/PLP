@@ -1,0 +1,110 @@
+<exercise>
+<!-- source latex = 'sequence limit.tex' -->
+<!-- converted on 08/11/2021 at 10:38 -->
+<statement>
+<p>
+Prove that
+<me>\displaystyle \lim_{n\to\infty}\left(1-\frac{2}{n^2}-\frac{3}{n^3}\right)=1. </me>
+</p>
+<p>
+You may use the following fact: Let <m>x,y</m> be positive real numbers. Then
+<me>  \sqrt{x} \lt\sqrt{y} \iff x\lt y. </me>
+</p>
+</statement>
+
+<!-- <hint></hint> -->
+
+<answer>
+<p>
+Recall from the definition of a limit that the proof should go like this:
+We're given some <m>\epsilon\gt 0</m>. We need to find some <m>N\in\mathbb{N}</m> so that whenever <m>n\gt N</m>, we have
+<me> \left|1-\frac{2}{n^2}-\frac{3}{n^3}-1\right| \lt \epsilon. </me>
+Let's unravel this inequality to see how large <m>n</m> needs to be. We want to rewrite this inequality so that's in the form <m>n</m> greater than <em>something</em>; this <em>something</em> will tell us how large we need to take <m>N</m> so that the inequality above is satisfied.
+</p>
+<p>
+Now since,
+<me>
+\left|\left(1-\frac{2}{n^2}-\frac{3}{n^3}\right)-1\right| =
+\left|-\frac{2}{n^2}-\frac{3}{n^3} \right| =  \frac{2}{n^2}+\frac{3}{n^3}
+</me>
+the inequality can be simplified to
+<me> \frac{2}{n^2}+\frac{3}{n^3} \lt \epsilon. </me>
+Because we have two different terms with <m>n</m> in them, it may be difficult to put the inequality in the form we'd like, that is, <m>n</m> greater than something.
+What we can do instead is consider which of the factors <m>1/n^2</m> or <m>1/n^3</m> is larger - and then only working with the larger one, by bounding the smaller one by it.
+</p>
+<p>
+Since <m>n \in \mathbb{N}</m> we know that <m>n \geq 1</m>. Dividing this inequality by <m>n^3</m> (which is positive), then gives us
+<me>
+  \frac{1}{n^2} \geq \frac{1}{n^3}
+</me>
+This means that
+<me> \frac{2}{n^2}+\frac{3}{n^3} \leq \frac{2}{n^2}+\frac{3}{n^2} =\frac{5}{n^2}. </me>
+Therefore, if we show that
+<me> \frac{5}{n^2}\lt \epsilon, </me>
+we'll also have that
+<me> \frac{2}{n^2}+\frac{3}{n^3} \lt \epsilon. </me>
+Now, we can take the square root of both sides of the inequality <m>5/n^2\lt\epsilon</m>, and use the reverse implication in the fact given in the question to say that
+<me> \frac{\sqrt{5}}{\sqrt{\epsilon}}\lt n. </me>
+We can actually reverse all of these steps (so we use the forward implication in the given fact), to get the following implication:
+<me> \frac{\sqrt{5}}{\sqrt{\epsilon}}\lt n \implies \left|1-\frac{2}{n^2}-\frac{3}{n^3}-1\right| \lt \epsilon. </me>
+This tells us that we can take <m>N</m> to be any natural number that is larger than <m>1/\sqrt{\epsilon}</m>.
+</p>
+<p>
+  So we can now write up the proof.
+</p>
+
+
+<p>
+But we have actually missed an opportunity to simplify things further here. Recall that by dividing the inequality <m>n \geq 1</m> by <m>n^3</m> we showed that <m>\frac{1}{n^2} \geq \frac{1}{n^3}</m> and used that to simplify the inequalities that we needed for our proof.  We can simplify things further still by noting that by dividing the inequality <m>n \geq 1</m> by <m>n^2</m> we get
+<me>
+  \frac{1}{n} \geq \frac{1}{n^2}
+</me>
+So we can use that to show
+<me> \frac{2}{n^2}+\frac{3}{n^3} \leq \frac{2}{n^2}+\frac{3}{n^2} =\frac{5}{n^2} \leq \frac{5}{n}.
+</me>
+Then it suffices to find <m>n</m> big enough so that
+<me>
+  \frac{5}{n} \leq \epsilon
+</me>
+which is quite a bit easier than the mucking around with square-roots we had to do before.
+</p>
+
+</answer>
+
+<solution>
+<proof><title>First proof</title>
+<p>
+Let <m>\epsilon \gt 0</m> be given. Let <m>N=\left\lceil \frac{5}{\epsilon}\right\rceil</m>. Note this implies that <m>N^2\geq 5/\epsilon</m>.
+Now suppose that <m>n\in\mathbb{N}</m>, <m>n\gt N</m>. Since <m>n=\sqrt{n^2}</m> and <m>N=\sqrt{N^2}</m> we can use the given fact to say that
+<me> n^2\gt N^2\geq \frac{5}{\epsilon}, </me>
+and so <m>5/n^2\lt \epsilon</m>. Moreover, since <m>n\geq 1</m>, we have <m>n^3\geq n^2</m>, and so <m>1/n^3\leq 1/n^2</m>.
+Using these two inequalities, we therefore have
+<me> \left|1-\frac{2}{n^2}-\frac{3}{n^3}-1\right| =\frac{2}{n^2}+\frac{3}{n^3}\leq\frac{5}{n^2}\lt\epsilon. </me>
+And thus the sequence converges to 1 as required.
+</p>
+</proof>
+
+
+<proof><title>Simpler proof</title>
+  <p>
+Let <m>\epsilon \gt 0</m> be given. Let <m>N=\left\lceil \frac{5}{\epsilon}\right\rceil</m>. Notice that when <m>n \geq N</m>, we have that
+<me>
+  \frac{5}{n} \leq \frac{5}{N} \lt \epsilon.
+</me>
+Since <m>n \geq 1</m>, we know that
+<me>
+\frac{1}{n} \geq \frac{1}{n^2} \geq \frac{1}{n^3}
+</me>
+Hence
+<me> \left|1-\frac{2}{n^2}-\frac{3}{n^3}-1\right| =\frac{2}{n^2}+\frac{3}{n^3}\leq\frac{5}{n}\lt\epsilon. </me>
+Thus the sequence converges to 1.
+</p></proof>
+
+<p>
+We shouldn't feel bad that we made a more complicated proof first; It
+is a normal part of doing mathematics. Our first proof of a result is
+often <q>bettered</q> by our second proof.
+</p>
+
+</solution>
+</exercise>

@@ -1,0 +1,131 @@
+<exercise>
+<!-- source latex = 'two elements in integers modulo 6 are related if one of them 1 or 5 times the other question.tex' -->
+<!-- converted on 26/11/2021 at 16:50 -->
+<statement>
+<p>
+Suppose that <m>n \in \mathbb{N}</m> and <m>\mathbb{Z}_n</m> is the set of equivalence class of congruent modulo <m>n</m> on <m>\mathbb{Z}</m>. In this question we will call an element <m>[u]_n</m> <em>invertible</em> if it has a multiplicative inverse. That is,
+<me>
+  [u]_n \text{ is invertible} \iff
+  \text{there exists } [v]_n \in \mathbb{Z}_n \text{ so that } [u]_n [v]_n = [1]_n.
+</me>
+Now, define a relation <m>R</m> on <m>\mathbb{Z}_n</m> by
+<me>
+  [x]_n \rel [y]_n \iff [x]_n[u]_n=[y]_n \text{ for some invertible } [u]_n\in \mathbb{Z}_n.
+</me>
+<ol marker="(a)">
+<li>
+<p>
+ Show that <m>R</m> is a equivalence relation.
+    </p></li>
+<li>
+<p>
+ Compute the equivalence classes of this relation for <m>n=6</m>.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<hint>
+<p>
+For the second part, start by finding the invertible elements in <m>\mathbb Z_6</m>
+</p>
+</hint>
+
+<solution>
+<p>
+We first prove that <m>R</m> is an equivalence relation.
+</p>
+
+<proof><p>
+We have to show that <m>R</m> is reflexive, symmetric and transitive.
+<ul>
+<li>
+<p>
+ (reflexive) We have <m>[x]_n\rel [x]_n</m> since <m>[x]_n[1]_n=[x]_n</m> for all <m>[x]_n \in \mathbb{Z}_n</m>.
+    </p></li>
+<li>
+<p>
+ (symmetric) Suppose <m>[x]_n\rel [y]_n</m>. Then by definition of <m>R</m>, we know that <m>[x]_n[u]_n=[y]_n</m> for some <em>invertible</em> <m>[u]_n</m>. Thus, we know that <m>[u]_n</m> has an inverse in <m>\mathbb Z_n</m>, and call <m>[v]_n \in \mathbb{Z}_n</m> to be a inverse of <m>[u]_n</m>, i.e. <m>[u]_n[v]_n=[1]_n</m>. Then since <m>[y]_n=[x]_n[u]_n</m>, we know that  <m>[y]_n[v]_n = [x]_n[u]_n[v]_n = [x]_n[1]_n = [x]_n</m> and thus <m>[y]_n\rel [x]_n</m>.
+    </p></li>
+<li>
+<p>
+ (transitive) Suppose <m>[x]_n\rel [y]_n</m> and <m>[y]_n\rel [z]_n</m>, that is <m>[x]_n[u]_n=[y]_n</m> and <m>[y]_n[v]_n=[z]_n</m> with <m>[u]_n,[v]_n</m> both admitting multiplicative inverse.
+</p>
+<p>
+Then we have <m>[x]_n[u]_n[v]_n=[y]_n[v]_n=[z]_n</m>. Denoting the multiplicative inverses of <m>[u]_n</m> and <m>[v]_n</m> by <m>[\bar{u}]_n</m> and <m> [\bar{v}]_n</m>, respectively, we see that
+<me>[u]_n[v]_n[\bar{v}]_n[\bar{u}]_n = [u]_n [1]_n [\bar{u}]_n = [u]_n [\bar{u}]_n = [1]_n.</me>
+</p>
+<p>
+This means that  <m>[u]_n[v]_n</m> admits a multiplicative inverse.
+</p>
+<p>
+Therefore, we have <m>[x]_n\rel [z]_n</m>.
+</p></li>
+</ul>
+</p></proof>
+
+<p>
+For the second part, we first note that the set of elements in <m>\mathbb{Z}_{6}</m> with a multiplicative inverses are <m>U = \{[1]_{6}, [5]_{6} \}</m>. We can see this by looking at the multiplication table for <m>\mathbb Z_6</m>:
+</p>
+<p>
+<me>\begin{array}{|c||*{7}{c|}}
+\hline
+  \amp  [0]_6  \amp  [1]_6  \amp  [2]_6  \amp  [3]_6  \amp  [4]_6  \amp  [5]_6
+\\
+\hline\hline
+[0]_6  \amp  [0]_6  \amp  [0]_6  \amp  [0]_6  \amp  [0]_6  \amp  [0]_6  \amp  [0]_6
+\\
+ \hline
+[1]_6  \amp  [0]_6  \amp  [1]_6  \amp  [2]_6  \amp  [3]_6  \amp  [4]_6  \amp  [5]_6
+\\
+ \hline
+[2]_6  \amp  [0]_6  \amp  [2]_6  \amp  [4]_6  \amp  [0]_6  \amp  [2]_6  \amp  [4]_6
+\\
+ \hline
+[3]_6  \amp  [0]_6  \amp  [3]_6  \amp  [0]_6  \amp  [3]_6  \amp  [0]_6  \amp  [3]_6
+\\
+ \hline
+[4]_6  \amp  [0]_6  \amp  [4]_6  \amp  [2]_6  \amp  [0]_6  \amp  [4]_6  \amp  [2]_6
+\\ \hline
+[5]_6  \amp  [0]_6  \amp  [5]_6  \amp  [4]_6  \amp  [3]_6  \amp  [2]_6  \amp  [1]_6
+\\ \hline
+\end{array}</me>
+</p>
+<p>
+Notice that the only products that are equal to <m>[1]_ 6</m> are <m>[1]_6[1]_6=[1]_6</m> and <m>[5]_6[5]_6=[1]_6</m>.
+</p>
+<p>
+Thus we may list the equivalence classes defined by <m>R</m>:
+<ul>
+<li>
+<p>
+ We see that
+<md>
+<mrow>
+[[0]_{6}]  \amp = \set{[y]_6\in\mathbb Z_6\colon [y]_6=[0]_6[u]_6 \text{ for some invertible } [u]_6\in\mathbb Z_6}
+</mrow><mrow>
+ \amp =\{[0]_{6}u: u \in U \} = \{ [0]_{6} \}.
+</mrow>
+</md>
+Then similarly,
+    </p></li>
+<li>
+<p>
+ <m>[[1]_{6}] = \{[1]_{6}u: u \in U \} = \{[1]_{6}, [5]_{6}\}</m>.
+    </p></li>
+<li>
+<p>
+ <m>[[2]_{6}] = \{[2]_{6}u: u \in U \} = \{ [2]_{6}, [4]_{6}\}</m>.
+    </p></li>
+<li>
+<p>
+ <m>[[3]_{6}] = \{[3]_{6}u: u \in U \} = \{ [3]_{6}\}</m>.
+</p>
+</li>
+</ul>
+</p>
+<p>
+Since these equivalence classes contain all the elements in <m>\mathbb Z_6</m>, we see that there are no other equivalence classes.
+</p>
+</solution>
+</exercise>

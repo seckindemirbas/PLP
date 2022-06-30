@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<exercises xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <xi:include href="ch04/show_whether_statements_are_logically_equivalent_using_truth_tables.ptx"/>
+  <xi:include href="ch04/negate_english_statements_using_symbolic_logic_question_callback_to_a_a_question_before.ptx"/>
+  <xi:include href="ch04/log_equiv.ptx"/>
+  <!-- <xi:include href="ch04/"/> -->
+
+</exercises>

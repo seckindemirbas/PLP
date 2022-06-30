@@ -1,0 +1,85 @@
+<exercise>
+<!-- source latex = 'the set of functions from A to zero or one is bijective to the power set of A question.tex' -->
+<!-- converted on 27/11/2021 at 15:25 -->
+<statement>
+<p>
+  For <m>n\in\mathbb{N}</m>, let <m>A=\{ a_1, a_2, a_3,\cdots, a_n \}</m> be a fixed set where <m>a_j\neq a_i</m> for any <m>i\neq j</m>, and let <m>F</m> be the set of all functions <m>f: A\rightarrow \{ 0,1 \}</m>.
+</p>
+<p>
+  What is <m>|F|</m>, the cardinality of <m>F</m>?
+</p>
+<p>
+Now, for <m>\mathcal{P}(A)</m>, the power set of <m>A</m>, consider the function <m>g:F \rightarrow \mathcal{P}(A)</m>, defined as
+<me>
+g(f)=\{ a\in A: f(a)=1 \}.
+</me>
+Is <m>g</m> injective? Is <m>g</m> surjective?
+</p>
+</statement>
+
+<hint>
+<p>
+<ul>
+<li>
+<p>
+ You can start the problem with a small set, say <m>A=\set{1,2,3}</m>, to understand the set <m>F</m> and the function <m>g</m>.
+</p>
+</li>
+<li>
+<p>
+ To find <m>|F|</m>, think about how many different images there are there for each element in <m>A</m>.
+</p></li>
+</ul>
+</p>
+</hint>
+
+<solution>
+
+  <proof><title>Proof of cardinality of <m>F</m></title>
+    <p> We see that for <m>f:A\rightarrow \set{0,1}</m> to be a function, every element in <m>A</m> has to go to a unique element in <m>\set{0,1}</m>. Then we see that for every element <m>a_i</m>, <m>i\in\set{1,2,\cdots, n}</m>, there are two different options for the value of <m>f(a_i)</m>, <m>f(a_i)=0</m> or <m>f(a_i)=1</m>. Thus, there are <m>2^n</m> diffferent ways we can construct a function from <m>A</m> to  <m>\set{0,1}</m>. Therefore, <m>|F|=2^n</m>.
+    </p>
+  </proof>
+
+  <proof><title>Proof that <m>g</m> is injective and surjective</title>
+<p>
+Now, let <m>g:F \rightarrow \mathcal{P}(A)</m> be defined as <m>g(f)=\{ a\in A: f(a)=1 \}</m>. We prove show that this function is both surjective and injective.
+<ul>
+<li>
+<p>
+ Surjective: Let <m>B\in\mathcal P(A)</m>. Then, we see that <m>B\subseteq A</m>. Thus, we can define <m>f_B: A\rightarrow \set{0,1}</m>, defined as <m>f_B(x)=1</m> if <m>x\in B</m> and <m>f_B(x)=0</m>  if <m>x\notin B</m>. Then we see that <m>f_B</m> is well-defined and moreover, we have <m>g(f_B)=B</m>. Therefore, <m>g</m> is surjective.
+</p>
+</li>
+<li>
+<p>
+ Injective: Let <m>f_1,f_2\in F</m> and assume that <m>g(f_1)=g(f_2)</m>. This implies,
+<me>
+\set{a\in A: f_1(a)=1}=\set{a\in A: f_2(a)=1}.
+</me>
+Call this set <m>B</m>. To show that <m>f_1=f_2</m>, we show that the functions agree at all inputs. Let <m>x \in A</m>, then either <m>x \in B</m> or <m>x \not\in B</m>. When <m>x=\in B</m>, we have, by definition of <m>B</m>, <m>f_1(x)=1=f_2(x)</m>. Then when <m>x \not\in B</m> we have <m>f_1(x)=0=f_2(x)</m>.Therefore <m>\forall x\in A</m>, we have <m>f_1(x)=f_2(x)</m>, which implies <m>f_1=f_2</m>. Therefore <m>g</m> is injective.
+</p></li>
+</ul>
+</p></proof>
+
+
+<p>
+Notice that we can also prove the injectiveness of <m>g</m> as follows:
+</p>
+
+<proof><title>Alternative proof that <m>g</m> is injective</title>
+  <p>
+  Let <m>f_1, f_2 \in F</m> so that <m>f_1 \neq f_2</m>. This means that there is some <m>x \in A</m>  so that <m>f_1(x) \neq f_2(x)</m>. Now, either <m>f_1(x)=0</m>, or <m>f_1(x)= 1</m>.
+  <ul>
+<li>
+<p>
+ Assume <m>f_1(x) = 1</m> and so <m>f_2(x)=0</m>. Then <m>x \in g(f_1)</m> but <m>x \not\in g(f_2)</m>, and so <m>g(f_1) \neq g(f_2)</m>.
+    </p></li>
+<li>
+<p>
+ Similarly, when <m>f_1(x)=0</m> we know <m>f_2(x)=1</m>. Hence <m>x \not\in g(f_1)</m> but <m>x \in g(f_2)</m>, and again <m>g(f_1) \neq g(f_2)</m>
+  </p></li>
+</ul>
+  Thus when <m>f_1 \neq f_2</m> we know that <m>g(f_1) \neq g(f_2)</m> and thus <m>g</m> is injective.
+</p></proof>
+
+</solution>
+</exercise>

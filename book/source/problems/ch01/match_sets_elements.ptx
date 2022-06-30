@@ -1,0 +1,51 @@
+<exercise>
+<!-- source latex = 'match_sets_elements.tex' -->
+<!-- converted on 23/06/2021 at 19:43 -->
+<statement>
+<p>
+For each of the numbers
+<me> a=2, \qquad b=0, \qquad c=-1, \qquad \text{and} \qquad d=\sqrt{2} </me>
+determine to which of the following sets they belong:
+<md>
+<mrow>
+A \amp =\set{x\in\mathbb{R}\st x\geq0, \; x^2\in\mathbb{N}} \amp  \;  \amp B=\set{x\in\mathbb{R} \st x^5-4x=0} 
+</mrow><mrow>
+C \amp =\set{x\in\mathbb{Z}\st x^5-4x=0} \amp  \;  \amp D=\set{a+b\sqrt{2}\st a,b\in\mathbb{Z}, \; a,b\geq0} 
+</mrow><mrow>
+</mrow>
+</md>
+</p>
+</statement>
+<solution>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ The number <m>2</m> is an element of <m>A</m> as <m>2^2=4\in\mathbb{N}</m>, and is an element of <m>D</m> since <m>2=2+0\cdot\sqrt{2}</m>.
+It is not an element of <m>B</m> or <m>C</m> as <m>2^5-4\cdot2\neq0</m>.
+</p></li>
+<li>
+<p>
+ The number <m>0</m> is an element of <m>B</m> and <m>C</m> (since <m>0^5-4\cdot0=0</m>), and of <m>D</m> (since <m>0=0+0\cdot\sqrt{2}</m>), but not of <m>A</m> because <m>0^2=0\not\in\mathbb{N}</m>.
+</p></li>
+<li>
+<p>
+ The number <m>-1</m> is not an element of any of the given sets.
+It does not belong to both <m>A</m> and <m>D</m> because it is negative (note that each element of <m>D</m> is necessarily non-negative).
+It does not belong to <m>B</m> or <m>C</m> as <m>(-1)^5-4(-1)\neq0</m>
+</p></li>
+<li>
+<p>
+ The number <m>\sqrt{2}</m> belongs to <m>A</m> as <m>\sqrt{2}\geq0</m> and <m>(\sqrt{2})^2\in\mathbb{N}</m>.
+It belongs to <m>B</m> as <m>(\sqrt{2})^5-4\cdot\sqrt{2}=0</m>, but not to <m>C</m>, because <m>\sqrt{2}\not\in\mathbb{Z}</m>.
+It belongs to <m>D</m> as <m>\sqrt{2}=0+1\cdot\sqrt{2}</m>.
+</p>
+<p>
+We have used the fact that <m>\sqrt{2}</m> is not an integer. You likely know this from its decimal expansion <m>\sqrt{2}=1.41\dots</m>, but can you think how you would explain this without using decimal expansions?
+We'll return to this question later in the book.
+</p>
+</li>
+</ol>
+</p>
+</solution>
+</exercise>

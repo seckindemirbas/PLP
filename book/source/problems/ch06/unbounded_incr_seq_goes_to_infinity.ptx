@@ -1,0 +1,137 @@
+<exercise>
+<!-- source latex = 'unbounded_incr_seq_goes_to_infinity.tex' -->
+<!-- converted on 09/06/2022 at 10:19 -->
+<statement>
+<p>
+Before completing this question, you should look over <xref ref="ex_bounded_seq"/>.
+</p>
+<p>
+A sequence <m> (a_n)_{n\in\mathbb{N}}</m> is <em>bounded</em> if there is some <m>M\geq 0</m> such that <m>|a_n|\leq M</m> for all <m>n\in\mathbb{N}</m>. If no such <m>M</m> exists, then we say <m>(a_n)_{n\in\mathbb{N}}</m> is <em>unbounded</em>.
+</p>
+<p>
+We say that <m>(a_n)_{n\in\mathbb{N}}</m> is <em>increasing</em> if <m>a_{n+1}\geq a_n</m> for all <m>n\in\mathbb{N}</m>.
+</p>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ Show that there is an unbounded sequence <m>(a_n)_{n\in\mathbb{N}}</m> with <m>\displaystyle\lim_{n\to\infty}a_n\neq+\infty</m>.
+</p></li>
+<li>
+<p>
+ Show that there is an increasing sequence <m>(a_n)_{n\in\mathbb{N}}</m> with <m>\displaystyle\lim_{n\to\infty}a_n\neq+\infty</m>.
+</p></li>
+<li>
+<p>
+ Show that if <m>(a_n)_{n\in\mathbb{N}}</m> is unbounded and increasing, then <m>\displaystyle\lim_{n\to\infty}a_n=+\infty</m>.
+</p>
+</li>
+</ol>
+Parts (a) and (b) tell us that when proving the statement in part (c), we need to use both conditions given.
+</p>
+</statement>
+<hint>
+<p>
+For part (c), the contrapositive can help. Also, see <xref ref="ex_log_equiv_tt"/><nbsp/>(c).
+</p>
+</hint>
+<answer>
+<p>
+  We will prove part (c) by contrapositive. The contrapositive of the statement given in the question is
+  <me>
+    \lim_{n\to\infty}a_n\neq+\infty\implies  (a_n)_{n\in\mathbb{N}} \text{ is bounded, or } (a_n)_{n\in\mathbb{N}} \text{ is not increasing.}
+  </me>
+  So this statement is of the form <m>P \implies (R \lor \neg Q) </m>. Now <m>Q</m> is either true or false
+  <ul>
+<li>
+<p>
+ If <m>Q</m> is false, then <m>R \lor \neg Q</m> is false, and so <m>P \implies F</m> is true. Easy!
+  </p></li>
+<li>
+<p>
+ While if <m>Q</m> is true, then <m>R \lor \neg Q</m> is true only when <m>R</m> is true, and so we have to show that <m>P \implies R</m> is true.
+  </p></li>
+</ul>
+</p>
+
+<p>
+  Also notice that this statement is of the same form as <xref ref="ex_log_equiv_tt"/><nbsp/>(c), and so is logically equivalent to
+  <me>
+  \lim_{n\to\infty}a_n\neq+\infty\implies \left( (a_n)_{n\in\mathbb{N}} \text{ is increasing} \implies a_n \text{ is bounded.} \right)
+  </me>
+  and so is of the form <m>P \implies (Q \implies R)</m>. Now, either <m>Q</m> is true or false:
+  <ul>
+<li>
+<p>
+ If <m>Q</m> is false, then <m>F \implies R</m> is true, and so <m>P \implies T</m> is true. Easy!
+  </p></li>
+<li>
+<p>
+ On the other hand, if <m>Q</m> is true, then <m>T \implies R</m> is only true when <m>R</m> is true, so we really have to show that <m>P \implies R</m> is true.
+  </p></li>
+</ul>
+</p>
+<p>
+  We know one of the following is true: either
+  <m>(a_n)_{n\in\mathbb{N}} </m> is not increasing, or it is increasing.
+  We will use these two cases to prove the contrapositive statement.
+  In the first case, when <m>(a_n)_{n\in\mathbb{N}} </m> is not
+  increasing, the conclusion (that <m>(a_n)_{n\in\mathbb{N}} </m> is
+  bounded or not increasing) is automatically satisfied.  Therefore we
+  may focus on the second case, when <m>(a_n)_{n\in\mathbb{N}} </m> is
+  increasing.  We need to show that the sequence is bounded (then the
+  conclusion, <m>(a_n)_{n\in\mathbb{N}} </m> is bounded or not
+  increasing, will be true).
+</p>
+<p>
+By assumption, we know that <m>\displaystyle\lim_{n\to\infty}a_n\neq+\infty</m>. By definition, this means there is some <m>C\gt0</m> such that for any <m>n\in\mathbb{N}</m>, there's some <m>m\geq n</m> with <m>a_m\lt C</m>.
+But since <m>(a_n)_{n\in\mathbb{N}} </m> is increasing, we know that <m>a_n\leq a_m\lt C</m>. While it's not necessarily true that <m>a_n\leq a_m</m> for all <m>n</m>, since <m>m</m> depends on <m>n</m>, we do know that <m>a_n\lt C</m> for all <m>n</m>.
+Moreover, we also know that <m>a_n\geq a_1</m> for all <m>n\in\mathbb{N}</m>, as <m>a_n</m> is increasing. Combining these inequalities to get <m>a_1\leq a_n\lt C</m>, we can show that <m>|a_n|</m> is bounded, as desired.
+</p>
+  
+</answer>
+
+
+<solution>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ We saw in part (d) of<nbsp/><xref ref="ex_infinite_limits"/>
+  that <m>\lim_{n\to\infty}(-1)^n\sqrt{n}\neq+\infty</m>, and
+  <m>((-1)^n\sqrt{n})_{n\in\mathbb{N}}</m> is an unbounded sequence.
+  Indeed, given <m>M\geq 0</m>, we choose <m>N</m> be an integer
+  strictly greater than <m>M^2</m>. Using the ceiling function, we set
+ <m>N = \lceil M^2 \rceil +1</m>. Then <m>N\gt M^2</m> implies
+  <m>|a_N|=\sqrt{N}\gt M</m>.
+</p>
+</li>
+<li>
+<p>
+ We need to find a sequence that increases, and does not go to
+  infinity. Take <m>a_n=-1/n</m>. Then <m>a_{n+1}\geq a_n</m> for all
+  <m>n\in\mathbb{N}</m>. Moreover, given any <m>M\geq 0</m>, we have that
+  <m>a_n\lt M</m> for all <m>n</m>. This implies that
+  <m>\displaystyle\lim_{n\to\infty}a_n\neq+\infty</m>.
+</p>
+</li>
+</ol>
+</p>
+
+<proof><title>Proof of (c)</title>
+<p>
+Suppose that <m>\displaystyle\lim_{n\to\infty}a_n\neq+\infty</m>, and that <m>a_n</m> is increasing.
+We show that <m>(a_n)_{n\in\mathbb{N}}</m> is bounded. Since <m>\displaystyle\lim_{n\to\infty}a_n\neq+\infty</m>, there is some <m>C\gt0</m> such that for any <m>n\in\mathbb{N}</m>, there's some <m>m\geq n</m> with <m>a_m\lt C</m>.
+Fix <m>n\in \mathbb{N}</m>, and let <m>m\geq n</m> be such that <m>a_m\lt C</m>. Since <m>(a_n)_{n\in\mathbb{N}} </m> is increasing and <m>m\geq n</m>, we have
+<me> a_n\leq a_m \lt C. </me>
+But as <m>(a_n)_{n\in\mathbb{N}} </m> is increasing, we also know that <m>a_1\leq a_n</m>. Let <m>M=\max\{|a_1|,|C|\}</m>. Note that
+<me>-|a_1|\leq a_1\leq a_n \lt C \leq |C| </me>
+But by choice of <m>M</m>, <m>|C|\leq M</m>, and <m>-M\leq -|a_1|</m>. Therefore
+<me> -M \leq a_n \leq M, </me>
+and so <m>|a_n|\leq M</m>. This holds for all <m>n</m>, and so <m>a_n</m> is bounded. Thus if <m>\displaystyle\lim_{n\to\infty}a_n\neq+\infty</m>, either <m>(a_n)_{n\in\mathbb{N}} </m> is not increasing or <m>(a_n)_{n\in\mathbb{N}} </m> is bounded.
+</p>
+</proof>
+
+
+</solution>
+</exercise>

@@ -1,0 +1,46 @@
+<exercise>
+<!-- source latex = 'not_defining_variables.tex' -->
+<!-- converted on 12/07/2021 at 13:09 -->
+<statement>
+<p>
+Consider the faulty proof below for the following statement:
+</p>
+<p>
+The sum of two odd integers is even.
+</p>
+
+<proof><title>Faulty proof</title>
+<p>
+Given <m>a=2k+1</m> and <m>b=2\ell+1</m>,
+<me> a+b = (2k+1)+(2\ell+1)=2(k+\ell+1). </me>
+Since <m>k+\ell+1\in \mathbb{Z}</m>, <m>a+b</m> is even.
+</p>
+</proof>
+
+<p>
+Identify any issues with the proof as written above, and then give a proper proof of the statement.
+</p>
+</statement>
+<solution>
+<p>
+The main issue with proof as written is that the variables are undefined.
+The variables <m>a</m>, <m>b</m>, <m>k</m>, and <m>\ell</m> came out of nowhere!
+Presumably, <m>a</m> and <m>b</m> are odd integers, and <m>k</m> and <m>\ell</m> are integers, but the proof didn't define them as such.
+Moreover, note that saying <m>k+\ell+1\in \mathbb{Z}</m> does not guarantee that <m>k,\ell\in\mathbb{Z}</m>; for example, taking <m>k=\ell=1/2</m> shows why.
+</p>
+<p>
+So while the ideas of the proof are correct, it is, at best, very sloppy. You should not assume that the reader will <q>just get it</q> - you need to explain what <q>it</q> is!
+</p>
+<p>
+Let's rewrite the proof with these issues resolved:
+</p>
+
+<proof>
+<p>
+Let <m>a</m> and <m>b</m> be odd integers. Then there are <m>k,\ell\in\mathbb{Z}</m> such that <m>a=2k+1</m> and <m>b=2\ell+1</m>. Hence
+<me> a+b = (2k+1)+(2\ell+1)=2(k+\ell+1). </me>
+Since <m>k,\ell</m> are integers, <m>k+\ell+1\in \mathbb{Z}</m>, and so <m>a+b</m> is even. Thus the sum of any two odd integers is even.
+</p></proof>
+
+</solution>
+</exercise>

@@ -1,0 +1,68 @@
+<exercise>
+<!-- source latex = 'n factorial is greater than 3 to the n question.tex' -->
+<!-- converted on 12/08/2021 at 19:59 -->
+<statement>
+<p>
+Let <m>n\in\mathbb{N}</m>. Prove that <m>\forall n\geq 7</m>, <m>n!\gt 3^n</m>.
+</p>
+</statement>
+<answer>
+<p>
+Since we want to show that the inequality <m>n!\gt 3^n</m> is true for all <m>n\geq 7</m>, we can try to understand how it behaves for any natural number. We can do that by starting to look at the statement for different values of <m>k\in\mathbb N</m>, and try to develop a pattern.
+</p>
+<p>
+We see that for <m>n=1</m>, the inequality becomes <m>1\gt 3</m>, which is not true. Moreover, if we check couple more numbers, we get,
+<md>
+<mrow>
+n=2  \amp  \amp  2\gt 9  \amp  \amp \text{False},
+</mrow><mrow>
+n=3  \amp  \amp  6\gt 27  \amp  \amp \text{False},
+</mrow><mrow>
+n=4  \amp  \amp  24\gt 81  \amp  \amp \text{False},
+</mrow><mrow>
+n=5  \amp  \amp  120\gt 243  \amp  \amp \text{False},
+</mrow><mrow>
+n=6  \amp  \amp  720\gt 729  \amp  \amp \text{False},
+</mrow><mrow>
+n=7  \amp  \amp  5040\gt 2187  \amp  \amp \text{True},
+</mrow><mrow>
+n=8  \amp  \amp  40320\gt 6561  \amp  \amp \text{True},
+</mrow><mrow>
+n=9  \amp  \amp  362880\gt 19683  \amp  \amp \text{True}.
+</mrow>
+</md>
+After <m>n=7</m>, we see that the left hand side grows much faster than the right hand side of the inequlity. This suggests that the statement shoul be true. Now, we can try to show it using induction.
+</p>
+</answer>
+
+<solution>
+<proof><p>
+We are going to use mathematical induction.
+<ul>
+<li>
+<p>
+<em>Base Case</em>: We see that for <m>n=7</m>, the stament is  <q><m>7!\gt 3^7</m></q>. We also know that <m>7!=5040</m> and <m>3^7=2187</m>. Thus, the statement is true for <m>n=7</m>
+</p>
+</li>
+<li>
+<p>
+<em>Inductive Step</em>: Let <m>k\geq 7</m>, and assume that the statement is true for <m>n=k</m>, that is, <m>k!\gt 3^k</m>. Then we see that
+</p>
+<p>
+<me> (k+1)!=(k+1)k!\gt (k+1)3^k \gt (3)3^k=3^{k+1}, </me>
+</p>
+<p>
+since <m>(k+1)\gt 3</m>.
+</p></li>
+</ul>
+</p>
+<p>
+Therefore the statement is true for <m>n=k+1</m>, and hence, by induction, it is true for all <m>n\in\mathbb{N}</m>.
+</p>
+</proof>
+
+<p>
+We should also note that the inductive step doesn't really require the assumption <m>n\geq 7</m>. For the inductive step to be true, all we need is <m>n\geq 3</m>. But, as we have seen in our scratch work, the statement isn't true for <m>n\lt 7</m>, so the corresponding base cases would be false.  This means that we can only prove this statement for <m>n\geq 7</m>.
+</p>
+</solution>
+</exercise>

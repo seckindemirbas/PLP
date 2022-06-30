@@ -1,0 +1,41 @@
+<exercise>
+<!-- source latex = 'n square plus 4n plus 5 is odd implies n is even question.tex' -->
+<!-- converted on 06/07/2021 at 10:19 -->
+<statement>
+<p>
+Let <m>n\in\mathbb Z</m>. Prove that if <m>n^2+4n+5</m> is odd, then <m>n</m> is even.
+</p>
+</statement>
+<answer>
+<p>
+We see that this is a conditional statement and as we did in the previous chapters, we can try direct proof where we assume the hypothesis and show the conclusion. That means, we assume that <m>n^2+4n+5</m> is odd and show that <m>n</m> is even.
+</p>
+<p>
+This means that we assume <m>n^2+4n+5=2k+1</m> for some <m>k\in\mathbb Z</m> and show that <m>n=2m</m> for some <m>m\in\mathbb Z</m>. However, to get from  <m>n^2+4n+5=2k+1</m> to showing that <m>n</m> is even will not an easy task. It would require us to take a square root, and so we would also need to understand the effect of taking square root on the parity of the number. Oof! That would be a whole other exercise.
+</p>
+<p>
+So, we may need to look at a different proof method. Since this is a conditional statement, we can look at its contrapositive and see whether it simplifies the problem. First, let <m>n\in\mathbb Z</m>, then the contrapositive is:
+<md>
+<mrow>
+  n \text{ is not odd } \implies n^2+4n+5 \text{ is not odd}.
+</mrow>
+</md>
+But since <m>n</m> is an integer, we know that <m>n^2+4n+5</m> is an integer. So if <m>n</m> and <m>n^2+4n+5</m> are not odd, then they must be even. Hence we can write the contrapositive as
+<md>
+<mrow>
+  n \text{ is odd } \implies n^2+4n+5 \text{ is even}.
+</mrow>
+</md>
+This immediately looks like a simpler statement since the hypothesis in on <m>n</m>, which is the simpler term, and the conclusion is on <m>n^2+4n+5</m>, which is the more complex term. From here, the rest of the proof is straightforward. We assume <m>n=2k+1</m> for some <m>k\in\mathbb Z</m> and then we write the expression for <m>n^2+4n+5</m> and show that it is even. Namely,
+</p>
+</answer>
+<solution>
+<proof><p>
+(Proof by contrapositive) Assume that <m>n</m> is odd. Then we see that <m>n=2k+1</m> for some <m>k\in \mathbb{Z}</m>. Thus, <m>n^2+4n+5=(2k+1)^2+4(2k+1)+5=2(2k^2+6k+3)</m>. Since <m>(2k^2+6k+3)\in\mathbb Z</m>, we see that <m>n^2+4n+5</m> is even.
+</p></proof>
+
+<p>
+Notice that we have started our proof with an indication to the reader that we are using the contrapositive. Always make things easier for your reader.
+</p>
+</solution>
+</exercise>

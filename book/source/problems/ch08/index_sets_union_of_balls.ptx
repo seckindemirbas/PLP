@@ -1,0 +1,74 @@
+<exercise>
+<!-- source latex = 'index_sets_union_of_balls.tex' -->
+<!-- converted on 30/03/2022 at 15:08 -->
+<statement>
+<p>
+Determine what each of the following unions is equal to, and prove your answer.
+<ol marker="(a)">
+<li>
+<p>
+<me> \bigcup_{n\in\mathbb{N}}[-n,n] </me>
+</p></li>
+<li>
+<p>
+ <me> \bigcup_{r\in\mathbb{R}, r\gt0} B_r </me>
+where
+<me> B_r = \{(x,y)\in \mathbb{R}\times\mathbb{R}:x^2+y^2\lt r\}. </me>
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ We claim that
+<me> \bigcup_{n\in\mathbb{N}}[-n,n] = \mathbb{R}. </me>
+</p>
+
+<proof>
+<p>
+For any <m>n\in\mathbb{N}</m>, we have <m>[-n,n]\subseteq\mathbb{R}</m>, and so
+<me> \bigcup_{n\in\mathbb{N}}[-n,n] \subseteq \mathbb{R}. </me>
+We need to show that the reverse inclusion holds. To this end, let <m>x\in \mathbb{R}</m>. If <m>x=0</m>,
+<me> 0 \in [-1,1]\subseteq \bigcup_{n\in\mathbb{N}}[-n,n]. </me>
+If <m>x\neq0</m>, let <m>N=\lceil |x| \rceil</m>.  Recall that <m>f(y)=\lceil y\rceil</m> is the ceiling function, defined to be the smallest integer <m>m</m> such that <m>y\leq m</m>.
+We have <m>N\in\mathbb{N}</m>, and <m>|x|\leq N</m>.  Hence
+<me> x\in [-N,N]\subseteq \bigcup_{n\in\mathbb{N}}[-n,n] </me>
+for this case as well. Thus
+<me> \mathbb{R}\subseteq \bigcup_{n\in\mathbb{N}}[-n,n] </me>
+holds as well, establishing that the sets are equal.
+</p></proof>
+
+</li>
+<li>
+<p>
+ For a fixed <m>r\in\mathbb{R}</m>, <m>r\gt 0</m>, the set
+<me>  B_r = \{(x,y):x^2+y^2\lt r\} </me>
+represents the inside of a disk in <m>\mathbb{R}^2</m> with radius <m>r</m>.
+We claim that
+<me> B_r = \{(x,y)\in\mathbb{R}\times\mathbb{R}: x^2+y^2\lt r\}= \mathbb{R}\times\mathbb{R}. </me>
+</p>
+
+<proof>
+<p>
+For any <m>r\in \mathbb{R}</m>, <m>r\gt 0</m>, we have by definition that
+<me> B_r = \{(x,y)\in \mathbb{R}\times\mathbb{R}:x^2+y^2\lt r\}\subseteq \mathbb{R}\times\mathbb{R}. </me>
+Therefore
+<me> \bigcup_{r\in\mathbb{R}, r\gt0} B_r \subseteq\mathbb{R}\times\mathbb{R}. </me>
+We need to show that the reverse inclusion holds. To this end, let <m>(x,y)\in \mathbb{R}\times \mathbb{R}</m>.
+Let <m>r=x^2+y^2+1</m>. Then <m>r \gt 0</m>, and <m>x^2+y^2\lt r</m>. Hence
+<me> (x,y)\in B_r\subseteq \bigcup_{r\in\mathbb{R}, r\gt0} B_r. </me>
+As <m>(x,y)</m> was arbitrary, we have
+<me> \mathbb{R}\times \mathbb{R}\subseteq \bigcup_{r\in\mathbb{R}, r\gt0} B_r  </me>
+and so the sets are in fact equal.
+</p></proof>
+
+
+</li>
+</ol>
+</p>
+</solution>
+</exercise>

@@ -1,0 +1,2415 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<chapter xml:id="ch-logic" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>A little logic</title>
+  <introduction>
+    <p>One of the main things we are trying to do in mathematics is prove that a statement is always true. A simple example of this is the sentence
+    </p>
+
+    <blockquote>
+      <p>The square of an even number is even.</p>
+    </blockquote>
+
+    <p>
+      More generally we might try to show that
+      <ul>
+        <li>
+          <p>
+            a particular mathematical object has some interesting properties,
+          </p>
+        </li>
+        <li>
+          <p>
+            when an object has property 1 then it always has property 2,
+          </p>
+        </li>
+        <li>
+          <p>
+            an object always has property 3 or property 4 but not both at the same time, or
+          </p>
+        </li>
+        <li>
+          <p>
+            you cannot find an object that has property 5.
+          </p>
+        </li>
+      </ul>
+    </p>
+    <p>
+      Let's spend a little time on this simple example of squaring even numbers and explore why it is true.
+      <ul>
+        <li>
+          <p>
+            A number
+            <m>n</m>
+            is even when we can write it as
+            <m>n=2k</m>
+            where
+            <m>k</m>
+            is an integer.
+          </p>
+        </li>
+        <li>
+          <p>
+            This tells us that the square of that number is
+            <m>n^2 = (2k)^2 = 4k^2</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            But now we see that
+            <m>n^2</m>
+            can be written as two times another number:
+            <m>4k^2 = 2(2k^2)</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            And since
+            <m>2k^2</m>
+            is an integer, we know that
+            <m>n^2</m>
+            is also even.
+          </p>
+        </li>
+      </ul>
+      Notice that there is quite a lot going on here
+      <mdash/>
+      a mixture of definitions, language and logic.
+    </p>
+    <p>
+      Most obviously (we hope) is that we have to understand what
+      <term>even</term>
+      means, so we need to define it. Despite us all being quite familiar with even and odd numbers, we should define it. We should not expect that everyone has exactly the same understanding of
+      <term>even</term>
+      since your readers can come from extremely diverse backgrounds. This author has encountered students who were taught at school that the number
+      <m>0</m>
+      is neither even nor odd, and others that were taught that only positive numbers can be even or odd. To avoid potential confusion we'll use the following
+    </p>
+
+    <blockquote>
+      <p>
+        A integer is <term>even</term> when it is equal to two times another integer, and an integer is odd when it is not even.
+      </p>
+    </blockquote>
+
+    <p>
+      We'll come back to this definition in the next chapter after we have done a little more logic. We'll also make it a proper formal definition with bold-text and reference numbers and so on.
+    </p>
+    <p>
+      Our explanation then consists of sentences asserting bits of mathematics. The sentences are arranged in a particular order and cannot be shuffled around; each one
+      <em>implies</em>
+      the next. To be a good explanation we should take care of our reader and use clear language and enough detail so they can follow along. To make the language flow a little more easily we connect the sentences with words and phrases like
+      <q>hence</q>,
+      <q>this tells us that</q>,
+      <q>because of this we can write</q>. These words and phrases are not just there to make the reader feel a little more comfortable, they also help us to emphasise the
+      <em>logical</em>
+      connections between the sentences to the reader. At the same time, we can expect our reader to do some work; they should be able to understand standard notation, do basic arithmetic and algebra, etc.
+    </p>
+    <p>
+      In this chapter we won't do much proving of things, but instead we will focus on basic mathematical sentences and how we combine them together using logic.
+    </p>
+
+  </introduction>
+
+  <section>
+    <title>Statements and open sentences</title>
+    <p>
+      When you pick up a piece of mathematics you find that it is made up of
+      <term>declarative sentences</term>
+      <mdash/>
+      sentences that declare something.
+    </p>
+    <blockquote>
+      <p>
+        The number
+        <m>\sqrt{2}</m>
+        is not a rational number.
+      </p>
+    </blockquote>
+    <blockquote>
+      <p>
+        The number 17 is even.
+      </p>
+    </blockquote>
+    <p>
+      The first sentence is <term>true</term> (we will prove it later in the text) and the second is <term>false</term>.
+      These are sentences that can be assigned a definite
+      <term>truth value</term>
+      <mdash/>
+      they are either true or false.
+      We will usually denote these
+      <m>T</m>
+      and
+      <m>F</m>
+      (and so save ourselves the burden of writing the other 7 characters).
+      A declarative sentence that can be assigned a truth value is called a
+      <term>statement</term>.
+    </p>
+    <p>
+      The reader will have noticed that the definitions in the previous paragraph are not very formal or precise. Since the authors have been emphasising the importance of being careful and precise, this seems a touch hypocritical<fn>Hypocrisy starts at home.</fn>. However, giving a
+      precise formal definition of mathematical statement turns out to be quite a lot like the problem of giving a precise formal definition of sets
+      <mdash/>
+      very difficult and lies beyond the scope of this book
+      <fn>
+        The interested reader should search-engine their way to articles on the foundations of mathematics, mathematical logic, Richard's paradox, the Berry paradox, and many other interesting topics that, unfortunately, lie outside the scope of this text
+        (since it must have a finite length).
+      </fn>. So please excuse the (little) hypocrisy and we'll just stick with this less formal and more intuitive definition of statement.
+    </p>
+
+    <p>Sentences like</p>
+    <blockquote>
+      <p>
+        I am tall
+      </p>
+    </blockquote>
+    <p>and</p>
+    <blockquote>
+      <p>
+        This sentence is false
+      </p>
+    </blockquote>
+    <p>
+      are not statements since we cannot decide their truth value
+      <mdash/>
+      they are neither true or false. In the first case it is because we don't actually know who
+      <q>I</q>
+      is. Is it the reader or is it the author? Further, we don't have a very precise definition of
+      <q>tall</q>
+      Indeed the notion of what height constitutes
+      <q>tall</q>
+      or
+      <q>short</q>
+      can vary dramatically between populations
+      <fn>
+        At the time of typing this author looked up wikipedia to find that the average height of a man in the Netherlands is about 184cm, while in Vietnam it is about 162cm. Quite a sizeable difference. Sorry for the pun.
+      </fn>. The second sentence is a little more difficult. If it is true, then it tells us it must be false
+      <mdash/>
+      how can it be both? While if it is false, then that implies it must be true
+      <mdash/>
+      again, how can it be both? This sort of self-referential sentence is very difficult to work with, so we will avoid them.
+    </p>
+    <aside>
+      <title>Self-referential statements</title>
+      <p>
+        Self-referential statements are very interesting, but we should really start with simpler and straight-forward statements before rushing into difficult and confusing ones. The interested reader should search-engine their way to the related topic of
+        Russell's paradox. This involves the set
+        <me>
+          R = \set{X \so X \not\in X}.
+        </me>
+        This is the set of all sets that do not contain themselves. The paradox occurs when we ask if
+        <m>R</m>
+        is an element of itself? If it is, then by the definition of
+        <m>R</m>
+        it cannot be. And if it is not, then by definition it must be.
+      </p>
+      <p>
+        The barber-paradox is similar, but more hirsute.
+      </p>
+    </aside>
+    <p>Here are some simple examples of mathematical statements:
+      <ul>
+        <li>
+          The 100th decimal digit of
+          <m>\pi</m>
+          is 7.
+        </li>
+        <li>
+          The square of the length of the hypotenuse of a right angle triangle is equal to the sum of the squares of the lengths of the other two sides.
+        </li>
+        <li>
+          Every even integer greater than
+          <m>2</m>
+          can be written as the sum of two primes.
+        </li>
+      </ul>
+      The first might be true or might be false, but it must either be true or false<fn>Actually it is true, though you have to be careful how you count
+        <mdash/>
+        since the number starts
+        <m>3.141\dots</m>
+        we have counted the initial
+        <q>3</q>
+        as the first decimal digit. On the other hand, if you start counting from the first
+        <q>1</q>, then the 100th digit is
+        <q>9</q>. Definitions matter.</fn>. The second is perhaps the most famous theorem any of us know. The last statement is
+      <term>Goldbach's conjecture</term>
+      and it is not known whether it is true or false. However it is still a statement because it must either be true or it is false.
+    </p>
+
+    <p>On the other hand, a sentence like
+      <me>
+        x^2 - 5x+4 = 0
+      </me>
+      is not a statement because its truth value depends on which number
+      <m>x</m>
+      we are discussing. In order to assign a truth value we need to know more about
+      <m>x</m>. Such sentences are called
+      <term>open sentences</term>. If we assign a value to
+      <m>x</m>
+      then the open sentence will be either true or false and so become a statement. Usually this variable will come from some predefined set
+      <mdash/>
+      its
+      <q>domain</q>. Often this is the integers or the reals, but typically we should make sure it is clear to the reader. This sentence,
+      <m>x^2-5x+4=0</m>, taken over the domain of the integers is true when
+      <m>x=1,4</m>
+      and otherwise false. We'll come back to open sentences in <xref ref="ch-quantifiers"/>.
+    </p>
+    <p>We now need to start playing with these statements in a more abstract way. This will allow us to talk more generally about doing operations on statements
+      <mdash/>
+      either operations that act on a single statement or operations that act on pairs of statements. I won't care too much about the details of the statement (<q>It is Tuesday</q>
+      or
+      <q>I can write with my left-hand</q>), but rather just its truth value (true and false). So much as we write an integer as
+      <m>n</m>
+      or
+      <m>m</m>, a real number as
+      <m>x</m>
+      or
+      <m>y</m>, I will write a statement as
+      <m>P, Q</m>
+      or
+      <m>R</m>.
+      As for the open sentences, we will use the notation <m>P(x),
+      Q(x), R(x)</m>, since their truth values depend<fn> When the
+      open sentence depends on more than one variable, say <m>x, k</m>
+      we will write <m>P(x,k), Q(x,k)</m> and so on.</fn> on the value
+      of <m>x</m>. This is reminiscent of a function; we put in some
+      value for x and the sentence returns to us a statement. For
+      example, if <m>P(x): x^2-5x+4=0</m>, we see that <m>P(1)</m> is
+      true, while <m>P(2)</m> is false.
+    </p>
+
+  </section>
+
+  <section>
+    <title>Negation</title>
+    <p>
+      Given a statement,
+      <m>P</m>, we can form a new statement which is the
+      <em>negation</em>
+      of the original, which we denote
+      <m>\neg P</m>; this little squiggle is called a tilde.
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let
+          <m>P</m>
+          be a statement. The <term>negation</term> of
+          <m>P</m>
+          is denoted
+          <m>\neg P</m>. When the original statement
+          <m>P</m>
+          is true, the negation
+          <m>\neg P</m>
+          is false. And when the original statement is false, the negation is true.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      You will also see the negation written as
+      <m>!P</m>
+      or
+      <m>\lnot P</m>. Since all three are quite commonly use, you should recognise all three. To not unduly confuse your reader, you should pick one and stick with it. You should recognise all three notations, as all three are in common use; we'll use the
+      tilde notation in this text<fn>This notation for the negation of a statement goes back at least as far as an Giuseppe Peano (1897) and Bertrand Russell (1908). The use of
+        <m>\lnot</m>
+        is due to Arend Heyting (1930)
+        <mdash/>
+        many thanks to
+        <url href="http://jeff560.tripod.com/set.html" visual="jeff560.tripod.com/set.html">this website</url>. The authors could not track down the earliest use of ! to denote the negation, but we do note that it is very commonly used in programming languages.
+      </fn>.
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          The negation of
+          <q>It is Tuesday</q>
+          is
+          <q>It is not Tuesday</q>
+        </li>
+        <li>
+          The negation of
+          <q>I can write with my left hand</q>
+          is
+          <q>I cannot write with my left hand</q>.
+	  <fn>
+	    The statement <q>I can write with my right hand</q> is not
+	    the negation of <q>I can write with my left hand</q>. Just
+	    because someone cannot write with the left-hand does not
+	    mean that they can write with their right. For most of
+	    human history people could not write with either hand.
+	  </fn>
+        </li>
+        <li>
+          The negation of
+          <q>The integer
+            <m>4</m>
+            is even</q>
+          is
+          <q>The integer 4 is not even</q>
+          or better yet
+          <q>The integer 4 is odd</q><fn>
+	  In this case, because 4 is an integer we know that if it is not even then it must be odd.
+	  However, this is not that case for non-integers.
+	  For example, the negation of <q><m>\pi</m> is even</q> is <q><m>\pi</m>
+	  is not even</q> rather than <q><m>\pi</m> is odd</q>.
+	  We’ll come back to even and odd in <xref ref="ch-direct"/>.
+	  </fn>.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      For our general statement
+      <m>P</m>
+      we can summarise its truth values and the corresponding truth values of its negation in a table:
+    </p>
+      <tabular left="minor" right="minor" top="minor" bottom="minor" halign="center">
+        <row>
+          <cell>
+            <m>P</m>
+          </cell>
+          <cell>
+            <m>\neg P</m>
+          </cell>
+          <cell>
+            <m>\neg(\neg P)</m>
+          </cell>
+        </row>
+        <row>
+          <cell>T
+          </cell>
+          <cell>
+            F
+          </cell>
+          <cell>
+            T
+          </cell>
+        </row>
+        <row>
+          <cell>
+            F
+          </cell>
+          <cell>
+            T
+          </cell>
+          <cell>
+            F</cell>
+        </row>
+      </tabular>
+
+    <p>
+      This table is called a truth table and we'll use them quite a bit. They can be a bit dull and mechanical to use, but they make the truth values very clear and precise and can help us reduce the problem of understanding the truth value of some
+      complicated combination of statements to a simple procedure of filling in entries of a table.
+    </p>
+    <p>
+      We have included a column for the double-negation of a statement,
+      <m>\neg(\neg P)</m>. Notice that the truth values of the double-negation are the same as those of the original statement. It is related to the law of the excluded middle
+      <mdash/>
+      a statement is true or its negation is true
+      <mdash/>
+      there is no third (middle) option. Thus the mean of negations in mathematics is quite different from what can happen in written and spoken English<fn>
+        In written and spoken English a double-negation can sometimes a negation,
+        <q>We don't need no education.</q>; sometimes it is ambiguous:
+        <q>I do not disagree.</q>; and sometimes positive:
+        <q>The time you have is not unlimited.</q>. In many languages a double-negation serves as a means of emphasising the negation.
+        <q>Yeah, right</q>
+        is a good example of a double-positive being a (sarcastic) negative.
+      </fn>. Also notice that if we only have the negation to play with then we cannot really do very much at all. We need some ways of combining statements. To do this we start with the logical
+      <q>conjunction</q>
+      and
+      <q>disjunction</q>
+      <mdash/>
+      <q>and</q>
+      and
+      <q>or</q>.
+    </p>
+  </section>
+
+  <section>
+    <title>Or and And</title>
+    <p>
+      So the two simplest ways of combining two logical statements are using
+      <q>or</q>
+      and
+      <q>and</q>
+      . The words
+      <q>or</q>
+      and
+      <q>and</q>
+      have precise mathematical meanings which sometimes differ from their use in day-to-day language. To avoid conflating these mathematical means with the colloquial meanings we can refer to
+      <q>or</q>
+      and
+      <q>and</q>
+      by the nicely latin-flavoured words
+      <q>disjunction</q>
+      and
+      <q>conjunction</q>; hopefully we won't need those for very long and we'll get used to being more precise about when we want mathematical
+      <q>and</q>
+      and
+      <q>or</q>
+      and when we are just being colloquial.
+    </p>
+
+    <definition>
+      <statement>
+        <p>
+          Let
+          <m>P</m>
+          and
+          <m>Q</m>
+          be statements.
+          <ul>
+            <li>
+              The <term>disjunction</term> of
+              <m>P</m>
+              and
+              <m>Q</m>
+              is the statement
+              <q>
+                <m>P</m>
+                or
+                <m>Q</m>
+              </q>
+              and is denoted
+              <m>P \lor Q</m>. The disjunction is true if at least one of
+              <m>P</m>
+              and
+              <m>Q</m>
+              are true. The disjunction is only false if both
+              <m>P</m>
+              and
+              <m>Q</m>
+              are false.
+            </li>
+            <li>
+              The <term>conjunction</term> of
+              <m>P</m>
+              and
+              <m>Q</m>
+              is the statement
+              <q>
+                <m>P</m>
+                and
+                <m>Q</m>
+              </q>
+              and is denoted
+              <m>P \land Q</m>. The conjunction is true when both
+              <m>P</m>
+              and
+              <m>Q</m>
+              are true. It is false if at least one of
+              <m>P</m>
+              and
+              <m>Q</m>
+              are false.
+            </li>
+          </ul>
+
+          The truth tables of the disjunction and conjunction are
+        </p>
+          <tabular left="minor" right="minor" top="minor" bottom="minor" halign="center">
+            <row>
+              <cell>
+                <m>P</m>
+              </cell>
+              <cell>
+                <m>Q</m>
+              </cell>
+              <cell>
+                <m>P \lor Q
+                </m>
+              </cell>
+              <cell>
+                <m>P \land Q</m>
+              </cell>
+            </row>
+            <row>
+              <cell>
+                T
+              </cell>
+              <cell>
+                T
+              </cell>
+              <cell>
+                T
+              </cell>
+              <cell>
+                T</cell>
+            </row>
+            <row>
+              <cell>
+                T
+              </cell>
+              <cell>
+                F
+              </cell>
+              <cell>
+                T
+              </cell>
+              <cell>
+                F
+              </cell>
+            </row>
+            <row>
+              <cell>
+                F
+              </cell>
+              <cell>
+                T
+              </cell>
+              <cell>
+                T
+              </cell>
+              <cell>
+                F
+              </cell>
+            </row>
+            <row>
+              <cell>
+                F
+              </cell>
+              <cell>
+                F
+              </cell>
+              <cell>
+                F
+              </cell>
+              <cell>
+                F
+              </cell>
+            </row>
+          </tabular>
+      </statement>
+    </definition>
+
+    <p>
+      Be careful to use the correct notation. The symbols
+      <m>\lor</m>
+      and
+      <m>\land</m>
+      should not be confused or interchanged with the symbols for unions and intersections,
+      <m>\cup</m>
+      and
+      <m>\cap</m>. We'll come back to unions and intersections later in the text.
+    </p>
+
+    <p>
+      Notice that this use of
+      <q>or</q>
+      defined above is different from how we often use
+      <q>or</q>
+      in spoken English. When you are on a flight and the attendant offers you a meal (assuming you are on a long flight that still offers such luxuries) you might be asked
+    </p>
+
+    <blockquote>
+      <p>
+        <q>Would you like chicken or beef</q>?
+      </p>
+    </blockquote>
+
+    <p>
+      You are not being offered both; you get at most one. This is an example of
+      <q>exclusive or</q>
+      <mdash/>
+      one or the other, but not both. The mathematical
+      <q>or</q>
+      we have just described above is
+      <q>inclusive or</q>
+      <mdash/>
+      at least one of the two options. You should assume that when we write
+      <q>or</q>
+      in a mathematical context we will mean
+      <em>inclusive or</em>. To refer to exclusive or we will typically write
+      <q>either
+        <ellipsis/>
+        or
+        <ellipsis/>
+        but not both</q>. If in doubt use more words to clarify things rather then save yourself a few symbols at the expense of your reader's understanding.
+    </p>
+
+    <p>
+      The use of
+      <q>and</q>
+      in English can also have subtle differences from the mathematical conjunction
+      <m>\land</m>. For example,
+      <q>and</q>
+      can sometimes imply an order:
+      <q>He lived and he died</q>
+      is more natural than
+      <q>He died and he lived</q>. The mathematical and, by contrast, doesn't care about order:
+      <m>P \land Q</m>
+      has the same truth table as
+      <m>Q \land P</m>.
+    </p>
+
+    <p>For example, take the statements
+      <q>7 is prime</q>
+      and
+      <q>18 is odd</q>. We can now construct a new statement
+    </p>
+
+    <blockquote>
+      <p>
+        7 is prime
+        <em>and</em>
+        18 is odd
+      </p>
+    </blockquote>
+
+    <p>
+      Since the first statement is true and the second is false, the conjunction of the two (our new statement) is false. On the other hand
+    </p>
+
+    <blockquote>
+      <p>
+        7 is prime and 18 is even
+      </p>
+    </blockquote>
+
+    <p>
+      is a true statement. Similarly the statement
+    </p>
+
+    <blockquote>
+      <p>
+        7 is prime or 18 is odd
+      </p>
+    </blockquote>
+
+    <p>
+      is true.
+    </p>
+
+    <p>
+      <q>Not</q>,
+      <q>and</q>
+      and
+      <q>or</q>
+      are three logical connectives
+      <mdash/>
+      or logical operators. They take one or two statements and combine them to make new statements
+      <mdash/>
+      called
+      <q>compound statements</q>. Using
+      <q>not</q>,
+      <q>and</q>
+      and
+      <q>or</q>
+      you can construct any truth table of two statements you might want (there are
+      <m>2^4 = 16</m>
+      of them). If you have done some computer science you have perhaps heard of NAND (not and), NOR (not or), XOR (exclusive or) and XNOR (exclusive not or). We'll shortly see how to construct such things using the three connectives we have just defined.
+      But first we'll introduce the logical operator that lies at the heart of most of the mathematical proofs that are coming.
+    </p>
+
+  </section>
+  <section xml:id="sec-implication">
+    <title>The implication</title>
+    <p>
+      In mathematics we make many statements of the form
+    </p>
+
+    <blockquote>
+      <p>
+        If
+        <m>x</m>
+        is a real number then
+        <m>x^2</m>
+        is a real number
+      </p>
+    </blockquote>
+
+    <p>
+      and a large fraction of the theorems we want to prove are of this form.
+    </p>
+
+    <definition xml:id="def-implications">
+      <statement>
+        <p>
+          For statements
+          <m>P</m>
+          and
+          <m>Q</m>, the
+          <term>implications</term>
+          or
+          <term>conditional</term>
+          is the statement
+          <md>
+            <mrow>
+              \text{if } P \text{ then } Q
+            </mrow>
+          </md>
+          and is denoted
+          <m>P \implies Q</m>. In this context
+          <m>P</m>
+          is called the
+          <term>hypothesis</term>
+          and
+          <m>Q</m>
+          is called the
+          <term>conclusion</term>. The implication is false when
+          <m>P</m>
+          is true and
+          <m>Q</m>
+          is false; otherwise it is true. The truth table is
+        </p>
+          <tabular left="minor" right="minor" top="minor" bottom="minor" halign="center">
+            <row>
+              <cell>
+                <m>P</m>
+              </cell>
+              <cell>
+                <m>Q</m>
+              </cell>
+              <cell>
+                <m>P \implies Q</m>
+              </cell>
+              <cell>
+                <m>(\neg P) \lor Q</m>
+              </cell>
+            </row>
+            <row>
+              <cell>T
+              </cell>
+              <cell>
+                T
+              </cell>
+              <cell>
+                T
+              </cell>
+              <cell>
+                T
+              </cell>
+            </row>
+            <row>
+              <cell>T
+              </cell>
+              <cell>
+                F
+              </cell>
+              <cell>
+                F
+              </cell>
+              <cell>
+                F
+              </cell>
+            </row>
+            <row>
+              <cell>F
+              </cell>
+              <cell>
+                T
+              </cell>
+              <cell>
+                T
+              </cell>
+              <cell>
+                T
+              </cell>
+            </row>
+            <row>
+              <cell>F
+              </cell>
+              <cell>
+                F
+              </cell>
+              <cell>
+                T
+              </cell>
+              <cell>
+                T</cell>
+            </row>
+          </tabular>
+      </statement>
+    </definition>
+
+    <note>
+      <p>
+        It is important to note that
+        <m>P \implies Q</m>
+        has the same truth table as
+        <m>(\neg P) \lor Q</m>.
+        Additionally
+        <mdash/>
+        the truth table is not symmetric in
+        <m>P</m>
+        and
+        <m>Q</m>
+        and hence the statements
+        <m>P \implies Q</m>
+        and
+        <m>Q \implies P</m>
+        have different truth tables. See the middle two rows of the table below.
+      </p>
+          <tabular left="minor" right="minor" top="minor" bottom="minor" halign="center">
+            <row>
+              <cell>
+                <m>P</m>
+              </cell>
+              <cell>
+                <m>Q</m>
+              </cell>
+              <cell>
+                <m>P \implies Q</m>
+              </cell>
+              <cell>
+                <m>Q \implies P</m>
+              </cell>
+            </row>
+            <row>
+              <cell>T
+              </cell>
+              <cell>
+                T
+              </cell>
+              <cell>
+                T
+              </cell>
+              <cell>
+                T
+              </cell>
+            </row>
+            <row>
+              <cell>T
+              </cell>
+              <cell>
+                F
+              </cell>
+              <cell>
+                F
+              </cell>
+              <cell>
+                T
+              </cell>
+            </row>
+            <row>
+              <cell>F
+              </cell>
+              <cell>
+                T
+              </cell>
+              <cell>
+                T
+              </cell>
+              <cell>
+                F
+              </cell>
+            </row>
+            <row>
+              <cell>F
+              </cell>
+              <cell>
+                F
+              </cell>
+              <cell>
+                T
+              </cell>
+              <cell>
+                T</cell>
+            </row>
+          </tabular>
+
+    </note>
+
+    <p>
+      Further note that sometimes the hypothesis is called the
+      <term>antecedent</term>
+      while the conclusion is called the
+      <term>consequent</term><fn>In a more linguistic context, the hypothesis is the
+      <term>protasis</term>
+      and the conclusion is the
+      <term>apodosis</term>.</fn>.
+    </p>
+
+    <p>Before we get to the peculiarities of the truth table, we should note that the statement
+      <q>
+        <m>P \implies Q</m>
+      </q>
+      can be read in many different ways. Some of these are (in the opinion of the authors) a little obfuscating, and we recommend to stick with
+      <q>If
+        <m>P</m>
+        then
+        <m>Q</m>
+      </q>.
+      <ul>
+        <li>
+          if
+          <m>P</m>
+          then
+          <m>Q</m>
+        </li>
+        <li>
+          <m>P</m>
+          implies
+          <m>Q</m>
+        </li>
+        <li>
+          whenever
+          <m>P</m>
+          then also
+          <m>Q</m>
+        </li>
+      </ul>
+      The author likes the statements above because the hypothesis comes before the conclusion. One may sometimes also see the implication
+      <m>P \implies Q</m>
+      written as
+      <ul>
+        <li>
+          <m>P</m>
+          only if
+          <m>Q</m>
+        </li>
+        <li>
+          <m>Q</m>
+          if
+          <m>P</m>
+        </li>
+        <li>
+          <m>Q</m>
+          whenever
+          <m>P</m>
+        </li>
+        <li>
+          <m>Q</m>
+          provided that
+          <m>P</m>
+        </li>
+      </ul>
+      The authors recommend that you avoid these (at least until you have a bit more experience with mathematical proofs) since they write the conclusion before the hypothesis. They make it very easy to confuse the flow of logic. The statement
+      <q>
+        <m>Q</m>
+        if
+        <m>P</m>
+      </q>
+      is particularly confusing and, in this author's opinion, should be avoided.
+    </p>
+
+    <p>
+      Many mathematicians like to use the terms
+      <q>necessary</q>
+      and
+      <q>sufficient</q>
+      when writing implications. These terms allow one to put more emphasis on either the hypothesis or conclusion
+      <mdash/>
+      this can be quite useful depending on the context in which you are writing. Consider again our nonsense example
+    </p>
+    <blockquote>
+      <p>If he is Shakespeare then he is dead</p>
+    </blockquote>
+    <p>
+      It is
+      <em>sufficient</em>
+      to check that a given person is Shakespeare to decide that they must be dead. Similarly, someone is
+      <em>necessarily</em>
+      dead in order for them to be Shakespeare You may see the implication
+      <m>P \implies Q</m>
+      written in the following ways
+      <ul>
+        <li>
+          <m>P</m>
+          is a sufficient condition for
+          <m>Q</m>,
+        </li>
+        <li>
+          <m>P</m>
+          is sufficient for
+          <m>Q</m>,
+        </li>
+        <li>
+          <m>Q</m>
+          is a necessary condition for
+          <m>P</m>, or</li>
+        <li>
+          <m>Q</m>
+          is necessary for
+          <m>P</m>.</li>
+      </ul>
+      The first two of these emphasise that if you want to know that
+      <m>Q</m>
+      is true, then one need only check (ie it is
+      <em>sufficient</em>
+      to check) that
+      <m>P</m>
+      is true. While the last two emphasise that the truth of
+      <m>Q</m>
+      is required (it is<em>necessary</em>) for
+      <m>P</m>
+      to be true.
+    </p>
+
+    <p>
+      Now back to the truth table. At first glance it can seem a bit strange so to get the feel of it we'll use it on a couple of simple examples and then apply it to something a little larger. Consider the statements
+      <m>P: 13 \text{ is even}</m>
+      and
+      <m>Q: 7 \text{ is odd}</m>. The statement
+      <m>P \implies Q</m>
+    </p>
+    <aside>
+      <title>Different conditionals</title>
+      <p>
+        The interested reader should look up different types of conditionals:
+        <ul>
+          <li>the material conditional (which is the implication we discuss here)</li>
+          <li>the indicative conditional (we really should understand that while sentences like
+            <q>If 4 is a square then the sky is blue</q>
+            are true, the truth of the hypothesis has nothing to do with the truth of the conclusion),</li>
+          <li>the counterfactual conditional (the dreaded subjunctive mood is lurking here and the author dare not reveal too much of their ignorance).</li>
+        </ul>
+        Of course, one can go a long long way down the rabbit hole when you start looking into this sort of thing (see
+        <url href="https://en.wikipedia.org/wiki/Down_the_Rabbit_Hole" visual="wikipedia.org/wiki/Down_the_Rabbit_Hole">this</url>
+        and
+        <url href="https://xkcd.com/214/" visual="xkcd.com/214/">this</url>
+        amongst many other distractions).
+      </p>
+    </aside>
+    <blockquote>
+      <p>
+        If 13 is even then 7 is odd
+      </p>
+    </blockquote>
+
+    <p>
+      is true, while
+      <m>Q \implies P</m>
+    </p>
+
+    <blockquote>
+      <p>
+        If 7 is odd then 13 is even
+      </p>
+    </blockquote>
+    <p>
+      is false.
+    </p>
+
+    <p>A more sizeable example which appears in a few textbooks in similar forms. Frequently a student will ask their instructor
+    </p>
+
+    <blockquote>
+      <p>
+        Will I pass this course?
+      </p>
+    </blockquote>
+    <p>
+      and the author (sometimes) responds
+    </p>
+
+    <blockquote>
+      <p>
+        If you pass the exam, then you will pass the course.
+      </p>
+    </blockquote>
+
+    <p>
+      Under what circumstances is the author lying or telling the truth?
+    </p>
+
+    <p>
+      The author has definitely lied if you pass the exam but end up failing to course. The other 3 possible outcomes are consistent with them telling the truth. Let's explore with the caveat that this should not be considered a binding discussion about
+      your actual passing or failing of a given course. Use
+      <m>P</m>
+      to denote
+      <q>The student passes the exam</q>, and
+      <m>Q</m>
+      to denote
+      <q>The student passes the course</q>, so we can write my statement as
+      <m>P \implies Q</m>:
+    </p>
+    <blockquote>
+      <p>
+        <q>
+          If the student passes the exam, then the student passes the course.</q>
+      </p>
+    </blockquote>
+
+    <p>
+      <dl>
+        <li>
+          <title>(T,T)</title>
+          <p>
+            Say the student passes the exam and passes the course, then clearly
+            <m>P \implies Q</m>
+            is true.</p>
+        </li>
+        <li>
+          <title>(T,F)</title>
+          <p>
+            Say the student passes the exam, but fails the course. Clearly the statement is wrong and so
+            <m>P \implies Q</m>
+            is false. The author lied!</p>
+        </li>
+        <li>
+          <title>
+            (F,T)</title>
+          <p>Say they failed the exam, but passed the course. Well this is indeed possible
+            <mdash/>
+            perhaps the exam was very nasty and the author was very impressed by the only-just-fail (and maybe some good homework) and so gave a passing mark overall. The statement is not false and so must be true.
+            <m>P \implies Q</m>
+            is true.
+          </p>
+        </li>
+        <li>
+          <title>
+            (F,F)</title>
+          <p>
+            Say the student fails the exam and fails the course. Well the statement is not false and so must be true. Hence
+            <m>P \implies Q</m>
+            is true.
+          </p>
+        </li>
+      </dl>
+    </p>
+    <p>
+      Another good example (which the author has used quite a lot when teaching) is
+    </p>
+
+    <blockquote>
+      <p>
+        If he is Shakespeare then he is dead.
+      </p>
+      <attribution>No one ever actually said this (well
+        <mdash/>
+        except just now)</attribution>
+    </blockquote>
+
+    <p>
+      <dl>
+        <li>
+          <title>
+            (T,T)</title>
+          <p>
+            Here is Shakespeare and, sure-enough, he is looking pretty dead
+            <fn>If one is not careful, you can end up on a long digression into dead parrots, pet-shop sketches, and the history of British comedy around here.
+            </fn>. So the implication above is not a lie.
+          </p>
+        </li>
+        <li>
+          <title>
+            (T,F)</title>
+          <p>
+            I found Shakespeare and he is up and about looking very well! The implication above is wrong and
+            <m>P \implies Q</m>
+            is false. Also we should all learn what his secret is since he is over 450 years old!
+          </p>
+        </li>
+        <li>
+          <title>
+            (F,T)</title>
+          <p>
+            Here is Chrisopher Marlowe
+            <fn>
+              There is (was?) a theory that Marlowe faked his own death and then started writing under the name
+              <q>William Shakespeare</q>
+              <mdash/>
+              though this is not widely accepted. People who promulgated this theory were called Marlovians.You can search-engine your way to some interesting articles on Marlowe.
+            </fn>
+            and he is not-alive. This does not actually invalidate the implication
+            <mdash/>
+            it is still true.
+          </p>
+        </li>
+        <li>
+          <title>
+            (F,F)</title>
+          <p>Consider a very alive modern writer
+            <mdash/>
+            despite their accomplishments they are not Shakespeare.
+            <fn>I'm sure you can find a few with the help of your favourite search-engine or online purveyor of books. You might even be lucky enough to study on a campus that that has a bookstore that still sells actual books.
+            </fn>. Again, this does not invalidate the implcation
+            <mdash/>so it is still true.
+          </p>
+        </li>
+      </dl>
+    </p>
+    <p>
+      So perhaps the most important thing to re-emphasise at this point is that an implication statement is false only when it fails to deliver it's claim. That is, when we find a situation in which the hypothesis is true but the conclusion is false.
+    </p>
+
+    <p>
+      As we noted above, a very large number of mathematical statements we want to prove take the form of an implication. For example:
+    </p>
+
+    <blockquote>
+      <p>
+        If
+        <m>n</m>
+        is even then
+        <m>n^2</m>
+        is even
+      </p>
+    </blockquote>
+    <p>
+      When we construct the proof of such a statement we need to demonstrate that it is
+      <em>always true and never false</em>. To understand how we do so, consider again the four rows of the truth table.
+    </p>
+
+      <tabular left="minor" right="minor" top="minor" bottom="minor" halign="center">
+        <row>
+          <cell>
+            <m>P</m>
+          </cell>
+          <cell>
+            <m>Q</m>
+          </cell>
+          <cell>
+            <m>P \implies Q</m>
+          </cell>
+        </row>
+        <row>
+          <cell>T
+          </cell>
+          <cell>
+            T
+          </cell>
+          <cell>
+            T
+          </cell>
+        </row>
+        <row>
+          <cell>T
+          </cell>
+          <cell>
+            F
+          </cell>
+          <cell>
+            F
+          </cell>
+        </row>
+        <row>
+          <cell>F
+          </cell>
+          <cell>
+            T
+          </cell>
+          <cell>
+            T
+          </cell>
+        </row>
+        <row>
+          <cell>F
+          </cell>
+          <cell>
+            F
+          </cell>
+          <cell>
+            T
+          </cell>
+        </row>
+      </tabular>
+
+    <p>
+      Notice that the implication is true in three of those cases and only false in one case
+      <mdash/>
+      namely when the hypothesis is true and the conclusion is false. So our proof needs to show that this possibility cannot happen.
+
+      <dl>
+        <li>
+          <title>Hypothesis false</title>
+          <p>
+	    We can see from the truth table that the implication is always true.
+	    We don't need to know anything about the conclusion since it doesn't matter whether or not the conclusion is true or false. Because of this, a proof doesn't actually have to consider this possibility explicitly. Anyone
+            reading the proof knows<fn>Should know.</fn>
+            the truth-table of the implication and so also knows that the implication is true when the hypothesis is false.
+          </p>
+        </li>
+        <li>
+          <title>Hypothesis true</title>
+          <p>
+            We will have to work, since the truth-value of the implication will depend on the truth value of the conclusion. Consequently most proofs start with the assumption that the hypothesis is true and then work towards showing that the conclusion must be
+            true.
+          </p>
+        </li>
+      </dl>
+    </p>
+
+    <note>
+      <p>
+        Note that because we want the implication to be true always, when we have an implication involving open sentences, such as
+      </p>
+
+      <blockquote>
+        <p>
+          If
+          <m>n</m>
+          is even then
+          <m>n^2</m>
+          is even
+        </p>
+      </blockquote>
+
+      <p>
+        we want this to be true for every possible choice of
+        <m>n</m>
+        in the domain (in this case, integers). Typically, we do not write
+      </p>
+
+      <blockquote>
+        <p>
+          For every possible
+          <m>n</m>, if
+          <m>n</m>
+          is even then
+          <m>n^2</m>
+          is even
+        </p>
+      </blockquote>
+      <p>
+        but instead assume that the reader will understand (by context) that we mean for every possible
+        <m>n</m>.
+      </p>
+
+    </note>
+
+  </section>
+
+  <section>
+    <title>Modus ponens and chaining implications</title>
+    <subsection>
+      <title>Modus ponens</title>
+      <p>
+        Once we have proved an implication
+        <md>
+          <mrow>
+            P \implies Q
+          </mrow>
+        </md>
+        to be always true, then we would like to make use of it. We will (soon) prove that the implication
+      </p>
+
+      <blockquote>
+        <p>
+          If
+          <m>n</m>
+          is even then
+          <m>n^2</m>
+          is even
+        </p>
+      </blockquote>
+      <p>
+        is always true. Since we know it cannot be false, we'll write down the relevant 3 rows of its truth table and suppress the 1 row corresponding to the implication being false:
+      </p>
+
+        <tabular left="minor" right="minor" top="minor" bottom="minor" halign="center">
+          <row>
+            <cell>
+              <m>P</m>
+            </cell>
+            <cell>
+              <m>Q</m>
+            </cell>
+            <cell>
+              <m>P \implies Q</m>
+            </cell>
+          </row>
+          <row>
+            <cell>T
+            </cell>
+            <cell>
+              T
+            </cell>
+            <cell>
+              T
+            </cell>
+          </row>
+          <row>
+            <cell>F
+            </cell>
+            <cell>
+              T
+            </cell>
+            <cell>
+              T
+            </cell>
+          </row>
+          <row>
+            <cell>F
+            </cell>
+            <cell>
+              F
+            </cell>
+            <cell>
+              T
+            </cell>
+          </row>
+        </tabular>
+
+      <p>
+        Notice that if we take a number like
+        <m>n=14</m>, then we know it is even and so the hypothesis is true. By the above truth-table we know that the conclusion must also be true
+        <mdash/>
+        the number
+        <m>n^2=14^2</m>
+        is even. We don't have to do any more work; the truth table, and our proof, ensure that the conclusion is true.
+      </p>
+      <p>
+        More generally, if we have proved that
+        <md>
+          <mrow>
+            P \amp \implies Q
+          </mrow>
+        </md>
+        is always true, then if we know the hypothesis
+        <m>P</m>
+        is true, then the conclusion
+        <m>Q</m>
+        must also be true.
+      </p>
+
+      <definition>
+        <title>Modus ponens</title>
+        <statement>
+          <p>
+            The deduction
+            <ul>
+              <li> <m>P</m> implies <m>Q</m> is true, and</li>
+              <li> <m>P</m> is true</li>
+              <li> hence <m>Q</m> must be true.</li>
+            </ul>
+            is called
+            <term>modus ponens</term>.
+          </p>
+
+        </statement>
+      </definition>
+      <p>
+        This logical deduction was first formalised by Theophrastus
+        <fn>
+          Theophrastus was a student of Plato, a contemporary of Aristotle, and wrote on everything from botany to logic. Given the fragmented historical record, it is perhaps safer to write that the first record that we have of the formal statement of modus
+          ponens comes from Theophrastus.
+        </fn>.
+      </p>
+
+      <p>
+        Notice that if we have proved the implication
+        <m>P \implies Q</m>
+        to be true, but the hypothesis
+        <m>P</m>
+        is false, then we
+        <alert>cannot</alert>
+        conclude anything about the truth value of the conclusion. When the hypothesis is false, the truth value of the conclusion doesn't matter
+        <mdash/>
+        the implication is still true. We can verify that by considering the relevant two rows from the truth-table of the implication.
+      </p>
+
+        <tabular left="minor" right="minor" top="minor" bottom="minor" halign="center">
+          <row>
+            <cell>
+              <m>P</m>
+            </cell>
+            <cell>
+              <m>Q</m>
+            </cell>
+            <cell>
+              <m>P \implies Q</m>
+            </cell>
+          </row>
+          <row>
+            <cell>F
+            </cell>
+            <cell>
+              T
+            </cell>
+            <cell>
+              T
+            </cell>
+          </row>
+          <row>
+            <cell>F
+            </cell>
+            <cell>
+              F
+            </cell>
+            <cell>
+              T
+            </cell>
+          </row>
+        </tabular>
+
+      <p>
+        Similarly notice that if we have proved the implication
+        <m>P \implies Q</m>
+        to be true, and we have proved the conclusion
+        <m>Q</m>
+        to be true then we cannot conclude anything about the truth value of the hypothesis
+        <m>P</m>. Again, this is easily verified by considering the relevant two rows from the truth-table of the implication.
+      </p>
+
+        <tabular left="minor" right="minor" top="minor" bottom="minor" halign="center">
+          <row>
+            <cell>
+              <m>P</m>
+            </cell>
+            <cell>
+              <m>Q</m>
+            </cell>
+            <cell>
+              <m>P \implies Q</m>
+            </cell>
+          </row>
+          <row>
+            <cell>T
+            </cell>
+            <cell>
+              T
+            </cell>
+            <cell>
+              T
+            </cell>
+          </row>
+          <row>
+            <cell>F
+            </cell>
+            <cell>
+              T
+            </cell>
+            <cell>
+              T
+            </cell>
+          </row>
+        </tabular>
+
+      <p>
+        There is, however, one more instance in which we can make a valid conclusion. Consider again the truth-table when the implication
+        <m>P \implies Q</m>
+        is true but the conclusion
+        <m>Q</m>
+        is false:
+      </p>
+
+        <tabular left="minor" right="minor" top="minor" bottom="minor" halign="center">
+          <row>
+            <cell>
+              <m>P</m>
+            </cell>
+            <cell>
+              <m>Q</m>
+            </cell>
+            <cell>
+              <m>P \implies Q</m>
+            </cell>
+          </row>
+          <row>
+            <cell>F
+            </cell>
+            <cell>
+              F
+            </cell>
+            <cell>
+              T
+            </cell>
+          </row>
+        </tabular>
+
+      <p>
+        Here the only possibility is that the hypothesis must be false. This allows us to make another valid deduction.
+      </p>
+
+      <definition xml:id="def_modus_tollens">
+        <title>Modus tollens</title>
+        <statement>
+          <p>
+            The deduction
+            <ul>
+              <li> <m>P</m> implies <m>Q</m> is true, and</li>
+              <li> <m>Q</m> is false</li>
+              <li> hence <m>P</m> must be false.</li>
+            </ul>
+            is called
+            <term>modus tollens</term>.
+          </p>
+        </statement>
+      </definition>
+
+      <p>
+        So when we know (back to our silly example) that
+      </p>
+
+      <blockquote>
+        <p>
+          If he is Shakespeare then he is dead.
+        </p>
+      </blockquote>
+
+      <p>
+        then we can conclude that any live person is not Shakespeare. We will come back to modus tollens a little later in
+        <xref ref="sec-CCB">Section</xref>
+        when we examine the contrapositive.
+      </p>
+    </subsection>
+
+    <subsection>
+      <title>Affirming the consequent and denying the antecedent</title>
+      <p>
+      Misapplication of modus ponens is a frequent source of logical errors. An extremely common one is called <q>affirming the consequent</q>.
+    </p>
+      <warning xml:id="warn-atc">
+        <title>A common logical error</title>
+      <p>
+        The <alert>false</alert> deduction
+        <ul>
+          <li><m>P</m> implies <m>Q</m> is true, and</li>
+          <li><m>Q</m> is true,</li>
+          <li>and hence <m>P</m> must be true</li>
+        </ul>
+        is called <term>affirming the consequent</term>.
+        </p>
+        <p>
+          The flow of logic is wrong <mdash /> check the truth table.
+          Also notice that our arrow notation for the implication,
+          <m>\implies</m>,
+          helps to remind us that truth should flow from the hypothesis to the conclusion and not the other way around.
+        </p>
+      </warning>
+      <p>
+        To see just how wrong this can be, consider again the true implication
+      </p>
+        <blockquote>
+          <p>
+            If he is Shakespeare then he is dead.
+          </p>
+        </blockquote>
+      <p>
+        If we were to affirm the consequent, then any dead man must be Shakespeare.
+      </p>
+      <p>
+        Affirming the consequent does occasionally get used as a rhetorical technique (especially by purveyors of nonsense):
+      </p>
+        <blockquote>
+          <p>
+            If they are Galileo then they are supressed. I'm being supressed, so I must be Galileo.
+          </p>
+        </blockquote>
+        <p>
+        or (when being a bit sorry for oneself)
+      </p>
+        <blockquote>
+          <p>
+            If they are a great artist then they are misunderstood. I'm misunderstood so I must be a great artist.
+          </p>
+        </blockquote>
+        <p>
+        and the social-media comment section fallacy (with thanks to
+        <url href="https://www.smbc-comics.com/comic/the-offensive-truth" visual="www.smbc-comics.com/comic/the-offensive-truth">
+          this comic</url>):
+        </p>
+        <blockquote>
+          <p>
+          If I tell the truth then I will offend people. I am offending people, so I must be telling the truth.
+        </p>
+        </blockquote>
+        <p>
+        So be careful of affirming the consequent
+        <mdash/>
+        it shows up a lot and is always fallacious.
+      </p>
+
+      <p>A very similar logical error is called <q>denying the antecedent</q></p>
+      <warning xml:id="warn-dta">
+        <title>Another common logical error</title>
+      <p>
+        The <alert>false</alert> deduction
+        <ul>
+          <li><m>P</m> implies <m>Q</m> is true, and</li>
+          <li><m>P</m> is false,</li>
+          <li>and hence <m>Q</m> must be false</li>
+        </ul>
+        is called <term>denying the antecedent</term> and is a misapplication of modus tollens.
+        </p>
+      </warning>
+
+      <p>Here are some examples:</p>
+        <blockquote>
+          <p>
+            If I have been to Toronto then I have visited Canada. I have not been to Toronto. So I have not visited Canada.
+          </p>
+        </blockquote>
+        <blockquote>
+          <p>
+            If he is Shakespeare then he is dead. Abraham Lincoln is not Shakespeare, so he must be alive.
+          </p>
+        </blockquote>
+        <blockquote>
+          <p>
+            If tastes bad then it must be healthy. This tastes good, so it must be unhealthy.
+          </p>
+        </blockquote>
+
+    </subsection>
+    <subsection>
+      <title>Chaining implications together</title>
+      <p>
+        When we construct a proof that
+        <m>P \implies Q</m>
+        is true, we don't do it in one big leap. Instead we break it down into a sequence of smaller (and easier) implications that we can chain together. To see how this works, consider the following:
+      </p>
+      <proposition xml:id="prop-chain-implication">
+        <statement>
+          <p>
+            Let
+            <m>P,Q</m>
+            and
+            <m>R</m>
+            be statement. Then the following statement is always true:
+            <md>
+              <mrow>
+                \Big( (P \implies R) \land (R \implies Q) \Big) \implies (P \implies Q).
+              </mrow>
+            </md>
+          </p>
+        </statement>
+      </proposition>
+      <p>
+        Since we are going to need to refer to this piece of mathematics a few times in this section, we have take the trouble to format it clearly and given it a number.
+      </p>
+      <p>
+        This result is an example of a tautology, a statement that is always true. We will come back to tautologies later in the text. To show that it is always true we could either build the truth-table, or we can do some reasoning. Both of these methods
+        are
+        <em>proofs</em>, but we won't be quite so formal until the next chapter. The truth-table is not hard to construct but a bit tedious; since each of
+        <m>P,Q,R</m>
+        can either be true or false, there are
+        <m>2^3=8</m>
+        rows to consider:
+      </p>
+
+        <tabular left="minor" right="minor" top="minor" bottom="minor" halign="center">
+          <row>
+            <cell>
+              <m>P</m>
+            </cell>
+            <cell>
+              <m>Q</m>
+            </cell>
+            <cell>
+              <m>R</m>
+            </cell>
+            <cell>
+              <m>P\implies R</m>
+            </cell>
+            <cell>
+              <m>R\implies Q</m>
+            </cell>
+            <cell>
+              <m>P\implies Q</m>
+            </cell>
+            <cell>The statement<nbsp/><xref ref="prop-chain-implication"/>
+            </cell>
+          </row>
+          <row>
+            <cell>T</cell>
+            <cell>T</cell>
+            <cell>T</cell>
+            <cell>T</cell>
+            <cell>T</cell>
+            <cell>T</cell>
+            <cell>T</cell>
+          </row>
+          <row>
+            <cell>T</cell>
+            <cell>T</cell>
+            <cell>F</cell>
+            <cell>F</cell>
+            <cell>T</cell>
+            <cell>T</cell>
+            <cell>T</cell>
+          </row>
+          <row>
+            <cell>T</cell>
+            <cell>F</cell>
+            <cell>T</cell>
+            <cell>T</cell>
+            <cell>F</cell>
+            <cell>F</cell>
+            <cell>T</cell>
+          </row>
+          <row>
+            <cell>T</cell>
+            <cell>F</cell>
+            <cell>F</cell>
+            <cell>F</cell>
+            <cell>T</cell>
+            <cell>F</cell>
+            <cell>T</cell>
+          </row>
+          <row>
+            <cell>F</cell>
+            <cell>T</cell>
+            <cell>T</cell>
+            <cell>T</cell>
+            <cell>T</cell>
+            <cell>T</cell>
+            <cell>T</cell>
+          </row>
+          <row>
+            <cell>F</cell>
+            <cell>T</cell>
+            <cell>F</cell>
+            <cell>T</cell>
+            <cell>T</cell>
+            <cell>T</cell>
+            <cell>T</cell>
+          </row>
+          <row>
+            <cell>F</cell>
+            <cell>F</cell>
+            <cell>T</cell>
+            <cell>T</cell>
+            <cell>F</cell>
+            <cell>T</cell>
+            <cell>T</cell>
+          </row>
+          <row>
+            <cell>F</cell>
+            <cell>F</cell>
+            <cell>F</cell>
+            <cell>T</cell>
+            <cell>T</cell>
+            <cell>T</cell>
+            <cell>T</cell>
+          </row>
+        </tabular>
+
+      <p>
+        The above is a perfectly reasonable way to show that the statement is always true. However, one can do the same just by a little reasoning; it also has the benefit of improving our understanding of the statement. We'll present the argument in
+        dot-point form:
+        <ul>
+          <li>The statement is an implication with hypothesis
+            <m>((P \implies R) \land (R \implies Q))</m>
+            and conclusion
+            <m>(P \implies Q)</m>. An implication is false when the hypothesis is true but the conclusion is false, and otherwise the implication is true.
+          </li>
+          <li>Since the conclusion, <m>(P\implies Q)</m>, is itself an implication, it can only be false when its hypothesis is true and its conclusion is false. So we must have
+            <m>P</m>
+            is true, but
+            <m>Q</m>
+            is false.</li>
+          <li>
+            <p>
+              In order for the hypothesis to be true, both implications,
+              <m>(P\implies R)</m>
+              and
+              <m>(R \implies Q)</m>, must be true (since a conjunction of two statements is only true when both statements are true).
+              <ul>
+                <li>Since
+                  <m>P</m>
+                  is true, and we require
+                  <m>(P\implies R)</m>
+                  to be true, we must have
+                  <m>R</m>
+                  is true.
+                </li>
+                <li>Since
+                  <m>Q</m>
+                  is false and we require
+                  <m>(R \implies Q)</m>
+                  to be true, we must have
+                  <m>R</m>
+                  is false.
+                </li>
+              </ul>
+              But since
+              <m>R</m>
+              is a statement it cannot be true and false at the same time.
+            </p>
+          </li>
+          <li>So there is now way for us to make the statement false. Since it is never false, it must always be true.</li>
+        </ul>
+      </p>
+
+      <p>
+        So back to the statement
+        <m>(P \implies Q)</m>. We'd like to show it is always true, but we cannot do it in one big leap. Instead, assume that we can make two smaller steps and prove that the two implications
+        <m>(P \implies R)</m>
+        and
+        <m>(R \implies Q)</m>
+        are always true. The conjunction of two implications,
+        <m>(P \implies R) \land (R \implies Q)</m>, is also true and is exactly the hypothesis in Result<nbsp/><xref ref="prop-chain-implication"/>. Since the implication in Result<nbsp/><xref ref="prop-chain-implication"/>
+        is always true and its hypothesis is true
+        <mdash/>
+        modus ponens
+        <mdash/>
+        its conclusion must be true.
+      </p>
+      <p>
+        So while we could try to prove
+        <m>(P \implies Q)</m>
+        is true in one big leap, it is sufficient to instead prove it is true in two smaller steps
+        <m>(P \implies R)</m>
+        and
+        <m>(R \implies Q)</m>. More generally when we prove
+        <m>(P \implies Q)</m>, we will instead prove a sequence of implications:
+        <md>
+          <mrow>
+            P &amp;\implies P_1 &amp; \text{and}
+          </mrow>
+          <mrow>
+            P_1 &amp; \implies P_2 &amp; \text{and}
+          </mrow>
+          <mrow>
+            P_2 &amp; \implies P_3 &amp; \text{and}&amp; \dots
+          </mrow>
+          <mrow>
+            &amp; \vdots
+          </mrow>
+          <mrow>
+            P_n &amp;\implies Q
+          </mrow>
+        </md>
+        where each of these intermediate implications is easier to prove.
+      </p>
+      <p>
+        Once we have done that, consider what happens if
+        <m>P</m>
+        is true or
+        <m>P</m>
+        is false:
+        <dl>
+          <li>
+            <title><m>P</m> is true</title>
+            <p>If
+              <m>P</m>
+              is true, the the first implication tells us
+              <m>P_1</m>
+              is true (modus ponens). Then since
+              <m>P_1</m>
+              is true, the next implication tells us
+              <m>P_2</m>
+              is true (again modus ponens). Since
+              <m>P_2</m>
+              is true,
+              <m>P_3</m>
+              is true,
+              <m>P_4</m>
+              is true, and so on until we can conclude
+              <m>Q</m>
+              is true. Since
+              <m>P</m>
+              is true and
+              <m>Q</m>
+              is true, the implication
+              <m>P \implies Q</m>
+              is true.
+            </p>
+          </li>
+          <li>
+            <title><m>P</m> is false</title>
+            <p>
+            On the other hand, if
+            <m>P</m>
+            is false then we know, just by looking at the implication truth-table, that the implication
+            <m>P \implies Q</m>
+            is true.
+          </p>
+          </li>
+        </dl>
+        Notice that when
+        <m>P</m>
+        is false, the fact that
+        <m>(P \implies Q)</m>
+        is true is immediate and simply relies on the truth-table of the implication; we don't have to do any work or any reasoning. On the other hand, when
+        <m>P</m>
+        is true, we do need to work to show that
+        <m>(P \implies Q)</m>
+        is true. For this reason almost all of our proofs will start with the
+        <em>assumption</em>
+        that
+        <m>P</m>
+        is true. We generally leave the case
+        <q>
+          <m>P</m>
+          is false</q>
+        unstated, assuming that our reader knows their truth-tables.
+      </p>
+
+    </subsection>
+
+  </section>
+  <section xml:id="sec-CCB">
+    <title>The converse, contrapositive and biconditional</title>
+    <p>
+      We really want to get to our first proofs, but we need to do a tiny bit more logic, and define a few terms, before we get there.
+      Consider the following thtree statements derived from implication <m>P \implies Q</m>.
+    </p>
+    <definition xml:id="def-converse-contrapositive">
+      <title>Contrapositive, converse and inverse</title>
+      <statement>
+        <p>
+          Let
+          <m>P</m>
+          and
+          <m>Q</m>
+          be statements, then:
+          <ul>
+            <li>
+              the statement
+              <m>(\neg Q) \implies (\neg P)</m>
+              is the
+              <term>contrapositive</term>,
+            </li>
+            <li>
+              the statement
+              <m>Q \implies P</m>
+              is the
+              <term>converse</term>, and
+            </li>
+            <li>
+              the statement
+              <m>(\neg P) \implies (\neg Q)</m>
+              is the
+              <term>inverse</term>
+            </li>
+          </ul>
+          of the implication
+          <m>P \implies Q</m>.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      The contrapositive and converse appear quite frequently in mathematical writing, but the inverse is rare (in this author's experience at least).
+      The truth-tables of the implication, contrapositive, converse and inverse are:
+    </p>
+
+      <tabular left="minor" right="minor" top="minor" bottom="minor" halign="center">
+        <row>
+          <cell> <m>P</m> </cell> <cell> <m>Q</m> </cell> <cell> <m>P \implies Q</m> </cell> <cell>
+          <m>\neg Q \implies \neg P</m> </cell> <cell> <m>Q \implies P</m> </cell><cell><m>\neg P \implies \neg Q</m></cell>
+        </row>
+        <row>
+          <cell> T </cell> <cell> T </cell> <cell> T </cell> <cell> T </cell><cell> T </cell><cell> T </cell>
+        </row>
+        <row>
+          <cell> T </cell> <cell> F </cell> <cell> F </cell> <cell> F </cell><cell> T </cell><cell>T</cell>
+        </row>
+        <row>
+          <cell> F </cell> <cell> T </cell> <cell> T </cell> <cell> T </cell> <cell> F </cell><cell>F</cell>
+        </row>
+        <row>
+          <cell> F </cell> <cell> F </cell> <cell> T </cell> <cell> T </cell> <cell> T </cell><cell>T</cell>
+        </row>
+      </tabular>
+
+    <p>
+      The above tables show that the original implication and the contrapositive have the exactly same truth tables, and that the converse and inverse have the same tables. However we also see that the original implication does not have the same table as the converse or inverse.
+      The inverse is not very commonly used, however the contrapositive and converse will be very useful for us as we continue.
+    </p>
+
+    <remark xml:id="rem-cci">
+      <title>Contraposition, conversion and inversion.</title>
+    <p>
+      Note that the act of forming the contrapositive of
+      <m>P\implies Q</m>
+      is <term>contraposition</term>. While forming the converse is (sometimes) called <term>conversion</term>, and forming the inverse is called <term>inversion</term>. Notice that the inversion is conversion of the contraposition of the implication.
+    </p>
+    </remark>
+    <aside>
+      <title>Doing it twice</title>
+      <p>
+        The inverse is also the contraposition of the conversion of the implication. The contraposition is also the inversion of the conversion. One could make a nice little table of the compositions of contraposition, conversion and inversion. Perhaps that is a good exercise.
+      </p>
+    </aside>
+
+    <p>
+      While the converse is useful for forming mathematical statements, it can also be  the source of bad logic (this is a good moment to go back and look at the warnings <xref ref="warn-atc"/> and <xref ref="warn-dta"/>). The statement
+    </p>
+
+      <blockquote>
+        <p>
+          If he is Shakespeare then he is dead.
+        </p>
+      </blockquote>
+
+      <p>
+        and its converse
+      </p>
+
+      <blockquote>
+        <p>
+          If he is dead then he is Shakespeare.
+        </p>
+      </blockquote>
+
+      <p>
+      definitely do not mean the same thing<fn>Not every dead person is Shakespeare <mdash /> ask any Elvis fan.</fn>.
+      However, the converse is often a source of interesting mathematics; once we have proved an implication, we should consider whether or not the converse is true. For example, we have already seen that
+    </p>
+      <blockquote>
+        <p>
+          If
+          <m>n</m>
+          is even then
+          <m>n^2</m>
+          is even
+        </p>
+      </blockquote>
+      <p> is true. It's converse is</p>
+
+      <blockquote>
+        <p>
+          If
+          <m>n^2</m>
+          is even then
+          <m>n</m>
+          is even
+        </p>
+      </blockquote>
+
+      <p>
+      is also true and will turn out to be quite useful later in the text.
+      </p>
+
+    <p>
+      The contrapositive can be extremely helpful
+      <mdash/>
+      it might be hard to prove the original implication, but much easier to prove the contrapositive. Consider the statement
+    </p>
+      <blockquote>
+        <p>
+          If
+          <m>n^2</m>
+          is odd then
+          <m>n</m>
+          is odd
+        </p>
+      </blockquote>
+    <p>
+      This, it turns out, is awkward to prove as it is stated. Its contrapositive, however, is
+    </p>
+      <blockquote>
+        <p>
+          If
+          <m>n</m>
+          is not odd then
+          <m>n^2</m>
+          is not odd.
+        </p>
+      </blockquote>
+      <p>
+      or equivalently (assuming we are only talking about integers<fn>Such assumptions happen quite frequently and the reader is often left to infer things from context. Writers do this, not just to be lazy, but so that the text flows and that one is not stating every single assumption in every single statement. That can make reading tedious, toilsome and tiring. Who doesn't like an alliteration.</fn> )
+    </p>
+      <blockquote>
+        <p>
+          If
+          <m>n</m>
+          is even then
+          <m>n^2</m>
+          is even
+        </p>
+      </blockquote>
+    <p>
+      which, even though we haven't written up the proof formally, we know is true. Since the truth-table of the contrapositive is identical to the original implcation, we now know that
+    </p>
+      <blockquote>
+        <p>
+          If
+          <m>n^2</m>
+          is odd then
+          <m>n</m>
+          is odd
+        </p>
+      </blockquote>
+      <p>
+      must also be true.
+    </p>
+
+    <p>Sometimes both an implication and its converse are true. That is
+      <md>
+        <mrow>
+          (P \implies Q)\land (Q\implies P)
+        </mrow>
+      </md>
+      This really means that whenever
+      <m>P</m>
+      is true, so is
+      <m>Q</m>, and whenever
+      <m>Q</m>
+      is true so is
+      <m>P</m>. It tells us that there is some sort of equivalence between what is expressed by
+      <m>P</m>
+      and
+      <m>Q</m>. We can rewrite the above statement using the symbol
+      <m>\iff</m>. It is our last connective and is called the
+      <q>biconditional</q>.
+    </p>
+    <definition xml:id="def-biconditional">
+      <title>The biconditional</title>
+      <statement>
+        <p>
+          Let
+          <m>P</m>
+          and
+          <m>Q</m>
+          be statements. The <term>biconditional</term>,
+          <m>P \iff Q</m>, read as
+          <q>
+            <m>P</m>
+            if and only if
+            <m>Q</m>
+          </q>, is true when
+          <m>P</m>
+          and
+          <m>Q</m>
+          have the same truth value and false when
+          <m>P</m>
+          and
+          <m>Q</m>
+          take different truth values.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      The biconditional
+      <m>P \iff Q</m>
+      is also sometimes written as
+      <ul>
+        <li>
+          <m>P</m>
+          iff
+          <m>Q</m>,
+        </li>
+        <li>
+          <m>P</m>
+          is equivalent to
+          <m>Q</m>, or
+        </li>
+        <li>
+          <m>P</m>
+          is a necessary and sufficient condition for
+          <m>Q</m>.
+        </li>
+      </ul>
+      Note that <q>iff</q> is still read as <q>if and only if</q> (and not as <q>ifffffffffff</q> with a long <q>f</q>-noise).
+    </p>
+
+      <remark>
+        <p>
+      We noted in the definition above, that
+      <m>P \iff Q</m>
+      is true when
+      <m>P,Q</m>
+      have the same truth-values and false when
+      <m>P,Q</m>
+      have different truth-values. This in turn means that
+      <m>P \iff Q</m>
+      has the same truth table as the statement
+      <m>(P \implies Q) \land (Q\implies P)</m>.
+    </p>
+
+      <tabular left="minor" right="minor" top="minor" bottom="minor" halign="center">
+        <row>
+          <cell>
+            <m>P</m>
+          </cell>
+          <cell>
+            <m>Q</m>
+          </cell>
+          <cell>
+            <m>P \iff Q</m>
+          </cell>
+          <cell>
+            <m>P\implies Q</m>
+          </cell>
+          <cell>
+            <m>Q\implies P</m>
+          </cell>
+          <cell>
+            <m>(P\implies Q) \land (Q\implies P)</m>
+          </cell>
+        </row>
+        <row>
+          <cell>T
+          </cell>
+          <cell>
+            T
+          </cell>
+          <cell>
+            T
+          </cell>
+          <cell>
+            T
+          </cell>
+          <cell>
+            T
+          </cell>
+          <cell>
+            T</cell>
+        </row>
+        <row>
+          <cell>
+            T
+          </cell>
+          <cell>
+            F
+          </cell>
+          <cell>
+            F
+          </cell>
+          <cell>
+            F
+          </cell>
+          <cell>
+            T
+          </cell>
+          <cell>
+            F</cell>
+        </row>
+        <row>
+          <cell>
+            F
+          </cell>
+          <cell>
+            T
+          </cell>
+          <cell>
+            F
+          </cell>
+          <cell>
+            T
+          </cell>
+          <cell>
+            F
+          </cell>
+          <cell>
+            F
+          </cell>
+        </row>
+        <row>
+          <cell>
+            F
+          </cell>
+          <cell>
+            F
+          </cell>
+          <cell>
+            T
+          </cell>
+          <cell>
+            T
+          </cell>
+          <cell>
+            T
+          </cell>
+          <cell>
+            T
+          </cell>
+        </row>
+      </tabular>
+
+  </remark>
+
+    <p>
+      One of the first biconditional statements that we'll prove is
+    </p>
+      <blockquote>
+        <p>
+          <m>n^2</m>
+          is odd if and only if
+          <m>n</m>
+          is odd.
+        </p>
+      </blockquote>
+    <p>
+      but we have to walk before we run, so armed with all this logic this lets get on to our first proofs. After that we'll come back to logic.
+    </p>
+  </section>
+
+  <xi:include href="../problems/02ex.ptx"/>
+
+</chapter>

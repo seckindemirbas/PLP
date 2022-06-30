@@ -1,0 +1,41 @@
+<exercise>
+<!-- source latex = 'an even integer is 4k or 4k+2 question.tex' -->
+<!-- converted on 05/07/2021 at 11:06 -->
+<statement>
+<p>
+Prove that if <m>n</m> is an even integer then <m>n=4k</m> or <m>n=4k+2</m> for some integer <m>k</m>.
+</p>
+</statement>
+<answer>
+<p>
+We see that this is a conditional statement. This means that we can assume the hypothesis and then we try to show the conclusion. Hence, we assume that <m>n=2k</m> for some <m>k\in\mathbb Z</m>, and show that <m>n=4m</m> or <m>n=4m+2</m> for some <m>m\in\mathbb Z</m>. However, when we wrote <m>n=2k</m> for some <m>k\in\mathbb Z</m>, we have extracted all the information from our assumption and we still need more to finish the proof.
+</p>
+<p>
+Proof by cases is a very useful tool in stuations like these since it creates extra structure for us to work with.
+</p>
+<p>
+In this question, if we pay a little closer attention to the conclusion of the statement, we see that we want to show is <m>n=4m=2(2m)</m> or <m>n=2(2m+1)</m> for some <m>m\in\mathbb Z</m>. Moreover, since <m>k\in\mathbb Z</m>, we know that <m>k=2m</m> or <m>k=2m+1</m> for some <m>m\in\mathbb Z</m>, which suggests that we can use cases to finish the proof. 
+</p>
+</answer>
+<solution>
+<proof><p>
+ Assume <m>n</m> is an even integer. Then we see <m>n=2a</m> for some <m>a\in\mathbb Z</m>. Since <m>a\in\mathbb Z</m> we see that <m>a</m> is either even or odd.
+<ul>
+<li>
+<p>
+ <em>Case 1:</em> Assume <m>a</m> is even. So in this case, we see that <m>a=2m</m> for some <m>m\in\mathbb Z</m>. Thus, <m>n=2a=2(2m)=4m</m> for some integer <m>m</m>.
+</p>
+</li>
+<li>
+<p>
+ <em>Case 2:</em> Now assume that <m>a</m> is odd. We see that <m>a=2t+1</m> for some <m>t\in\mathbb Z</m>.Thus, <m>n=2a=2(2t+1)=4t+2</m> for some integer <m>t</m>.
+</p></li>
+</ul>
+</p>
+<p>
+Therefore, if <m>n</m> is an even integer than <m>n=4k</m> or <m>n=4k+2</m> for some integer <m>k</m>.
+</p>
+</proof>
+
+</solution>
+</exercise>

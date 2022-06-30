@@ -1,0 +1,156 @@
+<exercise>
+<!-- source latex = 'write sets in set builder notation question.tex' -->
+<!-- converted on 05/07/2021 at 10:00 -->
+<statement>
+<p>
+We are going to write the following sets in set builder notation.
+</p>
+
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ <m>A=\set{5,10,15,20,25,\ldots}</m>.
+</p></li>
+<li>
+<p>
+ <m>B=\set{ 10,11,12,13,\ldots,98,99,100 }</m>.
+</p></li>
+<li>
+<p>
+ <m>C=\set{0,3,8,15,24,35,..}</m>.
+</p></li>
+<li>
+<p>
+ <m>D=\set{ \ldots, -\frac{3}{10},-\frac{2}{5}, -\frac{1}{2}, 0,\frac{1}{2}, \frac{2}{5}, \frac{3}{10}, \frac{4}{17},\ldots }</m>.
+</p></li>
+<li>
+<p>
+ <m>E=\set{2,4,16,256,65536,4294967296,\ldots}</m>.
+</p></li>
+<li>
+<p>
+ <m>F=\set{2,3,4,6,8,9,12,16,18,24,27,32,36,\ldots }</m>.
+</p>
+
+</li>
+</ol>
+</p>
+</statement>
+<hint>
+<p>
+<ol marker="(a)">
+<li>No hint.
+</li>
+<li>No hint.
+</li>
+<li>
+<p>
+ The elements of the set are close to other numbers that may be easier to find connection between.
+</p></li>
+<li>
+<p>
+ Can you see a connection between the numerators and the denominators? The previous question may give you a hint.
+</p></li>
+<li>
+<p>
+ What do the elements have in common?
+</p></li>
+<li>
+<p>
+ What do the elements have in common?
+</p>
+
+</li>
+</ol>
+</p>
+</hint>
+
+<answer>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ We see that this set is the set of positive multiples of <m>5</m>, or the set of all natural numbers that are muptiples of <m>5</m>. Therefore we can write this set <m>A=\set{5n\st n\in\mathbb{N}}</m>, or <m>A=\set{n\in\mathbb N\st n=5m \text{ for some } m\in\mathbb{N}}</m>.
+</p>
+<p>
+We can also use different representations for this set (for any set really), but keeping our definition for the set accurate and concise makes it easier to understand and use.
+</p>
+</li>
+<li>
+<p>
+ We see that <m>B</m> is the set of all natural numbers from <m>10</m> to <m>100</m>, inclusive.
+</p>
+<p>
+Therefore we can write this set as <m>B=\set{n\in\mathbb N\st 10\leq n\leq 100}</m> or, equivalently, <m>B=\set{n\in\mathbb Z\st 10\leq n\leq 100}</m>.
+</p>
+</li>
+<li>
+<p>
+
+Even though it may seem like there is not a connection between the elements of this set. We see that the elements are all <m>1</m> away from the square of a natural  number.
+</p>
+<p>
+Therefore we can write this set as <m>C=\set{n\in\mathbb N \st n=m^2-1 \text{ for some } m\in\mathbb N}</m>, or, equivalently,  <m>C=\set{n^2-1\st n\in\mathbb N}</m>.
+</p>
+</li>
+<li>
+<p>
+ We see that the elements of this set are fractions. So, to understand how we can write this set in set builder notation, we can try to find a connection between the numerator and the denominator of the elements of the set. Indeed, we see that <m>5=2^2+1</m>, <m>10=3^2+1</m>, <m>17=4^2+1</m>, etc..
+</p>
+<p>
+Therefore, we can write the set as <m>D=\set{\frac{m}{m^2+1} \st m \in \mathbb Z}</m>.
+</p>
+</li>
+<li>
+<p>
+ In this set we see that we only have natural numbers. We also see that all the elements of the set are powers of <m>2</m> (even though the fact <m>65535=2^{16}</m> may not be common knowledge, it is easy to check once we the `hunch' it may be). But, we also see that not all the powers of <m>2</m> are in the set. For example <m>32=2^5</m> is not in the set. So, if we write the set as powers of <m>2</m>, we see <m>E=\set{2^1, 2^2, 2^4, 2^8, 2^{16}, \ldots}</m>. This suggests that the powers themselves are also powers of <m>2</m>.
+</p>
+<p>
+Thus, we can write this set as <m>E=\set{n\in\mathbb{N}\st n=2^{(2^k)} \text{ for some nonnegative integer } k}</m>.
+</p>
+</li>
+<li>
+<p>
+ In this example, we see that every element of the set is a natural number and also divisible by <m>2</m> or <m>3</m>. This may suggest we write the set as <m>F=\set{n\in\mathbb N\st n=2k \text{ or } n=3k \text{ for some } k\in\mathbb N}</m>. However, we see that this is not the right definition since we know that <m>2</m> divides <m>10</m>, but <m>10</m> is not in the set. So we realise that this is the set of all natural numbers that are only divisible by <m>2</m> or <m>3</m>.
+</p>
+<p>
+Therefore we can write this set as <m>F=\set{2^a 3^b \st (a,b \in \mathbb Z), (a,b \geq 0), \text{ and }(a+b\neq 0)}</m>. Here, we are taking <m>a+b\neq 0</m> so that <m>a,b</m> are not both <m>0</m>, since <m>1\notin F</m>.
+</p>
+
+</li>
+</ol>
+</p>
+</answer>
+<solution>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ <m>A=\set{5n\st n\in\mathbb{N}}</m>
+  </p></li>
+<li>
+<p>
+ <m>B=\set{n\in\mathbb N\st 10\leq n\leq 100}</m>
+  </p></li>
+<li>
+<p>
+ <m>C=\set{n^2-1\st n\in\mathbb N}</m>
+  </p></li>
+<li>
+<p>
+ <m>D=\set{\frac{m}{m^2+1} \st m \in \mathbb Z}</m>
+  </p></li>
+<li>
+<p>
+ <m>E=\set{n\in\mathbb{N}\st n=2^{(2^k)} \text{ for some nonnegative integer } k}</m>
+  </p></li>
+<li>
+<p>
+ <m>F=\set{2^a 3^b \st (a,b \in \mathbb Z), (a,b \geq 0), \text{ and }(a+b\neq 0)}</m>
+</p>
+</li>
+</ol>
+</p>
+</solution>
+</exercise>

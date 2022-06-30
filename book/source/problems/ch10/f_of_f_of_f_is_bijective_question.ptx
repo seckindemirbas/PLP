@@ -1,0 +1,105 @@
+<exercise>
+<!-- source latex = 'f of f of f is bijective question.tex' -->
+<!-- converted on 07/12/2021 at 12:07 -->
+<statement>
+<p>
+The following question concerns the triple composition of a function.
+<ol marker="(a)">
+<li>
+<p>
+ Let <m>A</m> be a non-empty set and let <m>g:A \to A</m> be a function that satisfies <m>g\circ g\circ g=i_A</m>, where <m>i_A</m> is the identity function on the set <m>A</m>. Prove that <m>g</m> must be bijective.
+</p>
+</li>
+<li>
+<p>
+ Let <m>A=\mathbb R -\{0,1\}</m> and let <m>f:A\to A</m> be defined by <m>f(x)=1-\frac{1}{x}</m>.  Show that <m>f\circ f\circ f = i_A</m> .
+</p>
+</li>
+<li>
+<p>
+ Use part (a) to conclude that <m>f</m> is bijective and determine its inverse function <m>f^{-1}</m>.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<hint>
+<p>
+Make good use of the fact that
+<me>
+  g(g(g(x))) = (g \circ g)(  g(x) ) = i_A(x)= x.
+</me>
+</p>
+</hint>
+
+<!-- <answer> </answer> -->
+
+<solution>
+
+  <proof><title>Proof of (a)</title>
+<p>
+ Let <m>B</m> a set and assume that <m>g:A\to A</m> satisfies the condition <m>g\circ g\circ g=i_A</m>. We need to show that <m>g</m> is injective and surjective.
+</p>
+<p>
+<ul>
+<li>
+<p>
+ <em>Injective:</em> Let <m>x,y\in A</m> so that <m>g(x)=g(y)</m>. Since <m>g</m> is a function, this implies that <m>g( g(x) ) = g( g(y) )</m>. Applying <m>g</m> again gives <m>g( g( g(x) ) ) = g( g( g(y)))</m>, that is <m>(g \circ g \circ g)(x) = (g\circ g\circ g)(y)</m>. But, since <m>g\circ g\circ g=i_A</m>, the above implies that <m>i_A(x) = i_A(y)</m> and so <m>x=y</m>.
+Therefore <m>g</m> is injective.
+</p></li>
+<li>
+<p>
+<em>Surjective</em>: Let <m>b\in A</m>. The,n since <m>g\circ g\circ g=i_A</m>, we get <m>g\circ g\circ g(b)=b</m>. Therefore, if we set <m>a = (g\circ g)(b) \in A</m>, we have <m>g(a)=b</m>. Hence, <m>g</m> is surjective.
+</p></li>
+</ul>
+Therefore, we see that <m>g</m> is bijective.
+</p>
+  </proof>
+
+ <proof><title>Proof of (b)</title>
+<p>
+ This requires some careful algebraic manipulations. Start by computing and simplifying <m>(f\circ f)(x)</m>
+<md>
+<mrow>
+  f(f(x))  \amp = 1 - \dfrac{1}{1-\frac{1}{x}}
+</mrow><mrow>
+   \amp = 1 - \frac{x}{x-1} = \frac{x-1-x}{x-1}
+</mrow><mrow>
+   \amp  = \frac{-1}{x-1} = \frac{1}{1-x}
+</mrow>
+</md>
+Then use this to compute <m> (f\circ f \circ f)(x)</m>:
+<md>
+<mrow>
+  (f\circ f \circ f)(x) = f( (f\circ f)(x) )  \amp = 1 - \dfrac{1}{\frac{1}{x-1}}
+</mrow><mrow>
+   \amp = 1 - \frac{x-1}{1} = x
+</mrow>
+</md>
+as required. Thus <m>f\circ f \circ f = i_A</m> as required.
+</p>
+ </proof>
+
+<proof><title>Proof of (c)</title>
+<p>
+ The result from (a), implies that <m>f</m> is bijective. We can compute the inverse in two ways. First, observe that since  <m>f\circ f \circ f</m> is the identity
+function, it follows that <m>\forall x\in A</m>, we have <m> (f \circ f)(x) =f^{-1}(x)= \frac{1}{1-x}</m> as calculated in part (b).
+</p>
+<p>
+We could also solve for <m>f^{-1}</m> directly. Namely, if <m>f^{-1}(x)=y</m>, then we have
+<md>
+<mrow>
+  x  \amp = f(y) = 1 - \frac{1}{y}
+</mrow><mrow>
+  xy  \amp = y-1
+</mrow><mrow>
+  xy-y  \amp = -1
+</mrow>
+</md>
+from which we can conclude that
+ <me> y = f^{-1}(x) = \frac{1}{1-x}.</me>
+</p>
+</proof>
+
+</solution>
+</exercise>

@@ -1,0 +1,45 @@
+<exercise>
+<!-- source latex = 'Biconditional question where two divides n to the four minus seven.tex' -->
+<!-- converted on 30/06/2021 at 14:02 -->
+<statement>
+<p>
+Let <m>n\in\mathbb Z</m>. Show that <m>2\mid (n^4-7)</m> if and only if <m>4\mid (n^2+3)</m>.
+</p>
+</statement>
+<hint>
+<p>
+Think carefully about the parity of <m>n</m>.
+</p>
+</hint>
+<answer>
+<p>
+Since this is a biconditional statement, we need to prove the implication in both direction. That is we must prove
+<md>
+<mrow>
+ \big(2\mid (n^4-7)\big)  \amp \implies \big(4\mid (n^2+3)\big).
+  \amp  \text{and}  \amp  \amp
+ \big(4\mid (n^2+3)\big)  \amp \implies  \big(2\mid (n^4-7)\big)
+</mrow>
+</md>
+We'll prove each implication in turn.
+</p>
+</answer>
+<solution>
+<proof><p>
+Let <m>n\in\mathbb{Z}</m>. We prove each implication in turn.
+<ul>
+<li>
+<p>
+  <m>(\Rightarrow)</m>: Assume that <m>2\mid (n^4-7)</m>. Then we see that <m>n^4-7=2k</m> for some <m>k\in\mathbb{Z}</m>. Thus, we see that <m>n^4=2(k+3)+1</m>. Since <m>(2k+3)\in\mathbb{Z}</m>, we see that <m>n^4</m> is odd. Since the square of an even number is even and <m>n^4=n^2n^2</m>, we see that <m>n^2</m> is odd. Similarly, we see that <m>n</m> is odd. Thus <m>n=2m+1</m> for some <m>m\in\mathbb{Z}</m>. Hence, <m>n^2+3=(4m^2+4m+1)+3=4(m^2+m+1)</m> and since <m>(m^2+m+1)\in\mathbb{Z}</m>, we see that <m>4\mid (n^2+3)</m>.
+</p>
+</li>
+<li>
+<p>
+ <m>(\Leftarrow)</m>: Assume that <m>4\mid (n^2+3)</m>. Then we see that <m>n^2+3=4k</m> for some <m>k\in\mathbb{Z}</m>. Thus, we see that <m>n^2=2(2k-2)+1</m>. Since <m>(2k-2)\in\mathbb{Z}</m>, we see that <m>n^2</m> is odd. Moreover, since the product of two odd numbers is odd, we see that <m>n^4=n^2n^2</m> is odd. Thus <m>n^4=2m+1</m> for some <m>m\in\mathbb{Z}</m>. Hence, <m>n^4-7=2m-6=2(m-3)</m> and since <m>(m-3)\in\mathbb{Z}</m>, we see that <m>2\mid (n^4-7)</m>.
+</p></li>
+</ul>
+Since both implications are true, the biconditional holds.
+</p></proof>
+
+</solution>
+</exercise>

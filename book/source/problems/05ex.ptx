@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<exercises xmlns:xi="http://www.w3.org/2001/XInclude">
+
+<xi:include href="ch05/n_square_plus_4n_plus_5_is_odd_implies_n_is_even_question.ptx"/>
+<xi:include href="ch05/contra_divisibility.ptx"/>
+<xi:include href="ch05/if_5_or_2_doesnt_divide_n_then_10_doesnt_either_question.ptx"/>
+<xi:include href="ch05/if_n_is_not_1_or_2_then_it_cannot_divide_m_and_m_plus_2_at_the_same_time_question.ptx"/>
+<xi:include href="ch05/if_m_square_plus_n_square_is_even_then_n_and_m_have_the_same_parity_question.ptx"/>
+<xi:include href="ch05/contra_inequality.ptx"/>
+<xi:include href="ch05/Consecutive_addition.ptx"/>
+<xi:include href="ch05/an_even_integer_is_4k_or_4k+2_question.ptx"/>
+<xi:include href="ch05/Biconditional_question_where_two_divides_n_to_the_four_minus_seven.ptx"/>
+<xi:include href="ch05/3_divides_5a_iff_3_divides_a_question.ptx"/>
+<xi:include href="ch05/proofbycases_divby4.ptx"/>
+<xi:include href="ch05/x_plus_y_odd.ptx"/>
+<xi:include href="ch05/if_3_divides_n_square_plus_4n_plus_1_then_it_is_1_mod_3_question.ptx"/>
+<xi:include href="ch05/if_5_does_not_divide_m_then_m_square_is_1_or_minus_1_mod_5_question.ptx"/>
+<xi:include href="ch05/Division_by_3.ptx"/>
+<xi:include href="ch05/n_cube_plus_n_plus_1_cube_plus_n_plus_2_cube_is_divisible_by_9_question.ptx"/>
+<xi:include href="ch05/proof_by_cases_question_little_Fermat_for_5.ptx"/>
+<xi:include href="ch05/triangle_inequality_result_using_cases_question.ptx"/>
+<xi:include href="ch05/abs_val_question.ptx"/>
+<xi:include href="ch05/abs_val_question2.ptx"/>
+<xi:include href="ch05/Reverse_triangle_inequality.ptx"/>
+<xi:include href="ch05/1overx_decreasing.ptx"/>
+
+  <!-- <xi:include href="ch05/"/> -->
+
+</exercises>

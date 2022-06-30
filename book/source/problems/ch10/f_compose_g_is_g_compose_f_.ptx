@@ -1,0 +1,79 @@
+<exercise>
+<!-- source latex = 'f compose g is g compose f .tex' -->
+<!-- converted on 19/11/2021 at 11:28 -->
+<statement>
+<p>
+Consider the following functions and their compositions.
+<ol marker="(a)">
+<li>
+<p>
+ Let <m>f:\mathbb{R}\to \mathbb{R}</m> be defined by <m>f(x)=x+1</m>. Does there exist a function <m>g:\mathbb{R}\to \mathbb{R}</m> such that <m>(f\circ g )(x) = (g\circ f)(x)</m> for every <m>x\in \mathbb{R}</m>?
+    </p></li>
+<li>
+<p>
+ Let <m>f:\mathbb{R}\to \mathbb{R}</m> be defined by <m>f(x)=c</m> for some <m>c\in \mathbb{R}</m> (i.e. <m>f</m> is a constant function). Which functions <m>g:\mathbb{R}\to \mathbb{R}</m> have the property <m>(f\circ g) (x) = (g\circ f)(x)</m> for every <m>x\in \mathbb{R}</m>?
+    </p></li>
+<li>
+<p>
+ Let <m>f:\mathbb{R}\to \mathbb{R}</m>. Suppose <m>(f\circ g)(x) = (g\circ f)(x)</m> for every <m>x\in \mathbb{R}</m> and for every function <m>g:\mathbb{R}\to \mathbb{R}</m>. Show that <m>f(x) = x</m>.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<hint>
+<p>
+Your observations from part (b) can be helpful in solving part (c).
+</p>
+</hint>
+<solution>
+<proof><title>Proof of (a)</title>
+<p>  
+<em>Claim:</em> There exists a suitable function <m>g</m>
+</p>
+ 
+<p>
+  Consider <m>g(x)=x</m>. Then
+  <me>(f \circ g )(x) = f(g(x)) = f(x) = x+1.</me>
+  And on the other hand,
+  <me>(g\circ f(x) )= g(f(x)) = g(x+1) = x+1.</me>
+  Thus, <m>f\circ g = g\circ f</m>, as desired.
+</p></proof>
+
+
+<proof><title>Proof of (b)</title>
+<p>
+ <em>Claim:</em>  <m>g</m> can be any function such that <m>g(c)=c</m>.
+</p>
+<p>
+    Notice that <m>(f\circ g)(x) = f(g(x))=c</m>, since <m>f</m> is a constant function. Then in order for <m>(f\circ g)(x) = (g \circ f)(x)</m> for every <m>x\in \mathbb{R},</m>
+    <me>c= (g\circ f)(x) = g(f(x))=g(c).</me>
+    Hence, we require that <m>g(c)=c</m>. There are no other conditions on the function <m>g</m>.
+</p>
+</proof>
+
+
+<proof><title>Proof of (c)</title>
+<p>
+    Since the statement
+    <me>(f\circ g)(x) = (g\circ f)(x) \tag{1}</me>
+    must be true for any <m>x\in \mathbb{R}</m>, and any function <m>g:\mathbb{R}\to \mathbb{R}</m>, we begin by examining the restrictions placed on <m>f</m> when <m>g</m> is a constant function.
+</p>
+<p>
+    Fix <m>c\in \mathbb{R}</m> and define the function <m>g_c:\mathbb{R}\to \mathbb{R}</m> by <m>g_c(x) = c</m>. By assumption, the statement <m>(f\circ g_c)(x) = (g_c\circ f)(x)</m> must hold. Applying part (b), we see that we must have <m>f(c)=c</m>.
+</p>
+<p>
+    Moreover, since the choice of <m>c\in \mathbb{R}</m> was arbitrary and <m>(f\circ g_c)(x) = (g_c\circ f)(x)</m> must hold for every <m>c\in \mathbb{R}</m>, we know that <m>f(c)=c</m> for every <m>c\in \mathbb{R}</m>. This tells us that the function <m>f(x)=x</m> is the only function which could possibly satisfy (1).
+</p>
+<p>
+    It remains to check that (1) holds for the function <m>f(x)=x</m>. Working with the left hand side, we see
+    <me>(f\circ g)(x) = f(g(x)) = g(x)</me>
+    Where <m>f(g(x)) = g(x)</m> by the definition of <m>f</m>. On the other hand,
+    <me>(g\circ f)(x) = g(f(x)) = g(x)</me>
+    Where we obtain the second equality using the fact that <m>f(x)=x</m>. Therefore,
+    <me>(f\circ g)(x) = g(x) = (g\circ f)(x),</me>
+    and we conclude that <m>f(x)=x</m> is the only solution to (1).
+</p></proof>
+
+</solution>
+</exercise>

@@ -1,0 +1,145 @@
+<exercise>
+<!-- source latex = 'truth_table_question2.tex' -->
+<!-- converted on 23/06/2021 at 20:59 -->
+<statement>
+<p>
+Let <m>P</m> and <m>Q</m> be statements. Write out the truth tables for
+<ol marker="(a)">
+<li>
+<p>
+ <m> (\neg P)\implies Q </m>
+</p></li>
+<li>
+<p>
+ <m> (P\land Q)\lor \big((\neg P)\implies Q \big) </m>
+</p></li>
+<li>
+<p>
+ <m> P\land (\neg P)</m>
+</p></li>
+<li>
+<p>
+ <m> P\lor (\neg P)</m>
+</p></li>
+<li>
+<p>
+ <m> (P\implies Q) \iff (Q\implies P) </m>
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ We can refer to the truth table for the implication, except this time the hypothesis is <m>\neg P</m> rather than <m>P</m>.
+</p>
+<tabular left="minor" right="minor" top="minor" bottom="minor" halign="center">
+<row>
+<cell>
+<m>P</m>  </cell><cell>  <m>Q</m>  </cell><cell>  <m>\neg P</m>  </cell><cell>  <m>(\neg P)\implies Q</m></cell>
+</row><row>
+<cell>
+T  </cell><cell>  T  </cell><cell>  F  </cell><cell>  T</cell>
+</row><row>
+<cell>
+T  </cell><cell>  F  </cell><cell>  F  </cell><cell>  T</cell>
+</row><row>
+<cell>
+F  </cell><cell>  T  </cell><cell>  T  </cell><cell>  T</cell>
+</row><row>
+<cell>
+F  </cell><cell>  F  </cell><cell>  T  </cell><cell>  F</cell>
+</row>
+</tabular>
+</li>
+<li>
+<p>
+ We can use the truth table from part (a) to help figure out the new truth table.
+</p>
+
+<tabular left="minor" right="minor" top="minor" bottom="minor" halign="center">
+<row>
+<cell>
+<m>P</m>  </cell><cell>  <m>Q</m>  </cell><cell>   <m>(\neg P)\implies Q</m>  </cell><cell>  <m>P\land Q</m>  </cell><cell>  <m>(P\land Q)\lor \big((\neg P)\implies Q \big)</m></cell>
+</row><row>
+<cell>
+T  </cell><cell>  T   </cell><cell>  T  </cell><cell>  T  </cell><cell>  T</cell>
+</row><row>
+<cell>
+T  </cell><cell>  F   </cell><cell>  T  </cell><cell>  F  </cell><cell>  T</cell>
+</row><row>
+<cell>
+F  </cell><cell>  T   </cell><cell>  T  </cell><cell>  F  </cell><cell>  T</cell>
+</row><row>
+<cell>
+F  </cell><cell>  F   </cell><cell>  F  </cell><cell>  F  </cell><cell>  F</cell>
+</row>
+</tabular>
+</li>
+<li>
+<p>
+ From the truth table, we see that <m>P\land (\neg P)</m> is always false.
+</p>
+<tabular left="minor" right="minor" top="minor" bottom="minor" halign="center"><row>
+<cell>
+<m>P</m>  </cell><cell>   <m>\neg P</m>  </cell><cell>  <m>P\land (\neg P) </m></cell>
+</row><row>
+<cell>
+T  </cell><cell>  F  </cell><cell>  F</cell>
+</row><row>
+<cell>
+F  </cell><cell>  T  </cell><cell>  F</cell>
+</row>
+</tabular>
+
+</li>
+<li>
+<p>
+ From the truth table, we see that <m>P\lor (\neg P)</m> is always true.
+</p>
+
+<tabular left="minor" right="minor" top="minor" bottom="minor" halign="center">
+<row>
+<cell>
+<m>P</m>  </cell><cell>   <m>\neg P</m>  </cell><cell>  <m>P\lor (\neg P) </m></cell>
+</row><row>
+<cell>
+T  </cell><cell>  F  </cell><cell>  T</cell>
+</row><row>
+<cell>
+F  </cell><cell>  T  </cell><cell>  T</cell>
+</row>
+</tabular>
+
+</li>
+<li>
+<p>
+ From the truth table, we see that <m> (P\implies Q) \iff (Q\implies P) </m> is true only when <m>P</m> and <m>Q</m> have the same truth value.
+</p>
+<tabular left="minor" right="minor" top="minor" bottom="minor" halign="center">
+<row>
+<cell>
+<m>P</m>  </cell><cell>  <m>Q</m>  </cell><cell>   <m>P\implies Q</m>  </cell><cell>  <m>Q\implies P</m>  </cell><cell>  <m> (P\implies Q) \iff (Q\implies P) </m></cell>
+</row><row>
+<cell>
+T  </cell><cell>  T   </cell><cell>  T  </cell><cell>  T  </cell><cell>  T</cell>
+</row><row>
+<cell>
+T  </cell><cell>  F   </cell><cell>  F  </cell><cell>  T  </cell><cell>  F</cell>
+</row><row>
+<cell>
+F  </cell><cell>  T   </cell><cell>  T  </cell><cell>  F  </cell><cell>  F</cell>
+</row><row>
+<cell>
+F  </cell><cell>  F   </cell><cell>  T  </cell><cell>  T  </cell><cell>  T</cell>
+</row>
+</tabular>
+
+</li>
+</ol>
+</p>
+</solution>
+</exercise>

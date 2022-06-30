@@ -1,0 +1,70 @@
+<exercise>
+<!-- source latex = 'sum_prod_irrationals.tex' -->
+<!-- converted on 06/02/2022 at 13:48 -->
+<statement>
+<p>
+Consider the following statements about preserving irrationality under addition and multiplication.
+<ol marker="(a)">
+<li>
+<p>
+ Consider the following faulty proof of the statement, <q>If <m>x,y\in\mathbb{R}</m> are irrational, then <m>xy</m> is irrational.</q>
+</p>
+
+<proof><title>Faulty proof</title>
+<p>
+Let <m>x,y\in\mathbb{R}</m> be irrational. Then there are no <m>m,n,p,q\in\mathbb{Z}</m> such that <m>x=m/n</m> and <m>y=p/q</m>.
+Hence for any <m>m,n,p,q\in\mathbb{Z}</m>,
+<me> xy \neq \frac{mp}{nq}. </me>
+Since <m>mp,nq\in\mathbb{Z}</m>, we see that <m>xy</m> cannot be written as a fraction, and so <m>xy</m> is irrational.
+</p>
+</proof>
+
+<p>
+Show by counterexample that the statement above is false.
+</p>
+</li>
+<li>
+<p>
+ Prove or disprove the following statement: If <m>x,y\in\mathbb{R}</m> are irrational, then <m>x+y</m> is irrational.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+
+<answer>
+  <p>
+<ol marker="(a)">
+<li>
+<p>
+ We have to be careful when dealing with the not equal signs, because the property of being not equal is not transitive. It can be very easy to reach faulty conclusions. For example it is certainly <em>not</em> the case that <m>2 \neq -2</m> implies that <m> (2)^2 \neq (-2)^2</m>.
+</p>
+<p>
+In the same way, the statement that <m>x\neq m/n</m> for all <m>m,n\in\mathbb{Z}</m> and <m>y\neq p/q</m> for all <m>p,q\in\mathbb{Z}</m> does not imply that <m>xy\neq (mp)/(nq)</m> for all <m>m,p,n,q\in\mathbb{Z}</m>.
+This statement isn't true because we can factor an integer into irrational components; for example, we can write <m>2=\sqrt{2}\cdot\sqrt{2}</m>.
+</p>
+</li>
+</ol>
+  </p>
+</answer>
+
+<solution>
+<proof><title>Disproof of (a)</title>
+<p>
+As a counter example take <m>x=y=\sqrt{2}</m>, which is irrational, so <m>x\neq m/n</m> and <m>y\neq p/q</m> for any integers <m>m,n,p,q</m>.
+But <m>xy=2</m>, and we can write <m>2</m> in the form <m>(mp)/(nq)</m>, by taking, for example <m>m=2</m> and <m>n=p=q=1</m>.
+</p>
+</proof>
+
+<p>
+ The statement in (b) is false.
+</p>
+<proof><title>Disproof of (b)</title>
+<p>
+For a counterexample, we know that <m>\sqrt{2}</m> is irrational. Then <m>-\sqrt{2}</m> is irrational as well.
+Indeed, if this were not the case, we could write <m>-\sqrt{2}=m/n</m> for some <m>m,n\in\mathbb{Z}</m>, <m>n\neq0</m>. But then <m>\sqrt{2}=(-m)/n</m> for <m>-m,n\in\mathbb{Z}</m>, <m>n\neq0</m>, contradicting that <m>\sqrt{2}</m> is irrational.
+But <m>\sqrt{2}+(-\sqrt{2})=0</m> is rational.
+</p>
+</proof>
+</solution>
+</exercise>

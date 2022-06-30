@@ -1,0 +1,274 @@
+<exercise>
+<!-- source latex = 'Function composition.tex' -->
+<!-- converted on 19/11/2021 at 11:23 -->
+<statement>
+<p>
+Let <m>f,g</m>, and <m>h</m> be functions from <m>\mathbb{R}\to \mathbb{R}</m>. We define the following operations on functions:
+<ul>
+<li>
+<p>
+ Function addition: <m>\left(f+g\right)(x) = f(x)+g(x)</m>
+    </p></li>
+<li>
+<p>
+ Function division: <m>\left(\frac{f}{g}\right)(x) = \frac{f(x)}{g(x)}</m>
+    </p></li>
+<li>
+<p>
+ Function composition: <m>\left(f\circ g\right)(x) = f(g(x))</m>
+</p></li>
+</ul>
+Note that under this definition, <m>\left(\frac{1}{f}\right)(x) = \frac{1}{f(x)}</m>. This is NOT the inverse of <m>f(x)</m>.
+</p>
+
+
+<p>
+Prove or give a counterexample to the following statements:
+<ol marker="(a)">
+<li>
+<p>
+ <m>f\circ (g+h)= f\circ g + f\circ h</m> for every <m>x\in \mathbb{R}</m>.
+    </p></li>
+<li>
+<p>
+ <m>(g+h)\circ f = g\circ f + h\circ f</m> for every <m>x\in \mathbb{R}</m>.
+    </p></li>
+<li>
+<p>
+ <m>\frac{1}{f\circ g} = \frac{1}{f}\circ g</m> for every <m>x\in \mathbb{R}</m>.
+    </p></li>
+<li>
+<p>
+ <m>\frac{1}{f\circ g} = f \circ \frac{1}{g}</m> for every <m>x\in \mathbb{R}</m>.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<hint>
+<p>
+To show that two functions with same domains and codomains are different, it suffices to show that there is a single point at which they differ. To show that they are the same, you must show they are equal on every point of the domain.
+</p>
+</hint>
+<answer>
+<p>
+We do some rough computation here to try to figure out which statements are true or false. When we write up the proof, we will include more detail in these computations.
+<ol marker="(a)">
+<li>
+<p>
+ Fix <m>x\in \mathbb{R}</m>. We compute, starting with the left hand side. The computation below uses the definition of function composition, followed by the definition of function addition.
+    <md>
+<mrow>
+        (f\circ (g+h))(x)  \amp = f((g+h)(x))
+</mrow><mrow>
+         \amp = f(g(x)+h(x))
+    </mrow>
+</md>
+    Now, for the right hand side, we compute using the definitions of function addition and composition
+    <md>
+<mrow>
+        (f\circ g + f \circ h)(x)  \amp = (f\circ g)(x) + (f\circ h)(x)
+</mrow><mrow>
+         \amp =f(g(x)) + f(h(x))
+    </mrow>
+</md>
+    Most functions <m>f</m> do not have the property that
+    <me>f(g(x)+h(x)) = f(g(x))+f(h(x)).</me>
+    This is a property of linear functions. Therefore, we can create a counterexample using a nonlinear function such as <m>f(x)=x^2</m>.
+</p>
+</li>
+<li>
+<p>
+ Fix <m>x\in \mathbb{R}</m>. We compute, starting from the left hand side. By the definition of function composition,
+    <md>
+<mrow>
+        ((g+h)\circ f)(x)  \amp = (g+h)(f(x))
+        </mrow><intertext>By the definition of function addition</intertext><mrow>
+         \amp = g(f(x))+h(f(x))
+        </mrow><intertext>By the definition of composition</intertext><mrow>
+         \amp =(g\circ f)(x) + (h\circ f)(x)
+        </mrow><intertext>By the definition of function addition</intertext><mrow>
+         \amp = \left(g\circ f + h\circ f\right)(x)
+    </mrow>
+</md>
+    This computation did not rely on our choice of <m>x</m>, so it holds for all <m>x\in \mathbb{R}</m>. Thus, we can show
+    <me>(g+h)\circ f = g\circ f + h\circ f.</me>
+</p>
+</li>
+<li>
+<p>
+ We first use the definition of function composition to see that
+    <md>
+<mrow>
+        \left(\frac{1}{f}\circ g \right)(x)  \amp = \left(\frac{1}{f}\right)(g(x)).
+        </mrow><intertext>By the definition of function division, we have</intertext><mrow>
+         \amp = \frac{1}{f(g(x))}
+        </mrow><intertext>By the definition of function composition, we have</intertext><mrow>
+         \amp =\frac{1}{(f\circ g)(x)}
+        </mrow><intertext>Using the definition of function division yields</intertext><mrow>
+         \amp =\left(\frac{1}{f\circ g}\right)(x)
+    </mrow>
+</md>
+    This computation did not rely on our choice of <m>x</m>, so it holds for all <m>x\in \mathbb{R}</m>. Thus, we can show
+    <me>\left(\frac{1}{f}\right)\circ g = \frac{1}{f\circ g}.</me>
+</p>
+</li>
+<li>
+<p>
+ Fix <m>x\in \mathbb{R}</m>. We start with the left hand side, and use the definition of function division to compute,
+    <md>
+<mrow>
+        \left(\frac{1}{f\circ g}\right)(x)= \frac{1}{(f\circ g)(x)}
+        </mrow><intertext>By the definition of function composition</intertext><mrow>
+         \amp = \frac{1}{f(g(x))}
+    </mrow>
+</md>
+    On the other hand, we start from the right hand side. Using the definition of function composition to compute
+    <md>
+<mrow>
+        \left(f\circ \frac{1}{g}\right)(x)  \amp = f\left(\left(\frac{1}{g}\right)(x)\right)
+        </mrow><intertext> By the definition of function division</intertext><mrow>
+         \amp =f\left(\frac{1}{g(x)}\right)
+    </mrow>
+</md>
+    In order for
+    <me>\frac{1}{f(g(x))} = f\left(\frac{1}{g(x)}\right),</me>
+    <m>f</m> must have the property that
+    <me>\frac{1}{f(x)} = f\left(\frac{1}{x}\right).</me>
+    This is not true for every function <m>f:\mathbb{R}\to \mathbb{R}</m>. For example, if <m>f(x)=x+2</m>, we have
+    <me>\frac{1}{f(x)} = \frac{1}{x+2} \neq \frac{1}{x}+2 = f\left(\frac{1}{x}\right).</me>
+</p>
+</li>
+</ol>
+</p>
+</answer>
+<solution>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ <em>Claim:</em> This statement is false.
+</p>
+
+<proof><p>
+    Consider <m>f(x)=x^2</m> and <m>g(x)=h(x) = x</m>. Then
+    <md>
+<mrow>
+        f\circ (g+h)(x)  \amp = f((g+h)(x))
+</mrow><mrow>
+         \amp = f(g(x) +h(x))
+        </mrow><intertext>Using the choice of <m>g(x)</m> and <m>h(x)</m>,</intertext><mrow>
+         \amp = f(2x)
+</mrow><mrow>
+        </mrow><intertext>Using the choice of <m>f(x)</m>,</intertext><mrow>
+         \amp = 4x^2
+    </mrow>
+</md>
+    On the other hand, we compute
+    <md>
+<mrow>
+        (f\circ g + f\circ h)(x)  \amp = f(g(x)) + f(h(x))
+        </mrow><intertext>Using the definitions of <m>g(x)</m> and <m>h(x)</m>,</intertext><mrow>
+         \amp =f(x) + f(x)
+        </mrow><intertext>Using the definitions of <m>f(x)</m>,</intertext><mrow>
+         \amp =2x^2
+    </mrow>
+</md>
+    Consider <m>x=1</m>. Since
+    <me>f\circ (g+h)(1) = (4)1^2 = 4 \neq 2 = (2)1^2 = (f\circ g + f\circ h)(1),</me> we have found a value of <m>x</m> such that the functions are not equal. Therefore the statement is false.
+    </p></proof>
+
+</li>
+<li>
+<p>
+ <em>Claim:</em> The statement is true.
+</p>
+
+<proof><p>
+    Fix <m>x\in \mathbb{R}</m>. We compute, using the definition of function composition
+    <md>
+<mrow>
+        (g+h)\circ f(x)  \amp = (g+h)(f(x)).
+        </mrow><intertext>Using the definition of function addition, we obtain</intertext><mrow>
+         \amp =g(f(x)) + h(f(x)) .
+        </mrow><intertext>We now use the definition of function composition to rewrite the statement as</intertext><mrow>
+         \amp = \left(g\circ f\right)(x) + \left(h\circ f\right)(x).
+        </mrow><intertext>Finally, we use the definition of function addition to obtain</intertext><mrow>
+         \amp = (g\circ f + h\circ f)(x) .
+    </mrow>
+</md>
+    Since <m>x</m> was chosen arbitrarily, we have that
+    <me>(g+h)\circ f(x) = (g\circ f + h\circ f)(x)</me>
+    for every <m>x</m>. We conclude that
+    <me>(g+h)\circ f = g\circ f + h\circ f</me>
+    </p></proof>
+
+</li>
+<li>
+<p>
+ <em>Claim:</em> The statement is true.
+</p>
+
+<proof><p> Fix <m>x\in \mathbb{R}</m>.
+    First, we use the definition of function composition to see that<md>
+<mrow>
+        \left(\frac{1}{f}\circ g \right)(x)  \amp = \left(\frac{1}{f}\right)(g(x)).
+        </mrow><intertext>We regard the numerator as the constant function <m>h(x)=1</m>. This lets us rewrite the expression as </intertext><mrow>
+         \amp = \left(\frac{h}{f}\right)(g(x))
+         </mrow><intertext>By the definition of function division, we have</intertext><mrow>
+         \amp = \frac{h(g(x))}{f(g(x))}
+        </mrow><intertext>Since <m>h</m> is a constant function, we have <m>h(g(x)) = 1 = h(x)</m>, thus</intertext><mrow>
+         \amp = \frac{h(x)}{f(g(x))}
+        </mrow><intertext>By the definition of function composition, we have</intertext><mrow>
+         \amp =\frac{h(x)}{(f\circ g)(x)}
+        </mrow><intertext>Using the definition of function division yields</intertext><mrow>
+         \amp =\left(\frac{h}{f\circ g}\right)(x)
+        </mrow><intertext>Finally, we use the definition of <m>h</m> to conclude,</intertext><mrow>
+         \amp =\left(\frac{1}{f\circ g}\right)(x).
+    </mrow>
+</md>
+</p>
+<p>
+    Since <m>x</m> was chosen arbitrarily, we see that
+    <me>\left(\frac{1}{f}\circ g\right) (x) = \left(\frac{1}{f\circ g}\right)(x)</me>
+    for every <m>x\in \mathbb{R}</m>. We conclude that <me>\frac{1}{f}\circ g = \frac{1}{f\circ g}.</me>
+    </p></proof>
+
+</li>
+<li>
+<p>
+ <em>Claim:</em> The statement is false.
+</p>
+
+<proof><p>
+    Consider <m>f(x)=x+2</m> and <m>g(x)=x^2</m>. We compute
+    <md>
+<mrow>
+        \frac{1}{f\circ g}(x)  \amp = \frac{1}{f(g(x))}
+        </mrow><intertext>Using the definition of <m>g(x)</m>,</intertext><mrow>
+         \amp = \frac{1}{f(x^2)}
+        </mrow><intertext>Using the definition of <m>f(x)</m>,</intertext><mrow>
+         \amp = \frac{1}{x^2+2}.
+    </mrow>
+</md>
+    On the other hand,
+    <md>
+<mrow>
+        \left(f\circ \frac{1}{g}\right) (x)  \amp = f\left(\frac{1}{g(x)}\right)
+        </mrow><intertext>Using the definition of <m>g(x)</m>,</intertext><mrow>
+         \amp = f\left(\frac{1}{x^2} \right)
+        </mrow><intertext>Using the definition of <m>f(x)</m>,</intertext><mrow>
+         \amp = \frac{1}{x^2}+2.
+    </mrow>
+</md>
+</p>
+<p>
+    Consider <m>x=1</m>. Since
+    <me>\frac{1}{f\circ g}(1) = \frac{1}{1^2+2} = \frac{1}{3} \neq 3 = \frac{1}{1^2}+2 = \left(f\circ \frac{1}{g}\right) (x),</me> we have found a value of <m>x</m> such that the functions are not equal. Therefore the statement is false.
+    </p></proof>
+
+</li>
+</ol>
+</p>
+</solution>
+</exercise>

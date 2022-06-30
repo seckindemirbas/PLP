@@ -1,0 +1,2688 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<chapter xml:id="ch-quantifiers"  xmlns:xi="http://www.w3.org/2001/XInclude"><title>Quantifiers</title>
+<introduction>
+  <p>
+    The authors of this text have aimed to get you started proving things as quickly as possible. This meant that we had to skip over several important topics and return to them later.
+    That is why the text has bounced between logic and proof and logic and proof, and now we return one last time to logic.
+  </p>
+  <p>
+    The first result we really proved in this text (way back at <xref ref="res-first-proof"/>) was
+    <me>
+      (n \text{ is even}) \implies (n^2 \text{ is even}).
+    </me>
+    We approached the proof by thinking about how the implication could possibly be false. That, in turn, led us to assume the hypothesis to be true, and to show that the conclusion could not possibly be false. In so doing, we have hidden something from you, the reader. Sorry, but the authors felt this was a necessary but well-intentioned untruth<fn>A teenie-tiny one.</fn> to achieve their aim of getting you to start proving things as quickly as possible.
+  </p>
+  <p>
+    Consider the truth-values of hypothesis and conclusion of the above implication carefully. <q><m>n</m> is even</q> and <q><m>n^2</m> is even</q> are <em>not</em> a statement, they are both <term>open sentences</term><fn>The reader who has momentarily forgotten the difference between <term>statement</term> and <term>open sentence</term> should quickly jump back to <xref ref="ch-logic"/></fn> whose truth values depend on the variable <m>n</m>. We have hidden from you, our reader, is the implicit scope on the variable <m>n</m>. We implied that we want this result to be true <em>every possible integer <m>n</m></em>. To make this implicit explicit:
+    <me>
+      \text{For every integer } n, (n \text{ is even}) \implies (n^2 \text{ is even}).
+    </me>
+    The effect of that extra bit of text is to provide <em>scope</em> to the variable <m>n</m>, and so turns the open sentence into a statement with a well-defined truth value.
+    And once we have a statement we can try to prove it.
+  </p>
+<p>
+</p>
+</introduction>
+<section><title>Quantified statements</title>
+<p>
+Let us now go back to sentences like
+<me>
+  x^2-5x+4 = 0.
+</me>
+We were unable to assign a truth value to this statement because we had no information about <m>x</m>. It is clear that this sentence is true for some values of <m>x</m> and false for others:
+<ul>
+  <li>If <m>x=0</m> the sentence makes sense but is false.</li>
+  <li>If <m>x=1</m> the sentence makes sense and is true.</li>
+  <li>If <m>x</m> is the colour blue, then it doesn't even make sense.</li>
+</ul>
+</p>
+
+<p>
+  We can write the open sentence above as 
+  <me>
+    P(x): x^2-5x+4 = 0
+  </me>
+  Now we can express things in a more compact (and a little more abstract) way: <m>P(0)</m> is false, while <m>P(4)</m> is true.
+</p>
+
+<p>
+  Just as <xref  ref="res-first-proof"/> was a statement about integers, we might choose to study the open sentence over, say, the set <m>S = \{0,1,2,3,4\}</m>. In this case we would analyse the truth-values of <m>P(x)</m> over the <term>domain</term><fn> Again, this terminology is reminiscent of functions. </fn> <m>S</m>. Checking carefully we find that
+</p>
+<blockquote>
+<p>
+ <m>P(1), P(4)</m> are true and <m>P(0),P(2),P(3)</m> are false.
+</p>
+</blockquote>
+<p>
+  Such lists are going to become very cumbersome over big domains, let alone infinite<fn> Actually we cannot even construct such lists over some types of infinite domains <mdash /> see <xref ref="chap_cardinality"/>.</fn> domains. However, we could summarise that list by saying that the statement is true sometimes, but not true always. To be a little more precise:
+  <ul>
+    <li><m>P(x)</m> is true for some <m>x \in S</m>, and </li>
+    <li><m>P(x)</m> is not true for all <m>x \in S</m>.</li>
+  </ul>
+</p>
+<p>
+  Notice that the extra bits of text <q>for some <m>x \in S</m></q> and <q>for all <m>x \in S</m></q> place restrictions which values of <m>x</m> we take, and so turn the open sentences into statements. With that extra text we can now assign truth values.
+</p>
+
+<p>
+  To be even more careful, we can write the above as
+  <ul>
+    <li>There exists <m>x\in S</m> so that <m>x^2-5x+4=0</m>, and </li>
+    <li>For all <m>x \in S</m>, <m>x^2+5x-4=0</m></li>
+  </ul>
+  where the first is now a true statement, and the second is a false statement.   The extra bits <q>For all</q> and <q>There exists</q> are called <term>quantifiers</term>.
+</p>
+
+<definition>
+<statement><p>
+  We typically work with two quantifiers in mathematics <mdash/> the <term>universal quantifier</term> and the <term>existential quantifier</term>.
+  <ul>
+    <li> The <term>universal quantifier</term> is denoted <m>\forall</m> and is  read as <q>for all</q> or <q>for every</q>.
+    The statement <me>\forall x\in A, P(x)</me> is true provided <m>P(x)</m> is true for every single value of <m>x\in A</m> and otherwise the statement is false.
+  </li>
+  <li> The <term>existential quantifier</term> is denoted <m>\exists</m> and is read as <q>there exists</q>.
+    The statement <me>\exists x\in A \text{ so that } P(x)</me> is true provided there is at least one value of <m>x\in A</m> so that <m>P(x)</m> is true, and otherwise the statement is false.
+</li>
+</ul>
+</p></statement>
+</definition>
+<aside><title>Other quantifiers?</title>
+<p>
+  Sometimes in mathematics we also use the <term>unique existential quantifier</term> to indicate that there exists one and only one object of interest. It is sometimes denoted <m>\exists!</m>.
+  For example, <q>the equation <m>n^3=-1</m> has exactly one solution over the integers</q>.
+  We won't use this particular type of quantifier very often in this course.
+</p>
+<p>
+  Note that one can express the unique existential quantifier in terms of the usual existential quantifier. The interested reader should play around to work out how to do this, or just search-engine their way to it.
+</p>
+<p>
+  The unique existential quantifier is not alone; one can construct an infinite family of quantifiers of the form, <q>there are exactly 2<ellipsis/></q>, <q>there are exactly 3<ellipsis/></q>, etc. Further one can also consider quantifiers such as <q>for all but one</q>, or <q>for all but a finite number</q>
+</p>
+</aside>
+
+<p>
+  Back to our two statements above. We can now write them as
+<ul>
+<li> <q><m>\exists x \in S</m> such that <m>x^2 - 5x+4 = 0</m></q> or <q><m>\exists x\in S \st x^2 - 5x+4 = 0 </m></q>.
+</li>
+<li> <q>For every <m>x \in S, x^2 - 5x+4 = 0</m></q> or <q><m>\forall x\in S, x^2 - 5x+4 = 0 </m></q>
+</li>
+</ul>
+</p>
+<remark><title>Punctuation please</title>
+  <p>
+  Be careful to punctuate these statements nicely <mdash/> make sure that it is clear to the reader where the quantifier stops and the open sentence begins. In the case of for-all statements we usually just place a comma:
+  <me>
+    \underbrace{\forall x \in S}_{\text{quantifier}} \quad \underbrace{,}_{\text{punctuation}} \quad \underbrace{P(x)}_{\text{open sentence}}
+  </me>
+  For there-exists statements we write in <q>so that</q> or <q>such that</q>, since that is how the statements are typically read. Your busy hard-working mathematician will contract the <q>so that</q> to <q>s.t.</q>:
+  <me>
+    \underbrace{\exists x \in S}_{\text{quantifier}} \quad \underbrace{\st}_{\text{punctuation}} \quad \underbrace{P(x)}_{\text{open sentence}}
+  </me>
+
+It is also generally considered bad style to use <m>\exists</m> and <m>\forall</m> in sentences in place of <q>there exists</q> and <q>for all</q>.
+Mind you, that doesn't stop people doing it, but in general, it is okay to do in a mathematical statement or equation, but you should avoid writing them in the middle of paragraphs (except in scratch work).
+</p>
+</remark>
+<p>Quantifiers are often a point of confusion for students.
+This can be exacerbated by the number of different ways they can be expressed in written or spoken languauge.
+For example, the statement <q><m>\exists x\in A \st P(x)</m></q> can be read as
+<ul>
+<li> There exists <m>x</m> in <m>A</m> so that <m>P(x)</m> is true.
+</li>
+<li> There is <m>x</m> in <m>A</m> so that <m>P(x)</m> is true.
+</li>
+<li> There is at least one <m>x</m> in <m>A</m> so that <m>P(x)</m> is true.
+</li>
+<li> <m>P(x)</m> is true for at least one value of <m>x</m> from <m>A</m>
+</li>
+<li> We can find an <m>x</m> in <m>A</m> so that <m>P(x)</m> is true.
+</li>
+<li> We can always find an <m>x</m> in <m>A</m> that makes <m>P(x)</m> is true.
+</li>
+<li> At least one <m>x</m> in <m>A</m> exists so that <m>P(x)</m> is true.
+</li>
+<li> <ellipsis/>
+</li>
+</ul>
+The above is just what the author thought of in a couple of minutes.
+</p>
+<p>
+  Similarly, the statement <q><m>\forall x\in A, P(x)</m></q> can be read in many ways:
+<ul>
+<li> For all <m>x</m> in <m>A</m>, <m>P(x)</m> is true.
+</li>
+<li> For every <m>x</m> in <m>A</m>, <m>P(x)</m> is true.
+</li>
+<li> No matter which <m>x</m> we choose from <m>A</m>, <m>P(x)</m> is true.
+</li>
+<li> Every single <m>x</m> in <m>A</m> makes <m>P(x)</m> true.
+</li>
+<li> <m>P(x)</m> is true for every <m>x</m> in <m>A</m>.
+</li>
+<li> Every choice of <m>x</m> from <m>A</m> makes <m>P(x)</m> true.
+</li>
+<li> All the <m>x</m> in <m>A</m> makes <m>P(x)</m> true.
+</li>
+<li> <ellipsis/>
+</li>
+</ul>
+Oof!
+</p>
+
+<p>
+  We need to add one more to the list of ways to read <m>\forall x \in A, P(x)</m>:
+  <ul>
+  <li> If <m>x</m> is in <m>A</m> then <m>P(x)</m> is true.</li>
+  </ul>
+  This is critically important, because it shows us a link between the universal quantifier and the implication. It shows us that:
+<me>
+  ( \forall x \in A, P(x) ) \equiv (x \in A \implies P(x) )
+</me>
+Thankfully it is not too hard to see why <mdash/> think about their truth values.
+<ul>
+<li> <m>\forall x \in A, P(x)</m> is true provided <m>P(x)</m> is true for every single <m>x</m> from <m>A</m>. It is false if we can find at least one value of <m>x</m> from <m>A</m> so that <m>P(x)</m> is false.
+</li>
+<li> On the other hand, the implication <m>x\in A \implies P(x)</m>, is false when the hypothesis is true, but the conclusion is false. That is, we can find a value of <m>x\in A</m> so that <m>P(x)</m> is false. Otherwise the implication is true.
+</li>
+</ul>
+</p>
+
+<p>More generally when we have a statement like</p>
+
+<blockquote>
+<p>
+  If <m>n</m> is even then <m>n^2</m> is true.
+</p>
+</blockquote>
+
+<p>
+there is an implicit assumption that we actually mean
+</p>
+
+<blockquote>
+<p>
+  For all <m>n</m>, if <m>n</m> is even then <m>n^2</m> is true.
+</p>
+</blockquote>
+
+<p>
+So it is typically understood that when we write
+<md>
+<mrow>
+  P(x) &amp;\implies Q(x)
+</mrow>
+</md>
+the reader should really read this as
+<md>
+<mrow>
+  \forall x, P(x) &amp;\implies Q(x)
+</mrow>
+</md>
+Of course, we don't really mean for every single possible value of the variable <m>x</m> taken from the set of all possible things in this and every other universe.
+We actually mean
+<md>
+<mrow>
+  \forall x \in A, P(x) &amp;\implies Q(x)
+</mrow>
+</md>
+where the set <m>A</m> is often inferred by context.
+So when we are talking about even and odd numbers (as above), we really mean
+</p>
+
+<blockquote>
+<p>
+  For all integers <m>n</m>, if <m>n</m> is even then <m>n^2</m> is true.
+</p></blockquote>
+
+<p>
+  Typically the context is clear, and so it is is just cumbersome<fn>And tedious for the hard-working time-pressed mathematician.</fn> to write <q><m>\forall x \in A,\dots</m></q> before our statements.
+  When it is <em>us</em> doing the writing, <em>we</em> can look after our reader and try to make sure the context is clear.
+  To this end, a good general rule is:
+</p>
+
+<blockquote>
+<p>
+  If you are worried that the reader might not understand the context or that your statements might be open to misinterpretation, then put in more words and more details.
+</p>
+</blockquote>
+
+<p>
+  or, to be a little more to the point:
+</p>
+
+<blockquote>
+  <p>
+    If in doubt, put in more details.
+  </p>
+</blockquote>
+
+<p>
+  Time for a simple example (we'll do more complicated ones in the next section).
+</p>
+<example>
+  <statement>
+<p>
+Let <m>P(n)</m> be the open sentence <q><m>(7n-6)/3 </m> is an integer.</q> over the domain <m>\mathbb{Z}</m>.
+Explain whether the following statements are true
+<md>
+<mrow> \exists n \in \mathbb{Z} \st\amp P(n) </mrow>
+<mrow>
+  \forall n \in \mathbb{Z}, \amp P(n)
+</mrow>
+</md>
+</p>
+</statement>
+<solution>
+<p>
+  Let us think about each in turn.
+<ul>
+<li><p>
+  In order for this to be true we need to find at least one integer <m>n</m> that makes <m>P(n)</m> to be true. For example, setting <m>n=0</m>gives
+  <me>
+    P(0): -2 \text{ is an integer}
+  </me>
+    which is true.
+</p>
+<p>
+  Since we have found at least one value of <m>n</m> to make the open sentence true, the statement is true.
+</p>
+</li>
+<li><p>
+  In order for the second statement to be true, no matter which integer <m>n</m> we choose, the statement <m>P(n)</m> is true. However, if we pick <m>n=1</m> then
+<me>
+  P(1): \frac{1}{3} \text{ is an integer}
+</me>
+which is clearly false.
+</p>
+  <p>
+    Since we cannot pick whatever integer <m>n</m> we want, and still have <m>P(n)</m> true, it follows that the statement is false. To be more precise, it is false because there is some <m>n</m> so that <m>P(n)</m> is false. In symbols this is:
+    <me>
+    \exists n \in\mathbb{Z} \st \neg P(n).
+    </me>
+  </p>
+</li>
+</ul>
+</p>
+</solution>
+</example>
+<p>
+  Notice that in the case of the second statement in the above exercise, we have shown the statement to be false, by demonstrating that its <term>negation</term> is true. This brings us to negating quantifiers.
+</p>
+
+</section>
+<section><title>Negation of quantifiers</title>
+<p>
+  This last example brings us to the negation of quantifiers. This isn't difficult, but we should still be careful. Consider the statement
+  <me>
+    \forall n \in \mathbb{N}, n^2+1 \text{ is prime}.
+  </me>
+  In order for this to be true, we require that no matter which natural number <m>n</m>, the number <m>n^2+1</m> is prime.
+  <dl>
+    <li>
+        <title><m>n=1</m></title>
+        <p>
+          <m>1^2+1 = 2</m> which is prime.
+        </p>
+    </li>
+  <li>
+      <title><m>n=2</m></title>
+      <p>
+        <m>2^2+1 = 5</m> which is prime.
+      </p>
+  </li>
+  <li>
+      <title><m>n=3</m></title>
+      <p>
+        <m>3^2+1 = 10 = 2 \times 5</m> is not prime.
+      </p>
+  </li>
+</dl>
+  Since it fails when <m>n=3</m>, the statement is false.
+</p>
+<p>
+  Think carefully about what we have actually done here. We showed that this statement is false, by demonstrating that we could find <m>n\in\mathbb{N}</m> so that <m>n^2+1</m> is not prime. That is, we proved that the statement
+  <me>
+    \exists n \in \mathbb{N} \st n^2+1 \text{ is not prime}
+  </me>
+  is true. What we are really doing here is proving that our original statement is false, by demonstrating that the negation of that statement is true.
+</p>
+<p>
+  Now consider the statement
+  <me>
+    \exists n \in \mathbb{N} \st n^2 \lt n
+  </me>
+  You can convince yourself that this is false just by plugging in a few numbers or by drawing some graphs. However <em>convincing</em> is not the same as <em>proving</em>. In order for this to be false, we need to show that no matter which <m>n \in \mathbb{N}</m> we choose, <m>n^2 \geq n</m>. That is, we have to show that
+  <me>
+    \forall n \in \mathbb{N}, n^2 \geq n.
+  </me>
+  We'll do that shortly. But again, we are showing that the original is false by proving the negation to be true.
+</p>
+<p>
+  Notice that our first statement was
+  <me>
+    \forall n \in \mathbb{N}, P(n)
+  </me>
+  and we showed that it was false by proving that
+  <me>
+    \exists n \in \mathbb{N} \st  \neg P(n)
+  </me>
+  is true.
+  And similarly, our second statement was
+  <me>
+    \exists n \in \mathbb{N} \st  Q(n)
+  </me>
+  and to prove it false, we have to show that
+  <me>
+    \forall n \in \mathbb{N}, \neg Q(n)
+  </me>
+  is true.
+</p>
+
+
+<p>
+  More generally, when we negate a <q>for all</q> we get <q>there exists</q> and when we negate <q>there exists</q> we have <q>for all</q>. This is a very important result and we'll summarise it by a theorem.
+</p>
+<theorem>
+<statement><p>
+Let <m>P(x)</m> be an open sentence over the domain <m>A</m>, then
+<md>
+<mrow>
+  \neg(\forall x \in A, P(x)) &amp; \quad \equiv \quad \exists x\in A \st \neg(P(x))
+</mrow><mrow>
+  \neg(\exists x \in A \st P(x)) &amp; \quad \equiv \quad \forall x\in A, \neg(P(x))
+</mrow>
+</md>
+Note that the negated statement still has the same <term>domain</term>.
+</p>
+</statement>
+</theorem>
+
+<warning>
+  <title>The domain remains</title>
+    <p>
+An extremely common error to make is to assert that
+<md>
+<mrow>
+  \neg(\forall x \in A, P(x))
+  &amp; \equiv \underbrace{\forall x\not\in A}_{\text{bad!}} \st P(x) &amp; \text{do not do this}
+</mrow>
+<mrow>
+  &amp; \equiv \underbrace{\exists x\not\in A}_{\text{also bad!}} \st P(x) &amp; \text{nor this}
+</mrow>
+</md>
+These statements are not equivalent. Nor are
+<md>
+<mrow>
+  \neg(\exists x \in A, P(x))
+  &amp; \equiv \underbrace{\exists x\not\in A}_{\text{bad!}} \st P(x) &amp; \text{don't do this either}
+</mrow>
+</md>
+The domain of the quantifier remains unchanged when the statement is negated.
+</p>
+<p>
+  For example, consider the statement
+  <me>
+    \forall n \in\mathbb{N} \st n \geq 0.
+  </me>
+  This is definitely true; every natural number is non-negative. Because of this, the negation of the above must be false. However, if we were to  <em>incorrectly</em> compute the negation as
+  <me>
+    \exists n \not\in\mathbb{N}, n \lt 0
+  </me>
+  then we have a problem. Since the number <m>n=-1</m> is not a natural number, and is less than 0, the above is also true. So remember
+</p>
+<blockquote>
+  <p>
+    The domain of a quantified statement does not change when it is negated.
+  </p>
+</blockquote>
+</warning>
+
+<p>
+  Let us do a couple of simple examples and we'll get to more difficult ones in the next section.
+</p>
+
+<example>
+  <statement>
+    <p>
+      Determine whether or not the following statements are true or false and then prove your answer.
+      <ol marker="a">
+        <li><m>\exists n \in \mathbb{Z}, \frac{n+7}{3} \in \mathbb{Z}</m>.</li>
+        <li><m>\exists n \in \mathbb{Z}, \frac{n^2+1}{4} \in \mathbb{Z}</m>.</li>
+      </ol>
+    </p>
+  </statement>
+  <solution>
+    <p>
+      We tackle each in turn.
+      <ol marker="a">
+        <li>
+          <p>
+            This is true. It suffices to find one example of an integer <m>n</m> so that <m>\frac{n+7}{3}</m> is an integer. Our proof just has do that <mdash /> notice that it does not have to say how we found the example, just demonstrate that it works.
+          </p>
+          <proof>
+            <p>
+              The statement is true.
+              Let <m>n=2</m>. Then <m>\frac{n+7}{3} = \frac{9}{3} = 3 \in \mathbb{Z}</m> as required.
+            </p>
+          </proof>
+        </li>
+        <li>
+          <p>
+            This is a little harder. Notice that the statement is really saying that <m>n^2+1</m> is divisible by 4. Try a few values of <m>n</m>:
+            <md>
+            <mrow> n=1:  \amp \frac{1^2+1}{4} = \frac{2}{4}=\frac{1}{2}
+                \amp
+              n=2: \amp \frac{2^2+1}{4} = \frac{5}{4}</mrow>
+            <mrow> n=3:  \amp \frac{3^2+1}{4} = \frac{10}{4}=\frac{5}{2}
+              \amp
+               n=4: \amp \frac{4^2+1}{4} = \frac{17}{4}</mrow>
+            </md>
+            Not looking promising. Notice it fails both when <m>n</m> is even and <m>n</m> is odd. We can use that to form our proof. Now, we don't directly prove the statement is false, instead we prove the negation is true. So we can start our proof by saying just that.
+          </p>
+          <proof>
+            <p>
+              The statement is false; we demonstrate this by proving the negation to be true. The negation is
+              <me>
+                \forall n \in \mathbb{Z}, \frac{n^2+1}{4} \not\in \mathbb{Z}
+              </me>
+              Assume <m>n \in \mathbb{Z}</m>, then <m>n</m> is either even or odd.
+              <ul>
+                <li>
+                  When <m>n</m> is even, we can write <m>n=2k</m> for some integer <m>k</m>. Then <m>n^2+1 = 4k^2+1 = 4(k^2)+1</m>. Hence <m>n^2+1</m> is not divisible by 4.
+                </li>
+                <li>
+                  On the other hand, when <m>n</m> is odd, we can write <m>n=2k+1</m> for some integer <m>k</m>. Then <m>n^2+1 = 4k^2+4k+2 = 4(k^2+k)+2</m>. Hence <m>n^2+1</m> is not divisible by 4.
+                </li>
+              </ul>
+              In either case <m>\frac{n^2+1}{4}</m> is not an integer. Since the negation is true, the original statement is false.
+            </p>
+          </proof>
+        </li>
+      </ol>
+    </p>
+  </solution>
+</example>
+
+<example>
+  <statement>
+    <p>
+      Determine whether or not the following statements are true or false and then prove your answer.
+      <ol marker="a">
+        <li><m>\forall n \in \mathbb{Z}, \frac{n^2+n}{2} \in \mathbb{Z}</m>.</li>
+        <li><m>\forall n \in \mathbb{Z}, n^2-8n+1 \lt 0  </m>.</li>
+      </ol>
+    </p>
+  </statement>
+  <solution>
+    <p>
+      We tackle each in turn.
+      <ol marker="a">
+        <li>
+          <p>
+            This one is quite similar to the second statement in the previous example. It is actually true, and we can leverage the parity of <m>n</m> to get the result we need.
+          </p>
+          <proof>
+            <p>
+              The statement is true. Let <m>n \in \mathbb{N}</m>, then <m>n</m> is even or odd.
+              <ul>
+                <li>When <m>n</m> is even, <m>n=2k</m> for some <m>k \in \mathbb{Z}</m>. Hence <m>n^2+n = 4k^2+2k = 2(2k^2+k)</m> and so is even.</li>
+                <li>When <m>n</m> is odd, <m>n=2k+1</m> for some <m>k \in \mathbb{Z}</m>. Hence <m>n^2+n = 4k^2+6k+2 = 2(2k^2+3k+1)</m> and so is even.</li>
+              </ul>
+              Since in both cases <m>n^2+n</m> is even, it is divisible by 2. The result follows.
+            </p>
+          </proof>
+          <p>
+            Alternatively, we might try to prove the result by noticing that <m>n^2+n = n(n+1)</m> is the product of successive integers. Hence one if <m>n, n+1</m> must be even, and the product of any integer and an even number is even, so the result must be even. That would work, excepting that we have not actually proved that <q>product of any integer and an even number is even</q>. Its not a hard result, but we should prove it before using it.
+          </p>
+        </li>
+        <li>
+          <p>
+            If we just try plugging in a few small integers, the result holds. However, we know that <m>n^2</m> gets bigger much faster than <m>n</m> does, so the result should be false when <m>n</m> is big. Consequently we can show it is false by just plugging in a sufficiently large value of <m>n</m>.
+          </p>
+          <proof>
+            <p>
+              The result is false. We prove that the negation is true. The negation is
+              <me>
+                \exists n \in \mathbb{Z}, n^2-8n+1 \geq 0.
+              </me>
+              Let <m>n=10</m> then <m>n^2-8n+1 = 100-80+1 = 21 \geq 0</m> as required. Since the negation is true, the original statement is false.
+            </p>
+          </proof>
+        </li>
+      </ol>
+    </p>
+  </solution>
+</example>
+
+</section>
+<section><title>Nested quantifiers</title>
+
+<example>
+  <statement>
+<p>
+ Rewrite the following using quantifiers, and then write out their negations.
+ <ul>
+<li> There is a real number <m>y</m> such that <m>1/y = y+1</m>.
+</li>
+<li> For every natural number <m>z</m> there is a natural number <m>w</m> such that <m>z^2 \lt  w</m>.
+</li>
+</ul>
+</p>
+</statement>
+<solution>
+<p>
+  Translating the statements into symbols gives
+  <ul>
+    <li><m>\exists y \in \mathbb{R} \st 1/y=y+1</m></li>
+    <li><m>\forall z \in \mathbb{Z}, \exists w\in \mathbb{N} \st z^2 \lt w</m></li>
+  </ul>
+  The negations are then:
+  <md>
+  <mrow>
+    \neg(  \exists y \in \mathbb{R} \st 1/y=y+1 )
+    \amp \equiv  \forall y \in \mathbb{R} \st \neg( 1/y=y+1 )
+</mrow><mrow>
+    \amp \equiv  \forall y \in \mathbb{R} \st 1/y \neq y+1.
+  </mrow>
+</md>
+and
+  <md>
+  <mrow>
+    \neg( \forall z \in \mathbb{Z}, \exists w\in \mathbb{N} \st z^2 \lt w )
+    \amp \equiv
+     \exists z \in \mathbb{Z} \st \neg( \exists w\in \mathbb{N} \st z^2 \lt w )
+</mrow><mrow>
+     \amp \equiv
+      \exists z \in \mathbb{Z} \st  \forall w\in \mathbb{N}, \neg( z^2 \lt w )
+</mrow><mrow>
+      \amp \equiv
+       \exists z \in \mathbb{Z} \st  \forall w\in \mathbb{N}, z^2 \geq w.
+  </mrow>
+</md>
+  Notice how we can slide the negation from left to right, and along the way <m>\forall</m> becomes <m>\exists</m> and <m>\exists</m> becomes <m>\forall</m>. And, of course, the domains are unchanged by negation.
+</p>
+</solution>
+</example>
+
+<p>
+  The first statement is, in plain(er) english
+</p>
+<blockquote>
+  <p>
+    You can pick some real number <m>y</m> to make <m>1/y=y+1</m>.
+  </p>
+</blockquote>
+
+
+<p>
+   In writing it in this way, the authors have tried to take a mathematical statement into an exercise for the reader. <q>You <mdash /> dear reader <mdash /> can find (go on!) some real number <m>y</m> that has the property that <m>1/y</m> is equal to <m>1+y</m></q>. Similarly, we can write the statement <m>\forall z \in \mathbb{R}, z^2 \geq 0</m> as
+ </p>
+
+<blockquote>
+<p>
+  No matter which real number <m>z</m> you pick, <m>z^2</m> is non-negative.
+</p>
+</blockquote>
+
+<p>
+  Again, we have made this into an exercise for the reader. <q>You <mdash /> dear reader <mdash /> can pick any value of <m>z</m> you want, it will always turn out that <m>z^2 \geq 0</m>.
+</q>
+So far, nothing too controversial, but lets move on to the second example above since it contains nested quantifiers. But a warning first.
+</p>
+
+<warning>
+  <title>Quantifiers do not commute</title>
+  <p>
+    Nested quantifiers do not commute. The statement
+    <me> \forall x, \exists y \st  P(x,y)</me>
+    is not logically equivalent to
+    <me> \exists y \st \forall x,  P(x,y).  </me>
+  </p>
+</warning>
+
+<p>
+  The second example above contains nested quantifiers. Let us work through it slowly and carefully by writing it as a task for the reader.
+</p>
+<blockquote>
+<p>
+  No matter which <m>z \in \mathbb{Z}</m> you pick, there is a choice of <m>w \in \mathbb{N}</m> so that <m>z^2 \lt w</m>.
+</p>
+</blockquote>
+<p>
+  This statement is true. To see why, we should think of it as a 2-player game. Player 1 picks any <m>z</m> they want, and Player 2 has to choose a value of <m>w</m> so that <m>z^2 \lt w</m>. Player 1 goes first and Player 2 goes second.
+  <ul>
+    <li>Player 1 picks some integer <m>z</m>.</li>
+    <li>Player 2 knows the value of <m>z</m> and can make their choice accordingly. With a little thought, Player 2 realises that choosing <m>w = z^2+1</m> will work nicely (though they should be careful to make sure their choice is from the correct domain).</li>
+  </ul>
+  This is then the basis for proving the statement is true.
+</p>
+<proof>
+  <p>
+    Let <m>z \in \mathbb{Z}</m>. Then choose <m>w = z^2+1</m>. Since <m>z\in\mathbb{Z}</m> we know that <m>w</m> is a positive integer and so <m>w \in \mathbb{N}</m>. Then <m>z^2 \lt z^2+1 = w</m>. Hence the statement is true.
+  </p>
+</proof>
+
+<p>
+  What if we reverse the order of the quantifiers?
+  <me>
+  \exists w \in \mathbb{N} \st \forall z \in \mathbb{Z}, z^2 \lt w.
+  </me>
+  Again, we translate this into an exercise for the reader
+</p>
+<blockquote>
+<p>
+  You can choose some <m>w \in \mathbb{N}</m>, so that no matter what integer <m>z</m> is then chosen, <m>z^2 \lt w</m>.
+</p>
+</blockquote>
+<p>
+  This is false. Player 1 now has to pick <m>w</m> first, and Player 2 picks <m>z</m> second. Player 1 knows nothing about what Player 2 is going to do. So Player 1 might think <q>I'll pick a really big number, say <m>w=100</m></q>, but then Player 2 knows this value of <m>w</m> and can just pick a large value of <m>z</m>.
+</p>
+<p>
+  The best way (arguably) to prove the statement false, is to show that its negation is true. So a  <term>disproof</term> of the statement is just a proof of the negation of the statement. So write down the negation:
+  <me>
+  \forall w \in \mathbb{N}, \exists z \in \mathbb{Z} \st z^2 \geq w.
+  </me>
+  and again write it as a task for the reader:
+</p>
+<blockquote>
+<p>
+  No matter which <m>w\in \mathbb{N}</m> you pick, there will always be some choice of <m>z \in \mathbb{Z}</m> so that <m>z^2 \geq w</m>.
+</p>
+</blockquote>
+
+<p>
+  Again, Player 1 goes first and Player 2 goes second. Player 1 knows nothing about what Player 2 will do, but Player 2 knows what Player 1 did.
+  <ul>
+    <li>Player 1 picks some <m>w \in \mathbb{N}</m>.</li>
+    <li>Player 2 knows the value of <m>w</m>, and then (after some thought) picks <m>z=w+1</m></li>
+  </ul>
+  It is now sufficient to check that Player 2 has chosen <m>z</m> from the correct domain, and that <m>z^2 = (w^2+2w+1) \geq w</m> (which it is since <m>w \geq 1</m>).
+</p>
+<proof>
+  <p>
+    The original statement is false, so we prove the negation to be true. The negation is
+    <me>
+      \forall w \in \mathbb{N}, \exists z \in \mathbb{Z} \st z^2 \geq w.
+    </me>
+    Let <m>w \in \mathbb{N}</m> and then choose <m>z = w+1</m>. Since <m>w\in\mathbb{N}</m>, we know that <m>z \in \mathbb{Z}</m>. Further since <m>w \geq 1</m> we know that
+    <me>
+      z^2 = (w+1)^2 = w^2+2w+1 = (w^2+w+1) + w \geq w
+    </me>
+    as required. Since the negation is true, the original is false.
+  </p>
+</proof>
+
+<remark><title>Context and dropping domain</title>
+<p>
+  Mathematicians sometimes are a little sloppy with the way they write quantifiers, especially when the domain of those quantifiers is known by context. For example, if we are doing calculus, then most of our variables will be real numbers, while if we are working on a number theory problem, then our variables are likely to be integers. If the context is clear the domains will often be dropped.
+</p>
+<p>
+  So one might see the statement
+  <md>
+  <mrow>
+    \forall x \in \mathbb{R}, \amp \mbox{ if } x \lt -2 \mbox{ then } x^2  \gt  4
+    \amp \text{ written as}
+  </mrow>
+  <mrow>
+    \forall x, \amp \mbox{ if } x \lt -2 \mbox{ then } x^2  \gt  4 \amp \text{ or even as}
+  </mrow>
+  <mrow>
+    \amp \mbox{ if } x \lt -2 \mbox{ then } x^2  \gt  4
+  </mrow>
+  </md>
+  In this last statement we have dropped the quantifier completely. The universal quantifier is implicit <mdash /> the statement has to be true for all <m>x</m> in the domain.
+  So, when you see an implication
+  <md>
+    <mrow>\amp P(x) \implies Q(x) </mrow>
+    <intertext> it is really </intertext>
+    <mrow> \forall x,\ \amp P(x) \implies Q(x).</mrow>
+  </md>
+  Your hard-working time-pressed mathematician has just dropped a couple of symbols to save time.
+  This is a little sloppy, but really quite standard.
+</p>
+</remark>
+
+<p>
+  When students encounter nested quantifiers for the first time they typically find them quite  difficult. They are quite difficult but they do become easier with practice. Accordingly, the following example is one of this author's favourites. It, and its kin, have appeared on nearly every exam the author has given for this topic. The author's students are likely to have chosen a different type of question as their favourite. We will provide lots of similar exercises for you <mdash /> dear reader <mdash /> to practice, so that any dislike of nested quantifiers can be dispelled.
+</p>
+<example>
+  <statement>
+<p>
+Consider the following four statements:
+<ol marker="(a)">
+<li> <m>\exists x \in \mathbb{R} \st \exists y \in \mathbb{R}  \st xy=x+y </m>
+</li>
+<li> <m>\exists x  \in \mathbb{R} \st \forall y \in \mathbb{R} , xy=x+y</m>
+</li>
+<li> <m>\forall x \in \mathbb{R}, \exists y  \in \mathbb{R} \st  xy=x+y </m>
+</li>
+<li> <m>\forall x \in \mathbb{R}, \forall y \in \mathbb{R}, xy=x+y </m>.
+</li>
+</ol>
+Determine the truth value of the following four statements and prove your answers.
+</p>
+<p>
+    We will work through the statements in order, thinking about them as two-player games as we did above. We will also drop <q><m>\in \mathbb{R}</m></q> from the quantifiers; the reader should understand, by context, that all our variables are selected from <m>\mathbb{R}</m>.
+  </p>
+  <p>
+    Finally <mdash /> remember to be careful of the order of the quantifiers.
+</p>
+</statement>
+<answer>
+  <p>
+  <ol marker="(a)">
+   <li>
+  <p>
+  This is true.
+  <ul>
+    <li>Player 1 only has to choose one number. They choose <m>x=0</m>.</li>
+    <li>Player 2 only has to choose one number and they know Player 1's choice. So they also choose <m>y=0</m></li>
+  </ul>
+  Then <m>xy = 0 = 0+0 = x+y</m>.
+  </p>
+   </li>
+<li><p>
+  Again think about the 2 players:
+  <ul>
+    <li>Player 1 gets to choose only one number <m>x</m></li>
+    <li>Player 2 then has to be able to choose any real number <m>y</m> so that the equation holds.</li>
+  </ul>
+  This feels unlikely to work because we can <q>solve</q> the equation for <m>y</m> to get <m>y = \frac{x}{x-1}</m>. That is, for any given <m>x</m>-value there is going be exactly one <m>y</m>-value. So it feels like it will likely be false.
+</p>
+<p>
+   To see that it <em>is</em> false, write down the negation:
+   <me>
+     \forall x, \exists y \st xy \neq x+y.
+   </me>
+   <ul>
+     <li>Player 1 can choose any real number <m>x</m> they want.</li>
+     <li>Player 2 then has to be able to choose a real number <m>y</m> so that <m>xy \neq x+y</m>. A good choice is <m>y=1</m> (though there are infinitely many other good choices)</li>
+   </ul>
+   Now no matter what <m>x</m>-value, <m>xy = x</m> and <m>x+y = x+1</m>, and <m>x \neq x+1</m>. We just have to write it up.
+ </p>
+</li>
+<li>
+<p>
+  This one is a bit tricky. Again, think about our two players.
+  <ul>
+    <li>Player 1 chooses whatever <m>x</m>-value they feel like.</li>
+    <li><p>
+      Player 2 knows that value of <m>x</m> and based on that has to make a very careful choice of <m>y</m>. But that just requires Player 2 to solve <m>x+y=xy</m>. Easy!
+      <md>
+        <mrow>x+y \amp=xy </mrow>
+        <mrow>y-xy \amp= -x </mrow>
+        <mrow> y \amp = \frac{-x}{1-x} = \frac{x}{x-1} </mrow>
+      </md>
+      All good? Not quite <mdash /> things go wrong when <m>x=1</m>.
+    </p>
+    <p>
+      When <m>x=1</m>, our equation is <m>y+1 = y</m>. There is no real number  <m>y</m> that makes that true.
+    </p>
+  </li>
+  </ul>
+  So everything seemed fine until we considered <m>x=1</m>. So perhaps it is false?
+</p>
+<p>
+  You know the drill now; write down the negation and think about our two players:
+  <me>
+    \exists x \st \forall y, xy \neq x+y.
+  </me>
+  <ul>
+    <li>Player 1 makes a single careful choice of <m>x=1</m></li>
+    <li>Then no matter what <m>y</m>-value Player 2 chooses, <m>xy = y</m> and <m>x+y=y+1</m>, so <m>xy \neq x+y</m>.</li>
+  </ul>
+  So it is false. We just need to write out the proof.
+  </p>
+</li>
+<li>
+<p>
+  This one is also false, and it is easy to see why from the negation:
+  <me>
+    \exists x \st \exists y \st xy \neq x+y.
+  </me>
+  It suffices for Player 1 to pick <m>x=1</m>, and Player 2 to then pick <m>y=1</m>. Then <m>xy = 1</m> and <m>x+y=2</m>.
+</p>
+</li>
+</ol>
+</p>
+</answer>
+<solution>
+  <proof><title>Proof of (a)</title>
+    <p>
+      The statement is true. Pick <m>x=y=0</m> then <m>xy = 0</m> and <m>x+y = 0</m>.
+    </p>
+  </proof>
+
+  <p>
+   We give two proofs of (b), depending on how we choose <m>y</m>.
+ </p>
+
+  <proof><title>Proof of (b)</title>
+   <p>
+     We prove this to be false by showing the negation is true. The negation is
+     <me>
+       \forall x, \exists y \st xy \neq x+y.
+     </me>
+     Pick any <m>x \in \mathbb{R}</m>, and then set <m>y=1</m>. Since <m>xy = x</m> and <m>x+y = x+1</m>, we have that <m>xy \neq x+y</m> as required. Since the negation is true, the original statement is false.
+   </p>
+ </proof>
+ <proof><title>Another proof of (b)</title>
+   <p>
+     The statement is false. Let <m>x</m> be any real number. Then either <m>x=0</m> or <m>x \neq 0</m>.
+     <ul>
+       <li>When <m>x=0</m> set <m>y=1</m>. Then <m>xy = 0</m> and <m>x+y=1</m>.</li>
+       <li>When <m>x\neq 0</m> set <m>y=0</m>. Then <m>xy = 0</m> and <m>x+y=x</m>.</li>
+     </ul>
+     In both cases <m>xy \neq x+y</m> as required.
+   </p>
+ </proof>
+ 
+  <proof><title>Proof of (c)</title>
+    <p>
+      The statement is false. We prove the negation
+      <me>
+        \exists x \st \forall y, xy \neq x+y.
+      </me>
+      is true. Pick <m>x=1</m>, then no matter what <m>y</m> is chosen, <m>xy = y</m> and <m>x+y = y+1</m>, and Consequently <m>y \neq y+1</m>. Since the negation is true, the original statement is false.
+    </p>
+  </proof>
+
+ <proof><title>Proof of (d)</title>
+  <p>
+    The statement is false. We prove the negation:
+    <me>
+      \exists x \st \exists y \st xy \neq x+y.
+    </me>
+    Pick <m>x=1</m> and <m>y=1</m>, then <m>xy=1</m> and <m>x+y=2</m>.
+    Since the negation is true, the original is false.
+  </p>
+</proof>
+</solution>
+</example>
+
+<p>
+  I hope the reader can see why the above example makes for a good exam question. It is a good mathematical and logical workout. With that in mind, we (and the author really means you) should do another one. But before we leap into another fun example, a quick warning about negating implications:
+</p>
+<warning><title>Common implication errors</title>
+<p>
+  Remember that
+  <me>
+  \neg(P \implies Q) \quad \equiv \quad (P \land \neg Q).
+  </me>
+  The negation of <m>P \implies Q</m> is <alert>definitely not</alert>
+<me>
+  \underbrace{(P \implies \neg Q)}_{\text{bad!}} \qquad  \text{don't do this!}
+</me>
+This is a surprisingly common error. Please memorise <xref ref="thm-neg-imp"/>.
+</p>
+<p>
+It's also important to remember that:
+<ul>
+<li> if the hypothesis of an implication is false, the implication is true, and
+</li>
+<li> if the conclusion of an implication is true, the implication is true.
+</li>
+</ul>
+</p>
+</warning>
+
+<p>On with the fun!</p>
+<example>
+  <statement>
+  <p>
+  Determine the truth value of the following four statements and prove your answers.
+  <ul>
+<li> <m>\exists x \in \mathbb{R} \st \exists y \in \mathbb{R} \st (y \neq 0) \implies xy=1</m>
+</li>
+<li> <m>\exists x \in \mathbb{R} \st \forall y \in \mathbb{R}, (y \neq 0) \implies xy=1</m>
+</li>
+<li> <m>\forall x \in \mathbb{R}, \exists y \in \mathbb{R} \st (y \neq 0) \implies xy=1</m>
+</li>
+<li> <m>\forall x \in \mathbb{R}, \forall y \in \mathbb{R}, (y \neq 0) \implies xy=1</m>
+</li>
+</ul>
+  Remember that we must pick the value of <m>x</m> before we pick the value of <m>y</m> in every single case. You might find it helpful to write out the negations before deciding how to approach these.
+</p>
+  </statement>
+  <answer>
+    <p>
+    <ol marker="(a)">
+      <li>
+  <p>
+    As suggested, we'll write out the negation:
+    <me>
+      \forall x, \forall y, (y \neq 0) \land (xy\neq 1)
+    </me>
+    where we have dropped the <q><m>\in \mathbb{R}</m></q>, assuming the reader will understand by context.
+  </p>
+  <p>Now, in order to make an implication true, we just have to make the hypothesis false and that is quite easy in this case. Pick any <m>x</m> you want and then choose <m>y=0</m>. That's enough to make a proof (it also gives us a hint for one of the other statements).
+  </p>
+      </li>
+      <li>
+  <p>
+    Consider the original statement and what our two players have to do.
+    <ul>
+      <li>Player 1 has to choose some <m>x</m></li>
+      <li>Now, no matter what Player 2 picks, the implication must be true.</li>
+    </ul>
+    Let us assume Player 1 has chosen some <m>x</m> we don't know what it is yet, but let us assume they have chosen it. What can player 2 do to make the implication true. There are three ways to make it true: (hypothesis, conclusion) = (T,T), (F,T), (F,F). When Player 2 picks <m>y=0</m>, the hypothesis is false making the implication true. However, when they pick something else, the conclusion is only true when <m>y=1/x</m>. But this means for every other choice of <m>y</m>, the conclusion will be false. It really looks like this statement is false.
+  </p>
+  <p>
+    Time to think about the negation:
+    <me>
+      \forall x, \exists y \st (y \neq 0) \land (xy \neq 1)
+    </me>
+    What do our players do?
+    <ul>
+      <li>Player 1 can pick whatever <m>x</m> they like, so they do.</li>
+      <li>Player 2 knows the value of <m>x</m> and so can choose <m>y</m> to make the conjunction true. In particular, if Player 1 picked <m>x=0</m>, then Player 2 can choose <m>y=1</m>. On the other hand, if Player 1 picked any other value of <m>x</m>, then Player 2 can choose <m>y=-x</m>.</li>
+    </ul>
+    In both cases, <m>y\neq 0</m> and <m>xy =0</m> or <m>xy = -x^2 \neq 1</m>. Now just write it up!
+  </p>
+      </li>
+      <li>
+  <p>Think about our two players.
+    <ul>
+      <li>Player 1 can pick any <m>x</m> they want.</li>
+      <li>Player 2 just needs to make the implication true by careful choice of <m>y</m>. By choosing <m>y=0</m> they can make the hypothesis false.</li>
+    </ul>
+    Since Player 2 can always make the hypothesis false, the implication is true.
+  </p>
+      </li>
+      <li>
+  <p>
+    Last one. Oof.
+  </p>
+  <p>
+    Again, let us think about our two players.
+    <ul>
+      <li>Player 1 picks whatever <m>x</m> they want</li>
+      <li>Player 2 picks whatever <m>y</m> they want.</li>
+    </ul>
+    So, no matter what <m>x</m> was chosen, when Player 2 chooses <m>y=0</m>, the implication is true. But what about all the other choices? This feels unlikely.
+  </p>
+  <p>
+    Look at the negation:
+    <me>
+      \exists x \st, \exists y \st (y \neq 0) \land xy \neq 1
+    </me>
+    Ah - this is much easier. Player 1 can choose <m>x=0</m> and Player 2 can choose <m>y=1</m>. Then <m>y \neq 0</m> and <m>xy = 0 \neq 1</m>. There are, many other choices that would also work.
+  </p>
+      </li>
+    </ol>
+    </p>
+  </answer>
+<solution>
+  <proof><title>Proof of (a)</title>
+    <p>
+      The statement is true. Take <m>x=0,y=0</m>. Since the hypothesis is false, the implication is true.
+    </p>
+  </proof>
+  <proof><title>Another proof of (a)</title>
+    <p>
+      The statement is true. Take <m>x=y=2</m>, then the hypothesis and conclusion are both true, so the implication is true.
+    </p>
+  </proof>
+  <proof><title>Proof of (b)</title>
+    <p>
+      The statement is false, so we prove the negation:
+      <me>
+        \forall x, \exists y \st (y \neq 0) \land (xy \neq 1)
+      </me>
+      Let <m>x</m> be any real number. Then either <m>x = 0</m> or <m>x \neq 0</m>.
+      <ul>
+        <li>If <m>x=0</m> then pick <m>y=1</m>. Then <m>xy =0</m></li>
+        <li>On the other hand, if <m>x \neq 0</m> then pick <m>y = -x</m>, so that <m>xy = -x^2</m></li>
+      </ul>
+      In both cases, <m>y \neq 0</m> and <m>xy \neq 1</m>. Since the negation is true, the original statement is false.
+    </p>
+  </proof>
+    <proof><title>Another proof of (b)</title>
+      <p>
+        We prove the negation. Let <m>x</m> be any real number. Either <m>x=1</m> or <m>x \neq 1</m>. If <m>x=1</m> then pick <m>y=2</m>, so that <m>xy = 2</m>. On the other hand, if <m>x\neq 1</m>, then pick <m>y=1</m> so that <m>xy = x \neq 1</m>. In both cases we have that <m>y \neq 0</m> and <m>xy \neq 1</m> as required. Since the negation is true, the original is false.
+      </p>
+    </proof>
+  <proof><title>Proof of (c)</title>
+    <p>
+      The statement is true. Let <m>x</m> be any real number and then choose <m>y=0</m>. Since the hypothesis is false, the implication is true.
+    </p>
+  </proof>
+  <proof><title>Another proof of (c)</title>
+    <p>
+      Let <m>x</m> be any real number. Either <m>x = 0 </m> or <m>x \neq 0</m>.
+      If <m>x = 0</m> then pick <m>y=0</m> making the hypothesis false. On the other hand, if <m>x \neq 0</m> then set <m>y = \frac{1}{x} \neq 0</m>. In that case both the hypothesis and conclusion are true. In either case the implication is true.
+    </p>
+  </proof>
+  <proof><title>Proof of (d)</title>
+    <p>
+      We prove the negation:
+      <me>
+        \exists x \st, \exists y \st (y \neq 0) \land xy \neq 1.
+      </me>
+      Pick <m>x=0, y=1</m>. Then <m>xy = 0 \neq 1</m> and <m>y \neq 0</m>. Hence the negation is true and the original statement is false.
+    </p>
+  </proof>
+</solution>
+</example>
+</section>
+
+<section xml:id="sec_limits"><title>Quantifiers and rigorous limits</title>
+<introduction>
+<p>
+  Quantifiers appear all over mathematics, and it is essential that you become comfortable reading, understanding and applying them. One particularly important application of quantifiers is to make the notions of limits rigorous. You have<fn>At least we think you should have.
+  The authors are making an assumption about your mathematical education here, and we appologise if you have, in fact, not encountered limits before now.
+</fn> encountered the idea of a <term>limit</term> when you studied differential calculus; the idea that the value of a function gets <q>closer and closer</q> to a particular value as we take the argument of that function <q>closer and closer</q> to (say) zero. Quantifiers allow us to make <q>closer and closer</q> rigorous<fn>We recommend looking up the history of <term>infinitesimals</term> and <term>fluxions</term> which predate the rigorous definition of limits we give here. The calculus of Newton and Leibniz used infinitesimals to understand limits and derivatives. These ideas were attacked by Berkeley in his 1734 book <q>The Analyst</q> in which he refers to infinitesimals as <q>the ghosts of departed quantities</q>. The rigorous definition of limits, and so a rigorous foundation for calculus, was given almost 150 years later by Cauchy, Bolzano and Weierstrass. There is much of interest here for a motivated reader with a good search engine. We also recommend a little digression into <term>surreal numbers</term>, <term>hyperreal numbers</term> and <term>nonstandard analysis</term> <mdash/> things can get pretty weird.
+</fn>.
+We will start with the idea of the limit of a sequence, and then move on to limits of functions. So we begin with the definition of a sequence.
+</p>
+</introduction>
+<subsection><title>Convergence of sequences</title>
+<introduction>
+<definition xml:id="def-sequence">
+  <statement>
+    <p>
+      A <term>sequence</term> is an ordered list of real numbers. It is typically denoted
+      <me>
+        (x_n)_{n \in \mathbb{N}} = (x_1, x_2, x_3, \dots)
+      </me>
+      The numbers <m>x_1,x_2,\cdots</m> are the <term>terms</term> of the sequence.
+      You will also sometimes see alternate notation such as
+      <me>
+      (x_n)_n, \qquad (x_n)_{n\geq 1} \qquad \text{or} \qquad (x_n)
+      </me>
+      In some texts you will also see a sequence denoted with braces, <m>\{x_n\}</m>; we will not use that notation to avoid confusion with set notation.
+    </p>
+  </statement>
+</definition>
+
+<p>
+  An alternate way to think of a sequence is as a function that takes natural numbers and maps them to real numbers. So, for example, the sequence <m>\left(\frac{1}{n}\right)_n</m> is just the function <m>f:\mathbb{N} \to \mathbb{R}</m> defined by <m>f(n)=1/n</m>. We will come back to functions in <xref ref="ch-functions"/>. We also note that one can generalise this definition to sequences of other types of numbers or objects, but we will focus on sequences of real numbers.
+</p>
+
+
+<p>
+ We will typically define a particular sequence either by giving the first few terms,
+  <me>
+    (x_n) = (2,3,5,7,11,\dots)
+  </me>
+  or by giving a formula for the <m>n^\mathrm{th}</m> term in the sequence:
+  <me>
+    (x_n) = \left(\dfrac{1}{n}\right)
+  </me>
+  ie, the sequence <m>(1,1/2, 1/3, 1/4,\dots)</m>. Just as was the case with defining sets, we must make sure that we give the reader enough information to understand our definition. In this way, giving a formula for the <m>n^\mathrm{th}</m> term is typically preferred<fn>
+  The reader should assume that the sequence <m>(2,3,5,7,11,\dots)</m> is just the prime numbers, but a little digging in the <url href="https://oeis.org/" visual="oeis.org">Online Encyclopedia of Integer Sequences</url> shows a few other possibilities (some reasonable and some weird) including <q>partitions</q> (the number of ways of writing a given integer as a sum of smaller positive integers), <q>additive primes</q> (the sum of the digits is also prime), <q>absolute primes</q> (every permutation of the digits is also a prime) and lengths of <q>Farey sequences</q> (the reader should search-engine this one). Of course, if we are doing a good job as an author then we will have provided the reader with enough context to determine the sequence correctly.
+</fn>.
+</p>
+
+<p>
+  Typically one can compute the first few terms of a sequence by hand, and then the next many terms by computer. However, we are very often interested in the the behaviour of the terms of the sequence as <m>n</m> becomes very large. So, for example, consider the sequences
+  <md alignment="alignat" alignat-columns="4">
+  <mrow>
+  (a_n) \amp = \left( \frac{1}{n}\right)_n \amp = \amp \left(1, \frac{1}{2}, \frac{1}{3}, \frac{1}{4}, \dots \right)
+  </mrow>
+  <mrow>
+  (b_n) \amp = \left( (-1)^n \right)_n \amp = \amp \left(1, -1, 1, -1,\dots \right)
+  </mrow>
+  </md>
+  Here are plots of the first few terms to see how they behave.
+</p>
+
+<image source="seq_conv1" width="80%"/>
+
+<p>
+  Notice that in the first sequence, as <m>n</m> gets larger and larger, the term <m>a_n</m> gets closer and closer to 0. In this case we will say that <q><m>a_n</m> <term>converges</term> to <m>0</m></q>. In the second case, the sequence simply bounces back and forth between <m>+1</m> and <m>-1</m> and does not appear to <q>settle</q> to any particular value. In this case we will say that <q><m>b_n</m> diverges</q>. Let's see how we can turn this intuitive (but imprecise) understanding of convergence and turn it into a rigorous, precise definition.
+</p>
+
+<p>
+  To start towards that definition, let us rephrase convergence as a sort of two player game as we did for some of the nested quantifier examples earlier in this chapter, and focus on the example of <m>(a_n) = \left(\frac{1}{n}\right)</m>. In this game, Player 1 has to choose a small positive number, and then Player 2 has to work out how big does <m>n</m> have to be so that we can guarantee that the distance between <m>a_n</m> and <m>0</m> is smaller than Player 1's number. So, for example,
+  <ul>
+    <li>Player 1 says <q>Make the distance between <m>a_n</m> and <m>0</m> smaller than <m>0.01</m>.</q></li>
+    <li>Player 2 does some thinking and replies <q>Choose any <m>n \gt 100</m> and then it will work.</q></li>
+  </ul>
+  We can verify this by computing the distance<fn>
+  The absolute value is an example of a <term>metric</term> or <term>distance function</term>. You already know other examples of metrics <mdash /> for example, the distance between points <m>(x,y)</m> and <m>(z,w)</m> on the Cartesian plane is given by <m>d = \sqrt{(x-z)^2 + (y-w)^2}</m>; this is called the Euclidean metric. Another way to compute distances on the Cartesian plane is the taxicab metric <m>d = |x-z|+|y-w|</m>. A search-engine will guide you to more on this topic.
+  </fn> between two numbers using the absolute value, and then noting that
+  <me>
+  n \gt 100
+  \qquad \implies \qquad
+  \frac{1}{n} \lt \frac{1}{100} = 0.01
+  \qquad \implies \qquad
+  \left| \frac{1}{n} - 0 \right| \lt 0.01.
+  </me>
+</p>
+<p>
+This is just one instance, and Player 1 could have chosen <m>0.01</m> or <m>2^{-30}</m>. Indeed, Player 1 can choose <alert>any arbitrarily small</alert> positive number <m>\epsilon</m>, and then Player 2 can always work out how big to make <m>n</m> so that the distance between <m>a_n</m> and <m>0</m> is guaranteed to be smaller than <m>\epsilon</m>.
+<ul>
+<li>Player 1 says <q>I have chosen <m>\epsilon \gt 0</m>, please make the distance between <m>a_n</m> and <m>0</m> smaller than <m>\epsilon</m>.</q></li>
+<li>Player 2 does some thinking and replies <q>Choose any <m>n \gt \frac{1}{\epsilon}</m> and then it will work.</q></li>
+</ul>
+Again, we can verify this:
+<me>
+n \gt \frac{1}{\epsilon}
+\qquad \implies \qquad
+\frac{1}{n} \lt \epsilon
+\qquad \implies \qquad
+\left| \frac{1}{n} - 0 \right| \lt \epsilon
+</me>
+That is, Player 2 can set some point in the sequence <m>N = \frac{1}{\epsilon}</m>, so that for every value of <m>n \gt N</m>, we can guarantee that <m>|a_n - 0 | \lt \epsilon</m>. We can rephrase this outcome as
+</p>
+<blockquote>
+  <p>
+    No matter which <m>\epsilon \gt 0</m> that Player 1 chooses, Player 2 can always find some <m>N</m> so that if <m>n \gt N</m> then <m>|a_n-0| \lt \epsilon</m>.
+  </p>
+</blockquote>
+
+<p>
+  If we now try to play the same game with the second sequence <m>(b_n) = \left( (-1)^n \right)</m>, then we will quickly see that it does not work. Let us attempt to show that the sequence converges to <m>1</m> using the same game
+  <ul>
+  <li>Player 1 says <q>Make the distance between <m>a_n</m> and <m>1</m> smaller than <m>0.01</m>.</q></li>
+  <li>Player 2 does some thinking and replies <q>Well, if <m>n</m> is even then this will be true, but it will fail for every single odd value of <m>n</m>. I cannot give you a guarantee.</q></li>
+  </ul>
+  Player 2 cannot win. When <m>n</m> is even, <m>b_n=1</m> and so <m>|b_n-1|=0 \lt 0.01</m>, but when <m>n</m> is odd, <m>b_n=-1</m> and so <m>|b_n-1|=2 \gt 0.01</m>. So there is no way to make <m>n</m> sufficiently big, ie all <m>n</m> bigger than some <m>N</m>, so that <m>|b_n - 1| \lt 0.01</m>. We can rephrase this outcome as
+</p>
+<blockquote>
+  <p>
+    There is a choice of <m>\epsilon</m> so that no matter which <m>N</m> Player 2 chooses, there will always be some <m>n \gt N</m> so that <m>|b_n - 1 | \gt \epsilon</m>.
+  </p>
+</blockquote>
+<p>
+  This example will help us understand how to turn the intuitive idea of convergence into the rigorous definition.
+</p>
+</introduction>
+
+<subsubsection><title>Quantifying towards a definition</title>
+<p>
+  To start towards our definition, we need to first describe all the objects involved, and then we explain that convergence means that the objects satisfy certain conditions. In this case, we will start with something like
+</p>
+<blockquote>
+  <p>
+    Let <m>(x_n)_n</m> be a sequence of real numbers, that is, <m>x_n\in\mathbb{R}</m>, for all
+    <m>n\in\mathbb{N}</m>. Then we say that <m>(x_n)</m> converges to a real number <m>L</m> when <ellipsis/>
+  </p>
+</blockquote>
+<p>
+  and now we need to explain those conditions. Let us start with our intuitive idea
+</p>
+<blockquote>
+  <p>Let <m>(x_n)_n</m> be a sequence of real numbers, that is, <m>x_n\in\mathbb{R}</m>, for all
+  <m>n\in\mathbb{N}</m>. Then we say that <m>(x_n)</m> converges to a real number <m>L</m> when
+  <m>x_n</m> gets <alert>closer and closer</alert> to <m>L</m> as <m>n</m> becomes <alert>larger and larger</alert>.
+</p>
+</blockquote>
+<p>
+  While this is quite descriptive, it is not actually all that precise. Let us rewrite it as follows:
+</p>
+<blockquote>
+  <p>Let <m>(x_n)_n</m> be a sequence of real numbers, that is, <m>x_n\in\mathbb{R}</m>, for all
+  <m>n\in\mathbb{N}</m>. Then we say that <m>(x_n)</m> converges to a real number <m>L</m> when
+  <m>x_n</m> moves <alert>arbitrarily close</alert> to <m>L</m> as <m>n</m> becomes <alert>larger and larger</alert>.
+</p>
+</blockquote>
+<p>
+  Now this means that in order for <m>x_n</m> to converge to <m>L</m>, it must be possible to bring the number <m>x_n</m> as close to <m>L</m> as we want by making <m>n</m> really big.  This is exactly like the two player game we described above: Player 1 can make any choice of <m>\epsilon</m> and then Player 2 has to work out how large to make <m>n</m>. Let us write our definition again:
+</p>
+<blockquote>
+  <p>Let <m>(x_n)_n</m> be a sequence of real numbers, that is, <m>x_n\in\mathbb{R}</m>, for all
+  <m>n\in\mathbb{N}</m>. Then we say that <m>(x_n)</m> converges to a real number <m>L</m> when
+  <alert>no matter what positive <m>\epsilon</m> we choose</alert>, then <alert>for all <m>n</m> sufficiently large</alert>, we have <m>|x_n - L | \lt \epsilon</m>.
+</p>
+</blockquote>
+<p>
+  Now, in our game, Player 2 established just how big <m>n</m> needs so that we can guarantee the sequence terms are close enough to <m>L</m>. We denoted that threshold by <m>N</m>, and it will almost always depend on <m>\epsilon</m>. Of course, since Player 1 chooses <m>\epsilon</m> first, Player 2 can pick <m>N</m> with full knowledge of what Player 1 did. Time for another attempt at the definition:
+</p>
+<blockquote>
+  <p>Let <m>(x_n)_n</m> be a sequence of real numbers, that is, <m>x_n\in\mathbb{R}</m>, for all
+  <m>n\in\mathbb{N}</m>. Then we say that <m>(x_n)</m> converges to a real number <m>L</m> when
+  <alert>for all <m>\epsilon \gt 0</m></alert>,  <alert>there is <m>N \in \mathbb{N}</m></alert>, so that <alert>for all natural numbers <m>n \gt N</m></alert> we have <m>|x_n - L | \lt \epsilon</m>.
+</p>
+</blockquote>
+<p>
+  This is now pretty good. All that remains is to tweak the phrasing a little, clean it up and make it into a formal definition<fn>
+  This is, more or less, the definition given by Bolzano in 1816.
+</fn>.
+</p>
+<definition xml:id="def-convergence-sequence">
+  <statement>
+    <p>
+       Let <m>(x_n)</m> be a sequence of real numbers. We say that <m>(x_n)</m> has a <term>limit</term> <m>L\in\mathbb{R}</m> when
+      <me>
+        \forall\epsilon \gt 0, \exists N\in\mathbb N \st \forall n \in \mathbb{N}, (n\gt N) \implies (|x_n-L| \lt \epsilon).
+      </me>
+      In this case we say that the sequence  <term>converges</term> to <m>L</m>and write
+      <me>
+        x_n\to L \qquad \text{or} \qquad \lim\limits_{n\to \infty}x_n=L.
+      </me>
+      If the sequence doesn't converge to any number <m>L</m>, we say that the sequence <term>diverges</term>.
+    </p>
+  </statement>
+</definition>
+</subsubsection>
+
+<subsubsection>
+  <title>Some examples</title>
+<p>
+  Time to put our newly rigorised<fn>The authors were quite sure that <q>rigorised</q> is not a real word and were surprised to find it in the dictionary.</fn> understanding of limits to work.
+</p>
+
+<example xml:id="eg-seq-const">
+  <statement>
+    <p>
+      Let <m>c \in \mathbb{R}</m>. Show that the constant sequence <m>(x_n)_{n\in\mathbb N}=(c)_{n\in\mathbb N}</m> converges to <m>c</m>.
+    </p>
+  </statement>
+  <answer>
+    <p>
+      We know, at least intuitively, that the constant sequence must converge to that constant value its elements take. It makes sense. But, how can we prove it rigorously using the definition of sequence convergence.
+    </p>
+    <p>
+      Again, think of the two player game<fn>We'll dispense with this analogy soon.</fn>. We need to show that no matter which <m>\epsilon \gt 0</m> that Player 1 chooses, Player 2 can always find a threshold <m>N \in \mathbb{N}</m> (which, in general will depend on <m>\epsilon</m>), so that whenever <m>n \gt N</m> we have <m> |x_n-c| \lt \epsilon.</m>
+    </p>
+    <p>
+      Now assume that Player 1 picked an <m>\epsilon>0</m> and try to understand what Player 2 needs to show. They want to show that with the right choice of <m>N\in\mathbb N</m>, we can  keep <m>|x_n-c| \lt \epsilon</m>. But since <m>x_n</m> constant <m>x_n=c</m>, we can simplify the inequality that needs to be satisfied:
+      <me>
+        |x_n-c| \lt \epsilon \qquad \text{becomes} \qquad |c-c|=0 \lt \epsilon.
+      </me>
+      But since we know <m>\epsilon \gt 0</m>, this will be true independent of <m>n</m>. This, in turn, means that Player 2 is free to choose any <m>N\in\mathbb N</m>. Now Player 2 could be mysterious and pick any random value (eg <m>N=98127</m>) but let's force Player 2 to be a bit nicer to the audience (ie to the reader) and get them to pick a sensible value like <m>N=1</m>. Then for all <m>n \gt N=1</m>, we have <m>|x_n-c|=|c-c|=0 \lt \epsilon</m> as required.
+    </p>
+    <p>
+      All that remains is to write this nice and tidy in a proof.
+    </p>
+  </answer>
+  <solution>
+    <proof>
+      <p>
+        Let <m>\epsilon \gt 0</m> be given and pick <m>N=1</m>. Then, for all <m>n \gt N</m>, we have
+        <me>
+          |x_n - c| = |c-c| = 0 \lt \epsilon.
+        </me>
+        Therefore we conclude that <m>(x_n)</m> converges to <m>c</m> as required.
+      </p>
+    </proof>
+  </solution>
+</example>
+<p>
+  Notice that the proof in our example does not have to explain <alert>how</alert> we came up with the choice of <m>N</m>, it merely has to show that it works. Our definition of convergence requires that <q>there exists <m>N</m></q>, not that <q>there exists <m>N</m> with a nice explanation of how it was found</q>. This can sometimes make a nicely written proof seem much more clever than it really is. The reader can be left thinking <q>How on earth did they know how to choose that?</q>. But you should remember that the author of the proof probably did a lot of careful scratch work to work out how to make the proof nice and neat; that scratch work is not required for the proof to be valid. Of course, if the author knows their audience well, and knows they might need some help, then the author will hopefully leave some explanation in the text nearby.
+</p>
+
+<example>
+  <statement>
+    <p>
+      Show that the sequence <m>(a_n)_{n\in\mathbb N}=(\frac 1n)_{n\in\mathbb N}</m> converges to <m>0</m>.
+    </p>
+  </statement>
+  <answer>
+    <p>
+      This is precisely the example we did above to introduce the idea of convergence. We have even discussed how to think of proving the convergence as a two player game. So, let us dispense with the game analogy.
+    </p>
+    <p>
+      We are going to start by choosing some arbitrary <m>\epsilon \gt 0</m>, and then we need to find a threshold <m>N</m> so that for every <m>n \gt N</m>, we know that <m>|a_n - 0 | \lt \epsilon</m>. Now, our argument from the previous example won't work here, since
+      <m>|a_n - 0| = \frac{1}{n}</m> is no longer constant and varies with <m>n</m>. Let us try rewriting things a little to help us think.
+    </p>
+    <p>
+      We've chosen some arbitrary <m>\epsilon \gt 0</m>, and we need to show that <m>|a_n-0| = \frac 1n \lt \epsilon</m> when <m>n</m> is big enough, ie for <m>n \gt N</m>. But the inequality
+      <me>
+        \frac{1}{n} \lt \epsilon \qquad \iff \qquad n \gt \frac{1}{\epsilon}
+      </me>
+      since both <m>n, \epsilon</m> are positive. So this means that given our <m>\epsilon</m>, we need to work out how to make sure that <m>n \gt \frac{1}{\epsilon}</m>, because then we know that <m>\frac{1}{n} \lt \epsilon</m>.
+</p>
+<p>
+      Well, if we set <m>N = \frac{1}{\epsilon}</m>, then when we require <m>n \gt N</m>, then we have that <m>n \gt N \gt \epsilon</m> and so <m>\frac{1}{n} \lt \frac{1}{N} \lt \frac{1}{\epsilon}</m> implying that <m>\frac{1}{n} \lt \frac{1}{\epsilon}</m>. The only hitch is that our definition requires that <m>N</m> be a natural number.
+      But that is easy to fix, instead of setting <m>N = \frac{1}{\epsilon}</m>, we can just take <m>N</m> to be the next integer bigger than <m>\frac{1}{\epsilon}</m>. That is, we set <m>N</m> to be the <term>ceiling</term> of <m>\frac{1}{\epsilon}</m> which we write as <m> N = \ceil{ \frac{1}{\epsilon} }</m>.
+</p>
+
+<p>
+  Here, we should mention that even though any <m>N>\frac 1\epsilon</m> would work for our arguments above and that we have infinitely many possible choices for <m>N</m> it is important to either picking a specific <m>N</m> as we did in this scratch work, or prove the existence of such an <m>N</m> without giving it explicitly <mdash /> using results like the Archimedean property<fn>
+  This says, roughly, that given any two positive real numbers, <m>x,y</m>, we can always find an integer <m>n</m>, so that <m>nx \gt y</m>. This appears in a more geometric guise in Book V of Euclid's Elements, and Archimedes attributes it to Eudoxus.
+</fn>
+or similar. Simply saying that such number <em>should</em> exist is not an adequate justification. With that caveat out of the way, let's tidy this up and write the proof.
+</p>
+  </answer>
+  <solution>
+<proof>
+  <p>
+    Let <m>\epsilon \gt 0</m>. Then pick <m>N=\ceil{ \frac{1}{\epsilon}}</m>, so that <m>N \geq \frac{1}{\epsilon}</m>. Then for all <m>n \gt N</m>, we have that
+    <me>
+      |a_n - 0 | = \frac{1}{n} \lt \frac{1}{N} = \epsilon
+    </me>
+    Therefore we see that <m>(a_n)</m> converges to <m>0</m>.
+  </p>
+</proof>
+</solution>
+</example>
+
+<example>
+  <statement>
+    <p>
+      Show that the sequence  <m>(x_n) = \left(\dfrac{2n+4}{n+1}\right)</m> converges to <m>2</m>.
+    </p>
+  </statement>
+  <answer>
+    <p>
+      Again, let's start with the scratch work.
+    </p>
+    <p>
+      Our zeroth<fn>
+      This is barely a step at all really. But we do need <m>\epsilon</m>.</fn>
+      step is to pick some arbitrary <m>\epsilon \gt 0</m>. Now, as we saw in the previous example, we need to understand how to choose <m>n</m> so that we can guarantee
+      <me>
+        |x_n - L | = \left| \frac{2n+4}{n+1} - 2 \right| \lt \epsilon
+      </me>
+      To help us understand this, we should clean up the inequality and simplify the expression inside the absolute value. Simplifying shows us that we actually want
+      <me>
+       \left|\frac{2n+4}{n+1} - 2\right| = \left|\frac{2n+4-(2n+2)}{n+1} \right|= \left|\frac{2}{n+1}\right| \lt \epsilon.
+       </me>
+       At this point we should reiterate <mdash /> we have not proved this yet, this is just what we <em>want</em> to be true. We still need to work out how we choose <m>n</m> to make sure this is true.
+     </p>
+     <p>
+       We can even go a little further. Since we know <m>n</m> is a natural number, we know that <m>\frac{2}{n+1} \gt 0</m> and so we can write
+       <me>
+       \left|\frac{2}{n+1}\right| = \frac{2}{n+1} \lt \epsilon.
+       </me>
+       This is a little easier to manipulate, and we can quickly isolate <m>n</m>:
+       <me>
+         \frac{2}{n+1} \lt \epsilon
+         \qquad \iff \qquad
+         n+1 \gt \frac{2}{\epsilon}
+         \qquad \iff \qquad
+         n \gt \frac{2}{\epsilon}-1
+       </me>
+      So, this means that if we have <m>n \gt \frac{2}{\epsilon}-1</m>, then we know (moving back along our chain of reasoning) that <m>|x_n-2| \lt \epsilon</m>. So it makes sense for us to choose <m>N=\ceil{ \frac{2}{\epsilon}} -1</m>. Again, we make use of the ceiling function to ensure that <m>N</m> is an integer.
+     </p>
+     <p>
+       Oops! But be careful <mdash/> what happens if
+       <m>\epsilon=1000</m>? Then we choose <m>N=0</m> which is not a
+       natural number. Thankfully this is easily fixed, let us just
+       take <m>N</m> to be a little bit larger. Indeed, we can set
+       <m>N = \ceil{\frac{2}{\epsilon}}</m> and everything works out
+       nicely. More generally, in these types of proofs, once you have
+       worked out an <m>N</m>, one is free to make it <em>larger</em>
+       (you should ask yourself why).
+       One could also argue that the choice <m>N = \ceil{ \frac{2}{\epsilon} }</m> is a little neater<fn>
+      Mathematicians generally find <q>neatness</q> to be desirable in a proof. Of course, one should not make things so neat that the logic is obscured.</fn>
+       and does not change the proof very much.
+     </p>     
+  </answer>
+  <solution>
+    <proof>
+      <p>
+        Let <m>\epsilon \gt 0</m>, set <m>N = \ceil{(2/\epsilon)}</m> and let <m>n \gt N</m>. By our choice of <m>n</m>, we know that
+        <me>
+          n \gt N \gt \frac{2}{\epsilon}
+        </me>
+        From this we know that <m>n+1 \gt n \gt \frac{2}{\epsilon}</m> and so
+        <me>
+          \frac{2}{n+1} \lt \epsilon
+        </me>
+        Hence
+        <me>
+        |x_n-2|
+        =  \left| \frac{2n+4}{n+1} - 2 \right|
+        = \left| \frac{2}{n+1} \right|
+        = \frac{2}{n+1}
+        \lt \epsilon,
+        </me>
+        as required.
+      </p>
+    </proof>
+  </solution>
+</example>
+
+<p>
+  Of course we also know that not every sequence converges <mdash /> we have already seen an example of this above. Let us redo that example using our rigorous definition of convergence.
+</p>
+
+<example xml:id="eg_minus_1_to_n_conv">
+  <statement>
+    <p>
+      Show that the sequence <m>(b_n) = \left( (-1)^n\right)</m> does not converge to <m>1</m>.
+    </p>
+  </statement>
+  <answer>
+    <p>
+      Even though we wish to show that the sequence <m>(b_n)</m> does not converge to <m>1</m>, our starting point will still be the definition of convergence. Recall that the sequence <m>(b_n)</m> converges to <m>1</m> when
+      <me>
+        \forall\epsilon \gt 0, \exists N\in\mathbb N \st \forall n \in \mathbb{N} (n\gt N) \implies (|b_n-1| \lt \epsilon).
+      </me>
+      We want to show that this is false, and we do so by showing that the negation is true. The negation is
+      <me>
+        \exists\epsilon \gt 0 \st \forall N\in\mathbb N, \exists n\in\mathbb{N} \st (n \gt N) \land (|(-1)^n-1|\geq\epsilon).
+      </me>
+      So, if we can show that this is true, then the original statement is false, and so the sequence <m>(b_n)</m> does not converge to <m>1</m>.
+    </p>
+    <p>
+      Now, let's try to understand this statement. It says that we need to show that there is an <m>\epsilon \gt 0</m> such that no matter what <m>N\in\mathbb N</m> we choose, there is always at least one <m>n\gt N</m> such that <m>|(-1)^n-1|</m> is greater than <m>\epsilon</m>. Now, notice that we don't have to show this for all <m>\epsilon</m> (indeed we can't), we just need to find one <m>\epsilon</m> that makes things work.
+    </p>
+    <p>
+      As we saw above, sequence <m>(b_n)</m> alternates between <m>-1</m> and <m>1</m>.
+      <ul>
+        <li>
+            For <m>n</m> even, <m>b_n = (-1)^n = 1</m> and so <m>|b_n-1|=0 \lt \epsilon</m>. So this is true for all <m>\epsilon \gt 0</m> and all even <m>n</m>.
+        </li>
+        <li>On the other hand, for <m>n</m> odd, we have <m>b_n = (-1)^n = -1</m>, and so <m>|b_n-1| = |-1-1| = 2</m>. So, as long as we choose <m>0 \lt \epsilon \lt 2</m>, this case will fail for all odd <m>n \in \mathbb{N}</m>.
+        </li>
+      </ul>
+      So to make the proof work, we can choose, say, <m>\epsilon =1</m> and then show that things go wrong for odd <m>n</m>. Time for the proof.
+    </p>
+  </answer>
+  <solution>
+    <proof>
+      <p>
+        We show that the sequence <m>(b_n)=\left((-1)^n\right)</m> doesn't converge to <m>1</m>. To this we show that
+        <me>
+        \exists\epsilon \gt 0 \st \forall N\in\mathbb N, \exists n\in\mathbb{N}\st (n \gt N) \land (|(-1)^n-1|\geq\epsilon).
+        </me>
+        Let <m>\epsilon=1</m> and let <m>N</m> be any natural number. Now set <m>n = 2N+1</m>, so that <m>b_n = (-1)^n=-1</m>. Then
+        <me>
+          |b_n -1 | = |-1-1| = 2 \gt \epsilon.
+        </me>
+        Therefore we conclude that the sequence does not converge to <m>1</m>.
+      </p>
+    </proof>
+    <p>
+      Notice that we set <m>n=2N+1</m> in our proof and everything worked out nicely. We can actually choose any odd number larger than <m>N</m>. In fact, we could change the wording of the proof to say <q>Let <m>n</m> be any odd number larger than <m>N</m></q> and it would be correct. But, since we can can make a simple explicit choice, we should do so.
+    </p>
+  </solution>
+</example>
+
+
+<p>
+  In general, when we talk about the divergence of a sequence, we don't say that the sequence does not converge to a given specific number <m>L</m>. Rather, we typically want to prove<fn>
+  There are exceptions to this. For example, one easy way to show that a <em>series</em> diverges is to show that summands do not converge to zero.</fn>
+   that it does not converge to <alert>any</alert> number <m>L</m>. This is a much stronger statement. Written as a quantified statement, it is
+   <me>
+   \forall L\in\mathbb R, \exists\epsilon \gt 0 \st \forall N\in\mathbb N, \exists n\in\mathbb{N} \st (n\gt N) \land (|x_n-L|\geq\epsilon),
+   </me>
+   and says that for any number <m>L</m>, the sequence doesn't converge to that number.
+</p>
+<p>
+  Let's do an example where we show that a sequence actually diverges. That is, it does not converge to any number <m>L \in \mathbb{R}</m>.
+</p>
+
+<example>
+  <statement>
+    <p>
+      Show that the sequence <m>(x_n)=(n)</m> diverges.
+    </p>
+  </statement>
+  <answer>
+    <p>
+      First, let's write down what we want to show:
+      <me>
+      \forall L\in\mathbb R, \exists\epsilon \gt 0 \st \forall N\in\mathbb N, \exists n\in\mathbb{N} \st (n\gt N) \land (|n-L|\geq\epsilon).
+      </me>
+      Since we need to make this work for every possible <m>L</m>, we let <m>L</m> be an arbitrary real number.  Now, what we want is to satisfy <m>|n-L|\geq \epsilon</m> for some <m>\epsilon</m> and some <m>n</m>. It can be a little intimidating to try to this for an arbitrary <m>L</m>, so perhaps it is better to think about a few different <m>L</m>-values.
+      <ul>
+        <li>When <m>L=0</m>, the we can simplify <m>|n -L| = |n| = n</m>. Now since, <m>n \in \mathbb{N}</m>, we know that <m>n \geq 1</m>. So if we pick <m>\epsilon=1</m>, then we will have <m>|n-L| \geq \epsilon</m> for all <m>n \in \mathbb{N}</m>. Now, it is easy to also enforce the requirement that <m>n \gt N</m>, no matter what <m>N</m> is chosen, just pick <m>n = N+1</m>.
+        </li>
+        <li>Similarly, if we set <m>L=-1</m>, then we have <m>|n-L|=|n-(-1)|=n+1</m>. So again, we can pick <m>\epsilon=1</m> and then <m>|n-L| \geq \epsilon</m> for all <m>n \in \mathbb{N}</m>. This reasoning will actually work for any <m>L \leq 0</m>. Again, to also enforce the requirement that <m>n \gt N</m>, we can just pick <m>n=N+1</m>.
+        </li>
+        <li>What about when, say,  <m>L=17</m>, we will have <m>|n-L| = |n-17|</m>. Now, provided <m>n \gt 17</m>, this will be bigger than zero. In particular, if we set <m>n \geq 18</m>, then we will have <m>|n-17| \gt 1</m>. <alert>However</alert>, this is not quite right. We not only need that <m>|n-17| \geq \epsilon</m> but we also need that <m>n \gt N</m>, no matter what choice of <m>N \in \mathbb{N}</m>. Thankfully this is easily fixed, just choose <m>n = \max\{17, N\}+1</m>. Alternatively, since we know <m>N \geq 1</m>, we can choose <m>n = N+17</m>.
+        </li>
+        <li>More generally, if <m>L \gt 0</m>, then we can choose <m>n \geq \ceil{L}+1</m>, and then <m>|n-L| \geq 1</m>. Just as in the previous point, we need to satisfy <m>n \gt N</m>, so pick <m>n = \max\left\{\ceil{L},N \right\}+1</m>. Notice that a similar choice works when <m>L \leq 0</m>, just take <m>n = \max\left\{\ceil{|L|},N \right\}+1</m>.
+      </li>
+      </ul>
+      We are now ready to write the proof.
+    </p>
+  </answer>
+  <solution>
+<proof>
+  <p>
+    Let <m>L</m> be an arbitrary real number and set <m>\epsilon = 1</m>. Then for any <m>N \in \mathbb{N}</m>, set <m>n = \max\{N, \ceil{|L|} \}+1</m>. Then this gives
+    <me>
+      n \gt N \qquad \text{ and } \qquad |n-L| \gt 1=\epsilon
+    </me>
+    Therefore the sequence <m>(x_n)=(n)</m> diverges.
+  </p>
+</proof>
+  <p>
+    Notice how short the proof is compared to the scratch work. This is not unsusal. A nice neat proof can hide a lot of work.
+  </p>
+
+  </solution>
+</example>
+
+</subsubsection>
+</subsection>
+
+<subsection>
+  <title>The limit of a function</title>
+  <p>
+    Note that in this section of the text we restrict ourselves to real-valued functions. That is, functions that take a real number as input and return a real number as output, just like those you worked with in Calculus courses. We do look at more general functions in <xref ref="ch-functions"/>, but not their limits.
+  </p>
+
+  <p>
+    We define the limits of functions in very much the same way as the limits of sequences.
+    The definition is more general, as now we can talk of the limit of a function as its argument approaches a more general points, while for a sequence, we only talked of its behaviour as <m>n \to \infty</m>. Let's give the definition and then we'll explain it.
+  </p>
+<definition xml:id="def-convergence-function">
+  <statement>
+    <p>
+      Let <m>a,L \in \mathbb{R}</m> and let <m>f</m> be a real-valued function. We say that the <term>limit</term> of <m>f</m> as <m>x</m> approaches <m>a</m> is <m>L</m> when
+      <me>
+      \forall\epsilon \gt 0, \exists \delta \gt 0 \st \left(0\lt |x-a| \lt \delta\right)\implies \left(|f(x)-L| \lt \epsilon \right).
+      </me>
+      In this case we write
+      <me>
+        \lim\limits_{x\to a}f(x)=L \qquad \text{or sometimes}\qquad f(x)\xrightarrow[x\to a]{} L
+      </me>
+      and say that <m>f</m> <term>converges</term> to <m>L</m> as <m>x</m> approaches <m>a</m>.
+      We also sometimes say the limit of <m>f</m> as <m>x</m> goes to <m>a</m> is <m>L</m>, which we denote by
+      <me>
+        f(x) \to L \text{ as } x \to a.
+      </me>
+    </p>
+    <p>
+      If <m>f</m> does not converge to any finite limit <m>L</m> as <m>x</m> approaches <m>a</m>, then we say that <m>f</m> <term>diverges</term> as <m>x</m> approaches <m>a</m>.
+    </p>
+  </statement>
+</definition>
+
+<p>
+  This definition may look<fn>In fairness, it is a little more complicated. But it is not <em>that</em> much more complicated.</fn> more complicated than the equivalent definition for the convergence of a sequence, <xref ref="def-convergence-sequence"/>. But if we do some reverse engineering (much as we did for sequence convergence above, but in reverse) then we can read the definition as
+<ul>
+  <li>
+    <term>For all</term> positive <m>\epsilon</m>, <term>there is some</term> positive <m>\delta</m> so that <term>if</term> the distance between <m>x</m> and <m>a</m> is less than delta (but not zero), <term>then</term> the distance between <m>f(x)</m> and <m>L</m> is less than <m>\epsilon</m>.
+  </li>
+</ul>
+We can rephrase these quantifiers as little:
+<ul>
+  <li>
+    <term>No matter which</term> positive <m>\epsilon</m>, <term>we can always find some</term> positive <m>\delta</m> so that <term>if</term> the distance between <m>x</m> and <m>a</m> is less than delta (but not zero), <term>then</term> the distance between <m>f(x)</m> and <m>L</m> is less than <m>\epsilon</m>.
+  </li>
+</ul>
+This is telling us that if we need to make the distance between the function and its limit very small, we can always find some <m>\delta</m> so that we just need to make the distance <m>|x-a| \lt \delta</m>. That is
+<ul>
+  <li>
+    We can make the distance between <m>f(x)</m> and <m>L</m> <term>as small as we want</term>, by making the distance between <m>x</m> and <m>a</m> <term>arbitrarily small</term> (but not zero).
+  </li>
+</ul>
+So we reach
+<ul>
+  <li>
+    We can make <m>f(x)</m> <term>closer and closer</term> to <m>L</m> by taking <m>x</m> <term>closer and closer</term> to <m>a</m> (but not actually equal).
+  </li>
+</ul>
+This is probably, more or less, the working definition of a limit of a function you used in your first Calculus course. This gives reasonable intuition, but the power of quantifiers is to make everything precise and eliminate misunderstandings.
+</p>
+
+<remark><title>Why exclude <m>x=a</m></title>
+<p>
+Notice that the definition of convergence of a function says that given any <m>\epsilon</m> we can find <m>\delta</m> so that when
+<me>
+  0 \lt |x-a| \lt \delta
+</me>
+we know that the distance between the function and its limit is smaller than <m>\epsilon</m>. This hypothesis tells us that the distance between <m>x</m> and <m>a</m> has to be small, but not zero <mdash /> that is we do not require the function be close to its limit exactly at <m>x=a</m>. This is because the definition of <term>limit</term> has been crafted to tell us how the function behaves as it <em>approaches</em> <m>x=a</m>. We do not care about what happens exactly at <m>x=a</m>, and indeed we do not even require that the function be defined there. In fact, many important applications of limits <mdash /> such as derivatives <mdash /> would not work if we extended this hypothesis to include <m>x=a</m>.
+</p>
+<p>
+  Notice also, that our definition of limits of sequences had a similar quirk. We defined the limit in terms of the behaviour of the sequence terms as <m>n</m> became very very large. We did not care about the <q>infiniteth</q> term in the sequence <mdash /> if such a thing were defined.
+</p>
+</remark>
+
+<p>
+  Let's put this definiton to work by considering the limit of a simple function.
+</p>
+
+<example>
+  <statement>
+    <p>
+      Show that for any <m>\ds a\in \mathbb R, \lim_{x\to a}x=a</m>.
+    </p>
+  </statement>
+  <answer>
+    <p>
+      In this example we want to show that the function <m>f(x)=x</m> converges to the limit <m>a</m> as <m>x</m> goes to <m>a</m>. Even though this feels more like a tautology than an example, it is a good exercise in applying the limit definition.
+    </p>
+    <p>
+      To prove that <m>\lim_{x\to a}x = a</m> the definiton tells us that we need to show that
+      <me>
+      \forall\epsilon \gt 0, \exists \delta\st 0 \st \left(0\lt |x-a|\lt \delta\right)\implies \left(|f(x)-L| \lt \epsilon \right).
+      </me>
+      Now, this simplifies immediately since we have <m>f(x)=x</m> and <m>L=a</m>:
+      <me>
+      \forall\epsilon \gt 0, \exists \delta\st 0 \st \left(0\lt |x-a|\lt \delta\right)\implies \left(|x-a| \lt \epsilon \right).
+      </me>
+    </p>
+    <p>
+      So, given an arbitrary <m>\epsilon>0</m>, we need a <m>\delta>0</m> such that
+      <me>
+        0 \lt |x-a| \lt \delta \implies |x-a| \lt \epsilon.
+      </me>
+      That is, whatever positive <m>\delta</m> we pick, whenever <m>0 \lt |x-a| \lt \delta</m>, it implies that <m>|x-a| \lt \epsilon</m>. A good<fn>
+      There are an infinite number of possible correct choices of <m>\delta</m>. Indeed, <m>\delta = \epsilon/n</m> for any <m>n \in \mathbb{N}</m> works. But the choice of <m>\delta = \epsilon</m> is good because it works, while being neat and simple.
+      </fn> choice for <m>\delta</m> is simply <m>\delta = \epsilon</m>.
+    </p>
+    <p>
+      Now, let's write this in a proof.
+    </p>
+  </answer>
+  <solution>
+    <proof>
+      <p>
+        Suppose <m>\epsilon</m> is any positive real number. Then pick <m>\delta = \epsilon</m>. Then whenever <m>|x-a| \lt \delta</m>, then we know that <m>|f(x)-a| = |x-a| \lt \delta =\epsilon</m> as required.
+      </p>
+    </proof>
+  </solution>
+</example>
+<p>
+  That one is arguably a little too simple. Here is a slightly more complicated one.
+</p>
+<example>
+  <statement>
+    <p>
+      Let <m>a \in \mathbb{R}</m>. Prove that
+      <me>
+        \lim_{x\to a} 3x+5 = 3a+5.
+      </me>
+    </p>
+  </statement>
+  <answer>
+    <p>
+      Again, our starting point is to look at the definition. We need to prove that
+    <me>
+    \forall\epsilon \gt 0, \exists \delta \gt 0 \st (0\gt |x-a| \gt \delta)\implies (|(3x+5)-(3a+5)| \lt \epsilon).
+    </me>
+    Before we go much further, we should clean this up a little. We can simplify that last inequality. That is <m>|(3x+5)-(3a+5)| = |3x-3a| = 3|x-a|</m>, so
+    <me>
+    \forall\epsilon \gt 0, \exists \delta \gt 0 \st (0\gt |x-a| \gt \delta)\implies (3|x-a| \lt \epsilon).
+    </me>
+    </p>
+    <p>
+      Now this is looking pretty similar to the previous example. Given any <m>\epsilon</m>, we need to pick <m>\delta</m>, so that when <m>0 \lt |x-a| \lt \delta</m>, we guarantee that <m>3|x-a| \lt \epsilon</m>. If we rearrange this last inequality, we want
+      <me>
+        |x-a| \lt \frac{\epsilon}{3}.
+      </me>
+      And thus we pick <m>\delta = \frac{\epsilon}{3}</m>.
+    </p>
+    <p>
+      Alternatively, if we assume that we have <m>0 \lt |x-a| \lt \delta</m>, then multiplying everything by <m>3</m> gives:
+      <me>
+        0 \lt 3|x-a| \lt 3\delta
+      </me>
+      and thus we need <m>3\delta \leq \epsilon</m>. So again, we reach the neat choice of <m>\delta = \frac{\epsilon}{3}</m>. Time for the proof.
+    </p>
+  </answer>
+  <solution>
+    <proof>
+      <p>
+        Let <m>\epsilon</m> be any positive real number. Then pick <m>\delta = \frac{\epsilon}{3}</m>. Then as long as <m>|x-a| \lt \delta</m>, we have that
+        <me>
+          |(3x+5)-(3a+5)| = |3x-3a| = 3|x-a| \lt 3\delta = \epsilon.
+        </me>
+        And thus <m>(3x+5)</m> converges to <m>3a+5</m> as <m>x</m> approaches <m>a</m>.
+      </p>
+    </proof>
+    <p>
+      As you can see, the proof of the statement is very short, clean, and doesn't omit any necessary information. And, as was the case with our proofs above, we don't explain to the reader how we come up with the choice of <m>\delta = \epsilon/3</m>, we just have to prove that it works.
+    </p>
+  </solution>
+</example>
+<p>
+  Let's ratchet up the difficultly a little.
+</p>
+
+<example>
+  <statement>
+    <p>
+      Show that <m>\ds \lim_{x\to2} \left(\dfrac{1}{x} \right)= \dfrac{1}{2}</m>.
+    </p>
+  </statement>
+  <answer>
+    <p>
+      Just like in our previous example(s) we start with the definition of convergence and adapt it to the problem at hand. We need to show that
+      <me>
+        \forall\epsilon \gt 0, \exists \delta \gt 0 \st (0\lt |x-2|\lt\delta)\implies \left(\left|\frac 1x-\frac 12\right|\lt \epsilon\right).
+      </me>
+      Again, we can clean up and simplify the final inequality, since
+      <me>
+        \left|\frac{1}{x}-\frac{1}{2}\right| = \left|\frac{2-x}{2x} \right| = \frac{|x-2|}{2|x|}.
+      </me>
+      Thus we need to show that
+      <me>
+        \forall\epsilon \gt 0, \exists \delta \gt 0 \st (0\lt |x-2|\lt\delta)\implies \left( \frac{|2-x|}{2|x|} \lt \epsilon\right).
+      </me>
+    </p>
+    <p>
+      Now that we know what we need to show, let <m>\epsilon>0</m> be arbitrary. Then, we want a <m>\delta \gt 0</m> such that if we assume <m>0 \lt |x-2| \lt \delta</m>, we can guarantee that <m>\frac{|x-2|}{2|x|} \lt \epsilon</m>. Well, if we know that <m>|x-2| \lt \delta</m>, then we can write
+      <me>
+        \frac{|x-2|}{2|x|} \lt \frac{\delta}{2|x|} \lt \epsilon
+      </me>
+      and so we need
+      <me>
+        \delta \lt 2|x| \epsilon.
+      </me>
+      This is not quite enough <mdash /> our choice of <m>\delta</m> should not depend on <m>x</m>. We need some bound on <m>x</m>.
+    </p>
+    <p>
+      Recall our intuitive idea of the limit, as <m>x</m> gets very close to <m>2</m>, the function <m>\frac{1}{x}</m> gets very close to <m>\frac{1}{2}</m>. We don't really care what happens when <m>x</m> is a long way from <m>2</m>, and only on what happens when <m>x</m> is very close to <m>2</m>. Thus we should be able to focus on the region around <m>x=2</m>, say,
+      <m>1 \lt x \lt 3</m>, or equivalently, <m>|x-2| \lt 1</m>.
+    </p>
+    <p>
+      How<fn>
+      Should one ask rhetorical questions in a textbook?
+    </fn> does this help us? Well, if we know that <m>1 \lt x \lt 3</m>, then we know<fn>
+    Be careful with the inequalities here.
+    </fn> that  <m>|x|\gt 1</m>, and so
+    <me>
+      \frac{|x-2|}{2|x|} \lt \frac{\delta}{2|x|} \lt \frac{\delta}{2} \leq \epsilon
+    </me>
+    And thus we need to ensure that
+    <me>
+      \delta \leq 2 \epsilon.
+    </me>
+    </p>
+    <p>
+      At this point it  seems that we can choose any <m>\delta \leq 2 \epsilon</m>, but this is not quite right. Say, we chose a large value of <m>\epsilon</m>, like <m>\epsilon=3</m>, and so we could pick <m>\delta = 2\epsilon=6</m>. With that choice of <m>\epsilon</m> and <m>\delta</m>, the implication at the heart of the defintion of convergence becomes
+      <me>
+        (|x-2| \lt 6) \implies \left(\left|\frac{1}{x}-\frac{1}{2}\right| \lt 3\right).
+      </me>
+      Unfortuantely this is false. We could take, say <m>x=\frac{1}{10}=0.1</m>, and then the hypothesis is true, since <m>|x-2|=1.9 \lt 5</m>, but the conclusion is false since <m>\left|\frac{1}{x}-\frac{1}{2}\right| = |10-0.5| = 9.5 \gt 3</m>.
+    </p>
+    <p>
+      What went wrong? Remember to make our bound on <m>|x|</m> we required that <m>|x-2|\lt 1</m>. This is the same as requiring that <m>\delta\leq 1</m>. So we have actually imposed two requirements on <m>\delta</m>. We need both <m>\delta \leq 1</m> <em>and</em> <m>\delta \leq 2\epsilon</m>. To enforce both of these we can pick
+      <me>
+        \delta = \min\{1, 2\epsilon \}.
+      </me>
+      Now we can finally write up the proof.
+    </p>
+  </answer>
+  <solution>
+<proof>
+  <p>
+    Let <m>\epsilon \gt 0</m> and set <m>\delta = \min\{1,2\epsilon\}</m>. Now assume that
+    <m>
+      0 \lt |x-2| \lt \delta.
+    </m>
+    Since <m>\delta \leq 1</m>, we know that <m>|x-2| \lt 1</m> and so
+    <m>
+      1 \lt |x| \lt 3
+    </m>
+    and thus <m>2|x| \gt 2</m>.
+  </p>
+  <p>
+    Then
+    <me>
+      \left| \frac{1}{x} - \frac{1}{2} \right| = \frac{|x-2|}{2|x|} \lt \frac{|x-2|}{2} \lt \frac{\delta}{2}.
+    </me>
+    Since <m>\delta \lt 2\epsilon</m>, we know that
+    <me>
+      \left| \frac{1}{x} - \frac{1}{2} \right| \lt \epsilon
+    </me>
+    and so <m>\frac{1}{x} \to \frac{1}{2}</m> as <m>x \to 2</m>.
+  </p>
+</proof>
+</solution>
+</example>
+</subsection>
+</section>
+<section><title>(Optional) Properties of limits</title>
+<subsection  xml:id="subsec-proplimseq">
+  <title>(Optional) Some properties of limits of sequences</title>
+<introduction>
+<p>
+  When we work with sequences, it is not convenient to prove sequence convergence for each and every sequence individually. We can make use of some more general properties of limits of sequences to simplify our work. You will have already seen some <q>limit laws</q> when you studied calculus. We will prove some similar results in this section.
+</p>
+<theorem xml:id="thm-seq-lim"><title>Basic properties of limits of sequences</title>
+  <statement>
+    <p>
+      Let <m>(x_n)</m> and <m>(y_n)</m> be sequences so that
+      <me>
+      \lim_{n \to \infty} x_n = a \qquad \text{ and } \qquad
+      \lim_{n \to \infty} y_n = b
+      </me>
+      Additionally let <m>c,d \in \mathbb{R}</m>. Then
+      <ol marker="(a)">
+        <li xml:id="seq_uni">The limit of a sequence is unique</li>
+        <li xml:id="seq_lin">Linearity of limits: <m>\ds
+        \lim _{n\to \infty }(c \cdot x_{n} + d \cdot y_{n})=c \cdot a+ d \cdot b
+        </m>.</li>
+        <li xml:id="seq_prod">Product of limits: <m>\ds \lim_{n\to \infty} \left(x_n \cdot y_n\right) = a \cdot  b</m>.</li>
+        <li xml:id="seq_recip">Reciprocal of limit: <m>\ds\lim_{n\to\infty} \frac{1}{y_n} = \frac{1}{b}</m> as long as <m>b\neq 0</m></li>
+        <li xml:id="seq_ratio">Ratio of limits: <m>\ds \lim_{n\to\infty} \frac{x_n}{y_n} = \frac{a}{b}</m> as long as <m>b\neq 0</m></li>
+      </ol>
+    </p>
+  </statement>
+</theorem>
+<p>
+  Notice that for the sequences <m>(1/b_n)</m> and <m>(a_n/b_n)</m> to
+  be defined for all <m>n</m> we need <m>b_n \neq 0</m>, but we have
+  not stated that in the theorem.  This is because the condition that
+  the limit <m>b_n \to b \neq 0</m> implies that when <m>n</m> is
+  <em>large enough</em><fn> To be more precise, we can find some
+  <m>N_0</m> so that when <m>n \gt N_0</m> we know that <m>|b_n| \gt
+  0</m>.  </fn> we know that <m>b_n \neq 0</m> <mdash/> this is a
+  consequence of <xref ref="lem-xn-control"/> below. This is enough to
+  tell us that when <m>n</m> is large everything is defined, and,
+  typically, we don't worry about what happens when <m>n</m> is small.
+</p>
+
+
+</introduction>
+<subsubsection><title>Uniqueness of limits</title>
+<p>
+  To prove the first property <mdash /> uniqueness of limits <mdash/> we need to do some scratch work to build up our intuition. A very standard approach to proving uniqueness is to assume that we have two objects satisfying the property and then show that those two things must actually be the same.
+</p>
+<p>
+  So, let <m>(x_n)</m> be a convergent sequence and that
+  <me>
+    \lim_{n\to\infty}x_n=K \qquad \text{and also} \qquad
+    \lim_{n\to\infty}x_n=L
+  </me>
+  ie, there are two limits. Of course, we don't want these limits to <em>actually</em> be different, even though we've labelled them by different variables. We want to show that they are the same, that is <m>K=L</m>. In other words,
+  <me>
+    \left(\text{the limit is unique}\right) \equiv
+    \left(
+    (\lim_{n\to\infty}x_n=K) \land ( \lim_{n\to\infty}x_n=L)
+    \implies (K=L)
+    \right).
+  </me>
+</p>
+
+<p>
+  Assume the hypothesis is true. So
+  <me>
+    \lim_{n\to\infty}x_n=K \qquad \text{and also} \qquad
+    \lim_{n\to\infty}x_n=L
+  </me>
+  and then we try to show that <m>K=L</m>. Intuitively this makes sense. Since <m>\lim_{n\to\infty} x_n= K</m>, we know that we can make <m>x_n</m> arbitrarily close to <m>K</m> by making <m>n</m> large enough. Similarly, we can make <m>x_n</m> arbitrarily close to <m>L</m>. The only way this can happen is if <m>K</m> and <m>L</m> are also arbitrarily close to each other. And the only way that can happen is if they are actually the same.
+</p>
+<p>
+  This is an important point that we will have to prove. Namely, we are claiming that if two numbers are arbitrarily close to each other, then they must be equal. Rewriting this with quantifiers gives
+  <me>
+    (\forall \epsilon > 0, |K-L|\lt \epsilon) \implies (K=L).
+  </me>
+  At first glance this might look a little hard to prove, but think about its contrapositive:
+  <me>
+    (K \neq L) \implies (\exists \epsilon > 0 \st |K-L| \geq \epsilon).
+  </me>
+  So if two numbers are different, then we can find some positive number <m>\epsilon</m> so that the distance between those two numbers is bigger. That doesn't sound so bad. It is a useful result, so we'll make it into a lemma.
+</p>
+
+<lemma xml:id="lem-kl-equal">
+  <statement>
+    <p>
+      Let <m>K,L \in \mathbb{R}</m>. If for every <m>\epsilon \gt 0</m> we have that <m>|K-L| \lt \epsilon</m>, then we must have that <m>K=L</m>.
+    </p>
+  </statement>
+  <proof>
+    <p>
+      We prove the contrapositive. Let <m>K,L \in \mathbb{R}</m> so that <m>K \neq L</m>. Then set <m>\epsilon = \frac{|K-L|}{2}</m>. Since <m>K \neq L</m> we know that <m>\epsilon \gt 0</m>.
+      Then we have that <m>|K - L| = 2\epsilon \gt \epsilon</m> and so the result holds.
+    </p>
+  </proof>
+</lemma>
+
+<p>
+  Okay, to recap, we have assumed that <m>x_n \to K</m> and <m>x_n \to L</m>. This means that
+  <ul>
+    <li>
+      for all <m>\epsilon_K \gt 0</m>, there is some <m>N_K \in \mathbb{N}</m> so that for all <m>n \in \mathbb{N}</m> if <m>n \gt N_K</m> then <m>|x_n-K| \lt \epsilon_K</m>, and
+    </li>
+    <li>
+      for all <m>\epsilon_L \gt 0</m>, there is some <m>N_L \in \mathbb{N}</m> so that for all <m>n \in \mathbb{N}</m> if <m>n \gt N_L</m> then <m>|x_n-L| \lt \epsilon_L</m>.
+    </li>
+  </ul>
+  Notice that we have carefully used different symbols for the <m>\epsilon</m> and <m>N</m> to describe the convergence of <m>x_n \to K</m> and <m>x_n \to L</m>. We do this so that we are not accidentally assuming anything extra<fn>
+  We saw something like this back in <xref ref="rem-not-equal"/> <mdash /> we recommend that the reader quickly review that remark.</fn>
+  about how <m>x_n</m> converges to <m>K</m> or <m>L</m>. Now, this tells us that when <m>n</m> is big enough <mdash /> ie <m>n \gt \max\{N_K,N_L \}</m>, that
+  <me>
+  |x_n -K | \lt \epsilon_K \qquad \text{and} \qquad
+  |x_n -L | \lt \epsilon_L.
+  </me>
+  But how do we use this, and the lemma above, to tell us about the size of <m>|K-L|</m>?
+</p>
+<p>
+  There is a really nice trick using the <xref ref="thm-triangle"/> and a little algebra. First, we add zero in a sneaky way that allows us to rewrite <m>K-L</m> in terms of <m>(K-x_n)</m> and <m>(L-x_n)</m>:
+  <me>
+    |K-L| = |K-L+0| = |K-L + \underbrace{(x_n-x_n)}_{=0}| = |(K-x_n) + (x_n-L)|
+  </me>
+  Now apply the triangle inequality:
+  <me>
+    |K-L| = |(K-x_n) + (x_n-L)| \leq |K-x_n| + |x_n-L| = |x_n-K| + |x_n-L|
+  </me>
+  This gives us a way to bound the distance between <m>K</m> and <m>L</m> in terms of the distances between <m>x_n</m> and <m>K</m> and between <m>x_n</m> and <m>L</m>. But our assumption about the convergence of <m>x_n</m> gives us exactly that information. That is
+  <me>
+    |K-L| \leq |x_n-K| + |x_n-L|  \lt \epsilon_K + \epsilon_L
+  </me>
+</p>
+<p>
+  Now, given any <m>\epsilon</m>, we can<fn>
+  There are lots of potential choices here. For example, we can also pick <m>\epsilon_K=\alpha\epsilon, \epsilon_L=\beta\epsilon</m> with <m>\alpha,\beta \gt 0</m> and <m>\alpha+\beta \leq 1</m>, so that <m>\epsilon_K+\epsilon_L \leq \epsilon</m>.
+  </fn>
+   choose <m>\epsilon_K = \epsilon_L = \frac{\epsilon}{2}</m>. Then
+  <ul>
+    <li>since <m>x_n \to K</m>, we know that there is some <m>N_K</m> so that when <m>n \gt N_K</m>, we have that <m>|x_n-K| \lt \frac{\epsilon}{2}</m>.
+    </li>
+    <li>Similarly, since <m>x_n \to L</m>, we know that there is some <m>N_L</m> so that when <m>n \gt N_L</m>, we have that <m>|x_n-L| \lt \frac{\epsilon}{2}</m>.
+    </li>
+  </ul>
+  Then our reasoning above tells us that <m>|K-L|\lt \epsilon</m> providing <m>n \gt \max\{N_K, N_L\}</m>. And finally we can use <xref ref="lem-kl-equal"/> to complete the result.
+</p>
+<p>
+  Oof!
+</p>
+<proof><title>Proof of uniqueness of limits</title>
+  <p>
+    Let <m>(x_n)</m> be a convergent sequence. We will prove that its limit is unique. To do so we prove that if <m>x_n \to K</m> and <m>x_n \to L</m> then we must have that <m>K=L</m>.
+  </p>
+  <p>
+    So assume that <m>x_n \to K</m> and <m>x_n \to L</m>, and let <m>\epsilon \gt 0</m>.
+    <ul>
+      <li>Since <m>x_n \to K</m>, there is some <m>N_K \in \mathbb{N}</m> so that for all <m>n \gt N_K</m> we have that <m>|x_n - K| \lt \frac{\epsilon}{2}</m>.</li>
+      <li>And, since <m>x_n \to L</m>, there is some <m>N_L \in \mathbb{N}</m> so that for all <m>n \gt N_L</m> we have that <m>|x_n - L| \lt \frac{\epsilon}{2}</m>.</li>
+    </ul>
+    So if we pick <m>N = \max\{N_K, N_L\}</m> then for all <m>n \gt N</m> the triangle inequality implies that
+    <me>
+        |K-L| = |(K-x_n)+(x_n-L)| \leq |x_n-K| + |x_n-L| \leq \epsilon
+    </me>
+  </p>
+  <p>
+    Note that <m>K,L</m> are constants so the inequality <m>|K-L| \lt \epsilon</m> must hold independently of the value of <m>n</m>. And since it holds for any <m>\epsilon \gt 0</m> <xref ref="lem-kl-equal"/> implies that <m>K=L</m> as required.
+  </p>
+</proof>
+</subsubsection>
+<subsubsection><title>Linearity of limits</title>
+<p>
+  No time to rest! Let's get working on the linearity of limits. We prove this by breaking the result down into two simpler lemmas.
+</p>
+<lemma xml:id="lem-seq-scale">
+  <statement>
+    <p>
+      Let <m>a,c \in \mathbb{R}</m> and let <m>(x_n)</m> be a sequence that converges to <m>a</m>. The sequence <m>(c \cdot x_n)</m> converges to <m>c \cdot a</m>.
+    </p>
+  </statement>
+</lemma>
+
+<lemma xml:id="lem-seq-add">
+  <statement>
+    <p>
+      Let <m>a,b \in \mathbb{R}</m> and let <m>(x_n)</m> and <m>(y_n)</m> be sequences so that <m>x_n \to a</m> and <m>y_n \to b</m>. The sequence <m>(z_n) = (x_n+y_n)</m> converges to <m>a+b</m>.
+    </p>
+  </statement>
+</lemma>
+<p>
+  Once we prove both of these, the linearity of limits follows quite directly:
+<md>
+  <mrow> \lim _{n\to \infty }(c\cdot x_{n} + d\cdot y_{n}) \amp =
+  \lim _{n\to \infty }(c\cdot x_{n}) + \lim_{n\to \infty} (d\cdot y_{n})
+   </mrow>
+  <mrow> \amp= c\cdot \lim _{n\to \infty }( x_{n}) + d\cdot\lim_{n\to \infty} (y_{n}). </mrow>
+</md>
+</p>
+
+<p>
+  The first of these lemmas is a little easier than the second, so we'll start there. And, as usual, we start with scratch work. Notice that when <m>c=0</m> the result simplifies down to the statement that the constant sequence <m>x_n=0</m> converges to <m>0</m>. This is just <xref ref="eg-seq-const"/> and we can recycle that proof. So since we know how to prove the case <m>c=0</m>, we can now work on <m>c \neq 0</m>.
+</p>
+<p>
+  Notice that the statement is really a conditional. If <m>x_n \to a</m> then <m>c \cdot x_n \to c\cdot a</m>. We'll assume that <m>x_n \to a</m> and then work towards showing that <m>c \cdot x_n \to c\cdot a</m>.  To do this we have to prove that for all <m>\epsilon \gt 0</m>, there is some <m>N \in \mathbb{N}</m> so that for all <m>n \in \mathbb{N}</m> if <m>n \gt N</m> then <m>|c x_n - c a| \lt \epsilon</m>. Let's manipulate this inequality a little:
+  <me>
+    |c x_n - c a| = |c| |x_n-a|
+  </me>
+  and so it suffices for us to show that <m>|x_n-a| \lt \frac{\epsilon}{|c|}</m>.
+</p>
+<p>
+  Well, now we can put our assumption that <m>x_n \to a</m> to use. That assumption tells us that for <em>any</em> <m>\epsilon_x \gt 0</m>, there is <m>N_x \in \mathbb{N}</m> so that for all <m>n \in \mathbb{N}</m> when <m>n \gt N_x</m> then <m>|x_n-a| \lt \epsilon_x</m>. We are being careful to label those constants with the subscript <m>x</m> to help remind us that those constants describe the convergence of <m>x_n \to a</m>.
+</p>
+  <p>
+  Since this works for <em>any</em> <m>\epsilon_x</m>, we are free to set <m>\epsilon_x = \frac{\epsilon}{|c|}</m>. Then we know there is <m>N_x</m> so that if <m>n \gt N_x</m> then <m>|x_n-a| \lt \frac{\epsilon}{|c|}</m> and thus <m>|c||x_n-a| \lt \epsilon</m>, just as we need. All that remains is to write it up as a neat proof.
+</p>
+
+<proof><title>Proof of <xref ref="lem-seq-scale"/></title>
+  <p>
+    Let <m>\epsilon \gt 0</m> and assume that <m>x_n \to a</m>. We split the proof into two cases, <m>c = 0</m> and <m>c \neq 0</m>.
+  </p>
+  <p>
+    When <m>c=0</m>, then we have that <m>c \cdot x_n = 0</m>, and hence we trivially have
+    <me>
+      |c\cdot x_n - c \cdot a| = |0 - 0| \lt \epsilon
+    </me>
+    Thus <m>0 x_n \to 0</m>.
+  </p>
+  <p>
+    So now assume that <m>c \neq 0</m>. Since <m>x_n \to a</m>, we know that there exists <m>N_x \in \mathbb{N}</m> so that for all <m>n \in \mathbb{N}</m> when <m>n \gt N_x</m>, we have
+    <m>|x_n-a|\lt \frac{\epsilon}{|c|}</m>. Let <m>N= N_x</m> and then provided <m>n \gt N</m>,
+    <me>
+      |c\cdot x_n - c\cdot a| = |c| |x_n-a| \lt \epsilon.
+    </me>
+    And thus <m>c\cdot x_n \to c\cdot a</m> as required.
+  </p>
+</proof>
+<p>
+  We can actually clean this proof up and write it as a single case. We had to separate our the case <m>c=0</m> so that we did not divide <m>\epsilon</m> by <m>0</m>. However, we should remember that we do have some flexibility. Here is an alternate, slightly cleaner proof.
+</p>
+<proof><title>Second proof of <xref ref="lem-seq-scale"/></title>
+  <p>
+    Let <m>\epsilon \gt 0</m> and assume that <m>x_n \to a</m>. We know that there exists <m>N_x \in \mathbb{N}</m> so that for all <m>n \in \mathbb{N}</m> when <m>n \gt N_x</m>, we have
+    <m>|x_n-a|\lt \frac{\epsilon}{|c|+1}</m>. Let <m>N= N_x</m> and then provided <m>n \gt N</m>,
+    <me>
+      |c\cdot x_n - c\cdot a| = |c| |x_n-a| \lt \frac{|c| \epsilon}{|c|+1} \lt \epsilon.
+    </me>
+    And thus <m>c\cdot x_n \to c\cdot a</m> as required.
+  </p>
+</proof>
+
+
+<p>
+  Let us now turn to <xref ref="lem-seq-add"/>. Notice that, again, it is really a conditional: <q>if those sequences converge to <m>a</m> and <m>b</m>, then their sum converges to <m>a+b</m>.</q> So our proof will start by assuming the hypothesis is true and then working our way to the conclusion. We start by assuming that <m>x_n \to a</m> and <m>y_n \to b</m> and, as is always the case, it is a good idea to write down the meaning of the things that we have assumed and also to write down the meaning of what we want to show.
+</p>
+<p>
+  Our assumptions
+that <m>x_n \to a</m> and <m>y_n \to b</m> mean<fn>
+Know your definitons!
+</fn><fn>
+Again, we are careful to use different <m>\epsilon</m> and different <m>N</m> for each convergence statement in order to avoid making accidental extra assumptions.
+</fn>:
+  <ul>
+    <li>for any <m>\epsilon_x \gt 0</m> there is some <m>N_x \in\mathbb{N}</m> so that for all <m>n \in \mathbb{N}</m>, if <m>n \gt N</m> then <m>|x_n-a| \lt \epsilon_x</m>, and
+    </li>
+    <li>for any <m>\epsilon_y \gt 0</m> there is some <m>N_y \in\mathbb{N}</m> so that for all <m>n \in \mathbb{N}</m>, if <m>n \gt N</m> then <m>|y_n-b| \lt \epsilon_y</m>.
+    </li>
+  </ul>
+  And we wish to show that
+  <ul>
+    <li><p>for any <m>\epsilon \gt 0</m> there is some <m>N \in \mathbb{N}</m> so that for all <m>n \in \mathbb{N}</m> if <m>n \gt N</m> then
+    <me>|(x_n+y_n)-(a+b)| \lt \epsilon.</me>
+  </p>
+    </li>
+  </ul>
+</p>
+<p>
+  The triangle inequality, <xref ref="thm-triangle"/>, helps us here. It tells us how to bound the quantity <m>|(x_n+y_n)-(a+b)|</m> by <m>|x_n-a|</m> and <m>|y_n-b|</m>:
+  <me>
+    |(x_n+y_n)-(a+b)| = |(x_n-a)+(y_n-b)| \leq |x_n-a| +|y_n-b|
+  </me>
+  And then since we have assumed that <m>(x_n), (y_n)</m> converge to <m>a,b</m>, we know that by making <m>n</m> very big, we can make both <m>|x_n-a|</m> and <m>|y_n-b|</m> very small. This then implies that we can make <m>|(x_n+y_n)-(a+b)|</m> very small. In particular, if we can make both <m>|x_n-a|</m> and <m>|y_n-b|</m> smaller than <m>\frac{\epsilon}{2}</m>, then the triangle inequality tells us that <m>|(x_n+y_n)-(a+b)|</m> is smaller than <m>\epsilon</m>.  This is precisely what we need to prove the result.
+</p>
+<p>
+  Time to use our assumptions <m>x_n \to a</m> and <m>y_n \to b</m>. Since<fn>
+  We used a very similar idea in our proof of uniqueness of limits.</fn>
+   the definition of convergence works for <em>any</em> choice of <m>\epsilon</m>, we can pick <m>\epsilon_x = \epsilon_y = \frac{\epsilon}{2}</m>. Then
+  <ul>
+    <li>there is <m>N_x</m> so that when <m>n \gt N_x</m>, <m>|x_n-a| \lt \epsilon_x  = \frac{\epsilon}{2}</m>, and
+  </li>
+  <li>there is <m>N_y</m> so that when <m>n \gt N_y</m>, <m>|x_n-b| \lt \epsilon_y  = \frac{\epsilon}{2}</m>.
+  </li>
+  </ul>
+  This means that for any <m>n \gt \max\{N_x,N_y\}</m> we have <m>|x_n-a|+|x_n-b| \lt \epsilon</m>, which, in turn, guarantees that <m>|(x_n+y_n)-(a+b)| \lt\epsilon</m>. Now we just have to tidy it up and write it in a nice proof.
+</p>
+<proof><title>Proof of <xref ref="lem-seq-add"/></title>
+  <p>
+    Assume that <m>x_n \to a</m> and <m>y_n \to b</m>. We will show that <m>z_n =x_n+y_n \to a+b</m>.
+  </p>
+  <p>
+    Let <m>\epsilon  \gt 0</m>. Then since <m>x_n \to a</m>, we know that there exists <m>N_x \in \mathbb{N}</m> so that for all <m>n \in \mathbb{N}</m> if <m>n \gt N_x</m> then <m>|x_n-a| \lt \frac{\epsilon}{2}</m>. Similarly, since <m>y_n \to b</m>, we know that there exists <m>N_y \in \mathbb{N}</m> so that for all <m>n \in \mathbb{N}</m> if <m>n \gt N_y</m> then <m>|y_n-b| \lt \frac{\epsilon}{2}</m>.
+  </p>
+  <p>
+    Now pick <m>N = \max\{N_x, N_y\}</m>. Then for all <m>n \in \mathbb{N}</m> with <m>n \gt N</m>, we have
+    <md>
+      <mrow> |z_n - (a+b)| \amp = |x_n-a + y_n -b| </mrow>
+      <mrow> \amp \leq |x_n-a| + |y_n-b|</mrow>
+      <mrow> \amp \lt \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon.</mrow>
+    </md>
+    and thus <m>z_n \to (a+b)</m> as required.
+  </p>
+</proof>
+<p>
+  Now that we have proved these two lemmas we can complete our proof of the linearity of limits:
+</p>
+<proof><title>Proof of the linearity of limits</title>
+  <p>
+    Let <m>a,b,c,d \in \mathbb{R}</m> and let <m>(x_n)</m> and <m>(y_n)</m> be sequences so that
+    <me>
+      \lim _{n\to \infty }x_{n}=a \qquad \text{and} \qquad \lim _{n\to \infty }y_{n}=b.
+    </me>
+    Then by <xref ref="lem-seq-scale"/>:
+    <me>
+    \lim _{n\to \infty } c\cdot x_{n}=c\cdot a \qquad \text{and} \qquad \lim _{n\to \infty }d\cdot y_{n}=d\cdot b.
+    </me>
+    and then by <xref ref="lem-seq-add"/>:
+    <me>
+    \lim _{n\to \infty } \left(c\cdot x_{n} + d\cdot b_n\right) =
+    \lim _{n\to \infty } c\cdot x_{n} + \lim_{n\to\infty} d\cdot b_n =
+    c \cdot a + c \cdot b
+    </me>
+    as required.
+  </p>
+  <p>
+    Notice that by working in this order, we have been careful to first establish the convergence of the sequences <m>(c x_n)</m> and <m>(d y_n)</m>, via <xref ref="lem-seq-scale"/>, before establishing the convergence of their sum. This is necessary because <xref ref="lem-seq-add"/> only works for the sum of convergent sequences.
+  </p>
+</proof>
+</subsubsection>
+
+<subsubsection><title>Product of limits</title>
+<p>
+  Again, the statement is really an impliction: <q>if <m>x_n\to a</m> and <m>y_n \to b</m> then
+  <m>x_n \cdot y_n \to a \cdot b</m></q>. So we assume that <m>x_n \to a</m> and <m>y_n \to b</m>. This means, roughly speaking, that when <m>n</m> is really big, we know that <m>|x_n-a|</m> and <m>|y_n-b|</m> are small. And from that we need to show that <m>|x_n \cdot y_n - a\cdot b|</m> is also small.
+</p>
+<p>
+  So we have to somehow express
+  <me>
+    |x_n \cdot y_n - a\cdot b| \qquad \text{ in terms of }  \qquad |x_n-a| \text{ and } |y_n-b|
+  </me>
+  and we can do it by carefully adding and subtracting terms.
+  <md>
+    <mrow> (x_n \cdot y_n - a\cdot b) \amp =
+    (x_n \cdot y_n - a\cdot b) + \underbrace{(x_n \cdot b - x_n \cdot b)}_{=0}
+    </mrow>
+    <mrow> \amp = x_n(y_n-b) + b (x_n-a)</mrow>
+  </md>
+  So then, a little application of the triangle inequality gives
+  <md>
+    <mrow>|x_n \cdot y_n - a \cdot b| \amp = |x_n(y_n-b) + b(x_n-a) | </mrow>
+    <mrow> \amp \leq |x_n(y_n-b)| + |b(x_n-a)| </mrow>
+    <mrow> \amp = |x_n|\cdot |y_n-b| + |b|\cdot |x_n-a| </mrow>
+  </md>
+</p>
+<p>
+  Similar to the argument we used to prove <xref ref="lem-seq-add"/>, we see that if we can keep <m>|x_n|\cdot |y_n-b| \lt \epsilon/2</m> and <m>|b|\cdot |x_n-a| \lt \epsilon/2</m>, then we are done.
+  But, how can we do that? Well, we can recycle the ideas from the proof of <xref ref="lem-seq-scale"/> to keep <m>|b|\cdot |x_n-a| \lt \epsilon/2</m>, i.e. <m>|x_n-a| \lt \frac{\epsilon}{2|b|+1}</m>, since <m>|b|</m> is a constant. But that argument doesn't work for the other term, <m>|x_n|\cdot |y_n-b|</m> since <m>x_n</m> need not be a constant.
+</p>
+<p>
+  However, we do know when <m>n</m> is very large that <m>x_n</m> must be close <m>a</m>, its limit. So we should be able to bound <m>\frac{|a|}{2} \leq |x_n| \leq \frac{3|a|}{2}</m> for some sufficiently large <m>n</m>. This, in turn, would allow us to bound
+  <me>
+    \frac{|a|}{2} | y_n -b | \leq |x_n| \cdot |y_n-b| \leq \frac{3|a|}{2} |y_n-b|
+  </me>
+  And now, we use our control<fn>
+  That is, since <m>y_n \to b</m> we know that we can make <m>|y_n-b|</m> as small as we need, just by making <m>n</m> sufficiently large. In this way, our knowledge that <m>y_n</m> converges, gives us some control over the size of that term, <m>|y_n-b|</m>.
+  </fn>
+   over <m>|y_n-b|</m>, to make sure that <m>\frac{3|a|}{2}|y_n-b| \lt \epsilon/2</m>.
+</p>
+<p>
+  Let us make this intermediate result bounding <m>|x_n|</m>, into a lemma. It takes a little careful juggling of inequalities and the reverse triangle inequality, <xref ref="cor-triangle"/>, helps us. Then we can use the lemma to finish our proof.
+</p>
+<lemma xml:id="lem-xn-control">
+  <statement>
+    <p>
+      Let <m>a \in \mathbb{R}</m> and let <m>(x_n)</m> be a sequence that converges to <m>a</m>. Then there is some <m>N \in \mathbb{N}</m> so that for all <m>n \in \mathbb{N}</m>, when <m>n \gt N</m>, we have
+      <me>
+        \frac{|a|}{2} \leq |x_n| \leq \frac{3|a|}{2}.
+      </me>
+    </p>
+  </statement>
+  <proof>
+    <p>
+      Let <m>a</m> and <m>(x_n)</m> be as given, and let <m>\epsilon = \frac{|a|}{2}</m>. Then since <m>x_n \to a</m>, we know that there is <m>N \in \mathbb{N}</m> so that for all integer <m>n \gt N</m>,
+      <me>
+        |x_n - a| \lt \frac{|a|}{2}.
+      </me>
+      The reverse triangle inequality, <xref ref="cor-triangle"/> then tells us that
+      <me>
+        |x_n-a| \geq \left||x_n| - |a| \right|
+      </me>
+      and hence we know that
+      <me>
+        \left||x_n| - |a| \right| \lt \frac{|a|}{2}
+      </me>
+      This is equivalent (see <xref ref="lem-absolute3"/>) to the statement
+      <me>
+        -\frac{|a|}{2} \lt |x_n|-|a| \lt \frac{|a|}{2}
+      </me>
+      from which the result quickly follows by adding <m>|a|</m> to both sides.
+    </p>
+  </proof>
+</lemma>
+<proof><title>Proof of the product of limits</title>
+  <p>
+    Let <m>(x_n)</m> and <m>(y_n)</m> be sequences so that <m>x_n \to a</m> and <m>y_n \to b</m>. Let <m>\epsilon \gt 0</m>. Then, since those sequences converge we know that
+    <ul>
+      <li>there is some <m>N_x</m> so that for all <m>n \gt N_x</m> we have <m>|x_n-a| \lt \frac{\epsilon}{2|b|+1}</m>, and
+      </li>
+      <li>there is some <m>N_y</m> so that for all <m>n \gt N_y</m> we have <m>|y_n-b| \lt \frac{\epsilon}{3|a|+1}</m>.
+      </li>
+    </ul>
+    Notice that we have chosen denominators <m>2|b|+1</m> and <m>3|a|+1</m> to avoid the possibility of dividing by zero when <m>a</m> or <m>b</m> is zero. We also know
+      <ul>
+        <li>
+          by <xref ref="lem-xn-control"/> there is some <m>N_a</m> so that for all <m>n \gt N_a</m>, we have <m>|x_n| \lt \frac{3|a|}{2}</m>.
+        </li>
+      </ul>
+  </p>
+  <p>
+    Now assume that <m>n \gt \max\{N_x, N_y, N_a\}</m>, then
+    <md>
+      <mrow>|x_n y_n - a b| \amp = |x_n (y_n-b) + b (x_n-a)|</mrow>
+      <mrow> \amp \leq |x_n| |y_n-b| + |b| |x_n-a|</mrow>
+      <mrow> \amp \leq \frac{3|a|}{2} |y_n-b| + |b||x_n-a| \amp \text{by bound on }|x_n|</mrow>
+      <mrow> \amp \lt \frac{3|a|}{2} \cdot \frac{\epsilon}{3|a|+1} + |b|\cdot \frac{\epsilon}{2|b|+1} \amp \text{convergence of } x_n, y_n</mrow>
+      <mrow> \amp \lt \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon.</mrow>
+    </md>
+    and thus <m>x_n \cdot y_n \to a\cdot b</m> as required.
+  </p>
+
+</proof>
+
+</subsubsection>
+
+<subsubsection><title>Ratio of limits</title>
+<p>
+  We are on the home stretch now. We can prove the last property <mdash /> <xref ref="seq_ratio">the ratio of limits</xref>  <mdash /> by combining the third and forth properties <mdash /> <xref ref="seq_prod">the product of limits</xref> and the <xref ref="seq_recip">reciprocal of a limit</xref>. So we now just<fn>When someone says that you <q>just</q> need to do something, you are right to be skeptical. <q>Just</q> can be a very dangerous word.</fn> need to prove the reciprocal of limits.
+</p>
+
+<p>
+  Again, <xref ref="seq_recip"/> is a conditional statement, so to prove it, we assume the hypothesis,   <m>(y_n)\to b</m> and <m>b\neq 0</m>, and then show that <m>\left(\dfrac{1}{y_n}\right)\to \dfrac{1}{b}</m>.
+  <ul>
+    <li>So the assumption tells us that <m>b\neq 0</m> and for all <m>\epsilon_y \gt 0</m>, there is some <m>N_y \in \mathbb{N}</m> so that for all <m>n \in \mathbb{N}</m> when <m>n \gt N_y</m> then <m>|y_n-b| \lt \epsilon_y</m>.
+    </li>
+    <li>While to prove the conclusion we need to show that for all <m>\epsilon \gt 0</m> there is some <m>N \in \mathbb{N}</m> so that  for all <m>n \in \mathbb{N}</m> when <m>n \gt N</m> then <m>\left|\frac{1}{y_n}-\frac{1}{b}\right| \lt \epsilon</m>.
+    </li>
+  </ul>
+</p>
+<p>
+  Obviously<fn>Another dangerous word. Sorry. Better to say something like <q>Similarly to our earlier proofs in this section</q>. The point of this footnote is to draw the reader's attention to the fact that words like <q>obviously</q>, <q>clearly</q>, or <q>just</q>, are very subjective and should generally be avoided. But, we hope that it is clear to the reader that instructions like this are obviously to be disregarded from time to time. All things in moderation.</fn>
+   we need to somehow relate this final inequality,  <m>\left|\frac{1}{y_n}-\frac{1}{b}\right| \lt \epsilon</m>, to the inequality we get from the convergence of <m>y_n\to b</m>, namely <m>|y_n-b| \lt \epsilon_y</m>. So, time to do some rewriting:
+   <md>
+     <mrow>
+     \left|\frac{1}{y_n}-\frac{1}{b}\right| \amp = \left| \frac{(b-y_n)}{b\cdot y_n} \right|
+    </mrow>
+     <mrow>
+     \amp = \frac{|b-y_n|}{|b\cdot y_n|}
+     = \frac{1}{|b|}\cdot \frac{1}{|y_n|} \cdot |y_n-b|
+     </mrow>
+   </md>
+   And hence we need to choose <m>N</m> so that we can guarantee that
+   <me>
+     \left|\frac{1}{y_n}-\frac{1}{b}\right| =  \frac{1}{|b|}\cdot \frac{1}{|y_n|} \cdot |y_n-b| \lt \epsilon,
+   </me>
+   or equivalently:
+   <me>
+     |y_n-b| \lt |b| \cdot |y_n| \cdot \epsilon.
+   </me>
+
+</p>
+<p>
+  Now since we have control<fn>That is, since <m>y_n \to b</m>, we know that we can make <m>|y_n-b|</m> as small as we want by making <m>n</m> sufficiently large.
+</fn> over the size of <m>|y_n-b|</m>, we can make it really small. But, just as was the case when we proved the <xref ref="seq_prod">product of limits</xref>, we first have to bound <m>|y_n|</m>. Thankfully we did all that hard work already when we proved <xref ref="lem-xn-control"/>. That lemma tells us that there is some <m>N_b</m> so that when <m>n \gt N_b</m> we know that
+<me>
+  \frac{|b|}{2} \lt |y_n| \lt \frac{3|b|}{2}
+</me>
+Thus when <m>n \gt N_b</m>, we know that
+<m>\frac{|b|^2}{2}\cdot \epsilon \lt |b| \cdot |y_n| \cdot \epsilon</m>
+So, if we can guarantee that
+<me>
+  |y_n-b| \lt \frac{|b|^2}{2}\cdot \epsilon
+</me>
+then we have
+<me>
+  |y_n-b| \lt \frac{|b|^2}{2}\cdot \epsilon \lt |b| \cdot |y_n| \cdot \epsilon
+</me>
+and so <m> \left|\frac{1}{y_n}-\frac{1}{b}\right| \lt \epsilon</m> as required. Therefore we set
+<m>\epsilon_y = \frac{|b|^2}{2}\cdot \epsilon </m>.
+</p>
+<p>
+  The proof is ready to go. We just have to tidy things up and be careful of our various <m>N</m>'s and <m>\epsilon</m>'s.
+</p>
+<proof><title>Proof of the reciprocal of a limit</title>
+  <p>
+    Let <m>b\in \mathbb{R}</m> with <m>b \neq 0</m> and let <m>(y_n)</m> be a sequence that converges to <m>b</m>.
+</p>
+<p>
+    Now let <m>\epsilon \gt 0</m>. Since <m>y_n \to b</m>,  <xref ref="lem-xn-control"/> implies that there is <m>N_b \in \mathbb{N}</m> so that for all integer <m>n \gt N_b</m>
+    <me>
+      \frac{|b|}{2} \lt |y_n|.
+    </me>
+    Additionally, since <m>y_n \to b</m>, we can find <m>N_y \in \mathbb{N}</m> so that for all integer <m>n \gt N_y</m>,
+    <me>
+      |y_n-b|\lt \frac{|b|^2}{2} \cdot \epsilon.
+    </me>
+</p>
+<p>
+    Thus, if we pick <m>N=\max\{N_b,N_y\}</m>, then for all integer <m>n \gt N</m>, we have
+    <md>
+      <mrow> \left| \frac{1}{y_n}-\frac{1}{b} \right| \amp
+      = \frac{|y_n-b|}{|b|\cdot |y_n|}
+      </mrow>
+      <mrow>
+      \amp \lt |y_n-b| \cdot \frac{2}{|b|^2}
+      </mrow>
+      <mrow> \amp
+      \lt \frac{|b|^2}{2} \cdot \epsilon \cdot \frac{2}{|b|^2} = \epsilon
+      </mrow>
+    </md>
+    And therefore the result follows.
+  </p>
+</proof>
+
+<p>
+  Now that we have proved both the product of limits property and the reciprocal of limits property, we get the ratio of limits property quite directly.
+</p>
+<proof><title>Proof of the ratio of limits</title>
+  <p>
+    Let <m>x_n</m> and <m>y_n</m> be sequences so that <m>x_n \to a</m> and <m>y_n\to b \neq 0</m>. Then by <xref ref="seq_recip">the reciprocal of limits</xref> we know that <m>\frac{1}{y_n} \to \frac{1}{b}</m>. And so, by <xref ref="seq_prod">the product of limits</xref>, we know that
+    <me>
+    \lim_{n \to \infty} \frac{x_n}{y_n} =
+    \lim_{n \to \infty} x_n \cdot \frac{1}{y_n} =
+    \frac{a}{b}
+    </me>
+    as required.
+  </p>
+</proof>
+
+
+</subsubsection>
+
+</subsection>
+
+<subsection xml:id="subsec-proplimfunc">
+  <title>(Optional) Some properties of limits of functions</title>
+<introduction>
+<p>
+  The basic properties of limits of functions are very similar to those satisfied by the limits of sequences and should be familiar to the reader who has taken a Calculus course.
+</p>
+
+<theorem xml:id="thm-lim-func"><title>Basic properties of limits of functions</title>
+  <statement>
+    <p>
+      Let <m>a, K, L\in \mathbb{R}</m> and let <m>f</m> and <m>g</m> be real valued functions so that
+      <me>
+        \lim_{x\to a}f(x) = K \qquad \text{and} \qquad
+        \lim_{x\to a}g(x) = L.
+      </me>
+      Additionally let <m>c,d \in \mathbb{R}</m>. Then
+
+      <ol marker="(a)">
+        <li xml:id="fnc_unique">The limit of a function at a given point is unique.
+        </li>
+        <li xml:id="fnc_linear">Linearity of limits:
+        <m>
+        \ds \lim_{x\to a} (c\cdot f(x) + d \cdot g(x)) = cK + dL.
+        </m>
+        </li>
+        <li xml:id="fnc_prod">Product of limits:
+          <m>
+          \ds \lim_{x\to a} f(x) \cdot g(x) = K\cdot L
+          </m>.
+        </li>
+        <li xml:id="fnc_recip">Reciprocal of limit:
+          <m>
+          \ds \lim_{x\to a} \frac{1}{g(x)} = \frac{1}{L}
+          </m>
+          as long as <m>L \neq 0</m>.
+        </li>
+        <li xml:id="fnc_ratio">Ratio of limits:
+          <m>
+          \ds \lim_{x\to a} \frac{f(x)}{g(x)} = \frac{K}{L}
+          </m>
+          as long as <m>L \neq 0</m>.
+        </li>
+      </ol>
+    </p>
+  </statement>
+</theorem>
+<p>
+  Notice that the properties of limits of sequences are very similar to the properties of limits of sequences. The proofs are actually very similar as well. The main difference is that instead of picking some threshold <m>N \in \mathbb{N}</m> we need to pick <m>\delta</m>. Further, where we picked <m>N</m> to be at least as large as the other <m>N</m>'s used to ensure that all inequalities are satisfied (eg the proof of <xref ref="seq_prod"/> in <xref ref="thm-seq-lim"/>), we will need to pick <m>\delta</m> to be smaller than all the other <m>\delta</m>'s used. Because of these similarities we are going to give the proofs without scratch-work; we recommend the reader refer back to <xref ref="subsec-proplimseq"/> for the ideas underlying behind the proofs.
+</p>
+
+<p>
+  Also notice that for the reciprocal <m>1/g(x)</m> and ratio
+  <m>f(x)/g(x)</m> to be defined we require that <m>g(x) \neq 0</m>
+  but we have not stated this in the theorem. This is very similar to
+  the situation for <xref ref="thm-seq-lim"/> above. The condition
+  that <m>L \neq 0</m> tells that when <m>x</m> is <em>close
+  enough</em><fn>That is, we can find some <m>c \gt 0</m> so that when
+  <m>|x-a|\lt c</m>, we know <m>|g(x)| \gt 0</m>.</fn> to <m>a</m>
+  that <m>g(x) \neq 0</m> <mdash/> this is a consequence of <xref
+  ref="lem-fx-control"/> below. Since we are typically only interested
+  in what happens when <m>x</m> is close to <m>a</m>, the condition
+  that <m>L \neq 0</m> ensures that <m>1/g(x)</m> and ratio
+  <m>f(x)/g(x)</m> are defined.
+</p>
+
+</introduction>
+<subsubsection><title>Uniqueness of limits</title>
+<proof><title>Proof of the uniqueness of limits</title>
+  <p>
+    To show that the limit of a function is unique, we prove that if
+    <me>
+      \lim_{x\to a} f(x) = K \qquad \text{and also} \qquad
+      \lim_{x\to a} f(x) = L
+    </me>
+    then <m>K = L</m>.
+  </p>
+  <p>
+    So now assume that <m>\lim_{x\to a} f(x) =K</m> and <m>\lim_{x\to a}f(x)=L</m>, and moreover let <m>\epsilon \gt 0</m>.
+    <ul>
+      <li>Since <m>\lim_{x\to a}f(x)=K</m>, we see that <m>\exists \delta_K \gt 0</m> so that when <m>0 \lt |x-a| \lt \delta_K</m> we have <m>|f(x)-K| \lt \frac{\epsilon}{2}</m>.
+      </li>
+      <li>Similarly, since <m>\lim_{x\to a}f(x)=L</m>, we see that <m>\exists \delta_L \gt 0</m> so that when <m>0 \lt |x-a| \lt \delta_L</m> we have <m>|f(x)-K| \lt \frac{\epsilon}{2}</m>.
+      </li>
+    </ul>
+    Thus, if we pick <m>\delta = \min\{\delta_K, \delta_L \}</m> then when <m>0 \lt |x-a| \lt \delta</m> we know that
+    <me>
+      |K-L| = |(K-f(x))+(f(x)-L)| \leq |f(x)-K| + |f(x)-L|
+      \lt \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon.
+    </me>
+    This, by <xref ref="lem-kl-equal"/>, implies that <m>K=L</m>, and therefore the limit of a function at a point is unique.
+  </p>
+</proof>
+</subsubsection>
+
+<subsubsection><title>Linearity of limits</title>
+<p>
+  We prove the linearity of limits via two simpler lemmas.
+</p>
+<lemma xml:id="lem-fnc-scale">
+  <statement>
+    <p>
+      Let <m>a, K, c\in \mathbb{R}</m> and let <m>f</m> be a real value function so that
+      <me>
+        \lim_{x\to a}f(x) = K.
+        </me>
+      Then
+      <me>
+        \lim_{x\to a} c\cdot f(x) = c\cdot K.
+      </me>
+    </p>
+  </statement>
+  <proof>
+    <p>
+      Let <m>a,c,K,f</m> be as in the statement of the lemma. Now let <m>\epsilon \gt 0</m>, so that by the convergence of <m>f</m> we know that there is some <m>\delta_K</m> so that when <m>0 \lt |x-a| \lt \delta_K</m> we have that
+      <me>
+      |f(x)-K| \lt \frac{\epsilon}{|c|+1}
+      </me>.
+      Notice that this choice avoids any problems that might arise in the case that <m>c=0</m>.
+  </p>
+  <p>
+    Now let <m>\delta = \delta_K</m>, so that when <m>0 \lt |x-a| \lt \delta=\delta_K</m> we know that
+    <me>
+      |c\cdot f(x) - c\cdot K| \lt |c| \cdot |f(x)-K| \lt \frac{|c|}{|c|+1}\epsilon \lt \epsilon
+    </me>
+    and thus <m>cf(x) \to cK</m> as <m>x \to a</m> as required.
+    </p>
+  </proof>
+
+</lemma>
+
+<lemma xml:id="lem-fnc-add">
+  <statement>
+    <p>
+      Let <m>a, K, L\in \mathbb{R}</m> and let <m>f</m> and <m>g</m> be real valued functions so that
+      <me>
+        \lim_{x\to a}f(x) = K \qquad \text{and} \qquad
+        \lim_{x\to a}g(x) = L.
+        </me>
+      Then
+      <me>
+        \lim_{x\to a} f(x)+g(x) = K+L.
+      </me>
+    </p>
+  </statement>
+  <proof>
+    <p>
+      Let <m>a,K,L,f,g</m> be as in the statement of the lemma, and let <m>\epsilon \gt 0</m>. Then
+      <ul>
+        <li>since <m>f(x)\to K</m> we know that there is some <m>\delta_K</m> so that when <m>0\lt|x-a|\lt \delta_K</m> we have that <m>|f(x)-K| \lt \frac{\epsilon}{2}</m>,
+        </li>
+        <li>and similarly, since <m>g(x)\to L</m> we know that there is some <m>\delta_L</m> so that when <m>0\lt|x-a|\lt \delta_L</m> we have that <m>|g(x)-L| \lt \frac{\epsilon}{2}</m>.
+        </li>
+      </ul>
+      Pick <m>\delta = \min\left\{\delta_K, \delta_L\right\}</m>, so that for all <m>x</m> with <m>0\lt|x-a|\lt \delta</m> we know that
+      <md>
+	<mrow>|(f(x)+g(x))-(K+L) | \amp = |(f(x)-K) + (g(x)-L) |</mrow>
+	<mrow>\amp  \leq |f(x)-K| + |g(x)-L|</mrow>
+	<mrow>\amp \lt \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon.</mrow>
+      </md>
+      Thus <m>(f(x)+g(x))\to (K+L)</m> as <m>x\to a</m> as required.
+    </p>
+  </proof>
+</lemma>
+<p>
+  Equipped with these two lemmas, the proof of the linearity of limits of functions is quite straightforward.
+</p>
+
+<proof><title>Proof of the linearity of limits</title>
+<p>
+  Let <m>f</m> and <m>g</m> be functions so that
+  <me>
+    \lim_{x\to a} f(x) =K \qquad \text{and} \qquad
+    \lim_{x\to a} g(x) = L.
+  </me>
+  Moreover, let <m>c,d \in \mathbb{R}</m>. Then using <xref ref="lem-fnc-scale"/> we know that
+<me>
+  \lim_{x\to a} c\cdot f(x) = c\cdot K \qquad \text{and} \qquad
+  \lim_{x\to a} d\cdot g(x) = d\cdot L.
+</me>
+And then <xref ref="lem-fnc-add"/> we get
+<me>
+  \lim_{x \to a}\left( c\cdot f(x) + d\cdot g(x)\right)
+  = c\cdot K + d \cdot L
+</me>
+  as desired.
+</p>
+</proof>
+
+</subsubsection>
+<subsubsection>
+  <title>Product of limits</title>
+  <p>
+    As was the case for sequences, our proof of the product of limits (and also the reciprocal of limits) relies the <q>trick</q> of rewriting
+      <md>
+        <mrow> | f(x)\cdot g(x)-K\cdot L |\amp =
+        |f(x)\cdot g(x)-f(x) \cdot L + f(x)\cdot L - K\cdot L|
+         </mrow>
+        <mrow> \amp = |f(x)(g(x)-L) + L(f(x)-K) | </mrow>
+        <mrow> \amp \leq |f(x)|\cdot|g(x)-L| + |L|\cdot|f(x)-K|. </mrow>
+      </md>
+    So we again require some control over the size of the function close to <m>x=a</m>. Consequently we need lemma analogous to <xref ref="lem-xn-control"/> that gives us a rigorous bound on <m>f(x)</m> when <m>x</m> is close to <m>a</m>.
+  </p>
+<lemma xml:id="lem-fx-control">
+  <statement>
+    <p>
+      Let <m>a,K \in \mathbb{R}</m> and let <m>f(x)</m> be a function that converges to <m>K</m> as <m>x</m> approaches <m>a</m>. Then, there is some <m>\delta \gt 0</m> so that when <m>0 \lt |x-a| \lt \delta</m>, we have
+      <me>
+        \frac{|K|}{2} \leq |f(x)| \leq \frac{3|K|}{2}.
+      </me>
+    </p>
+  </statement>
+</lemma>
+<p>
+  Now that we have this lemma we can proceed with the proof.
+</p>
+<proof><title>Proof of the product of limits</title>
+  <p>
+    Let <m>a,K,L,f,g</m> be as in the statement of the lemma, and let <m>\epsilon \gt 0</m>. Then we assemble the following three facts:
+    <ul>
+      <li>Since <m>f(x)\to K</m> as <m>x \to a</m>, there is some <m>\delta_K \gt 0</m> so that when <m>0 \lt |x-a| \lt \delta_K</m> we know that <m>|f(x)-K| \lt \frac{\epsilon}{2|L|+1}</m>.</li>
+
+      <li>Similarly, since <m>g(x)\to L</m> as <m>x \to a</m>, there is some <m>\delta_L \gt 0</m> so that when <m>0 \lt |x-a| \lt \delta_L</m> we know that <m>|g(x)-L| \lt \frac{\epsilon}{3|K|+1}</m>.
+     </li>
+
+     <li>Finally, since <m>f(x)\to L</m> as <m>x \to a</m>, <xref ref="lem-fx-control"/> tells us that there is some <m>\delta_f</m> so that when <m>0\lt |x-a|\lt \delta_f</m> we know that
+     <m>|f(x)| \lt \frac{3|K|}{2}</m>.</li>
+    </ul>
+    Notice that we have chosen denominators of <m>2|L|+1</m> and <m>3|K|+1</m> to avoid any problems that could arise if we had <m>L=0</m> or <m>K=0</m>.
+  </p>
+  <p>
+    Now let <m>\delta = \min\{\delta_K, \delta_L, \delta_f \}</m>. Then when <m>0 \lt |x-a| \lt \delta</m> we know that
+    <me>
+      |f(x)-K| \lt \frac{\epsilon}{2|L|+1}
+      \qquad \text{and}\qquad
+      |g(x)-L| \lt \frac{\epsilon}{3|K|+1}
+      \qquad \text{and}\qquad
+      |f(x)| \lt \frac{3|K|}{2}.
+    </me>
+    Then:
+    <md>
+      <mrow> | f(x)\cdot g(x)-K\cdot L |\amp = |f(x)(g(x)-L) + L(f(x)-K) | </mrow>
+      <mrow> \amp \leq |f(x)|\cdot|g(x)-L| + |L|\cdot|f(x)-K| </mrow>
+      <mrow> \amp \leq \frac{3|K|}{2} \cdot \frac{\epsilon}{3|K|+1}
+      + |L| \cdot \frac{\epsilon}{2|L|+1}
+      </mrow>
+      <mrow> \amp \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon.</mrow>
+    </md>
+    Hence the result follows.
+  </p>
+</proof>
+</subsubsection>
+
+<subsubsection>
+  <title>Ratio of limits</title>
+  <p>
+    As was the case for limits of sequences, we prove the limit of ratios of functions by first proving the limit of the reciprocal of a function and then using the above result on the limit of products to complete the result.
+  </p>
+
+<proof><title>Proof of the reciprocal of limits</title>
+<p>
+    Let <m>a, L</m> and <m>g</m> be as stated, and let <m>\epsilon \gt 0</m> be arbitrary. Then
+<ul>
+  <li><p>since <m>\lim_{x\to a} g(x) = L</m>, there is some <m>\delta_L</m> so that when <m>0 \lt |x-a| \lt \delta_L</m>, we know that
+  <me>
+    |g(x)-L| \lt \epsilon \frac{|L|^2}{2},
+  </me>
+    </p>
+  </li>
+  <li>
+    <p>
+      and similarly, since <m>\lim_{x\to a} g(x) = L</m>, <xref ref="lem-fx-control"/> implies that there is some <m>\delta_g</m> so that when <m>0 \lt |x-a| \lt \delta_g</m>, we know that <m>\frac{|L|}{2} \lt |g(x)|</m>.
+    </p>
+  </li>
+</ul>
+</p>
+  <p>
+    Now pick <m>\delta = \min\{\delta_L, \delta_g \}</m>. Then whenever <m>0 \lt |x-a| \lt \delta</m> we get
+    <md>
+      <mrow> \left| \frac{1}{g(x)}-\frac{1}{L} \right|
+      \amp
+      =\left| \frac{(L-g(x))}{L \cdot g(x)} \right|
+     </mrow>
+      <mrow> \amp
+      = \frac{1}{|L|} \cdot \frac{1}{|g|}\cdot |g(x)-L|
+       </mrow>
+       <mrow>
+        \amp\lt
+        \frac{2}{|L|^2} \cdot \epsilon \cdot \frac{|L|^2}{2} = \epsilon.
+       </mrow>
+    </md>
+    Therefore the result follows.
+  </p>
+</proof>
+
+<p>
+  Putting this result together with the result for the product of limits gives us the ratio of limits.
+</p>
+<proof><title>Proof of the ratio of limits</title>
+  <p>
+    Let <m>f</m> and <m>g</m> be functions so that <m>\lim_{x\to a}f(x)=K</m> and <m>\lim_{x\to a} g(x)=L \neq 0</m>. Then from <xref ref="fnc_recip"/> we see that
+    <me>
+      \lim_{x\to a} \frac{1}{g(x)} = \frac{1}{L}
+    </me>
+    and then by <xref ref="fnc_prod"/> we get
+    <md>
+      <mrow> \lim _{x\to a }\left(\frac {f(x)}{g(x)}\right)
+      \amp
+      =\lim_{x\to a}f(x)\cdot\lim _{x\to a }\left(\frac {1}{g(x)}\right)
+       </mrow>
+      <mrow> \amp = K \cdot \frac{1}{L} = \frac{K}{L}</mrow>
+    </md>
+    Therefore the result follows.
+  </p>
+</proof>
+
+
+</subsubsection>
+
+</subsection>
+
+</section>
+<xi:include href="../problems/06ex.ptx"/>
+
+</chapter>

@@ -1,0 +1,32 @@
+<exercise>
+<!-- source latex = 'no_mult_inverse.tex' -->
+<!-- converted on 06/02/2022 at 13:49 -->
+<statement>
+<p>
+Let <m>n\in\mathbb{N}</m>. Suppose that <m>a\in\mathbb{Z}</m> is such that <m>\gcd(a,n)\gt1</m>. Show, by contradiction, that there is no <m>k\in\mathbb{Z}</m> so that <m>ak\equiv1\mod{n}</m>.
+This statement implies that <m>[a]_n</m> is not invertible, which is a concept defined in <xref ref="ex_inv_mod_p"/>.
+</p>
+</statement>
+<hint>
+<p>
+Remember that <m>1</m> is not divisible by very many integers!
+</p>
+</hint>
+<answer>
+<p>
+ In order to prove the statement by contradiction, we need to assume that there is some <m>k\in\mathbb{Z}</m> so that <m>ak\equiv1\mod{n}</m>, and then show that this leads to a contradiction, implying that the statement must be true.
+From the equation <m>ak\equiv1\mod{n}</m>, we know that <m>n\mid (ak-1)</m>. From here we can show that <m>\gcd(a,n)\mid 1</m>. This contradicts that <m>\gcd(a,n)\gt 1</m>.
+</p>
+</answer>
+<solution>
+
+<proof><p>
+Let <m>n\in\mathbb{N}</m> and let <m>a\in\mathbb{Z}</m> be such that <m>d=\gcd(a,n)\gt1</m>. Assume, toward a contradiction, that there is some integer <m>k\in\mathbb{Z}</m> such that <m>ka\equiv1\mod{n}</m>.
+By definition, we have <m>n\mid (ka-1)</m>. Then there is some integer <m>\ell\in\mathbb{Z}</m> so that <m>\ell n=ka-1</m>. Rearranging, we have <m>1=ka-\ell n</m>. Since <m>d=\gcd(a,n)</m> divides both <m>a</m> and <m>n</m>, there are integers
+<m>u,v</m> such that <m>a=ud</m> and <m>n=vd</m>. Then
+<me> 1=kud+\ell vd =(ku+\ell v)d </me>
+and as <m>ku+\ell v\in\mathbb{Z}</m>, <m>d</m> divides <m>1</m>. But this is a contradiction, since <m>d\gt 1</m>. Hence there is no integer <m>k\in\mathbb{Z}</m> such that <m>ka\equiv1\mod{n}</m>.
+</p></proof>
+
+</solution>
+</exercise>

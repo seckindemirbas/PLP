@@ -1,0 +1,25 @@
+<exercise xml:id="ex_n_div_a_aplus1">
+<!-- source latex = 'n divides a and a plus 1 question.tex' -->
+<!-- converted on 24/06/2021 at 14:47 -->
+<statement>
+<p>
+Let <m>n, a\in\mathbb{Z}</m>. Prove that if <m>n\mid a</m> and <m>n\mid (a+1)</m>, then <m>n=-1</m> or <m>n=1</m>.
+</p>
+</statement>
+<hint>
+<p>
+Think about the divisors of 1 and how you might use that.
+</p>
+</hint>
+<answer>
+<p>
+The hypothesis tells us that <m>a=nk</m> and <m>a+1=n\ell</m>. This means we can write <m>1 =  (a+1)-a = n\ell - nk = n(\ell-k)</m>. But this means <m>n \mid 1</m>. This is the basis of our proof.
+</p>
+</answer>
+<solution>
+<proof><p>
+Let <m>n,a\in\mathbb{Z}</m>. Assume that <m>n\mid a</m> and <m>n\mid (a+1)</m>. Then we see that <m>a=nk</m> for some <m>k\in\mathbb{Z}</m> and <m>(a+1)=n\ell</m> for some <m>\ell\in\mathbb{Z}</m>. Thus, <m>1=(a+1)-a=n(\ell-k)</m> and since <m>(\ell-k)\in\mathbb{Z}</m>, we see <m>n\mid 1</m>. Therefore, since <m>n</m> is an integer, the only possibilities are that <m>n=1</m> or <m>n=-1</m>.
+</p></proof>
+
+</solution>
+</exercise>

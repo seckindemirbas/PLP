@@ -1,0 +1,73 @@
+<exercise>
+<!-- source latex = 'x_plus_y_odd.tex' -->
+<!-- converted on 12/08/2021 at 19:39 -->
+<statement>
+<p>
+Prove the following statement:
+</p>
+<p>
+If <m>x+y</m> is odd, then either <m>x</m> or <m>y</m> is odd, but not both.
+</p>
+</statement>
+<hint>
+<p>
+Think carefully about the contrapositive.
+</p>
+</hint>
+<answer>
+<p>
+We would like to prove the contrapositive, but first we need to figure out what the contrapositive statement is. Following the technical definition, we know that the contrapositive is
+<em>If <m>\neg</m>(<m>x</m> or <m>y</m> is odd, but not both), then <m>\neg</m>(<m>x+y</m> is odd)</em>. But we would like to translate this into a statement that is easier to comprehend.
+</p>
+
+<p>
+There are four possibilities for the parities of <m>x</m> and <m>y</m>:
+<ol marker="(a)">
+<li>
+<p>
+ <m>x</m> and <m>y</m> are both even.
+    </p></li>
+<li>
+<p>
+ <m>x</m> is even and <m>y</m> is odd.
+    </p></li>
+<li>
+<p>
+ <m>x</m> is odd and <m>y</m>  is even.
+    </p></li>
+<li>
+<p>
+ <m>x</m> and <m>y</m> are both odd.
+</p>
+</li>
+</ol>
+Options 2 and 3 fit the condition <em><m>x</m> or <m>y</m> is odd, but not both</em>. Therefore, <em><m>\neg</m>(<m>x</m> or <m>y</m> is odd, but not both)</em> is satisfied by conditions 1 and 4. We can summarize these two conditions as <q><m>x</m> and <m>y</m> have the same parity.</q> Moreover, we can rewrite the statement <em><m>\neg</m>(<m>x+y</m> is odd)</em> as <q><m>x+y</m> is even.</q>
+</p>
+<p>
+Putting these together, we get the contrapositive:
+ <em>If <m>x</m> and <m>y</m> have the same parity, then <m>x+y</m> is even</em>.
+</p>
+</answer>
+
+<solution>
+<proof><p>
+We proceed by contrapositive. We see that thee contrapositive of the statement is: If <m>x</m> and <m>y</m> have the same parity, then <m>x+y</m> is even.  Now assume that <m>x</m> and <m>y</m> are both even or both odd. Then we have 2 cases:
+<ul>
+<li>
+<p>
+ Case 1: Assume that both <m>x</m> and <m>y</m> are even. Then <m>x=2n</m> and <m>y=2m</m> for some <m>n,m\in \mathbb{Z}</m>. Therefore,
+<me>x+y = 2n+2m =2(n+m).</me>
+Since <m>n, m \in \mathbb{Z}</m> and the sum of integers is also an integer, we see that <m>n+m\in \mathbb{Z}</m>, so that <m>x+y</m> fits the definition of an even number, as required.
+    </p></li>
+<li>
+<p>
+ Case 2: Assume that <m>x</m> and <m>y</m> are both odd. Then <m>x=2j+1</m> and <m>y=2k+1</m> for some <m>j,k\in \mathbb{Z}</m>. Then
+<me>x+y = 2j+1+2k+1 = 2(j+k+1).</me>
+Since <m>j,k,1 \in \mathbb{Z}</m> and the sum of integers is an integer, <m>j+k+1\in \mathbb{Z}</m>, and we see that <m>x+y</m> is even, as desired.
+</p></li>
+</ul>
+</p>
+</proof>
+
+</solution>
+</exercise>

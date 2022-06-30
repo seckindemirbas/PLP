@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<publication>
+  <common>
+    <exercise-divisional hint="no" answer="no" solution="no"/>
+  </common>
+
+  <source>
+    <directories external="assets" generated="generated"/>
+  </source>
+ 
+  <numbering>
+    <!-- The next elements say how the levels deep to break up the    -->
+    <!-- numbering of the respective elements. Can't be more than the -->
+    <!-- @level on divisions above.                                   -->
+    <blocks level="2"/>
+    <projects level="0"/>
+    <equations level="1"/>
+    <footnotes level="0"/>
+  </numbering>
+  <latex print="no" sides="one">
+  </latex>
+  
+  <html>
+    <knowl remark="no" example="no" proof="yes"/>
+    <css style="default" colors="blue_red"/>
+    <!-- <analytics google-gst="UA-0123456-1" statcounter-project="0123456" statcounter-security="0123456"/> -->
+    <!-- Google search, via masthead textbox is switched on    -->
+    <!-- and associated with a Google account via CX number    -->
+    <!-- <search google-cx=""/> -->
+    <!-- ***************************************************** -->
+  </html>
+
+</publication>

@@ -1,0 +1,60 @@
+<exercise>
+<!-- source latex = 'sets_han1.tex' -->
+<!-- converted on 23/06/2021 at 19:53 -->
+<statement>
+<p>
+Are the following statements true or false?
+<ol marker="(a)">
+<li>
+<p>
+ <m>\es = \{0\}</m>
+    </p></li>
+<li>
+<p>
+ <m>\es = \{\es\}</m>
+    </p></li>
+<li>
+<p>
+ <m>|\es| = 0</m>
+    </p></li>
+<li>
+<p>
+ <m>\{\{\es \}\} = \{\es\}</m>
+    </p></li>
+<li>
+<p>
+ <m>\{\es\} = \{\{\}\}</m>
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+The goal of this question is to highlight that the empty set is not the same as the zero set, nor is it same as the set containing the empty set. When in doubt, refer the empty bag analogy provided in <xref ref="sec-describing"/>.
+<ol marker="(a)">
+<li>
+<p>
+ False. The empty set contains no elements, but the set <m>\set{0}</m> contains <m>1</m> element, namely the number 0.
+    </p></li>
+<li>
+<p>
+ False. This is for the same reason as above. <m>\{\es \}</m> is a set with <m>1</m> element; it contains the empty set.
+    </p></li>
+<li>
+<p>
+ True. There are <m>0</m> elements in the empty set.
+    </p></li>
+<li>
+<p>
+ False. The set <m>\{\es\}</m> is a set, containing a set with no elements (this is like a bag containing another empty bag), whereas the set <m>\{\{\es\}\}</m> is a set containing a set containing a set with no elements (like a bag containing a bag containing a third empty bag).
+    </p></li>
+<li>
+<p>
+ True. These are both sets containing a set with no elements.
+</p>
+</li>
+</ol>
+</p>
+</solution>
+</exercise>

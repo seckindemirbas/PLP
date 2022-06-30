@@ -1,0 +1,45 @@
+<exercise>
+<!-- source latex = 'Consecutive addition.tex' -->
+<!-- converted on 12/08/2021 at 19:26 -->
+<statement>
+<p>
+We say that the pair of numbers <m>a,b</m> are consecutive in the set <m>S</m> when <m>a \lt b</m> and there is no number <m>c \in S</m> so that <m>a \lt c \lt b</m>. That is, the number <m>b</m> is the next number in the set after <m>a</m>. For example:
+<ul>
+<li>
+<p>
+ <m>5</m> and  <m>6</m> are consecutive integers.
+</p></li>
+<li>
+<p>
+ <m>10</m> and  <m>12</m> are consecutive even numbers.
+</p></li>
+<li>
+<p>
+ <m>25</m> and <m>30</m> are consecutive multiples of <m>5</m>.
+</p></li>
+</ul>
+Prove the following statement:
+</p>
+<p>
+Let <m>a,b\in \mathbb{Z}</m>. If <m>a+b</m> is not odd, then <m>a</m> and <m>b</m> are not consecutive.
+</p>
+</statement>
+
+<answer>
+  <p>
+    Proving things directly looks difficult, so we look at the
+    contrapositive: <em>If <m>a</m> and <m>b</m> are consecutive,
+    then <m>a+b</m> is odd</em>. Now we can use the definition of consecutive to prove things.
+</p>
+</answer>
+
+<solution>
+
+<proof><p>
+We proceed by contrapositive. Without loss of generality, assume that <m>b \gt a</m>. Assume that <m>a</m> and <m>b</m> are consecutive, so that <m>b=a+1</m>. We compute,
+<me>a+b = a + (a+1) = 2a+1.</me>
+Since <m>a\in \mathbb{Z}</m>, we see that <m>a+b</m> fits the definition of an odd integer, as desired.
+</p></proof>
+
+</solution>
+</exercise>

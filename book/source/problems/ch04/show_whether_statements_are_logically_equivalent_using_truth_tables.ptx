@@ -1,0 +1,192 @@
+<exercise xml:id="ex_log_equiv_tt">
+<!-- source latex = 'show whether statements are logically equivalent using truth tables.tex' -->
+<!-- converted on 05/07/2021 at 10:33 -->
+<statement>
+<p>
+Use truth tables to determine whether or not the following pairs of statements are logically equivalent.
+</p>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ <q><m>({\neg} P)\lor Q</m></q> and <q><m>P\Rightarrow Q</m></q>.
+</p></li>
+<li>
+<p>
+ <q><m>P\Leftrightarrow Q</m></q> and <q><m>({\neg} P)\Leftrightarrow ({\neg} Q)</m></q>.
+</p></li>
+<li>
+<p>
+ <q><m>P\Rightarrow (Q\lor R)</m></q> and <q><m>P\Rightarrow (({\neg} Q)\Rightarrow R)</m></q>.
+</p></li>
+<li>
+<p>
+ <q><m>(P\lor Q)\Rightarrow R</m></q> and <q><m>(P\Rightarrow R)\land(Q\Rightarrow R)</m></q>.
+</p></li>
+<li>
+<p>
+ <q><m>P\Rightarrow (Q\lor R)</m></q> and <q><m>(Q\land R)\Rightarrow P</m></q>.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ <m>({{\neg}} P)\lor Q</m> and <m>P\Rightarrow Q</m>.
+</p>
+
+<tabular left="minor" right="minor" top="minor" bottom="minor" halign="center">
+<row>
+<cell><m>P</m> </cell><cell> <m>Q</m> </cell><cell> <m>({\neg} P)</m>  </cell><cell>  <m>({\neg} P) \lor Q</m>  </cell><cell>  <m>P \implies Q</m></cell>
+</row><row>
+<cell>T </cell><cell> T </cell><cell> F </cell><cell> T </cell><cell> T</cell>
+</row><row>
+<cell>T </cell><cell> F </cell><cell> F </cell><cell> F </cell><cell> F</cell>
+</row><row>
+<cell>F </cell><cell> T </cell><cell> T </cell><cell> T </cell><cell> T</cell>
+</row><row>
+<cell>F </cell><cell> F </cell><cell> T </cell><cell> T </cell><cell> T</cell>
+</row>
+</tabular>
+
+<p>
+We see that the last two columns are the same. Therefore, these are logically equivalent.
+</p>
+</li>
+<li>
+<p>
+ <m>P\Leftrightarrow Q</m> and <m>({{\neg}} P)\Leftrightarrow ({{\neg}} Q)</m>.
+</p>
+
+<tabular left="minor" right="minor" top="minor" bottom="minor" halign="center">
+<row>
+<cell><m>P</m> </cell><cell> <m>Q</m> </cell><cell> <m>{\neg} P</m>  </cell><cell>  <m>{\neg} Q</m> </cell><cell> <m>P \Leftrightarrow Q</m>  </cell><cell>  <m>({\neg} P) \Leftrightarrow ({\neg} Q)</m></cell>
+</row><row>
+<cell>T </cell><cell> T </cell><cell> F </cell><cell> F </cell><cell> T </cell><cell> T</cell>
+</row><row>
+<cell>T </cell><cell> F </cell><cell> F </cell><cell> T </cell><cell> F </cell><cell> F</cell>
+</row><row>
+<cell>F </cell><cell> T </cell><cell> T </cell><cell> F </cell><cell> F </cell><cell> F</cell>
+</row><row>
+<cell>F </cell><cell> F </cell><cell> T </cell><cell> T </cell><cell> T </cell><cell> T</cell>
+</row>
+</tabular>
+
+<p>
+We see that the last two columns are the same. Therefore, these are logically equivalent.
+</p>
+</li>
+<li>
+<p>
+ <m>P\Rightarrow (Q\lor R)</m> and <m>P\Rightarrow (({{\neg}} Q)\Rightarrow R)</m>.
+</p>
+
+<tabular left="minor" right="minor" top="minor" bottom="minor" halign="center">
+<row>
+<cell><m>P</m> </cell><cell> <m>Q</m> </cell><cell> <m>R</m> </cell><cell> <m>Q\lor R</m>  </cell><cell>  <m>({\neg} Q)\Rightarrow R</m> </cell><cell> <m>P \Rightarrow (Q\lor R)</m>  </cell><cell>  <m>P \Rightarrow (({\neg} Q)\Rightarrow R)</m></cell>
+</row><row>
+<cell>T </cell><cell> T </cell><cell> T </cell><cell> T </cell><cell> T </cell><cell> T </cell><cell> T</cell>
+</row><row>
+<cell>T </cell><cell> T </cell><cell> F </cell><cell> T </cell><cell> T </cell><cell> T </cell><cell> T</cell>
+</row><row>
+<cell>T </cell><cell> F </cell><cell> T </cell><cell> T </cell><cell> T </cell><cell> T </cell><cell> T</cell>
+</row><row>
+<cell>F </cell><cell> T </cell><cell> T </cell><cell> T </cell><cell> T </cell><cell> T </cell><cell> T</cell>
+</row><row>
+<cell>T </cell><cell> F </cell><cell> F </cell><cell> F </cell><cell> F </cell><cell> F </cell><cell> F</cell>
+</row><row>
+<cell>F </cell><cell> T </cell><cell> F </cell><cell> T </cell><cell> T </cell><cell> T </cell><cell> T</cell>
+</row><row>
+<cell>F </cell><cell> F </cell><cell> T </cell><cell> T </cell><cell> T </cell><cell> T </cell><cell> T</cell>
+</row><row>
+<cell>F </cell><cell> F </cell><cell> F </cell><cell> F </cell><cell> F </cell><cell> T </cell><cell> T</cell>
+</row>
+</tabular>
+
+<p>
+We see that the last two columns are the same. Therefore, these are logically equivalent.
+</p>
+</li>
+<li>
+<p>
+ <m>(P\lor Q)\Rightarrow R</m> and <m>(P\Rightarrow R)\land(Q\Rightarrow R)</m>.
+</p>
+
+<tabular left="minor" right="minor" top="minor" bottom="minor" halign="center">
+<row>
+<cell><m>P</m> </cell><cell> <m>Q</m> </cell><cell> <m>R</m> </cell><cell> <m>P\lor Q</m>  </cell><cell>  <m>P\Rightarrow R</m> </cell><cell> <m>Q \Rightarrow R</m>  </cell><cell>  <m>(P\lor Q) \Rightarrow R</m>  </cell><cell>  <m>(P \Rightarrow R)\land(Q\Rightarrow R)</m></cell>
+</row><row>
+<cell>T </cell><cell> T </cell><cell> T </cell><cell> T </cell><cell> T </cell><cell> T </cell><cell> T </cell><cell> T</cell>
+</row><row>
+<cell>T </cell><cell> T </cell><cell> F </cell><cell> T </cell><cell> F </cell><cell> F </cell><cell> F </cell><cell> F</cell>
+</row><row>
+<cell>T </cell><cell> F </cell><cell> T </cell><cell> T </cell><cell> T </cell><cell> T </cell><cell> T </cell><cell> T</cell>
+</row><row>
+<cell>F </cell><cell> T </cell><cell> T </cell><cell> T </cell><cell> T </cell><cell> T </cell><cell> T </cell><cell> T</cell>
+</row><row>
+<cell>T </cell><cell> F </cell><cell> F </cell><cell> T </cell><cell> F </cell><cell> F </cell><cell> F </cell><cell> F</cell>
+</row><row>
+<cell>F </cell><cell> T </cell><cell> F </cell><cell> T </cell><cell> T </cell><cell> F </cell><cell> F </cell><cell> F</cell>
+</row><row>
+<cell>F </cell><cell> F </cell><cell> T </cell><cell> F </cell><cell> T </cell><cell> T </cell><cell> T </cell><cell> T</cell>
+</row><row>
+<cell>F </cell><cell> F </cell><cell> F </cell><cell> F </cell><cell> T </cell><cell> T </cell><cell> T </cell><cell> T</cell>
+</row>
+</tabular>
+
+<p>
+We see that the last two columns are the same. Therefore, these are logically equivalent.
+</p>
+</li>
+<li>
+<p>
+ <m>P\Rightarrow (Q\lor R)</m> and <m>(Q\land R)\Rightarrow P</m>.
+</p>
+
+<tabular left="minor" right="minor" top="minor" bottom="minor" halign="center">
+<row>
+<cell><m>P</m> </cell><cell> <m>Q</m> </cell><cell> <m>R</m> </cell><cell> <m>Q\lor R</m>  </cell><cell>  <m>Q\land R</m> </cell><cell> <m>P\Rightarrow(Q\lor R)</m>  </cell><cell>  <m>(Q \land R)\Rightarrow P</m></cell>
+</row><row>
+<cell>T </cell><cell> T </cell><cell> T </cell><cell> T </cell><cell> T </cell><cell> T </cell><cell> T</cell>
+</row><row>
+<cell>T </cell><cell> T </cell><cell> F </cell><cell> T </cell><cell> F </cell><cell> T </cell><cell> T</cell>
+</row><row>
+<cell>T </cell><cell> F </cell><cell> T </cell><cell> T </cell><cell> F </cell><cell> T </cell><cell> T</cell>
+</row><row>
+<cell>F </cell><cell> T </cell><cell> T </cell><cell> T </cell><cell> T </cell><cell> T </cell><cell> F</cell>
+</row><row>
+<cell>T </cell><cell> F </cell><cell> F </cell><cell> F </cell><cell> F </cell><cell> F </cell><cell> T</cell>
+</row><row>
+<cell>F </cell><cell> T </cell><cell> F </cell><cell> T </cell><cell> F </cell><cell> T </cell><cell> T</cell>
+</row><row>
+<cell>F </cell><cell> F </cell><cell> T </cell><cell> T </cell><cell> F </cell><cell> T </cell><cell> T</cell>
+</row><row>
+<cell>F </cell><cell> F </cell><cell> F </cell><cell> F </cell><cell> F </cell><cell> T </cell><cell> T</cell>
+</row>
+</tabular>
+
+<p>
+We see that the last two columns are different. Therefore, these are not logically equivalent. Indeed, we see that when <m>P</m> is false and <m>Q, R</m> are true (i.e. the fourth row), we see that <m>P\Rightarrow(Q\lor R)</m> is true, whereas <m>(Q \land R)\Rightarrow P</m> is false.
+</p>
+
+</li>
+</ol>
+</p>
+<p>
+Even though questions like this are very easy to show and may feel quite unnecessary, they play an important role in understanding what logical equivalences we can think of when we are proving statements.
+</p>
+<p>
+For example, part (c) tells us that if we have a conditional statement where the conclusion is an `or'-statement, we can indeed turn that into a double implication statement which may be easier to prove.
+</p>
+<p>
+Similarly part (d) is going to play an important role in proving statements using cases in the upcoming chapter.
+</p>
+<p>
+So, it is important to think about which statements are logically equivalent and how we can use that to our advantage when we want to prove different statements.
+</p>
+</solution>
+</exercise>

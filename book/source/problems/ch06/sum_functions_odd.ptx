@@ -1,0 +1,49 @@
+<exercise>
+<!-- source latex = 'sum_functions_odd.tex' -->
+<!-- converted on 18/08/2021 at 14:52 -->
+<statement>
+<p>
+Let <m>f:\mathbb{R}\to\mathbb{R}</m> be a function. We say that <m>f</m> is
+<ul>
+<li>
+<p>
+ even if <m>f(-x)=f(x)</m> for all <m>x\in\mathbb{R}</m>;
+</p></li>
+<li>
+<p>
+  odd if <m>f(-x)=-f(x)</m> for all <m>x\in\mathbb{R}</m>.
+</p></li>
+</ul>
+</p>
+<p>
+Let <m>f:\mathbb{R}\to\mathbb{R}</m> and <m>g:\mathbb{R}\to\mathbb{R}</m>. If <m>f+g</m> is odd, are <m>f</m> and <m>g</m> also odd?
+</p>
+</statement>
+<hint>
+<p>
+Try playing around with some simple functions.
+</p>
+</hint>
+<answer>
+<p>
+We'll try to construct a pair of function <m>f,g</m> so that <m>f+g</m> is odd, but one of them, say <m>f</m>, is even.
+We can test the result by look at some simple odd and even functions.
+An example of an odd function is <m>y=x</m>, and an example of an even function is <m>y=x^2</m>.
+Let's suppose that <m>f(x)=x^2</m>, which is even. We want to choose <m>g</m> so that <m>f+g=x</m>, an odd function. Then we can take <m>g(x)=x-f(x)=x-x^2</m>.
+Also, we can show that <m>g</m> is neither even nor odd;  <m>g(2)=-2</m> but <m>g(-2)=-6</m>.
+</p>
+</answer>
+
+<solution>
+<proof>
+<p>
+Let <m>f:\mathbb{R}\to\mathbb{R}</m> be defined by <m>f(x)=x^2</m>, and let <m>g:\mathbb{R}\to\mathbb{R}</m> be defined by <m>g(x)=x-x^2</m>.
+Then for any <m>x\in\mathbb{R}</m>,
+<me> f(x)=x^2=(-x)^2=f(-x) </me>
+so <m>f</m> is even, not odd. Moreover, <m>(f+g)(x)=x^2+(x-x^2)=x</m>. Then
+<me> (f+g)(x)=x=-(f+g)(-x) </me>
+and so <m>f+g</m> is odd. Therefore just because the sum of two functions is an odd function, it does not follow that those two functions are odd functions.
+</p></proof>
+
+</solution>
+</exercise>

@@ -1,0 +1,76 @@
+<exercise>
+<!-- source latex = 'intersection of partitions is a partition question.tex' -->
+<!-- converted on 19/11/2021 at 10:59 -->
+<statement>
+<p>
+Let <m>A</m> be a non-empty set and <m>P\subseteq \mathcal P(A)</m> and <m>Q\subseteq \mathcal P(A)</m> partitions of <m>A</m>. Prove that the set <m>R</m> defined as
+<md>
+<mrow>
+    R=\{S\cap T : S\in P,\ T\in Q\}- \{\emptyset\}
+</mrow>
+</md>
+is also a partition of <m>A</m>.
+</p>
+</statement>
+<hint>
+<p>
+Remember that every element of the set <m>R</m> is the intersection of two elements of <m>P</m> and <m>Q</m>. Also, read the definition of partitions carefully.
+</p>
+</hint>
+
+<solution>
+
+<proof><p>
+  Let <m>A,P,Q,R</m> be as given in the statement of the problem. Then to show that <m>R</m> is a partition of <m>A</m>, we need to show that
+<md>
+<mrow>
+\bigcup_{X\in R}X=A
+</mrow>
+</md>
+and
+<md>
+<mrow>
+ (U_1, U_2\in R, U_1\neq U_2)\implies (U_1\cap U_2=\emptyset).
+</mrow>
+</md>
+We prove each of these in turn.
+<ul>
+<li>
+<p>
+  To prove the set equality we need to show that each side is included in the other. One of these inclusions is straight-forward, since if <m>X\in R</m>, then, by definition of <m>R</m>, <m>X\subseteq A</m>. Therefore, we see that <m>\bigcup_{X\in R}X\subseteq A</m>.
+</p>
+<p>
+Thus, we just need to show that <m>A\subseteq \bigcup_{X\in R}X</m>.
+Let <m>x\in A</m>.
+Since <m>P</m> and <m>Q</m> are partitions of <m>A</m>, there exists <m>S\in P</m> and <m>T\in Q</m> such that <m>x\in S</m> and <m>x\in T</m>.
+This entails that <m>x\in S\cap T</m> and <m>S\cap T\in R</m>.
+Therefore <m>x\in \bigcup_{X\in R}X</m>.
+</p>
+</li>
+<li>
+<p>
+ To show the second property of partitions let <m>U_1,U_2\in R</m>.
+By definition <m>U_1=S_1\cap T_1</m> for some <m>S_1\in P</m> and <m>T_1\in Q</m>.
+Similarly, <m>U_2 = S_2 \cap T_2</m> for some <m>S_2 \in P</m> and <m>T_2 \in Q</m>.
+</p>
+<p>
+We can prove the contrapositive of the implication. Assume that <m>U_1 \cap U_2 \neq \emptyset</m>. Hence there is some <m>x \in U_1 \cap U_2</m>. Since <m>x \in U_1</m> this implies that <m>x \in S_1 \cap T_1</m>, and since <m>x \in U_2</m> we know that <m>x \in S_2 \cap T_2</m>. Thus <m>x</m> is in all of <m>S_1, S_2, T_1, T_2</m>.
+<ul>
+<li>
+<p>
+ Since <m>x \in S_1</m> and <m>x \in S_2</m>, it follows that <m>x \in S_1 \cap S_2</m>. Thus, since <m>S_1, S_2</m> are parts of a partition, we have <m>S_1 = S_2</m>.
+  </p></li>
+<li>
+<p>
+ Similarly, since <m>x \in T_1</m> and <m>x \in T_2</m>, we know that <m>T_1 = T_2</m>.
+</p></li>
+</ul>
+Thus we must have <m>U_1 = S_1 \cap T_1 = S_2 \cap T_2 = U_2</m>. Hence when <m>U_1 \cap U_2 \neq \emptyset</m> it follows that <m>U_1 = U_2</m>.
+</p></li>
+</ul>
+In the end, <m>R</m> is a partition of <m>A</m>.
+</p>
+</proof>
+
+</solution>
+</exercise>

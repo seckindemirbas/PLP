@@ -1,0 +1,57 @@
+<exercise>
+<!-- source latex = 'the set of all functions from N to set of 0 and 1 is uncontable.tex' -->
+<!-- converted on 03/03/2022 at 12:37 -->
+<statement>
+<p>
+Let <m>S</m> be the set of all functions <m>f: \mathbb{N} \rightarrow \set{0, 1}</m>. Prove that <m>S</m> is uncountable.
+</p>
+
+<p>
+Notice that the codomain of these functions is the set that contains just two elements, zero and one. It is not the set of all reals between 0 and 1.
+</p>
+</statement>
+<hint>
+<p>
+Question 13 in Section 10 may be useful.
+</p>
+</hint>
+<answer>
+<p>
+Question 13 in Section 10 suggests that we should be able to construct a bijective function <m>g: S\to\pow{N}</m> (as done in that question) implying that <m>S</m> is uncountable.
+</p>
+</answer>
+<solution>
+
+<proof>
+<p>
+Consider the function <m>G: S \rightarrow \mathcal{P}(\mathbb{N})</m> defined by <m>G(f) = \{n: f(n)=1 \}</m>. We claim that <m>G</m> is a bijection. This implies that <m>|S| = |\mathcal{P}(\mathbb{N})|</m> and thus is uncountable.
+</p>
+<p>
+To prove the claim, it suffices to show that <m>G</m> is injective and surjective.
+<ul>
+<li>
+<p>
+ (Injectivity) Suppose that <m>f, h \in S</m> such that <m>G(f) = G(h)</m>. Then we have
+<me>
+\set{n: f(n)=1 } = \set{n: h(n)=1 },
+</me>
+So the functions <m>f,h</m> take the value <m>1</m> at the same inputs. At any other value of <m>n</m> the functions must be zero. Hence they take the value <m>1</m> at the same times and the value <m>0</m> at the same time. So <m>f = h</m>.
+    </p></li>
+<li>
+<p>
+ (Surjectivity) Suppose that <m>X \in \mathcal{P}(\mathbb{N})</m> and so <m>X \subseteq \mathbb{N}</m>. Define <m>f: \mathbb{N} \rightarrow \set{0, 1}</m> by
+    <me>
+    f(n) = \begin{cases}
+    1 \quad \text{if } n \in X
+    \\
+    0 \quad \text{otherwise.}
+    \end{cases}
+    </me>
+    Then we have <m>G(f) = X</m> by definition.
+</p></li>
+</ul>
+</p>
+</proof>
+
+</solution>
+</exercise>

@@ -1,0 +1,36 @@
+<exercise xml:id="ex_product_of_odd">
+<!-- source latex = 'product of two odd numbers is odd.tex' -->
+<!-- converted on 05/07/2021 at 12:59 -->
+<statement>
+<p>
+Prove that the product of two odd numbers is odd.
+</p>
+</statement>
+<hint>
+<p>
+Think about what being odd means and how we can use it.
+</p>
+</hint>
+<answer>
+<p>
+Even though this doesn't look like a condtional statement, we wee that we can rewrite it as:
+<md>
+<mrow>
+\text{if } m,n \text{ are odd, then } mn \text{ is odd.}
+</mrow>
+</md>
+Therefore, to prove it, we are going to assume that the hypothesis is true and show that the conclusion follows. This means that we assume that <m>m,n</m> are two odd numbers and show that  <m>mn</m> is odd.
+</p>
+<p>
+Here, we are going to rely on the definitions again to get as much information as we can from our assumption.  Since <m>m</m> and <m>n</m> are odd, we know that <m>m=2k+1</m> for some <m>k\in\mathbb Z</m> and  <m>n=2\ell+1</m> for some <m>\ell\in\mathbb Z</m>. Using this structure, we can get a nice expression for <m>mn</m>.
+</p>
+<p>
+We see that <m>mn=(2k+1)(2\ell+1)=2(2k\ell+k+\ell)+1</m>. Then, using the definition of even and odd functions, we see that <m>mn</m> is an odd number since <m>2k\ell+k+\ell\in\mathbb{Z}</m>. This is what we wanted to show. Let's clean this up.
+</p>
+</answer>
+<solution>
+<proof><p>
+Assume <m>n,m</m> are odd integers. Then we know <m>n=2k+1</m> and <m>m=2\ell+1</m> for some <m>k,\ell\in\mathbb{Z}</m>. Thus, <m>nm=(2k+1)(2\ell+1)=2(2k\ell+k+\ell)+1</m>. Now since <m>k,\ell \in \mathbb{Z}</m> we know that <m>2k\ell+k+\ell\in\mathbb{Z}</m>, and so <m>nm</m> is odd.
+</p></proof>
+</solution>
+</exercise>

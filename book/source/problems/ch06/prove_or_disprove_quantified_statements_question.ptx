@@ -1,0 +1,71 @@
+<exercise>
+<!-- source latex = 'prove or disprove quantified statements question.tex' -->
+<!-- converted on 24/06/2021 at 16:20 -->
+<statement>
+<p>
+Prove or disprove the following statements.
+</p>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ <m>\forall a \in \mathbb N</m>, <m>\forall b\in\mathbb{N}</m> if <m>b \lt a</m>, then <m>b-b^2 \lt a</m>.
+</p>
+</li>
+<li>
+<p>
+ <m>\forall p\in\mathbb N</m>, <m>\forall q\in\mathbb{N}</m>, if <m>\sqrt{\dfrac{p}{q}}\in\mathbb N</m>, then <m>\sqrt{p}\in\mathbb N</m> and <m>\sqrt{q}\in\mathbb N</m>.
+</p>
+</li>
+<li>
+<p>
+ <m>\forall a,b\in\mathbb R</m>, <m>\exists c,d\in\mathbb R</m>, such that if <m>ab\geq cd</m>, then <m>a\geq c</m> and <m>b\geq d</m>.
+</p>
+</li>
+<li>
+<p>
+ <m>\forall a,b\in\mathbb{N}</m>, if <m>\exists x,y\in\mathbb{Z}</m> and <m>\exists k\in\mathbb{N}</m> such that <m>ax+by=k</m>, then <m>(k \mid a)</m> and <m>(k \mid b)</m>.
+</p>
+
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ <em>Proof</em>: Let <m>a,b\in\mathbb{N}</m>. Assume that <m>b \lt a</m>. Thus, since <m>b^2\geq 0</m>, we get <m>b-b^2\leq b \lt a</m>.
+</p></li>
+<li>
+<p>
+ <em>Disproof</em>: Consider the negation:
+<me>
+\exists p\in\mathbb N \text{ such that } \exists q\in\mathbb{N} \text{ such that } \sqrt{\dfrac{p}{q}}\in\mathbb N \text{ and }\left(
+\sqrt{p}\notin\mathbb N \text{ or } \sqrt{q}\in\mathbb N
+\right).
+</me>
+So we can prove that this is true using an example --- that is a counter-example to the original statement. Take <m>p=8</m> and <m>q=2</m>. Then we see that <m>\sqrt{\dfrac{p}{q}}=\sqrt{4}=2\in\mathbb N</m>, whereas <m>\sqrt{p}=\sqrt{8}\notin\mathbb N</m> and <m>\sqrt{q}=\sqrt{2}\notin\mathbb N</m>.
+</p>
+<p>
+Note that We haven't proved that <m>\sqrt{2}, \sqrt{8}</m> are not integers, but we do so <xref ref="ch-contradictions">later in the book</xref>. For the moment, it is safe to assume this.
+</p>
+</li>
+<li>
+<p>
+ <em>Proof</em>: Let <m>a,b\in\mathbb{R}</m>, then we can pick <m>c=a</m> and <m>d=b</m> and get <m>ab=cd</m> and moreover, since <m>a=c</m> and <m>b=d</m>, we see that the statement is true.
+</p></li>
+<li>
+<p>
+ <em>Disproof</em>: Consider the negation:
+<me>
+\exists a,b\in\mathbb{N} \text{ such that } \left(\exists x,y\in\mathbb{Z} \text{ and } \exists k\in\mathbb{N} \text{ such that } ax+by=k \right) \text{ and } (k \nmid a \lor k \nmid b).
+</me>
+Since all of these are existential quantifiers we can prove the negation is true by an example --- this is just a counter-example to the original statement.  Take <m>a=2</m> and <m>b=3</m> so that both are prime numbers. At the same time, taking <m>x=y=1</m> and <m>k=5</m> and get <m>ax+by=k</m>, but <m>5 \nmid 2</m> and <m>5 \nmid 3</m>.
+</p>
+</li>
+</ol>
+</p>
+</solution>
+</exercise>

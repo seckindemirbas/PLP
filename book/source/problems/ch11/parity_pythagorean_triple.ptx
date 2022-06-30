@@ -1,0 +1,32 @@
+<exercise>
+<!-- source latex = 'parity_pythagorean_triple.tex' -->
+<!-- converted on 06/02/2022 at 13:53 -->
+<statement>
+<p>
+Let <m>a,b,c\in\mathbb Z</m>. If <m>a^2+b^2=c^2</m>, then <m>a</m> or <m>b</m> is even.
+</p>
+</statement>
+<answer>
+<p>
+We'll try to prove the statement by contradiction, by assuming that both <m>a</m> and <m>b</m> are odd. Using the definition of <m>a</m> and <m>b</m> being odd, we can prove that <m>a^2+b^2=4n+2</m> for some <m>n\in\mathbb Z</m>.
+Since <m>c^2=a^2+b^2</m>, this implies that <m>c^2</m> is even, and so <m>c</m> is even. (The contrapositive of this statement is given in <xref ref="res_n_odd_nsquare_odd"/>) But then <m>4</m> will divide <m>c^2</m>. This contradicts the equation <m>c^2=a^2+b^2=4n+2</m>, which implies that <m>c^2</m> is not divisible by <m>4</m>.
+</p>
+</answer>
+<solution>
+
+<proof><p>
+ Let <m>a,b,c\in\mathbb Z</m> be such that <m>a^2+b^2=c^2</m>. Assume for a contradiction that  and <m>a</m> and <m>b</m> are both odd.
+ Then, there are <m>k,\ell\in\mathbb Z</m> such that <m>a=2k+1</m> and <m>b=2\ell+1</m>. Then we see that
+ <me> c^2=a^2+b^2=(2k+1)^2+(2\ell+1)^2=4k^2+4k+4\ell^2+4\ell+2=2(2k^2+2\ell^2+2k+2\ell+1). </me>
+ Since <m>(2k^2+2\ell^2+2k+2\ell+1)\in\mathbb Z</m>, we see that <m>c^2</m> is even, which implies <m>c</m> is even. Thus, <m>c=2m</m> for some <m>m\in\mathbb Z</m>.
+ Substituting this into the equation
+ <me> 4k^2+4k+4\ell^2+4\ell+2=c^2 </me>
+ we obtain
+  <me> 4k^2+4k+4\ell^2+4\ell+2=4m^2. </me>
+  But then we may write
+  <me> 2=4m^2-( 4k^2+4k+4\ell^2+4\ell)=4(m^2-k^2-k-\ell^2-\ell) </me>
+  and as <m>m^2-k^2-k-\ell^2-\ell\in\mathbb Z</m>, we can conclude that <m>4\mid 2</m>, a contradiction. Hence our original assumption was false, and so <m>a</m> or <m>b</m> must be even.
+</p></proof>
+
+</solution>
+</exercise>

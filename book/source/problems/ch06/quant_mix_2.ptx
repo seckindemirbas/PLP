@@ -1,0 +1,52 @@
+<exercise>
+<!-- source latex = 'quant_mix_2.tex' -->
+<!-- converted on 12/08/2021 at 19:45 -->
+<statement>
+<p>
+Determine whether the following four statements are true or false. Explain your answers.
+<ol marker="(a)">
+<li>
+<p>
+ <m>\exists x\in\mathbb{R} \text{ s.t. } \exists y\in\mathbb{R} \text{ s.t. } x^2 \lt y</m>.
+</p></li>
+<li>
+<p>
+ <m>\exists x\in\mathbb{R} \text{ s.t. } \forall y\in\mathbb{R},  x^2 \lt y</m>.
+</p></li>
+<li>
+<p>
+ <m>\forall x\in\mathbb{R}, \exists y\in\mathbb{R} \text{ s.t. }  x^2 \lt y</m>.
+</p></li>
+<li>
+<p>
+ <m>\forall x\in\mathbb{R}, \forall y\in\mathbb{R},  x^2 \lt y</m>.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ True. We only need an example of <m>x,y</m> so that <m>x^2 \lt y</m>. Take <m>x=0,y=1</m>.
+</p></li>
+<li>
+<p>
+ False. We show the negation is true; the negation is <m>\forall x\in\mathbb{R}, \exists y\in\mathbb{R} \text{ s.t. } x^2 \geq y</m>. Let <m>x</m> be any real number, then we know <m>x^2 \geq 0</m>, so set <m>y=0</m>. Then we must have <m>x^2 \geq 0 = y</m> as required. Since negation is true, original is false.
+</p>
+</li>
+<li>
+<p>
+ True. Let <m>x</m> be any real number and then pick <m>y=x^2+1</m> (remember we must pick <m>y</m> after we pick <m>x</m>. Then we have <m>x^2 \lt x^2+1 = y</m> as required.
+</p></li>
+<li>
+<p>
+ False. We show the negation is true;  the negation is <m>\exists x\in\mathbb{R}\text{ s.t. } \exists y\in\mathbb{R} \text{ s.t. } x^2 \geq y</m>. So we only need an example of <m>x,y</m>. Pick <m>x=1,y=0</m> then <m>x^2 = 1 \gt 0 = y</m>. Since the negation is true, the original is false.
+</p>
+</li>
+</ol>
+</p>
+</solution>
+</exercise>

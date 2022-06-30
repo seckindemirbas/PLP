@@ -1,0 +1,55 @@
+<exercise>
+<!-- source latex = 'abs_val_question2.tex' -->
+<!-- converted on 12/08/2021 at 19:34 -->
+<statement>
+<p>
+Let <m>x\in\mathbb{R}</m>. Show that if <m>|x-2| \lt 1</m>, then <m>|2x^2-3x-2| \lt 3</m>.  You may use the following result without proof:
+<me> |ab|=|a|\cdot|b| \text{ for any } a,b\in\mathbb{R}. </me>
+</p>
+</statement>
+
+
+<answer>
+<p>
+In order to bound <m>|2x^2-3x-2|</m>, we can factor the expression, and try to bound each term.
+<me> |2x^2-3x-2|=|(2x+1)(x-2)|=|2x+1|\cdot|x-2| </me>
+The factor <m>|x-2| \lt 1</m>, by assumption. But how can we bound the factor <m>|2x+1|</m>? We'll need to use the inequality <m>|x-2| \lt 1</m> again.
+</p>
+<p>
+Recall that <m>|x-2| \lt 1 </m> is equivalent to the inequality
+<me> -1 \lt x-2 \lt 1.  </me>
+Adding <m>2</m> to everything, we end up with
+<me> 1 \lt x \lt 3 </me>
+which implies that <m>|x| \lt 3</m>. Now we can use the triangle inequality to bound <m>|2x+1|</m>:
+<me> |2x+1|\leq |2x|+1=2|x|+1 \lt 2\cdot3+1=7. </me>
+</p>
+
+<p>
+With this scrap work, we're ready to write up the proof of the statement.
+But remember, we have to make sure that our logic flows in the correct direction. We must make sure our proof starts from the hypothesis, <m>|x-2| \lt 1</m>, and ends at the conclusion, <m>|2x^2-3x-2| \lt 3</m>.
+</p>
+</answer>
+
+<solution>
+<proof>
+<p>
+Let <m>x\in\mathbb{R}</m>, and suppose that <m>|x-2| \lt 1</m>.
+Note that this inequality implies that
+<me> -1 \lt x-2 \lt 1.  </me>
+Adding <m>2</m> to everything, we end up with
+<me> 1 \lt x \lt 3 </me>
+which implies that <m>|x| \lt 3</m>.
+</p>
+<p>
+Furthermore, note that
+<me> |2x^2-3x-2|=|(2x+1)(x-2)|=|2x+1|\cdot|x-2|. </me>
+Using the inequality <m>|x-2| \lt 1</m>, we therefore have
+<me> |2x^2-3x-2| \lt |2x+1|\cdot1. </me>
+However, using the triangle inequality, and the bound <m>|x| \lt 3</m> we already established, we have
+<me> |2x+1|\leq |2x|+1=2|x|+1 \lt 2\cdot3+1=7. </me>
+Thus
+<me> |2x^2-3x-2| \lt |2x+1|\cdot1 \lt 7\cdot 1=7. </me>
+</p></proof>
+
+</solution>
+</exercise>

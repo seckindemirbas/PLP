@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<exercises xmlns:xi="http://www.w3.org/2001/XInclude">
+<xi:include href="ch12/showing_basic_sets_denumerable.ptx"/>
+<xi:include href="ch12/Does_a_set_have_the_cardinality_of_the_naturals.ptx"/>
+<xi:include href="ch12/Show_N_times_N_is_bijective_to_N_using_a_function.ptx"/>
+<xi:include href="ch12/Partitions_of_the_naturals.ptx"/>
+<xi:include href="ch12/Z_denumerable_prove_function_bijective.ptx"/>
+<xi:include href="ch12/det_basic_sets_denum.ptx"/>
+<xi:include href="ch12/Irrationals_are_uncountable.ptx"/>
+<xi:include href="ch12/find_explicit_bijection_from_minus_inf_to_minus_sqrt29_to_R.ptx"/>
+<xi:include href="ch12/the_set_of_all_functions_from_N_to_set_of_0_and_1_is_uncontable.ptx"/>
+<xi:include href="ch12/R_and_unit_interval_equinumerous.ptx"/>
+<xi:include href="ch12/Show_that_some_more_sets_have_the_same_cardinality.ptx"/>
+<xi:include href="ch12/two_pairs_of_sets_are_equinumerous_implies_their_unions_are_too.ptx"/>
+<xi:include href="ch12/find_explicit_bijection_from_0_to_infinity_to_0_to_1_union_to_1_to_infinity.ptx"/>
+<xi:include href="ch12/R2_equinumerous_with_R.ptx"/>
+<xi:include href="ch12/cardinality_power_sets_of_equinumerous_sets.ptx"/>
+<xi:include href="ch12/Set_of_infinite_sequences_of_integers_is_uncountable.ptx"/>
+<xi:include href="ch12/partition_sets_have_same_cardinality_implies_sets_have_same_cardinality.ptx"/>
+<xi:include href="ch12/transitivity_of_cardinality_leq.ptx"/>
+<xi:include href="ch12/Union_over_size_n_sets_of_N_versus_the_power_set_of_N.ptx"/>
+<xi:include href="ch12/union_cntbly_many_cntble_sets.ptx"/>
+<xi:include href="ch12/Rational_coefficient_polynomials_and_roots_of_polynomials_are_countable.ptx"/>
+
+
+
+</exercises>

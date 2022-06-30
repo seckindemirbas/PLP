@@ -1,0 +1,72 @@
+<exercise>
+<!-- source latex = 'specific quadratic function is bijective question.tex' -->
+<!-- converted on 27/11/2021 at 15:22 -->
+<statement>
+<p>
+Prove that <m>f:[3,\infty)\rightarrow [5,\infty)</m>, defined by <m>f(x)=x^2-6x+14</m> is a bijective function.
+</p>
+</statement>
+
+<hint>
+<p>
+This is a good example as to why when we want to determine whether a function is injective and/or surjective, we shouldn't only look at `what kind' of a function it is, but also consider the domain and the codomain of the function as well.
+</p>
+<p>
+Remember, a function is not just a formula!
+</p>
+</hint>
+<answer>
+<p>
+To prove that the function is injective we start by assuming <m>f(a)=f(b)</m> and then prove that this implies that <m>a=b</m>. This requires a little juggling and factoring of polynomials. To prove that it is surjective we take some <m>y \in [5,\infty)</m> and then show that there is an <m>x \in [3,\infty)</m> so that <m>y=f(x)</m>. Now, the proof doesn't have to show how we came up with that <m>x</m>, only that it works. We find it by solving <m>y=f(x)</m>:
+<md>
+<mrow>
+    x^2-6x+16  \amp =y  \amp  \text{complete the square}
+    (x^2-6x+9)+5  \amp =y
+</mrow><mrow>
+    (x-3)^2  \amp = y-5   \amp  \text{careful with square-roots}
+</mrow><mrow>
+    (x-3)  \amp = \pm \sqrt{y-5}
+</mrow><mrow>
+    x  \amp = 3 \pm \sqrt{y-5}
+</mrow>
+</md>
+Now since <m>y \geq 5</m>, the square root is defined. And since we want <m>x \geq 3</m>, we take the positive branch. That is, given a <m>y</m>-value in the codomain, set <m>x = 3+\sqrt{y-5}</m>.
+</p>
+
+</answer>
+<solution>
+
+<proof>
+<p>
+ Let <m>f:[3,\infty)\rightarrow [5,\infty)</m>, defined by <m>f(x)=x^2-6x+14</m>. We want to show that <m>f</m> is a bijective function. To do that, we need to show that <m>f</m> is both injective and surjective.
+</p>
+<p>
+<ul>
+<li>
+<p>
+ Injective: Let <m>a,b\in [3,\infty)</m> and <m>f(a)=f(b)</m>. This means that <m>a^2-6a+14=b^2-6b+14</m>. Cancelling <m>14</m> from both sides and collecting terms together, we see <m>a^2-b^2-6(a-b)=(a+b-6)(a-b)=0</m>. Then, we see that <m>a+b-6=0</m> or <m>a-b=0</m>. If <m>a-b=0</m> then we know that <m>a=b</m>. On the other hand,  when <m>a+b=6</m>, since <m>a,b\geq 3</m>, we see that <m>a=3=b</m>. Thus, we see that in all the cases, <m>a=b</m>.
+</p>
+<p>
+Hence, <m>f</m> is injective.
+</p>
+</li>
+<li>
+<p>
+ Surjective: Let <m>y\in [5,\infty)</m>. Then set <m>x=3+\sqrt{y-5}</m>. Since <m>y \geq 5</m>, we know that <m>\sqrt{y-5}</m> is a non-negative real number, and thus <m>x \geq 3</m> lies in the domain of the function. We now verify that <m>f(x)=y</m>:
+<md>
+<mrow>
+  f(x)  \amp = (3+\sqrt{y-5})^2 -6(3+\sqrt{y-5}) +14
+</mrow><mrow>
+   \amp = 9 + 6\sqrt{y-5} + (y-5) - 18 - 6\sqrt{y-5} + 14
+</mrow><mrow>
+   \amp = y
+</mrow>
+</md>
+as required. Hence <m>f</m> is surjective.
+</p></li>
+</ul>
+Therefore <m>f</m> is a bijective function.
+</p></proof>
+
+</solution>
+</exercise>

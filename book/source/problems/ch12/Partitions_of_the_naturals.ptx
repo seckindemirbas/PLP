@@ -1,0 +1,46 @@
+<exercise>
+<!-- source latex = 'Partitions of the naturals.tex' -->
+<!-- converted on 08/03/2022 at 14:51 -->
+<statement>
+<p>
+Describe a partition of <m>\mathbb{N}</m> that divides <m>\mathbb{N}</m> into <m>\aleph_0</m> countably infinite subsets. That is, partition <m>\mathbb{N}</m> into an infinite number of subsets, each of which is itself infinite.
+</p>
+</statement>
+<hint>
+<p>
+<ul>
+<li>
+<p>
+ Splitting <m>\mathbb{N}</m> into even and odd doesn't work because it is a partition into only two parts.
+</p></li>
+<li>
+<p>
+ Similarly, splitting <m>\mathbb{N}</m> as <m>\set{\set{n} | n \in \mathbb{N}}</m> doesn't work because the parts are all finite.
+</p></li>
+</ul>
+</p>
+</hint>
+<solution>
+<proof>
+<p>
+Here we can use the fact that the set of prime numbers is countably infinite. Let <m>P</m> be the set of prime numbers. We have seen that <m>P</m> is countably infinite. The we can list the elements of <m>P</m> as <m>\{ p_1, p_2, p_3, \ldots \}</m>. then  <m>\forall i\in\mathbb{N}</m> we can define the sets <me> A_i=\{ p_i^n: n\in\mathbb{N} \}. </me>
+We see by definition that <m>|A_i|=|\mathbb{N}|</m>.
+</p>
+<p>
+Moreover consider the set:
+</p>
+<p>
+<m>A_0=\{1\}\cup\{n\in\mathbb{N}: \exists p_i,p_j\in P, \text{ s.t. } p_i\neq p_j, \text{ and } p_i\mid n \text{ and } p_j\mid n\}</m>. then we see that <m>A_0</m> is also coutably infinite (since, say, it contains all the multiples <m>6</m> and still a subset of the set of natural numbers).
+</p>
+<p>
+We also observe that there are countable infinitely many <m>A_k</m>'s, which are all countably infinite themselves and <m>\bigcup\limits_{n\geq 0} A_n=\mathbb{N}</m>.
+</p>
+</proof>
+
+<proof><title>Another proof</title>
+<p>
+<em>Another solution:</em> We know that we have a bijection, <m>f:\mathbb N\times\mathbb N\rightarrow\mathbb N</m>, defined as <m>f(n,m) = 2^{n-1}(2m-1)</m>. Then, <m>\forall n\in\mathbb N</m>, we can define the set <m>A_n=\set{2^{n-1}z: z \text{ is odd}}</m>. Then we see that <m>A_n</m> is countably infinite for all <m>n</m>, there are countable many of such <m>A_n</m>'s, where <m>A_k\cap A_l=\emptyset</m> if <m>k\neq l</m>, and  <m>\bigcup\limits_{n\geq 0} A_n=\mathbb{N}</m>.
+</p>
+</proof>
+</solution>
+</exercise>

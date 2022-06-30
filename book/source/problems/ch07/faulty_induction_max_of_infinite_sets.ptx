@@ -1,0 +1,42 @@
+<exercise xml:id="ex_faulty_proof_max">
+<!-- source latex = 'faulty_induction_max_of_infinite_sets.tex' -->
+<!-- converted on 30/03/2022 at 15:50 -->
+<statement>
+<p>
+Determine why the proposed proof of the following statement is incorrect:
+</p>
+<p>
+Every non-empty subset <m>A</m> of the natural numbers has a maximum element.  That is, there is some <m>a\in A</m> such that <m>b\leq a</m> for all <m>b\in A</m>.
+</p>
+
+<proof><title>Faulty proof</title>
+<p>
+Let <m>A\subseteq\mathbb{N}</m> be non-empty. We proceed with induction on <m>|A|</m>.
+</p>
+<p>
+If <m>|A|=1</m>, then the single element of <m>A</m> is its maximum.
+</p>
+<p>
+Now suppose that <m>|A|=n+1</m> for some <m>n\geq1</m>, and that any subset of <m>\mathbb{N}</m> of size <m>n</m> has a maximum element.
+Choose some <m>a\in A</m>, and let <m>B=A\setminus\{a\}</m>. Then <m>B\subseteq\mathbb{N}</m>, and <m>|B|=n</m>. By the inductive hypothesis, <m>B</m> has a maximum element, say <m>b</m>.
+Therefore <m>c\leq b</m> for all <m>c\in A\setminus\{a\}</m>. If <m>a\leq b</m> as well, then <m>b</m> is the maximum element of <m>A</m>.
+If <m>b\leq a</m>, then <m>c\leq b\leq a</m> for all <m>c\in A\setminus\{a\}</m>. Therefore <m>a</m> is the maximum element of <m>A</m>.
+</p>
+<p>
+Taking <m>n\to\infty</m>, we see that any non-empty <m>A\subset\mathbb{N}</m> has a maximum.
+</p></proof>
+
+</statement>
+
+<solution>
+<p>
+When we prove a statement, say <m>P(n)</m>, by induction, we prove the statement for all <m>n\in\mathbb{N}</m>.
+Even though <m>n</m> can be as large as we like, it must always be a finite number. We can't actually set <m>n</m> to infinity.
+</p>
+<p>
+The proposed proof actually shows that if <m>A\subseteq\mathbb{N}</m> and <m>|A|=n</m> for some <m>n\in\mathbb{N}</m>, then <m>A</m> has a maximum element.
+So, we have shown that if <m>A</m> is a non-empty subset of <m>\mathbb{N}</m> with a finite number of elements, then <m>A</m> has a maximum element.
+This is not true if <m>A</m> has infinitely many elements. For example, if <m>A=\mathbb{N}</m>, then <m>A</m> does not have a maximum.
+</p>
+</solution>
+</exercise>

@@ -1,0 +1,66 @@
+<exercise>
+<!-- source latex = 'A solution to an equation cannot be rational question.tex' -->
+<!-- converted on 07/12/2021 at 12:30 -->
+<statement>
+<p>
+Let <m>x \in \mathbb{R}</m> satisfy <m>x^7 + 5x^2 - 3 = 0</m>. Then prove that <m>x</m> is irrational.
+</p>
+</statement>
+<hint>
+<p>
+What would the equation look like if <m>x</m> were a rational number?
+</p>
+</hint>
+
+<!-- <answer></answer>  -->
+
+<solution>
+
+<proof><p>
+Assume for a contradiction that <m>x</m> is a rational number. This means that we can write <m>x=\dfrac{m}{n}</m>, where <m>m \in\mathbb Z</m>, <m>n\in\mathbb N</m>, where <m>\gcd(m,n)=1</m>. Then, plugging this into the equation, we get
+ <me> \dfrac{m^7}{n^7}+5\dfrac{m^2}{n^2}-3=0. </me>
+Then multiplying both sides by <m>n^7</m> we get
+<me> m^7+5m^2n^5-3n^7=0. </me>
+Since, by assumption, this is satisfied by <m>m,n</m>, it must also be satisfied modulo 2. It becomes:
+<me>
+  m^7 + m^2n^5 + n^7 \equiv 0 \pmod 2
+</me>
+There are four possibilities depending on the parity of <m>m,n</m>: both even, both odd, or different parities,
+<ul>
+<li>
+<p>
+ both even: This implies that <m>2 \mid m</m> and <m>2 \mid n</m> which contradicts our assumption that <m>\gcd(m,n)=1</m>. Thus this cannot happen.
+  </p></li>
+<li>
+<p>
+ both odd: in this case <m>m \equiv 1 \pmod 2, n \equiv 1 \pmod 2</m>, but then
+  <me>
+    m^7 + m^2n^5 + n^7 \equiv 3 \equiv 1 \pmod 2
+  </me>
+  But this cannot happen since <m>m^7 + m^2n^5 + n^7 \equiv 0 \pmod 2</m>, and <m>1 \not\equiv 0 \pmod 2</m>.
+  </p></li>
+<li>
+<p>
+ <m>m</m> even and <m>n</m> odd: In this case <m>m \equiv 0 \pmod 2</m> and <m>n \equiv 1 \pmod 2</m> and so
+  <me>
+    m^7 + m^2n^5 + n^7 \equiv 1 \pmod 2
+  </me>
+  Again, this cannot happen since <m>m^7 + m^2n^5 + n^7 \equiv 0 \pmod 2</m>.
+  </p></li>
+<li>
+<p>
+ <m>m</m> odd and <m>n</m> even: Now <m>m \equiv 1 \pmod 2</m> and <m>n \equiv 0 \pmod 2</m> and so
+  <me>
+    m^7 + m^2n^5 + n^7 \equiv 1 \pmod 2
+  </me>
+  This cannot happen since <m>m^7 + m^2n^5 + n^7 \equiv 0 \pmod 2</m>.
+</p></li>
+</ul>
+This gives us a contradiction since there is no integer solution to this equation modulo 2.
+</p>
+<p>
+Therefore, any real solution of the equation <m>x^7 + 5x^2 - 3 = 0</m> is irrational.
+</p></proof>
+
+</solution>
+</exercise>

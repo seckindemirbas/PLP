@@ -1,0 +1,31 @@
+<exercise>
+<!-- source latex = '3 divides n minus 4 implies it divides n square minus 1.tex' -->
+<!-- converted on 05/07/2021 at 12:52 -->
+<statement>
+<p>
+Let <m>n\in\mathbb{Z}</m>. If <m>3\mid (n-4)</m>, then <m>3\mid (n^2-1)</m>.
+</p>
+</statement>
+<hint>
+<p>
+Think about what it means for <m>3</m> to divide an integer and how we can use that information.
+</p>
+</hint>
+<answer>
+<p>
+To prove this conditional statement, we are going to assume the hypothesis to be true and show that the conclusion follows. That  means, we assume that <m>3\mid (n-4)</m> and show that <m>3\mid (n^2-1)</m>.
+</p>
+<p>
+We see that assuming  <m>3\mid (n-4)</m> means that <m>n-4=3k</m> for some <m>k\in\mathbb Z</m>, and under this assumption, we want to show that <m>3\mid (n^2-1)</m>, that is, <m>n^2-1=3m</m> for some <m>m\in\mathbb Z</m>. This suggests that if we have an expression on <m>n</m> we can simply calculate <m>n^2-1</m> and get the desired result (alternatively, we could try to find a connection between <m>(n-4)</m> and <m>(n^2-1)</m>).
+</p>
+<p>
+Since we know that <m>n-4=3k</m> for some <m>k\in\mathbb Z</m>,  we see that <m>n=3k+4</m>. Thus, we get <m>n^2-1= (3k+4)^2-1=(9k^2+24k+16)-1= 3(3k^2+8k+5)</m>, which is what we wanted to show. Of course, in a proof we don't need this much explanation. Indeed, we can write this explanation nicely in a proof.
+</p>
+</answer>
+<solution>
+  <proof><p>
+Let <m>n\in\mathbb{Z}</m> and assume that <m>3\mid (n-4)</m>. Then we see that <m>(n-4)=3k</m> for some <m>k\in\mathbb{Z}</m>. Thus, <m>n=3k+4</m>, which implies <m>n^2-1= (3k+4)^2-1=(9k^2+24k+16)-1= 3(3k^2+8k+5)</m>. Therefore, since <m>k\in\mathbb{Z}</m>, we know that <m>3k^2+8k+5\in\mathbb{Z}</m>, and so we see <m>3\mid (n^2-1)</m> as required.
+</p></proof>
+
+</solution>
+</exercise>

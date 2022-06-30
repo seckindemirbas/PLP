@@ -1,0 +1,83 @@
+<exercise xml:id="ex_union_of_equinumerous">
+<!-- source latex = 'two pairs of sets are equinumerous implies their unions are too.tex' -->
+<!-- converted on 03/03/2022 at 12:41 -->
+<statement>
+<p>
+Let <m>A,B,C,D</m> be any nonempty sets. Suppose that <m>A\cap C=\emptyset</m> and <m>B\cap D=\emptyset</m>, and that <m>|A|=|B|</m> and <m>|C|=|D|</m>. Show that <m>|A\cup C|=|B\cup D|</m>.
+</p>
+</statement>
+<hint>
+<p>
+The sets do not have to be finite.
+</p>
+</hint>
+<answer>
+<p>
+In this question, we intuitively know that the result must be true. This is because we realize that if all the sets are finite, the result is more or less trivial. When the sets are finite we know that the we can equate the cardinality of a set with its <q>size</q>, i.e. the number of elements it has. This means that if <m>|A|=|B|</m> and <m>|C|=|D|</m>, we can conclude that <m>A</m> and <m>B</m> have the same number of elements and <m>C</m> and <m>D</m> have the same number of elements. Thus, since <m>A\cap C=\emptyset</m> and <m>B\cap D=\emptyset</m>, we get
+<me>
+|A\cup C|=|A|+|C|=|B|+|D|=|B\cup D|,
+</me>
+and the result follows.
+</p>
+<p>
+Unfortunately, this argument fails when at least one of the sets is infinite, since we cannot talk about the <q>sizes</q> of infinite sets. So what we need to, instead, is to use the actual definition of two sets having equal cardinalities. That is, we know that <m>|A|=|B|</m> and <m>|C|=|D|</m> means that there exist two bijective functions <m>f: A\to B</m> and <m>g: C\to D</m>.
+</p>
+<p>
+Now, we need to be able to find a bijective function
+<me>
+h:A\cup C \to B\cup D.
+</me>
+For this, we realize that if <m>x\in A\cup C</m>, then <m>x\in A</m> or <m>x\in C</m>. This means that for each case, we can use either <m>f</m> or <m>g</m> to send <m>x\in A\cup C</m> to <m>B\cup D</m>, which will define our function <m>h</m>. Then all we will have to do is to show that this new function is indeed bijective.
+</p>
+</answer>
+<solution>
+
+<proof>
+<p>
+  Since <m>|A|=|B|</m> and <m>|C|=|D|</m>, there are bijections <m>f:A\to B</m> and <m>g:C\to D</m>. Since <m>A\cap C=\emptyset</m>, any <m>x\in A\cup C</m>, either <m>x\in A</m> or <m>x\in C</m> but not in both. Define <m>F:A\cup C\to B\cup D</m> by
+  <me>
+    F(x) = \begin{cases}
+      f(x)  \amp  \text{ if } x \in A 
+      \\
+      g(x)  \amp  \text{ if } x \in C.
+      \end{cases}
+   </me>
+   And since <m> A\cap C = \emptyset</m> this is well defined.
+</p>
+<p>
+   We now show <m>F</m> is bijective. To see <m>F</m> is injective: assume <m>F(x)=F(y)</m>.
+<ol marker="(a)">
+<li>
+<p>
+ <m>x,y\in A</m>. So <m>f(x)=f(y)</m> hence <m>x=y</m> as <m>f</m> is injective.
+</p></li>
+<li>
+<p>
+ <m>x,y\in C</m>. So <m>g(x)=g(y)</m> hence <m>x=y</m> as <m>g</m> is injective.
+</p></li>
+<li>
+<p>
+ <m>x\in A</m> and <m>y\in C</m> (or similarly <m>x\in C</m> and <m>y\in A</m>), <m>F(x) = f(x) \in B</m> and <m>F(y)=g(y)\in D</m>. But <m>B\cap D=\emptyset</m>, which gives us a contradiction. So this case cannot happen.
+</p>
+</li>
+</ol>
+Since we always have <m>x=y</m>, we conclude <m>F</m> is injective.
+</p>
+<p>
+To see <m>F</m> is surjective: For any <m>y\in B\cup D</m>, %since <m>B\cap D=\emptyset</m>, <m>y\in B</m> or <m>y\in D</m> but not in both.
+<ol marker="(a)">
+<li>
+<p>
+ <m>y\in B</m>. There is <m>x\in A</m> s.t. <m>f(x)=y</m> since <m>f</m> is surjective. So <m>F(x)=f(x)=y</m>.
+</p></li>
+<li>
+<p>
+ <m>y\in D</m>. There is <m>x\in C</m> s.t. <m>g(x)=y</m> since <m>g</m> is surjective. So <m>F(x)=g(x)=y</m>.
+</p>
+</li>
+</ol>
+We conclude <m>F</m> is surjective. Hence <m>F</m> is bijective and <m>|A\cup C|=|B\cup D|</m>.
+</p></proof>
+
+</solution>
+</exercise>

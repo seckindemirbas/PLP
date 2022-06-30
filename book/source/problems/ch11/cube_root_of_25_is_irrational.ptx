@@ -1,0 +1,49 @@
+<exercise>
+<!-- source latex = 'cube root of 25 is irrational.tex' -->
+<!-- converted on 07/12/2021 at 12:25 -->
+<statement>
+<p>
+Prove that <m>\sqrt[3]{25}</m> is irrational.
+</p>
+</statement>
+<hint>
+<p>
+Please observe that <m>25\mid 5^3</m>.
+</p>
+<p>
+Euclid and the prime-ness of 5 also help.
+</p>
+</hint>
+<answer>
+<p>
+This is a good proof-by-contradiction question. We'll assume that <m>\sqrt[3]{25}</m> is rational, write it as a simple fraction, and then show that we get a contradiction.
+</p>
+</answer>
+<solution>
+
+<proof><p>
+Assume for a contradiction that <m> \sqrt[3]{25} \in \mathbb{Q}</m>. Then we can write <m>\sqrt[3]{25} = a/b</m> for some <m>a\in\mathbb Z</m> and <m>b \in \mathbb{N}</m>, with <m> \gcd(a,b)= 1</m>.
+This implies that  <m>25 = a ^3 / b ^3</m>, which in turn implies
+<me>
+25 b ^3 = a ^3.
+</me>
+Therefore <m>25 \mid a ^3</m>, so <m>5 \mid a ^3</m>. Thus, since 5 is prime, we have <m>5 \mid a</m>, by Euclid's lemma.
+</p>
+<p>
+This means we can write <m>a = 5 n</m> for some <m>n\in\mathbb Z</m>. Then we can substitute this into our equation above:
+<me>
+25 b ^3 = a ^3 =  125 n^3.
+</me>
+This, then implies that
+<me>
+  b^3 = 5n^3,
+</me>
+so <m>5 \mid b^3</m>. Again, since <m>5</m> is prime, Euclid's lemma implies that <m>5 \mid b</m>. This gives a contradiction since <m>5\mid a</m> and <m>5 \mid b</m>, but we assumed that <m>\gcd(a,b)=1</m>.
+</p>
+<p>
+Therefore, <m>\sqrt[3]{25}</m> is irrational.
+</p>
+</proof>
+
+</solution>
+</exercise>

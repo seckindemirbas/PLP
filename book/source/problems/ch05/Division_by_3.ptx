@@ -1,0 +1,47 @@
+<exercise>
+<!-- source latex = 'Division by 3.tex' -->
+<!-- converted on 12/08/2021 at 19:18 -->
+<statement>
+<p>
+Let <m>q\in \mathbb{Z}</m>. If <m>3\nmid q</m>, then <m>q^2 \equiv 1 \mod 3</m>.
+</p>
+</statement>
+<hint>
+<p>
+If we assume the hypothesis is true, then what do we know about <m>q</m>?
+</p>
+</hint>
+<answer>
+<p>
+Before attempting the question, we should think about what method of proof will be easiest to show. Based on the content of the chapter, it might be wise to consider a proof by contrapositive or a direct proof with cases.
+</p>
+<p>
+The contrapositive statement is: <em>If <m>q^2 \not \equiv 1 \mod 3</m>, then <m>3\mid q</m></em>. This means that either <m>q^2 \equiv 0 \mod 3</m> or <m>q^2 \equiv 2 \mod 3</m>. Working through this problem would be difficult because we start with cases on <m>q^2</m> and we need to get information about <m>q</m> from there. For this reason, we look into another method of proof.
+</p>
+<p>
+Now, we consider what a direct proof with cases might look like. If <m>3 \nmid q</m>, then when we divide <m>q</m> by <m>3</m>, we will have a remainder of <m>1</m> or <m>2</m>. This gives two very clear cases. It is also easier in general to start with information about <m>q</m> and work towards information about <m>q^2</m>. Because of this, we proceed directly using cases.
+</p>
+</answer>
+
+<solution>
+<proof><p>
+Assume that <m>3\nmid q</m>. Then we have two possible cases, <m>q\equiv 1 \mod 3</m> or <m>q\equiv 2 \mod 3</m>.
+<ul>
+<li>
+<p>
+ Case 1: <m>q\equiv 1 \mod 3.</m> Then by definition, <m>q=3k+1</m> for some <m>k\in \mathbb{Z}</m>. Squaring <m>q</m>, we see that <me>q^2 = (3k+1)^2 = 9k^2+6k+1 = 3(3k^2+2k) + 1.</me>
+Because <m>3k^2+2k\in \mathbb{Z}</m>, we conclude that <m>q^2\equiv 1 \mod 3 </m>.
+  </p></li>
+<li>
+<p>
+ Case 2: <m>q\equiv 2 \mod 3.</m> Then by definition, <m>q=3k+2</m> for some <m>k\in \mathbb{Z}</m>. Squaring <m>q</m>, we see that <me>q^2 = (3k+2)^2 = 9k^2+12k+4 = (9k^2+12k+3)+1 = 3(3k^2+4k+1)+1.</me>
+Because <m>3k^2+4k+1\in \mathbb{Z}</m>, we conclude that <m>q^2\equiv 1 \mod 3 </m>.
+</p></li>
+</ul>
+</p>
+<p>
+Since we have verified both possible cases, we deduce that if <m>3\nmid q</m>, then <m>q^2 \equiv 1 \mod 3</m>.
+</p></proof>
+
+</solution>
+</exercise>

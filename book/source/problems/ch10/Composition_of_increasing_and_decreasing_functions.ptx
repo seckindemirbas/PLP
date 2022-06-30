@@ -1,0 +1,45 @@
+<exercise xml:id="ex_comp_inc_decr">
+  <!-- source latex = 'Composition of increasing and decreasing functions.tex' -->
+<!-- converted on 19/11/2021 at 11:20 -->
+<statement>
+<p>
+We say that a function <m>f:\mathbb{R}\to \mathbb{R}</m> is <em>strictly increasing</em> if whenever <m>x_1  \lt  x_2</m> we have <m>f(x_1)  \lt  f(x_2)</m>. Similarly, a function <m>g: \mathbb{R}\to \mathbb{R}</m> is <em>strictly decreasing</em> if whenever <m>x_1  \lt  x_2</m> we have <m>g(x_1)  \gt  g(x_2)</m>.
+<ol marker="(a)">
+<li>
+<p>
+  Prove that the composition of two strictly increasing functions is strictly increasing.
+    </p></li>
+<li>
+<p>
+ Prove that the composition of two strictly decreasing functions is strictly increasing.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+
+<!-- <hint></hint> -->
+
+<solution>
+
+  <proof><title>Proof of (a)</title>
+  <p>
+    Let <m>f,g:\mathbb{R}\to \mathbb{R}</m> be two strictly increasing functions. Fix <m>x_1, x_2 \in \mathbb{R}</m> with <m>x_1 \lt  x_2</m>. Then because <m>g</m> is strictly increasing,
+    <me>z_1=g(x_1) \lt  g(x_2)=z_2.</me>
+    Now, using the fact that <m>f</m> is strictly increasing and that <m>z_1\lt z_2</m>, we see that
+    <me>(f\circ g)(x_1) = f(g(x_1)) = f(z_1)  \lt  f(z_2) = f(g(x_2)) = (f\circ g)(x_2).</me>
+    Therefore <m>f\circ g</m> is a strictly increasing function.
+  </p>
+  </proof>
+
+  <proof><title>Proof of (b)</title>
+  <p>
+    Let <m>f,g:\mathbb{R}\to \mathbb{R}</m> be two strictly decreasing functions. Fix <m>x_1, x_2 \in \mathbb{R}</m> with <m>x_1  \lt  x_2</m>. Then because <m>g</m> is strictly decreasing,
+    <me>z_1 = g(x_1)  \gt  g(x_2)= z_2.</me>
+    Now, using the fact that <m>f</m> is strictly decreasing and <m>z_2 \lt z_1</m>, we see that
+    <me>(f\circ g)(x_2) = f(g(x_2)) = f(z_2)  \gt  f(z_1) = f(g(x_1)) = (f\circ g)(x_1)</me>
+    Therefore <m>f\circ g</m> is a strictly increasing function.
+  </p>
+  </proof>
+</solution>
+</exercise>

@@ -1,0 +1,119 @@
+<exercise>
+<!-- source latex = '4 x square plus 5 y square equals 7 does not have integer solutions.tex' -->
+<!-- converted on 07/12/2021 at 12:27 -->
+<statement>
+<p>
+Prove that there do not exist <m>x,y\in\mathbb Z</m> that satisfy the equation <m>5y^2-4x^2=7</m>.
+</p>
+</statement>
+<hint>
+<p>
+Modular arithmetic can really help with problems like this since they take all the infinite possible integers down to a small finite set of equivalence classes. Consider the equation modulo <m>4</m>.
+</p>
+</hint>
+<answer>
+<p>
+Since we are trying to show that there are no integers satisfying , it may be useful to use proof by contradiction.
+</p>
+<p>
+So, assume <m>\exists x,y\in\mathbb Z</m> such that <m>5y^2-4x^2=7</m>. This may not look too helpful since we have <m>2</m> unknowns and one equation, and it is not obvious as to how <m>x</m> and <m>y</m> would interact with each other to produce <m>7</m>. One thing we can do in this question is to try to find a way to reduce the number of the variables. This may look a little unconventional, but if we look at the equation modulo <m>4</m>, we see that it becomes
+<md>
+<mrow>
+  5y^2-4x^2 \amp \equiv 7 \pmod 4
+</mrow><mrow>
+    1y^2-0x^2 \amp \equiv 3\pmod 4
+</mrow><mrow>
+    y^2 \amp \equiv 3 \pmod 4
+</mrow>
+</md>
+which eliminates <m>x</m> completely!
+</p>
+<p>
+Then, if we can show that there is no integer <m>y</m> satisfying <m>y^2\equiv 3 \pmod 4</m>, we would get our contradiction. Moreover, we see that if <m>y</m> is even, then <m>y^2\equiv 0 \pmod 4</m> and if <m>y</m> is odd, then <m>y^2\equiv 1 \pmod 4</m>. Therefore, we have our contradiction.
+</p>
+<p>
+Notice that we could also consider the four classes of <m>y \pmod 4</m>, but it will give the same result, just with more work.
+</p>
+<p>
+We can also eliminate <m>y</m> instead of <m>x</m> by considering the equation modulo <m>5</m>. This gives
+<md>
+<mrow>
+  5y^2 - 4 x^2 \equiv 7 \pmod 5
+</mrow><mrow>
+  0y^2 + 1 x^2 \equiv 2 \pmod 5
+</mrow>
+</md>
+So we need to find <m>x^2 \equiv 2 \pmod 5</m>. Writing the square modulo <m>5</m> gives the following table:
+<md>
+<mrow>
+  \begin{array}{c|c|c|c|c|c}
+    x  \amp  0  \amp  1  \amp  2  \amp  3  \amp  4
+</mrow><mrow>
+    \hline
+    x^2  \amp  0  \amp  1  \amp  4  \amp  4  \amp  1
+  \end{array}
+</mrow>
+</md>
+So there is no <m>x</m> so that <m>x^2 \equiv 2 \pmod 5</m>.
+</p>
+</answer>
+<solution>
+
+<proof><p>
+Suppose for a contradiction that there are integers <m>x</m> and <m>y</m> satisfying <m>5y^2-4x^2=7</m>. Then we see that <m>5y^2-4x^2\equiv 7 \pmod 4</m>. This implies
+<md>
+<mrow>
+    1y^2-0x^2 \amp \equiv 3\pmod 4
+</mrow><mrow>
+    y^2 \amp \equiv 3 \pmod 4.
+</mrow>
+</md>
+However, we have <m>2</m> cases for <m>y</m>, <m>y</m> is even or <m>y</m> is odd.
+<ul>
+<li>
+<p>
+<em><m>y</m> is even</em>: In this case, we see that <m>y=2k</m> for some <m>k\in\mathbb Z</m>. Therefore <m>y^2=4k^2\equiv 0\pmod 4</m>, which contradicts with <m> y^2\equiv 3 \mod 4</m>.
+</p></li>
+<li>
+<p>
+<em><m>y</m> is odd</em>: Then, we see that <m>y=2k+1</m> for some <m>k\in\mathbb Z</m>. Thus, we get <m>y^2=4k^2+4k+1\equiv 1 \pmod 4</m>, which, again, contradicts with <m> y^2\equiv 3 \mod 4</m>.
+</p></li>
+</ul>
+Hence we can conclude that there doesn't exist <m>x,y\in\mathbb Z</m> satisfying the equation <m>5y^2-4x^2=7</m>.
+</p></proof>
+
+<p>
+It is worth noting that this approach to showing the non-existence of integer solutions to equations can work very effectively (as it does above). However, consider what happens in the above if we choose a <q>bad</q> modulus. Consider the equation modulo 3:
+<md>
+<mrow>
+  5y^2 - 4x^2  \amp \equiv 7 \pmod 3
+</mrow><mrow>
+  2y^2 + 2y^2  \amp  \equiv 1 \pmod 3
+</mrow>
+</md>
+This equation <em>does</em> have a solution <m>x,y = 1 \pmod 3</m> since
+<md>
+<mrow>
+  2 \cdot 1 + 2 \cdot 1 = 4 \equiv 1 \pmod 3.
+</mrow>
+</md>
+This does not mean the equation has a solution over the integers. Let us be careful with the flow of logic:
+<ul>
+<li>
+<p>
+ If the equation has a solution, <m>x=a,y=b</m> over the integers, then
+  </p></li>
+<li>
+<p>
+ those numbers satisfy <m> 5b^2-4a^2 = 7 </m>, so then
+  </p></li>
+<li>
+<p>
+ taking that equation modulo <m>n</m> gives the equation <m> 5b^2 -4a^2 \equiv 7 \pmod n</m>
+</p></li>
+</ul>
+That chain of reasoning has to be true for all modulii <m>n</m>. So when we find a moulus with no solutions, we can use <xref ref="def_modus_tollens">modus tollens</xref> to tell us that the equation has no solution. Unfortunately, when we do find a solution for a particular modulus, we cannot infer that there has to be a solution over the integers; that would be an example of
+<xref ref="warn-atc">affirming the consequent</xref>.
+</p>
+</solution>
+</exercise>

@@ -1,0 +1,108 @@
+<exercise>
+<!-- source latex = 'Quantifier set question with primes.tex' -->
+<!-- converted on 12/08/2021 at 19:42 -->
+<statement>
+<p>
+Let <m>P\subset\mathbb N</m> be the set of prime numbers <m>P=\set{2,3,5,7,11,\ldots}</m>. Determine whether the following statements are true or false. Prove your answers (<q>true</q> or <q>false</q> is not sufficient).
+</p>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+ <m>\forall x\in P</m>, <m>\forall y\in P</m>, <m>x+y\in P</m>.
+</p></li>
+<li>
+<p>
+ <m>\forall x\in P</m>, <m>\exists y\in P</m> such that <m>x+y\in P</m>.
+</p></li>
+<li>
+<p>
+ <m>\exists x\in P</m> such that <m>\forall y\in P</m>, <m>x+y\in P</m>.
+</p></li>
+<li>
+<p>
+  <m>\exists x\in P</m> such that <m>\exists y\in P</m>, <m>x+y\in P</m>.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<hint>
+<p>
+Which primes are even?
+</p>
+</hint>
+<solution>
+<p>
+The fact that 2 is the only even prime really helps to solve this problem.
+</p>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+
+<em>Disproof</em>: This statement is false. The negation of the statement is
+<md>
+<mrow>
+   \exists x\in P \text{ s.t. } \exists y\in P \text{ s.t. } x+y \not\in P.
+</mrow>
+</md>
+So we to prove the negation is true we simply need an example of <m>x,y</m>. That example is then a counterexample to the original. Take <m>x=y=3\in P</m>. Then we see that <m>x+y=6\notin P</m>. Notice that there are many such counter examples; one can take any pair of odd primes.
+</p>
+</li>
+<li>
+<p>
+
+<em>Disproof</em>: This statement is false. The negation of the statement is
+<md>
+<mrow>
+   \exists x\in P \text{ s.t. } \forall y\in P \text{ s.t. } x+y \not\in P.
+</mrow>
+</md>
+Take <m>x=7 \in P</m>, and let <m>y \in P</m>. Either <m>y</m> is even or <m>y</m> is odd.
+<ul>
+<li>
+<p>
+  When <m>y</m> is even, it must be 2, but then <m>x+y=9 \not\in P</m>.
+  </p></li>
+<li>
+<p>
+ When <m>y</m> is odd, <m>x+y \gt 2</m> is even, and so not prime.
+</p></li>
+</ul>
+In either case the negation is true, and so the original statement is false.
+</p>
+</li>
+<li>
+<p>
+
+<em>Disproof</em>: This statement is false. The negation of the statement is
+<md>
+<mrow>
+\forall x\in P, \exists y\in P \text{ s.t. } x+y\notin P.
+</mrow>
+</md>
+We can use a similar proof to the previous statement. Let <m>x \in P</m>, then either <m>x=2</m> or <m>x</m> is odd.
+<ul>
+<li>
+<p>
+ <em>Case 1: <m>x=2</m></em>: In this case, we can pick <m>y=7\in P</m>, and get <m>x+y=9\notin P</m>.
+  </p></li>
+<li>
+<p>
+ <em>Case 2: <m>x</m> is odd</em>: In this case, we can take <m>y=x</m>. This implies that <m>x+y \gt 2</m> is even and thus, <m>x+y\notin P</m>.
+</p></li>
+</ul>
+Therefore the negation of the statement is true, and hence, the original statement is false.
+</p>
+</li>
+<li>
+<p>
+
+<em>Proof</em>: This statement is true. As an example, we can take any <m>x=2\in P</m>, and <m>y=3\in P</m>. Then we see that <m>x+y=5\in P</m>.
+</p>
+</li>
+</ol>
+</p>
+</solution>
+</exercise>

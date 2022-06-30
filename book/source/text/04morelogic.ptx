@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude"><title>More logic</title>
+
+<introduction>
+<p>
+Before we continue proving things, we need to learn more about how to manipulate logical expressions. We need to be able to rewrite statements as <em>equivalent</em> statements <mdash /> create a new statement with the same truth table as the original. We have already seen an example of this in the <xref text="custom" ref="def-converse-contrapositive">contrapositive</xref>. In order to do that, we also need to understand how negation interacts with the disjunction, conjunction and implication. Our starting point for all of this is to think about statements which are always true.
+</p>
+
+</introduction>
+<section><title>Tautologies and contradictions</title>
+<p>
+If we play around with compound statements and explore what can and cannot happen, we will quickly run into some statements which seem (potentially) rather silly:
+<md>
+<mrow>
+  P \lor (\neg P)
+</mrow>
+</md>
+This statement is always true <mdash/> no matter whether <m>P</m> is true or false.
+Such a statement is called a <term>tautology</term>.
+Why might this be useful?
+Well <mdash/> you've seen that when we prove things, we need to use things that are true and the above is always true.
+</p>
+
+<p>Here is another (more obviously useful) one
+<md>
+<mrow>
+   \neg (P \land Q ) \iff ( (\neg P) \lor (\neg Q) )
+</mrow>
+</md>
+This statement is always true no matter what the truth values of <m>P</m> and <m>Q</m>, so it is a tautology.
+To see this we could either write up the truth-table, or argue
+<ul>
+<li> The left-hand clause is false only when <m>P</m> and <m>Q</m> are both true. Otherwise it is false.
+</li>
+<li> The right-hand clause is false only when <m>\neg P</m> and <m>\neg Q</m> are both false. That is, it is only true when both <m>P</m> and <m>Q</m> are false. Otherwise it is true.
+</li>
+<li> Hence both clauses take the same truth values and so the biconditional is always true.
+</li>
+</ul>
+We'll come back to this expression very shortly.
+</p>
+
+<p>Just as there are statements that are always true, there are statements such as
+<md>
+<mrow>
+  P \land (\neg P)
+</mrow>
+</md>
+that are always false.This is a <term>contradiction</term>.
+Another example is
+<md>
+<mrow>
+  (P \land Q) \land ((\neg P) \lor (\neg Q))
+</mrow>
+</md>
+Lets write these definitions in a proper formal way so that we can refer back to it easily later if we need to do so.
+</p>
+
+<definition><title>Tautologies and contradictions</title>
+<statement>
+<p>
+  A <term>tautology</term> is a statement that is always true, while a <term>contradiction</term> is a statement that is always false.
+</p>
+</statement>
+</definition>
+
+
+<p>
+  We will use tautologies in the very near future, but contraditions will have to wait until later in the course <mdash/> there is a proof technique called <q>proof by contradiction</q> which relies on us arriving at a contradiction.
+</p>
+
+</section>
+<section><title>Logical equivalence</title>
+<p>
+Not all tautologies are terribly useful, but we will use one family of tautologies again and again as we write proofs: <term>logical equivalences</term>. We have seen that the two statements
+<md>
+<mrow>
+  (P \land Q) \amp \qquad \text{and}\qquad (Q \land P)
+</mrow>
+</md>
+have the same truth tables; it only takes a moment to write down the table to convince yourself.
+</p>
+
+<p>
+We could write this <q>have the same truth tables</q>-fact as follows:
+<md>
+<mrow>
+  (P \land Q) \iff (Q \land P) &amp; \text{ is a tautology}
+</mrow>
+</md>
+Take a moment to parse this. The biconditional at the heart of the statement must be true, and a quick review of the <xref text="custom" ref="def-biconditional">biconditional</xref> tells us that both sides must be true at the same time and false at the same time <mdash /> exactly what we want to express. This way of writing things is still cumbersome, and mathematicians will always seek out nicer notation if it is available.
+</p>
+
+<definition>
+<statement><p>
+  We say that two statements <m>R</m> and <m>S</m> are <term>logically equivalent</term> when the statement <m>R\iff S</m> is a tautology.  In this case we write <m>R \equiv S</m>.
+</p></statement>
+</definition>
+
+<remark><title>Equivalent and equal?</title>
+<p>
+Note that some texts use <q><m>=</m></q> to denote logical equivalence, while this author much prefers <q><m>\equiv</m></q>. One can get into long debates as to whether or not <q><m>=</m></q> is equivalent to <q><m>\equiv</m></q> despite not being equal. And unfortunately there is no clean and well established convention in the mathematical community. You should, as a reader, recognise both (from context).
+</p>
+</remark>
+
+<p>
+Another logical equivalence we've already seen (back in <xref text="type-hybrid" ref="sec-implication"/>) is
+<md>
+<mrow>
+  (P \implies Q) \equiv ( (\neg P)\lor Q) )
+</mrow>
+</md>
+where we have written this down with plenty of brackets to avoid potential ambiguities.
+</p>
+
+<p>Logical equivalence becomes very useful when we are trying to prove things. If we start with a difficult statement <m>R</m>, and transform it into an easier and logically equivalent statement <m>S</m>, then a proof of <m>S</m> automatically gives us a proof of <m>R</m>.
+</p>
+
+
+<p>
+  Here is a list of useful logical equivalences which will be very handy for proving things as we continue in the text. These constitute our first important result and since we will use it frequently we should call it a theorem.
+</p>
+
+<theorem xml:id="thm-logical-equiv"><title>Logical equivalences</title>
+<statement><p>
+Let <m>P, Q</m> and <m>R</m> be statements. Then
+<ul>
+<li> Implication: <m>(P \implies Q) \equiv ( (\neg P)\lor Q) )</m>
+</li>
+<li> Contrapositive: <m>(P\implies Q) \equiv ((\neg Q) \implies (\neg P))</m>
+</li>
+<li> Biconditional: <m>(P \iff Q) \equiv ( (P\implies Q) \land (Q\implies P))</m>
+</li>
+<li> Double negation: <m>\neg{(\neg{(P)})} \equiv P</m>
+</li>
+<li><p> Commutative laws
+  <ul>
+<li> <m>P \lor Q \equiv Q \lor P</m>
+</li>
+<li> <m>P \land Q \equiv Q \land P</m>
+</li>
+</ul></p>
+</li>
+<li><p> Associative laws
+  <ul>
+<li> <m>P \lor (Q\lor R) \equiv (P \lor Q)\lor R</m>
+</li>
+<li> <m>P \land (Q\land R) \equiv (P \land Q)\land R</m>
+</li>
+</ul></p>
+</li>
+<li><p> Distributive laws
+  <ul>
+<li> <m>P \lor (Q \land R) \equiv (P \lor Q) \land (P \lor R)</m>.
+</li>
+<li> <m>P \land (Q \lor R) \equiv (P \land Q) \lor (P \land R)</m>.
+</li>
+</ul></p>
+</li>
+<li><p> DeMorgan's laws
+  <ul>
+<li> <m>\neg{(P \lor Q)} \equiv (\neg{P}) \land (\neg{Q})</m>
+</li>
+<li> <m>\neg{(P \land Q)} \equiv (\neg{P}) \lor (\neg{Q})</m>
+</li>
+</ul></p>
+</li>
+</ul>
+</p></statement>
+<proof>
+<p>
+  These can all be proved in a straightforward, but slightly tedious, manner by computing and comparing truth tables.
+</p>
+</proof>
+</theorem>
+
+<aside>
+  <title>DeMorgan and camels</title>
+  <p>
+    De Morgan's laws are named after the 19th century mathematician, Augustus De Morgan, though they were known at least as far back as Aristotle.
+  </p>
+  <p>This author notes that he has come across many variations of the name, <q>de Morgan</q>, <q>De Morgan</q> and <q>DeMorgan</q>, but has yet to find anyone writing it with the medial capitalisation so beloved by tech-companies: <q>deMorgan</q>. Medial capitalisation is very common in computer langauges to make multi-word variable names legible without spaces; in that context it is frequently called camelCase.
+</p>
+</aside>
+
+<p>
+  By chaining the logical equivalences in <xref text="type-hybrid" ref="thm-logical-equiv"/> together we can make new ones.  For example, we can show the equivalence of the contrapositive as follows:
+</p>
+<example>
+<p>
+  Show that the contrapositive is logically equivalent to the original implication.
+  <md>
+<mrow>
+    (P \implies Q) &amp;\equiv ((\neg P) \lor Q) &amp; \text{implication as or}
+</mrow><mrow>
+    &amp; \equiv Q \lor (\neg P) &amp; \text{commutation of or}
+</mrow><mrow>
+    &amp; \equiv \neg(\neg Q) \lor (\neg P) &amp; \text{double negation}
+</mrow><mrow>
+    &amp; \equiv (\neg Q)\implies (\neg P) &amp; \text{or as implication}
+  </mrow>
+</md>
+  Arguably this would be easier to do using a truth table, but the above is much more informative.
+</p>
+</example>
+
+<p>Here is a nice, and useful, example.
+</p>
+<example>
+<p>
+  Prove that <m>\neg(P \implies Q) \equiv P \land (\neg Q)</m>.
+<md>
+<mrow>
+  \neg(P \implies Q)
+  &amp; \equiv \neg ( (\neg P) \lor Q) &amp; \text{rewrite implication as or}
+</mrow><mrow>
+  &amp; \equiv (\neg(\neg P)) \land (\neg Q) &amp; \mbox{DeMorgan}
+</mrow><mrow>
+  &amp; \equiv P \land (\neg Q) &amp; \text{double negation}
+</mrow>
+</md>
+</p>
+</example>
+
+<p>Another nice, and useful example.
+In fact it is so nice and useful, we probably should have made it an exercise:
+</p>
+<example>
+<p>
+ Show <m>\neg(P \iff Q) \equiv (P \land \neg Q) \lor (Q \land \neg P)</m>.
+<md>
+<mrow>
+  \neg(P \iff Q)
+  &amp; \equiv \neg( (P \implies Q) \land (Q \implies P) ) &amp; \text{rewrite biconditional}
+</mrow><mrow>
+  &amp; \equiv ( \neg(P \implies Q) \lor  \neg(Q \implies P) ) &amp; \text{DeMorgan}
+</mrow><mrow>
+  &amp; \equiv ( P \land (\neg Q) ) \lor (Q \land (\neg P) ) &amp; \text{previous example}
+</mrow>
+</md>
+</p>
+</example>
+
+<p>So we now have another useful theorem
+</p>
+<theorem xml:id="thm-neg-imp"><title>Negating implications and biconditionals</title>
+<statement><p>
+ For statements <m>P</m> and <m>Q</m> we have
+ <ul>
+<li> <m>\neg( P \implies Q ) \equiv P \land (\neg Q) </m>
+</li>
+<li> <m>\neg( P \iff Q ) \equiv ( P \land (\neg Q) ) \lor (Q \land (\neg P) ) </m>
+</li>
+</ul>
+</p></statement>
+</theorem>
+
+<p>
+  This one will be very useful later on, so we'll call it a lemma. It isn't quite complete, you'll have to finish it off as an exercise later.
+</p>
+<lemma xml:id="lem-porqimpliesr">
+  <statement>
+    <p>
+      Let <m>P,Q</m> and <m>R</m> be statements. Then
+      <me>
+      ( (P \lor R) \implies Q ) \equiv ( (P \implies Q) \land (R \implies Q) )
+      </me>
+    </p>
+  </statement>
+    <proof>
+      <p>
+        We leave the proof as an exercise.
+        <!-- See <xref ref="prob-porqimpliesr"/> in the exercises. -->
+      </p>
+    </proof>
+</lemma>
+
+<p>
+  Some practice negating things.
+</p>
+<example>
+  <statement>
+    <p>
+      What is the negation of
+      <me>
+        (x^2 \geq 4) \land (x \lt 1)
+      </me>
+      Remeber to be careful when we negating inequalities. The negation of <m>a \lt b</m> is <m>a \geq b</m>, and the negation of <m>a \leq b</m> is <m>a \gt b</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <md>
+        <mrow> \neg( (x^2\geq 4) \land (x \lt 1) )
+                \amp  \equiv ( \neg(x^2\geq 4) \lor \neg(x \lt 1) )</mrow>
+        <mrow> \amp \equiv (x^2 \lt 4) \lor (x \geq 1) </mrow>
+      </md>
+    </p>
+  </solution>
+</example>
+
+<example>
+  <statement>
+    <p>
+      Negate the statement
+      <me>
+        (x^2 \geq 1) \implies (x \geq 1).
+      </me>
+    </p>
+  </statement>
+  <solution>
+    <p>
+      Remeber to be careful with those inequalities.
+      <md>
+        <mrow>\neg( (x^2 \geq 1) \implies (x\geq 1))
+            \amp\equiv (x^2\geq 1) \land \neg(x\geq 1)</mrow>
+        <mrow> \amp\equiv (x^2 \geq 1) \land (x \lt 1) </mrow>
+      </md>
+    </p>
+  </solution>
+</example>
+
+<example>
+  <statement>
+    <p>
+      Negate <q>The integer <m>x</m> is odd if and only if <m>x^2</m> is odd.</q>
+    </p>
+  </statement>
+  <solution>
+    <p>
+      This is actually a true statement (one we'll prove soon), but we can negate it anyway.
+      We'll make use of the fact that if an integer is not odd, then it must be even (and vice-versa).
+       <md>
+    <mrow>
+         \neg( (x \text{ is odd}) \iff (x^2 \text{ is odd}) )
+         &amp; \equiv
+       \Big(  ( x \text{ is odd}) \land \neg (x^2 \text{ is odd} ) \Big)
+	 \lor \Big( (x^2 \text{ is odd}) \land \neg (x \text{ is odd}) \Big)
+    </mrow><mrow>
+         &amp; \equiv
+         \Big( (x \text{ is odd}) \land (x^2 \text{ is not odd}) \Big)
+	 \lor \Big( (x^2 \text{ is odd}) \land (x \text{ is not odd}) \Big) 
+       </mrow><mrow>
+       &amp; \equiv
+       \Big( (x \text{ is odd}) \land (x^2 \text{ is even})\Big) \lor \Big( (x^2 \text{ is odd}) \land (x \text{ is even}) \Big)
+       </mrow>
+    </md>
+       Oof! That is not so pretty.
+    </p>
+  </solution>
+</example>
+
+
+<p>We are ready for some more proofs, but first <mdash /> there are some exercises for you.
+</p>
+
+</section>
+<xi:include href="../problems/04ex.ptx"/>
+
+</chapter>
