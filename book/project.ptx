@@ -4,13 +4,13 @@
     <target name="html">
       <format>html</format>
       <source>source/plp.ptx</source>
-      <publication>publication.ptx</publication>
+      <publication>publication/publication.ptx</publication>
       <output-dir>output/html</output-dir>
     </target>
     <target name="latex">
       <format>latex</format>
       <source>source/plp.ptx</source>
-      <publication>publication.ptx</publication>
+      <publication>publication/publication.ptx</publication>
       <output-dir>output/latex</output-dir>
       <stringparam key="latex.font.size" value="12pt"/>
     </target>
