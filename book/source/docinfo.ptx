@@ -2,6 +2,7 @@
 
 <docinfo>
   <latex-preamble>
+    <package>cancel</package>
     <package>upgreek</package>
   </latex-preamble>
   <macros>
