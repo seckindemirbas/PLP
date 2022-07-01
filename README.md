@@ -1,10 +1,11 @@
-# PLP
+# PLP 
 
 ## About
 
 This is the source repository for 
 "PLP - An introduction to mathematical proof"
-a [free](https://creativecommons.org/licenses/by-nc-sa/4.0/) web- and pdf- textbook for a first undergraduate course in mathematical proof. 
+a [free](https://creativecommons.org/licenses/by-nc-sa/4.0/) web- and pdf- textbook for a first undergraduate course in mathematical proof. You can find the book (as both html and pdf) and slides on the [main textbook website](www.math.ubc.ca/~PLP).
+
 
 It is written by [Seckin Demirbas](https://personal.math.ubc.ca/~s.demirbas/) & [Andrew Rechnitzer](https://personal.math.ubc.ca/~andrewr/front_page.html). A very large fraction of the exercises and solutions were contributed by  [Hannah Kohut](https://www.math.ubc.ca/user/2920) and [Charlotte Trainor](https://www.math.ubc.ca/user/2576) with funding from UBC's [OER fund](https://oerfund.open.ubc.ca/) and also the [Mathematics Department](https://www.math.ubc.ca/).
 
