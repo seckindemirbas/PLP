@@ -25,7 +25,7 @@ $ cd book
 ```
 $ pretext build html
 ```
-* This will take a little time - roughly 3 minutes on a modest linux laptop computer
+* This will take a little time - roughly 2-3 minutes on a modest linux laptop computer
 * The resulting HTML will be produced in the `output/html` subdirectory
 * To view the HTML run
 ```
