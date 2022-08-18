@@ -1,0 +1,67 @@
+\documentclass[12pt]{article}
+\usepackage{amsthm,amsmath,amsfonts,amsthm,amstext,amssymb,fullpage,framed,fancybox,graphicx,color,mdwlist,pifont, hyperref}
+%\usepackage{fullpage}
+\usepackage{tikz}
+\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;} 
+\usepackage[margin=1cm]{geometry}
+\pagestyle{empty}
+\newtheorem*{theorem*}{Theorem}
+
+\newcommand{\set}[1]{\left\{ #1 \right\}}
+\renewcommand{\neg}{\sim}
+\newcommand{\st}{\text{ s.t. }}
+\begin{document}
+\centerline{\bf\large Worksheet for Week 4}
+
+\vspace{25pt}
+
+
+Note: Order of the quantifiers matters.
+
+\begin{enumerate}
+
+\item Consider the following statements and discuss which ones are true.
+
+\begin{itemize}
+\item $\forall m\in\mathbb Z, \exists n\in\mathbb Z$ s.t. $m^2<n$.
+\item $\exists m\in\mathbb Z$ s.t. $\forall n\in\mathbb Z$, $m<n$.
+\item $\exists m,n\in\mathbb Z$, s.t. $m^2<n$.
+\item $\forall m,n\in\mathbb Z$, $m^2<n$.
+\end{itemize}
+
+\item Negate the statements below and determine whether the statements or their negations are true.
+
+\begin{itemize}
+\item $\forall x\in\mathbb R$, $\exists y\in\mathbb R$, s.t. $y+5=x$.
+\item $\forall x\in\mathbb R$, $\exists n\in\mathbb N$, s.t. $x^n>0$.
+\item $\forall n\in\mathbb R$, $(n^2\text{ is even})\implies (n \text{ is even})$.
+\item $\exists y\in\mathbb R$, s.t. $\forall x\in\mathbb R$, $x^2\geq y$.
+\item $\exists x\in\mathbb R$, s.t. $\forall y\in\mathbb R$, $(y\leq x-1)\implies (y^2-x^2\geq 4)$.
+\end{itemize}
+
+\item Prove the following statement:
+\[ \forall x\in\mathbb R, \forall y\in\mathbb R, (\forall z>0, |x-y|<z)\implies (x=y).  \]
+Hint: How can you rewrite the statement?
+
+\item Let $\mathbb I$ denote the set of irrationals. Prove that $\forall x\in\mathbb I$, $(k\in\mathbb Q\implies \dfrac{x}{k}\in\mathbb I)$.
+
+Now, use this result, and the fact that $\pi\in\mathbb I$ to show
+\[\forall n\in\mathbb N, \exists y\in\mathbb I \st x>y>0.\]
+
+\item Let $A$ be a set. We say that a function $f: A\to \mathbb R$ is bounded if $\exists m\in\mathbb R, \st \forall x\in A,\  |f(x)|\leq M$.
+
+Use this definition to show that $f:\mathbb R\to \mathbb R$ defined as $f(x)=3x-7$ is not bounded.
+
+Hint: If the statement above is the definition of a bounded function, what should a function that is NOT bounded satisfy?
+
+\item Fact: $\forall x\in\mathbb R$, $\exists n\in\mathbb N$, s.t. $n\geq x$.
+
+Use this fact to show
+\[\forall \epsilon>0, \exists N\in\mathbb N \st \forall n\in\mathbb N,\ \dfrac{1}{n}<\epsilon.\] 
+Hint: For $\epsilon, n>0$, we have $(\frac 1n<\epsilon) \iff (\frac{1}{\epsilon}<n)$.
+
+\end{enumerate}
+
+Before next week, watch videos 16 and 17 in \url{https://personal.math.ubc.ca/~PLP/auxiliary.html}.
+
+\end{document} 

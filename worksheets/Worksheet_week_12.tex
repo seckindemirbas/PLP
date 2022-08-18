@@ -1,0 +1,191 @@
+\documentclass[12pt]{article}
+\usepackage{amsthm,amsmath,amsfonts,amsthm,amstext,amssymb,fullpage,framed,fancybox,graphicx,color,mdwlist,pifont,hyperref}
+\usepackage[turkish]{babel}
+%\usepackage{fullpage}
+\usepackage{tikz}
+\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;} 
+\usepackage[margin=1cm]{geometry}
+\pagestyle{empty}
+\newtheorem*{theorem*}{Theorem}
+\newcommand{\set}[1]{\left\{ #1 \right\}}
+\newcommand{\s}{{\color{red} \textbf{Solution}}}
+\newcommand{\st}{\text{ s.t. }}
+\usepackage{etoolbox}
+\newtoggle{show}
+%toggle this to show/hide solutions
+\toggletrue{show}
+\togglefalse{show}
+
+\newcommand{\soln}[1]{
+\iftoggle{show}{
+{\color{red} \textbf{Solution:}#1
+}}{}
+}
+\begin{document}
+\centerline{\bf\large Worksheet for Week 12}
+
+\vspace{25pt}
+
+\begin{enumerate}
+
+\item Prove that $\sqrt 3$ is irrational.
+
+\soln{ This is very straightforward. Let the students work on it for couple minutes. Some of them may try to prove it using even-odd numbers, you can correct such mistakes when you are doing the proof, and explain that proofs may require different cases and one has to be careful about it.
+}
+
+\item Let $a,b,c\in\mathbb Z$. If $a^2+b^2=c^2$, then $a$ or $b$ is even.
+
+\soln{ Let $a,b,c\in\mathbb Z$ and assume for a contradiction that $a^2+b^2=c^2$ and $a$ and $b$ are both odd. Then, we see that $a=2k+1$ for some $k\in\mathbb Z$ and $b=2m+1$ for some $m\in\mathbb Z$. Then we see that $a^2+b^2=(2k+1)^2+(2m+1)^2=4k^2+4k+4m^2+4m+2=2(2k^2+2m^2+2k+2m+1)=c^2$. Since, $(2k^2+2m^2+2k+2m+1)\in\mathbb Z$, we see that $c^2$ is even, shich implies $c$ is even. Thus, $c=2n$ for some $n\in\mathbb Z$. Hence, we get \[a^2+b^2=(2k+1)^2+(2m+1)^2=4k^2+4k+4m^2+4m+2=4n^2=c^2,\]
+which implies that \[ 2=4n^2-(4k^2+4k+4m^2+4m)=4(n^2-k^2-m^2-k-m). \]
+
+Since $(n^2-k^2-m^2-k-m)\in\mathbb Z$, this implies $4\mid 2$, which is a contradiction. 
+
+Therefore $a$ or $b$ has to be even.
+}
+
+\item Show that $|\mathbb Z|=|S|$, where $\mathbb{Z}$ and $S = \{x  \in\mathbb{R}: \sin x = 1\}$.
+
+\soln{ We see that $S = \{x  \in\mathbb{R}: \sin x = 1\}=\{ x\in\mathbb{R}: x=\pi/2+2\pi n \text{ for some } n\in\mathbb{Z} \}$. Thus we can define a bijection $f:
+\mathbb{Z}\rightarrow S$, where $f(k)=\dfrac{\pi}{2}+2\pi k$. Then, we see that $f$ is injective and, by definition of $S$, we see it is surjective too. Hence $f$ is bijective. 
+}
+\item Show that $|\{0, 1\}\times\mathbb{N}|=|\mathbb{Z}|$.
+
+\soln{ For this question we can define the function $f: \mathbb{Z}\rightarrow(0,1)\times\mathbb{N}$, 
+\begin{align}
+f(k)=\left\{
+\begin{array}{ll}
+(1,k+1)& \text{ if } k\geq 0\\
+&\\
+(0,-k)& \text{ if } k\leq -1\\
+\end{array}
+\right.
+\end{align}
+
+Then we see that for $k,m\in\mathbb{Z}$, if $f(k)=f(m)$, then either $k,m\leq -1$ or $k,m\geq 0$.  If $k,m\geq 0$ we have $(1,k+1)=(1,m+1)$ in which case $k=m$. If $k,m\leq -1$ we have $(0,-k)=(0,-m)$, in which case $k=m$ too. We also see that these two are the only two cases since if $k\geq 0$ and $m\leq -1$ or $m\geq 0$ and $k\leq -1$ we see $f(k)\neq f(m)$.
+
+We also see that $f$ is surjective. If $(a,n)\in\mathbb{N}$ we have two cases: $a=0$ or $a=1$. If $a=0$, we can define $k=-n$ so that $f(-k)=(0,n)$ and if $a=1$, we ca define $k=n-1$ so that $f(k)=(1,n)$.
+}
+
+\item Let $f :\mathbb R\rightarrow [-1,1]$ be a function which is defined by $f(x)=\dfrac{2x}{1+x^2}$.
+
+Is $f$ surjective? Is $f$ injective?
+
+Hint: A good scratchwork will be important.
+
+\soln{
+
+{\bf Proof:} 
+{\bf Show $ f$ is surjective:} Let $y\in[-1,1]$. We want to show that there exists $x\in\mathbb R$, such that $f(x)=\dfrac{2x}{1+x^2}=y$. We see that this is equivalent to finding $x\in\mathbb R$ satisfying, 
+
+$x^2y-2x+y=0$. First, we see that if $y=0$, we can take $x=0$. Now, for $y\neq 0$, we can divide the equation by $y$ and rewrite the equation as 
+
+$x^2-\dfrac{2x}{y}+1=0$. Since this is a quadratic equation, we know that it has a soln if and only if the discriminant $\left(\dfrac{2}{y}\right)^2-4\geq 0$, that is, $\dfrac{4}{y^2}\geq 4$. By rearranging this inequality, we see that it is equvalent to $y^2\leq 1$, which is true since $y\in[-1,1]$. Therefore, we see that there is a solution to the equation 
+
+$\dfrac{2x}{1+x^2}=y$ for any $y\in[-1,1]$. Hence $f$ is surjective.
+
+{\bf Show $ f$ is injective:} We see that for any $a\in\mathbb R$, such that $a\neq 0$, we see that $x_1=a\neq \frac{1}{a}=x_2$, but $f(x_1)=f(x_2)$. (you can guide students to this counterex while doing some scratchwork beforehand.)	
+
+Therefore $f$ is not bijective. Does it mean $|[-1,1]|\neq |\mathbb R|$? You can mention that this is a common mistake amongst students.
+
+}
+
+
+\item Show that $|(0,1)|=|(0,\infty)|$.
+
+\soln{ One can show that $|(0,1)|=|(1,\infty)|$, by showing the function 
+
+$f:(0,1)\rightarrow(1,\infty)$, defined by $f(x)=\dfrac{1}{x}$ is bijective, and combining this with the function 
+
+$g:(1,\infty)\rightarrow (0,\infty)$, defined by $g(x)=x-1$.
+
+This is a nice example of how to  create a bijection in multiple steps. This way students may not feel overwhelmed when we ask them to find a bijection from a set to another, they can do that in steps
+
+Then combine this even more with $h(x)=\ln(x)$, to get that $|(0,1)|=|\mathbb R|$. 
+
+}
+
+Before the following examples, watch videos 41, 42, and 43 in \url{https://personal.math.ubc.ca/~PLP/auxiliary.html}.
+
+\item Cantor-Schr\"{o}der-Bernstein theorem is very(!) useful.
+\begin{itemize}
+\item Prove that \(|(0,1]| = |(0,1)| \) by constructing a suitable bijection.
+
+Hint: Consider the subset \( \set{\frac{1}{n} \mid n \in \mathbb{N} }\) and how you might map it to \(\set{\frac{1}{n+1} \mid n \in \mathbb{N}}\) while leaving everything else alone.
+
+\item Prove the that \(|(0,1]| = |(0,1)| \) using Cantor-Schr\"{o}der-Bernstein theorem.
+
+\end{itemize}
+
+\item Let $\mathbb Z(\sqrt{2})$ be the set of numbers of the form $a+b\sqrt{2}$. where $a$ and $b$ are integers.
+
+\begin{enumerate}
+
+\item Prove that $\mathbb Z(\sqrt{2})\cap \mathbb Q=\mathbb Z$.
+
+\item Prove that if $x\in\mathbb Z(\sqrt{2})$, then for all natural numbers $n$, we have $x^n\in\mathbb Z(\sqrt{2})$.
+
+\item Prove that $\mathbb Z(\sqrt{2})$ is denumerable.
+
+\end{enumerate}
+
+Hint: Knowing that $\sqrt 2$ is irrational, can you relate $\mathbb Z(\sqrt 2)$ to $\mathbb Z^2$?
+
+\item (If there is time)
+Define $P$ to be the set of all polynomials with rational coefficients. That is,
+\[P=\left\{a_0+a_1x+a_2x^2+\cdots+a_nx^n ~:~ n \in \mathbb N \mbox{ and } a_i \in \mathbb Q \mbox{ for all }i\in \{0,1,\ldots,n\}\right\}.\]
+ \begin{enumerate}
+\item Prove or disprove: $P$ is countable.
+
+These numbers that are solutions to rational (or equivalently integer) polynonimals are called algebraic numbers. As an example we see $\sqrt 2$ is irrational, but is the solution to the equation $x^2-2=0$. Thus, since the set of algebraic numbers is countable and the set of real numbers is uncountable, we see that there has to be uncountable many real numbers that cannot be written as a solution to a polynomial with rational coefficients. We call such numbers \textit{transcendental} numbers. For example, $\pi$ is a transcendental number-as one can guess, showing a number is transcendental is generally a very hard question.
+
+Hint: Can you relate the set of all polynomials of degree $n$ with rational coefficients to $\mathbb Q^{n+1}$, and that does that relation tell us about the set, $P$, of all polynomials with rational coefficients? 
+
+\soln{ To show that $P$ is countable, we are first going to show that  for any $m\in\mathbb N$, $P_m=\left\{a_0+a_1x+a_2x^2+\cdots+a_mx^m \colon \mbox{ and } a_i \in \mathbb Q \mbox{ for all }i\in \{0,1,\ldots,m\}, a_m\neq 0\right\}$ is countable. We are going to show that by defining a bijection $f: P_m\rightarrow \Big(\mathbb Q^{m}\times \big(\mathbb Q-\set{0}\big)\Big)$ as 
+
+\[f(a_0+a_1x+a_2x^2+\cdots+a_mx^m)=\big((a_0,a_1,a_2,\cdots,a_{m-1}), a_m\big).\] Then, by definition, we see that this function is surjective. 
+
+Moreover, if $(a_0+a_1x+a_2x^2+\cdots+a_mx^m),(b_0+b_1x+b_2x^2+\cdots+b_mx^m)\in P_m$ and
+
+ $f(a_0+a_1x+a_2x^2+\cdots+a_mx^m)=f(b_0+b_1x+b_2x^2+\cdots+b_mx^m)$, then we see 
+
+$\big((a_0,a_1,a_2,\cdots,a_{m-1}), a_m\big)=\big((b_0,b_1,b_2,\cdots,b_{m-1}), b_m\big)$. Therefore, we see that $a_i=b_i$ for all $i\in\set{0,1,2,\ldots,m}$. Thus, we that $a_0+a_1x+a_2x^2+\cdots+a_mx^m=b_0+b_1x+b_2x^2+\cdots+b_mx^m$, which implies that the function $f$ is injective.
+
+Therefore $|P_m|=\left|\Big(\mathbb Q^{m}\times \big(\mathbb Q-\set{0}\big)\Big)\right|=|\mathbb N|$, since the Cartesian product of finitely many countable sets is countable.
+
+Then, we know that  for all $m\in\mathbb N$, we can write the elements of the set $P_m$ in an infinite list as
+\[ P_m=\set{a_{1m}, a_{2m},a_{3m},a_{4m},\ldots} .\]
+
+We also see that $P=\bigcup\limits_{m\in\mathbb N}P_m$. Thus, we can list the elements of $P$ in an infinite list as 
+\[ P=\set{a_{11},a_{21},a_{12},a_{31},a_{22},a_{13},a_{41},a_{32},a_{23},a_{14}, \ldots}. \]
+
+Therefore $P$ is countable (the final step also shows that the countable union of countably infinite sets is countable).
+}
+
+\item Define $A$ to be the set of all real numbers that are the roots of a polynomial in $P$. That is,
+\[A = \{x \in \mathbb R ~:~ \exists f \in P-\set{0} \mbox{ s.t. } f(x)=0\}.\]
+Prove or disprove: $|A|=|P|$.
+
+Hint: How many solutions can a polynomial of degree $n$ have?
+
+
+\soln{ We know that every polynomial of order $m$ has at most $m$ distinct real roots. Now, for $k\in\mathbb N$, for any polynomial $a_{km}$ of degree $m$, defined as above, define the set \[R_{a_{km}}=\set{x\in\mathbb R: a_{km}(x)=0}.\]
+Then, we see that for any $k\in\mathbb N$, $|R_{a_{km}}|\leq m$, in particular, $R_{a_{km}}$ is countable.
+
+Thus, we see that $A_m=\bigcup\limits_{k\in\mathbb N}R_{a_{km}}$ gives us the set of all possible solutions to polynomials of order $m$. Then, we see that $A_m$ is the countable union of countable set, and thus, is countable.
+
+Since $A=\bigcup\limits_{m\in\mathbb N} A_m$, we see that $A$ is also countable union of countable sets, and hence is countable.
+
+Moreover, since any $q\in\mathbb Q$ is a zero of a polynomial with rational coefficients, e.g. $f(x)=x-q$, we see that $\mathbb Q\subseteq A$. This implies that $A$ is infinite. Thus, we see that $A$ is countably infinite.
+
+Therefore $|A|=|P|$.
+
+}
+
+
+\end{enumerate}
+
+
+
+\end{enumerate}
+
+\end{document} 

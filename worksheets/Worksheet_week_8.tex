@@ -1,0 +1,137 @@
+\documentclass[12pt]{article}
+\usepackage{amsthm,amsmath,amsfonts,amsthm,amstext,amssymb,fullpage,framed,fancybox,graphicx,color,mdwlist,pifont, hyperref,enumitem}
+%\usepackage{fullpage}
+\usepackage{tikz}
+\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;} 
+\usepackage[margin=1cm]{geometry}
+\pagestyle{empty}
+\newtheorem*{theorem*}{Theorem}
+
+\newcommand{\set}[1]{\left\{ #1 \right\}}
+\renewcommand{\neg}{\sim}
+\newcommand{\st}{\text{ s.t. }}
+\begin{document}
+\centerline{\bf\large Worksheet for Week 8}
+
+\vspace{25pt}
+
+
+
+\begin{enumerate}
+
+\item Let $A$, $B$ and $C$ be sets. Then prove or disprove: $A\cap (B\cup C)=(A\cap B)\cup (A\cap C)$.
+
+%\textbf{Proof:} Since this is a set equality, we need to prove $A\cap (B\cup C)\subseteq(A\cap B)\cup (A\cap C)$ and
+%
+% $(A\cap B)\cup (A\cap C)\subseteq A\cap (B\cup C)$.
+% 
+% \textbf{Proof of $A\cap (B\cup C)\subseteq(A\cap B)\cup (A\cap C)$:} Assume that $x\in A\cap (B\cup C)$. Then we know that $x\in A$ and $x\in (B\cup C)$. That means $x\in A$ and moreover, $x\in B$ or $x\in C$. Then we have two cases,  $x\in A$ and $x\in B$ or $x\in A$ and $x\in C$. First assume $x\in A$ and $x\in B$. Thus, $x\in (A\cap B)$. This implies $x\in (A\cap B)\cup (A\cup C)$. We see that the case $x\in A$ and $x\in C$ is treated similarly to the previous case. Therefore, $A\cap (B\cup C)\subseteq(A\cap B)\cup (A\cap C)$ 
+% 
+% \textbf{Proof of  $(A\cap B)\cup (A\cap C)\subseteq A\cap (B\cup C)$:} Let $y\in (A\cap B)\cup (A\cap C)$. Then we have two cases: $y\in (A\cap B)$ or $y\in (A\cap C)$. Since these cases are similar, WLOG we can assume $y\in (A\cap B)$. Then we see that $y\in A$ and $y\in B$. Thus, we see $y\in A$ and $y\in B\cup C$. Therefore $y\in A\cap (B\cup C)$. Hence, $(A\cap B)\cup (A\cap C)\subseteq A\cap (B\cup C)$.
+% 
+% Therefore, we see that for  $A$, $B$ and $C$ be sets. Then $A\cap (B\cup C)=(A\cap B)\cup (A\cap C)$.
+
+\item Let $A$, $B$ and $C$ be sets. Then prove or disprove: $A-(B-C)=(A-B)-C$.
+
+Hint: Venn diagrams will be useful here.
+
+\item If $A$ and $B$ are sets, then prove that $(A\subseteq B)\implies (\mathcal P(A)\subseteq \mathcal P(B))$.
+
+Hint: Remember that subset relation is a conditional statement.
+
+\item (Old final question) Let $A,B,C$ be sets. Prove that $A\times C\subseteq B\times C$ if and only if $A\subseteq B$ or $C=\emptyset$.
+
+Hint: For one of the directions, recall $\left(P\implies (Q\lor R)\right)\equiv \left(P\implies ((\neg Q)\implies R)\right)$.
+
+%{\bf Proof:}  Let $A,B,C$ be sets.
+%
+%{\bf Show ``$A\subseteq B$ or $C=\emptyset$ implies $A\times C\subseteq B\times C$'': } Assume that $A\subseteq B$ or $C=\emptyset$. Then, we have $2$ cases.
+%
+%{\bf Case 1: $A\subseteq B$:} Let $(a,c)\in A\times C$. Then, we know that $a\in A$ and $c\in C$. Since $A\subseteq B$, we see that $a\in B$. Thus, $(a,c)\in B\times C$. Hence $A\times C\subseteq B\times C$.
+%
+%{\bf Case 2: $C=\emptyset$:} In this case, we see that $A\times C=\emptyset=B\times C$.
+%
+%Therefore, in both cases, $A\times C\subseteq B\times C$.
+%
+%{\bf Show `` $A\times C\subseteq B\times C$ implies $A\subseteq B$ or $C=\emptyset$ '': } Assume that $A\times C\subseteq B\times C$, and that $C\neq \emptyset$, since otherwise the statement is trivially true. 
+%
+%Now, let $a\in A$. Then, since $C\neq \emptyset$, we see that there exists $c\in C$, and thus, $(a,c)\in A\times C$. Moreover, since $A\times C\subseteq B\times C$, we see $(a,c)\in B\times C$. This implies that $a\in B$.
+%
+%Thus, $A\subseteq B$.
+%
+%Therefore, for sets $A, B, C$, $A\times C\subseteq B\times C$ if and only if $A\subseteq B$ or $C=\emptyset$.
+
+\item If $A$ and $B$ are sets, then prove that $\mathcal{P}(A)\cap\mathcal{P}(B) = \mathcal{P}(A\cap B)$.
+
+%\textbf{Proof:} This is a set equality, so we have to prove $\mathcal{P}(A)\cap\mathcal{P}(B) \subseteq \mathcal{P}(A\cap B)$ and $ \mathcal{P}(A\cap B)\subseteq \mathcal{P}(A)\cap\mathcal{P}(B)$.
+%
+%\textbf{Proof of $\mathcal{P}(A)\cap\mathcal{P}(B) \subseteq \mathcal{P}(A\cap B)$:} Let $X\in \mathcal{P}(A)\cap\mathcal{P}(B) $. Then we see that $X\in\mathcal{P}(A)$ and $X\in \mathcal{P}(B)$. This implies that $X\subseteq A$ and $X\subseteq B$. Then we see that if $z\in X$, then $z\in A$ and $z\in B$, that is $z\in A\cap B$. Hence, $X\subseteq A\cap B$. Then we see that $X\in \mathcal{P}(A\cap B)$.
+%
+%\textbf{Proof of  $ \mathcal{P}(A\cap B)\subseteq \mathcal{P}(A)\cap\mathcal{P}(B)$:} Let $Y\in \mathcal{P}(A\cap B)$. Then we see that $Y\subseteq A\cap B$. Thus, if $t\in Y$. then $t\in A\cap B$. This implies $t\in A$ and $t\in B$. Thus, we see that $Y\subseteq A$ and $Y\subseteq B$. This means that $Y\in  \mathcal{P}(A)$ and $Y\in \mathcal{P}(B)$. Therefore $Y\in \mathcal{P}(A)\cap\mathcal{P}(B)$.
+%
+%Hence, the result follows.
+\end{enumerate}
+
+Before the following examples, watch videos 26 and 27 in \url{https://personal.math.ubc.ca/~PLP/auxiliary.html}.
+
+\begin{enumerate}[resume]
+\item Let $A =\{1,2,3,4,5,6\}$. Write out the relation $R$ that expresses ``$\nmid$'' (does not divide) on $A$ as a set of ordered pairs.
+
+
+
+Note: We need to make sure that we are not leaving any one of the ordered pairs out. If we do, it is not the same relation anymore.
+
+\item (Old final) Determine which of the following relations, $\mathbf{R}$, are reflexive, symmetric and transitive on the given set $A$. (We call a relation that satisfies all 3 properties, an equivalence relation.) Prove your answers.
+
+\begin{enumerate}
+
+\item  $\mathbf{R}=\set{(x,y)\in\mathbb R\times \mathbb R\colon y=x^2}$ on $A=\mathbb R$.
+
+\item  $\mathbf{R}=\set{(1,1),(2,2),(3,3),(1,2),(2,1),(1,3),(3,1)}$ on $A=\set{1,2,3}$.
+
+\item  $\mathbf{R}=\set{(a,b)\in\mathbb Z\times \mathbb Z\colon 3 \text{ divides } a-b}$ on $A=\mathbb Z$.
+
+\end{enumerate}
+
+%\textbf{Solution:}
+%
+%\begin{enumerate}
+%
+%\item We see that this relation is not reflexive since $(2,2)\notin \mathbf{R}$, that is, $\mathbf{R}$ (students may also mention that other properties fail too).
+%
+%\item We see that this relation is not an equivalence relation since $(2,1), (1,3)\in \mathbf{R}$, but $(2,3)\notin \mathbf{R}$, that is, $\mathbf{R}$ is not transitive.
+%
+%\item We see that this relation is reflexive since for any $a\in\mathbb Z$, we see $3\mid 0=(a-a)$. 
+%
+%We also see that this relation is symmetric since if $a,b \in\mathbb Z$ and $3\mid (a-b)$, then we know that $a-b=3k$ for some $k\in\mathbb Z$ and thus, $b-a=3(-k)$. Therefore, since $-k\in\mathbb Z$, we see that $3\mid (b-a)$, that is $b\mathbf{R}a$. 
+%
+%This relation is also transitive since if $a,b,c\in\mathbb Z$ and $3\mid (a-b)$ and $3\mid (b-c)$, then we see $a-b=3k$ and $b-c=3m$ for some $k,min\mathbb Z$. Thus, $a-c=(a-b)+(b-c)=3(k+m)$, which implies $3\mid (a-c)$, since $k+m\in\mathbb Z$. Therefore $a\mathbf{R}c$.
+%
+%Hence, $\mathbf{R}$ is an equivalence relation.
+%
+%\end{enumerate}
+
+
+\item Define a relation on $\mathbb Z$ as $a R b$ if $3\mid (2a-5b)$. Is $R$ reflexive, symmetric, transitive? Justify your answer.
+
+%\textbf{Solution:} We need to check whether this relation is reflexive, symmetric, and transitive.
+%\begin{itemize}
+%\item[] \textbf{Reflexive:} We see that this relation is reflexive since for any $a\in\mathbb Z$, we have $(2a-5a)=3(-a)$, which implies $3\mid (2a-5a)$, that is, $aRa$. 
+%\item[] \textbf{Symmetric:} Let $a,b\in\mathbb Z$ and assume $aRb$. Then we see $3\mid (2a-5b)$, and so $2a-5b=3k$ for some $k\in\mathbb Z$. Then $2b-5a = (-3b-3a)-(2a-5b) = 3(-b-a-k)$. Since $(-b-a-k)\in\mathbb{Z}$ we see that $3\mid (2b-5a)$. Therefore $R$ is symmetric.
+%\item[] \textbf{Transitive:} Let $a,b,c\in\mathbb Z$ and assume $aRb$ and $bRc$. Then we see $3\mid (2a-5b)$ and $3\mid (2b-5c)$, so that $2a-5b=3k$ and $2b-5c=3n$ for some $k,n\in\mathbb Z$. Then $2a-5c = (2a-5b)+3b+(2b-5c) = 3(k+b+n)$. Since $(k+b+n)\in\mathbb{Z}$ we see that $3\mid (2a-5c)$. Therefore $R$ is transitive.
+%\end{itemize}
+
+\item Let $\mathcal R$ and $\mathcal R'$ be two relations on the same set $A$. Prove or disprove the following.
+\begin{enumerate}
+\item If $\mathcal R$ and $\mathcal R'$ are transitive, then the relation $\widehat{\mathcal R}$ defined as $\widehat{\mathcal R}=\mathcal R \cup\mathcal R'$ is transitive.
+\item If $\mathcal R$ and $\mathcal R'$ are transitive, then the relation $\widehat{\mathcal R}$ defined as $\widehat{\mathcal R}=\mathcal R \cap\mathcal R'$ is transitive.
+%\item If $\mathcal R$ and $\mathcal R'$ are symmetric, then $\mathcal R \cup\mathcal R'$ is symmetric.
+%\item If $\mathcal R$ and $\mathcal R'$ are symmetric, then $\mathcal R \cap\mathcal R'$ is symmetric.
+\end{enumerate}
+
+\end{enumerate}
+
+Before the following week, watch video 28 in \url{https://personal.math.ubc.ca/~PLP/auxiliary.html}.
+
+
+\end{document} 

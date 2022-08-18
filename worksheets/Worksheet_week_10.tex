@@ -1,0 +1,263 @@
+\documentclass[12pt]{article}
+\usepackage{amsthm,amsmath,amsfonts,amsthm,amstext,amssymb,fullpage,framed,fancybox,graphicx,color,mdwlist,pifont, hyperref}
+%\usepackage{fullpage}
+\usepackage{tikz}
+\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;} 
+\usepackage[margin=1cm]{geometry}
+\pagestyle{empty}
+\newtheorem*{theorem*}{Theorem}
+\newcommand{\set}[1]{\left\{ #1 \right\}}
+\newcommand{\s}{{\color{red} \textbf{Solution}}}
+
+\usepackage{etoolbox}
+\newtoggle{show}
+%toggle this to show/hide solutions
+\toggletrue{show}
+\togglefalse{show}
+
+\newcommand{\soln}[1]{
+\iftoggle{show}{
+{\color{red} \textbf{Solution:}#1
+}}{}
+}
+\begin{document}
+\centerline{\bf\large Worksheet for Week 10}
+
+\vspace{25pt}
+
+
+\begin{enumerate}
+
+\item For which values of $a,b\in\mathbb N$ does the set 
+$\phi=\set{(x,y)\in\mathbb Z\times \mathbb Z: ax+by= 6 }$ define a function?
+
+\soln{ For $\phi$ to define a function $\forall x\in \mathbb Z$ there has to be a unique point $y\in\mathbb Z$ such that $(x,y)\in\phi$. Let $x\in\mathbb Z$. Then, by definition of $\phi$, we see that $y=\dfrac{6-ax}{b}$, which is uniquely defined for any $x\in\mathbb{Z}$. Then, we see that for $\phi$ to be a function, $\dfrac{6-ax}{b}$ must be an integer.  Since this has to be true for any $x\in \mathbb Z$, we see that it has to be true for $x=0$, that is $b\mid 6$. Thus, $b\in\set{1,2,3,6}$. This also means that for $\phi$ for be a function $\dfrac{ax}{b}$ must also be an integer.
+
+Therefore, we see that if $b=1$, then for any value of $a$, $\phi$ defines a function. If $b=\set{2,3,6}$, then we see that $\phi$ defines a function for all $a\in\mathbb N$ such that $b\mid a$.
+}
+
+\item Is the set $\theta = \{((x, y), (5y, 4x, x + y)) : x, y \in\mathbb{R}\}$ a function? If so, what is its domain and its range?
+
+Hint: How can you visualize the range?
+
+\soln{ We see that $\forall(x,y)\in \mathbb R^2$, there is a unique ordered pair 
+$((x, y), (5y, 4x, x + y))\in\mathbb R^2\times \mathbb R^3$. Therefore, $\theta$ defines a function from $\mathbb R^2$ to $\mathbb R^3$. Moreover, this also implies that the domain of $\theta$ is $\mathbb R^2$.
+
+We know that the range of $\theta$ is the set $Y\subseteq \mathbb R^3$ satisfying:
+\begin{align*}
+ Y&=\set{(a,b,c)\in\mathbb R^3: (a,b,c)=(5y, 4x, x + y)\text{ for some } (x,y)\in\mathbb R^2}\\
+&=\set{(a,b,c)\in\mathbb R^3: a=5y, b=4x, c=x+y \text{ for some } (x,y)\in\mathbb R^2}\\
+&=\set{(a,b,c)\in\mathbb R^3: a=5y, b=4x, c=a/5+b/4 \text{ for some } (x,y)\in\mathbb R^2}\\
+&=\set{ (a,b,a/5+b/4)\in\mathbb R^3: a=5y, b=4x \text{ for some } (x,y)\in\mathbb R^2}\\
+&=\set{ (a,b,a/5+b/4)\in\mathbb R^3: a,b\in\mathbb R},
+\end{align*}
+which defines the plane $20z-4a-5b=0$ in $\mathbb{R}^3$.
+}
+
+
+\item (Old Final) Suppose that $f : A\rightarrow B$ is a function and let $C$ be a subset of $A$.
+
+\begin{enumerate}
+
+\item Prove that $f(A)-f(C)\subseteq f(A-C)$.
+
+\item Find a counterexample for $f(A-C)\subseteq f(A)-f(C)$.
+
+\end{enumerate}
+
+Hint: Think about for which type of functions part (b) fails.
+
+\soln{
+
+\begin{enumerate}
+
+\item Suppose that $f : A\rightarrow B$ is a function and let $C$ be a subset of $A$. Assume that $x\in f(A)-f(C)$. Then, we know that $x\in f(A)$ but $x\notin f(C)$. This means that there exists $a\in A$ such that $x=f(a)$ and there doesn't exist $c\in C$ such that $x= f(c)$. Then, since we know that $C\subseteq A$ and $f(a)=x$, we see that $a\notin C$, that is, $a\in A-C$. Thus, by definition, $x\in f(A-C)$ since $x=f(a)$ for some $a\in A-C$.
+
+\item For a counterexample, we can take $A=\set{-1,1}$, $C=\set{1}$, $B=\set{1}$, and $f:A\rightarrow B$ defined as $f(x)=x^2$. Then, we see that $A-C=\set{-1}$, and thus, $f(A-C)=\set{1}$, whereas 
+
+$f(A)=f(C)=\set{1}$, which implies that $f(A)-f(C)=\emptyset$.
+
+\end{enumerate}
+
+}
+
+\item
+
+ Let $f : \mathbb Z\times\mathbb Z\rightarrow \mathbb Z$ be a function defined as $f(a,b)=4a+6b$. Explicitly describe the set $S=$range($f$). Prove your answer.
+
+\soln{
+ Let $f : \mathbb Z^2\rightarrow \mathbb Z$ be a function defined as $f(a,b)=4a+6b=2(2a+3b)$. Then, we see that $\forall (a,b)\in\mathbb Z^2$, we have $f(a,b)$ is even. Hence, range$f$ is a subset of the set of even numbers. Moreover, if we have an even number, call $c$, then $c=2k$ for some $k\in\mathbb Z$. We also see that if we take $a=2k$, $b=-k$, then $f(a,b)=f(2k,-k)=2k=c$.
+
+Therefore we see that range$(f)$ is the set of all even numbers. 
+
+}
+
+Before the following examples, watch video 33 in \url{https://personal.math.ubc.ca/~PLP/auxiliary.html}.
+
+\item A function $f : \mathbb{Z} \rightarrow \mathbb{Z}\times\mathbb{Z}$ is defined as $f(n) = (2n+1, n + 2)$. Verify whether this
+function is injective and whether it is surjective.
+
+\soln{  We immediately see that this function is not surjective. We see that $(2,0)\in\mathbb Z\times \mathbb Z$, but, 
+
+$(2n+1, n+2)\neq (2,0)$ for any $n\in\mathbb Z$ since $2$ is even and $2n+1$ is always odd, that is $2\neq 2n+1$ for any $n\in\mathbb Z$.
+
+To check the injectivity, let $n,m\in\mathbb Z$ and assume $n\neq m$. Then we see that $n+2\neq m+2$. Hence, we see $(2n+1, n+2)\neq (2m+1, m+2)$, that is $f(n)\neq f(m)$. Therefore the function is injective.
+}
+
+\item Let $A, B$ be nonempty sets. Prove that if there is a bijection $f:A\rightarrow B$, then there is a bijection from $\mathcal{P}(A)$, the power set of $A$, to $\mathcal{P}(B)$, the power set of $B$.
+
+Hint: How can you send a {\it subset} of $A$ to a {\it subset} of $B$, knowing how to send each element of $A$ to an element of $B$?
+
+\soln{ Let $A, B$ be nonempty sets and assume that there is a bijection $f:A\rightarrow B$. Then, since $f$ is a function, we can define a new function $g:\mathcal{P}(A)\rightarrow \mathcal{P}(B)$ as follows:
+\[g(X)=\set{ f(x) : x\in X } \in \mathcal P(B). \]
+
+Now, we need to check that $g$ is injective and surjective.
+
+\textbf{Show $g$ is surjective:} Let $Y\in\mathcal P(B)$. Then we know that $Y\subseteq B$. We also know that $f$ is surjective. Then, we see that $\forall y\in Y$ there is an $x\in A$ such that $f(x)=y$. Therefore, we see that for $X=\set{x\in A: f(x)\in Y}$, we see $g(X)=Y$. Hence $g$ is surjective.
+
+\textbf{Show $g$ is injective:} Let $X_1,X_2\in\mathcal P(B)$, and assume that $X_1\neq X_2$. Then, we see that $\exists a_1\in X_1$ such that $a_1\notin X_2$ or $\exists a_2\in X_2$ such that $a_2\notin X_1$. WLOG, assume that $\exists a_1\in X_1$ such that $a_1\notin X_2$. We see that if $f(a_1)\in g(X_2)$, then $\exists x_2\in X_2$ such that $f(a_1)=f(x_2)$. But, since $a_1\notin X_2$, that would imply $a_1\neq x_2$. Therefore $f$ would be not be injective. Therefore, by contrapositive, we see that if $f$ is injective, $f(a_1)\notin g(X_2)$, that is $g(X_1)\neq g(X_2)$. Therefore $g$ is injective.
+}
+
+
+\item Suppose that $f: A\rightarrow B$ and $C_1, C_2$ are subsets of $A$. Show that if $f$ is injective, then 
+
+$f(C_1\cap C_2)=f(C_1)\cap f(C_2)$.
+
+
+\soln{
+
+Let $f: A\rightarrow B$ and let $C_1, C_2$ be subsets of $A$. Moreover, assume that $f$ is injective. Then, we want to show $f(C_1\cap C_2)=f(C_1)\cap f(C_2)$.
+
+\textbf{$f(C_1\cap C_2)\subseteq f(C_1)\cap f(C_2)$}: Let $y\in f(C_1\cap C_2)$. Then we see that there exists $x\in C_1\cap C_2$, such that $y=f(x)$. Thus, since $x\in C_1$, we see $y\in f(C_1)$ and similarly, since $x\in C_2$, we see $y\in f(C_2)$. Thus, $y\in f(C_1)\cap f(C_2)$.
+
+Hence, $f(C_1\cap C_2)\subseteq f(C_1)\cap f(C_2)$.
+
+\textbf{$ f(C_1)\cap f(C_2)\subseteq f(C_1\cap C_2)$}: Let $y\in f(C_1)\cap f(C_2)$. Then, by definition $y\in f(C_1)$ and $y\in f(C_2)$. This implies that there exists $c_1\in C_1$ and $c_2\in C_2$ such that $y=f(c_1)=f(c_2)$. Moreover, we know that since $f$ is injective and $f(c_1)=f(c_2)$, we have $c_1=c_2$. Thus, $y=f(c_1)$ where $c_1\in C_1$ and $c_1=c_2\in C_2$. This implies that $y\in f(C_1\cap C_2)$.
+
+Hence, $ f(C_1)\cap f(C_2)\subseteq f(C_1\cap C_2)$.
+
+Therefore, we see that $f(C_1\cap C_2)=f(C_1)\cap f(C_2)$.
+
+}
+
+\item
+
+\begin{enumerate}
+
+\item Let $f : A\rightarrow B$ be a surjective function and let $D_1, D_2\subseteq B$. Show that if $f^{-1}(D_1)\subseteq f^{-1}(D_2)$, then $D_1\subseteq D_2$.
+
+\item Construct an example that shows the above is not true when $f$ is not surjective.
+
+\end{enumerate}
+
+\soln{
+
+\begin{enumerate}
+
+\item
+
+{\bf Proof:}  Let $f : A\rightarrow B$ be a surjective function and let $D_1, D_2\subseteq B$. Moreover let $f^{-1}(D_1)\subseteq f^{-1}(D_2)$ and assume that $d\in D_1$. Then, since $f$ is surjective, we know that there is $a\in A$, such that $f(a)=d$. Thus, $a\in f^{-1}(D_1)$. We also know that $f^{-1}(D_1)\subseteq f^{-1}(D_2)$, which implies that $a\in f^{-1}(D_2) $. Thus, $f(a)=d\in D_2$.
+
+Therefore $D_1\subseteq D_2$.
+
+\item We see that this is not a true statement if $f$ is not surjective. For a counterexample, we can take $A=\set{1}$, $B=\set{1,2}$, $f:A\rightarrow B$, defined as $f(1)=1$. Then, we can take $D_1=\set{1,2}$ and $D_2=\set{1}$ and see that $f^{-1}(D_1)=\set{1}=f^{-1}(D_2)$, but $D_2\subset D_1$.
+
+\end{enumerate}
+
+}
+
+
+\item Prove that the function $f : \mathbb R-\set{1}\rightarrow \mathbb R-\set{2}$ given by $f(x)=\dfrac{2x}{x-1}$ is bijective.
+
+\soln{
+
+\textbf{Proof}: Let  $f : \mathbb R-\set{1}\rightarrow\mathbb R=\set{2}$, be  defined by $f(x)=\dfrac{2x}{x-1}$. Then we want to show that $f$ is both injetive and surjective.
+
+\textbf{$f$ is injective}: Assume that $a,z\in\mathbb \mathbb R-\set{1}$, and $f(x)=f(z)$. This means that $\dfrac{2x}{x-1}=\dfrac{2z}{z-1}$.
+
+Thus, we see that $(2x)(z-1)=(2z)(x-1)$. By expanding the products we get $2xz-2x=2xz-2z$, which implies $x=z$. Hence, $f$ is injective.
+
+\textbf{$f$ is surjective}: Let $y\in\mathbb R-\set{2}$. Then, we want to find $x\in\mathbb R-\set{1}$, such that $f(x)=\dfrac{2x}{x-1}=y$.
+
+By rearranging the terms we see that we want to find $x\in\mathbb R-\set{1}$, such that $2x=yx-y$. By further rearranging, we see that $x=\dfrac{y}{y-2}$. Since $y\neq 2$, we see that $x$ is well-defined and also $x\neq 1$. Therefore, we see that for $x=\dfrac{y}{y-2}$, we have $f(x)=y$.
+
+Hence, $f$ is surjective.
+
+Therefore $f$ is bijective.
+
+}
+
+\item  In this question, correct answers without justifications are not sufficient.
+
+\begin{enumerate}
+
+\item Find a function $f :\mathbb Z\rightarrow \mathbb Z$ which is injective but not surjective.
+
+\item Find a function $g :\mathbb Z\rightarrow \mathbb Z$ which is surjective but not injective.
+
+\end{enumerate}
+
+Discuss what would happen if I replaced $\mathbb Z$ with a finite set in the question? Would you be able to find such functions?
+
+Note: This is related to the ``cardinality'' of a set and we will come back to this topic in the last section.
+
+\soln{
+
+\begin{enumerate}
+
+\item For this, we can construct a piecewise function $f:\mathbb Z\rightarrow \mathbb Z$ as follows:
+
+\[f(x)=\left\{
+\begin{array}{lll}
+x&&  x\leq 0\\
+x+1&& x>0
+\end{array}
+\right.
+\]
+
+Then, we see that $f$ is not a surjective function since there is no $a\in\mathbb Z$ such that $f(a)=1$. 
+
+Moreover, if $a,b\in\mathbb Z$, such that $f(a)=f(b)$, then we have 2 cases:
+
+{\bf Case 1: $f(a)=f(b)>0$:} In this case, we see that, $a,b>0$. Thus, $f(a)=a+1=b+1=f(b)$, which implies $a=b$.
+
+{\bf Case 2: $f(a)=f(b)\leq 0$:} In this case, we see that $a,b\leq 0$. Thus, $f(a)=a=b=f(b)$.
+
+Therefore $f$ is injective.
+
+\item 
+For this, we can construct a piecewise function $g:\mathbb Z\rightarrow \mathbb Z$ as follows:
+
+\[g(x)=\left\{
+\begin{array}{lll}
+x&&  x\leq 0\\
+x-1&& x>0
+\end{array}
+\right.
+\]
+
+Then, we see that $g$ is not a injective function since $1\neq 0$, but $g(0)=g(1)=0$. 
+
+Moreover, if $b\in\mathbb Z$, then we have 2 cases:
+
+{\bf Case 1: $b>0$:} In this case, we see that we can take $a=b+1$, and get $g(a)=a-1=b$.
+
+{\bf Case 2: $b\leq 0$:} In this case. we see that we can take $a=b$, and get $g(a)=a=b$.
+
+Therefore we see that $g$ is surjective.
+
+Therefore $f$ is injective.
+
+
+
+\end{enumerate}
+
+}
+
+Before the following week, watch videos 34 and 35 in \url{https://personal.math.ubc.ca/~PLP/auxiliary.html}.
+
+\end{enumerate}
+
+
+
+\end{document} 

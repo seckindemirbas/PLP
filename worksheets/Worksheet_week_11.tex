@@ -1,0 +1,167 @@
+\documentclass[12pt]{article}
+\usepackage{amsthm,amsmath,amsfonts,amsthm,amstext,amssymb,fullpage,framed,fancybox,graphicx,color,mdwlist,pifont, hyperref}
+%\usepackage{fullpage}
+\usepackage{tikz}
+\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;} 
+\usepackage[margin=1cm]{geometry}
+\pagestyle{empty}
+\newtheorem*{theorem*}{Theorem}
+\newcommand{\set}[1]{\left\{ #1 \right\}}
+\newcommand{\s}{{\color{red} \textbf{Solution}}}
+
+\usepackage{etoolbox}
+\newtoggle{show}
+%toggle this to show/hide solutions
+\toggletrue{show}
+\togglefalse{show}
+
+\newcommand{\soln}[1]{
+\iftoggle{show}{
+{\color{red} \textbf{Solution:}#1
+}}{}
+}
+\begin{document}
+\centerline{\bf\large Worksheet for Week 11}
+
+\vspace{25pt}
+
+
+\begin{enumerate}
+
+\item Consider $f : A\rightarrow B$. Prove that $f$ is injective if and only if $X = f^{-1}( f (X))$ for all
+$X \subseteq A$.
+
+\soln{ This is a biconditional statement, so we have to prove both sides of the implications.
+
+\textbf{ Proof of ``$f$ is injective only if $X = f^{-1}( f (X))$'':} Assume that $f$ is injective. Then we need to show $X \subseteq f^{-1}( f (X))$ and $f^{-1}( f (X))\subseteq X$.
+
+\textbf{Show ``$X \subseteq f^{-1}( f (X))$'':} Let $a\in X$. Then, by definition, we see $f(a)\in f(X)$, which also implies $a\in  f^{-1}( f (X))$. Therefore $X\subseteq  f^{-1}( f (X))$.
+
+\textbf{Show ``$f^{-1}( f (X))\subseteq X$'':} Let $b\in f^{-1}( f (X))$. Then, by definition, we see that $f(b)\in f(X)$. Thus, we see that there exists $c\in X$ such that $f(c)=f(b)$. Moreover, since $f$ is injective, we see that $b=c$. In particular, $b\in X$. Therefore $f^{-1}( f (X))\subseteq X$.
+
+Hence we can conclude that if f is injective, then $X = f^{-1}( f (X))$.
+
+\textbf{Proof of ``$f$ is injective if $X = f^{-1}( f (X))$  '':} We are going to use proof by contrapositive. Assume $f$ is not injective. Then we see that there are $x,y\in A$ such that $x\neq y$ but $f(x)=f(y)$. Then we see that for the set $Y=\set{y}$, we get $f^{-1}( f (Y))=f^{-1}( \{f(y)\})=\set{x,y}\neq Y$. Therefore  if $X = f^{-1}( f (X))$, then $f$ is injective.
+
+}
+
+
+\item (old final question) Prove that the function $f : \mathbb R-\set{1}\rightarrow \mathbb R-\set{2}$ given by $f(x)=\dfrac{2x}{x-1}$ is bijective.
+
+
+\soln{
+
+\textbf{Proof}: Let  $f : \mathbb R-\set{1}\rightarrow\mathbb R=\set{2}$, be  defined by $f(x)=\dfrac{2x}{x-1}$. Then we want to show that $f$ is both injetive and surjective.
+
+\textbf{$f$ is injective}: Assume that $a,z\in\mathbb \mathbb R-\set{1}$, and $f(x)=f(z)$. This means that $\dfrac{2x}{x-1}=\dfrac{2z}{z-1}$.
+
+Thus, we see that $(2x)(z-1)=(2z)(x-1)$. By expanding the products we get $2xz-2x=2xz-2z$, which implies $x=z$. Hence, $f$ is injective.
+
+\textbf{$f$ is surjective}: Let $y\in\mathbb R-\set{2}$. Then, we want to find $x\in\mathbb R-\set{1}$, such that $f(x)=\dfrac{2x}{x-1}=y$.
+
+By rearranging the terms we see that we want to find $x\in\mathbb R-\set{1}$, such that $2x=yx-y$. By further rearranging, we see that $x=\dfrac{y}{y-2}$. Since $y\neq 2$, we see that $x$ is well-defined and also $x\neq 1$. Therefore, we see that for $x=\dfrac{y}{y-2}$, we have $f(x)=y$.
+
+Hence, $f$ is surjective.
+
+Therefore $f$ is bijective.
+
+}
+
+\item Let $a,b,c,a$ be real numbers. Define the $2\times 2$ matrix $A$ by 
+$$
+A =\begin{pmatrix}a&b\\c&d\end{pmatrix}
+$$
+and let $S$ be the set of all $2\times 2$ matrices, two matrices $A_1,A_2\in S$ are equal if $a_1=a_2,b_1=b_2,c_1=c_2,d_1=d_2$. 
+Let $f:S\to S$ be a function defined by 
+$$
+f(\begin{pmatrix}a&b\\c&d\end{pmatrix}) =\begin{pmatrix}d&-b\\-c&a\end{pmatrix}.
+$$
+Find $f\circ f$. Is $f$ invertible? If so, what is $f^{-1}$? 
+
+Hint: You don't need to know anything about matrices more than what is given in the question.
+
+\item Let $E,F,G$ be non-empty sets and let $f:E\rightarrow F$, $g:F\rightarrow G$ and $h:G\rightarrow E$ be three functions. Prove that if $g\circ f$ and $h\circ g$ are bijective then the three functions $f,g,h$ are bijective.
+
+Hint: Try to show that each function is both injective and surjective.
+
+\item Let $A$ and $B$ be nonempty sets. Prove that if $f$ is an injection, then $f(A-B)=f(A)-f(B)$.
+
+\soln{ Assume $f$ is an injective function. Then we want to show $f(A-B)\subseteq f(A)-f(B)$ and $f(A)-f(B)\subseteq f(A-B)$.
+
+\textbf{Show `` $f(A-B)\subseteq f(A)-f(B)$ '':} Let $y\in f(A-B)$. Then, by definition, there exists $x\in A-B$ such that $f(x)=y$. Then, we see that $y\in f(A)$. Moreover, we see that if $y\in f(B)$, then we see that there is $z\in B$ such that $f(z)=y=f(x)$. Hence, since $x\in A-B$ and $z\in B$, we see that $x\mathbb{N}eq z$, which implies that $f$ is not injective. Therefore, by contrapositive, we see that if $f$ is injective, then $y\mathbb{N}otin f(B)$. Hence, $y\in f(A)-f(B)$. Therefore  $f(A-B)\subseteq f(A)-f(B)$.
+
+\textbf{Show `` $ f(A)-f(B)\subseteq f(A-B)$ '':} Let $y\in f(A)-f(B)$. Then we know that $y\in f(A)$, that is, there exists $a\in A$ such that $f(a)=b$. We also know that $y\mathbb{N}otin f(B)$, which means that $y\mathbb{N}eq f(b)$ for any $b\in B$. Thus, we see that $y=f(x)$ for some $x\in A-B$, which implies $y\in f(A-B)$. Therefore $f(A)-f(B)\subseteq f(A-B)$.
+}
+
+\item (This is related to Pigenhole Principle. You can do it if there is time) Let $A=\{a_1, a_2, a_3,\ldots, a_n\}$ be a nonempty set of $n$ distinct natural numbers. Prove that there exists a nonempty subset of $A$ for which the sum of its elements is divisible by $n$.
+
+{\bf Hint:} Consider the sums $s_k=a_1+a_2+\cdots +a_k$.
+
+\soln{ We are going to use the Pigeonhole Principle in this proof. Let $A_k=\set{a_1, a_2,a_3,\cdots, a_k}$ be subets of $A$. Then we know there are $n$ such subsets. We see that if $n\mid(a_1+a_2+\cdots +a_{k_0})$ for some $k_0\in\set{1,2,3,\cdots, n}$, then we can take $A_{k_0}$ as our subset that satisfy the condition. If there is no such $k_0$, we see that the sum of the elements of the sets $A_1, A_2, \cdots, A_n$ belong to the equivalence classes $[1],[2],[3], \cdots, [n-1]$ of the equivalence relation `congruence modulo $n$'. Thus, we have $n$ subset of $A$ and $n-1$ equivalence classes that these subsets can go to, which means that by Pigeounhole Principle, there has to be at least two distinct subsets, sum of elements of which belong to the same equivalence class. Call them $A_{k_1}$ and $A_{k_2}$, and assume WLOG that $k_2>k_1$. 
+
+Then we see that there exists $j\in\set{1,2,3,\cdots, n-1}$ such that $(a_1+a_2+a_3+\cdots+a_{k_1})\in[j]$, as well as $(a_1+a_2+a_3+\cdots+a_{k_2})\in[j]$. Hence, we can conclude that 
+
+$n\mid \big((a_1+a_2+a_3+\cdots+a_{k_2})-(a_1+a_2+a_3+\cdots+a_{k_1})\big)$, that is, $n\mid (a_{k_1+1}+a_{k_1+2}+a_{k_1+3}+\cdots+a_{k_2})$. Therefore we see that the subset $B=\set{a_{k_1+1}, a_{k_1+2},\cdots, a_{k_2}}$ satisfies the condition of the statement.
+
+Hence the statement is true.
+
+}
+
+Before the following examples, watch videos 36, 37, and 38 in \url{https://personal.math.ubc.ca/~PLP/auxiliary.html}.
+
+\item  Let $n\in\mathbb{N}$, $n\geq 2$, and $a,b,c\in\mathbb{Z}$. Prove that if $ab\equiv 1 \pmod{n}$, then $\forall c\not\equiv 0\pmod{n}$ we have 
+
+$ac\not\equiv 0\pmod{n}$.
+
+\soln{  Let $n\in\mathbb{N}$, $n\geq 2$, and $a,b,c\in\mathbb{Z}$. Now, assume for a contradiction that $ab\equiv 1 \pmod{n}$ and $\exists c\not\equiv 0\pmod{n}$ such that
+$ac\equiv 0\pmod{n}$. Since $ac\equiv 0\pmod{n}$, we see $bac\equiv b0\equiv 0\pmod{n}$. Moreover, since $ab\equiv 1 \pmod{n}$, we see $abc\equiv 1c\equiv c \pmod{n}$. Therefore combining these two equivalences, we get $c\equiv abc\equiv 0 \pmod n$, which is a contradiction, since $c\not\equiv 0\pmod n$.
+
+Therefore if $ab\equiv 1 \pmod{n}$, then $\forall c\not\equiv 0\pmod{n}$ we have 
+$ac\not\equiv 0\pmod{n}$.
+}
+\item Let $ x \in \mathbb{R}$ satisfy $x^7 + 5x^2 - 3 = 0$. Then prove that $x$ is irrational. 
+
+\soln{ Assume for a contradiction that $x$ is rational. This means that we can write $x=\dfrac{m}{n}$, where $m in\mathbb Z$, $n\in\mathbb N$. Assume moreover that $\gcd(m,n)=1$. Then, plugging this into the equation, we get \[ \dfrac{m^7}{n^7}+5\dfrac{m^2}{n^2}-3=0. \]
+Then multiplying both sides by $n^7$ we get \[ m^7+5m^2n^5-3n^7=0. \]
+Then, since $\gcd(m,n)=1$, we know that $m,n$ cannot both be even. Then, we have three cases.
+
+\textbf{Case 1: $m$ is odd, $n$ is even:} In this case, we see that $m^7$ is odd, $5m^2n^5$ is even, and $3n^7$ is also even. Then we see that $ m^7+5m^2n^5-3n^7$ is odd, which contradicts with the the fact that $ m^7+5m^2n^5-3n^7=0$ and $0$ is even.
+
+\textbf{Case 2: $m$ is even, $n$ is odd:} In this case, we see that $m^7$ is even, $5m^2n^5$ is even, and $3n^7$ is odd. Then we see that $ m^7+5m^2n^5-3n^7$ is odd, which contradicts with the the fact that $ m^7+5m^2n^5-3n^7=0$ and $0$ is even.
+
+\textbf{Case 1: $m$ is odd, $n$ is odd:} In this case, we see that $m^7$ is odd, $5m^2n^5$ is odd, and $3n^7$ is also odd. Then we see that $ m^7+5m^2n^5-3n^7$ is odd, which contradicts with the the fact that $ m^7+5m^2n^5-3n^7=0$ and $0$ is even.
+
+Therefore, any real solution of the equation $x^7 + 5x^2 - 3 = 0$ is irrational.
+}
+
+
+\item Let $(x_n)_{n\in\mathbb N}$ be a real sequence. Then, recall that we say $(x_n)$ converges to $L$ if
+	\[\forall \epsilon>0, \exists N \in\mathbb{N}, \forall n\geq N,   |x_n-L|<\epsilon.\]
+
+Prove that if a sequence $(y_n)$ converges, then the limit is unique.
+
+\soln{ Assume for a contradiction that the sequence $y_n$ converges, but the limit is not unique. This means $\exists L_1,L_2$, $L_1\neq L_2$ such that $y_n$ converges to $L_1$ and $y_n$ converges to $L_2$. Assume WLOG that $L_1<L_2$.
+
+Then, by definition 
+\[\forall \epsilon_1>0, \exists N_{\epsilon_1} \in\mathbb{N}, \forall n\geq N_{\epsilon_1},   |y_n-L_1|<\epsilon_1,\]
+and
+\[\forall \epsilon_2>0, \exists N_{\epsilon_2} \in\mathbb{N}, \forall n\geq N_{\epsilon_2},   |y_n-L_2|<\epsilon_2.\]
+
+Now, let $\epsilon_1=\epsilon_2= \dfrac{L_2-L_1}{3}$. Then, since $y_n$ converges to $L_1$, we see that $\exists N_{\epsilon_1} \in\mathbb{N}$ such that $\forall n\geq N_{\epsilon_1},   |y_n-L_1|<\dfrac{L_2-L_1}{3}$.
+
+Moreover, since $y_n$ converges to $L_2$, we see  $\exists N_{\epsilon_2} \in\mathbb{N}$ such that $\forall n\geq N_{\epsilon_2},   |y_n-L_2|<\dfrac{L_2-L_1}{3}$.
+
+Now letting $N=\max(N_{\epsilon_1},N_{\epsilon_2})$, we see $\forall n\geq N,   |y_n-L_1|<\dfrac{L_2-L_1}{3}$, and $ |y_n-L_2|<\dfrac{L_2-L_1}{3}$.
+
+Thus, choosing $m=N+1$, we get $|y_{m}-L_1|<\dfrac{L_2-L_1}{3}$, and $ |y_{m}-L_2|<\dfrac{L_2-L_1}{3}$. 
+
+Then, by triangle and reverse triangle inequalities, we see that $|y_{m}-L_1|<\dfrac{L_2-L_1}{3}$ implies $y_{m}<\dfrac{L_2+2L_1}{3}$ and $|y_{m}-L_2|<\dfrac{L_2-L_1}{3}$ implies  $y_{m}>\dfrac{2L_2+L_1}{3}$. This is a contradiction, since $\dfrac{2L_2+L_1}{3}>\dfrac{L_2+2L_1}{3}$.
+
+Therefore if a sequence converges, then the limit is unique.
+}
+
+\end{enumerate}
+
+Before the following week, watch videos 39 and 40 in \url{https://personal.math.ubc.ca/~PLP/auxiliary.html}.
+
+\end{document} 
