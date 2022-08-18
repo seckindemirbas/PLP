@@ -1,0 +1,174 @@
+\documentclass[12pt]{article}
+\usepackage{amsthm,amsmath,amsfonts,amsthm,amstext,amssymb,fullpage,framed,fancybox,graphicx,color,mdwlist,pifont, hyperref,enumitem}
+%\usepackage{fullpage}
+\usepackage{tikz}
+\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;} 
+\usepackage[margin=1cm]{geometry}
+\pagestyle{empty}
+\newtheorem*{theorem*}{Theorem}
+
+\newcommand{\set}[1]{\left\{ #1 \right\}}
+\renewcommand{\neg}{\sim}
+\newcommand{\st}{\text{ s.t. }}
+
+\newcommand{\s}{{\color{red} \textbf{Solution}}}
+
+\usepackage{etoolbox}
+\newtoggle{show}
+%toggle this to show/hide solutions
+%\toggletrue{show}
+\togglefalse{show}
+
+
+\newcommand{\soln}[1]{
+\iftoggle{show}{
+{\color{red} \textbf{Solution:}#1
+}}{}
+}
+
+\begin{document}
+\centerline{\bf\large Worksheet for Week 7}
+
+\vspace{25pt}
+
+
+\begin{enumerate}
+
+\item Let $A=\set{1,2}$. Find $\mathcal P(A)$ and $\mathcal P(\mathcal P(A)-\set{\emptyset})$.
+
+\item Show that if $p$ and $q$ are natural numbers, then $\set{pn \mid n \in\mathbb N}\cap\set{qn \mid n \in\mathbb N}\neq \emptyset$.
+
+Hint: Think about a couple of concrete examples first.
+
+\item (Old final question) Let $p_1, p_2, p_3, \ldots, p_n, \ldots$ be the set of all prime numbers listed in an increasing order (so that $p_1=2, p_2=3, p_3=5$, etc.).
+
+For $k\in\mathbb N$ let
+\[A_k=\set{a\in\mathbb N\mid a\geq 2 \text{ and $p_k$ does not divide a}}\]
+and for $n\in\mathbb N$, define
+\[B_n=\bigcap\limits_{k=1}^nA_k=A_1\cap A_2\cap A_3\cap\ldots \cap A_n.\]
+
+\begin{enumerate}
+
+\item Find the smallest element of the set $B_4$.
+
+\item (Casual discussion) Ask whether for every $n\in\mathbb N$, the set $B_n$ is infinite or not.
+
+\item Find the intersection of all $A_k$'s.
+
+\end{enumerate}
+
+Hint: The last example from last lecture may be useful here.
+%\item[]
+
+%\soln{
+%
+%\begin{enumerate}
+%
+%\item We see that $B_4=\bigcap\limits_{k=1}^4A_k=\set{a\in\mathbb N\mid a\geq 2, \text{ and } (2\nmid a), (3\nmid a), (5\nmid a), \text{ and } (7\nmid a)}$. Therefore, the smallest element of $B_4$ is $11$, since $2,3,4,5,6,7,8,9,10\notin B_4$.
+%
+%\item
+%{\bf Proof:} Let $n\in\mathbb N$. Then, we see that since $p_k$ is prime for all $k\in\mathbb N$ such that $k>n$, we see that $p_m\nmid p_k$ for any $m\leq n$. This implies that $p_k\in A_m$ for all $m\leq n$ and $k>n$. Thus, $P=\set{p_k\mid k\in\mathbb N, k>n}\subseteq B_n$. Therefore, since the set of prime numbers is infinite and since $P$ is the set of all primes but the first $n$, we see that $P$ is also infinite, which implies that $B_n$ is also infinite.
+%
+%\item We see that $\bigcap\limits_{k=1}^{\infty }A_k=\set{a\in\mathbb N\mid a\geq 2, p_n\nmid a \text{ for any } n\in\mathbb N}$. This means that $\bigcap\limits_{k=1}^{\infty }A_k$ is the set of all natural numbers that are greater than $1$ and are not divisible by any prime number. But, since every natural number greater than $1$ has a prime divisor, we see that $\bigcap\limits_{k=1}^{\infty }A_k=\emptyset$.
+%
+%\end{enumerate}
+%
+%}
+
+\item
+Let $a\in \mathbb R$.
+\begin{enumerate}
+\item On the $xy$-plane, draw the set $A_a= \{(x, x^2-ax),\, x\in \mathbb R\}$ when $a=0$, $a=1$ and $a=2$.
+\item Show that $\bigcap_{a\in \mathbb R} A_a=\{(0,0)\}$.
+\end{enumerate}
+
+Hint: What does it mean for a point to be in the intersection?
+
+\item  Show that for every $k\in\mathbb Z$, $\exists x,y\in\mathbb Z$, such that $k=4x+5y$.
+
+What does it say about the set $A=\set{4x+5y\mid x,y\in\mathbb Z}$: is it a subset of, superset of, or equal to $\mathbb Z$?
+
+\soln{
+This is a simple example, one can take $y=k, x=-k$, and at the end this means that $A=\mathbb Z$.
+}
+
+\end{enumerate}
+
+Before next examples, watch video 24 in \url{https://personal.math.ubc.ca/~PLP/auxiliary.html}.
+
+\begin{enumerate}[resume]
+
+\item
+Let $A$, $B$  and $C$ be sets. For each of the following statements, either prove it is true or give a counterexample.
+\begin{enumerate}
+    \item $\mathcal{P}(A\cup B) \subseteq  \mathcal{P}(A)\cup \mathcal{P}(B)$
+    \item $\mathcal{P}(A\cup B) \supseteq  \mathcal{P}(A)\cup \mathcal{P}(B)$
+\end{enumerate}
+
+Hint: First try this with small sets.
+
+\item (Old final question: this is a tricy one) Let $T$ be the set of all natural numbers that can be written as some nonnegative
+number of $3$’s plus some nonnegative number of $5$’s. For example, $9 = 3 + 3 + 3$ and
+$10 = 5 + 5$ and $17 = 3 + 3 + 3 + 3 + 5$ are all in $T$, but $4$ is not. Find $\mathbb N-T$ (with
+justification).
+
+Hint: Try to figure out which numbers are in the set, and then try to generalize your answer.
+
+%\item[]
+%
+%\soln{
+%We see that we can write the set as $T=\set{x\in\mathbb N\colon x=3n+5m \text{ for some } n,m\in\mathbb N\cup \set{0} }$, or equivalently as $T=\set{3n+5m\mid n,m\in\mathbb N\cup\set{0}, n+m\neq 0}$.
+%
+%\textbf{Claim:} $T=\set{3,5,6}\cup\set{n\in\mathbb N\mid n\geq 8}$.
+%
+%\textbf{Proof of the claim:} We see that by definition $3,5\in T$. Moreover $6\in T$ since $6=3+3$. We also see that $4, 7\notin T$, since $4=3+1$ and $1$ cannot be written as an element of $T$, and moreover $7=5+2=3\cdot 2+1$, and neither $1$ nor $2$ can be written as an element of $T$.
+%
+%For $n\geq 8$, we see that we can have $3$ cases:
+%
+%\textbf{Case 1: $3\mid n$}:  In this case, we see that we can write  $n=3k$ for some $k\in\mathbb N$, $k\geq 3$. Thus, $n\in T$.
+%
+%\textbf{Case 2: $3\mid (n+1)$}: In this case, we see that $n+1=3m$ for some $m\in\mathbb N$. Moreover, since $n\geq 8$, we see that $m\geq 3$. Thus, we can write
+%
+%$n=3m-1=3m-1+5-5=3m-6+5=3(m-2)+5$. Thus, since $m\geq 3$, we get $m-2\geq 1$. Therefore $n\in T$.
+%
+%\textbf{Case 3: $3\mid (n+2)$}: In this case, we see that $n+2=3b$ for some $b\in\mathbb N$. Moreover, since $n\geq 8$, we see that $b\geq 4$. Thus, we see 
+%
+%$n=3b-2=3b-2=3b-2+12-12=3(b-4)+10=3(b-4)+2\cdot 5$. Thus, since $b\geq 4$, we get $b-4\geq 0$. Therefore $n\in T$.
+%
+%Hence, we see that our claim is true.
+%}
+
+
+\item Let $S$ be a set and, $A_\alpha$'s be sets for all $\alpha\in S$. Then, we can define the sets
+
+\begin{itemize}
+\item $\bigcap\limits_{\alpha\in S} A_\alpha=\{ x\mid \forall \alpha\in S,  x\in A_\alpha  \}$
+\item $\bigcup\limits_{\alpha\in S} A_\alpha=\{ x\mid \exists \alpha\in S,  x\in A_\alpha  \}$
+\end{itemize}
+
+Use these definitions to find the sets
+\begin{enumerate}
+\item $\bigcap\limits_{x\in \mathbb R} (1-x^2, 2+x^2) $
+
+Hint: $\big(=[1,2]\big)$
+\item $\bigcup\limits_{x\in (0,1)} [1+x^2, 2-x] $
+
+Hint: $\big(=(1,2)\big)$.
+\end{enumerate}
+\soln{
+In these questions, students will get confused.  You can show that one side of the subset relation is easy, whereas the other side is hard. You can also define the intersection and sak the intersection question first and then do the union if that makes time management better.
+}
+
+\item We consider subsets $A$, $B$ and $C$ of the universe $U$. Let $\bar A$ denote the complement of $A$.
+\begin{enumerate}
+\item Prove that $\bar A\subseteq B$ if and only if $A\cup B=U$.
+\item Prove that  $\bar A\subseteq B$ implies $(C\backslash B)\cup A=A$
+\end{enumerate}
+
+Hint: A little diagram may help you visualize.
+
+\end{enumerate}
+
+Before next week, watch video 25 in \url{https://personal.math.ubc.ca/~PLP/auxiliary.html}.
+
+\end{document} 

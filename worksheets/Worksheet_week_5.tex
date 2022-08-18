@@ -1,0 +1,59 @@
+\documentclass[12pt]{article}
+\usepackage{amsthm,amsmath,amsfonts,amsthm,amstext,amssymb,fullpage,framed,fancybox,graphicx,color,mdwlist,pifont, hyperref,enumitem}
+%\usepackage{fullpage}
+\usepackage{tikz}
+\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;} 
+\usepackage[margin=1cm]{geometry}
+\pagestyle{empty}
+\newtheorem*{theorem*}{Theorem}
+
+\newcommand{\set}[1]{\left\{ #1 \right\}}
+\renewcommand{\neg}{\sim}
+\newcommand{\st}{\text{ s.t. }}
+\begin{document}
+\centerline{\bf\large Worksheet for Week 5}
+
+\vspace{25pt}
+
+
+\textbf{Definition:} Let $L\in\mathbb R$. We say that a sequence $(x_n)$ converges to $L$, denoted by $x_n\to L$ iff,
+\[\forall \epsilon>0, \exists N\in\mathbb N, \st \forall n\geq N,\  |x_n-L|\leq \epsilon.\]
+
+\begin{enumerate}
+
+\item Show that $(x_n)=(\dfrac{n}{n^2+1})$ converges to $0$.
+
+Hint: For $n\in\mathbb N$, we have $\frac{n}{n^2+1}<\frac{1}{n}$.
+
+\item Show that $(x_n)=(\dfrac{n}{\sqrt{n^2+1}})$ doesn't converge to $0$.
+
+Hint: What does it mean for a sequence to NOT converge to a number?
+
+\item Let $(x_n), (b_n)$ be sequences. Prove that if $0<x_n<b_n$ $\forall n\in\mathbb N$ and $b_n\to 0$, then $x_n\to 0$.
+
+Hint: If $0<x_n<b_n$, the $|x_n|<|b_n|$. Thus, if we can make $|b_n|<\epsilon$, then we will have $|x_n|<\epsilon$.
+
+\end{enumerate}
+
+\textbf{Definition:} Let $A$ be a set and $L\in\mathbb R$. We say that a function $f: A\to \mathbb R$ has the limit $L$ as $x$ goes to $a$, denoted by $\lim\limits_{x\to a}f(x)=L$, if
+\[\forall \epsilon>0, \exists \delta>0, \st (0<|x-a|<\delta)\implies (|f(x)-L|<\epsilon). \]
+
+\begin{enumerate}[resume]
+\item Show that $\lim\limits_{x\to 1} (5x+3)=8$.
+
+Hint: Be careful that $\delta$ may depend on $\epsilon$.
+
+\item Prove that  $\lim\limits_{x\to 2}\left(\dfrac{1}{x}\right)=\dfrac 12$.
+
+Hint: You may need to have more than one condition on $\delta$.
+
+\item Let $f, g$ be functions and $L_1, L_2\in\mathbb R$. Show that if $\lim\limits_{x\to a}f(x)=L_1$ and $\lim\limits_{x\to a}g(x)=L_2$, then $\lim\limits_{x\to a}(f+g)(x)=L_1+L_2$.
+
+Hint: Triangle inequality and a good scratchwork will be crucial.
+
+\end{enumerate}
+
+Before next week, watch videos 18 and 19 in \url{https://personal.math.ubc.ca/~PLP/auxiliary.html}.
+
+
+\end{document} 

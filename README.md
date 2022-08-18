@@ -11,7 +11,11 @@ It is written by [Seckin Demirbas](https://personal.math.ubc.ca/~s.demirbas/) & 
 
 The text grew out of our lecture notes for [Mathematics 220](https://www.calendar.ubc.ca/vancouver/courses.cfm?page=code&code=MATH#220) at UBC. Those notes were written in LaTeX but as we started to transform them into this text we translated them into [PreTeXt](https://pretextbook.org/). Many thanks to [Rob Beezer](http://buzzard.ups.edu/) and the [pretext community](https://groups.google.com/g/pretext-support) for all their help along the way.
 
-The repository contains sources for the textbook and also lecture slides. The slides should be considered ancillary materials and were used to produce [short online videos](https://www.youtube.com/playlist?list=PLsZ5tCZabvkCNItGgafhVqzekTwEbHyYk) for Mathematics 220 at UBC.
+The repository contains sources for the textbook and also lecture slides. The slides should be considered ancillary materials and were used to produce [short online videos](https://www.youtube.com/playlist?list=PLsZ5tCZabvkCNItGgafhVqzekTwEbHyYk) for Mathematics 220 at UBC. 
+
+We have also added worksheets used to teach a 13 week course from PLP.
+
+
 
 ## Building
 The sources for both the book and lecture are written in [PreTeXt](https://pretextbook.org/).
@@ -19,6 +23,8 @@ The sources for both the book and lecture are written in [PreTeXt](https://prete
 * The slides compile to [reveal.js](https://revealjs.com/) html presentations, which, in turn, can be rendered as PDFs using tools such as [decktape](https://github.com/astefanutti/decktape).
 
 Build instructions for the book and slides can be found in the relevant subdirectories.
+
+The worksheets are written standard latex and can be compiled using (for example) pdflatex.
 
 ### Installing PreTeXt CLI
 * Requires an up to date `python` installation.

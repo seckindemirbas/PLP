@@ -1,0 +1,80 @@
+\documentclass[12pt]{article}
+\usepackage{amsthm,amsmath,amsfonts,amsthm,amstext,amssymb,fullpage,framed,fancybox,graphicx,color,mdwlist,pifont, hyperref}
+%\usepackage{fullpage}
+\usepackage{tikz}
+\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;} 
+\usepackage[margin=1cm]{geometry}
+\pagestyle{empty}
+\newtheorem*{theorem*}{Theorem}
+
+\newcommand{\set}[1]{\left\{ #1 \right\}}
+\renewcommand{\neg}{\sim}
+
+\begin{document}
+\centerline{\bf\large Worksheet for Week 2}
+
+\vspace{25pt}
+
+
+\begin{enumerate}
+
+\item Write the following statements in symbolic logic notation. Use the notation $P(\cdot)$ for open sentences.
+
+\begin{itemize}
+
+\item {\color{red} Let $f:\mathbb R \to \mathbb R$ be a differentiable function at $x=x_0$. Then, if $f'(x_0)=0$, then $f$ has a local maximum of minimum at $x=x_0$}.
+
+\item If $x\in\mathbb R$ and the sequence $(x_n)$ converges $x$, then $(\frac{1}{x_n})$ converges to $\frac{1}{x}$.
+
+\item {\color{red} If an integer is divisible by $6$ or $10$, then it is divisible by $2$}.
+
+\item If the divisibility of an integer $n$ by $2$ implies its divisibility by $6$, then it is divisible by $3$.
+
+\item {\color{red}($\ast$) If an integer is a multiple of $8$, then it is a multiple of $4$ and $2$}.
+
+\end{itemize}
+
+Discuss whether the statement ($\ast$) is true or false. When discussing the truth value of that statement, what if I say: `` This statement is false. What about $25$? It is neither divisible by $2$ nor $4$?''. Does this sound correct? If not, why?
+
+ If we actually want to prove the true statements, what should we assume and what should we show?
+ 
+ Before next examples, watch videos 8 and 9 in \url{https://personal.math.ubc.ca/~PLP/auxiliary.html}.
+
+\item  Prove the statement:
+\begin{center}
+If $n$ is even, then $n^2+4n+5$ is odd.
+\end{center}
+
+
+\item Prove the statement:
+\begin{center}
+Let $n\in\mathbb Z$. Then, if $2\mid n$ and $3\mid n$, then $6\mid n$.
+\end{center}
+
+At this stage, please remember that we haven't showed any results on the properties of the prime numbers. So, your result shouldn't involve properties of prime numbers unless you prove those results as well. Also, when you are done with the proof, ask yourself the question: ``Does my proof still work if I replace $3$ and $6$ with $4$ and $8$ respectively?''. That is, does your proof also prove the statement:
+\begin{center}
+Let $n\in\mathbb Z$. Then, if $2\mid n$ and $4\mid n$, then $8\mid n$,
+\end{center}	
+which is a false statement (false for $n=4$).
+
+\item Prove the following statement:
+\begin{center}
+Let $x\in\mathbb R$. If $x>0$, then $x+\dfrac{2}{x}>2$.
+\end{center}
+
+When we want to prove this statement, we should be careful with the direction of the logical statement. You should ask yourself: ``What do I want to show? What should I assume?''.
+
+
+Before the next examples, watch videos 6 and 10 in \url{https://personal.math.ubc.ca/~PLP/auxiliary.html}.
+
+\item Consider the {\color{red} red sentences} above and write their contrapositives, converses and determine which ones are true: the original, the converse, both, or neither?
+
+\item Using logical operations, show that $\neg (P\iff Q)\equiv (P \text{ (XOR) } Q)$.
+
+\item Is $\big((P\implies Q)\implies R\big)$ logically equivalent to $\big(P\implies (Q\implies R)\big)$? If not, can you find an example ($3$ statements P, Q, and R), where one of the statements is correct where the other one is false?
+
+\end{enumerate}
+
+Before next week, watch video 11 in \url{https://personal.math.ubc.ca/~PLP/auxiliary.html}.
+
+\end{document} 
