@@ -868,9 +868,9 @@ and now we prove each implication in turn
     <p>
     Let <m>a,b,c</m> and <m>n</m> be as stated. Then we know that for some <m>k,\ell\in\mathbb{Z}</m>
     <me>
-      a-b = nk \qquad \text{and} \qquad b-c \equiv 2 \ell.
+      a-b = nk \qquad \text{and} \qquad b-c = n \ell.
     </me>
-    Then <m>(a-b)+(b-c)=a-c = 2(k+\ell)</m> and so <m>a \equiv c \mod n</m>.
+    Then <m>(a-b)+(b-c)=a-c = n(k+\ell)</m> and so <m>a \equiv c \mod n</m>.
   </p>
   </proof>
 </proposition>
