@@ -565,7 +565,7 @@ The domain of the quantifier remains unchanged when the statement is negated.
  <ul>
 <li> There is a real number <m>y</m> such that <m>1/y = y+1</m>.
 </li>
-<li> For every natural number <m>z</m> there is a natural number <m>w</m> such that <m>z^2 \lt  w</m>.
+<li> For every integer <m>z</m> there is a natural number <m>w</m> such that <m>z^2 \lt  w</m>.
 </li>
 </ul>
 </p>
