@@ -3,7 +3,7 @@
 <!-- converted on 12/08/2021 at 19:34 -->
 <statement>
 <p>
-Let <m>x\in\mathbb{R}</m>. Show that if <m>|x-2| \lt 1</m>, then <m>|2x^2-3x-2| \lt 3</m>.  You may use the following result without proof:
+Let <m>x\in\mathbb{R}</m>. Show that if <m>|x-2| \lt 1</m>, then <m>|2x^2-3x-2| \lt 7</m>.  You may use the following result without proof:
 <me> |ab|=|a|\cdot|b| \text{ for any } a,b\in\mathbb{R}. </me>
 </p>
 </statement>
@@ -26,7 +26,7 @@ which implies that <m>|x| \lt 3</m>. Now we can use the triangle inequality to b
 
 <p>
 With this scrap work, we're ready to write up the proof of the statement.
-But remember, we have to make sure that our logic flows in the correct direction. We must make sure our proof starts from the hypothesis, <m>|x-2| \lt 1</m>, and ends at the conclusion, <m>|2x^2-3x-2| \lt 3</m>.
+But remember, we have to make sure that our logic flows in the correct direction. We must make sure our proof starts from the hypothesis, <m>|x-2| \lt 1</m>, and ends at the conclusion, <m>|2x^2-3x-2| \lt 7</m>.
 </p>
 </answer>
 
