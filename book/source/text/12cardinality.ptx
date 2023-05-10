@@ -408,7 +408,7 @@ This function is a bijection from <m>\mathbb{N}</m> to <m>E</m>:
 <ul>
 <li> Injective because if <m>n_1 \neq n_2</m> then <m>f(n_1) = n_1 \neq n_2 = f(n_2)</m>.
 </li>
-<li> Surjective becuase for any <m>b \in E</m>, we know that <m>b=2k</m> for <m>k \in \mathbb{N}</m>, and <m>f(k) = 2k=b </m>.
+<li> Surjective because for any <m>b \in E</m>, we know that <m>b=2k</m> for <m>k \in \mathbb{N}</m>, and <m>f(k) = 2k=b </m>.
 </li>
 </ul>
 So the set of natural numbers is equinumerous with a proper subset of the natural numbers!
