@@ -24,11 +24,7 @@
   <html>
     <knowl remark="no" example="no" proof="yes"/>
     <css style="default" colors="blue_red"/>
-    <!-- <analytics google-gst="UA-0123456-1" statcounter-project="0123456" statcounter-security="0123456"/> -->
-    <!-- Google search, via masthead textbox is switched on    -->
-    <!-- and associated with a Google account via CX number    -->
-    <!-- <search google-cx=""/> -->
-    <!-- ***************************************************** -->
+    <analytics google-gst="G-FL66FX9988"/>    
   </html>
 
 </publication>
