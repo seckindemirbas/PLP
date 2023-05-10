@@ -7,7 +7,7 @@
 <xi:include href="ch07/there_is_x_and_y_and_z_such_that_x_quare_plus_y_square_is_equal_to_z_to_the_2n_plus_1_question.ptx"/>
 <xi:include href="ch07/8_divides_3_to_2n1.ptx"/>
 <xi:include href="ch07/distributive_law.ptx"/>
-<xi:include href="ch07/n_fact_is_more_than_3_to_n_.ptx"/>
+<!-- <xi:include href="ch07/n_fact_is_more_than_3_to_n_.ptx"/> -->
 <xi:include href="ch07/power_of_2_greater_than_2n.ptx"/>
 <xi:include href="ch07/sum_of_exponentials.ptx"/>
 <xi:include href="ch07/sum_of_rationals.ptx"/>
