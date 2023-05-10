@@ -1249,7 +1249,7 @@ That is, Player 2 can set some point in the sequence <m>N = \frac{1}{\epsilon}</
       <me>
         \forall\epsilon \gt 0, \exists N\in\mathbb N \st \forall n \in \mathbb{N}, (n\gt N) \implies (|x_n-L| \lt \epsilon).
       </me>
-      In this case we say that the sequence  <term>converges</term> to <m>L</m>and write
+      In this case we say that the sequence  <term>converges</term> to <m>L</m> and write
       <me>
         x_n\to L \qquad \text{or} \qquad \lim\limits_{n\to \infty}x_n=L.
       </me>
