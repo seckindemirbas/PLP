@@ -761,7 +761,7 @@ Writing the scratch work really helps to formulate your ideas and makes writing 
       <p>
         We know that <m>x \geq 4 \gt 0</m>, so then multiplying this
         by <m>x</m> gives us <m>x^2 \geq 4x</m>, and similarly,
-        multiplying it by <m>4</m> gives us <m>4x \gt 16</m>. Hence
+        multiplying it by <m>4</m> gives us <m>4x \gt 16</m>.
         Hence we know that <m>x^2 \geq 16</m>.
       </p>
     </li>
