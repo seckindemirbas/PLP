@@ -7,7 +7,7 @@ Show that the following pairs of statements are logically equivalent using <xref
 </p>
 <p>
 <ol marker="(a)">
-<li>
+<li xml:id="prob-contrapos-bicond">
 <p>
  <m>P\iff Q</m> and <m>(\neg P) \iff (\neg Q)</m>
 </p></li>

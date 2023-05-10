@@ -408,7 +408,7 @@ This function is a bijection from <m>\mathbb{N}</m> to <m>E</m>:
 <ul>
 <li> Injective because if <m>n_1 \neq n_2</m> then <m>f(n_1) = n_1 \neq n_2 = f(n_2)</m>.
 </li>
-<li> Surjective becuase for any <m>b \in E</m>, we know that <m>b=2k</m> for <m>k \in \mathbb{N}</m>, and <m>f(k) = 2k=b </m>.
+<li> Surjective because for any <m>b \in E</m>, we know that <m>b=2k</m> for <m>k \in \mathbb{N}</m>, and <m>f(k) = 2k=b </m>.
 </li>
 </ul>
 So the set of natural numbers is equinumerous with a proper subset of the natural numbers!
@@ -1159,7 +1159,7 @@ This is a really beautiful result about the nature of the infinite! The author s
 </p>
 </proof>
 
-<p>Note that the cardinality of the reals is denoted <m>c</m>, for continuum. That is <m>|\mathbb{R}| = c</m>. Since <m>c \neq \aleph_0</m> and <m>\mathbb{N} \subseteq \mathbb{R}</m>, we must have <m>\alpha_0  \lt  c</m>. Of course, to give a concrete meaning to the symbol <q><m> \lt </m></q> in the context of cardinalities of infinite sets, we have to do some work. That is the subject of our next section.
+<p>Note that the cardinality of the reals is denoted <m>c</m>, for continuum. That is <m>|\mathbb{R}| = c</m>. Since <m>c \neq \aleph_0</m> and <m>\mathbb{N} \subseteq \mathbb{R}</m>, we must have <m>\aleph_0  \lt  c</m>. Of course, to give a concrete meaning to the symbol <q><m> \lt </m></q> in the context of cardinalities of infinite sets, we have to do some work. That is the subject of our next section.
 </p>
 
 

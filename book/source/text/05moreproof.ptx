@@ -325,12 +325,9 @@ Is uses a cute little trick that is worth remembering.
 </lemma>
 <aside><title>It pays to do some exercises</title>
 <p>
-If you haven't done it already, now is a good time to do (an exercise will be added here)
-<!-- <xref ref="prob-contrapos-bicond"/> -->
-in the exercises. It tells us that the above is logically equivalent to
-<me>
-  (n^2 \text{ is even}) \iff (n \text{ is even})
-</me>
+If you haven't done it already, now is a good time to do <xref
+ref="prob-contrapos-bicond">this exercise</xref>. It tells us that the above is logically
+equivalent to <q><m>n^2</m> is even if and only if <m>n</m> is even</q>, 
 which is another useful (equivalent) result.
 </p>
 </aside>
