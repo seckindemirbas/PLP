@@ -19,13 +19,7 @@ Let <m>k\in \mathbb{N}</m>. Compute the <m>k^{\text{th}}</m> derivative of the f
 </p>
 </li>
 </ol>
-You may use the fact that
-<md>
-<mrow>
-  \frac{d}{dx} x^a = a x^{a-1}
-</mrow>
-</md>
-for any <m>a \in \mathbb{R}</m>.
+You may use the chain and power rules in your solutions.
 </p>
 </statement>
 <hint>
