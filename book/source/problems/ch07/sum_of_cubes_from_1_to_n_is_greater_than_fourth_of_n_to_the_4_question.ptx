@@ -66,12 +66,12 @@ We are going to prove this statement using induction.
 </mrow><mrow>
  \amp =\frac{1}{4}k^4+k^3+3k^2+3k+1
 </mrow><mrow>
- \amp =\frac{1}{4}(k+1)^4+\left(\frac 32k^2+2k+1\right)
+ \amp =\frac{1}{4}(k+1)^4+\left(\frac 32k^2+2k+ \frac{3}{4}\right)
 </mrow><mrow>
  \amp \gt\frac{1}{4}(k+1)^4,
 </mrow>
 </md>
-since <m>\frac{3}{2}k^2+2k+1 \gt 0</m> for all <m>k\in\mathbb N</m>. This means that the statement is true for <m>n=k+1</m>.
+since <m>\frac{3}{2}k^2+2k+\frac{3}{4} \gt 0</m> for all <m>k\in\mathbb N</m>. This means that the statement is true for <m>n=k+1</m>.
 </p></li>
 </ul>
 Therefore, by mathematical induction, we see that the statement is true for all <m>n\in\mathbb N</m>.
