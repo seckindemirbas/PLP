@@ -19,7 +19,7 @@ The inductive hypothesis tells us that <m>x_1+x_2+\dots+x_k\in\mathbb{Q}</m>. Bu
 <solution>
 <proof>
 <p>
-Let <m>n\in\mathbb{N}</m>. Suppose <m>n=2</m>, and that <m>x_1,x_2\in\mathbb{Q}</m>. Then there are <m>a_1,a_1,b_1,b_2\in\mathbb{Z}</m> with <m>b_1\neq0</m> and <m>b_2\neq0</m> so that <m>x_1=a_1/b_1</m> and <m>x_2=a_2/b_2</m>.
+Let <m>n\in\mathbb{N}</m>. Suppose <m>n=2</m>, and that <m>x_1,x_2\in\mathbb{Q}</m>. Then there are <m>a_1,a_2,b_1,b_2\in\mathbb{Z}</m> with <m>b_1\neq0</m> and <m>b_2\neq0</m> so that <m>x_1=a_1/b_1</m> and <m>x_2=a_2/b_2</m>.
 Then
 <me> x_1+x_2 = \frac{b_2a_1+b_1a_2}{b_1b_2} </me>
 where <m>b_2a_1+b_1a_2,b_1b_2\in\mathbb{Z}</m> with <m>b_1b_2\neq0</m>. Thus <m>x_1+x_2\in\mathbb{Q}</m>.
