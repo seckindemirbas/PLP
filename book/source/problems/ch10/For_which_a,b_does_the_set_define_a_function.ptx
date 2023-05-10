@@ -47,6 +47,17 @@ for every <m>x \in \mathbb{Z}</m>. Setting <m>x=0</m> immediately tells us that 
 That is, <m>\phi</m> is a function provided <m>b \in \set{1,2,3,6}</m> (that is <m>b \mid 6</m>) and <m>b \mid a</m>.
 </p>
 
+<p>
+  Now, strictly speaking we have shown that if <m>\phi</m> is a function, then we have <m>b \mid 6, b\mid a</m>. We can also readily show that when <m>b \mid 6, b \mid a</m> then <m>\phi</m> is a function. 
+</p>
+<p>
+  So now assume that <m>b \mid 6, b \mid a</m>, and sot <m>6=kb, a=\ell b</m> for integers <m>k,\ell</m>. Hence
+  <me>
+    y = \frac{6-ax}{b} = \frac{kb - \ell b x}{b} = k-\ell x
+  </me>
+  and thus if <m>x \in \mathbb{Z}</m> then <m>y \in \mathbb{Z}</m>, and so we have a function.
+</p>
+
 </answer>
 <solution>
 <p>
@@ -61,7 +72,23 @@ Since this has to be true for any <m>x\in \mathbb Z</m>, we see that it has to b
 </p>
 <p>
 This also means that for <m>\phi</m> for be a function <m>\dfrac{ax}{b}</m> must also be an integer, that is <m>b \mid ax</m>. Setting <m>x=1</m> tells us that <m>a</m> must be a multiple of <m>b</m> as claimed.
-</p></proof>
+</p>
+
+<p>
+  Now assume that <m>b \mid 6</m> and <m>b \mid a</m>, so that <m>6 =
+  b k, a = b \ell</m> for some <m>k,\ell \in \mathbb{Z}</m>. Notice
+  that <m>k \neq 0</m>. Then the condition that <m>ax+by=6</m> becomes
+  <me>
+    \ell b x + b y = b k
+  </me>
+  and dividing through by <m>k</m> we have
+  <me>
+    \ell x + y = k
+  </me>
+  or <m>y=k-\ell x</m>. Then for any <m>x \in \mathbb{Z}</m> we know that <m>y \in \mathbb{Z}</m> and so <m>\phi</m> is a function.  
+</p>
+
+</proof>
 
 </solution>
 </exercise>
