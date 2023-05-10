@@ -43,12 +43,12 @@ Note: Order of the quantifiers matters.
 \[ \forall x\in\mathbb R, \forall y\in\mathbb R, (\forall z>0, |x-y|<z)\implies (x=y).  \]
 Hint: How can you rewrite the statement?
 
-\item Let $\mathbb I$ denote the set of irrationals. Prove that $\forall x\in\mathbb I$, $(k\in\mathbb Q\implies \dfrac{x}{k}\in\mathbb I)$.
+\item Let $\mathbb I$ denote the set of irrationals. Prove that $\forall x\in\mathbb I$, $\left(k\in\mathbb{Q}\setminus\set{0}\implies \dfrac{x}{k}\in\mathbb I\right)$.
 
 Now, use this result, and the fact that $\pi\in\mathbb I$ to show
 \[\forall n\in\mathbb N, \exists y\in\mathbb I \st x>y>0.\]
 
-\item Let $A$ be a set. We say that a function $f: A\to \mathbb R$ is bounded if $\exists m\in\mathbb R, \st \forall x\in A,\  |f(x)|\leq M$.
+\item Let $A$ be a set. We say that a function $f: A\to \mathbb R$ is bounded if $\exists M\in\mathbb R, \st \forall x\in A,\  |f(x)|\leq M$.
 
 Use this definition to show that $f:\mathbb R\to \mathbb R$ defined as $f(x)=3x-7$ is not bounded.
 
@@ -57,7 +57,7 @@ Hint: If the statement above is the definition of a bounded function, what shoul
 \item Fact: $\forall x\in\mathbb R$, $\exists n\in\mathbb N$, s.t. $n\geq x$.
 
 Use this fact to show
-\[\forall \epsilon>0, \exists N\in\mathbb N \st \forall n\in\mathbb N,\ \dfrac{1}{n}<\epsilon.\] 
+\[\forall \epsilon>0, \exists N\in\mathbb N \st \forall n\in\mathbb N,\ (n > N) \implies \left(\dfrac{1}{n}<\epsilon \right).\] 
 Hint: For $\epsilon, n>0$, we have $(\frac 1n<\epsilon) \iff (\frac{1}{\epsilon}<n)$.
 
 \end{enumerate}

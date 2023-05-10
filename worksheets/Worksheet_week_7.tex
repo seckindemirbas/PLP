@@ -79,7 +79,12 @@ Hint: The last example from last lecture may be useful here.
 Let $a\in \mathbb R$.
 \begin{enumerate}
 \item On the $xy$-plane, draw the set $A_a= \{(x, x^2-ax),\, x\in \mathbb R\}$ when $a=0$, $a=1$ and $a=2$.
-\item Show that $\bigcap_{a\in \mathbb R} A_a=\{(0,0)\}$.
+\item Now define 
+  \begin{align*}
+    \bigcap_{a\in \mathbb R} A_a &= \set{(u,v) \mid \forall a \in \mathbb{R}, (u,v) \in A_a}
+  \end{align*}
+  Show that $\bigcap_{a\in \mathbb R} A_a=\{(0,0)\}$.
+
 \end{enumerate}
 
 Hint: What does it mean for a point to be in the intersection?
@@ -107,8 +112,8 @@ Let $A$, $B$  and $C$ be sets. For each of the following statements, either prov
 
 Hint: First try this with small sets.
 
-\item (Old final question: this is a tricy one) Let $T$ be the set of all natural numbers that can be written as some nonnegative
-number of $3$’s plus some nonnegative number of $5$’s. For example, $9 = 3 + 3 + 3$ and
+\item (Old final question: this is a tricky one) Let $T$ be the set of all natural numbers that can be written as some nonnegative integer
+number of $3$’s plus some nonnegative integer number of $5$’s. For example, $9 = 3 + 3 + 3$ and
 $10 = 5 + 5$ and $17 = 3 + 3 + 3 + 3 + 5$ are all in $T$, but $4$ is not. Find $\mathbb N-T$ (with
 justification).
 
@@ -139,7 +144,7 @@ Hint: Try to figure out which numbers are in the set, and then try to generalize
 %}
 
 
-\item Let $S$ be a set and, $A_\alpha$'s be sets for all $\alpha\in S$. Then, we can define the sets
+\item Let $S$ be a set and $A_\alpha$'s be sets for all $\alpha\in S$. Then, we can define the sets
 
 \begin{itemize}
 \item $\bigcap\limits_{\alpha\in S} A_\alpha=\{ x\mid \forall \alpha\in S,  x\in A_\alpha  \}$
@@ -151,7 +156,7 @@ Use these definitions to find the sets
 \item $\bigcap\limits_{x\in \mathbb R} (1-x^2, 2+x^2) $
 
 Hint: $\big(=[1,2]\big)$
-\item $\bigcup\limits_{x\in (0,1)} [1+x^2, 2-x] $
+\item $\bigcup\limits_{x\in (0,1/2)} [1+x^2, 2-x] $
 
 Hint: $\big(=(1,2)\big)$.
 \end{enumerate}
