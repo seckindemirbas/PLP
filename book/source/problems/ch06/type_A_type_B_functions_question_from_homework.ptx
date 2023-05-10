@@ -11,7 +11,7 @@ Let <m>f:\mathbb{R}\rightarrow\mathbb{R}</m> and <m>g:\mathbb{R}\to \mathbb{R}</
   </p></li>
 <li>
 <p>
- we say that <m>g</m> is <em>type B</em> if <m>\exists x\in\mathbb R</m> such that <m>\forall y\in\mathbb R</m>, if <m>y\geq x</m>, then <m>|f(y)|\geq 1</m>.
+ we say that <m>g</m> is <em>type B</em> if <m>\exists x\in\mathbb R</m> such that <m>\forall y\in\mathbb R</m>, if <m>y\geq x</m>, then <m>|g(y)|\geq 1</m>.
 </p></li>
 </ul>
 Prove or find a counterexample for the following statements.

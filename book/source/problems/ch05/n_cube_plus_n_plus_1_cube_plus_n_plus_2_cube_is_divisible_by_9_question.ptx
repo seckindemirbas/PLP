@@ -13,10 +13,10 @@ Expand the cubes and simplify the sum
 </hint>
 <solution>
 <p>
-We see that this is a conditional statement, so we can assume the hypothesis and try to show the conclusion. This means that we assume that <m>n\in\mathbb Z</m> and show that <m>n^3+(n+1)^3+(n+2)^3</m> is divisible by <m>9</m>. Since the hypothesis is very broad, this suggests that we use proof by cases; and since the result is about divisibility by <m>9</m>, this suggests that we use <m>9</m> cases using division algorithm. But, this looks too much.
+We see that this is a conditional statement, so we can assume the hypothesis and try to show the conclusion. This means that we assume that <m>n\in\mathbb Z</m> and show that <m>n^3+(n+1)^3+(n+2)^3</m> is divisible by <m>9</m>. Since the hypothesis is very broad, this suggests that we use proof by cases; and since the result is about divisibility by <m>9</m>, this suggests that we use <m>9</m> cases using division algorithm. Oof! That sounds ugly.
 </p>
 <p>
-What we can do is to rewrite what we want to show and see whether it simplifies. We see
+  Instead, let's try to rewrite what we want to show and see if it can be simplified. Notice that 
 <md>
 <mrow>
 n^3+(n+1)^3+(n+2)^3 \amp =n^3+(n^3+3n^2+3n+1)+(n^3+6n^2+12n+8)
@@ -28,7 +28,7 @@ n^3+(n+1)^3+(n+2)^3 \amp =n^3+(n^3+3n^2+3n+1)+(n^3+6n^2+12n+8)
  \amp =3n(n^2+5)+9(n^2+1).
 </mrow>
 </md>
-This means that all we need to do is to show <m>3n(n^2+5)+9(n^2+1)=9k</m> for some <m>k\in\mathbb Z</m>. Rewriting this, we see that we want to show <m>3n(n^2+5)=9t</m> for some <m>t\in\mathbb Z</m>, i.e. <m>3\mid n(n^2+5)</m>. Even though this would still require cases, now we would be done with only <m>3</m> cases since we are now dealing with divisibility by <m>3</m>. Let's see how we can make use of this in the proof.
+This means that all we need to do is show that <m>3n(n^2+5)+9(n^2+1)=9k</m> for some <m>k\in\mathbb Z</m>. In fact since one of the terms on the LHS is already a multiple of <m>9</m>, we only need to show that <m>3n(n^2+5)=9t</m> for some <m>t\in\mathbb Z</m>, i.e. <m>3\mid n(n^2+5)</m>. Even though this still requires cases, we now only need 3. Let's see how we can make use of this in the proof.
 </p>
 
 <proof><p>

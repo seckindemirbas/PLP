@@ -27,7 +27,7 @@ However, we are not allowed to use triangle inequality in this question. This me
 It is quite common to think here to look at cases <m>x\lt -4</m>, <m>x\geq 4</m>, <m>x\lt 3</m>, and <m>x\geq 3</m>. However, this is not the most efficient way to divide this hypothesis into cases since even when we look at <m>x\geq -4</m>, we need to consider the sign of <m>x-3</m>. This means that within some of the cases, we may have extra cases to consider.
 </p>
 <p>
-Instead, we can divide these into <m>3</m> cases: <m>x\lt 4</m>, <m>-4\leq x\leq 3</m>, and <m>x\gt 3</m>. This is more efficient since the expressions <m>(x+4)</m> and <m>(x-3)</m> do not change signs in the intervals <m>(-\infty,-4)</m>, <m>[-4, 3]</m>, and <m>(3,\infty)</m>.
+Instead, we can divide these into <m>3</m> cases: <m>x\lt -4</m>, <m>-4\leq x\leq 3</m>, and <m>x\gt 3</m>. This is more efficient since the expressions <m>(x+4)</m> and <m>(x-3)</m> do not change signs in the intervals <m>(-\infty,-4)</m>, <m>[-4, 3]</m>, and <m>(3,\infty)</m>.
 </p>
 <p>
 Let's see how this works in the proof.
