@@ -167,24 +167,38 @@ Therefore $D_1\subseteq D_2$.
 }
 
 
-\item Prove that the function $f : \mathbb R-\set{1}\rightarrow \mathbb R-\set{2}$ given by $f(x)=\dfrac{2x}{x-1}$ is bijective.
+\item Prove that the function $f : \mathbb R-\set{2/5}\rightarrow \mathbb R-\set{-3/5}$ given by $f(x)=\dfrac{3x}{2-5x}$ is bijective.
 
 \soln{
 
-\textbf{Proof}: Let  $f : \mathbb R-\set{1}\rightarrow\mathbb R=\set{2}$, be  defined by $f(x)=\dfrac{2x}{x-1}$. Then we want to show that $f$ is both injetive and surjective.
+  \textbf{Proof}: Let
+  $f : \mathbb R-\set{1}\rightarrow\mathbb R=\set{2}$, be defined by
+  $f(x)=\dfrac{3x}{2-5x}$. Then we want to show that $f$ is both
+  injetive and surjective.
 
-\textbf{$f$ is injective}: Assume that $a,z\in\mathbb \mathbb R-\set{1}$, and $f(x)=f(z)$. This means that $\dfrac{2x}{x-1}=\dfrac{2z}{z-1}$.
+\textbf{$f$ is injective}: Assume that $a,z\in\mathbb \mathbb R-\set{2/5}$, and $f(x)=f(z)$. This means that $\dfrac{3x}{2-5x}=\dfrac{3z}{2-5z}$.
 
-Thus, we see that $(2x)(z-1)=(2z)(x-1)$. By expanding the products we get $2xz-2x=2xz-2z$, which implies $x=z$. Hence, $f$ is injective.
+Thus, we see that $(3x)(2-5z)=(3z)(2-5x)$. By expanding the products we get $6x-15xz = 6z-15zx$, which implies $x=z$. Hence, $f$ is injective.
 
-\textbf{$f$ is surjective}: Let $y\in\mathbb R-\set{2}$. Then, we want to find $x\in\mathbb R-\set{1}$, such that $f(x)=\dfrac{2x}{x-1}=y$.
+\textbf{$f$ is surjective}: Let $y\in\mathbb R-\set{-3/5}$. Then, we want to find $x\in\mathbb R-\set{2/5}$, such that $f(x)=\dfrac{3x}{2-5x}=y$.
 
-By rearranging the terms we see that we want to find $x\in\mathbb R-\set{1}$, such that $2x=yx-y$. By further rearranging, we see that $x=\dfrac{y}{y-2}$. Since $y\neq 2$, we see that $x$ is well-defined and also $x\neq 1$. Therefore, we see that for $x=\dfrac{y}{y-2}$, we have $f(x)=y$.
+By solving the equation for \(x\) we need \(x=2y/(5y+3)\). Since \(y \neq -3/5\) we see that \(x\) exists. Further since (by partial fractions)
+\begin{align*}
+  x = \frac{2y}{5y+3} = \frac{2}{5} - \frac{6/5}{5y+3}
+\end{align*}
+where this last term is non-zero, we know that \(x \neq 2/5\).
 
-Hence, $f$ is surjective.
+We can then verify that
+\begin{align*}
+  f(x) &= \frac{3x}{2-5x} \\
+       &= \frac{6y/(5y+3)}{2 - 10y/(5y+3)} \\
+       &= \frac{6y}{10y+6-10y} = y
+\end{align*}
+as required.
+
+Hence for any \(y\) in the codomain there is some \(x\) in the domain so that \(f(x)=y\). Thus \(f\) is surjective.
 
 Therefore $f$ is bijective.
-
 }
 
 \item  In this question, correct answers without justifications are not sufficient.
