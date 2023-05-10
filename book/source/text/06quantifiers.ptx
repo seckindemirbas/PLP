@@ -1680,11 +1680,11 @@ we know that the distance between the function and its limit is smaller than <m>
     <p>
       Again, our starting point is to look at the definition. We need to prove that
     <me>
-    \forall\epsilon \gt 0, \exists \delta \gt 0 \st (0\gt |x-a| \gt \delta)\implies (|(3x+5)-(3a+5)| \lt \epsilon).
+    \forall\epsilon \gt 0, \exists \delta \gt 0 \st (0\lt |x-a| \lt \delta)\implies (|(3x+5)-(3a+5)| \lt \epsilon).
     </me>
     Before we go much further, we should clean this up a little. We can simplify that last inequality. That is <m>|(3x+5)-(3a+5)| = |3x-3a| = 3|x-a|</m>, so
     <me>
-    \forall\epsilon \gt 0, \exists \delta \gt 0 \st (0\gt |x-a| \gt \delta)\implies (3|x-a| \lt \epsilon).
+    \forall\epsilon \gt 0, \exists \delta \gt 0 \st (0\lt |x-a| \lt \delta)\implies (3|x-a| \lt \epsilon).
     </me>
     </p>
     <p>
