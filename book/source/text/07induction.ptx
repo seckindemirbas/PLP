@@ -1225,7 +1225,7 @@ then <m>P(n)</m> is true for all <m>n \in S</m>.
 <example><title>A game of taking away</title>
 <p>
   Let <m>n</m> be a natural number. Two players place <m>n</m> balls
-  in a box. The players take it in turn removing either one, two or
+  in a box. The players take turns removing either one, two or
   three balls from the box. The player two removes the last ball loses.
 </p>
 <p>
