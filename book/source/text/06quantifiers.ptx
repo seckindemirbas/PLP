@@ -1776,7 +1776,7 @@ we know that the distance between the function and its limit is smaller than <m>
       <me>
         (|x-2| \lt 6) \implies \left(\left|\frac{1}{x}-\frac{1}{2}\right| \lt 3\right).
       </me>
-      Unfortuantely this is false. We could take, say <m>x=\frac{1}{10}=0.1</m>, and then the hypothesis is true, since <m>|x-2|=1.9 \lt 5</m>, but the conclusion is false since <m>\left|\frac{1}{x}-\frac{1}{2}\right| = |10-0.5| = 9.5 \gt 3</m>.
+      Unfortuantely this is false. We could take, say <m>x=\frac{1}{10}=0.1</m>, and then the hypothesis is true, since <m>|x-2|=1.9 \lt 6</m>, but the conclusion is false since <m>\left|\frac{1}{x}-\frac{1}{2}\right| = |10-0.5| = 9.5 \gt 3</m>.
     </p>
     <p>
       What went wrong? Remember to make our bound on <m>|x|</m> we required that <m>|x-2|\lt 1</m>. This is the same as requiring that <m>\delta\leq 1</m>. So we have actually imposed two requirements on <m>\delta</m>. We need both <m>\delta \leq 1</m> <em>and</em> <m>\delta \leq 2\epsilon</m>. To enforce both of these we can pick
