@@ -376,7 +376,7 @@ We make it easy for them to read and verify the proof.
           <li>Base case. When <m>n=1</m>, the polynomial gives <m>1+5-7 = -1</m>. Hence the base case is true.</li>
           <li>
             <p>
-              Inductive step. Assume that <m>k^2+5k-7</m> is odd, and so <m>k^2+5k-7 = 2\ell</m>. Then
+              Inductive step. Assume that <m>k^2+5k-7</m> is odd, and so <m>k^2+5k-7 = 2\ell+1</m>. Then
               <me>(k+1)^2 + 5(k+1)-7 = 2k+6 + (k^2+5k-7) = 2(k+3)+2\ell+1</me>
               and hence is also odd.
             </p>
