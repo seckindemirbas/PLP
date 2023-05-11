@@ -18,7 +18,7 @@
     <equations level="1"/>
     <footnotes level="0"/>
   </numbering>
-  <latex print="no" sides="one">
+  <latex print="no" sides="one" font-size="12">
   </latex>
   
   <html>
