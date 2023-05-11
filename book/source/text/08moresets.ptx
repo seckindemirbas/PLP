@@ -868,11 +868,7 @@ And, as you'll see in the examples below, a quick sketch of Venn diagrams can he
 </mrow><mrow>
     A-(B\cup C) &amp;= (A-B)\cap(A-C)
 </mrow><mrow>
-    A-(B-C) &amp;= (A \cap C)-(A-B)
-</mrow><mrow>
-    A-(B \cap C) &amp;= (A-B) \cup (A-C)
-</mrow><mrow>
-    A-(B \cup C) &amp;= (A-B) \cap (A-C)
+    A-(B-C) &amp;= (A \cap C) \cup (A-B)
   </mrow>
 </md>
 </p></statement>

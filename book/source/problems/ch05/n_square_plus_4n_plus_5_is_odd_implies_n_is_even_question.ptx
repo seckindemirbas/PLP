@@ -30,8 +30,10 @@ This immediately looks like a simpler statement since the hypothesis in on <m>n<
 </p>
 </answer>
 <solution>
-<proof><p>
-(Proof by contrapositive) Assume that <m>n</m> is odd. Then we see that <m>n=2k+1</m> for some <m>k\in \mathbb{Z}</m>. Thus, <m>n^2+4n+5=(2k+1)^2+4(2k+1)+5=2(2k^2+6k+3)</m>. Since <m>(2k^2+6k+3)\in\mathbb Z</m>, we see that <m>n^2+4n+5</m> is even.
+<proof><p> (Proof by contrapositive) Assume that <m>n</m> is odd. Then
+we see that <m>n=2k+1</m> for some <m>k\in \mathbb{Z}</m>. Thus,
+<m>n^2+4n+5=(2k+1)^2+4(2k+1)+5=2(2k^2+6k+5)</m>. Since
+<m>(2k^2+6k+5)\in\mathbb Z</m>, we see that <m>n^2+4n+5</m> is even.
 </p></proof>
 
 <p>

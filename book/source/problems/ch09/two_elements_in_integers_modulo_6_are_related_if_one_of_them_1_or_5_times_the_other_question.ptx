@@ -10,7 +10,7 @@ Suppose that <m>n \in \mathbb{N}</m> and <m>\mathbb{Z}_n</m> is the set of equiv
 </me>
 Now, define a relation <m>R</m> on <m>\mathbb{Z}_n</m> by
 <me>
-  [x]_n \rel [y]_n \iff [x]_n[u]_n=[y]_n \text{ for some invertible } [u]_n\in \mathbb{Z}_n.
+  [x]_n \;R\; [y]_n \iff [x]_n[u]_n=[y]_n \text{ for some invertible } [u]_n\in \mathbb{Z}_n.
 </me>
 <ol marker="(a)">
 <li>

@@ -332,7 +332,7 @@ With a little work (and some proofs!) we can show that the following table holds
 </li>
 <li> Symmetric <mdash/> Let <m>a,b\in \mathbb{Z}</m> so that <m>a \rel b</m>. We know that <m>2 \mid a-b</m> and so we can write <m>a-b = 2k</m> for some <m>k \in \mathbb{Z}</m>. But then <m>b-a=2(-k)</m>, and so <m>2\mid (b-a)</m> and thus <m>b \rel a</m>.
 </li>
-<li> Transitive <mdash/> Let <m>a,b,c\in \mathbb{Z}</m> with <m>a\rel b</m> and <m>b \rel c</m>. Thus we know that <m>a-b = 2k</m> and <m> b-c = 2\ell</m> for some integer <m>k,\ell </m>. But then <m>a-c = 2(k-\ell)</m> and thus <m> 2\mid (a-c)</m>. Hence <m>a \rel c</m> as required.
+<li> Transitive <mdash/> Let <m>a,b,c\in \mathbb{Z}</m> with <m>a\rel b</m> and <m>b \rel c</m>. Thus we know that <m>a-b = 2k</m> and <m> b-c = 2\ell</m> for some integer <m>k,\ell </m>. But then <m>a-c = 2(k+\ell)</m> and thus <m> 2\mid (a-c)</m>. Hence <m>a \rel c</m> as required.
 </li>
 </ul>
 </p>
