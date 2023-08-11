@@ -365,10 +365,10 @@ Another student flavoured example.
   <ul>
 <li> Reflexive <mdash/> It is reflexive since each student is less than 2m from themselves.
 </li>
-<li> Symmetric <mdash/> It is symmetric, because if student <m>a</m> is less than 2m from student <m>b</m>, then <m>b</m> is less then 2m from <m>a</m>.
+<li> Symmetric <mdash/> It is symmetric, because if student <m>a</m> is less than 2m from student <m>b</m>, then <m>b</m> is less than 2m from <m>a</m>.
 </li>
-<li> Transitive <mdash/> It is not transitive, just because <m>a</m> is 2m from <m>b</m> and <m>b</m> is 2m <m>c</m>, it does not mean that <m>a</m> is 2m from <m>c</m>.
-    If the the students are arranged in a line with 1.5m between each of them, then <m>a</m> is 3m from <m>c</m>.
+<li> Transitive <mdash/> It is not transitive, just because <m>a</m> is 2m from <m>b</m> and <m>b</m> is 2m from <m>c</m>, it does not mean that <m>a</m> is 2m from <m>c</m>.
+    If the students are arranged in a line with 1.5m between each of them, then <m>a</m> is 3m from <m>c</m>.
 </li>
 </ul>
 </p></example>
@@ -518,7 +518,7 @@ Another example:
         <m>\frac{c}{d}\rel \frac{a}{b}</m>. So the relation is symmetric.
       </p></li>
       <li><p>
-        Transitive <mdash /> Let <m>\frac{a}{b}, \frac{c}{d}, \frac{x}{y} \in F</m>. Assume that <m>\frac{a}{b}\rel \frac{c}{d}</m> and <m>\frac{c}{d} \rel \frac{e}{f}</m>. Hence we know that
+        Transitive <mdash /> Let <m>\frac{a}{b}, \frac{c}{d}, \frac{e}{f} \in F</m>. Assume that <m>\frac{a}{b}\rel \frac{c}{d}</m> and <m>\frac{c}{d} \rel \frac{e}{f}</m>. Hence we know that
         <me>
           ad=bc \qquad \text{ and } \qquad cf=de.
         </me>
@@ -767,7 +767,7 @@ We'll call this result a corollary.
 
 <proof>
 <p>
-  Let <m>R</m> be an equivalence class on <m>A</m> and let <m>x,y \in A</m>.
+  Let <m>R</m> be an equivalence relation on <m>A</m> and let <m>x,y \in A</m>.
   Now form the set <m>B = [x] \cap [y]</m>.
   Either this set is empty or not.
 </p>
@@ -775,7 +775,7 @@ We'll call this result a corollary.
 <p>  <ul>
 <li> If <m>B = \es</m> then there is nothing left to prove.
 </li>
-<li> On the other hand, if <m>B</m> is non-empty, then there must be some element <m>a \in B</m>.
+<li> On the other hand, if <m>B</m> is non-empty, then there must be some element <m>b \in B</m>.
     Hence <m>b \in [x]</m>, so <m>b \rel x</m> and by symmetry of <m>R</m> we know <m>x \rel b</m>.
     Now, since <m>b\in [y]</m>, we have <m>b \rel y</m>.
     By transitivity of <m>R</m>, <m>x \rel y</m>.
@@ -846,7 +846,7 @@ We'll call this result a corollary.
       <me>
         (a,b) \rel (c,d) \iff a+d=c+b
       </me>
-      Show that is is an equivalence relation and determine its equivalence classes.
+      Show that is an equivalence relation and determine its equivalence classes.
     </p>
   </statement>
   <solution>
@@ -979,7 +979,7 @@ Where the union <m>\ds \bigcup_{X \in \mathcal{P}} X</m> is the union of all the
 
 
 <p>
-  Given an equivalence relation we can prove that it equivalence classes form a set partition.
+  Given an equivalence relation we can prove that its equivalence classes form a set partition.
 </p>
 <theorem>
 <statement><p>
@@ -1038,7 +1038,7 @@ It is not too hard to prove that this relation is an equivalence relation.
 </li>
 <li> Symmetric <mdash/> Let <m>x \rel y</m>, so we know that <m>x, y</m> lie in the same piece of the partition. Hence we must also have <m>y \rel x</m>.
 </li>
-<li> Transitive <mdash/> Let <m>x \rel y</m> and <m>y \rel z</m>. Then there must be <m>X,Y \in \mathcal{P}</m> so that <m>x,y \in X</m> and <m>y,z \in Y</m>. Hence <m>X \cap Y \neq \es</m> (since it contains <m>y</m>. Since <m>\mathcal{P}</m> is a partition, we know that <m>X \cap Y = \es</m> or <m>X=Y</m>. Hence <m>X=Y</m> and so <m>x,z \in X</m>. Thus <m>x \rel z</m> as required.
+<li> Transitive <mdash/> Let <m>x \rel y</m> and <m>y \rel z</m>. Then there must be <m>X,Y \in \mathcal{P}</m> so that <m>x,y \in X</m> and <m>y,z \in Y</m>. Hence <m>X \cap Y \neq \es</m> (since it contains <m>y</m>). Since <m>\mathcal{P}</m> is a partition, we know that <m>X \cap Y = \es</m> or <m>X=Y</m>. Hence <m>X=Y</m> and so <m>x,z \in X</m>. Thus <m>x \rel z</m> as required.
 </li>
 </ul>
 </p>
@@ -1094,7 +1094,7 @@ By Theorem<nbsp/><xref ref="thm_congrent_er"/>, congruence modulo <m>n</m> is an
   <me>
     c \in [a] \qquad \text{and} \qquad d \in [b],
   </me>
-  where <m>[x]</m> denotes the equivalence class of <m>a</m> under congruence modulo <m>n</m>.
+  where <m>[x]</m> denotes the equivalence class of <m>x</m> under congruence modulo <m>n</m>.
   Then
   <md>
   <mrow>
@@ -1757,7 +1757,7 @@ For example
 
 <algorithm xml:id="alg-euc"><title>The Euclidean algorithm</title>
   <statement>
-    <p>Let <m>a,b \in \mathbb{Z}</m> with <m>|a|\geq |b|</m> and at least one of <m>a,b</m> non-zero. Then <m>\gcd(a,b)</m> can be computing using the following steps:
+    <p>Let <m>a,b \in \mathbb{Z}</m> with <m>|a|\geq |b|</m> and at least one of <m>a,b</m> non-zero. Then <m>\gcd(a,b)</m> can be computed using the following steps:
     <ol>
       <li>If <m>b=0</m> then the gcd is <m>a</m>, otherwise go on to (2)</li>
       <li>Compute the remainder of <m>a</m> divided by <m>b</m>, that is <m>a = qb + r</m> with <m>0 \leq r \lt |b|</m>.</li>
@@ -2197,7 +2197,7 @@ For example
   </p>
   <proof>
     <p>
-      Let <m>n \in \mathbb{Z}</m> so that <m>n \geq 2</m>. We use induction to prove that <m>n</m> can be decomposed as a product of primes. We then show that this decomposition is unqiue.
+      Let <m>n \in \mathbb{Z}</m> so that <m>n \geq 2</m>. We use induction to prove that <m>n</m> can be decomposed as a product of primes. We then show that this decomposition is unique.
     </p>
     <p>
       We proceed to show the existence of a prime factorisation by <xref ref="subsec-stronginduction">strong induction</xref>.

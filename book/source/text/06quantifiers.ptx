@@ -202,7 +202,7 @@ there is an implicit assumption that we actually mean
 
 <blockquote>
 <p>
-  For all <m>n</m>, if <m>n</m> is even then <m>n^2</m> is true.
+  For all <m>n</m>, if <m>n</m> is even then <m>n^2</m> is even.
 </p>
 </blockquote>
 
@@ -278,7 +278,7 @@ Explain whether the following statements are true
   Let us think about each in turn.
 <ul>
 <li><p>
-  In order for this to be true we need to find at least one integer <m>n</m> that makes <m>P(n)</m> to be true. For example, setting <m>n=0</m>gives
+  In order for this to be true we need to find at least one integer <m>n</m> that makes <m>P(n)</m> to be true. For example, setting <m>n=0</m> gives
   <me>
     P(0): -2 \text{ is an integer}
   </me>
@@ -447,8 +447,8 @@ The domain of the quantifier remains unchanged when the statement is negated.
     <p>
       Determine whether or not the following statements are true or false and then prove your answer.
       <ol marker="a">
-        <li><m>\exists n \in \mathbb{Z}, \frac{n+7}{3} \in \mathbb{Z}</m>.</li>
-        <li><m>\exists n \in \mathbb{Z}, \frac{n^2+1}{4} \in \mathbb{Z}</m>.</li>
+        <li><m>\exists n \in \mathbb{Z} \st \frac{n+7}{3} \in \mathbb{Z}</m>.</li>
+        <li><m>\exists n \in \mathbb{Z} \st \frac{n^2+1}{4} \in \mathbb{Z}</m>.</li>
       </ol>
     </p>
   </statement>
@@ -1116,7 +1116,7 @@ We will start with the idea of the limit of a sequence, and then move on to limi
 </p>
 
 <p>
-  Typically one can compute the first few terms of a sequence by hand, and then the next many terms by computer. However, we are very often interested in the the behaviour of the terms of the sequence as <m>n</m> becomes very large. So, for example, consider the sequences
+  Typically one can compute the first few terms of a sequence by hand, and then the next many terms by computer. However, we are very often interested in the behaviour of the terms of the sequence as <m>n</m> becomes very large. So, for example, consider the sequences
   <md alignment="alignat" alignat-columns="4">
   <mrow>
   (a_n) \amp = \left( \frac{1}{n}\right)_n \amp = \amp \left(1, \frac{1}{2}, \frac{1}{3}, \frac{1}{4}, \dots \right)
@@ -1176,7 +1176,7 @@ That is, Player 2 can set some point in the sequence <m>N = \frac{1}{\epsilon}</
 <p>
   If we now try to play the same game with the second sequence <m>(b_n) = \left( (-1)^n \right)</m>, then we will quickly see that it does not work. Let us attempt to show that the sequence converges to <m>1</m> using the same game
   <ul>
-  <li>Player 1 says <q>Make the distance between <m>a_n</m> and <m>1</m> smaller than <m>0.01</m>.</q></li>
+  <li>Player 1 says <q>Make the distance between <m>b_n</m> and <m>1</m> smaller than <m>0.01</m>.</q></li>
   <li>Player 2 does some thinking and replies <q>Well, if <m>n</m> is even then this will be true, but it will fail for every single odd value of <m>n</m>. I cannot give you a guarantee.</q></li>
   </ul>
   Player 2 cannot win. When <m>n</m> is even, <m>b_n=1</m> and so <m>|b_n-1|=0 \lt 0.01</m>, but when <m>n</m> is odd, <m>b_n=-1</m> and so <m>|b_n-1|=2 \gt 0.01</m>. So there is no way to make <m>n</m> sufficiently big, ie all <m>n</m> bigger than some <m>N</m>, so that <m>|b_n - 1| \lt 0.01</m>. We can rephrase this outcome as
@@ -1536,7 +1536,7 @@ or similar. Simply saying that such number <em>should</em> exist is not an adequ
   </p>
 </proof>
   <p>
-    Notice how short the proof is compared to the scratch work. This is not unsusal. A nice neat proof can hide a lot of work.
+    Notice how short the proof is compared to the scratch work. This is not unusual. A nice neat proof can hide a lot of work.
   </p>
 
   </solution>
@@ -1553,7 +1553,7 @@ or similar. Simply saying that such number <em>should</em> exist is not an adequ
 
   <p>
     We define the limits of functions in very much the same way as the limits of sequences.
-    The definition is more general, as now we can talk of the limit of a function as its argument approaches a more general points, while for a sequence, we only talked of its behaviour as <m>n \to \infty</m>. Let's give the definition and then we'll explain it.
+    The definition is more general, as now we can talk of the limit of a function as its argument approaches more general points, while for a sequence, we only talked of its behaviour as <m>n \to \infty</m>. Let's give the definition and then we'll explain it.
   </p>
 <definition xml:id="def-convergence-function">
   <statement>
@@ -1634,7 +1634,7 @@ we know that the distance between the function and its limit is smaller than <m>
       In this example we want to show that the function <m>f(x)=x</m> converges to the limit <m>a</m> as <m>x</m> goes to <m>a</m>. Even though this feels more like a tautology than an example, it is a good exercise in applying the limit definition.
     </p>
     <p>
-      To prove that <m>\lim_{x\to a}x = a</m> the definiton tells us that we need to show that
+      To prove that <m>\lim_{x\to a}x = a</m> the definition tells us that we need to show that
       <me>
       \forall\epsilon \gt 0, \exists \delta\st 0 \st \left(0\lt |x-a|\lt \delta\right)\implies \left(|f(x)-L| \lt \epsilon \right).
       </me>
@@ -1772,11 +1772,11 @@ we know that the distance between the function and its limit is smaller than <m>
     </me>
     </p>
     <p>
-      At this point it  seems that we can choose any <m>\delta \leq 2 \epsilon</m>, but this is not quite right. Say, we chose a large value of <m>\epsilon</m>, like <m>\epsilon=3</m>, and so we could pick <m>\delta = 2\epsilon=6</m>. With that choice of <m>\epsilon</m> and <m>\delta</m>, the implication at the heart of the defintion of convergence becomes
+      At this point it  seems that we can choose any <m>\delta \leq 2 \epsilon</m>, but this is not quite right. Say, we chose a large value of <m>\epsilon</m>, like <m>\epsilon=3</m>, and so we could pick <m>\delta = 2\epsilon=6</m>. With that choice of <m>\epsilon</m> and <m>\delta</m>, the implication at the heart of the definition of convergence becomes
       <me>
         (|x-2| \lt 6) \implies \left(\left|\frac{1}{x}-\frac{1}{2}\right| \lt 3\right).
       </me>
-      Unfortuantely this is false. We could take, say <m>x=\frac{1}{10}=0.1</m>, and then the hypothesis is true, since <m>|x-2|=1.9 \lt 6</m>, but the conclusion is false since <m>\left|\frac{1}{x}-\frac{1}{2}\right| = |10-0.5| = 9.5 \gt 3</m>.
+      Unfortunately this is false. We could take, say <m>x=\frac{1}{10}=0.1</m>, and then the hypothesis is true, since <m>|x-2|=1.9 \lt 6</m>, but the conclusion is false since <m>\left|\frac{1}{x}-\frac{1}{2}\right| = |10-0.5| = 9.5 \gt 3</m>.
     </p>
     <p>
       What went wrong? Remember to make our bound on <m>|x|</m> we required that <m>|x-2|\lt 1</m>. This is the same as requiring that <m>\delta\leq 1</m>. So we have actually imposed two requirements on <m>\delta</m>. We need both <m>\delta \leq 1</m> <em>and</em> <m>\delta \leq 2\epsilon</m>. To enforce both of these we can pick

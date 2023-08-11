@@ -455,13 +455,13 @@ A good place to start is to take the inequality we know and try to make it look 
 </mrow><mrow>
   (1+x)^{k+1} &amp; \geq (1+kx)(1+x)
 </mrow><mrow>
-  &amp;= 1+(k+1)x + x^2
+  &amp;= 1+(k+1)x + kx^2
   </mrow>
 </md>
-Nearly there, we just need to get rid of this <m>x^2</m> term. We know <m>x^2 \geq 0</m>, so
+Nearly there, we just need to get rid of this <m>kx^2</m> term. We know <m>x^2 \geq 0</m>, so <m>kx^2 \geq 0</m> and hence
 <md>
   <mrow>
-  (1+x)^{k+1} \amp \geq 1+(k+1)x + x^2 \geq 1+(k+1)x
+  (1+x)^{k+1} \amp \geq 1+(k+1)x + kx^2 \geq 1+(k+1)x
  </mrow>
 </md>
 as required.
@@ -507,7 +507,7 @@ We don't have to go back and fix our scratch work, but we should make sure that 
 <mrow>
     (1+x)^k(1+x) &amp;\geq (1+kx)(1+x) \amp \text{factor left and expand right}
 </mrow><mrow>
-    (1+x)^{k+1} &amp; \geq 1+(k+1)x + x^2 &amp;\text{since }x^2\geq 0
+    (1+x)^{k+1} &amp; \geq 1+(k+1)x + kx^2 &amp;\text{since }x^2\geq 0
 </mrow><mrow>
     &amp;\geq 1+(k+1)x
   </mrow>
@@ -1002,7 +1002,7 @@ To prove this result we'll make use of the following fact (which you probably co
           <mrow>  \amp = 1 - \lim_{b \to \infty}e^{-b}</mrow>
           <mrow>  \amp = 1 - 0 = 1 = 0! </mrow>
           </md>
-          where we have used use <xref ref="fact-useful-limit"/> to evaluate the limit.
+          where we have used <xref ref="fact-useful-limit"/> to evaluate the limit.
           Hence the base case is true.
         </p>
       </li>
@@ -1124,8 +1124,8 @@ then <m>P(n)</m> is true for all <m>n \in S</m>.
 	<li>
 	  Now assume that the result holds for all
 	  <m>n=12,13,14\dots,k</m>, with <m>k\geq 14</m>, and so we
-	  can write <m>k-2 = 3a + 5b</m>. Then it follows that <m>k+1
-	  = 3+(k-2) = 3(a+1)+5b</m> and so has the required form. That
+	  can write <m>k-2 = 3a + 7b</m>. Then it follows that <m>k+1
+	  = 3+(k-2) = 3(a+1)+7b</m> and so has the required form. That
 	  is, since the result holds for all <m>n=12,\dots,k</m>, we
 	  know that it holds for <m>n=k+1</m>.
 	</li>
@@ -1189,7 +1189,7 @@ then <m>P(n)</m> is true for all <m>n \in S</m>.
 	Now assume that the result holds for bars of
 	<m>1,2,\dots,n</m> blocks, and then consider a bar of
 	<m>n+1</m> blocks. Say we split it into two pieces, one of
-	size one of size <m>k</m> and one of size <m>n+1-k</m> (with
+	size <m>k</m>, and one of size <m>n+1-k</m> (with
 	<m>k=1,2,\dots,n</m>). This takes <m>1</m> break, and we are
 	left with the problem of splitting up the bar of <m>k</m>
 	blocks and the bar of <m>n+1-k</m> blocks (as shown below).
@@ -1226,7 +1226,7 @@ then <m>P(n)</m> is true for all <m>n \in S</m>.
 <p>
   Let <m>n</m> be a natural number. Two players place <m>n</m> balls
   in a box. The players take turns removing either one, two or
-  three balls from the box. The player two removes the last ball loses.
+  three balls from the box. The player that removes the last ball loses.
 </p>
 <p>
   So for example, if there are 13 balls in the box, the game could play out as

@@ -375,7 +375,7 @@
     </tabular>
     By sweeping through diagonals <m>\swarrow \swarrow \swarrow</m> we list all the elements of <m>A\times B</m>:
     <me>
-      A\times B = \Big\{ (a_1,a_1), (a_2,a_1), (a_1,b_2), (a_3,b_1), (a_2,b_2), (a_1,b_3), \dots \Big\}
+      A\times B = \Big\{ (a_1,b_1), (a_2,b_1), (a_1,b_2), (a_3,b_1), (a_2,b_2), (a_1,b_3), \dots \Big\}
     </me>
     This list does not repeat, and any given <m>(a_k,b_n)</m> appears at finite position, so <m>A \times B</m> is denumerable.
   </p>

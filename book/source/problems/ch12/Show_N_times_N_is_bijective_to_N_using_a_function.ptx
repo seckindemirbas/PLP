@@ -39,7 +39,7 @@ We first show that the function is injective. So assume that <m>f(m_1,n_1)=f(m_2
 <m>2^{m_1-m_2} (2n_1-1) = 2n_2-1</m>. If <m>m_1\not=m_2</m>, then the left side is even but this contradicts the right side is odd. Thus, <m>m_1=m_2</m>. Then <m>2n_1-1=2n_2-1</m>, hence <m>n_1=n_2</m>. We conclude that <m>f</m> is injective.
 </p>
 <p>
-Now we show that <m>f</m> is also surjective. Let <m>k\in \mathbb N</m>. Then we can write <m>k</m> as a nonnegative power of 2 times an odd number, namely, <m>k = 2^n (2q-1)</m> where <m>n\geq 0</m> is an integer and <m>q\in\mathbb N</m>. To see this expression for <m>k</m> is uniqueness, assume <m>k = 2^{n_1}(2q_1-1)=2^{n_2}(2q_2-1)</m>. WLOG, assume <m>n_1\geq n_2</m>. Then <m>2^{n_1-n_2}(2q_1-1)=2q_2-1</m>. If <m>n_1 \gt n_2</m> then the left side is even but the right side is odd, a contradiction. Thus <m>n_1=n_2</m> and it follows <m>q_1=q_2</m>. Now we have <m>n+1,q\in\mathbb N</m>
+Now we show that <m>f</m> is also surjective. Let <m>k\in \mathbb N</m>. Then we can write <m>k</m> as a nonnegative power of 2 times an odd number, namely, <m>k = 2^n (2q-1)</m> where <m>n\geq 0</m> is an integer and <m>q\in\mathbb N</m>. To see that this expression for <m>k</m> is unique, assume <m>k = 2^{n_1}(2q_1-1)=2^{n_2}(2q_2-1)</m>. WLOG, assume <m>n_1\geq n_2</m>. Then <m>2^{n_1-n_2}(2q_1-1)=2q_2-1</m>. If <m>n_1 \gt n_2</m> then the left side is even but the right side is odd, a contradiction. Thus <m>n_1=n_2</m> and it follows <m>q_1=q_2</m>. Now we have <m>n+1,q\in\mathbb N</m>
 <m>f(n+1,q) = 2^{n}(2q-1)</m>. So <m>f</m> is surjective.
 </p>
 <p>

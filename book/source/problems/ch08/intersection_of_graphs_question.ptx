@@ -87,7 +87,7 @@ F\cap G= \amp \set{(a,b)\in\mathbb R^2\colon (a,b)\in F \text{ and } (a,b)\in G}
       </p></li>
 <li>
 <p>
- Very similarly, let <m>(x,y)=(4,6)</m>. Then since <m>6 = 4^2-3\cdot 2  + 2</m>, we know that <m>(x,y) \in F</m>. And since <m>6=4+2</m> we also know that <m>(x,y) \in G</m>.
+ Very similarly, let <m>(x,y)=(4,6)</m>. Then since <m>6 = 4^2-3\cdot 4  + 2</m>, we know that <m>(x,y) \in F</m>. And since <m>6=4+2</m> we also know that <m>(x,y) \in G</m>.
     </p></li>
 </ul>
     So in both cases, we have that <m>(x,y) \in F</m> and <m>(x,y) \in G</m>, and thus <m>(x,y) \in F \cap G</m> as required.

@@ -5,7 +5,7 @@
 One of the reasons to introduce relations is because they are nice intermediate mathematical object between sets (which have very little additional structure) and functions (which have quite a lot of structure).
 Indeed the idea of relations allows us to escape from the idea of a function as being a formula.
 Arguably, the usual high-school mathematics curriculum (especially the last couple of years of it) is really driving us towards being able to do calculus.
-And in calculus all the functions we look at nice formulas that build up more complicated functions by doing arithmetic on simpler functions.
+And in calculus all the functions we look at are nice formulas that build up more complicated functions by doing arithmetic on simpler functions.
 At their core, these functions are really very algorithmic:
 <ul>
 <li> Give me an input number <m>x</m>
@@ -858,7 +858,7 @@ They all have the same formula, but have different domains and co-domains (and s
   The simplest (useful) bijective function is the identity function.
 </p>
 
-<definition>
+<definition xml:id="defn_identity_function">
 <statement><p>
  Given a non-empty set <m>A</m> we define the identity function <m>i_A: A \to A</m> by <m>i_A(a) = a</m>
 for all <m>a\in A</m>.
@@ -1106,8 +1106,8 @@ a_2</m>. Since <m>f</m> is injective, it follows that <m>f(a_1) \neq f(a_2)</m>.
 injective it followst that <m>g(f(a_1)) \neq g(f(a_2))</m>. Thus <m>(g\circ f)(a_1) \neq (g\circ
 f)(a_2)</m>. Thus <m>g\circ f</m> is injective.
 </li>
-<li> Let <m>f,g</m> be surjective functions and let <m>c \in C</m>. Since <m>g</m> is surjective, <m>g(c)
-= b</m> for some <m>b \in B</m>. Since <m>f</m> is surjective, there is some <m>a \in A</m> such that <m>f(a)
+<li> Let <m>f,g</m> be surjective functions and let <m>c \in C</m>. Since <m>g</m> is surjective, <m>g(b)
+= c</m> for some <m>b \in B</m>. Since <m>f</m> is surjective, there is some <m>a \in A</m> such that <m>f(a)
 = b</m>. It follows that <m>g(f(a)) = c</m> and so <m>g\circ f</m> is surjective.
 </li>
 </ul>
@@ -1179,7 +1179,7 @@ f)(a_2)</m>. Thus <m>g\circ f</m> is injective.
 <definition>
   <statement>
     <p>
-      Let <m>f:A \to B</m> and <m>g: B \to A</m> be functions.
+      Recall <xref ref="defn_identity_function"/>, and let <m>f:A \to B</m> and <m>g: B \to A</m> be functions.
       <ul>
         <li>If <m>g \circ f = i_A</m> then we say that <m>g</m> is a <term>left-inverse</term> of <m>f</m>.</li>
         <li>Similarly, if <m>f \circ g = i_B</m> then we say that <m>g</m> is a <term>right-inverse</term> of <m>f</m>.</li>
@@ -1200,7 +1200,7 @@ f)(a_2)</m>. Thus <m>g\circ f</m> is injective.
 
 <example>
   <p>
-    Let <m>A=\set{1,2}</m> and <m>g = \set{4,5,6}</m> and define
+    Let <m>A=\set{1,2}</m> and <m>B = \set{4,5,6}</m> and define
     <md>
       <mrow>\amp f: A \to B \amp\amp f(1)=4, f(2)=5 </mrow>
       <mrow>\amp g: B \to A \amp\amp g(4)=1, g(5)=2, g(6)=2</mrow>
@@ -1231,11 +1231,11 @@ f)(a_2)</m>. Thus <m>g\circ f</m> is injective.
   <p>
     Then we see that
     <me>
-      g(f(1))=g(4)=1 \qquad g(f(2))=g(5)=2 \qquad \text{but} \qquad g(f(6))=g(2)=5
+      g(f(1))=g(4)=1 \qquad g(f(2))=g(5)=2 \qquad \text{but} \qquad g(f(3))=g(5)=2
     </me>
     and so <m>g</m> is not a left-inverse of <m>f</m>. And then
     <me>
-      f(g(4))=f(1)=4 \qquad \text{and} \qquad f(g(2))=f(5)=2
+      f(g(4))=f(1)=4 \qquad \text{and} \qquad f(g(5))=f(2)=5
     </me>
     making <m>g</m> a right-inverse of <m>f</m>.
   </p>
@@ -1389,12 +1389,12 @@ f)(a_2)</m>. Thus <m>g\circ f</m> is injective.
   </statement>
   <proof>
     <p>
-      We combine some the lemmas above to prove this result.
+      We combine some of the lemmas above to prove this result.
       <ul>
         <li>
           <p>Assume that <m>f</m> has an inverse. Then that inverse is both a left-inverse and a right-inverse. <xref ref="lem_left_right_inv"/> then implies that <m>f</m> is both injective and surjective, and so is bijective.
         </p>
-          <p>Now assume that <m>f</m> is bijective. Then <xref ref="lem_left_right_inv"/> tells us there there exists a function <m>g</m> that is a left-inverse and right-inverse for <m>f</m>. Then, by definition <m>g</m> is an inverse for <m>f</m>.
+          <p>Now assume that <m>f</m> is bijective. Then <xref ref="lem_left_right_inv"/> tells us there exists a function <m>g</m> that is a left-inverse and right-inverse for <m>f</m>. Then, by definition <m>g</m> is an inverse for <m>f</m>.
           </p>
         </li>
         <li>The uniqueness of the inverse is proven by <xref ref="lem_inv_unique"/>.
@@ -1429,7 +1429,7 @@ f)(a_2)</m>. Thus <m>g\circ f</m> is injective.
 
 <example><title>Möbius continued</title>
   <p>
-    In <xref ref="prop-mobius"/> above we saw saw that a Möbius transformation <m>h: \mathbb{R}-\set{\frac{d}{c}} \to \mathbb{R}-\set{\frac{a}{c}}</m> defined by <me>h(x) = \frac{ax-b}{cx-d}</me> is bijective. The above result tells us that it has an inverse function.
+    In <xref ref="prop-mobius"/> above we saw  that a Möbius transformation <m>h: \mathbb{R}-\set{\frac{d}{c}} \to \mathbb{R}-\set{\frac{a}{c}}</m> defined by <me>h(x) = \frac{ax-b}{cx-d}</me> is bijective. The above result tells us that it has an inverse function.
 
     We can verify that the inverse is
     <m>h^{-1}: \mathbb{R}-\set{\frac{a}{c}} \to \mathbb{R}-\set{\frac{d}{c}}</m> defined by
@@ -1441,7 +1441,7 @@ f)(a_2)</m>. Thus <m>g\circ f</m> is injective.
     <mrow> h^{-1}(h(x))\amp  = h^{-1}\left(\frac{ax-b}{cx-d} \right) </mrow>
     <mrow> \amp = \dfrac{d \frac{ax-b}{cx-d} -b }{c \frac{ax-b}{cx-d} -a}</mrow>
     <mrow> \amp = \dfrac{d(ax-b)-b(cx-d)}{c(ax-b)-a(cx-d)}</mrow>
-    <mrow> \amp = \dfrac{(ad-bc)x}{ad-bc} = c</mrow>
+    <mrow> \amp = \dfrac{(ad-bc)x}{ad-bc} = x</mrow>
   </md>
   as required.
     </p>
