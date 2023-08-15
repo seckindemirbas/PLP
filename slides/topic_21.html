@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-06-30T16:08:42-07:00       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*       on 2023-08-15T16:12:33-07:00       *-->
+<!--*   A recent stable commit (2022-07-01):   *-->
+<!--* 6c761d3dba23af92cba35001c852aac04ae99a5f *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
-<html>
+<html xmlns:pi="http://pretextbook.org/2020/pretext/internal">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>PLP - 21</title>
@@ -19,9 +19,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/plugin/math/math.js"></script><style>
 ul {
   display: block !important;
-}
-.sbsrow {
-  display: flex; !important;
 }
 .reveal img {
   border: 0.5px !important;
@@ -138,15 +135,14 @@ dfn {
 </div></div>
 </div></section><section><h3>Proof</h3>
 <div align="left"> <article class="hiddenproof" id="proof-1"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
-<p>We prove the result by induction. Since <span class="process-math">\(2^5 = 32 \gt 25 = 5^2\text{,}\)</span> the result holds when <span class="process-math">\(n=5\text{.}\)</span> Now assume that <span class="process-math">\(k\geq 5\)</span> and that <span class="process-math">\(2^k \geq k^2\text{.}\)</span> Then<div class="displaymath process-math" data-contains-math-knowls="" id="md-1">
+<p>We prove the result by induction. Since <span class="process-math">\(2^5 = 32 \gt 25 = 5^2\text{,}\)</span> the result holds when <span class="process-math">\(n=5\text{.}\)</span> Now assume that <span class="process-math">\(k\geq 5\)</span> and that <span class="process-math">\(2^k \geq k^2\text{.}\)</span> Then<div class="displaymath process-math" id="md-1">
 \begin{align*}
 2^{k+1} \amp \geq 2k^2 = k^2+k^2 \\
 \amp \geq k^2 + 5k \amp \text{since } k \geq 5\\
 \amp = k^2 + 2k + 3k \\
 \amp \geq k^2 + 2k +1 \amp \text{since } k \geq 5
 \end{align*}
-</div>Thus the inductive step holds for <span class="process-math">\(k \geq 5\text{.}\)</span></p>
-<p>The result follows for all integer <span class="process-math">\(n \geq 5\)</span> by induction.</p></article>
+</div>Thus the inductive step holds for <span class="process-math">\(k \geq 5\text{.}\)</span></p> <p>The result follows for all integer <span class="process-math">\(n \geq 5\)</span> by induction.</p></article>
 </div></section><section><h3>Another generalisation</h3>
 <div align="left"> <div class="theorem"><div>
 <h3>Theorem:
@@ -161,23 +157,22 @@ dfn {
 </div></div> <div class="theorem"><div>
 <h3>Proposition:
       </h3>
-<p>Let <span class="process-math">\(\theta \in \mathbb{R}\)</span> be fixed.</p>
-<p>Let <span class="process-math">\(p_0 = 1, p_1 = \cos \theta\text{,}\)</span> and <span class="process-math">\(p_n = 2p_1p_{n-1} - p_{n-2}.\)</span> Then <span class="process-math">\(p_n = \cos(n\theta)\)</span> for all integer <span class="process-math">\(n \geq 0\text{.}\)</span></p>
+<p>Let <span class="process-math">\(\theta \in \mathbb{R}\)</span> be fixed.</p> <p>Let <span class="process-math">\(p_0 = 1, p_1 = \cos \theta\text{,}\)</span> and <span class="process-math">\(p_n = 2p_1p_{n-1} - p_{n-2}.\)</span> Then <span class="process-math">\(p_n = \cos(n\theta)\)</span> for all integer <span class="process-math">\(n \geq 0\text{.}\)</span></p>
 </div></div>
 </div></section><section><h3>A little trigonometric reminder</h3>
-<div align="left"> <p>Recall that<div class="displaymath process-math" data-contains-math-knowls="">
+<div align="left"> <p>Recall that<div class="displaymath process-math">
 \begin{equation*}
 \cos(a+b) = \cos a \cos b - \sin a \sin b
 \qquad
 \cos(a-b) = \cos a \cos b + \sin a \sin b
 \end{equation*}
 </div></p> <article class="hiddenproof" id="proof-2"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
-<p>We prove the result by strong induction. When <span class="process-math">\(n=0\)</span> we have <span class="process-math">\(p_0 = \cos 0 = 1\)</span> as required. Now assume that <span class="process-math">\(p_j = \cos j \theta\)</span> for <span class="process-math">\(j=0,1,2,\dots k\text{.}\)</span> Now consider <span class="process-math">\(p_{k+1} = 2p_1 p_{k} - p_{k-1}\)</span><div class="displaymath process-math" data-contains-math-knowls="" id="md-2">
+<p>We prove the result by strong induction. When <span class="process-math">\(n=0\)</span> we have <span class="process-math">\(p_0 = \cos 0 = 1\)</span> as required. Now assume that <span class="process-math">\(p_j = \cos j \theta\)</span> for <span class="process-math">\(j=0,1,2,\dots k\text{.}\)</span> Now consider <span class="process-math">\(p_{k+1} = 2p_1 p_{k} - p_{k-1}\)</span><div class="displaymath process-math" id="md-2">
 \begin{align*}
 p_{k+1} \amp = 2\cos \theta \cos k\theta - \cos(k-1)\theta\\
 \amp = 2\cos\theta\cos k\theta - \left( \cos k\theta \cos \theta + \sin\theta\sin k\theta \right) \\
 \amp = \cos\theta \cos k\theta - \sin\theta \sin k \theta \\
-\amp = \cos(k+1)\theta 
+\amp = \cos((k+1)\theta) 
 \end{align*}
 </div>as required. So the result holds for all integer <span class="process-math">\(n \geq 0\)</span> by strong induction.</p></article>
 </div></section></section>

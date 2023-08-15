@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-06-30T16:13:27-07:00       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*       on 2023-08-15T16:11:17-07:00       *-->
+<!--*   A recent stable commit (2022-07-01):   *-->
+<!--* 6c761d3dba23af92cba35001c852aac04ae99a5f *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
-<html>
+<html xmlns:pi="http://pretextbook.org/2020/pretext/internal">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>PLP - 41</title>
@@ -19,9 +19,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/plugin/math/math.js"></script><style>
 ul {
   display: block !important;
-}
-.sbsrow {
-  display: flex; !important;
 }
 .reveal img {
   border: 0.5px !important;
@@ -129,36 +126,36 @@ dfn {
 <div align="left"> <p>When a set <span class="process-math">\(B\)</span> is denumerable we can “list out” its elements.<ul class="disc">
 <li>Since denumerable there is a bijection <span class="process-math">\(f: \mathbb{N} \to B\)</span>
 </li>
-<li><p>So we can write <span class="process-math">\(B\)</span> as<div class="displaymath process-math" data-contains-math-knowls="" id="md-1">
+<li><p>So we can write <span class="process-math">\(B\)</span> as<div class="displaymath process-math" id="md-1">
 \begin{align*}
 B \amp = \set{ f(1), f(2), f(3), f(4), \dots}\\
 \amp = \set{ b_1, b_2, b_3, b_4, \dots} \amp b_n = f(n)
 \end{align*}
 </div></p></li>
 </ul></p> <p>This list has two nice properties<ul class="disc">
-<li><p>Since <span class="process-math">\(f\)</span> is injective, the list does not repeat<div class="displaymath process-math" data-contains-math-knowls="">
+<li><p>Since <span class="process-math">\(f\)</span> is injective, the list does not repeat<div class="displaymath process-math">
 \begin{equation*}
 k \neq n \implies b_k = f(k) \neq f(n) = b_n
 \end{equation*}
 </div></p></li>
-<li><p>Since <span class="process-math">\(f\)</span> is surjective, any given <span class="process-math">\(y \in B\)</span> appears at some <em class="emphasis">finite</em> position<div class="displaymath process-math" data-contains-math-knowls="">
+<li><p>Since <span class="process-math">\(f\)</span> is surjective, any given <span class="process-math">\(y \in B\)</span> appears at some <em class="emphasis">finite</em> position<div class="displaymath process-math">
 \begin{equation*}
 \forall y \in B, \exists n \in \mathbb{N} \text{ s.t. } y = f(n) = b_n
 \end{equation*}
 </div></p></li>
 </ul></p>
 </div></section><section><h3>A list gives a bijection</h3>
-<div align="left"> <p>Say we can write the elements of <span class="process-math">\(B\)</span> in a <em class="emphasis">nice</em> list<div class="displaymath process-math" data-contains-math-knowls="">
+<div align="left"> <p>Say we can write the elements of <span class="process-math">\(B\)</span> in a <em class="emphasis">nice</em> list<div class="displaymath process-math">
 \begin{equation*}
 B = \set{b_1, b_2, b_3, b_4, \dots}
 \end{equation*}
-</div>then we can use this to construct a bijection: <span class="process-math">\(g: \mathbb{N} \to B\text{.}\)</span></p> <p>What does <em class="emphasis">nice</em> mean? First define<div class="displaymath process-math" data-contains-math-knowls="">
+</div>then we can use this to construct a bijection: <span class="process-math">\(g: \mathbb{N} \to B\text{.}\)</span></p> <p>What does <em class="emphasis">nice</em> mean? First define<div class="displaymath process-math">
 \begin{equation*}
 g:\mathbb{N} \to B \qquad \text{ by } \qquad g(k) = b_k
 \end{equation*}
 </div>Then the list is <em class="emphasis">nice</em> when<ul class="disc">
 <li>it does not repeat — so that <span class="process-math">\(g\)</span> is injective</li>
-<li><p>any given element <span class="process-math">\(y \in B\)</span> appears at a finite position<div class="displaymath process-math" data-contains-math-knowls="">
+<li><p>any given element <span class="process-math">\(y \in B\)</span> appears at a finite position<div class="displaymath process-math">
 \begin{equation*}
 \forall y \in B, \exists n \in \mathbb{N} \text{ s.t. }  y = g(n) = b_n
 \end{equation*}
@@ -180,7 +177,7 @@ g:\mathbb{N} \to B \qquad \text{ by } \qquad g(k) = b_k
 </ul></p>
 </div></section><section><h3>Proof <span class="process-math">\(|\mathbb{N}| = |\mathbb{Z}|\)</span>
 </h3>
-<div align="left"> <p>List <span class="process-math">\(\mathbb{Z} = \set{0,1,-1,2,-2,3,-3,\dots}\)</span> or equivalently<div class="displaymath process-math" data-contains-math-knowls="">
+<div align="left"> <p>List <span class="process-math">\(\mathbb{Z} = \set{0,1,-1,2,-2,3,-3,\dots}\)</span> or equivalently<div class="displaymath process-math">
 \begin{equation*}
 \begin{array}{cccccccc}
 1 \amp 2 \amp 3 \amp 4 \amp 5 \amp 6 \amp 7 \amp \cdots \\
@@ -220,7 +217,7 @@ g:\mathbb{N} \to B \qquad \text{ by } \qquad g(k) = b_k
 <div align="left"> <div class="theorem"><div>
 <h3>Proposition:
       </h3>
-<p>Let <span class="process-math">\(k \in \mathbb{N}\text{,}\)</span> then following sets are denumerable:<div class="displaymath process-math" data-contains-math-knowls="">
+<p>Let <span class="process-math">\(k \in \mathbb{N}\text{,}\)</span> then following sets are denumerable:<div class="displaymath process-math">
 \begin{equation*}
 k\mathbb{Z} = \set{kn \text{ : } n \in \mathbb{Z}}
 \qquad \text{ and } \qquad
@@ -237,11 +234,11 @@ k\mathbb{N} = \set{kn \text{ : } n \in \mathbb{N}}
 </div></div> <p><dfn class="terminology">Proof sketch</dfn><ul class="disc">
 <li>If <span class="process-math">\(A,B\)</span> are finite, then all are finite, so countable</li>
 <li>Since <span class="process-math">\(A \cap B \subseteq A\text{,}\)</span> by the previous theorem, this is countable.</li>
-<li><p>Since <span class="process-math">\(A,B\)</span> countable, <span class="process-math">\(B-A\)</span> is countable. Then list carefully<div class="displaymath process-math" data-contains-math-knowls="">
+<li><p>Since <span class="process-math">\(A,B\)</span> countable, <span class="process-math">\(B-A\)</span> is countable. Then list carefully<div class="displaymath process-math">
 \begin{equation*}
 A = \set{a_1,a_2,a_3,\dots} \qquad (B-A) = \set{b_1,b_2,b_3,\dots}
 \end{equation*}
-</div>then combine the lists by alternating<div class="displaymath process-math" data-contains-math-knowls="">
+</div>then combine the lists by alternating<div class="displaymath process-math">
 \begin{equation*}
 A \cup B = A \cup (B-A) = \set{a_1,b_1,a_2,b_2,a_3,b_3,\dots}
 \end{equation*}
@@ -340,9 +337,9 @@ A \cup B = A \cup (B-A) = \set{a_1,b_1,a_2,b_2,a_3,b_3,\dots}
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\vdots\)</span></td>
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\ddots\)</span></td>
 </tr>
-</table></div> By sweeping through diagonals <span class="process-math">\(\swarrow \swarrow \swarrow\)</span> we list all the elements of <span class="process-math">\(A\times B\text{:}\)</span><div class="displaymath process-math" data-contains-math-knowls="">
+</table></div> By sweeping through diagonals <span class="process-math">\(\swarrow \swarrow \swarrow\)</span> we list all the elements of <span class="process-math">\(A\times B\text{:}\)</span><div class="displaymath process-math">
 \begin{equation*}
-A\times B = \Big\{ (a_1,a_1), (a_2,a_1), (a_1,b_2), (a_3,b_1), (a_2,b_2), (a_1,b_3), \dots \Big\}
+A\times B = \Big\{ (a_1,b_1), (a_2,b_1), (a_1,b_2), (a_3,b_1), (a_2,b_2), (a_1,b_3), \dots \Big\}
 \end{equation*}
 </div>This list does not repeat, and any given <span class="process-math">\((a_k,b_n)\)</span> appears at finite position, so <span class="process-math">\(A \times B\)</span> is denumerable.</p></article>
 </div></section><section><h3>Rationals are denumerable</h3>

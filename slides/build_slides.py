@@ -6,10 +6,6 @@ from pathlib import Path
 import subprocess
 import sys
 
-# use pretext xsl from the install of the pretext-cli
-from pretext.static import core_xsl
-
-
 def insert_user_css(filename, css_file_name):
     # insert link to user css at the end of the head.
     # this is a bit hacky but works
@@ -49,7 +45,7 @@ html_out_file = sourceStem + ".html"
 print("Reading in XSL transforms")
 
 # use this if you have a pretext-cli install
-pretext_xsl_dir = Path(core_xsl(as_path=True))
+pretext_xsl_dir = Path().home()/".ptx"/"xsl"
 # else set to path to your local pretext install
 
 
@@ -94,7 +90,7 @@ insert_user_css(html_out_file, "plp_styling.css")
 # assumes that you have working pretext-cli install and
 # also decktape installed through npm as per instructions here
 # https://github.com/astefanutti/decktape
-quit()
+# quit()
 
 # run NPM to get the bin path for decktape
 try:
