@@ -43,7 +43,7 @@ Prove or disprove the following statements.
  <em>Disproof</em>: Consider the negation:
 <me>
 \exists p\in\mathbb N \text{ such that } \exists q\in\mathbb{N} \text{ such that } \sqrt{\dfrac{p}{q}}\in\mathbb N \text{ and }\left(
-\sqrt{p}\notin\mathbb N \text{ or } \sqrt{q}\in\mathbb N
+\sqrt{p}\notin\mathbb N \text{ or } \sqrt{q}\not\in\mathbb N
 \right).
 </me>
 So we can prove that this is true using an example --- that is a counter-example to the original statement. Take <m>p=8</m> and <m>q=2</m>. Then we see that <m>\sqrt{\dfrac{p}{q}}=\sqrt{4}=2\in\mathbb N</m>, whereas <m>\sqrt{p}=\sqrt{8}\notin\mathbb N</m> and <m>\sqrt{q}=\sqrt{2}\notin\mathbb N</m>.

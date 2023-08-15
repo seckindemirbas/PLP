@@ -47,7 +47,7 @@ Now, we can take the square root of both sides of the inequality <m>5/n^2\lt\eps
 <me> \frac{\sqrt{5}}{\sqrt{\epsilon}}\lt n. </me>
 We can actually reverse all of these steps (so we use the forward implication in the given fact), to get the following implication:
 <me> \frac{\sqrt{5}}{\sqrt{\epsilon}}\lt n \implies \left|1-\frac{2}{n^2}-\frac{3}{n^3}-1\right| \lt \epsilon. </me>
-This tells us that we can take <m>N</m> to be any natural number that is larger than <m>1/\sqrt{\epsilon}</m>.
+This tells us that we can take <m>N</m> to be any natural number that is larger than <m>\sqrt{5}/\sqrt{\epsilon}</m>.
 </p>
 <p>
   So we can now write up the proof.
@@ -74,7 +74,7 @@ which is quite a bit easier than the mucking around with square-roots we had to 
 <solution>
 <proof><title>First proof</title>
 <p>
-Let <m>\epsilon \gt 0</m> be given. Let <m>N=\left\lceil \frac{5}{\epsilon}\right\rceil</m>. Note this implies that <m>N^2\geq 5/\epsilon</m>.
+Let <m>\epsilon \gt 0</m> be given. Let <m>N=\left\lceil \sqrt{\frac{5}{\epsilon}}\right\rceil</m>. Note this implies that <m>N^2\geq 5/\epsilon</m>.
 Now suppose that <m>n\in\mathbb{N}</m>, <m>n\gt N</m>. Since <m>n=\sqrt{n^2}</m> and <m>N=\sqrt{N^2}</m> we can use the given fact to say that
 <me> n^2\gt N^2\geq \frac{5}{\epsilon}, </me>
 and so <m>5/n^2\lt \epsilon</m>. Moreover, since <m>n\geq 1</m>, we have <m>n^3\geq n^2</m>, and so <m>1/n^3\leq 1/n^2</m>.
@@ -89,11 +89,11 @@ And thus the sequence converges to 1 as required.
   <p>
 Let <m>\epsilon \gt 0</m> be given. Let <m>N=\left\lceil \frac{5}{\epsilon}\right\rceil</m>. Notice that when <m>n \geq N</m>, we have that
 <me>
-  \frac{5}{n} \leq \frac{5}{N} \lt \epsilon.
+  \frac{5}{n} \lt \frac{5}{N} \leq \epsilon.
 </me>
 Since <m>n \geq 1</m>, we know that
 <me>
-\frac{1}{n} \geq \frac{1}{n^2} \geq \frac{1}{n^3}
+\frac{1}{n} \gt \frac{1}{n^2} \geq \frac{1}{n^3}
 </me>
 Hence
 <me> \left|1-\frac{2}{n^2}-\frac{3}{n^3}-1\right| =\frac{2}{n^2}+\frac{3}{n^3}\leq\frac{5}{n}\lt\epsilon. </me>

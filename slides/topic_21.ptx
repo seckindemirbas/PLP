@@ -135,7 +135,7 @@
       <mrow> p_{k+1} \amp = 2\cos \theta \cos k\theta - \cos(k-1)\theta</mrow>
       <mrow> \amp = 2\cos\theta\cos k\theta - \left( \cos k\theta \cos \theta + \sin\theta\sin k\theta \right) </mrow>
       <mrow> \amp = \cos\theta \cos k\theta - \sin\theta \sin k \theta </mrow>
-      <mrow> \amp = \cos(k+1)\theta </mrow>
+      <mrow> \amp = \cos((k+1)\theta) </mrow>
     </md>
     as required. So the result holds for all integer <m>n \geq 0</m> by strong induction.
   </p>

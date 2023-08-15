@@ -231,7 +231,7 @@ We'll give a few examples, most quite standard, and one definitely not.
 <example>
   <statement>
 <p>
-  Fix <m>n \in \mathbb{N}</m> and let <m>S = \set{1,2,\cdots,2n-1}</m> and let <m>A \subseteq S</m> so that <m>|A|=n+1</m>. Prove that there two elements of <m>A</m> whose sum is <m>2n</m>.
+  Fix <m>n \in \mathbb{N}</m> and let <m>S = \set{1,2,\cdots,2n-1}</m> and let <m>A \subseteq S</m> so that <m>|A|=n+1</m>. Prove that there are two elements of <m>A</m> whose sum is <m>2n</m>.
 </p>
   </statement>
   <solution>
@@ -290,7 +290,7 @@ An excellent illustration of the pigeonhole principle is given by the database o
 
 <p>This can be a source of fun (well, mathematician fun), but it can also create problems. The idea of making use of <q>Big data</q> to solve problems is getting a lot attention. People even announcing that analysis of huge data sets will replace<fn>
 This was a big headline article in Wired magazine in 2008.</fn>
- the scientific method! However, given enough data, you will find correlations everywhere. Its just a matter of putting objects in boxes <mdash/> the pigeonhole principle at work.
+ the scientific method! However, given enough data, you will find correlations everywhere. It is just a matter of putting objects in boxes <mdash/> the pigeonhole principle at work.
 </p>
 </example>
 
@@ -435,7 +435,7 @@ and we ask ourselves (or our teacher, or our parent<fn>Perhaps repeatedly?</fn>)
 
 <p>The apparent paradox<fn>
   It is a veridical paradox. That is, a paradox that seems absurd but is actually true. Another good example, for the paradoxically inclined, is the Monte Hall problem. The interested reader can (and should) search-engine their way to that particular example.
-</fn> in Dedekin's definition of infinite sets goes back at least as far as Galileo, and is often called Galileo's paradox. In his <q>Two new sciences</q> Galileo imagines a conversation between two people, Simplicio and Salviati<fn>
+</fn> in Dedekind's definition of infinite sets goes back at least as far as Galileo, and is often called Galileo's paradox. In his <q>Two new sciences</q> Galileo imagines a conversation between two people, Simplicio and Salviati<fn>
 Salviati is named after one of Galileo's friends, while Simplicio is likely modelled on one of his philosophical opponents, or perhaps is intended to represent Galileo's beliefs early in his lief. Both characters appear in Galileo's work <q>Dialogue Concerning the Two Chief World Systems</q> which discusses the relative merits of the Copernican (heliocentric) and Ptolemaic (geocentric) models of the solar system. That book was subsequently banned by the Catholic Church for over 200 years.</fn>
 . Simplicio brings up the bijection<fn>
 He doesn't call it a bijection <mdash/> that term didn't come into mathematics until the middle of the 20th century with the work of  Bourbaki.</fn>
@@ -1711,7 +1711,7 @@ To see that this is actually function <mdash/> take any element of <m>a \in A</m
     <ul>
       <li>
         <p>
-          Let Let <m>f:(0,1) \to [0,1]</m> be defined by <m>f(x)=x</m>. It is (immediately) injective by the same argument used above.
+          Let <m>f:(0,1) \to [0,1]</m> be defined by <m>f(x)=x</m>. It is (immediately) injective by the same argument used above.
         </p>
       </li>
       <li>
@@ -1754,7 +1754,7 @@ This way we can map something to 0 while not forgetting or missing any other ele
       <p>
         Injective <mdash/> Let <m>a,b \in (0,1)</m> and assume <m>f(a)=f(b)</m>.
         If <m>f(a)=f(b) = \frac{n-1}{n}</m> for some <m>n \in \mathbb{N}</m>, then we must have <m>a=\frac{n}{n+1}=b</m>.
-        On the other if <m>f(a)=f(b)</m> is not of this form then <m>f(x)=x</m>, so <m>a=b</m>.
+        On the other hand if <m>f(a)=f(b)</m> is not of this form then <m>f(x)=x</m>, so <m>a=b</m>.
       </p>
     </li>
     <li>

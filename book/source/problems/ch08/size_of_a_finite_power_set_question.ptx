@@ -69,7 +69,7 @@ Moreover, we see that if <m>|A|=1</m>, then <m>A=\set{a}</m> for some <m>a</m>. 
 <p>
 Now, let <m>B</m> be a set with <m>|B|=n+1</m>. Then, we see <m>B=\set{b_1, b_2, b_3, \ldots, b_{n+1}}</m>. Therefore, we see that we can write
 <me>
-B=\set{b_1, b_2, b_3, \ldots, b_{n}}\cup\set{b_{n+1}}=\tilde{B}\cup\set{b_n+1},
+B=\set{b_1, b_2, b_3, \ldots, b_{n}}\cup\set{b_{n+1}}=\tilde{B}\cup\set{b_{n+1}},
 </me>
 where <m>|\tilde{B}|=n</m>.
 </p>

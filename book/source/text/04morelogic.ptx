@@ -107,7 +107,7 @@ Note that some texts use <q><m>=</m></q> to denote logical equivalence, while th
 Another logical equivalence we've already seen (back in <xref text="type-hybrid" ref="sec-implication"/>) is
 <md>
 <mrow>
-  (P \implies Q) \equiv ( (\neg P)\lor Q) )
+  (P \implies Q) \equiv ( (\neg P)\lor Q ) 
 </mrow>
 </md>
 where we have written this down with plenty of brackets to avoid potential ambiguities.
@@ -125,7 +125,7 @@ where we have written this down with plenty of brackets to avoid potential ambig
 <statement><p>
 Let <m>P, Q</m> and <m>R</m> be statements. Then
 <ul>
-<li> Implication: <m>(P \implies Q) \equiv ( (\neg P)\lor Q) )</m>
+<li> Implication: <m>(P \implies Q) \equiv ( (\neg P)\lor Q )</m>
 </li>
 <li> Contrapositive: <m>(P\implies Q) \equiv ((\neg Q) \implies (\neg P))</m>
 </li>

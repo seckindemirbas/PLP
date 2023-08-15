@@ -1910,7 +1910,7 @@
               is a statement it cannot be true and false at the same time.
             </p>
           </li>
-          <li>So there is now way for us to make the statement false. Since it is never false, it must always be true.</li>
+          <li>So there is no way for us to make the statement false. Since it is never false, it must always be true.</li>
         </ul>
       </p>
 
@@ -1966,7 +1966,7 @@
             <title><m>P</m> is true</title>
             <p>If
               <m>P</m>
-              is true, the the first implication tells us
+              is true, the first implication tells us
               <m>P_1</m>
               is true (modus ponens). Then since
               <m>P_1</m>

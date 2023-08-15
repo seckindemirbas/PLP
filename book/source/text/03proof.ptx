@@ -620,7 +620,7 @@ Writing the scratch work really helps to formulate your ideas and makes writing 
   Assume that <m>n</m> is an odd integer and so <m>n=2k+1</m> for some <m>k \in \mathbb{Z}</m>. So
   <md>
 <mrow>
-  n^2 = (2k+1)^2 = 4k^2+4k+1 = 2(2k^2+2k)
+  n^2 = (2k+1)^2 = 4k^2+4k+1 = 2(2k^2+2k)+1
   </mrow>
 </md>
   Since <m>k</m> is an integer, <m>2k^2+2k</m> is also an integer and so <m>n^2</m> is odd.
@@ -768,7 +768,7 @@ Writing the scratch work really helps to formulate your ideas and makes writing 
     <li>
       <p>
         Similarly, since we know <m>x \geq 4</m> we know that <m>3x \geq 12</m>.
-        Ah <mdash />now there is a problem <mdash /> we about to try to take the difference of inequalities. Bad.
+        Ah <mdash />now there is a problem <mdash /> we are about to try to take the difference of inequalities. Bad.
       </p>
     </li>
     <li>

@@ -157,7 +157,7 @@ Of course, we aren't really done until we write thing up nicely.
 The following result expresses that being a subset is a transitive relation.
 We'll see much more about transitivity in the near future.
 </p>
-<proposition>
+<proposition xml:id="res_subset_trans">
 <statement><p>
     Let <m>A,B,C</m> be sets. Then if <m>A\subseteq B</m> and <m>B \subseteq C</m> then <m>A\subseteq C</m>.
 </p></statement>
@@ -277,7 +277,7 @@ We will also prove an important result about the power set of an infinite set.
 </example>
 
 
-<proposition xml:id="res_subset_trans">
+<proposition>
 <statement><p>
   Let <m>A,B</m> be sets.
   Then <m>A \subseteq B</m> if and only if <m>\pow{A} \subseteq \pow{B}</m>.
@@ -734,7 +734,7 @@ We are used to this notation, <q> <m>(x,y)</m> </q>, but we should define it bef
 <p>
 Given two sets <m>A,B</m>, the set of all possible ordered pairs is the <term>Cartesian product</term> of those sets. To be more precise:
 </p>
-<definition><title>Cartesian products</title>
+<definition><title>Cartesian product</title>
 <statement><p>
  Let <m>A,B</m> be sets. The <term>Cartesian product</term>,or just <term>product</term>, of <m>A</m> and <m>B</m> is the set of all ordered pairs <m>(a,b)</m> such that <m>a \in A</m> and <m>b \in B</m>.
  We write this as <m>A \times B</m>.
@@ -899,9 +899,9 @@ And, as you'll see in the examples below, a quick sketch of Venn diagrams can he
 </li>
 <li> If <m>x \not\in A</m> then <m>x\not\in A \cap B</m>
 </li>
-<li> If <m>x \in A</m> and <m>x\in B</m> then <m>x \in A \cap B</m>.
-</li>
 <li> If <m>x \in A</m> or <m>x\in B</m> then <m>x \in A \cup B</m>.
+</li>
+<li> If <m>x \in A</m> and <m>x\in B</m> then <m>x \in A \cap B</m>.
 </li>
 </ul>
 </p></statement>
@@ -1250,7 +1250,7 @@ non-empty, such an <m>(x,y)</m> exists.
     <m>x \in B\cap C</m>. Thus <m>x \in A \cup (B\cap C)</m>.
 </li>
 </ul>
-    Thus if <m>x\in LHS</m> then <m>x \in RHS</m>. and so <m>LHS \subseteq RHS</m>.
+    Thus if <m>x\in LHS</m> then <m>x \in RHS</m>. And so <m>LHS \subseteq RHS</m>.
 </p>
 </proof>
   </solution>
@@ -1562,7 +1562,7 @@ where we have used the fact that <m>A-B = A\cap\bar{B}</m>, DeMorgans laws and d
       </me>
       We similarly define their union to be
       <me>
-        \bigcup_{k=1}^N A_k = \set{x \st x \in A_j \text{ for some } j \in \set{1,2,,\dots,M} }.
+        \bigcup_{k=1}^N A_k = \set{x \st x \in A_j \text{ for some } j \in \set{1,2,\dots,N} }.
       </me>
     </p>
   </statement>
@@ -1585,8 +1585,8 @@ This notation is very useful when we have to work with lots of sets<fn>As you ca
     <p>
       Further, let <m>B_m, B_{m+1}, B_{m+2},\dots</m> be sets, then
       <md>
-      <mrow> \bigcap_{k=m}^\infty B_k \amp = \set{x \st \forall j \in \mathbb{N} \text{ with } j \geq m, x \in A_j } </mrow>
-      <mrow> \bigcup_{k=m}^\infty B_k \amp = \set{x \st \exists j \in \mathbb{N} \text{ with } j \geq m \text{ s.t. } x \in A_j } </mrow>
+      <mrow> \bigcap_{k=m}^\infty B_k \amp = \set{x \st \forall j \in \mathbb{N} \text{ with } j \geq m, x \in B_j } </mrow>
+      <mrow> \bigcup_{k=m}^\infty B_k \amp = \set{x \st \exists j \in \mathbb{N} \text{ with } j \geq m \text{ s.t. } x \in B_j } </mrow>
       </md>
     </p>
   </statement>
@@ -1596,7 +1596,7 @@ This notation is very useful when we have to work with lots of sets<fn>As you ca
   These definitions tell us that if <m>x \in \bigcap_{n=m}^\infty A_n</m>, then <m>x \in A_k</m> for every single <m>k \geq m</m>.
   On the other hand, if we know that <m>x \not \in \bigcap_{n=m}^\infty A_n</m>, then there must be at least one index <m>k \geq m</m> so that <m>x \not\in A_k</m>.
   Similarly,  if <m>x \in \bigcup_{n=m}^\infty A_n</m>, then there is at least one index <m>k \geq m</m> so that <m>x \in A_k</m>.
-  And if <m>x \not\in x \in \bigcup_{n=m}^\infty A_n</m>, then <m>x \not\in A_k</m> for every single <m>k \geq m</m>.
+  And if <m>x \not\in \bigcup_{n=m}^\infty A_n</m>, then <m>x \not\in A_k</m> for every single <m>k \geq m</m>.
 </p>
 
 <example>
@@ -1618,7 +1618,7 @@ This notation is very useful when we have to work with lots of sets<fn>As you ca
       </me>
       The first of these is true since <m>0 \in A_n=\left(-\dfrac
       1n,\dfrac 1n\right)</m> for all <m>n \in \mathbb{N}</m>. The
-      second follows<fn>We are assuming that we can assume that
+      second follows<fn>We are assuming that we know
       <m>e = 2.71828\dots</m>. It is not too hard to show that <m>2 \lt e \lt 3</m>, but it does take some calculus.</fn> since <m>e \lt 3</m> and so
       <m>\frac{1}{e} \gt \frac{1}{3}</m> and so <m>\frac{1}{e} \not\in
       A_3</m>; since it is not in one of the sets, it cannot be in the
@@ -1635,7 +1635,7 @@ This notation is very useful when we have to work with lots of sets<fn>As you ca
   <me>
     A_x = [-x,x^2] = \set{t \in \mathbb{R} \st -x \leq t \leq x^2}.
   </me>
-  So that <m>A_5 = [5,25]</m> and <m>A_\pi = [-\pi, \pi^2]</m>. So the <m>A_x</m> are a family of  sets indexed by real numbers. Sometimes we might need to take the union and intersection of all the sets in such a family, and so we we generalise the notation even more.
+  So that <m>A_5 = [5,25]</m> and <m>A_\pi = [-\pi, \pi^2]</m>. So the <m>A_x</m> form a family of sets indexed by real numbers. Sometimes we might need to take the union and intersection of all the sets in such a family, and so we generalise the notation even more.
 </p>
 
 <definition xml:id="def-indexedsets3">
@@ -1785,7 +1785,7 @@ This notation is very useful when we have to work with lots of sets<fn>As you ca
         Let us show the two inclusions in turn.
         <ul>
           <li>
-            <p>Let <m>x\in\bigcup_{k=1}^\infty A_k</m>. Then <m>x\in A_k</m> for some <m>k\in \mathbb N</m> so that <m>\frac{1}{k+1} \lt x \lt 1 + \frac{1}{k+1}</m> from which we get that <m>0 \lt x \lt \frac{3}{2}</m>, so that <m>x\in (0,\frac32)</m>.
+            <p>Let <m>x\in\bigcup_{k=1}^\infty A_k</m>. Then <m>x\in A_k</m> for some <m>k\in \mathbb N</m> so that <m>\frac{1}{k+1} \leq x \lt 1 + \frac{1}{k+1}</m> from which we get that <m>0 \lt x \lt \frac{3}{2}</m>, so that <m>x\in (0,\frac32)</m>.
             </p>
           </li>
           <li>
@@ -1796,7 +1796,7 @@ This notation is very useful when we have to work with lots of sets<fn>As you ca
                     Suppose that <m>x\geq \frac{1}{2}</m>. Then because of the assumption on <m>x</m> we have <m>\frac12\leq x \lt \frac32</m>, and so <m>x\in A_1</m>, so <m>x\in\bigcup_{k=1}^\infty A_k</m>.
                 </li>
                 <li>Second case:
-                  Suppose that <m>x \lt \frac12</m>. Then let if we let <m>n=\ceil{\frac1x}</m> then we have <m>\frac1x \lt n+1</m> and so <m>x \gt \frac{1}{n+1}</m>. This is enough to show that <m>x\in A_n</m> with <m>n\in \mathbb N</m> and so <m>x\in\bigcup_{k=1}^\infty A_k</m>.
+                  Suppose that <m>x \lt \frac12</m>. Then if we let <m>n=\ceil{\frac1x}</m> then we have <m>\frac1x \lt n+1</m> and so <m>x \gt \frac{1}{n+1}</m>. This is enough to show that <m>x\in A_n</m> with <m>n\in \mathbb N</m> and so <m>x\in\bigcup_{k=1}^\infty A_k</m>.
                  </li>
               </ol>
             </p>
@@ -1818,9 +1818,9 @@ This notation is very useful when we have to work with lots of sets<fn>As you ca
 	    </p>
 	    <p>
 	      Now we can use <xref ref="lem_lim_pos_x_zero"/> to show
-	      that <m>x \leq 1</m>. Since we know that <m>x-1 \leq
+	      that <m>x \leq 1</m>. Since we know that <m>x-1 \lt
 	      \frac{1}{k+1}</m>, <xref ref="lem_lim_pos_x_zero"/>
-	      implies that <m>x-1 \leq 0</m> and hence <m>x \leq
+	      implies that <m>x-1 \lt 0</m> and hence <m>x \leq
 	      1</m>. 
 	    </p>
 	    <p>

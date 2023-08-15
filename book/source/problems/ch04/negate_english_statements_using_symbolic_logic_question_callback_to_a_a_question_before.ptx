@@ -17,7 +17,7 @@ Use the logical equivalences given in <xref ref="thm-logical-equiv"/> and <xref 
 </p></li>
 <li>
 <p>
- If <m>n</m> is a not a multiple of <m>10</m>, then it is a multiple of <m>2</m> but is not a multiple of <m>5</m>.
+ If <m>n</m> is not a multiple of <m>10</m>, then it is a multiple of <m>2</m> but is not a multiple of <m>5</m>.
 </p></li>
 <li>
 <p>
