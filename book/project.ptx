@@ -1,26 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<project>
+<!-- This file, the project manifest, provides the overall configuration for your PreTeXt project. To edit the content of your document, open `source/main.ptx`. See https://pretextbook.org/doc/guide/html/processing-CLI.html#cli-project-manifest. -->
+<project ptx-version="2">
   <targets>
-    <target name="html">
-      <format>html</format>
-      <source>source/plp.ptx</source>
-      <publication>publication/publication.ptx</publication>
-      <output-dir>output/html</output-dir>
-    </target>
-    <target name="latex">
-      <format>latex</format>
-      <source>source/plp.ptx</source>
-      <publication>publication/publication.ptx</publication>
-      <output-dir>output/latex</output-dir>
-    </target>
+    <target name="html" format="html" source="plp.ptx"/>
+    <target name="latex" format="latex" publication="publication.ptx" source="plp.ptx"/>
+    <target name="print" format="pdf" publication="publication.ptx" source="plp.ptx" />
   </targets>
-  <executables>
-      <latex>latex</latex>
-      <pdflatex>pdflatex</pdflatex>
-      <xelatex>xelatex</xelatex>
-      <pdfsvg>pdf2svg</pdfsvg>
-      <pdfpng>convert</pdfpng>
-      <pdfeps>pdftops</pdfeps>
-      <pdfcrop>pdf-crop-margins</pdfcrop>
-    </executables>
 </project>
