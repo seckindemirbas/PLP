@@ -784,7 +784,7 @@ for <m>n=5</m>.
 <li> Inductive hypothesis <mdash/> assume <m>2^k \gt k^2</m>. Then <m>2^{k+1}=2 \cdot 2^k  \gt  2k^2</m>. Since
 <m>k \geq 5</m> we have <m>k^2 \geq 5k</m>, and hence
 <me>
-  2^{k+1} \gt 2k^2 = k^2+k^2 = k^2+5k = k^2 +2k +3k.
+  2^{k+1} \gt 2k^2 = k^2+k^2 \geq k^2+5k = k^2 +2k +3k.
 </me>
 Now since <m>k \geq 5</m>, we know that <m>3k>1</m>, and so
 <me>
