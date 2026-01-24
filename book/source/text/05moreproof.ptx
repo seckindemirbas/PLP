@@ -278,7 +278,7 @@ Is uses a cute little trick that is worth remembering.
       </me>
       We've been a little sloppy here <mdash /> we didn't write down the <q>Let <m>n \in \mathbb{Z}</m></q>, but it is scratch work not the actually proof. It is okay to be a <em>little bit</em> sloppy. The integerness of <m>n</m> means that we can simplify this further to
       <me>
-        (n \text{is odd}) \implies (n^2+4n+5 \text{ is even})
+        (n \text{ is odd}) \implies (n^2+4n+5 \text{ is even})
       </me>
       This is now straight-forward for us.
     </p>
