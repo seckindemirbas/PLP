@@ -49,7 +49,7 @@ Both statements are false. We disprove each in turn.
 <p>
  Now let <m>A = \set{1,2}, B = \set{2}</m>. Then
   <me>
-  \pow{A} - \pow{B} = \set{\emptyset, \set{1}, \set{1,2}}
+  \pow{A} - \pow{B} = \set{\set{1}, \set{1,2}}
   \quad\text{but}\quad
   \pow{A-B} = \set{\emptyset, \set{1}}.
   </me>
