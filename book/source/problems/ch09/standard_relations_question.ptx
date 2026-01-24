@@ -66,7 +66,7 @@ The relation is not transitive. For example, if we take <m>A=\set{1,2}</m>, <m>B
  Let <m>f:\mathbb{R}\rightarrow\mathbb{R}</m>. Then <m>f(x)-f(x)=0</m> for all <m>x\in\mathbb{R}</m>, and so <m>f-f</m> is a linear function. Thus the relation is reflexive.
 Now let <m>g:\mathbb{R}\rightarrow\mathbb{R}</m> also. If <m>f(x)-g(x)=mx+b</m> for all <m>x\in\mathbb{R}</m>, then <m>g(x)-f(x)=-mx-b</m> for all <m>x\in\mathbb{R}</m>. Then <m>g-f</m> is also a linear function, so the relation is symmetric.
 Finally let <m>h:\mathbb{R}\rightarrow\mathbb{R}</m>. If <m>f(x)-g(x)=m_1x+b_1</m> and <m>g(x)-h(x)=m_2x+b_2</m> for all <m>x\in\mathbb{R}</m>, then
-<me> f(x)-h(x)=(f(x)-g(x))-(g(x)-h(x))=(m_1-m_2)x+(b_1-b_2) </me>
+<me> f(x)-h(x)=(f(x)-g(x))+(g(x)-h(x))=(m_1+m_2)x+(b_1+b_2) </me>
 for all <m>x\in \mathbb{R}</m>. So <m>f-h</m> is also linear, and thus the relation is transitive.
 </p>
 
