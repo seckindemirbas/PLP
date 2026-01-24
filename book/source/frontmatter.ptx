@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <frontmatter xml:id="frontmatter" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <titlepage>
+  <bibinfo>
     <author>
       <personname>Seçkin Demirbaş</personname>
       <department>Department of Mathematics</department>
@@ -15,7 +15,6 @@
       <institution>University of British Columbia</institution>
       <email>andrewr@math.ubc.ca</email>
     </author>
-    
     <credit>
       <title>Exercises for PLP</title>
       <author>
@@ -31,13 +30,7 @@
 	<email>ctrainor@math.ubc.ca</email>
       </author>
     </credit>
-    <date>
-      <today />
-    </date>
-  </titlepage>
-  
-  <colophon>
-    
+
     <credit>
       <role>Source files</role>
       <entity>
@@ -61,12 +54,21 @@
     
     
     <copyright>
-      <year>2018 <ndash/> 2023</year>
+      <year>2018 <ndash/> 2026</year>
       <holder>Seçkin Demirbaş, Andrew Rechnitzer</holder>
     </copyright>
-    
-    
-  </colophon>
+
+    <date>
+      <today />
+    </date>
+ 
+     
+   </bibinfo>
+
+  <titlepage>
+    <titlepage-items/>
+    </titlepage>
+ 
   <dedication>
     <p>
       For our students and all the colleagues and scholars who have freely shared their knowledge with us <mdash/> SD &amp; AR.

@@ -80,63 +80,55 @@ We do some rough computation here to try to figure out which statements are true
 <li>
 <p>
  Fix <m>x\in \mathbb{R}</m>. We compute, starting from the left hand side. By the definition of function composition,
-    <md>
-<mrow>
-        ((g+h)\circ f)(x)  \amp = (g+h)(f(x))
-        </mrow><intertext>By the definition of function addition</intertext><mrow>
-         \amp = g(f(x))+h(f(x))
-        </mrow><intertext>By the definition of composition</intertext><mrow>
-         \amp =(g\circ f)(x) + (h\circ f)(x)
-        </mrow><intertext>By the definition of function addition</intertext><mrow>
-         \amp = \left(g\circ f + h\circ f\right)(x)
-    </mrow>
+<md>
+  <mrow> ((g+h)\circ f)(x)  \amp = (g+h)(f(x)) \amp \text{addition} </mrow>
+  <mrow> \amp = g(f(x))+h(f(x)) \amp \text{composition}</mrow>
+  <mrow> \amp =(g\circ f)(x) + (h\circ f)(x) \amp \text{addition}</mrow>
+  <mrow> \amp = \left( g\circ f + h\circ f \right)(x) </mrow>
 </md>
-    This computation did not rely on our choice of <m>x</m>, so it holds for all <m>x\in \mathbb{R}</m>. Thus, we can show
-    <me>(g+h)\circ f = g\circ f + h\circ f.</me>
+This computation did not rely on our choice of <m>x</m>, so it holds for all <m>x\in \mathbb{R}</m>. Thus, we can show
+<me>(g+h)\circ f = g\circ f + h\circ f.</me>
 </p>
 </li>
 <li>
 <p>
  We first use the definition of function composition to see that
-    <md>
-<mrow>
-        \left(\frac{1}{f}\circ g \right)(x)  \amp = \left(\frac{1}{f}\right)(g(x)).
-        </mrow><intertext>By the definition of function division, we have</intertext><mrow>
-         \amp = \frac{1}{f(g(x))}
-        </mrow><intertext>By the definition of function composition, we have</intertext><mrow>
-         \amp =\frac{1}{(f\circ g)(x)}
-        </mrow><intertext>Using the definition of function division yields</intertext><mrow>
-         \amp =\left(\frac{1}{f\circ g}\right)(x)
-    </mrow>
-</md>
-    This computation did not rely on our choice of <m>x</m>, so it holds for all <m>x\in \mathbb{R}</m>. Thus, we can show
-    <me>\left(\frac{1}{f}\right)\circ g = \frac{1}{f\circ g}.</me>
+<md>
+    <mrow> \left(\frac{1}{f}\circ g \right)(x)  \amp = \left(\frac{1}{f}\right)(g(x)). </mrow>
+    <intertext>By the definition of function division, we have</intertext>
+    <mrow> \amp = \frac{1}{f(g(x))} </mrow>
+    <intertext>By the definition of function composition, we have</intertext>
+    <mrow> \amp =\frac{1}{(f\circ g)(x)} </mrow>
+    <intertext>Using the definition of function division yields</intertext>
+    <mrow> \amp =\left(\frac{1}{f\circ g}\right)(x) </mrow>
+ </md> 
+This computation did not rely on our choice of <m>x</m>, so it holds for all <m>x\in \mathbb{R}</m>. Thus, we can show
+<me>\left(\frac{1}{f}\right)\circ g = \frac{1}{f\circ g}.</me>
 </p>
 </li>
 <li>
 <p>
  Fix <m>x\in \mathbb{R}</m>. We start with the left hand side, and use the definition of function division to compute,
-    <md>
-<mrow>
-        \left(\frac{1}{f\circ g}\right)(x)= \frac{1}{(f\circ g)(x)}
-        </mrow><intertext>By the definition of function composition</intertext><mrow>
-         \amp = \frac{1}{f(g(x))}
-    </mrow>
+<md>
+    <mrow> \left(\frac{1}{f\circ g}\right)(x) \amp = \frac{1}{(f\circ g)(x)} \amp \text{composition}</mrow>
+    <mrow> \amp = \frac{1}{f(g(x))} </mrow>
 </md>
-    On the other hand, we start from the right hand side. Using the definition of function composition to compute
-    <md>
-<mrow>
-        \left(f\circ \frac{1}{g}\right)(x)  \amp = f\left(\left(\frac{1}{g}\right)(x)\right)
-        </mrow><intertext> By the definition of function division</intertext><mrow>
-         \amp =f\left(\frac{1}{g(x)}\right)
-    </mrow>
+On the other hand, we start from the right hand side. Using the definition of function composition to compute
+<md>
+ <mrow> 
+                \left(f\circ \frac{1}{g}\right)(x)  \amp = f\left(\left(\frac{1}{g}\right)(x)\right)
+                \amp \text{division}
+              </mrow>
+              <mrow>
+     \amp =f\left(\frac{1}{g(x)}\right)
+</mrow>
 </md>
-    In order for
-    <me>\frac{1}{f(g(x))} = f\left(\frac{1}{g(x)}\right),</me>
-    <m>f</m> must have the property that
-    <me>\frac{1}{f(x)} = f\left(\frac{1}{x}\right).</me>
-    This is not true for every function <m>f:\mathbb{R}\to \mathbb{R}</m>. For example, if <m>f(x)=x+2</m>, we have
-    <me>\frac{1}{f(x)} = \frac{1}{x+2} \neq \frac{1}{x}+2 = f\left(\frac{1}{x}\right).</me>
+In order for
+<me>\frac{1}{f(g(x))} = f\left(\frac{1}{g(x)}\right),</me>
+<m>f</m> must have the property that
+<me>\frac{1}{f(x)} = f\left(\frac{1}{x}\right).</me>
+This is not true for every function <m>f:\mathbb{R}\to \mathbb{R}</m>. For example, if <m>f(x)=x+2</m>, we have
+<me>\frac{1}{f(x)} = \frac{1}{x+2} \neq \frac{1}{x}+2 = f\left(\frac{1}{x}\right).</me>
 </p>
 </li>
 </ol>
@@ -159,7 +151,6 @@ We do some rough computation here to try to figure out which statements are true
          \amp = f(g(x) +h(x))
         </mrow><intertext>Using the choice of <m>g(x)</m> and <m>h(x)</m>,</intertext><mrow>
          \amp = f(2x)
-</mrow><mrow>
         </mrow><intertext>Using the choice of <m>f(x)</m>,</intertext><mrow>
          \amp = 4x^2
     </mrow>

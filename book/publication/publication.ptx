@@ -23,7 +23,7 @@
   
   <html>
     <knowl remark="no" example="no" proof="yes"/>
-    <css style="default" colors="blue_red"/>
+    <theme style="default-modern" palette="blue_red"/>
     <analytics google-gst="G-FL66FX9988"/>    
   </html>
 
