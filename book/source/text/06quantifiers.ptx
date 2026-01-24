@@ -1804,7 +1804,7 @@ we know that the distance between the function and its limit is smaller than <m>
     <me>
       \left| \frac{1}{x} - \frac{1}{2} \right| = \frac{|x-2|}{2|x|} \lt \frac{|x-2|}{2} \lt \frac{\delta}{2}.
     </me>
-    Since <m>\delta \lt 2\epsilon</m>, we know that
+    Since <m>\delta \leq 2\epsilon</m>, we know that
     <me>
       \left| \frac{1}{x} - \frac{1}{2} \right| \lt \epsilon
     </me>
