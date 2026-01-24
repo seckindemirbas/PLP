@@ -112,7 +112,7 @@ Armed with these ideas we can define our new and more abstract idea of a functio
 </ul>
 </p>
 </li>
-<li> In this context we call the set <m>A</m> the <term>domain</term> of <m>f</m>, and the set <m>B</m> is called the <term>co-domain</term>.
+<li> In this context we call the set <m>A</m> the <term>domain</term> of <m>f</m>, and the set <m>B</m> is called the <term>codomain</term>.
 </li>
 <li><p>
    If <m>(a,b) \in f</m> then we write <m>f(a) = b</m>, and we call <m>b</m> the image of <m>a</m>.
@@ -124,7 +124,7 @@ We also sometimes say that <m>f</m> maps <m>a</m> to <m>b</m>. With this notatio
 </li>
 </ul></p>
 </li>
-<li> We can further refine the co-domain to be exactly the set of elements of <m>B</m> that are mapped to by something in <m>A</m>; this set is called the <term>range</term>:
+<li> We can further refine the codomain to be exactly the set of elements of <m>B</m> that are mapped to by something in <m>A</m>; this set is called the <term>range</term>:
 <md>
 <mrow>
 	\mathrm{rng} f &amp;= \set{b \in B \;|\; \exists a \in A \st f(a) = b}
@@ -144,14 +144,14 @@ You might know this from high-school as the <q>vertical line test</q> <mdash/> i
 </li>
 <li> Two functions <m>f,g:A \to B</m> are equal when <m>f(a) = g(a)</m> for all <m>a \in A</m>.
 </li>
-<li> The range is not (necessarily) the same as the co-domain. The range is always a subset of the co-domain. For example
+<li> The range is not (necessarily) the same as the codomain. The range is always a subset of the codomain. For example
 <md>
 <mrow>
 	f: \mathbb{R} \to \mathbb{R} &amp;&amp; f(x) = x^2
 </mrow>
 </md>
-has domain <m>\mathbb{R}</m>, co-domain <m>\mathbb{R}</m> and range <m>[0,\infty)</m>.
-We make the distinction between the two because sometimes it is really hard to write the range, but it is usually very easy to write the co-domain. We must be able to apply <m>f</m> to every single <m>a \in A</m>, but we don't have to arrive at every <m>b \in B</m>.
+has domain <m>\mathbb{R}</m>, codomain <m>\mathbb{R}</m> and range <m>[0,\infty)</m>.
+We make the distinction between the two because sometimes it is really hard to write the range, but it is usually very easy to write the codomain. We must be able to apply <m>f</m> to every single <m>a \in A</m>, but we don't have to arrive at every <m>b \in B</m>.
 </li>
 </ul>
 </p>
@@ -176,7 +176,7 @@ Around the 19th century developments in mathematics required more general notion
   <me>
     f = \set{ (1,b), (2,d), (3,b), (4,a), (5,d)}
   </me>
-  Both these approaches are reasonably practical when the domain and co-domain of the function are small, but is really not going to work as soon as they get a little bigger.
+  Both these approaches are reasonably practical when the domain and codomain of the function are small, but is really not going to work as soon as they get a little bigger.
 </p>
 
 <example>
@@ -194,7 +194,7 @@ Around the 19th century developments in mathematics required more general notion
 
 <p>In order for <m>f</m> to be a function it has to satisfy two conditions:
 <ul>
-<li> For every <m>x</m> in the domain, there must be a <m>y</m> in the co-domain so that <m>f(x)=y </m>, and
+<li> For every <m>x</m> in the domain, there must be a <m>y</m> in the codomain so that <m>f(x)=y </m>, and
 </li>
 <li> If <m>f(x)=y</m>  and <m>f(x)=z</m> then <m>y=z</m>.
 </li>
@@ -217,7 +217,7 @@ and so <m>y=z</m>.
 <li> The second condition is satisfied by the same argument we used for <m>f</m>.
 </li>
 </ul>
-  The co-domain of <m>g</m> is the set of integers, but its range <m>\set{n \in \mathbb{Z} \text{ so that } 3|n}</m>.
+  The codomain of <m>g</m> is the set of integers, but its range <m>\set{n \in \mathbb{Z} \text{ so that } 3|n}</m>.
 </p>
 </example>
 </section>
@@ -336,7 +336,7 @@ Our quick look at preimages of <m>f(x)=x^2</m> above illustrated this second poi
   </statement>
   <solution>
     <p>
-      It will help to make a quick sketch of <m>y=f(x)=x^2</m> and think about the various intervals in the domain and co-domain. That <m>f(x)</m> is decreasing for <m>x\lt 0</m> and increasing for <m>x \gt 0</m> does make this exercise a little easier.
+      It will help to make a quick sketch of <m>y=f(x)=x^2</m> and think about the various intervals in the domain and codomain. That <m>f(x)</m> is decreasing for <m>x\lt 0</m> and increasing for <m>x \gt 0</m> does make this exercise a little easier.
     </p>
 
     <image width="66%" source="parabola"/>
@@ -371,7 +371,7 @@ Our quick look at preimages of <m>f(x)=x^2</m> above illustrated this second poi
 </example>
 
 <p>
-  This example shows that the preimage of a single element<fn>Recall that we are abusing the definition of preimage here; we really mean <q>the preimage of a set containing a single element</q>.</fn> in the co-domain can be empty, or can contain a single element, or can contain multiple elements. As noted above, we want to understand what conditions we can impose on a function so that the preimage of a single point<fn>Another similar abuse of the definition of preimage in order to keep the language flowing.</fn> in the co-domain always contains exactly one point in the domain. This will allow us to properly define inverse functions <mdash /> that is if <m>f(x)=y</m> then how do we define a new function <m>g</m> so that <m>g(y)=x</m>.
+  This example shows that the preimage of a single element<fn>Recall that we are abusing the definition of preimage here; we really mean <q>the preimage of a set containing a single element</q>.</fn> in the codomain can be empty, or can contain a single element, or can contain multiple elements. As noted above, we want to understand what conditions we can impose on a function so that the preimage of a single point<fn>Another similar abuse of the definition of preimage in order to keep the language flowing.</fn> in the codomain always contains exactly one point in the domain. This will allow us to properly define inverse functions <mdash /> that is if <m>f(x)=y</m> then how do we define a new function <m>g</m> so that <m>g(y)=x</m>.
 </p>
 
 <p>
@@ -519,11 +519,11 @@ You can see that if we have arrived at the letter <q>M</q> then it is easy to de
 
 <p>
   Now, for us to be able to sensibly undo our function, we need the
-  preimage of every element in our co-domain to have exactly one
+  preimage of every element in our codomain to have exactly one
   element in it. To be more precise, for any element <m>y</m> in our
   codomain, there must exist some <m>x</m> in the domain so that the
   preimage of <m>\set{y}</m> is the set <m>\set{x}</m>.  If you think
-  about this a little, this means that the domain and co-domain must
+  about this a little, this means that the domain and codomain must
   have the same size<fn>This is perhaps no so hard to see when
   everything is finite, but harder to see when things are
   infinite. Indeed, we'll see examples of just how weird this can be
@@ -727,7 +727,7 @@ Notice that in the proof we <em>do not</em> have to explain to the reader how we
   <me>
     \exists b \in B \text{ s.t. } \forall a \in A, f(a) \neq b.
   </me>
-  So in order to show that <m>g</m> is not surjective, we have to find (at least one) <m>b \in \mathbb{R}</m> (in the co-domain) that is not the image of any <m>a \in \mathbb{R}</m> (in the domain). Sometimes this can be tricky to  prove, but for the example above we can use the fact that the square of a real is non-negative.
+  So in order to show that <m>g</m> is not surjective, we have to find (at least one) <m>b \in \mathbb{R}</m> (in the codomain) that is not the image of any <m>a \in \mathbb{R}</m> (in the domain). Sometimes this can be tricky to  prove, but for the example above we can use the fact that the square of a real is non-negative.
 </p>
 
 <proof><title>Proof of <xref ref="res_simple_non_surj"/></title>
@@ -765,7 +765,7 @@ Let <m>b = -1 \in \mathbb{R}</m>. Since the square of any real number is non-neg
 <image width="40%" source="function_drawing2" />
 
 <p>
-  The function on the left is not injective (despite its domain being smaller than its co-domain). And the function on the right it not surjective (despite its domain being larger than its co-domain).
+  The function on the left is not injective (despite its domain being smaller than its codomain). And the function on the right it not surjective (despite its domain being larger than its codomain).
 </p>
 </warning>
 
@@ -790,7 +790,7 @@ is <term>bijective</term>, or a <term>one-to-one correspondence</term>.
 <statement>
 <p>
 Consider the following functions. Determine whether they are injective, surjective or bijective.
-They all have the same formula, but have different domains and co-domains (and so are different functions).
+They all have the same formula, but have different domains and codomains (and so are different functions).
 <ul>
 <li> <m>f: \mathbb{R} \to \mathbb{R}</m> given by <m>f(x) =x^2</m>. Neither surjective, nor injective.
 </li>
@@ -805,7 +805,7 @@ They all have the same formula, but have different domains and co-domains (and s
 </statement>
 <solution>
   <p>
-  All of these functions have the same formula, just different domains and co-domains.
+  All of these functions have the same formula, just different domains and codomains.
   <ul>
     <li><p>
       Think about how these functions can fail to be injective. We can verify that <m>f(-x)=(-x)^2 = x^2 = f(x)</m>. Hence these functions will fail to be injective if <m>x</m> and <m>-x</m> are both within the domain. So neither <m>f, g</m> are injective since
@@ -826,7 +826,7 @@ They all have the same formula, but have different domains and co-domains (and s
       </p>
     </li>
     <li>
-      <p>Now think about how these functions might fail to be surjective. We know that the square of a real number is non-negative. That is <m>0 \leq x^2</m>. So if there is a negative number in the co-domain there is no real number that can map to it. Consequently, neither <m>f</m> nor <m>h</m> are surjections, since there is no <m>x \in \mathbb{R}</m> so that
+      <p>Now think about how these functions might fail to be surjective. We know that the square of a real number is non-negative. That is <m>0 \leq x^2</m>. So if there is a negative number in the codomain there is no real number that can map to it. Consequently, neither <m>f</m> nor <m>h</m> are surjections, since there is no <m>x \in \mathbb{R}</m> so that
       <me>
         f(x) = -1 \qquad \text{ or } \qquad h(x)=-1.
       </me>
@@ -901,7 +901,7 @@ The authors are usually loath to use the word <q>clear</q>, but we hope that it 
   <me>
     h: \mathbb{R}-\set{\frac{d}{c}} \to \mathbb{R}-\set{\frac{a}{c}} \qquad h(x) = \frac{ax-b}{cx-d}
   </me>
-  If the constants satisfy <m>ad\neq bc</m>, then this is a Möbius transformation<fn>Well, we should really take <m>x</m> over complex numbers, but the interested reader should search-engine their way to more on this topic. They are named for August Möbius who was 19th century German mathematician and astronomer. He is perhaps best known for discovering the Möbius strip which is an two-dimensional surface with only 1 side. The Möbius strip was actually discovered slightly earlier by Johann Listing; perhaps <q>Listing strip</q> doesn't have quite the same ring to it (sorry for the poor pun).</fn>  Notice that the denominator is zero when <m>cx=d</m>, and hence we have removed the point <m>x=\frac{d}{c}</m> from the domain; the function is not defined there. Some similar reasoning can show that there is no <m>x \in \mathbb{R}</m> so that <m>h(x)= \frac{a}{c}</m>, so we remove that point from the co-domain.  Finally, notice that if <m>ad=bc</m> then
+  If the constants satisfy <m>ad\neq bc</m>, then this is a Möbius transformation<fn>Well, we should really take <m>x</m> over complex numbers, but the interested reader should search-engine their way to more on this topic. They are named for August Möbius who was 19th century German mathematician and astronomer. He is perhaps best known for discovering the Möbius strip which is an two-dimensional surface with only 1 side. The Möbius strip was actually discovered slightly earlier by Johann Listing; perhaps <q>Listing strip</q> doesn't have quite the same ring to it (sorry for the poor pun).</fn>  Notice that the denominator is zero when <m>cx=d</m>, and hence we have removed the point <m>x=\frac{d}{c}</m> from the domain; the function is not defined there. Some similar reasoning can show that there is no <m>x \in \mathbb{R}</m> so that <m>h(x)= \frac{a}{c}</m>, so we remove that point from the codomain.  Finally, notice that if <m>ad=bc</m> then
   <md>
     <mrow> h(x)\amp = \frac{ax-b}{cx-d} </mrow>
     <mrow> \amp = \frac{cax-cb}{c^2 x - cd} \amp \text{since } bc=ad</mrow>
@@ -979,7 +979,7 @@ Now since <m>ad \neq bc</m> and <m>y \neq \frac{a}{c}</m>, this is never zero. H
   &amp;= \frac{y(ad-bc)}{ad-bc} = y
   </mrow>
 </md>
-  Hence for any <m>y</m> in the co-domain, there is an <m>x</m> in the range such that <m>h(x) = y</m>.
+  Hence for any <m>y</m> in the codomain, there is an <m>x</m> in the range such that <m>h(x) = y</m>.
 So the function is surjective.
 </li>
 <li> Now let <m>x, y</m> be two elements of the range such that <m>h(x) = h(y)</m>. Hence
