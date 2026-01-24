@@ -30,7 +30,7 @@ We are going to use mathematical induction.
 </li>
 <li>
 <p>
-<em>Inductive Step</em>: Let <m>k\geq 1</m>, and assume that the statement is true for <m>n=k</m>, that is, <m>\exists x,y,z\in \mathbb Z</m> such that <m>x\geq 2</m>, <m>y\geq 2</m>, and <m>z\geq 2</m> and satisfy <m>x^2+y^2=z^{2k+1}</m>. Then we see that if we multiply the equation by <m>z^2</m>, we get <m>(xz)^2+(yz)^2=z^{2k+3}=z^{2(k+1)+1}</m>. Moreover, we see that <m>(xz),(xy)\geq 2</m> since <m>x,z,y\geq 2</m>.
+<em>Inductive Step</em>: Let <m>k\geq 1</m>, and assume that the statement is true for <m>n=k</m>, that is, <m>\exists x,y,z\in \mathbb Z</m> such that <m>x\geq 2</m>, <m>y\geq 2</m>, and <m>z\geq 2</m> and satisfy <m>x^2+y^2=z^{2k+1}</m>. Then we see that if we multiply the equation by <m>z^2</m>, we get <m>(xz)^2+(yz)^2=z^{2k+3}=z^{2(k+1)+1}</m>. Moreover, we see that <m>(xz),(yz)\geq 2</m> since <m>x,z,y\geq 2</m>.
 </p></li>
 </ul>
 </p>
