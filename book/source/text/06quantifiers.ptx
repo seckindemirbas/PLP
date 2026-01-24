@@ -1745,11 +1745,11 @@ we know that the distance between the function and its limit is smaller than <m>
     <p>
       Now that we know what we need to show, let <m>\epsilon>0</m> be arbitrary. Then, we want a <m>\delta \gt 0</m> such that if we assume <m>0 \lt |x-2| \lt \delta</m>, we can guarantee that <m>\frac{|x-2|}{2|x|} \lt \epsilon</m>. Well, if we know that <m>|x-2| \lt \delta</m>, then we can write
       <me>
-        \frac{|x-2|}{2|x|} \lt \frac{\delta}{2|x|} \lt \epsilon
+        \frac{|x-2|}{2|x|} \lt \frac{\delta}{2|x|} \leq \epsilon
       </me>
       and so we need
       <me>
-        \delta \lt 2|x| \epsilon.
+        \delta \leq 2|x| \epsilon.
       </me>
       This is not quite enough <mdash /> our choice of <m>\delta</m> should not depend on <m>x</m>. We need some bound on <m>x</m>.
     </p>
