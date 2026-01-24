@@ -1636,11 +1636,11 @@ we know that the distance between the function and its limit is smaller than <m>
     <p>
       To prove that <m>\lim_{x\to a}x = a</m> the definition tells us that we need to show that
       <me>
-      \forall\epsilon \gt 0, \exists \delta\st 0 \st \left(0\lt |x-a|\lt \delta\right)\implies \left(|f(x)-L| \lt \epsilon \right).
+      \forall\epsilon \gt 0, \exists \delta\gt 0 \st \left(0\lt |x-a|\lt \delta\right)\implies \left(|f(x)-L| \lt \epsilon \right).
       </me>
       Now, this simplifies immediately since we have <m>f(x)=x</m> and <m>L=a</m>:
       <me>
-      \forall\epsilon \gt 0, \exists \delta\st 0 \st \left(0\lt |x-a|\lt \delta\right)\implies \left(|x-a| \lt \epsilon \right).
+      \forall\epsilon \gt 0, \exists \delta\gt 0 \st \left(0\lt |x-a|\lt \delta\right)\implies \left(|x-a| \lt \epsilon \right).
       </me>
     </p>
     <p>

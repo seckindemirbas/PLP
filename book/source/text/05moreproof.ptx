@@ -801,8 +801,8 @@ Also notice that congruence nicely extends parity; we can re-express parity as j
   Then
   <md>
   <mrow>
-      a+b \amp \equiv c+d \mod n, \amp
-      a-b \amp \equiv c-d \mod n \amp \amp
+      a+b \amp \equiv (c+d) \mod n, \amp
+      a-b \amp \equiv (c-d) \mod n \amp \amp
       \text{and}
   </mrow><mrow>
     ab \amp \equiv cd \mod n.

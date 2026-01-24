@@ -459,7 +459,7 @@ Here are some others we won't really use, except maybe for some examples and exe
   <ul>
     <li><q><m>19</m> is congruent to <m>5</m> modulo 7</q></li>
     <li><q><m>11</m> is congruent to <m>27</m> modulo 4</q></li>
-    <li><q><m>13</m> is congruent to <m>7</m> modulo 5</q></li>
+    <li><q><m>13</m> is not congruent to <m>7</m> modulo 5</q></li>
   </ul>
   where there is a definite <em>first</em> number and a definite <em>second</em> number in the relation. However since congruence is symmetric, we can instead say
   <ul>
@@ -867,7 +867,7 @@ We'll call this result a corollary.
           <p>
             Transitive <mdash /> Let <m>(a,b), (c,d), (e,f) \in \mathbb{R}^2</m> and assume that
             <me>
-              (a,b) \rel (c,d) \qquad \text{ and } \qquad (c,d) \rel (a,b).
+              (a,b) \rel (c,d) \qquad \text{ and } \qquad (c,d) \rel (e,f).
             </me>
             Hence we know that
             <me>
@@ -1395,7 +1395,7 @@ This makes it much easier to talk about different modulii without confusing the 
   (since <m>[13]_4 = [1]_4</m>).
   Similarly modulo 5 we get:
   <me>
-    [2]_5 \cdot [x]_5 = [1]_5.
+    [2]_5 \cdot [x]_5 = [3]_5.
   </me>
   We can try to solve these equations by brute-force by just writing out the multiplication tables modulo 4 and 5:
 </p>
@@ -1454,7 +1454,7 @@ This makes it much easier to talk about different modulii without confusing the 
 <p>
     Now - we see that modulo 5 we have a solution since:
     <me>
-      [2]_5 \cdot [3]_5 = [1]_5
+      [2]_5 \cdot [4]_5 = [3]_5
     </me>
     but modulo 4 there is no solution since
     <me>
@@ -1776,7 +1776,7 @@ For example
       </me>
       By Lemma <xref ref="lem-euc"/> we know that <m>\gcd(a,b) = \gcd(a,r)</m>. Hence computing <m>\gcd(b,r)</m> is the same as computing <m>\gcd(a,b)</m>.
       </li>
-      <li>Since <m>0 \lt r \lt |b|</m> it follows that the value of <m>r</m> will be <em>strictly</em> smaller in each iteration. Further, since <m>r</m> is an integer, it follows that <m>r</m> will become zero in a finite number of iterations.
+      <li>Since <m>0 \leq r \lt |b|</m> it follows that the value of <m>r</m> will be <em>strictly</em> smaller in each iteration. Further, since <m>r</m> is an integer, it follows that <m>r</m> will become zero in a finite number of iterations.
       </li>
     </ul>
     Hence the algorithm described will terminate in a finite number of steps and give the gcd.
