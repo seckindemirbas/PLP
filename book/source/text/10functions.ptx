@@ -637,7 +637,7 @@ That wasn't too bad. Time to write it up as a proof.
   So we need a counter-example; there exists some pair of distinct <m>a_1,a_2 \in \mathbb{R}</m> that map to the same value. Of course, we could have started with the equivalent contrapositive definition of injective:
   <me>\forall a_1,a_2 \in A, a_1 \neq a_2 \implies f(a_1) \neq f(a_2)</me>
   The negation of that is
-  <me>\exists a_1,a_2 \in A \text{ s.t. } a_2 \neq a_2 \implies f(a_1) = f(a_2)</me>
+  <me>\exists a_1,a_2 \in A \text{ s.t. } a_1 \neq a_2 \land f(a_1) = f(a_2)</me>
   which is the same as we found with the first definition of injective. Of course, this must be the case because the two definitions are equivalent.
 </p>
 
