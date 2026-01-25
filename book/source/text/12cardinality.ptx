@@ -10,7 +10,7 @@
       to be a little skeptical of the use of the word <q>just</q>
       here; counting up the elements of a finite set can sometimes be
       quite difficult. Here we have listed out all the elements quite
-      explicitly, but somes a set will be defined more
+      explicitly, but sometimes a set will be defined more
       <em>implicitly</em>, and then counting the elements can be quite
       challenging. The interested reader should search-engine their
       way to a description of enumerative combinatorics which is the
@@ -750,7 +750,7 @@ We form the function <m>f: \mathbb{N} \to A \times B</m> by sweeping successive 
   f(7) &amp;= (a_1,b_4) &amp; f(8) &amp;= (a_2,b_3) &amp; f(9) &amp;= (a_3,b_2) &amp; f(10) &amp;= (a_4,b_1)
 </mrow>
 </md>
-and so forth. Since any given ordered pair is reached eventually (ie after a finite number of diagonal sweeps of finite length), the function is surjective.
+and so forth. Since any given ordered pair is reached eventually (i.e. after a finite number of diagonal sweeps of finite length), the function is surjective.
 Since we never repeat an ordered pair, the function is injective. Thus <m>f</m> is bijective.
 </p>
 </proof>
@@ -1474,7 +1474,7 @@ So we have at least a denumerable number of infinites! In fact there are even mo
     |\pow{\mathbb{N}}| \leq | \mathbb{R} | \qquad \text{ and }
     | \mathbb{R} | \leq |\pow{\mathbb{N}}|
   </me>
-  by finding injections between those sets. However in order to show that the existence of those injections implies the existence of a bijection, ie
+  by finding injections between those sets. However in order to show that the existence of those injections implies the existence of a bijection, i.e.
   <me>
     (|A| \leq |B|) \land (|B| \leq |A|) \implies (|A|=|B|)
   </me>

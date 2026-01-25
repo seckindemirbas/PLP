@@ -181,7 +181,7 @@
       <q>short</q>
       can vary dramatically between populations
       <fn>
-        At the time of typing this author looked up wikipedia to find that the average height of a man in the Netherlands is about 184cm, while in Vietnam it is about 162cm. Quite a sizeable difference. Sorry for the pun.
+        At the time of typing this author looked up Wikipedia to find that the average height of a man in the Netherlands is about 184cm, while in Vietnam it is about 162cm. Quite a sizeable difference. Sorry for the pun.
       </fn>. The second sentence is a little more difficult. If it is true, then it tells us it must be false
       <mdash/>
       how can it be both? While if it is false, then that implies it must be true
@@ -440,7 +440,7 @@
       <q>or</q>
       and
       <q>and</q>
-      by the nicely latin-flavoured words
+      by the nicely Latin-flavoured words
       <q>disjunction</q>
       and
       <q>conjunction</q>; hopefully we won't need those for very long and we'll get used to being more precise about when we want mathematical
@@ -1025,9 +1025,7 @@
       </ul>
       The first two of these emphasise that if you want to know that
       <m>Q</m>
-      is true, then one need only check (ie it is
-      <em>sufficient</em>
-      to check) that
+      is true, then one need only check (i.e. it is <em>sufficient</em> to check) that
       <m>P</m>
       is true. While the last two emphasise that the truth of
       <m>Q</m>
@@ -1195,12 +1193,12 @@
           <title>
             (F,T)</title>
           <p>
-            Here is Chrisopher Marlowe
+            Here is Christopher Marlowe
             <fn>
               There is (was?) a theory that Marlowe faked his own death and then started writing under the name
               <q>William Shakespeare</q>
               <mdash/>
-              though this is not widely accepted. People who promulgated this theory were called Marlovians.You can search-engine your way to some interesting articles on Marlowe.
+              though this is not widely accepted. People who promulgated this theory were called Marlovians. You can search-engine your way to some interesting articles on Marlowe.
             </fn>
             and he is not-alive. This does not actually invalidate the implication
             <mdash/>
@@ -1675,7 +1673,7 @@
       </p>
         <blockquote>
           <p>
-            If they are Galileo then they are supressed. I'm being supressed, so I must be Galileo.
+            If they are Galileo then they are suppressed. I'm being suppressed, so I must be Galileo.
           </p>
         </blockquote>
         <p>
@@ -2026,7 +2024,7 @@
     <title>The converse, contrapositive and biconditional</title>
     <p>
       We really want to get to our first proofs, but we need to do a tiny bit more logic, and define a few terms, before we get there.
-      Consider the following thtree statements derived from implication <m>P \implies Q</m>.
+      Consider the following three statements derived from implication <m>P \implies Q</m>.
     </p>
     <definition xml:id="def-converse-contrapositive">
       <title>Contrapositive, converse and inverse</title>
@@ -2194,7 +2192,7 @@
         </p>
       </blockquote>
     <p>
-      which, even though we haven't written up the proof formally, we know is true. Since the truth-table of the contrapositive is identical to the original implcation, we now know that
+      which, even though we haven't written up the proof formally, we know is true. Since the truth-table of the contrapositive is identical to the original implication, we now know that
     </p>
       <blockquote>
         <p>

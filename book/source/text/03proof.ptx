@@ -57,7 +57,7 @@ The authors are going to assume that you are familiar with the above properties 
 The real numbers have an interesting history and you might be surprised to know that the first rigorous definition was only written down in 1871 by Georg Cantor <mdash /> about 2 centuries after calculus was discovered by Newton and Leibniz! We'll discuss Cantor quite a bit later in the text. Your favourite search-engine can direct you to the axioms of the real numbers.
 </p>
   </aside>
-<p>Another useful fact is Euclidean Divison, also called the division algorithm by some texts. It will come in very handy when we discuss even and odd numbers (for example).
+<p>Another useful fact is Euclidean Division, also called the division algorithm by some texts. It will come in very handy when we discuss even and odd numbers (for example).
 </p>
   <fact xml:id="fact-euc-div">
     <title>Euclidean division</title>
@@ -86,7 +86,7 @@ The real numbers have an interesting history and you might be surprised to know 
       <p>
       A Theorem is a true statement that is important and interesting
       <mdash/>
-      Pythagorous' theorem for example. Or Euclid's theorem stating that there are an infinite number of prime numbers. Also, it is sometimes the case that implicit in the use of the word
+      Pythagoras' theorem for example. Or Euclid's theorem stating that there are an infinite number of prime numbers. Also, it is sometimes the case that implicit in the use of the word
       <q>Theorem</q>
       is that this is a result that we will use later to build other interesting results.
     </p>
@@ -427,7 +427,7 @@ What are we trying to get to?
     It is very important to know definitions precisely. We cannot prove involving an object or property unless we can rigorously and carefully define it. The authors will likely nag you again and again about this.
   </p>
   <p>
-    If you have trouble memorising definitions, then we recommend you search-engine your way to some memorisation tips and tricks. You could also nag the authors back about producing nice auxillary materials that, say, could be easily reviewed on flash-cards or a phone.
+    If you have trouble memorising definitions, then we recommend you search-engine your way to some memorisation tips and tricks. You could also nag the authors back about producing nice auxiliary materials that, say, could be easily reviewed on flash-cards or a phone.
   </p>
 </aside>
 

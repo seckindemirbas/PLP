@@ -429,8 +429,8 @@ We can visualise the operations of union and intersection using a Venn diagram<f
 John Venn was a 19th century English logician and mathematician.
 He introduced <q>Eulerian circles</q> (which later became to be known as Venn diagrams) in a paper <q>On the Diagrammatic and Mechanical Representation of Propositions and Reasoning</q>. He also built a machine to bowl cricket balls.
 </fn>.
-These diagrams might seem like an obvious and simple idea, however it is much more recent than the cartesian plane.
-Venn diagrams are 19th century mathematics, while the cartesian plane is 17th century mathematics<fn>Or, if you look into the history a little more, 14th century.</fn>.
+These diagrams might seem like an obvious and simple idea, however it is much more recent than the Cartesian plane.
+Venn diagrams are 19th century mathematics, while the Cartesian plane is 17th century mathematics<fn>Or, if you look into the history a little more, 14th century.</fn>.
 </p>
 
 <sidebyside width="45%">
@@ -852,7 +852,7 @@ You can see that the distributive laws for sets look very much like the distribu
 Laws for set differences are less obvious and we certainly wouldn't expect you to remember them. However they do make very good exercises!
 And, as you'll see in the examples below, a quick sketch of Venn diagrams can help a lot. <alert>But</alert> a Venn diagram is not a proof
 <fn>
-  The Venn diagram is good scratch work for a proof, but really what one is doing is showing that for a particular choice of sets (ie the ones drawn) everything works out. To be a proof it has to work for every choice.
+  The Venn diagram is good scratch work for a proof, but really what one is doing is showing that for a particular choice of sets (i.e. the ones drawn) everything works out. To be a proof it has to work for every choice.
 </fn>.
 </p>
 
@@ -1060,7 +1060,7 @@ What about a distributive law or two?
     It is a set-equality, so we need to prove the LHS is a subset of the RHS and vice-versa.
     <ul>
 <li> Let <m>p \in A \times (B\cup C)</m>. Notice that since <m>A,B,C</m> are non-empty, we know that <m>p</m> exists. 
-      Since the LHS is the cartesian product of two sets, this element <m>p</m> is really an ordered pair of elements.
+      Since the LHS is the Cartesian product of two sets, this element <m>p</m> is really an ordered pair of elements.
       It is probably a bit easier to follow what is going to happen if we make this clear from the start.
       With this in mind, let us restart things.
 </li>

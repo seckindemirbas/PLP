@@ -125,7 +125,7 @@ Mind you, that doesn't stop people doing it, but in general, it is okay to do in
 </p>
 </remark>
 <p>Quantifiers are often a point of confusion for students.
-This can be exacerbated by the number of different ways they can be expressed in written or spoken languauge.
+This can be exacerbated by the number of different ways they can be expressed in written or spoken language.
 For example, the statement <q><m>\exists x\in A \st P(x)</m></q> can be read as
 <ul>
 <li> There exists <m>x</m> in <m>A</m> so that <m>P(x)</m> is true.
@@ -606,7 +606,7 @@ and
 </example>
 
 <p>
-  The first statement is, in plain(er) english
+  The first statement is, in plain(er) English
 </p>
 <blockquote>
   <p>
@@ -1071,7 +1071,7 @@ It's also important to remember that:
 <introduction>
 <p>
   Quantifiers appear all over mathematics, and it is essential that you become comfortable reading, understanding and applying them. One particularly important application of quantifiers is to make the notions of limits rigorous. You have<fn>At least we think you should have.
-  The authors are making an assumption about your mathematical education here, and we appologise if you have, in fact, not encountered limits before now.
+  The authors are making an assumption about your mathematical education here, and we apologise if you have, in fact, not encountered limits before now.
 </fn> encountered the idea of a <term>limit</term> when you studied differential calculus; the idea that the value of a function gets <q>closer and closer</q> to a particular value as we take the argument of that function <q>closer and closer</q> to (say) zero. Quantifiers allow us to make <q>closer and closer</q> rigorous<fn>We recommend looking up the history of <term>infinitesimals</term> and <term>fluxions</term> which predate the rigorous definition of limits we give here. The calculus of Newton and Leibniz used infinitesimals to understand limits and derivatives. These ideas were attacked by Berkeley in his 1734 book <q>The Analyst</q> in which he refers to infinitesimals as <q>the ghosts of departed quantities</q>. The rigorous definition of limits, and so a rigorous foundation for calculus, was given almost 150 years later by Cauchy, Bolzano and Weierstrass. There is much of interest here for a motivated reader with a good search engine. We also recommend a little digression into <term>surreal numbers</term>, <term>hyperreal numbers</term> and <term>nonstandard analysis</term> <mdash/> things can get pretty weird.
 </fn>.
 We will start with the idea of the limit of a sequence, and then move on to limits of functions. So we begin with the definition of a sequence.
@@ -1110,7 +1110,7 @@ We will start with the idea of the limit of a sequence, and then move on to limi
   <me>
     (x_n) = \left(\dfrac{1}{n}\right)
   </me>
-  ie, the sequence <m>(1,1/2, 1/3, 1/4,\dots)</m>. Just as was the case with defining sets, we must make sure that we give the reader enough information to understand our definition. In this way, giving a formula for the <m>n^\mathrm{th}</m> term is typically preferred<fn>
+  i.e. the sequence <m>(1,1/2, 1/3, 1/4,\dots)</m>. Just as was the case with defining sets, we must make sure that we give the reader enough information to understand our definition. In this way, giving a formula for the <m>n^\mathrm{th}</m> term is typically preferred<fn>
   The reader should assume that the sequence <m>(2,3,5,7,11,\dots)</m> is just the prime numbers, but a little digging in the <url href="https://oeis.org/" visual="oeis.org">Online Encyclopedia of Integer Sequences</url> shows a few other possibilities (some reasonable and some weird) including <q>partitions</q> (the number of ways of writing a given integer as a sum of smaller positive integers), <q>additive primes</q> (the sum of the digits is also prime), <q>absolute primes</q> (every permutation of the digits is also a prime) and lengths of <q>Farey sequences</q> (the reader should search-engine this one). Of course, if we are doing a good job as an author then we will have provided the reader with enough context to determine the sequence correctly.
 </fn>.
 </p>
@@ -1620,7 +1620,7 @@ we know that the distance between the function and its limit is smaller than <m>
 </remark>
 
 <p>
-  Let's put this definiton to work by considering the limit of a simple function.
+  Let's put this definition to work by considering the limit of a simple function.
 </p>
 
 <example>
@@ -1868,7 +1868,7 @@ we know that the distance between the function and its limit is smaller than <m>
     \lim_{n\to\infty}x_n=K \qquad \text{and also} \qquad
     \lim_{n\to\infty}x_n=L
   </me>
-  ie, there are two limits. Of course, we don't want these limits to <em>actually</em> be different, even though we've labelled them by different variables. We want to show that they are the same, that is <m>K=L</m>. In other words,
+  i.e. there are two limits. Of course, we don't want these limits to <em>actually</em> be different, even though we've labelled them by different variables. We want to show that they are the same, that is <m>K=L</m>. In other words,
   <me>
     \left(\text{the limit is unique}\right) \equiv
     \left(
@@ -2068,7 +2068,7 @@ we know that the distance between the function and its limit is smaller than <m>
 <p>
   Our assumptions
 that <m>x_n \to a</m> and <m>y_n \to b</m> mean<fn>
-Know your definitons!
+Know your definitions!
 </fn><fn>
 Again, we are careful to use different <m>\epsilon</m> and different <m>N</m> for each convergence statement in order to avoid making accidental extra assumptions.
 </fn>:
@@ -2151,7 +2151,7 @@ Again, we are careful to use different <m>\epsilon</m> and different <m>N</m> fo
 
 <subsubsection><title>Product of limits</title>
 <p>
-  Again, the statement is really an impliction: <q>if <m>x_n\to a</m> and <m>y_n \to b</m> then
+  Again, the statement is really an implication: <q>if <m>x_n\to a</m> and <m>y_n \to b</m> then
   <m>x_n \cdot y_n \to a \cdot b</m></q>. So we assume that <m>x_n \to a</m> and <m>y_n \to b</m>. This means, roughly speaking, that when <m>n</m> is really big, we know that <m>|x_n-a|</m> and <m>|y_n-b|</m> are small. And from that we need to show that <m>|x_n \cdot y_n - a\cdot b|</m> is also small.
 </p>
 <p>

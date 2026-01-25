@@ -279,7 +279,7 @@ in turn, will help us to define the <term>inverse function</term>.
 
 <p>The notation for preimage, <m>f^{-1}</m>, is somewhat unfortunate in that we use the same notation to mean the inverse-function. Additionally, it is regularly confused with
 <me>\left(f(x)\right)^{-1} = \dfrac{1}{f(x)}</me>
-ie the reciprocal. Alas, we are stuck with this notation and must be careful to understand its meaning by context.
+i.e. the reciprocal. Alas, we are stuck with this notation and must be careful to understand its meaning by context.
 </p>
 
 <p>This is an important point, so we'll make it a formal warning:</p>
@@ -1103,7 +1103,7 @@ is some <m>b \in B</m> such that <m>g(b) = c</m>. Similarly for each <m>b \in B<
  <ul>
 <li> Let <m>f,g</m> be injective functions. And let <m>a_1, a_2 \in A</m> such that <m>a_1 \neq
 a_2</m>. Since <m>f</m> is injective, it follows that <m>f(a_1) \neq f(a_2)</m>. And since <m>g</m> is
-injective it followst that <m>g(f(a_1)) \neq g(f(a_2))</m>. Thus <m>(g\circ f)(a_1) \neq (g\circ
+injective it follows that <m>g(f(a_1)) \neq g(f(a_2))</m>. Thus <m>(g\circ f)(a_1) \neq (g\circ
 f)(a_2)</m>. Thus <m>g\circ f</m> is injective.
 </li>
 <li> Let <m>f,g</m> be surjective functions and let <m>c \in C</m>. Since <m>g</m> is surjective, <m>g(b)

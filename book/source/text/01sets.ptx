@@ -307,7 +307,7 @@ A very famous example is
   S \amp = \set{A \so A \not\in A }
 </mrow>
 </md>
-ie. the set of all sets that do not contain themselves.
+i.e. the set of all sets that do not contain themselves.
 This is a problem, because if <m>S \in S</m>, then according to the defining rule, it cannot be.
 On the other hand, if <m>S \not\in S</m> then it must be.
 Hence the rule is ambiguous.

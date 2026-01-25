@@ -66,7 +66,7 @@ Lets write these definitions in a proper formal way so that we can refer back to
 
 
 <p>
-  We will use tautologies in the very near future, but contraditions will have to wait until later in the course <mdash/> there is a proof technique called <q>proof by contradiction</q> which relies on us arriving at a contradiction.
+  We will use tautologies in the very near future, but contradictions will have to wait until later in the course <mdash/> there is a proof technique called <q>proof by contradiction</q> which relies on us arriving at a contradiction.
 </p>
 
 </section>
@@ -285,7 +285,7 @@ In fact it is so nice and useful, we probably should have made it an exercise:
       <me>
         (x^2 \geq 4) \land (x \lt 1)
       </me>
-      Remeber to be careful when we negating inequalities. The negation of <m>a \lt b</m> is <m>a \geq b</m>, and the negation of <m>a \leq b</m> is <m>a \gt b</m>.
+      Remember to be careful when we negating inequalities. The negation of <m>a \lt b</m> is <m>a \geq b</m>, and the negation of <m>a \leq b</m> is <m>a \gt b</m>.
     </p>
   </statement>
   <solution>
@@ -310,7 +310,7 @@ In fact it is so nice and useful, we probably should have made it an exercise:
   </statement>
   <solution>
     <p>
-      Remeber to be careful with those inequalities.
+      Remember to be careful with those inequalities.
       <md>
         <mrow>\neg( (x^2 \geq 1) \implies (x\geq 1))
             \amp\equiv (x^2\geq 1) \land \neg(x\geq 1)</mrow>
