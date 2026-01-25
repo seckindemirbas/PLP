@@ -62,7 +62,13 @@ Note that We haven't proved that <m>\sqrt{2}, \sqrt{8}</m> are not integers, but
 <me>
 \exists a,b\in\mathbb{N} \text{ such that } \left(\exists x,y\in\mathbb{Z} \text{ and } \exists k\in\mathbb{N} \text{ such that } ax+by=k \right) \text{ and } (k \nmid a \lor k \nmid b).
 </me>
-Since all of these are existential quantifiers we can prove the negation is true by an example --- this is just a counter-example to the original statement.  Take <m>a=2</m> and <m>b=3</m> so that both are prime numbers. At the same time, taking <m>x=y=1</m> and <m>k=5</m> and get <m>ax+by=k</m>, but <m>5 \nmid 2</m> and <m>5 \nmid 3</m>.
+            Since all of these are existential quantifiers we can prove the negation is true by an example --- this is just a counter-example to the original statement.  
+            </p>
+            <p>
+            Take <m>a=2</m> and <m>b=3</m> so that both are prime numbers. At the same time, taking <m>x=y=1</m> and <m>k=5</m> and get <m>ax+by=k</m>, but <m>5 \nmid 2</m> and <m>5 \nmid 3</m>.
+</p>
+            <p>
+            Similarly, one can take <m>a=b=1</m>, and <m>x=y=1</m> with <m>k=2</m>.This gives <m>ax+by=k</m>, but <m>2 \nmid 1</m> and <m>2 \nmid 1</m>.
 </p>
 </li>
 </ol>

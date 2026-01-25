@@ -32,7 +32,7 @@ Now, let <m>n\in\mathbb Z</m> and assume that <m>n\equiv 3 \pmod 4</m>. To prove
 </p></li>
 <li>
 <p>
- <em>Case 2:  <m>a</m> and <m>b</m> are both odd:</em> Then, we know that <m>a=2k+1</m> and <m>b=2\ell+1</m> for some <m>k,\ell\in\mathbb{Z}</m>. In this case, we see that <m>a^2=4k^24k+1</m> and <m>b^2=4\ell^2+4\ell+1</m>. Thus, <m>a^2+b^2=4k^2+4k+1+4\ell^2+4\ell+1=4(k^2+k+\ell^2+\ell)+2</m>. Since <m>k^2+k+\ell^2+\ell\in\mathbb Z</m> we see <m>4\mid (a^2+b^2-2)</m>. Therefore <m>(a^2+b^2)\equiv 2\pmod 4</m>.
+ <em>Case 2:  <m>a</m> and <m>b</m> are both odd:</em> Then, we know that <m>a=2k+1</m> and <m>b=2\ell+1</m> for some <m>k,\ell\in\mathbb{Z}</m>. In this case, we see that <m>a^2=4k^2+4k+1</m> and <m>b^2=4\ell^2+4\ell+1</m>. Thus, <m>a^2+b^2=4k^2+4k+1+4\ell^2+4\ell+1=4(k^2+k+\ell^2+\ell)+2</m>. Since <m>k^2+k+\ell^2+\ell\in\mathbb Z</m> we see <m>4\mid (a^2+b^2-2)</m>. Therefore <m>(a^2+b^2)\equiv 2\pmod 4</m>.
 </p></li>
 <li>
 <p>
