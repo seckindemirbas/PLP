@@ -59,7 +59,10 @@ We see that the statement involves the expressions <m>|x+4|</m> and <m>|x-3|</m>
 <p>
 Therefore if <m>x\in\mathbb{R}</m>, then <m>|x+4|+|x-3|\geq 7</m>.
 </p>
-</proof>
-
+    </proof>
+    <p>
+    In the above proof there are 2 points that we should be careful of, namely <m>x=3</m> and <m>x=-4</m>. We need to make sure they are covered by our cases. In the above we put both points in case 2, but, with some careful changes to the inequalities, they could also be moved into cases 1 and 3 if we wanted. 
+    We could even make them into their own cases, but that is (arguably) a bit too tedious.
+    </p>
 </solution>
 </exercise>

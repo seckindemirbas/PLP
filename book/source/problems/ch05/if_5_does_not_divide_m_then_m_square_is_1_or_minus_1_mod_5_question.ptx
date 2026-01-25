@@ -39,17 +39,17 @@ Assume that <m>5\nmid m</m>. By the division algorithm, there are four cases for
 <li>
 <p>
 
-<em>Case 2</em>:  <m>m=5k+2</m> for some <m>k\in\mathbb Z</m>. In this case, we have <m>m^2=25k^2+20k+4</m>. Thus, we see <m>m^2+1=5(5k^2+2k+1)</m>. Since <m>(5k^2+2k+1)\in\mathbb Z</m>, we see <m>5\mid (m^2+1)</m>, that is <m>m^2\equiv -1 \mod{5}</m>.
+<em>Case 2</em>:  <m>m=5k+2</m> for some <m>k\in\mathbb Z</m>. In this case, we have <m>m^2=25k^2+20k+4</m>. Thus, we see <m>m^2+1=5(5k^2+4k+1)</m>. Since <m>(5k^2+4k+1)\in\mathbb Z</m>, we see <m>5\mid (m^2+1)</m>, that is <m>m^2\equiv -1 \mod{5}</m>.
 </p></li>
 <li>
 <p>
 
-<em>Case 3</em>:  <m>m=5k+3</m> for some <m>k\in\mathbb Z</m>. In this case, we have <m>m^2=25k^2+30k+9</m>. Thus, we see <m>m^2+1=5(5k^2+2k+2)</m>. Since <m>(5k^2+2k+2)\in\mathbb Z</m>, we see <m>5\mid (m^2+1)</m>, that is <m>m^2\equiv -1 \mod{5}</m>.
+<em>Case 3</em>:  <m>m=5k+3</m> for some <m>k\in\mathbb Z</m>. In this case, we have <m>m^2=25k^2+30k+9</m>. Thus, we see <m>m^2+1=5(5k^2+6k+2)</m>. Since <m>(5k^2+6k+2)\in\mathbb Z</m>, we see <m>5\mid (m^2+1)</m>, that is <m>m^2\equiv -1 \mod{5}</m>.
 </p></li>
 <li>
 <p>
 
-<em>Case 4</em>:  <m>m=5k+4</m> for some <m>k\in\mathbb Z</m>. In this case, we have <m>m^2=25k^2+40k+16</m>. Thus, we see <m>m^2-1=5(5k^2+2k+3)</m>. Since <m>(5k^2+2k+3)\in\mathbb Z</m>, we see <m>5\mid (m^2-1)</m>, that is <m>m^2\equiv 1 \mod{5}</m>.
+<em>Case 4</em>:  <m>m=5k+4</m> for some <m>k\in\mathbb Z</m>. In this case, we have <m>m^2=25k^2+40k+16</m>. Thus, we see <m>m^2-1=5(5k^2+8k+3)</m>. Since <m>(5k^2+8k+3)\in\mathbb Z</m>, we see <m>5\mid (m^2-1)</m>, that is <m>m^2\equiv 1 \mod{5}</m>.
 </p></li>
 </ul>
 </p>
