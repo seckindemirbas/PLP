@@ -41,19 +41,21 @@ Write the contrapositive of the following statements.
  If <m>n</m> is not a multiple of <m>24</m>, then it is not a multiple of <m>4</m> or <m>6</m>.
     </p></li>
 <li>
-<p>
- We give two ways of writing this; they are quite similar.
-    <ul>
-<li>
-<p>
- If <m>n</m> is not a multiple of <m>2</m>, but it is a multiple of <m>5</m>, then <m>n</m> is a multiple of 10.
-    </p></li>
-<li>
-<p>
- If <m>n</m> is a multiple of <m>5</m> and not a multiple of <m>2</m>, then <m>n</m> is a multiple of 10.
-    </p></li>
-</ul>
-    </p></li>
+          <p>
+            Let's start by rewriting the original statement to make it a bit more clear:
+            <ul>
+              <li>
+                 If <m>n</m> is not a multiple of <m>10</m>, then (it is a multiple of <m>2</m>) and (it is not a multiple of <m>5</m>).
+              </li>
+            </ul>
+            This means it easier to find the contrapositive:
+            <ul>
+            <li>
+             If <m>n</m> is not a multiple of <m>2</m> or it is a multiple of <m>5</m>, then <m>n</m> is a multiple of 10.
+            </li>
+            </ul>
+            </p>
+            </li>
 <li>
 <p>
  First we rearrange the original statement to be in a format where we can more easily identify the hypothesis and the conclusion:
