@@ -581,9 +581,9 @@ The domain of the quantifier remains unchanged when the statement is negated.
   <md>
   <mrow>
     \neg(  \exists y \in \mathbb{R} \st 1/y=y+1 )
-    \amp \equiv  \forall y \in \mathbb{R} \st \neg( 1/y=y+1 )
+    \amp \equiv  \forall y \in \mathbb{R},  \neg( 1/y=y+1 )
 </mrow><mrow>
-    \amp \equiv  \forall y \in \mathbb{R} \st 1/y \neq y+1.
+    \amp \equiv  \forall y \in \mathbb{R}, 1/y \neq y+1.
   </mrow>
 </md>
 and
