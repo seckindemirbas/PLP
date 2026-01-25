@@ -32,13 +32,13 @@ Alternatively, assuming <m>a=2k</m> and <m>a=3m</m> for some <m>k,m\in\mathbb Z<
 </answer>
 <solution>
 <proof><title>First proof</title><p>
-Let <m>a\in\mathbb{Z}</m>. Assume that <m>2\mid a</m> and <m>3\mid a</m>. This implies <m>a=2k</m> some some <m>k\in\mathbb{Z}</m> and <m>a=3m</m> for some <m>m\in\mathbb{Z}</m>. Thus, we see <m>3a=6k</m> and <m>2a=6m</m>. Hence, <m>a=3a-2a=6k-6m=6(k-m)</m>.Therefore, since <m>(k-m)\in\mathbb{Z}</m> for <m>k,m\in\mathbb{Z}</m>, we see <m>6\mid a</m>.
+Let <m>a\in\mathbb{Z}</m>. Assume that <m>2\mid a</m> and <m>3\mid a</m>. This implies <m>a=2k</m> for some <m>k\in\mathbb{Z}</m> and <m>a=3m</m> for some <m>m\in\mathbb{Z}</m>. Thus, we see <m>3a=6k</m> and <m>2a=6m</m>. Hence, <m>a=3a-2a=6k-6m=6(k-m)</m>.Therefore, since <m>(k-m)\in\mathbb{Z}</m> for <m>k,m\in\mathbb{Z}</m>, we see <m>6\mid a</m>.
 </p></proof>
 
 
 <proof><title>Alternative proof</title>
 <p>
-Let <m>a\in\mathbb{Z}</m>. Assume that <m>2\mid a</m> and <m>3\mid a</m>. This implies <m>a=2k</m> some some <m>k\in\mathbb{Z}</m> and <m>a=3m</m> for some <m>m\in\mathbb{Z}</m>. Thus, we see <m>a=2k=3m</m>, and hence, <m>2k-2m=2(k-m)=m</m>. This implies <m>a=3m=6(k-m)</m>. Therefore, since <m>(k-m)\in\mathbb{Z}</m> for <m>k,m\in\mathbb{Z}</m>, we see <m>6\mid a</m>.
+Let <m>a\in\mathbb{Z}</m>. Assume that <m>2\mid a</m> and <m>3\mid a</m>. This implies <m>a=2k</m> for some <m>k\in\mathbb{Z}</m> and <m>a=3m</m> for some <m>m\in\mathbb{Z}</m>. Thus, we see <m>a=2k=3m</m>, and hence, <m>2k-2m=2(k-m)=m</m>. This implies <m>a=3m=6(k-m)</m>. Therefore, since <m>(k-m)\in\mathbb{Z}</m> for <m>k,m\in\mathbb{Z}</m>, we see <m>6\mid a</m>.
 </p></proof>
 
 </solution>

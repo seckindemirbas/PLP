@@ -119,7 +119,7 @@ Since <m>k,\ell\in\mathbb{Z}</m>, we also have that <m>2k\ell</m> is an integer,
 <proof>
 <p>
 Let <m>m</m> be an even number and <m>n</m> be an odd number. Then there are some <m>k,\ell\in\mathbb{Z}</m> such that <m>m=2k</m> and <m>n=2\ell+1</m>, and so
-<me> mn = (2k)(2\ell+1) =2( 2k\ell+k)). </me>
+<me> mn = (2k)(2\ell+1) =2( 2k\ell+k). </me>
 Since <m>k,\ell\in\mathbb{Z}</m>, we also have that <m> 2k\ell+k)</m> is an integer, and thus <m>mn</m> is even.
 </p>
 </proof>
