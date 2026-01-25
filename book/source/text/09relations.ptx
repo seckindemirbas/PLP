@@ -216,7 +216,7 @@ The relation <q>is less than</q> on the set of reals, on the other hand, satisfi
 <li> The relation <m>R</m> is <term>transitive</term> when for any <m>a,b,c \in A</m>, <m>a \rel b</m> and <m>b \rel c</m> implies <m>a \rel c</m>.
 </li>
 </ul>
-Notice that in the definition of transitive we do not require that <m>a,b,c</m> are different.
+Notice that in the definition of transitive we do not require that <m>a,b,c</m> be different.
 </p></statement>
 </definition>
 
