@@ -89,11 +89,11 @@ Now we can write <m>\pow{B}</m> as a union of all subsets that contain the eleme
 <mrow>
 |\pow{B}| \amp =|\mathcal P|+|\mathcal Q|
 </mrow><mrow>
- \amp |\pow{\tilde{B}}|+|\mathcal Q|
+ \amp = |\pow{\tilde{B}}|+|\mathcal Q|
 </mrow><mrow>
- \amp |\pow{\tilde{B}}|+|\pow{\tilde{B}}|=2|\pow{\tilde{B}}|
+ \amp = |\pow{\tilde{B}}|+|\pow{\tilde{B}}|=2 \cdot |\pow{\tilde{B}}|
 </mrow><mrow>
- \amp =2.2^n=2^{n+1}.
+ \amp =2 \cdot 2^n=2^{n+1}.
 </mrow>
 </md>
 </p>
