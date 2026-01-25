@@ -767,9 +767,9 @@ Also notice that congruence nicely extends parity; we can re-express parity as j
   <p>
     We prove both implications in turn. So start by assuming that <m>a \equiv b \mod 2</m>. Then we know that <m>2 \mid (a-b)</m> and thus <m>a-b=2k</m> for some <m>k \in \mathbb{Z}</m>. Now either <m>a</m> is even or odd.
     <ul>
-      <li>When <m>a</m> is even, we know that <m>a=2\ell</m> for some integer <m>\ell</m>, and thus <m>b=2k+2\ell</m> and so is also even.
+      <li>When <m>a</m> is even, we know that <m>a=2\ell</m> for some integer <m>\ell</m>, and thus <m>b=2\ell-2k</m> and so is also even.
     </li>
-    <li>Similarly when <m>a</m> is odd, we know that <m>a=2m+1</m> for some integer <m>m</m>, and thus <m>b=2k+2m+1</m> and so is also odd.
+    <li>Similarly when <m>a</m> is odd, we know that <m>a=2m+1</m> for some integer <m>m</m>, and thus <m>b=2m-2k+1</m> and so is also odd.
     </li>
     </ul>
     Thus being congruent modulo 2 implies that they have the same parity.

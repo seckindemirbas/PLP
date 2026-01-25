@@ -14,7 +14,7 @@ Modular arithmetic makes this much easier.
 <solution>
 
 <proof><p>
- Let <m>a\in\mathbb{Z}</m>. By Euclidean division, the number <m>a</m> can be written uniquely as <m>a=5k+r</m> with <m>r \in \set{0,1,2,3,4}</m>. This means that
+      Let <m>a\in\mathbb{Z}</m>. By Euclidean division, the number <m>a</m> can be written uniquely as <m>a=5k+r</m> with <m>k\in \mathbb{Z}</m> and <m>r \in \set{0,1,2,3,4}</m>. This means that
  <me>
  a \equiv r \pmod5 \qquad \text{ with } r \in \set{0,1,2,3,4}.
  </me>
