@@ -31,7 +31,7 @@ Prove that there do not exist <m>a,n\in\mathbb N</m> such that <m>a^2 + 35 = 7^n
 We'll prove this by contradiction by first assuming that there are some <m>a,n\in\mathbb N</m> satisfying the equation.
 Writing <m>a^2=7^n-35</m>, we can show that <m>a^2</m> is divisible by <m>7</m>. By Euclid's lemma, this implies that <m>7\mid a</m>.
 Then <m>7^2\mid a^2</m>. Notice that <m>7\mid 35</m>, but <m>7^2\nmid 35</m>. If we also had <m>7^2\mid 7^n</m>, then that would imply <m>7^2</m> divides <m>35=7^n-a^2</m>, which is a contradiction.
-So we have a contradiction in the case <m>n\geq 2</m>. Now we just need to show that the case <m>n=1</m> also leads to a contradiction. In this case, we have the equation <m>a^2+35=7</m>. This is imposible, since <m>a^2+35\geq 35</m>.
+So we have a contradiction in the case <m>n\geq 2</m>. Now we just need to show that the case <m>n=1</m> also leads to a contradiction. In this case, we have the equation <m>a^2+35=7</m>. This is impossible, since <m>a^2+35\geq 35</m>.
 </p>
 
 </answer>

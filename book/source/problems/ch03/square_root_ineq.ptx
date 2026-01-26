@@ -41,7 +41,7 @@ and reverse the argument above to show the desired conclusion,
 Let <m>x,y\in\mathbb{R}</m> such that <m>x,y\geq0</m>. Since the square root function is never negative,
 <m>\sqrt{x}\sqrt{y}\geq0</m>. Then multiplying by <m>2</m> and adding <m>x+y</m> to both sides, we have
 <me> x + y \leq x+2\sqrt{x}\sqrt{y}+y. </me>
-Since <m>x,y\geq0</m>, we have that <m>(\sqrt{x})^2=x</m> and <m>(\sqrt{y})^2=y</m>, and so we may factor the righthand side of the above inequality to obtain
+Since <m>x,y\geq0</m>, we have that <m>(\sqrt{x})^2=x</m> and <m>(\sqrt{y})^2=y</m>, and so we may factor the right-hand side of the above inequality to obtain
 <me> x+y \leq (\sqrt{x}+\sqrt{y})^2. </me>
 Since <m>x+y\geq0</m>, we then have
 <me> \sqrt{x+y} \leq \sqrt{(\sqrt{x}+\sqrt{y})^2} </me>

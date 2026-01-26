@@ -37,7 +37,7 @@ x\in\mathbb{Z}
             <p>Now assume that <m>x \in \mathbb{Z}</m>. We prove the result by showing that <m>n \leq x</m> and <m>n \geq x</m>.
             <ul>
               <li> Then, since the floor function returns the greatest integer less than or equal to <m>x</m>, we know that <m>n \leq x</m>. </li>
-              <li> By definition of the floor function, we know that for any integer <m>k</m> satsifying <m>k \leq x</m>, we must have that <m>k \leq n</m>,
+              <li> By definition of the floor function, we know that for any integer <m>k</m> satisfying <m>k \leq x</m>, we must have that <m>k \leq n</m>,
               since <m>n</m> is the greatest such integer. Since <m>x</m> is an integer and <m>x \leq x</m>, we know that <m>x \leq n</m> </li>
             </ul>
            Because <m>x \leq n</m> and <m>x \geq n</m>, we know <m>x = n = \lfloor x \rfloor</m>.

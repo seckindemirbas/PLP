@@ -112,7 +112,7 @@ This does not mean the equation has a solution over the integers. Let us be care
  taking that equation modulo <m>n</m> gives the equation <m> 5b^2 -4a^2 \equiv 7 \pmod n</m>
 </p></li>
 </ul>
-That chain of reasoning has to be true for all modulii <m>n</m>. So when we find a moulus with no solutions, we can use <xref ref="def_modus_tollens">modus tollens</xref> to tell us that the equation has no solution. Unfortunately, when we do find a solution for a particular modulus, we cannot infer that there has to be a solution over the integers; that would be an example of
+That chain of reasoning has to be true for all moduli <m>n</m>. So when we find a modulus with no solutions, we can use <xref ref="def_modus_tollens">modus tollens</xref> to tell us that the equation has no solution. Unfortunately, when we do find a solution for a particular modulus, we cannot infer that there has to be a solution over the integers; that would be an example of
 <xref ref="warn-atc">affirming the consequent</xref>.
 </p>
 </solution>

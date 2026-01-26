@@ -36,7 +36,7 @@ Is <m>g</m> injective? Is <m>g</m> surjective?
 <solution>
 
   <proof><title>Proof of cardinality of <m>F</m></title>
-    <p> We see that for <m>f:A\rightarrow \set{0,1}</m> to be a function, every element in <m>A</m> has to go to a unique element in <m>\set{0,1}</m>. Then we see that for every element <m>a_i</m>, <m>i\in\set{1,2,\cdots, n}</m>, there are two different options for the value of <m>f(a_i)</m>, <m>f(a_i)=0</m> or <m>f(a_i)=1</m>. Thus, there are <m>2^n</m> diffferent ways we can construct a function from <m>A</m> to  <m>\set{0,1}</m>. Therefore, <m>|F|=2^n</m>.
+    <p> We see that for <m>f:A\rightarrow \set{0,1}</m> to be a function, every element in <m>A</m> has to go to a unique element in <m>\set{0,1}</m>. Then we see that for every element <m>a_i</m>, <m>i\in\set{1,2,\cdots, n}</m>, there are two different options for the value of <m>f(a_i)</m>, <m>f(a_i)=0</m> or <m>f(a_i)=1</m>. Thus, there are <m>2^n</m> different ways we can construct a function from <m>A</m> to  <m>\set{0,1}</m>. Therefore, <m>|F|=2^n</m>.
     </p>
   </proof>
 

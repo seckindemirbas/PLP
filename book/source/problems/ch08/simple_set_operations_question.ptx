@@ -235,7 +235,7 @@ We also see,
 </md>
 </p>
 <p>
- since <m>(1,1)\in B\times B</m> but <m>(1,1)\notin (A_4\times B)\cup  (B\times A_4)</m>.
+ since <m>(1,1)\in B\times B</m> but <m>(1,1)\not\in (A_4\times B)\cup  (B\times A_4)</m>.
 </p>
 </li>
 </ol>

@@ -58,7 +58,7 @@ Prove that
 When we look at the relation defined in the question, we can easily see that it is reflexive (since equality is reflexive), and symmetric (since equality is symmetric). Moreover, if <m>(x,y)\rel (s,t)</m> and <m>(s,t)\rel (a,b)</m>, we see that <m>x^2+y^2=s^2+t^2=a^2+b^2</m>. Therefore it also is a transitive relation. As we can see, trying to show that this relation is an equivalence relation is not too hard to show.
 </p>
 <p>
-Now, let's try to understand the equivalence classes of this relation. Let <m>(s,t)\in\mathbb R^2</m>. then we see
+Now, let's try to understand the equivalence classes of this relation. Let <m>(s,t)\in\mathbb R^2</m>, then we see
 <md>
 <mrow>
 [(s,t)] \amp =\set{(x,y)\in\mathbb R^2\colon (s,t)\rel (x,y)}

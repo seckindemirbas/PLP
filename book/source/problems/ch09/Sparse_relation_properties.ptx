@@ -26,7 +26,7 @@ For the first part, the result in <xref ref="ex_n_div_a_aplus1"/> will be useful
 <p>
 For the first part, we first realize the relation  <m>R = \{(a,b) \in \mathbb{Z} \times \mathbb{Z} : n\mid (a-b)\}</m> is nothing but the congruence modulo <m>n</m> relation.
 Moreover, we see that if <m>R</m> is not sparse than there are <m>a,b\in\mathbb Z</m> such that <m>a\equiv b \pmod n</m> and either <m>a\equiv (b+1) \pmod n</m> or <m>(a+1)\equiv b \pmod n</m>.
-Since these cases are symetric with respect to <m>a</m> and <m>b</m>, WLOG, we can assume that <m>a\equiv (b+1) \pmod n</m>.
+Since these cases are symmetric with respect to <m>a</m> and <m>b</m>, WLOG, we can assume that <m>a\equiv (b+1) \pmod n</m>.
 Then, we see that <m>n\mid (b-a)</m> and <m>n\mid ((b+1)-a)</m>, that is <m>n\mid ((b-a)+1)</m>.
 Therefore, as the hint suggested, we get <m>n=1</m> (since <m>n\in\mathbb N</m>).
 We can also see that if <m>n=1</m>, then the congruence relation cannot be sparse, since every element will be related to every nonzero element.

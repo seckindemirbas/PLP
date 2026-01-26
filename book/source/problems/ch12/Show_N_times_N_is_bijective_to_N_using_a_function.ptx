@@ -13,12 +13,12 @@ Can you use this <m>f</m> to conclude that <m>\mathbb N\times\mathbb N</m> is de
 <answer>
 <p>
 We know that we can use this function to show that <m>\mathbb N\times\mathbb N</m> is denumerable, <em>if</em> it is a bijective function.
-That is, if the function is bijetive, then we can conclude that <m>|\mathbb N|=|\mathbb N\times\mathbb N|</m>, which implies that <m>\mathbb N\times\mathbb N</m> is denumerable.
+That is, if the function is bijective, then we can conclude that <m>|\mathbb N|=|\mathbb N\times\mathbb N|</m>, which implies that <m>\mathbb N\times\mathbb N</m> is denumerable.
 But, if the function is <em>not</em> bijective, this wouldn't give us any more information, since just because <m>f</m> is not bijective wouldn't imply <m>|\mathbb N|\neq|\mathbb N\times\mathbb N|</m>.
 </p>
 <p>
 We actually saw that if we have two denumerable sets <m>A, B</m>, then <m>A\times B</m> is also denumerable.
-We proved it using a diagonalization argument (see <xref ref="res_prod_of_denum"/>).
+We proved it using a diagonalisation argument (see <xref ref="res_prod_of_denum"/>).
 Applying this result to <m>A=B=\mathbb N</m>, we can immediately see that <m>\mathbb N\times \mathbb N</m> is, indeed, denumerable.
 </p>
 <p>

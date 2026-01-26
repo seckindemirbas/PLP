@@ -16,7 +16,7 @@ Think about what does being even mean and how we can use it.
 We see that this is a conditional statement, and to prove it, we are going to assume that the hypothesis is true and show that the conclusion follows. This means that we assume that <m>n</m> is an even number and show that <m>n^2+3n+5</m> is odd.
 </p>
 <p>
-This means that, we have an assumption and we need to understand what this assumption means by using the definitions and extracting useful exressions, i.e. structures we can work with.
+This means that, we have an assumption and we need to understand what this assumption means by using the definitions and extracting useful expressions, i.e. structures we can work with.
 </p>
 <p>
 In this question, since <m>n</m> is even, we know that <m>n=2k</m> for some <m>k\in\mathbb Z</m>. This is a nice structure and we can build upon it. Now, since we want to show that <m>n^2+3n+5</m> is odd, we can try to see what this expression is equal to given the assumption, <m>n=2k</m>.

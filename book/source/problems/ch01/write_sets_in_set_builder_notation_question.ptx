@@ -71,7 +71,7 @@ Write the following sets in set builder notation.
 <ol marker="(a)">
 <li>
 <p>
- We see that this set is the set of positive multiples of <m>5</m>, or the set of all natural numbers that are muptiples of <m>5</m>. Therefore we can write this set <m>A=\set{5n\st n\in\mathbb{N}}</m>, or <m>A=\set{n\in\mathbb N\st n=5m \text{ for some } m\in\mathbb{N}}</m>.
+ We see that this set is the set of positive multiples of <m>5</m>, or the set of all natural numbers that are multiples of <m>5</m>. Therefore we can write this set <m>A=\set{5n\st n\in\mathbb{N}}</m>, or <m>A=\set{n\in\mathbb N\st n=5m \text{ for some } m\in\mathbb{N}}</m>.
 </p>
 <p>
 We can also use different representations for this set (for any set really), but keeping our definition for the set accurate and concise makes it easier to understand and use.

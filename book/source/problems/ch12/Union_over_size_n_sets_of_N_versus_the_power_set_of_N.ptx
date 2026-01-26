@@ -45,7 +45,7 @@ Let <m>F_n= \{ X \subset \mathbb{N} \colon |X| = n \}\subseteq \mathcal{P}(\math
     <m>\{ a_1, a_2, a_3, \cdots, a_n \}=\{a_{k_1}, a_{k_2},  a_{k_3}, \cdots, a_{k_n}\}</m> and <m>\{ b_1, b_2, b_3, \cdots, b_n \}=\{b_{k_1}, b_{k_2},  b_{k_3}, \cdots, b_{k_n}\}</m> we see <m>\{ a_1, a_2, a_3, \cdots, a_n \}=\{b_{1}, b_{2},  b_{3}, \cdots, b_{n}\}</m>, meaning that <m>f</m> is injective.
 </p>
 <p>
-    We have also seen that the finite cartesian product of countable sets is countable (via <xref ref="res_prod_of_denum"/>). Thus, we see <m>\mathbb{N}^n</m> is countable. Therefore since <m>f</m> is an injection from <m>F_n</m> to <m>\mathbb{N}^n</m> and since <m>\mathbb{N}^n</m> is countable, we see <m>F_n</m> is countable.
+    We have also seen that the finite Cartesian product of countable sets is countable (via <xref ref="res_prod_of_denum"/>). Thus, we see <m>\mathbb{N}^n</m> is countable. Therefore since <m>f</m> is an injection from <m>F_n</m> to <m>\mathbb{N}^n</m> and since <m>\mathbb{N}^n</m> is countable, we see <m>F_n</m> is countable.
     </p></proof>
 
     <proof><title>Proof of (c)</title>

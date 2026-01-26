@@ -12,7 +12,7 @@ Show that the definition of <m>S</m> is ambiguous by providing two different way
 The set is ill-defined because we haven't written out enough elements to determine the set's <q>rule</q>.
 We could, for example, interpret this set as the set of all positive even integers,
 <me> \set{2, 4, 6, 8,\dots}, </me>
-or the the set of all positive integer powers of two,
+or the set of all positive integer powers of two,
 <me> \set{2, 4, 8, 16,\dots}. </me>
 </p>
 </solution>

@@ -16,7 +16,7 @@ The sum <m> \sum\limits_{k=1}^n k</m> is a very standard result and is in the ma
 Here we see that we have a statement we want to show is true for all <m>n\in\mathbb N</m>. In the previous chapters we have seen that to show such statements we assume that <m>n\in\mathbb N</m> and try to show the conclusion. Moreover, since the hypothesis is broad, we would probably need to look at cases. But, in this question, it is not clear what the cases should be. Instead, we can also apply mathematical induction. We see that this equation doesn't seem to give us a formula, but instead gives us two expressions. However, we know what the right hand side is equal to.
 </p>
 <p>
-We know that <m>\displaystyle{\sum\limits_{k=1}^m k}=\dfrac{m(m+1)}{2}</m> (see <xref ref="prop-sum-of-int"/>). This means that what we wat to show now becomes
+We know that <m>\displaystyle{\sum\limits_{k=1}^m k}=\dfrac{m(m+1)}{2}</m> (see <xref ref="prop-sum-of-int"/>). This means that what we want to show now becomes
 <me>
 \sum\limits_{k=1}^{n} k^3=\frac{n^2(n+1)^2}{4}.
 </me>
