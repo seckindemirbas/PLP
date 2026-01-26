@@ -925,7 +925,7 @@ The authors are usually loath to use the word <q>clear</q>, but we hope that it 
 </proposition>
 
 <p>
-Scratch work.
+Scratchwork.
 <ul>
 <li> Injective. Let <m>x,y \in \mathbb{R}-\set{\frac{d}{c}}</m> and assume <m>h(x) = h(y)</m>. Then
  <md>
@@ -1070,7 +1070,7 @@ Consequently if <m>f,g</m> are bijective then so is <m>g \circ f</m>.
 </theorem>
 
 <p>
-Scratch work:
+Scratchwork:
 <ul>
   <li><p>
 Injective: Assume both <m>f</m> and <m>g</m> are injective. So if <m>a_1 \neq a_2 \in A</m>

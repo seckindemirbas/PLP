@@ -229,7 +229,7 @@ The above analysis becomes much easier with practice.
 </p>
 </proof>
 <p>
-So even though our scratch work took some twists and turns, our proof is quite succinct.
+So even though our scratchwork took some twists and turns, our proof is quite succinct.
 </p>
 
 
@@ -312,7 +312,7 @@ Okay, now lets look at the converse.
 <li> Hence <m>A</m> must be a subset of <m>B</m> <mdash/> by definition of the power set.
 </li>
 </ul>
-As always, once the scratch work is done, its time to write up.
+As always, once the scratchwork is done, its time to write up.
 </p>
 
 <proof>
@@ -471,7 +471,7 @@ Here is a good example adapted from one in <url href="https://www.people.vcu.edu
 </statement>
 
 <answer>
-<p>So <mdash/> scratch work first.
+<p>So <mdash/> scratchwork first.
   To prove the equality we need to show that the LHS is a subset of the RHS and vice versa.
   So we start by proving that  <m>A \subseteq B\cap C</m>.
   <ul>
@@ -852,7 +852,7 @@ You can see that the distributive laws for sets look very much like the distribu
 Laws for set differences are less obvious and we certainly wouldn't expect you to remember them. However they do make very good exercises!
 And, as you'll see in the examples below, a quick sketch of Venn diagrams can help a lot. <alert>But</alert> a Venn diagram is not a proof
 <fn>
-  The Venn diagram is good scratch work for a proof, but really what one is doing is showing that for a particular choice of sets (i.e. the ones drawn) everything works out. To be a proof it has to work for every choice.
+  The Venn diagram is good scratchwork for a proof, but really what one is doing is showing that for a particular choice of sets (i.e. the ones drawn) everything works out. To be a proof it has to work for every choice.
 </fn>.
 </p>
 
@@ -968,7 +968,7 @@ and similarly the second (its contrapositive) says
 
 <p>
   Again, note that though Venn diagrams are useful tools for to understand and explore problems like these, they are not proofs.
-  You should think of them as tools to help your scratch work.
+  You should think of them as tools to help your scratchwork.
 </p>
 
 <p>
@@ -1258,7 +1258,7 @@ non-empty, such an <m>(x,y)</m> exists.
 
 
 <p>
-  We'll prove that <m>A-(B\cap C) = (A-B)\cup(A-C)</m> using the distributive and DeMorgans laws.
+  We'll prove that <m>A-(B\cap C) = (A-B)\cup(A-C)</m> using the distributive and DeMorgan's laws.
 </p>
 
 <example>
@@ -1318,7 +1318,7 @@ non-empty, such an <m>(x,y)</m> exists.
       &amp;= (A-B) \cup (A-C)
     </mrow>
 </md>
-    where we have used DeMorgans' laws, the distributive law and the fact that <m>A-B = A\cap\bar{B}</m>.
+            where we have used DeMorgan's laws, the distributive law and the fact that <m>A-B = A\cap\bar{B}</m>.
   </p>
 </proof>
 </solution>
@@ -1385,7 +1385,7 @@ A couple more examples.
   <proof>
     <p>Let <m>A,B</m> be sets. Then
     <md>
-      <mrow> (A\cup B) - (A\cap B)\amp = (A\cup B) \cap \overline{(A \cap B)} \amp \text{DeMorgans law} </mrow>
+      <mrow> (A\cup B) - (A\cap B)\amp = (A\cup B) \cap \overline{(A \cap B)} \amp \text{DeMorgan's law} </mrow>
       <mrow> \amp = (A\cup B)\cap (\bar{A} \cup \bar{B}) \amp \text{distributive law} </mrow>
       <mrow> \amp = \big(A \cap (\bar{A} \cup \bar{B}) \big)  \cup \big(B \cap (\bar{A} \cup \bar{B})\big) \amp \text{distributive law again}</mrow>
       <mrow> \amp =
@@ -1408,7 +1408,7 @@ A couple more examples.
 
   <p>
   We can also prove this result from first principles <mdash /> by showing each side is a subset of the other.
-  We don't present any scratch work here, rather we just leap into the proof. You can see that it is not really any cleaner than the proof we have presented above, but it is always worth seeing things from a  different perspective.
+  We don't present any scratchwork here, rather we just leap into the proof. You can see that it is not really any cleaner than the proof we have presented above, but it is always worth seeing things from a  different perspective.
 </p>
 
 <proof>
@@ -1517,7 +1517,7 @@ A couple more examples.
   &amp;= (A \cap C) \cup (A - B)
 </mrow>
 </md>
-where we have used the fact that <m>A-B = A\cap\bar{B}</m>, DeMorgans laws and distributive laws.
+where we have used the fact that <m>A-B = A\cap\bar{B}</m>, DeMorgan's laws and distributive laws.
   </p>
 
 </proof>

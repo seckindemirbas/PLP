@@ -160,7 +160,7 @@ Again, we have arrived at statements that look just like those we proved in <xre
 </p>
 
 <p>
-  Once you have this fluency it only takes a moment to write down the contrapositive when you start your scratch work. Then you can assess what looks easier: the original or the contrapositive.
+  Once you have this fluency it only takes a moment to write down the contrapositive when you start your scratchwork. Then you can assess what looks easier: the original or the contrapositive.
   If the contrapositive looks easier to prove, then we should proceed down that path.
   On the other hand, when it looks harder stick with the original.
 </p>
@@ -176,7 +176,7 @@ Again, we have arrived at statements that look just like those we proved in <xre
 </p>
 </statement>
 <answer>
-<p>  First up, lets write out some scratch work / explorations.
+<p>  First up, lets write out some scratchwork / explorations.
 <ul>
 <li> We got stuck when we tried a direct proof, so write down the contrapositive:
   <me>
@@ -272,11 +272,11 @@ Is uses a cute little trick that is worth remembering.
   </statement>
   <answer>
     <p>
-      The first thing we should do as part of our scratch work is to write down the contrapositive:
+      The first thing we should do as part of our scratchwork is to write down the contrapositive:
       <me>
         (n \text{ is not even}) \implies (n^2+4n+5 \text{ is not odd})
       </me>
-      We've been a little sloppy here <mdash /> we didn't write down the <q>Let <m>n \in \mathbb{Z}</m></q>, but it is scratch work not the actually proof. It is okay to be a <em>little bit</em> sloppy. The integerness of <m>n</m> means that we can simplify this further to
+      We've been a little sloppy here <mdash /> we didn't write down the <q>Let <m>n \in \mathbb{Z}</m></q>, but it is scratchwork not the actually proof. It is okay to be a <em>little bit</em> sloppy. The integerness of <m>n</m> means that we can simplify this further to
       <me>
         (n \text{ is odd}) \implies (n^2+4n+5 \text{ is even})
       </me>
@@ -559,7 +559,7 @@ The 4 colour Theorem tells you that any map (e.g. a map of countries of the worl
 <p>
   One should be very careful using WLOG (and its siblings).
   We should be very sure that the cases really are very similar.
-  Indeed, it is much safer (as a general rule for the inexperienced prover) to actually do all those cases in your scratch work. <em>Then</em> determine whether or not they really are similar enough that skipping them is not going to cause any problems. And on then skip them when writting up the proof.
+  Indeed, it is much safer (as a general rule for the inexperienced prover) to actually do all those cases in your scratchwork. <em>Then</em> determine whether or not they really are similar enough that skipping them is not going to cause any problems. And on then skip them when writing up the proof.
 </p>
 </remark>
 
@@ -661,7 +661,7 @@ and
   <me>
     n = 3k \qquad \text{ or } \qquad n=3k+1 \qquad \text{ or } \qquad n=3k+2
   </me>
-  for some integer <m>k</m>. It is this consequence of Euclidean division that will help us prove our result. Time for some scratch work.
+  for some integer <m>k</m>. It is this consequence of Euclidean division that will help us prove our result. Time for some scratchwork.
 </p>
 
 <p>
@@ -721,7 +721,7 @@ and
 
 <remark><title>The importance of uniqueness</title>
 <p>
-  Notice that in the above scratch work and proof we have used the <em>uniqueness</em> of Euclidean divison to show that <m>n^2</m> is not divisible by 3. Once we have shown (in a case) that <m>n^2 = 3\ell+1</m> for some integer <m>\ell</m>, <xref ref="fact-euc-div"/> tells us that there is no other way to write <m>n^2 = 3q</m> with <m>q \in \mathbb{Z}</m>. Similarly, in the case where we show that <m>n^2=3\ell+2</m>, the uniqueness of Euclidean division means that there is no way for us to write <m>n^2</m> as 3 times an integer.
+  Notice that in the above scratchwork and proof we have used the <em>uniqueness</em> of Euclidean divison to show that <m>n^2</m> is not divisible by 3. Once we have shown (in a case) that <m>n^2 = 3\ell+1</m> for some integer <m>\ell</m>, <xref ref="fact-euc-div"/> tells us that there is no other way to write <m>n^2 = 3q</m> with <m>q \in \mathbb{Z}</m>. Similarly, in the case where we show that <m>n^2=3\ell+2</m>, the uniqueness of Euclidean division means that there is no way for us to write <m>n^2</m> as 3 times an integer.
 </p>
 </remark>
 

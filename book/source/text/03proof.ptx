@@ -469,9 +469,9 @@ We have (in our work above) worked out <alert>how</alert> to prove our result, b
 In this way proving a result really breaks into two parts
 <dl>
 <li>
-  <title>Scratch work</title>
+  <title>Scratchwork</title>
   <p>
-   Scratch work or proof-strategy or exploration or <ellipsis/> <mdash/> this is typically the difficult part, trying to work out what is going on, what does the hypothesis mean, what does the conclusion mean, how do we get from one to the other.
+   Scratchwork or proof-strategy or exploration or <ellipsis/> <mdash/> this is typically the difficult part, trying to work out what is going on, what does the hypothesis mean, what does the conclusion mean, how do we get from one to the other.
   What is the idea or path of the proof.
 </p>
 </li>
@@ -479,7 +479,7 @@ In this way proving a result really breaks into two parts
   <title>Write-up</title>
   <p>
   Once we have all the ideas and parts we still need to write things up nicely.
-  This is typically easier than the scratch work, but it is non-trivial.
+  This is typically easier than the scratchwork, but it is non-trivial.
   We'll still need to work to make sure our presentation is clear, precise and easy to follow.
 </p>
 </li>
@@ -577,7 +577,7 @@ These serve to make the proof more legible and flow a little more naturally.
 </p></statement>
 </proposition>
 <p>
-We don't leap into the proof; we start with scratch work.
+We don't leap into the proof; we start with scratchwork.
 <ul>
 <li> Assume the hypothesis is true (if it is false, there is nothing to be done).
 </li>
@@ -612,8 +612,8 @@ So we've got the idea, lets write it up.
 </p></statement>
 </proposition>
 <p>
-Do your scratch work before you write up the proof <mdash/> even if you see the way to prove it.
-Writing the scratch work really helps to formulate your ideas and makes writing out the proof much easier.
+Do your scratchwork before you write up the proof <mdash/> even if you see the way to prove it.
+Writing the scratchwork really helps to formulate your ideas and makes writing out the proof much easier.
 </p>
 <proof>
 <p>
@@ -631,7 +631,7 @@ Writing the scratch work really helps to formulate your ideas and makes writing 
 <p>
   Not all mathematics involves integers, nor do all proofs involve equalities.
   So we should do a few examples of inequalities involving real numbers.
-  This isn't just for variety, but does illustrate an important point about how our scratch work can often be quite different in logical structure from the final proof.
+  This isn't just for variety, but does illustrate an important point about how our scratchwork can often be quite different in logical structure from the final proof.
 </p>
 
 <proposition>
@@ -642,7 +642,7 @@ Writing the scratch work really helps to formulate your ideas and makes writing 
   </statement>
 </proposition>
   <p>
-    As always we start with some scratch work.
+    As always we start with some scratchwork.
     We don't know too many facts about inequalities <mdash /> well, we do, but we haven't stated too many of them as facts or axioms in this text.
     We do know that <m>x^2 \geq 0</m> no matter which real number we take for <m>x</m> <mdash /> this was stated as <xref ref="fact-square-nonneg"/>.
     So it would suffice to rearrange our inequality to make it look like the square of something.
@@ -694,7 +694,7 @@ Writing the scratch work really helps to formulate your ideas and makes writing 
     </ul>
   </p>
   <p>
-    This is quite common when we prove inequalities; the logical flow in scratch work is often the reverse of what is required for the proof.
+    This is quite common when we prove inequalities; the logical flow in scratchwork is often the reverse of what is required for the proof.
     We typically start at the inequality we want to prove and then work our way to something we know <mdash /> a fact, an axiom, a previous result or theorem.
     To then present the proof we must start at the axiom, fact or theorem, and then work our way to the result.
     We can now write things up nicely:
@@ -710,7 +710,7 @@ Writing the scratch work really helps to formulate your ideas and makes writing 
 
 <p>
   That was very illustrative (which is, of course, why we include this topic).
-  Our scratch work can look very different from the final write up of the proof.
+  Our scratchwork can look very different from the final write up of the proof.
   We should do a couple more, but first a useful fact about inequalities, multiplication and division.
 </p>
 
@@ -798,10 +798,10 @@ Writing the scratch work really helps to formulate your ideas and makes writing 
   </p>
 </proof>
 <p>
-    In this case the logical flow in our scratch work matched the flow required for the proof.
+    In this case the logical flow in our scratchwork matched the flow required for the proof.
     This is different from the previous example.
     There is not a hard rule that holds for all results.
-    We need to be able to look at our scratch work, see the logical flow and determine how to translate that into a correct proof.
+    We need to be able to look at our scratchwork, see the logical flow and determine how to translate that into a correct proof.
 </p>
 
 <p>
