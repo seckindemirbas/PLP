@@ -14,7 +14,7 @@ Factoring a cubic can be painful. Perhaps write down the cubics you need and the
 </hint>
 <answer>
 <p>
-As scratch work for this problem, we work through the computation we will have to do after we adopt the inductive hypothesis. That is, we want to work through the <m>n=j+1</m> case after assuming that the <m>n=j</m> case is true.
+As scratchwork for this problem, we work through the computation we will have to do after we adopt the inductive hypothesis. That is, we want to work through the <m>n=j+1</m> case after assuming that the <m>n=j</m> case is true.
 <md>
 <mrow>
     \sum_{k=1}^{j+1} k^2  \amp = (j+1)^2 + \sum_{k=1}^{j} k^2

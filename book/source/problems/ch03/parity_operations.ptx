@@ -46,7 +46,7 @@ In this case, we can factor out a <m>2</m>:
 and so <m>m+n</m> is even. Note also that here we use the fact that <m>k+\ell+1</m> is an integer, since both <m>k</m> and <m>\ell</m> are integers.
 </p>
 <p>
-With this scratch work we can write a formal proof to the statement, <q>the sum of two odd numbers is even.</q>
+With this scratchwork we can write a formal proof to the statement, <q>the sum of two odd numbers is even.</q>
 The solutions to the remaining parts can be determined using the same logic: first, we'll suppose that <m>m</m> and <m>n</m> are two integers whose parity is given.
 We can then write out <m>m</m> in the form <m>2k</m> if its even, or <m>2k+1</m> if its odd, and similarly for <m>n</m> (although we should be careful not to reuse the variable <m>k</m> in our expression for <m>n</m>). Using these expressions we can then obtain an expression for <m>m+n</m> or <m>mn</m>.
 Then we manipulate this expression so that it's either in the form <m>2p</m> or <m>2p+1</m>, where <m>p</m> is an integer, to determine if it is even or odd.

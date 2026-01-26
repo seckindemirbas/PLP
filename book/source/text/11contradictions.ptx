@@ -106,7 +106,7 @@ Thus we conclude that <m>(\neg P)</m> is false, and so <m>P</m> is true.
   <ul><li>the hypothesis is true,</li></ul>
   and a well defined end point:
   <ul><li>the conclusion is true.</li></ul>
-  By exploring the conclusion in our scratch work we can work out how to make the proof work.
+  By exploring the conclusion in our scratchwork we can work out how to make the proof work.
 </p>
 <p>
   Proof by contradiction starts clearly enough
@@ -142,7 +142,7 @@ This gives us a contradiction of the form
 Let's apply this approach to the above result.
 </p>
 
-<p>Our scratch work should look something like this:
+<p>Our scratchwork should look something like this:
 <ul>
 <li> We'll try a proof by contradiction
 </li>

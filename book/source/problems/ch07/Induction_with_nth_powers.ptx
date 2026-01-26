@@ -13,7 +13,7 @@ As a base case, consider <m>n=0</m> and <m>n=1</m>. This means that your inducti
 </hint>
 <answer>
 <p>
-As scratch work, we want to try to break the <m>n+1</m> case into something involving the previous cases.
+As scratchwork, we want to try to break the <m>n+1</m> case into something involving the previous cases.
 </p>
 <p>
 Rather than trying to factor <m>\alpha^{n+1}+\frac{1}{\alpha^{n+1}}</m>, we attempt to get to it by multiplying the previous cases. We try to multiply the <m>n=1</m> and <m>n</m> cases because this will give a power of <m>n+1</m>

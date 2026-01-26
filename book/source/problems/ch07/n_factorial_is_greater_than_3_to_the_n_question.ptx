@@ -62,7 +62,7 @@ Therefore the statement is true for <m>n=k+1</m>, and hence, by induction, it is
 </proof>
 
 <p>
-We should also note that the inductive step doesn't really require the assumption <m>n\geq 7</m>. For the inductive step to be true, all we need is <m>n\geq 3</m>. But, as we have seen in our scratch work, the statement isn't true for <m>n\lt 7</m>, so the corresponding base cases would be false.  This means that we can only prove this statement for <m>n\geq 7</m>.
+We should also note that the inductive step doesn't really require the assumption <m>n\geq 7</m>. For the inductive step to be true, all we need is <m>n\geq 3</m>. But, as we have seen in our scratchwork, the statement isn't true for <m>n\lt 7</m>, so the corresponding base cases would be false.  This means that we can only prove this statement for <m>n\geq 7</m>.
 </p>
 </solution>
 </exercise>

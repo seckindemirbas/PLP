@@ -23,7 +23,7 @@ Prove the reverse triangle inequality. That is, given <m>x, y\in \mathbb{R}</m>,
 </hint>
 <answer>
 <p>
-We start with some scratch work. We are asked to prove an inequality involving absolute values. Often, the triangle inequality can be helpful in these types of situations. Recall that the triangle inequality states: For any <m>a,b\in \mathbb{R}</m>, <m>|a+b|\leq |a|+|b|</m>. Following the hint, we would like to show that <m>-|x-y|\leq |x|-|y|</m> and <m>|x|-|y|\leq |x-y|</m>.
+We start with some scratchwork. We are asked to prove an inequality involving absolute values. Often, the triangle inequality can be helpful in these types of situations. Recall that the triangle inequality states: For any <m>a,b\in \mathbb{R}</m>, <m>|a+b|\leq |a|+|b|</m>. Following the hint, we would like to show that <m>-|x-y|\leq |x|-|y|</m> and <m>|x|-|y|\leq |x-y|</m>.
 </p>
 <p>
 We rearrange the triangle inequality and attempt to get the formula <m>|x|-|y|\leq |x-y|</m> (the other formula can be obtained similarly).

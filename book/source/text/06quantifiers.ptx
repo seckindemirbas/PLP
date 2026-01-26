@@ -121,7 +121,7 @@ We were unable to assign a truth value to this statement because we had no infor
   </me>
 
 It is also generally considered bad style to use <m>\exists</m> and <m>\forall</m> in sentences in place of <q>there exists</q> and <q>for all</q>.
-Mind you, that doesn't stop people doing it, but in general, it is okay to do in a mathematical statement or equation, but you should avoid writing them in the middle of paragraphs (except in scratch work).
+Mind you, that doesn't stop people doing it, but in general, it is okay to do in a mathematical statement or equation, but you should avoid writing them in the middle of paragraphs (except in scratchwork).
 </p>
 </remark>
 <p>Quantifiers are often a point of confusion for students.
@@ -1302,7 +1302,7 @@ That is, Player 2 can set some point in the sequence <m>N = \frac{1}{\epsilon}</
   </solution>
 </example>
 <p>
-  Notice that the proof in our example does not have to explain <alert>how</alert> we came up with the choice of <m>N</m>, it merely has to show that it works. Our definition of convergence requires that <q>there exists <m>N</m></q>, not that <q>there exists <m>N</m> with a nice explanation of how it was found</q>. This can sometimes make a nicely written proof seem much more clever than it really is. The reader can be left thinking <q>How on earth did they know how to choose that?</q>. But you should remember that the author of the proof probably did a lot of careful scratch work to work out how to make the proof nice and neat; that scratch work is not required for the proof to be valid. Of course, if the author knows their audience well, and knows they might need some help, then the author will hopefully leave some explanation in the text nearby.
+  Notice that the proof in our example does not have to explain <alert>how</alert> we came up with the choice of <m>N</m>, it merely has to show that it works. Our definition of convergence requires that <q>there exists <m>N</m></q>, not that <q>there exists <m>N</m> with a nice explanation of how it was found</q>. This can sometimes make a nicely written proof seem much more clever than it really is. The reader can be left thinking <q>How on earth did they know how to choose that?</q>. But you should remember that the author of the proof probably did a lot of careful scratchwork to work out how to make the proof nice and neat; that scratchwork is not required for the proof to be valid. Of course, if the author knows their audience well, and knows they might need some help, then the author will hopefully leave some explanation in the text nearby.
 </p>
 
 <example>
@@ -1332,7 +1332,7 @@ That is, Player 2 can set some point in the sequence <m>N = \frac{1}{\epsilon}</
 </p>
 
 <p>
-  Here, we should mention that even though any <m>N>\frac 1\epsilon</m> would work for our arguments above and that we have infinitely many possible choices for <m>N</m> it is important to either picking a specific <m>N</m> as we did in this scratch work, or prove the existence of such an <m>N</m> without giving it explicitly <mdash /> using results like the Archimedean property<fn>
+  Here, we should mention that even though any <m>N>\frac 1\epsilon</m> would work for our arguments above and that we have infinitely many possible choices for <m>N</m> it is important to either picking a specific <m>N</m> as we did in this scratchwork, or prove the existence of such an <m>N</m> without giving it explicitly <mdash /> using results like the Archimedean property<fn>
   This says, roughly, that given any two positive real numbers, <m>x,y</m>, we can always find an integer <m>n</m>, so that <m>nx \gt y</m>. This appears in a more geometric guise in Book V of Euclid's Elements, and Archimedes attributes it to Eudoxus.
 </fn>
 or similar. Simply saying that such number <em>should</em> exist is not an adequate justification. With that caveat out of the way, let's tidy this up and write the proof.
@@ -1359,7 +1359,7 @@ or similar. Simply saying that such number <em>should</em> exist is not an adequ
   </statement>
   <answer>
     <p>
-      Again, let's start with the scratch work.
+      Again, let's start with the scratchwork.
     </p>
     <p>
       Our zeroth<fn>
@@ -1536,7 +1536,7 @@ or similar. Simply saying that such number <em>should</em> exist is not an adequ
   </p>
 </proof>
   <p>
-    Notice how short the proof is compared to the scratch work. This is not unusual. A nice neat proof can hide a lot of work.
+    Notice how short the proof is compared to the scratchwork. This is not unusual. A nice neat proof can hide a lot of work.
   </p>
 
   </solution>
@@ -1860,7 +1860,7 @@ we know that the distance between the function and its limit is smaller than <m>
 </introduction>
 <subsubsection><title>Uniqueness of limits</title>
 <p>
-  To prove the first property <mdash /> uniqueness of limits <mdash/> we need to do some scratch work to build up our intuition. A very standard approach to proving uniqueness is to assume that we have two objects satisfying the property and then show that those two things must actually be the same.
+  To prove the first property <mdash /> uniqueness of limits <mdash/> we need to do some scratchwork to build up our intuition. A very standard approach to proving uniqueness is to assume that we have two objects satisfying the property and then show that those two things must actually be the same.
 </p>
 <p>
   So, let <m>(x_n)</m> be a convergent sequence and that
@@ -2011,7 +2011,7 @@ we know that the distance between the function and its limit is smaller than <m>
 </p>
 
 <p>
-  The first of these lemmas is a little easier than the second, so we'll start there. And, as usual, we start with scratch work. Notice that when <m>c=0</m> the result simplifies down to the statement that the constant sequence <m>x_n=0</m> converges to <m>0</m>. This is just <xref ref="eg-seq-const"/> and we can recycle that proof. So since we know how to prove the case <m>c=0</m>, we can now work on <m>c \neq 0</m>.
+  The first of these lemmas is a little easier than the second, so we'll start there. And, as usual, we start with scratchwork. Notice that when <m>c=0</m> the result simplifies down to the statement that the constant sequence <m>x_n=0</m> converges to <m>0</m>. This is just <xref ref="eg-seq-const"/> and we can recycle that proof. So since we know how to prove the case <m>c=0</m>, we can now work on <m>c \neq 0</m>.
 </p>
 <p>
   Notice that the statement is really a conditional. If <m>x_n \to a</m> then <m>c \cdot x_n \to c\cdot a</m>. We'll assume that <m>x_n \to a</m> and then work towards showing that <m>c \cdot x_n \to c\cdot a</m>.  To do this we have to prove that for all <m>\epsilon \gt 0</m>, there is some <m>N \in \mathbb{N}</m> so that for all <m>n \in \mathbb{N}</m> if <m>n \gt N</m> then <m>|c x_n - c a| \lt \epsilon</m>. Let's manipulate this inequality a little:

@@ -489,7 +489,7 @@ but when we multiply by something negative (say <m>-2</m>), the sign flips:
 </mrow>
 </md>
 Thankfully since <m>x \gt -1</m>, we know that <m>1+x \gt 0</m> and so we are not multiplying by a negative number.
-We don't have to go back and fix our scratch work, but we should make sure that we highlight this point when we write up the proof. We help our reader understand important subtle details by pointing them out.
+We don't have to go back and fix our scratchwork, but we should make sure that we highlight this point when we write up the proof. We help our reader understand important subtle details by pointing them out.
 </p>
 </li>
 </ul>

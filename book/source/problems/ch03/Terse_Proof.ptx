@@ -35,7 +35,7 @@ Identify any issues with the proof as written above and give a correct proof.
 </statement>
 <solution>
 <p>
-There are a few issues with this proof. First of all, the flow of logic in this proof is backwards. The computation presented in the question could be used as scratch work, but is not a proof. A proof should start with a basic fact (here: the square of any nonzero real number is positive), and work towards the desired conclusion. Furthermore, this solution lacks explanation. A good proof should explain the steps taken to reach the conclusion. Our proofs should not only be correct but they should also be easy on the reader. Often, we forget to include extra explanation because our brains are filling in those extra details as we write. Think about the reader - they don't have the same brain as you to fill in those gaps! How can you make it easier for them to understand?
+There are a few issues with this proof. First of all, the flow of logic in this proof is backwards. The computation presented in the question could be used as scratchwork, but is not a proof. A proof should start with a basic fact (here: the square of any nonzero real number is positive), and work towards the desired conclusion. Furthermore, this solution lacks explanation. A good proof should explain the steps taken to reach the conclusion. Our proofs should not only be correct but they should also be easy on the reader. Often, we forget to include extra explanation because our brains are filling in those extra details as we write. Think about the reader - they don't have the same brain as you to fill in those gaps! How can you make it easier for them to understand?
 </p>
 
 <proof><p>
