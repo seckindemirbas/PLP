@@ -23,14 +23,14 @@ Describe a partition of <m>\mathbb{N}</m> that divides <m>\mathbb{N}</m> into <m
 <solution>
 <proof>
 <p>
-Here we can use the fact that the set of prime numbers is countably infinite. Let <m>P</m> be the set of prime numbers. We have seen that <m>P</m> is countably infinite. The we can list the elements of <m>P</m> as <m>\{ p_1, p_2, p_3, \ldots \}</m>. then  <m>\forall i\in\mathbb{N}</m> we can define the sets <me> A_i=\{ p_i^n: n\in\mathbb{N} \}. </me>
+Here we can use the fact that the set of prime numbers is countably infinite. Let <m>P</m> be the set of prime numbers. We have seen that <m>P</m> is countably infinite. Then we can list the elements of <m>P</m> as <m>\{ p_1, p_2, p_3, \ldots \}</m> and  <m>\forall i\in\mathbb{N}</m> we can define the sets <me> A_i=\{ p_i^n: n\in\mathbb{N} \}. </me>
 We see by definition that <m>|A_i|=|\mathbb{N}|</m>.
 </p>
 <p>
 Moreover consider the set:
 </p>
 <p>
-<m>A_0=\{1\}\cup\{n\in\mathbb{N}: \exists p_i,p_j\in P, \text{ s.t. } p_i\neq p_j, \text{ and } p_i\mid n \text{ and } p_j\mid n\}</m>. then we see that <m>A_0</m> is also coutably infinite (since, say, it contains all the multiples <m>6</m> and still a subset of the set of natural numbers).
+<m>A_0=\{1\}\cup\{n\in\mathbb{N}: \exists p_i,p_j\in P, \text{ s.t. } p_i\neq p_j, \text{ and } p_i\mid n \text{ and } p_j\mid n\}</m>. Then we see that <m>A_0</m> is also countably infinite (since, say, it contains all the multiples <m>6</m> and still a subset of the set of natural numbers).
 </p>
 <p>
 We also observe that there are countable infinitely many <m>A_k</m>'s, which are all countably infinite themselves and <m>\bigcup\limits_{n\geq 0} A_n=\mathbb{N}</m>.

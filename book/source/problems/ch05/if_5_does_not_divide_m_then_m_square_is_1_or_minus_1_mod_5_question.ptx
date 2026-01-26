@@ -21,7 +21,7 @@ We could also think about looking at the contrapositive of this statement. This 
 \text{if  } m^2\not\equiv 1 \mod{5} \text{ and } m^2\not\equiv -1 \mod{5}, \text{ then }5\mid m.
 </mrow>
 </md>
-This still suggests that we use case, and, on top of that, we would have assumptions on the more conplex term, <m>m^2</m>, instead of the simpler term, <m>m</m>. Therefore, using direct proof with cases may be easier in this question. Let's write the proof using cases.
+This still suggests that we use case, and, on top of that, we would have assumptions on the more complex term, <m>m^2</m>, instead of the simpler term, <m>m</m>. Therefore, using direct proof with cases may be easier in this question. Let's write the proof using cases.
 </p>
 </answer>
 

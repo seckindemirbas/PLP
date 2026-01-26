@@ -13,7 +13,7 @@ To prove that this is an equivalence relation, we need to show that <m>R</m> is 
 <ul>
 <li>
 <p>
- <m>R</m> is reflexive: Let <m>a\in\mathbb Z</m>. Notice that <m>7a^2 - 2a^2 = 5a^2</m> and  <m>5\mid 5a^2</m>. Thus, <m>a\rel a</m>, and so <m>R</m> is relexive.
+ <m>R</m> is reflexive: Let <m>a\in\mathbb Z</m>. Notice that <m>7a^2 - 2a^2 = 5a^2</m> and  <m>5\mid 5a^2</m>. Thus, <m>a\rel a</m>, and so <m>R</m> is reflexive.
 </p>
 </li>
 <li>

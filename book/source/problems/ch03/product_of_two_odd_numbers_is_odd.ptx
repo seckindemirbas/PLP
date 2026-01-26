@@ -13,7 +13,7 @@ Think about what being odd means and how we can use it.
 </hint>
 <answer>
 <p>
-Even though this doesn't look like a condtional statement, we wee that we can rewrite it as:
+Even though this doesn't look like a conditional statement, we wee that we can rewrite it as:
 <md>
 <mrow>
 \text{if } m,n \text{ are odd, then } mn \text{ is odd.}

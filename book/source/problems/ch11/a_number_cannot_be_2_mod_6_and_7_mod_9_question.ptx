@@ -3,7 +3,7 @@
 <!-- converted on 07/12/2021 at 12:29 -->
 <statement>
 <p>
-Prove that there is no integer <m>a</m> that simulataneously satisfies
+Prove that there is no integer <m>a</m> that simultaneously satisfies
 <me>
   a \equiv 2 \mod 6 \qquad \text{and} \qquad
   a \equiv 7 \mod 9.

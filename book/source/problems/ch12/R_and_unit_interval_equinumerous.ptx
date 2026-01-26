@@ -101,7 +101,7 @@ If <m>a+b\leq 1</m>, then <m>a+b\lt 1+2ab</m>, as <m>a</m> and <m>b</m> are posi
 If <m>a+b\gt 1</m>, then either <m>a\gt 1/2</m> or <m>b\gt 1/2</m>. Without loss of generality, assume <m>a\gt 1/2</m>, as we may relabel if necessary.
 Then <m>2a\gt 1</m>, and as <m>b\gt0</m>, we also have <m>2ab\gt b</m>. Therefore
 <me> 1+2ab \gt 1+b\gt a+b </me>
-with the last two inequalitiy following from <m>1\gt a</m>.
+with the last two inequality following from <m>1\gt a</m>.
 In all cases, we have <m>1+2ab\gt a+b</m>, and so <m>1-(a+b)+2ab\neq0</m>.  As mentioned earlier, this implies that <m>a=b</m>, and so <m>y</m> is injective.
 </p>
 </li>

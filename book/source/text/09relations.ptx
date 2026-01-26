@@ -1122,7 +1122,7 @@ By Theorem<nbsp/><xref ref="thm_congrent_er"/>, congruence modulo <m>n</m> is an
     \underbrace{35}_{5\times 7} \equiv \underbrace{3}_{3 \times 1} \mod 4
   </me>
   Notice that this will hold no matter which elements of <m>[1]</m> and <m>[3]</m> we multiply together, we will always get an element of <m>[3]</m>.
-  This suggests (with a little bending of notation and avoiding any confusion with cartesian products):
+  This suggests (with a little bending of notation and avoiding any confusion with Cartesian products):
   <me>
     [1] \cdot [3] = [3]
   </me>
@@ -1208,7 +1208,7 @@ We can rewrite the above equivalence classes with the modulus as a subscript:
 <me>
   [7]_4 \cdot [9]_4 = [3]_4
 </me>
-This makes it much easier to talk about different modulii without confusing the reader. Of course, if the modulus is clear by context, then we don't need the subscript.
+This makes it much easier to talk about different moduli without confusing the reader. Of course, if the modulus is clear by context, then we don't need the subscript.
 </p>
 
 <p>
@@ -1217,7 +1217,7 @@ This makes it much easier to talk about different modulii without confusing the 
   <me>
   17321289 \times 23492871 = 406926808030718.
   </me>
-  If you look at this for amoment, you realise that the product is wrong <mdash /> the last number definitely should not be an <q>8</q>.
+  If you look at this for a moment, you realise that the product is wrong <mdash /> the last number definitely should not be an <q>8</q>.
   We can show this by computing the product modulo 10:
   <me>
     [17321289]_{10} \cdot [23492871]_{10} = [9]_{10} \cdot [1]_{10} = [9]_{10}.
@@ -1491,14 +1491,14 @@ This makes it much easier to talk about different modulii without confusing the 
     </p>
   </proof>
 </lemma>
-<remark><title>Bezout and Euclid</title>
+<remark><title>Bézout and Euclid</title>
 <p>
   The converse of this lemma states that if <m>a,n</m> have no common divisors, then the equation has a solution. To prove this we need to show that if <m>a,n</m> have no common divisors, then
   we can find <m>b,k</m> so that
   <me>
     ab + kn =1.
   </me>
-  This is (essentially) Bezout's identity. The values <m>b,k</m> can be computed using the extended Euclidean algorithm. We will discuss all of this in the optional section below.
+  This is (essentially) Bézout's identity. The values <m>b,k</m> can be computed using the extended Euclidean algorithm. We will discuss all of this in the optional section below.
 </p>
 </remark>
 
@@ -1509,11 +1509,11 @@ Consider the following sequence of numbers
 <me>
   1,10,7,8,4,9,0,3,2,\dots
 </me>
-The numbers bounce around and look fairly ``random''. However, they are not actually random at all; they satisfy the simple relation
+The numbers bounce around and look fairly <q>random</q>random. However, they are not actually random at all; they satisfy the simple relation
 <me>
   x_{k+1} \equiv (7 x_k + 3) \mod{11},
 </me>
-or, using the % operator (ie integer remainder operator)
+or, using the % operator (i.e. integer remainder operator)
 <me>
   x_{k+1} = (7x_k+3)\% 11.
 </me>
@@ -1583,7 +1583,7 @@ There is a lot of interesting mathematics to be found in generating pseudo-rando
 
 <remark><title>What about zero?</title>
 <p>
-  Notice that in the above defintion if <m>a,b</m> are non-zero then
+  Notice that in the above definition if <m>a,b</m> are non-zero then
   the <m>\gcd(a,b)</m> and <m>\lcm(a,b)</m> are well-defined. We
   should note that since <m>0 \times a = 0</m>, the definition extends
   to
@@ -1745,7 +1745,7 @@ There is a lot of interesting mathematics to be found in generating pseudo-rando
 For example
   <md>
     <mrow>\gcd(268, 120) \amp = \gcd(120,28)
-      \amp\text{since } 28 \amp=268-2\times120
+      \amp\text{since } 28 \amp=268-2\times 120
       </mrow>
     <mrow> \amp= \gcd(28,8) \amp \text{since } 8 \amp = 120 - 4 \times 28 </mrow>
     <mrow> \amp = \gcd(8,4) \amp \text{since } 4 \amp = 28 -  3\times 8 </mrow>
@@ -2215,7 +2215,7 @@ For example
         <me>
           n=ab=p_1 p_2 \cdots p_k  \cdot  q_1 q_2 \cdots q_\ell
         </me>
-        is a product of primes as requried.
+        is a product of primes as required.
       </li>
       </ul>
     </p>

@@ -16,7 +16,7 @@ We are going to use mathematical induction.
 <ul>
 <li>
 <p>
-<em>Base Case</em>: We see that for <m>n=1</m>, the stament is  <q><m>3\mid (1^3-1)=0</m></q>. Hence, we see that this statement is true for <m>n=1</m>.
+<em>Base Case</em>: We see that for <m>n=1</m>, the statement is  <q><m>3\mid (1^3-1)=0</m></q>. Hence, we see that this statement is true for <m>n=1</m>.
 </p>
 </li>
 <li>

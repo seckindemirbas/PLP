@@ -54,7 +54,7 @@ using integration by parts. Using the definition of <m>\mathcal{L}\{f'\}(x)</m>,
      \amp = f(x)e^{-sx}\bigg|_{0}^\infty  - \int_0^\infty f(x) (-se^{-sx}) \mathrm{d}x
 </mrow><mrow>
      \amp = \lim_{t\to \infty} f(t)e^{-st} - f(0) + s\int_0^\infty f(x) e^{-sx} \mathrm{d}x
-    </mrow><intertext>By assumption 2. the first term is <m>0</m>, so we have</intertext><mrow>
+    </mrow><intertext>By assumption 2, the first term is <m>0</m>, so we have</intertext><mrow>
      \amp =-f(0) + s\mathcal{L}\{f\}(s)
 </mrow>
 </md>

@@ -40,7 +40,7 @@ We can see that the statement says: <q>intersection of the power sets of <m>A</m
 </li>
 <li>
 <p>
- <m>\supseteq</m>: Let <m>Y\in \mathcal{P}(A\cap B)</m>. Then we see that <m>Y\subseteq A\cap B</m>. Thus, if <m>t\in Y</m>. then <m>t\in A\cap B</m>. This implies <m>t\in A</m> and <m>t\in B</m>. Thus, we see that <m>Y\subseteq A</m> and <m>Y\subseteq B</m>. This means that <m>Y\in  \mathcal{P}(A)</m> and <m>Y\in \mathcal{P}(B)</m>. Therefore <m>Y\in \mathcal{P}(A)\cap\mathcal{P}(B)</m>.
+ <m>\supseteq</m>: Let <m>Y\in \mathcal{P}(A\cap B)</m>. Then we see that <m>Y\subseteq A\cap B</m>. Thus, if <m>t\in Y</m> then <m>t\in A\cap B</m>. This implies <m>t\in A</m> and <m>t\in B</m>. Thus, we see that <m>Y\subseteq A</m> and <m>Y\subseteq B</m>. This means that <m>Y\in  \mathcal{P}(A)</m> and <m>Y\in \mathcal{P}(B)</m>. Therefore <m>Y\in \mathcal{P}(A)\cap\mathcal{P}(B)</m>.
 </p></li>
 </ul>
 Hence, the result follows.

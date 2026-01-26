@@ -20,7 +20,7 @@ Let <m>n,r \in \mathbb{Z}</m> so that <m>0 \leq r \leq n</m>. We define the bino
   </p></li>
 <li>
 <p>
- and so prove, using induction, the Binomal Theorem:
+ and so prove, using induction, the Binomial Theorem:
   <me>
     (a+b)^n = \sum_{k=0}^n \binom{n}{k} a^{n-k} b^k
   </me>

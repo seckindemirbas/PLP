@@ -54,7 +54,7 @@ Thus, <m>A_1=\set{1}</m>.
 </p></li>
 <li>
 <p>
-  We see that this set looks very similar to <m>A_1</m>. But we see that it is differrent in that we now are looking at the set of all <em>integers</em> whose square is less than <m>2</m>, not natural numbers. In this case, we see that we have <m>3</m> numbers satisfying the condition, namely <m>-1</m>, <m>0</m>, and <m>1</m>.
+  We see that this set looks very similar to <m>A_1</m>. But we see that it is different in that we now are looking at the set of all <em>integers</em> whose square is less than <m>2</m>, not natural numbers. In this case, we see that we have <m>3</m> numbers satisfying the condition, namely <m>-1</m>, <m>0</m>, and <m>1</m>.
 </p>
 <p>
 Thus, <m>A_2=\set{-1,0,1}</m>.

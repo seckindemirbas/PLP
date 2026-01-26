@@ -350,7 +350,7 @@ which is another useful (equivalent) result.
 </li>
 </ul>
 are true and then it follows that the conjunction is true, and so our original biconditional statement is true.
-Hence our proof consists of two parts (ie sub-proofs).
+Hence our proof consists of two parts (i.e. sub-proofs).
 </p>
 <p>
 Of course, we have to tell the reader what we are doing. Statements like <q>We prove each implication in turn</q> or <q>We first prove one direction and then the other</q> are good ways to warn the reader what structure to expect. Then you can make this structure very easy to read by using dot-points or other formatting tricks.
@@ -522,7 +522,7 @@ Since both cases are true, the result follows.
 </p>
 <aside><title>4 colours by computer</title>
 <p>
-The 4 colour Theorem tells you that any map (eg, a map of countries of the world) can be coloured using no more than 4 colours, so that no two neighbouring regions have the same colour. The interested reader can search-engine their way to many articles on the topic. The original proof by Appel &amp; Haken was one of the first computer-aided proofs. The idea of getting a computer is not without objections <mdash /> if a proof involves so many logical steps that it cannot be verified by a human, then is it really a proof? Again, the interested reader should search-engine their way to articles on philosophical questions that emerge from computer-aided proof.
+The 4 colour Theorem tells you that any map (e.g. a map of countries of the world) can be coloured using no more than 4 colours, so that no two neighbouring regions have the same colour. The interested reader can search-engine their way to many articles on the topic. The original proof by Appel &amp; Haken was one of the first computer-aided proofs. The idea of getting a computer is not without objections <mdash /> if a proof involves so many logical steps that it cannot be verified by a human, then is it really a proof? Again, the interested reader should search-engine their way to articles on philosophical questions that emerge from computer-aided proof.
 </p>
 <p>
   Note that it is significantly easier to prove that you need no more than 5 colours, and we might even do it at the end of this text (assuming the author gets around to it). No computers are required! The proof actually started as a flawed attempt to prove the 4 colour Theorem by Kempe in 1879 which was rescued a decade later by Heawood as the 5 colour Theorem.
@@ -953,7 +953,7 @@ the absolute value of a number depends on whether that number is negative or not
 <p>
   To prove the next result it is actually convenient to use a more symmetric definition of the absolute value function that splits into three cases:
   <me>
-    |x| = \begin{cases} x \amp \text{if } x \gt0 \\ 0 \amp \text{if }x=0 \\ -x \amp \text{if } x \lt 0\end{cases}
+    |x| = \begin{cases} x \amp \text{if } x \gt 0 \\ 0 \amp \text{if }x=0 \\ -x \amp \text{if } x \lt 0\end{cases}
   </me>
   We do this to take advantage of the fact<fn>
   In computing and in some applications it can be quite useful to have a <q>signed zero</q>. The interested reader should search-engine their way to more information on this topic and the related topic of the extended real number system. You have actually already seen some of the ideas when you studied limits to zero and to <m>\pm \infty</m> in Calculus 1.
