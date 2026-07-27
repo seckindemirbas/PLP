@@ -1480,7 +1480,7 @@ or similar. Simply saying that such number <em>should</em> exist is not an adequ
       </p>
     </proof>
     <p>
-      Notice that we set <m>n=2N+1</m> in our proof and everything worked out nicely. We can actually choose any odd number larger than <m>N</m>. In fact, we could change the wording of the proof to say <q>Let <m>n</m> be any odd number larger than <m>N</m></q> and it would be correct. But, since we can can make a simple explicit choice, we should do so.
+      Notice that we set <m>n=2N+1</m> in our proof and everything worked out nicely. We can actually choose any odd number larger than <m>N</m>. In fact, we could change the wording of the proof to say <q>Let <m>n</m> be any odd number larger than <m>N</m></q> and it would be correct. But, since we can make a simple explicit choice, we should do so.
     </p>
   </solution>
 </example>
