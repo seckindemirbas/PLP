@@ -1249,8 +1249,7 @@ then <m>P(n)</m> is true for all <m>n \in S</m>.
   When the game starts with <m>n=1=4\times 0 +1</m> balls, Player 1 must remove the only ball from box and so loses.
 </p>
 <p>
-  Now assume that Player 2 can always win when <m>n=4\ell+1</m> for
-  <m>n=1,5,\dots,4\ell+1</m>. Now consider what happens when the box
+  Now, let <m>\ell \in \mathbb N \cup\{0\}</m>, and assume that Player 2 can always win when <m>n\in\{ 4(0)+1, 4(1)+1,\dots,4(\ell)+1\}</m>. Now consider what happens when the box
   starts with <m>n=4\ell+5</m> balls. Since Player 2 knows how to win if they leave Player 1 with
     <m>4\ell+1</m> balls, they will respond to Player 1's move by
     trying to get to <m>4\ell+1</m> balls.
