@@ -889,7 +889,7 @@ questions. Induction has its uses way beyond summation, divisibility and inequal
       We prove this result by induction. When <m>n=3</m>, the result holds (as was stated above) with the set <m>\set{2,3,6}</m>.
     </p>
     <p>
-      Now assume the result holds for <m>n=k</m>. Hence there is a set <m>\set{a_1,a_2,\cdots,a_k}</m> so that
+      Now let <m>k \in \mathbb N</m>, <m>k \ge 3</m>, and assume the result holds for <m>n=k</m>. Hence there is a set <m>\set{a_1,a_2,\cdots,a_k}</m> so that
       <me>
       1 = \frac{1}{a_1} + \frac{1}{a_2} + \cdots + \frac{1}{a_k}
       </me>
