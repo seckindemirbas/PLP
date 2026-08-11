@@ -439,13 +439,13 @@ eBookConfig.enable_chatcodes =  false;
 <div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#subsec-extendedinduction-7-2-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
 </li>
 <li id="subsec-extendedinduction-7-2-2">
-<div class="para" id="p-derived-subsec-extendedinduction-7-2-2">For the inductive step we need to prove that<div class="displaymath process-math" id="subsec-extendedinduction-7-2-2-1">
+<div class="para" id="p-derived-subsec-extendedinduction-7-2-2">For the inductive step we need to prove that, for all natural numbers <span class="process-math">\(k \ge 5\text{,}\)</span><div class="displaymath process-math" id="subsec-extendedinduction-7-2-2-2">
 \begin{align*}
 \left( 2^k  \gt  k^2 \right)
 &amp; \implies
 \left( 2^{k+1}  \gt  (k+1)^2 \right)
 \end{align*}
-</div>So we assume the first inequality, <span class="process-math">\(2^k \gt k^2\text{,}\)</span> and have to work our way to the second, <span class="process-math">\(2^{k+1} \gt (k+1)^2\text{.}\)</span> Multiplying the original inequality by 2 might be a good place to start.<div class="displaymath process-math" id="subsec-extendedinduction-7-2-2-4">
+</div>So we assume the first inequality, <span class="process-math">\(2^k \gt k^2\text{,}\)</span> and have to work our way to the second, <span class="process-math">\(2^{k+1} \gt (k+1)^2\text{.}\)</span> Multiplying the original inequality by 2 might be a good place to start.<div class="displaymath process-math" id="subsec-extendedinduction-7-2-2-5">
 \begin{gather*}
 2 \cdot 2^k = 2^{k+1}  \gt  2k^2
 \end{gather*}
@@ -467,11 +467,11 @@ eBookConfig.enable_chatcodes =  false;
 <div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#subsec-extendedinduction-8-1-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
 </li>
 <li id="subsec-extendedinduction-8-1-1-2">
-<div class="para" id="p-derived-subsec-extendedinduction-8-1-1-2">Inductive hypothesis — assume <span class="process-math">\(2^k \gt k^2\text{.}\)</span> Then <span class="process-math">\(2^{k+1}=2 \cdot 2^k  \gt  2k^2\text{.}\)</span> Since <span class="process-math">\(k \geq 5\)</span> we have <span class="process-math">\(k^2 \geq 5k\text{,}\)</span> and hence<div class="displaymath process-math" id="subsec-extendedinduction-8-1-1-2-6">
+<div class="para" id="p-derived-subsec-extendedinduction-8-1-1-2">Inductive hypothesis — assume <span class="process-math">\(2^k \gt k^2\)</span> for some <span class="process-math">\(k \ge 5\text{.}\)</span> Then <span class="process-math">\(2^{k+1}=2 \cdot 2^k  \gt  2k^2\text{.}\)</span> Since <span class="process-math">\(k \geq 5\)</span> we have <span class="process-math">\(k^2 \geq 5k\text{,}\)</span> and hence<div class="displaymath process-math" id="subsec-extendedinduction-8-1-1-2-7">
 \begin{equation*}
 2^{k+1} \gt 2k^2 = k^2+k^2 \geq k^2+5k = k^2 +2k +3k.
 \end{equation*}
-</div>Now since <span class="process-math">\(k \geq 5\text{,}\)</span> we know that <span class="process-math">\(3k&gt;1\text{,}\)</span> and so<div class="displaymath process-math" id="subsec-extendedinduction-8-1-1-2-9">
+</div>Now since <span class="process-math">\(k \geq 5\text{,}\)</span> we know that <span class="process-math">\(3k&gt;1\text{,}\)</span> and so<div class="displaymath process-math" id="subsec-extendedinduction-8-1-1-2-10">
 \begin{equation*}
 2^{k+1} \gt k^2 + 2k +1 = (k+1)^2
 \end{equation*}
