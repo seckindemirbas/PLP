@@ -429,7 +429,7 @@ Since <m>(1+x)^1 = 1+x</m>, the conclusion is always true, so the implication is
 <li>
   <p>
 Now the induction step.
-We assume that <m>P(k)</m> is true.
+We assume that <m>P(k)</m> is true for some <m>k \in \mathbb N</m>.
 That is
 <md>
 <mrow>
@@ -501,7 +501,7 @@ We don't have to go back and fix our scratchwork, but we should make sure that w
 <ul>
 <li> Based case: when <m>n=1</m>, the statement is true since <m>(1+x)^1 = 1+1\cdot x</m>.
 </li>
-<li> Induction step. We assume that <m>x  \gt -1</m>  and that <m>(1+x)^k \geq 1+kx</m>.
+<li> Induction step. We assume that <m>x  \gt -1</m>  and that <m>(1+x)^k \geq 1+kx</m> for some <m>k \in \mathbb N</m>.
   Since <m>x \gt -1</m>, we know that <m>1+x \gt 0</m> and so multiplying through by <m>1+x</m> doesn't change the sign of the inequality:
   <md>
 <mrow>
