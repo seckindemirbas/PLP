@@ -1400,7 +1400,8 @@ then <m>P(n)</m> is true for all <m>n \in S</m>.
       </md>
     </p>
     <p>
-      Now assume the result holds for all <m>k \leq n</m>. Now from the recurrence that defines the Fibonacci numbers:
+      Now let <m>k \in \mathbb N</m> and assume the result holds when <m>n=k</m>. (That is, we assume that <m>F_{2k-1} = F_k^2 + F_{k-1}^2</m> and <m>F_{2k} = F_{k+1}^2 - F_{k-1}^2</m>.)  </p>
+    <p>Our goal is to show that the result holds when <m>n=k+1</m>. From the recurrence that defines the Fibonacci numbers:
       <md>
         <mrow>F_{2k+1} \amp = F_{2k}+F_{2k-1} </mrow>
         <mrow> \amp= (F_{k+1}^2 - F_{k-1}^2) + (F_k^2 + F_{k-1}^2) \amp \text{by assumption} </mrow>

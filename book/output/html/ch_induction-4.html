@@ -1194,9 +1194,11 @@ F_2 \amp = 1 = 1^2 - 0^2 = F_2^2 - F_0^2
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#prop-fib4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="prop-fib4-2-2">
-<div class="para">Now assume the result holds for all <span class="process-math">\(k \leq n\text{.}\)</span> Now from the recurrence that defines the Fibonacci numbers:</div>
-<div class="displaymath process-math" id="prop-fib4-2-2-2">
+<div class="para" id="prop-fib4-2-2">Now let <span class="process-math">\(k \in \mathbb N\)</span> and assume the result holds when <span class="process-math">\(n=k\text{.}\)</span> (That is, we assume that <span class="process-math">\(F_{2k-1} = F_k^2 + F_{k-1}^2\)</span> and <span class="process-math">\(F_{2k} = F_{k+1}^2 - F_{k-1}^2\text{.}\)</span>)<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#prop-fib4-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="prop-fib4-2-3">
+<div class="para">Our goal is to show that the result holds when <span class="process-math">\(n=k+1\text{.}\)</span> From the recurrence that defines the Fibonacci numbers:</div>
+<div class="displaymath process-math" id="prop-fib4-2-3-2">
 \begin{align*}
 F_{2k+1} \amp = F_{2k}+F_{2k-1} \\
 \amp= (F_{k+1}^2 - F_{k-1}^2) + (F_k^2 + F_{k-1}^2) \amp \text{by assumption} \\
@@ -1204,7 +1206,7 @@ F_{2k+1} \amp = F_{2k}+F_{2k-1} \\
 \end{align*}
 </div>
 <div class="para">as required. We do similarly for the other equation (though more gymnastics are required).</div>
-<div class="displaymath process-math" id="prop-fib4-2-2-3">
+<div class="displaymath process-math" id="prop-fib4-2-3-3">
 \begin{align*}
 F_{2k+2} \amp = F_{2k+1}+F_{2k} \\
 \amp= (F_{k+1}^2 + F_k^2) + (F_{k+1}^2 - F_{k-1}^2) 
@@ -1212,14 +1214,14 @@ F_{2k+2} \amp = F_{2k+1}+F_{2k} \\
 </div>
 <div class="para intertext">Try to make the first bracket look like <span class="process-math">\(F_{k+2}^2 = (F_{k+1}+F_k)^2\)</span>
 </div>
-<div class="displaymath process-math" id="prop-fib4-2-2-5">
+<div class="displaymath process-math" id="prop-fib4-2-3-5">
 \begin{align*}
 \amp= (F_{k+1}^2 \underbrace{+ 2F_{k+1}F_k}_{+} + F_k^2)  + (F_{k+1}^2  - F_{k-1}^2) \underbrace{-2 F_k F_{k+1}}_{-} 
 \end{align*}
 </div>
 <div class="para intertext">Now manipulate the second bracket using difference of squares and then <span class="process-math">\(F_{k+1}-F_{k-1}=F_k\)</span>
 </div>
-<div class="displaymath process-math" id="prop-fib4-2-2-7">
+<div class="displaymath process-math" id="prop-fib4-2-3-7">
 \begin{align*}
 \amp= (F_{k+1} + F_k)^2 + (F_{k+1}-F_{k-1})(F_{k+1}+F_{k-1})-2F_kF_{k+1}\\
 \amp= F_{k+2}^2 + F_k (F_{k+1}+F_{k-1} -2 F_{k+1})\\
@@ -1228,9 +1230,9 @@ F_{2k+2} \amp = F_{2k+1}+F_{2k} \\
 \end{align*}
 </div>
 <div class="para">as required.</div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#prop-fib4-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#prop-fib4-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="prop-fib4-2-3">Since the base case is true and the inductive step is true, the result follows by induction.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#prop-fib4-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="prop-fib4-2-4">Since the base case is true and the inductive step is true, the result follows by induction.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#prop-fib4-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Proof 7.2.19.1"><a tabindex="-1" href="#prop-fib4-2" title="Copy heading and permalink for Proof 7.2.19.1" aria-label="Copy heading and permalink for Proof 7.2.19.1">🔗</a></div>
 </article></details>
