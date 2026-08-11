@@ -909,8 +909,8 @@ z^0 + z^{-0} = q_0 = 2 \in \mathbb{Z}
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-stronginduction-7-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="subsec-stronginduction-7-2-3">
-<div class="para">Now assume that the result holds for <span class="process-math">\(0 \leq n \leq k\text{.}\)</span> So we know that <span class="process-math">\(q_1, q_{k-1}, q_k\)</span> are integers. Hence</div>
-<div class="displaymath process-math" id="subsec-stronginduction-7-2-3-3">
+<div class="para">Now assume that the result holds for <span class="process-math">\(0 \leq n \leq k\text{,}\)</span> where <span class="process-math">\(k\)</span> is some nonnegative integer. So we know that <span class="process-math">\(q_1, q_{k-1}, q_k\)</span> are integers. Hence</div>
+<div class="displaymath process-math" id="subsec-stronginduction-7-2-3-4">
 \begin{align*}
 q_k q_1 \amp = (z^k + z^{-k})(z+z^{-1})\\
 \amp= z^{k+1} + z^{k-1} + z^{1-k} + z^{-k-1}\\
@@ -918,7 +918,7 @@ q_k q_1 \amp = (z^k + z^{-k})(z+z^{-1})\\
 \end{align*}
 </div>
 <div class="para">So we have</div>
-<div class="displaymath process-math" id="subsec-stronginduction-7-2-3-4">
+<div class="displaymath process-math" id="subsec-stronginduction-7-2-3-5">
 \begin{equation*}
 q_{k+1} = q_k q_1 - q_{k-1}
 \end{equation*}
@@ -944,7 +944,7 @@ q_{k+1} = q_k q_1 - q_{k-1}
 <div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#subsec-stronginduction-9-4-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
 </li>
 <li id="subsec-stronginduction-9-4-1-2">
-<div class="para" id="subsec-stronginduction-9-4-1-2-1">Now assume that the result holds for bars of <span class="process-math">\(1,2,\dots,n\)</span> blocks, and then consider a bar of <span class="process-math">\(n+1\)</span> blocks. Say we split it into two pieces, one of size <span class="process-math">\(k\text{,}\)</span> and one of size <span class="process-math">\(n+1-k\)</span> (with <span class="process-math">\(k=1,2,\dots,n\)</span>). This takes <span class="process-math">\(1\)</span> break, and we are left with the problem of splitting up the bar of <span class="process-math">\(k\)</span> blocks and the bar of <span class="process-math">\(n+1-k\)</span> blocks (as shown below).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-stronginduction-9-4-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="subsec-stronginduction-9-4-1-2-1">Now assume that the result holds for bars of <span class="process-math">\(1,2,\dots,n\)</span> blocks, and then consider a bar of <span class="process-math">\(n+1\)</span> blocks. Say we split it into two pieces, one of size <span class="process-math">\(k\text{,}\)</span> and one of size <span class="process-math">\(n+1-k\)</span> (with <span class="process-math">\(k\in\{1,2,\dots,n\}\)</span>). This takes <span class="process-math">\(1\)</span> break, and we are left with the problem of splitting up the bar of <span class="process-math">\(k\)</span> blocks and the bar of <span class="process-math">\(n+1-k\)</span> blocks (as shown below).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-stronginduction-9-4-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="image-box" style="width: 66%; margin-left: 17%; margin-right: 17%;"><img src="external/choc2.svg" role="img" class="contained"></div>
 <div class="para" id="subsec-stronginduction-9-4-1-2-3">However, by assumption, we know that splitting a bar of <span class="process-math">\(k\)</span> blocks takes <span class="process-math">\(k-1\)</span> breaks, and splitting a bar of <span class="process-math">\(n+1-k\)</span> blocks takes <span class="process-math">\(n-k\)</span> breaks. So, in total we’ll need <span class="process-math">\(1 + k-1 + n-k = n\)</span> breaks. Notice that this is independent of our choice <span class="process-math">\(k\text{.}\)</span> Hence the result holds for a bar of <span class="process-math">\(n+1\)</span> blocks.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-stronginduction-9-4-1-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>

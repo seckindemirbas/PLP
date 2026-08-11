@@ -1156,7 +1156,7 @@ then <m>P(n)</m> is true for all <m>n \in S</m>.
       so the result holds.
     </p>
     <p>
-      Now assume that the result holds for <m>0 \leq n \leq k</m>. So we know that <m>q_1, q_{k-1}, q_k</m> are integers.
+      Now assume that the result holds for <m>0 \leq n \leq k</m>, where <m>k</m> is some nonnegative integer. So we know that <m>q_1, q_{k-1}, q_k</m> are integers.
       Hence
       <md>
         <mrow> q_k q_1 \amp = (z^k + z^{-k})(z+z^{-1})</mrow>
@@ -1193,7 +1193,7 @@ then <m>P(n)</m> is true for all <m>n \in S</m>.
 	<m>1,2,\dots,n</m> blocks, and then consider a bar of
 	<m>n+1</m> blocks. Say we split it into two pieces, one of
 	size <m>k</m>, and one of size <m>n+1-k</m> (with
-	<m>k=1,2,\dots,n</m>). This takes <m>1</m> break, and we are
+	<m>k\in\{1,2,\dots,n\}</m>). This takes <m>1</m> break, and we are
 	left with the problem of splitting up the bar of <m>k</m>
 	blocks and the bar of <m>n+1-k</m> blocks (as shown below).
       </p>
