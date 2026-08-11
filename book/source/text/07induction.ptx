@@ -957,7 +957,7 @@ questions. Induction has its uses way beyond summation, divisibility and inequal
       and hence the result holds for <m>n=2</m>.
     </p>
     <p>
-      Assume the result holds for <m>n=k</m>, then
+      Let <m>k \in \mathbb N</m>, <m>k \ge 2</m>, and assume the result holds for <m>n=k</m>. Then
       <md>
         <mrow> \diff{}{x} f^{(k)}(x) \amp = \diff{}{x}(-1)^k \frac{(k-2)!}{x^{k-1}} </mrow>
         <mrow> \amp= (-1)^k (k-2)! \cdot(-1) (k-1)x^{-k} </mrow>
@@ -997,7 +997,7 @@ To prove this result we'll make use of the following fact (which you probably co
     <ul>
       <li>
         <p>
-          When <m>n=0</m> we have
+          When <m>n=0</m>, we have
           <md>
           <mrow>
             \int_0^\infty e^{-x} \dee{x} \amp= \left[ -e^{-x} \right]_0^\infty
@@ -1011,7 +1011,7 @@ To prove this result we'll make use of the following fact (which you probably co
       </li>
       <li>
         <p>
-          Assume that the result holds for <m>n=k</m>. Then we evaluate the integral for <m>n=k+1</m> using integration by parts.
+          Let <m>k \in \mathbb N\cup\{0\}</m>, and assume that the result holds for <m>n=k</m>. Then we evaluate the integral for <m>n=k+1</m> using integration by parts.
           <md>
             <mrow>\int_0^\infty x^{k+1} e^{-x}\dee{x}
               \amp = \left[ -e^{-x}x^{k+1}\right]_0^\infty + \int_0^\infty (k+1)x^k e^{-x}\dee{x}

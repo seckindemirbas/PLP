@@ -679,8 +679,8 @@ f''(x)\amp= \frac{1}{x}
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#prop--2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="prop--2-3">
-<div class="para">Assume the result holds for <span class="process-math">\(n=k\text{,}\)</span> then</div>
-<div class="displaymath process-math" id="prop--2-3-2">
+<div class="para">Let <span class="process-math">\(k \in \mathbb N\text{,}\)</span> <span class="process-math">\(k \ge 2\text{,}\)</span> and assume the result holds for <span class="process-math">\(n=k\text{.}\)</span> Then</div>
+<div class="displaymath process-math" id="prop--2-3-4">
 \begin{align*}
 \diff{}{x} f^{(k)}(x) \amp = \diff{}{x}(-1)^k \frac{(k-2)!}{x^{k-1}} \\
 \amp= (-1)^k (k-2)! \cdot(-1) (k-1)x^{-k} \\
@@ -731,7 +731,7 @@ n! = \int_0^\infty x^n e^{-x} \dee{x}
 <ul class="disc" id="subsec-extendedinduction-21-2-1">
 <li id="subsec-extendedinduction-21-2-1-1">
 <div class="para logical" id="subsec-extendedinduction-21-2-1-1-1">
-<div class="para">When <span class="process-math">\(n=0\)</span> we have</div>
+<div class="para">When <span class="process-math">\(n=0\text{,}\)</span> we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fact-useful-limit.html" id="subsec-extendedinduction-21-2-1-1-1-2">
 \begin{align*}
 \int_0^\infty e^{-x} \dee{x} \amp= \left[ -e^{-x} \right]_0^\infty\\
@@ -746,8 +746,8 @@ n! = \int_0^\infty x^n e^{-x} \dee{x}
 </li>
 <li id="subsec-extendedinduction-21-2-1-2">
 <div class="para logical" id="subsec-extendedinduction-21-2-1-2-1">
-<div class="para">Assume that the result holds for <span class="process-math">\(n=k\text{.}\)</span> Then we evaluate the integral for <span class="process-math">\(n=k+1\)</span> using integration by parts.</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fact-useful-limit.html" id="subsec-extendedinduction-21-2-1-2-1-3">
+<div class="para">Let <span class="process-math">\(k \in \mathbb N\cup\{0\}\text{,}\)</span> and assume that the result holds for <span class="process-math">\(n=k\text{.}\)</span> Then we evaluate the integral for <span class="process-math">\(n=k+1\)</span> using integration by parts.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fact-useful-limit.html" id="subsec-extendedinduction-21-2-1-2-1-4">
 \begin{align*}
 \int_0^\infty x^{k+1} e^{-x}\dee{x}
 \amp = \left[ -e^{-x}x^{k+1}\right]_0^\infty + \int_0^\infty (k+1)x^k e^{-x}\dee{x}\\
