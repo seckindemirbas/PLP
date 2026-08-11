@@ -1,0 +1,17 @@
+WARNING : Using CLI version 2.48.1 but project's `requirements.txt`
+WARNING : is configured to use 2.36.0. Consider either installing
+WARNING : CLI version 2.36.0 or running `pretext update-project`
+WARNING : to update `requirements.txt` and other managed files to match 2.48.1.
+INFO    : Since no target was supplied, we will use "html".
+
+INFO    : Now preparing local server to preview your project directory `C:\Users\ecyea\git\PLP\book`.
+INFO    :   (Reminder: use `pretext deploy` to deploy your built project to a public
+INFO    :   GitHub Pages site that can be shared with readers who cannot access your
+INFO    :   personal computer.)
+INFO    : 
+INFO    : starting server ...
+INFO    : setting up PreTeXt web server ...
+INFO    : Added pretext web server entry b4b5062731 35184 8128 localhost
+
+INFO    : Server will soon be available at http://localhost:8128
+INFO    : Opening browser for target `html` at http://localhost:8128/output/html

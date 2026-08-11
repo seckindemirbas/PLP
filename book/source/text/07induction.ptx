@@ -692,11 +692,11 @@ By the principle of mathematical induction it is true for all natural numbers <m
           <li>Base case: When there is only 1 horse, it has the same colour as itself. So the statement is true when there is exactly 1 horse.</li>
           <li>
             <p>
-              Inductive step: We assume the statement is true when there are <m>n=k</m> horses. Now consider a set of <m>n=k+1</m> horses. Exclude one of those horses from the set to obtain a set of <m>k</m> horses. By assumption all those horses have the same colour. Put that excluded horse back into the set and remove another. Now the set again has <m>k</m> horses and so they all have the same colour. This means that all the <m>k+1</m> horses (including the two we temporarily removed) must have the same colour.
+              Inductive step: let <m>k \in \mathbb N</m>. We assume the statement is true when there are <m>n=k</m> horses. Now consider a set of <m>n=k+1</m> horses. Exclude one of those horses from the set to obtain a set of <m>k</m> horses. By assumption, all those horses have the same colour. Put that excluded horse back into the set and remove another. Now the set again has <m>k</m> horses and so they all have the same colour. This means that all the <m>k+1</m> horses (including the two we temporarily removed) must have the same colour.
             </p>
           </li>
         </ul>
-        By induction the statement is true for all <m>n \in \mathbb{N}</m>.
+        By induction, the statement is true for all <m>n \in \mathbb{N}</m>.
       </p>
     </justification>
   </statement>
