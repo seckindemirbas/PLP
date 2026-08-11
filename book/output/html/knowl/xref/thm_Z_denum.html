@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h2 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">12.2.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para">The set of all integers is denumerable.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm_Z_denum-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 12.2.3"><a tabindex="-1" href="#thm_Z_denum" title="Copy heading and permalink for Theorem 12.2.3" aria-label="Copy heading and permalink for Theorem 12.2.3">🔗</a></div>
+</article>
+<details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="title">Proof sketch.</span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para">We will sketch out how to prove this result but leave the formal proof to the reader. It suffices to find a “nice way” to list out all the elements of <span class="process-math">\(\mathbb{Z}\)</span> (since this nice list is really a bijection). We can’t just do <span class="process-math">\(\mathbb{Z} = \set{\dots, -2,-1,0,1,2, \dots}\)</span> — which each integer appears on the list, it is not clear that any given integer appears at some finite position in the list. This sort of infinite list is typically called bi-infinite, since it extends to infinity in both direction.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm_Z_denum-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">On the other hand, if we write out the integers as</div>
+<div class="displaymath process-math">
+\begin{align*}
+\mathbb{Z} &amp;= \set{0,1,-1,2,-2,\dots}
+\end{align*}
+</div>
+<div class="para">then we can see that every integer will appear once, and that any given integer will appear at some finite position in the list. Indeed, this list, carefully described, is a proof of the result.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm_Z_denum-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">We can, in this case, make the bijection very explicit in this case and define a function</div>
+<div class="displaymath process-math">
+\begin{align*}
+f &amp;= \begin{array}{cccccc}
+1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 &amp; \cdots\\
+\downarrow &amp; \downarrow &amp; \downarrow &amp; \downarrow &amp; \downarrow &amp; \downarrow\\
+0 &amp; 1 &amp; -1 &amp; 2 &amp; -2 &amp; \cdots
+\end{array}
+\end{align*}
+</div>
+<div class="para">With a bit of juggling this becomes</div>
+<div class="displaymath process-math">
+\begin{align*}
+f(n) &amp;= \begin{cases}
+\frac{1-n}{2} &amp; n \mbox{ is odd}\\
+\frac{n}{2} &amp; n \mbox{ is even}
+\end{cases}
+= \frac{1 + (-1)^n(2n-1)}{4}
+\end{align*}
+</div>
+<div class="para">It is not hard to show this is bijective — in fact, we’ll make this an exercise.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm_Z_denum-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 12.2.3.1: Proof sketch"><a tabindex="-1" href="#thm_Z_denum-2" title="Copy heading and permalink for Proof 12.2.3.1: Proof sketch" aria-label="Copy heading and permalink for Proof 12.2.3.1: Proof sketch">🔗</a></div>
+</article></details><span class="incontext"><a class="internal" href="chap_cardinality-4.html#thm_Z_denum">In Context</a></span>
+</body>
+</html>

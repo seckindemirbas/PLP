@@ -1,0 +1,1329 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Some set-flavoured results</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
+startMathJax({
+hasWebworkReps: false,
+hasSage: false,
+isReact: false,
+htmlPresentation: false,
+lang: "en-US",
+});
+</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta name="twitter:title" content="PLP">
+<meta property="og:title" content="PLP">
+<meta property="book:title" content="PLP">
+<meta name="twitter:description" content="An introduction to mathematical proof">
+<meta property="og:description" content="An introduction to mathematical proof">
+<meta name="twitter:card" content="summary">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.48"></script><script src="_static/pretext/js/dist/pretext-read-aloud.js?v=2.48"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.2.4';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.40bd1420d3277749.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.b388362b5f43738a.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.8086b62682b271d1.css">
+<script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead" role="banner"><div class="ptx-banner"><div class="title-container">
+<div class="heading ptx-banner-heading"><a href="plp.html"><span class="title">PLP</span> <span class="subtitle">An introduction to mathematical proof</span></a></div>
+<p class="byline">Seçkin Demirbaş, Andrew Rechnitzer</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button id="ptx-toc-toggle" type="button" aria-controls="ptx-sidebar" class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="ptx-search-box">
+<div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search Book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog"><div class="ptx-search-dialog-controls">
+<input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close" id="ptx-search-close" class="ptx-search-close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div id="ptx-search-status" class="ptx-search-status" aria-live="polite" aria-atomic="true"></div>
+<h2 class="heading ptx-search-results-heading">Search Results: </h2>
+<div id="ptx-search-empty" class="ptx-search-empty"><span>No results.</span></div>
+<ol id="ptx-search-results" class="ptx-search-results"></ol></dialog>
+</div>
+<span class="nav-other-controls"><button id="ptx-read-aloud-button" class="ptx-read-aloud-button button" title="Read aloud" aria-expanded="false"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf1bc;</span><span class="name">Read aloud</span></button><div id="ptx-read-aloud-player" class="ptx-read-aloud-player" hidden="hidden" role="group" aria-label="Read aloud">
+<button id="ptx-read-aloud-prev" class="button" title="Previous sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe045;</span></button><button id="ptx-read-aloud-toggle" class="ptx-read-aloud-toggle button" title="Play"><span class="ptx-read-aloud-icon-play"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></span><span class="ptx-read-aloud-icon-pause"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe034;</span></span></button><button id="ptx-read-aloud-next" class="button" title="Next sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe044;</span></button><a id="ptx-read-aloud-continue" class="ptx-read-aloud-continue button" hidden="hidden">Continue<span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></a><button id="ptx-read-aloud-settings-button" class="ptx-read-aloud-settings-button button" title="Reading settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe429;</span></button>
+</div>
+<dialog class="ptx-dialog ptx-read-aloud-settings-popup" id="ptx-read-aloud-settings-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Read aloud settings</h2>
+<button class="ptx-read-aloud-settings-close-button button" id="ptx-read-aloud-settings-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label for="ptx-read-aloud-voice"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe91f;</span><span>Voice</span></label><select id="ptx-read-aloud-voice"></select><label class="ptx-readability-slider-label" for="ptx-read-aloud-rate"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe9e4;</span><span>Reading speed</span><output id="ptx-read-aloud-rate-value" for="ptx-read-aloud-rate">1×</output></label><input type="range" id="ptx-read-aloud-rate" min="0.5" max="2" step="0.1" value="1"><label for="ptx-read-aloud-asides"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d7;</span><span>Collapsed content</span></label><select id="ptx-read-aloud-asides"><option value="skip">Announce, do not read</option>
+<option value="read">Read automatically</option></select><label for="ptx-read-aloud-autoscroll"><input type="checkbox" id="ptx-read-aloud-autoscroll" checked><span>Follow along (auto-scroll)</span></label><label for="ptx-read-aloud-autocontinue"><input type="checkbox" id="ptx-read-aloud-autocontinue"><span>Continue to the next page automatically</span></label>
+</div></dialog><button id="ptx-readability-options-button" class="ptx-readability-options-button button" title="Readability settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf6f1;</span><span class="name">Readability settings</span></button><dialog class="ptx-dialog ptx-readability-options-popup" id="ptx-readability-options-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Readability settings</h2>
+<button class="ptx-readability-options-close-button button" id="ptx-readability-options-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-line-height"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe240;</span><span>Line height</span><output id="ptx-readability-line-height-value" for="ptx-readability-line-height">1.35</output></label><input type="range" id="ptx-readability-line-height" min="1.10" max="3" step="0.05" value="1.35">
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-font-size"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe245;</span><span>Content font size</span><output id="ptx-readability-font-size-value" for="ptx-readability-font-size">100%</output></label><input type="range" id="ptx-readability-font-size" min="0.8" max="1.5" step="0.05" value="1">
+</div>
+<fieldset class="ptx-readability-options-group ptx-readability-options-group-theme">
+<legend>Theme</legend>
+<label for="ptx-readability-theme-system"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-system" value="system"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe1ab;</span><span>System</span></label><label for="ptx-readability-theme-light"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-light" value="light"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe518;</span><span>Light</span></label><label for="ptx-readability-theme-dark"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-dark" value="dark"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span>Dark</span></label>
+</fieldset>
+<fieldset class="ptx-readability-options-group">
+<legend>Assistive technologies</legend>
+<label for="ptx-readability-accessible-permalinks"><input type="checkbox" id="ptx-readability-accessible-permalinks"><span>🔗</span><span>Expose permalinks</span></label>
+</fieldset>
+<div class="ptx-readability-options-group"><button type="button" class="ptx-readability-reset-button button" id="ptx-readability-reset-button"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf053;</span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="plp-11-5.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="plp-11.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="plp-11-7.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{cancel}\require{upgreek} \newcommand{\ds}{\displaystyle}
+ \renewcommand{\textcolor}[2]{{\color{#1}{#2}}}
+ 
+ \newcommand{\es}{ {\varnothing}}
+ \newcommand{\st}{ \;\mathrm{s.t.}\; }
+ \newcommand{\so}{ \;\mid\; }
+ \newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+ \newcommand{\set}[1]{ \left\{#1\right\} }
+ 
+ \renewcommand{\neg}{\sim}
+
+ \newcommand{\rel}[1][R]{\;\mathcal{#1}\;}
+ \newcommand{\nrel}[1][R]{\;\cancel{\mathcal{#1}}\;}
+
+ \newcommand{\dee}[1]{\mathrm{d}#1}
+ \newcommand{\diff}[2]{\dfrac{\mathrm{d}#1}{\mathrm{d}#2}}
+ 
+ \renewcommand{\mod}[1]{\ (\mathrm{mod}\ #1)}
+ \newcommand{\lcm}{\mathrm{lcm}}
+ 
+ \let\oldepsilon\epsilon
+ 
+ \renewcommand{\epsilon}{\varepsilon}
+ \newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" role="complementary" class="ptx-sidebar"><nav id="ptx-toc" tabindex="-1" aria-label="Contents" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul id="ptx-toc-group-frontmatter" class="structural toc-item-list">
+<li class="toc-item toc-dedication"><div class="toc-title-box"><a href="frontmatter-3.html" class="internal"><span class="title">Dedication</span></a></div></li>
+<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="frontmatter-5.html" class="internal"><span class="title">Preface</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="plp-4.html" class="internal"><span class="codenumber">1</span> <span class="title">Sets</span></a></div>
+<ul id="ptx-toc-group-plp-4" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="plp-4-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="plp-4-3.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Not so formal definition</span></a></div>
+<ul id="ptx-toc-group-plp-4-3" class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="plp-4-3.html#plp-4-3-3" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Who is this reader you keep on mentioning?</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-describing.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Describing a set</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-4-5.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Onward</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="plp-4-6.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-logic.html" class="internal"><span class="codenumber">2</span> <span class="title">A little logic</span></a></div>
+<ul id="ptx-toc-group-ch-logic" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-logic-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-logic-3.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Statements and open sentences</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-logic-4.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Negation</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-logic-5.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Or and And</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-implication.html" class="internal"><span class="codenumber">2.4</span> <span class="title">The implication</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-logic-7.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Modus ponens and chaining implications</span></a></div>
+<ul id="ptx-toc-group-ch-logic-7" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-logic-7.html#ch-logic-7-2" class="internal"><span class="codenumber">2.5.1</span> <span class="title">Modus ponens</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-logic-7.html#ch-logic-7-3" class="internal"><span class="codenumber">2.5.2</span> <span class="title">Affirming the consequent and denying the antecedent</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-logic-7.html#ch-logic-7-4" class="internal"><span class="codenumber">2.5.3</span> <span class="title">Chaining implications together</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-CCB.html" class="internal"><span class="codenumber">2.6</span> <span class="title">The converse, contrapositive and biconditional</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-logic-9.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-direct.html" class="internal"><span class="codenumber">3</span> <span class="title">Direct proofs</span></a></div>
+<ul id="ptx-toc-group-ch-direct" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-direct-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-direct-3.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Trivialities and vacuousness</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-direct-4.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Direct proofs</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-direct-5.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Proofs of inequalities</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-direct-6.html" class="internal"><span class="codenumber">3.4</span> <span class="title">A quick visit to disproofs</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-direct-7.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="plp-7.html" class="internal"><span class="codenumber">4</span> <span class="title">More logic</span></a></div>
+<ul id="ptx-toc-group-plp-7" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="plp-7-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-7-3.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Tautologies and contradictions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-7-4.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Logical equivalence</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="plp-7-5.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-moreproof.html" class="internal"><span class="codenumber">5</span> <span class="title">More proofs</span></a></div>
+<ul id="ptx-toc-group-ch-moreproof" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-moreproof-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-moreproof-3.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Contrapositive</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-moreproof-4.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Proofs with cases</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-congruence.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Congruence modulo <span class="process-math">\(n\)</span></span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-abs-triangle.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Absolute values and the triangle inequality</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-moreproof-7.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-quantifiers.html" class="internal"><span class="codenumber">6</span> <span class="title">Quantifiers</span></a></div>
+<ul id="ptx-toc-group-ch-quantifiers" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-quantifiers-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-quantifiers-3.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Quantified statements</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-quantifiers-4.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Negation of quantifiers</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-quantifiers-5.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Nested quantifiers</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_limits.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Quantifiers and rigorous limits</span></a></div>
+<ul id="ptx-toc-group-sec_limits" class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec_limits.html#sec_limits-3" class="internal"><span class="codenumber">6.4.1</span> <span class="title">Convergence of sequences</span></a></div>
+<ul id="ptx-toc-group-sec_limits-3" class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec_limits.html#sec_limits-3-3" class="internal"><span class="codenumber">6.4.1.1</span> <span class="title">Quantifying towards a definition</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec_limits.html#sec_limits-3-4" class="internal"><span class="codenumber">6.4.1.2</span> <span class="title">Some examples</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_limits.html#sec_limits-4" class="internal"><span class="codenumber">6.4.2</span> <span class="title">The limit of a function</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-quantifiers-7.html" class="internal"><span class="codenumber">6.5</span> <span class="title">(Optional) Properties of limits</span></a></div>
+<ul id="ptx-toc-group-ch-quantifiers-7" class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimseq" class="internal"><span class="codenumber">6.5.1</span> <span class="title">(Optional) Some properties of limits of sequences</span></a></div>
+<ul id="ptx-toc-group-subsec-proplimseq" class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimseq-3" class="internal"><span class="codenumber">6.5.1.1</span> <span class="title">Uniqueness of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimseq-4" class="internal"><span class="codenumber">6.5.1.2</span> <span class="title">Linearity of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimseq-5" class="internal"><span class="codenumber">6.5.1.3</span> <span class="title">Product of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimseq-6" class="internal"><span class="codenumber">6.5.1.4</span> <span class="title">Ratio of limits</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimfunc" class="internal"><span class="codenumber">6.5.2</span> <span class="title">(Optional) Some properties of limits of functions</span></a></div>
+<ul id="ptx-toc-group-subsec-proplimfunc" class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimfunc-3" class="internal"><span class="codenumber">6.5.2.1</span> <span class="title">Uniqueness of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimfunc-4" class="internal"><span class="codenumber">6.5.2.2</span> <span class="title">Linearity of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimfunc-5" class="internal"><span class="codenumber">6.5.2.3</span> <span class="title">Product of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimfunc-6" class="internal"><span class="codenumber">6.5.2.4</span> <span class="title">Ratio of limits</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-quantifiers-8.html" class="internal"><span class="codenumber">6.6</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_induction.html" class="internal"><span class="codenumber">7</span> <span class="title">Induction</span></a></div>
+<ul id="ptx-toc-group-ch_induction" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch_induction-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch_induction-3.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Induction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch_induction-4.html" class="internal"><span class="codenumber">7.2</span> <span class="title">More general inductions</span></a></div>
+<ul id="ptx-toc-group-ch_induction-4" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch_induction-4.html#subsec-extendedinduction" class="internal"><span class="codenumber">7.2.1</span> <span class="title">A little more general</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch_induction-4.html#subsec-stronginduction" class="internal"><span class="codenumber">7.2.2</span> <span class="title">More general and yet equivalent</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch_induction-5.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="plp-11.html" class="internal"><span class="codenumber">8</span> <span class="title">Return to sets</span></a></div>
+<ul class="structural toc-item-list contains-active" id="ptx-toc-group-plp-11">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="plp-11-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-11-3.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Subsets</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-11-4.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Set operations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-11-5.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Cartesian products of sets</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="plp-11-6.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Some set-flavoured results</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-11-7.html" class="internal"><span class="codenumber">8.5</span> <span class="title">Indexed sets</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="plp-11-8.html" class="internal"><span class="codenumber">8.6</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_relations.html" class="internal"><span class="codenumber">9</span> <span class="title">Relations</span></a></div>
+<ul id="ptx-toc-group-ch_relations" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch_relations-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch_relations-3.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Relations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_prop_rel.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Properties of relations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch_relations-5.html" class="internal"><span class="codenumber">9.3</span> <span class="title">Equivalence relations &amp; classes</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_congruence_revisited.html" class="internal"><span class="codenumber">9.4</span> <span class="title">Congruence revisited</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-euclid.html" class="internal"><span class="codenumber">9.5</span> <span class="title">Greatest divisors, Bézout and the Euclidean algorithm</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-unique-fact.html" class="internal"><span class="codenumber">9.6</span> <span class="title">Uniqueness of prime factorisation</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch_relations-9.html" class="internal"><span class="codenumber">9.7</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-functions.html" class="internal"><span class="codenumber">10</span> <span class="title">Functions</span></a></div>
+<ul id="ptx-toc-group-ch-functions" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-functions-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-functions-3.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-functions-4.html" class="internal"><span class="codenumber">10.2</span> <span class="title">A more abstract definition</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-functions-5.html" class="internal"><span class="codenumber">10.3</span> <span class="title">Images and preimages of sets</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-functions-6.html" class="internal"><span class="codenumber">10.4</span> <span class="title">Injective and surjective functions</span></a></div>
+<ul id="ptx-toc-group-ch-functions-6" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-functions-6.html#ch-functions-6-3" class="internal"><span class="codenumber">10.4.1</span> <span class="title">Injections and surjections</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-functions-6.html#ch-functions-6-4" class="internal"><span class="codenumber">10.4.2</span> <span class="title">Bijective functions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-functions-7.html" class="internal"><span class="codenumber">10.5</span> <span class="title">Composition of functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_inv_func.html" class="internal"><span class="codenumber">10.6</span> <span class="title">Inverse functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-functions-9.html" class="internal"><span class="codenumber">10.7</span> <span class="title">(Optional) The axiom of choice</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-functions-10.html" class="internal"><span class="codenumber">10.8</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-contradictions.html" class="internal"><span class="codenumber">11</span> <span class="title">Proof by contradiction</span></a></div>
+<ul id="ptx-toc-group-ch-contradictions" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-contradictions-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-contradictions-3.html" class="internal"><span class="codenumber">11.1</span> <span class="title">Structure of a proof by contradiction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-contradictions-4.html" class="internal"><span class="codenumber">11.2</span> <span class="title">Some examples</span></a></div>
+<ul id="ptx-toc-group-ch-contradictions-4" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-contradictions-4.html#ch-contradictions-4-3" class="internal"><span class="codenumber">11.2.1</span> <span class="title">The irrationality of <span class="process-math">\(\sqrt{2}\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-contradictions-4.html#ssec_inf_primes" class="internal"><span class="codenumber">11.2.2</span> <span class="title">The infinitude of primes</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-contradictions-5.html" class="internal"><span class="codenumber">11.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap_cardinality.html" class="internal"><span class="codenumber">12</span> <span class="title">Cardinality</span></a></div>
+<ul id="ptx-toc-group-chap_cardinality" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="chap_cardinality-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="chap_cardinality-3.html" class="internal"><span class="codenumber">12.1</span> <span class="title">Finite sets</span></a></div>
+<ul id="ptx-toc-group-chap_cardinality-3" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-3.html#chap_cardinality-3-3" class="internal"><span class="codenumber">12.1.1</span> <span class="title">Equinumerous sets, bijections and pigeons</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-3.html#chap_cardinality-3-4" class="internal"><span class="codenumber">12.1.2</span> <span class="title">Comparing with functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-3.html#chap_cardinality-3-5" class="internal"><span class="codenumber">12.1.3</span> <span class="title">Infinite sets are strange.</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap_cardinality-4.html" class="internal"><span class="codenumber">12.2</span> <span class="title">Denumerable sets</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_uncount.html" class="internal"><span class="codenumber">12.3</span> <span class="title">Uncountable sets</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="chap_cardinality-6.html" class="internal"><span class="codenumber">12.4</span> <span class="title">Comparing cardinalities</span></a></div>
+<ul id="ptx-toc-group-chap_cardinality-6" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-6.html#chap_cardinality-6-2" class="internal"><span class="codenumber">12.4.1</span> <span class="title">Extending to the infinite</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-6.html#chap_cardinality-6-3" class="internal"><span class="codenumber">12.4.2</span> <span class="title">Cantor’s Theorem and infinite infinities</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-6.html#chap_cardinality-6-4" class="internal"><span class="codenumber">12.4.3</span> <span class="title">Congratulations are in order</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-6.html#chap_cardinality-6-5" class="internal"><span class="codenumber">12.4.4</span> <span class="title">One more question</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_compare_card.html" class="internal"><span class="codenumber">12.5</span> <span class="title">More comparisons of cardinalties</span></a></div>
+<ul id="ptx-toc-group-sec_compare_card" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_compare_card.html#sec_compare_card-3" class="internal"><span class="codenumber">12.5.1</span> <span class="title">The Cantor-Schröder-Bernstein theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_compare_card.html#sec_compare_card-4" class="internal"><span class="codenumber">12.5.2</span> <span class="title">Applications</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_compare_card.html#sec_compare_card-5" class="internal"><span class="codenumber">12.5.3</span> <span class="title">Proof that <span class="process-math">\(|\pow{\mathbb{N}}| = |\mathbb{R}|\)</span></span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_cantor_first.html" class="internal"><span class="codenumber">12.6</span> <span class="title">(Optional) Cantor’s first proof of the uncountability of the reals</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chap_cardinality-9.html" class="internal"><span class="codenumber">12.7</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul id="ptx-toc-group-backmatter" class="structural toc-item-list">
+<li class="toc-item toc-solutions"><div class="toc-title-box"><a href="app_hint.html" class="internal"><span class="codenumber">A.</span> <span class="title">Hints for Exercises</span></a></div></li>
+<li class="toc-item toc-solutions"><div class="toc-title-box"><a href="app_answ.html" class="internal"><span class="codenumber">B.</span> <span class="title">Scratchwork for Exercises</span></a></div></li>
+<li class="toc-item toc-solutions"><div class="toc-title-box"><a href="app_soln.html" class="internal"><span class="codenumber">C.</span> <span class="title">Solutions to Exercises</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="backmatter-5.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="plp-11-6">
+<h1 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Some set-flavoured results</span>
+</h1>
+<div class="para" id="plp-11-6-2">There are quite a few standard results that describe how the set operations defined above interact with each other. We’ll state some of the more important ones as a theorem (or two (or three)). But first, let us summarise what we have learned above.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-6-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="remark remark-like" id="plp-11-6-3"><h2 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.4.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">A set of results about sets seen earlier.</span>
+</h2>
+<div class="para logical" id="plp-11-6-3-2">
+<div class="para">Let <span class="process-math">\(A,B\)</span> be sets. Then</div>
+<ul class="disc" id="plp-11-6-3-2-2">
+<li id="plp-11-6-3-2-2-1">
+<div class="para" id="p-derived-plp-11-6-3-2-2-1"><span class="process-math">\((A \subseteq B) \equiv (\forall x\in A, x\in B) \equiv( x\in A \implies x\in B)\text{.}\)</span></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-3-2-2-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="plp-11-6-3-2-2-2">
+<div class="para" id="p-derived-plp-11-6-3-2-2-2"><span class="process-math">\(\displaystyle (A = B) \equiv \left( (A \subseteq B) \land (B \subseteq A) \right) \equiv \left((x \in
+A) \iff (x \in B) \right)\)</span></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-3-2-2-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="plp-11-6-3-2-2-3">
+<div class="para" id="p-derived-plp-11-6-3-2-2-3"><span class="process-math">\(\displaystyle (x \in A \cap B) \equiv \left( (x\in A) \land (x\in B) \right)\)</span></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-3-2-2-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="plp-11-6-3-2-2-4">
+<div class="para" id="p-derived-plp-11-6-3-2-2-4"><span class="process-math">\(\displaystyle (x \in A \cup B) \equiv \left( (x\in A) \lor (x\in B) \right)\)</span></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-3-2-2-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="plp-11-6-3-2-2-5">
+<div class="para" id="p-derived-plp-11-6-3-2-2-5"><span class="process-math">\(\displaystyle (x \in \bar{A}) \equiv (x \not\in A) \equiv \neg(x \in A)\)</span></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-3-2-2-5" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="plp-11-6-3-2-2-6">
+<div class="para" id="p-derived-plp-11-6-3-2-2-6"><span class="process-math">\(\displaystyle (x \in A - B) \equiv \left( (x \in A) \land (x \not\in B)\right) \equiv \left( (x \in A) \land \neg(x \in
+B) \right)\)</span></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-3-2-2-6" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-6-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Remark 8.4.1: A set of results about sets seen earlier"><a tabindex="-1" href="#plp-11-6-3" title="Copy heading and permalink for Remark 8.4.1: A set of results about sets seen earlier" aria-label="Copy heading and permalink for Remark 8.4.1: A set of results about sets seen earlier">🔗</a></div>
+</article>
+<div class="para" id="plp-11-6-4">Using these we can prove the following theorems<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-6-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="plp-11-6-5"><h2 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.4.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">DeMorgan’s laws.</span>
+</h2>
+<div class="para logical" id="plp-11-6-5-2-1">
+<div class="para">Let <span class="process-math">\(A,B\)</span> be sets contained in a universal set <span class="process-math">\(U\text{.}\)</span> Then</div>
+<div class="displaymath process-math" id="plp-11-6-5-2-1-3">
+\begin{align*}
+\overline{A \cap B} &amp;= \bar{A} \cup \bar{B}\\
+\overline{A \cup B} &amp;= \bar{A} \cap \bar{B}
+\end{align*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-6-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 8.4.2: DeMorgan’s laws"><a tabindex="-1" href="#plp-11-6-5" title="Copy heading and permalink for Theorem 8.4.2: DeMorgan’s laws" aria-label="Copy heading and permalink for Theorem 8.4.2: DeMorgan’s laws">🔗</a></div>
+</article>
+<article class="theorem theorem-like" id="plp-11-6-6"><h2 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.4.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Distributive laws.</span>
+</h2>
+<div class="para logical" id="plp-11-6-6-2-1">
+<div class="para">Let <span class="process-math">\(A,B,C\)</span> be sets then</div>
+<div class="displaymath process-math" id="plp-11-6-6-2-1-2">
+\begin{align*}
+A \cup (B \cap C) &amp;= (A\cup C) \cap (A \cup B)\\
+A \cap (B \cup C) &amp;= (A\cap C) \cup (A \cap B)
+\end{align*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math" id="plp-11-6-6-2-1-3">
+\begin{align*}
+A \times (B \cap C) &amp;= (A\times C) \cap (A \times B)\\
+A \times (B \cup C) &amp;= (A\times C) \cup (A \times B)
+\end{align*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-6-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 8.4.3: Distributive laws"><a tabindex="-1" href="#plp-11-6-6" title="Copy heading and permalink for Theorem 8.4.3: Distributive laws" aria-label="Copy heading and permalink for Theorem 8.4.3: Distributive laws">🔗</a></div>
+</article>
+<div class="para" id="plp-11-6-7">The above are not so hard to understand. You can see that the distributive laws for sets look very much like the distributive laws for additional and multiplication. Laws for set differences are less obvious and we certainly wouldn’t expect you to remember them. However they do make very good exercises! And, as you’ll see in the examples below, a quick sketch of Venn diagrams can help a lot. <em class="alert">But</em> a Venn diagram is not a proof <details class="ptx-footnote" aria-live="polite" id="plp-11-6-7-2"><summary class="ptx-footnote__number" title="Footnote 93"><sup> 93 </sup></summary>
+<div class="ptx-footnote__contents" id="plp-11-6-7-2">The Venn diagram is good scratchwork for a proof, but really what one is doing is showing that for a particular choice of sets (i.e. the ones drawn) everything works out. To be a proof it has to work for every choice.
+</div></details>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-6-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm_set_diff"><h2 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.4.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Set differences.</span>
+</h2>
+<div class="para logical" id="thm_set_diff-2-1">
+<div class="para">Let <span class="process-math">\(A,B,C\)</span> be sets contained in a universal set <span class="process-math">\(U\text{.}\)</span> Then</div>
+<div class="displaymath process-math" id="thm_set_diff-2-1-3">
+\begin{align*}
+A-B &amp;= A \cap \bar{B}\\
+A-(B\cap C) &amp;= (A-B)\cup(A-C)\\
+A-(B\cup C) &amp;= (A-B)\cap(A-C)\\
+A-(B-C) &amp;= (A \cap C) \cup (A-B)
+\end{align*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm_set_diff-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 8.4.4: Set differences"><a tabindex="-1" href="#thm_set_diff" title="Copy heading and permalink for Theorem 8.4.4: Set differences" aria-label="Copy heading and permalink for Theorem 8.4.4: Set differences">🔗</a></div>
+</article>
+<div class="para" id="plp-11-6-9">When we prove the above theorems we’ll make use of some simple little results that follow quite directly from the definitions of our set operations. Rather than explaining those results again and again in each proof (where the reader has to check the reasoning each time), we’ll put them in a separate little result of their own. Since it is a helpful result we’ll call it a lemma.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-6-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="lemma theorem-like" id="plp-11-6-10"><h2 class="heading">
+<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.4.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para logical" id="plp-11-6-10-1-1">
+<div class="para">Let <span class="process-math">\(A, B\)</span> be sets.</div>
+<ul class="disc" id="plp-11-6-10-1-1-2">
+<li id="plp-11-6-10-1-1-2-1">
+<div class="para" id="p-derived-plp-11-6-10-1-1-2-1">If <span class="process-math">\(x \in A\)</span> then <span class="process-math">\(x \in A \cup B\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-10-1-1-2-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="plp-11-6-10-1-1-2-2">
+<div class="para" id="p-derived-plp-11-6-10-1-1-2-2">If <span class="process-math">\(x \in A\cap B\)</span> then <span class="process-math">\(x \in A\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-10-1-1-2-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="plp-11-6-10-1-1-2-3">
+<div class="para" id="p-derived-plp-11-6-10-1-1-2-3">If <span class="process-math">\(x \not\in A \cup B\)</span> then <span class="process-math">\(x \not\in A\)</span> and <span class="process-math">\(x \not\in B\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-10-1-1-2-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="plp-11-6-10-1-1-2-4">
+<div class="para" id="p-derived-plp-11-6-10-1-1-2-4">If <span class="process-math">\(x \not\in A \cap B\)</span> then <span class="process-math">\(x \not\in A\)</span> or <span class="process-math">\(x \not\in B\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-10-1-1-2-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">The contrapositives of these statements also turn out to be useful in certain circumstances, so we state them explicitly.</div>
+<ul class="disc" id="plp-11-6-10-1-1-3">
+<li id="plp-11-6-10-1-1-3-1">
+<div class="para" id="p-derived-plp-11-6-10-1-1-3-1">If <span class="process-math">\(x \not\in A \cup B\)</span> then <span class="process-math">\(x\not\in A\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-10-1-1-3-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="plp-11-6-10-1-1-3-2">
+<div class="para" id="p-derived-plp-11-6-10-1-1-3-2">If <span class="process-math">\(x \not\in A\)</span> then <span class="process-math">\(x\not\in A \cap B\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-10-1-1-3-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="plp-11-6-10-1-1-3-3">
+<div class="para" id="p-derived-plp-11-6-10-1-1-3-3">If <span class="process-math">\(x \in A\)</span> or <span class="process-math">\(x\in B\)</span> then <span class="process-math">\(x \in A \cup B\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-10-1-1-3-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="plp-11-6-10-1-1-3-4">
+<div class="para" id="p-derived-plp-11-6-10-1-1-3-4">If <span class="process-math">\(x \in A\)</span> and <span class="process-math">\(x\in B\)</span> then <span class="process-math">\(x \in A \cap B\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-10-1-1-3-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-6-10-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Lemma 8.4.5"><a tabindex="-1" href="#plp-11-6-10" title="Copy heading and permalink for Lemma 8.4.5" aria-label="Copy heading and permalink for Lemma 8.4.5">🔗</a></div>
+</article>
+<div class="para" id="plp-11-6-11">These are straight forward to prove using the logic we know and the definitions of union and intersection.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-6-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="plp-11-6-12" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="plp-11-6-12-1">
+<div class="para">We prove each in order.</div>
+<ul class="disc" id="plp-11-6-12-1-1">
+<li id="plp-11-6-12-1-1-1">
+<div class="para" id="p-derived-plp-11-6-12-1-1-1">Assume <span class="process-math">\(x \in A\text{.}\)</span> Then <span class="process-math">\(x\in A\)</span> or <span class="process-math">\(x\in B\text{.}\)</span> Hence <span class="process-math">\(x \in A\cup B\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-12-1-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="plp-11-6-12-1-1-2">
+<div class="para" id="p-derived-plp-11-6-12-1-1-2">Assume <span class="process-math">\(x \in A \cap B\text{.}\)</span> Hence <span class="process-math">\(x \in A\)</span> and <span class="process-math">\(x\in B\text{.}\)</span> Thus we have that <span class="process-math">\(x\in A\)</span> as required.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-12-1-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="plp-11-6-12-1-1-3">
+<div class="para" id="p-derived-plp-11-6-12-1-1-3">The contrapositive of the statement is the definition of intersection, so the statement is true.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-12-1-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="plp-11-6-12-1-1-4">
+<div class="para" id="p-derived-plp-11-6-12-1-1-4">The contrapositive of the statement is the definition of union, so the statement is true.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-12-1-1-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-6-12-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 8.4.1"><a tabindex="-1" href="#plp-11-6-12" title="Copy heading and permalink for Proof 8.4.1" aria-label="Copy heading and permalink for Proof 8.4.1">🔗</a></div>
+</article></details>
+<article class="remark remark-like" id="plp-11-6-13"><h2 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.4.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Careful choice of <span class="process-math">\(B\)</span>.</span>
+</h2>
+<div class="para" id="plp-11-6-13-2">Take a careful look at the first of the statements in the lemma above. Observe that the hypothesis does not mention the set <span class="process-math">\(B\)</span> that is in the conclusion. This is a useful observation. It means that we can apply the result by choosing <span class="process-math">\(B\)</span> to be some set we are interested in. That is:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-6-13-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<blockquote class="blockquote" id="plp-11-6-13-3">
+<div class="para" id="plp-11-6-13-3-1">If <span class="process-math">\(x \in A\)</span> then <span class="process-math">\(x\)</span> is in the union of <span class="process-math">\(A\)</span> and <em class="emphasis">any set we choose</em>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-6-13-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Quotation"><a tabindex="-1" href="#plp-11-6-13-3" title="Copy heading and permalink for Quotation" aria-label="Copy heading and permalink for Quotation">🔗</a></div>
+</blockquote>
+<div class="para" id="plp-11-6-13-4">and similarly the second (its contrapositive) says<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-6-13-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<blockquote class="blockquote" id="plp-11-6-13-5">
+<div class="para" id="plp-11-6-13-5-1">If <span class="process-math">\(x\not\in A\)</span> then <span class="process-math">\(x\)</span> is not in the intersection of <span class="process-math">\(A\)</span> and <em class="emphasis">any set we choose</em>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-6-13-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Quotation"><a tabindex="-1" href="#plp-11-6-13-5" title="Copy heading and permalink for Quotation" aria-label="Copy heading and permalink for Quotation">🔗</a></div>
+</blockquote>
+<div class="autopermalink" aria-hidden="true" data-description="Remark 8.4.6: Careful choice of B"><a tabindex="-1" href="#plp-11-6-13" title="Copy heading and permalink for Remark 8.4.6: Careful choice of B" aria-label="Copy heading and permalink for Remark 8.4.6: Careful choice of B">🔗</a></div>
+</article>
+<div class="para" id="plp-11-6-14">Okay, primed with these results let’s prove one of DeMorgan’s laws<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-6-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="example example-like" id="plp-11-6-15"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.4.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para" id="plp-11-6-15-1-1">Let <span class="process-math">\(A,B\)</span> be sets included in a universal set <span class="process-math">\(U\text{,}\)</span> then <span class="process-math">\(\overline{A \cap B} = \bar{A} \cup \bar{B}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-6-15-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="plp-11-6-15-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Scratchwork</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="answer solution-like knowl__content">
+<div class="para" id="plp-11-6-15-2-1">First we should draw a Venn diagram describing the sets <span class="process-math">\(\overline{A\cap B}, \bar{A}\)</span> and <span class="process-math">\(\bar{B}\text{:}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-6-15-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/notAcapB.svg" role="img" class="contained"></div>
+<div class="para" id="plp-11-6-15-2-3">Again, note that though Venn diagrams are useful tools for to understand and explore problems like these, they are not proofs. You should think of them as tools to help your scratchwork.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-6-15-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="plp-11-6-15-2-4">
+<div class="para">Its an equality so we have to prove that the LHS is a subset of the RHS and vice-versa. Let’s do those in order.</div>
+<ul class="disc" id="plp-11-6-15-2-4-1">
+<li id="plp-11-6-15-2-4-1-1">
+<div class="para" id="p-derived-plp-11-6-15-2-4-1-1">Assume <span class="process-math">\(x\in \overline{A\cap B}\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-15-2-4-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="plp-11-6-15-2-4-1-2">
+<div class="para" id="p-derived-plp-11-6-15-2-4-1-2">By definition of set complement this means that <span class="process-math">\(x \not\in (A\cap B)\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-15-2-4-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="plp-11-6-15-2-4-1-3">
+<div class="para logical" id="plp-11-6-15-2-4-1-3-1">
+<div class="para">Now our helpful lemma comes to our aid. It tells that this implies that <span class="process-math">\(x \notin A\)</span> or <span class="process-math">\(x\not\in B\text{.}\)</span>
+</div>
+<ul class="circle" id="plp-11-6-15-2-4-1-3-1-3">
+<li id="plp-11-6-15-2-4-1-3-1-3-1">
+<div class="para" id="p-derived-plp-11-6-15-2-4-1-3-1-3-1">If <span class="process-math">\(x\not\in A\)</span> then <span class="process-math">\(x \in \bar{A}\text{.}\)</span> As per our helpful lemma, if <span class="process-math">\(x\)</span> is an element of a particular set, then it is an element of the union of that set and any other set we choose. Hence, if <span class="process-math">\(x\in \bar{A}\)</span> then <span class="process-math">\(x\in \bar{A}\cup\bar{B}\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-15-2-4-1-3-1-3-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="plp-11-6-15-2-4-1-3-1-3-2">
+<div class="para" id="p-derived-plp-11-6-15-2-4-1-3-1-3-2">Similarly, if <span class="process-math">\(x\not\in B\)</span> then <span class="process-math">\(x\in\bar{B}\text{,}\)</span> and so <span class="process-math">\(x \in \bar{B}\cup\bar{A}\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-15-2-4-1-3-1-3-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-6-15-2-4-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-15-2-4-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="plp-11-6-15-2-4-1-4">
+<div class="para" id="p-derived-plp-11-6-15-2-4-1-4">In either case <span class="process-math">\(x\in\bar{A}\cup\bar{B}\)</span> as required.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-15-2-4-1-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">And the other inclusion:</div>
+<ul class="disc" id="plp-11-6-15-2-4-2">
+<li id="plp-11-6-15-2-4-2-1">
+<div class="para logical" id="plp-11-6-15-2-4-2-1-1">
+<div class="para">Assume <span class="process-math">\(x\in\bar{A} \cup \bar{B}\text{.}\)</span> Hence <span class="process-math">\(x\in\bar{A}\)</span> or <span class="process-math">\(x\in\bar{B}\text{.}\)</span>
+</div>
+<ul class="circle" id="plp-11-6-15-2-4-2-1-1-4">
+<li id="plp-11-6-15-2-4-2-1-1-4-1">
+<div class="para" id="p-derived-plp-11-6-15-2-4-2-1-1-4-1">If <span class="process-math">\(x\in\bar{A}\)</span> then <span class="process-math">\(x\not\in A\text{.}\)</span> As above, our helpful lemma comes to our aid. If we know that <span class="process-math">\(x\)</span> is not an element of a particular set, then it is not in the intersection of that set and any other set we choose. Hence, if <span class="process-math">\(x \not\in A\)</span> then <span class="process-math">\(x\not\in A\cap B\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-15-2-4-2-1-1-4-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="plp-11-6-15-2-4-2-1-1-4-2">
+<div class="para" id="p-derived-plp-11-6-15-2-4-2-1-1-4-2">If <span class="process-math">\(x\in\bar{B}\)</span> then <span class="process-math">\(x\not\in B\text{,}\)</span> and by a similar argument, <span class="process-math">\(x\not\in A\cap B\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-15-2-4-2-1-1-4-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-6-15-2-4-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-15-2-4-2-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="plp-11-6-15-2-4-2-2">
+<div class="para" id="p-derived-plp-11-6-15-2-4-2-2">In either case <span class="process-math">\(x\not\in A\cap B\text{,}\)</span> so <span class="process-math">\(x\in\overline{A\cap B}\)</span> as required.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-15-2-4-2-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">Now we can write this as a proper proof.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-6-15-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Scratchwork 8.4.7.1"><a tabindex="-1" href="#plp-11-6-15-2" title="Copy heading and permalink for Scratchwork 8.4.7.1" aria-label="Copy heading and permalink for Scratchwork 8.4.7.1">🔗</a></div>
+</div></details>
+<details id="plp-11-6-15-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<details id="plp-11-6-15-3-1" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="plp-11-6-15-3-1-1">
+<div class="para">We first prove that <span class="process-math">\(\overline{A\cap B} \subset \bar{A}\cup\bar{B}\)</span> and then the reverse inclusion.</div>
+<ul class="disc" id="plp-11-6-15-3-1-1-2">
+<li id="plp-11-6-15-3-1-1-2-1">
+<div class="para" id="p-derived-plp-11-6-15-3-1-1-2-1">Let <span class="process-math">\(x \in \overline{A\cap B}\text{,}\)</span> and hence <span class="process-math">\(x\not\in (A \cap B)\text{.}\)</span> This implies that <span class="process-math">\(x\not\in A\)</span> or <span class="process-math">\(x\not\in B\text{.}\)</span> If <span class="process-math">\(x \not\in A\)</span> then <span class="process-math">\(x \in \bar{A}\text{,}\)</span> and so <span class="process-math">\(x \in\bar{A} \cup \bar{B}\text{.}\)</span> Similarly, if <span class="process-math">\(x \not\in B\)</span> then <span class="process-math">\(x \in \bar{B}\text{,}\)</span> and so <span class="process-math">\(x \in\bar{B} \cup \bar{A}\text{.}\)</span> In either case, <span class="process-math">\(x\in \bar{A} \cup \bar{B}\)</span> as required.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-15-3-1-1-2-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="plp-11-6-15-3-1-1-2-2">
+<div class="para" id="p-derived-plp-11-6-15-3-1-1-2-2">Now assume that <span class="process-math">\(x\in \bar{A} \cup \bar{B}\text{,}\)</span> so <span class="process-math">\(x\in \bar{A}\)</span> or <span class="process-math">\(x \in \bar{B}\text{.}\)</span> If <span class="process-math">\(x \in \bar{A}\)</span> then <span class="process-math">\(x\not\in A\text{,}\)</span> and so <span class="process-math">\(x\not\in A \cap B\text{.}\)</span> Similarly if <span class="process-math">\(x \in \bar{B}\)</span> then <span class="process-math">\(x\not\in B\text{,}\)</span> and so <span class="process-math">\(x\not\in B \cap A\text{.}\)</span> In either case <span class="process-math">\(x\not\in A\cap B\text{,}\)</span> and so <span class="process-math">\(x\in \overline{A\cap B}\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-15-3-1-1-2-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">Since we have shown both inclusions, <span class="process-math">\(\overline{A\cap B} = \bar{A}\cup\bar{B}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-6-15-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 8.4.7.1.1"><a tabindex="-1" href="#plp-11-6-15-3-1" title="Copy heading and permalink for Proof 8.4.7.1.1" aria-label="Copy heading and permalink for Proof 8.4.7.1.1">🔗</a></div>
+</article></details><div class="autopermalink" aria-hidden="true" data-description="Solution 8.4.7.1"><a tabindex="-1" href="#plp-11-6-15-3" title="Copy heading and permalink for Solution 8.4.7.1" aria-label="Copy heading and permalink for Solution 8.4.7.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 8.4.7"><a tabindex="-1" href="#plp-11-6-15" title="Copy heading and permalink for Example 8.4.7" aria-label="Copy heading and permalink for Example 8.4.7">🔗</a></div>
+</article>
+<div class="para" id="plp-11-6-16">What about a distributive law or two?<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-6-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="example example-like" id="plp-11-6-17"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.4.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para" id="plp-11-6-17-1-1">Let <span class="process-math">\(A,B,C\)</span> be non-empty sets, then <span class="process-math">\(A \times (B\cup C) = (A\times B) \cup (A\times C)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-6-17-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="plp-11-6-17-1-2">Notice that this result still holds when the sets are allowed to be empty, but the proof of the result is a little messier and involves more cases.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-6-17-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="plp-11-6-17-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Scratchwork</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="answer solution-like knowl__content">
+<div class="para logical" id="plp-11-6-17-2-1">
+<div class="para">Unfortunately it isn’t so easy to draw a useful picture here<details class="ptx-footnote" aria-live="polite" id="plp-11-6-17-2-1-1"><summary class="ptx-footnote__number" title="Footnote 94"><sup> 94 </sup></summary>
+<div class="ptx-footnote__contents" id="plp-11-6-17-2-1-1">Well … I guess we could draw <span class="process-math">\(A,B,C\)</span> as one-dimensional sets lying on different axes, and then the product would be some rectangular region in the plane? Something like that might work. A good exercise for the eager reader.
+</div></details>, but thankfully this isn’t too hard to prove. It is a set-equality, so we need to prove the LHS is a subset of the RHS and vice-versa.</div>
+<ul class="disc" id="plp-11-6-17-2-1-2">
+<li id="plp-11-6-17-2-1-2-1">
+<div class="para" id="p-derived-plp-11-6-17-2-1-2-1">Let <span class="process-math">\(p \in A \times (B\cup C)\text{.}\)</span> Notice that since <span class="process-math">\(A,B,C\)</span> are non-empty, we know that <span class="process-math">\(p\)</span> exists. Since the LHS is the Cartesian product of two sets, this element <span class="process-math">\(p\)</span> is really an ordered pair of elements. It is probably a bit easier to follow what is going to happen if we make this clear from the start. With this in mind, let us restart things.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-17-2-1-2-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="plp-11-6-17-2-1-2-2">
+<div class="para" id="p-derived-plp-11-6-17-2-1-2-2">Let <span class="process-math">\((x,y) \in A \times (B \cup C) \text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-17-2-1-2-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="plp-11-6-17-2-1-2-3">
+<div class="para" id="p-derived-plp-11-6-17-2-1-2-3">This means that <span class="process-math">\(x\in A\)</span> and <span class="process-math">\(y \in B\cup C\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-17-2-1-2-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="plp-11-6-17-2-1-2-4">
+<div class="para logical" id="plp-11-6-17-2-1-2-4-1">
+<div class="para">Hence <span class="process-math">\(y \in B\)</span> or <span class="process-math">\(y \in C\text{.}\)</span>
+</div>
+<ul class="circle" id="plp-11-6-17-2-1-2-4-1-3">
+<li id="plp-11-6-17-2-1-2-4-1-3-1">
+<div class="para" id="p-derived-plp-11-6-17-2-1-2-4-1-3-1">Let <span class="process-math">\(y \in B\text{,}\)</span> then since <span class="process-math">\(x \in A\text{,}\)</span> we know that <span class="process-math">\((x,y) \in A \times B\text{.}\)</span> Thus <span class="process-math">\((x,y) \in (A\times B) \cup \text{(any set we choose)}\text{,}\)</span> and so <span class="process-math">\((x,y) \in (A\times B) \cup (A \times C)\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-17-2-1-2-4-1-3-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="plp-11-6-17-2-1-2-4-1-3-2">
+<div class="para" id="p-derived-plp-11-6-17-2-1-2-4-1-3-2">Similarly, let <span class="process-math">\(y\in C\text{.}\)</span> Since <span class="process-math">\(y\in C\)</span> and <span class="process-math">\(x \in A\text{,}\)</span> we know that <span class="process-math">\((x,y)\in A\times C\text{,}\)</span> and so <span class="process-math">\((x,y) \in (A\times B) \cup (A\times C)\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-17-2-1-2-4-1-3-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-6-17-2-1-2-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-17-2-1-2-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="plp-11-6-17-2-1-2-5">
+<div class="para" id="p-derived-plp-11-6-17-2-1-2-5">So <span class="process-math">\((x,y) \in RHS\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-17-2-1-2-5" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">And the other way around…</div>
+<ul class="disc" id="plp-11-6-17-2-1-4">
+<li id="plp-11-6-17-2-1-4-1">
+<div class="para logical" id="plp-11-6-17-2-1-4-1-1">
+<div class="para">Let <span class="process-math">\((x,y) \in  (A\times B) \cup (A\times C)\text{,}\)</span> so <span class="process-math">\((x,y) \in (A\times B)\)</span> or <span class="process-math">\((x,y) \in (A\times C)\text{.}\)</span> Again, since <span class="process-math">\(A,B,C\)</span> are non-empty we know that such an <span class="process-math">\((x,y)\)</span> exists.</div>
+<ul class="circle" id="plp-11-6-17-2-1-4-1-1-6">
+<li id="plp-11-6-17-2-1-4-1-1-6-1">
+<div class="para" id="p-derived-plp-11-6-17-2-1-4-1-1-6-1">If <span class="process-math">\((x,y) \in (A\times B)\)</span> then <span class="process-math">\(x\in A\)</span> and <span class="process-math">\(y \in B\text{.}\)</span> Hence <span class="process-math">\(y \in B\cup \text{(any set we choose)}\text{,}\)</span> and so <span class="process-math">\(y\in B\cup C\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-17-2-1-4-1-1-6-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="plp-11-6-17-2-1-4-1-1-6-2">
+<div class="para" id="p-derived-plp-11-6-17-2-1-4-1-1-6-2">Similarly, if <span class="process-math">\((x,y) \in A \times C\)</span> then <span class="process-math">\(x \in A\)</span> and <span class="process-math">\(y \in C\text{.}\)</span> Hence <span class="process-math">\(y \in C \cup B\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-17-2-1-4-1-1-6-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-6-17-2-1-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-17-2-1-4-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="plp-11-6-17-2-1-4-2">
+<div class="para" id="p-derived-plp-11-6-17-2-1-4-2">In either case <span class="process-math">\(x \in A\)</span> and <span class="process-math">\(y \in B \cup C\text{,}\)</span> so <span class="process-math">\((x,y) \in LHS\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-17-2-1-4-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-6-17-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="plp-11-6-17-2-2">Now we clean it up and make it a proof.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-6-17-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Scratchwork 8.4.8.1"><a tabindex="-1" href="#plp-11-6-17-2" title="Copy heading and permalink for Scratchwork 8.4.8.1" aria-label="Copy heading and permalink for Scratchwork 8.4.8.1">🔗</a></div>
+</div></details>
+<details id="plp-11-6-17-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<details id="plp-11-6-17-3-1" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="plp-11-6-17-3-1-1">
+<div class="para">We prove each inclusion in turn.  Assume that <span class="process-math">\((x,y) \in A
+\times (B\cup C )\text{,}\)</span> so that <span class="process-math">\(x \in A\)</span> and <span class="process-math">\(y \in B\cup
+C\text{.}\)</span> Since the sets are non-empty, such a <span class="process-math">\((x,y)\)</span> exists. Since <span class="process-math">\(y \in B\cup C\text{,}\)</span> we know that <span class="process-math">\(y \in B\)</span> or <span class="process-math">\(y
+\in C\text{.}\)</span>
+</div>
+<ul class="disc" id="plp-11-6-17-3-1-1-8">
+<li id="plp-11-6-17-3-1-1-8-1">
+<div class="para" id="p-derived-plp-11-6-17-3-1-1-8-1">If <span class="process-math">\(y\in B\text{,}\)</span> then since <span class="process-math">\(x\in A\text{,}\)</span> we know that <span class="process-math">\((x,y) \in A \times B\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-17-3-1-1-8-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="plp-11-6-17-3-1-1-8-2">
+<div class="para" id="p-derived-plp-11-6-17-3-1-1-8-2">Similarly, if <span class="process-math">\(y\in C\)</span> we know that <span class="process-math">\((x,y) \in A \times C\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-17-3-1-1-8-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">In both cases we have that <span class="process-math">\((x,y) \in (A \times B) \cup (A \times C)\text{,}\)</span> and so <span class="process-math">\(LHS \subseteq RHS\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-6-17-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="plp-11-6-17-3-1-2">
+<div class="para">Now assume that <span class="process-math">\((x,y) \in RHS\text{,}\)</span> so <span class="process-math">\((x,y) \in A \times
+B\)</span> or <span class="process-math">\((x,y)\in A\times C\text{.}\)</span> Again, since the sets are non-empty, such an <span class="process-math">\((x,y)\)</span> exists.</div>
+<ul class="disc" id="plp-11-6-17-3-1-2-5">
+<li id="plp-11-6-17-3-1-2-5-1">
+<div class="para" id="p-derived-plp-11-6-17-3-1-2-5-1">If <span class="process-math">\((x,y) \in A \times B\text{,}\)</span> then <span class="process-math">\(x\in A\)</span> and <span class="process-math">\(y\in B\text{.}\)</span> Hence <span class="process-math">\(y \in B \cup C\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-17-3-1-2-5-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="plp-11-6-17-3-1-2-5-2">
+<div class="para" id="p-derived-plp-11-6-17-3-1-2-5-2">Similarly, if <span class="process-math">\((x,y) \in A \times C\text{,}\)</span> then <span class="process-math">\(x \in A\)</span> and <span class="process-math">\(y \in C\text{.}\)</span> Thus <span class="process-math">\(y \in C \cup B\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-17-3-1-2-5-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">In either case we know that <span class="process-math">\(x \in A\)</span> and <span class="process-math">\(y \in B\cup C\text{,}\)</span> so <span class="process-math">\((x,y) \in A \times (B\cup C)\)</span> as required.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-6-17-3-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 8.4.8.1.1"><a tabindex="-1" href="#plp-11-6-17-3-1" title="Copy heading and permalink for Proof 8.4.8.1.1" aria-label="Copy heading and permalink for Proof 8.4.8.1.1">🔗</a></div>
+</article></details><div class="autopermalink" aria-hidden="true" data-description="Solution 8.4.8.1"><a tabindex="-1" href="#plp-11-6-17-3" title="Copy heading and permalink for Solution 8.4.8.1" aria-label="Copy heading and permalink for Solution 8.4.8.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 8.4.8"><a tabindex="-1" href="#plp-11-6-17" title="Copy heading and permalink for Example 8.4.8" aria-label="Copy heading and permalink for Example 8.4.8">🔗</a></div>
+</article>
+<div class="para" id="plp-11-6-18">A more challenging distributive law.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-6-18" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="example example-like" id="plp-11-6-19"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.4.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para" id="plp-11-6-19-1-1">Let <span class="process-math">\(A,B,C\)</span> be sets, then <span class="process-math">\(A \cup (B\cap C) = (A\cup C) \cap (A\cup B)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-6-19-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="plp-11-6-19-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Scratchwork</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="answer solution-like knowl__content">
+<div class="para" id="plp-11-6-19-2-1">Again, a picture helps.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-6-19-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/AcupBcapC.svg" role="img" class="contained"></div>
+<div class="para logical" id="plp-11-6-19-2-3">
+<div class="para">Lets prove the inclusions one at a time. First LHS is a subset of the RHS.</div>
+<ul class="disc" id="plp-11-6-19-2-3-1">
+<li id="plp-11-6-19-2-3-1-1">
+<div class="para logical" id="plp-11-6-19-2-3-1-1-1">
+<div class="para">Let <span class="process-math">\(x \in A\cup(B\cap C)\text{,}\)</span> so that <span class="process-math">\(x\in A\)</span> or <span class="process-math">\(x\in(B\cap C)\text{.}\)</span>
+</div>
+<ul class="circle" id="plp-11-6-19-2-3-1-1-1-4">
+<li id="plp-11-6-19-2-3-1-1-1-4-1">
+<div class="para" id="p-derived-plp-11-6-19-2-3-1-1-1-4-1">Assume <span class="process-math">\(x\in A\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-19-2-3-1-1-1-4-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="plp-11-6-19-2-3-1-1-1-4-2">
+<div class="para" id="p-derived-plp-11-6-19-2-3-1-1-1-4-2">Hence <span class="process-math">\(x \in A\cup B\)</span> and <span class="process-math">\(x\in A \cup C\)</span> (again because we know that if <span class="process-math">\(x \in A\)</span> then it is in the union of <span class="process-math">\(A\)</span> and any set we choose).</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-19-2-3-1-1-1-4-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="plp-11-6-19-2-3-1-1-1-4-3">
+<div class="para" id="p-derived-plp-11-6-19-2-3-1-1-1-4-3">Thus <span class="process-math">\(x \in (A\cup B) \cap (A\cup C)\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-19-2-3-1-1-1-4-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-6-19-2-3-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-19-2-3-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="plp-11-6-19-2-3-1-2">
+<div class="para logical" id="plp-11-6-19-2-3-1-2-1">
+<div class="para">On the other hand, assume that <span class="process-math">\(x\in B\cap C\)</span>
+</div>
+<ul class="circle" id="plp-11-6-19-2-3-1-2-1-2">
+<li id="plp-11-6-19-2-3-1-2-1-2-1">
+<div class="para" id="p-derived-plp-11-6-19-2-3-1-2-1-2-1">Hence <span class="process-math">\(x\in B\)</span> and <span class="process-math">\(x \in C\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-19-2-3-1-2-1-2-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="plp-11-6-19-2-3-1-2-1-2-2">
+<div class="para" id="p-derived-plp-11-6-19-2-3-1-2-1-2-2">Since <span class="process-math">\(x\in B\text{,}\)</span> we know that <span class="process-math">\(x\in B \cup A\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-19-2-3-1-2-1-2-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="plp-11-6-19-2-3-1-2-1-2-3">
+<div class="para" id="p-derived-plp-11-6-19-2-3-1-2-1-2-3">Similarly, since <span class="process-math">\(x \in C\text{,}\)</span> we know that <span class="process-math">\(x \in C \cup A\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-19-2-3-1-2-1-2-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="plp-11-6-19-2-3-1-2-1-2-4">
+<div class="para" id="p-derived-plp-11-6-19-2-3-1-2-1-2-4">Because both <span class="process-math">\(x\in A\cup B\)</span> and <span class="process-math">\(x \in A\cup C\text{,}\)</span> we have that <span class="process-math">\(x \in (A\cup B) \cap (A\cup C)\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-19-2-3-1-2-1-2-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-6-19-2-3-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-19-2-3-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="plp-11-6-19-2-3-1-3">
+<div class="para" id="p-derived-plp-11-6-19-2-3-1-3">In both cases, <span class="process-math">\(x \in (A\cup B) \cap (A\cup C)\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-19-2-3-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">Now we prove that the RHS is a subset of the LHS.</div>
+<ul class="disc" id="plp-11-6-19-2-3-2">
+<li id="plp-11-6-19-2-3-2-1">
+<div class="para" id="p-derived-plp-11-6-19-2-3-2-1">Let <span class="process-math">\(x \in (A\cup B) \cap (A\cup C)\text{,}\)</span> so that <span class="process-math">\(x \in A\cup B\)</span> and <span class="process-math">\(x \in A \cup C\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-19-2-3-2-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="plp-11-6-19-2-3-2-2">
+<div class="para logical" id="plp-11-6-19-2-3-2-2-1">
+<div class="para">At this point it is a good idea to explore the 4 possibilities that this suggests.</div>
+<ul class="circle" id="plp-11-6-19-2-3-2-2-1-1">
+<li id="plp-11-6-19-2-3-2-2-1-1-1">
+<div class="para" id="p-derived-plp-11-6-19-2-3-2-2-1-1-1">
+<span class="process-math">\((x \in A) \land (x\in A)\)</span> — this is easy because we have that <span class="process-math">\(x \in A \cup \text{(any set we choose)}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-19-2-3-2-2-1-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="plp-11-6-19-2-3-2-2-1-1-2">
+<div class="para" id="p-derived-plp-11-6-19-2-3-2-2-1-1-2">
+<span class="process-math">\((x \in A) \land (x\in C) \)</span> — this is also easy because we have that <span class="process-math">\(x \in A \cup \text{(any set we choose)}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-19-2-3-2-2-1-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="plp-11-6-19-2-3-2-2-1-1-3">
+<div class="para" id="p-derived-plp-11-6-19-2-3-2-2-1-1-3">
+<span class="process-math">\((x \in B) \land (x\in A)\)</span> — similarly we have that <span class="process-math">\(x \in A \cup \text{(any set we choose)}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-19-2-3-2-2-1-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="plp-11-6-19-2-3-2-2-1-1-4">
+<div class="para" id="p-derived-plp-11-6-19-2-3-2-2-1-1-4">
+<span class="process-math">\((x \in B) \land (x\in C)\)</span> — not too hard because <span class="process-math">\(x \in B \cap C\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-19-2-3-2-2-1-1-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">So these four possibilities really break down into two cases. Either <span class="process-math">\(x\in A\)</span> or <span class="process-math">\(x\not\in A\text{.}\)</span>
+</div>
+<ul class="circle" id="plp-11-6-19-2-3-2-2-1-4">
+<li id="plp-11-6-19-2-3-2-2-1-4-1">
+<div class="para" id="p-derived-plp-11-6-19-2-3-2-2-1-4-1">If <span class="process-math">\(x \in A\text{,}\)</span> then we know that <span class="process-math">\(x \in A \cup \text{anything}\)</span> and so <span class="process-math">\(x \in A \cup(B\cap C)\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-19-2-3-2-2-1-4-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="plp-11-6-19-2-3-2-2-1-4-2">
+<div class="para" id="p-derived-plp-11-6-19-2-3-2-2-1-4-2">Otherwise, if <span class="process-math">\(x \not\in A\)</span> then we must have that <span class="process-math">\(x\in B\)</span> and <span class="process-math">\(x \in C\text{,}\)</span> so <span class="process-math">\(x\in B\cap C\text{.}\)</span> Then since <span class="process-math">\(x \in B\cap C\text{,}\)</span> we also have that <span class="process-math">\(x \in (B\cap C) \cup A\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-19-2-3-2-2-1-4-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-6-19-2-3-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-19-2-3-2-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="plp-11-6-19-2-3-2-3">
+<div class="para" id="p-derived-plp-11-6-19-2-3-2-3">In either case we have that <span class="process-math">\(x \in A \cup (B \cap C)\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-19-2-3-2-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-6-19-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Scratchwork 8.4.9.1"><a tabindex="-1" href="#plp-11-6-19-2" title="Copy heading and permalink for Scratchwork 8.4.9.1" aria-label="Copy heading and permalink for Scratchwork 8.4.9.1">🔗</a></div>
+</div></details>
+<details id="plp-11-6-19-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<details id="plp-11-6-19-3-1" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="plp-11-6-19-3-1-1">
+<div class="para">We prove each inclusion in turn. Start by assuming that <span class="process-math">\(x \in A \cup(B \cap C)\text{.}\)</span> Then <span class="process-math">\(x \in A\)</span> or <span class="process-math">\(x \in B \cap C\text{.}\)</span> We consider each case in turn.</div>
+<ul class="disc" id="plp-11-6-19-3-1-1-4">
+<li id="plp-11-6-19-3-1-1-4-1">
+<div class="para" id="p-derived-plp-11-6-19-3-1-1-4-1">Assume <span class="process-math">\(x \in A\text{.}\)</span> Then <span class="process-math">\(x \in A \cup B\)</span> and <span class="process-math">\(x \in A \cup C\)</span> and so <span class="process-math">\(x \in RHS\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-19-3-1-1-4-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="plp-11-6-19-3-1-1-4-2">
+<div class="para" id="p-derived-plp-11-6-19-3-1-1-4-2">Assume now that <span class="process-math">\(x \in B \cap C\text{.}\)</span> Then <span class="process-math">\(x \in B\)</span> and <span class="process-math">\(x \in C\text{,}\)</span> so <span class="process-math">\(x \in B \cup A\)</span> and <span class="process-math">\(x \in C \cup A\text{.}\)</span> Thus <span class="process-math">\(x \in RHS\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-19-3-1-1-4-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">In either case we have <span class="process-math">\(x\in RHS\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-6-19-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="plp-11-6-19-3-1-2">
+<div class="para">Now assume that <span class="process-math">\(x \in (A\cup B) \cap (A\cup C)\text{,}\)</span> and so <span class="process-math">\(x\in A\cup B\)</span> and <span class="process-math">\(x\in A \cup C\text{.}\)</span>
+</div>
+<ul class="disc" id="plp-11-6-19-3-1-2-4">
+<li id="plp-11-6-19-3-1-2-4-1">
+<div class="para" id="p-derived-plp-11-6-19-3-1-2-4-1">If <span class="process-math">\(x\in A\)</span> then <span class="process-math">\(x\in A \cup (B \cap C)\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-19-3-1-2-4-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="plp-11-6-19-3-1-2-4-2">
+<div class="para" id="p-derived-plp-11-6-19-3-1-2-4-2">If <span class="process-math">\(x\not\in A\)</span> then since <span class="process-math">\(x\in A \cup B\text{,}\)</span> we must have <span class="process-math">\(x \in B\text{.}\)</span> Similarly since <span class="process-math">\(x\in A \cup C\)</span> we have <span class="process-math">\(x\in C\text{.}\)</span> Since <span class="process-math">\(x\in B\)</span> and <span class="process-math">\(x \in C\text{,}\)</span> <span class="process-math">\(x \in B\cap C\text{.}\)</span> Thus <span class="process-math">\(x \in A \cup (B\cap C)\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-19-3-1-2-4-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">Thus if <span class="process-math">\(x\in LHS\)</span> then <span class="process-math">\(x \in RHS\text{.}\)</span> And so <span class="process-math">\(LHS \subseteq RHS\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-6-19-3-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 8.4.9.1.1"><a tabindex="-1" href="#plp-11-6-19-3-1" title="Copy heading and permalink for Proof 8.4.9.1.1" aria-label="Copy heading and permalink for Proof 8.4.9.1.1">🔗</a></div>
+</article></details><div class="autopermalink" aria-hidden="true" data-description="Solution 8.4.9.1"><a tabindex="-1" href="#plp-11-6-19-3" title="Copy heading and permalink for Solution 8.4.9.1" aria-label="Copy heading and permalink for Solution 8.4.9.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 8.4.9"><a tabindex="-1" href="#plp-11-6-19" title="Copy heading and permalink for Example 8.4.9" aria-label="Copy heading and permalink for Example 8.4.9">🔗</a></div>
+</article>
+<div class="para" id="plp-11-6-20">We’ll prove that <span class="process-math">\(A-(B\cap C) = (A-B)\cup(A-C)\)</span> using the distributive and DeMorgan’s laws.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-6-20" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="example example-like" id="plp-11-6-21"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.4.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para logical" id="plp-11-6-21-1-1">
+<div class="para">Let <span class="process-math">\(A,B,C\)</span> be sets included in a universal set <span class="process-math">\(U\text{.}\)</span> Show that</div>
+<div class="displaymath process-math" id="plp-11-6-21-1-1-3">
+\begin{align*}
+A-(B\cap C) &amp;= (A-B) \cup (A-C).
+\end{align*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-6-21-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="plp-11-6-21-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Scratchwork</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="answer solution-like knowl__content">
+<div class="para" id="plp-11-6-21-2-1">A picture can help us understand this<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-6-21-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/AminusBcapC.svg" role="img" class="contained"></div>
+<div class="para logical" id="plp-11-6-21-2-3">
+<div class="para">Let us start with the LHS and we’ll use DeMorgan’s laws and distributive laws to arrive at the RHS.</div>
+<div class="displaymath process-math" id="plp-11-6-21-2-3-1">
+\begin{align*}
+A - (B\cap C) &amp;= A \cap \overline{(B\cap C)} &amp; \text{set-difference as intersection}\\
+&amp;= A \cap (\bar{B} \cup \bar{C}) &amp; \text{DeMorgan}\\
+&amp;= (A \cap \bar{B}) \cup (A \cap \bar{C}) &amp; \text{distributive}\\
+&amp;= (A-B) \cup (A-C) &amp; \text{intersection as set-difference}
+\end{align*}
+</div>
+<div class="para">That is much much easier than proving it from first principles — that is proving it as we proved the couple of examples above. Of course, this argument things requires that we have already done the hard work of proving those other results.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-6-21-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="plp-11-6-21-2-4">Now the above calculation is all but a proof, we just need a few words. Also, we probably don’t need to annotate our calculation as we have done above — though it wouldn’t hurt. If we don’t then we should, at a minimum, tell the reader what set laws we have used.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-6-21-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Scratchwork 8.4.10.1"><a tabindex="-1" href="#plp-11-6-21-2" title="Copy heading and permalink for Scratchwork 8.4.10.1" aria-label="Copy heading and permalink for Scratchwork 8.4.10.1">🔗</a></div>
+</div></details>
+<details id="plp-11-6-21-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<details id="plp-11-6-21-3-1" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="plp-11-6-21-3-1-1">
+<div class="para">Let <span class="process-math">\(A,B,C\)</span> be sets, then</div>
+<div class="displaymath process-math" id="plp-11-6-21-3-1-1-2">
+\begin{align*}
+A - (B\cap C) &amp;= A \cap \overline{(B\cap C)}\\
+&amp;= A \cap (\bar{B} \cup \bar{C})\\
+&amp;= (A \cap \bar{B}) \cup (A \cap \bar{C})\\
+&amp;= (A-B) \cup (A-C)
+\end{align*}
+</div>
+<div class="para">where we have used DeMorgan’s laws, the distributive law and the fact that <span class="process-math">\(A-B = A\cap\bar{B}\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-6-21-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 8.4.10.1.1"><a tabindex="-1" href="#plp-11-6-21-3-1" title="Copy heading and permalink for Proof 8.4.10.1.1" aria-label="Copy heading and permalink for Proof 8.4.10.1.1">🔗</a></div>
+</article></details><div class="autopermalink" aria-hidden="true" data-description="Solution 8.4.10.1"><a tabindex="-1" href="#plp-11-6-21-3" title="Copy heading and permalink for Solution 8.4.10.1" aria-label="Copy heading and permalink for Solution 8.4.10.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 8.4.10"><a tabindex="-1" href="#plp-11-6-21" title="Copy heading and permalink for Example 8.4.10" aria-label="Copy heading and permalink for Example 8.4.10">🔗</a></div>
+</article>
+<div class="para" id="plp-11-6-22">A couple more examples.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-6-22" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="example example-like" id="plp-11-6-23"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.4.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para logical" id="plp-11-6-23-1-1">
+<div class="para">Let <span class="process-math">\(A,B\)</span> be sets included in a universal set <span class="process-math">\(U\text{.}\)</span> Show that</div>
+<div class="displaymath process-math" id="plp-11-6-23-1-1-3">
+\begin{align*}
+(A\cup B) - (A \cap B) \amp = (A-B) \cup (B-A).
+\end{align*}
+</div>
+<div class="para">This quantity is called the symmetric difference of <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> and is sometimes denoted <span class="process-math">\(A \Delta B\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-6-23-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="plp-11-6-23-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Scratchwork</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="answer solution-like knowl__content">
+<div class="para" id="plp-11-6-23-2-1">So we can start by trying to rewrite set differences as intersections and see what happens. Actually, we should start by drawing a picture of what is happening.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-6-23-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/symmdiff.svg" role="img" class="contained"></div>
+<div class="para logical" id="plp-11-6-23-2-3">
+<div class="para">Now lets try</div>
+<div class="displaymath process-math" id="plp-11-6-23-2-3-1">
+\begin{align*}
+(A\cup B) - (A\cap B)\amp = (A\cup B) \cap \overline{(A \cap B)} \amp \text{DeMorgan it} \\
+\amp = (A\cup B)\cap (\bar{A} \cup \bar{B}) \amp \text{Distribute} \\
+\amp = \big(A \cap (\bar{A} \cup \bar{B}) \big)  \cup \big(B \cap (\bar{A} \cup \bar{B})\big) \amp \text{expand more}\\
+\amp =
+(A\cap \bar{A}) \cup (A \cap \bar{B}) \cup (B \cap \bar{A}) \cup (B \cap \bar{B}) \amp \text{now clean up}\\
+\amp =
+\es \cup (A \cap \bar{B}) \cup (B \cap \bar{A}) \cup \es \amp \text{rewrite}\\
+\amp =
+(A - B) \cup (B-A)
+\end{align*}
+</div>
+<div class="para">Oof! Here we have used that <span class="process-math">\(C \cap \bar{C} = \es\)</span> and <span class="process-math">\(C \cup \es = C\)</span> for any set <span class="process-math">\(C\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-6-23-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="plp-11-6-23-2-4">
+<div class="para">What if we try starting with the right and work to the left?</div>
+<div class="displaymath process-math" id="plp-11-6-23-2-4-1">
+\begin{align*}
+(A-B) \cup (B-A) \amp= (A \cap \bar{B}) \cup (B \cap \bar{A} ) \amp \text{expand}\\
+\amp = \big( (A\cap \bar{B})\cup B \big) \cap \big( (A \cap \bar{B}) \cup \bar{A} \big)  \amp \text{expand more}\\
+\amp = \big( (A \cup B) \cap (B\cap \bar{B}) \big) \cap  \big( (A\cup \bar{A})\cap (\bar{B} \cup \bar{A}) \big)  \amp \text{clean up}\\
+\amp = \big( (A\cup B)\cap U) \cap \big( U \cap (\bar{B} \cup \bar{A} )\big)  \amp \text{clean more}\\
+\amp = (A\cup B) \cap (\bar{B} \cup \bar{A} )  \amp \text{deMorgan it}\\
+\amp = (A\cup B)\cap \overline{(A\cap B)} \\
+\amp = (A\cup B) - (A\cap B)
+\end{align*}
+</div>
+<div class="para">Not much difference really. Here we have used that <span class="process-math">\(C \cup \bar{C} = U\)</span> and <span class="process-math">\(C \cap U = C\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-6-23-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Scratchwork 8.4.11.1"><a tabindex="-1" href="#plp-11-6-23-2" title="Copy heading and permalink for Scratchwork 8.4.11.1" aria-label="Copy heading and permalink for Scratchwork 8.4.11.1">🔗</a></div>
+</div></details>
+<details id="plp-11-6-23-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<details id="plp-11-6-23-3-1" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="plp-11-6-23-3-1-1">
+<div class="para">Let <span class="process-math">\(A,B\)</span> be sets. Then</div>
+<div class="displaymath process-math" id="plp-11-6-23-3-1-1-2">
+\begin{align*}
+(A\cup B) - (A\cap B)\amp = (A\cup B) \cap \overline{(A \cap B)} \amp \text{DeMorgan's law} \\
+\amp = (A\cup B)\cap (\bar{A} \cup \bar{B}) \amp \text{distributive law} \\
+\amp = \big(A \cap (\bar{A} \cup \bar{B}) \big)  \cup \big(B \cap (\bar{A} \cup \bar{B})\big) \amp \text{distributive law again}\\
+\amp =
+(A\cap \bar{A}) \cup (A \cap \bar{B}) \cup (B \cap \bar{A}) \cup (B \cap \bar{B})\\
+\amp =
+\es \cup (A \cap \bar{B}) \cup (B \cap \bar{A}) \cup \es\\
+\amp =
+(A - B) \cup (B-A) \amp\text{as required}.
+\end{align*}
+</div>
+<div class="para">Notice that in the last couple of steps we have used the following two facts</div>
+<div class="displaymath process-math" id="plp-11-6-23-3-1-1-3">
+\begin{align*}
+C \cap \bar{C} \amp = \es \amp\text{ and } \amp \amp C \cup \es \amp = C 
+\end{align*}
+</div>
+<div class="para">for any set <span class="process-math">\(C\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-6-23-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 8.4.11.1.1"><a tabindex="-1" href="#plp-11-6-23-3-1" title="Copy heading and permalink for Proof 8.4.11.1.1" aria-label="Copy heading and permalink for Proof 8.4.11.1.1">🔗</a></div>
+</article></details>
+<div class="para" id="plp-11-6-23-3-2">We can also prove this result from first principles — by showing each side is a subset of the other. We don’t present any scratchwork here, rather we just leap into the proof. You can see that it is not really any cleaner than the proof we have presented above, but it is always worth seeing things from a  different perspective.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-6-23-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="plp-11-6-23-3-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="plp-11-6-23-3-3-1">
+<div class="para">We start by proving the left-hand side is a subset of the right-hand side and then the reverse inclusion. We also make use of the following two facts</div>
+<div class="displaymath process-math" id="plp-11-6-23-3-3-1-1">
+\begin{align*}
+(x \not\in A\cap B) \amp \implies (x \not\in A) \lor (x \not\in B)
+\amp \text{and}\amp\amp
+(x\not\in A)\amp \implies (x \not\in A \cap B)
+\end{align*}
+</div>
+<div class="para">which are simply the contrapositives of the following statements</div>
+<div class="displaymath process-math" id="plp-11-6-23-3-3-1-2">
+\begin{align*}
+(x\in A)\land (x\in B) \amp \implies (x\in A\cap B)
+\amp\text{and}\amp\amp
+(x\in A\cap B) \amp \implies (x\in A) 
+\end{align*}
+</div>
+<ul class="disc" id="plp-11-6-23-3-3-1-3">
+<li id="plp-11-6-23-3-3-1-3-1">
+<div class="para logical" id="plp-11-6-23-3-3-1-3-1-1">
+<div class="para">Assume <span class="process-math">\(x \in LHS\text{,}\)</span> so <span class="process-math">\(x \in (A\cup B)\)</span> and <span class="process-math">\(x \not\in (A\cap B)\text{.}\)</span> This second fact implies that <span class="process-math">\(x \not\in A\)</span> or <span class="process-math">\(x \not\in B\text{.}\)</span>
+</div>
+<ul class="circle" id="plp-11-6-23-3-3-1-3-1-1-6">
+<li id="plp-11-6-23-3-3-1-3-1-1-6-1">
+<div class="para" id="p-derived-plp-11-6-23-3-3-1-3-1-1-6-1">If <span class="process-math">\(x \not \in A\)</span> then since <span class="process-math">\(x \in A \cup B\text{,}\)</span> it follows that we must have <span class="process-math">\(x \in B\text{.}\)</span> Since <span class="process-math">\(x \in B\)</span> and <span class="process-math">\(x \not\in A\text{,}\)</span> we have that <span class="process-math">\(x \in B-A\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-23-3-3-1-3-1-1-6-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="plp-11-6-23-3-3-1-3-1-1-6-2">
+<div class="para" id="p-derived-plp-11-6-23-3-3-1-3-1-1-6-2">Similarly, if <span class="process-math">\(x \not\in B\)</span> then since <span class="process-math">\(x \in A \cup B\text{,}\)</span> we must have <span class="process-math">\(x \in A\text{.}\)</span> Hence <span class="process-math">\(x \in A-B\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-23-3-3-1-3-1-1-6-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">In either case <span class="process-math">\(x \in (A-B) \cup (B-A)\text{,}\)</span> so <span class="process-math">\(LHS \subseteq RHS\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-6-23-3-3-1-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-23-3-3-1-3-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="plp-11-6-23-3-3-1-3-2">
+<div class="para logical" id="plp-11-6-23-3-3-1-3-2-1">
+<div class="para">Now assume that <span class="process-math">\(x \in RHS\text{,}\)</span> so <span class="process-math">\(x \in A-B\)</span> or <span class="process-math">\(x \in B-A\text{.}\)</span>
+</div>
+<ul class="circle" id="plp-11-6-23-3-3-1-3-2-1-4">
+<li id="plp-11-6-23-3-3-1-3-2-1-4-1">
+<div class="para" id="p-derived-plp-11-6-23-3-3-1-3-2-1-4-1">If <span class="process-math">\(x \in A-B\text{,}\)</span> then <span class="process-math">\(x\in A\)</span> but <span class="process-math">\(x \not\in B\text{.}\)</span> Since <span class="process-math">\(x\in A\text{,}\)</span> <span class="process-math">\(x \in A\cup B\text{.}\)</span> And since <span class="process-math">\(x \not\in B\text{,}\)</span> we know that <span class="process-math">\(x \not\in B \cap A\text{.}\)</span> Hence <span class="process-math">\(x \in (A\cup B) - (A \cap B)\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-23-3-3-1-3-2-1-4-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="plp-11-6-23-3-3-1-3-2-1-4-2">
+<div class="para" id="p-derived-plp-11-6-23-3-3-1-3-2-1-4-2">Similarly, if <span class="process-math">\(x \in B-A\text{,}\)</span> then <span class="process-math">\(x\in B\)</span> but <span class="process-math">\(x \not\in A\text{.}\)</span> Since <span class="process-math">\(x\in B\text{,}\)</span> <span class="process-math">\(x \in B\cup A\text{.}\)</span> And since <span class="process-math">\(x \not\in A\text{,}\)</span> we know that <span class="process-math">\(x \not\in A \cap B\text{.}\)</span> Hence <span class="process-math">\(x \in (A\cup B) - (A \cap B)\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-23-3-3-1-3-2-1-4-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">Thus we know that <span class="process-math">\(RHS \subseteq LHS\text{.}\)</span> Consequently <span class="process-math">\(LHS=RHS\)</span> as required.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-6-23-3-3-1-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-6-23-3-3-1-3-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-6-23-3-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 8.4.11.1.2"><a tabindex="-1" href="#plp-11-6-23-3-3" title="Copy heading and permalink for Proof 8.4.11.1.2" aria-label="Copy heading and permalink for Proof 8.4.11.1.2">🔗</a></div>
+</article></details><div class="autopermalink" aria-hidden="true" data-description="Solution 8.4.11.1"><a tabindex="-1" href="#plp-11-6-23-3" title="Copy heading and permalink for Solution 8.4.11.1" aria-label="Copy heading and permalink for Solution 8.4.11.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 8.4.11"><a tabindex="-1" href="#plp-11-6-23" title="Copy heading and permalink for Example 8.4.11" aria-label="Copy heading and permalink for Example 8.4.11">🔗</a></div>
+</article>
+<article class="example example-like" id="plp-11-6-24"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.4.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para" id="plp-11-6-24-1-1">Let <span class="process-math">\(A,B,C\)</span> be sets included in a universal set <span class="process-math">\(U\text{.}\)</span> Prove that <span class="process-math">\(A-(B-C) = (A\cap C) \cup (A-B)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-6-24-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="plp-11-6-24-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Scratchwork</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="answer solution-like knowl__content">
+<div class="para" id="plp-11-6-24-2-1">Again, we start with a picture of what is going on:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-6-24-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/AminusBminusC.svg" role="img" class="contained"></div>
+<div class="para logical" id="plp-11-6-24-2-3">
+<div class="para">And now we should play around with some of what we already know</div>
+<div class="displaymath process-math" id="plp-11-6-24-2-3-1">
+\begin{align*}
+A - (B-C) &amp;= A \cap \overline{(B-C)}  &amp; \text{set difference as intersection}\\
+&amp;= A \cap \overline{B \cap \bar{C}} &amp; \text{set difference as intersection}\\
+&amp;= A \cap (\bar{B} \cup \bar{\bar{C}}) &amp; \text{DeMorgan}\\
+&amp;= A \cap (\bar{B} \cup C) &amp; \text{double complement}\\
+&amp;= (A \cap \bar{B}) \cup (A \cap C) &amp; \text{distributive law}\\
+&amp;= (A \cap C) \cup (A - B) &amp; \text{intersection as set difference}
+\end{align*}
+</div>
+<div class="para">oof!</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-6-24-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Scratchwork 8.4.12.1"><a tabindex="-1" href="#plp-11-6-24-2" title="Copy heading and permalink for Scratchwork 8.4.12.1" aria-label="Copy heading and permalink for Scratchwork 8.4.12.1">🔗</a></div>
+</div></details>
+<details id="plp-11-6-24-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<details id="plp-11-6-24-3-1" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="plp-11-6-24-3-1-1">
+<div class="para">Let <span class="process-math">\(A,B,C\)</span> be sets as given in the statement of the result. Then</div>
+<div class="displaymath process-math" id="plp-11-6-24-3-1-1-2">
+\begin{align*}
+A - (B-C) &amp;= A \cap \overline{(B-C)}\\
+&amp;= A \cap \overline{B \cap \bar{C}}\\
+&amp;= A \cap (\bar{B} \cup C)\\
+&amp;= (A \cap \bar{B}) \cup (A \cap C)\\
+&amp;= (A \cap C) \cup (A - B)
+\end{align*}
+</div>
+<div class="para">where we have used the fact that <span class="process-math">\(A-B = A\cap\bar{B}\text{,}\)</span> DeMorgan’s laws and distributive laws.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-6-24-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 8.4.12.1.1"><a tabindex="-1" href="#plp-11-6-24-3-1" title="Copy heading and permalink for Proof 8.4.12.1.1" aria-label="Copy heading and permalink for Proof 8.4.12.1.1">🔗</a></div>
+</article></details><div class="autopermalink" aria-hidden="true" data-description="Solution 8.4.12.1"><a tabindex="-1" href="#plp-11-6-24-3" title="Copy heading and permalink for Solution 8.4.12.1" aria-label="Copy heading and permalink for Solution 8.4.12.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 8.4.12"><a tabindex="-1" href="#plp-11-6-24" title="Copy heading and permalink for Example 8.4.12" aria-label="Copy heading and permalink for Example 8.4.12">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Section 8.4: Some set-flavoured results"><a tabindex="-1" href="#plp-11-6" title="Copy heading and permalink for Section 8.4: Some set-flavoured results" aria-label="Copy heading and permalink for Section 8.4: Some set-flavoured results">🔗</a></div>
+</section>
+</div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="plp-11-5.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="plp-11-7.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+<!--Start: Google Global Site Tag code--><!--*** DO NOT COPY ANOTHER PROJECT'S MAGIC NUMBERS/ID ***--><!--***           GET YOUR OWN FROM GOOGLE             ***-->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-FL66FX9988"></script><script>  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-FL66FX9988');
+</script><!--End: Google Global Site Tag code-->
+</body>
+</html>

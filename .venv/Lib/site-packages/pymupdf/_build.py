@@ -1,0 +1,11 @@
+pymupdf_git_branch = 'aptest-jules'
+pymupdf_git_comment = 'tests/test_general.py:test_5054(): expect success after recent fix in mupdf master.'
+pymupdf_git_diff = ''
+pymupdf_git_diff_n = None
+pymupdf_git_sha = '12786d12b2962a1d77fd13b103162eddf749644c'
+mupdf_location = 'https://mupdf.com/downloads/archive/mupdf-1.28.2-source.tar.gz'
+pymupdf_version = '1.28.2'
+pymupdf_version_tuple = (1, 28, 2)
+swig_version = '4.4.1'
+swig_version_tuple = (4, 4, 1)
+fake_no_gil = False

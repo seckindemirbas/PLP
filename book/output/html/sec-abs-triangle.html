@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Absolute values and the triangle inequality</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
+startMathJax({
+hasWebworkReps: false,
+hasSage: false,
+isReact: false,
+htmlPresentation: false,
+lang: "en-US",
+});
+</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta name="twitter:title" content="PLP">
+<meta property="og:title" content="PLP">
+<meta property="book:title" content="PLP">
+<meta name="twitter:description" content="An introduction to mathematical proof">
+<meta property="og:description" content="An introduction to mathematical proof">
+<meta name="twitter:card" content="summary">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.48"></script><script src="_static/pretext/js/dist/pretext-read-aloud.js?v=2.48"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.2.4';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.40bd1420d3277749.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.b388362b5f43738a.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.8086b62682b271d1.css">
+<script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead" role="banner"><div class="ptx-banner"><div class="title-container">
+<div class="heading ptx-banner-heading"><a href="plp.html"><span class="title">PLP</span> <span class="subtitle">An introduction to mathematical proof</span></a></div>
+<p class="byline">Seçkin Demirbaş, Andrew Rechnitzer</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button id="ptx-toc-toggle" type="button" aria-controls="ptx-sidebar" class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="ptx-search-box">
+<div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search Book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog"><div class="ptx-search-dialog-controls">
+<input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close" id="ptx-search-close" class="ptx-search-close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div id="ptx-search-status" class="ptx-search-status" aria-live="polite" aria-atomic="true"></div>
+<h2 class="heading ptx-search-results-heading">Search Results: </h2>
+<div id="ptx-search-empty" class="ptx-search-empty"><span>No results.</span></div>
+<ol id="ptx-search-results" class="ptx-search-results"></ol></dialog>
+</div>
+<span class="nav-other-controls"><button id="ptx-read-aloud-button" class="ptx-read-aloud-button button" title="Read aloud" aria-expanded="false"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf1bc;</span><span class="name">Read aloud</span></button><div id="ptx-read-aloud-player" class="ptx-read-aloud-player" hidden="hidden" role="group" aria-label="Read aloud">
+<button id="ptx-read-aloud-prev" class="button" title="Previous sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe045;</span></button><button id="ptx-read-aloud-toggle" class="ptx-read-aloud-toggle button" title="Play"><span class="ptx-read-aloud-icon-play"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></span><span class="ptx-read-aloud-icon-pause"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe034;</span></span></button><button id="ptx-read-aloud-next" class="button" title="Next sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe044;</span></button><a id="ptx-read-aloud-continue" class="ptx-read-aloud-continue button" hidden="hidden">Continue<span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></a><button id="ptx-read-aloud-settings-button" class="ptx-read-aloud-settings-button button" title="Reading settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe429;</span></button>
+</div>
+<dialog class="ptx-dialog ptx-read-aloud-settings-popup" id="ptx-read-aloud-settings-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Read aloud settings</h2>
+<button class="ptx-read-aloud-settings-close-button button" id="ptx-read-aloud-settings-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label for="ptx-read-aloud-voice"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe91f;</span><span>Voice</span></label><select id="ptx-read-aloud-voice"></select><label class="ptx-readability-slider-label" for="ptx-read-aloud-rate"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe9e4;</span><span>Reading speed</span><output id="ptx-read-aloud-rate-value" for="ptx-read-aloud-rate">1×</output></label><input type="range" id="ptx-read-aloud-rate" min="0.5" max="2" step="0.1" value="1"><label for="ptx-read-aloud-asides"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d7;</span><span>Collapsed content</span></label><select id="ptx-read-aloud-asides"><option value="skip">Announce, do not read</option>
+<option value="read">Read automatically</option></select><label for="ptx-read-aloud-autoscroll"><input type="checkbox" id="ptx-read-aloud-autoscroll" checked><span>Follow along (auto-scroll)</span></label><label for="ptx-read-aloud-autocontinue"><input type="checkbox" id="ptx-read-aloud-autocontinue"><span>Continue to the next page automatically</span></label>
+</div></dialog><button id="ptx-readability-options-button" class="ptx-readability-options-button button" title="Readability settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf6f1;</span><span class="name">Readability settings</span></button><dialog class="ptx-dialog ptx-readability-options-popup" id="ptx-readability-options-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Readability settings</h2>
+<button class="ptx-readability-options-close-button button" id="ptx-readability-options-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-line-height"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe240;</span><span>Line height</span><output id="ptx-readability-line-height-value" for="ptx-readability-line-height">1.35</output></label><input type="range" id="ptx-readability-line-height" min="1.10" max="3" step="0.05" value="1.35">
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-font-size"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe245;</span><span>Content font size</span><output id="ptx-readability-font-size-value" for="ptx-readability-font-size">100%</output></label><input type="range" id="ptx-readability-font-size" min="0.8" max="1.5" step="0.05" value="1">
+</div>
+<fieldset class="ptx-readability-options-group ptx-readability-options-group-theme">
+<legend>Theme</legend>
+<label for="ptx-readability-theme-system"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-system" value="system"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe1ab;</span><span>System</span></label><label for="ptx-readability-theme-light"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-light" value="light"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe518;</span><span>Light</span></label><label for="ptx-readability-theme-dark"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-dark" value="dark"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span>Dark</span></label>
+</fieldset>
+<fieldset class="ptx-readability-options-group">
+<legend>Assistive technologies</legend>
+<label for="ptx-readability-accessible-permalinks"><input type="checkbox" id="ptx-readability-accessible-permalinks"><span>🔗</span><span>Expose permalinks</span></label>
+</fieldset>
+<div class="ptx-readability-options-group"><button type="button" class="ptx-readability-reset-button button" id="ptx-readability-reset-button"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf053;</span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="sec-congruence.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-moreproof.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="ch-moreproof-7.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{cancel}\require{upgreek} \newcommand{\ds}{\displaystyle}
+ \renewcommand{\textcolor}[2]{{\color{#1}{#2}}}
+ 
+ \newcommand{\es}{ {\varnothing}}
+ \newcommand{\st}{ \;\mathrm{s.t.}\; }
+ \newcommand{\so}{ \;\mid\; }
+ \newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+ \newcommand{\set}[1]{ \left\{#1\right\} }
+ 
+ \renewcommand{\neg}{\sim}
+
+ \newcommand{\rel}[1][R]{\;\mathcal{#1}\;}
+ \newcommand{\nrel}[1][R]{\;\cancel{\mathcal{#1}}\;}
+
+ \newcommand{\dee}[1]{\mathrm{d}#1}
+ \newcommand{\diff}[2]{\dfrac{\mathrm{d}#1}{\mathrm{d}#2}}
+ 
+ \renewcommand{\mod}[1]{\ (\mathrm{mod}\ #1)}
+ \newcommand{\lcm}{\mathrm{lcm}}
+ 
+ \let\oldepsilon\epsilon
+ 
+ \renewcommand{\epsilon}{\varepsilon}
+ \newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" role="complementary" class="ptx-sidebar"><nav id="ptx-toc" tabindex="-1" aria-label="Contents" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul id="ptx-toc-group-frontmatter" class="structural toc-item-list">
+<li class="toc-item toc-dedication"><div class="toc-title-box"><a href="frontmatter-3.html" class="internal"><span class="title">Dedication</span></a></div></li>
+<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="frontmatter-5.html" class="internal"><span class="title">Preface</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="plp-4.html" class="internal"><span class="codenumber">1</span> <span class="title">Sets</span></a></div>
+<ul id="ptx-toc-group-plp-4" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="plp-4-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="plp-4-3.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Not so formal definition</span></a></div>
+<ul id="ptx-toc-group-plp-4-3" class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="plp-4-3.html#plp-4-3-3" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Who is this reader you keep on mentioning?</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-describing.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Describing a set</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-4-5.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Onward</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="plp-4-6.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-logic.html" class="internal"><span class="codenumber">2</span> <span class="title">A little logic</span></a></div>
+<ul id="ptx-toc-group-ch-logic" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-logic-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-logic-3.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Statements and open sentences</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-logic-4.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Negation</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-logic-5.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Or and And</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-implication.html" class="internal"><span class="codenumber">2.4</span> <span class="title">The implication</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-logic-7.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Modus ponens and chaining implications</span></a></div>
+<ul id="ptx-toc-group-ch-logic-7" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-logic-7.html#ch-logic-7-2" class="internal"><span class="codenumber">2.5.1</span> <span class="title">Modus ponens</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-logic-7.html#ch-logic-7-3" class="internal"><span class="codenumber">2.5.2</span> <span class="title">Affirming the consequent and denying the antecedent</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-logic-7.html#ch-logic-7-4" class="internal"><span class="codenumber">2.5.3</span> <span class="title">Chaining implications together</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-CCB.html" class="internal"><span class="codenumber">2.6</span> <span class="title">The converse, contrapositive and biconditional</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-logic-9.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-direct.html" class="internal"><span class="codenumber">3</span> <span class="title">Direct proofs</span></a></div>
+<ul id="ptx-toc-group-ch-direct" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-direct-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-direct-3.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Trivialities and vacuousness</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-direct-4.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Direct proofs</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-direct-5.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Proofs of inequalities</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-direct-6.html" class="internal"><span class="codenumber">3.4</span> <span class="title">A quick visit to disproofs</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-direct-7.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="plp-7.html" class="internal"><span class="codenumber">4</span> <span class="title">More logic</span></a></div>
+<ul id="ptx-toc-group-plp-7" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="plp-7-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-7-3.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Tautologies and contradictions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-7-4.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Logical equivalence</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="plp-7-5.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-moreproof.html" class="internal"><span class="codenumber">5</span> <span class="title">More proofs</span></a></div>
+<ul class="structural toc-item-list contains-active" id="ptx-toc-group-ch-moreproof">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-moreproof-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-moreproof-3.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Contrapositive</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-moreproof-4.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Proofs with cases</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-congruence.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Congruence modulo <span class="process-math">\(n\)</span></span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-abs-triangle.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Absolute values and the triangle inequality</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-moreproof-7.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-quantifiers.html" class="internal"><span class="codenumber">6</span> <span class="title">Quantifiers</span></a></div>
+<ul id="ptx-toc-group-ch-quantifiers" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-quantifiers-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-quantifiers-3.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Quantified statements</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-quantifiers-4.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Negation of quantifiers</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-quantifiers-5.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Nested quantifiers</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_limits.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Quantifiers and rigorous limits</span></a></div>
+<ul id="ptx-toc-group-sec_limits" class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec_limits.html#sec_limits-3" class="internal"><span class="codenumber">6.4.1</span> <span class="title">Convergence of sequences</span></a></div>
+<ul id="ptx-toc-group-sec_limits-3" class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec_limits.html#sec_limits-3-3" class="internal"><span class="codenumber">6.4.1.1</span> <span class="title">Quantifying towards a definition</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec_limits.html#sec_limits-3-4" class="internal"><span class="codenumber">6.4.1.2</span> <span class="title">Some examples</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_limits.html#sec_limits-4" class="internal"><span class="codenumber">6.4.2</span> <span class="title">The limit of a function</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-quantifiers-7.html" class="internal"><span class="codenumber">6.5</span> <span class="title">(Optional) Properties of limits</span></a></div>
+<ul id="ptx-toc-group-ch-quantifiers-7" class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimseq" class="internal"><span class="codenumber">6.5.1</span> <span class="title">(Optional) Some properties of limits of sequences</span></a></div>
+<ul id="ptx-toc-group-subsec-proplimseq" class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimseq-3" class="internal"><span class="codenumber">6.5.1.1</span> <span class="title">Uniqueness of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimseq-4" class="internal"><span class="codenumber">6.5.1.2</span> <span class="title">Linearity of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimseq-5" class="internal"><span class="codenumber">6.5.1.3</span> <span class="title">Product of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimseq-6" class="internal"><span class="codenumber">6.5.1.4</span> <span class="title">Ratio of limits</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimfunc" class="internal"><span class="codenumber">6.5.2</span> <span class="title">(Optional) Some properties of limits of functions</span></a></div>
+<ul id="ptx-toc-group-subsec-proplimfunc" class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimfunc-3" class="internal"><span class="codenumber">6.5.2.1</span> <span class="title">Uniqueness of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimfunc-4" class="internal"><span class="codenumber">6.5.2.2</span> <span class="title">Linearity of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimfunc-5" class="internal"><span class="codenumber">6.5.2.3</span> <span class="title">Product of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimfunc-6" class="internal"><span class="codenumber">6.5.2.4</span> <span class="title">Ratio of limits</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-quantifiers-8.html" class="internal"><span class="codenumber">6.6</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_induction.html" class="internal"><span class="codenumber">7</span> <span class="title">Induction</span></a></div>
+<ul id="ptx-toc-group-ch_induction" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch_induction-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch_induction-3.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Induction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch_induction-4.html" class="internal"><span class="codenumber">7.2</span> <span class="title">More general inductions</span></a></div>
+<ul id="ptx-toc-group-ch_induction-4" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch_induction-4.html#subsec-extendedinduction" class="internal"><span class="codenumber">7.2.1</span> <span class="title">A little more general</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch_induction-4.html#subsec-stronginduction" class="internal"><span class="codenumber">7.2.2</span> <span class="title">More general and yet equivalent</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch_induction-5.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="plp-11.html" class="internal"><span class="codenumber">8</span> <span class="title">Return to sets</span></a></div>
+<ul id="ptx-toc-group-plp-11" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="plp-11-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-11-3.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Subsets</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-11-4.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Set operations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-11-5.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Cartesian products of sets</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-11-6.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Some set-flavoured results</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-11-7.html" class="internal"><span class="codenumber">8.5</span> <span class="title">Indexed sets</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="plp-11-8.html" class="internal"><span class="codenumber">8.6</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_relations.html" class="internal"><span class="codenumber">9</span> <span class="title">Relations</span></a></div>
+<ul id="ptx-toc-group-ch_relations" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch_relations-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch_relations-3.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Relations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_prop_rel.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Properties of relations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch_relations-5.html" class="internal"><span class="codenumber">9.3</span> <span class="title">Equivalence relations &amp; classes</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_congruence_revisited.html" class="internal"><span class="codenumber">9.4</span> <span class="title">Congruence revisited</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-euclid.html" class="internal"><span class="codenumber">9.5</span> <span class="title">Greatest divisors, Bézout and the Euclidean algorithm</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-unique-fact.html" class="internal"><span class="codenumber">9.6</span> <span class="title">Uniqueness of prime factorisation</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch_relations-9.html" class="internal"><span class="codenumber">9.7</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-functions.html" class="internal"><span class="codenumber">10</span> <span class="title">Functions</span></a></div>
+<ul id="ptx-toc-group-ch-functions" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-functions-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-functions-3.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-functions-4.html" class="internal"><span class="codenumber">10.2</span> <span class="title">A more abstract definition</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-functions-5.html" class="internal"><span class="codenumber">10.3</span> <span class="title">Images and preimages of sets</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-functions-6.html" class="internal"><span class="codenumber">10.4</span> <span class="title">Injective and surjective functions</span></a></div>
+<ul id="ptx-toc-group-ch-functions-6" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-functions-6.html#ch-functions-6-3" class="internal"><span class="codenumber">10.4.1</span> <span class="title">Injections and surjections</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-functions-6.html#ch-functions-6-4" class="internal"><span class="codenumber">10.4.2</span> <span class="title">Bijective functions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-functions-7.html" class="internal"><span class="codenumber">10.5</span> <span class="title">Composition of functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_inv_func.html" class="internal"><span class="codenumber">10.6</span> <span class="title">Inverse functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-functions-9.html" class="internal"><span class="codenumber">10.7</span> <span class="title">(Optional) The axiom of choice</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-functions-10.html" class="internal"><span class="codenumber">10.8</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-contradictions.html" class="internal"><span class="codenumber">11</span> <span class="title">Proof by contradiction</span></a></div>
+<ul id="ptx-toc-group-ch-contradictions" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-contradictions-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-contradictions-3.html" class="internal"><span class="codenumber">11.1</span> <span class="title">Structure of a proof by contradiction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-contradictions-4.html" class="internal"><span class="codenumber">11.2</span> <span class="title">Some examples</span></a></div>
+<ul id="ptx-toc-group-ch-contradictions-4" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-contradictions-4.html#ch-contradictions-4-3" class="internal"><span class="codenumber">11.2.1</span> <span class="title">The irrationality of <span class="process-math">\(\sqrt{2}\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-contradictions-4.html#ssec_inf_primes" class="internal"><span class="codenumber">11.2.2</span> <span class="title">The infinitude of primes</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-contradictions-5.html" class="internal"><span class="codenumber">11.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap_cardinality.html" class="internal"><span class="codenumber">12</span> <span class="title">Cardinality</span></a></div>
+<ul id="ptx-toc-group-chap_cardinality" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="chap_cardinality-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="chap_cardinality-3.html" class="internal"><span class="codenumber">12.1</span> <span class="title">Finite sets</span></a></div>
+<ul id="ptx-toc-group-chap_cardinality-3" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-3.html#chap_cardinality-3-3" class="internal"><span class="codenumber">12.1.1</span> <span class="title">Equinumerous sets, bijections and pigeons</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-3.html#chap_cardinality-3-4" class="internal"><span class="codenumber">12.1.2</span> <span class="title">Comparing with functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-3.html#chap_cardinality-3-5" class="internal"><span class="codenumber">12.1.3</span> <span class="title">Infinite sets are strange.</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap_cardinality-4.html" class="internal"><span class="codenumber">12.2</span> <span class="title">Denumerable sets</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_uncount.html" class="internal"><span class="codenumber">12.3</span> <span class="title">Uncountable sets</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="chap_cardinality-6.html" class="internal"><span class="codenumber">12.4</span> <span class="title">Comparing cardinalities</span></a></div>
+<ul id="ptx-toc-group-chap_cardinality-6" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-6.html#chap_cardinality-6-2" class="internal"><span class="codenumber">12.4.1</span> <span class="title">Extending to the infinite</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-6.html#chap_cardinality-6-3" class="internal"><span class="codenumber">12.4.2</span> <span class="title">Cantor’s Theorem and infinite infinities</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-6.html#chap_cardinality-6-4" class="internal"><span class="codenumber">12.4.3</span> <span class="title">Congratulations are in order</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-6.html#chap_cardinality-6-5" class="internal"><span class="codenumber">12.4.4</span> <span class="title">One more question</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_compare_card.html" class="internal"><span class="codenumber">12.5</span> <span class="title">More comparisons of cardinalties</span></a></div>
+<ul id="ptx-toc-group-sec_compare_card" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_compare_card.html#sec_compare_card-3" class="internal"><span class="codenumber">12.5.1</span> <span class="title">The Cantor-Schröder-Bernstein theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_compare_card.html#sec_compare_card-4" class="internal"><span class="codenumber">12.5.2</span> <span class="title">Applications</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_compare_card.html#sec_compare_card-5" class="internal"><span class="codenumber">12.5.3</span> <span class="title">Proof that <span class="process-math">\(|\pow{\mathbb{N}}| = |\mathbb{R}|\)</span></span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_cantor_first.html" class="internal"><span class="codenumber">12.6</span> <span class="title">(Optional) Cantor’s first proof of the uncountability of the reals</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chap_cardinality-9.html" class="internal"><span class="codenumber">12.7</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul id="ptx-toc-group-backmatter" class="structural toc-item-list">
+<li class="toc-item toc-solutions"><div class="toc-title-box"><a href="app_hint.html" class="internal"><span class="codenumber">A.</span> <span class="title">Hints for Exercises</span></a></div></li>
+<li class="toc-item toc-solutions"><div class="toc-title-box"><a href="app_answ.html" class="internal"><span class="codenumber">B.</span> <span class="title">Scratchwork for Exercises</span></a></div></li>
+<li class="toc-item toc-solutions"><div class="toc-title-box"><a href="app_soln.html" class="internal"><span class="codenumber">C.</span> <span class="title">Solutions to Exercises</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="backmatter-5.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="sec-abs-triangle">
+<h1 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Absolute values and the triangle inequality</span>
+</h1>
+<div class="para" id="sec-abs-triangle-2">The triangle inequality is a very simple inequality that turns out to be extremely useful. It relates the absolute value of the sum of numbers to the absolute values of those numbers. So before we state it, we should formalise the absolute value function.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-abs-triangle-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="def-absolute"><h2 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.4.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para logical" id="def-absolute-1-1">
+<div class="para">Let <span class="process-math">\(x \in \mathbb{R}\text{,}\)</span> then the absolute value of <span class="process-math">\(x\)</span> is denoted <span class="process-math">\(|x|\)</span> and is given by</div>
+<div class="displaymath process-math" id="def-absolute-1-1-4">
+\begin{equation*}
+|x| = \begin{cases} x \amp \text{if } x \geq 0 \\ -x \amp \text{if } x \lt 0\end{cases}
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#def-absolute-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 5.4.1"><a tabindex="-1" href="#def-absolute" title="Copy heading and permalink for Definition 5.4.1" aria-label="Copy heading and permalink for Definition 5.4.1">🔗</a></div>
+</article>
+<div class="para logical" id="sec-abs-triangle-4">
+<div class="para">How we compute<details class="ptx-footnote" aria-live="polite" id="sec-abs-triangle-4-1"><summary class="ptx-footnote__number" title="Footnote 33"><sup> 33 </sup></summary>
+<div class="ptx-footnote__contents" id="sec-abs-triangle-4-1">When we first encounter the absolute value, it is often tempting to think of it a function that  “removes the minus sign”. Such thinking leads to errors. In particular, if <span class="process-math">\(x\)</span> is a negative number then <span class="process-math">\(|x| = -x\text{,}\)</span> and the presence of that minus sign can be very confusing.
+</div></details> the absolute value of a number depends on whether that number is negative or not — it is an example of a piecewise function.</div>
+<div class="displaymath process-math" id="sec-abs-triangle-4-3">
+\begin{align*}
+|8| \amp = 8 \\
+|-5| \amp = -(-5) = 5 
+\end{align*}
+</div>
+<div class="para">Since the absolute value is defined in two branches like this, it naturally leads to proofs that require cases. The proof of the triangle inequality is a good example of this. Before we state (and prove) the triangle inequality, let’s prove a few useful lemmas that describe some useful properties of the absolute value.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-abs-triangle-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="lemma theorem-like" id="lem-absolute1"><h2 class="heading">
+<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.4.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para" id="lem-absolute1-1-1">Let <span class="process-math">\(x \in \mathbb{R}\text{,}\)</span> then <span class="process-math">\(|x| \geq 0\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-absolute1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Lemma 5.4.2"><a tabindex="-1" href="#lem-absolute1" title="Copy heading and permalink for Lemma 5.4.2" aria-label="Copy heading and permalink for Lemma 5.4.2">🔗</a></div>
+</article>
+<div class="para" id="sec-abs-triangle-6">We will split the proof into two cases. The first dealing with <span class="process-math">\(x \geq 0\)</span> and the second with <span class="process-math">\(x \lt 0\text{.}\)</span> Doing this allows us to rewrite the absolute value <span class="process-math">\(|x|\)</span> as either <span class="process-math">\(x\)</span> or <span class="process-math">\(-x\text{,}\)</span> and so simplify our analysis.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-abs-triangle-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="sec-abs-triangle-7" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="sec-abs-triangle-7-1">
+<div class="para">Let <span class="process-math">\(x \in \mathbb{R}\)</span> so that either <span class="process-math">\(x \geq 0\)</span> or <span class="process-math">\(x \lt 0\text{.}\)</span>
+</div>
+<ul class="disc" id="sec-abs-triangle-7-1-4">
+<li id="sec-abs-triangle-7-1-4-1">
+<div class="para" id="p-derived-sec-abs-triangle-7-1-4-1">When <span class="process-math">\(x \geq 0\text{,}\)</span> we know that <span class="process-math">\(|x|=x\text{,}\)</span> and so <span class="process-math">\(|x| \geq 0\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-abs-triangle-7-1-4-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-abs-triangle-7-1-4-2">
+<div class="para" id="p-derived-sec-abs-triangle-7-1-4-2">Now assume that <span class="process-math">\(x \lt 0\text{.}\)</span> Then <span class="process-math">\(|x| = -x\text{.}\)</span> Now since <span class="process-math">\(x\)</span> is negative, it follows that <span class="process-math">\(-x\)</span> is positive, and so <span class="process-math">\(|x|= -x \gt 0\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-abs-triangle-7-1-4-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">In both cases we have shown that <span class="process-math">\(|x| \geq 0\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-abs-triangle-7-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 5.4.1"><a tabindex="-1" href="#sec-abs-triangle-7" title="Copy heading and permalink for Proof 5.4.1" aria-label="Copy heading and permalink for Proof 5.4.1">🔗</a></div>
+</article></details>
+<div class="para logical" id="sec-abs-triangle-8">
+<div class="para">To prove the next result it is actually convenient to use a more symmetric definition of the absolute value function that splits into three cases:</div>
+<div class="displaymath process-math" id="sec-abs-triangle-8-1">
+\begin{equation*}
+|x| = \begin{cases} x \amp \text{if } x \gt 0 \\ 0 \amp \text{if }x=0 \\ -x \amp \text{if } x \lt 0\end{cases}
+\end{equation*}
+</div>
+<div class="para">We do this to take advantage of the fact<details class="ptx-footnote" aria-live="polite" id="sec-abs-triangle-8-2"><summary class="ptx-footnote__number" title="Footnote 34"><sup> 34 </sup></summary>
+<div class="ptx-footnote__contents" id="sec-abs-triangle-8-2">In computing and in some applications it can be quite useful to have a “signed zero”. The interested reader should search-engine their way to more information on this topic and the related topic of the extended real number system. You have actually already seen some of the ideas when you studied limits to zero and to <span class="process-math">\(\pm \infty\)</span> in Calculus 1.
+</div></details> that <span class="process-math">\(-0=0\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-abs-triangle-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="lemma theorem-like" id="lem-absolute0"><h2 class="heading">
+<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.4.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para" id="lem-absolute0-1-1">Let <span class="process-math">\(x \in \mathbb{R}\)</span> then <span class="process-math">\(|x|=|-x|\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-absolute0-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Lemma 5.4.3"><a tabindex="-1" href="#lem-absolute0" title="Copy heading and permalink for Lemma 5.4.3" aria-label="Copy heading and permalink for Lemma 5.4.3">🔗</a></div>
+</article>
+<details id="sec-abs-triangle-10" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="sec-abs-triangle-10-1">
+<div class="para">Let <span class="process-math">\(x \in \mathbb{R}\text{,}\)</span> then either <span class="process-math">\(x=0, x\gt 0, x\lt 0\text{.}\)</span>
+</div>
+<ul class="disc" id="sec-abs-triangle-10-1-3">
+<li id="sec-abs-triangle-10-1-3-1">
+<div class="para" id="p-derived-sec-abs-triangle-10-1-3-1">When <span class="process-math">\(x=0\text{,}\)</span> then <span class="process-math">\(-x=x=0\)</span> and <span class="process-math">\(|x|=|-x|=0\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-abs-triangle-10-1-3-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-abs-triangle-10-1-3-2">
+<div class="para" id="p-derived-sec-abs-triangle-10-1-3-2">Now, let <span class="process-math">\(x \gt 0\text{.}\)</span> This means that <span class="process-math">\(|x|=x\text{.}\)</span> Further <span class="process-math">\(-x \lt 0\)</span> and so <span class="process-math">\(|-x|= -(-x) = x = |x|\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-abs-triangle-10-1-3-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-abs-triangle-10-1-3-3">
+<div class="para" id="p-derived-sec-abs-triangle-10-1-3-3">Finally, let <span class="process-math">\(x \lt 0\text{,}\)</span> so that <span class="process-math">\(|x|=-x\text{.}\)</span> Additionally, <span class="process-math">\(-x \gt 0\)</span> and so <span class="process-math">\(|-x| = (-x)= |x|\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-abs-triangle-10-1-3-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">In all three cases the result holds.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-abs-triangle-10-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 5.4.2"><a tabindex="-1" href="#sec-abs-triangle-10" title="Copy heading and permalink for Proof 5.4.2" aria-label="Copy heading and permalink for Proof 5.4.2">🔗</a></div>
+</article></details>
+<div class="para" id="sec-abs-triangle-11">We can reuse the basic ideas of this proof to obtain the following<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-abs-triangle-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="lemma theorem-like" id="lem-absolute2"><h2 class="heading">
+<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.4.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para" id="lem-absolute2-1-1">Let <span class="process-math">\(x \in \mathbb{R}\text{,}\)</span> then  <span class="process-math">\(-|x| \leq x \leq |x|\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-absolute2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Lemma 5.4.4"><a tabindex="-1" href="#lem-absolute2" title="Copy heading and permalink for Lemma 5.4.4" aria-label="Copy heading and permalink for Lemma 5.4.4">🔗</a></div>
+</article>
+<details id="sec-abs-triangle-13" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="sec-abs-triangle-13-1">
+<div class="para">Let <span class="process-math">\(x \in \mathbb{R}\)</span> so that either <span class="process-math">\(x \geq 0\)</span> or <span class="process-math">\(x \lt 0\text{.}\)</span>
+</div>
+<ul class="disc" id="sec-abs-triangle-13-1-4">
+<li id="sec-abs-triangle-13-1-4-1">
+<div class="para" id="p-derived-sec-abs-triangle-13-1-4-1">When <span class="process-math">\(x \geq 0\text{,}\)</span> we know that <span class="process-math">\(|x|=x\text{.}\)</span> Now since <span class="process-math">\(x \geq 0\text{,}\)</span> it follows that <span class="process-math">\(-|x| \leq 0 \leq x = |x|\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-abs-triangle-13-1-4-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-abs-triangle-13-1-4-2">
+<div class="para" id="p-derived-sec-abs-triangle-13-1-4-2">Now assume that <span class="process-math">\(x \lt 0\text{.}\)</span> Then <span class="process-math">\(|x| = -x\text{,}\)</span> so that <span class="process-math">\(-|x| = x\text{.}\)</span> Now since <span class="process-math">\(x \lt 0\)</span> it follows that <span class="process-math">\(-|x| = x \lt 0 \leq |x|\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-abs-triangle-13-1-4-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">In both cases we have shown that <span class="process-math">\(-|x| \leq x \leq |x|\)</span> as required.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-abs-triangle-13-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 5.4.3"><a tabindex="-1" href="#sec-abs-triangle-13" title="Copy heading and permalink for Proof 5.4.3" aria-label="Copy heading and permalink for Proof 5.4.3">🔗</a></div>
+</article></details>
+<div class="para" id="sec-abs-triangle-14">We can extend the above lemma a little to get a very useful result. It tells us how to transform bounds on quantity into bounds on its absolute value and vice-versa.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-abs-triangle-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="lemma theorem-like" id="lem-absolute3"><h2 class="heading">
+<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.4.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para logical" id="lem-absolute3-1-1">
+<div class="para">Let <span class="process-math">\(x,y \in \mathbb{R}\text{,}\)</span> then</div>
+<div class="displaymath process-math" id="lem-absolute3-1-1-2">
+\begin{equation*}
+|x| \leq y \iff -y \leq x \leq y
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-absolute3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Lemma 5.4.5"><a tabindex="-1" href="#lem-absolute3" title="Copy heading and permalink for Lemma 5.4.5" aria-label="Copy heading and permalink for Lemma 5.4.5">🔗</a></div>
+</article>
+<details id="sec-abs-triangle-16" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="sec-abs-triangle-16-1">
+<div class="para">We prove each implication in turn.</div>
+<ul class="disc" id="sec-abs-triangle-16-1-1">
+<li id="sec-abs-triangle-16-1-1-1">
+<div class="para logical" id="sec-abs-triangle-16-1-1-1-1">
+<div class="para">Assume that <span class="process-math">\(|x| \leq y\text{.}\)</span> Now either <span class="process-math">\(x \geq 0\)</span> or <span class="process-math">\(x \lt 0\text{.}\)</span>
+</div>
+<ul class="circle" id="sec-abs-triangle-16-1-1-1-1-4">
+<li id="sec-abs-triangle-16-1-1-1-1-4-1">
+<div class="para" id="p-derived-sec-abs-triangle-16-1-1-1-1-4-1">When <span class="process-math">\(x \geq 0\text{,}\)</span> we know that <span class="process-math">\(|x|=x\text{.}\)</span> Hence <span class="process-math">\(y \geq |x|=x \geq 0 \geq -y\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-abs-triangle-16-1-1-1-1-4-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-abs-triangle-16-1-1-1-1-4-2">
+<div class="para" id="p-derived-sec-abs-triangle-16-1-1-1-1-4-2">On the other hand if <span class="process-math">\(x \lt 0\text{,}\)</span> we know that <span class="process-math">\(y \geq |x|=-x \gt 0\text{.}\)</span> So, multiplying through by <span class="process-math">\(-1\)</span> we have <span class="process-math">\(-y \leq x \lt 0 \leq y\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-abs-triangle-16-1-1-1-1-4-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">In both cases we have shown that <span class="process-math">\(-y \leq x \leq y\)</span> as required.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-abs-triangle-16-1-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-abs-triangle-16-1-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-abs-triangle-16-1-1-2">
+<div class="para logical" id="sec-abs-triangle-16-1-1-2-1">
+<div class="para">Now assume that <span class="process-math">\(-y \leq x \leq y\text{.}\)</span> Again, either <span class="process-math">\(x \geq 0\)</span> or <span class="process-math">\(x \lt 0\text{.}\)</span>
+</div>
+<ul class="circle" id="sec-abs-triangle-16-1-1-2-1-4">
+<li id="sec-abs-triangle-16-1-1-2-1-4-1">
+<div class="para" id="p-derived-sec-abs-triangle-16-1-1-2-1-4-1">When <span class="process-math">\(x \geq 0\text{,}\)</span> we know that <span class="process-math">\(x = |x|\text{.}\)</span> So, by assumption <span class="process-math">\(y \geq x = |x|\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-abs-triangle-16-1-1-2-1-4-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-abs-triangle-16-1-1-2-1-4-2">
+<div class="para" id="p-derived-sec-abs-triangle-16-1-1-2-1-4-2">Now, when <span class="process-math">\(x \leq 0\text{,}\)</span> <span class="process-math">\(|x|=-x\text{.}\)</span> Transform our assumption <span class="process-math">\(y \geq x \geq -y\text{,}\)</span> by multiplying everything by <span class="process-math">\(-1\text{,}\)</span> giving <span class="process-math">\(-y \leq -x = |x| \leq y\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-abs-triangle-16-1-1-2-1-4-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">In both cases we have shown that <span class="process-math">\(|x| \leq y\)</span> as required.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-abs-triangle-16-1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-abs-triangle-16-1-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-abs-triangle-16-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 5.4.4"><a tabindex="-1" href="#sec-abs-triangle-16" title="Copy heading and permalink for Proof 5.4.4" aria-label="Copy heading and permalink for Proof 5.4.4">🔗</a></div>
+</article></details>
+<div class="para" id="sec-abs-triangle-17">Okay, now we can prove our main result; it tells us that the absolute value of the sum of two numbers is smaller<details class="ptx-footnote" aria-live="polite" id="sec-abs-triangle-17-1"><summary class="ptx-footnote__number" title="Footnote 35"><sup> 35 </sup></summary>
+<div class="ptx-footnote__contents" id="sec-abs-triangle-17-1">This gives a nice counter example to the misquotation of Aristotle about sums and parts that has been worn out from (over/mis)use.
+</div></details> than the sum of the absolute values. It is a very simple but turns out to be extremely useful<details class="ptx-footnote" aria-live="polite" id="sec-abs-triangle-17-2"><summary class="ptx-footnote__number" title="Footnote 36"><sup> 36 </sup></summary>
+<div class="ptx-footnote__contents" id="sec-abs-triangle-17-2">Mathematicians like results like this one. When we define a new mathematical operation or function, we want to see how it interacts with the ones we already know. When you did Calculus you saw results like this — we have just defined limits, how do limits interact with addition, multiplication and division? There are many other examples including  the product rule and the quotient rule and integration by parts. We will see more examples when we get to functions in <a href="ch-functions.html" class="internal" title="Chapter 10: Functions">Chapter 10</a>.
+</div></details>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-abs-triangle-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-triangle"><h2 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.4.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The triangle inequality.</span>
+</h2>
+<div class="para logical" id="thm-triangle-2-1">
+<div class="para">Let <span class="process-math">\(x,y \in \mathbb{R}\text{,}\)</span> then</div>
+<div class="displaymath process-math" id="thm-triangle-2-1-2">
+\begin{equation*}
+|x+y| \leq |x| + |y|.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm-triangle-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 5.4.6: The triangle inequality"><a tabindex="-1" href="#thm-triangle" title="Copy heading and permalink for Theorem 5.4.6: The triangle inequality" aria-label="Copy heading and permalink for Theorem 5.4.6: The triangle inequality">🔗</a></div>
+</article>
+<div class="para" id="sec-abs-triangle-19">The inequality gets its name from a more geometric interpretation<details class="ptx-footnote" aria-live="polite" id="sec-abs-triangle-19-1"><summary class="ptx-footnote__number" title="Footnote 37"><sup> 37 </sup></summary>
+<div class="ptx-footnote__contents" id="sec-abs-triangle-19-1">Indeed it was likely first proved by the ancient Greeks, and appears in Book 1 of Euclid’s Elements as Proposition 20. The interested reader should search-engine their way to a discussion of Euclid’s elements — likely one of the most influential books ever written.
+</div></details>. It tells us that the length of the third side of the triangle, <span class="process-math">\(C\text{,}\)</span> is bounded by the sum of the lengths of the other two sides, <span class="process-math">\(A,B\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-abs-triangle-19" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="image-box" style="width: 33%; margin-left: 33.5%; margin-right: 33.5%;"><img src="external/triangle_inequality.svg" role="img" class="contained"></div>
+<div class="para logical" id="sec-abs-triangle-21">
+<div class="para">Now, rather than leap into a neat proof of this, we should take some time to explore the problem and the various cases that might arise. Since the values of <span class="process-math">\(|x|, |y|\)</span> and <span class="process-math">\(|x+y|\)</span> all depend on whether each quantity is positive or negative<details class="ptx-footnote" aria-live="polite" id="sec-abs-triangle-21-3"><summary class="ptx-footnote__number" title="Footnote 38"><sup> 38 </sup></summary>
+<div class="ptx-footnote__contents" id="sec-abs-triangle-21-3">The pedantic reader will notice that we could have said “whether each quantity is non-negative or negative”, since we have defined the absolute value function to lump <span class="process-math">\(x=0\)</span> together with <span class="process-math">\(x \gt 0\text{.}\)</span> We could have split absolute value function in 3 pieces <span class="process-math">\(x \gt 0, x=0, x \lt 0\)</span> as we did in one of the proofs earlier in the section. While this is nicely symmetric, it does make our proofs longer, since we have to consider 3 cases for each quantity.
+</div></details>.</div>
+<ul class="disc" id="sec-abs-triangle-21-4">
+<li id="sec-abs-triangle-21-4-1">
+<div class="para logical" id="sec-abs-triangle-21-4-1-1">
+<div class="para">Notice that if both <span class="process-math">\(x,y \geq 0\text{,}\)</span> then it is easy to prove since</div>
+<div class="displaymath process-math" id="sec-abs-triangle-21-4-1-1-2">
+\begin{equation*}
+|x| + |y| = x+y
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-abs-triangle-21-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-abs-triangle-21-4-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-abs-triangle-21-4-2">
+<div class="para logical" id="sec-abs-triangle-21-4-2-1">
+<div class="para">Similarly, if both <span class="process-math">\(x,y \lt 0\text{,}\)</span> then we know that <span class="process-math">\(x+y\lt 0\)</span> and so we have</div>
+<div class="displaymath process-math" id="sec-abs-triangle-21-4-2-1-3">
+\begin{equation*}
+|x| + |y| = (-x) + (-y) = -(x+y) = |x+y|
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-abs-triangle-21-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-abs-triangle-21-4-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-abs-triangle-21-4-3">
+<div class="para logical" id="sec-abs-triangle-21-4-3-1">
+<div class="para">A little more care is required when (say) <span class="process-math">\(x \geq 0\)</span> but <span class="process-math">\(y \lt 0\text{.}\)</span> In this case we have</div>
+<div class="displaymath process-math" id="sec-abs-triangle-21-4-3-1-3">
+\begin{equation*}
+|x| + |y| = x + (-y) = x-y
+\end{equation*}
+</div>
+<div class="para">and it is not immediately obvious how to relate this to <span class="process-math">\((x+y)\text{.}\)</span> One way to proceed is to break this case into subcases depending on whether <span class="process-math">\((x+y) \geq 0\)</span> or <span class="process-math">\((x+y) \lt 0\text{.}\)</span> Urgh.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-abs-triangle-21-4-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-abs-triangle-21-4-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-abs-triangle-21" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-abs-triangle-22">
+<div class="para">Let us instead take a step back and start again, but this time from assumptions about <span class="process-math">\((a+b)\text{.}\)</span>   Either <span class="process-math">\(a+b \geq 0\)</span> or <span class="process-math">\(a+b \lt 0\text{.}\)</span>
+</div>
+<ul class="disc" id="sec-abs-triangle-22-4">
+<li id="sec-abs-triangle-22-4-1">
+<div class="para logical" id="sec-abs-triangle-22-4-1-1">
+<div class="para">In the first case</div>
+<div class="displaymath process-math" id="sec-abs-triangle-22-4-1-1-1">
+\begin{equation*}
+|a+b| = a+b
+\end{equation*}
+</div>
+<div class="para">and we know, from our lemma above, that <span class="process-math">\(a \leq |a|\)</span> and <span class="process-math">\(b \leq |b|\text{,}\)</span> so</div>
+<div class="displaymath process-math" id="sec-abs-triangle-22-4-1-1-4">
+\begin{equation*}
+|a+b| = a+b \leq |a| + |b|.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-abs-triangle-22-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-abs-triangle-22-4-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-abs-triangle-22-4-2">
+<div class="para logical" id="sec-abs-triangle-22-4-2-1">
+<div class="para">Now, the second case gives</div>
+<div class="displaymath process-math" id="sec-abs-triangle-22-4-2-1-1">
+\begin{equation*}
+|a+b| = -(a+b) = -a - b
+\end{equation*}
+</div>
+<div class="para">Our lemma above tells us that <span class="process-math">\(-a \leq |a|\)</span> (and similarly that <span class="process-math">\(-b \leq |b|\)</span>), so</div>
+<div class="displaymath process-math" id="sec-abs-triangle-22-4-2-1-4">
+\begin{equation*}
+|a+b| = (-a) +  (-b) \leq |a| + |b|
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-abs-triangle-22-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-abs-triangle-22-4-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">Oof! Now we can write it up.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-abs-triangle-22" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="sec-abs-triangle-23" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="sec-abs-triangle-23-1">
+<div class="para">Let <span class="process-math">\(a,b \in \mathbb{R}\text{.}\)</span> Either <span class="process-math">\((a+b) \geq 0\)</span> or <span class="process-math">\((a+b)\lt 0\text{.}\)</span>
+</div>
+<ul class="disc" id="sec-abs-triangle-23-1-4">
+<li id="sec-abs-triangle-23-1-4-1">
+<div class="para" id="sec-abs-triangle-23-1-4-1-1">When <span class="process-math">\((a+b) \geq 0\text{,}\)</span> we know that <span class="process-math">\(|a+b|= a+b\text{.}\)</span> By <a href="sec-abs-triangle.html#lem-absolute2" class="xref" data-knowl="./knowl/xref/lem-absolute2.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 5.4.4">Lemma 5.4.4</a>, we know that <span class="process-math">\(a \leq |a|\)</span> and <span class="process-math">\(b \leq |b|\text{.}\)</span> Thus <span class="process-math">\(|a+b| = a+b \leq |a|+|b|\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-abs-triangle-23-1-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-abs-triangle-23-1-4-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-abs-triangle-23-1-4-2">
+<div class="para" id="sec-abs-triangle-23-1-4-2-1">When <span class="process-math">\((a+b) \lt 0\text{,}\)</span> we have <span class="process-math">\(|a+b| = -a-b = (-a)+(-b)\text{.}\)</span> Again, by <a href="sec-abs-triangle.html#lem-absolute2" class="xref" data-knowl="./knowl/xref/lem-absolute2.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 5.4.4">Lemma 5.4.4</a> <span class="process-math">\(-a \leq |-a| = |a|\)</span> and <span class="process-math">\(-b \leq |-b| \leq |b|\text{,}\)</span> and so <span class="process-math">\(|a+b| = -(a+b)=(-a)+(-b) \leq |a|+|b| \text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-abs-triangle-23-1-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-abs-triangle-23-1-4-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">In both cases we have that <span class="process-math">\(|a+b| \leq |a|+|b|\)</span> as required.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-abs-triangle-23-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 5.4.5"><a tabindex="-1" href="#sec-abs-triangle-23" title="Copy heading and permalink for Proof 5.4.5" aria-label="Copy heading and permalink for Proof 5.4.5">🔗</a></div>
+</article></details>
+<div class="para" id="sec-abs-triangle-24">This is not the only way to prove this result. We can be a little more sneaky via the inequality in <a href="sec-abs-triangle.html#lem-absolute3" class="xref" data-knowl="./knowl/xref/lem-absolute3.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 5.4.5">Lemma 5.4.5</a>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-abs-triangle-24" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="sec-abs-triangle-25" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="title">Another proof.</span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="sec-abs-triangle-25-2">
+<div class="para">Let <span class="process-math">\(x,y \in \mathbb{R}\text{.}\)</span> Then from <a href="sec-abs-triangle.html#lem-absolute2" class="xref" data-knowl="./knowl/xref/lem-absolute2.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 5.4.4">Lemma 5.4.4</a>we know that <span class="process-math">\(x \leq |x|\text{,}\)</span> and that <span class="process-math">\(-x \leq |-x|=|x|\text{,}\)</span> and hence <span class="process-math">\(x \geq -|x|\text{.}\)</span> Putting those together we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-absolute2.html ./knowl/xref/lem-absolute3.html" id="sec-abs-triangle-25-2-6">
+\begin{equation*}
+-|x| \leq x \leq |x|
+\end{equation*}
+</div>
+<div class="para">Similarly, we know that <span class="process-math">\(-|y| \leq y \leq |y|\text{.}\)</span> Adding these inequalities together gives</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-absolute2.html ./knowl/xref/lem-absolute3.html" id="sec-abs-triangle-25-2-8">
+\begin{equation*}
+-|x|-|y| \leq (x+y) \leq |x|+|y|
+\end{equation*}
+</div>
+<div class="para">and so, by <a href="sec-abs-triangle.html#lem-absolute3" class="xref" data-knowl="./knowl/xref/lem-absolute3.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 5.4.5">Lemma 5.4.5</a> above</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-absolute2.html ./knowl/xref/lem-absolute3.html" id="sec-abs-triangle-25-2-10">
+\begin{equation*}
+|x+y| \leq |x| + |y|
+\end{equation*}
+</div>
+<div class="para">as required.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-abs-triangle-25-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 5.4.6: Another proof"><a tabindex="-1" href="#sec-abs-triangle-25" title="Copy heading and permalink for Proof 5.4.6: Another proof" aria-label="Copy heading and permalink for Proof 5.4.6: Another proof">🔗</a></div>
+</article></details>
+<div class="para" id="sec-abs-triangle-26">A useful corollary of the triangle inequality is a bound on the absolute value of the difference of two numbers. This is often called the reverse triangle inequality.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-abs-triangle-26" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="corollary theorem-like" id="cor-triangle"><h2 class="heading">
+<span class="type">Corollary</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.4.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Reverse triangle inequality.</span>
+</h2>
+<div class="para logical" id="cor-triangle-2-1">
+<div class="para">Let <span class="process-math">\(x,y \in \mathbb{R}\)</span> then</div>
+<div class="displaymath process-math" id="cor-triangle-2-1-2">
+\begin{equation*}
+|x-y| \geq \Big| |x| - |y| \Big|
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#cor-triangle-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Corollary 5.4.7: Reverse triangle inequality"><a tabindex="-1" href="#cor-triangle" title="Copy heading and permalink for Corollary 5.4.7: Reverse triangle inequality" aria-label="Copy heading and permalink for Corollary 5.4.7: Reverse triangle inequality">🔗</a></div>
+</article>
+<details id="sec-abs-triangle-28" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="sec-abs-triangle-28-1">
+<div class="para">From the triangle inequality <span class="process-math">\(|x|+|y|\geq |x+y|\)</span> we can arrive at the following two inequalities, by setting <span class="process-math">\(x=a, y=b-a\)</span> and <span class="process-math">\(x=b, y=a-b\)</span>
+</div>
+<div class="displaymath process-math" id="sec-abs-triangle-28-1-4">
+\begin{align*}
+|a| + |b-a| \amp \geq |b|\\
+|b| + |a-b| \amp \geq |a|
+\end{align*}
+</div>
+<div class="para">Rearranging these gives</div>
+<div class="displaymath process-math" id="sec-abs-triangle-28-1-5">
+\begin{equation*}
+|b-a| \geq |b|-|a|
+\end{equation*}
+</div>
+<div class="para">and <span class="process-math">\(|b|-|a| \geq -|a-b|\text{,}\)</span> which can be rewritten as</div>
+<div class="displaymath process-math" id="sec-abs-triangle-28-1-7">
+\begin{equation*}
+-(|b|-|a|) \leq |b-a|
+\end{equation*}
+</div>
+<div class="para">Putting these together gives</div>
+<div class="displaymath process-math" id="sec-abs-triangle-28-1-8">
+\begin{equation*}
+-(|b|-|a|) \leq |b-a| \leq |b|-|a|
+\end{equation*}
+</div>
+<div class="para">from which the result follows.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-abs-triangle-28-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 5.4.7"><a tabindex="-1" href="#sec-abs-triangle-28" title="Copy heading and permalink for Proof 5.4.7" aria-label="Copy heading and permalink for Proof 5.4.7">🔗</a></div>
+</article></details><div class="autopermalink" aria-hidden="true" data-description="Section 5.4: Absolute values and the triangle inequality"><a tabindex="-1" href="#sec-abs-triangle" title="Copy heading and permalink for Section 5.4: Absolute values and the triangle inequality" aria-label="Copy heading and permalink for Section 5.4: Absolute values and the triangle inequality">🔗</a></div>
+</section>
+</div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="sec-congruence.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch-moreproof-7.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+<!--Start: Google Global Site Tag code--><!--*** DO NOT COPY ANOTHER PROJECT'S MAGIC NUMBERS/ID ***--><!--***           GET YOUR OWN FROM GOOGLE             ***-->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-FL66FX9988"></script><script>  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-FL66FX9988');
+</script><!--End: Google Global Site Tag code-->
+</body>
+</html>

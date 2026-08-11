@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title></title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
+startMathJax({
+hasWebworkReps: false,
+hasSage: false,
+isReact: false,
+htmlPresentation: false,
+lang: "en-US",
+});
+</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta name="twitter:title" content="PLP">
+<meta property="og:title" content="PLP">
+<meta property="book:title" content="PLP">
+<meta name="twitter:description" content="An introduction to mathematical proof">
+<meta property="og:description" content="An introduction to mathematical proof">
+<meta name="twitter:card" content="summary">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.48"></script><script src="_static/pretext/js/dist/pretext-read-aloud.js?v=2.48"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.2.4';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.40bd1420d3277749.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.b388362b5f43738a.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.8086b62682b271d1.css">
+<script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead" role="banner"><div class="ptx-banner"><div class="title-container">
+<div class="heading ptx-banner-heading"><a href="plp.html"><span class="title">PLP</span> <span class="subtitle">An introduction to mathematical proof</span></a></div>
+<p class="byline">Seçkin Demirbaş, Andrew Rechnitzer</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button id="ptx-toc-toggle" type="button" aria-controls="ptx-sidebar" class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="ptx-search-box">
+<div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search Book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog"><div class="ptx-search-dialog-controls">
+<input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close" id="ptx-search-close" class="ptx-search-close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div id="ptx-search-status" class="ptx-search-status" aria-live="polite" aria-atomic="true"></div>
+<h2 class="heading ptx-search-results-heading">Search Results: </h2>
+<div id="ptx-search-empty" class="ptx-search-empty"><span>No results.</span></div>
+<ol id="ptx-search-results" class="ptx-search-results"></ol></dialog>
+</div>
+<span class="nav-other-controls"><button id="ptx-read-aloud-button" class="ptx-read-aloud-button button" title="Read aloud" aria-expanded="false"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf1bc;</span><span class="name">Read aloud</span></button><div id="ptx-read-aloud-player" class="ptx-read-aloud-player" hidden="hidden" role="group" aria-label="Read aloud">
+<button id="ptx-read-aloud-prev" class="button" title="Previous sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe045;</span></button><button id="ptx-read-aloud-toggle" class="ptx-read-aloud-toggle button" title="Play"><span class="ptx-read-aloud-icon-play"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></span><span class="ptx-read-aloud-icon-pause"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe034;</span></span></button><button id="ptx-read-aloud-next" class="button" title="Next sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe044;</span></button><a id="ptx-read-aloud-continue" class="ptx-read-aloud-continue button" hidden="hidden">Continue<span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></a><button id="ptx-read-aloud-settings-button" class="ptx-read-aloud-settings-button button" title="Reading settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe429;</span></button>
+</div>
+<dialog class="ptx-dialog ptx-read-aloud-settings-popup" id="ptx-read-aloud-settings-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Read aloud settings</h2>
+<button class="ptx-read-aloud-settings-close-button button" id="ptx-read-aloud-settings-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label for="ptx-read-aloud-voice"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe91f;</span><span>Voice</span></label><select id="ptx-read-aloud-voice"></select><label class="ptx-readability-slider-label" for="ptx-read-aloud-rate"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe9e4;</span><span>Reading speed</span><output id="ptx-read-aloud-rate-value" for="ptx-read-aloud-rate">1×</output></label><input type="range" id="ptx-read-aloud-rate" min="0.5" max="2" step="0.1" value="1"><label for="ptx-read-aloud-asides"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d7;</span><span>Collapsed content</span></label><select id="ptx-read-aloud-asides"><option value="skip">Announce, do not read</option>
+<option value="read">Read automatically</option></select><label for="ptx-read-aloud-autoscroll"><input type="checkbox" id="ptx-read-aloud-autoscroll" checked><span>Follow along (auto-scroll)</span></label><label for="ptx-read-aloud-autocontinue"><input type="checkbox" id="ptx-read-aloud-autocontinue"><span>Continue to the next page automatically</span></label>
+</div></dialog><button id="ptx-readability-options-button" class="ptx-readability-options-button button" title="Readability settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf6f1;</span><span class="name">Readability settings</span></button><dialog class="ptx-dialog ptx-readability-options-popup" id="ptx-readability-options-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Readability settings</h2>
+<button class="ptx-readability-options-close-button button" id="ptx-readability-options-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-line-height"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe240;</span><span>Line height</span><output id="ptx-readability-line-height-value" for="ptx-readability-line-height">1.35</output></label><input type="range" id="ptx-readability-line-height" min="1.10" max="3" step="0.05" value="1.35">
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-font-size"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe245;</span><span>Content font size</span><output id="ptx-readability-font-size-value" for="ptx-readability-font-size">100%</output></label><input type="range" id="ptx-readability-font-size" min="0.8" max="1.5" step="0.05" value="1">
+</div>
+<fieldset class="ptx-readability-options-group ptx-readability-options-group-theme">
+<legend>Theme</legend>
+<label for="ptx-readability-theme-system"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-system" value="system"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe1ab;</span><span>System</span></label><label for="ptx-readability-theme-light"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-light" value="light"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe518;</span><span>Light</span></label><label for="ptx-readability-theme-dark"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-dark" value="dark"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span>Dark</span></label>
+</fieldset>
+<fieldset class="ptx-readability-options-group">
+<legend>Assistive technologies</legend>
+<label for="ptx-readability-accessible-permalinks"><input type="checkbox" id="ptx-readability-accessible-permalinks"><span>🔗</span><span>Expose permalinks</span></label>
+</fieldset>
+<div class="ptx-readability-options-group"><button type="button" class="ptx-readability-reset-button button" id="ptx-readability-reset-button"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf053;</span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="ch-quantifiers.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-quantifiers.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="ch-quantifiers-3.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{cancel}\require{upgreek} \newcommand{\ds}{\displaystyle}
+ \renewcommand{\textcolor}[2]{{\color{#1}{#2}}}
+ 
+ \newcommand{\es}{ {\varnothing}}
+ \newcommand{\st}{ \;\mathrm{s.t.}\; }
+ \newcommand{\so}{ \;\mid\; }
+ \newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+ \newcommand{\set}[1]{ \left\{#1\right\} }
+ 
+ \renewcommand{\neg}{\sim}
+
+ \newcommand{\rel}[1][R]{\;\mathcal{#1}\;}
+ \newcommand{\nrel}[1][R]{\;\cancel{\mathcal{#1}}\;}
+
+ \newcommand{\dee}[1]{\mathrm{d}#1}
+ \newcommand{\diff}[2]{\dfrac{\mathrm{d}#1}{\mathrm{d}#2}}
+ 
+ \renewcommand{\mod}[1]{\ (\mathrm{mod}\ #1)}
+ \newcommand{\lcm}{\mathrm{lcm}}
+ 
+ \let\oldepsilon\epsilon
+ 
+ \renewcommand{\epsilon}{\varepsilon}
+ \newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" role="complementary" class="ptx-sidebar"><nav id="ptx-toc" tabindex="-1" aria-label="Contents" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul id="ptx-toc-group-frontmatter" class="structural toc-item-list">
+<li class="toc-item toc-dedication"><div class="toc-title-box"><a href="frontmatter-3.html" class="internal"><span class="title">Dedication</span></a></div></li>
+<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="frontmatter-5.html" class="internal"><span class="title">Preface</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="plp-4.html" class="internal"><span class="codenumber">1</span> <span class="title">Sets</span></a></div>
+<ul id="ptx-toc-group-plp-4" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="plp-4-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="plp-4-3.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Not so formal definition</span></a></div>
+<ul id="ptx-toc-group-plp-4-3" class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="plp-4-3.html#plp-4-3-3" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Who is this reader you keep on mentioning?</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-describing.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Describing a set</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-4-5.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Onward</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="plp-4-6.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-logic.html" class="internal"><span class="codenumber">2</span> <span class="title">A little logic</span></a></div>
+<ul id="ptx-toc-group-ch-logic" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-logic-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-logic-3.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Statements and open sentences</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-logic-4.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Negation</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-logic-5.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Or and And</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-implication.html" class="internal"><span class="codenumber">2.4</span> <span class="title">The implication</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-logic-7.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Modus ponens and chaining implications</span></a></div>
+<ul id="ptx-toc-group-ch-logic-7" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-logic-7.html#ch-logic-7-2" class="internal"><span class="codenumber">2.5.1</span> <span class="title">Modus ponens</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-logic-7.html#ch-logic-7-3" class="internal"><span class="codenumber">2.5.2</span> <span class="title">Affirming the consequent and denying the antecedent</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-logic-7.html#ch-logic-7-4" class="internal"><span class="codenumber">2.5.3</span> <span class="title">Chaining implications together</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-CCB.html" class="internal"><span class="codenumber">2.6</span> <span class="title">The converse, contrapositive and biconditional</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-logic-9.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-direct.html" class="internal"><span class="codenumber">3</span> <span class="title">Direct proofs</span></a></div>
+<ul id="ptx-toc-group-ch-direct" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-direct-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-direct-3.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Trivialities and vacuousness</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-direct-4.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Direct proofs</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-direct-5.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Proofs of inequalities</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-direct-6.html" class="internal"><span class="codenumber">3.4</span> <span class="title">A quick visit to disproofs</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-direct-7.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="plp-7.html" class="internal"><span class="codenumber">4</span> <span class="title">More logic</span></a></div>
+<ul id="ptx-toc-group-plp-7" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="plp-7-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-7-3.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Tautologies and contradictions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-7-4.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Logical equivalence</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="plp-7-5.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-moreproof.html" class="internal"><span class="codenumber">5</span> <span class="title">More proofs</span></a></div>
+<ul id="ptx-toc-group-ch-moreproof" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-moreproof-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-moreproof-3.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Contrapositive</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-moreproof-4.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Proofs with cases</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-congruence.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Congruence modulo <span class="process-math">\(n\)</span></span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-abs-triangle.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Absolute values and the triangle inequality</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-moreproof-7.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-quantifiers.html" class="internal"><span class="codenumber">6</span> <span class="title">Quantifiers</span></a></div>
+<ul class="structural toc-item-list contains-active" id="ptx-toc-group-ch-quantifiers">
+<li class="toc-item toc-introduction active"><div class="toc-title-box"><a href="ch-quantifiers-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-quantifiers-3.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Quantified statements</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-quantifiers-4.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Negation of quantifiers</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-quantifiers-5.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Nested quantifiers</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_limits.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Quantifiers and rigorous limits</span></a></div>
+<ul id="ptx-toc-group-sec_limits" class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec_limits.html#sec_limits-3" class="internal"><span class="codenumber">6.4.1</span> <span class="title">Convergence of sequences</span></a></div>
+<ul id="ptx-toc-group-sec_limits-3" class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec_limits.html#sec_limits-3-3" class="internal"><span class="codenumber">6.4.1.1</span> <span class="title">Quantifying towards a definition</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec_limits.html#sec_limits-3-4" class="internal"><span class="codenumber">6.4.1.2</span> <span class="title">Some examples</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_limits.html#sec_limits-4" class="internal"><span class="codenumber">6.4.2</span> <span class="title">The limit of a function</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-quantifiers-7.html" class="internal"><span class="codenumber">6.5</span> <span class="title">(Optional) Properties of limits</span></a></div>
+<ul id="ptx-toc-group-ch-quantifiers-7" class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimseq" class="internal"><span class="codenumber">6.5.1</span> <span class="title">(Optional) Some properties of limits of sequences</span></a></div>
+<ul id="ptx-toc-group-subsec-proplimseq" class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimseq-3" class="internal"><span class="codenumber">6.5.1.1</span> <span class="title">Uniqueness of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimseq-4" class="internal"><span class="codenumber">6.5.1.2</span> <span class="title">Linearity of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimseq-5" class="internal"><span class="codenumber">6.5.1.3</span> <span class="title">Product of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimseq-6" class="internal"><span class="codenumber">6.5.1.4</span> <span class="title">Ratio of limits</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimfunc" class="internal"><span class="codenumber">6.5.2</span> <span class="title">(Optional) Some properties of limits of functions</span></a></div>
+<ul id="ptx-toc-group-subsec-proplimfunc" class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimfunc-3" class="internal"><span class="codenumber">6.5.2.1</span> <span class="title">Uniqueness of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimfunc-4" class="internal"><span class="codenumber">6.5.2.2</span> <span class="title">Linearity of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimfunc-5" class="internal"><span class="codenumber">6.5.2.3</span> <span class="title">Product of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimfunc-6" class="internal"><span class="codenumber">6.5.2.4</span> <span class="title">Ratio of limits</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-quantifiers-8.html" class="internal"><span class="codenumber">6.6</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_induction.html" class="internal"><span class="codenumber">7</span> <span class="title">Induction</span></a></div>
+<ul id="ptx-toc-group-ch_induction" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch_induction-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch_induction-3.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Induction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch_induction-4.html" class="internal"><span class="codenumber">7.2</span> <span class="title">More general inductions</span></a></div>
+<ul id="ptx-toc-group-ch_induction-4" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch_induction-4.html#subsec-extendedinduction" class="internal"><span class="codenumber">7.2.1</span> <span class="title">A little more general</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch_induction-4.html#subsec-stronginduction" class="internal"><span class="codenumber">7.2.2</span> <span class="title">More general and yet equivalent</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch_induction-5.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="plp-11.html" class="internal"><span class="codenumber">8</span> <span class="title">Return to sets</span></a></div>
+<ul id="ptx-toc-group-plp-11" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="plp-11-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-11-3.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Subsets</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-11-4.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Set operations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-11-5.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Cartesian products of sets</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-11-6.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Some set-flavoured results</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-11-7.html" class="internal"><span class="codenumber">8.5</span> <span class="title">Indexed sets</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="plp-11-8.html" class="internal"><span class="codenumber">8.6</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_relations.html" class="internal"><span class="codenumber">9</span> <span class="title">Relations</span></a></div>
+<ul id="ptx-toc-group-ch_relations" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch_relations-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch_relations-3.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Relations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_prop_rel.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Properties of relations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch_relations-5.html" class="internal"><span class="codenumber">9.3</span> <span class="title">Equivalence relations &amp; classes</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_congruence_revisited.html" class="internal"><span class="codenumber">9.4</span> <span class="title">Congruence revisited</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-euclid.html" class="internal"><span class="codenumber">9.5</span> <span class="title">Greatest divisors, Bézout and the Euclidean algorithm</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-unique-fact.html" class="internal"><span class="codenumber">9.6</span> <span class="title">Uniqueness of prime factorisation</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch_relations-9.html" class="internal"><span class="codenumber">9.7</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-functions.html" class="internal"><span class="codenumber">10</span> <span class="title">Functions</span></a></div>
+<ul id="ptx-toc-group-ch-functions" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-functions-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-functions-3.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-functions-4.html" class="internal"><span class="codenumber">10.2</span> <span class="title">A more abstract definition</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-functions-5.html" class="internal"><span class="codenumber">10.3</span> <span class="title">Images and preimages of sets</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-functions-6.html" class="internal"><span class="codenumber">10.4</span> <span class="title">Injective and surjective functions</span></a></div>
+<ul id="ptx-toc-group-ch-functions-6" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-functions-6.html#ch-functions-6-3" class="internal"><span class="codenumber">10.4.1</span> <span class="title">Injections and surjections</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-functions-6.html#ch-functions-6-4" class="internal"><span class="codenumber">10.4.2</span> <span class="title">Bijective functions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-functions-7.html" class="internal"><span class="codenumber">10.5</span> <span class="title">Composition of functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_inv_func.html" class="internal"><span class="codenumber">10.6</span> <span class="title">Inverse functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-functions-9.html" class="internal"><span class="codenumber">10.7</span> <span class="title">(Optional) The axiom of choice</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-functions-10.html" class="internal"><span class="codenumber">10.8</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-contradictions.html" class="internal"><span class="codenumber">11</span> <span class="title">Proof by contradiction</span></a></div>
+<ul id="ptx-toc-group-ch-contradictions" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-contradictions-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-contradictions-3.html" class="internal"><span class="codenumber">11.1</span> <span class="title">Structure of a proof by contradiction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-contradictions-4.html" class="internal"><span class="codenumber">11.2</span> <span class="title">Some examples</span></a></div>
+<ul id="ptx-toc-group-ch-contradictions-4" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-contradictions-4.html#ch-contradictions-4-3" class="internal"><span class="codenumber">11.2.1</span> <span class="title">The irrationality of <span class="process-math">\(\sqrt{2}\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-contradictions-4.html#ssec_inf_primes" class="internal"><span class="codenumber">11.2.2</span> <span class="title">The infinitude of primes</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-contradictions-5.html" class="internal"><span class="codenumber">11.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap_cardinality.html" class="internal"><span class="codenumber">12</span> <span class="title">Cardinality</span></a></div>
+<ul id="ptx-toc-group-chap_cardinality" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="chap_cardinality-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="chap_cardinality-3.html" class="internal"><span class="codenumber">12.1</span> <span class="title">Finite sets</span></a></div>
+<ul id="ptx-toc-group-chap_cardinality-3" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-3.html#chap_cardinality-3-3" class="internal"><span class="codenumber">12.1.1</span> <span class="title">Equinumerous sets, bijections and pigeons</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-3.html#chap_cardinality-3-4" class="internal"><span class="codenumber">12.1.2</span> <span class="title">Comparing with functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-3.html#chap_cardinality-3-5" class="internal"><span class="codenumber">12.1.3</span> <span class="title">Infinite sets are strange.</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap_cardinality-4.html" class="internal"><span class="codenumber">12.2</span> <span class="title">Denumerable sets</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_uncount.html" class="internal"><span class="codenumber">12.3</span> <span class="title">Uncountable sets</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="chap_cardinality-6.html" class="internal"><span class="codenumber">12.4</span> <span class="title">Comparing cardinalities</span></a></div>
+<ul id="ptx-toc-group-chap_cardinality-6" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-6.html#chap_cardinality-6-2" class="internal"><span class="codenumber">12.4.1</span> <span class="title">Extending to the infinite</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-6.html#chap_cardinality-6-3" class="internal"><span class="codenumber">12.4.2</span> <span class="title">Cantor’s Theorem and infinite infinities</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-6.html#chap_cardinality-6-4" class="internal"><span class="codenumber">12.4.3</span> <span class="title">Congratulations are in order</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-6.html#chap_cardinality-6-5" class="internal"><span class="codenumber">12.4.4</span> <span class="title">One more question</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_compare_card.html" class="internal"><span class="codenumber">12.5</span> <span class="title">More comparisons of cardinalties</span></a></div>
+<ul id="ptx-toc-group-sec_compare_card" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_compare_card.html#sec_compare_card-3" class="internal"><span class="codenumber">12.5.1</span> <span class="title">The Cantor-Schröder-Bernstein theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_compare_card.html#sec_compare_card-4" class="internal"><span class="codenumber">12.5.2</span> <span class="title">Applications</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_compare_card.html#sec_compare_card-5" class="internal"><span class="codenumber">12.5.3</span> <span class="title">Proof that <span class="process-math">\(|\pow{\mathbb{N}}| = |\mathbb{R}|\)</span></span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_cantor_first.html" class="internal"><span class="codenumber">12.6</span> <span class="title">(Optional) Cantor’s first proof of the uncountability of the reals</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chap_cardinality-9.html" class="internal"><span class="codenumber">12.7</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul id="ptx-toc-group-backmatter" class="structural toc-item-list">
+<li class="toc-item toc-solutions"><div class="toc-title-box"><a href="app_hint.html" class="internal"><span class="codenumber">A.</span> <span class="title">Hints for Exercises</span></a></div></li>
+<li class="toc-item toc-solutions"><div class="toc-title-box"><a href="app_answ.html" class="internal"><span class="codenumber">B.</span> <span class="title">Scratchwork for Exercises</span></a></div></li>
+<li class="toc-item toc-solutions"><div class="toc-title-box"><a href="app_soln.html" class="internal"><span class="codenumber">C.</span> <span class="title">Solutions to Exercises</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="backmatter-5.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="introduction" id="ch-quantifiers-2"><h1 class="heading">Introduction</h1>
+<div class="para" id="ch-quantifiers-2-1">The authors of this text have aimed to get you started proving things as quickly as possible. This meant that we had to skip over several important topics and return to them later. That is why the text has bounced between logic and proof and logic and proof, and now we return one last time to logic.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-quantifiers-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ch-quantifiers-2-2">
+<div class="para">The first result we really proved in this text (way back at <a href="ch-direct-4.html#res-first-proof" class="xref" data-knowl="./knowl/xref/res-first-proof.html" data-reveal-label="Reveal" data-close-label="Close" title="Result 3.2.7">Result 3.2.7</a>) was</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/res-first-proof.html" id="ch-quantifiers-2-2-2">
+\begin{equation*}
+(n \text{ is even}) \implies (n^2 \text{ is even}).
+\end{equation*}
+</div>
+<div class="para">We approached the proof by thinking about how the implication could possibly be false. That, in turn, led us to assume the hypothesis to be true, and to show that the conclusion could not possibly be false. In so doing, we have hidden something from you, the reader. Sorry, but the authors felt this was a necessary but well-intentioned untruth<details class="ptx-footnote" aria-live="polite" id="ch-quantifiers-2-2-3"><summary class="ptx-footnote__number" title="Footnote 39"><sup> 39 </sup></summary>
+<div class="ptx-footnote__contents" id="ch-quantifiers-2-2-3">A teenie-tiny one.
+</div></details> to achieve their aim of getting you to start proving things as quickly as possible.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-quantifiers-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ch-quantifiers-2-3">
+<div class="para">Consider the truth-values of hypothesis and conclusion of the above implication carefully. “<span class="process-math">\(n\)</span> is even” and “<span class="process-math">\(n^2\)</span> is even” are <em class="emphasis">not</em> a statement, they are both <dfn class="terminology">open sentences</dfn><details class="ptx-footnote" aria-live="polite" id="ch-quantifiers-2-3-5"><summary class="ptx-footnote__number" title="Footnote 40"><sup> 40 </sup></summary>
+<div class="ptx-footnote__contents" id="ch-quantifiers-2-3-5">The reader who has momentarily forgotten the difference between <dfn class="terminology">statement</dfn> and <dfn class="terminology">open sentence</dfn> should quickly jump back to <a href="ch-logic.html" class="internal" title="Chapter 2: A little logic">Chapter 2</a>
+</div></details> whose truth values depend on the variable <span class="process-math">\(n\text{.}\)</span> We have hidden from you, our reader, is the implicit scope on the variable <span class="process-math">\(n\text{.}\)</span> We implied that we want this result to be true <em class="emphasis">every possible integer <span class="process-math">\(n\)</span></em>. To make this implicit explicit:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ch-logic.html" id="ch-quantifiers-2-3-9">
+\begin{equation*}
+\text{For every integer } n, (n \text{ is even}) \implies (n^2 \text{ is even}).
+\end{equation*}
+</div>
+<div class="para">The effect of that extra bit of text is to provide <em class="emphasis">scope</em> to the variable <span class="process-math">\(n\text{,}\)</span> and so turns the open sentence into a statement with a well-defined truth value. And once we have a statement we can try to prove it.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-quantifiers-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ch-quantifiers-2-4"><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-quantifiers-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div></section>
+</div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="ch-quantifiers.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch-quantifiers-3.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+<!--Start: Google Global Site Tag code--><!--*** DO NOT COPY ANOTHER PROJECT'S MAGIC NUMBERS/ID ***--><!--***           GET YOUR OWN FROM GOOGLE             ***-->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-FL66FX9988"></script><script>  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-FL66FX9988');
+</script><!--End: Google Global Site Tag code-->
+</body>
+</html>

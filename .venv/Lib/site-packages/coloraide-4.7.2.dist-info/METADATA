@@ -1,0 +1,98 @@
+Metadata-Version: 2.4
+Name: coloraide
+Version: 4.7.2
+Summary: A color library for Python.
+Project-URL: Homepage, https://github.com/facelessuser/coloraide
+Author-email: Isaac Muse <Isaac.Muse@gmail.com>
+License-Expression: MIT
+License-File: LICENSE.md
+Keywords: color,color-contrast,color-conversion,color-difference,color-filters,color-harmonies,color-interpolation,color-manipulation,color-spaces,color-temperature,color-vision-deficiency,colour,css
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Programming Language :: Python :: 3.14
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Text Processing :: Filters
+Classifier: Topic :: Text Processing :: Markup :: HTML
+Requires-Python: >=3.9
+Requires-Dist: typing-extensions; python_version < '3.11'
+Description-Content-Type: text/markdown
+
+[![Donate via PayPal][donate-image]][donate-link]
+[![Build][github-ci-image]][github-ci-link]
+[![Coverage Status][codecov-image]][codecov-link]
+[![PyPI Version][pypi-image]][pypi-link]
+[![PyPI Downloads][pypi-down]][pypi-link]
+[![PyPI - Python Version][python-image]][pypi-link]
+[![License][license-image-mit]][license-link]
+
+# ColorAide
+
+## Overview
+
+ColorAide is a pure Python, object oriented approach to colors.
+
+```python
+>>> from coloraide import Color
+>>> c = Color("red")
+>>> c.to_string()
+'rgb(255 0 0)'
+>>> c.convert('hsl').to_string()
+'hsl(0 100% 50%)'
+>>> c.set("lch.chroma", 30).to_string()
+'rgb(173.81 114.29 97.218)'
+>>> Color("blue").mix("yellow", space="lch").to_string()
+'rgb(255 65.751 107.47)'
+```
+
+ColorAide particularly has a focus on the following:
+
+- Accurate colors.
+
+- Proper round tripping (where reasonable).
+
+- Be generally easy to pick up for the average user.
+
+- Support modern CSS color spaces and syntax.
+
+- Make accessible many new and old non-CSS color spaces.
+
+- Provide a number of useful utilities such as interpolation, color distancing, blending, gamut mapping, filters,
+  correlated color temperature, color vision deficiency simulation, etc.
+
+- Provide a plugin API to extend supported color spaces and approaches to various utilities.
+
+- Allow users to configure defaults to their liking.
+
+With ColorAide, you can specify a color, convert it to other color spaces, mix it with other colors, output it in
+different CSS formats, and much more!
+
+# Documentation
+
+https://facelessuser.github.io/coloraide
+
+## License
+
+MIT
+
+[github-ci-image]: https://github.com/facelessuser/coloraide/workflows/build/badge.svg
+[github-ci-link]: https://github.com/facelessuser/coloraide/actions?query=workflow%3Abuild+branch%3Amain
+[codecov-image]: https://img.shields.io/codecov/c/github/facelessuser/coloraide/main.svg?logo=codecov&logoColor=aaaaaa&labelColor=333333
+[codecov-link]: https://codecov.io/github/facelessuser/coloraide
+[pypi-image]: https://img.shields.io/pypi/v/coloraide.svg?logo=pypi&logoColor=aaaaaa&labelColor=333333
+[pypi-down]: https://img.shields.io/pypi/dm/coloraide.svg?logo=pypi&logoColor=aaaaaa&labelColor=333333
+[pypi-link]: https://pypi.python.org/pypi/coloraide
+[python-image]: https://img.shields.io/pypi/pyversions/coloraide?logo=python&logoColor=aaaaaa&labelColor=333333
+[license-image-mit]: https://img.shields.io/badge/license-MIT-blue.svg?labelColor=333333
+[license-link]: https://github.com/facelessuser/coloraide/blob/main/LICENSE.md
+[donate-image]: https://img.shields.io/badge/Donate-PayPal-3fabd1?logo=paypal
+[donate-link]: https://www.paypal.me/facelessuser

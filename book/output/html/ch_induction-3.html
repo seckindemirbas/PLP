@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Induction</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
+startMathJax({
+hasWebworkReps: false,
+hasSage: false,
+isReact: false,
+htmlPresentation: false,
+lang: "en-US",
+});
+</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta name="twitter:title" content="PLP">
+<meta property="og:title" content="PLP">
+<meta property="book:title" content="PLP">
+<meta name="twitter:description" content="An introduction to mathematical proof">
+<meta property="og:description" content="An introduction to mathematical proof">
+<meta name="twitter:card" content="summary">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.48"></script><script src="_static/pretext/js/dist/pretext-read-aloud.js?v=2.48"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.2.4';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.40bd1420d3277749.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.b388362b5f43738a.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.8086b62682b271d1.css">
+<script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead" role="banner"><div class="ptx-banner"><div class="title-container">
+<div class="heading ptx-banner-heading"><a href="plp.html"><span class="title">PLP</span> <span class="subtitle">An introduction to mathematical proof</span></a></div>
+<p class="byline">Seçkin Demirbaş, Andrew Rechnitzer</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button id="ptx-toc-toggle" type="button" aria-controls="ptx-sidebar" class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="ptx-search-box">
+<div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search Book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog"><div class="ptx-search-dialog-controls">
+<input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close" id="ptx-search-close" class="ptx-search-close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div id="ptx-search-status" class="ptx-search-status" aria-live="polite" aria-atomic="true"></div>
+<h2 class="heading ptx-search-results-heading">Search Results: </h2>
+<div id="ptx-search-empty" class="ptx-search-empty"><span>No results.</span></div>
+<ol id="ptx-search-results" class="ptx-search-results"></ol></dialog>
+</div>
+<span class="nav-other-controls"><button id="ptx-read-aloud-button" class="ptx-read-aloud-button button" title="Read aloud" aria-expanded="false"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf1bc;</span><span class="name">Read aloud</span></button><div id="ptx-read-aloud-player" class="ptx-read-aloud-player" hidden="hidden" role="group" aria-label="Read aloud">
+<button id="ptx-read-aloud-prev" class="button" title="Previous sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe045;</span></button><button id="ptx-read-aloud-toggle" class="ptx-read-aloud-toggle button" title="Play"><span class="ptx-read-aloud-icon-play"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></span><span class="ptx-read-aloud-icon-pause"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe034;</span></span></button><button id="ptx-read-aloud-next" class="button" title="Next sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe044;</span></button><a id="ptx-read-aloud-continue" class="ptx-read-aloud-continue button" hidden="hidden">Continue<span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></a><button id="ptx-read-aloud-settings-button" class="ptx-read-aloud-settings-button button" title="Reading settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe429;</span></button>
+</div>
+<dialog class="ptx-dialog ptx-read-aloud-settings-popup" id="ptx-read-aloud-settings-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Read aloud settings</h2>
+<button class="ptx-read-aloud-settings-close-button button" id="ptx-read-aloud-settings-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label for="ptx-read-aloud-voice"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe91f;</span><span>Voice</span></label><select id="ptx-read-aloud-voice"></select><label class="ptx-readability-slider-label" for="ptx-read-aloud-rate"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe9e4;</span><span>Reading speed</span><output id="ptx-read-aloud-rate-value" for="ptx-read-aloud-rate">1×</output></label><input type="range" id="ptx-read-aloud-rate" min="0.5" max="2" step="0.1" value="1"><label for="ptx-read-aloud-asides"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d7;</span><span>Collapsed content</span></label><select id="ptx-read-aloud-asides"><option value="skip">Announce, do not read</option>
+<option value="read">Read automatically</option></select><label for="ptx-read-aloud-autoscroll"><input type="checkbox" id="ptx-read-aloud-autoscroll" checked><span>Follow along (auto-scroll)</span></label><label for="ptx-read-aloud-autocontinue"><input type="checkbox" id="ptx-read-aloud-autocontinue"><span>Continue to the next page automatically</span></label>
+</div></dialog><button id="ptx-readability-options-button" class="ptx-readability-options-button button" title="Readability settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf6f1;</span><span class="name">Readability settings</span></button><dialog class="ptx-dialog ptx-readability-options-popup" id="ptx-readability-options-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Readability settings</h2>
+<button class="ptx-readability-options-close-button button" id="ptx-readability-options-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-line-height"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe240;</span><span>Line height</span><output id="ptx-readability-line-height-value" for="ptx-readability-line-height">1.35</output></label><input type="range" id="ptx-readability-line-height" min="1.10" max="3" step="0.05" value="1.35">
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-font-size"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe245;</span><span>Content font size</span><output id="ptx-readability-font-size-value" for="ptx-readability-font-size">100%</output></label><input type="range" id="ptx-readability-font-size" min="0.8" max="1.5" step="0.05" value="1">
+</div>
+<fieldset class="ptx-readability-options-group ptx-readability-options-group-theme">
+<legend>Theme</legend>
+<label for="ptx-readability-theme-system"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-system" value="system"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe1ab;</span><span>System</span></label><label for="ptx-readability-theme-light"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-light" value="light"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe518;</span><span>Light</span></label><label for="ptx-readability-theme-dark"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-dark" value="dark"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span>Dark</span></label>
+</fieldset>
+<fieldset class="ptx-readability-options-group">
+<legend>Assistive technologies</legend>
+<label for="ptx-readability-accessible-permalinks"><input type="checkbox" id="ptx-readability-accessible-permalinks"><span>🔗</span><span>Expose permalinks</span></label>
+</fieldset>
+<div class="ptx-readability-options-group"><button type="button" class="ptx-readability-reset-button button" id="ptx-readability-reset-button"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf053;</span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="ch_induction-2.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch_induction.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="ch_induction-4.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{cancel}\require{upgreek} \newcommand{\ds}{\displaystyle}
+ \renewcommand{\textcolor}[2]{{\color{#1}{#2}}}
+ 
+ \newcommand{\es}{ {\varnothing}}
+ \newcommand{\st}{ \;\mathrm{s.t.}\; }
+ \newcommand{\so}{ \;\mid\; }
+ \newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+ \newcommand{\set}[1]{ \left\{#1\right\} }
+ 
+ \renewcommand{\neg}{\sim}
+
+ \newcommand{\rel}[1][R]{\;\mathcal{#1}\;}
+ \newcommand{\nrel}[1][R]{\;\cancel{\mathcal{#1}}\;}
+
+ \newcommand{\dee}[1]{\mathrm{d}#1}
+ \newcommand{\diff}[2]{\dfrac{\mathrm{d}#1}{\mathrm{d}#2}}
+ 
+ \renewcommand{\mod}[1]{\ (\mathrm{mod}\ #1)}
+ \newcommand{\lcm}{\mathrm{lcm}}
+ 
+ \let\oldepsilon\epsilon
+ 
+ \renewcommand{\epsilon}{\varepsilon}
+ \newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" role="complementary" class="ptx-sidebar"><nav id="ptx-toc" tabindex="-1" aria-label="Contents" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul id="ptx-toc-group-frontmatter" class="structural toc-item-list">
+<li class="toc-item toc-dedication"><div class="toc-title-box"><a href="frontmatter-3.html" class="internal"><span class="title">Dedication</span></a></div></li>
+<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="frontmatter-5.html" class="internal"><span class="title">Preface</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="plp-4.html" class="internal"><span class="codenumber">1</span> <span class="title">Sets</span></a></div>
+<ul id="ptx-toc-group-plp-4" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="plp-4-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="plp-4-3.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Not so formal definition</span></a></div>
+<ul id="ptx-toc-group-plp-4-3" class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="plp-4-3.html#plp-4-3-3" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Who is this reader you keep on mentioning?</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-describing.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Describing a set</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-4-5.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Onward</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="plp-4-6.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-logic.html" class="internal"><span class="codenumber">2</span> <span class="title">A little logic</span></a></div>
+<ul id="ptx-toc-group-ch-logic" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-logic-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-logic-3.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Statements and open sentences</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-logic-4.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Negation</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-logic-5.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Or and And</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-implication.html" class="internal"><span class="codenumber">2.4</span> <span class="title">The implication</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-logic-7.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Modus ponens and chaining implications</span></a></div>
+<ul id="ptx-toc-group-ch-logic-7" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-logic-7.html#ch-logic-7-2" class="internal"><span class="codenumber">2.5.1</span> <span class="title">Modus ponens</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-logic-7.html#ch-logic-7-3" class="internal"><span class="codenumber">2.5.2</span> <span class="title">Affirming the consequent and denying the antecedent</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-logic-7.html#ch-logic-7-4" class="internal"><span class="codenumber">2.5.3</span> <span class="title">Chaining implications together</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-CCB.html" class="internal"><span class="codenumber">2.6</span> <span class="title">The converse, contrapositive and biconditional</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-logic-9.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-direct.html" class="internal"><span class="codenumber">3</span> <span class="title">Direct proofs</span></a></div>
+<ul id="ptx-toc-group-ch-direct" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-direct-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-direct-3.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Trivialities and vacuousness</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-direct-4.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Direct proofs</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-direct-5.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Proofs of inequalities</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-direct-6.html" class="internal"><span class="codenumber">3.4</span> <span class="title">A quick visit to disproofs</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-direct-7.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="plp-7.html" class="internal"><span class="codenumber">4</span> <span class="title">More logic</span></a></div>
+<ul id="ptx-toc-group-plp-7" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="plp-7-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-7-3.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Tautologies and contradictions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-7-4.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Logical equivalence</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="plp-7-5.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-moreproof.html" class="internal"><span class="codenumber">5</span> <span class="title">More proofs</span></a></div>
+<ul id="ptx-toc-group-ch-moreproof" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-moreproof-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-moreproof-3.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Contrapositive</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-moreproof-4.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Proofs with cases</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-congruence.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Congruence modulo <span class="process-math">\(n\)</span></span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-abs-triangle.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Absolute values and the triangle inequality</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-moreproof-7.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-quantifiers.html" class="internal"><span class="codenumber">6</span> <span class="title">Quantifiers</span></a></div>
+<ul id="ptx-toc-group-ch-quantifiers" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-quantifiers-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-quantifiers-3.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Quantified statements</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-quantifiers-4.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Negation of quantifiers</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-quantifiers-5.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Nested quantifiers</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_limits.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Quantifiers and rigorous limits</span></a></div>
+<ul id="ptx-toc-group-sec_limits" class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec_limits.html#sec_limits-3" class="internal"><span class="codenumber">6.4.1</span> <span class="title">Convergence of sequences</span></a></div>
+<ul id="ptx-toc-group-sec_limits-3" class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec_limits.html#sec_limits-3-3" class="internal"><span class="codenumber">6.4.1.1</span> <span class="title">Quantifying towards a definition</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec_limits.html#sec_limits-3-4" class="internal"><span class="codenumber">6.4.1.2</span> <span class="title">Some examples</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_limits.html#sec_limits-4" class="internal"><span class="codenumber">6.4.2</span> <span class="title">The limit of a function</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-quantifiers-7.html" class="internal"><span class="codenumber">6.5</span> <span class="title">(Optional) Properties of limits</span></a></div>
+<ul id="ptx-toc-group-ch-quantifiers-7" class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimseq" class="internal"><span class="codenumber">6.5.1</span> <span class="title">(Optional) Some properties of limits of sequences</span></a></div>
+<ul id="ptx-toc-group-subsec-proplimseq" class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimseq-3" class="internal"><span class="codenumber">6.5.1.1</span> <span class="title">Uniqueness of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimseq-4" class="internal"><span class="codenumber">6.5.1.2</span> <span class="title">Linearity of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimseq-5" class="internal"><span class="codenumber">6.5.1.3</span> <span class="title">Product of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimseq-6" class="internal"><span class="codenumber">6.5.1.4</span> <span class="title">Ratio of limits</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimfunc" class="internal"><span class="codenumber">6.5.2</span> <span class="title">(Optional) Some properties of limits of functions</span></a></div>
+<ul id="ptx-toc-group-subsec-proplimfunc" class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimfunc-3" class="internal"><span class="codenumber">6.5.2.1</span> <span class="title">Uniqueness of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimfunc-4" class="internal"><span class="codenumber">6.5.2.2</span> <span class="title">Linearity of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimfunc-5" class="internal"><span class="codenumber">6.5.2.3</span> <span class="title">Product of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimfunc-6" class="internal"><span class="codenumber">6.5.2.4</span> <span class="title">Ratio of limits</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-quantifiers-8.html" class="internal"><span class="codenumber">6.6</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch_induction.html" class="internal"><span class="codenumber">7</span> <span class="title">Induction</span></a></div>
+<ul class="structural toc-item-list contains-active" id="ptx-toc-group-ch_induction">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch_induction-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="ch_induction-3.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Induction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch_induction-4.html" class="internal"><span class="codenumber">7.2</span> <span class="title">More general inductions</span></a></div>
+<ul id="ptx-toc-group-ch_induction-4" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch_induction-4.html#subsec-extendedinduction" class="internal"><span class="codenumber">7.2.1</span> <span class="title">A little more general</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch_induction-4.html#subsec-stronginduction" class="internal"><span class="codenumber">7.2.2</span> <span class="title">More general and yet equivalent</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch_induction-5.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="plp-11.html" class="internal"><span class="codenumber">8</span> <span class="title">Return to sets</span></a></div>
+<ul id="ptx-toc-group-plp-11" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="plp-11-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-11-3.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Subsets</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-11-4.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Set operations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-11-5.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Cartesian products of sets</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-11-6.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Some set-flavoured results</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-11-7.html" class="internal"><span class="codenumber">8.5</span> <span class="title">Indexed sets</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="plp-11-8.html" class="internal"><span class="codenumber">8.6</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_relations.html" class="internal"><span class="codenumber">9</span> <span class="title">Relations</span></a></div>
+<ul id="ptx-toc-group-ch_relations" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch_relations-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch_relations-3.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Relations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_prop_rel.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Properties of relations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch_relations-5.html" class="internal"><span class="codenumber">9.3</span> <span class="title">Equivalence relations &amp; classes</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_congruence_revisited.html" class="internal"><span class="codenumber">9.4</span> <span class="title">Congruence revisited</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-euclid.html" class="internal"><span class="codenumber">9.5</span> <span class="title">Greatest divisors, Bézout and the Euclidean algorithm</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-unique-fact.html" class="internal"><span class="codenumber">9.6</span> <span class="title">Uniqueness of prime factorisation</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch_relations-9.html" class="internal"><span class="codenumber">9.7</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-functions.html" class="internal"><span class="codenumber">10</span> <span class="title">Functions</span></a></div>
+<ul id="ptx-toc-group-ch-functions" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-functions-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-functions-3.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-functions-4.html" class="internal"><span class="codenumber">10.2</span> <span class="title">A more abstract definition</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-functions-5.html" class="internal"><span class="codenumber">10.3</span> <span class="title">Images and preimages of sets</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-functions-6.html" class="internal"><span class="codenumber">10.4</span> <span class="title">Injective and surjective functions</span></a></div>
+<ul id="ptx-toc-group-ch-functions-6" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-functions-6.html#ch-functions-6-3" class="internal"><span class="codenumber">10.4.1</span> <span class="title">Injections and surjections</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-functions-6.html#ch-functions-6-4" class="internal"><span class="codenumber">10.4.2</span> <span class="title">Bijective functions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-functions-7.html" class="internal"><span class="codenumber">10.5</span> <span class="title">Composition of functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_inv_func.html" class="internal"><span class="codenumber">10.6</span> <span class="title">Inverse functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-functions-9.html" class="internal"><span class="codenumber">10.7</span> <span class="title">(Optional) The axiom of choice</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-functions-10.html" class="internal"><span class="codenumber">10.8</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-contradictions.html" class="internal"><span class="codenumber">11</span> <span class="title">Proof by contradiction</span></a></div>
+<ul id="ptx-toc-group-ch-contradictions" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-contradictions-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-contradictions-3.html" class="internal"><span class="codenumber">11.1</span> <span class="title">Structure of a proof by contradiction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-contradictions-4.html" class="internal"><span class="codenumber">11.2</span> <span class="title">Some examples</span></a></div>
+<ul id="ptx-toc-group-ch-contradictions-4" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-contradictions-4.html#ch-contradictions-4-3" class="internal"><span class="codenumber">11.2.1</span> <span class="title">The irrationality of <span class="process-math">\(\sqrt{2}\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-contradictions-4.html#ssec_inf_primes" class="internal"><span class="codenumber">11.2.2</span> <span class="title">The infinitude of primes</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-contradictions-5.html" class="internal"><span class="codenumber">11.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap_cardinality.html" class="internal"><span class="codenumber">12</span> <span class="title">Cardinality</span></a></div>
+<ul id="ptx-toc-group-chap_cardinality" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="chap_cardinality-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="chap_cardinality-3.html" class="internal"><span class="codenumber">12.1</span> <span class="title">Finite sets</span></a></div>
+<ul id="ptx-toc-group-chap_cardinality-3" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-3.html#chap_cardinality-3-3" class="internal"><span class="codenumber">12.1.1</span> <span class="title">Equinumerous sets, bijections and pigeons</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-3.html#chap_cardinality-3-4" class="internal"><span class="codenumber">12.1.2</span> <span class="title">Comparing with functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-3.html#chap_cardinality-3-5" class="internal"><span class="codenumber">12.1.3</span> <span class="title">Infinite sets are strange.</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap_cardinality-4.html" class="internal"><span class="codenumber">12.2</span> <span class="title">Denumerable sets</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_uncount.html" class="internal"><span class="codenumber">12.3</span> <span class="title">Uncountable sets</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="chap_cardinality-6.html" class="internal"><span class="codenumber">12.4</span> <span class="title">Comparing cardinalities</span></a></div>
+<ul id="ptx-toc-group-chap_cardinality-6" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-6.html#chap_cardinality-6-2" class="internal"><span class="codenumber">12.4.1</span> <span class="title">Extending to the infinite</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-6.html#chap_cardinality-6-3" class="internal"><span class="codenumber">12.4.2</span> <span class="title">Cantor’s Theorem and infinite infinities</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-6.html#chap_cardinality-6-4" class="internal"><span class="codenumber">12.4.3</span> <span class="title">Congratulations are in order</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-6.html#chap_cardinality-6-5" class="internal"><span class="codenumber">12.4.4</span> <span class="title">One more question</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_compare_card.html" class="internal"><span class="codenumber">12.5</span> <span class="title">More comparisons of cardinalties</span></a></div>
+<ul id="ptx-toc-group-sec_compare_card" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_compare_card.html#sec_compare_card-3" class="internal"><span class="codenumber">12.5.1</span> <span class="title">The Cantor-Schröder-Bernstein theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_compare_card.html#sec_compare_card-4" class="internal"><span class="codenumber">12.5.2</span> <span class="title">Applications</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_compare_card.html#sec_compare_card-5" class="internal"><span class="codenumber">12.5.3</span> <span class="title">Proof that <span class="process-math">\(|\pow{\mathbb{N}}| = |\mathbb{R}|\)</span></span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_cantor_first.html" class="internal"><span class="codenumber">12.6</span> <span class="title">(Optional) Cantor’s first proof of the uncountability of the reals</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chap_cardinality-9.html" class="internal"><span class="codenumber">12.7</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul id="ptx-toc-group-backmatter" class="structural toc-item-list">
+<li class="toc-item toc-solutions"><div class="toc-title-box"><a href="app_hint.html" class="internal"><span class="codenumber">A.</span> <span class="title">Hints for Exercises</span></a></div></li>
+<li class="toc-item toc-solutions"><div class="toc-title-box"><a href="app_answ.html" class="internal"><span class="codenumber">B.</span> <span class="title">Scratchwork for Exercises</span></a></div></li>
+<li class="toc-item toc-solutions"><div class="toc-title-box"><a href="app_soln.html" class="internal"><span class="codenumber">C.</span> <span class="title">Solutions to Exercises</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="backmatter-5.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="ch_induction-3">
+<h1 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Induction</span>
+</h1>
+<div class="para logical" id="ch_induction-3-2">
+<div class="para">
+<dfn class="terminology">Induction</dfn>, once you get past some of the technicalities, is a very intuitive idea. This author likes to think of induction like climbing an infinite ladder and an induction argument is really just a proof that we can climb that ladder. The proof is in 3 parts:</div>
+<ul class="disc" id="ch_induction-3-2-2">
+<li id="ch_induction-3-2-2-1">
+<div class="para" id="p-derived-ch_induction-3-2-2-1">If you can step onto the ladder, and</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_induction-3-2-2-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch_induction-3-2-2-2">
+<div class="para" id="p-derived-ch_induction-3-2-2-2">from the current step you can reach the next step, then</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_induction-3-2-2-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch_induction-3-2-2-3">
+<div class="para" id="p-derived-ch_induction-3-2-2-3">you can climb the ladder as high as you want.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_induction-3-2-2-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_induction-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ch_induction-3-3">
+<div class="para">As more concrete mathematical example, say we wish to prove</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ch-moreproof.html" id="ch_induction-3-3-1">
+\begin{equation*}
+\text{For all } n \in \mathbb{N}, n^2+5n-7 \text{ is odd}.
+\end{equation*}
+</div>
+<div class="para">The dedicated reader may recall a very similar example in <a href="ch-moreproof.html" class="internal" title="Chapter 5: More proofs">Chapter 5</a> and realise that we can do this using proof by cases, however, it is a good example for proof by “ladder idea”.</div>
+<ul class="disc" id="ch_induction-3-3-4">
+<li id="ch_induction-3-3-4-1">
+<div class="para" id="ch_induction-3-3-4-1-1">Step onto the ladder. When <span class="process-math">\(n=1\)</span> the polynomial is <span class="process-math">\(1+5-7 = -1\)</span> which is odd. So the assertion is true for the very smallest value of <span class="process-math">\(n\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_induction-3-3-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_induction-3-3-4-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch_induction-3-3-4-2">
+<div class="para logical" id="ch_induction-3-3-4-2-1">
+<div class="para">Climb from one rung to the next. We wish to show that if the assertion is true for the current value of <span class="process-math">\(n=k\text{,}\)</span> then it is also true for <span class="process-math">\(n=k+1\text{.}\)</span> That is, if we are on the current step, we can move up to the next step. So, to be more precise, we want to show that</div>
+<div class="displaymath process-math" id="ch_induction-3-3-4-2-1-3">
+\begin{equation*}
+(k^2+5k-7 \text{ is odd}) \implies ( (k+1)^2+5(k+1)-7 \text{ is odd})
+\end{equation*}
+</div>
+<div class="para">So this is just a little direct proof hiding inside our argument.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_induction-3-3-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ch_induction-3-3-4-2-2">
+<div class="para">
+<dfn class="terminology">Proof:</dfn> Assume <span class="process-math">\(k^2+5k-7 = 2\ell+1\text{.}\)</span> Then</div>
+<div class="displaymath process-math" id="ch_induction-3-3-4-2-2-3">
+\begin{align*}
+(k+1)^2+5(k+1)-7 \amp= k^2+2k+1+5k+5-7 \\
+\amp= \underbrace{k^2+5k-7}_{=2\ell+1} + (2k+6) \\
+\amp= 2(\ell+k+3) + 1. 
+\end{align*}
+</div>
+<div class="para">Hence <span class="process-math">\((k+1)^2+5(k+1)-7\)</span> is odd as required.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_induction-3-3-4-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_induction-3-3-4-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch_induction-3-3-4-3">
+<div class="para" id="ch_induction-3-3-4-3-1">Conclusion. So how do we put these facts together? The first fact guarantees that our result is true for <span class="process-math">\(n=1\text{.}\)</span> Then the second fact tells us that since it is true for <span class="process-math">\(n=1\text{,}\)</span> it is also true for <span class="process-math">\(n=2\text{.}\)</span> But then since it is true for <span class="process-math">\(n=2\text{,}\)</span> it true for <span class="process-math">\(n=3\)</span> (by the same fact). Applying that fact again and again gives us <span class="process-math">\(n=4, n=5, n=6, \cdots\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_induction-3-3-4-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_induction-3-3-4-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">Strictly speaking we have to be a bit more careful with that final “…”, but we’ll see how to do that below.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_induction-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ch_induction-3-4">This proof method, <dfn class="terminology">mathematical induction</dfn>, is formalised in the next theorem.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_induction-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="ch_induction-3-5"><h2 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The principle of mathematical induction.</span>
+</h2>
+<div class="para logical" id="ch_induction-3-5-2-1">
+<div class="para">For every <span class="process-math">\(n \in \mathbb{N}\)</span> let <span class="process-math">\(P(n)\)</span> be a statement. If</div>
+<ul class="disc" id="ch_induction-3-5-2-1-3">
+<li id="ch_induction-3-5-2-1-3-1">
+<div class="para" id="p-derived-ch_induction-3-5-2-1-3-1">
+<span class="process-math">\(P(1)\)</span> is a true statement, and</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_induction-3-5-2-1-3-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch_induction-3-5-2-1-3-2">
+<div class="para" id="p-derived-ch_induction-3-5-2-1-3-2">the implication <span class="process-math">\(P(k) \implies P(k+1)\)</span> is true for all <span class="process-math">\(k \in \mathbb{N}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_induction-3-5-2-1-3-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">then <span class="process-math">\(P(n)\)</span> is true for all <span class="process-math">\(n \in \mathbb{N}\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_induction-3-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 7.1.1: The principle of mathematical induction"><a tabindex="-1" href="#ch_induction-3-5" title="Copy heading and permalink for Theorem 7.1.1: The principle of mathematical induction" aria-label="Copy heading and permalink for Theorem 7.1.1: The principle of mathematical induction">🔗</a></div>
+</article>
+<div class="para" id="ch_induction-3-6">We can’t quite give a complete proof of this theorem, though we can give almost everything that is needed. Call this a “proof sketch” — the core ideas are there, but we’ll skip over a technicality and also write it a little informally.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_induction-3-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="ch_induction-3-7" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="title">Proof-sketch.</span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="ch_induction-3-7-2">
+<div class="para">Start by assuming the hypotheses of the theorem are true. That is, we assume that</div>
+<ul class="disc" id="ch_induction-3-7-2-1">
+<li id="ch_induction-3-7-2-1-1">
+<div class="para" id="p-derived-ch_induction-3-7-2-1-1">
+<span class="process-math">\(P(1)\)</span> is true, and</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_induction-3-7-2-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch_induction-3-7-2-1-2">
+<div class="para" id="p-derived-ch_induction-3-7-2-1-2">the implication <span class="process-math">\(P(k) \implies P(k+1)\)</span> is true for all natural numbers <span class="process-math">\(k\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_induction-3-7-2-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_induction-3-7-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ch_induction-3-7-3">
+<div class="para">Then the core idea of the proof is construct two sets</div>
+<ul class="disc" id="ch_induction-3-7-3-1">
+<li id="ch_induction-3-7-3-1-1">
+<div class="para logical" id="ch_induction-3-7-3-1-1-1">
+<div class="para">The “good” set:</div>
+<div class="displaymath process-math" id="ch_induction-3-7-3-1-1-1-2">
+\begin{equation*}
+G = \set{n \in \mathbb{N} \mid P(n) \text{ is true} }
+\end{equation*}
+</div>
+<div class="para">This is the set of all <span class="process-math">\(n\)</span>-values for which our statement is true. By assumption, we know that <span class="process-math">\(1 \in G\text{,}\)</span> and <span class="process-math">\(G \neq \es\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_induction-3-7-3-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_induction-3-7-3-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch_induction-3-7-3-1-2">
+<div class="para logical" id="ch_induction-3-7-3-1-2-1">
+<div class="para">The “bad” set:</div>
+<div class="displaymath process-math" id="ch_induction-3-7-3-1-2-1-2">
+\begin{equation*}
+B = \set{n \in \mathbb{N} \mid P(n) \text{ is false} }.
+\end{equation*}
+</div>
+<div class="para">This is the set of all <span class="process-math">\(n\)</span>-values for which our statement is false.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_induction-3-7-3-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_induction-3-7-3-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">As is often the case, the “good” isn’t as interesting as the “bad”, and we’ll focus on the set <span class="process-math">\(B\text{.}\)</span> It is either empty or non-empty.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_induction-3-7-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ch_induction-3-7-4">If <span class="process-math">\(B\)</span> is empty, then we are done, because then <span class="process-math">\(P(n)\)</span> must be true for every single <span class="process-math">\(n\in \mathbb{N}\)</span> as required.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_induction-3-7-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ch_induction-3-7-5">
+<ul class="disc" id="ch_induction-3-7-5-1">
+<li id="ch_induction-3-7-5-1-1">
+<div class="para" id="p-derived-ch_induction-3-7-5-1-1">As <span class="process-math">\(B\)</span> is not empty, we can look for the smallest element in <span class="process-math">\(B\text{.}\)</span> And since <span class="process-math">\(B\)</span> is a non-empty set of natural numbers we can always find its smallest smallest element. However we do note that this is not possible for all sets — we’ll come back to this point shortly.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_induction-3-7-5-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch_induction-3-7-5-1-2">
+<div class="para" id="p-derived-ch_induction-3-7-5-1-2">Let <span class="process-math">\(\ell\)</span> be this smallest number in <span class="process-math">\(B\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_induction-3-7-5-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch_induction-3-7-5-1-3">
+<div class="para" id="p-derived-ch_induction-3-7-5-1-3">From the hypothesis in the theorem, we know that <span class="process-math">\(\ell \gt 1\)</span> (since <span class="process-math">\(P(1)\)</span> is true).</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_induction-3-7-5-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch_induction-3-7-5-1-4">
+<div class="para" id="p-derived-ch_induction-3-7-5-1-4">By the way we constructed <span class="process-math">\(B\)</span> and <span class="process-math">\(\ell\text{,}\)</span> we know that <span class="process-math">\(P(n)\)</span> is true for all <span class="process-math">\(1 \leq n  \lt  \ell\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_induction-3-7-5-1-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch_induction-3-7-5-1-5">
+<div class="para logical" id="ch_induction-3-7-5-1-5-1">
+<div class="para">Now we have a problem:</div>
+<ul class="circle" id="ch_induction-3-7-5-1-5-1-1">
+<li id="ch_induction-3-7-5-1-5-1-1-1">
+<div class="para" id="p-derived-ch_induction-3-7-5-1-5-1-1-1">we know that <span class="process-math">\(P(\ell-1)\)</span> is true, but</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_induction-3-7-5-1-5-1-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch_induction-3-7-5-1-5-1-1-2">
+<div class="para" id="p-derived-ch_induction-3-7-5-1-5-1-1-2">we also know that the implication <span class="process-math">\(P(\ell-1) \implies P(\ell)\)</span> is true (since that is one of the hypotheses).</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_induction-3-7-5-1-5-1-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch_induction-3-7-5-1-5-1-1-3">
+<div class="para" id="p-derived-ch_induction-3-7-5-1-5-1-1-3">But if <span class="process-math">\(P(\ell-1)\)</span> is true, and <span class="process-math">\(P(\ell)\)</span> is false, then that implication is false.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_induction-3-7-5-1-5-1-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_induction-3-7-5-1-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_induction-3-7-5-1-5" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch_induction-3-7-5-1-6">
+<div class="para" id="p-derived-ch_induction-3-7-5-1-6">This is a <dfn class="terminology">contradiction</dfn> — our assumption is contradicted by <span class="process-math">\(P(\ell)\)</span> being false.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_induction-3-7-5-1-6" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch_induction-3-7-5-1-7">
+<div class="para" id="p-derived-ch_induction-3-7-5-1-7">The only way to resolve this situation is to conclude that no such <span class="process-math">\(\ell\)</span> exists — that is, <span class="process-math">\(B\)</span> is empty.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_induction-3-7-5-1-7" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">Hence we must have <span class="process-math">\(P(n)\)</span> is true for all natural numbers <span class="process-math">\(n\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_induction-3-7-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 7.1.1: Proof-sketch"><a tabindex="-1" href="#ch_induction-3-7" title="Copy heading and permalink for Proof 7.1.1: Proof-sketch" aria-label="Copy heading and permalink for Proof 7.1.1: Proof-sketch">🔗</a></div>
+</article></details>
+<div class="para" id="ch_induction-3-8">There are two sneaky things going on in this proof. Firstly, we are doing a <dfn class="terminology">proof by contradiction</dfn> by stealth; don’t worry too much about this yet as we’ll return to those proofs later in the text. Second, and more important in the short term, is that the proof relies on a delicate point<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_induction-3-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<blockquote class="blockquote" id="ch_induction-3-9">
+<div class="para" id="ch_induction-3-9-1">since <span class="process-math">\(B\)</span> is just a non-empty set of natural numbers, we can always find the smallest number in that set.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_induction-3-9-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Quotation"><a tabindex="-1" href="#ch_induction-3-9" title="Copy heading and permalink for Quotation" aria-label="Copy heading and permalink for Quotation">🔗</a></div>
+</blockquote>
+<div class="para" id="ch_induction-3-10">We are using here something called the <dfn class="terminology">well ordering principle</dfn>. This guarantees us that we can always find the smallest element in a set of natural numbers. This is very definitely false for other sets of numbers — if we build a set of integers, or rational numbers, or real numbers, then it might not have a minimum.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_induction-3-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="example example-like" id="ch_induction-3-11"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Sets without minima.</span>
+</h2>
+<div class="para logical" id="ch_induction-3-11-2-1">
+<div class="para">Consider the following sets</div>
+<div class="displaymath process-math" id="ch_induction-3-11-2-1-1">
+\begin{align*}
+\set{2k \mid k \in \mathbb{Z} } &amp;&amp;
+\set{\frac{1}{n} \mid n \in \mathbb{N}} &amp;&amp;
+(0,1) = \set{x \in \mathbb{R} \mid 0  \lt  x  \lt  1}.
+\end{align*}
+</div>
+<div class="para">None of these sets have minimum elements; you can always find another element that is smaller.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_induction-3-11-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="ch_induction-3-11-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para" id="ch_induction-3-11-3-1">Note that this argument requires proof by contradiction and if the reader is confused by the details of this argument, we suggest that they wait until we have covered that topic and then return to this discussion. In fact, making this an example in that section is a good idea and the authors might do exactly that.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_induction-3-11-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ch_induction-3-11-3-2">
+<div class="para">Consider the set <span class="process-math">\(\set{2k \mid k\in\mathbb{Z}}\text{.}\)</span>
+</div>
+<ul class="disc" id="ch_induction-3-11-3-2-2">
+<li id="ch_induction-3-11-3-2-2-1">
+<div class="para" id="p-derived-ch_induction-3-11-3-2-2-1">Either this set has a minimum or it does not.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_induction-3-11-3-2-2-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch_induction-3-11-3-2-2-2">
+<div class="para" id="p-derived-ch_induction-3-11-3-2-2-2">If it does have a minimum, call that minimum <span class="process-math">\(\ell\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_induction-3-11-3-2-2-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch_induction-3-11-3-2-2-3">
+<div class="para" id="p-derived-ch_induction-3-11-3-2-2-3">However, the number <span class="process-math">\(\ell-2\)</span> is also in the set, and <span class="process-math">\(\ell-2 \lt \ell\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_induction-3-11-3-2-2-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch_induction-3-11-3-2-2-4">
+<div class="para" id="p-derived-ch_induction-3-11-3-2-2-4">So <span class="process-math">\(\ell\)</span> cannot be the minimum.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_induction-3-11-3-2-2-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">So the set cannot have a minimum.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_induction-3-11-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ch_induction-3-11-3-3">Similarly, if <span class="process-math">\((0,1)\)</span> has a minimum then call it <span class="process-math">\(q\text{.}\)</span> But then since <span class="process-math">\(0 \lt q \lt 1\text{,}\)</span> we know that <span class="process-math">\(0 \lt q/2 \lt q\text{.}\)</span> So <span class="process-math">\(q/2\)</span> is in the set and smaller than <span class="process-math">\(q\text{,}\)</span> so <span class="process-math">\(q\)</span> cannot be a minimum. Hence no such minimum exists. The same argument works for the set <span class="process-math">\(\set{1/n \mid n\in\mathbb{N}}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_induction-3-11-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 7.1.2.1"><a tabindex="-1" href="#ch_induction-3-11-3" title="Copy heading and permalink for Solution 7.1.2.1" aria-label="Copy heading and permalink for Solution 7.1.2.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 7.1.2: Sets without minima"><a tabindex="-1" href="#ch_induction-3-11" title="Copy heading and permalink for Example 7.1.2: Sets without minima" aria-label="Copy heading and permalink for Example 7.1.2: Sets without minima">🔗</a></div>
+</article>
+<div class="para" id="ch_induction-3-12">Now that we are armed with a formal statement of <dfn class="terminology">mathematical induction</dfn>, we should make use of it. The typical first example is the simple summation we saw in the introduction to this chapter. However (arguably) this can give the wrong idea of what induction is. To (hopefully) avoid this potential trap, let us do an example about divisibility.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_induction-3-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="proposition theorem-like" id="ch_induction-3-13"><h2 class="heading">
+<span class="type">Result</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para" id="ch_induction-3-13-1-1">For every natural number <span class="process-math">\(n\text{,}\)</span> <span class="process-math">\(3 | (4^{n}-1)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_induction-3-13-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Result 7.1.3"><a tabindex="-1" href="#ch_induction-3-13" title="Copy heading and permalink for Result 7.1.3" aria-label="Copy heading and permalink for Result 7.1.3">🔗</a></div>
+</article>
+<div class="para logical" id="ch_induction-3-14">
+<div class="para">So our statement is <span class="process-math">\(P(n)\)</span> is “<span class="process-math">\(3 | (4^{n}-1)\)</span>”. To prove this true for all naturals <span class="process-math">\(n\)</span> using induction, we need to show</div>
+<ul class="disc" id="ch_induction-3-14-4">
+<li id="ch_induction-3-14-4-1">
+<div class="para" id="p-derived-ch_induction-3-14-4-1">The statement <span class="process-math">\(P(1)\)</span> is true, and</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_induction-3-14-4-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch_induction-3-14-4-2">
+<div class="para" id="p-derived-ch_induction-3-14-4-2">The implications <span class="process-math">\(P(k) \implies P(k+1)\)</span> is true for all <span class="process-math">\(k \in \mathbb{N}\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_induction-3-14-4-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">In most cases (but definitely not all), showing that <span class="process-math">\(P(1)\)</span> is true is easy, and proving the inductive step requires work.</div>
+<ul class="disc" id="ch_induction-3-14-6">
+<li id="ch_induction-3-14-6-1">
+<div class="para" id="p-derived-ch_induction-3-14-6-1">Setting <span class="process-math">\(n=1\)</span> in our statement gives<div class="displaymath process-math" id="ch_induction-3-14-6-1-2">
+\begin{gather*}
+3|(4^1-1)
+\end{gather*}
+</div>which is true (since <span class="process-math">\(4-1=3\)</span>).</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_induction-3-14-6-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch_induction-3-14-6-2">
+<div class="para" id="p-derived-ch_induction-3-14-6-2">Now the harder part — the inductive step: We have to prove that<div class="displaymath process-math" id="ch_induction-3-14-6-2-2">
+\begin{gather*}
+( 3 | (4^k-1)) \implies (3|(4^{k+1}-1))
+\end{gather*}
+</div>for all <span class="process-math">\(k\in \mathbb{N}\text{.}\)</span> That is, the inductive step requires us to prove an implication. As we have done many times before (and will do many times in the future), we assume the hypothesis is true and work our way to the conclusion. So we start by assuming that <span class="process-math">\(3|(4^k-1)\text{,}\)</span> which means that<div class="displaymath process-math" id="ch_induction-3-14-6-2-5">
+\begin{align*}
+4^k-1 &amp;= 3 \ell &amp; \text{for some } \ell \in\mathbb{Z}
+\end{align*}
+</div>and we want to arrive at<div class="displaymath process-math" id="ch_induction-3-14-6-2-6">
+\begin{align*}
+4^{k+1}-1 &amp;= 3m &amp; \text{so that } \amp\amp 3|(4^{k+1}-1)
+\end{align*}
+</div>We need to think about how we can construct <span class="process-math">\(4^{k+1}-1\)</span> from <span class="process-math">\(4^k-1\text{.}\)</span> Multiplying by 4 is a good way to go:<div class="displaymath process-math" id="ch_induction-3-14-6-2-9">
+\begin{align*}
+4^k-1 &amp;= 3\ell\\
+4^k &amp;= 3\ell+1\\
+4^{k+1} &amp;= 12\ell +4\\
+4^{k+1}-1 &amp;= 12\ell +3 = 3(4\ell+1)
+\end{align*}
+</div>And since <span class="process-math">\(4\ell+1 \in \mathbb{Z}\)</span> we have reached the conclusion we want.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_induction-3-14-6-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_induction-3-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ch_induction-3-15">Now that we know how to prove the base case (that was easy) and we know how to prove the inductive step (not too bad), we can put things together into a proof. Remember to  tell the reader what we are doing.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_induction-3-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="ch_induction-3-16" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="ch_induction-3-16-1">
+<div class="para">We proceed by induction.</div>
+<ul class="disc" id="ch_induction-3-16-1-1">
+<li id="ch_induction-3-16-1-1-1">
+<div class="para" id="p-derived-ch_induction-3-16-1-1-1">Base case — When <span class="process-math">\(n=1\)</span> the result is true since <span class="process-math">\(3|(4-1)\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_induction-3-16-1-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch_induction-3-16-1-1-2">
+<div class="para" id="p-derived-ch_induction-3-16-1-1-2">Inductive hypothesis — Assume <span class="process-math">\(P(k)\)</span> is true. Then <span class="process-math">\(4^k-1 = 3 \ell\)</span> for some <span class="process-math">\(\ell \in \mathbb{Z}\text{.}\)</span> Then<div class="displaymath process-math" id="ch_induction-3-16-1-1-2-5">
+\begin{align*}
+4^{k+1}-1 &amp;= 4(4^k)-1\\
+&amp;= 4(4^k-1)+4-1\\
+&amp;= 4\cdot 3 \ell +3 = 3( 4\ell +1)
+\end{align*}
+</div>Thus if <span class="process-math">\(P(k)\)</span> then <span class="process-math">\(P(k+1)\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_induction-3-16-1-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">By the principle of mathematical induction the statement is true for all naturals <span class="process-math">\(n\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_induction-3-16-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 7.1.2"><a tabindex="-1" href="#ch_induction-3-16" title="Copy heading and permalink for Proof 7.1.2" aria-label="Copy heading and permalink for Proof 7.1.2">🔗</a></div>
+</article></details>
+<article class="remark remark-like" id="ch_induction-3-17"><h2 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Make structure obvious to the reader.</span>
+</h2>
+<div class="para" id="ch_induction-3-17-2">Notice that we are making the structure of the proof very clear. We start by telling reader that we are using induction. We have then labelled the two conditions “base case” and “inductive hypothesis” or “inductive step”, so that it is very clear how the proof is being constructed. We then have a little summarising sentence at the end saying “by induction it is true!” It means that a reader who is familiar with induction can readily check off each part of the induction proof against what they know about induction as they read the proof. We make it easy for them to read and verify the proof. (This is an especially good idea when someone has to mark your work, not just read it!)<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_induction-3-17-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Remark 7.1.4: Make structure obvious to the reader"><a tabindex="-1" href="#ch_induction-3-17" title="Copy heading and permalink for Remark 7.1.4: Make structure obvious to the reader" aria-label="Copy heading and permalink for Remark 7.1.4: Make structure obvious to the reader">🔗</a></div>
+</article>
+<div class="para" id="ch_induction-3-18">We can rewrite our above simple parity example with this same structure. It is good practice.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_induction-3-18" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="example example-like" id="ch_induction-3-19"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para" id="ch_induction-3-19-1-1">For all <span class="process-math">\(n \in \mathbb{N}, n^2+5n-7\)</span> is odd.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_induction-3-19-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="ch_induction-3-19-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<details id="ch_induction-3-19-2-1" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="ch_induction-3-19-2-1-1">
+<div class="para">We use induction to prove the result.</div>
+<ul class="disc" id="ch_induction-3-19-2-1-1-1">
+<li id="ch_induction-3-19-2-1-1-1-1">
+<div class="para" id="p-derived-ch_induction-3-19-2-1-1-1-1">Base case. When <span class="process-math">\(n=1\text{,}\)</span> the polynomial gives <span class="process-math">\(1+5-7 = -1\text{.}\)</span> Hence the base case is true.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_induction-3-19-2-1-1-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch_induction-3-19-2-1-1-1-2">
+<div class="para logical" id="ch_induction-3-19-2-1-1-1-2-1">
+<div class="para">Inductive step. Assume that <span class="process-math">\(k^2+5k-7\)</span> is odd, and so <span class="process-math">\(k^2+5k-7 = 2\ell+1\text{.}\)</span> Then</div>
+<div class="displaymath process-math" id="ch_induction-3-19-2-1-1-1-2-1-3">
+\begin{equation*}
+(k+1)^2 + 5(k+1)-7 = 2k+6 + (k^2+5k-7) = 2(k+3)+2\ell+1
+\end{equation*}
+</div>
+<div class="para">and hence is also odd.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_induction-3-19-2-1-1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_induction-3-19-2-1-1-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">By mathematical induction the result holds for all <span class="process-math">\(n \in \mathbb{N}\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_induction-3-19-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 7.1.5.1.1"><a tabindex="-1" href="#ch_induction-3-19-2-1" title="Copy heading and permalink for Proof 7.1.5.1.1" aria-label="Copy heading and permalink for Proof 7.1.5.1.1">🔗</a></div>
+</article></details><div class="autopermalink" aria-hidden="true" data-description="Solution 7.1.5.1"><a tabindex="-1" href="#ch_induction-3-19-2" title="Copy heading and permalink for Solution 7.1.5.1" aria-label="Copy heading and permalink for Solution 7.1.5.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 7.1.5"><a tabindex="-1" href="#ch_induction-3-19" title="Copy heading and permalink for Example 7.1.5" aria-label="Copy heading and permalink for Example 7.1.5">🔗</a></div>
+</article>
+<details id="ch_induction-3-20" class="aside aside-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Aside<span class="colon heading-divison-mark heading-divison-mark__colon">:</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Extend to all <span class="process-math">\(n \in \mathbb{Z}\)</span>.</span>
+</h2></summary>
+<aside class="aside aside-like knowl__content">
+<div class="para logical" id="ch_induction-3-20-2">
+<div class="para">If we wish to prove this same result by induction but for all integers <span class="process-math">\(n\text{,}\)</span> we could split the problem into 3. The first we just did, we could then prove it holds for <span class="process-math">\(n=0\)</span> —easy! And then for negative integers we could rewrite the result as</div>
+<div class="displaymath process-math" id="ch_induction-3-20-2-4">
+\begin{equation*}
+\forall n \in \mathbb{N}, (-n)^2+5(-n)-7 \text{ is odd}.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_induction-3-20-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</aside></details>
+<div class="para" id="ch_induction-3-21">To avoid doing the very standard summation examples for a touch longer, we’ll do an inequality. This particular example is another classic induction problem<details class="ptx-footnote" aria-live="polite" id="ch_induction-3-21-1"><summary class="ptx-footnote__number" title="Footnote 72"><sup> 72 </sup></summary>
+<div class="ptx-footnote__contents" id="ch_induction-3-21-1">Like many of the authors “jokes” it is an antique and should be handled with care.
+</div></details>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_induction-3-21" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="proposition theorem-like" id="ch_induction-3-22"><h2 class="heading">
+<span class="type">Result</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para logical" id="ch_induction-3-22-1-1">
+<div class="para">Let <span class="process-math">\(n \in \mathbb{N}\)</span> and let <span class="process-math">\(x\in\mathbb{R}\)</span> with <span class="process-math">\(x \gt -1\text{.}\)</span> Then</div>
+<div class="displaymath process-math" id="ch_induction-3-22-1-1-4">
+\begin{equation*}
+(1+x)^n \geq 1+nx.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_induction-3-22-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Result 7.1.6"><a tabindex="-1" href="#ch_induction-3-22" title="Copy heading and permalink for Result 7.1.6" aria-label="Copy heading and permalink for Result 7.1.6">🔗</a></div>
+</article>
+<div class="para logical" id="ch_induction-3-23">
+<div class="para">If we choose to use induction (and we will), then it is a good idea to clarify what the actual statement is. Rewriting things carefully, we can write</div>
+<div class="displaymath process-math" id="ch_induction-3-23-1">
+\begin{equation*}
+P(n): \text{if } (x \gt -1) \text{ then } (1+x)^n \geq (1+nx).
+\end{equation*}
+</div>
+<ul class="disc" id="ch_induction-3-23-2">
+<li id="ch_induction-3-23-2-1">
+<div class="para logical" id="ch_induction-3-23-2-1-1">
+<div class="para">First up, we verify the base case; setting <span class="process-math">\(n=1\)</span> gives</div>
+<div class="displaymath process-math" id="ch_induction-3-23-2-1-1-2">
+\begin{gather*}
+(x \gt -1) \implies (1+x)^1 \geq 1+x
+\end{gather*}
+</div>
+<div class="para">Since <span class="process-math">\((1+x)^1 = 1+x\text{,}\)</span> the conclusion is always true, so the implication is true, and the base case is true.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_induction-3-23-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_induction-3-23-2-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch_induction-3-23-2-2">
+<div class="para logical" id="ch_induction-3-23-2-2-1">
+<div class="para">Now the induction step. We assume that <span class="process-math">\(P(k)\)</span> is true. That is</div>
+<div class="displaymath process-math" id="ch_induction-3-23-2-2-1-2">
+\begin{gather*}
+(x \gt -1) \implies (1+x)^k \geq 1+kx
+\end{gather*}
+</div>
+<div class="para">is a true statement, and we then need to prove that</div>
+<div class="displaymath process-math" id="ch_induction-3-23-2-2-1-3">
+\begin{gather*}
+(x \gt -1) \implies (1+x)^{k+1} \geq 1+(k+1)x.
+\end{gather*}
+</div>
+<div class="para">To prove this second implication, we do as we have done so many times, and will do many times in the future, we assume the hypothesis is true. So we assume <span class="process-math">\((x \gt -1)\text{.}\)</span> From the first implication (and our assumption that <span class="process-math">\(x\gt -1\)</span>) we know that <span class="process-math">\((1+x)^k \geq 1+kx\text{.}\)</span> We now need to prove that <span class="process-math">\((1+x)^{k+1}\)</span> is bigger than <span class="process-math">\(1+(k+1)x\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_induction-3-23-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ch_induction-3-23-2-2-2">
+<div class="para">A good place to start is to take the inequality we know and try to make it look like the inequality we want.</div>
+<div class="displaymath process-math" id="ch_induction-3-23-2-2-2-1">
+\begin{align*}
+(1+x)^k &amp;\geq 1+kx &amp; \text{multiply by } (1+x)\\
+(1+x)^{k+1} &amp; \geq (1+kx)(1+x)\\
+&amp;= 1+(k+1)x + kx^2
+\end{align*}
+</div>
+<div class="para">Nearly there, we just need to get rid of this <span class="process-math">\(kx^2\)</span> term. We know <span class="process-math">\(x^2 \geq 0\text{,}\)</span> so <span class="process-math">\(kx^2 \geq 0\)</span> and hence</div>
+<div class="displaymath process-math" id="ch_induction-3-23-2-2-2-5">
+\begin{align*}
+(1+x)^{k+1} \amp \geq 1+(k+1)x + kx^2 \geq 1+(k+1)x
+\end{align*}
+</div>
+<div class="para">as required.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_induction-3-23-2-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ch_induction-3-23-2-2-3">But there is a problem: where have we used the assumption <span class="process-math">\(x \gt -1\text{?}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_induction-3-23-2-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ch_induction-3-23-2-2-4">When you are doing mathematics and answering problems, you should keep your eyes open for this sort of thing. If you haven’t used one of the hypotheses in your proof then there is very likely to be an error somewhere!<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_induction-3-23-2-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ch_induction-3-23-2-2-5">
+<div class="para">Now — our work above is not actually wrong, but that is more by luck than by design<details class="ptx-footnote" aria-live="polite" id="ch_induction-3-23-2-2-5-2"><summary class="ptx-footnote__number" title="Footnote 73"><sup> 73 </sup></summary>
+<div class="ptx-footnote__contents" id="ch_induction-3-23-2-2-5-2">Of course the author actually designed the example to illustrate this luck. So perhaps it is designed luck?
+</div></details>. Where we multiplied by <span class="process-math">\(1+x\)</span> we didn’t examine whether quantity is positive or negative. When we multiply an inequality by something positive (say <span class="process-math">\(+2\)</span>), then inequality keeps the same sign:</div>
+<div class="displaymath process-math" id="ch_induction-3-23-2-2-5-5">
+\begin{align*}
+2 &amp; \leq 3 &amp; \implies 4 &amp; \leq 6.
+\end{align*}
+</div>
+<div class="para">but when we multiply by something negative (say <span class="process-math">\(-2\)</span>), the sign flips:</div>
+<div class="displaymath process-math" id="ch_induction-3-23-2-2-5-7">
+\begin{align*}
+2 &amp; \leq 3 &amp; \implies (-4) &amp; \geq (-6)
+\end{align*}
+</div>
+<div class="para">Thankfully since <span class="process-math">\(x \gt -1\text{,}\)</span> we know that <span class="process-math">\(1+x \gt 0\)</span> and so we are not multiplying by a negative number. We don’t have to go back and fix our scratchwork, but we should make sure that we highlight this point when we write up the proof. We help our reader understand important subtle details by pointing them out.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_induction-3-23-2-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_induction-3-23-2-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_induction-3-23" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="ch_induction-3-24" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="ch_induction-3-24-1">
+<div class="para">We use induction.</div>
+<ul class="disc" id="ch_induction-3-24-1-1">
+<li id="ch_induction-3-24-1-1-1">
+<div class="para" id="p-derived-ch_induction-3-24-1-1-1">Based case: when <span class="process-math">\(n=1\text{,}\)</span> the statement is true since <span class="process-math">\((1+x)^1 = 1+1\cdot x\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_induction-3-24-1-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch_induction-3-24-1-1-2">
+<div class="para" id="p-derived-ch_induction-3-24-1-1-2">Induction step. We assume that <span class="process-math">\(x  \gt -1\)</span>  and that <span class="process-math">\((1+x)^k \geq 1+kx\text{.}\)</span> Since <span class="process-math">\(x \gt -1\text{,}\)</span> we know that <span class="process-math">\(1+x \gt 0\)</span> and so multiplying through by <span class="process-math">\(1+x\)</span> doesn’t change the sign of the inequality:<div class="displaymath process-math" id="ch_induction-3-24-1-1-2-6">
+\begin{align*}
+(1+x)^k(1+x) &amp;\geq (1+kx)(1+x) \amp \text{factor left and expand right}\\
+(1+x)^{k+1} &amp; \geq 1+(k+1)x + kx^2 &amp;\text{since }x^2\geq 0\\
+&amp;\geq 1+(k+1)x
+\end{align*}
+</div>as required.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_induction-3-24-1-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">So by induction the inequality is true for all <span class="process-math">\(n\in\mathbb{N}\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_induction-3-24-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 7.1.3"><a tabindex="-1" href="#ch_induction-3-24" title="Copy heading and permalink for Proof 7.1.3" aria-label="Copy heading and permalink for Proof 7.1.3">🔗</a></div>
+</article></details>
+<div class="para" id="ch_induction-3-25">Now we are ready to do the very standard summation example. But first a warning<details class="ptx-footnote" aria-live="polite" id="ch_induction-3-25-1"><summary class="ptx-footnote__number" title="Footnote 74"><sup> 74 </sup></summary>
+<div class="ptx-footnote__contents" id="ch_induction-3-25-1">A nag?
+</div></details>:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_induction-3-25" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="warning remark-like" id="ch_induction-3-26"><h2 class="heading">
+<span class="type">Warning</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Induction is not summation.</span>
+</h2>
+<div class="para logical" id="ch_induction-3-26-2">
+<div class="para">Induction requires us to prove both that</div>
+<ul class="disc" id="ch_induction-3-26-2-1">
+<li id="ch_induction-3-26-2-1-1">
+<div class="para" id="p-derived-ch_induction-3-26-2-1-1">the base case, <span class="process-math">\(P(1)\text{,}\)</span> is true, and</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_induction-3-26-2-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch_induction-3-26-2-1-2">
+<div class="para" id="p-derived-ch_induction-3-26-2-1-2">the inductive hypothesis, <span class="process-math">\(P(k)\implies P(k+1)\text{,}\)</span> is true for all <span class="process-math">\(k\in\mathbb{N}\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_induction-3-26-2-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">Mathematical induction is not simply adding the next term to both sides of the equation.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_induction-3-26-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Warning 7.1.7: Induction is not summation"><a tabindex="-1" href="#ch_induction-3-26" title="Copy heading and permalink for Warning 7.1.7: Induction is not summation" aria-label="Copy heading and permalink for Warning 7.1.7: Induction is not summation">🔗</a></div>
+</article>
+<div class="para" id="ch_induction-3-27">With that out of the way:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_induction-3-27" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="proposition theorem-like" id="prop-sum-of-int"><h2 class="heading">
+<span class="type">Result</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para" id="prop-sum-of-int-1-1">For every natural number <span class="process-math">\(n\text{,}\)</span> <span class="process-math">\(\sum_{k=1}^n k = \frac{n(n+1)}{2}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#prop-sum-of-int-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Result 7.1.8"><a tabindex="-1" href="#prop-sum-of-int" title="Copy heading and permalink for Result 7.1.8" aria-label="Copy heading and permalink for Result 7.1.8">🔗</a></div>
+</article>
+<div class="para logical" id="ch_induction-3-29">
+<ul class="disc" id="ch_induction-3-29-1">
+<li id="ch_induction-3-29-1-1">
+<div class="para" id="p-derived-ch_induction-3-29-1-1">The base case is very easy (as it often is). When <span class="process-math">\(n=1\)</span> we have:<div class="displaymath process-math" id="ch_induction-3-29-1-1-2">
+\begin{align*}
+\sum_{k=1}^n k &amp;= \frac{1\cdot 2}{2} &amp; \text{which is}\\
+1 &amp;= 1 \checkmark.
+\end{align*}
+</div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_induction-3-29-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch_induction-3-29-1-2">
+<div class="para" id="p-derived-ch_induction-3-29-1-2">As is typical, the inductive step needs a bit more work. We need to prove that<div class="displaymath process-math" id="ch_induction-3-29-1-2-1">
+\begin{align*}
+\left( 1 + 2 + \cdots + k = \frac{k(k+1)}{2} \right)
+&amp; \implies
+\left( 1 + 2 + \cdots + k + k+1 = \frac{(k+1)(k+2)}{2} \right)
+\end{align*}
+</div>Like most proofs of implications, we start by assuming the hypothesis is true and try to work our way to the conclusion. In this case, it is pretty clear that we can get from the first statement to the second just by adding <span class="process-math">\((k+1)\)</span> to both sides. Note that “adding <span class="process-math">\(k+1\)</span> to both sides” is <em class="alert">not</em> the induction step. The induction step requires us to prove that <span class="process-math">\(P(k) \implies P(k+1)\text{,}\)</span> and we prove that <em class="alert">in this particular example</em> by adding <span class="process-math">\(k+1\)</span> to both sides. This is a very common error (and more than a little frustrating to mark<details class="ptx-footnote" aria-live="polite" id="ch_induction-3-29-1-2-8"><summary class="ptx-footnote__number" title="Footnote 75"><sup> 75 </sup></summary>
+<div class="ptx-footnote__contents" id="ch_induction-3-29-1-2-8">Be nice to your marker?
+</div></details>).</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_induction-3-29-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">We are now ready to write things up nicely.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_induction-3-29" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="ch_induction-3-30" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="ch_induction-3-30-1">
+<div class="para">We proceed by induction.</div>
+<ul class="disc" id="ch_induction-3-30-1-1">
+<li id="ch_induction-3-30-1-1-1">
+<div class="para" id="p-derived-ch_induction-3-30-1-1-1">Base case — When <span class="process-math">\(n=1\)</span> the statement is true since <span class="process-math">\(1 = \frac{1 \cdot 2}{2}\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_induction-3-30-1-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch_induction-3-30-1-1-2">
+<div class="para" id="p-derived-ch_induction-3-30-1-1-2">Inductive hypothesis — Assume the statement is true for <span class="process-math">\(n=k\text{,}\)</span> that is<div class="displaymath process-math" id="ch_induction-3-30-1-1-2-3">
+\begin{align*}
+1 + 2 + \cdots + k &amp;= \frac{k(k+1)}{2}
+\end{align*}
+</div>Adding <span class="process-math">\(k+1\)</span> to both sides gives<div class="displaymath process-math" id="ch_induction-3-30-1-1-2-5">
+\begin{align*}
+1 + 2 + \cdots + k +(k+1) &amp;= \frac{k(k+1)}{2} + (k+1)\\
+&amp;= \frac{1}{2} \left(k^2+k + 2k +2 \right)\\
+&amp; = \frac{1}{2} (k+1)(k+2).
+\end{align*}
+</div>Hence if the statement is true for <span class="process-math">\(n=k\)</span> then it must be true for <span class="process-math">\(n=k+1\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_induction-3-30-1-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">By the principle of mathematical induction it is true for all natural numbers <span class="process-math">\(n\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_induction-3-30-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 7.1.4"><a tabindex="-1" href="#ch_induction-3-30" title="Copy heading and permalink for Proof 7.1.4" aria-label="Copy heading and permalink for Proof 7.1.4">🔗</a></div>
+</article></details>
+<div class="para" id="ch_induction-3-31">It is a good idea to see a few false induction proofs. Each of these examples contains a flaw.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_induction-3-31" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="example example-like" id="ch_induction-3-32"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Polynomial primes.</span>
+</h2>
+<div class="para" id="ch_induction-3-32-2-1">For all <span class="process-math">\(n \in \mathbb{N}, n^2-n+41\)</span> is prime.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_induction-3-32-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="ch_induction-3-32-2-2">We call the following argument a “misproof” since it looks like a proof, but is incorrect. In the solution below we explain why it is wrong.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_induction-3-32-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<details id="ch_induction-3-32-2-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Misproof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="ch_induction-3-32-2-3-1">
+<div class="para">We check the first values of <span class="process-math">\(n\text{:}\)</span>
+</div>
+<ul class="disc" id="ch_induction-3-32-2-3-1-2">
+<li id="ch_induction-3-32-2-3-1-2-1">
+<div class="para" id="p-derived-ch_induction-3-32-2-3-1-2-1">
+<span class="process-math">\(n=1\text{:}\)</span> <span class="process-math">\(1-1+41 = 41\)</span> which is prime.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_induction-3-32-2-3-1-2-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch_induction-3-32-2-3-1-2-2">
+<div class="para" id="p-derived-ch_induction-3-32-2-3-1-2-2">
+<span class="process-math">\(n=2\text{:}\)</span> <span class="process-math">\(4-2+41 = 43\)</span> which is prime.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_induction-3-32-2-3-1-2-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch_induction-3-32-2-3-1-2-3">
+<div class="para" id="p-derived-ch_induction-3-32-2-3-1-2-3">
+<span class="process-math">\(n=3\text{:}\)</span> <span class="process-math">\(9-3+41 = 47\)</span> which is prime.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_induction-3-32-2-3-1-2-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch_induction-3-32-2-3-1-2-4">
+<div class="para" id="p-derived-ch_induction-3-32-2-3-1-2-4">
+<span class="process-math">\(n=4\text{:}\)</span> <span class="process-math">\(16-4+41 = 53\)</span> which is prime.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_induction-3-32-2-3-1-2-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch_induction-3-32-2-3-1-2-5">
+<div class="para" id="p-derived-ch_induction-3-32-2-3-1-2-5">
+<span class="process-math">\(n=5\text{:}\)</span> <span class="process-math">\(25-5+41 = 61\)</span> which is prime.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_induction-3-32-2-3-1-2-5" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">Since it is true for the first few values of <span class="process-math">\(n\text{,}\)</span> it is true for all <span class="process-math">\(n\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_induction-3-32-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Misproof 1"><a tabindex="-1" href="#ch_induction-3-32-2-3" title="Copy heading and permalink for Misproof 1" aria-label="Copy heading and permalink for Misproof 1">🔗</a></div>
+</article></details><div class="solutions">
+<details id="ch_induction-3-32-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para" id="ch_induction-3-32-3-1">This is a very wrong proof. <em class="alert">Examples are not proof.</em><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_induction-3-32-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ch_induction-3-32-3-2">Surprisingly this polynomial does give you prime numbers for <span class="process-math">\(n=1,\cdots,40\text{.}\)</span> This was first noticed by Euler<details class="ptx-footnote" aria-live="polite" id="ch_induction-3-32-3-2-2"><summary class="ptx-footnote__number" title="Footnote 76"><sup> 76 </sup></summary>
+<div class="ptx-footnote__contents" id="ch_induction-3-32-3-2-2">The interested reader should search-engine their way to “Euler’s lucky numbers”. There is actually some quite deep number theory lurking in side that polynomial.
+</div></details>.  However when <span class="process-math">\(n=41\)</span> it is clearly not prime, since it gives <span class="process-math">\(41^2-41+41 = 41^2\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_induction-3-32-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 7.1.9.1"><a tabindex="-1" href="#ch_induction-3-32-3" title="Copy heading and permalink for Solution 7.1.9.1" aria-label="Copy heading and permalink for Solution 7.1.9.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 7.1.9: Polynomial primes"><a tabindex="-1" href="#ch_induction-3-32" title="Copy heading and permalink for Example 7.1.9: Polynomial primes" aria-label="Copy heading and permalink for Example 7.1.9: Polynomial primes">🔗</a></div>
+</article>
+<article class="example example-like" id="ch_induction-3-33"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Everything you know about 2 is wrong?</span>
+</h2>
+<div class="para" id="ch_induction-3-33-2-1">For all <span class="process-math">\(n \in \mathbb{N}\text{,}\)</span> <span class="process-math">\(n+1 \lt n\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_induction-3-33-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="ch_induction-3-33-2-2">We give the flawed proof and then explain what is wrong with it in the solutions below.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_induction-3-33-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<details id="ch_induction-3-33-2-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Misproof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="ch_induction-3-33-2-3-1">
+<div class="para">We prove this by induction. So assume that the statement is true for <span class="process-math">\(n=k\text{.}\)</span> That is</div>
+<div class="displaymath process-math" id="ch_induction-3-33-2-3-1-2">
+\begin{equation*}
+k+1 \lt k.
+\end{equation*}
+</div>
+<div class="para">Then we can write, by adding <span class="process-math">\(1\)</span> to both sides of the above inequality</div>
+<div class="displaymath process-math" id="ch_induction-3-33-2-3-1-4">
+\begin{equation*}
+(k+2) \lt (k+1)
+\end{equation*}
+</div>
+<div class="para">And thus the statement is true for <span class="process-math">\(n=k+1\text{.}\)</span> By mathematical induction, the statement is true for all <span class="process-math">\(n \in \mathbb{N}\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_induction-3-33-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Misproof 1"><a tabindex="-1" href="#ch_induction-3-33-2-3" title="Copy heading and permalink for Misproof 1" aria-label="Copy heading and permalink for Misproof 1">🔗</a></div>
+</article></details><div class="solutions">
+<details id="ch_induction-3-33-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="ch_induction-3-33-3-1">
+<div class="para">This proof of the <em class="emphasis">inductive step</em> is perfectly correct. We have correctly shown that</div>
+<div class="displaymath process-math" id="ch_induction-3-33-3-1-2">
+\begin{equation*}
+(k+1 \lt k) \implies (k+2 \lt k+1)
+\end{equation*}
+</div>
+<div class="para">However this is a vacuous statement since the hypothesis is never true. This is the flaw in our proof — we did not check the base-case. When <span class="process-math">\(n=1\)</span> the statement is false.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_induction-3-33-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ch_induction-3-33-3-2">Since the base case fails, we cannot use mathematical induction.  Both the base case and the inductive step must be true for an induction proof to work.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_induction-3-33-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 7.1.10.1"><a tabindex="-1" href="#ch_induction-3-33-3" title="Copy heading and permalink for Solution 7.1.10.1" aria-label="Copy heading and permalink for Solution 7.1.10.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 7.1.10: Everything you know about 2 is wrong?"><a tabindex="-1" href="#ch_induction-3-33" title="Copy heading and permalink for Example 7.1.10: Everything you know about 2 is wrong?" aria-label="Copy heading and permalink for Example 7.1.10: Everything you know about 2 is wrong?">🔗</a></div>
+</article>
+<article class="example example-like" id="ch_induction-3-34"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Pólya’s colourless horses.</span>
+</h2>
+<div class="para" id="ch_induction-3-34-2-1">This is George Pólya’s proof that “All horses have the same colour”.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_induction-3-34-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="ch_induction-3-34-2-2">Again, we’ll first give the flawed proof, and then show you where it goes wrong.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_induction-3-34-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<details id="ch_induction-3-34-2-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Misproof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="ch_induction-3-34-2-3-1">
+<div class="para">We proceed by induction.</div>
+<ul class="disc" id="ch_induction-3-34-2-3-1-1">
+<li id="ch_induction-3-34-2-3-1-1-1">
+<div class="para" id="p-derived-ch_induction-3-34-2-3-1-1-1">Base case: When there is only 1 horse, it has the same colour as itself. So the statement is true when there is exactly 1 horse.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_induction-3-34-2-3-1-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch_induction-3-34-2-3-1-1-2">
+<div class="para" id="ch_induction-3-34-2-3-1-1-2-1">Inductive step: We assume the statement is true when there are <span class="process-math">\(n=k\)</span> horses. Now consider a set of <span class="process-math">\(n=k+1\)</span> horses. Exclude one of those horses from the set to obtain a set of <span class="process-math">\(k\)</span> horses. By assumption all those horses have the same colour. Put that excluded horse back into the set and remove another. Now the set again has <span class="process-math">\(k\)</span> horses and so they all have the same colour. This means that all the <span class="process-math">\(k+1\)</span> horses (including the two we temporarily removed) must have the same colour.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_induction-3-34-2-3-1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_induction-3-34-2-3-1-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">By induction the statement is true for all <span class="process-math">\(n \in \mathbb{N}\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_induction-3-34-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Misproof 1"><a tabindex="-1" href="#ch_induction-3-34-2-3" title="Copy heading and permalink for Misproof 1" aria-label="Copy heading and permalink for Misproof 1">🔗</a></div>
+</article></details><div class="solutions">
+<details id="ch_induction-3-34-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para" id="ch_induction-3-34-3-1">So what is wrong here? There is a subtle error in the inductive step. Remember that the inductive step has to be true for all <span class="process-math">\(k \in \mathbb{N}\text{,}\)</span> however it contains the tacit assumption that <span class="process-math">\(k\)</span> is not too small. To see why, step through the argument carefully when <span class="process-math">\(k=1\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_induction-3-34-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ch_induction-3-34-3-2">Assume that the statement is true when <span class="process-math">\(n=k=1\text{.}\)</span> Then consider a set of <span class="process-math">\(n=k+1 = 2\)</span> horses: call them Alice and Bob<details class="ptx-footnote" aria-live="polite" id="ch_induction-3-34-3-2-3"><summary class="ptx-footnote__number" title="Footnote 77"><sup> 77 </sup></summary>
+<div class="ptx-footnote__contents" id="ch_induction-3-34-3-2-3">Very traditional names for horses with side-interests in cryptography.
+</div></details>. Now we remove one horse (Alice), and then every horse remaining in the set (which is just Bob) has the same colour. Now we put Alice back and take Bob out. So Alice has the same colour as every horse in the set — which is just Alice. At no point do we ever compare the colour of Alice or Bob with a third horse<details class="ptx-footnote" aria-live="polite" id="ch_induction-3-34-3-2-5"><summary class="ptx-footnote__number" title="Footnote 78"><sup> 78 </sup></summary>
+<div class="ptx-footnote__contents" id="ch_induction-3-34-3-2-5">A stalking horse? A dark horse?
+</div></details>. Consequently we cannot infer any relationship between the colours of equine  Alice or Bob.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_induction-3-34-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 7.1.11.1"><a tabindex="-1" href="#ch_induction-3-34-3" title="Copy heading and permalink for Solution 7.1.11.1" aria-label="Copy heading and permalink for Solution 7.1.11.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 7.1.11: Pólya’s colourless horses"><a tabindex="-1" href="#ch_induction-3-34" title="Copy heading and permalink for Example 7.1.11: Pólya’s colourless horses" aria-label="Copy heading and permalink for Example 7.1.11: Pólya’s colourless horses">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Section 7.1: Induction"><a tabindex="-1" href="#ch_induction-3" title="Copy heading and permalink for Section 7.1: Induction" aria-label="Copy heading and permalink for Section 7.1: Induction">🔗</a></div>
+</section>
+</div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="ch_induction-2.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch_induction-4.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+<!--Start: Google Global Site Tag code--><!--*** DO NOT COPY ANOTHER PROJECT'S MAGIC NUMBERS/ID ***--><!--***           GET YOUR OWN FROM GOOGLE             ***-->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-FL66FX9988"></script><script>  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-FL66FX9988');
+</script><!--End: Google Global Site Tag code-->
+</body>
+</html>

@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Equivalence relations and equivalence classes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
+startMathJax({
+hasWebworkReps: false,
+hasSage: false,
+isReact: false,
+htmlPresentation: false,
+lang: "en-US",
+});
+</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta name="twitter:title" content="PLP">
+<meta property="og:title" content="PLP">
+<meta property="book:title" content="PLP">
+<meta name="twitter:description" content="An introduction to mathematical proof">
+<meta property="og:description" content="An introduction to mathematical proof">
+<meta name="twitter:card" content="summary">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.48"></script><script src="_static/pretext/js/dist/pretext-read-aloud.js?v=2.48"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.2.4';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.40bd1420d3277749.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.b388362b5f43738a.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.8086b62682b271d1.css">
+<script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead" role="banner"><div class="ptx-banner"><div class="title-container">
+<div class="heading ptx-banner-heading"><a href="plp.html"><span class="title">PLP</span> <span class="subtitle">An introduction to mathematical proof</span></a></div>
+<p class="byline">Seçkin Demirbaş, Andrew Rechnitzer</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button id="ptx-toc-toggle" type="button" aria-controls="ptx-sidebar" class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="ptx-search-box">
+<div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search Book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog"><div class="ptx-search-dialog-controls">
+<input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close" id="ptx-search-close" class="ptx-search-close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div id="ptx-search-status" class="ptx-search-status" aria-live="polite" aria-atomic="true"></div>
+<h2 class="heading ptx-search-results-heading">Search Results: </h2>
+<div id="ptx-search-empty" class="ptx-search-empty"><span>No results.</span></div>
+<ol id="ptx-search-results" class="ptx-search-results"></ol></dialog>
+</div>
+<span class="nav-other-controls"><button id="ptx-read-aloud-button" class="ptx-read-aloud-button button" title="Read aloud" aria-expanded="false"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf1bc;</span><span class="name">Read aloud</span></button><div id="ptx-read-aloud-player" class="ptx-read-aloud-player" hidden="hidden" role="group" aria-label="Read aloud">
+<button id="ptx-read-aloud-prev" class="button" title="Previous sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe045;</span></button><button id="ptx-read-aloud-toggle" class="ptx-read-aloud-toggle button" title="Play"><span class="ptx-read-aloud-icon-play"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></span><span class="ptx-read-aloud-icon-pause"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe034;</span></span></button><button id="ptx-read-aloud-next" class="button" title="Next sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe044;</span></button><a id="ptx-read-aloud-continue" class="ptx-read-aloud-continue button" hidden="hidden">Continue<span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></a><button id="ptx-read-aloud-settings-button" class="ptx-read-aloud-settings-button button" title="Reading settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe429;</span></button>
+</div>
+<dialog class="ptx-dialog ptx-read-aloud-settings-popup" id="ptx-read-aloud-settings-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Read aloud settings</h2>
+<button class="ptx-read-aloud-settings-close-button button" id="ptx-read-aloud-settings-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label for="ptx-read-aloud-voice"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe91f;</span><span>Voice</span></label><select id="ptx-read-aloud-voice"></select><label class="ptx-readability-slider-label" for="ptx-read-aloud-rate"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe9e4;</span><span>Reading speed</span><output id="ptx-read-aloud-rate-value" for="ptx-read-aloud-rate">1×</output></label><input type="range" id="ptx-read-aloud-rate" min="0.5" max="2" step="0.1" value="1"><label for="ptx-read-aloud-asides"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d7;</span><span>Collapsed content</span></label><select id="ptx-read-aloud-asides"><option value="skip">Announce, do not read</option>
+<option value="read">Read automatically</option></select><label for="ptx-read-aloud-autoscroll"><input type="checkbox" id="ptx-read-aloud-autoscroll" checked><span>Follow along (auto-scroll)</span></label><label for="ptx-read-aloud-autocontinue"><input type="checkbox" id="ptx-read-aloud-autocontinue"><span>Continue to the next page automatically</span></label>
+</div></dialog><button id="ptx-readability-options-button" class="ptx-readability-options-button button" title="Readability settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf6f1;</span><span class="name">Readability settings</span></button><dialog class="ptx-dialog ptx-readability-options-popup" id="ptx-readability-options-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Readability settings</h2>
+<button class="ptx-readability-options-close-button button" id="ptx-readability-options-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-line-height"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe240;</span><span>Line height</span><output id="ptx-readability-line-height-value" for="ptx-readability-line-height">1.35</output></label><input type="range" id="ptx-readability-line-height" min="1.10" max="3" step="0.05" value="1.35">
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-font-size"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe245;</span><span>Content font size</span><output id="ptx-readability-font-size-value" for="ptx-readability-font-size">100%</output></label><input type="range" id="ptx-readability-font-size" min="0.8" max="1.5" step="0.05" value="1">
+</div>
+<fieldset class="ptx-readability-options-group ptx-readability-options-group-theme">
+<legend>Theme</legend>
+<label for="ptx-readability-theme-system"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-system" value="system"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe1ab;</span><span>System</span></label><label for="ptx-readability-theme-light"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-light" value="light"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe518;</span><span>Light</span></label><label for="ptx-readability-theme-dark"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-dark" value="dark"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span>Dark</span></label>
+</fieldset>
+<fieldset class="ptx-readability-options-group">
+<legend>Assistive technologies</legend>
+<label for="ptx-readability-accessible-permalinks"><input type="checkbox" id="ptx-readability-accessible-permalinks"><span>🔗</span><span>Expose permalinks</span></label>
+</fieldset>
+<div class="ptx-readability-options-group"><button type="button" class="ptx-readability-reset-button button" id="ptx-readability-reset-button"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf053;</span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="sec_prop_rel.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch_relations.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec_congruence_revisited.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{cancel}\require{upgreek} \newcommand{\ds}{\displaystyle}
+ \renewcommand{\textcolor}[2]{{\color{#1}{#2}}}
+ 
+ \newcommand{\es}{ {\varnothing}}
+ \newcommand{\st}{ \;\mathrm{s.t.}\; }
+ \newcommand{\so}{ \;\mid\; }
+ \newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+ \newcommand{\set}[1]{ \left\{#1\right\} }
+ 
+ \renewcommand{\neg}{\sim}
+
+ \newcommand{\rel}[1][R]{\;\mathcal{#1}\;}
+ \newcommand{\nrel}[1][R]{\;\cancel{\mathcal{#1}}\;}
+
+ \newcommand{\dee}[1]{\mathrm{d}#1}
+ \newcommand{\diff}[2]{\dfrac{\mathrm{d}#1}{\mathrm{d}#2}}
+ 
+ \renewcommand{\mod}[1]{\ (\mathrm{mod}\ #1)}
+ \newcommand{\lcm}{\mathrm{lcm}}
+ 
+ \let\oldepsilon\epsilon
+ 
+ \renewcommand{\epsilon}{\varepsilon}
+ \newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" role="complementary" class="ptx-sidebar"><nav id="ptx-toc" tabindex="-1" aria-label="Contents" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul id="ptx-toc-group-frontmatter" class="structural toc-item-list">
+<li class="toc-item toc-dedication"><div class="toc-title-box"><a href="frontmatter-3.html" class="internal"><span class="title">Dedication</span></a></div></li>
+<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="frontmatter-5.html" class="internal"><span class="title">Preface</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="plp-4.html" class="internal"><span class="codenumber">1</span> <span class="title">Sets</span></a></div>
+<ul id="ptx-toc-group-plp-4" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="plp-4-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="plp-4-3.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Not so formal definition</span></a></div>
+<ul id="ptx-toc-group-plp-4-3" class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="plp-4-3.html#plp-4-3-3" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Who is this reader you keep on mentioning?</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-describing.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Describing a set</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-4-5.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Onward</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="plp-4-6.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-logic.html" class="internal"><span class="codenumber">2</span> <span class="title">A little logic</span></a></div>
+<ul id="ptx-toc-group-ch-logic" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-logic-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-logic-3.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Statements and open sentences</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-logic-4.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Negation</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-logic-5.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Or and And</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-implication.html" class="internal"><span class="codenumber">2.4</span> <span class="title">The implication</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-logic-7.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Modus ponens and chaining implications</span></a></div>
+<ul id="ptx-toc-group-ch-logic-7" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-logic-7.html#ch-logic-7-2" class="internal"><span class="codenumber">2.5.1</span> <span class="title">Modus ponens</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-logic-7.html#ch-logic-7-3" class="internal"><span class="codenumber">2.5.2</span> <span class="title">Affirming the consequent and denying the antecedent</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-logic-7.html#ch-logic-7-4" class="internal"><span class="codenumber">2.5.3</span> <span class="title">Chaining implications together</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-CCB.html" class="internal"><span class="codenumber">2.6</span> <span class="title">The converse, contrapositive and biconditional</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-logic-9.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-direct.html" class="internal"><span class="codenumber">3</span> <span class="title">Direct proofs</span></a></div>
+<ul id="ptx-toc-group-ch-direct" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-direct-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-direct-3.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Trivialities and vacuousness</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-direct-4.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Direct proofs</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-direct-5.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Proofs of inequalities</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-direct-6.html" class="internal"><span class="codenumber">3.4</span> <span class="title">A quick visit to disproofs</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-direct-7.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="plp-7.html" class="internal"><span class="codenumber">4</span> <span class="title">More logic</span></a></div>
+<ul id="ptx-toc-group-plp-7" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="plp-7-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-7-3.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Tautologies and contradictions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-7-4.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Logical equivalence</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="plp-7-5.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-moreproof.html" class="internal"><span class="codenumber">5</span> <span class="title">More proofs</span></a></div>
+<ul id="ptx-toc-group-ch-moreproof" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-moreproof-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-moreproof-3.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Contrapositive</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-moreproof-4.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Proofs with cases</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-congruence.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Congruence modulo <span class="process-math">\(n\)</span></span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-abs-triangle.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Absolute values and the triangle inequality</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-moreproof-7.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-quantifiers.html" class="internal"><span class="codenumber">6</span> <span class="title">Quantifiers</span></a></div>
+<ul id="ptx-toc-group-ch-quantifiers" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-quantifiers-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-quantifiers-3.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Quantified statements</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-quantifiers-4.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Negation of quantifiers</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-quantifiers-5.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Nested quantifiers</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_limits.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Quantifiers and rigorous limits</span></a></div>
+<ul id="ptx-toc-group-sec_limits" class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec_limits.html#sec_limits-3" class="internal"><span class="codenumber">6.4.1</span> <span class="title">Convergence of sequences</span></a></div>
+<ul id="ptx-toc-group-sec_limits-3" class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec_limits.html#sec_limits-3-3" class="internal"><span class="codenumber">6.4.1.1</span> <span class="title">Quantifying towards a definition</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec_limits.html#sec_limits-3-4" class="internal"><span class="codenumber">6.4.1.2</span> <span class="title">Some examples</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_limits.html#sec_limits-4" class="internal"><span class="codenumber">6.4.2</span> <span class="title">The limit of a function</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-quantifiers-7.html" class="internal"><span class="codenumber">6.5</span> <span class="title">(Optional) Properties of limits</span></a></div>
+<ul id="ptx-toc-group-ch-quantifiers-7" class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimseq" class="internal"><span class="codenumber">6.5.1</span> <span class="title">(Optional) Some properties of limits of sequences</span></a></div>
+<ul id="ptx-toc-group-subsec-proplimseq" class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimseq-3" class="internal"><span class="codenumber">6.5.1.1</span> <span class="title">Uniqueness of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimseq-4" class="internal"><span class="codenumber">6.5.1.2</span> <span class="title">Linearity of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimseq-5" class="internal"><span class="codenumber">6.5.1.3</span> <span class="title">Product of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimseq-6" class="internal"><span class="codenumber">6.5.1.4</span> <span class="title">Ratio of limits</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimfunc" class="internal"><span class="codenumber">6.5.2</span> <span class="title">(Optional) Some properties of limits of functions</span></a></div>
+<ul id="ptx-toc-group-subsec-proplimfunc" class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimfunc-3" class="internal"><span class="codenumber">6.5.2.1</span> <span class="title">Uniqueness of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimfunc-4" class="internal"><span class="codenumber">6.5.2.2</span> <span class="title">Linearity of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimfunc-5" class="internal"><span class="codenumber">6.5.2.3</span> <span class="title">Product of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimfunc-6" class="internal"><span class="codenumber">6.5.2.4</span> <span class="title">Ratio of limits</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-quantifiers-8.html" class="internal"><span class="codenumber">6.6</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_induction.html" class="internal"><span class="codenumber">7</span> <span class="title">Induction</span></a></div>
+<ul id="ptx-toc-group-ch_induction" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch_induction-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch_induction-3.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Induction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch_induction-4.html" class="internal"><span class="codenumber">7.2</span> <span class="title">More general inductions</span></a></div>
+<ul id="ptx-toc-group-ch_induction-4" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch_induction-4.html#subsec-extendedinduction" class="internal"><span class="codenumber">7.2.1</span> <span class="title">A little more general</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch_induction-4.html#subsec-stronginduction" class="internal"><span class="codenumber">7.2.2</span> <span class="title">More general and yet equivalent</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch_induction-5.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="plp-11.html" class="internal"><span class="codenumber">8</span> <span class="title">Return to sets</span></a></div>
+<ul id="ptx-toc-group-plp-11" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="plp-11-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-11-3.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Subsets</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-11-4.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Set operations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-11-5.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Cartesian products of sets</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-11-6.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Some set-flavoured results</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-11-7.html" class="internal"><span class="codenumber">8.5</span> <span class="title">Indexed sets</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="plp-11-8.html" class="internal"><span class="codenumber">8.6</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch_relations.html" class="internal"><span class="codenumber">9</span> <span class="title">Relations</span></a></div>
+<ul class="structural toc-item-list contains-active" id="ptx-toc-group-ch_relations">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch_relations-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch_relations-3.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Relations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_prop_rel.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Properties of relations</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="ch_relations-5.html" class="internal"><span class="codenumber">9.3</span> <span class="title">Equivalence relations &amp; classes</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_congruence_revisited.html" class="internal"><span class="codenumber">9.4</span> <span class="title">Congruence revisited</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-euclid.html" class="internal"><span class="codenumber">9.5</span> <span class="title">Greatest divisors, Bézout and the Euclidean algorithm</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-unique-fact.html" class="internal"><span class="codenumber">9.6</span> <span class="title">Uniqueness of prime factorisation</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch_relations-9.html" class="internal"><span class="codenumber">9.7</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-functions.html" class="internal"><span class="codenumber">10</span> <span class="title">Functions</span></a></div>
+<ul id="ptx-toc-group-ch-functions" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-functions-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-functions-3.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-functions-4.html" class="internal"><span class="codenumber">10.2</span> <span class="title">A more abstract definition</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-functions-5.html" class="internal"><span class="codenumber">10.3</span> <span class="title">Images and preimages of sets</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-functions-6.html" class="internal"><span class="codenumber">10.4</span> <span class="title">Injective and surjective functions</span></a></div>
+<ul id="ptx-toc-group-ch-functions-6" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-functions-6.html#ch-functions-6-3" class="internal"><span class="codenumber">10.4.1</span> <span class="title">Injections and surjections</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-functions-6.html#ch-functions-6-4" class="internal"><span class="codenumber">10.4.2</span> <span class="title">Bijective functions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-functions-7.html" class="internal"><span class="codenumber">10.5</span> <span class="title">Composition of functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_inv_func.html" class="internal"><span class="codenumber">10.6</span> <span class="title">Inverse functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-functions-9.html" class="internal"><span class="codenumber">10.7</span> <span class="title">(Optional) The axiom of choice</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-functions-10.html" class="internal"><span class="codenumber">10.8</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-contradictions.html" class="internal"><span class="codenumber">11</span> <span class="title">Proof by contradiction</span></a></div>
+<ul id="ptx-toc-group-ch-contradictions" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-contradictions-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-contradictions-3.html" class="internal"><span class="codenumber">11.1</span> <span class="title">Structure of a proof by contradiction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-contradictions-4.html" class="internal"><span class="codenumber">11.2</span> <span class="title">Some examples</span></a></div>
+<ul id="ptx-toc-group-ch-contradictions-4" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-contradictions-4.html#ch-contradictions-4-3" class="internal"><span class="codenumber">11.2.1</span> <span class="title">The irrationality of <span class="process-math">\(\sqrt{2}\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-contradictions-4.html#ssec_inf_primes" class="internal"><span class="codenumber">11.2.2</span> <span class="title">The infinitude of primes</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-contradictions-5.html" class="internal"><span class="codenumber">11.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap_cardinality.html" class="internal"><span class="codenumber">12</span> <span class="title">Cardinality</span></a></div>
+<ul id="ptx-toc-group-chap_cardinality" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="chap_cardinality-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="chap_cardinality-3.html" class="internal"><span class="codenumber">12.1</span> <span class="title">Finite sets</span></a></div>
+<ul id="ptx-toc-group-chap_cardinality-3" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-3.html#chap_cardinality-3-3" class="internal"><span class="codenumber">12.1.1</span> <span class="title">Equinumerous sets, bijections and pigeons</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-3.html#chap_cardinality-3-4" class="internal"><span class="codenumber">12.1.2</span> <span class="title">Comparing with functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-3.html#chap_cardinality-3-5" class="internal"><span class="codenumber">12.1.3</span> <span class="title">Infinite sets are strange.</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap_cardinality-4.html" class="internal"><span class="codenumber">12.2</span> <span class="title">Denumerable sets</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_uncount.html" class="internal"><span class="codenumber">12.3</span> <span class="title">Uncountable sets</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="chap_cardinality-6.html" class="internal"><span class="codenumber">12.4</span> <span class="title">Comparing cardinalities</span></a></div>
+<ul id="ptx-toc-group-chap_cardinality-6" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-6.html#chap_cardinality-6-2" class="internal"><span class="codenumber">12.4.1</span> <span class="title">Extending to the infinite</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-6.html#chap_cardinality-6-3" class="internal"><span class="codenumber">12.4.2</span> <span class="title">Cantor’s Theorem and infinite infinities</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-6.html#chap_cardinality-6-4" class="internal"><span class="codenumber">12.4.3</span> <span class="title">Congratulations are in order</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-6.html#chap_cardinality-6-5" class="internal"><span class="codenumber">12.4.4</span> <span class="title">One more question</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_compare_card.html" class="internal"><span class="codenumber">12.5</span> <span class="title">More comparisons of cardinalties</span></a></div>
+<ul id="ptx-toc-group-sec_compare_card" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_compare_card.html#sec_compare_card-3" class="internal"><span class="codenumber">12.5.1</span> <span class="title">The Cantor-Schröder-Bernstein theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_compare_card.html#sec_compare_card-4" class="internal"><span class="codenumber">12.5.2</span> <span class="title">Applications</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_compare_card.html#sec_compare_card-5" class="internal"><span class="codenumber">12.5.3</span> <span class="title">Proof that <span class="process-math">\(|\pow{\mathbb{N}}| = |\mathbb{R}|\)</span></span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_cantor_first.html" class="internal"><span class="codenumber">12.6</span> <span class="title">(Optional) Cantor’s first proof of the uncountability of the reals</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chap_cardinality-9.html" class="internal"><span class="codenumber">12.7</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul id="ptx-toc-group-backmatter" class="structural toc-item-list">
+<li class="toc-item toc-solutions"><div class="toc-title-box"><a href="app_hint.html" class="internal"><span class="codenumber">A.</span> <span class="title">Hints for Exercises</span></a></div></li>
+<li class="toc-item toc-solutions"><div class="toc-title-box"><a href="app_answ.html" class="internal"><span class="codenumber">B.</span> <span class="title">Scratchwork for Exercises</span></a></div></li>
+<li class="toc-item toc-solutions"><div class="toc-title-box"><a href="app_soln.html" class="internal"><span class="codenumber">C.</span> <span class="title">Solutions to Exercises</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="backmatter-5.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="ch_relations-5">
+<h1 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Equivalence relations and equivalence classes</span>
+</h1>
+<div class="para" id="ch_relations-5-3">An important class of relations are those that are similar to “=”. We know that “is equal to” is reflexive, symmetric and transitive. Any relation that has these properties acts something like equality does — we call these relations equivalence relations.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_relations-5-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="ch_relations-5-4"><h2 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.3.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para" id="ch_relations-5-4-1-1">Let <span class="process-math">\(R\)</span> be a relation on a set <span class="process-math">\(A\text{.}\)</span> If <span class="process-math">\(R\)</span> is reflexive, symmetric and transitive then <span class="process-math">\(R\)</span> is an equivalence relation.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_relations-5-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 9.3.1"><a tabindex="-1" href="#ch_relations-5-4" title="Copy heading and permalink for Definition 9.3.1" aria-label="Copy heading and permalink for Definition 9.3.1">🔗</a></div>
+</article>
+<div class="para logical" id="ch_relations-5-5">
+<div class="para">From our work in the previous section we know that the following relations are equivalence relations</div>
+<ul class="disc" id="ch_relations-5-5-1">
+<li id="ch_relations-5-5-1-1">
+<div class="para" id="p-derived-ch_relations-5-5-1-1">“is equal to”</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_relations-5-5-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch_relations-5-5-1-2">
+<div class="para" id="p-derived-ch_relations-5-5-1-2">“has same parity as”</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_relations-5-5-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch_relations-5-5-1-3">
+<div class="para" id="p-derived-ch_relations-5-5-1-3">“is congruent to”</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_relations-5-5-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">Notice that these other two relations are weaker than equality — the underlying objects do not have to be the same in order to be equivalent.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_relations-5-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="example example-like" id="ch_relations-5-6"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.3.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para" id="ch_relations-5-6-1">Let <span class="process-math">\(A\)</span> be the set of students at a particular university. Show that the relation “has the same birthday as” is an equivalence relation.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_relations-5-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="ch_relations-5-6-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="ch_relations-5-6-2-1">
+<div class="para">We need to prove that the relation is reflexive, symmetric and transitive; we prove each in turn.</div>
+<ul class="disc" id="ch_relations-5-6-2-1-1">
+<li id="ch_relations-5-6-2-1-1-1">
+<div class="para" id="p-derived-ch_relations-5-6-2-1-1-1">Reflexive — Since any person has the same birthday as themselves, the relation is reflexive.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_relations-5-6-2-1-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch_relations-5-6-2-1-1-2">
+<div class="para" id="p-derived-ch_relations-5-6-2-1-1-2">Symmetric — Let <span class="process-math">\(a\)</span> have the same birthday as <span class="process-math">\(b\text{.}\)</span> Then <span class="process-math">\(b\)</span> has the same birthday as <span class="process-math">\(a\text{.}\)</span> Hence the relation is symmetric.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_relations-5-6-2-1-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch_relations-5-6-2-1-1-3">
+<div class="para" id="p-derived-ch_relations-5-6-2-1-1-3">Transitive — Let <span class="process-math">\(a\)</span> have the same birthday as <span class="process-math">\(b\)</span> and <span class="process-math">\(b\)</span> have the same birthday as <span class="process-math">\(c\text{.}\)</span> Then it follows that <span class="process-math">\(a\)</span> and <span class="process-math">\(c\)</span> must be born on the same day of the year. Hence <span class="process-math">\(a\)</span> has the same birthday as <span class="process-math">\(c\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_relations-5-6-2-1-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_relations-5-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 9.3.2.1"><a tabindex="-1" href="#ch_relations-5-6-2" title="Copy heading and permalink for Proof 9.3.2.1" aria-label="Copy heading and permalink for Proof 9.3.2.1">🔗</a></div>
+</article></details><div class="autopermalink" aria-hidden="true" data-description="Example 9.3.2"><a tabindex="-1" href="#ch_relations-5-6" title="Copy heading and permalink for Example 9.3.2" aria-label="Copy heading and permalink for Example 9.3.2">🔗</a></div>
+</article>
+<div class="para" id="ch_relations-5-7">Consider now the set <span class="process-math">\(A = \set{0,1,2,3,\dots,10}\)</span> and consider congruence modulo 4. As we have done a few times, we’ll draw a picture of the relation on this set. Not, there could, potentially be a lot of arrows in this figure. To save some space, we can take advantage of the fact that congruence is reflexive, and so we know that if there is an arrow from <span class="process-math">\(a\)</span> to <span class="process-math">\(b\text{,}\)</span> there must be one back from <span class="process-math">\(b\)</span> to <span class="process-math">\(a\text{.}\)</span> So, instead of drawing two arrows between <span class="process-math">\(a\)</span> and <span class="process-math">\(b\text{,}\)</span> we’ll just draw a single arc.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_relations-5-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="external/congruentEg.svg" role="img" class="contained"></div>
+<div class="para" id="ch_relations-5-9">We can do exactly the same thing, but now with the relation “has the same parity as”<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_relations-5-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="external/equivParity.svg" role="img" class="contained"></div>
+<div class="para" id="ch_relations-5-11">In each case we should notice that the set of nodes in the pictures fall into a small number of subsets, in which each node is connected to every other node. These connected subsets are examples of equivalence classes.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_relations-5-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="ch_relations-5-12"><h2 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.3.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para logical" id="ch_relations-5-12-1-1">
+<div class="para">Given an equivalence relation <span class="process-math">\(R\)</span> defined on a set <span class="process-math">\(A\text{,}\)</span> we define the equivalence class of <span class="process-math">\(x \in A\)</span> (with respect to <span class="process-math">\(R\)</span>) to be the set of elements related to <span class="process-math">\(x\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="ch_relations-5-12-1-1-6">
+\begin{align*}
+[x] &amp;= \set{ y \in A \;:\; y \rel x }
+\end{align*}
+</div>
+<div class="para">This is sometimes also written as “<span class="process-math">\(E_x\)</span>”.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_relations-5-12-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 9.3.3"><a tabindex="-1" href="#ch_relations-5-12" title="Copy heading and permalink for Definition 9.3.3" aria-label="Copy heading and permalink for Definition 9.3.3">🔗</a></div>
+</article>
+<div class="para logical" id="ch_relations-5-13">
+<div class="para">So in our “congruent modulo 4” example above, the equivalence classes are</div>
+<div class="displaymath process-math" id="ch_relations-5-13-2">
+\begin{align*}
+[0] &amp;= \set{0,4,8} &amp; [1]&amp;= \set{1,5,9} &amp; [2] &amp;= \set{2,6,10} &amp; [3] = \set{3,7}\\
+[4] &amp;= \set{0,4,8} &amp; [5]&amp;= \set{1,5,9} &amp; [6] &amp;= \set{2,6,10} &amp; [7] = \set{3,7}\\
+[8] &amp;= \set{0,4,8} &amp; [9]&amp;= \set{1,5,9} &amp; [10] &amp;= \set{2,6,10}
+\end{align*}
+</div>
+<div class="para">while in our “has the same parity as” example we get</div>
+<div class="displaymath process-math" id="ch_relations-5-13-4">
+\begin{align*}
+[0] &amp;= \set{0,2,4,6,8,10} &amp; [1]&amp;= \set{1,3,5,7,9}\\
+[2] &amp;= \set{0,2,4,6,8,10} &amp; [3]&amp;= \set{1,3,5,7,9}\\
+[4] &amp;= \set{0,2,4,6,8,10} &amp; [5]&amp;= \set{1,3,5,7,9}\\
+[6] &amp;= \set{0,2,4,6,8,10} &amp; [7]&amp;= \set{1,3,5,7,9}\\
+[8] &amp;= \set{0,2,4,6,8,10} &amp; [9]&amp;= \set{1,3,5,7,9}\\
+[10] &amp;= \set{0,2,4,6,8,10}
+\end{align*}
+</div>
+<div class="para">First notice that there are no empty equivalence classes. This follows from the fact that equivalence relations are reflexive:</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_relations-5-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="lemma theorem-like" id="lem_ec_nonempt"><h2 class="heading">
+<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.3.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para" id="lem_ec_nonempt-1-1">Let <span class="process-math">\(R\)</span> be an equivalence relation on a set <span class="process-math">\(A\text{.}\)</span> Then for any <span class="process-math">\(x \in A\text{,}\)</span> <span class="process-math">\(x \in [x]\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem_ec_nonempt-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Lemma 9.3.4"><a tabindex="-1" href="#lem_ec_nonempt" title="Copy heading and permalink for Lemma 9.3.4" aria-label="Copy heading and permalink for Lemma 9.3.4">🔗</a></div>
+</article>
+<details id="ch_relations-5-15" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="ch_relations-5-15-1">
+<div class="para">Let <span class="process-math">\(x \in A\text{.}\)</span> We know that <span class="process-math">\(R\)</span> is reflexive, so <span class="process-math">\(x \rel x\text{.}\)</span> Since we define</div>
+<div class="displaymath process-math" id="ch_relations-5-15-1-4">
+\begin{align*}
+[x] &amp;= \set{a \in A \;:\; a \rel x}
+\end{align*}
+</div>
+<div class="para">we must have that <span class="process-math">\(x \in [x]\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_relations-5-15-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 9.3.1"><a tabindex="-1" href="#ch_relations-5-15" title="Copy heading and permalink for Proof 9.3.1" aria-label="Copy heading and permalink for Proof 9.3.1">🔗</a></div>
+</article></details>
+<div class="para logical" id="ch_relations-5-16">
+<div class="para">Also notice that there is a lot of repetition in our lists of equivalence classes. Indeed, we could have been listed them as:</div>
+<div class="displaymath process-math" id="ch_relations-5-16-1">
+\begin{align*}
+[0]=[4]=[8] &amp;= \set{0,4,8} &amp; [1]=[5]=[9] &amp;= \set{1,5,9}\\
+[2]=[6]=[10] &amp;= \set{2,6,10} &amp; [3]=[7] = \set{3,7}
+\end{align*}
+</div>
+<div class="para">In fact it looks exactly like</div>
+<div class="displaymath process-math" id="ch_relations-5-16-2">
+\begin{gather*}
+[x]=[y] \iff x \rel y
+\end{gather*}
+</div>
+<div class="para">This is an important (and true!) result, so let’s call it a theorem and prove it.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_relations-5-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm_equiv_class"><h2 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.3.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para logical" id="thm_equiv_class-1-1">
+<div class="para">Let <span class="process-math">\(R\)</span> be an equivalence relation on <span class="process-math">\(A\)</span> and let <span class="process-math">\(x,y \in A\text{.}\)</span> Then</div>
+<div class="displaymath process-math" id="thm_equiv_class-1-1-4">
+\begin{gather*}
+x \rel y \iff [x]=[y]
+\end{gather*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm_equiv_class-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 9.3.5"><a tabindex="-1" href="#thm_equiv_class" title="Copy heading and permalink for Theorem 9.3.5" aria-label="Copy heading and permalink for Theorem 9.3.5">🔗</a></div>
+</article>
+<details id="ch_relations-5-18" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="ch_relations-5-18-1">
+<div class="para">We prove each implication in turn.</div>
+<ul class="disc" id="ch_relations-5-18-1-1">
+<li id="ch_relations-5-18-1-1-1">
+<div class="para" id="ch_relations-5-18-1-1-1-1">(<span class="process-math">\(\Leftarrow\)</span>) Assume <span class="process-math">\([x] = [y]\text{.}\)</span> From our lemma above, we know <span class="process-math">\(x \in [x]\text{.}\)</span> Hence <span class="process-math">\(x \in [y]\text{.}\)</span> But we define <span class="process-math">\([y]= \set{a \in A \;:\; a \rel y}\text{,}\)</span> and since <span class="process-math">\(x\)</span> is in this set we know that <span class="process-math">\(x \rel y\)</span> as required.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_relations-5-18-1-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_relations-5-18-1-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch_relations-5-18-1-1-2">
+<div class="para logical" id="ch_relations-5-18-1-1-2-1">
+<div class="para">(<span class="process-math">\(\Rightarrow\)</span>) Assume <span class="process-math">\(x \rel y\text{.}\)</span> In order to prove that <span class="process-math">\([x] = [y]\text{,}\)</span> we prove that each is a subset of the other.</div>
+<ul class="circle" id="ch_relations-5-18-1-1-2-1-4">
+<li id="ch_relations-5-18-1-1-2-1-4-1">
+<div class="para" id="p-derived-ch_relations-5-18-1-1-2-1-4-1">Let <span class="process-math">\(a \in [x]\text{,}\)</span> and so <span class="process-math">\(a \rel x\text{.}\)</span> Now since <span class="process-math">\(x \rel y\)</span> and <span class="process-math">\(R\)</span> is transitive, we know that <span class="process-math">\(a \rel y\text{.}\)</span> Consequently <span class="process-math">\(a \in [y]\text{,}\)</span> and thus <span class="process-math">\([x] \subseteq [y]\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_relations-5-18-1-1-2-1-4-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch_relations-5-18-1-1-2-1-4-2">
+<div class="para" id="p-derived-ch_relations-5-18-1-1-2-1-4-2">Now let <span class="process-math">\(b \in [y]\text{,}\)</span> so <span class="process-math">\(b \rel y\text{.}\)</span> Since <span class="process-math">\(R\)</span> is symmetric, we know that <span class="process-math">\(y \rel x\text{,}\)</span> and because of transitivity, this implies that <span class="process-math">\(b \rel x\text{.}\)</span> Hence <span class="process-math">\(b \in [x]\)</span> and so <span class="process-math">\([y] \subseteq [x]\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_relations-5-18-1-1-2-1-4-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">Thus <span class="process-math">\([x] = [y]\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_relations-5-18-1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_relations-5-18-1-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_relations-5-18-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 9.3.2"><a tabindex="-1" href="#ch_relations-5-18" title="Copy heading and permalink for Proof 9.3.2" aria-label="Copy heading and permalink for Proof 9.3.2">🔗</a></div>
+</article></details>
+<article class="remark remark-like" id="ch_relations-5-19"><h2 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.3.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Representing classes — be kind.</span>
+</h2>
+<div class="para" id="ch_relations-5-19-2">This result tells us that given any two related elements <span class="process-math">\(x \rel y\text{,}\)</span> their equivalence classes are the same. This can help us choose how we might represent an equivalence class to our reader; since <span class="process-math">\([x]=[y]\text{,}\)</span> we might as well choose to write it using which ever of <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> is simpler for the reader. That is, we’ll write the class using its simplest <dfn class="terminology">representative</dfn>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_relations-5-19-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ch_relations-5-19-3">
+<div class="para">In the above example we saw that <span class="process-math">\([0]=[4]=[8]\text{,}\)</span> <span class="process-math">\([1]=[5]=[9]\)</span> and so forth,  so when discussing these classes we should pick to represent them as</div>
+<div class="displaymath process-math" id="ch_relations-5-19-3-3">
+\begin{equation*}
+[0] \qquad [1] \qquad [2] \qquad \text{and} \qquad [3].
+\end{equation*}
+</div>
+<div class="para">In general it is a good idea to be kind to your reader (and yourself) by representing your equivalence classes using simple members of those equivalence classes.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_relations-5-19-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Remark 9.3.6: Representing classes — be kind"><a tabindex="-1" href="#ch_relations-5-19" title="Copy heading and permalink for Remark 9.3.6: Representing classes — be kind" aria-label="Copy heading and permalink for Remark 9.3.6: Representing classes — be kind">🔗</a></div>
+</article>
+<div class="para" id="ch_relations-5-20">We can push the above theorem further to show that any two equivalence classes are disjoint or equal. Equivalence classes cannot overlap “just a little” — it is all or nothing. We’ll call this result a corollary.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_relations-5-20" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="corollary theorem-like" id="cor_ec_distinct"><h2 class="heading">
+<span class="type">Corollary</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.3.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para" id="cor_ec_distinct-1-1">Let <span class="process-math">\(R\)</span> be an equivalence class on <span class="process-math">\(A\)</span> and let <span class="process-math">\(x,y \in A\text{.}\)</span> Then either <span class="process-math">\([x] = [y]\)</span> or <span class="process-math">\([x] \cap [y] = \es \text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#cor_ec_distinct-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Corollary 9.3.7"><a tabindex="-1" href="#cor_ec_distinct" title="Copy heading and permalink for Corollary 9.3.7" aria-label="Copy heading and permalink for Corollary 9.3.7">🔗</a></div>
+</article>
+<details id="ch_relations-5-22" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para" id="ch_relations-5-22-1">Let <span class="process-math">\(R\)</span> be an equivalence relation on <span class="process-math">\(A\)</span> and let <span class="process-math">\(x,y \in A\text{.}\)</span> Now form the set <span class="process-math">\(B = [x] \cap [y]\text{.}\)</span> Either this set is empty or not.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_relations-5-22-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ch_relations-5-22-2">
+<ul class="disc" id="ch_relations-5-22-2-1">
+<li id="ch_relations-5-22-2-1-1">
+<div class="para" id="p-derived-ch_relations-5-22-2-1-1">If <span class="process-math">\(B = \es\)</span> then there is nothing left to prove.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_relations-5-22-2-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch_relations-5-22-2-1-2">
+<div class="para" id="p-derived-ch_relations-5-22-2-1-2">On the other hand, if <span class="process-math">\(B\)</span> is non-empty, then there must be some element <span class="process-math">\(b \in B\text{.}\)</span> Hence <span class="process-math">\(b \in [x]\text{,}\)</span> so <span class="process-math">\(b \rel x\)</span> and by symmetry of <span class="process-math">\(R\)</span> we know <span class="process-math">\(x \rel b\text{.}\)</span> Now, since <span class="process-math">\(b\in [y]\text{,}\)</span> we have <span class="process-math">\(b \rel y\text{.}\)</span> By transitivity of <span class="process-math">\(R\text{,}\)</span> <span class="process-math">\(x \rel y\text{.}\)</span> The previous theorem then ensures that <span class="process-math">\([x] = [y]\)</span> as required.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_relations-5-22-2-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_relations-5-22-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 9.3.3"><a tabindex="-1" href="#ch_relations-5-22" title="Copy heading and permalink for Proof 9.3.3" aria-label="Copy heading and permalink for Proof 9.3.3">🔗</a></div>
+</article></details>
+<div class="para" id="ch_relations-5-23">Before we go on, let us look at some more examples of equivalence classes.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_relations-5-23" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="example example-like" id="ch_relations-5-24"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.3.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para logical" id="ch_relations-5-24-1">
+<div class="para">Let <span class="process-math">\(R\)</span> be congruence modulo <span class="process-math">\(5\)</span> on the set of integers. We know from Theorem <a href="sec_prop_rel.html#thm_congrent_er" class="xref" data-knowl="./knowl/xref/thm_congrent_er.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 9.2.6">Theorem 9.2.6</a> above, that this is an equivalence relation. Now, using Euclidean division <a href="ch-direct-2.html#fact-euc-div" class="xref" data-knowl="./knowl/xref/fact-euc-div.html" data-reveal-label="Reveal" data-close-label="Close" title="Fact 3.0.3: Euclidean division">Fact 3.0.3</a>, and dividing by <span class="process-math">\(5\text{,}\)</span> we see that any integer <span class="process-math">\(n\)</span> can be written as</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm_congrent_er.html ./knowl/xref/fact-euc-div.html" id="ch_relations-5-24-1-7">
+\begin{equation*}
+n=5q+r \qquad \text{ where } r \in \set{0,1,2,3,4}
+\end{equation*}
+</div>
+<div class="para">Hence <span class="process-math">\(n-r = 5q\text{.}\)</span> So <span class="process-math">\(n\)</span> must be congruent to one of <span class="process-math">\(0,1,2,3,4\)</span> modulo 5. Thus our equivalence classes are exactly</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm_congrent_er.html ./knowl/xref/fact-euc-div.html" id="ch_relations-5-24-1-11">
+\begin{equation*}
+[0] \qquad [1] \qquad [2] \qquad [3] \qquad [4].
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_relations-5-24-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 9.3.8"><a tabindex="-1" href="#ch_relations-5-24" title="Copy heading and permalink for Example 9.3.8" aria-label="Copy heading and permalink for Example 9.3.8">🔗</a></div>
+</article>
+<article class="example example-like" id="ch_relations-5-25"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.3.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para logical" id="ch_relations-5-25-1-1">
+<div class="para">Let <span class="process-math">\(S\)</span> be the set of all students at University of British Columbia. We define a relation on <span class="process-math">\(S\)</span> by</div>
+<div class="displaymath process-math" id="ch_relations-5-25-1-1-3">
+\begin{equation*}
+a \rel b \qquad \iff \qquad \text{$a$ has the same age as $b$}.
+\end{equation*}
+</div>
+<div class="para">Now this definition is still a little sloppy around the edges. To make it more precise:</div>
+<ul class="disc" id="ch_relations-5-25-1-1-4">
+<li id="ch_relations-5-25-1-1-4-1">
+<div class="para" id="p-derived-ch_relations-5-25-1-1-4-1">
+<span class="process-math">\(S\)</span> is the set of all students enrolled on the 1st of October 2019.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_relations-5-25-1-1-4-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch_relations-5-25-1-1-4-2">
+<div class="para" id="p-derived-ch_relations-5-25-1-1-4-2">By “age” we mean the age in years rounded down to the nearest integer.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_relations-5-25-1-1-4-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">Show that this defines an equivalence relation and determine the equivalence classes.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_relations-5-25-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="ch_relations-5-25-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para" id="ch_relations-5-25-2-1">We’ll first show that this is reflexive, symmetric and transitive and then look at the equivalence classes.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_relations-5-25-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ch_relations-5-25-2-2">
+<ul class="disc" id="ch_relations-5-25-2-2-1">
+<li id="ch_relations-5-25-2-2-1-1">
+<div class="para" id="p-derived-ch_relations-5-25-2-2-1-1">Reflexive — Let <span class="process-math">\(a\)</span> be a student. Then since <span class="process-math">\(a\)</span> has the same age as <span class="process-math">\(a\text{,}\)</span> it follows that <span class="process-math">\(a \rel a\)</span> as required.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_relations-5-25-2-2-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch_relations-5-25-2-2-1-2">
+<div class="para" id="p-derived-ch_relations-5-25-2-2-1-2">Symmetric — Let <span class="process-math">\(a,b\)</span> be students so that <span class="process-math">\(a\)</span> has the same age as <span class="process-math">\(b\text{.}\)</span> This means that <span class="process-math">\(b\)</span> has the same age as <span class="process-math">\(a\)</span> and hence <span class="process-math">\(b \rel a\)</span> as required.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_relations-5-25-2-2-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch_relations-5-25-2-2-1-3">
+<div class="para" id="p-derived-ch_relations-5-25-2-2-1-3">Transitive — Let <span class="process-math">\(a,b,c\)</span> be students so that <span class="process-math">\(a\)</span> has the same age as <span class="process-math">\(b\)</span> and <span class="process-math">\(b\)</span> has the same age as <span class="process-math">\(c\text{.}\)</span> Then <span class="process-math">\(a\)</span> has the same age as <span class="process-math">\(c\)</span> and so <span class="process-math">\(a \rel c\text{.}\)</span> Hence the relation is transitive.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_relations-5-25-2-2-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_relations-5-25-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ch_relations-5-25-2-3">The equivalence classes are just sets of students with the same age (in years rounded to nearest integer). So there will be an equivalence class full of 18 year-olds, another of 19 year-olds, and so on. We should be a little careful, there may<details class="ptx-footnote" aria-live="polite" id="ch_relations-5-25-2-3-1"><summary class="ptx-footnote__number" title="Footnote 100"><sup> 100 </sup></summary>
+<div class="ptx-footnote__contents" id="ch_relations-5-25-2-3-1">See <a class="external" href="https://www.cbc.ca/news/canada/british-columbia/oldest-youngest-ubc-student-1.5283736" target="_blank">here</a>.
+</div></details> be a very small number of 15 year-olds, 16 year-olds and on up to 75 year old students.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_relations-5-25-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 9.3.9.1"><a tabindex="-1" href="#ch_relations-5-25-2" title="Copy heading and permalink for Solution 9.3.9.1" aria-label="Copy heading and permalink for Solution 9.3.9.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 9.3.9"><a tabindex="-1" href="#ch_relations-5-25" title="Copy heading and permalink for Example 9.3.9" aria-label="Copy heading and permalink for Example 9.3.9">🔗</a></div>
+</article>
+<article class="example example-like" id="ch_relations-5-26"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.3.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para logical" id="ch_relations-5-26-1-1">
+<div class="para">Let <span class="process-math">\(R\)</span> be a relation defined on <span class="process-math">\(\mathbb{R}^2\)</span> by</div>
+<div class="displaymath process-math" id="ch_relations-5-26-1-1-3">
+\begin{equation*}
+(a,b) \rel (c,d) \iff a+d=c+b
+\end{equation*}
+</div>
+<div class="para">Show that is an equivalence relation and determine its equivalence classes.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_relations-5-26-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="ch_relations-5-26-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para" id="ch_relations-5-26-2-1">We first show that it is an equivalence relation and then we’ll look at its equivalence classes.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_relations-5-26-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ch_relations-5-26-2-2">
+<ul class="disc" id="ch_relations-5-26-2-2-1">
+<li id="ch_relations-5-26-2-2-1-1">
+<div class="para" id="p-derived-ch_relations-5-26-2-2-1-1">Reflexive — Let <span class="process-math">\((a,b) \in \mathbb{R}^2\text{,}\)</span> then since <span class="process-math">\(a+b=a+b\text{,}\)</span> it follows that <span class="process-math">\((a,b) \rel (a,b)\text{.}\)</span> Hence the relation is reflexive.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_relations-5-26-2-2-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch_relations-5-26-2-2-1-2">
+<div class="para" id="ch_relations-5-26-2-2-1-2-1">Symmetric — Let <span class="process-math">\((a,b), (c,d) \in \mathbb{R}^2\)</span> and assume that <span class="process-math">\((a,b) \rel (c,d)\text{.}\)</span> This implies that <span class="process-math">\(a+d=c+b\text{.}\)</span> Since equality is symmetric, we know that <span class="process-math">\(c+b=a+d\)</span> and so <span class="process-math">\((c,d) \rel (a,b)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_relations-5-26-2-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_relations-5-26-2-2-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch_relations-5-26-2-2-1-3">
+<div class="para logical" id="ch_relations-5-26-2-2-1-3-1">
+<div class="para">Transitive — Let <span class="process-math">\((a,b), (c,d), (e,f) \in \mathbb{R}^2\)</span> and assume that</div>
+<div class="displaymath process-math" id="ch_relations-5-26-2-2-1-3-1-3">
+\begin{equation*}
+(a,b) \rel (c,d) \qquad \text{ and } \qquad (c,d) \rel (e,f).
+\end{equation*}
+</div>
+<div class="para">Hence we know that</div>
+<div class="displaymath process-math" id="ch_relations-5-26-2-2-1-3-1-4">
+\begin{equation*}
+a+d=c+b \qquad  \text{ and } c+f = e+d.
+\end{equation*}
+</div>
+<div class="para">Rearrange the second of these to give <span class="process-math">\(c = e+d-f\text{.}\)</span> Substitute this into the first to get</div>
+<div class="displaymath process-math" id="ch_relations-5-26-2-2-1-3-1-6">
+\begin{align*}
+a+d \amp=c+b \\
+\amp=\underbrace{e+d-f}_{=c}+b \amp \text{ and so}\\
+a+f\amp=e+b. 
+\end{align*}
+</div>
+<div class="para">Hence <span class="process-math">\((a,b)\rel (e,f)\)</span> as required.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_relations-5-26-2-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_relations-5-26-2-2-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_relations-5-26-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ch_relations-5-26-2-3">
+<div class="para">So what do the equivalence classes look like? Theorem <a href="ch_relations-5.html#thm_equiv_class" class="xref" data-knowl="./knowl/xref/thm_equiv_class.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 9.3.5">Theorem 9.3.5</a> tells us that two elements are in the same equivalence class if and only if they satisfy the relation. So let <span class="process-math">\((a,b) \in \mathbb{R}^2\)</span> and let us examine its equivalence class. The pair <span class="process-math">\((x,y) \in [(a,b)]\)</span> if and only if <span class="process-math">\((a,b) \rel (x,y)\)</span> . That is we must have <span class="process-math">\(a+y=x+b\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm_equiv_class.html" id="ch_relations-5-26-2-3-6">
+\begin{equation*}
+y=x+(b-a).
+\end{equation*}
+</div>
+<div class="para">Hence the equivalence class of <span class="process-math">\((a,b)\)</span> is the set of points lying on the line with gradient 1 that passes through <span class="process-math">\((a,b)\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_relations-5-26-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 9.3.10.1"><a tabindex="-1" href="#ch_relations-5-26-2" title="Copy heading and permalink for Solution 9.3.10.1" aria-label="Copy heading and permalink for Solution 9.3.10.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 9.3.10"><a tabindex="-1" href="#ch_relations-5-26" title="Copy heading and permalink for Example 9.3.10" aria-label="Copy heading and permalink for Example 9.3.10">🔗</a></div>
+</article>
+<div class="para" id="ch_relations-5-27">Our results above tell us that an equivalence relation cuts a set up into non-empty disjoint pieces, such as is depicted below.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_relations-5-27" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/partition.svg" role="img" class="contained"></div>
+<div class="para" id="ch_relations-5-29">Here we have coloured the different equivalence classes and you can think of the dots in the different subsets as being some elements in those equivalence classes. Notice there is no overlap between the subsets, and the entire set is covered by the subsets — no piece is missing. This separation<details class="ptx-footnote" aria-live="polite" id="ch_relations-5-29-2"><summary class="ptx-footnote__number" title="Footnote 101"><sup> 101 </sup></summary>
+<div class="ptx-footnote__contents" id="ch_relations-5-29-2">Alternatively, we might say that such a <em class="emphasis">partitioning</em> of a set is called a set partition. However that sentence is a bit self-referential. At any rate, the term <dfn class="terminology">set partition</dfn> is another on point naming by mathematicians.
+</div></details> of a set into disjoint pieces  is called a set partition.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_relations-5-29" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="def_partition"><h2 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.3.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para logical" id="def_partition-1-1">
+<div class="para">A partition of a set <span class="process-math">\(A\)</span> is a collection <span class="process-math">\(\mathcal{P}\)</span> of non-empty subsets of <span class="process-math">\(A\text{,}\)</span> so that</div>
+<ul class="disc" id="def_partition-1-1-4">
+<li id="def_partition-1-1-4-1">
+<div class="para" id="p-derived-def_partition-1-1-4-1">if <span class="process-math">\(x \in A\)</span> then there exists <span class="process-math">\(X \in \mathcal{P}\)</span> so that <span class="process-math">\(x \in X\text{,}\)</span> and</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#def_partition-1-1-4-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="def_partition-1-1-4-2">
+<div class="para" id="p-derived-def_partition-1-1-4-2">if <span class="process-math">\(X,Y \in \mathcal{P}\text{,}\)</span> then either <span class="process-math">\(X \cap Y = \es\)</span> or <span class="process-math">\(X = Y\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#def_partition-1-1-4-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">The elements of <span class="process-math">\(\mathcal{P}\)</span> are then called blocks, parts or pieces of the partition.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#def_partition-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para logical" id="def_partition-1-2">
+<div class="para">An equivalent definition is that a partition of a set <span class="process-math">\(A\)</span> is a collection <span class="process-math">\(\mathcal{P}\)</span> of non-empty subsets of <span class="process-math">\(A\text{,}\)</span> so that</div>
+<ul class="disc" id="def_partition-1-2-4">
+<li id="def_partition-1-2-4-1">
+<div class="para" id="p-derived-def_partition-1-2-4-1">
+<span class="process-math">\(\ds \bigcup_{X \in \mathcal{P}} X = A\text{,}\)</span> and</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#def_partition-1-2-4-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="def_partition-1-2-4-2">
+<div class="para" id="p-derived-def_partition-1-2-4-2">if <span class="process-math">\(X,Y \in \mathcal{P}\text{,}\)</span> then either <span class="process-math">\(X \cap Y = \es\)</span> or <span class="process-math">\(X = Y\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#def_partition-1-2-4-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">Where the union <span class="process-math">\(\ds \bigcup_{X \in \mathcal{P}} X\)</span> is the union of all the sets in the partition <span class="process-math">\(\mathcal{P}\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#def_partition-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 9.3.11"><a tabindex="-1" href="#def_partition" title="Copy heading and permalink for Definition 9.3.11" aria-label="Copy heading and permalink for Definition 9.3.11">🔗</a></div>
+</article>
+<div class="para" id="ch_relations-5-31">Consider our equivalence class examples above, and notice that in each case the equivalence classes form partitions of the underlying set. Rather than just “notice” let us do one (new) example more explicitly.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_relations-5-31" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ch_relations-5-32">Given an equivalence relation we can prove that its equivalence classes form a set partition.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_relations-5-32" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="ch_relations-5-33"><h2 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.3.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para" id="ch_relations-5-33-1-1">Let <span class="process-math">\(R\)</span> be an equivalence relation on <span class="process-math">\(A\text{.}\)</span> The set of equivalence classes of <span class="process-math">\(R\)</span> forms a set partition of <span class="process-math">\(A\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_relations-5-33-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 9.3.12"><a tabindex="-1" href="#ch_relations-5-33" title="Copy heading and permalink for Theorem 9.3.12" aria-label="Copy heading and permalink for Theorem 9.3.12">🔗</a></div>
+</article>
+<details id="ch_relations-5-34" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="ch_relations-5-34-1">
+<div class="para">Let <span class="process-math">\(\mathcal{P} = \set{[x] \so x\in A}\)</span> be the set of equivalence classes.</div>
+<ul class="disc" id="ch_relations-5-34-1-2">
+<li id="ch_relations-5-34-1-2-1">
+<div class="para" id="p-derived-ch_relations-5-34-1-2-1">Let <span class="process-math">\(x \in A\text{.}\)</span> Then by Lemma <a href="ch_relations-5.html#lem_ec_nonempt" class="xref" data-knowl="./knowl/xref/lem_ec_nonempt.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 9.3.4">Lemma 9.3.4</a> above we know that <span class="process-math">\(x \in [x]\text{,}\)</span> and by definition <span class="process-math">\([x] \in \mathcal{P}\text{.}\)</span> Hence for any <span class="process-math">\(x \in A, x \in X\)</span> for some <span class="process-math">\(X \in \mathcal{P}\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_relations-5-34-1-2-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch_relations-5-34-1-2-2">
+<div class="para" id="p-derived-ch_relations-5-34-1-2-2">Let <span class="process-math">\(X,Y \in \mathcal{P}\text{.}\)</span> Then by Corollary <a href="ch_relations-5.html#cor_ec_distinct" class="xref" data-knowl="./knowl/xref/cor_ec_distinct.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 9.3.7">Corollary 9.3.7</a>, we know that either <span class="process-math">\(X=Y\)</span> or <span class="process-math">\(X \cap Y= \es\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_relations-5-34-1-2-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">Hence the set of equivalence classes forms a set partition.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_relations-5-34-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 9.3.4"><a tabindex="-1" href="#ch_relations-5-34" title="Copy heading and permalink for Proof 9.3.4" aria-label="Copy heading and permalink for Proof 9.3.4">🔗</a></div>
+</article></details>
+<div class="para logical" id="ch_relations-5-35">
+<div class="para">So an equivalence relation gives equivalence classes that define a set partition. We can also go backwards. A set partition can be used to define equivalence classes that in turn define an equivalence relation. To be more precise, take a set partition <span class="process-math">\(\mathcal{P}\)</span> of a set <span class="process-math">\(A\text{.}\)</span> For any two elements <span class="process-math">\(x,y \in A\)</span> we can define</div>
+<div class="displaymath process-math" id="ch_relations-5-35-4">
+\begin{gather*}
+x \rel y \iff x,y \text{ are elements of the same part of the partition }\mathcal{P}
+\end{gather*}
+</div>
+<div class="para">It is not too hard to prove that this relation is an equivalence relation.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_relations-5-35" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="ch_relations-5-36"><h2 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.3.13</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para logical" id="ch_relations-5-36-1-1">
+<div class="para">Let <span class="process-math">\(\mathcal{P}\)</span> be a set partition on the set <span class="process-math">\(A\text{,}\)</span> and define a relation <span class="process-math">\(R\)</span> by</div>
+<div class="displaymath process-math" id="ch_relations-5-36-1-1-4">
+\begin{gather*}
+x \rel y \iff \big( x,y \in X \text{ for some } X \in \mathcal{P} \big)
+\end{gather*}
+</div>
+<div class="para">That is <span class="process-math">\(x \rel y\)</span> if and only if they belong to the same piece of the partition.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_relations-5-36-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="ch_relations-5-36-1-2">Then the relation <span class="process-math">\(R\)</span> is an equivalence relation.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_relations-5-36-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 9.3.13"><a tabindex="-1" href="#ch_relations-5-36" title="Copy heading and permalink for Theorem 9.3.13" aria-label="Copy heading and permalink for Theorem 9.3.13">🔗</a></div>
+</article>
+<details id="ch_relations-5-37" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="ch_relations-5-37-1">
+<div class="para">We need to show that <span class="process-math">\(R\)</span> is reflexive, symmetric and transitive.</div>
+<ul class="disc" id="ch_relations-5-37-1-2">
+<li id="ch_relations-5-37-1-2-1">
+<div class="para" id="p-derived-ch_relations-5-37-1-2-1">Reflexive — Let <span class="process-math">\(x \in A\text{.}\)</span> Since <span class="process-math">\(\mathcal{P}\)</span> is a set partition, we know that <span class="process-math">\(x\)</span> is an element of some piece of the partition. Hence <span class="process-math">\(x \)</span> is in the same piece of the partition as itself, and so <span class="process-math">\(x \rel x\)</span> as required.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_relations-5-37-1-2-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch_relations-5-37-1-2-2">
+<div class="para" id="p-derived-ch_relations-5-37-1-2-2">Symmetric — Let <span class="process-math">\(x \rel y\text{,}\)</span> so we know that <span class="process-math">\(x, y\)</span> lie in the same piece of the partition. Hence we must also have <span class="process-math">\(y \rel x\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_relations-5-37-1-2-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch_relations-5-37-1-2-3">
+<div class="para" id="p-derived-ch_relations-5-37-1-2-3">Transitive — Let <span class="process-math">\(x \rel y\)</span> and <span class="process-math">\(y \rel z\text{.}\)</span> Then there must be <span class="process-math">\(X,Y \in \mathcal{P}\)</span> so that <span class="process-math">\(x,y \in X\)</span> and <span class="process-math">\(y,z \in Y\text{.}\)</span> Hence <span class="process-math">\(X \cap Y \neq \es\)</span> (since it contains <span class="process-math">\(y\)</span>). Since <span class="process-math">\(\mathcal{P}\)</span> is a partition, we know that <span class="process-math">\(X \cap Y = \es\)</span> or <span class="process-math">\(X=Y\text{.}\)</span> Hence <span class="process-math">\(X=Y\)</span> and so <span class="process-math">\(x,z \in X\text{.}\)</span> Thus <span class="process-math">\(x \rel z\)</span> as required.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_relations-5-37-1-2-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_relations-5-37-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 9.3.5"><a tabindex="-1" href="#ch_relations-5-37" title="Copy heading and permalink for Proof 9.3.5" aria-label="Copy heading and permalink for Proof 9.3.5">🔗</a></div>
+</article></details><div class="autopermalink" aria-hidden="true" data-description="Section 9.3: Equivalence relations and equivalence classes"><a tabindex="-1" href="#ch_relations-5" title="Copy heading and permalink for Section 9.3: Equivalence relations and equivalence classes" aria-label="Copy heading and permalink for Section 9.3: Equivalence relations and equivalence classes">🔗</a></div>
+</section>
+</div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="sec_prop_rel.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec_congruence_revisited.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+<!--Start: Google Global Site Tag code--><!--*** DO NOT COPY ANOTHER PROJECT'S MAGIC NUMBERS/ID ***--><!--***           GET YOUR OWN FROM GOOGLE             ***-->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-FL66FX9988"></script><script>  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-FL66FX9988');
+</script><!--End: Google Global Site Tag code-->
+</body>
+</html>

@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Some examples</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
+startMathJax({
+hasWebworkReps: false,
+hasSage: false,
+isReact: false,
+htmlPresentation: false,
+lang: "en-US",
+});
+</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta name="twitter:title" content="PLP">
+<meta property="og:title" content="PLP">
+<meta property="book:title" content="PLP">
+<meta name="twitter:description" content="An introduction to mathematical proof">
+<meta property="og:description" content="An introduction to mathematical proof">
+<meta name="twitter:card" content="summary">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.48"></script><script src="_static/pretext/js/dist/pretext-read-aloud.js?v=2.48"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.2.4';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.40bd1420d3277749.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.b388362b5f43738a.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.8086b62682b271d1.css">
+<script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead" role="banner"><div class="ptx-banner"><div class="title-container">
+<div class="heading ptx-banner-heading"><a href="plp.html"><span class="title">PLP</span> <span class="subtitle">An introduction to mathematical proof</span></a></div>
+<p class="byline">Seçkin Demirbaş, Andrew Rechnitzer</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button id="ptx-toc-toggle" type="button" aria-controls="ptx-sidebar" class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="ptx-search-box">
+<div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search Book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog"><div class="ptx-search-dialog-controls">
+<input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close" id="ptx-search-close" class="ptx-search-close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div id="ptx-search-status" class="ptx-search-status" aria-live="polite" aria-atomic="true"></div>
+<h2 class="heading ptx-search-results-heading">Search Results: </h2>
+<div id="ptx-search-empty" class="ptx-search-empty"><span>No results.</span></div>
+<ol id="ptx-search-results" class="ptx-search-results"></ol></dialog>
+</div>
+<span class="nav-other-controls"><button id="ptx-read-aloud-button" class="ptx-read-aloud-button button" title="Read aloud" aria-expanded="false"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf1bc;</span><span class="name">Read aloud</span></button><div id="ptx-read-aloud-player" class="ptx-read-aloud-player" hidden="hidden" role="group" aria-label="Read aloud">
+<button id="ptx-read-aloud-prev" class="button" title="Previous sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe045;</span></button><button id="ptx-read-aloud-toggle" class="ptx-read-aloud-toggle button" title="Play"><span class="ptx-read-aloud-icon-play"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></span><span class="ptx-read-aloud-icon-pause"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe034;</span></span></button><button id="ptx-read-aloud-next" class="button" title="Next sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe044;</span></button><a id="ptx-read-aloud-continue" class="ptx-read-aloud-continue button" hidden="hidden">Continue<span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></a><button id="ptx-read-aloud-settings-button" class="ptx-read-aloud-settings-button button" title="Reading settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe429;</span></button>
+</div>
+<dialog class="ptx-dialog ptx-read-aloud-settings-popup" id="ptx-read-aloud-settings-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Read aloud settings</h2>
+<button class="ptx-read-aloud-settings-close-button button" id="ptx-read-aloud-settings-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label for="ptx-read-aloud-voice"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe91f;</span><span>Voice</span></label><select id="ptx-read-aloud-voice"></select><label class="ptx-readability-slider-label" for="ptx-read-aloud-rate"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe9e4;</span><span>Reading speed</span><output id="ptx-read-aloud-rate-value" for="ptx-read-aloud-rate">1×</output></label><input type="range" id="ptx-read-aloud-rate" min="0.5" max="2" step="0.1" value="1"><label for="ptx-read-aloud-asides"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d7;</span><span>Collapsed content</span></label><select id="ptx-read-aloud-asides"><option value="skip">Announce, do not read</option>
+<option value="read">Read automatically</option></select><label for="ptx-read-aloud-autoscroll"><input type="checkbox" id="ptx-read-aloud-autoscroll" checked><span>Follow along (auto-scroll)</span></label><label for="ptx-read-aloud-autocontinue"><input type="checkbox" id="ptx-read-aloud-autocontinue"><span>Continue to the next page automatically</span></label>
+</div></dialog><button id="ptx-readability-options-button" class="ptx-readability-options-button button" title="Readability settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf6f1;</span><span class="name">Readability settings</span></button><dialog class="ptx-dialog ptx-readability-options-popup" id="ptx-readability-options-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Readability settings</h2>
+<button class="ptx-readability-options-close-button button" id="ptx-readability-options-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-line-height"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe240;</span><span>Line height</span><output id="ptx-readability-line-height-value" for="ptx-readability-line-height">1.35</output></label><input type="range" id="ptx-readability-line-height" min="1.10" max="3" step="0.05" value="1.35">
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-font-size"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe245;</span><span>Content font size</span><output id="ptx-readability-font-size-value" for="ptx-readability-font-size">100%</output></label><input type="range" id="ptx-readability-font-size" min="0.8" max="1.5" step="0.05" value="1">
+</div>
+<fieldset class="ptx-readability-options-group ptx-readability-options-group-theme">
+<legend>Theme</legend>
+<label for="ptx-readability-theme-system"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-system" value="system"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe1ab;</span><span>System</span></label><label for="ptx-readability-theme-light"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-light" value="light"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe518;</span><span>Light</span></label><label for="ptx-readability-theme-dark"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-dark" value="dark"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span>Dark</span></label>
+</fieldset>
+<fieldset class="ptx-readability-options-group">
+<legend>Assistive technologies</legend>
+<label for="ptx-readability-accessible-permalinks"><input type="checkbox" id="ptx-readability-accessible-permalinks"><span>🔗</span><span>Expose permalinks</span></label>
+</fieldset>
+<div class="ptx-readability-options-group"><button type="button" class="ptx-readability-reset-button button" id="ptx-readability-reset-button"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf053;</span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="ch-contradictions-3.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-contradictions.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="ch-contradictions-5.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{cancel}\require{upgreek} \newcommand{\ds}{\displaystyle}
+ \renewcommand{\textcolor}[2]{{\color{#1}{#2}}}
+ 
+ \newcommand{\es}{ {\varnothing}}
+ \newcommand{\st}{ \;\mathrm{s.t.}\; }
+ \newcommand{\so}{ \;\mid\; }
+ \newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+ \newcommand{\set}[1]{ \left\{#1\right\} }
+ 
+ \renewcommand{\neg}{\sim}
+
+ \newcommand{\rel}[1][R]{\;\mathcal{#1}\;}
+ \newcommand{\nrel}[1][R]{\;\cancel{\mathcal{#1}}\;}
+
+ \newcommand{\dee}[1]{\mathrm{d}#1}
+ \newcommand{\diff}[2]{\dfrac{\mathrm{d}#1}{\mathrm{d}#2}}
+ 
+ \renewcommand{\mod}[1]{\ (\mathrm{mod}\ #1)}
+ \newcommand{\lcm}{\mathrm{lcm}}
+ 
+ \let\oldepsilon\epsilon
+ 
+ \renewcommand{\epsilon}{\varepsilon}
+ \newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" role="complementary" class="ptx-sidebar"><nav id="ptx-toc" tabindex="-1" aria-label="Contents" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul id="ptx-toc-group-frontmatter" class="structural toc-item-list">
+<li class="toc-item toc-dedication"><div class="toc-title-box"><a href="frontmatter-3.html" class="internal"><span class="title">Dedication</span></a></div></li>
+<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="frontmatter-5.html" class="internal"><span class="title">Preface</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="plp-4.html" class="internal"><span class="codenumber">1</span> <span class="title">Sets</span></a></div>
+<ul id="ptx-toc-group-plp-4" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="plp-4-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="plp-4-3.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Not so formal definition</span></a></div>
+<ul id="ptx-toc-group-plp-4-3" class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="plp-4-3.html#plp-4-3-3" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Who is this reader you keep on mentioning?</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-describing.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Describing a set</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-4-5.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Onward</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="plp-4-6.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-logic.html" class="internal"><span class="codenumber">2</span> <span class="title">A little logic</span></a></div>
+<ul id="ptx-toc-group-ch-logic" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-logic-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-logic-3.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Statements and open sentences</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-logic-4.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Negation</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-logic-5.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Or and And</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-implication.html" class="internal"><span class="codenumber">2.4</span> <span class="title">The implication</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-logic-7.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Modus ponens and chaining implications</span></a></div>
+<ul id="ptx-toc-group-ch-logic-7" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-logic-7.html#ch-logic-7-2" class="internal"><span class="codenumber">2.5.1</span> <span class="title">Modus ponens</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-logic-7.html#ch-logic-7-3" class="internal"><span class="codenumber">2.5.2</span> <span class="title">Affirming the consequent and denying the antecedent</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-logic-7.html#ch-logic-7-4" class="internal"><span class="codenumber">2.5.3</span> <span class="title">Chaining implications together</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-CCB.html" class="internal"><span class="codenumber">2.6</span> <span class="title">The converse, contrapositive and biconditional</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-logic-9.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-direct.html" class="internal"><span class="codenumber">3</span> <span class="title">Direct proofs</span></a></div>
+<ul id="ptx-toc-group-ch-direct" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-direct-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-direct-3.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Trivialities and vacuousness</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-direct-4.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Direct proofs</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-direct-5.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Proofs of inequalities</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-direct-6.html" class="internal"><span class="codenumber">3.4</span> <span class="title">A quick visit to disproofs</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-direct-7.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="plp-7.html" class="internal"><span class="codenumber">4</span> <span class="title">More logic</span></a></div>
+<ul id="ptx-toc-group-plp-7" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="plp-7-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-7-3.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Tautologies and contradictions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-7-4.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Logical equivalence</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="plp-7-5.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-moreproof.html" class="internal"><span class="codenumber">5</span> <span class="title">More proofs</span></a></div>
+<ul id="ptx-toc-group-ch-moreproof" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-moreproof-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-moreproof-3.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Contrapositive</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-moreproof-4.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Proofs with cases</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-congruence.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Congruence modulo <span class="process-math">\(n\)</span></span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-abs-triangle.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Absolute values and the triangle inequality</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-moreproof-7.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-quantifiers.html" class="internal"><span class="codenumber">6</span> <span class="title">Quantifiers</span></a></div>
+<ul id="ptx-toc-group-ch-quantifiers" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-quantifiers-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-quantifiers-3.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Quantified statements</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-quantifiers-4.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Negation of quantifiers</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-quantifiers-5.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Nested quantifiers</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_limits.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Quantifiers and rigorous limits</span></a></div>
+<ul id="ptx-toc-group-sec_limits" class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec_limits.html#sec_limits-3" class="internal"><span class="codenumber">6.4.1</span> <span class="title">Convergence of sequences</span></a></div>
+<ul id="ptx-toc-group-sec_limits-3" class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec_limits.html#sec_limits-3-3" class="internal"><span class="codenumber">6.4.1.1</span> <span class="title">Quantifying towards a definition</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec_limits.html#sec_limits-3-4" class="internal"><span class="codenumber">6.4.1.2</span> <span class="title">Some examples</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_limits.html#sec_limits-4" class="internal"><span class="codenumber">6.4.2</span> <span class="title">The limit of a function</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-quantifiers-7.html" class="internal"><span class="codenumber">6.5</span> <span class="title">(Optional) Properties of limits</span></a></div>
+<ul id="ptx-toc-group-ch-quantifiers-7" class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimseq" class="internal"><span class="codenumber">6.5.1</span> <span class="title">(Optional) Some properties of limits of sequences</span></a></div>
+<ul id="ptx-toc-group-subsec-proplimseq" class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimseq-3" class="internal"><span class="codenumber">6.5.1.1</span> <span class="title">Uniqueness of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimseq-4" class="internal"><span class="codenumber">6.5.1.2</span> <span class="title">Linearity of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimseq-5" class="internal"><span class="codenumber">6.5.1.3</span> <span class="title">Product of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimseq-6" class="internal"><span class="codenumber">6.5.1.4</span> <span class="title">Ratio of limits</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimfunc" class="internal"><span class="codenumber">6.5.2</span> <span class="title">(Optional) Some properties of limits of functions</span></a></div>
+<ul id="ptx-toc-group-subsec-proplimfunc" class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimfunc-3" class="internal"><span class="codenumber">6.5.2.1</span> <span class="title">Uniqueness of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimfunc-4" class="internal"><span class="codenumber">6.5.2.2</span> <span class="title">Linearity of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimfunc-5" class="internal"><span class="codenumber">6.5.2.3</span> <span class="title">Product of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimfunc-6" class="internal"><span class="codenumber">6.5.2.4</span> <span class="title">Ratio of limits</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-quantifiers-8.html" class="internal"><span class="codenumber">6.6</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_induction.html" class="internal"><span class="codenumber">7</span> <span class="title">Induction</span></a></div>
+<ul id="ptx-toc-group-ch_induction" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch_induction-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch_induction-3.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Induction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch_induction-4.html" class="internal"><span class="codenumber">7.2</span> <span class="title">More general inductions</span></a></div>
+<ul id="ptx-toc-group-ch_induction-4" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch_induction-4.html#subsec-extendedinduction" class="internal"><span class="codenumber">7.2.1</span> <span class="title">A little more general</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch_induction-4.html#subsec-stronginduction" class="internal"><span class="codenumber">7.2.2</span> <span class="title">More general and yet equivalent</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch_induction-5.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="plp-11.html" class="internal"><span class="codenumber">8</span> <span class="title">Return to sets</span></a></div>
+<ul id="ptx-toc-group-plp-11" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="plp-11-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-11-3.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Subsets</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-11-4.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Set operations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-11-5.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Cartesian products of sets</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-11-6.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Some set-flavoured results</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-11-7.html" class="internal"><span class="codenumber">8.5</span> <span class="title">Indexed sets</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="plp-11-8.html" class="internal"><span class="codenumber">8.6</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_relations.html" class="internal"><span class="codenumber">9</span> <span class="title">Relations</span></a></div>
+<ul id="ptx-toc-group-ch_relations" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch_relations-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch_relations-3.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Relations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_prop_rel.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Properties of relations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch_relations-5.html" class="internal"><span class="codenumber">9.3</span> <span class="title">Equivalence relations &amp; classes</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_congruence_revisited.html" class="internal"><span class="codenumber">9.4</span> <span class="title">Congruence revisited</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-euclid.html" class="internal"><span class="codenumber">9.5</span> <span class="title">Greatest divisors, Bézout and the Euclidean algorithm</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-unique-fact.html" class="internal"><span class="codenumber">9.6</span> <span class="title">Uniqueness of prime factorisation</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch_relations-9.html" class="internal"><span class="codenumber">9.7</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-functions.html" class="internal"><span class="codenumber">10</span> <span class="title">Functions</span></a></div>
+<ul id="ptx-toc-group-ch-functions" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-functions-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-functions-3.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-functions-4.html" class="internal"><span class="codenumber">10.2</span> <span class="title">A more abstract definition</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-functions-5.html" class="internal"><span class="codenumber">10.3</span> <span class="title">Images and preimages of sets</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-functions-6.html" class="internal"><span class="codenumber">10.4</span> <span class="title">Injective and surjective functions</span></a></div>
+<ul id="ptx-toc-group-ch-functions-6" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-functions-6.html#ch-functions-6-3" class="internal"><span class="codenumber">10.4.1</span> <span class="title">Injections and surjections</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-functions-6.html#ch-functions-6-4" class="internal"><span class="codenumber">10.4.2</span> <span class="title">Bijective functions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-functions-7.html" class="internal"><span class="codenumber">10.5</span> <span class="title">Composition of functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_inv_func.html" class="internal"><span class="codenumber">10.6</span> <span class="title">Inverse functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-functions-9.html" class="internal"><span class="codenumber">10.7</span> <span class="title">(Optional) The axiom of choice</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-functions-10.html" class="internal"><span class="codenumber">10.8</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-contradictions.html" class="internal"><span class="codenumber">11</span> <span class="title">Proof by contradiction</span></a></div>
+<ul class="structural toc-item-list contains-active" id="ptx-toc-group-ch-contradictions">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-contradictions-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-contradictions-3.html" class="internal"><span class="codenumber">11.1</span> <span class="title">Structure of a proof by contradiction</span></a></div></li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="ch-contradictions-4.html" class="internal"><span class="codenumber">11.2</span> <span class="title">Some examples</span></a></div>
+<ul class="structural toc-item-list active" id="ptx-toc-group-ch-contradictions-4">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-contradictions-4.html#ch-contradictions-4-3" class="internal"><span class="codenumber">11.2.1</span> <span class="title">The irrationality of <span class="process-math">\(\sqrt{2}\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-contradictions-4.html#ssec_inf_primes" class="internal"><span class="codenumber">11.2.2</span> <span class="title">The infinitude of primes</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-contradictions-5.html" class="internal"><span class="codenumber">11.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap_cardinality.html" class="internal"><span class="codenumber">12</span> <span class="title">Cardinality</span></a></div>
+<ul id="ptx-toc-group-chap_cardinality" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="chap_cardinality-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="chap_cardinality-3.html" class="internal"><span class="codenumber">12.1</span> <span class="title">Finite sets</span></a></div>
+<ul id="ptx-toc-group-chap_cardinality-3" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-3.html#chap_cardinality-3-3" class="internal"><span class="codenumber">12.1.1</span> <span class="title">Equinumerous sets, bijections and pigeons</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-3.html#chap_cardinality-3-4" class="internal"><span class="codenumber">12.1.2</span> <span class="title">Comparing with functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-3.html#chap_cardinality-3-5" class="internal"><span class="codenumber">12.1.3</span> <span class="title">Infinite sets are strange.</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap_cardinality-4.html" class="internal"><span class="codenumber">12.2</span> <span class="title">Denumerable sets</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_uncount.html" class="internal"><span class="codenumber">12.3</span> <span class="title">Uncountable sets</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="chap_cardinality-6.html" class="internal"><span class="codenumber">12.4</span> <span class="title">Comparing cardinalities</span></a></div>
+<ul id="ptx-toc-group-chap_cardinality-6" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-6.html#chap_cardinality-6-2" class="internal"><span class="codenumber">12.4.1</span> <span class="title">Extending to the infinite</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-6.html#chap_cardinality-6-3" class="internal"><span class="codenumber">12.4.2</span> <span class="title">Cantor’s Theorem and infinite infinities</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-6.html#chap_cardinality-6-4" class="internal"><span class="codenumber">12.4.3</span> <span class="title">Congratulations are in order</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-6.html#chap_cardinality-6-5" class="internal"><span class="codenumber">12.4.4</span> <span class="title">One more question</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_compare_card.html" class="internal"><span class="codenumber">12.5</span> <span class="title">More comparisons of cardinalties</span></a></div>
+<ul id="ptx-toc-group-sec_compare_card" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_compare_card.html#sec_compare_card-3" class="internal"><span class="codenumber">12.5.1</span> <span class="title">The Cantor-Schröder-Bernstein theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_compare_card.html#sec_compare_card-4" class="internal"><span class="codenumber">12.5.2</span> <span class="title">Applications</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_compare_card.html#sec_compare_card-5" class="internal"><span class="codenumber">12.5.3</span> <span class="title">Proof that <span class="process-math">\(|\pow{\mathbb{N}}| = |\mathbb{R}|\)</span></span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_cantor_first.html" class="internal"><span class="codenumber">12.6</span> <span class="title">(Optional) Cantor’s first proof of the uncountability of the reals</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chap_cardinality-9.html" class="internal"><span class="codenumber">12.7</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul id="ptx-toc-group-backmatter" class="structural toc-item-list">
+<li class="toc-item toc-solutions"><div class="toc-title-box"><a href="app_hint.html" class="internal"><span class="codenumber">A.</span> <span class="title">Hints for Exercises</span></a></div></li>
+<li class="toc-item toc-solutions"><div class="toc-title-box"><a href="app_answ.html" class="internal"><span class="codenumber">B.</span> <span class="title">Scratchwork for Exercises</span></a></div></li>
+<li class="toc-item toc-solutions"><div class="toc-title-box"><a href="app_soln.html" class="internal"><span class="codenumber">C.</span> <span class="title">Solutions to Exercises</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="backmatter-5.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="ch-contradictions-4">
+<h1 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Some examples</span>
+</h1>
+<section class="introduction" id="ch-contradictions-4-2">
+<div class="para" id="ch-contradictions-4-2-1">We’ll start with a couple of good warm-up examples.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-contradictions-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="example example-like" id="ch-contradictions-4-2-2"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.2.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">No integer solutions.</span>
+</h2>
+<div class="para" id="ch-contradictions-4-2-2-2-1">There are no integers <span class="process-math">\(a,b\)</span> so that <span class="process-math">\(2a+4b=1\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-contradictions-4-2-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="ch-contradictions-4-2-2-3" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Scratchwork</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="answer solution-like knowl__content">
+<div class="para logical" id="ch-contradictions-4-2-2-3-1">
+<div class="para">Now notice that this result hides some universal quantifiers:</div>
+<div class="displaymath process-math" id="ch-contradictions-4-2-2-3-1-1">
+\begin{equation*}
+\forall a,b \in \mathbb{Z}, 2a+4b \neq 1
+\end{equation*}
+</div>
+<div class="para">To prove this using a contradiction we need to assume the negation of this statement. That is, we will assume that</div>
+<div class="displaymath process-math" id="ch-contradictions-4-2-2-3-1-2">
+\begin{equation*}
+\exists a,b \in \mathbb{Z} \st 2a+4b=1.
+\end{equation*}
+</div>
+<div class="para">So let <span class="process-math">\(a,b\)</span> be integers so that <span class="process-math">\(2a+4b=1\text{.}\)</span> But from this we have (after a quick division by 2)</div>
+<div class="displaymath process-math" id="ch-contradictions-4-2-2-3-1-5">
+\begin{equation*}
+a + 2b = \frac{1}{2}
+\end{equation*}
+</div>
+<div class="para">and this is sufficient to get a contradiction; <span class="process-math">\(a \in \mathbb{Z}\)</span> and <span class="process-math">\(2b \in \mathbb{Z}\)</span> so their sum must be an integer. We just need to write this up nicely<details class="ptx-footnote" aria-live="polite" id="ch-contradictions-4-2-2-3-1-8"><summary class="ptx-footnote__number" title="Footnote 139"><sup> 139 </sup></summary>
+<div class="ptx-footnote__contents" id="ch-contradictions-4-2-2-3-1-8">and, of course, make sure we warn the reader that we are using proof by contradiction.
+</div></details>.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-contradictions-4-2-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Scratchwork 11.2.1.1"><a tabindex="-1" href="#ch-contradictions-4-2-2-3" title="Copy heading and permalink for Scratchwork 11.2.1.1" aria-label="Copy heading and permalink for Scratchwork 11.2.1.1">🔗</a></div>
+</div></details>
+<details id="ch-contradictions-4-2-2-4" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<details id="ch-contradictions-4-2-2-4-1" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="ch-contradictions-4-2-2-4-1-1">
+<div class="para">Assume, to the contrary, that there exist integers <span class="process-math">\(a,b\)</span> so that <span class="process-math">\(2a+4b=1\text{.}\)</span> This implies that</div>
+<div class="displaymath process-math" id="ch-contradictions-4-2-2-4-1-1-3">
+\begin{equation*}
+a + 2b = \frac{1}{2}
+\end{equation*}
+</div>
+<div class="para">which gives a contradiction because the sum of integers is also an integer. Consequently, there can be no such integer <span class="process-math">\(a,b\)</span> and the result follows.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-contradictions-4-2-2-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 11.2.1.1.1"><a tabindex="-1" href="#ch-contradictions-4-2-2-4-1" title="Copy heading and permalink for Proof 11.2.1.1.1" aria-label="Copy heading and permalink for Proof 11.2.1.1.1">🔗</a></div>
+</article></details><div class="autopermalink" aria-hidden="true" data-description="Solution 11.2.1.1"><a tabindex="-1" href="#ch-contradictions-4-2-2-4" title="Copy heading and permalink for Solution 11.2.1.1" aria-label="Copy heading and permalink for Solution 11.2.1.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 11.2.1: No integer solutions"><a tabindex="-1" href="#ch-contradictions-4-2-2" title="Copy heading and permalink for Example 11.2.1: No integer solutions" aria-label="Copy heading and permalink for Example 11.2.1: No integer solutions">🔗</a></div>
+</article>
+<article class="example example-like" id="ch-contradictions-4-2-3"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.2.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Another no integer solutions.</span>
+</h2>
+<div class="para" id="ch-contradictions-4-2-3-2-1">There are no integers <span class="process-math">\(a,b\)</span> so that <span class="process-math">\(a^2-4b=3\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-contradictions-4-2-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="ch-contradictions-4-2-3-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<details id="ch-contradictions-4-2-3-3-1" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="ch-contradictions-4-2-3-3-1-1">
+<div class="para">Assume, to the contrary that <span class="process-math">\(a,b\)</span> are integers so that <span class="process-math">\(a^2-4b=3\text{.}\)</span> Hence <span class="process-math">\(a^2=4b+3\text{.}\)</span> Consequently <span class="process-math">\(a\)</span> must be odd (otherwise the LHS is even while the RHS is odd). So we can write <span class="process-math">\(a=2k+1\)</span> for some integer <span class="process-math">\(k\text{.}\)</span> Hence</div>
+<div class="displaymath process-math" id="ch-contradictions-4-2-3-3-1-1-7">
+\begin{equation*}
+(2k+1)^2 = 4b+3
+\end{equation*}
+</div>
+<div class="para">and so</div>
+<div class="displaymath process-math" id="ch-contradictions-4-2-3-3-1-1-8">
+\begin{equation*}
+4k^2+4k+1 = 4b+3
+\end{equation*}
+</div>
+<div class="para">which means that</div>
+<div class="displaymath process-math" id="ch-contradictions-4-2-3-3-1-1-9">
+\begin{equation*}
+4(k^2+k-b) = 2.
+\end{equation*}
+</div>
+<div class="para">And since <span class="process-math">\(k^2+k-b \in \mathbb{Z}\text{,}\)</span> this implies that <span class="process-math">\(2\)</span> is divisible by 4. This is clearly false and so we have arrived at a contradiction. Thus there can be no such integers <span class="process-math">\(a,b\)</span> and the result holds.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-contradictions-4-2-3-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 11.2.2.1.1"><a tabindex="-1" href="#ch-contradictions-4-2-3-3-1" title="Copy heading and permalink for Proof 11.2.2.1.1" aria-label="Copy heading and permalink for Proof 11.2.2.1.1">🔗</a></div>
+</article></details><div class="autopermalink" aria-hidden="true" data-description="Solution 11.2.2.1"><a tabindex="-1" href="#ch-contradictions-4-2-3-3" title="Copy heading and permalink for Solution 11.2.2.1" aria-label="Copy heading and permalink for Solution 11.2.2.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 11.2.2: Another no integer solutions"><a tabindex="-1" href="#ch-contradictions-4-2-3" title="Copy heading and permalink for Example 11.2.2: Another no integer solutions" aria-label="Copy heading and permalink for Example 11.2.2: Another no integer solutions">🔗</a></div>
+</article>
+<div class="para" id="ch-contradictions-4-2-4">Time for something a bit more substantial — a result about irrational numbers. Recall the definition of rational and irrational numbers.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-contradictions-4-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="ch-contradictions-4-2-5"><h2 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.2.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para" id="ch-contradictions-4-2-5-1-1">Let <span class="process-math">\(q\)</span> be a real number. We say that <span class="process-math">\(q\)</span> is rational if it can be written <span class="process-math">\(q = \frac{a}{b}\)</span> where <span class="process-math">\(a,b \in \mathbb{Z}\)</span> with <span class="process-math">\(b \neq 0\text{.}\)</span> If <span class="process-math">\(q\)</span> is not rational we call it irrational.  We will denote the set of irrational numbers as <span class="process-math">\(\mathbb{I}\text{,}\)</span> and note that <span class="process-math">\(\mathbb{I} = \mathbb{R} - \mathbb{Q}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-contradictions-4-2-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 11.2.3"><a tabindex="-1" href="#ch-contradictions-4-2-5" title="Copy heading and permalink for Definition 11.2.3" aria-label="Copy heading and permalink for Definition 11.2.3">🔗</a></div>
+</article>
+<div class="para" id="ch-contradictions-4-2-6">We note that the notation, <span class="process-math">\(\mathbb{I}\text{,}\)</span> is not standard, and some authors will use <span class="process-math">\(\mathbb{P}\)</span> or <span class="process-math">\(\mathbb{K}\text{.}\)</span> Unfortunately there is no widely accepted standard notation for the set of irrational numbers. When you do make use of a particular notation for irrational numbers<details class="ptx-footnote" aria-live="polite" id="ch-contradictions-4-2-6-4"><summary class="ptx-footnote__number" title="Footnote 140"><sup> 140 </sup></summary>
+<div class="ptx-footnote__contents" id="ch-contradictions-4-2-6-4">and we do recommend using <span class="process-math">\(\mathbb{I}\)</span> for this course
+</div></details>, and you are unsure if your reader knows that notation, we recommend that you devote a quick short sentence clarifying to explain.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-contradictions-4-2-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ch-contradictions-4-2-7">
+<div class="para">Thus a number <span class="process-math">\(q\)</span> is irrational when (writing it with quantifiers)</div>
+<div class="displaymath process-math" id="ch-contradictions-4-2-7-2">
+\begin{gather*}
+\forall a,b\in \mathbb{Z}, \left( \frac{a}{b} \neq q \right).
+\end{gather*}
+</div>
+<div class="para">So a good way to reach a contradiction when working with irrational numbers, is to show that a number that you have assumed to be irrational can actually be written as a ratio of integers. We use exactly this approach for the next result.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-contradictions-4-2-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="proposition theorem-like" id="res_rat_plus_irrat"><h2 class="heading">
+<span class="type">Result</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.2.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para" id="res_rat_plus_irrat-1-1">The sum of a rational number and an irrational number is irrational.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#res_rat_plus_irrat-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Result 11.2.4"><a tabindex="-1" href="#res_rat_plus_irrat" title="Copy heading and permalink for Result 11.2.4" aria-label="Copy heading and permalink for Result 11.2.4">🔗</a></div>
+</article>
+<div class="para logical" id="ch-contradictions-4-2-9">
+<div class="para">We start by assuming that the result is actually false and then work our way to a contradiction — namely that the number we assumed to be irrational is actually rational. It pays, especially when starting out with proof by contradiction, to write statements carefully with  with quantifiers, so that we can also write down the negation carefully. The original statement is</div>
+<div class="displaymath process-math" id="ch-contradictions-4-2-9-2">
+\begin{equation*}
+\forall x \in \mathbb{Q}, \forall y \in \mathbb{I}, x+y \in \mathbb{I}
+\end{equation*}
+</div>
+<div class="para">and its negation is</div>
+<div class="displaymath process-math" id="ch-contradictions-4-2-9-3">
+\begin{equation*}
+\exists x \in \mathbb{Q} \st \exists y \in \mathbb{I} \st x+y \not\in \mathbb{I}
+\end{equation*}
+</div>
+<div class="para">We can simplify this a bit because we know that <span class="process-math">\(x+y \in \mathbb{R}\text{,}\)</span> so if it is not irrational, it must be rational:</div>
+<div class="displaymath process-math" id="ch-contradictions-4-2-9-5">
+\begin{equation*}
+\exists x \in \mathbb{Q} \st \exists y \in \mathbb{I} \st x+y \in \mathbb{Q}.
+\end{equation*}
+</div>
+<div class="para">Now we assume <em class="emphasis">this</em> statement is true. And hence we can find a rational number, <span class="process-math">\(x = \frac{a}{b}\text{,}\)</span> and an irrational number, <span class="process-math">\(y\text{,}\)</span> and their sum <span class="process-math">\(x+y\)</span> is rational. One way we could get the contradiction, is to leverage the facts we have (by assumption)</div>
+<div class="displaymath process-math" id="ch-contradictions-4-2-9-10">
+\begin{equation*}
+x \in \mathbb{Q} \qquad y \in \mathbb{I} \qquad \text{and} \qquad x+y \in \mathbb{Q}
+\end{equation*}
+</div>
+<div class="para">to reach a contradiction; in this example we’ll show that <span class="process-math">\(y \in \mathbb{Q}\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-contradictions-4-2-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ch-contradictions-4-2-10">
+<div class="para">Since <span class="process-math">\(x\in \mathbb{Q}\)</span> we know that there are integers <span class="process-math">\(a,b\)</span> so that</div>
+<div class="displaymath process-math" id="ch-contradictions-4-2-10-3">
+\begin{equation*}
+x  = \frac{a}{b}.
+\end{equation*}
+</div>
+<div class="para">similarly since <span class="process-math">\(x+y\in \mathbb{Q}\)</span> we know that there are integers <span class="process-math">\(c,d\)</span> so that</div>
+<div class="displaymath process-math" id="ch-contradictions-4-2-10-6">
+\begin{equation*}
+x + y = \frac{c}{d}.
+\end{equation*}
+</div>
+<div class="para">But now we can use these to obtain more information about <span class="process-math">\(y\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="ch-contradictions-4-2-10-8">
+\begin{align*}
+y \amp = (x+y) - x\\
+\amp = \frac{c}{d}- \frac{a}{b} = \frac{cb-ad}{bd}
+\end{align*}
+</div>
+<div class="para">But since all of <span class="process-math">\(a,b,c,d \in \mathbb{Z}\text{,}\)</span> we’ve just shown that <span class="process-math">\(y\)</span> is rational — contradiction!</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-contradictions-4-2-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ch-contradictions-4-2-11">Time to write it up. When we do so we should definitely be careful and show that those denominators are not zero.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-contradictions-4-2-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="ch-contradictions-4-2-12" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="title">Proof of Result 11.2.4.</span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="ch-contradictions-4-2-12-2">
+<div class="para">We prove the result by contradiction. Assume that the result is false, and so there is a rational number <span class="process-math">\(x\)</span> and an irrational number <span class="process-math">\(y\)</span> whose sum <span class="process-math">\(z=x+y\)</span> is rational. Since <span class="process-math">\(x\)</span> and <span class="process-math">\(z\)</span> are rational, <span class="process-math">\(x = a/b\)</span> and <span class="process-math">\(z=c/d\)</span> for some <span class="process-math">\(a,b,c,d \in \mathbb{Z}\)</span> with <span class="process-math">\(b,d \neq 0\text{.}\)</span> But now</div>
+<div class="displaymath process-math" id="ch-contradictions-4-2-12-2-10">
+\begin{align*}
+y &amp;= z-x = \frac{cb-ad}{bd}
+\end{align*}
+</div>
+<div class="para">with <span class="process-math">\(bd \neq 0\)</span> and so <span class="process-math">\(y\)</span> must be rational. This contradicts our assumption that <span class="process-math">\(y\)</span> was irrational. Hence the result is true.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-contradictions-4-2-12-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 11.2.1: Proof of Result 11.2.4"><a tabindex="-1" href="#ch-contradictions-4-2-12" title="Copy heading and permalink for Proof 11.2.1: Proof of Result 11.2.4" aria-label="Copy heading and permalink for Proof 11.2.1: Proof of Result 11.2.4">🔗</a></div>
+</article></details>
+<div class="para logical" id="ch-contradictions-4-2-13">
+<div class="para">When we use proof by contradiction to prove an implication, we just have to negate carefully. Say our statement <span class="process-math">\(P\)</span> is of the form</div>
+<div class="displaymath process-math" id="ch-contradictions-4-2-13-2">
+\begin{gather*}
+P \equiv \Big( \forall x \in S, Q(x) \implies R(x) \Big)
+\end{gather*}
+</div>
+<div class="para">Our proof by contradiction needs us to prove that the negation of this statement implies a contradiction. So negating carefully:</div>
+<div class="displaymath process-math" id="ch-contradictions-4-2-13-3">
+\begin{align*}
+(\neg P) \amp \equiv \neg\Big(\forall x \in S, Q(x) \implies R(x) \Big) \\
+\amp \equiv \exists x\in S \st \neg\Big( Q(x) \implies R(x)\Big)\\
+\amp \equiv \exists x\in S \st  \Big(Q(x) \land \neg{R(x)} \Big)
+\end{align*}
+</div>
+<div class="para">So our proof will start by assuming the existence of some <span class="process-math">\(x \in S\)</span> such that <span class="process-math">\(Q(x)\)</span> is true and <span class="process-math">\(R(x)\)</span> is false. Of course, we should make sure that we alert the reader that we are using proof by contradiction. We might say “Suppose the statement is false” or something similar. Here is example of this in action:</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-contradictions-4-2-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="proposition theorem-like" id="ch-contradictions-4-2-14"><h2 class="heading">
+<span class="type">Result</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.2.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para" id="ch-contradictions-4-2-14-1-1">Let <span class="process-math">\(a,b \in \mathbb{Z}\)</span> with <span class="process-math">\(a \geq 2\text{.}\)</span> Then <span class="process-math">\(a\)</span> does not divide <span class="process-math">\(b\)</span> or <span class="process-math">\(a\)</span> does not divide <span class="process-math">\(b+1\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-contradictions-4-2-14-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Result 11.2.5"><a tabindex="-1" href="#ch-contradictions-4-2-14" title="Copy heading and permalink for Result 11.2.5" aria-label="Copy heading and permalink for Result 11.2.5">🔗</a></div>
+</article>
+<div class="para logical" id="ch-contradictions-4-2-15">
+<div class="para">This statement has an implication hiding inside and can be written as</div>
+<div class="displaymath process-math" id="ch-contradictions-4-2-15-1">
+\begin{equation*}
+\forall a,b \in \mathbb{Z}, \Big[ (a \geq 2) \implies \big( (a \nmid b) \lor (a \nmid(b+1) ) \big) \Big]
+\end{equation*}
+</div>
+<div class="para">so when we negate it we obtain</div>
+<div class="displaymath process-math" id="ch-contradictions-4-2-15-2">
+\begin{equation*}
+\exists a,b \in \mathbb{Z} \st \Big[ (a \geq 2) \land \big( (a \mid b) \land (a \mid (b+1)) \big) \Big]
+\end{equation*}
+</div>
+<div class="para">We’ll start<details class="ptx-footnote" aria-live="polite" id="ch-contradictions-4-2-15-3"><summary class="ptx-footnote__number" title="Footnote 141"><sup> 141 </sup></summary>
+<div class="ptx-footnote__contents" id="ch-contradictions-4-2-15-3">Of course, we’ll warn the reader that it is a proof by contradiction before we get too far along. Be kind to your reader.
+</div></details>  our proof by assuming that we can find such integers <span class="process-math">\(a,b\text{,}\)</span> so that <span class="process-math">\(a \geq 2\)</span> and <span class="process-math">\(a \mid b\)</span> and <span class="process-math">\(a \mid (b+1)\text{.}\)</span> From this we’ll reach a contradiction.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-contradictions-4-2-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="ch-contradictions-4-2-16" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para" id="ch-contradictions-4-2-16-1">Assume, to the contrary, that there is some <span class="process-math">\(a,b \in \mathbb{Z}\)</span> so that <span class="process-math">\(a \geq 2\)</span> and <span class="process-math">\(a\)</span> divides both <span class="process-math">\(b\)</span> and <span class="process-math">\(b+1\text{.}\)</span> This then implies that there exists <span class="process-math">\(k,\ell \in \mathbb{Z}\)</span> such that <span class="process-math">\(b=ak\)</span> and <span class="process-math">\((b+1) = a\ell\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-contradictions-4-2-16-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ch-contradictions-4-2-16-2">But then <span class="process-math">\(1 = (b+1)-b = (\ell-k) a\text{.}\)</span> Since <span class="process-math">\(\ell -k \in \mathbb{Z}\)</span> this implies that <span class="process-math">\(a\)</span> divides <span class="process-math">\(1\text{.}\)</span> This means that <span class="process-math">\(a=1\)</span> or <span class="process-math">\(a=-1\text{.}\)</span> This contradicts our assumption that <span class="process-math">\(a \geq 2\text{.}\)</span> Hence the result is true.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-contradictions-4-2-16-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 11.2.2"><a tabindex="-1" href="#ch-contradictions-4-2-16" title="Copy heading and permalink for Proof 11.2.2" aria-label="Copy heading and permalink for Proof 11.2.2">🔗</a></div>
+</article></details>
+<div class="para" id="ch-contradictions-4-2-17">This is not the only way to prove the above result and we could give a quick contrapositive proof which as some similarities with our proof above.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-contradictions-4-2-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="ch-contradictions-4-2-18" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="ch-contradictions-4-2-18-1">
+<div class="para">We prove the contrapositive. So let <span class="process-math">\(a,b \in \mathbb{Z}\)</span> and assume that <span class="process-math">\(a \mid b\)</span> and <span class="process-math">\(a \mid (b+1)\text{.}\)</span> Then we know that <span class="process-math">\(b = ak, (b+1)=a\ell\)</span> for some <span class="process-math">\(k,\ell \in \mathbb{Z}\text{.}\)</span> But then this tells us that</div>
+<div class="displaymath process-math" id="ch-contradictions-4-2-18-1-6">
+\begin{equation*}
+1 = (b+1)-b = a (k-\ell)
+\end{equation*}
+</div>
+<div class="para">and so <span class="process-math">\(a \mid 1\text{.}\)</span> However the only divisors of <span class="process-math">\(1\)</span> are <span class="process-math">\(1,-1\text{.}\)</span> And thus we know that <span class="process-math">\(a \lt 2\)</span> as required.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-contradictions-4-2-18-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 11.2.3"><a tabindex="-1" href="#ch-contradictions-4-2-18" title="Copy heading and permalink for Proof 11.2.3" aria-label="Copy heading and permalink for Proof 11.2.3">🔗</a></div>
+</article></details></section>
+<section class="subsection" id="ch-contradictions-4-3">
+<h2 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.2.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The irrationality of <span class="process-math">\(\sqrt{2}\)</span></span>
+</h2>
+<div class="para" id="ch-contradictions-4-3-2">The existence of a real quantity whose square is <span class="process-math">\(2\)</span> follows directly from applying Pythagoras’s Theorem to the following simple triangle.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-contradictions-4-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="external/hypot.svg" role="img" class="contained"></div>
+<div class="para" id="ch-contradictions-4-3-4">It is, however, much less obvious that <span class="process-math">\(\sqrt{2}\)</span> cannot be expressed as the ratio of two integers; that result is one of the most famous in mathematics. Its proof, and so the proof of the existence of irrational numbers, is generally attributed to a member of the Pythagorean school in the 5th century BC, typically  Hippasus of Metapontum. The evidence that exists linking Hippasus to the discovery of irrational numbers suggests that he was not praised for his work, but, rather, that he was expelled from his school. Some accounts indicate that he was even drowned as punishment! At the time the Pythagorean school thought that the positive integers numbers were somehow fundamental and beautiful and <em class="emphasis">natural</em>. The natural numbers were almost mystical objects and could be deployed to explain the universe. That such a simple and beautiful geometric object — the hypotenuse of a right-angle triangle — could not be expressed as the ratio of natural numbers was truly shocking. In some sense, it broke the link between number and the world.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-contradictions-4-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm_sqrt2_irrat"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.2.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="thm_sqrt2_irrat-1-1">The number <span class="process-math">\(\sqrt{2}\)</span> is not rational.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm_sqrt2_irrat-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 11.2.6"><a tabindex="-1" href="#thm_sqrt2_irrat" title="Copy heading and permalink for Theorem 11.2.6" aria-label="Copy heading and permalink for Theorem 11.2.6">🔗</a></div>
+</article>
+<div class="para logical" id="ch-contradictions-4-3-6">
+<div class="para">We prove this result by finding a contradiction — that <span class="process-math">\(\sqrt{2}\)</span> is both rational and irrational. The same proof can be made to work (with minor adjustments) for any prime number. A key part of the proof is understanding that when we write a rational number</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem_nodd_iff_n2odd.html" id="ch-contradictions-4-3-6-3">
+\begin{equation*}
+q = \frac{a}{b}
+\end{equation*}
+</div>
+<div class="para">that we can insist that <span class="process-math">\(a,b\)</span> do not have common factors. If we do have a representation <span class="process-math">\(q = \frac{c}{d}\)</span> where <span class="process-math">\(\gcd(c,d) \gt 1\text{,}\)</span> then we can divide both numerator and denominator by that common factor and set</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem_nodd_iff_n2odd.html" id="ch-contradictions-4-3-6-7">
+\begin{equation*}
+q = \dfrac{c}{d} = \frac{c/\gcd(c,d)}{d/gcd(c,d)} = \frac{a}{b}
+\end{equation*}
+</div>
+<div class="para">where the new numerator and denominator, <span class="process-math">\(a,b\)</span> have no common factors. In this way, the resulting <span class="process-math">\(a,b\)</span> are the <em class="emphasis">smallest</em> integers whose ratio represents that rational number. Using this idea, our proof works by assuming that <span class="process-math">\(\sqrt{2}\)</span> is rational and so can be represented by a smallest <span class="process-math">\(a,b\)</span> (ie with no common factors). We then obtain a contradiction by showing that the numerator and denominator do have a common factor. Along the way we will make use of a result we proved earlier<details class="ptx-footnote" aria-live="polite" id="ch-contradictions-4-3-6-13"><summary class="ptx-footnote__number" title="Footnote 142"><sup> 142 </sup></summary>
+<div class="ptx-footnote__contents" id="ch-contradictions-4-3-6-13">
+<a href="ch-moreproof-3.html#lem_nodd_iff_n2odd" class="xref" data-knowl="./knowl/xref/lem_nodd_iff_n2odd.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 5.1.5">Lemma 5.1.5</a> is logically equivalent to the statement “The number <span class="process-math">\(n^2\)</span> is even iff <span class="process-math">\(n\)</span> is even” (just take the contrapositive of both implications).
+</div></details>.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-contradictions-4-3-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<blockquote class="blockquote" id="ch-contradictions-4-3-7">
+<div class="para" id="ch-contradictions-4-3-7-1">Let <span class="process-math">\(n \in \mathbb{Z}\text{.}\)</span> Then <span class="process-math">\(n^2\)</span> is even if and only if <span class="process-math">\(n\)</span> is even.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-contradictions-4-3-7-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Quotation"><a tabindex="-1" href="#ch-contradictions-4-3-7" title="Copy heading and permalink for Quotation" aria-label="Copy heading and permalink for Quotation">🔗</a></div>
+</blockquote>
+<details id="ch-contradictions-4-3-8" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para" id="ch-contradictions-4-3-8-1">We prove the result by contradiction, and so assume that <span class="process-math">\(\sqrt{2}\)</span> is rational. Thus we can write <span class="process-math">\(\sqrt{2} = \frac{a}{b}\)</span> where <span class="process-math">\(a,b \in \mathbb{Z}\)</span> and <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> have <em class="emphasis">no common factors</em>. Hence <span class="process-math">\(2 = \frac{a^2}{b^2}\text{,}\)</span> which can be rewritten as <span class="process-math">\(2b^2 = a^2\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-contradictions-4-3-8-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ch-contradictions-4-3-8-2">This implies that <span class="process-math">\(a^2\)</span> is even and so (by the above fact) <span class="process-math">\(a\)</span> must be even. Thus we can write <span class="process-math">\(a = 2 c\)</span> for some <span class="process-math">\(c \in \mathbb{Z}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-contradictions-4-3-8-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ch-contradictions-4-3-8-3">Substituting <span class="process-math">\(a=2c\)</span> into <span class="process-math">\(2b^2=a^2\)</span> we find <span class="process-math">\(2 b^2 = 4 c^2\text{,}\)</span> which implies <span class="process-math">\(b^2 = 2 c^2\text{.}\)</span>Hence <span class="process-math">\(b^2\)</span> is even and so <span class="process-math">\(b\)</span> must be even.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-contradictions-4-3-8-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ch-contradictions-4-3-8-4">Since both <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> are even, they must have a common factor of <span class="process-math">\(2\text{.}\)</span> This contradicts our assumption that <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> have no common factors. Hence the result is true and <span class="process-math">\(\sqrt{2} \not\in\mathbb{Q}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-contradictions-4-3-8-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 11.2.1.1"><a tabindex="-1" href="#ch-contradictions-4-3-8" title="Copy heading and permalink for Proof 11.2.1.1" aria-label="Copy heading and permalink for Proof 11.2.1.1">🔗</a></div>
+</article></details>
+<div class="para" id="ch-contradictions-4-3-9">Here is another result with a similar proof.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-contradictions-4-3-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="proposition theorem-like" id="ch-contradictions-4-3-10"><h3 class="heading">
+<span class="type">Result</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.2.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="ch-contradictions-4-3-10-1-1">Let <span class="process-math">\(a,b,c\)</span> be odd integers. Then the polynomial <span class="process-math">\(ax^2 + bx + c\)</span> has no rational zeros.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-contradictions-4-3-10-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Result 11.2.7"><a tabindex="-1" href="#ch-contradictions-4-3-10" title="Copy heading and permalink for Result 11.2.7" aria-label="Copy heading and permalink for Result 11.2.7">🔗</a></div>
+</article>
+<details id="ch-contradictions-4-3-11" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="ch-contradictions-4-3-11-1">
+<div class="para">Assume, to the contrary, that there are odd <span class="process-math">\(a,b,c\)</span> and rational <span class="process-math">\(x\)</span> so that <span class="process-math">\(ax^2+bx+c=0\text{.}\)</span> Since <span class="process-math">\(x\)</span> is rational, we know that <span class="process-math">\(x=\frac{k}{n}\)</span> for some integers <span class="process-math">\(k,n\)</span> with <span class="process-math">\(n \neq 0\text{.}\)</span> Further, we can assume that <span class="process-math">\(k,n\)</span> have no common factors; if they do have common factors, remove them. Then</div>
+<div class="displaymath process-math" id="ch-contradictions-4-3-11-1-9">
+\begin{equation*}
+a\left(\frac{k}{n}\right)^2+b\left(\frac{k}{n}\right)+c = 0
+\end{equation*}
+</div>
+<div class="para">and so (multiplying through by <span class="process-math">\(n^2\)</span>)</div>
+<div class="displaymath process-math" id="ch-contradictions-4-3-11-1-11">
+\begin{equation*}
+ak^2+bkn+cn^2 =0
+\end{equation*}
+</div>
+<div class="para">Now consider the parity of <span class="process-math">\(k\)</span> and <span class="process-math">\(n\text{.}\)</span> There are four possibilities</div>
+<ul class="disc" id="ch-contradictions-4-3-11-1-14">
+<li id="ch-contradictions-4-3-11-1-14-1">
+<div class="para" id="p-derived-ch-contradictions-4-3-11-1-14-1">If <span class="process-math">\(k,n\)</span> are both odd, then since <span class="process-math">\(a,b,c\)</span> are odd, the LHS is also odd, and so cannot equal zero.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch-contradictions-4-3-11-1-14-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch-contradictions-4-3-11-1-14-2">
+<div class="para" id="p-derived-ch-contradictions-4-3-11-1-14-2">If <span class="process-math">\(k\)</span> is even and <span class="process-math">\(n\)</span> is odd, then <span class="process-math">\(ak^2\)</span> and <span class="process-math">\(bkn\)</span> are even, and <span class="process-math">\(cn^2\)</span> is odd. Hence the LHS is odd and so cannot equal zero.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch-contradictions-4-3-11-1-14-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch-contradictions-4-3-11-1-14-3">
+<div class="para" id="p-derived-ch-contradictions-4-3-11-1-14-3">Similarly, if <span class="process-math">\(n\)</span> is even and <span class="process-math">\(k\)</span> is odd, then <span class="process-math">\(bkn\)</span> and <span class="process-math">\(cn^2\)</span> are even and <span class="process-math">\(ak^2\)</span> is odd. Again this implies the LHS is odd and so cannot equal zero.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch-contradictions-4-3-11-1-14-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch-contradictions-4-3-11-1-14-4">
+<div class="para" id="p-derived-ch-contradictions-4-3-11-1-14-4">Finally, if <span class="process-math">\(k,n\)</span> are both even, then this contradicts our assumption that <span class="process-math">\(k,n\)</span> have no common factors.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch-contradictions-4-3-11-1-14-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">Thus there cannot exist such <span class="process-math">\(k,n\)</span> and hence there is no such rational <span class="process-math">\(x\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-contradictions-4-3-11-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 11.2.1.2"><a tabindex="-1" href="#ch-contradictions-4-3-11" title="Copy heading and permalink for Proof 11.2.1.2" aria-label="Copy heading and permalink for Proof 11.2.1.2">🔗</a></div>
+</article></details>
+<article class="remark remark-like" id="ch-contradictions-4-3-12"><h3 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.2.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Pythagoras’ Theorem.</span>
+</h3>
+<div class="para" id="ch-contradictions-4-3-12-2">There are a great many proofs of this famous theorem, but here is a pictorial argument that the authors particularly like (and we include here for completeness<details class="ptx-footnote" aria-live="polite" id="ch-contradictions-4-3-12-2-1"><summary class="ptx-footnote__number" title="Footnote 143"><sup> 143 </sup></summary>
+<div class="ptx-footnote__contents" id="ch-contradictions-4-3-12-2-1">and because we can! We hope the reader will agree that it is pretty cool.
+</div></details>). It is attributed to the 12th century mathematician and astronomer Bhaskara<details class="ptx-footnote" aria-live="polite" id="ch-contradictions-4-3-12-2-2"><summary class="ptx-footnote__number" title="Footnote 144"><sup> 144 </sup></summary>
+<div class="ptx-footnote__contents" id="ch-contradictions-4-3-12-2-2">Bhāskara, made many contributions to mathematics, including understanding some of the central ideas of differential calculus around 500 years before Newton and Leibniz. The interested reader should use their search engine to discover more. We note that Bhāskara is also known as Bhāskara II to distinguish him from Bhāskara I. Bhāskara I was  a 7th Century mathematician and astronomer, who amongst other achievements helped to develop the positional notation we use for representing numbers including a circle symbol for zero. He is also worth a trip to your favourite search engine. Both Bhāskara have satellites named after them by the Indian Space Research Organisation.
+</div></details>. Construct a right-angle triangle with sides <span class="process-math">\(a,b,c\text{,}\)</span> and then make another 3 copies, each rotated by 90 degrees, and then rearrange those triangles as shown on the right.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-contradictions-4-3-12-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="image-box" style="width: 66%; margin-left: 17%; margin-right: 17%;"><img src="external/hypot2.svg" role="img" class="contained"></div>
+<div class="para logical" id="ch-contradictions-4-3-12-4">
+<div class="para">Now notice that the outer-square has area <span class="process-math">\((a+b)^2\text{,}\)</span> and the inner rotated square has area <span class="process-math">\(c^2\text{.}\)</span> The four triangles have total area <span class="process-math">\(2ab\text{.}\)</span> Equating the areas gives <span class="process-math">\((a+b)^2 = c^2+2ab\text{.}\)</span> But since <span class="process-math">\((a+b)^2 = a^2+b^2+2ab\text{,}\)</span> subtracting <span class="process-math">\(2ab\)</span> from each side gives</div>
+<div class="displaymath process-math" id="ch-contradictions-4-3-12-4-7">
+\begin{equation*}
+c^2 = a^2+b^2.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-contradictions-4-3-12-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Remark 11.2.8: Pythagoras’ Theorem"><a tabindex="-1" href="#ch-contradictions-4-3-12" title="Copy heading and permalink for Remark 11.2.8: Pythagoras’ Theorem" aria-label="Copy heading and permalink for Remark 11.2.8: Pythagoras’ Theorem">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Subsection 11.2.1: The irrationality of \sqrt{2}"><a tabindex="-1" href="#ch-contradictions-4-3" title="Copy heading and permalink for Subsection 11.2.1: The irrationality of \sqrt{2}" aria-label="Copy heading and permalink for Subsection 11.2.1: The irrationality of \sqrt{2}">🔗</a></div>
+</section>
+<section class="subsection" id="ssec_inf_primes">
+<h2 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.2.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The infinitude of primes</span>
+</h2>
+<div class="para" id="ssec_inf_primes-2">Here is wonderful result about a fundamental property of numbers — that there are an infinite number of primes. The first recorded proof of this is due to Euclid in his Elements<details class="ptx-footnote" aria-live="polite" id="ssec_inf_primes-2-2"><summary class="ptx-footnote__number" title="Footnote 145"><sup> 145 </sup></summary>
+<div class="ptx-footnote__contents" id="ssec_inf_primes-2-2">This 13 book work on mathematics has been called the most famous and influential textbook in history. Indeed, it was <em class="emphasis">the</em> standard textbook for university students for many centuries. The interested reader should search-engine their way to more information.
+</div></details> from around 300 BC. The result does not rely on unique prime factorisations, but it does require the fact that every integer greater than 1 has a prime divisor. We prove this first via strong induction — in fact we did this back in <a href="ch_induction-4.html#ex_exists_prime_fac" class="xref" data-knowl="./knowl/xref/ex_exists_prime_fac.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 7.2.20: There exists a prime factorisation">Example 7.2.20</a>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ssec_inf_primes-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="proposition theorem-like" id="ssec_inf_primes-3"><h3 class="heading">
+<span class="type">Result</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.2.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="ssec_inf_primes-3-1-1">Let <span class="process-math">\(n \in \mathbb{N}\)</span> so that <span class="process-math">\(n \geq 2\text{.}\)</span> Then <span class="process-math">\(n\)</span> is divisible by a prime number.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ssec_inf_primes-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Result 11.2.9"><a tabindex="-1" href="#ssec_inf_primes-3" title="Copy heading and permalink for Result 11.2.9" aria-label="Copy heading and permalink for Result 11.2.9">🔗</a></div>
+</article>
+<details id="ssec_inf_primes-3-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para" id="ssec_inf_primes-3-2-1">See <a href="ch_induction-4.html#ex_exists_prime_fac" class="xref" data-knowl="./knowl/xref/ex_exists_prime_fac.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 7.2.20: There exists a prime factorisation">Example 7.2.20</a>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ssec_inf_primes-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 11.2.9.1"><a tabindex="-1" href="#ssec_inf_primes-3-2" title="Copy heading and permalink for Proof 11.2.9.1" aria-label="Copy heading and permalink for Proof 11.2.9.1">🔗</a></div>
+</article></details>
+<div class="para" id="ssec_inf_primes-4">Armed with this result, we can prove that the set of primes is not finite.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ssec_inf_primes-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="ssec_inf_primes-5"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.2.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Euclid — 300 BC.</span>
+</h3>
+<div class="para" id="ssec_inf_primes-5-2-1">There are infinitely many primes.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ssec_inf_primes-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 11.2.10: Euclid — 300 BC"><a tabindex="-1" href="#ssec_inf_primes-5" title="Copy heading and permalink for Theorem 11.2.10: Euclid — 300 BC" aria-label="Copy heading and permalink for Theorem 11.2.10: Euclid — 300 BC">🔗</a></div>
+</article>
+<div class="para" id="ssec_inf_primes-6">We will prove this using a “proof by contradiction”. We assume that there are only a finite number of primes and then deduce a contradiction. If there are a finite number of primes, we can list them out <span class="process-math">\(\set{p_1,p_2, \dots p_r}\)</span> and we can form the new number <span class="process-math">\(N = p_1 p_2 \dots p_r\)</span> — Now <span class="process-math">\(N+1\)</span> is not on our list and it is not divisible by any of the primes. This will be the source of the contradiction (with a little more work).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ssec_inf_primes-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="ssec_inf_primes-7" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="ssec_inf_primes-7-1">
+<div class="para">Assume there are a finite number of primes. Since the primes are finite, we can write a finite list containing all of them — <span class="process-math">\(p_1, p_2, \dots, p_n\text{.}\)</span> Now let <span class="process-math">\(N = (p_1 p_2 \dots p_r)\)</span> be a product of all the primes. Since the list of primes is finite, we know that <span class="process-math">\(N\)</span> is finite. Now either <span class="process-math">\(N+1\)</span> is prime or not.</div>
+<ul class="disc" id="ssec_inf_primes-7-1-6">
+<li id="ssec_inf_primes-7-1-6-1">
+<div class="para" id="p-derived-ssec_inf_primes-7-1-6-1">If <span class="process-math">\(N+1\)</span> is prime then since <span class="process-math">\(N+1\)</span> is bigger than all the primes on the list, <span class="process-math">\(N+1\)</span> is not in our list of prime numbers. This gives a contradiction since our list was assumed to be <em class="emphasis">all</em> the primes.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ssec_inf_primes-7-1-6-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ssec_inf_primes-7-1-6-2">
+<div class="para logical" id="ssec_inf_primes-7-1-6-2-1">
+<div class="para">If <span class="process-math">\(N+1\)</span> is not prime then, by the above result, it must be divisible by one of the primes in our list — say  <span class="process-math">\(p_k \mid (N+1)\text{.}\)</span> Hence we can write <span class="process-math">\(N+1 = p_k a\)</span> for some <span class="process-math">\(a \in \mathbb{N}\text{.}\)</span> Similarly we can write <span class="process-math">\(N = p_k b\)</span> for some <span class="process-math">\(b \in \mathbb{N}\text{.}\)</span> But then</div>
+<div class="displaymath process-math" id="ssec_inf_primes-7-1-6-2-1-8">
+\begin{equation*}
+1 = (N+1) - N = p_k (a-b).
+\end{equation*}
+</div>
+<div class="para">This implies that <span class="process-math">\(1\)</span> is divisible by <span class="process-math">\(p_k\)</span> which is clearly false.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ssec_inf_primes-7-1-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ssec_inf_primes-7-1-6-2-2">Thus <span class="process-math">\(N+1\)</span> is not divisible by any prime on our list and so there must be some prime that is not contained in our list. Again this gives a contradiction since our list as assumed to contain <em class="emphasis">all</em> primes.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ssec_inf_primes-7-1-6-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ssec_inf_primes-7-1-6-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">In both cases a contradiction is obtained and hence the result is true.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ssec_inf_primes-7-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 11.2.2.1"><a tabindex="-1" href="#ssec_inf_primes-7" title="Copy heading and permalink for Proof 11.2.2.1" aria-label="Copy heading and permalink for Proof 11.2.2.1">🔗</a></div>
+</article></details><div class="autopermalink" aria-hidden="true" data-description="Subsection 11.2.2: The infinitude of primes"><a tabindex="-1" href="#ssec_inf_primes" title="Copy heading and permalink for Subsection 11.2.2: The infinitude of primes" aria-label="Copy heading and permalink for Subsection 11.2.2: The infinitude of primes">🔗</a></div>
+</section><div class="autopermalink" aria-hidden="true" data-description="Section 11.2: Some examples"><a tabindex="-1" href="#ch-contradictions-4" title="Copy heading and permalink for Section 11.2: Some examples" aria-label="Copy heading and permalink for Section 11.2: Some examples">🔗</a></div>
+</section>
+</div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="ch-contradictions-3.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch-contradictions-5.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+<!--Start: Google Global Site Tag code--><!--*** DO NOT COPY ANOTHER PROJECT'S MAGIC NUMBERS/ID ***--><!--***           GET YOUR OWN FROM GOOGLE             ***-->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-FL66FX9988"></script><script>  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-FL66FX9988');
+</script><!--End: Google Global Site Tag code-->
+</body>
+</html>

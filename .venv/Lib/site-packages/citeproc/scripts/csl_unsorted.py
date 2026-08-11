@@ -1,0 +1,84 @@
+#!/usr/bin/env python
+
+import os
+import sys
+import warnings
+from optparse import OptionParser
+
+# The references are parsed from a BibTeX database, so we import the
+# corresponding parser.
+from citeproc.source.bibtex import BibTeX
+
+# Import the citeproc-py classes we'll use below.
+from citeproc import frontend
+from citeproc import CitationStylesStyle, CitationStylesBibliography
+from citeproc import formatter
+from citeproc import Citation, CitationItem
+
+
+def main():
+    usage = \
+"""usage: %prog [options] <bib_file>'
+
+Output a formatted bibliography from bibtex file <bib_file> to stdout
+
+You might want to put the path to your CSL styles in the `CSL_STYLES_PATH`
+environment variable with something like (bash shell)::
+
+    export CSL_STYLES_PATH=$HOME/dev_trees/styles
+"""
+    parser = OptionParser(usage)
+    parser.add_option('-s', '--style', dest='style',
+                      default='harvard-cite-them-right',
+                      help='style file', metavar='STYLE_FILE')
+    parser.add_option('-f', '--format', dest='format', default='rst',
+                      help='output type', metavar='FORMAT')
+    (options, args) = parser.parse_args()
+    if len(args) != 1:
+        parser.print_usage()
+        sys.exit(1)
+
+    output_format = options.format
+    try:
+        output_format = getattr(formatter, options.format)
+    except AttributeError:
+        available_formatters = (attr for attr in dir(formatter)
+                                if not attr.startswith('__'))
+        print('style should be one of: ' + ', '.join(available_formatters))
+        sys.exit(1)
+
+    # Get styles path out of the environment variable
+    env_path = os.environ.get('CSL_STYLES_PATH')
+    if env_path is not None:
+        frontend.STYLES_PATH = env_path
+
+    # Silence lots of warnings
+    warnings.simplefilter('ignore')
+    # Read bibliography
+    bib_source = BibTeX(args[0])
+    # load a CSL style (full path or name of style in style path)
+    bib_style = CitationStylesStyle(options.style)
+    # Create the citeproc-py bibliography, passing it the:
+    # * CitationStylesStyle,
+    # * BibliographySource (BibTeX in this case), and
+    # * a formatter (plain, html, or rst)
+    bibliography = CitationStylesBibliography(bib_style, bib_source,
+                                              output_format)
+    # Processing citations in a document need to be done in two passes as for
+    # some CSL styles, a citation can depend on the order of citations in the
+    # bibliography and thus on citations following the current one.
+    # For this reason, we first need to register all citations with the
+    # CitationStylesBibliography.
+    # Just read every one in key order
+    for name in sorted(bib_source):
+        bibliography.register(Citation([CitationItem(name)]))
+    # In the second pass, CitationStylesBibliography can generate citations.
+    # CitationStylesBibliography.cite() requires a callback function to be
+    # passed along to be called in case a CitationItem's key is not present in
+    # the bibliography.
+    for item in bibliography.bibliography():
+        print(str(item))
+
+
+if __name__ == '__main__':
+    main()

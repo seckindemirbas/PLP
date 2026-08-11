@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.4.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para">Show that the sequence <span class="process-math">\((b_n) = \left( (-1)^n\right)\)</span> does not converge to <span class="process-math">\(1\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg_minus_1_to_n_conv-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Scratchwork</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="answer solution-like knowl__content">
+<div class="para logical">
+<div class="para">Even though we wish to show that the sequence <span class="process-math">\((b_n)\)</span> does not converge to <span class="process-math">\(1\text{,}\)</span> our starting point will still be the definition of convergence. Recall that the sequence <span class="process-math">\((b_n)\)</span> converges to <span class="process-math">\(1\)</span> when</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\forall\epsilon \gt 0, \exists N\in\mathbb N \st \forall n \in \mathbb{N} (n\gt N) \implies (|b_n-1| \lt \epsilon).
+\end{equation*}
+</div>
+<div class="para">We want to show that this is false, and we do so by showing that the negation is true. The negation is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\exists\epsilon \gt 0 \st \forall N\in\mathbb N, \exists n\in\mathbb{N} \st (n \gt N) \land (|(-1)^n-1|\geq\epsilon).
+\end{equation*}
+</div>
+<div class="para">So, if we can show that this is true, then the original statement is false, and so the sequence <span class="process-math">\((b_n)\)</span> does not converge to <span class="process-math">\(1\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg_minus_1_to_n_conv-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">Now, let’s try to understand this statement. It says that we need to show that there is an <span class="process-math">\(\epsilon \gt 0\)</span> such that no matter what <span class="process-math">\(N\in\mathbb N\)</span> we choose, there is always at least one <span class="process-math">\(n\gt N\)</span> such that <span class="process-math">\(|(-1)^n-1|\)</span> is greater than <span class="process-math">\(\epsilon\text{.}\)</span> Now, notice that we don’t have to show this for all <span class="process-math">\(\epsilon\)</span> (indeed we can’t), we just need to find one <span class="process-math">\(\epsilon\)</span> that makes things work.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg_minus_1_to_n_conv-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">As we saw above, sequence <span class="process-math">\((b_n)\)</span> alternates between <span class="process-math">\(-1\)</span> and <span class="process-math">\(1\text{.}\)</span>
+</div>
+<ul class="disc" id="eg_minus_1_to_n_conv-2-3-4">
+<li>
+<div class="para">For <span class="process-math">\(n\)</span> even, <span class="process-math">\(b_n = (-1)^n = 1\)</span> and so <span class="process-math">\(|b_n-1|=0 \lt \epsilon\text{.}\)</span> So this is true for all <span class="process-math">\(\epsilon \gt 0\)</span> and all even <span class="process-math">\(n\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#eg_minus_1_to_n_conv-2-3-4-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li>
+<div class="para">On the other hand, for <span class="process-math">\(n\)</span> odd, we have <span class="process-math">\(b_n = (-1)^n = -1\text{,}\)</span> and so <span class="process-math">\(|b_n-1| = |-1-1| = 2\text{.}\)</span> So, as long as we choose <span class="process-math">\(0 \lt \epsilon \lt 2\text{,}\)</span> this case will fail for all odd <span class="process-math">\(n \in \mathbb{N}\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#eg_minus_1_to_n_conv-2-3-4-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">So to make the proof work, we can choose, say, <span class="process-math">\(\epsilon =1\)</span> and then show that things go wrong for odd <span class="process-math">\(n\text{.}\)</span> Time for the proof.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg_minus_1_to_n_conv-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Scratchwork 6.4.6.1"><a tabindex="-1" href="#eg_minus_1_to_n_conv-2" title="Copy heading and permalink for Scratchwork 6.4.6.1" aria-label="Copy heading and permalink for Scratchwork 6.4.6.1">🔗</a></div>
+</div></details>
+<details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical">
+<div class="para">We show that the sequence <span class="process-math">\((b_n)=\left((-1)^n\right)\)</span> doesn’t converge to <span class="process-math">\(1\text{.}\)</span> To this we show that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\exists\epsilon \gt 0 \st \forall N\in\mathbb N, \exists n\in\mathbb{N}\st (n \gt N) \land (|(-1)^n-1|\geq\epsilon).
+\end{equation*}
+</div>
+<div class="para">Let <span class="process-math">\(\epsilon=1\)</span> and let <span class="process-math">\(N\)</span> be any natural number. Now set <span class="process-math">\(n = 2N+1\text{,}\)</span> so that <span class="process-math">\(b_n = (-1)^n=-1\text{.}\)</span> Then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+|b_n -1 | = |-1-1| = 2 \gt \epsilon.
+\end{equation*}
+</div>
+<div class="para">Therefore we conclude that the sequence does not converge to <span class="process-math">\(1\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg_minus_1_to_n_conv-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 6.4.6.1.1"><a tabindex="-1" href="#eg_minus_1_to_n_conv-3-1" title="Copy heading and permalink for Proof 6.4.6.1.1" aria-label="Copy heading and permalink for Proof 6.4.6.1.1">🔗</a></div>
+</article></details>
+<div class="para">Notice that we set <span class="process-math">\(n=2N+1\)</span> in our proof and everything worked out nicely. We can actually choose any odd number larger than <span class="process-math">\(N\text{.}\)</span> In fact, we could change the wording of the proof to say “Let <span class="process-math">\(n\)</span> be any odd number larger than <span class="process-math">\(N\)</span>” and it would be correct. But, since we can make a simple explicit choice, we should do so.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg_minus_1_to_n_conv-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 6.4.6.1"><a tabindex="-1" href="#eg_minus_1_to_n_conv-3" title="Copy heading and permalink for Solution 6.4.6.1" aria-label="Copy heading and permalink for Solution 6.4.6.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 6.4.6"><a tabindex="-1" href="#eg_minus_1_to_n_conv" title="Copy heading and permalink for Example 6.4.6" aria-label="Copy heading and permalink for Example 6.4.6">🔗</a></div>
+</article><span class="incontext"><a class="internal" href="sec_limits.html#eg_minus_1_to_n_conv">In Context</a></span>
+</body>
+</html>

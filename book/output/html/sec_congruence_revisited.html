@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Congruence revisited</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
+startMathJax({
+hasWebworkReps: false,
+hasSage: false,
+isReact: false,
+htmlPresentation: false,
+lang: "en-US",
+});
+</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta name="twitter:title" content="PLP">
+<meta property="og:title" content="PLP">
+<meta property="book:title" content="PLP">
+<meta name="twitter:description" content="An introduction to mathematical proof">
+<meta property="og:description" content="An introduction to mathematical proof">
+<meta name="twitter:card" content="summary">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.48"></script><script src="_static/pretext/js/dist/pretext-read-aloud.js?v=2.48"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.2.4';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.40bd1420d3277749.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.b388362b5f43738a.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.8086b62682b271d1.css">
+<script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead" role="banner"><div class="ptx-banner"><div class="title-container">
+<div class="heading ptx-banner-heading"><a href="plp.html"><span class="title">PLP</span> <span class="subtitle">An introduction to mathematical proof</span></a></div>
+<p class="byline">Seçkin Demirbaş, Andrew Rechnitzer</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button id="ptx-toc-toggle" type="button" aria-controls="ptx-sidebar" class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="ptx-search-box">
+<div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search Book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog"><div class="ptx-search-dialog-controls">
+<input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close" id="ptx-search-close" class="ptx-search-close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div id="ptx-search-status" class="ptx-search-status" aria-live="polite" aria-atomic="true"></div>
+<h2 class="heading ptx-search-results-heading">Search Results: </h2>
+<div id="ptx-search-empty" class="ptx-search-empty"><span>No results.</span></div>
+<ol id="ptx-search-results" class="ptx-search-results"></ol></dialog>
+</div>
+<span class="nav-other-controls"><button id="ptx-read-aloud-button" class="ptx-read-aloud-button button" title="Read aloud" aria-expanded="false"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf1bc;</span><span class="name">Read aloud</span></button><div id="ptx-read-aloud-player" class="ptx-read-aloud-player" hidden="hidden" role="group" aria-label="Read aloud">
+<button id="ptx-read-aloud-prev" class="button" title="Previous sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe045;</span></button><button id="ptx-read-aloud-toggle" class="ptx-read-aloud-toggle button" title="Play"><span class="ptx-read-aloud-icon-play"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></span><span class="ptx-read-aloud-icon-pause"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe034;</span></span></button><button id="ptx-read-aloud-next" class="button" title="Next sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe044;</span></button><a id="ptx-read-aloud-continue" class="ptx-read-aloud-continue button" hidden="hidden">Continue<span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></a><button id="ptx-read-aloud-settings-button" class="ptx-read-aloud-settings-button button" title="Reading settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe429;</span></button>
+</div>
+<dialog class="ptx-dialog ptx-read-aloud-settings-popup" id="ptx-read-aloud-settings-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Read aloud settings</h2>
+<button class="ptx-read-aloud-settings-close-button button" id="ptx-read-aloud-settings-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label for="ptx-read-aloud-voice"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe91f;</span><span>Voice</span></label><select id="ptx-read-aloud-voice"></select><label class="ptx-readability-slider-label" for="ptx-read-aloud-rate"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe9e4;</span><span>Reading speed</span><output id="ptx-read-aloud-rate-value" for="ptx-read-aloud-rate">1×</output></label><input type="range" id="ptx-read-aloud-rate" min="0.5" max="2" step="0.1" value="1"><label for="ptx-read-aloud-asides"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d7;</span><span>Collapsed content</span></label><select id="ptx-read-aloud-asides"><option value="skip">Announce, do not read</option>
+<option value="read">Read automatically</option></select><label for="ptx-read-aloud-autoscroll"><input type="checkbox" id="ptx-read-aloud-autoscroll" checked><span>Follow along (auto-scroll)</span></label><label for="ptx-read-aloud-autocontinue"><input type="checkbox" id="ptx-read-aloud-autocontinue"><span>Continue to the next page automatically</span></label>
+</div></dialog><button id="ptx-readability-options-button" class="ptx-readability-options-button button" title="Readability settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf6f1;</span><span class="name">Readability settings</span></button><dialog class="ptx-dialog ptx-readability-options-popup" id="ptx-readability-options-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Readability settings</h2>
+<button class="ptx-readability-options-close-button button" id="ptx-readability-options-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-line-height"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe240;</span><span>Line height</span><output id="ptx-readability-line-height-value" for="ptx-readability-line-height">1.35</output></label><input type="range" id="ptx-readability-line-height" min="1.10" max="3" step="0.05" value="1.35">
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-font-size"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe245;</span><span>Content font size</span><output id="ptx-readability-font-size-value" for="ptx-readability-font-size">100%</output></label><input type="range" id="ptx-readability-font-size" min="0.8" max="1.5" step="0.05" value="1">
+</div>
+<fieldset class="ptx-readability-options-group ptx-readability-options-group-theme">
+<legend>Theme</legend>
+<label for="ptx-readability-theme-system"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-system" value="system"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe1ab;</span><span>System</span></label><label for="ptx-readability-theme-light"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-light" value="light"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe518;</span><span>Light</span></label><label for="ptx-readability-theme-dark"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-dark" value="dark"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span>Dark</span></label>
+</fieldset>
+<fieldset class="ptx-readability-options-group">
+<legend>Assistive technologies</legend>
+<label for="ptx-readability-accessible-permalinks"><input type="checkbox" id="ptx-readability-accessible-permalinks"><span>🔗</span><span>Expose permalinks</span></label>
+</fieldset>
+<div class="ptx-readability-options-group"><button type="button" class="ptx-readability-reset-button button" id="ptx-readability-reset-button"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf053;</span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="ch_relations-5.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch_relations.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-euclid.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{cancel}\require{upgreek} \newcommand{\ds}{\displaystyle}
+ \renewcommand{\textcolor}[2]{{\color{#1}{#2}}}
+ 
+ \newcommand{\es}{ {\varnothing}}
+ \newcommand{\st}{ \;\mathrm{s.t.}\; }
+ \newcommand{\so}{ \;\mid\; }
+ \newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+ \newcommand{\set}[1]{ \left\{#1\right\} }
+ 
+ \renewcommand{\neg}{\sim}
+
+ \newcommand{\rel}[1][R]{\;\mathcal{#1}\;}
+ \newcommand{\nrel}[1][R]{\;\cancel{\mathcal{#1}}\;}
+
+ \newcommand{\dee}[1]{\mathrm{d}#1}
+ \newcommand{\diff}[2]{\dfrac{\mathrm{d}#1}{\mathrm{d}#2}}
+ 
+ \renewcommand{\mod}[1]{\ (\mathrm{mod}\ #1)}
+ \newcommand{\lcm}{\mathrm{lcm}}
+ 
+ \let\oldepsilon\epsilon
+ 
+ \renewcommand{\epsilon}{\varepsilon}
+ \newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" role="complementary" class="ptx-sidebar"><nav id="ptx-toc" tabindex="-1" aria-label="Contents" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul id="ptx-toc-group-frontmatter" class="structural toc-item-list">
+<li class="toc-item toc-dedication"><div class="toc-title-box"><a href="frontmatter-3.html" class="internal"><span class="title">Dedication</span></a></div></li>
+<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="frontmatter-5.html" class="internal"><span class="title">Preface</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="plp-4.html" class="internal"><span class="codenumber">1</span> <span class="title">Sets</span></a></div>
+<ul id="ptx-toc-group-plp-4" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="plp-4-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="plp-4-3.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Not so formal definition</span></a></div>
+<ul id="ptx-toc-group-plp-4-3" class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="plp-4-3.html#plp-4-3-3" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Who is this reader you keep on mentioning?</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-describing.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Describing a set</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-4-5.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Onward</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="plp-4-6.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-logic.html" class="internal"><span class="codenumber">2</span> <span class="title">A little logic</span></a></div>
+<ul id="ptx-toc-group-ch-logic" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-logic-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-logic-3.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Statements and open sentences</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-logic-4.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Negation</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-logic-5.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Or and And</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-implication.html" class="internal"><span class="codenumber">2.4</span> <span class="title">The implication</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-logic-7.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Modus ponens and chaining implications</span></a></div>
+<ul id="ptx-toc-group-ch-logic-7" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-logic-7.html#ch-logic-7-2" class="internal"><span class="codenumber">2.5.1</span> <span class="title">Modus ponens</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-logic-7.html#ch-logic-7-3" class="internal"><span class="codenumber">2.5.2</span> <span class="title">Affirming the consequent and denying the antecedent</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-logic-7.html#ch-logic-7-4" class="internal"><span class="codenumber">2.5.3</span> <span class="title">Chaining implications together</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-CCB.html" class="internal"><span class="codenumber">2.6</span> <span class="title">The converse, contrapositive and biconditional</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-logic-9.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-direct.html" class="internal"><span class="codenumber">3</span> <span class="title">Direct proofs</span></a></div>
+<ul id="ptx-toc-group-ch-direct" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-direct-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-direct-3.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Trivialities and vacuousness</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-direct-4.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Direct proofs</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-direct-5.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Proofs of inequalities</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-direct-6.html" class="internal"><span class="codenumber">3.4</span> <span class="title">A quick visit to disproofs</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-direct-7.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="plp-7.html" class="internal"><span class="codenumber">4</span> <span class="title">More logic</span></a></div>
+<ul id="ptx-toc-group-plp-7" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="plp-7-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-7-3.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Tautologies and contradictions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-7-4.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Logical equivalence</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="plp-7-5.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-moreproof.html" class="internal"><span class="codenumber">5</span> <span class="title">More proofs</span></a></div>
+<ul id="ptx-toc-group-ch-moreproof" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-moreproof-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-moreproof-3.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Contrapositive</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-moreproof-4.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Proofs with cases</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-congruence.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Congruence modulo <span class="process-math">\(n\)</span></span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-abs-triangle.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Absolute values and the triangle inequality</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-moreproof-7.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-quantifiers.html" class="internal"><span class="codenumber">6</span> <span class="title">Quantifiers</span></a></div>
+<ul id="ptx-toc-group-ch-quantifiers" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-quantifiers-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-quantifiers-3.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Quantified statements</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-quantifiers-4.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Negation of quantifiers</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-quantifiers-5.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Nested quantifiers</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_limits.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Quantifiers and rigorous limits</span></a></div>
+<ul id="ptx-toc-group-sec_limits" class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec_limits.html#sec_limits-3" class="internal"><span class="codenumber">6.4.1</span> <span class="title">Convergence of sequences</span></a></div>
+<ul id="ptx-toc-group-sec_limits-3" class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec_limits.html#sec_limits-3-3" class="internal"><span class="codenumber">6.4.1.1</span> <span class="title">Quantifying towards a definition</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec_limits.html#sec_limits-3-4" class="internal"><span class="codenumber">6.4.1.2</span> <span class="title">Some examples</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_limits.html#sec_limits-4" class="internal"><span class="codenumber">6.4.2</span> <span class="title">The limit of a function</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-quantifiers-7.html" class="internal"><span class="codenumber">6.5</span> <span class="title">(Optional) Properties of limits</span></a></div>
+<ul id="ptx-toc-group-ch-quantifiers-7" class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimseq" class="internal"><span class="codenumber">6.5.1</span> <span class="title">(Optional) Some properties of limits of sequences</span></a></div>
+<ul id="ptx-toc-group-subsec-proplimseq" class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimseq-3" class="internal"><span class="codenumber">6.5.1.1</span> <span class="title">Uniqueness of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimseq-4" class="internal"><span class="codenumber">6.5.1.2</span> <span class="title">Linearity of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimseq-5" class="internal"><span class="codenumber">6.5.1.3</span> <span class="title">Product of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimseq-6" class="internal"><span class="codenumber">6.5.1.4</span> <span class="title">Ratio of limits</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimfunc" class="internal"><span class="codenumber">6.5.2</span> <span class="title">(Optional) Some properties of limits of functions</span></a></div>
+<ul id="ptx-toc-group-subsec-proplimfunc" class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimfunc-3" class="internal"><span class="codenumber">6.5.2.1</span> <span class="title">Uniqueness of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimfunc-4" class="internal"><span class="codenumber">6.5.2.2</span> <span class="title">Linearity of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimfunc-5" class="internal"><span class="codenumber">6.5.2.3</span> <span class="title">Product of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimfunc-6" class="internal"><span class="codenumber">6.5.2.4</span> <span class="title">Ratio of limits</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-quantifiers-8.html" class="internal"><span class="codenumber">6.6</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_induction.html" class="internal"><span class="codenumber">7</span> <span class="title">Induction</span></a></div>
+<ul id="ptx-toc-group-ch_induction" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch_induction-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch_induction-3.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Induction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch_induction-4.html" class="internal"><span class="codenumber">7.2</span> <span class="title">More general inductions</span></a></div>
+<ul id="ptx-toc-group-ch_induction-4" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch_induction-4.html#subsec-extendedinduction" class="internal"><span class="codenumber">7.2.1</span> <span class="title">A little more general</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch_induction-4.html#subsec-stronginduction" class="internal"><span class="codenumber">7.2.2</span> <span class="title">More general and yet equivalent</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch_induction-5.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="plp-11.html" class="internal"><span class="codenumber">8</span> <span class="title">Return to sets</span></a></div>
+<ul id="ptx-toc-group-plp-11" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="plp-11-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-11-3.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Subsets</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-11-4.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Set operations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-11-5.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Cartesian products of sets</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-11-6.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Some set-flavoured results</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-11-7.html" class="internal"><span class="codenumber">8.5</span> <span class="title">Indexed sets</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="plp-11-8.html" class="internal"><span class="codenumber">8.6</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch_relations.html" class="internal"><span class="codenumber">9</span> <span class="title">Relations</span></a></div>
+<ul class="structural toc-item-list contains-active" id="ptx-toc-group-ch_relations">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch_relations-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch_relations-3.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Relations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_prop_rel.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Properties of relations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch_relations-5.html" class="internal"><span class="codenumber">9.3</span> <span class="title">Equivalence relations &amp; classes</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec_congruence_revisited.html" class="internal"><span class="codenumber">9.4</span> <span class="title">Congruence revisited</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-euclid.html" class="internal"><span class="codenumber">9.5</span> <span class="title">Greatest divisors, Bézout and the Euclidean algorithm</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-unique-fact.html" class="internal"><span class="codenumber">9.6</span> <span class="title">Uniqueness of prime factorisation</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch_relations-9.html" class="internal"><span class="codenumber">9.7</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-functions.html" class="internal"><span class="codenumber">10</span> <span class="title">Functions</span></a></div>
+<ul id="ptx-toc-group-ch-functions" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-functions-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-functions-3.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-functions-4.html" class="internal"><span class="codenumber">10.2</span> <span class="title">A more abstract definition</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-functions-5.html" class="internal"><span class="codenumber">10.3</span> <span class="title">Images and preimages of sets</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-functions-6.html" class="internal"><span class="codenumber">10.4</span> <span class="title">Injective and surjective functions</span></a></div>
+<ul id="ptx-toc-group-ch-functions-6" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-functions-6.html#ch-functions-6-3" class="internal"><span class="codenumber">10.4.1</span> <span class="title">Injections and surjections</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-functions-6.html#ch-functions-6-4" class="internal"><span class="codenumber">10.4.2</span> <span class="title">Bijective functions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-functions-7.html" class="internal"><span class="codenumber">10.5</span> <span class="title">Composition of functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_inv_func.html" class="internal"><span class="codenumber">10.6</span> <span class="title">Inverse functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-functions-9.html" class="internal"><span class="codenumber">10.7</span> <span class="title">(Optional) The axiom of choice</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-functions-10.html" class="internal"><span class="codenumber">10.8</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-contradictions.html" class="internal"><span class="codenumber">11</span> <span class="title">Proof by contradiction</span></a></div>
+<ul id="ptx-toc-group-ch-contradictions" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-contradictions-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-contradictions-3.html" class="internal"><span class="codenumber">11.1</span> <span class="title">Structure of a proof by contradiction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-contradictions-4.html" class="internal"><span class="codenumber">11.2</span> <span class="title">Some examples</span></a></div>
+<ul id="ptx-toc-group-ch-contradictions-4" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-contradictions-4.html#ch-contradictions-4-3" class="internal"><span class="codenumber">11.2.1</span> <span class="title">The irrationality of <span class="process-math">\(\sqrt{2}\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-contradictions-4.html#ssec_inf_primes" class="internal"><span class="codenumber">11.2.2</span> <span class="title">The infinitude of primes</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-contradictions-5.html" class="internal"><span class="codenumber">11.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap_cardinality.html" class="internal"><span class="codenumber">12</span> <span class="title">Cardinality</span></a></div>
+<ul id="ptx-toc-group-chap_cardinality" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="chap_cardinality-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="chap_cardinality-3.html" class="internal"><span class="codenumber">12.1</span> <span class="title">Finite sets</span></a></div>
+<ul id="ptx-toc-group-chap_cardinality-3" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-3.html#chap_cardinality-3-3" class="internal"><span class="codenumber">12.1.1</span> <span class="title">Equinumerous sets, bijections and pigeons</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-3.html#chap_cardinality-3-4" class="internal"><span class="codenumber">12.1.2</span> <span class="title">Comparing with functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-3.html#chap_cardinality-3-5" class="internal"><span class="codenumber">12.1.3</span> <span class="title">Infinite sets are strange.</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap_cardinality-4.html" class="internal"><span class="codenumber">12.2</span> <span class="title">Denumerable sets</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_uncount.html" class="internal"><span class="codenumber">12.3</span> <span class="title">Uncountable sets</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="chap_cardinality-6.html" class="internal"><span class="codenumber">12.4</span> <span class="title">Comparing cardinalities</span></a></div>
+<ul id="ptx-toc-group-chap_cardinality-6" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-6.html#chap_cardinality-6-2" class="internal"><span class="codenumber">12.4.1</span> <span class="title">Extending to the infinite</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-6.html#chap_cardinality-6-3" class="internal"><span class="codenumber">12.4.2</span> <span class="title">Cantor’s Theorem and infinite infinities</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-6.html#chap_cardinality-6-4" class="internal"><span class="codenumber">12.4.3</span> <span class="title">Congratulations are in order</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-6.html#chap_cardinality-6-5" class="internal"><span class="codenumber">12.4.4</span> <span class="title">One more question</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_compare_card.html" class="internal"><span class="codenumber">12.5</span> <span class="title">More comparisons of cardinalties</span></a></div>
+<ul id="ptx-toc-group-sec_compare_card" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_compare_card.html#sec_compare_card-3" class="internal"><span class="codenumber">12.5.1</span> <span class="title">The Cantor-Schröder-Bernstein theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_compare_card.html#sec_compare_card-4" class="internal"><span class="codenumber">12.5.2</span> <span class="title">Applications</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_compare_card.html#sec_compare_card-5" class="internal"><span class="codenumber">12.5.3</span> <span class="title">Proof that <span class="process-math">\(|\pow{\mathbb{N}}| = |\mathbb{R}|\)</span></span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_cantor_first.html" class="internal"><span class="codenumber">12.6</span> <span class="title">(Optional) Cantor’s first proof of the uncountability of the reals</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chap_cardinality-9.html" class="internal"><span class="codenumber">12.7</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul id="ptx-toc-group-backmatter" class="structural toc-item-list">
+<li class="toc-item toc-solutions"><div class="toc-title-box"><a href="app_hint.html" class="internal"><span class="codenumber">A.</span> <span class="title">Hints for Exercises</span></a></div></li>
+<li class="toc-item toc-solutions"><div class="toc-title-box"><a href="app_answ.html" class="internal"><span class="codenumber">B.</span> <span class="title">Scratchwork for Exercises</span></a></div></li>
+<li class="toc-item toc-solutions"><div class="toc-title-box"><a href="app_soln.html" class="internal"><span class="codenumber">C.</span> <span class="title">Solutions to Exercises</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="backmatter-5.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="sec_congruence_revisited">
+<h1 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Congruence revisited</span>
+</h1>
+<div class="para" id="sec_congruence_revisited-2">One very important relation is congruence modulo <span class="process-math">\(n\text{.}\)</span> It is not too hard to show that it is an equivalence relation, and its equivalence classes have some very useful properties. The reader should quickly revisit <a href="sec-congruence.html" class="internal" title="Section 5.3: Congruence modulo n">Section 5.3</a>, <a href="sec-congruence.html#def-congruent" class="xref" data-knowl="./knowl/xref/def-congruent.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 5.3.1">Definition 5.3.1</a> and <a href="sec-congruence.html#thm-mod-arith" class="xref" data-knowl="./knowl/xref/thm-mod-arith.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.3.3: Modular arithmetic">Theorem 5.3.3</a>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_congruence_revisited-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec_congruence_revisited-3">
+<div class="para">By Theorem <a href="sec_prop_rel.html#thm_congrent_er" class="xref" data-knowl="./knowl/xref/thm_congrent_er.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 9.2.6">Theorem 9.2.6</a>, congruence modulo <span class="process-math">\(n\)</span> is an equivalence relation and so has equivalence classes. For example, if we fix the modulus as <span class="process-math">\(4\text{,}\)</span> then we can write down the four equivalence classes of integers modulo 4:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm_congrent_er.html" id="sec_congruence_revisited-3-5">
+\begin{align*}
+[0]\amp =\set{\dots,-8,-4,0,4,8,\dots} \amp
+[1]\amp=\set{\dots,-7,-3,1,5,9,\dots}\\
+[2]\amp=\set{\dots,-6,-2,2,6,10,\dots} \amp
+[3]\amp=\set{\dots,-5,-1,3,7,11,\dots}
+\end{align*}
+</div>
+<div class="para">Notice that we are <em class="emphasis">representing</em> each equivalence class by the smallest non-negative integer in that class.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_congruence_revisited-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="warning remark-like" id="sec_congruence_revisited-4"><h2 class="heading">
+<span class="type">Warning</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.4.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Modulo relation and operator.</span>
+</h2>
+<div class="para logical" id="sec_congruence_revisited-4-2">
+<div class="para">Many of you who have programmed will have encountered the modulo operator; it is usually denoted by the percentage sign, “%”. This operator is more correctly called the “integer remainder operator”. In particular,  if (via Euclidean division) we know that <span class="process-math">\(a = kn+r\)</span> where <span class="process-math">\(0\leq r  \lt  n\text{,}\)</span> then</div>
+<div class="displaymath process-math" id="sec_congruence_revisited-4-2-5">
+\begin{align*}
+a \% n &amp;= r
+\end{align*}
+</div>
+<div class="para">When we represent the equivalence classes modulo <span class="process-math">\(n\)</span> we typically<details class="ptx-footnote" aria-live="polite" id="sec_congruence_revisited-4-2-7"><summary class="ptx-footnote__number" title="Footnote 102"><sup> 102 </sup></summary>
+<div class="ptx-footnote__contents" id="sec_congruence_revisited-4-2-7">This author has gotten into difficulties in a piece of research when their coauthor (for very valid reasons) instead chose to represent equivalence classes by the integer closest to zero.
+</div></details> represent them by the smallest non-negative member of the equivalence class, which is the remainder when divided by <span class="process-math">\(n\text{.}\)</span> This can lead to a confusion between the equivalence classes and the remainders.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_congruence_revisited-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec_congruence_revisited-4-3">So while equivalence classes modulo <span class="process-math">\(n\)</span> are related to the effect of this integer remainder operator % — they are not the same. You should avoid thinking of “modulo <span class="process-math">\(n\)</span>” as an operation that is done on integers.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_congruence_revisited-4-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Warning 9.4.1: Modulo relation and operator"><a tabindex="-1" href="#sec_congruence_revisited-4" title="Copy heading and permalink for Warning 9.4.1: Modulo relation and operator" aria-label="Copy heading and permalink for Warning 9.4.1: Modulo relation and operator">🔗</a></div>
+</article>
+<div class="para" id="sec_congruence_revisited-5">One reason that this equivalence relation, congruence modulo <span class="process-math">\(m\text{,}\)</span> is so important is that its equivalence classes interact very nicely with arithmetic giving rise to <dfn class="terminology">modular arithmetic</dfn>. We saw this idea back in <a href="sec-congruence.html#thm-mod-arith" class="xref" data-knowl="./knowl/xref/thm-mod-arith.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.3.3: Modular arithmetic">Theorem 5.3.3</a>. Let us rewrite that result in terms of equivalence classes.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_congruence_revisited-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-mod-arith-redux"><h2 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.4.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Modular arithmetic redux.</span>
+</h2>
+<div class="para logical" id="thm-mod-arith-redux-2-1">
+<div class="para">Let <span class="process-math">\(n \in \mathbb{N}\text{,}\)</span> and let <span class="process-math">\(a,b,c,d \in \mathbb{Z}\)</span> so that</div>
+<div class="displaymath process-math" id="thm-mod-arith-redux-2-1-3">
+\begin{equation*}
+c \in [a] \qquad \text{and} \qquad d \in [b],
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\([x]\)</span> denotes the equivalence class of <span class="process-math">\(x\)</span> under congruence modulo <span class="process-math">\(n\text{.}\)</span> Then</div>
+<div class="displaymath process-math" id="thm-mod-arith-redux-2-1-7">
+\begin{align*}
+c+d \amp \in [a+b],  \amp c-d \amp \in [a-b]  \amp \text{and}\\
+c\cdot d \amp \in  [a\cdot b]
+\end{align*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm-mod-arith-redux-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 9.4.2: Modular arithmetic redux"><a tabindex="-1" href="#thm-mod-arith-redux" title="Copy heading and permalink for Theorem 9.4.2: Modular arithmetic redux" aria-label="Copy heading and permalink for Theorem 9.4.2: Modular arithmetic redux">🔗</a></div>
+</article>
+<details id="thm-mod-arith-redux-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para" id="thm-mod-arith-redux-3-1">The proof of this statement is essentially identical to the proof of <a href="sec-congruence.html#thm-mod-arith" class="xref" data-knowl="./knowl/xref/thm-mod-arith.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.3.3: Modular arithmetic">Theorem 5.3.3</a>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm-mod-arith-redux-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 9.4.2.1"><a tabindex="-1" href="#thm-mod-arith-redux-3" title="Copy heading and permalink for Proof 9.4.2.1" aria-label="Copy heading and permalink for Proof 9.4.2.1">🔗</a></div>
+</article></details>
+<div class="para logical" id="sec_congruence_revisited-7">
+<div class="para">As an illustration of this result, consider the numbers 5 and 7. When we multiply them together we get 35. But now, think about these numbers modulo 4, and the equivalence classes they lie in:</div>
+<div class="displaymath process-math" id="sec_congruence_revisited-7-1">
+\begin{equation*}
+5 \in [1] \qquad 7 \in [3] \qquad 35 \in [3]
+\end{equation*}
+</div>
+<div class="para">The above theorem tells us that since <span class="process-math">\(5 \equiv 1 \mod 4\)</span> and <span class="process-math">\(7 \equiv 3 \mod 4\text{,}\)</span> their product</div>
+<div class="displaymath process-math" id="sec_congruence_revisited-7-4">
+\begin{equation*}
+\underbrace{35}_{5\times 7} \equiv \underbrace{3}_{3 \times 1} \mod 4
+\end{equation*}
+</div>
+<div class="para">Notice that this will hold no matter which elements of <span class="process-math">\([1]\)</span> and <span class="process-math">\([3]\)</span> we multiply together, we will always get an element of <span class="process-math">\([3]\text{.}\)</span> This suggests (with a little bending of notation and avoiding any confusion with Cartesian products):</div>
+<div class="displaymath process-math" id="sec_congruence_revisited-7-8">
+\begin{equation*}
+[1] \cdot [3] = [3]
+\end{equation*}
+</div>
+<div class="para">and similarly</div>
+<div class="displaymath process-math" id="sec_congruence_revisited-7-9">
+\begin{equation*}
+[1] + [3] = [4] = [0].
+\end{equation*}
+</div>
+<div class="para">This can be made to work more generally, but first we should define things carefully and then prove things carefully.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_congruence_revisited-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="def-mod-arith"><h2 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.4.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para logical" id="def-mod-arith-1-1">
+<div class="para">Let <span class="process-math">\(n \in \mathbb{N}\text{,}\)</span> and let <span class="process-math">\(a,b \in \mathbb{Z}\text{.}\)</span> Then we define the following arithmetic operations on the equivalence classes modulo <span class="process-math">\(n\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="def-mod-arith-1-1-4">
+\begin{align*}
+[a]+[b] \amp= [a+b]\\
+[a]-[b] \amp= [a-b]\\
+[a] \cdot [b] \amp= [a \cdot b]
+\end{align*}
+</div>
+<div class="para">where we have used “<span class="process-math">\(\cdot\)</span>” to denote multiplication to avoid confusion with the cartesian product of sets.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#def-mod-arith-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 9.4.3"><a tabindex="-1" href="#def-mod-arith" title="Copy heading and permalink for Definition 9.4.3" aria-label="Copy heading and permalink for Definition 9.4.3">🔗</a></div>
+</article>
+<div class="para logical" id="sec_congruence_revisited-9">
+<div class="para">There is a small problem with this definition — we need to make sure that it makes sense and is <dfn class="terminology">well defined</dfn> and that our choice of representative elements <span class="process-math">\(a,b\)</span> does not change the results <span class="process-math">\([a+b],[a-b], [a\cdot b]\text{.}\)</span> For example, in our modulo 4 example, we know that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-mod-arith.html ./knowl/xref/thm-mod-arith-redux.html" id="sec_congruence_revisited-9-5">
+\begin{equation*}
+[1]=[5]=[-3] \qquad \text{ and } [3]=[7]=[-1]
+\end{equation*}
+</div>
+<div class="para">so we need to be sure that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-mod-arith.html ./knowl/xref/thm-mod-arith-redux.html" id="sec_congruence_revisited-9-6">
+\begin{equation*}
+\underbrace{[1]+[3]}_{[4]} = \underbrace{[5]+[7]}_{[12]} = \underbrace{[-3]+[-1]}_{[-4]} = [0]
+\end{equation*}
+</div>
+<div class="para">Thankfully, this is a simple corollary of <a href="sec-congruence.html#thm-mod-arith" class="xref" data-knowl="./knowl/xref/thm-mod-arith.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.3.3: Modular arithmetic">Theorem 5.3.3</a> (or <a href="sec_congruence_revisited.html#thm-mod-arith-redux" class="xref" data-knowl="./knowl/xref/thm-mod-arith-redux.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 9.4.2: Modular arithmetic redux">Theorem 9.4.2</a>).</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_congruence_revisited-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="corollary theorem-like" id="cor-mod-arith"><h2 class="heading">
+<span class="type">Corollary</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.4.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Modular arithmetic.</span>
+</h2>
+<div class="para logical" id="cor-mod-arith-2-1">
+<div class="para">Let <span class="process-math">\(n \in \mathbb{N}\text{,}\)</span> and let <span class="process-math">\(a,b \in \mathbb{Z}\text{.}\)</span> Then the sets</div>
+<div class="displaymath process-math" id="cor-mod-arith-2-1-3">
+\begin{equation*}
+[a + b] \qquad  [a - b] \qquad [a\cdot b]
+\end{equation*}
+</div>
+<div class="para">are well defined and do not depend on the choice of representative elements.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#cor-mod-arith-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Corollary 9.4.4: Modular arithmetic"><a tabindex="-1" href="#cor-mod-arith" title="Copy heading and permalink for Corollary 9.4.4: Modular arithmetic" aria-label="Copy heading and permalink for Corollary 9.4.4: Modular arithmetic">🔗</a></div>
+</article>
+<details id="cor-mod-arith-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para" id="cor-mod-arith-3-1">Let <span class="process-math">\(a,b,n\)</span> be as in the statement of the result, and let <span class="process-math">\(c \in [a], d\in [b]\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#cor-mod-arith-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="cor-mod-arith-3-2">By definition <span class="process-math">\([c]+[d] = [c+d]\text{.}\)</span> It suffices to show that <span class="process-math">\([c+d]=[a+b]\text{.}\)</span> By Theorem <a href="sec-congruence.html#thm-mod-arith" class="xref" data-knowl="./knowl/xref/thm-mod-arith.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.3.3: Modular arithmetic">Theorem 5.3.3</a>, we know that <span class="process-math">\(c+d \in [a+b]\)</span> and so by Corollary <a href="ch_relations-5.html#cor_ec_distinct" class="xref" data-knowl="./knowl/xref/cor_ec_distinct.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 9.3.7">Corollary 9.3.7</a> <span class="process-math">\([c+d]=[a+b]\)</span> as required.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#cor-mod-arith-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="cor-mod-arith-3-3">The same argument shows that <span class="process-math">\([c]-[d] = [c-d]=[a-b]\text{,}\)</span> and that <span class="process-math">\([c] \cdot [d] = [c\times d] = [a \cdot b]\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#cor-mod-arith-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 9.4.4.1"><a tabindex="-1" href="#cor-mod-arith-3" title="Copy heading and permalink for Proof 9.4.4.1" aria-label="Copy heading and permalink for Proof 9.4.4.1">🔗</a></div>
+</article></details>
+<div class="para logical" id="sec_congruence_revisited-11">
+<div class="para">This result turns out to be very useful. It tells us that</div>
+<div class="displaymath process-math" id="sec_congruence_revisited-11-1">
+\begin{equation*}
+[7] \cdot [9] = [3] \cdot [1] = [3 \cdot 1] = [3].
+\end{equation*}
+</div>
+<div class="para">Of course, that one is easy enough to check in our head:</div>
+<div class="displaymath process-math" id="sec_congruence_revisited-11-2">
+\begin{equation*}
+7 \times 9 = 63 \qquad \text{and}  \qquad 63 \equiv 3 \mod 4.
+\end{equation*}
+</div>
+<div class="para">But (minutely) less easy:</div>
+<div class="displaymath process-math" id="sec_congruence_revisited-11-3">
+\begin{equation*}
+[19] \cdot [11] = [3] \cdot [3] = [9] = [1]
+\end{equation*}
+</div>
+<div class="para">(which is true since <span class="process-math">\(19 \times 11 = 209 = 208 + 1 = 52\times 4 + 1\)</span>).</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_congruence_revisited-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec_congruence_revisited-12">
+<div class="para">Now, just before we switch gears to modulo 10, we should make some notation to emphasise the modulus so that we don’t mix equivalence classes from different equivalence relations<details class="ptx-footnote" aria-live="polite" id="sec_congruence_revisited-12-1"><summary class="ptx-footnote__number" title="Footnote 103"><sup> 103 </sup></summary>
+<div class="ptx-footnote__contents" id="sec_congruence_revisited-12-1">In some situations it is very helpful to mix results from different moduli, but one does it very deliberately, and not by accident. For a good example of carefully mixing moduli, see <a href="sec_congruence_revisited.html#eg-CRT" class="xref" data-knowl="./knowl/xref/eg-CRT.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 9.4.6: Chinese remainder theorem">Example 9.4.6</a> below.
+</div></details>. We can rewrite the above equivalence classes with the modulus as a subscript:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eg-CRT.html" id="sec_congruence_revisited-12-2">
+\begin{equation*}
+[7]_4 \cdot [9]_4 = [3]_4
+\end{equation*}
+</div>
+<div class="para">This makes it much easier to talk about different moduli without confusing the reader. Of course, if the modulus is clear by context, then we don’t need the subscript.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_congruence_revisited-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec_congruence_revisited-13">
+<div class="para">Another, more complicated one, For example, let <span class="process-math">\(a=17321289, b=23492871\)</span> and we compute their product as</div>
+<div class="displaymath process-math" id="sec_congruence_revisited-13-2">
+\begin{equation*}
+17321289 \times 23492871 = 406926808030718.
+\end{equation*}
+</div>
+<div class="para">If you look at this for a moment, you realise that the product is wrong — the last number definitely should not be an “8”. We can show this by computing the product modulo 10:</div>
+<div class="displaymath process-math" id="sec_congruence_revisited-13-5">
+\begin{equation*}
+[17321289]_{10} \cdot [23492871]_{10} = [9]_{10} \cdot [1]_{10} = [9]_{10}.
+\end{equation*}
+</div>
+<div class="para">This is a very simple example of using modular arithmetic as a way of error-checking. Some simple techniques based on modular arithmetic are often used in credit-card numbers and similar.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_congruence_revisited-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="example example-like" id="sec_congruence_revisited-14"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.4.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Checking long numbers — Luhn algorithm.</span>
+</h2>
+<div class="para logical" id="sec_congruence_revisited-14-2">
+<div class="para">The author is going to assume that everyone has had to either write down a telephone number or a credit card number and messed it up. Very common mistakes are</div>
+<ul class="disc" id="sec_congruence_revisited-14-2-1">
+<li id="sec_congruence_revisited-14-2-1-1">
+<div class="para" id="p-derived-sec_congruence_revisited-14-2-1-1">Single digit error: <span class="process-math">\(1 \mapsto 2\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec_congruence_revisited-14-2-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec_congruence_revisited-14-2-1-2">
+<div class="para" id="p-derived-sec_congruence_revisited-14-2-1-2">Transposition: <span class="process-math">\(12 \mapsto 21\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec_congruence_revisited-14-2-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec_congruence_revisited-14-2-1-3">
+<div class="para" id="p-derived-sec_congruence_revisited-14-2-1-3">Phonetic errors: <span class="process-math">\(60 \mapsto 16\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec_congruence_revisited-14-2-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">Everyone has dialed a wrong number<details class="ptx-footnote" aria-live="polite" id="sec_congruence_revisited-14-2-2"><summary class="ptx-footnote__number" title="Footnote 104"><sup> 104 </sup></summary>
+<div class="ptx-footnote__contents" id="sec_congruence_revisited-14-2-2">I think? Well, the author definitely has
+</div></details>, but thankfully, credit card numbers have some built-in checks that prevent simple errors like the above. In particular, a credit card has a “check digit”.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_congruence_revisited-14-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec_congruence_revisited-14-3">
+<div class="para">Since people rarely mess transcribing up the first or last digit of a long number, one can exploit the last digit to check up on the others. So say you have a long number (like a credit card or phone number), that you want to protect against simple errors, then you should append a single special digit to the end of that number. For example, say we have the first 8 digits of a number “31415926” and we want to make sure that it can be checked when copied down by someone else. A really simple check is to sum up the digits modulo ten:</div>
+<div class="displaymath process-math" id="sec_congruence_revisited-14-3-2">
+\begin{equation*}
+3+1+4+1+5+9+2+6 = 31 \equiv 1 \mod 10
+\end{equation*}
+</div>
+<div class="para">So we can append “1” to the end of the number to get “31415926<em class="alert">1</em>”.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_congruence_revisited-14-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec_congruence_revisited-14-4">
+<div class="para">Now when we read it out to a friend over the phone, they copy down “313159261”. They can then compute the check number:</div>
+<div class="displaymath process-math" id="sec_congruence_revisited-14-4-2">
+\begin{equation*}
+3+1+3+1+5+9+2+6 = 30 \equiv 0 \mod 10
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(0 \neq 1\)</span> they know there is an error. This will proof against a single-digit substitution error, but it will not be safe against a transposition. If they wrote down “314<em class="alert">51</em>9261” then the check gives</div>
+<div class="displaymath process-math" id="sec_congruence_revisited-14-4-5">
+\begin{equation*}
+3+1+4+5+1+9+2+6 = 31 \equiv 1 \mod 10
+\end{equation*}
+</div>
+<div class="para">So the error goes undetected.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_congruence_revisited-14-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec_congruence_revisited-14-5">
+<div class="para">However there is a better way. The Luhn algorithm<details class="ptx-footnote" aria-live="polite" id="sec_congruence_revisited-14-5-1"><summary class="ptx-footnote__number" title="Footnote 105"><sup> 105 </sup></summary>
+<div class="ptx-footnote__contents" id="sec_congruence_revisited-14-5-1">Named for the computer scientist Hans Peter Luhn (1896–1964).
+</div></details> is used in many applications including in credit cards.</div>
+<ul class="disc" id="sec_congruence_revisited-14-5-2">
+<li id="sec_congruence_revisited-14-5-2-1">
+<div class="para" id="p-derived-sec_congruence_revisited-14-5-2-1">Start with our number <span class="process-math">\(3,1,4,1,5,9,2,6\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec_congruence_revisited-14-5-2-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec_congruence_revisited-14-5-2-2">
+<div class="para" id="p-derived-sec_congruence_revisited-14-5-2-2">Double every second digit (starting from the rightmost): <span class="process-math">\(3,2,4,2,5,18,2,12\text{.}\)</span> Notice that our list of digits becomes longer</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec_congruence_revisited-14-5-2-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec_congruence_revisited-14-5-2-3">
+<div class="para" id="p-derived-sec_congruence_revisited-14-5-2-3">Now sum <em class="emphasis">all</em>:<div class="displaymath process-math" id="sec_congruence_revisited-14-5-2-3-2">
+\begin{equation*}
+3+2+4+2+5+(1+8)+2+(1+2) = 30
+\end{equation*}
+</div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec_congruence_revisited-14-5-2-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec_congruence_revisited-14-5-2-4">
+<div class="para" id="p-derived-sec_congruence_revisited-14-5-2-4">Multiply the result by 9 and compute the result modulo ten:<div class="displaymath process-math" id="sec_congruence_revisited-14-5-2-4-1">
+\begin{equation*}
+30 \times 9 = 270 \equiv 0 \mod 10
+\end{equation*}
+</div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec_congruence_revisited-14-5-2-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec_congruence_revisited-14-5-2-5">
+<div class="para" id="p-derived-sec_congruence_revisited-14-5-2-5">Append the result as the check digit: “31415926<em class="alert">0</em>”</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec_congruence_revisited-14-5-2-5" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_congruence_revisited-14-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec_congruence_revisited-14-6">
+<div class="para">Let us try this against the two transcription errors above:</div>
+<ul class="disc" id="sec_congruence_revisited-14-6-1">
+<li id="sec_congruence_revisited-14-6-1-1">
+<div class="para" id="p-derived-sec_congruence_revisited-14-6-1-1">“31<em class="alert">3</em>159260” becomes “3,2,3,2,5,18,2,12” which gives<div class="displaymath process-math" id="sec_congruence_revisited-14-6-1-1-3">
+\begin{equation*}
+3+2+3+3+2+5+(1+8)+2+(1+2) = 32.
+\end{equation*}
+</div>Multiply by 9 to get <span class="process-math">\(32\times 9 = 288\)</span> giving check-digit “8”. Error detected!</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec_congruence_revisited-14-6-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec_congruence_revisited-14-6-1-2">
+<div class="para" id="p-derived-sec_congruence_revisited-14-6-1-2">“314<em class="alert">51</em>9261” becomes “3,2,4,10,1,18,2,12” which gives<div class="displaymath process-math" id="sec_congruence_revisited-14-6-1-2-3">
+\begin{equation*}
+3+2+4+(1+0)+1+(1+8)+2+(1+2) = 25.
+\end{equation*}
+</div>Multiply by 9 to get <span class="process-math">\(225\)</span> giving check-digit “5”. Error detected!</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec_congruence_revisited-14-6-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">This is not too hard to do by hand, but it is very easy for a computer.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_congruence_revisited-14-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec_congruence_revisited-14-7">This is not perfect, some errors will go undetected. The interested reader should search-engine their way to more information.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_congruence_revisited-14-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 9.4.5: Checking long numbers — Luhn algorithm"><a tabindex="-1" href="#sec_congruence_revisited-14" title="Copy heading and permalink for Example 9.4.5: Checking long numbers — Luhn algorithm" aria-label="Copy heading and permalink for Example 9.4.5: Checking long numbers — Luhn algorithm">🔗</a></div>
+</article>
+<article class="example example-like" id="eg-CRT"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.4.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Chinese remainder theorem.</span>
+</h2>
+<div class="para" id="eg-CRT-2">You can push this idea further, and instead of doing arithmetic with very large numbers, you can do the same arithmetic modulo several different primes and then reconstruct the big-number result using the results modulo each prime. The piece of mathematics that tells you how to reconstruct the result is called the Chinese Remainder Theorem. It was first stated in the 3rd century AD by the Chinese mathematician Sunzi, but the first real method for this reconstruction is due to Aryabhata (an Indian mathematician of the 6th century AD). It seems to have been rediscovered a few times and seems to have entered European mathematics via Fibonacci in the 12th century. It’s not quite clear when it got its name, but perhaps sometime between 1850 and 1930?<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-CRT-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="eg-CRT-3">We won’t do the Chinese remainder theorem in this course (its a good one to do in a number theory course), but we’ll do a few more applications of congruences.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-CRT-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 9.4.6: Chinese remainder theorem"><a tabindex="-1" href="#eg-CRT" title="Copy heading and permalink for Example 9.4.6: Chinese remainder theorem" aria-label="Copy heading and permalink for Example 9.4.6: Chinese remainder theorem">🔗</a></div>
+</article>
+<article class="example example-like" id="sec_congruence_revisited-16"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.4.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">No integer solutions.</span>
+</h2>
+<div class="para logical" id="sec_congruence_revisited-16-2-1">
+<div class="para">Show that the equation</div>
+<div class="displaymath process-math" id="sec_congruence_revisited-16-2-1-1">
+\begin{align*}
+x^2 - 4y^2 &amp;= 3
+\end{align*}
+</div>
+<div class="para">has no integer solutions.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_congruence_revisited-16-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="sec_congruence_revisited-16-3" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Scratchwork</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="answer solution-like knowl__content">
+<div class="para logical" id="sec_congruence_revisited-16-3-1">
+<div class="para">A sneaky way to look at this is to realise that if there is an integer solution, then if you look at that solution modulo, say <span class="process-math">\(7\text{,}\)</span> then it will still be a solution. ie</div>
+<div class="displaymath process-math" id="sec_congruence_revisited-16-3-1-2">
+\begin{align*}
+(x^2 - 4y^2) \mod 7 &amp;= 3 \mod 7.
+\end{align*}
+</div>
+<div class="para">Hence if we can prove that the equation has no solution modulo (again say) 7, then it cannot have a solution over the integers (by taking the contrapositive). Notice that the converse is very false — just because we can find a solution modulo 7, does not mean there is an integer solution.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_congruence_revisited-16-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec_congruence_revisited-16-3-2">
+<div class="para">Now, because one of the coefficients in the equation is a 4, it simplifies considerably modulo 4. In particular</div>
+<div class="displaymath process-math" id="sec_congruence_revisited-16-3-2-1">
+\begin{gather*}
+4y^2 \mod 4 = 0
+\end{gather*}
+</div>
+<div class="para">no matter what <span class="process-math">\(y\)</span> we put in. So modulo 4 the equation simplifies to</div>
+<div class="displaymath process-math" id="sec_congruence_revisited-16-3-2-3">
+\begin{align*}
+(x^2 - 4y^2)\mod 4 &amp;= x^2 \mod 4 = 3 \mod 4
+\end{align*}
+</div>
+<div class="para">So now we look at squares modulo 4.</div>
+<div class="displaymath process-math" id="sec_congruence_revisited-16-3-2-4">
+\begin{align*}
+0^2 \mod 4 &amp;= 0 &amp;
+1^2 \mod 4 &amp;= 1 &amp;
+2^2 \mod 4 &amp;= 0\\
+3^2 \mod 4 &amp;= 1 &amp;
+4^2 \mod 4 &amp;= 0 &amp;
+5^2 \mod 4 &amp;= 1
+\end{align*}
+</div>
+<div class="para">So — it looks like squares modulo 4 are either 0 or 1, depending on their parity. If this is true then we are done — there is no solution modulo 4, so there cannot be an integer solution.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_congruence_revisited-16-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Scratchwork 9.4.7.1"><a tabindex="-1" href="#sec_congruence_revisited-16-3" title="Copy heading and permalink for Scratchwork 9.4.7.1" aria-label="Copy heading and permalink for Scratchwork 9.4.7.1">🔗</a></div>
+</div></details>
+<details id="sec_congruence_revisited-16-4" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<details id="sec_congruence_revisited-16-4-1" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="sec_congruence_revisited-16-4-1-1">
+<div class="para">The equation either has a solution <span class="process-math">\(x,y \in \mathbb{Z}\)</span> or it does not. If the equation does have a solution, then <span class="process-math">\(x\)</span> is either even or odd.</div>
+<ul class="disc" id="sec_congruence_revisited-16-4-1-1-3">
+<li id="sec_congruence_revisited-16-4-1-1-3-1">
+<div class="para" id="p-derived-sec_congruence_revisited-16-4-1-1-3-1">If <span class="process-math">\(x\)</span> is even then <span class="process-math">\(x=2k\)</span> for some <span class="process-math">\(k \in \mathbb{Z}\text{,}\)</span> and so<div class="displaymath process-math" id="sec_congruence_revisited-16-4-1-1-3-1-4">
+\begin{align*}
+x^2 - 4y^2 &amp;= 4(k^2-y^2)
+\end{align*}
+</div>and so <span class="process-math">\(x^2-4y^2 \equiv 0 \mod 4\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec_congruence_revisited-16-4-1-1-3-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec_congruence_revisited-16-4-1-1-3-2">
+<div class="para" id="p-derived-sec_congruence_revisited-16-4-1-1-3-2">On the other hand, if <span class="process-math">\(x\)</span> is odd, then <span class="process-math">\(x=2k+1\)</span> for some <span class="process-math">\(k \in \mathbb{Z}\)</span> and so<div class="displaymath process-math" id="sec_congruence_revisited-16-4-1-1-3-2-4">
+\begin{align*}
+x^2 - 4y^2 &amp;= 4k^2+4k+1-4y^2 = 4(k^2+4k-y^2) + 1
+\end{align*}
+</div>and so <span class="process-math">\(x^2 - 4y^2 \equiv 1 \mod 4\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec_congruence_revisited-16-4-1-1-3-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">In either case <span class="process-math">\(x^2-4y^2\)</span> is not congruent to 3 modulo 4. Hence there cannot be a solution.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_congruence_revisited-16-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 9.4.7.1.1"><a tabindex="-1" href="#sec_congruence_revisited-16-4-1" title="Copy heading and permalink for Proof 9.4.7.1.1" aria-label="Copy heading and permalink for Proof 9.4.7.1.1">🔗</a></div>
+</article></details><div class="autopermalink" aria-hidden="true" data-description="Solution 9.4.7.1"><a tabindex="-1" href="#sec_congruence_revisited-16-4" title="Copy heading and permalink for Solution 9.4.7.1" aria-label="Copy heading and permalink for Solution 9.4.7.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 9.4.7: No integer solutions"><a tabindex="-1" href="#sec_congruence_revisited-16" title="Copy heading and permalink for Example 9.4.7: No integer solutions" aria-label="Copy heading and permalink for Example 9.4.7: No integer solutions">🔗</a></div>
+</article>
+<div class="para logical" id="sec_congruence_revisited-17">
+<div class="para">Now, noticeably absent from Theorem <a href="sec-congruence.html#thm-mod-arith" class="xref" data-knowl="./knowl/xref/thm-mod-arith.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.3.3: Modular arithmetic">Theorem 5.3.3</a> above is any discussion of division. Consider the equation <span class="process-math">\(x = \frac{13}{2}\text{;}\)</span> here we are really solving the equation <span class="process-math">\(2x=13\text{.}\)</span> Consider this equation modulo <span class="process-math">\(4\)</span> — find any <span class="process-math">\(x\)</span> so that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-mod-arith.html" id="sec_congruence_revisited-17-7">
+\begin{equation*}
+[2]_4 \cdot [x]_4 =[1]_4
+\end{equation*}
+</div>
+<div class="para">(since <span class="process-math">\([13]_4 = [1]_4\)</span>). Similarly modulo 5 we get:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-mod-arith.html" id="sec_congruence_revisited-17-9">
+\begin{equation*}
+[2]_5 \cdot [x]_5 = [3]_5.
+\end{equation*}
+</div>
+<div class="para">We can try to solve these equations by brute-force by just writing out the multiplication tables modulo 4 and 5:</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_congruence_revisited-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="sidebyside">
+<div class="sbsrow" style="margin-left:0%;margin-right:0%;grid-template-columns:50% 50%;column-gap:0%;">
+<div class="sbspanel fixed-width sbspanel--top top" style=""><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\cdot\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">[0]</td>
+<td class="l m b0 r0 l0 t0 lines">[1]</td>
+<td class="l m b0 r0 l0 t0 lines">[2]</td>
+<td class="l m b0 r0 l0 t0 lines">[3]</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">[0]</td>
+<td class="l m b0 r0 l0 t0 lines">[0]</td>
+<td class="l m b0 r0 l0 t0 lines">[0]</td>
+<td class="l m b0 r0 l0 t0 lines">[0]</td>
+<td class="l m b0 r0 l0 t0 lines">[0]</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">[1]</td>
+<td class="l m b0 r0 l0 t0 lines">[0]</td>
+<td class="l m b0 r0 l0 t0 lines">[1]</td>
+<td class="l m b0 r0 l0 t0 lines">[2]</td>
+<td class="l m b0 r0 l0 t0 lines">[3]</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">[2]</td>
+<td class="l m b0 r0 l0 t0 lines">[0]</td>
+<td class="l m b0 r0 l0 t0 lines">[2]</td>
+<td class="l m b0 r0 l0 t0 lines">[0]</td>
+<td class="l m b0 r0 l0 t0 lines">[2]</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">[3]</td>
+<td class="l m b0 r0 l0 t0 lines">[0]</td>
+<td class="l m b0 r0 l0 t0 lines">[3]</td>
+<td class="l m b0 r0 l0 t0 lines">[2]</td>
+<td class="l m b0 r0 l0 t0 lines">[1]</td>
+</tr>
+</table></div>
+<div class="sbspanel fixed-width sbspanel--top top" style=""><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\cdot\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">[0]</td>
+<td class="l m b0 r0 l0 t0 lines">[1]</td>
+<td class="l m b0 r0 l0 t0 lines">[2]</td>
+<td class="l m b0 r0 l0 t0 lines">[3]</td>
+<td class="l m b0 r0 l0 t0 lines">[4]</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">[0]</td>
+<td class="l m b0 r0 l0 t0 lines">[0]</td>
+<td class="l m b0 r0 l0 t0 lines">[0]</td>
+<td class="l m b0 r0 l0 t0 lines">[0]</td>
+<td class="l m b0 r0 l0 t0 lines">[0]</td>
+<td class="l m b0 r0 l0 t0 lines">[0]</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">[1]</td>
+<td class="l m b0 r0 l0 t0 lines">[0]</td>
+<td class="l m b0 r0 l0 t0 lines">[1]</td>
+<td class="l m b0 r0 l0 t0 lines">[2]</td>
+<td class="l m b0 r0 l0 t0 lines">[3]</td>
+<td class="l m b0 r0 l0 t0 lines">[4]</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">[2]</td>
+<td class="l m b0 r0 l0 t0 lines">[0]</td>
+<td class="l m b0 r0 l0 t0 lines">[2]</td>
+<td class="l m b0 r0 l0 t0 lines">[4]</td>
+<td class="l m b0 r0 l0 t0 lines">[1]</td>
+<td class="l m b0 r0 l0 t0 lines">[3]</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">[3]</td>
+<td class="l m b0 r0 l0 t0 lines">[0]</td>
+<td class="l m b0 r0 l0 t0 lines">[3]</td>
+<td class="l m b0 r0 l0 t0 lines">[1]</td>
+<td class="l m b0 r0 l0 t0 lines">[4]</td>
+<td class="l m b0 r0 l0 t0 lines">[2]</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">[4]</td>
+<td class="l m b0 r0 l0 t0 lines">[0]</td>
+<td class="l m b0 r0 l0 t0 lines">[4]</td>
+<td class="l m b0 r0 l0 t0 lines">[3]</td>
+<td class="l m b0 r0 l0 t0 lines">[2]</td>
+<td class="l m b0 r0 l0 t0 lines">[1]</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="para logical" id="sec_congruence_revisited-19">
+<div class="para">Now - we see that modulo 5 we have a solution since:</div>
+<div class="displaymath process-math" id="sec_congruence_revisited-19-1">
+\begin{equation*}
+[2]_5 \cdot [4]_5 = [3]_5
+\end{equation*}
+</div>
+<div class="para">but modulo 4 there is no solution since</div>
+<div class="displaymath process-math" id="sec_congruence_revisited-19-2">
+\begin{equation*}
+[2]_4 \cdot [x]_4 = [0]_4 \text{ or } [2]_4.
+\end{equation*}
+</div>
+<div class="para">The existence of solutions to the equation</div>
+<div class="displaymath process-math" id="sec_congruence_revisited-19-3">
+\begin{equation*}
+[a]_n \cdot [x]_n = [1]_n
+\end{equation*}
+</div>
+<div class="para">depends on the divisors of <span class="process-math">\(a\)</span> and <span class="process-math">\(n\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_congruence_revisited-19" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="lemma theorem-like" id="sec_congruence_revisited-20"><h2 class="heading">
+<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.4.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para logical" id="sec_congruence_revisited-20-1-1">
+<div class="para">Let <span class="process-math">\(a \in \mathbb{Z}, n \in \mathbb{N}\text{.}\)</span> If <span class="process-math">\(d&gt;1\)</span> divides both <span class="process-math">\(a,n\)</span> then the equation</div>
+<div class="displaymath process-math" id="sec_congruence_revisited-20-1-1-4">
+\begin{equation*}
+[a]_n \cdot [x]_n = [1]_n
+\end{equation*}
+</div>
+<div class="para">does not have a solution.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_congruence_revisited-20-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Lemma 9.4.8"><a tabindex="-1" href="#sec_congruence_revisited-20" title="Copy heading and permalink for Lemma 9.4.8" aria-label="Copy heading and permalink for Lemma 9.4.8">🔗</a></div>
+</article>
+<details id="sec_congruence_revisited-20-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="sec_congruence_revisited-20-2-1">
+<div class="para">Say that the equation</div>
+<div class="displaymath process-math" id="sec_congruence_revisited-20-2-1-1">
+\begin{equation*}
+[a]_n \cdot [x]_n = [1]_n
+\end{equation*}
+</div>
+<div class="para">has a solution <span class="process-math">\(x=b\text{.}\)</span> Then for some <span class="process-math">\(k \in \mathbb{Z}\)</span>
+</div>
+<div class="displaymath process-math" id="sec_congruence_revisited-20-2-1-4">
+\begin{equation*}
+ab + kn = 1.
+\end{equation*}
+</div>
+<div class="para">Now if, <span class="process-math">\(d&gt;1\)</span> divides both <span class="process-math">\(a,n\)</span> the left-hand side is divisible by <span class="process-math">\(d\text{.}\)</span> However this does not make sense because the right-hand side is only divisible by <span class="process-math">\(\pm 1\text{.}\)</span> Hence no such solution can exist.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_congruence_revisited-20-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 9.4.8.1"><a tabindex="-1" href="#sec_congruence_revisited-20-2" title="Copy heading and permalink for Proof 9.4.8.1" aria-label="Copy heading and permalink for Proof 9.4.8.1">🔗</a></div>
+</article></details>
+<article class="remark remark-like" id="sec_congruence_revisited-21"><h2 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.4.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Bézout and Euclid.</span>
+</h2>
+<div class="para logical" id="sec_congruence_revisited-21-2">
+<div class="para">The converse of this lemma states that if <span class="process-math">\(a,n\)</span> have no common divisors, then the equation has a solution. To prove this we need to show that if <span class="process-math">\(a,n\)</span> have no common divisors, then we can find <span class="process-math">\(b,k\)</span> so that</div>
+<div class="displaymath process-math" id="sec_congruence_revisited-21-2-4">
+\begin{equation*}
+ab + kn =1.
+\end{equation*}
+</div>
+<div class="para">This is (essentially) Bézout’s identity. The values <span class="process-math">\(b,k\)</span> can be computed using the extended Euclidean algorithm. We will discuss all of this in the optional section below.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_congruence_revisited-21-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Remark 9.4.9: Bézout and Euclid"><a tabindex="-1" href="#sec_congruence_revisited-21" title="Copy heading and permalink for Remark 9.4.9: Bézout and Euclid" aria-label="Copy heading and permalink for Remark 9.4.9: Bézout and Euclid">🔗</a></div>
+</article>
+<article class="example example-like" id="sec_congruence_revisited-22"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.4.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Pseudo random numbers.</span>
+</h2>
+<div class="para logical" id="sec_congruence_revisited-22-2">
+<div class="para">Consider the following sequence of numbers</div>
+<div class="displaymath process-math" id="sec_congruence_revisited-22-2-1">
+\begin{equation*}
+1,10,7,8,4,9,0,3,2,\dots
+\end{equation*}
+</div>
+<div class="para">The numbers bounce around and look fairly “random”random. However, they are not actually random at all; they satisfy the simple relation</div>
+<div class="displaymath process-math" id="sec_congruence_revisited-22-2-3">
+\begin{equation*}
+x_{k+1} \equiv (7 x_k + 3) \mod{11},
+\end{equation*}
+</div>
+<div class="para">or, using the % operator (i.e. integer remainder operator)</div>
+<div class="displaymath process-math" id="sec_congruence_revisited-22-2-4">
+\begin{equation*}
+x_{k+1} = (7x_k+3)\% 11.
+\end{equation*}
+</div>
+<div class="para">This is an example of a linear congruent generator; the next term in the sequence is determined by a simple linear equation involving a congruence:</div>
+<div class="displaymath process-math" id="sec_congruence_revisited-22-2-5">
+\begin{equation*}
+x_{k+1} = a x_k + c \mod n
+\end{equation*}
+</div>
+<div class="para">If one chooses <span class="process-math">\(a\)</span> and <span class="process-math">\(c\)</span> carefully, then the resulting sequence of numbers will look quite random. However, since the numbers are not actually random, they are usually called <dfn class="terminology">pseudo random</dfn> numbers.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_congruence_revisited-22-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec_congruence_revisited-22-3">
+<div class="para">Many computer algorithms for generating pseudo random numbers are based on this idea. Of course, one does need to be quite careful and make sure that your pseudo-random numbers are actually fairly random. For example, if we choose <span class="process-math">\(a=7, c=5, n=11\)</span> in the above, then we get the sequence</div>
+<div class="displaymath process-math" id="sec_congruence_revisited-22-3-2">
+\begin{equation*}
+1,1,1,1,\dots
+\end{equation*}
+</div>
+<div class="para">since <span class="process-math">\(7\cdot 1 + 5 = 12 \equiv 1 \mod{11}\text{.}\)</span> Not very random at all.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_congruence_revisited-22-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec_congruence_revisited-22-4">There is a lot of interesting mathematics to be found in generating pseudo-random numbers and testing their randomness; we recommend that the interested reader take a trip to their favourite search engine.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_congruence_revisited-22-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 9.4.10: Pseudo random numbers"><a tabindex="-1" href="#sec_congruence_revisited-22" title="Copy heading and permalink for Example 9.4.10: Pseudo random numbers" aria-label="Copy heading and permalink for Example 9.4.10: Pseudo random numbers">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Section 9.4: Congruence revisited"><a tabindex="-1" href="#sec_congruence_revisited" title="Copy heading and permalink for Section 9.4: Congruence revisited" aria-label="Copy heading and permalink for Section 9.4: Congruence revisited">🔗</a></div>
+</section>
+</div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="ch_relations-5.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-euclid.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+<!--Start: Google Global Site Tag code--><!--*** DO NOT COPY ANOTHER PROJECT'S MAGIC NUMBERS/ID ***--><!--***           GET YOUR OWN FROM GOOGLE             ***-->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-FL66FX9988"></script><script>  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-FL66FX9988');
+</script><!--End: Google Global Site Tag code-->
+</body>
+</html>

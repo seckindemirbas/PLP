@@ -1,0 +1,6 @@
+# <!--
+# Note: this is workaround to include a file that's not in the `src/`
+# directory in the book. See the comments in `../book.toml` for more
+# details. In general, don't do this.
+# -->
+{{#include ../book.toml}}

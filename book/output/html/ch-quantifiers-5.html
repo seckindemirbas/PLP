@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Nested quantifiers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
+startMathJax({
+hasWebworkReps: false,
+hasSage: false,
+isReact: false,
+htmlPresentation: false,
+lang: "en-US",
+});
+</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta name="twitter:title" content="PLP">
+<meta property="og:title" content="PLP">
+<meta property="book:title" content="PLP">
+<meta name="twitter:description" content="An introduction to mathematical proof">
+<meta property="og:description" content="An introduction to mathematical proof">
+<meta name="twitter:card" content="summary">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.48"></script><script src="_static/pretext/js/dist/pretext-read-aloud.js?v=2.48"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.2.4';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.40bd1420d3277749.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.b388362b5f43738a.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.8086b62682b271d1.css">
+<script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead" role="banner"><div class="ptx-banner"><div class="title-container">
+<div class="heading ptx-banner-heading"><a href="plp.html"><span class="title">PLP</span> <span class="subtitle">An introduction to mathematical proof</span></a></div>
+<p class="byline">Seçkin Demirbaş, Andrew Rechnitzer</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button id="ptx-toc-toggle" type="button" aria-controls="ptx-sidebar" class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="ptx-search-box">
+<div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search Book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog"><div class="ptx-search-dialog-controls">
+<input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close" id="ptx-search-close" class="ptx-search-close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div id="ptx-search-status" class="ptx-search-status" aria-live="polite" aria-atomic="true"></div>
+<h2 class="heading ptx-search-results-heading">Search Results: </h2>
+<div id="ptx-search-empty" class="ptx-search-empty"><span>No results.</span></div>
+<ol id="ptx-search-results" class="ptx-search-results"></ol></dialog>
+</div>
+<span class="nav-other-controls"><button id="ptx-read-aloud-button" class="ptx-read-aloud-button button" title="Read aloud" aria-expanded="false"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf1bc;</span><span class="name">Read aloud</span></button><div id="ptx-read-aloud-player" class="ptx-read-aloud-player" hidden="hidden" role="group" aria-label="Read aloud">
+<button id="ptx-read-aloud-prev" class="button" title="Previous sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe045;</span></button><button id="ptx-read-aloud-toggle" class="ptx-read-aloud-toggle button" title="Play"><span class="ptx-read-aloud-icon-play"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></span><span class="ptx-read-aloud-icon-pause"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe034;</span></span></button><button id="ptx-read-aloud-next" class="button" title="Next sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe044;</span></button><a id="ptx-read-aloud-continue" class="ptx-read-aloud-continue button" hidden="hidden">Continue<span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></a><button id="ptx-read-aloud-settings-button" class="ptx-read-aloud-settings-button button" title="Reading settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe429;</span></button>
+</div>
+<dialog class="ptx-dialog ptx-read-aloud-settings-popup" id="ptx-read-aloud-settings-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Read aloud settings</h2>
+<button class="ptx-read-aloud-settings-close-button button" id="ptx-read-aloud-settings-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label for="ptx-read-aloud-voice"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe91f;</span><span>Voice</span></label><select id="ptx-read-aloud-voice"></select><label class="ptx-readability-slider-label" for="ptx-read-aloud-rate"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe9e4;</span><span>Reading speed</span><output id="ptx-read-aloud-rate-value" for="ptx-read-aloud-rate">1×</output></label><input type="range" id="ptx-read-aloud-rate" min="0.5" max="2" step="0.1" value="1"><label for="ptx-read-aloud-asides"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d7;</span><span>Collapsed content</span></label><select id="ptx-read-aloud-asides"><option value="skip">Announce, do not read</option>
+<option value="read">Read automatically</option></select><label for="ptx-read-aloud-autoscroll"><input type="checkbox" id="ptx-read-aloud-autoscroll" checked><span>Follow along (auto-scroll)</span></label><label for="ptx-read-aloud-autocontinue"><input type="checkbox" id="ptx-read-aloud-autocontinue"><span>Continue to the next page automatically</span></label>
+</div></dialog><button id="ptx-readability-options-button" class="ptx-readability-options-button button" title="Readability settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf6f1;</span><span class="name">Readability settings</span></button><dialog class="ptx-dialog ptx-readability-options-popup" id="ptx-readability-options-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Readability settings</h2>
+<button class="ptx-readability-options-close-button button" id="ptx-readability-options-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-line-height"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe240;</span><span>Line height</span><output id="ptx-readability-line-height-value" for="ptx-readability-line-height">1.35</output></label><input type="range" id="ptx-readability-line-height" min="1.10" max="3" step="0.05" value="1.35">
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-font-size"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe245;</span><span>Content font size</span><output id="ptx-readability-font-size-value" for="ptx-readability-font-size">100%</output></label><input type="range" id="ptx-readability-font-size" min="0.8" max="1.5" step="0.05" value="1">
+</div>
+<fieldset class="ptx-readability-options-group ptx-readability-options-group-theme">
+<legend>Theme</legend>
+<label for="ptx-readability-theme-system"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-system" value="system"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe1ab;</span><span>System</span></label><label for="ptx-readability-theme-light"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-light" value="light"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe518;</span><span>Light</span></label><label for="ptx-readability-theme-dark"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-dark" value="dark"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span>Dark</span></label>
+</fieldset>
+<fieldset class="ptx-readability-options-group">
+<legend>Assistive technologies</legend>
+<label for="ptx-readability-accessible-permalinks"><input type="checkbox" id="ptx-readability-accessible-permalinks"><span>🔗</span><span>Expose permalinks</span></label>
+</fieldset>
+<div class="ptx-readability-options-group"><button type="button" class="ptx-readability-reset-button button" id="ptx-readability-reset-button"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf053;</span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="ch-quantifiers-4.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-quantifiers.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec_limits.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{cancel}\require{upgreek} \newcommand{\ds}{\displaystyle}
+ \renewcommand{\textcolor}[2]{{\color{#1}{#2}}}
+ 
+ \newcommand{\es}{ {\varnothing}}
+ \newcommand{\st}{ \;\mathrm{s.t.}\; }
+ \newcommand{\so}{ \;\mid\; }
+ \newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+ \newcommand{\set}[1]{ \left\{#1\right\} }
+ 
+ \renewcommand{\neg}{\sim}
+
+ \newcommand{\rel}[1][R]{\;\mathcal{#1}\;}
+ \newcommand{\nrel}[1][R]{\;\cancel{\mathcal{#1}}\;}
+
+ \newcommand{\dee}[1]{\mathrm{d}#1}
+ \newcommand{\diff}[2]{\dfrac{\mathrm{d}#1}{\mathrm{d}#2}}
+ 
+ \renewcommand{\mod}[1]{\ (\mathrm{mod}\ #1)}
+ \newcommand{\lcm}{\mathrm{lcm}}
+ 
+ \let\oldepsilon\epsilon
+ 
+ \renewcommand{\epsilon}{\varepsilon}
+ \newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" role="complementary" class="ptx-sidebar"><nav id="ptx-toc" tabindex="-1" aria-label="Contents" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul id="ptx-toc-group-frontmatter" class="structural toc-item-list">
+<li class="toc-item toc-dedication"><div class="toc-title-box"><a href="frontmatter-3.html" class="internal"><span class="title">Dedication</span></a></div></li>
+<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="frontmatter-5.html" class="internal"><span class="title">Preface</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="plp-4.html" class="internal"><span class="codenumber">1</span> <span class="title">Sets</span></a></div>
+<ul id="ptx-toc-group-plp-4" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="plp-4-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="plp-4-3.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Not so formal definition</span></a></div>
+<ul id="ptx-toc-group-plp-4-3" class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="plp-4-3.html#plp-4-3-3" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Who is this reader you keep on mentioning?</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-describing.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Describing a set</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-4-5.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Onward</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="plp-4-6.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-logic.html" class="internal"><span class="codenumber">2</span> <span class="title">A little logic</span></a></div>
+<ul id="ptx-toc-group-ch-logic" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-logic-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-logic-3.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Statements and open sentences</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-logic-4.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Negation</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-logic-5.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Or and And</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-implication.html" class="internal"><span class="codenumber">2.4</span> <span class="title">The implication</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-logic-7.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Modus ponens and chaining implications</span></a></div>
+<ul id="ptx-toc-group-ch-logic-7" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-logic-7.html#ch-logic-7-2" class="internal"><span class="codenumber">2.5.1</span> <span class="title">Modus ponens</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-logic-7.html#ch-logic-7-3" class="internal"><span class="codenumber">2.5.2</span> <span class="title">Affirming the consequent and denying the antecedent</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-logic-7.html#ch-logic-7-4" class="internal"><span class="codenumber">2.5.3</span> <span class="title">Chaining implications together</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-CCB.html" class="internal"><span class="codenumber">2.6</span> <span class="title">The converse, contrapositive and biconditional</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-logic-9.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-direct.html" class="internal"><span class="codenumber">3</span> <span class="title">Direct proofs</span></a></div>
+<ul id="ptx-toc-group-ch-direct" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-direct-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-direct-3.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Trivialities and vacuousness</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-direct-4.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Direct proofs</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-direct-5.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Proofs of inequalities</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-direct-6.html" class="internal"><span class="codenumber">3.4</span> <span class="title">A quick visit to disproofs</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-direct-7.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="plp-7.html" class="internal"><span class="codenumber">4</span> <span class="title">More logic</span></a></div>
+<ul id="ptx-toc-group-plp-7" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="plp-7-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-7-3.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Tautologies and contradictions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-7-4.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Logical equivalence</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="plp-7-5.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-moreproof.html" class="internal"><span class="codenumber">5</span> <span class="title">More proofs</span></a></div>
+<ul id="ptx-toc-group-ch-moreproof" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-moreproof-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-moreproof-3.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Contrapositive</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-moreproof-4.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Proofs with cases</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-congruence.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Congruence modulo <span class="process-math">\(n\)</span></span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-abs-triangle.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Absolute values and the triangle inequality</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-moreproof-7.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-quantifiers.html" class="internal"><span class="codenumber">6</span> <span class="title">Quantifiers</span></a></div>
+<ul class="structural toc-item-list contains-active" id="ptx-toc-group-ch-quantifiers">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-quantifiers-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-quantifiers-3.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Quantified statements</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-quantifiers-4.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Negation of quantifiers</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="ch-quantifiers-5.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Nested quantifiers</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_limits.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Quantifiers and rigorous limits</span></a></div>
+<ul id="ptx-toc-group-sec_limits" class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec_limits.html#sec_limits-3" class="internal"><span class="codenumber">6.4.1</span> <span class="title">Convergence of sequences</span></a></div>
+<ul id="ptx-toc-group-sec_limits-3" class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec_limits.html#sec_limits-3-3" class="internal"><span class="codenumber">6.4.1.1</span> <span class="title">Quantifying towards a definition</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec_limits.html#sec_limits-3-4" class="internal"><span class="codenumber">6.4.1.2</span> <span class="title">Some examples</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_limits.html#sec_limits-4" class="internal"><span class="codenumber">6.4.2</span> <span class="title">The limit of a function</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-quantifiers-7.html" class="internal"><span class="codenumber">6.5</span> <span class="title">(Optional) Properties of limits</span></a></div>
+<ul id="ptx-toc-group-ch-quantifiers-7" class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimseq" class="internal"><span class="codenumber">6.5.1</span> <span class="title">(Optional) Some properties of limits of sequences</span></a></div>
+<ul id="ptx-toc-group-subsec-proplimseq" class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimseq-3" class="internal"><span class="codenumber">6.5.1.1</span> <span class="title">Uniqueness of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimseq-4" class="internal"><span class="codenumber">6.5.1.2</span> <span class="title">Linearity of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimseq-5" class="internal"><span class="codenumber">6.5.1.3</span> <span class="title">Product of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimseq-6" class="internal"><span class="codenumber">6.5.1.4</span> <span class="title">Ratio of limits</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimfunc" class="internal"><span class="codenumber">6.5.2</span> <span class="title">(Optional) Some properties of limits of functions</span></a></div>
+<ul id="ptx-toc-group-subsec-proplimfunc" class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimfunc-3" class="internal"><span class="codenumber">6.5.2.1</span> <span class="title">Uniqueness of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimfunc-4" class="internal"><span class="codenumber">6.5.2.2</span> <span class="title">Linearity of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimfunc-5" class="internal"><span class="codenumber">6.5.2.3</span> <span class="title">Product of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimfunc-6" class="internal"><span class="codenumber">6.5.2.4</span> <span class="title">Ratio of limits</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-quantifiers-8.html" class="internal"><span class="codenumber">6.6</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_induction.html" class="internal"><span class="codenumber">7</span> <span class="title">Induction</span></a></div>
+<ul id="ptx-toc-group-ch_induction" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch_induction-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch_induction-3.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Induction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch_induction-4.html" class="internal"><span class="codenumber">7.2</span> <span class="title">More general inductions</span></a></div>
+<ul id="ptx-toc-group-ch_induction-4" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch_induction-4.html#subsec-extendedinduction" class="internal"><span class="codenumber">7.2.1</span> <span class="title">A little more general</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch_induction-4.html#subsec-stronginduction" class="internal"><span class="codenumber">7.2.2</span> <span class="title">More general and yet equivalent</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch_induction-5.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="plp-11.html" class="internal"><span class="codenumber">8</span> <span class="title">Return to sets</span></a></div>
+<ul id="ptx-toc-group-plp-11" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="plp-11-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-11-3.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Subsets</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-11-4.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Set operations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-11-5.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Cartesian products of sets</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-11-6.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Some set-flavoured results</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-11-7.html" class="internal"><span class="codenumber">8.5</span> <span class="title">Indexed sets</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="plp-11-8.html" class="internal"><span class="codenumber">8.6</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_relations.html" class="internal"><span class="codenumber">9</span> <span class="title">Relations</span></a></div>
+<ul id="ptx-toc-group-ch_relations" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch_relations-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch_relations-3.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Relations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_prop_rel.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Properties of relations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch_relations-5.html" class="internal"><span class="codenumber">9.3</span> <span class="title">Equivalence relations &amp; classes</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_congruence_revisited.html" class="internal"><span class="codenumber">9.4</span> <span class="title">Congruence revisited</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-euclid.html" class="internal"><span class="codenumber">9.5</span> <span class="title">Greatest divisors, Bézout and the Euclidean algorithm</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-unique-fact.html" class="internal"><span class="codenumber">9.6</span> <span class="title">Uniqueness of prime factorisation</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch_relations-9.html" class="internal"><span class="codenumber">9.7</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-functions.html" class="internal"><span class="codenumber">10</span> <span class="title">Functions</span></a></div>
+<ul id="ptx-toc-group-ch-functions" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-functions-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-functions-3.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-functions-4.html" class="internal"><span class="codenumber">10.2</span> <span class="title">A more abstract definition</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-functions-5.html" class="internal"><span class="codenumber">10.3</span> <span class="title">Images and preimages of sets</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-functions-6.html" class="internal"><span class="codenumber">10.4</span> <span class="title">Injective and surjective functions</span></a></div>
+<ul id="ptx-toc-group-ch-functions-6" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-functions-6.html#ch-functions-6-3" class="internal"><span class="codenumber">10.4.1</span> <span class="title">Injections and surjections</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-functions-6.html#ch-functions-6-4" class="internal"><span class="codenumber">10.4.2</span> <span class="title">Bijective functions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-functions-7.html" class="internal"><span class="codenumber">10.5</span> <span class="title">Composition of functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_inv_func.html" class="internal"><span class="codenumber">10.6</span> <span class="title">Inverse functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-functions-9.html" class="internal"><span class="codenumber">10.7</span> <span class="title">(Optional) The axiom of choice</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-functions-10.html" class="internal"><span class="codenumber">10.8</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-contradictions.html" class="internal"><span class="codenumber">11</span> <span class="title">Proof by contradiction</span></a></div>
+<ul id="ptx-toc-group-ch-contradictions" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-contradictions-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-contradictions-3.html" class="internal"><span class="codenumber">11.1</span> <span class="title">Structure of a proof by contradiction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-contradictions-4.html" class="internal"><span class="codenumber">11.2</span> <span class="title">Some examples</span></a></div>
+<ul id="ptx-toc-group-ch-contradictions-4" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-contradictions-4.html#ch-contradictions-4-3" class="internal"><span class="codenumber">11.2.1</span> <span class="title">The irrationality of <span class="process-math">\(\sqrt{2}\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-contradictions-4.html#ssec_inf_primes" class="internal"><span class="codenumber">11.2.2</span> <span class="title">The infinitude of primes</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-contradictions-5.html" class="internal"><span class="codenumber">11.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap_cardinality.html" class="internal"><span class="codenumber">12</span> <span class="title">Cardinality</span></a></div>
+<ul id="ptx-toc-group-chap_cardinality" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="chap_cardinality-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="chap_cardinality-3.html" class="internal"><span class="codenumber">12.1</span> <span class="title">Finite sets</span></a></div>
+<ul id="ptx-toc-group-chap_cardinality-3" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-3.html#chap_cardinality-3-3" class="internal"><span class="codenumber">12.1.1</span> <span class="title">Equinumerous sets, bijections and pigeons</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-3.html#chap_cardinality-3-4" class="internal"><span class="codenumber">12.1.2</span> <span class="title">Comparing with functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-3.html#chap_cardinality-3-5" class="internal"><span class="codenumber">12.1.3</span> <span class="title">Infinite sets are strange.</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap_cardinality-4.html" class="internal"><span class="codenumber">12.2</span> <span class="title">Denumerable sets</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_uncount.html" class="internal"><span class="codenumber">12.3</span> <span class="title">Uncountable sets</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="chap_cardinality-6.html" class="internal"><span class="codenumber">12.4</span> <span class="title">Comparing cardinalities</span></a></div>
+<ul id="ptx-toc-group-chap_cardinality-6" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-6.html#chap_cardinality-6-2" class="internal"><span class="codenumber">12.4.1</span> <span class="title">Extending to the infinite</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-6.html#chap_cardinality-6-3" class="internal"><span class="codenumber">12.4.2</span> <span class="title">Cantor’s Theorem and infinite infinities</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-6.html#chap_cardinality-6-4" class="internal"><span class="codenumber">12.4.3</span> <span class="title">Congratulations are in order</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-6.html#chap_cardinality-6-5" class="internal"><span class="codenumber">12.4.4</span> <span class="title">One more question</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_compare_card.html" class="internal"><span class="codenumber">12.5</span> <span class="title">More comparisons of cardinalties</span></a></div>
+<ul id="ptx-toc-group-sec_compare_card" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_compare_card.html#sec_compare_card-3" class="internal"><span class="codenumber">12.5.1</span> <span class="title">The Cantor-Schröder-Bernstein theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_compare_card.html#sec_compare_card-4" class="internal"><span class="codenumber">12.5.2</span> <span class="title">Applications</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_compare_card.html#sec_compare_card-5" class="internal"><span class="codenumber">12.5.3</span> <span class="title">Proof that <span class="process-math">\(|\pow{\mathbb{N}}| = |\mathbb{R}|\)</span></span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_cantor_first.html" class="internal"><span class="codenumber">12.6</span> <span class="title">(Optional) Cantor’s first proof of the uncountability of the reals</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chap_cardinality-9.html" class="internal"><span class="codenumber">12.7</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul id="ptx-toc-group-backmatter" class="structural toc-item-list">
+<li class="toc-item toc-solutions"><div class="toc-title-box"><a href="app_hint.html" class="internal"><span class="codenumber">A.</span> <span class="title">Hints for Exercises</span></a></div></li>
+<li class="toc-item toc-solutions"><div class="toc-title-box"><a href="app_answ.html" class="internal"><span class="codenumber">B.</span> <span class="title">Scratchwork for Exercises</span></a></div></li>
+<li class="toc-item toc-solutions"><div class="toc-title-box"><a href="app_soln.html" class="internal"><span class="codenumber">C.</span> <span class="title">Solutions to Exercises</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="backmatter-5.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="ch-quantifiers-5">
+<h1 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Nested quantifiers</span>
+</h1>
+<article class="example example-like" id="ch-quantifiers-5-2"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.3.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para logical" id="ch-quantifiers-5-2-1-1">
+<div class="para">Rewrite the following using quantifiers, and then write out their negations.</div>
+<ul class="disc" id="ch-quantifiers-5-2-1-1-1">
+<li id="ch-quantifiers-5-2-1-1-1-1">
+<div class="para" id="p-derived-ch-quantifiers-5-2-1-1-1-1">There is a real number <span class="process-math">\(y\)</span> such that <span class="process-math">\(1/y = y+1\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch-quantifiers-5-2-1-1-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch-quantifiers-5-2-1-1-1-2">
+<div class="para" id="p-derived-ch-quantifiers-5-2-1-1-1-2">For every integer <span class="process-math">\(z\)</span> there is a natural number <span class="process-math">\(w\)</span> such that <span class="process-math">\(z^2 \lt  w\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch-quantifiers-5-2-1-1-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-quantifiers-5-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="ch-quantifiers-5-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="ch-quantifiers-5-2-2-1">
+<div class="para">Translating the statements into symbols gives</div>
+<ul class="disc" id="ch-quantifiers-5-2-2-1-1">
+<li id="ch-quantifiers-5-2-2-1-1-1">
+<div class="para" id="p-derived-ch-quantifiers-5-2-2-1-1-1"><span class="process-math">\(\displaystyle \exists y \in \mathbb{R} \st 1/y=y+1\)</span></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch-quantifiers-5-2-2-1-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch-quantifiers-5-2-2-1-1-2">
+<div class="para" id="p-derived-ch-quantifiers-5-2-2-1-1-2"><span class="process-math">\(\displaystyle \forall z \in \mathbb{Z}, \exists w\in \mathbb{N} \st z^2 \lt w\)</span></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch-quantifiers-5-2-2-1-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">The negations are then:</div>
+<div class="displaymath process-math" id="ch-quantifiers-5-2-2-1-2">
+\begin{align*}
+\neg(  \exists y \in \mathbb{R} \st 1/y=y+1 )
+\amp \equiv  \forall y \in \mathbb{R},  \neg( 1/y=y+1 )\\
+\amp \equiv  \forall y \in \mathbb{R}, 1/y \neq y+1.
+\end{align*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math" id="ch-quantifiers-5-2-2-1-3">
+\begin{align*}
+\neg( \forall z \in \mathbb{Z}, \exists w\in \mathbb{N} \st z^2 \lt w )
+\amp \equiv
+\exists z \in \mathbb{Z} \st \neg( \exists w\in \mathbb{N} \st z^2 \lt w )\\
+\amp \equiv
+\exists z \in \mathbb{Z} \st  \forall w\in \mathbb{N}, \neg( z^2 \lt w )\\
+\amp \equiv
+\exists z \in \mathbb{Z} \st  \forall w\in \mathbb{N}, z^2 \geq w.
+\end{align*}
+</div>
+<div class="para">Notice how we can slide the negation from left to right, and along the way <span class="process-math">\(\forall\)</span> becomes <span class="process-math">\(\exists\)</span> and <span class="process-math">\(\exists\)</span> becomes <span class="process-math">\(\forall\text{.}\)</span> And, of course, the domains are unchanged by negation.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-quantifiers-5-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 6.3.1.1"><a tabindex="-1" href="#ch-quantifiers-5-2-2" title="Copy heading and permalink for Solution 6.3.1.1" aria-label="Copy heading and permalink for Solution 6.3.1.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 6.3.1"><a tabindex="-1" href="#ch-quantifiers-5-2" title="Copy heading and permalink for Example 6.3.1" aria-label="Copy heading and permalink for Example 6.3.1">🔗</a></div>
+</article>
+<div class="para" id="ch-quantifiers-5-3">The first statement is, in plain(er) English<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-quantifiers-5-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<blockquote class="blockquote" id="ch-quantifiers-5-4">
+<div class="para" id="ch-quantifiers-5-4-1">You can pick some real number <span class="process-math">\(y\)</span> to make <span class="process-math">\(1/y=y+1\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-quantifiers-5-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Quotation"><a tabindex="-1" href="#ch-quantifiers-5-4" title="Copy heading and permalink for Quotation" aria-label="Copy heading and permalink for Quotation">🔗</a></div>
+</blockquote>
+<div class="para" id="ch-quantifiers-5-5">In writing it in this way, the authors have tried to take a mathematical statement into an exercise for the reader. “You — dear reader — can find (go on!) some real number <span class="process-math">\(y\)</span> that has the property that <span class="process-math">\(1/y\)</span> is equal to <span class="process-math">\(1+y\)</span>”. Similarly, we can write the statement <span class="process-math">\(\forall z \in \mathbb{R}, z^2 \geq 0\)</span> as<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-quantifiers-5-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<blockquote class="blockquote" id="ch-quantifiers-5-6">
+<div class="para" id="ch-quantifiers-5-6-1">No matter which real number <span class="process-math">\(z\)</span> you pick, <span class="process-math">\(z^2\)</span> is non-negative.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-quantifiers-5-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Quotation"><a tabindex="-1" href="#ch-quantifiers-5-6" title="Copy heading and permalink for Quotation" aria-label="Copy heading and permalink for Quotation">🔗</a></div>
+</blockquote>
+<div class="para" id="ch-quantifiers-5-7">Again, we have made this into an exercise for the reader. “You — dear reader — can pick any value of <span class="process-math">\(z\)</span> you want, it will always turn out that <span class="process-math">\(z^2 \geq 0\text{.}\)</span>” So far, nothing too controversial, but lets move on to the second example above since it contains nested quantifiers. But a warning first.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-quantifiers-5-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="warning remark-like" id="ch-quantifiers-5-8"><h2 class="heading">
+<span class="type">Warning</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.3.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Quantifiers do not commute.</span>
+</h2>
+<div class="para logical" id="ch-quantifiers-5-8-2">
+<div class="para">Nested quantifiers do not commute. The statement</div>
+<div class="displaymath process-math" id="ch-quantifiers-5-8-2-1">
+\begin{equation*}
+\forall x, \exists y \st  P(x,y)
+\end{equation*}
+</div>
+<div class="para">is not logically equivalent to</div>
+<div class="displaymath process-math" id="ch-quantifiers-5-8-2-2">
+\begin{equation*}
+\exists y \st \forall x,  P(x,y).  
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-quantifiers-5-8-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Warning 6.3.2: Quantifiers do not commute"><a tabindex="-1" href="#ch-quantifiers-5-8" title="Copy heading and permalink for Warning 6.3.2: Quantifiers do not commute" aria-label="Copy heading and permalink for Warning 6.3.2: Quantifiers do not commute">🔗</a></div>
+</article>
+<div class="para" id="ch-quantifiers-5-9">The second example above contains nested quantifiers. Let us work through it slowly and carefully by writing it as a task for the reader.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-quantifiers-5-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<blockquote class="blockquote" id="ch-quantifiers-5-10">
+<div class="para" id="ch-quantifiers-5-10-1">No matter which <span class="process-math">\(z \in \mathbb{Z}\)</span> you pick, there is a choice of <span class="process-math">\(w \in \mathbb{N}\)</span> so that <span class="process-math">\(z^2 \lt w\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-quantifiers-5-10-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Quotation"><a tabindex="-1" href="#ch-quantifiers-5-10" title="Copy heading and permalink for Quotation" aria-label="Copy heading and permalink for Quotation">🔗</a></div>
+</blockquote>
+<div class="para logical" id="ch-quantifiers-5-11">
+<div class="para">This statement is true. To see why, we should think of it as a 2-player game. Player 1 picks any <span class="process-math">\(z\)</span> they want, and Player 2 has to choose a value of <span class="process-math">\(w\)</span> so that <span class="process-math">\(z^2 \lt w\text{.}\)</span> Player 1 goes first and Player 2 goes second.</div>
+<ul class="disc" id="ch-quantifiers-5-11-4">
+<li id="ch-quantifiers-5-11-4-1">
+<div class="para" id="p-derived-ch-quantifiers-5-11-4-1">Player 1 picks some integer <span class="process-math">\(z\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch-quantifiers-5-11-4-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch-quantifiers-5-11-4-2">
+<div class="para" id="p-derived-ch-quantifiers-5-11-4-2">Player 2 knows the value of <span class="process-math">\(z\)</span> and can make their choice accordingly. With a little thought, Player 2 realises that choosing <span class="process-math">\(w = z^2+1\)</span> will work nicely (though they should be careful to make sure their choice is from the correct domain).</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch-quantifiers-5-11-4-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">This is then the basis for proving the statement is true.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-quantifiers-5-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="ch-quantifiers-5-12" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para" id="ch-quantifiers-5-12-1">Let <span class="process-math">\(z \in \mathbb{Z}\text{.}\)</span> Then choose <span class="process-math">\(w = z^2+1\text{.}\)</span> Since <span class="process-math">\(z\in\mathbb{Z}\)</span> we know that <span class="process-math">\(w\)</span> is a positive integer and so <span class="process-math">\(w \in \mathbb{N}\text{.}\)</span> Then <span class="process-math">\(z^2 \lt z^2+1 = w\text{.}\)</span> Hence the statement is true.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-quantifiers-5-12-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 6.3.1"><a tabindex="-1" href="#ch-quantifiers-5-12" title="Copy heading and permalink for Proof 6.3.1" aria-label="Copy heading and permalink for Proof 6.3.1">🔗</a></div>
+</article></details>
+<div class="para logical" id="ch-quantifiers-5-13">
+<div class="para">What if we reverse the order of the quantifiers?</div>
+<div class="displaymath process-math" id="ch-quantifiers-5-13-1">
+\begin{equation*}
+\exists w \in \mathbb{N} \st \forall z \in \mathbb{Z}, z^2 \lt w.
+\end{equation*}
+</div>
+<div class="para">Again, we translate this into an exercise for the reader</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-quantifiers-5-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<blockquote class="blockquote" id="ch-quantifiers-5-14">
+<div class="para" id="ch-quantifiers-5-14-1">You can choose some <span class="process-math">\(w \in \mathbb{N}\text{,}\)</span> so that no matter what integer <span class="process-math">\(z\)</span> is then chosen, <span class="process-math">\(z^2 \lt w\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-quantifiers-5-14-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Quotation"><a tabindex="-1" href="#ch-quantifiers-5-14" title="Copy heading and permalink for Quotation" aria-label="Copy heading and permalink for Quotation">🔗</a></div>
+</blockquote>
+<div class="para" id="ch-quantifiers-5-15">This is false. Player 1 now has to pick <span class="process-math">\(w\)</span> first, and Player 2 picks <span class="process-math">\(z\)</span> second. Player 1 knows nothing about what Player 2 is going to do. So Player 1 might think “I’ll pick a really big number, say <span class="process-math">\(w=100\)</span>”, but then Player 2 knows this value of <span class="process-math">\(w\)</span> and can just pick a large value of <span class="process-math">\(z\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-quantifiers-5-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ch-quantifiers-5-16">
+<div class="para">The best way (arguably) to prove the statement false, is to show that its negation is true. So a  <dfn class="terminology">disproof</dfn> of the statement is just a proof of the negation of the statement. So write down the negation:</div>
+<div class="displaymath process-math" id="ch-quantifiers-5-16-2">
+\begin{equation*}
+\forall w \in \mathbb{N}, \exists z \in \mathbb{Z} \st z^2 \geq w.
+\end{equation*}
+</div>
+<div class="para">and again write it as a task for the reader:</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-quantifiers-5-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<blockquote class="blockquote" id="ch-quantifiers-5-17">
+<div class="para" id="ch-quantifiers-5-17-1">No matter which <span class="process-math">\(w\in \mathbb{N}\)</span> you pick, there will always be some choice of <span class="process-math">\(z \in \mathbb{Z}\)</span> so that <span class="process-math">\(z^2 \geq w\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-quantifiers-5-17-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Quotation"><a tabindex="-1" href="#ch-quantifiers-5-17" title="Copy heading and permalink for Quotation" aria-label="Copy heading and permalink for Quotation">🔗</a></div>
+</blockquote>
+<div class="para logical" id="ch-quantifiers-5-18">
+<div class="para">Again, Player 1 goes first and Player 2 goes second. Player 1 knows nothing about what Player 2 will do, but Player 2 knows what Player 1 did.</div>
+<ul class="disc" id="ch-quantifiers-5-18-1">
+<li id="ch-quantifiers-5-18-1-1">
+<div class="para" id="p-derived-ch-quantifiers-5-18-1-1">Player 1 picks some <span class="process-math">\(w \in \mathbb{N}\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch-quantifiers-5-18-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch-quantifiers-5-18-1-2">
+<div class="para" id="p-derived-ch-quantifiers-5-18-1-2">Player 2 knows the value of <span class="process-math">\(w\text{,}\)</span> and then (after some thought) picks <span class="process-math">\(z=w+1\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch-quantifiers-5-18-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">It is now sufficient to check that Player 2 has chosen <span class="process-math">\(z\)</span> from the correct domain, and that <span class="process-math">\(z^2 = (w^2+2w+1) \geq w\)</span> (which it is since <span class="process-math">\(w \geq 1\)</span>).</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-quantifiers-5-18" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="ch-quantifiers-5-19" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="ch-quantifiers-5-19-1">
+<div class="para">The original statement is false, so we prove the negation to be true. The negation is</div>
+<div class="displaymath process-math" id="ch-quantifiers-5-19-1-1">
+\begin{equation*}
+\forall w \in \mathbb{N}, \exists z \in \mathbb{Z} \st z^2 \geq w.
+\end{equation*}
+</div>
+<div class="para">Let <span class="process-math">\(w \in \mathbb{N}\)</span> and then choose <span class="process-math">\(z = w+1\text{.}\)</span> Since <span class="process-math">\(w\in\mathbb{N}\text{,}\)</span> we know that <span class="process-math">\(z \in \mathbb{Z}\text{.}\)</span> Further since <span class="process-math">\(w \geq 1\)</span> we know that</div>
+<div class="displaymath process-math" id="ch-quantifiers-5-19-1-7">
+\begin{equation*}
+z^2 = (w+1)^2 = w^2+2w+1 = (w^2+w+1) + w \geq w
+\end{equation*}
+</div>
+<div class="para">as required. Since the negation is true, the original is false.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-quantifiers-5-19-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 6.3.2"><a tabindex="-1" href="#ch-quantifiers-5-19" title="Copy heading and permalink for Proof 6.3.2" aria-label="Copy heading and permalink for Proof 6.3.2">🔗</a></div>
+</article></details>
+<article class="remark remark-like" id="ch-quantifiers-5-20"><h2 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.3.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Context and dropping domain.</span>
+</h2>
+<div class="para" id="ch-quantifiers-5-20-2">Mathematicians sometimes are a little sloppy with the way they write quantifiers, especially when the domain of those quantifiers is known by context. For example, if we are doing calculus, then most of our variables will be real numbers, while if we are working on a number theory problem, then our variables are likely to be integers. If the context is clear the domains will often be dropped.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-quantifiers-5-20-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ch-quantifiers-5-20-3">
+<div class="para">So one might see the statement</div>
+<div class="displaymath process-math" id="ch-quantifiers-5-20-3-1">
+\begin{align*}
+\forall x \in \mathbb{R}, \amp \mbox{ if } x \lt -2 \mbox{ then } x^2  \gt  4
+\amp \text{ written as}\\
+\forall x, \amp \mbox{ if } x \lt -2 \mbox{ then } x^2  \gt  4 \amp \text{ or even as}\\
+\amp \mbox{ if } x \lt -2 \mbox{ then } x^2  \gt  4
+\end{align*}
+</div>
+<div class="para">In this last statement we have dropped the quantifier completely. The universal quantifier is implicit — the statement has to be true for all <span class="process-math">\(x\)</span> in the domain. So, when you see an implication</div>
+<div class="displaymath process-math" id="ch-quantifiers-5-20-3-4">
+\begin{align*}
+\amp P(x) \implies Q(x) 
+\end{align*}
+</div>
+<div class="para intertext">it is really</div>
+<div class="displaymath process-math" id="ch-quantifiers-5-20-3-6">
+\begin{align*}
+\forall x,\ \amp P(x) \implies Q(x).
+\end{align*}
+</div>
+<div class="para">Your hard-working time-pressed mathematician has just dropped a couple of symbols to save time. This is a little sloppy, but really quite standard.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-quantifiers-5-20-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Remark 6.3.3: Context and dropping domain"><a tabindex="-1" href="#ch-quantifiers-5-20" title="Copy heading and permalink for Remark 6.3.3: Context and dropping domain" aria-label="Copy heading and permalink for Remark 6.3.3: Context and dropping domain">🔗</a></div>
+</article>
+<div class="para" id="ch-quantifiers-5-21">When students encounter nested quantifiers for the first time they typically find them quite  difficult. They are quite difficult but they do become easier with practice. Accordingly, the following example is one of this author’s favourites. It, and its kin, have appeared on nearly every exam the author has given for this topic. The author’s students are likely to have chosen a different type of question as their favourite. We will provide lots of similar exercises for you — dear reader — to practice, so that any dislike of nested quantifiers can be dispelled.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-quantifiers-5-21" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="example example-like" id="ch-quantifiers-5-22"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.3.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para logical" id="ch-quantifiers-5-22-1-1">
+<div class="para">Consider the following four statements:</div>
+<ol class="lower-alpha ol-marker-1" id="ch-quantifiers-5-22-1-1-1">
+<li id="ch-quantifiers-5-22-1-1-1-1">
+<div class="para" id="p-derived-ch-quantifiers-5-22-1-1-1-1"><span class="process-math">\(\displaystyle \exists x \in \mathbb{R} \st \exists y \in \mathbb{R}  \st xy=x+y \)</span></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item a"><a tabindex="-1" href="#ch-quantifiers-5-22-1-1-1-1" title="Copy heading and permalink for Item a" aria-label="Copy heading and permalink for Item a">🔗</a></div>
+</li>
+<li id="ch-quantifiers-5-22-1-1-1-2">
+<div class="para" id="p-derived-ch-quantifiers-5-22-1-1-1-2"><span class="process-math">\(\displaystyle \exists x  \in \mathbb{R} \st \forall y \in \mathbb{R} , xy=x+y\)</span></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item b"><a tabindex="-1" href="#ch-quantifiers-5-22-1-1-1-2" title="Copy heading and permalink for Item b" aria-label="Copy heading and permalink for Item b">🔗</a></div>
+</li>
+<li id="ch-quantifiers-5-22-1-1-1-3">
+<div class="para" id="p-derived-ch-quantifiers-5-22-1-1-1-3"><span class="process-math">\(\displaystyle \forall x \in \mathbb{R}, \exists y  \in \mathbb{R} \st  xy=x+y \)</span></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item c"><a tabindex="-1" href="#ch-quantifiers-5-22-1-1-1-3" title="Copy heading and permalink for Item c" aria-label="Copy heading and permalink for Item c">🔗</a></div>
+</li>
+<li id="ch-quantifiers-5-22-1-1-1-4">
+<div class="para" id="p-derived-ch-quantifiers-5-22-1-1-1-4"><span class="process-math">\(\forall x \in \mathbb{R}, \forall y \in \mathbb{R}, xy=x+y \text{.}\)</span></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item d"><a tabindex="-1" href="#ch-quantifiers-5-22-1-1-1-4" title="Copy heading and permalink for Item d" aria-label="Copy heading and permalink for Item d">🔗</a></div>
+</li>
+</ol>
+<div class="para">Determine the truth value of the following four statements and prove your answers.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-quantifiers-5-22-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="ch-quantifiers-5-22-1-2">We will work through the statements in order, thinking about them as two-player games as we did above. We will also drop “<span class="process-math">\(\in \mathbb{R}\)</span>” from the quantifiers; the reader should understand, by context, that all our variables are selected from <span class="process-math">\(\mathbb{R}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-quantifiers-5-22-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="ch-quantifiers-5-22-1-3">Finally — remember to be careful of the order of the quantifiers.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-quantifiers-5-22-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="ch-quantifiers-5-22-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Scratchwork</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="answer solution-like knowl__content">
+<div class="para logical" id="ch-quantifiers-5-22-2-1">
+<ol class="lower-alpha ol-marker-1" id="ch-quantifiers-5-22-2-1-1">
+<li id="ch-quantifiers-5-22-2-1-1-1">
+<div class="para logical" id="ch-quantifiers-5-22-2-1-1-1-1">
+<div class="para">This is true.</div>
+<ul class="disc" id="ch-quantifiers-5-22-2-1-1-1-1-1">
+<li id="ch-quantifiers-5-22-2-1-1-1-1-1-1">
+<div class="para" id="p-derived-ch-quantifiers-5-22-2-1-1-1-1-1-1">Player 1 only has to choose one number. They choose <span class="process-math">\(x=0\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch-quantifiers-5-22-2-1-1-1-1-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch-quantifiers-5-22-2-1-1-1-1-1-2">
+<div class="para" id="p-derived-ch-quantifiers-5-22-2-1-1-1-1-1-2">Player 2 only has to choose one number and they know Player 1’s choice. So they also choose <span class="process-math">\(y=0\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch-quantifiers-5-22-2-1-1-1-1-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">Then <span class="process-math">\(xy = 0 = 0+0 = x+y\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-quantifiers-5-22-2-1-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item a"><a tabindex="-1" href="#ch-quantifiers-5-22-2-1-1-1" title="Copy heading and permalink for Item a" aria-label="Copy heading and permalink for Item a">🔗</a></div>
+</li>
+<li id="ch-quantifiers-5-22-2-1-1-2">
+<div class="para logical" id="ch-quantifiers-5-22-2-1-1-2-1">
+<div class="para">Again think about the 2 players:</div>
+<ul class="disc" id="ch-quantifiers-5-22-2-1-1-2-1-1">
+<li id="ch-quantifiers-5-22-2-1-1-2-1-1-1">
+<div class="para" id="p-derived-ch-quantifiers-5-22-2-1-1-2-1-1-1">Player 1 gets to choose only one number <span class="process-math">\(x\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch-quantifiers-5-22-2-1-1-2-1-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch-quantifiers-5-22-2-1-1-2-1-1-2">
+<div class="para" id="p-derived-ch-quantifiers-5-22-2-1-1-2-1-1-2">Player 2 then has to be able to choose any real number <span class="process-math">\(y\)</span> so that the equation holds.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch-quantifiers-5-22-2-1-1-2-1-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">This feels unlikely to work because we can “solve” the equation for <span class="process-math">\(y\)</span> to get <span class="process-math">\(y = \frac{x}{x-1}\text{.}\)</span> That is, for any given <span class="process-math">\(x\)</span>-value there is going be exactly one <span class="process-math">\(y\)</span>-value. So it feels like it will likely be false.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-quantifiers-5-22-2-1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ch-quantifiers-5-22-2-1-1-2-2">
+<div class="para">To see that it <em class="emphasis">is</em> false, write down the negation:</div>
+<div class="displaymath process-math" id="ch-quantifiers-5-22-2-1-1-2-2-2">
+\begin{equation*}
+\forall x, \exists y \st xy \neq x+y.
+\end{equation*}
+</div>
+<ul class="disc" id="ch-quantifiers-5-22-2-1-1-2-2-3">
+<li id="ch-quantifiers-5-22-2-1-1-2-2-3-1">
+<div class="para" id="p-derived-ch-quantifiers-5-22-2-1-1-2-2-3-1">Player 1 can choose any real number <span class="process-math">\(x\)</span> they want.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch-quantifiers-5-22-2-1-1-2-2-3-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch-quantifiers-5-22-2-1-1-2-2-3-2">
+<div class="para" id="p-derived-ch-quantifiers-5-22-2-1-1-2-2-3-2">Player 2 then has to be able to choose a real number <span class="process-math">\(y\)</span> so that <span class="process-math">\(xy \neq x+y\text{.}\)</span> A good choice is <span class="process-math">\(y=1\)</span> (though there are infinitely many other good choices)</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch-quantifiers-5-22-2-1-1-2-2-3-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">Now no matter what <span class="process-math">\(x\)</span>-value, <span class="process-math">\(xy = x\)</span> and <span class="process-math">\(x+y = x+1\text{,}\)</span> and <span class="process-math">\(x \neq x+1\text{.}\)</span> We just have to write it up.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-quantifiers-5-22-2-1-1-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item b"><a tabindex="-1" href="#ch-quantifiers-5-22-2-1-1-2" title="Copy heading and permalink for Item b" aria-label="Copy heading and permalink for Item b">🔗</a></div>
+</li>
+<li id="ch-quantifiers-5-22-2-1-1-3">
+<div class="para logical" id="ch-quantifiers-5-22-2-1-1-3-1">
+<div class="para">This one is a bit tricky. Again, think about our two players.</div>
+<ul class="disc" id="ch-quantifiers-5-22-2-1-1-3-1-1">
+<li id="ch-quantifiers-5-22-2-1-1-3-1-1-1">
+<div class="para" id="p-derived-ch-quantifiers-5-22-2-1-1-3-1-1-1">Player 1 chooses whatever <span class="process-math">\(x\)</span>-value they feel like.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch-quantifiers-5-22-2-1-1-3-1-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch-quantifiers-5-22-2-1-1-3-1-1-2">
+<div class="para logical" id="ch-quantifiers-5-22-2-1-1-3-1-1-2-1">
+<div class="para">Player 2 knows that value of <span class="process-math">\(x\)</span> and based on that has to make a very careful choice of <span class="process-math">\(y\text{.}\)</span> But that just requires Player 2 to solve <span class="process-math">\(x+y=xy\text{.}\)</span> Easy!</div>
+<div class="displaymath process-math" id="ch-quantifiers-5-22-2-1-1-3-1-1-2-1-4">
+\begin{align*}
+x+y \amp=xy \\
+y-xy \amp= -x \\
+y \amp = \frac{-x}{1-x} = \frac{x}{x-1} 
+\end{align*}
+</div>
+<div class="para">All good? Not quite — things go wrong when <span class="process-math">\(x=1\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-quantifiers-5-22-2-1-1-3-1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ch-quantifiers-5-22-2-1-1-3-1-1-2-2">When <span class="process-math">\(x=1\text{,}\)</span> our equation is <span class="process-math">\(y+1 = y\text{.}\)</span> There is no real number  <span class="process-math">\(y\)</span> that makes that true.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-quantifiers-5-22-2-1-1-3-1-1-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch-quantifiers-5-22-2-1-1-3-1-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">So everything seemed fine until we considered <span class="process-math">\(x=1\text{.}\)</span> So perhaps it is false?</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-quantifiers-5-22-2-1-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ch-quantifiers-5-22-2-1-1-3-2">
+<div class="para">You know the drill now; write down the negation and think about our two players:</div>
+<div class="displaymath process-math" id="ch-quantifiers-5-22-2-1-1-3-2-1">
+\begin{equation*}
+\exists x \st \forall y, xy \neq x+y.
+\end{equation*}
+</div>
+<ul class="disc" id="ch-quantifiers-5-22-2-1-1-3-2-2">
+<li id="ch-quantifiers-5-22-2-1-1-3-2-2-1">
+<div class="para" id="p-derived-ch-quantifiers-5-22-2-1-1-3-2-2-1">Player 1 makes a single careful choice of <span class="process-math">\(x=1\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch-quantifiers-5-22-2-1-1-3-2-2-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch-quantifiers-5-22-2-1-1-3-2-2-2">
+<div class="para" id="p-derived-ch-quantifiers-5-22-2-1-1-3-2-2-2">Then no matter what <span class="process-math">\(y\)</span>-value Player 2 chooses, <span class="process-math">\(xy = y\)</span> and <span class="process-math">\(x+y=y+1\text{,}\)</span> so <span class="process-math">\(xy \neq x+y\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch-quantifiers-5-22-2-1-1-3-2-2-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">So it is false. We just need to write out the proof.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-quantifiers-5-22-2-1-1-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item c"><a tabindex="-1" href="#ch-quantifiers-5-22-2-1-1-3" title="Copy heading and permalink for Item c" aria-label="Copy heading and permalink for Item c">🔗</a></div>
+</li>
+<li id="ch-quantifiers-5-22-2-1-1-4">
+<div class="para logical" id="ch-quantifiers-5-22-2-1-1-4-1">
+<div class="para">This one is also false, and it is easy to see why from the negation:</div>
+<div class="displaymath process-math" id="ch-quantifiers-5-22-2-1-1-4-1-1">
+\begin{equation*}
+\exists x \st \exists y \st xy \neq x+y.
+\end{equation*}
+</div>
+<div class="para">It suffices for Player 1 to pick <span class="process-math">\(x=1\text{,}\)</span> and Player 2 to then pick <span class="process-math">\(y=1\text{.}\)</span> Then <span class="process-math">\(xy = 1\)</span> and <span class="process-math">\(x+y=2\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-quantifiers-5-22-2-1-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item d"><a tabindex="-1" href="#ch-quantifiers-5-22-2-1-1-4" title="Copy heading and permalink for Item d" aria-label="Copy heading and permalink for Item d">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-quantifiers-5-22-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Scratchwork 6.3.4.1"><a tabindex="-1" href="#ch-quantifiers-5-22-2" title="Copy heading and permalink for Scratchwork 6.3.4.1" aria-label="Copy heading and permalink for Scratchwork 6.3.4.1">🔗</a></div>
+</div></details>
+<details id="ch-quantifiers-5-22-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<details id="ch-quantifiers-5-22-3-1" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="title">Proof of (a).</span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para" id="ch-quantifiers-5-22-3-1-2">The statement is true. Pick <span class="process-math">\(x=y=0\)</span> then <span class="process-math">\(xy = 0\)</span> and <span class="process-math">\(x+y = 0\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-quantifiers-5-22-3-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 6.3.4.1.1: Proof of (a)"><a tabindex="-1" href="#ch-quantifiers-5-22-3-1" title="Copy heading and permalink for Proof 6.3.4.1.1: Proof of (a)" aria-label="Copy heading and permalink for Proof 6.3.4.1.1: Proof of (a)">🔗</a></div>
+</article></details>
+<div class="para" id="ch-quantifiers-5-22-3-2">We give two proofs of (b), depending on how we choose <span class="process-math">\(y\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-quantifiers-5-22-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="ch-quantifiers-5-22-3-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="title">Proof of (b).</span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="ch-quantifiers-5-22-3-3-2">
+<div class="para">We prove this to be false by showing the negation is true. The negation is</div>
+<div class="displaymath process-math" id="ch-quantifiers-5-22-3-3-2-1">
+\begin{equation*}
+\forall x, \exists y \st xy \neq x+y.
+\end{equation*}
+</div>
+<div class="para">Pick any <span class="process-math">\(x \in \mathbb{R}\text{,}\)</span> and then set <span class="process-math">\(y=1\text{.}\)</span> Since <span class="process-math">\(xy = x\)</span> and <span class="process-math">\(x+y = x+1\text{,}\)</span> we have that <span class="process-math">\(xy \neq x+y\)</span> as required. Since the negation is true, the original statement is false.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-quantifiers-5-22-3-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 6.3.4.1.2: Proof of (b)"><a tabindex="-1" href="#ch-quantifiers-5-22-3-3" title="Copy heading and permalink for Proof 6.3.4.1.2: Proof of (b)" aria-label="Copy heading and permalink for Proof 6.3.4.1.2: Proof of (b)">🔗</a></div>
+</article></details>
+<details id="ch-quantifiers-5-22-3-4" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="title">Another proof of (b).</span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="ch-quantifiers-5-22-3-4-2">
+<div class="para">The statement is false. Let <span class="process-math">\(x\)</span> be any real number. Then either <span class="process-math">\(x=0\)</span> or <span class="process-math">\(x \neq 0\text{.}\)</span>
+</div>
+<ul class="disc" id="ch-quantifiers-5-22-3-4-2-4">
+<li id="ch-quantifiers-5-22-3-4-2-4-1">
+<div class="para" id="p-derived-ch-quantifiers-5-22-3-4-2-4-1">When <span class="process-math">\(x=0\)</span> set <span class="process-math">\(y=1\text{.}\)</span> Then <span class="process-math">\(xy = 0\)</span> and <span class="process-math">\(x+y=1\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch-quantifiers-5-22-3-4-2-4-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch-quantifiers-5-22-3-4-2-4-2">
+<div class="para" id="p-derived-ch-quantifiers-5-22-3-4-2-4-2">When <span class="process-math">\(x\neq 0\)</span> set <span class="process-math">\(y=0\text{.}\)</span> Then <span class="process-math">\(xy = 0\)</span> and <span class="process-math">\(x+y=x\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch-quantifiers-5-22-3-4-2-4-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">In both cases <span class="process-math">\(xy \neq x+y\)</span> as required.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-quantifiers-5-22-3-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 6.3.4.1.3: Another proof of (b)"><a tabindex="-1" href="#ch-quantifiers-5-22-3-4" title="Copy heading and permalink for Proof 6.3.4.1.3: Another proof of (b)" aria-label="Copy heading and permalink for Proof 6.3.4.1.3: Another proof of (b)">🔗</a></div>
+</article></details>
+<details id="ch-quantifiers-5-22-3-5" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="title">Proof of (c).</span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="ch-quantifiers-5-22-3-5-2">
+<div class="para">The statement is false. We prove the negation</div>
+<div class="displaymath process-math" id="ch-quantifiers-5-22-3-5-2-1">
+\begin{equation*}
+\exists x \st \forall y, xy \neq x+y.
+\end{equation*}
+</div>
+<div class="para">is true. Pick <span class="process-math">\(x=1\text{,}\)</span> then no matter what <span class="process-math">\(y\)</span> is chosen, <span class="process-math">\(xy = y\)</span> and <span class="process-math">\(x+y = y+1\text{,}\)</span> and Consequently <span class="process-math">\(y \neq y+1\text{.}\)</span> Since the negation is true, the original statement is false.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-quantifiers-5-22-3-5-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 6.3.4.1.4: Proof of (c)"><a tabindex="-1" href="#ch-quantifiers-5-22-3-5" title="Copy heading and permalink for Proof 6.3.4.1.4: Proof of (c)" aria-label="Copy heading and permalink for Proof 6.3.4.1.4: Proof of (c)">🔗</a></div>
+</article></details>
+<details id="ch-quantifiers-5-22-3-6" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="title">Proof of (d).</span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="ch-quantifiers-5-22-3-6-2">
+<div class="para">The statement is false. We prove the negation:</div>
+<div class="displaymath process-math" id="ch-quantifiers-5-22-3-6-2-1">
+\begin{equation*}
+\exists x \st \exists y \st xy \neq x+y.
+\end{equation*}
+</div>
+<div class="para">Pick <span class="process-math">\(x=1\)</span> and <span class="process-math">\(y=1\text{,}\)</span> then <span class="process-math">\(xy=1\)</span> and <span class="process-math">\(x+y=2\text{.}\)</span> Since the negation is true, the original is false.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-quantifiers-5-22-3-6-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 6.3.4.1.5: Proof of (d)"><a tabindex="-1" href="#ch-quantifiers-5-22-3-6" title="Copy heading and permalink for Proof 6.3.4.1.5: Proof of (d)" aria-label="Copy heading and permalink for Proof 6.3.4.1.5: Proof of (d)">🔗</a></div>
+</article></details><div class="autopermalink" aria-hidden="true" data-description="Solution 6.3.4.1"><a tabindex="-1" href="#ch-quantifiers-5-22-3" title="Copy heading and permalink for Solution 6.3.4.1" aria-label="Copy heading and permalink for Solution 6.3.4.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 6.3.4"><a tabindex="-1" href="#ch-quantifiers-5-22" title="Copy heading and permalink for Example 6.3.4" aria-label="Copy heading and permalink for Example 6.3.4">🔗</a></div>
+</article>
+<div class="para" id="ch-quantifiers-5-23">I hope the reader can see why the above example makes for a good exam question. It is a good mathematical and logical workout. With that in mind, we (and the author really means you) should do another one. But before we leap into another fun example, a quick warning about negating implications:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-quantifiers-5-23" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="warning remark-like" id="ch-quantifiers-5-24"><h2 class="heading">
+<span class="type">Warning</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.3.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Common implication errors.</span>
+</h2>
+<div class="para logical" id="ch-quantifiers-5-24-2">
+<div class="para">Remember that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-neg-imp.html" id="ch-quantifiers-5-24-2-1">
+\begin{equation*}
+\neg(P \implies Q) \quad \equiv \quad (P \land \neg Q).
+\end{equation*}
+</div>
+<div class="para">The negation of <span class="process-math">\(P \implies Q\)</span> is <em class="alert">definitely not</em>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-neg-imp.html" id="ch-quantifiers-5-24-2-4">
+\begin{equation*}
+\underbrace{(P \implies \neg Q)}_{\text{bad!}} \qquad  \text{don't do this!}
+\end{equation*}
+</div>
+<div class="para">This is a surprisingly common error. Please memorise <a href="plp-7-4.html#thm-neg-imp" class="xref" data-knowl="./knowl/xref/thm-neg-imp.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.2.7: Negating implications and biconditionals">Theorem 4.2.7</a>.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-quantifiers-5-24-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ch-quantifiers-5-24-3">
+<div class="para">It’s also important to remember that:</div>
+<ul class="disc" id="ch-quantifiers-5-24-3-1">
+<li id="ch-quantifiers-5-24-3-1-1">
+<div class="para" id="p-derived-ch-quantifiers-5-24-3-1-1">if the hypothesis of an implication is false, the implication is true, and</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch-quantifiers-5-24-3-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch-quantifiers-5-24-3-1-2">
+<div class="para" id="p-derived-ch-quantifiers-5-24-3-1-2">if the conclusion of an implication is true, the implication is true.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch-quantifiers-5-24-3-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-quantifiers-5-24-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Warning 6.3.5: Common implication errors"><a tabindex="-1" href="#ch-quantifiers-5-24" title="Copy heading and permalink for Warning 6.3.5: Common implication errors" aria-label="Copy heading and permalink for Warning 6.3.5: Common implication errors">🔗</a></div>
+</article>
+<div class="para" id="ch-quantifiers-5-25">On with the fun!<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-quantifiers-5-25" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="example example-like" id="ch-quantifiers-5-26"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.3.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para logical" id="ch-quantifiers-5-26-1-1">
+<div class="para">Determine the truth value of the following four statements and prove your answers.</div>
+<ul class="disc" id="ch-quantifiers-5-26-1-1-1">
+<li id="ch-quantifiers-5-26-1-1-1-1">
+<div class="para" id="p-derived-ch-quantifiers-5-26-1-1-1-1"><span class="process-math">\(\displaystyle \exists x \in \mathbb{R} \st \exists y \in \mathbb{R} \st (y \neq 0) \implies xy=1\)</span></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch-quantifiers-5-26-1-1-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch-quantifiers-5-26-1-1-1-2">
+<div class="para" id="p-derived-ch-quantifiers-5-26-1-1-1-2"><span class="process-math">\(\displaystyle \exists x \in \mathbb{R} \st \forall y \in \mathbb{R}, (y \neq 0) \implies xy=1\)</span></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch-quantifiers-5-26-1-1-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch-quantifiers-5-26-1-1-1-3">
+<div class="para" id="p-derived-ch-quantifiers-5-26-1-1-1-3"><span class="process-math">\(\displaystyle \forall x \in \mathbb{R}, \exists y \in \mathbb{R} \st (y \neq 0) \implies xy=1\)</span></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch-quantifiers-5-26-1-1-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch-quantifiers-5-26-1-1-1-4">
+<div class="para" id="p-derived-ch-quantifiers-5-26-1-1-1-4"><span class="process-math">\(\displaystyle \forall x \in \mathbb{R}, \forall y \in \mathbb{R}, (y \neq 0) \implies xy=1\)</span></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch-quantifiers-5-26-1-1-1-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">Remember that we must pick the value of <span class="process-math">\(x\)</span> before we pick the value of <span class="process-math">\(y\)</span> in every single case. You might find it helpful to write out the negations before deciding how to approach these.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-quantifiers-5-26-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="ch-quantifiers-5-26-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Scratchwork</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="answer solution-like knowl__content">
+<div class="para logical" id="ch-quantifiers-5-26-2-1">
+<ol class="lower-alpha ol-marker-1" id="ch-quantifiers-5-26-2-1-1">
+<li id="ch-quantifiers-5-26-2-1-1-1">
+<div class="para logical" id="ch-quantifiers-5-26-2-1-1-1-1">
+<div class="para">As suggested, we’ll write out the negation:</div>
+<div class="displaymath process-math" id="ch-quantifiers-5-26-2-1-1-1-1-1">
+\begin{equation*}
+\forall x, \forall y, (y \neq 0) \land (xy\neq 1)
+\end{equation*}
+</div>
+<div class="para">where we have dropped the “<span class="process-math">\(\in \mathbb{R}\)</span>”, assuming the reader will understand by context.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-quantifiers-5-26-2-1-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ch-quantifiers-5-26-2-1-1-1-2">Now, in order to make an implication true, we just have to make the hypothesis false and that is quite easy in this case. Pick any <span class="process-math">\(x\)</span> you want and then choose <span class="process-math">\(y=0\text{.}\)</span> That’s enough to make a proof (it also gives us a hint for one of the other statements).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-quantifiers-5-26-2-1-1-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item a"><a tabindex="-1" href="#ch-quantifiers-5-26-2-1-1-1" title="Copy heading and permalink for Item a" aria-label="Copy heading and permalink for Item a">🔗</a></div>
+</li>
+<li id="ch-quantifiers-5-26-2-1-1-2">
+<div class="para logical" id="ch-quantifiers-5-26-2-1-1-2-1">
+<div class="para">Consider the original statement and what our two players have to do.</div>
+<ul class="disc" id="ch-quantifiers-5-26-2-1-1-2-1-1">
+<li id="ch-quantifiers-5-26-2-1-1-2-1-1-1">
+<div class="para" id="p-derived-ch-quantifiers-5-26-2-1-1-2-1-1-1">Player 1 has to choose some <span class="process-math">\(x\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch-quantifiers-5-26-2-1-1-2-1-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch-quantifiers-5-26-2-1-1-2-1-1-2">
+<div class="para" id="p-derived-ch-quantifiers-5-26-2-1-1-2-1-1-2">Now, no matter what Player 2 picks, the implication must be true.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch-quantifiers-5-26-2-1-1-2-1-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">Let us assume Player 1 has chosen some <span class="process-math">\(x\)</span> we don’t know what it is yet, but let us assume they have chosen it. What can player 2 do to make the implication true. There are three ways to make it true: (hypothesis, conclusion) = (T,T), (F,T), (F,F). When Player 2 picks <span class="process-math">\(y=0\text{,}\)</span> the hypothesis is false making the implication true. However, when they pick something else, the conclusion is only true when <span class="process-math">\(y=1/x\text{.}\)</span> But this means for every other choice of <span class="process-math">\(y\text{,}\)</span> the conclusion will be false. It really looks like this statement is false.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-quantifiers-5-26-2-1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ch-quantifiers-5-26-2-1-1-2-2">
+<div class="para">Time to think about the negation:</div>
+<div class="displaymath process-math" id="ch-quantifiers-5-26-2-1-1-2-2-1">
+\begin{equation*}
+\forall x, \exists y \st (y \neq 0) \land (xy \neq 1)
+\end{equation*}
+</div>
+<div class="para">What do our players do?</div>
+<ul class="disc" id="ch-quantifiers-5-26-2-1-1-2-2-2">
+<li id="ch-quantifiers-5-26-2-1-1-2-2-2-1">
+<div class="para" id="p-derived-ch-quantifiers-5-26-2-1-1-2-2-2-1">Player 1 can pick whatever <span class="process-math">\(x\)</span> they like, so they do.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch-quantifiers-5-26-2-1-1-2-2-2-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch-quantifiers-5-26-2-1-1-2-2-2-2">
+<div class="para" id="p-derived-ch-quantifiers-5-26-2-1-1-2-2-2-2">Player 2 knows the value of <span class="process-math">\(x\)</span> and so can choose <span class="process-math">\(y\)</span> to make the conjunction true. In particular, if Player 1 picked <span class="process-math">\(x=0\text{,}\)</span> then Player 2 can choose <span class="process-math">\(y=1\text{.}\)</span> On the other hand, if Player 1 picked any other value of <span class="process-math">\(x\text{,}\)</span> then Player 2 can choose <span class="process-math">\(y=-x\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch-quantifiers-5-26-2-1-1-2-2-2-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">In both cases, <span class="process-math">\(y\neq 0\)</span> and <span class="process-math">\(xy =0\)</span> or <span class="process-math">\(xy = -x^2 \neq 1\text{.}\)</span> Now just write it up!</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-quantifiers-5-26-2-1-1-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item b"><a tabindex="-1" href="#ch-quantifiers-5-26-2-1-1-2" title="Copy heading and permalink for Item b" aria-label="Copy heading and permalink for Item b">🔗</a></div>
+</li>
+<li id="ch-quantifiers-5-26-2-1-1-3">
+<div class="para logical" id="ch-quantifiers-5-26-2-1-1-3-1">
+<div class="para">Think about our two players.</div>
+<ul class="disc" id="ch-quantifiers-5-26-2-1-1-3-1-1">
+<li id="ch-quantifiers-5-26-2-1-1-3-1-1-1">
+<div class="para" id="p-derived-ch-quantifiers-5-26-2-1-1-3-1-1-1">Player 1 can pick any <span class="process-math">\(x\)</span> they want.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch-quantifiers-5-26-2-1-1-3-1-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch-quantifiers-5-26-2-1-1-3-1-1-2">
+<div class="para" id="p-derived-ch-quantifiers-5-26-2-1-1-3-1-1-2">Player 2 just needs to make the implication true by careful choice of <span class="process-math">\(y\text{.}\)</span> By choosing <span class="process-math">\(y=0\)</span> they can make the hypothesis false.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch-quantifiers-5-26-2-1-1-3-1-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">Since Player 2 can always make the hypothesis false, the implication is true.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-quantifiers-5-26-2-1-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item c"><a tabindex="-1" href="#ch-quantifiers-5-26-2-1-1-3" title="Copy heading and permalink for Item c" aria-label="Copy heading and permalink for Item c">🔗</a></div>
+</li>
+<li id="ch-quantifiers-5-26-2-1-1-4">
+<div class="para" id="ch-quantifiers-5-26-2-1-1-4-1">Last one. Oof.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-quantifiers-5-26-2-1-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ch-quantifiers-5-26-2-1-1-4-2">
+<div class="para">Again, let us think about our two players.</div>
+<ul class="disc" id="ch-quantifiers-5-26-2-1-1-4-2-1">
+<li id="ch-quantifiers-5-26-2-1-1-4-2-1-1">
+<div class="para" id="p-derived-ch-quantifiers-5-26-2-1-1-4-2-1-1">Player 1 picks whatever <span class="process-math">\(x\)</span> they want</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch-quantifiers-5-26-2-1-1-4-2-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch-quantifiers-5-26-2-1-1-4-2-1-2">
+<div class="para" id="p-derived-ch-quantifiers-5-26-2-1-1-4-2-1-2">Player 2 picks whatever <span class="process-math">\(y\)</span> they want.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch-quantifiers-5-26-2-1-1-4-2-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">So, no matter what <span class="process-math">\(x\)</span> was chosen, when Player 2 chooses <span class="process-math">\(y=0\text{,}\)</span> the implication is true. But what about all the other choices? This feels unlikely.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-quantifiers-5-26-2-1-1-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ch-quantifiers-5-26-2-1-1-4-3">
+<div class="para">Look at the negation:</div>
+<div class="displaymath process-math" id="ch-quantifiers-5-26-2-1-1-4-3-1">
+\begin{equation*}
+\exists x \st, \exists y \st (y \neq 0) \land xy \neq 1
+\end{equation*}
+</div>
+<div class="para">Ah - this is much easier. Player 1 can choose <span class="process-math">\(x=0\)</span> and Player 2 can choose <span class="process-math">\(y=1\text{.}\)</span> Then <span class="process-math">\(y \neq 0\)</span> and <span class="process-math">\(xy = 0 \neq 1\text{.}\)</span> There are, many other choices that would also work.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-quantifiers-5-26-2-1-1-4-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item d"><a tabindex="-1" href="#ch-quantifiers-5-26-2-1-1-4" title="Copy heading and permalink for Item d" aria-label="Copy heading and permalink for Item d">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-quantifiers-5-26-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Scratchwork 6.3.6.1"><a tabindex="-1" href="#ch-quantifiers-5-26-2" title="Copy heading and permalink for Scratchwork 6.3.6.1" aria-label="Copy heading and permalink for Scratchwork 6.3.6.1">🔗</a></div>
+</div></details>
+<details id="ch-quantifiers-5-26-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<details id="ch-quantifiers-5-26-3-1" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="title">Proof of (a).</span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para" id="ch-quantifiers-5-26-3-1-2">The statement is true. Take <span class="process-math">\(x=0,y=0\text{.}\)</span> Since the hypothesis is false, the implication is true.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-quantifiers-5-26-3-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 6.3.6.1.1: Proof of (a)"><a tabindex="-1" href="#ch-quantifiers-5-26-3-1" title="Copy heading and permalink for Proof 6.3.6.1.1: Proof of (a)" aria-label="Copy heading and permalink for Proof 6.3.6.1.1: Proof of (a)">🔗</a></div>
+</article></details>
+<details id="ch-quantifiers-5-26-3-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="title">Another proof of (a).</span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para" id="ch-quantifiers-5-26-3-2-2">The statement is true. Take <span class="process-math">\(x=y=2\text{,}\)</span> then the hypothesis and conclusion are both true, so the implication is true.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-quantifiers-5-26-3-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 6.3.6.1.2: Another proof of (a)"><a tabindex="-1" href="#ch-quantifiers-5-26-3-2" title="Copy heading and permalink for Proof 6.3.6.1.2: Another proof of (a)" aria-label="Copy heading and permalink for Proof 6.3.6.1.2: Another proof of (a)">🔗</a></div>
+</article></details>
+<details id="ch-quantifiers-5-26-3-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="title">Proof of (b).</span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="ch-quantifiers-5-26-3-3-2">
+<div class="para">The statement is false, so we prove the negation:</div>
+<div class="displaymath process-math" id="ch-quantifiers-5-26-3-3-2-1">
+\begin{equation*}
+\forall x, \exists y \st (y \neq 0) \land (xy \neq 1)
+\end{equation*}
+</div>
+<div class="para">Let <span class="process-math">\(x\)</span> be any real number. Then either <span class="process-math">\(x = 0\)</span> or <span class="process-math">\(x \neq 0\text{.}\)</span>
+</div>
+<ul class="disc" id="ch-quantifiers-5-26-3-3-2-5">
+<li id="ch-quantifiers-5-26-3-3-2-5-1">
+<div class="para" id="p-derived-ch-quantifiers-5-26-3-3-2-5-1">If <span class="process-math">\(x=0\)</span> then pick <span class="process-math">\(y=1\text{.}\)</span> Then <span class="process-math">\(xy =0\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch-quantifiers-5-26-3-3-2-5-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch-quantifiers-5-26-3-3-2-5-2">
+<div class="para" id="p-derived-ch-quantifiers-5-26-3-3-2-5-2">On the other hand, if <span class="process-math">\(x \neq 0\)</span> then pick <span class="process-math">\(y = -x\text{,}\)</span> so that <span class="process-math">\(xy = -x^2\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch-quantifiers-5-26-3-3-2-5-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">In both cases, <span class="process-math">\(y \neq 0\)</span> and <span class="process-math">\(xy \neq 1\text{.}\)</span> Since the negation is true, the original statement is false.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-quantifiers-5-26-3-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 6.3.6.1.3: Proof of (b)"><a tabindex="-1" href="#ch-quantifiers-5-26-3-3" title="Copy heading and permalink for Proof 6.3.6.1.3: Proof of (b)" aria-label="Copy heading and permalink for Proof 6.3.6.1.3: Proof of (b)">🔗</a></div>
+</article></details>
+<details id="ch-quantifiers-5-26-3-4" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="title">Another proof of (b).</span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para" id="ch-quantifiers-5-26-3-4-2">We prove the negation. Let <span class="process-math">\(x\)</span> be any real number. Either <span class="process-math">\(x=1\)</span> or <span class="process-math">\(x \neq 1\text{.}\)</span> If <span class="process-math">\(x=1\)</span> then pick <span class="process-math">\(y=2\text{,}\)</span> so that <span class="process-math">\(xy = 2\text{.}\)</span> On the other hand, if <span class="process-math">\(x\neq 1\text{,}\)</span> then pick <span class="process-math">\(y=1\)</span> so that <span class="process-math">\(xy = x \neq 1\text{.}\)</span> In both cases we have that <span class="process-math">\(y \neq 0\)</span> and <span class="process-math">\(xy \neq 1\)</span> as required. Since the negation is true, the original is false.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-quantifiers-5-26-3-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 6.3.6.1.4: Another proof of (b)"><a tabindex="-1" href="#ch-quantifiers-5-26-3-4" title="Copy heading and permalink for Proof 6.3.6.1.4: Another proof of (b)" aria-label="Copy heading and permalink for Proof 6.3.6.1.4: Another proof of (b)">🔗</a></div>
+</article></details>
+<details id="ch-quantifiers-5-26-3-5" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="title">Proof of (c).</span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para" id="ch-quantifiers-5-26-3-5-2">The statement is true. Let <span class="process-math">\(x\)</span> be any real number and then choose <span class="process-math">\(y=0\text{.}\)</span> Since the hypothesis is false, the implication is true.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-quantifiers-5-26-3-5-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 6.3.6.1.5: Proof of (c)"><a tabindex="-1" href="#ch-quantifiers-5-26-3-5" title="Copy heading and permalink for Proof 6.3.6.1.5: Proof of (c)" aria-label="Copy heading and permalink for Proof 6.3.6.1.5: Proof of (c)">🔗</a></div>
+</article></details>
+<details id="ch-quantifiers-5-26-3-6" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="title">Another proof of (c).</span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para" id="ch-quantifiers-5-26-3-6-2">Let <span class="process-math">\(x\)</span> be any real number. Either <span class="process-math">\(x = 0 \)</span> or <span class="process-math">\(x \neq 0\text{.}\)</span> If <span class="process-math">\(x = 0\)</span> then pick <span class="process-math">\(y=0\)</span> making the hypothesis false. On the other hand, if <span class="process-math">\(x \neq 0\)</span> then set <span class="process-math">\(y = \frac{1}{x} \neq 0\text{.}\)</span> In that case both the hypothesis and conclusion are true. In either case the implication is true.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-quantifiers-5-26-3-6-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 6.3.6.1.6: Another proof of (c)"><a tabindex="-1" href="#ch-quantifiers-5-26-3-6" title="Copy heading and permalink for Proof 6.3.6.1.6: Another proof of (c)" aria-label="Copy heading and permalink for Proof 6.3.6.1.6: Another proof of (c)">🔗</a></div>
+</article></details>
+<details id="ch-quantifiers-5-26-3-7" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="title">Proof of (d).</span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="ch-quantifiers-5-26-3-7-2">
+<div class="para">We prove the negation:</div>
+<div class="displaymath process-math" id="ch-quantifiers-5-26-3-7-2-1">
+\begin{equation*}
+\exists x \st, \exists y \st (y \neq 0) \land xy \neq 1.
+\end{equation*}
+</div>
+<div class="para">Pick <span class="process-math">\(x=0, y=1\text{.}\)</span> Then <span class="process-math">\(xy = 0 \neq 1\)</span> and <span class="process-math">\(y \neq 0\text{.}\)</span> Hence the negation is true and the original statement is false.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-quantifiers-5-26-3-7-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 6.3.6.1.7: Proof of (d)"><a tabindex="-1" href="#ch-quantifiers-5-26-3-7" title="Copy heading and permalink for Proof 6.3.6.1.7: Proof of (d)" aria-label="Copy heading and permalink for Proof 6.3.6.1.7: Proof of (d)">🔗</a></div>
+</article></details><div class="autopermalink" aria-hidden="true" data-description="Solution 6.3.6.1"><a tabindex="-1" href="#ch-quantifiers-5-26-3" title="Copy heading and permalink for Solution 6.3.6.1" aria-label="Copy heading and permalink for Solution 6.3.6.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 6.3.6"><a tabindex="-1" href="#ch-quantifiers-5-26" title="Copy heading and permalink for Example 6.3.6" aria-label="Copy heading and permalink for Example 6.3.6">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Section 6.3: Nested quantifiers"><a tabindex="-1" href="#ch-quantifiers-5" title="Copy heading and permalink for Section 6.3: Nested quantifiers" aria-label="Copy heading and permalink for Section 6.3: Nested quantifiers">🔗</a></div>
+</section>
+</div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="ch-quantifiers-4.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec_limits.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+<!--Start: Google Global Site Tag code--><!--*** DO NOT COPY ANOTHER PROJECT'S MAGIC NUMBERS/ID ***--><!--***           GET YOUR OWN FROM GOOGLE             ***-->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-FL66FX9988"></script><script>  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-FL66FX9988');
+</script><!--End: Google Global Site Tag code-->
+</body>
+</html>

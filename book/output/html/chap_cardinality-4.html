@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Denumerable sets</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
+startMathJax({
+hasWebworkReps: false,
+hasSage: false,
+isReact: false,
+htmlPresentation: false,
+lang: "en-US",
+});
+</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta name="twitter:title" content="PLP">
+<meta property="og:title" content="PLP">
+<meta property="book:title" content="PLP">
+<meta name="twitter:description" content="An introduction to mathematical proof">
+<meta property="og:description" content="An introduction to mathematical proof">
+<meta name="twitter:card" content="summary">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.48"></script><script src="_static/pretext/js/dist/pretext-read-aloud.js?v=2.48"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.2.4';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.40bd1420d3277749.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.b388362b5f43738a.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.8086b62682b271d1.css">
+<script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead" role="banner"><div class="ptx-banner"><div class="title-container">
+<div class="heading ptx-banner-heading"><a href="plp.html"><span class="title">PLP</span> <span class="subtitle">An introduction to mathematical proof</span></a></div>
+<p class="byline">Seçkin Demirbaş, Andrew Rechnitzer</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button id="ptx-toc-toggle" type="button" aria-controls="ptx-sidebar" class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="ptx-search-box">
+<div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search Book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog"><div class="ptx-search-dialog-controls">
+<input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close" id="ptx-search-close" class="ptx-search-close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div id="ptx-search-status" class="ptx-search-status" aria-live="polite" aria-atomic="true"></div>
+<h2 class="heading ptx-search-results-heading">Search Results: </h2>
+<div id="ptx-search-empty" class="ptx-search-empty"><span>No results.</span></div>
+<ol id="ptx-search-results" class="ptx-search-results"></ol></dialog>
+</div>
+<span class="nav-other-controls"><button id="ptx-read-aloud-button" class="ptx-read-aloud-button button" title="Read aloud" aria-expanded="false"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf1bc;</span><span class="name">Read aloud</span></button><div id="ptx-read-aloud-player" class="ptx-read-aloud-player" hidden="hidden" role="group" aria-label="Read aloud">
+<button id="ptx-read-aloud-prev" class="button" title="Previous sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe045;</span></button><button id="ptx-read-aloud-toggle" class="ptx-read-aloud-toggle button" title="Play"><span class="ptx-read-aloud-icon-play"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></span><span class="ptx-read-aloud-icon-pause"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe034;</span></span></button><button id="ptx-read-aloud-next" class="button" title="Next sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe044;</span></button><a id="ptx-read-aloud-continue" class="ptx-read-aloud-continue button" hidden="hidden">Continue<span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></a><button id="ptx-read-aloud-settings-button" class="ptx-read-aloud-settings-button button" title="Reading settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe429;</span></button>
+</div>
+<dialog class="ptx-dialog ptx-read-aloud-settings-popup" id="ptx-read-aloud-settings-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Read aloud settings</h2>
+<button class="ptx-read-aloud-settings-close-button button" id="ptx-read-aloud-settings-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label for="ptx-read-aloud-voice"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe91f;</span><span>Voice</span></label><select id="ptx-read-aloud-voice"></select><label class="ptx-readability-slider-label" for="ptx-read-aloud-rate"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe9e4;</span><span>Reading speed</span><output id="ptx-read-aloud-rate-value" for="ptx-read-aloud-rate">1×</output></label><input type="range" id="ptx-read-aloud-rate" min="0.5" max="2" step="0.1" value="1"><label for="ptx-read-aloud-asides"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d7;</span><span>Collapsed content</span></label><select id="ptx-read-aloud-asides"><option value="skip">Announce, do not read</option>
+<option value="read">Read automatically</option></select><label for="ptx-read-aloud-autoscroll"><input type="checkbox" id="ptx-read-aloud-autoscroll" checked><span>Follow along (auto-scroll)</span></label><label for="ptx-read-aloud-autocontinue"><input type="checkbox" id="ptx-read-aloud-autocontinue"><span>Continue to the next page automatically</span></label>
+</div></dialog><button id="ptx-readability-options-button" class="ptx-readability-options-button button" title="Readability settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf6f1;</span><span class="name">Readability settings</span></button><dialog class="ptx-dialog ptx-readability-options-popup" id="ptx-readability-options-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Readability settings</h2>
+<button class="ptx-readability-options-close-button button" id="ptx-readability-options-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-line-height"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe240;</span><span>Line height</span><output id="ptx-readability-line-height-value" for="ptx-readability-line-height">1.35</output></label><input type="range" id="ptx-readability-line-height" min="1.10" max="3" step="0.05" value="1.35">
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-font-size"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe245;</span><span>Content font size</span><output id="ptx-readability-font-size-value" for="ptx-readability-font-size">100%</output></label><input type="range" id="ptx-readability-font-size" min="0.8" max="1.5" step="0.05" value="1">
+</div>
+<fieldset class="ptx-readability-options-group ptx-readability-options-group-theme">
+<legend>Theme</legend>
+<label for="ptx-readability-theme-system"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-system" value="system"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe1ab;</span><span>System</span></label><label for="ptx-readability-theme-light"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-light" value="light"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe518;</span><span>Light</span></label><label for="ptx-readability-theme-dark"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-dark" value="dark"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span>Dark</span></label>
+</fieldset>
+<fieldset class="ptx-readability-options-group">
+<legend>Assistive technologies</legend>
+<label for="ptx-readability-accessible-permalinks"><input type="checkbox" id="ptx-readability-accessible-permalinks"><span>🔗</span><span>Expose permalinks</span></label>
+</fieldset>
+<div class="ptx-readability-options-group"><button type="button" class="ptx-readability-reset-button button" id="ptx-readability-reset-button"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf053;</span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="chap_cardinality-3.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chap_cardinality.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec_uncount.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{cancel}\require{upgreek} \newcommand{\ds}{\displaystyle}
+ \renewcommand{\textcolor}[2]{{\color{#1}{#2}}}
+ 
+ \newcommand{\es}{ {\varnothing}}
+ \newcommand{\st}{ \;\mathrm{s.t.}\; }
+ \newcommand{\so}{ \;\mid\; }
+ \newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+ \newcommand{\set}[1]{ \left\{#1\right\} }
+ 
+ \renewcommand{\neg}{\sim}
+
+ \newcommand{\rel}[1][R]{\;\mathcal{#1}\;}
+ \newcommand{\nrel}[1][R]{\;\cancel{\mathcal{#1}}\;}
+
+ \newcommand{\dee}[1]{\mathrm{d}#1}
+ \newcommand{\diff}[2]{\dfrac{\mathrm{d}#1}{\mathrm{d}#2}}
+ 
+ \renewcommand{\mod}[1]{\ (\mathrm{mod}\ #1)}
+ \newcommand{\lcm}{\mathrm{lcm}}
+ 
+ \let\oldepsilon\epsilon
+ 
+ \renewcommand{\epsilon}{\varepsilon}
+ \newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" role="complementary" class="ptx-sidebar"><nav id="ptx-toc" tabindex="-1" aria-label="Contents" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul id="ptx-toc-group-frontmatter" class="structural toc-item-list">
+<li class="toc-item toc-dedication"><div class="toc-title-box"><a href="frontmatter-3.html" class="internal"><span class="title">Dedication</span></a></div></li>
+<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="frontmatter-5.html" class="internal"><span class="title">Preface</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="plp-4.html" class="internal"><span class="codenumber">1</span> <span class="title">Sets</span></a></div>
+<ul id="ptx-toc-group-plp-4" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="plp-4-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="plp-4-3.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Not so formal definition</span></a></div>
+<ul id="ptx-toc-group-plp-4-3" class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="plp-4-3.html#plp-4-3-3" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Who is this reader you keep on mentioning?</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-describing.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Describing a set</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-4-5.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Onward</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="plp-4-6.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-logic.html" class="internal"><span class="codenumber">2</span> <span class="title">A little logic</span></a></div>
+<ul id="ptx-toc-group-ch-logic" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-logic-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-logic-3.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Statements and open sentences</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-logic-4.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Negation</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-logic-5.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Or and And</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-implication.html" class="internal"><span class="codenumber">2.4</span> <span class="title">The implication</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-logic-7.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Modus ponens and chaining implications</span></a></div>
+<ul id="ptx-toc-group-ch-logic-7" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-logic-7.html#ch-logic-7-2" class="internal"><span class="codenumber">2.5.1</span> <span class="title">Modus ponens</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-logic-7.html#ch-logic-7-3" class="internal"><span class="codenumber">2.5.2</span> <span class="title">Affirming the consequent and denying the antecedent</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-logic-7.html#ch-logic-7-4" class="internal"><span class="codenumber">2.5.3</span> <span class="title">Chaining implications together</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-CCB.html" class="internal"><span class="codenumber">2.6</span> <span class="title">The converse, contrapositive and biconditional</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-logic-9.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-direct.html" class="internal"><span class="codenumber">3</span> <span class="title">Direct proofs</span></a></div>
+<ul id="ptx-toc-group-ch-direct" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-direct-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-direct-3.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Trivialities and vacuousness</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-direct-4.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Direct proofs</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-direct-5.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Proofs of inequalities</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-direct-6.html" class="internal"><span class="codenumber">3.4</span> <span class="title">A quick visit to disproofs</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-direct-7.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="plp-7.html" class="internal"><span class="codenumber">4</span> <span class="title">More logic</span></a></div>
+<ul id="ptx-toc-group-plp-7" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="plp-7-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-7-3.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Tautologies and contradictions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-7-4.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Logical equivalence</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="plp-7-5.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-moreproof.html" class="internal"><span class="codenumber">5</span> <span class="title">More proofs</span></a></div>
+<ul id="ptx-toc-group-ch-moreproof" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-moreproof-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-moreproof-3.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Contrapositive</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-moreproof-4.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Proofs with cases</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-congruence.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Congruence modulo <span class="process-math">\(n\)</span></span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-abs-triangle.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Absolute values and the triangle inequality</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-moreproof-7.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-quantifiers.html" class="internal"><span class="codenumber">6</span> <span class="title">Quantifiers</span></a></div>
+<ul id="ptx-toc-group-ch-quantifiers" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-quantifiers-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-quantifiers-3.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Quantified statements</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-quantifiers-4.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Negation of quantifiers</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-quantifiers-5.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Nested quantifiers</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_limits.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Quantifiers and rigorous limits</span></a></div>
+<ul id="ptx-toc-group-sec_limits" class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec_limits.html#sec_limits-3" class="internal"><span class="codenumber">6.4.1</span> <span class="title">Convergence of sequences</span></a></div>
+<ul id="ptx-toc-group-sec_limits-3" class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec_limits.html#sec_limits-3-3" class="internal"><span class="codenumber">6.4.1.1</span> <span class="title">Quantifying towards a definition</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec_limits.html#sec_limits-3-4" class="internal"><span class="codenumber">6.4.1.2</span> <span class="title">Some examples</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_limits.html#sec_limits-4" class="internal"><span class="codenumber">6.4.2</span> <span class="title">The limit of a function</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-quantifiers-7.html" class="internal"><span class="codenumber">6.5</span> <span class="title">(Optional) Properties of limits</span></a></div>
+<ul id="ptx-toc-group-ch-quantifiers-7" class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimseq" class="internal"><span class="codenumber">6.5.1</span> <span class="title">(Optional) Some properties of limits of sequences</span></a></div>
+<ul id="ptx-toc-group-subsec-proplimseq" class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimseq-3" class="internal"><span class="codenumber">6.5.1.1</span> <span class="title">Uniqueness of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimseq-4" class="internal"><span class="codenumber">6.5.1.2</span> <span class="title">Linearity of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimseq-5" class="internal"><span class="codenumber">6.5.1.3</span> <span class="title">Product of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimseq-6" class="internal"><span class="codenumber">6.5.1.4</span> <span class="title">Ratio of limits</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimfunc" class="internal"><span class="codenumber">6.5.2</span> <span class="title">(Optional) Some properties of limits of functions</span></a></div>
+<ul id="ptx-toc-group-subsec-proplimfunc" class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimfunc-3" class="internal"><span class="codenumber">6.5.2.1</span> <span class="title">Uniqueness of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimfunc-4" class="internal"><span class="codenumber">6.5.2.2</span> <span class="title">Linearity of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimfunc-5" class="internal"><span class="codenumber">6.5.2.3</span> <span class="title">Product of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimfunc-6" class="internal"><span class="codenumber">6.5.2.4</span> <span class="title">Ratio of limits</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-quantifiers-8.html" class="internal"><span class="codenumber">6.6</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_induction.html" class="internal"><span class="codenumber">7</span> <span class="title">Induction</span></a></div>
+<ul id="ptx-toc-group-ch_induction" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch_induction-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch_induction-3.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Induction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch_induction-4.html" class="internal"><span class="codenumber">7.2</span> <span class="title">More general inductions</span></a></div>
+<ul id="ptx-toc-group-ch_induction-4" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch_induction-4.html#subsec-extendedinduction" class="internal"><span class="codenumber">7.2.1</span> <span class="title">A little more general</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch_induction-4.html#subsec-stronginduction" class="internal"><span class="codenumber">7.2.2</span> <span class="title">More general and yet equivalent</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch_induction-5.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="plp-11.html" class="internal"><span class="codenumber">8</span> <span class="title">Return to sets</span></a></div>
+<ul id="ptx-toc-group-plp-11" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="plp-11-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-11-3.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Subsets</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-11-4.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Set operations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-11-5.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Cartesian products of sets</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-11-6.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Some set-flavoured results</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-11-7.html" class="internal"><span class="codenumber">8.5</span> <span class="title">Indexed sets</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="plp-11-8.html" class="internal"><span class="codenumber">8.6</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_relations.html" class="internal"><span class="codenumber">9</span> <span class="title">Relations</span></a></div>
+<ul id="ptx-toc-group-ch_relations" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch_relations-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch_relations-3.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Relations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_prop_rel.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Properties of relations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch_relations-5.html" class="internal"><span class="codenumber">9.3</span> <span class="title">Equivalence relations &amp; classes</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_congruence_revisited.html" class="internal"><span class="codenumber">9.4</span> <span class="title">Congruence revisited</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-euclid.html" class="internal"><span class="codenumber">9.5</span> <span class="title">Greatest divisors, Bézout and the Euclidean algorithm</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-unique-fact.html" class="internal"><span class="codenumber">9.6</span> <span class="title">Uniqueness of prime factorisation</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch_relations-9.html" class="internal"><span class="codenumber">9.7</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-functions.html" class="internal"><span class="codenumber">10</span> <span class="title">Functions</span></a></div>
+<ul id="ptx-toc-group-ch-functions" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-functions-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-functions-3.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-functions-4.html" class="internal"><span class="codenumber">10.2</span> <span class="title">A more abstract definition</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-functions-5.html" class="internal"><span class="codenumber">10.3</span> <span class="title">Images and preimages of sets</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-functions-6.html" class="internal"><span class="codenumber">10.4</span> <span class="title">Injective and surjective functions</span></a></div>
+<ul id="ptx-toc-group-ch-functions-6" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-functions-6.html#ch-functions-6-3" class="internal"><span class="codenumber">10.4.1</span> <span class="title">Injections and surjections</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-functions-6.html#ch-functions-6-4" class="internal"><span class="codenumber">10.4.2</span> <span class="title">Bijective functions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-functions-7.html" class="internal"><span class="codenumber">10.5</span> <span class="title">Composition of functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_inv_func.html" class="internal"><span class="codenumber">10.6</span> <span class="title">Inverse functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-functions-9.html" class="internal"><span class="codenumber">10.7</span> <span class="title">(Optional) The axiom of choice</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-functions-10.html" class="internal"><span class="codenumber">10.8</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-contradictions.html" class="internal"><span class="codenumber">11</span> <span class="title">Proof by contradiction</span></a></div>
+<ul id="ptx-toc-group-ch-contradictions" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-contradictions-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-contradictions-3.html" class="internal"><span class="codenumber">11.1</span> <span class="title">Structure of a proof by contradiction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-contradictions-4.html" class="internal"><span class="codenumber">11.2</span> <span class="title">Some examples</span></a></div>
+<ul id="ptx-toc-group-ch-contradictions-4" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-contradictions-4.html#ch-contradictions-4-3" class="internal"><span class="codenumber">11.2.1</span> <span class="title">The irrationality of <span class="process-math">\(\sqrt{2}\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-contradictions-4.html#ssec_inf_primes" class="internal"><span class="codenumber">11.2.2</span> <span class="title">The infinitude of primes</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-contradictions-5.html" class="internal"><span class="codenumber">11.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="chap_cardinality.html" class="internal"><span class="codenumber">12</span> <span class="title">Cardinality</span></a></div>
+<ul class="structural toc-item-list contains-active" id="ptx-toc-group-chap_cardinality">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="chap_cardinality-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="chap_cardinality-3.html" class="internal"><span class="codenumber">12.1</span> <span class="title">Finite sets</span></a></div>
+<ul id="ptx-toc-group-chap_cardinality-3" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-3.html#chap_cardinality-3-3" class="internal"><span class="codenumber">12.1.1</span> <span class="title">Equinumerous sets, bijections and pigeons</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-3.html#chap_cardinality-3-4" class="internal"><span class="codenumber">12.1.2</span> <span class="title">Comparing with functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-3.html#chap_cardinality-3-5" class="internal"><span class="codenumber">12.1.3</span> <span class="title">Infinite sets are strange.</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="chap_cardinality-4.html" class="internal"><span class="codenumber">12.2</span> <span class="title">Denumerable sets</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_uncount.html" class="internal"><span class="codenumber">12.3</span> <span class="title">Uncountable sets</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="chap_cardinality-6.html" class="internal"><span class="codenumber">12.4</span> <span class="title">Comparing cardinalities</span></a></div>
+<ul id="ptx-toc-group-chap_cardinality-6" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-6.html#chap_cardinality-6-2" class="internal"><span class="codenumber">12.4.1</span> <span class="title">Extending to the infinite</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-6.html#chap_cardinality-6-3" class="internal"><span class="codenumber">12.4.2</span> <span class="title">Cantor’s Theorem and infinite infinities</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-6.html#chap_cardinality-6-4" class="internal"><span class="codenumber">12.4.3</span> <span class="title">Congratulations are in order</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-6.html#chap_cardinality-6-5" class="internal"><span class="codenumber">12.4.4</span> <span class="title">One more question</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_compare_card.html" class="internal"><span class="codenumber">12.5</span> <span class="title">More comparisons of cardinalties</span></a></div>
+<ul id="ptx-toc-group-sec_compare_card" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_compare_card.html#sec_compare_card-3" class="internal"><span class="codenumber">12.5.1</span> <span class="title">The Cantor-Schröder-Bernstein theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_compare_card.html#sec_compare_card-4" class="internal"><span class="codenumber">12.5.2</span> <span class="title">Applications</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_compare_card.html#sec_compare_card-5" class="internal"><span class="codenumber">12.5.3</span> <span class="title">Proof that <span class="process-math">\(|\pow{\mathbb{N}}| = |\mathbb{R}|\)</span></span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_cantor_first.html" class="internal"><span class="codenumber">12.6</span> <span class="title">(Optional) Cantor’s first proof of the uncountability of the reals</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chap_cardinality-9.html" class="internal"><span class="codenumber">12.7</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul id="ptx-toc-group-backmatter" class="structural toc-item-list">
+<li class="toc-item toc-solutions"><div class="toc-title-box"><a href="app_hint.html" class="internal"><span class="codenumber">A.</span> <span class="title">Hints for Exercises</span></a></div></li>
+<li class="toc-item toc-solutions"><div class="toc-title-box"><a href="app_answ.html" class="internal"><span class="codenumber">B.</span> <span class="title">Scratchwork for Exercises</span></a></div></li>
+<li class="toc-item toc-solutions"><div class="toc-title-box"><a href="app_soln.html" class="internal"><span class="codenumber">C.</span> <span class="title">Solutions to Exercises</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="backmatter-5.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="chap_cardinality-4">
+<h1 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">12.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Denumerable sets</span>
+</h1>
+<div class="para" id="chap_cardinality-4-2">As described above, our intuitive notion of an infinite set (or any infinite thing), is a process that keeps on going. We never get to the end because we can always take another step. What we are really doing when we think of infinity in this way is setting up a bijection between it and the set of natural numbers. There is some infinite process — we start at the beginning (the number 1) and then we take a step <span class="process-math">\(n \mapsto n+1\text{,}\)</span> and then another step, and another step and, …. This is the first type of infinity that we will encounter — sets that are in bijection with <span class="process-math">\(\mathbb{N}\text{.}\)</span> We call these sets denumerable because we can think of counting off the elements via the bijection.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#chap_cardinality-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="chap_cardinality-4-3"><h2 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">12.2.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para logical" id="chap_cardinality-4-3-1-1">
+<div class="para">Let <span class="process-math">\(A\)</span> be a set.</div>
+<ul class="disc" id="chap_cardinality-4-3-1-1-2">
+<li id="chap_cardinality-4-3-1-1-2-1">
+<div class="para" id="p-derived-chap_cardinality-4-3-1-1-2-1">The set <span class="process-math">\(A\)</span> is called <dfn class="terminology">denumerable</dfn> if there is a bijection <span class="process-math">\(f: \mathbb{N} \to A\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#chap_cardinality-4-3-1-1-2-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="chap_cardinality-4-3-1-1-2-2">
+<div class="para" id="p-derived-chap_cardinality-4-3-1-1-2-2">The cardinal number of a denumerable set is denoted <span class="process-math">\(\aleph_0\)</span> (read “aleph naught” or “aleph null”).</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#chap_cardinality-4-3-1-1-2-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="chap_cardinality-4-3-1-1-2-3">
+<div class="para" id="p-derived-chap_cardinality-4-3-1-1-2-3">The set <span class="process-math">\(A\)</span> is called <dfn class="terminology">countable</dfn> if it is finite <em class="emphasis">or</em> denumerable.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#chap_cardinality-4-3-1-1-2-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="chap_cardinality-4-3-1-1-2-4">
+<div class="para" id="p-derived-chap_cardinality-4-3-1-1-2-4">The set <span class="process-math">\(A\)</span> is <dfn class="terminology">uncountable</dfn> if it is not countable.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#chap_cardinality-4-3-1-1-2-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#chap_cardinality-4-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 12.2.1"><a tabindex="-1" href="#chap_cardinality-4-3" title="Copy heading and permalink for Definition 12.2.1" aria-label="Copy heading and permalink for Definition 12.2.1">🔗</a></div>
+</article>
+<div class="para logical" id="chap_cardinality-4-4">
+<div class="para">Notice that</div>
+<ul class="disc" id="chap_cardinality-4-4-1">
+<li id="chap_cardinality-4-4-1-1">
+<div class="para" id="p-derived-chap_cardinality-4-4-1-1">At this stage it is not clear that there is something out there that is “uncountable” — the existence of uncountable sets was highly controversial when Cantor proved it in 1874<details class="ptx-footnote" aria-live="polite" id="chap_cardinality-4-4-1-1-3"><summary class="ptx-footnote__number" title="Footnote 159"><sup> 159 </sup></summary>
+<div class="ptx-footnote__contents" id="chap_cardinality-4-4-1-1-3">It first appeared in an article called “On a Property of the Collection of All Real Algebraic Numbers”. He did not use his famous diagonal-argument (we do it a little later in the text); that argument appeared 17 years later in a 1891 paper titled “On an elementary question of the theory of manifolds.”
+</div></details>.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#chap_cardinality-4-4-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="chap_cardinality-4-4-1-2">
+<div class="para" id="p-derived-chap_cardinality-4-4-1-2">There is a bijection from <span class="process-math">\(\mathbb{N} \)</span> to <span class="process-math">\(A\)</span> if and only if there is a bijection from <span class="process-math">\(A\)</span> to <span class="process-math">\(\mathbb{N}\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#chap_cardinality-4-4-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="chap_cardinality-4-4-1-3">
+<div class="para" id="p-derived-chap_cardinality-4-4-1-3">Finally, a very nice property of denumerable sets is that even though they are infinite, we can still “list out the elements”.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#chap_cardinality-4-4-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">This last point is both very important and also is a little counter-intuitive, so we’ll make it more precise. Consider a denumerable set <span class="process-math">\(A\text{.}\)</span> By definition there is a bijection <span class="process-math">\(f: \mathbb{N} \to A\text{.}\)</span> Now we can think of <span class="process-math">\(f\)</span> as a relation</div>
+<div class="displaymath process-math" id="chap_cardinality-4-4-5">
+\begin{align*}
+f &amp;= \set{(1,f(1)), (2,f(2)), (3,f(3)), \dots }
+\end{align*}
+</div>
+<div class="para intertext">Hence we can write <span class="process-math">\(A\)</span> as</div>
+<div class="displaymath process-math" id="chap_cardinality-4-4-7">
+\begin{align*}
+A &amp;= \set{f(1), f(2), f(3), \dots} &amp; \text{or equivalently}\\
+A &amp;= \set{a_1, a_2, a_3, \dots} &amp; \text{with } a_i = f(i).
+\end{align*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#chap_cardinality-4-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="chap_cardinality-4-5">
+<div class="para">Notice that this list has a couple of special properties.</div>
+<ul class="disc" id="chap_cardinality-4-5-1">
+<li id="chap_cardinality-4-5-1-1">
+<div class="para" id="p-derived-chap_cardinality-4-5-1-1">Since <span class="process-math">\(f\)</span> is injective, our list does not repeat — different indices give different elements of <span class="process-math">\(A\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#chap_cardinality-4-5-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="chap_cardinality-4-5-1-2">
+<div class="para" id="p-derived-chap_cardinality-4-5-1-2">Also, since <span class="process-math">\(f\)</span> is surjective, any given element of <span class="process-math">\(A\)</span> — say <span class="process-math">\(q\)</span> — is mapped to by some integer <span class="process-math">\(n_q \in \mathbb{N}\text{.}\)</span> Since <span class="process-math">\(n_q\)</span> is finite, this means that any given element of <span class="process-math">\(A\)</span> appears on the list in some finite position.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#chap_cardinality-4-5-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">We can also go backwards — if we can list out the elements of some infinite set <span class="process-math">\(B\text{,}\)</span> then <span class="process-math">\(B\)</span> is denumerable. Say we have listed out our elements as  <span class="process-math">\(\set{b_1,b_2,b_3,\dots}\text{,}\)</span> so that</div>
+<ul class="disc" id="chap_cardinality-4-5-6">
+<li id="chap_cardinality-4-5-6-1">
+<div class="para" id="p-derived-chap_cardinality-4-5-6-1">the list does not repeat, and</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#chap_cardinality-4-5-6-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="chap_cardinality-4-5-6-2">
+<div class="para" id="p-derived-chap_cardinality-4-5-6-2">any given element of <span class="process-math">\(B\)</span> appears at some finite position on the list.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#chap_cardinality-4-5-6-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">Now we can define a function <span class="process-math">\(g:\mathbb{N} \to B\)</span> by <span class="process-math">\(g(j) = b_j\text{.}\)</span> That is, just map any natural number to the element at that position in the list. The two conditions we have placed on the list then mean that <span class="process-math">\(g\)</span> is injective and surjective, so <span class="process-math">\(g\)</span> is a bijection. Hence <span class="process-math">\(B\)</span> is denumerable.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#chap_cardinality-4-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="chap_cardinality-4-6">Let’s formalise this idea that denumerable means listable in a lemma. The proof is given by the argument above.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#chap_cardinality-4-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="lemma theorem-like" id="chap_cardinality-4-7"><h2 class="heading">
+<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">12.2.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Listing elements of denumerable sets.</span>
+</h2>
+<div class="para logical" id="chap_cardinality-4-7-2-1">
+<div class="para">Let <span class="process-math">\(A\)</span> be a set. If <span class="process-math">\(A\)</span> is denumerable then we can construct an infinite list, <span class="process-math">\(a_1, a_2, a_3, \dots\text{,}\)</span> of all its elements so that</div>
+<ul class="disc" id="chap_cardinality-4-7-2-1-4">
+<li id="chap_cardinality-4-7-2-1-4-1">
+<div class="para" id="p-derived-chap_cardinality-4-7-2-1-4-1">the list does not repeat any element of <span class="process-math">\(A\text{,}\)</span> and</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#chap_cardinality-4-7-2-1-4-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="chap_cardinality-4-7-2-1-4-2">
+<div class="para" id="p-derived-chap_cardinality-4-7-2-1-4-2">any given element, <span class="process-math">\(a \in A\)</span> appears at some finite position in the list</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#chap_cardinality-4-7-2-1-4-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">The converse of this statement is also true. Namely, if we can construct such a list of the elements of <span class="process-math">\(A\text{,}\)</span> then <span class="process-math">\(A\)</span> is denumerable.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#chap_cardinality-4-7-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Lemma 12.2.2: Listing elements of denumerable sets"><a tabindex="-1" href="#chap_cardinality-4-7" title="Copy heading and permalink for Lemma 12.2.2: Listing elements of denumerable sets" aria-label="Copy heading and permalink for Lemma 12.2.2: Listing elements of denumerable sets">🔗</a></div>
+</article>
+<details id="chap_cardinality-4-7-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="chap_cardinality-4-7-3-1">
+<div class="para">Let <span class="process-math">\(A\)</span> be denumerable. Then, by definition, there exists a bijection <span class="process-math">\(f: \mathbb{N} \to A\text{.}\)</span> For any <span class="process-math">\(n \in
+\mathbb{N}\text{,}\)</span> define the <span class="process-math">\(n^\mathrm{th}\)</span> element of our list to be <span class="process-math">\(a_n = f(n)\text{.}\)</span> Then</div>
+<ul class="disc" id="chap_cardinality-4-7-3-1-6">
+<li id="chap_cardinality-4-7-3-1-6-1">
+<div class="para" id="p-derived-chap_cardinality-4-7-3-1-6-1">Since <span class="process-math">\(f\)</span> is injective, we know that for <span class="process-math">\(j \neq k\text{,}\)</span> <span class="process-math">\(a_j = f(j) \neq f(k)=a_k\text{.}\)</span> So the items on our list are distinct.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#chap_cardinality-4-7-3-1-6-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="chap_cardinality-4-7-3-1-6-2">
+<div class="para" id="p-derived-chap_cardinality-4-7-3-1-6-2">Since <span class="process-math">\(f\)</span> is surjective, we know that for any <span class="process-math">\(x
+\in A\)</span> there exists <span class="process-math">\(n \in \mathbb{N}\)</span> so that <span class="process-math">\(f(n)=x\text{.}\)</span> Thus the element <span class="process-math">\(x = a_n\)</span> is the <span class="process-math">\(n^\mathrm{th}\)</span> item on the list, and so appears at a finite position in the list.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#chap_cardinality-4-7-3-1-6-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#chap_cardinality-4-7-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="chap_cardinality-4-7-3-2">
+<div class="para">Now assume such a list exists. Then for any <span class="process-math">\(n \in
+\mathbb{N}\)</span> define <span class="process-math">\(g(n) = a_n \in A\text{.}\)</span> Since the list is infinite this defines a function <span class="process-math">\(g: \mathbb{N} \to A\text{.}\)</span> Then</div>
+<ul class="disc" id="chap_cardinality-4-7-3-2-4">
+<li id="chap_cardinality-4-7-3-2-4-1">
+<div class="para" id="p-derived-chap_cardinality-4-7-3-2-4-1">Let <span class="process-math">\(x \in A\text{.}\)</span> By assumption, the element <span class="process-math">\(x\)</span> appears at some finite position in the list. So there is <span class="process-math">\(n
+\in \mathbb{N}\)</span> so that <span class="process-math">\(x = a_n = g(n)\text{.}\)</span> Thus <span class="process-math">\(g\)</span> is surjective.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#chap_cardinality-4-7-3-2-4-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="chap_cardinality-4-7-3-2-4-2">
+<div class="para" id="p-derived-chap_cardinality-4-7-3-2-4-2">Since the list does not repeat we can take the items from the <span class="process-math">\(j^\mathrm{th}\)</span> and <span class="process-math">\(k^\mathrm{th}\)</span> positions on the list, namely <span class="process-math">\(a_j, a_k\)</span> with <span class="process-math">\(j \neq k\text{.}\)</span> Then we know that <span class="process-math">\(a_j \neq a_k\)</span> which in turn gives <span class="process-math">\(g(j) \neq
+g(k)\text{.}\)</span> Thus <span class="process-math">\(g\)</span> is injective.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#chap_cardinality-4-7-3-2-4-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">Hence there is a bijection <span class="process-math">\(g: \mathbb{N} \to A\)</span> and so <span class="process-math">\(A\)</span> is denumerable.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#chap_cardinality-4-7-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 12.2.2.1"><a tabindex="-1" href="#chap_cardinality-4-7-3" title="Copy heading and permalink for Proof 12.2.2.1" aria-label="Copy heading and permalink for Proof 12.2.2.1">🔗</a></div>
+</article></details>
+<div class="para" id="chap_cardinality-4-8">This infinite-but-listable way of looking at denumerable sets makes it much easier to work with them. Especially because, as we have seen with our even numbers example above, infinite sets are very counter-intuitive. Here is counter-intuitive result that is also a very important result.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#chap_cardinality-4-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm_Z_denum"><h2 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">12.2.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para" id="thm_Z_denum-1-1">The set of all integers is denumerable.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm_Z_denum-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 12.2.3"><a tabindex="-1" href="#thm_Z_denum" title="Copy heading and permalink for Theorem 12.2.3" aria-label="Copy heading and permalink for Theorem 12.2.3">🔗</a></div>
+</article>
+<details id="thm_Z_denum-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="title">Proof sketch.</span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para" id="thm_Z_denum-2-2">We will sketch out how to prove this result but leave the formal proof to the reader. It suffices to find a “nice way” to list out all the elements of <span class="process-math">\(\mathbb{Z}\)</span> (since this nice list is really a bijection). We can’t just do <span class="process-math">\(\mathbb{Z} = \set{\dots, -2,-1,0,1,2, \dots}\)</span> — which each integer appears on the list, it is not clear that any given integer appears at some finite position in the list. This sort of infinite list is typically called bi-infinite, since it extends to infinity in both direction.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm_Z_denum-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="thm_Z_denum-2-3">
+<div class="para">On the other hand, if we write out the integers as</div>
+<div class="displaymath process-math" id="thm_Z_denum-2-3-1">
+\begin{align*}
+\mathbb{Z} &amp;= \set{0,1,-1,2,-2,\dots}
+\end{align*}
+</div>
+<div class="para">then we can see that every integer will appear once, and that any given integer will appear at some finite position in the list. Indeed, this list, carefully described, is a proof of the result.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm_Z_denum-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="thm_Z_denum-2-4">
+<div class="para">We can, in this case, make the bijection very explicit in this case and define a function</div>
+<div class="displaymath process-math" id="thm_Z_denum-2-4-1">
+\begin{align*}
+f &amp;= \begin{array}{cccccc}
+1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 &amp; \cdots\\
+\downarrow &amp; \downarrow &amp; \downarrow &amp; \downarrow &amp; \downarrow &amp; \downarrow\\
+0 &amp; 1 &amp; -1 &amp; 2 &amp; -2 &amp; \cdots
+\end{array}
+\end{align*}
+</div>
+<div class="para">With a bit of juggling this becomes</div>
+<div class="displaymath process-math" id="thm_Z_denum-2-4-2">
+\begin{align*}
+f(n) &amp;= \begin{cases}
+\frac{1-n}{2} &amp; n \mbox{ is odd}\\
+\frac{n}{2} &amp; n \mbox{ is even}
+\end{cases}
+= \frac{1 + (-1)^n(2n-1)}{4}
+\end{align*}
+</div>
+<div class="para">It is not hard to show this is bijective — in fact, we’ll make this an exercise.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm_Z_denum-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 12.2.3.1: Proof sketch"><a tabindex="-1" href="#thm_Z_denum-2" title="Copy heading and permalink for Proof 12.2.3.1: Proof sketch" aria-label="Copy heading and permalink for Proof 12.2.3.1: Proof sketch">🔗</a></div>
+</article></details>
+<div class="para" id="chap_cardinality-4-10">So again we have produced an example of a strict subset having the same cardinality: <span class="process-math">\(\mathbb{N} \subset \mathbb{Z}\)</span> but <span class="process-math">\(|\mathbb{N}| = |\mathbb{Z}|\text{.}\)</span> This is quite general; a subset of a denumerable set is either finite or itself denumerable.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#chap_cardinality-4-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm_countable_subset"><h2 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">12.2.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para" id="thm_countable_subset-1-1">Let <span class="process-math">\(A\)</span> be a denumerable set and let <span class="process-math">\(B \subseteq A\text{.}\)</span> Then <span class="process-math">\(B\)</span> is countable.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm_countable_subset-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 12.2.4"><a tabindex="-1" href="#thm_countable_subset" title="Copy heading and permalink for Theorem 12.2.4" aria-label="Copy heading and permalink for Theorem 12.2.4">🔗</a></div>
+</article>
+<div class="para" id="chap_cardinality-4-12">Now this proof is a little fiddly around the edges so we’ll just give a proof sketch. Before we get started with the proof, consider the specific case of <span class="process-math">\(A\)</span> being the set of positive odd numbers, and <span class="process-math">\(B\)</span> being the set of odd prime numbers.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#chap_cardinality-4-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="image-box" style="width: 66%; margin-left: 17%; margin-right: 17%;"><img src="external/primes_inside_natural.svg" role="img" class="contained"></div>
+<div class="para" id="chap_cardinality-4-14">On the right-hand side of the figure we’ve drawn the set of odd primes, <span class="process-math">\(B\text{,}\)</span> and the natural numbers and the bijection <span class="process-math">\(g\)</span> between them. On the left-hand side we’ve given the set of odd numbers, <span class="process-math">\(A\)</span> and next to it we’ve drawn the set of natural numbers <span class="process-math">\(\mathbb{N}\)</span> and the bijection <span class="process-math">\(f\)</span> between them. Notice that we’ve drawn some edges in red and some in green. The red edges correspond to the elements of <span class="process-math">\(A\)</span> that are not in <span class="process-math">\(B\text{,}\)</span> while the green edges correspond to the elements in <span class="process-math">\(A\)</span> that are in <span class="process-math">\(B\text{.}\)</span>  Notice that the red edges stop, while the green edges trace through a set <span class="process-math">\(I\)</span> (described in the proof sketch below), and then another copy of <span class="process-math">\(\mathbb{N}\)</span> and then finally to the set <span class="process-math">\(B\text{.}\)</span> Keep this picture in mind when you read the proof sketch below.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#chap_cardinality-4-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="chap_cardinality-4-15" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="title">Actually just a sketch of a proof.</span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="chap_cardinality-4-15-2">
+<div class="para">Let <span class="process-math">\(B\)</span> be a subset of a denumerable set <span class="process-math">\(A\text{.}\)</span>
+</div>
+<ul class="disc" id="chap_cardinality-4-15-2-3">
+<li id="chap_cardinality-4-15-2-3-1">
+<div class="para" id="p-derived-chap_cardinality-4-15-2-3-1">If <span class="process-math">\(B\)</span> is finite then we are done, because a finite set is countable.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#chap_cardinality-4-15-2-3-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="chap_cardinality-4-15-2-3-2">
+<div class="para" id="chap_cardinality-4-15-2-3-2-1">Assume <span class="process-math">\(B\)</span> is infinite. There is a bijection <span class="process-math">\(f: \mathbb{N} \to A\text{,}\)</span> and we can write <span class="process-math">\(A = \{a_1,a_2,\dots \}\)</span> and <span class="process-math">\(f(n) = a_n\text{.}\)</span> Now define <span class="process-math">\(I = \{n \in \mathbb{N} \so a_n \in B\}\)</span> — ie the indices of elements that are in <span class="process-math">\(B\text{.}\)</span> Notice that <span class="process-math">\(I \subseteq \mathbb{N}\)</span> and so we can write the indices in order<details class="ptx-footnote" aria-live="polite" id="chap_cardinality-4-15-2-3-2-1-9"><summary class="ptx-footnote__number" title="Footnote 160"><sup> 160 </sup></summary>
+<div class="ptx-footnote__contents" id="chap_cardinality-4-15-2-3-2-1-9">This bit actually requires a bit of thought — one can use the well-ordering principle to find the smallest thing in the set <span class="process-math">\(I\)</span> and call it <span class="process-math">\(i_1\text{.}\)</span>Then remove that from the set and find the next smallest, call it <span class="process-math">\(i_2\text{.}\)</span> etc etc.
+</div></details><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#chap_cardinality-4-15-2-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="chap_cardinality-4-15-2-3-2-2">
+<div class="para">Hence we can write the set of these indices as <span class="process-math">\(I = \set{i_1, i_2, i_3, \dots}\text{.}\)</span> Now define a function <span class="process-math">\(g: \mathbb{N} \to B\)</span> by</div>
+<div class="displaymath process-math" id="chap_cardinality-4-15-2-3-2-2-3">
+\begin{align*}
+g(n) &amp;= a_{i_n}
+\end{align*}
+</div>
+<div class="para">That is, for any input number <span class="process-math">\(n\text{,}\)</span> look up the <span class="process-math">\(n^\mathrm{th}\)</span> index in <span class="process-math">\(I\text{,}\)</span> and then return that element of <span class="process-math">\(A\text{.}\)</span> By construction that is an element of <span class="process-math">\(B\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#chap_cardinality-4-15-2-3-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="chap_cardinality-4-15-2-3-2-3">We can trace this though our odd-primes figure above. In that case <span class="process-math">\(g(3)=7\)</span> because <span class="process-math">\(i_3 = 4\)</span> and <span class="process-math">\(f(4)=7\text{.}\)</span> Similarly, <span class="process-math">\(g(5) = 13\)</span> since <span class="process-math">\(i_5=7\)</span> and <span class="process-math">\(f(7)=13\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#chap_cardinality-4-15-2-3-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#chap_cardinality-4-15-2-3-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="chap_cardinality-4-15-2-3-3">
+<div class="para logical" id="chap_cardinality-4-15-2-3-3-1">
+<div class="para">Now that we have this function, we need to prove it is bijective.</div>
+<ul class="circle" id="chap_cardinality-4-15-2-3-3-1-1">
+<li id="chap_cardinality-4-15-2-3-3-1-1-1">
+<div class="para" id="p-derived-chap_cardinality-4-15-2-3-3-1-1-1">Injective — Assume that <span class="process-math">\(g(n)=g(m)\text{,}\)</span> then <span class="process-math">\(a_{i_n} = a_{i_m}\text{.}\)</span> Since the original function <span class="process-math">\(f\)</span> is bijective, this implies that <span class="process-math">\(i_n=i_m\text{.}\)</span> Hence <span class="process-math">\(n=m\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#chap_cardinality-4-15-2-3-3-1-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="chap_cardinality-4-15-2-3-3-1-1-2">
+<div class="para" id="p-derived-chap_cardinality-4-15-2-3-3-1-1-2">Surjective — Let <span class="process-math">\(b \in B\text{.}\)</span> Then since <span class="process-math">\(B \subseteq A\text{,}\)</span> we know <span class="process-math">\(b\in A\text{.}\)</span> Since <span class="process-math">\(f\)</span> is surjective, there is some <span class="process-math">\(n\)</span> so that <span class="process-math">\(f(n)=a_n=b\text{.}\)</span> Hence <span class="process-math">\(n \in I\text{.}\)</span> Hence there is some <span class="process-math">\(1 \leq k \leq n\)</span> so that <span class="process-math">\(g(k)=a_n=b\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#chap_cardinality-4-15-2-3-3-1-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#chap_cardinality-4-15-2-3-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#chap_cardinality-4-15-2-3-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="chap_cardinality-4-15-2-3-4">
+<div class="para" id="p-derived-chap_cardinality-4-15-2-3-4">Thus there is a bijection from <span class="process-math">\(\mathbb{N}\)</span> to <span class="process-math">\(B\text{,}\)</span> and so <span class="process-math">\(B\)</span> is denumerable.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#chap_cardinality-4-15-2-3-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#chap_cardinality-4-15-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 12.2.1: Actually just a sketch of a proof"><a tabindex="-1" href="#chap_cardinality-4-15" title="Copy heading and permalink for Proof 12.2.1: Actually just a sketch of a proof" aria-label="Copy heading and permalink for Proof 12.2.1: Actually just a sketch of a proof">🔗</a></div>
+</article></details>
+<div class="para" id="chap_cardinality-4-16">Let’s generalise our result above positive even numbers being in bijection with the naturals; we’ll also do Galileo’s paradox the same way. Using the above theorem we don’t have to establish explicit bijections, we just need to show that they are infinite subsets of a denumerable set.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#chap_cardinality-4-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="proposition theorem-like" id="chap_cardinality-4-17"><h2 class="heading">
+<span class="type">Result</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">12.2.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para logical" id="chap_cardinality-4-17-1-1">
+<div class="para">Let <span class="process-math">\(k \in \mathbb{N}\text{,}\)</span> then the sets</div>
+<div class="displaymath process-math" id="chap_cardinality-4-17-1-1-2">
+\begin{align*}
+k \mathbb{Z} &amp;= \set{k n \so n \in \mathbb{Z}} &amp;
+k \mathbb{N} &amp;= \set{k n \so n \in \mathbb{N}} &amp;
+&amp;\set{n^2 \so n \in \mathbb{N}}
+\end{align*}
+</div>
+<div class="para">are denumerable.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#chap_cardinality-4-17-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Result 12.2.5"><a tabindex="-1" href="#chap_cardinality-4-17" title="Copy heading and permalink for Result 12.2.5" aria-label="Copy heading and permalink for Result 12.2.5">🔗</a></div>
+</article>
+<details id="chap_cardinality-4-18" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para" id="chap_cardinality-4-18-1">Let <span class="process-math">\(k \in \mathbb{N}\text{.}\)</span> Then above sets all subsets of <span class="process-math">\(\mathbb{Z}\text{.}\)</span> Hence by the previous theorem they are countable. All of the sets are infinite, so they must be denumerable.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#chap_cardinality-4-18-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 12.2.2"><a tabindex="-1" href="#chap_cardinality-4-18" title="Copy heading and permalink for Proof 12.2.2" aria-label="Copy heading and permalink for Proof 12.2.2">🔗</a></div>
+</article></details>
+<div class="para" id="chap_cardinality-4-19">One can show that the union of denumerable sets is denumerable and that the Cartesian product is too.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#chap_cardinality-4-19" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="proposition theorem-like" id="res_prod_of_denum"><h2 class="heading">
+<span class="type">Result</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">12.2.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para" id="res_prod_of_denum-1-1">Let <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> be denumerable sets, then <span class="process-math">\(A \times B\)</span> is denumerable.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#res_prod_of_denum-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Result 12.2.6"><a tabindex="-1" href="#res_prod_of_denum" title="Copy heading and permalink for Result 12.2.6" aria-label="Copy heading and permalink for Result 12.2.6">🔗</a></div>
+</article>
+<details id="chap_cardinality-4-21" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="chap_cardinality-4-21-1">
+<div class="para">It suffices to find a bijection from <span class="process-math">\(\mathbb{N}\)</span> to <span class="process-math">\(A\times B\text{.}\)</span> Since <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are denumerable we can write <span class="process-math">\(A = \set{a_1,a_2,\dots}\)</span> and <span class="process-math">\(B = \set{b_1,b_2,\dots}\text{.}\)</span> Construct the following (infinite) table</div>
+<div class="displaymath process-math" id="chap_cardinality-4-21-1-7">
+\begin{align*}
+\begin{array}{c|cccc}
+&amp; b_1 &amp; b_2 &amp; b_3 &amp; \dots\\
+\hline
+a_1 &amp; (a_1,b_1) &amp; (a_1,b_2) &amp; (a_1,b_3) &amp; \dots\\
+a_2 &amp; (a_2,b_1) &amp; (a_2,b_2) &amp; (a_2,b_3) &amp; \dots\\
+a_3 &amp; (a_3,b_1) &amp; (a_3,b_2) &amp; (a_3,b_3) &amp; \dots\\
+\vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \ddots
+\end{array}
+\end{align*}
+</div>
+<div class="para">We form the function <span class="process-math">\(f: \mathbb{N} \to A \times B\)</span> by sweeping successive diagonals <span class="process-math">\(\swarrow \; \swarrow \; \cdots \text{.}\)</span>
+</div>
+<div class="displaymath process-math" id="chap_cardinality-4-21-1-10">
+\begin{align*}
+f(1) &amp;= (a_1,b_1)\\
+f(2) &amp;= (a_1,b_2) &amp; f(3) &amp;= (a_2,b_1)\\
+f(4) &amp;= (a_1,b_3) &amp; f(5) &amp;= (a_2,b_2) &amp; f(6) &amp;= (a_3,b_1)\\
+f(7) &amp;= (a_1,b_4) &amp; f(8) &amp;= (a_2,b_3) &amp; f(9) &amp;= (a_3,b_2) &amp; f(10) &amp;= (a_4,b_1)
+\end{align*}
+</div>
+<div class="para">and so forth. Since any given ordered pair is reached eventually (i.e. after a finite number of diagonal sweeps of finite length), the function is surjective. Since we never repeat an ordered pair, the function is injective. Thus <span class="process-math">\(f\)</span> is bijective.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#chap_cardinality-4-21-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 12.2.3"><a tabindex="-1" href="#chap_cardinality-4-21" title="Copy heading and permalink for Proof 12.2.3" aria-label="Copy heading and permalink for Proof 12.2.3">🔗</a></div>
+</article></details>
+<div class="para" id="chap_cardinality-4-22">Notice that if we tried to list out the elements by reading out each column (or each row), then the resulting function would not be surjective — it would take an infinite time to reach the second column. Hence the preimage under that function of an element in the second column would not be a natural number.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#chap_cardinality-4-22" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="chap_cardinality-4-23">Very similarly we arrive at the following very counter-intuitive result<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#chap_cardinality-4-23" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="chap_cardinality-4-24"><h2 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">12.2.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para" id="chap_cardinality-4-24-1-1">The set of positive rational numbers <span class="process-math">\(\mathbb{Q}^+\)</span> is denumerable.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#chap_cardinality-4-24-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 12.2.7"><a tabindex="-1" href="#chap_cardinality-4-24" title="Copy heading and permalink for Theorem 12.2.7" aria-label="Copy heading and permalink for Theorem 12.2.7">🔗</a></div>
+</article>
+<details id="chap_cardinality-4-25" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="chap_cardinality-4-25-1">
+<div class="para">Form the following table of positive rationals</div>
+<div class="displaymath process-math" id="chap_cardinality-4-25-1-1">
+\begin{align*}
+\begin{array}{c|cccc}
+&amp; 1 &amp; 2 &amp; 3 &amp; \dots\\
+\hline
+1 &amp; 1/1 &amp; 1/2 &amp; 1/3 &amp; \dots\\
+2 &amp; 2/1 &amp; 2/2 &amp; 2/3 &amp; \dots\\
+3 &amp; 3/1 &amp; 3/2 &amp; 3/3 &amp; \dots\\
+\vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \ddots
+\end{array}
+\end{align*}
+</div>
+<div class="para">List things out in the same sweeping diagonal order  <span class="process-math">\(\swarrow \; \swarrow \; \cdots \)</span> we used previously:</div>
+<div class="displaymath process-math" id="chap_cardinality-4-25-1-3">
+\begin{align*}
+\begin{array}{ccccc}
+\frac{1}{1}, \\[1ex]
+\frac{1}{2}, &amp;  \frac{2}{1},    \\[1ex]
+\frac{1}{3}, &amp;  \frac{2}{2},  &amp;  \frac{3}{1},  \\[1ex]
+\frac{1}{4}, &amp;  \frac{2}{3},  &amp;  \frac{3}{2}, &amp;  \frac{4}{1}, \\[1ex]
+\frac{1}{5}, &amp;  \frac{2}{4},  &amp;  \frac{3}{3}, &amp;  \frac{4}{2}, &amp; \frac{5}{1},\\
+\vdots
+\end{array}
+\end{align*}
+</div>
+<div class="para">This list gives a surjective function, since any given positive rational number would appear at some finite positive position on the list. For example, we have <span class="process-math">\(f(1)=\frac{1}{1}, f(2)=\frac{1}{2}, f(5)=\frac{2}{2}\text{,}\)</span> and so on. However, the list repeats rationals, so it is not injective.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#chap_cardinality-4-25-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="chap_cardinality-4-25-2">
+<div class="para">Thankfully this is quite easy to fix, we can simply skip those rationals that have already appeared<details class="ptx-footnote" aria-live="polite" id="chap_cardinality-4-25-2-1"><summary class="ptx-footnote__number" title="Footnote 161"><sup> 161 </sup></summary>
+<div class="ptx-footnote__contents" id="chap_cardinality-4-25-2-1">Notice that we do not have to be able to do this efficiently, we just need to be able to do it! Mind you, it is not too hard to work out that a given ratio <span class="process-math">\(\frac{a}{b}\)</span> has already appeared on the list when <span class="process-math">\(a,b\)</span> have a common divisor.
+</div></details>:</div>
+<div class="displaymath process-math" id="chap_cardinality-4-25-2-2">
+\begin{align*}
+\begin{array}{ccccc}
+\frac{1}{1}, &amp; \\[1ex]
+\frac{1}{2}, &amp;  \frac{2}{1},    \\[1ex]
+\frac{1}{3}, &amp;  \cdot   &amp;  \frac{3}{1},  \\[1ex]
+\frac{1}{4}, &amp;  \frac{2}{3},  &amp;  \frac{3}{2}, &amp;  \frac{4}{1},  \\[1ex]
+\frac{1}{5}, &amp;  \cdot &amp;  \cdot &amp;  \cdot &amp; \frac{5}{1},
+\end{array}
+\end{align*}
+</div>
+<div class="para">where we have used a dot to indicate a fraction we have skipped.  Define <span class="process-math">\(f: \mathbb{N} \to \mathbb{Q}^+\)</span> by <span class="process-math">\(f(n)\)</span> is the nth term of the list. So <span class="process-math">\(f(1)=\frac{1}{1}, f(3)=\frac{2}{1}, f(5)=\frac{3}{1}, f(7)=\frac{2}{3}\)</span> and so on.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#chap_cardinality-4-25-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="chap_cardinality-4-25-3">Since every positive rational number appears on the list (at some finite position), <span class="process-math">\(f\)</span> is surjective. Since no number is repeated, <span class="process-math">\(f\)</span> is injective. Thus <span class="process-math">\(f\)</span> is bijective and so <span class="process-math">\(|\mathbb{N}| = \mathbb{Q}^+\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#chap_cardinality-4-25-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 12.2.4"><a tabindex="-1" href="#chap_cardinality-4-25" title="Copy heading and permalink for Proof 12.2.4" aria-label="Copy heading and permalink for Proof 12.2.4">🔗</a></div>
+</article></details>
+<details id="chap_cardinality-4-26" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="title">An alternative proof.</span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para" id="chap_cardinality-4-26-2">We can also prove this result using our previous theorem, by constructing a bijection from <span class="process-math">\(\mathbb{Q}^+\)</span> to an infinite subset of <span class="process-math">\(\mathbb{N}\times\mathbb{N}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#chap_cardinality-4-26-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="chap_cardinality-4-26-3">
+<div class="para">Recall that we can write any <span class="process-math">\(q \in \mathbb{Q}^+\)</span> uniquely as <span class="process-math">\(\frac{a}{b}\)</span> where <span class="process-math">\(a,b\)</span> are natural numbers with no common divisors. Then we can define <span class="process-math">\(f:\mathbb{Q}^+ \to \mathbb{N}\times\mathbb{N}\)</span> by</div>
+<div class="displaymath process-math" id="chap_cardinality-4-26-3-5">
+\begin{align*}
+f(q) \amp= (a,b) \amp \text{where } q=\frac{a}{b}
+\end{align*}
+</div>
+<div class="para">and <span class="process-math">\(a,b \in \mathbb{N}\)</span> with no common divisors. We claim that this function is an injection.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#chap_cardinality-4-26-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="chap_cardinality-4-26-4">Let <span class="process-math">\(p,q \in \mathbb{Q}^+\)</span> so that <span class="process-math">\(p \neq q\text{.}\)</span> Now if <span class="process-math">\(f(p)=f(q)=(a,b)\)</span> we must have <span class="process-math">\(p=q=\frac{a}{b}\text{.}\)</span> Thus we must have <span class="process-math">\(f(p) \neq f(q)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#chap_cardinality-4-26-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="chap_cardinality-4-26-5">The injection <span class="process-math">\(f\)</span> can be specialised to a bijection <span class="process-math">\(\hat{f}: \mathbb{Q} \to \mathrm{rng}(f)\)</span> by reducing its codomain to exactly the range of <span class="process-math">\(f\text{.}\)</span> Since <span class="process-math">\(\mathrm{rng}(f)\)</span> is an infinite subset of <span class="process-math">\(\mathbb{N}\times\mathbb{N}\text{,}\)</span> it must be denumerable. Hence <span class="process-math">\(\mathbb{Q}^+\)</span> is denumerable.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#chap_cardinality-4-26-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 12.2.5: An alternative proof"><a tabindex="-1" href="#chap_cardinality-4-26" title="Copy heading and permalink for Proof 12.2.5: An alternative proof" aria-label="Copy heading and permalink for Proof 12.2.5: An alternative proof">🔗</a></div>
+</article></details>
+<div class="para logical" id="chap_cardinality-4-27">
+<div class="para">Now say that the above order gives</div>
+<div class="displaymath process-math" id="chap_cardinality-4-27-1">
+\begin{gather*}
+\mathbb{Q}^+ = \set{q_1,q_2,q_3,\dots}\\
+\mathbb{Q}^- = \set{-q_1,-q_2,-q_3,\dots}
+\end{gather*}
+</div>
+<div class="para">Then we can write</div>
+<div class="displaymath process-math" id="chap_cardinality-4-27-2">
+\begin{align*}
+\mathbb{Q} &amp;= \set{0} \cup \mathbb{Q}^+ \cup \mathbb{Q}^-\\
+&amp;= \set{0, q_1, -q_1, q_2, -q_2, \dots}
+\end{align*}
+</div>
+<div class="para">And so by using this sneaky way of listing the rationals, we get</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#chap_cardinality-4-27" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="corollary theorem-like" id="chap_cardinality-4-28"><h2 class="heading">
+<span class="type">Corollary</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">12.2.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para" id="chap_cardinality-4-28-1-1">The set of all rational numbers is denumerable.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#chap_cardinality-4-28-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Corollary 12.2.8"><a tabindex="-1" href="#chap_cardinality-4-28" title="Copy heading and permalink for Corollary 12.2.8" aria-label="Copy heading and permalink for Corollary 12.2.8">🔗</a></div>
+</article>
+<div class="para" id="chap_cardinality-4-29">This is really weird. While the natural numbers and the integers feel very similar; there are nice discrete unit steps between numbers. The rational numbers, however, appear to be very different objects. Most striking being that they are dense  — between any two rationals we can find another rational number.  But despite that, the rationals are the same size as the integers!<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#chap_cardinality-4-29" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="chap_cardinality-4-30">The trick we used above to prove this corollary is a good one and can be extended to a more general result:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#chap_cardinality-4-30" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="proposition theorem-like" id="res_count_union_intersect"><h2 class="heading">
+<span class="type">Result</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">12.2.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para" id="res_count_union_intersect-1-1">Let <span class="process-math">\(A,B\)</span> be countable sets. Then the union <span class="process-math">\(A\cup B\)</span> and intersection <span class="process-math">\(A \cap B\)</span> are also countable.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#res_count_union_intersect-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Result 12.2.9"><a tabindex="-1" href="#res_count_union_intersect" title="Copy heading and permalink for Result 12.2.9" aria-label="Copy heading and permalink for Result 12.2.9">🔗</a></div>
+</article>
+<details id="chap_cardinality-4-32" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="chap_cardinality-4-32-1">
+<ul class="disc" id="chap_cardinality-4-32-1-1">
+<li id="chap_cardinality-4-32-1-1-1">
+<div class="para" id="p-derived-chap_cardinality-4-32-1-1-1">The intersection <span class="process-math">\(A \cap B \subseteq A\text{,}\)</span> so if <span class="process-math">\(A\)</span> is finite then so is the intersection. While if <span class="process-math">\(A\)</span> is denumerable, then our previous theorem tells us that all its subsets are countable. So we are done.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#chap_cardinality-4-32-1-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="chap_cardinality-4-32-1-1-2">
+<div class="para logical" id="chap_cardinality-4-32-1-1-2-1">
+<div class="para">Now consider the union.  Since <span class="process-math">\(A,B\)</span> are countable, we can list out their elements as</div>
+<div class="displaymath process-math" id="chap_cardinality-4-32-1-1-2-1-2">
+\begin{align*}
+A &amp;= \set{a_1,a_2,a_3,\dots} &amp;
+B &amp;= \set{b_1,b_2,b_3,\dots} &amp;
+\end{align*}
+</div>
+<div class="para">Assume, for the moment that <span class="process-math">\(A\cap B = \es\text{.}\)</span>
+</div>
+<ul class="circle" id="chap_cardinality-4-32-1-1-2-1-4">
+<li id="chap_cardinality-4-32-1-1-2-1-4-1">
+<div class="para" id="p-derived-chap_cardinality-4-32-1-1-2-1-4-1">If both <span class="process-math">\(A,B\)</span> are finite then their union is finite.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#chap_cardinality-4-32-1-1-2-1-4-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="chap_cardinality-4-32-1-1-2-1-4-2">
+<div class="para" id="p-derived-chap_cardinality-4-32-1-1-2-1-4-2">If both <span class="process-math">\(A,B\)</span> are infinite, then write the union as<div class="displaymath process-math" id="chap_cardinality-4-32-1-1-2-1-4-2-2">
+\begin{align*}
+A \cup B &amp;= \set{a_1, b_1, a_2, b_2, a_3, b_3, \dots}
+\end{align*}
+</div>This listing of the elements of the union demonstrates that the union is denumerable.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#chap_cardinality-4-32-1-1-2-1-4-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="chap_cardinality-4-32-1-1-2-1-4-3">
+<div class="para" id="p-derived-chap_cardinality-4-32-1-1-2-1-4-3">If one of <span class="process-math">\(A,B\)</span> is finite, but the other infinite, then we can write<div class="displaymath process-math" id="chap_cardinality-4-32-1-1-2-1-4-3-2">
+\begin{align*}
+A \cup B &amp;= \set{a_1, b_1, a_2, b_2, a_3, b_3, \dots, a_n, b_n, a_{n+1}, a_{n+2}, a_{n+3}, \dots} &amp; \text{ or}\\
+A \cup B &amp;= \set{a_1, b_1, a_2, b_2, a_3, b_3, \dots, a_\ell, b_\ell, b_{\ell+1}, b_{\ell+2}, b_{\ell+3}, \dots}
+\end{align*}
+</div>depending on which of <span class="process-math">\(A,B\)</span> are finite. This  demonstrates that the union is denumerable.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#chap_cardinality-4-32-1-1-2-1-4-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">Thus the union of two disjoint countable sets is countable.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#chap_cardinality-4-32-1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="chap_cardinality-4-32-1-1-2-2">
+<div class="para">Now assume that <span class="process-math">\(A \cap B \neq \es\text{,}\)</span> then write <span class="process-math">\(C = B -
+A\text{,}\)</span> so that</div>
+<div class="displaymath process-math" id="chap_cardinality-4-32-1-1-2-2-3">
+\begin{equation*}
+C \subseteq B \qquad A \cap C = \es \qquad A\cup C = A \cup B.
+\end{equation*}
+</div>
+<div class="para">These are quite straight-forward to prove:</div>
+<ul class="circle" id="chap_cardinality-4-32-1-1-2-2-4">
+<li id="chap_cardinality-4-32-1-1-2-2-4-1">
+<div class="para" id="p-derived-chap_cardinality-4-32-1-1-2-2-4-1">If <span class="process-math">\(x \in C\)</span> then <span class="process-math">\(x \in B-A\)</span> and so <span class="process-math">\(x \in B\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#chap_cardinality-4-32-1-1-2-2-4-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="chap_cardinality-4-32-1-1-2-2-4-2">
+<div class="para" id="p-derived-chap_cardinality-4-32-1-1-2-2-4-2">Let <span class="process-math">\(x \in A\text{.}\)</span> Then we must have that <span class="process-math">\(x \not\in B-A\text{,}\)</span> and thus <span class="process-math">\(x \not\in C\text{.}\)</span> Hence <span class="process-math">\(A\cap C\)</span> must be empty.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#chap_cardinality-4-32-1-1-2-2-4-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="chap_cardinality-4-32-1-1-2-2-4-3">
+<div class="para logical" id="chap_cardinality-4-32-1-1-2-2-4-3-1">
+<div class="para">Since <span class="process-math">\(C = B-A = B \cap \bar{A}\text{,}\)</span> we have</div>
+<div class="displaymath process-math" id="chap_cardinality-4-32-1-1-2-2-4-3-1-2">
+\begin{equation*}
+A \cup C = A \cup (B \cap \bar{A}) = (A \cup B) \cap (A \cup \bar{A}) = (A \cup B) \cap U = A \cup B
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(U\)</span> denotes the universal set.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#chap_cardinality-4-32-1-1-2-2-4-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#chap_cardinality-4-32-1-1-2-2-4-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">Now, since <span class="process-math">\(B\)</span> is countable we know that <span class="process-math">\(C\)</span> is countable. The reasoning used for disjoint sets above, then shows that <span class="process-math">\(A \cup C\)</span> is countable, and thus <span class="process-math">\(A\cup B\)</span> is countable.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#chap_cardinality-4-32-1-1-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#chap_cardinality-4-32-1-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#chap_cardinality-4-32-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 12.2.6"><a tabindex="-1" href="#chap_cardinality-4-32" title="Copy heading and permalink for Proof 12.2.6" aria-label="Copy heading and permalink for Proof 12.2.6">🔗</a></div>
+</article></details><div class="autopermalink" aria-hidden="true" data-description="Section 12.2: Denumerable sets"><a tabindex="-1" href="#chap_cardinality-4" title="Copy heading and permalink for Section 12.2: Denumerable sets" aria-label="Copy heading and permalink for Section 12.2: Denumerable sets">🔗</a></div>
+</section>
+</div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="chap_cardinality-3.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec_uncount.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+<!--Start: Google Global Site Tag code--><!--*** DO NOT COPY ANOTHER PROJECT'S MAGIC NUMBERS/ID ***--><!--***           GET YOUR OWN FROM GOOGLE             ***-->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-FL66FX9988"></script><script>  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-FL66FX9988');
+</script><!--End: Google Global Site Tag code-->
+</body>
+</html>

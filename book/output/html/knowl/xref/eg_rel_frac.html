@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.2.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Fractions.</span>
+</h2>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(F\)</span> be the set of all fractions:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+F = \set{ \frac{a}{b} \so a,b \in \mathbb{Z}, b \neq 0}.
+\end{equation*}
+</div>
+<div class="para">Consider the following fractions that are <em class="emphasis">different</em> elements of <span class="process-math">\(F\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{2}{4}\qquad \frac{3}{6} \qquad \frac{-7}{-14} \qquad \frac{9}{18}
+\end{equation*}
+</div>
+<div class="para">All of these are just different ways of writing “one half” and so correspond to the same single element of <span class="process-math">\(\mathbb{Q}\text{.}\)</span> We typically avoid this duplication by <em class="emphasis">representing</em> each rational number by a single reduced fraction. This is an example of an <dfn class="terminology">equivalence class</dfn>, but we will get to those in the next section.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg_rel_frac-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">But before that, let us formalise how two fractions are related. We’ve been doing that since primary school — they are related when they are the same rational number. That is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{a}{b} \rel \frac{c}{d} \iff \frac{a}{b} = \frac{c}{d}
+\end{equation*}
+</div>
+<div class="para">Notice the “<span class="process-math">\(=\)</span>” in the equation on the right <em class="emphasis">does not</em> mean that the fractions are <em class="emphasis">identical</em> rather it means that they represent the same number. We can make this condition a little more comfortable by writing it as</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{a}{b} \rel \frac{c}{d} \iff ad = bc
+\end{equation*}
+</div>
+<div class="para">Let us show that this relation is reflexive, symmetric and transitive.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg_rel_frac-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical">
+<div class="para">We show that the relation on the set of fractions defined above is reflexive, symmetric and transitive.</div>
+<ul class="disc" id="eg_rel_frac-4-1-1">
+<li>
+<div class="para">Reflexive — Let <span class="process-math">\(\frac{a}{b} \in F\text{.}\)</span> Then since <span class="process-math">\(ab=ab\text{,}\)</span> it follows that <span class="process-math">\(\frac{a}{b} \rel \frac{a}{b}\text{.}\)</span> Hence the relation is reflexive.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg_rel_frac-4-1-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#eg_rel_frac-4-1-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li>
+<div class="para">Symmetric — Let <span class="process-math">\(\frac{a}{b}, \frac{c}{d} \in F\text{.}\)</span> Assume that <span class="process-math">\(\frac{a}{b}\rel \frac{c}{d}\text{.}\)</span> Hence <span class="process-math">\(ad=bc\text{,}\)</span> and so <span class="process-math">\(bc=ad\text{.}\)</span> Thus <span class="process-math">\(\frac{c}{d}\rel \frac{a}{b}\text{.}\)</span> So the relation is symmetric.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg_rel_frac-4-1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#eg_rel_frac-4-1-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li>
+<div class="para logical">
+<div class="para">Transitive — Let <span class="process-math">\(\frac{a}{b}, \frac{c}{d}, \frac{e}{f} \in F\text{.}\)</span> Assume that <span class="process-math">\(\frac{a}{b}\rel \frac{c}{d}\)</span> and <span class="process-math">\(\frac{c}{d} \rel \frac{e}{f}\text{.}\)</span> Hence we know that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+ad=bc \qquad \text{ and } \qquad cf=de.
+\end{equation*}
+</div>
+<div class="para">Multiply the first of these equations by <span class="process-math">\(f\)</span> and the second by <span class="process-math">\(b\text{.}\)</span> This gives</div>
+<div class="displaymath process-math">
+\begin{equation*}
+adf=bcf \qquad \text{ and } \qquad bcf = deb
+\end{equation*}
+</div>
+<div class="para">Using the transitivity of equality we know that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+adf = deb
+\end{equation*}
+</div>
+<div class="para">and since <span class="process-math">\(d \neq 0\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+af = eb
+\end{equation*}
+</div>
+<div class="para">Thus <span class="process-math">\(\frac{a}{b} \rel \frac{e}{f}\)</span> and so the relation is transitive.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg_rel_frac-4-1-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#eg_rel_frac-4-1-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg_rel_frac-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 9.2.7.1"><a tabindex="-1" href="#eg_rel_frac-4" title="Copy heading and permalink for Proof 9.2.7.1" aria-label="Copy heading and permalink for Proof 9.2.7.1">🔗</a></div>
+</article></details><div class="autopermalink" aria-hidden="true" data-description="Example 9.2.7: Fractions"><a tabindex="-1" href="#eg_rel_frac" title="Copy heading and permalink for Example 9.2.7: Fractions" aria-label="Copy heading and permalink for Example 9.2.7: Fractions">🔗</a></div>
+</article><span class="incontext"><a class="internal" href="sec_prop_rel.html#eg_rel_frac">In Context</a></span>
+</body>
+</html>

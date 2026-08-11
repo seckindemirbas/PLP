@@ -1,0 +1,4 @@
+INFO    : PreTeXt project found in `C:\Users\ecyea\git\PLP\book`.
+WARNING : Project's CLI version could not be detected from `requirements.txt`.
+WARNING : Try `pretext init --refresh` to produce a compatible file.
+INFO    : 

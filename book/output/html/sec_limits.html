@@ -1,0 +1,1332 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Quantifiers and rigorous limits</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
+startMathJax({
+hasWebworkReps: false,
+hasSage: false,
+isReact: false,
+htmlPresentation: false,
+lang: "en-US",
+});
+</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta name="twitter:title" content="PLP">
+<meta property="og:title" content="PLP">
+<meta property="book:title" content="PLP">
+<meta name="twitter:description" content="An introduction to mathematical proof">
+<meta property="og:description" content="An introduction to mathematical proof">
+<meta name="twitter:card" content="summary">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.48"></script><script src="_static/pretext/js/dist/pretext-read-aloud.js?v=2.48"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.2.4';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.40bd1420d3277749.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.b388362b5f43738a.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.8086b62682b271d1.css">
+<script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead" role="banner"><div class="ptx-banner"><div class="title-container">
+<div class="heading ptx-banner-heading"><a href="plp.html"><span class="title">PLP</span> <span class="subtitle">An introduction to mathematical proof</span></a></div>
+<p class="byline">Seçkin Demirbaş, Andrew Rechnitzer</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button id="ptx-toc-toggle" type="button" aria-controls="ptx-sidebar" class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="ptx-search-box">
+<div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search Book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog"><div class="ptx-search-dialog-controls">
+<input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close" id="ptx-search-close" class="ptx-search-close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div id="ptx-search-status" class="ptx-search-status" aria-live="polite" aria-atomic="true"></div>
+<h2 class="heading ptx-search-results-heading">Search Results: </h2>
+<div id="ptx-search-empty" class="ptx-search-empty"><span>No results.</span></div>
+<ol id="ptx-search-results" class="ptx-search-results"></ol></dialog>
+</div>
+<span class="nav-other-controls"><button id="ptx-read-aloud-button" class="ptx-read-aloud-button button" title="Read aloud" aria-expanded="false"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf1bc;</span><span class="name">Read aloud</span></button><div id="ptx-read-aloud-player" class="ptx-read-aloud-player" hidden="hidden" role="group" aria-label="Read aloud">
+<button id="ptx-read-aloud-prev" class="button" title="Previous sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe045;</span></button><button id="ptx-read-aloud-toggle" class="ptx-read-aloud-toggle button" title="Play"><span class="ptx-read-aloud-icon-play"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></span><span class="ptx-read-aloud-icon-pause"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe034;</span></span></button><button id="ptx-read-aloud-next" class="button" title="Next sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe044;</span></button><a id="ptx-read-aloud-continue" class="ptx-read-aloud-continue button" hidden="hidden">Continue<span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></a><button id="ptx-read-aloud-settings-button" class="ptx-read-aloud-settings-button button" title="Reading settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe429;</span></button>
+</div>
+<dialog class="ptx-dialog ptx-read-aloud-settings-popup" id="ptx-read-aloud-settings-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Read aloud settings</h2>
+<button class="ptx-read-aloud-settings-close-button button" id="ptx-read-aloud-settings-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label for="ptx-read-aloud-voice"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe91f;</span><span>Voice</span></label><select id="ptx-read-aloud-voice"></select><label class="ptx-readability-slider-label" for="ptx-read-aloud-rate"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe9e4;</span><span>Reading speed</span><output id="ptx-read-aloud-rate-value" for="ptx-read-aloud-rate">1×</output></label><input type="range" id="ptx-read-aloud-rate" min="0.5" max="2" step="0.1" value="1"><label for="ptx-read-aloud-asides"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d7;</span><span>Collapsed content</span></label><select id="ptx-read-aloud-asides"><option value="skip">Announce, do not read</option>
+<option value="read">Read automatically</option></select><label for="ptx-read-aloud-autoscroll"><input type="checkbox" id="ptx-read-aloud-autoscroll" checked><span>Follow along (auto-scroll)</span></label><label for="ptx-read-aloud-autocontinue"><input type="checkbox" id="ptx-read-aloud-autocontinue"><span>Continue to the next page automatically</span></label>
+</div></dialog><button id="ptx-readability-options-button" class="ptx-readability-options-button button" title="Readability settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf6f1;</span><span class="name">Readability settings</span></button><dialog class="ptx-dialog ptx-readability-options-popup" id="ptx-readability-options-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Readability settings</h2>
+<button class="ptx-readability-options-close-button button" id="ptx-readability-options-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-line-height"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe240;</span><span>Line height</span><output id="ptx-readability-line-height-value" for="ptx-readability-line-height">1.35</output></label><input type="range" id="ptx-readability-line-height" min="1.10" max="3" step="0.05" value="1.35">
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-font-size"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe245;</span><span>Content font size</span><output id="ptx-readability-font-size-value" for="ptx-readability-font-size">100%</output></label><input type="range" id="ptx-readability-font-size" min="0.8" max="1.5" step="0.05" value="1">
+</div>
+<fieldset class="ptx-readability-options-group ptx-readability-options-group-theme">
+<legend>Theme</legend>
+<label for="ptx-readability-theme-system"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-system" value="system"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe1ab;</span><span>System</span></label><label for="ptx-readability-theme-light"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-light" value="light"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe518;</span><span>Light</span></label><label for="ptx-readability-theme-dark"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-dark" value="dark"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span>Dark</span></label>
+</fieldset>
+<fieldset class="ptx-readability-options-group">
+<legend>Assistive technologies</legend>
+<label for="ptx-readability-accessible-permalinks"><input type="checkbox" id="ptx-readability-accessible-permalinks"><span>🔗</span><span>Expose permalinks</span></label>
+</fieldset>
+<div class="ptx-readability-options-group"><button type="button" class="ptx-readability-reset-button button" id="ptx-readability-reset-button"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf053;</span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="ch-quantifiers-5.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-quantifiers.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="ch-quantifiers-7.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{cancel}\require{upgreek} \newcommand{\ds}{\displaystyle}
+ \renewcommand{\textcolor}[2]{{\color{#1}{#2}}}
+ 
+ \newcommand{\es}{ {\varnothing}}
+ \newcommand{\st}{ \;\mathrm{s.t.}\; }
+ \newcommand{\so}{ \;\mid\; }
+ \newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+ \newcommand{\set}[1]{ \left\{#1\right\} }
+ 
+ \renewcommand{\neg}{\sim}
+
+ \newcommand{\rel}[1][R]{\;\mathcal{#1}\;}
+ \newcommand{\nrel}[1][R]{\;\cancel{\mathcal{#1}}\;}
+
+ \newcommand{\dee}[1]{\mathrm{d}#1}
+ \newcommand{\diff}[2]{\dfrac{\mathrm{d}#1}{\mathrm{d}#2}}
+ 
+ \renewcommand{\mod}[1]{\ (\mathrm{mod}\ #1)}
+ \newcommand{\lcm}{\mathrm{lcm}}
+ 
+ \let\oldepsilon\epsilon
+ 
+ \renewcommand{\epsilon}{\varepsilon}
+ \newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" role="complementary" class="ptx-sidebar"><nav id="ptx-toc" tabindex="-1" aria-label="Contents" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul id="ptx-toc-group-frontmatter" class="structural toc-item-list">
+<li class="toc-item toc-dedication"><div class="toc-title-box"><a href="frontmatter-3.html" class="internal"><span class="title">Dedication</span></a></div></li>
+<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="frontmatter-5.html" class="internal"><span class="title">Preface</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="plp-4.html" class="internal"><span class="codenumber">1</span> <span class="title">Sets</span></a></div>
+<ul id="ptx-toc-group-plp-4" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="plp-4-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="plp-4-3.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Not so formal definition</span></a></div>
+<ul id="ptx-toc-group-plp-4-3" class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="plp-4-3.html#plp-4-3-3" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Who is this reader you keep on mentioning?</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-describing.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Describing a set</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-4-5.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Onward</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="plp-4-6.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-logic.html" class="internal"><span class="codenumber">2</span> <span class="title">A little logic</span></a></div>
+<ul id="ptx-toc-group-ch-logic" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-logic-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-logic-3.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Statements and open sentences</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-logic-4.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Negation</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-logic-5.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Or and And</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-implication.html" class="internal"><span class="codenumber">2.4</span> <span class="title">The implication</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-logic-7.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Modus ponens and chaining implications</span></a></div>
+<ul id="ptx-toc-group-ch-logic-7" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-logic-7.html#ch-logic-7-2" class="internal"><span class="codenumber">2.5.1</span> <span class="title">Modus ponens</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-logic-7.html#ch-logic-7-3" class="internal"><span class="codenumber">2.5.2</span> <span class="title">Affirming the consequent and denying the antecedent</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-logic-7.html#ch-logic-7-4" class="internal"><span class="codenumber">2.5.3</span> <span class="title">Chaining implications together</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-CCB.html" class="internal"><span class="codenumber">2.6</span> <span class="title">The converse, contrapositive and biconditional</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-logic-9.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-direct.html" class="internal"><span class="codenumber">3</span> <span class="title">Direct proofs</span></a></div>
+<ul id="ptx-toc-group-ch-direct" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-direct-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-direct-3.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Trivialities and vacuousness</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-direct-4.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Direct proofs</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-direct-5.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Proofs of inequalities</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-direct-6.html" class="internal"><span class="codenumber">3.4</span> <span class="title">A quick visit to disproofs</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-direct-7.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="plp-7.html" class="internal"><span class="codenumber">4</span> <span class="title">More logic</span></a></div>
+<ul id="ptx-toc-group-plp-7" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="plp-7-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-7-3.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Tautologies and contradictions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-7-4.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Logical equivalence</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="plp-7-5.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-moreproof.html" class="internal"><span class="codenumber">5</span> <span class="title">More proofs</span></a></div>
+<ul id="ptx-toc-group-ch-moreproof" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-moreproof-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-moreproof-3.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Contrapositive</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-moreproof-4.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Proofs with cases</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-congruence.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Congruence modulo <span class="process-math">\(n\)</span></span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-abs-triangle.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Absolute values and the triangle inequality</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-moreproof-7.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-quantifiers.html" class="internal"><span class="codenumber">6</span> <span class="title">Quantifiers</span></a></div>
+<ul class="structural toc-item-list contains-active" id="ptx-toc-group-ch-quantifiers">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-quantifiers-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-quantifiers-3.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Quantified statements</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-quantifiers-4.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Negation of quantifiers</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-quantifiers-5.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Nested quantifiers</span></a></div></li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="sec_limits.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Quantifiers and rigorous limits</span></a></div>
+<ul class="structural toc-item-list active" id="ptx-toc-group-sec_limits">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec_limits.html#sec_limits-3" class="internal"><span class="codenumber">6.4.1</span> <span class="title">Convergence of sequences</span></a></div>
+<ul id="ptx-toc-group-sec_limits-3" class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec_limits.html#sec_limits-3-3" class="internal"><span class="codenumber">6.4.1.1</span> <span class="title">Quantifying towards a definition</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec_limits.html#sec_limits-3-4" class="internal"><span class="codenumber">6.4.1.2</span> <span class="title">Some examples</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_limits.html#sec_limits-4" class="internal"><span class="codenumber">6.4.2</span> <span class="title">The limit of a function</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-quantifiers-7.html" class="internal"><span class="codenumber">6.5</span> <span class="title">(Optional) Properties of limits</span></a></div>
+<ul id="ptx-toc-group-ch-quantifiers-7" class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimseq" class="internal"><span class="codenumber">6.5.1</span> <span class="title">(Optional) Some properties of limits of sequences</span></a></div>
+<ul id="ptx-toc-group-subsec-proplimseq" class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimseq-3" class="internal"><span class="codenumber">6.5.1.1</span> <span class="title">Uniqueness of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimseq-4" class="internal"><span class="codenumber">6.5.1.2</span> <span class="title">Linearity of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimseq-5" class="internal"><span class="codenumber">6.5.1.3</span> <span class="title">Product of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimseq-6" class="internal"><span class="codenumber">6.5.1.4</span> <span class="title">Ratio of limits</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimfunc" class="internal"><span class="codenumber">6.5.2</span> <span class="title">(Optional) Some properties of limits of functions</span></a></div>
+<ul id="ptx-toc-group-subsec-proplimfunc" class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimfunc-3" class="internal"><span class="codenumber">6.5.2.1</span> <span class="title">Uniqueness of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimfunc-4" class="internal"><span class="codenumber">6.5.2.2</span> <span class="title">Linearity of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimfunc-5" class="internal"><span class="codenumber">6.5.2.3</span> <span class="title">Product of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimfunc-6" class="internal"><span class="codenumber">6.5.2.4</span> <span class="title">Ratio of limits</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-quantifiers-8.html" class="internal"><span class="codenumber">6.6</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_induction.html" class="internal"><span class="codenumber">7</span> <span class="title">Induction</span></a></div>
+<ul id="ptx-toc-group-ch_induction" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch_induction-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch_induction-3.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Induction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch_induction-4.html" class="internal"><span class="codenumber">7.2</span> <span class="title">More general inductions</span></a></div>
+<ul id="ptx-toc-group-ch_induction-4" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch_induction-4.html#subsec-extendedinduction" class="internal"><span class="codenumber">7.2.1</span> <span class="title">A little more general</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch_induction-4.html#subsec-stronginduction" class="internal"><span class="codenumber">7.2.2</span> <span class="title">More general and yet equivalent</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch_induction-5.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="plp-11.html" class="internal"><span class="codenumber">8</span> <span class="title">Return to sets</span></a></div>
+<ul id="ptx-toc-group-plp-11" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="plp-11-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-11-3.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Subsets</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-11-4.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Set operations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-11-5.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Cartesian products of sets</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-11-6.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Some set-flavoured results</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-11-7.html" class="internal"><span class="codenumber">8.5</span> <span class="title">Indexed sets</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="plp-11-8.html" class="internal"><span class="codenumber">8.6</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_relations.html" class="internal"><span class="codenumber">9</span> <span class="title">Relations</span></a></div>
+<ul id="ptx-toc-group-ch_relations" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch_relations-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch_relations-3.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Relations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_prop_rel.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Properties of relations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch_relations-5.html" class="internal"><span class="codenumber">9.3</span> <span class="title">Equivalence relations &amp; classes</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_congruence_revisited.html" class="internal"><span class="codenumber">9.4</span> <span class="title">Congruence revisited</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-euclid.html" class="internal"><span class="codenumber">9.5</span> <span class="title">Greatest divisors, Bézout and the Euclidean algorithm</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-unique-fact.html" class="internal"><span class="codenumber">9.6</span> <span class="title">Uniqueness of prime factorisation</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch_relations-9.html" class="internal"><span class="codenumber">9.7</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-functions.html" class="internal"><span class="codenumber">10</span> <span class="title">Functions</span></a></div>
+<ul id="ptx-toc-group-ch-functions" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-functions-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-functions-3.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-functions-4.html" class="internal"><span class="codenumber">10.2</span> <span class="title">A more abstract definition</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-functions-5.html" class="internal"><span class="codenumber">10.3</span> <span class="title">Images and preimages of sets</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-functions-6.html" class="internal"><span class="codenumber">10.4</span> <span class="title">Injective and surjective functions</span></a></div>
+<ul id="ptx-toc-group-ch-functions-6" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-functions-6.html#ch-functions-6-3" class="internal"><span class="codenumber">10.4.1</span> <span class="title">Injections and surjections</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-functions-6.html#ch-functions-6-4" class="internal"><span class="codenumber">10.4.2</span> <span class="title">Bijective functions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-functions-7.html" class="internal"><span class="codenumber">10.5</span> <span class="title">Composition of functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_inv_func.html" class="internal"><span class="codenumber">10.6</span> <span class="title">Inverse functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-functions-9.html" class="internal"><span class="codenumber">10.7</span> <span class="title">(Optional) The axiom of choice</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-functions-10.html" class="internal"><span class="codenumber">10.8</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-contradictions.html" class="internal"><span class="codenumber">11</span> <span class="title">Proof by contradiction</span></a></div>
+<ul id="ptx-toc-group-ch-contradictions" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-contradictions-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-contradictions-3.html" class="internal"><span class="codenumber">11.1</span> <span class="title">Structure of a proof by contradiction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-contradictions-4.html" class="internal"><span class="codenumber">11.2</span> <span class="title">Some examples</span></a></div>
+<ul id="ptx-toc-group-ch-contradictions-4" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-contradictions-4.html#ch-contradictions-4-3" class="internal"><span class="codenumber">11.2.1</span> <span class="title">The irrationality of <span class="process-math">\(\sqrt{2}\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-contradictions-4.html#ssec_inf_primes" class="internal"><span class="codenumber">11.2.2</span> <span class="title">The infinitude of primes</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-contradictions-5.html" class="internal"><span class="codenumber">11.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap_cardinality.html" class="internal"><span class="codenumber">12</span> <span class="title">Cardinality</span></a></div>
+<ul id="ptx-toc-group-chap_cardinality" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="chap_cardinality-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="chap_cardinality-3.html" class="internal"><span class="codenumber">12.1</span> <span class="title">Finite sets</span></a></div>
+<ul id="ptx-toc-group-chap_cardinality-3" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-3.html#chap_cardinality-3-3" class="internal"><span class="codenumber">12.1.1</span> <span class="title">Equinumerous sets, bijections and pigeons</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-3.html#chap_cardinality-3-4" class="internal"><span class="codenumber">12.1.2</span> <span class="title">Comparing with functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-3.html#chap_cardinality-3-5" class="internal"><span class="codenumber">12.1.3</span> <span class="title">Infinite sets are strange.</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap_cardinality-4.html" class="internal"><span class="codenumber">12.2</span> <span class="title">Denumerable sets</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_uncount.html" class="internal"><span class="codenumber">12.3</span> <span class="title">Uncountable sets</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="chap_cardinality-6.html" class="internal"><span class="codenumber">12.4</span> <span class="title">Comparing cardinalities</span></a></div>
+<ul id="ptx-toc-group-chap_cardinality-6" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-6.html#chap_cardinality-6-2" class="internal"><span class="codenumber">12.4.1</span> <span class="title">Extending to the infinite</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-6.html#chap_cardinality-6-3" class="internal"><span class="codenumber">12.4.2</span> <span class="title">Cantor’s Theorem and infinite infinities</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-6.html#chap_cardinality-6-4" class="internal"><span class="codenumber">12.4.3</span> <span class="title">Congratulations are in order</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-6.html#chap_cardinality-6-5" class="internal"><span class="codenumber">12.4.4</span> <span class="title">One more question</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_compare_card.html" class="internal"><span class="codenumber">12.5</span> <span class="title">More comparisons of cardinalties</span></a></div>
+<ul id="ptx-toc-group-sec_compare_card" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_compare_card.html#sec_compare_card-3" class="internal"><span class="codenumber">12.5.1</span> <span class="title">The Cantor-Schröder-Bernstein theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_compare_card.html#sec_compare_card-4" class="internal"><span class="codenumber">12.5.2</span> <span class="title">Applications</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_compare_card.html#sec_compare_card-5" class="internal"><span class="codenumber">12.5.3</span> <span class="title">Proof that <span class="process-math">\(|\pow{\mathbb{N}}| = |\mathbb{R}|\)</span></span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_cantor_first.html" class="internal"><span class="codenumber">12.6</span> <span class="title">(Optional) Cantor’s first proof of the uncountability of the reals</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chap_cardinality-9.html" class="internal"><span class="codenumber">12.7</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul id="ptx-toc-group-backmatter" class="structural toc-item-list">
+<li class="toc-item toc-solutions"><div class="toc-title-box"><a href="app_hint.html" class="internal"><span class="codenumber">A.</span> <span class="title">Hints for Exercises</span></a></div></li>
+<li class="toc-item toc-solutions"><div class="toc-title-box"><a href="app_answ.html" class="internal"><span class="codenumber">B.</span> <span class="title">Scratchwork for Exercises</span></a></div></li>
+<li class="toc-item toc-solutions"><div class="toc-title-box"><a href="app_soln.html" class="internal"><span class="codenumber">C.</span> <span class="title">Solutions to Exercises</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="backmatter-5.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="sec_limits">
+<h1 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Quantifiers and rigorous limits</span>
+</h1>
+<section class="introduction" id="sec_limits-2">
+<div class="para" id="sec_limits-2-1">Quantifiers appear all over mathematics, and it is essential that you become comfortable reading, understanding and applying them. One particularly important application of quantifiers is to make the notions of limits rigorous. You have<details class="ptx-footnote" aria-live="polite" id="sec_limits-2-1-1"><summary class="ptx-footnote__number" title="Footnote 44"><sup> 44 </sup></summary>
+<div class="ptx-footnote__contents" id="sec_limits-2-1-1">At least we think you should have. The authors are making an assumption about your mathematical education here, and we apologise if you have, in fact, not encountered limits before now.
+</div></details> encountered the idea of a <dfn class="terminology">limit</dfn> when you studied differential calculus; the idea that the value of a function gets “closer and closer” to a particular value as we take the argument of that function “closer and closer” to (say) zero. Quantifiers allow us to make “closer and closer” rigorous<details class="ptx-footnote" aria-live="polite" id="sec_limits-2-1-6"><summary class="ptx-footnote__number" title="Footnote 45"><sup> 45 </sup></summary>
+<div class="ptx-footnote__contents" id="sec_limits-2-1-6">We recommend looking up the history of <dfn class="terminology">infinitesimals</dfn> and <dfn class="terminology">fluxions</dfn> which predate the rigorous definition of limits we give here. The calculus of Newton and Leibniz used infinitesimals to understand limits and derivatives. These ideas were attacked by Berkeley in his 1734 book “The Analyst” in which he refers to infinitesimals as “the ghosts of departed quantities”. The rigorous definition of limits, and so a rigorous foundation for calculus, was given almost 150 years later by Cauchy, Bolzano and Weierstrass. There is much of interest here for a motivated reader with a good search engine. We also recommend a little digression into <dfn class="terminology">surreal numbers</dfn>, <dfn class="terminology">hyperreal numbers</dfn> and <dfn class="terminology">nonstandard analysis</dfn> — things can get pretty weird.
+</div></details>. We will start with the idea of the limit of a sequence, and then move on to limits of functions. So we begin with the definition of a sequence.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section>
+<section class="subsection" id="sec_limits-3">
+<h2 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.4.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Convergence of sequences</span>
+</h2>
+<section class="introduction" id="sec_limits-3-2">
+<article class="definition definition-like" id="def-sequence"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.4.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="def-sequence-1-1">
+<div class="para">A <dfn class="terminology">sequence</dfn> is an ordered list of real numbers. It is typically denoted</div>
+<div class="displaymath process-math" id="def-sequence-1-1-2">
+\begin{equation*}
+(x_n)_{n \in \mathbb{N}} = (x_1, x_2, x_3, \dots)
+\end{equation*}
+</div>
+<div class="para">The numbers <span class="process-math">\(x_1,x_2,\cdots\)</span> are the <dfn class="terminology">terms</dfn> of the sequence. You will also sometimes see alternate notation such as</div>
+<div class="displaymath process-math" id="def-sequence-1-1-5">
+\begin{equation*}
+(x_n)_n, \qquad (x_n)_{n\geq 1} \qquad \text{or} \qquad (x_n)
+\end{equation*}
+</div>
+<div class="para">In some texts you will also see a sequence denoted with braces, <span class="process-math">\(\{x_n\}\text{;}\)</span> we will not use that notation to avoid confusion with set notation.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#def-sequence-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 6.4.1"><a tabindex="-1" href="#def-sequence" title="Copy heading and permalink for Definition 6.4.1" aria-label="Copy heading and permalink for Definition 6.4.1">🔗</a></div>
+</article>
+<div class="para" id="sec_limits-3-2-2">An alternate way to think of a sequence is as a function that takes natural numbers and maps them to real numbers. So, for example, the sequence <span class="process-math">\(\left(\frac{1}{n}\right)_n\)</span> is just the function <span class="process-math">\(f:\mathbb{N} \to \mathbb{R}\)</span> defined by <span class="process-math">\(f(n)=1/n\text{.}\)</span> We will come back to functions in <a href="ch-functions.html" class="internal" title="Chapter 10: Functions">Chapter 10</a>. We also note that one can generalise this definition to sequences of other types of numbers or objects, but we will focus on sequences of real numbers.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-3-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec_limits-3-2-3">
+<div class="para">We will typically define a particular sequence either by giving the first few terms,</div>
+<div class="displaymath process-math" id="sec_limits-3-2-3-1">
+\begin{equation*}
+(x_n) = (2,3,5,7,11,\dots)
+\end{equation*}
+</div>
+<div class="para">or by giving a formula for the <span class="process-math">\(n^\mathrm{th}\)</span> term in the sequence:</div>
+<div class="displaymath process-math" id="sec_limits-3-2-3-3">
+\begin{equation*}
+(x_n) = \left(\dfrac{1}{n}\right)
+\end{equation*}
+</div>
+<div class="para">i.e. the sequence <span class="process-math">\((1,1/2, 1/3, 1/4,\dots)\text{.}\)</span> Just as was the case with defining sets, we must make sure that we give the reader enough information to understand our definition. In this way, giving a formula for the <span class="process-math">\(n^\mathrm{th}\)</span> term is typically preferred<details class="ptx-footnote" aria-live="polite" id="sec_limits-3-2-3-6"><summary class="ptx-footnote__number" title="Footnote 46"><sup> 46 </sup></summary>
+<div class="ptx-footnote__contents" id="sec_limits-3-2-3-6">The reader should assume that the sequence <span class="process-math">\((2,3,5,7,11,\dots)\)</span> is just the prime numbers, but a little digging in the <a class="external" href="https://oeis.org/" target="_blank">Online Encyclopedia of Integer Sequences</a> shows a few other possibilities (some reasonable and some weird) including “partitions” (the number of ways of writing a given integer as a sum of smaller positive integers), “additive primes” (the sum of the digits is also prime), “absolute primes” (every permutation of the digits is also a prime) and lengths of “Farey sequences” (the reader should search-engine this one). Of course, if we are doing a good job as an author then we will have provided the reader with enough context to determine the sequence correctly.
+</div></details>.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-3-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec_limits-3-2-4">
+<div class="para">Typically one can compute the first few terms of a sequence by hand, and then the next many terms by computer. However, we are very often interested in the behaviour of the terms of the sequence as <span class="process-math">\(n\)</span> becomes very large. So, for example, consider the sequences</div>
+<div class="displaymath process-math" id="sec_limits-3-2-4-2">
+\begin{alignat*}{4}
+(a_n) \amp = \left( \frac{1}{n}\right)_n \amp = \amp \left(1, \frac{1}{2}, \frac{1}{3}, \frac{1}{4}, \dots \right)\\
+(b_n) \amp = \left( (-1)^n \right)_n \amp = \amp \left(1, -1, 1, -1,\dots \right)
+\end{alignat*}
+</div>
+<div class="para">Here are plots of the first few terms to see how they behave.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-3-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/seq_conv1.svg" role="img" class="contained"></div>
+<div class="para" id="sec_limits-3-2-6">Notice that in the first sequence, as <span class="process-math">\(n\)</span> gets larger and larger, the term <span class="process-math">\(a_n\)</span> gets closer and closer to 0. In this case we will say that “<span class="process-math">\(a_n\)</span> <dfn class="terminology">converges</dfn> to <span class="process-math">\(0\)</span>”. In the second case, the sequence simply bounces back and forth between <span class="process-math">\(+1\)</span> and <span class="process-math">\(-1\)</span> and does not appear to “settle” to any particular value. In this case we will say that “<span class="process-math">\(b_n\)</span> diverges”. Let’s see how we can turn this intuitive (but imprecise) understanding of convergence and turn it into a rigorous, precise definition.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-3-2-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec_limits-3-2-7">
+<div class="para">To start towards that definition, let us rephrase convergence as a sort of two player game as we did for some of the nested quantifier examples earlier in this chapter, and focus on the example of <span class="process-math">\((a_n) = \left(\frac{1}{n}\right)\text{.}\)</span> In this game, Player 1 has to choose a small positive number, and then Player 2 has to work out how big does <span class="process-math">\(n\)</span> have to be so that we can guarantee that the distance between <span class="process-math">\(a_n\)</span> and <span class="process-math">\(0\)</span> is smaller than Player 1’s number. So, for example,</div>
+<ul class="disc" id="sec_limits-3-2-7-5">
+<li id="sec_limits-3-2-7-5-1">
+<div class="para" id="p-derived-sec_limits-3-2-7-5-1">Player 1 says “Make the distance between <span class="process-math">\(a_n\)</span> and <span class="process-math">\(0\)</span> smaller than <span class="process-math">\(0.01\text{.}\)</span>”</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec_limits-3-2-7-5-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec_limits-3-2-7-5-2">
+<div class="para" id="p-derived-sec_limits-3-2-7-5-2">Player 2 does some thinking and replies “Choose any <span class="process-math">\(n \gt 100\)</span> and then it will work.”</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec_limits-3-2-7-5-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">We can verify this by computing the distance<details class="ptx-footnote" aria-live="polite" id="sec_limits-3-2-7-6"><summary class="ptx-footnote__number" title="Footnote 47"><sup> 47 </sup></summary>
+<div class="ptx-footnote__contents" id="sec_limits-3-2-7-6">The absolute value is an example of a <dfn class="terminology">metric</dfn> or <dfn class="terminology">distance function</dfn>. You already know other examples of metrics — for example, the distance between points <span class="process-math">\((x,y)\)</span> and <span class="process-math">\((z,w)\)</span> on the Cartesian plane is given by <span class="process-math">\(d = \sqrt{(x-z)^2 + (y-w)^2}\text{;}\)</span> this is called the Euclidean metric. Another way to compute distances on the Cartesian plane is the taxicab metric <span class="process-math">\(d = |x-z|+|y-w|\text{.}\)</span> A search-engine will guide you to more on this topic.
+</div></details> between two numbers using the absolute value, and then noting that</div>
+<div class="displaymath process-math" id="sec_limits-3-2-7-7">
+\begin{equation*}
+n \gt 100
+\qquad \implies \qquad
+\frac{1}{n} \lt \frac{1}{100} = 0.01
+\qquad \implies \qquad
+\left| \frac{1}{n} - 0 \right| \lt 0.01.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-3-2-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec_limits-3-2-8">
+<div class="para">This is just one instance, and Player 1 could have chosen <span class="process-math">\(0.01\)</span> or <span class="process-math">\(2^{-30}\text{.}\)</span> Indeed, Player 1 can choose <em class="alert">any arbitrarily small</em> positive number <span class="process-math">\(\epsilon\text{,}\)</span> and then Player 2 can always work out how big to make <span class="process-math">\(n\)</span> so that the distance between <span class="process-math">\(a_n\)</span> and <span class="process-math">\(0\)</span> is guaranteed to be smaller than <span class="process-math">\(\epsilon\text{.}\)</span>
+</div>
+<ul class="disc" id="sec_limits-3-2-8-9">
+<li id="sec_limits-3-2-8-9-1">
+<div class="para" id="p-derived-sec_limits-3-2-8-9-1">Player 1 says “I have chosen <span class="process-math">\(\epsilon \gt 0\text{,}\)</span> please make the distance between <span class="process-math">\(a_n\)</span> and <span class="process-math">\(0\)</span> smaller than <span class="process-math">\(\epsilon\text{.}\)</span>”</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec_limits-3-2-8-9-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec_limits-3-2-8-9-2">
+<div class="para" id="p-derived-sec_limits-3-2-8-9-2">Player 2 does some thinking and replies “Choose any <span class="process-math">\(n \gt \frac{1}{\epsilon}\)</span> and then it will work.”</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec_limits-3-2-8-9-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">Again, we can verify this:</div>
+<div class="displaymath process-math" id="sec_limits-3-2-8-10">
+\begin{equation*}
+n \gt \frac{1}{\epsilon}
+\qquad \implies \qquad
+\frac{1}{n} \lt \epsilon
+\qquad \implies \qquad
+\left| \frac{1}{n} - 0 \right| \lt \epsilon
+\end{equation*}
+</div>
+<div class="para">That is, Player 2 can set some point in the sequence <span class="process-math">\(N = \frac{1}{\epsilon}\text{,}\)</span> so that for every value of <span class="process-math">\(n \gt N\text{,}\)</span> we can guarantee that <span class="process-math">\(|a_n - 0 | \lt \epsilon\text{.}\)</span> We can rephrase this outcome as</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-3-2-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<blockquote class="blockquote" id="sec_limits-3-2-9">
+<div class="para" id="sec_limits-3-2-9-1">No matter which <span class="process-math">\(\epsilon \gt 0\)</span> that Player 1 chooses, Player 2 can always find some <span class="process-math">\(N\)</span> so that if <span class="process-math">\(n \gt N\)</span> then <span class="process-math">\(|a_n-0| \lt \epsilon\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-3-2-9-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Quotation"><a tabindex="-1" href="#sec_limits-3-2-9" title="Copy heading and permalink for Quotation" aria-label="Copy heading and permalink for Quotation">🔗</a></div>
+</blockquote>
+<div class="para logical" id="sec_limits-3-2-10">
+<div class="para">If we now try to play the same game with the second sequence <span class="process-math">\((b_n) = \left( (-1)^n \right)\text{,}\)</span> then we will quickly see that it does not work. Let us attempt to show that the sequence converges to <span class="process-math">\(1\)</span> using the same game</div>
+<ul class="disc" id="sec_limits-3-2-10-3">
+<li id="sec_limits-3-2-10-3-1">
+<div class="para" id="p-derived-sec_limits-3-2-10-3-1">Player 1 says “Make the distance between <span class="process-math">\(b_n\)</span> and <span class="process-math">\(1\)</span> smaller than <span class="process-math">\(0.01\text{.}\)</span>”</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec_limits-3-2-10-3-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec_limits-3-2-10-3-2">
+<div class="para" id="p-derived-sec_limits-3-2-10-3-2">Player 2 does some thinking and replies “Well, if <span class="process-math">\(n\)</span> is even then this will be true, but it will fail for every single odd value of <span class="process-math">\(n\text{.}\)</span> I cannot give you a guarantee.”</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec_limits-3-2-10-3-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">Player 2 cannot win. When <span class="process-math">\(n\)</span> is even, <span class="process-math">\(b_n=1\)</span> and so <span class="process-math">\(|b_n-1|=0 \lt 0.01\text{,}\)</span> but when <span class="process-math">\(n\)</span> is odd, <span class="process-math">\(b_n=-1\)</span> and so <span class="process-math">\(|b_n-1|=2 \gt 0.01\text{.}\)</span> So there is no way to make <span class="process-math">\(n\)</span> sufficiently big, ie all <span class="process-math">\(n\)</span> bigger than some <span class="process-math">\(N\text{,}\)</span> so that <span class="process-math">\(|b_n - 1| \lt 0.01\text{.}\)</span> We can rephrase this outcome as</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-3-2-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<blockquote class="blockquote" id="sec_limits-3-2-11">
+<div class="para" id="sec_limits-3-2-11-1">There is a choice of <span class="process-math">\(\epsilon\)</span> so that no matter which <span class="process-math">\(N\)</span> Player 2 chooses, there will always be some <span class="process-math">\(n \gt N\)</span> so that <span class="process-math">\(|b_n - 1 | \gt \epsilon\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-3-2-11-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Quotation"><a tabindex="-1" href="#sec_limits-3-2-11" title="Copy heading and permalink for Quotation" aria-label="Copy heading and permalink for Quotation">🔗</a></div>
+</blockquote>
+<div class="para" id="sec_limits-3-2-12">This example will help us understand how to turn the intuitive idea of convergence into the rigorous definition.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-3-2-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section>
+<section class="subsubsection" id="sec_limits-3-3">
+<h3 class="heading hide-type">
+<span class="type">Subsubsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.4.1.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Quantifying towards a definition</span>
+</h3>
+<div class="para" id="sec_limits-3-3-2">To start towards our definition, we need to first describe all the objects involved, and then we explain that convergence means that the objects satisfy certain conditions. In this case, we will start with something like<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-3-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<blockquote class="blockquote" id="sec_limits-3-3-3">
+<div class="para" id="sec_limits-3-3-3-1">Let <span class="process-math">\((x_n)_n\)</span> be a sequence of real numbers, that is, <span class="process-math">\(x_n\in\mathbb{R}\text{,}\)</span> for all <span class="process-math">\(n\in\mathbb{N}\text{.}\)</span> Then we say that <span class="process-math">\((x_n)\)</span> converges to a real number <span class="process-math">\(L\)</span> when …<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-3-3-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Quotation"><a tabindex="-1" href="#sec_limits-3-3-3" title="Copy heading and permalink for Quotation" aria-label="Copy heading and permalink for Quotation">🔗</a></div>
+</blockquote>
+<div class="para" id="sec_limits-3-3-4">and now we need to explain those conditions. Let us start with our intuitive idea<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-3-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<blockquote class="blockquote" id="sec_limits-3-3-5">
+<div class="para" id="sec_limits-3-3-5-1">Let <span class="process-math">\((x_n)_n\)</span> be a sequence of real numbers, that is, <span class="process-math">\(x_n\in\mathbb{R}\text{,}\)</span> for all <span class="process-math">\(n\in\mathbb{N}\text{.}\)</span> Then we say that <span class="process-math">\((x_n)\)</span> converges to a real number <span class="process-math">\(L\)</span> when <span class="process-math">\(x_n\)</span> gets <em class="alert">closer and closer</em> to <span class="process-math">\(L\)</span> as <span class="process-math">\(n\)</span> becomes <em class="alert">larger and larger</em>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-3-3-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Quotation"><a tabindex="-1" href="#sec_limits-3-3-5" title="Copy heading and permalink for Quotation" aria-label="Copy heading and permalink for Quotation">🔗</a></div>
+</blockquote>
+<div class="para" id="sec_limits-3-3-6">While this is quite descriptive, it is not actually all that precise. Let us rewrite it as follows:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-3-3-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<blockquote class="blockquote" id="sec_limits-3-3-7">
+<div class="para" id="sec_limits-3-3-7-1">Let <span class="process-math">\((x_n)_n\)</span> be a sequence of real numbers, that is, <span class="process-math">\(x_n\in\mathbb{R}\text{,}\)</span> for all <span class="process-math">\(n\in\mathbb{N}\text{.}\)</span> Then we say that <span class="process-math">\((x_n)\)</span> converges to a real number <span class="process-math">\(L\)</span> when <span class="process-math">\(x_n\)</span> moves <em class="alert">arbitrarily close</em> to <span class="process-math">\(L\)</span> as <span class="process-math">\(n\)</span> becomes <em class="alert">larger and larger</em>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-3-3-7-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Quotation"><a tabindex="-1" href="#sec_limits-3-3-7" title="Copy heading and permalink for Quotation" aria-label="Copy heading and permalink for Quotation">🔗</a></div>
+</blockquote>
+<div class="para" id="sec_limits-3-3-8">Now this means that in order for <span class="process-math">\(x_n\)</span> to converge to <span class="process-math">\(L\text{,}\)</span> it must be possible to bring the number <span class="process-math">\(x_n\)</span> as close to <span class="process-math">\(L\)</span> as we want by making <span class="process-math">\(n\)</span> really big.  This is exactly like the two player game we described above: Player 1 can make any choice of <span class="process-math">\(\epsilon\)</span> and then Player 2 has to work out how large to make <span class="process-math">\(n\text{.}\)</span> Let us write our definition again:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-3-3-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<blockquote class="blockquote" id="sec_limits-3-3-9">
+<div class="para" id="sec_limits-3-3-9-1">Let <span class="process-math">\((x_n)_n\)</span> be a sequence of real numbers, that is, <span class="process-math">\(x_n\in\mathbb{R}\text{,}\)</span> for all <span class="process-math">\(n\in\mathbb{N}\text{.}\)</span> Then we say that <span class="process-math">\((x_n)\)</span> converges to a real number <span class="process-math">\(L\)</span> when <em class="alert">no matter what positive <span class="process-math">\(\epsilon\)</span> we choose</em>, then <em class="alert">for all <span class="process-math">\(n\)</span> sufficiently large</em>, we have <span class="process-math">\(|x_n - L | \lt \epsilon\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-3-3-9-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Quotation"><a tabindex="-1" href="#sec_limits-3-3-9" title="Copy heading and permalink for Quotation" aria-label="Copy heading and permalink for Quotation">🔗</a></div>
+</blockquote>
+<div class="para" id="sec_limits-3-3-10">Now, in our game, Player 2 established just how big <span class="process-math">\(n\)</span> needs so that we can guarantee the sequence terms are close enough to <span class="process-math">\(L\text{.}\)</span> We denoted that threshold by <span class="process-math">\(N\text{,}\)</span> and it will almost always depend on <span class="process-math">\(\epsilon\text{.}\)</span> Of course, since Player 1 chooses <span class="process-math">\(\epsilon\)</span> first, Player 2 can pick <span class="process-math">\(N\)</span> with full knowledge of what Player 1 did. Time for another attempt at the definition:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-3-3-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<blockquote class="blockquote" id="sec_limits-3-3-11">
+<div class="para" id="sec_limits-3-3-11-1">Let <span class="process-math">\((x_n)_n\)</span> be a sequence of real numbers, that is, <span class="process-math">\(x_n\in\mathbb{R}\text{,}\)</span> for all <span class="process-math">\(n\in\mathbb{N}\text{.}\)</span> Then we say that <span class="process-math">\((x_n)\)</span> converges to a real number <span class="process-math">\(L\)</span> when <em class="alert">for all <span class="process-math">\(\epsilon \gt 0\)</span></em>,  <em class="alert">there is <span class="process-math">\(N \in \mathbb{N}\)</span></em>, so that <em class="alert">for all natural numbers <span class="process-math">\(n \gt N\)</span></em> we have <span class="process-math">\(|x_n - L | \lt \epsilon\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-3-3-11-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Quotation"><a tabindex="-1" href="#sec_limits-3-3-11" title="Copy heading and permalink for Quotation" aria-label="Copy heading and permalink for Quotation">🔗</a></div>
+</blockquote>
+<div class="para" id="sec_limits-3-3-12">This is now pretty good. All that remains is to tweak the phrasing a little, clean it up and make it into a formal definition<details class="ptx-footnote" aria-live="polite" id="sec_limits-3-3-12-1"><summary class="ptx-footnote__number" title="Footnote 48"><sup> 48 </sup></summary>
+<div class="ptx-footnote__contents" id="sec_limits-3-3-12-1">This is, more or less, the definition given by Bolzano in 1816.
+</div></details>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-3-3-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="def-convergence-sequence"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.4.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para logical" id="def-convergence-sequence-1-1">
+<div class="para">Let <span class="process-math">\((x_n)\)</span> be a sequence of real numbers. We say that <span class="process-math">\((x_n)\)</span> has a <dfn class="terminology">limit</dfn> <span class="process-math">\(L\in\mathbb{R}\)</span> when</div>
+<div class="displaymath process-math" id="def-convergence-sequence-1-1-5">
+\begin{equation*}
+\forall\epsilon \gt 0, \exists N\in\mathbb N \st \forall n \in \mathbb{N}, (n\gt N) \implies (|x_n-L| \lt \epsilon).
+\end{equation*}
+</div>
+<div class="para">In this case we say that the sequence  <dfn class="terminology">converges</dfn> to <span class="process-math">\(L\)</span> and write</div>
+<div class="displaymath process-math" id="def-convergence-sequence-1-1-8">
+\begin{equation*}
+x_n\to L \qquad \text{or} \qquad \lim\limits_{n\to \infty}x_n=L.
+\end{equation*}
+</div>
+<div class="para">If the sequence doesn’t converge to any number <span class="process-math">\(L\text{,}\)</span> we say that the sequence <dfn class="terminology">diverges</dfn>.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#def-convergence-sequence-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 6.4.2"><a tabindex="-1" href="#def-convergence-sequence" title="Copy heading and permalink for Definition 6.4.2" aria-label="Copy heading and permalink for Definition 6.4.2">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Subsubsection 6.4.1.1: Quantifying towards a definition"><a tabindex="-1" href="#sec_limits-3-3" title="Copy heading and permalink for Subsubsection 6.4.1.1: Quantifying towards a definition" aria-label="Copy heading and permalink for Subsubsection 6.4.1.1: Quantifying towards a definition">🔗</a></div>
+</section>
+<section class="subsubsection" id="sec_limits-3-4">
+<h3 class="heading hide-type">
+<span class="type">Subsubsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.4.1.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Some examples</span>
+</h3>
+<div class="para" id="sec_limits-3-4-2">Time to put our newly rigorised<details class="ptx-footnote" aria-live="polite" id="sec_limits-3-4-2-1"><summary class="ptx-footnote__number" title="Footnote 49"><sup> 49 </sup></summary>
+<div class="ptx-footnote__contents" id="sec_limits-3-4-2-1">The authors were quite sure that “rigorised” is not a real word and were surprised to find it in the dictionary.
+</div></details> understanding of limits to work.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-3-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="example example-like" id="eg-seq-const"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.4.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="eg-seq-const-1-1">Let <span class="process-math">\(c \in \mathbb{R}\text{.}\)</span> Show that the constant sequence <span class="process-math">\((x_n)_{n\in\mathbb N}=(c)_{n\in\mathbb N}\)</span> converges to <span class="process-math">\(c\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-seq-const-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="eg-seq-const-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Scratchwork</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="answer solution-like knowl__content">
+<div class="para" id="eg-seq-const-2-1">We know, at least intuitively, that the constant sequence must converge to that constant value its elements take. It makes sense. But, how can we prove it rigorously using the definition of sequence convergence.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-seq-const-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="eg-seq-const-2-2">Again, think of the two player game<details class="ptx-footnote" aria-live="polite" id="eg-seq-const-2-2-1"><summary class="ptx-footnote__number" title="Footnote 50"><sup> 50 </sup></summary>
+<div class="ptx-footnote__contents" id="eg-seq-const-2-2-1">We’ll dispense with this analogy soon.
+</div></details>. We need to show that no matter which <span class="process-math">\(\epsilon \gt 0\)</span> that Player 1 chooses, Player 2 can always find a threshold <span class="process-math">\(N \in \mathbb{N}\)</span> (which, in general will depend on <span class="process-math">\(\epsilon\)</span>), so that whenever <span class="process-math">\(n \gt N\)</span> we have <span class="process-math">\(|x_n-c| \lt \epsilon.\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-seq-const-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="eg-seq-const-2-3">
+<div class="para">Now assume that Player 1 picked an <span class="process-math">\(\epsilon&gt;0\)</span> and try to understand what Player 2 needs to show. They want to show that with the right choice of <span class="process-math">\(N\in\mathbb N\text{,}\)</span> we can  keep <span class="process-math">\(|x_n-c| \lt \epsilon\text{.}\)</span> But since <span class="process-math">\(x_n\)</span> constant <span class="process-math">\(x_n=c\text{,}\)</span> we can simplify the inequality that needs to be satisfied:</div>
+<div class="displaymath process-math" id="eg-seq-const-2-3-6">
+\begin{equation*}
+|x_n-c| \lt \epsilon \qquad \text{becomes} \qquad |c-c|=0 \lt \epsilon.
+\end{equation*}
+</div>
+<div class="para">But since we know <span class="process-math">\(\epsilon \gt 0\text{,}\)</span> this will be true independent of <span class="process-math">\(n\text{.}\)</span> This, in turn, means that Player 2 is free to choose any <span class="process-math">\(N\in\mathbb N\text{.}\)</span> Now Player 2 could be mysterious and pick any random value (eg <span class="process-math">\(N=98127\)</span>) but let’s force Player 2 to be a bit nicer to the audience (ie to the reader) and get them to pick a sensible value like <span class="process-math">\(N=1\text{.}\)</span> Then for all <span class="process-math">\(n \gt N=1\text{,}\)</span> we have <span class="process-math">\(|x_n-c|=|c-c|=0 \lt \epsilon\)</span> as required.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-seq-const-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="eg-seq-const-2-4">All that remains is to write this nice and tidy in a proof.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-seq-const-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Scratchwork 6.4.3.1"><a tabindex="-1" href="#eg-seq-const-2" title="Copy heading and permalink for Scratchwork 6.4.3.1" aria-label="Copy heading and permalink for Scratchwork 6.4.3.1">🔗</a></div>
+</div></details>
+<details id="eg-seq-const-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<details id="eg-seq-const-3-1" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h5 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="eg-seq-const-3-1-1">
+<div class="para">Let <span class="process-math">\(\epsilon \gt 0\)</span> be given and pick <span class="process-math">\(N=1\text{.}\)</span> Then, for all <span class="process-math">\(n \gt N\text{,}\)</span> we have</div>
+<div class="displaymath process-math" id="eg-seq-const-3-1-1-4">
+\begin{equation*}
+|x_n - c| = |c-c| = 0 \lt \epsilon.
+\end{equation*}
+</div>
+<div class="para">Therefore we conclude that <span class="process-math">\((x_n)\)</span> converges to <span class="process-math">\(c\)</span> as required.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg-seq-const-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 6.4.3.1.1"><a tabindex="-1" href="#eg-seq-const-3-1" title="Copy heading and permalink for Proof 6.4.3.1.1" aria-label="Copy heading and permalink for Proof 6.4.3.1.1">🔗</a></div>
+</article></details><div class="autopermalink" aria-hidden="true" data-description="Solution 6.4.3.1"><a tabindex="-1" href="#eg-seq-const-3" title="Copy heading and permalink for Solution 6.4.3.1" aria-label="Copy heading and permalink for Solution 6.4.3.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 6.4.3"><a tabindex="-1" href="#eg-seq-const" title="Copy heading and permalink for Example 6.4.3" aria-label="Copy heading and permalink for Example 6.4.3">🔗</a></div>
+</article>
+<div class="para" id="sec_limits-3-4-4">Notice that the proof in our example does not have to explain <em class="alert">how</em> we came up with the choice of <span class="process-math">\(N\text{,}\)</span> it merely has to show that it works. Our definition of convergence requires that “there exists <span class="process-math">\(N\)</span>”, not that “there exists <span class="process-math">\(N\)</span> with a nice explanation of how it was found”. This can sometimes make a nicely written proof seem much more clever than it really is. The reader can be left thinking “How on earth did they know how to choose that?”. But you should remember that the author of the proof probably did a lot of careful scratchwork to work out how to make the proof nice and neat; that scratchwork is not required for the proof to be valid. Of course, if the author knows their audience well, and knows they might need some help, then the author will hopefully leave some explanation in the text nearby.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-3-4-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="example example-like" id="sec_limits-3-4-5"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.4.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="sec_limits-3-4-5-1-1">Show that the sequence <span class="process-math">\((a_n)_{n\in\mathbb N}=(\frac 1n)_{n\in\mathbb N}\)</span> converges to <span class="process-math">\(0\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-3-4-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="sec_limits-3-4-5-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Scratchwork</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="answer solution-like knowl__content">
+<div class="para" id="sec_limits-3-4-5-2-1">This is precisely the example we did above to introduce the idea of convergence. We have even discussed how to think of proving the convergence as a two player game. So, let us dispense with the game analogy.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-3-4-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec_limits-3-4-5-2-2">We are going to start by choosing some arbitrary <span class="process-math">\(\epsilon \gt 0\text{,}\)</span> and then we need to find a threshold <span class="process-math">\(N\)</span> so that for every <span class="process-math">\(n \gt N\text{,}\)</span> we know that <span class="process-math">\(|a_n - 0 | \lt \epsilon\text{.}\)</span> Now, our argument from the previous example won’t work here, since <span class="process-math">\(|a_n - 0| = \frac{1}{n}\)</span> is no longer constant and varies with <span class="process-math">\(n\text{.}\)</span> Let us try rewriting things a little to help us think.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-3-4-5-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec_limits-3-4-5-2-3">
+<div class="para">We’ve chosen some arbitrary <span class="process-math">\(\epsilon \gt 0\text{,}\)</span> and we need to show that <span class="process-math">\(|a_n-0| = \frac 1n \lt \epsilon\)</span> when <span class="process-math">\(n\)</span> is big enough, ie for <span class="process-math">\(n \gt N\text{.}\)</span> But the inequality</div>
+<div class="displaymath process-math" id="sec_limits-3-4-5-2-3-5">
+\begin{equation*}
+\frac{1}{n} \lt \epsilon \qquad \iff \qquad n \gt \frac{1}{\epsilon}
+\end{equation*}
+</div>
+<div class="para">since both <span class="process-math">\(n, \epsilon\)</span> are positive. So this means that given our <span class="process-math">\(\epsilon\text{,}\)</span> we need to work out how to make sure that <span class="process-math">\(n \gt \frac{1}{\epsilon}\text{,}\)</span> because then we know that <span class="process-math">\(\frac{1}{n} \lt \epsilon\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-3-4-5-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec_limits-3-4-5-2-4">Well, if we set <span class="process-math">\(N = \frac{1}{\epsilon}\text{,}\)</span> then when we require <span class="process-math">\(n \gt N\text{,}\)</span> then we have that <span class="process-math">\(n \gt N \gt \epsilon\)</span> and so <span class="process-math">\(\frac{1}{n} \lt \frac{1}{N} \lt \frac{1}{\epsilon}\)</span> implying that <span class="process-math">\(\frac{1}{n} \lt \frac{1}{\epsilon}\text{.}\)</span> The only hitch is that our definition requires that <span class="process-math">\(N\)</span> be a natural number. But that is easy to fix, instead of setting <span class="process-math">\(N = \frac{1}{\epsilon}\text{,}\)</span> we can just take <span class="process-math">\(N\)</span> to be the next integer bigger than <span class="process-math">\(\frac{1}{\epsilon}\text{.}\)</span> That is, we set <span class="process-math">\(N\)</span> to be the <dfn class="terminology">ceiling</dfn> of <span class="process-math">\(\frac{1}{\epsilon}\)</span> which we write as <span class="process-math">\(N = \ceil{ \frac{1}{\epsilon} }\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-3-4-5-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec_limits-3-4-5-2-5">Here, we should mention that even though any <span class="process-math">\(N&gt;\frac 1\epsilon\)</span> would work for our arguments above and that we have infinitely many possible choices for <span class="process-math">\(N\)</span> it is important to either picking a specific <span class="process-math">\(N\)</span> as we did in this scratchwork, or prove the existence of such an <span class="process-math">\(N\)</span> without giving it explicitly — using results like the Archimedean property<details class="ptx-footnote" aria-live="polite" id="sec_limits-3-4-5-2-5-6"><summary class="ptx-footnote__number" title="Footnote 51"><sup> 51 </sup></summary>
+<div class="ptx-footnote__contents" id="sec_limits-3-4-5-2-5-6">This says, roughly, that given any two positive real numbers, <span class="process-math">\(x,y\text{,}\)</span> we can always find an integer <span class="process-math">\(n\text{,}\)</span> so that <span class="process-math">\(nx \gt y\text{.}\)</span> This appears in a more geometric guise in Book V of Euclid’s Elements, and Archimedes attributes it to Eudoxus.
+</div></details> or similar. Simply saying that such number <em class="emphasis">should</em> exist is not an adequate justification. With that caveat out of the way, let’s tidy this up and write the proof.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-3-4-5-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Scratchwork 6.4.4.1"><a tabindex="-1" href="#sec_limits-3-4-5-2" title="Copy heading and permalink for Scratchwork 6.4.4.1" aria-label="Copy heading and permalink for Scratchwork 6.4.4.1">🔗</a></div>
+</div></details>
+<details id="sec_limits-3-4-5-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<details id="sec_limits-3-4-5-3-1" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h5 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="sec_limits-3-4-5-3-1-1">
+<div class="para">Let <span class="process-math">\(\epsilon \gt 0\text{.}\)</span> Then pick <span class="process-math">\(N=\ceil{ \frac{1}{\epsilon}}\text{,}\)</span> so that <span class="process-math">\(N \geq \frac{1}{\epsilon}\text{.}\)</span> Then for all <span class="process-math">\(n \gt N\text{,}\)</span> we have that</div>
+<div class="displaymath process-math" id="sec_limits-3-4-5-3-1-1-5">
+\begin{equation*}
+|a_n - 0 | = \frac{1}{n} \lt \frac{1}{N} = \epsilon
+\end{equation*}
+</div>
+<div class="para">Therefore we see that <span class="process-math">\((a_n)\)</span> converges to <span class="process-math">\(0\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-3-4-5-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 6.4.4.1.1"><a tabindex="-1" href="#sec_limits-3-4-5-3-1" title="Copy heading and permalink for Proof 6.4.4.1.1" aria-label="Copy heading and permalink for Proof 6.4.4.1.1">🔗</a></div>
+</article></details><div class="autopermalink" aria-hidden="true" data-description="Solution 6.4.4.1"><a tabindex="-1" href="#sec_limits-3-4-5-3" title="Copy heading and permalink for Solution 6.4.4.1" aria-label="Copy heading and permalink for Solution 6.4.4.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 6.4.4"><a tabindex="-1" href="#sec_limits-3-4-5" title="Copy heading and permalink for Example 6.4.4" aria-label="Copy heading and permalink for Example 6.4.4">🔗</a></div>
+</article>
+<article class="example example-like" id="sec_limits-3-4-6"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.4.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="sec_limits-3-4-6-1-1">Show that the sequence  <span class="process-math">\((x_n) = \left(\dfrac{2n+4}{n+1}\right)\)</span> converges to <span class="process-math">\(2\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-3-4-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="sec_limits-3-4-6-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Scratchwork</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="answer solution-like knowl__content">
+<div class="para" id="sec_limits-3-4-6-2-1">Again, let’s start with the scratchwork.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-3-4-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec_limits-3-4-6-2-2">
+<div class="para">Our zeroth<details class="ptx-footnote" aria-live="polite" id="sec_limits-3-4-6-2-2-1"><summary class="ptx-footnote__number" title="Footnote 52"><sup> 52 </sup></summary>
+<div class="ptx-footnote__contents" id="sec_limits-3-4-6-2-2-1">This is barely a step at all really. But we do need <span class="process-math">\(\epsilon\text{.}\)</span>
+</div></details> step is to pick some arbitrary <span class="process-math">\(\epsilon \gt 0\text{.}\)</span> Now, as we saw in the previous example, we need to understand how to choose <span class="process-math">\(n\)</span> so that we can guarantee</div>
+<div class="displaymath process-math" id="sec_limits-3-4-6-2-2-4">
+\begin{equation*}
+|x_n - L | = \left| \frac{2n+4}{n+1} - 2 \right| \lt \epsilon
+\end{equation*}
+</div>
+<div class="para">To help us understand this, we should clean up the inequality and simplify the expression inside the absolute value. Simplifying shows us that we actually want</div>
+<div class="displaymath process-math" id="sec_limits-3-4-6-2-2-5">
+\begin{equation*}
+\left|\frac{2n+4}{n+1} - 2\right| = \left|\frac{2n+4-(2n+2)}{n+1} \right|= \left|\frac{2}{n+1}\right| \lt \epsilon.
+\end{equation*}
+</div>
+<div class="para">At this point we should reiterate — we have not proved this yet, this is just what we <em class="emphasis">want</em> to be true. We still need to work out how we choose <span class="process-math">\(n\)</span> to make sure this is true.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-3-4-6-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec_limits-3-4-6-2-3">
+<div class="para">We can even go a little further. Since we know <span class="process-math">\(n\)</span> is a natural number, we know that <span class="process-math">\(\frac{2}{n+1} \gt 0\)</span> and so we can write</div>
+<div class="displaymath process-math" id="sec_limits-3-4-6-2-3-3">
+\begin{equation*}
+\left|\frac{2}{n+1}\right| = \frac{2}{n+1} \lt \epsilon.
+\end{equation*}
+</div>
+<div class="para">This is a little easier to manipulate, and we can quickly isolate <span class="process-math">\(n\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="sec_limits-3-4-6-2-3-5">
+\begin{equation*}
+\frac{2}{n+1} \lt \epsilon
+\qquad \iff \qquad
+n+1 \gt \frac{2}{\epsilon}
+\qquad \iff \qquad
+n \gt \frac{2}{\epsilon}-1
+\end{equation*}
+</div>
+<div class="para">So, this means that if we have <span class="process-math">\(n \gt \frac{2}{\epsilon}-1\text{,}\)</span> then we know (moving back along our chain of reasoning) that <span class="process-math">\(|x_n-2| \lt \epsilon\text{.}\)</span> So it makes sense for us to choose <span class="process-math">\(N=\ceil{ \frac{2}{\epsilon}} -1\text{.}\)</span> Again, we make use of the ceiling function to ensure that <span class="process-math">\(N\)</span> is an integer.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-3-4-6-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec_limits-3-4-6-2-4">Oops! But be careful — what happens if <span class="process-math">\(\epsilon=1000\text{?}\)</span> Then we choose <span class="process-math">\(N=0\)</span> which is not a natural number. Thankfully this is easily fixed, let us just take <span class="process-math">\(N\)</span> to be a little bit larger. Indeed, we can set <span class="process-math">\(N = \ceil{\frac{2}{\epsilon}}\)</span> and everything works out nicely. More generally, in these types of proofs, once you have worked out an <span class="process-math">\(N\text{,}\)</span> one is free to make it <em class="emphasis">larger</em> (you should ask yourself why). One could also argue that the choice <span class="process-math">\(N = \ceil{ \frac{2}{\epsilon} }\)</span> is a little neater<details class="ptx-footnote" aria-live="polite" id="sec_limits-3-4-6-2-4-9"><summary class="ptx-footnote__number" title="Footnote 53"><sup> 53 </sup></summary>
+<div class="ptx-footnote__contents" id="sec_limits-3-4-6-2-4-9">Mathematicians generally find “neatness” to be desirable in a proof. Of course, one should not make things so neat that the logic is obscured.
+</div></details> and does not change the proof very much.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-3-4-6-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Scratchwork 6.4.5.1"><a tabindex="-1" href="#sec_limits-3-4-6-2" title="Copy heading and permalink for Scratchwork 6.4.5.1" aria-label="Copy heading and permalink for Scratchwork 6.4.5.1">🔗</a></div>
+</div></details>
+<details id="sec_limits-3-4-6-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<details id="sec_limits-3-4-6-3-1" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h5 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="sec_limits-3-4-6-3-1-1">
+<div class="para">Let <span class="process-math">\(\epsilon \gt 0\text{,}\)</span> set <span class="process-math">\(N = \ceil{(2/\epsilon)}\)</span> and let <span class="process-math">\(n \gt N\text{.}\)</span> By our choice of <span class="process-math">\(n\text{,}\)</span> we know that</div>
+<div class="displaymath process-math" id="sec_limits-3-4-6-3-1-1-5">
+\begin{equation*}
+n \gt N \gt \frac{2}{\epsilon}
+\end{equation*}
+</div>
+<div class="para">From this we know that <span class="process-math">\(n+1 \gt n \gt \frac{2}{\epsilon}\)</span> and so</div>
+<div class="displaymath process-math" id="sec_limits-3-4-6-3-1-1-7">
+\begin{equation*}
+\frac{2}{n+1} \lt \epsilon
+\end{equation*}
+</div>
+<div class="para">Hence</div>
+<div class="displaymath process-math" id="sec_limits-3-4-6-3-1-1-8">
+\begin{equation*}
+|x_n-2|
+=  \left| \frac{2n+4}{n+1} - 2 \right|
+= \left| \frac{2}{n+1} \right|
+= \frac{2}{n+1}
+\lt \epsilon,
+\end{equation*}
+</div>
+<div class="para">as required.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-3-4-6-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 6.4.5.1.1"><a tabindex="-1" href="#sec_limits-3-4-6-3-1" title="Copy heading and permalink for Proof 6.4.5.1.1" aria-label="Copy heading and permalink for Proof 6.4.5.1.1">🔗</a></div>
+</article></details><div class="autopermalink" aria-hidden="true" data-description="Solution 6.4.5.1"><a tabindex="-1" href="#sec_limits-3-4-6-3" title="Copy heading and permalink for Solution 6.4.5.1" aria-label="Copy heading and permalink for Solution 6.4.5.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 6.4.5"><a tabindex="-1" href="#sec_limits-3-4-6" title="Copy heading and permalink for Example 6.4.5" aria-label="Copy heading and permalink for Example 6.4.5">🔗</a></div>
+</article>
+<div class="para" id="sec_limits-3-4-7">Of course we also know that not every sequence converges — we have already seen an example of this above. Let us redo that example using our rigorous definition of convergence.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-3-4-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="example example-like" id="eg_minus_1_to_n_conv"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.4.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="eg_minus_1_to_n_conv-1-1">Show that the sequence <span class="process-math">\((b_n) = \left( (-1)^n\right)\)</span> does not converge to <span class="process-math">\(1\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg_minus_1_to_n_conv-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="eg_minus_1_to_n_conv-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Scratchwork</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="answer solution-like knowl__content">
+<div class="para logical" id="eg_minus_1_to_n_conv-2-1">
+<div class="para">Even though we wish to show that the sequence <span class="process-math">\((b_n)\)</span> does not converge to <span class="process-math">\(1\text{,}\)</span> our starting point will still be the definition of convergence. Recall that the sequence <span class="process-math">\((b_n)\)</span> converges to <span class="process-math">\(1\)</span> when</div>
+<div class="displaymath process-math" id="eg_minus_1_to_n_conv-2-1-5">
+\begin{equation*}
+\forall\epsilon \gt 0, \exists N\in\mathbb N \st \forall n \in \mathbb{N} (n\gt N) \implies (|b_n-1| \lt \epsilon).
+\end{equation*}
+</div>
+<div class="para">We want to show that this is false, and we do so by showing that the negation is true. The negation is</div>
+<div class="displaymath process-math" id="eg_minus_1_to_n_conv-2-1-6">
+\begin{equation*}
+\exists\epsilon \gt 0 \st \forall N\in\mathbb N, \exists n\in\mathbb{N} \st (n \gt N) \land (|(-1)^n-1|\geq\epsilon).
+\end{equation*}
+</div>
+<div class="para">So, if we can show that this is true, then the original statement is false, and so the sequence <span class="process-math">\((b_n)\)</span> does not converge to <span class="process-math">\(1\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg_minus_1_to_n_conv-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="eg_minus_1_to_n_conv-2-2">Now, let’s try to understand this statement. It says that we need to show that there is an <span class="process-math">\(\epsilon \gt 0\)</span> such that no matter what <span class="process-math">\(N\in\mathbb N\)</span> we choose, there is always at least one <span class="process-math">\(n\gt N\)</span> such that <span class="process-math">\(|(-1)^n-1|\)</span> is greater than <span class="process-math">\(\epsilon\text{.}\)</span> Now, notice that we don’t have to show this for all <span class="process-math">\(\epsilon\)</span> (indeed we can’t), we just need to find one <span class="process-math">\(\epsilon\)</span> that makes things work.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg_minus_1_to_n_conv-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="eg_minus_1_to_n_conv-2-3">
+<div class="para">As we saw above, sequence <span class="process-math">\((b_n)\)</span> alternates between <span class="process-math">\(-1\)</span> and <span class="process-math">\(1\text{.}\)</span>
+</div>
+<ul class="disc" id="eg_minus_1_to_n_conv-2-3-4">
+<li id="eg_minus_1_to_n_conv-2-3-4-1">
+<div class="para" id="p-derived-eg_minus_1_to_n_conv-2-3-4-1">For <span class="process-math">\(n\)</span> even, <span class="process-math">\(b_n = (-1)^n = 1\)</span> and so <span class="process-math">\(|b_n-1|=0 \lt \epsilon\text{.}\)</span> So this is true for all <span class="process-math">\(\epsilon \gt 0\)</span> and all even <span class="process-math">\(n\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#eg_minus_1_to_n_conv-2-3-4-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="eg_minus_1_to_n_conv-2-3-4-2">
+<div class="para" id="p-derived-eg_minus_1_to_n_conv-2-3-4-2">On the other hand, for <span class="process-math">\(n\)</span> odd, we have <span class="process-math">\(b_n = (-1)^n = -1\text{,}\)</span> and so <span class="process-math">\(|b_n-1| = |-1-1| = 2\text{.}\)</span> So, as long as we choose <span class="process-math">\(0 \lt \epsilon \lt 2\text{,}\)</span> this case will fail for all odd <span class="process-math">\(n \in \mathbb{N}\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#eg_minus_1_to_n_conv-2-3-4-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">So to make the proof work, we can choose, say, <span class="process-math">\(\epsilon =1\)</span> and then show that things go wrong for odd <span class="process-math">\(n\text{.}\)</span> Time for the proof.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg_minus_1_to_n_conv-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Scratchwork 6.4.6.1"><a tabindex="-1" href="#eg_minus_1_to_n_conv-2" title="Copy heading and permalink for Scratchwork 6.4.6.1" aria-label="Copy heading and permalink for Scratchwork 6.4.6.1">🔗</a></div>
+</div></details>
+<details id="eg_minus_1_to_n_conv-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<details id="eg_minus_1_to_n_conv-3-1" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h5 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="eg_minus_1_to_n_conv-3-1-1">
+<div class="para">We show that the sequence <span class="process-math">\((b_n)=\left((-1)^n\right)\)</span> doesn’t converge to <span class="process-math">\(1\text{.}\)</span> To this we show that</div>
+<div class="displaymath process-math" id="eg_minus_1_to_n_conv-3-1-1-3">
+\begin{equation*}
+\exists\epsilon \gt 0 \st \forall N\in\mathbb N, \exists n\in\mathbb{N}\st (n \gt N) \land (|(-1)^n-1|\geq\epsilon).
+\end{equation*}
+</div>
+<div class="para">Let <span class="process-math">\(\epsilon=1\)</span> and let <span class="process-math">\(N\)</span> be any natural number. Now set <span class="process-math">\(n = 2N+1\text{,}\)</span> so that <span class="process-math">\(b_n = (-1)^n=-1\text{.}\)</span> Then</div>
+<div class="displaymath process-math" id="eg_minus_1_to_n_conv-3-1-1-8">
+\begin{equation*}
+|b_n -1 | = |-1-1| = 2 \gt \epsilon.
+\end{equation*}
+</div>
+<div class="para">Therefore we conclude that the sequence does not converge to <span class="process-math">\(1\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg_minus_1_to_n_conv-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 6.4.6.1.1"><a tabindex="-1" href="#eg_minus_1_to_n_conv-3-1" title="Copy heading and permalink for Proof 6.4.6.1.1" aria-label="Copy heading and permalink for Proof 6.4.6.1.1">🔗</a></div>
+</article></details>
+<div class="para" id="eg_minus_1_to_n_conv-3-2">Notice that we set <span class="process-math">\(n=2N+1\)</span> in our proof and everything worked out nicely. We can actually choose any odd number larger than <span class="process-math">\(N\text{.}\)</span> In fact, we could change the wording of the proof to say “Let <span class="process-math">\(n\)</span> be any odd number larger than <span class="process-math">\(N\)</span>” and it would be correct. But, since we can make a simple explicit choice, we should do so.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg_minus_1_to_n_conv-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 6.4.6.1"><a tabindex="-1" href="#eg_minus_1_to_n_conv-3" title="Copy heading and permalink for Solution 6.4.6.1" aria-label="Copy heading and permalink for Solution 6.4.6.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 6.4.6"><a tabindex="-1" href="#eg_minus_1_to_n_conv" title="Copy heading and permalink for Example 6.4.6" aria-label="Copy heading and permalink for Example 6.4.6">🔗</a></div>
+</article>
+<div class="para logical" id="sec_limits-3-4-9">
+<div class="para">In general, when we talk about the divergence of a sequence, we don’t say that the sequence does not converge to a given specific number <span class="process-math">\(L\text{.}\)</span> Rather, we typically want to prove<details class="ptx-footnote" aria-live="polite" id="sec_limits-3-4-9-2"><summary class="ptx-footnote__number" title="Footnote 54"><sup> 54 </sup></summary>
+<div class="ptx-footnote__contents" id="sec_limits-3-4-9-2">There are exceptions to this. For example, one easy way to show that a <em class="emphasis">series</em> diverges is to show that summands do not converge to zero.
+</div></details> that it does not converge to <em class="alert">any</em> number <span class="process-math">\(L\text{.}\)</span> This is a much stronger statement. Written as a quantified statement, it is</div>
+<div class="displaymath process-math" id="sec_limits-3-4-9-5">
+\begin{equation*}
+\forall L\in\mathbb R, \exists\epsilon \gt 0 \st \forall N\in\mathbb N, \exists n\in\mathbb{N} \st (n\gt N) \land (|x_n-L|\geq\epsilon),
+\end{equation*}
+</div>
+<div class="para">and says that for any number <span class="process-math">\(L\text{,}\)</span> the sequence doesn’t converge to that number.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-3-4-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec_limits-3-4-10">Let’s do an example where we show that a sequence actually diverges. That is, it does not converge to any number <span class="process-math">\(L \in \mathbb{R}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-3-4-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="example example-like" id="sec_limits-3-4-11"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.4.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="sec_limits-3-4-11-1-1">Show that the sequence <span class="process-math">\((x_n)=(n)\)</span> diverges.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-3-4-11-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="sec_limits-3-4-11-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Scratchwork</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="answer solution-like knowl__content">
+<div class="para logical" id="sec_limits-3-4-11-2-1">
+<div class="para">First, let’s write down what we want to show:</div>
+<div class="displaymath process-math" id="sec_limits-3-4-11-2-1-1">
+\begin{equation*}
+\forall L\in\mathbb R, \exists\epsilon \gt 0 \st \forall N\in\mathbb N, \exists n\in\mathbb{N} \st (n\gt N) \land (|n-L|\geq\epsilon).
+\end{equation*}
+</div>
+<div class="para">Since we need to make this work for every possible <span class="process-math">\(L\text{,}\)</span> we let <span class="process-math">\(L\)</span> be an arbitrary real number.  Now, what we want is to satisfy <span class="process-math">\(|n-L|\geq \epsilon\)</span> for some <span class="process-math">\(\epsilon\)</span> and some <span class="process-math">\(n\text{.}\)</span> It can be a little intimidating to try to this for an arbitrary <span class="process-math">\(L\text{,}\)</span> so perhaps it is better to think about a few different <span class="process-math">\(L\)</span>-values.</div>
+<ul class="disc" id="sec_limits-3-4-11-2-1-9">
+<li id="sec_limits-3-4-11-2-1-9-1">
+<div class="para" id="p-derived-sec_limits-3-4-11-2-1-9-1">When <span class="process-math">\(L=0\text{,}\)</span> the we can simplify <span class="process-math">\(|n -L| = |n| = n\text{.}\)</span> Now since, <span class="process-math">\(n \in \mathbb{N}\text{,}\)</span> we know that <span class="process-math">\(n \geq 1\text{.}\)</span> So if we pick <span class="process-math">\(\epsilon=1\text{,}\)</span> then we will have <span class="process-math">\(|n-L| \geq \epsilon\)</span> for all <span class="process-math">\(n \in \mathbb{N}\text{.}\)</span> Now, it is easy to also enforce the requirement that <span class="process-math">\(n \gt N\text{,}\)</span> no matter what <span class="process-math">\(N\)</span> is chosen, just pick <span class="process-math">\(n = N+1\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec_limits-3-4-11-2-1-9-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec_limits-3-4-11-2-1-9-2">
+<div class="para" id="p-derived-sec_limits-3-4-11-2-1-9-2">Similarly, if we set <span class="process-math">\(L=-1\text{,}\)</span> then we have <span class="process-math">\(|n-L|=|n-(-1)|=n+1\text{.}\)</span> So again, we can pick <span class="process-math">\(\epsilon=1\)</span> and then <span class="process-math">\(|n-L| \geq \epsilon\)</span> for all <span class="process-math">\(n \in \mathbb{N}\text{.}\)</span> This reasoning will actually work for any <span class="process-math">\(L \leq 0\text{.}\)</span> Again, to also enforce the requirement that <span class="process-math">\(n \gt N\text{,}\)</span> we can just pick <span class="process-math">\(n=N+1\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec_limits-3-4-11-2-1-9-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec_limits-3-4-11-2-1-9-3">
+<div class="para" id="p-derived-sec_limits-3-4-11-2-1-9-3">What about when, say,  <span class="process-math">\(L=17\text{,}\)</span> we will have <span class="process-math">\(|n-L| = |n-17|\text{.}\)</span> Now, provided <span class="process-math">\(n \gt 17\text{,}\)</span> this will be bigger than zero. In particular, if we set <span class="process-math">\(n \geq 18\text{,}\)</span> then we will have <span class="process-math">\(|n-17| \gt 1\text{.}\)</span> <em class="alert">However</em>, this is not quite right. We not only need that <span class="process-math">\(|n-17| \geq \epsilon\)</span> but we also need that <span class="process-math">\(n \gt N\text{,}\)</span> no matter what choice of <span class="process-math">\(N \in \mathbb{N}\text{.}\)</span> Thankfully this is easily fixed, just choose <span class="process-math">\(n = \max\{17, N\}+1\text{.}\)</span> Alternatively, since we know <span class="process-math">\(N \geq 1\text{,}\)</span> we can choose <span class="process-math">\(n = N+17\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec_limits-3-4-11-2-1-9-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec_limits-3-4-11-2-1-9-4">
+<div class="para" id="p-derived-sec_limits-3-4-11-2-1-9-4">More generally, if <span class="process-math">\(L \gt 0\text{,}\)</span> then we can choose <span class="process-math">\(n \geq \ceil{L}+1\text{,}\)</span> and then <span class="process-math">\(|n-L| \geq 1\text{.}\)</span> Just as in the previous point, we need to satisfy <span class="process-math">\(n \gt N\text{,}\)</span> so pick <span class="process-math">\(n = \max\left\{\ceil{L},N \right\}+1\text{.}\)</span> Notice that a similar choice works when <span class="process-math">\(L \leq 0\text{,}\)</span> just take <span class="process-math">\(n = \max\left\{\ceil{|L|},N \right\}+1\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec_limits-3-4-11-2-1-9-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">We are now ready to write the proof.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-3-4-11-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Scratchwork 6.4.7.1"><a tabindex="-1" href="#sec_limits-3-4-11-2" title="Copy heading and permalink for Scratchwork 6.4.7.1" aria-label="Copy heading and permalink for Scratchwork 6.4.7.1">🔗</a></div>
+</div></details>
+<details id="sec_limits-3-4-11-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<details id="sec_limits-3-4-11-3-1" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h5 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="sec_limits-3-4-11-3-1-1">
+<div class="para">Let <span class="process-math">\(L\)</span> be an arbitrary real number and set <span class="process-math">\(\epsilon = 1\text{.}\)</span> Then for any <span class="process-math">\(N \in \mathbb{N}\text{,}\)</span> set <span class="process-math">\(n = \max\{N, \ceil{|L|} \}+1\text{.}\)</span> Then this gives</div>
+<div class="displaymath process-math" id="sec_limits-3-4-11-3-1-1-5">
+\begin{equation*}
+n \gt N \qquad \text{ and } \qquad |n-L| \gt 1=\epsilon
+\end{equation*}
+</div>
+<div class="para">Therefore the sequence <span class="process-math">\((x_n)=(n)\)</span> diverges.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-3-4-11-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 6.4.7.1.1"><a tabindex="-1" href="#sec_limits-3-4-11-3-1" title="Copy heading and permalink for Proof 6.4.7.1.1" aria-label="Copy heading and permalink for Proof 6.4.7.1.1">🔗</a></div>
+</article></details>
+<div class="para" id="sec_limits-3-4-11-3-2">Notice how short the proof is compared to the scratchwork. This is not unusual. A nice neat proof can hide a lot of work.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-3-4-11-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 6.4.7.1"><a tabindex="-1" href="#sec_limits-3-4-11-3" title="Copy heading and permalink for Solution 6.4.7.1" aria-label="Copy heading and permalink for Solution 6.4.7.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 6.4.7"><a tabindex="-1" href="#sec_limits-3-4-11" title="Copy heading and permalink for Example 6.4.7" aria-label="Copy heading and permalink for Example 6.4.7">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Subsubsection 6.4.1.2: Some examples"><a tabindex="-1" href="#sec_limits-3-4" title="Copy heading and permalink for Subsubsection 6.4.1.2: Some examples" aria-label="Copy heading and permalink for Subsubsection 6.4.1.2: Some examples">🔗</a></div>
+</section><div class="autopermalink" aria-hidden="true" data-description="Subsection 6.4.1: Convergence of sequences"><a tabindex="-1" href="#sec_limits-3" title="Copy heading and permalink for Subsection 6.4.1: Convergence of sequences" aria-label="Copy heading and permalink for Subsection 6.4.1: Convergence of sequences">🔗</a></div>
+</section>
+<section class="subsection" id="sec_limits-4">
+<h2 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.4.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The limit of a function</span>
+</h2>
+<div class="para" id="sec_limits-4-2">Note that in this section of the text we restrict ourselves to real-valued functions. That is, functions that take a real number as input and return a real number as output, just like those you worked with in Calculus courses. We do look at more general functions in <a href="ch-functions.html" class="internal" title="Chapter 10: Functions">Chapter 10</a>, but not their limits.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec_limits-4-3">We define the limits of functions in very much the same way as the limits of sequences. The definition is more general, as now we can talk of the limit of a function as its argument approaches more general points, while for a sequence, we only talked of its behaviour as <span class="process-math">\(n \to \infty\text{.}\)</span> Let’s give the definition and then we’ll explain it.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-4-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="def-convergence-function"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.4.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="def-convergence-function-1-1">
+<div class="para">Let <span class="process-math">\(a,L \in \mathbb{R}\)</span> and let <span class="process-math">\(f\)</span> be a real-valued function. We say that the <dfn class="terminology">limit</dfn> of <span class="process-math">\(f\)</span> as <span class="process-math">\(x\)</span> approaches <span class="process-math">\(a\)</span> is <span class="process-math">\(L\)</span> when</div>
+<div class="displaymath process-math" id="def-convergence-function-1-1-8">
+\begin{equation*}
+\forall\epsilon \gt 0, \exists \delta \gt 0 \st \left(0\lt |x-a| \lt \delta\right)\implies \left(|f(x)-L| \lt \epsilon \right).
+\end{equation*}
+</div>
+<div class="para">In this case we write</div>
+<div class="displaymath process-math" id="def-convergence-function-1-1-9">
+\begin{equation*}
+\lim\limits_{x\to a}f(x)=L \qquad \text{or sometimes}\qquad f(x)\xrightarrow[x\to a]{} L
+\end{equation*}
+</div>
+<div class="para">and say that <span class="process-math">\(f\)</span> <dfn class="terminology">converges</dfn> to <span class="process-math">\(L\)</span> as <span class="process-math">\(x\)</span> approaches <span class="process-math">\(a\text{.}\)</span> We also sometimes say the limit of <span class="process-math">\(f\)</span> as <span class="process-math">\(x\)</span> goes to <span class="process-math">\(a\)</span> is <span class="process-math">\(L\text{,}\)</span> which we denote by</div>
+<div class="displaymath process-math" id="def-convergence-function-1-1-19">
+\begin{equation*}
+f(x) \to L \text{ as } x \to a.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#def-convergence-function-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="def-convergence-function-1-2">If <span class="process-math">\(f\)</span> does not converge to any finite limit <span class="process-math">\(L\)</span> as <span class="process-math">\(x\)</span> approaches <span class="process-math">\(a\text{,}\)</span> then we say that <span class="process-math">\(f\)</span> <dfn class="terminology">diverges</dfn> as <span class="process-math">\(x\)</span> approaches <span class="process-math">\(a\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#def-convergence-function-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 6.4.8"><a tabindex="-1" href="#def-convergence-function" title="Copy heading and permalink for Definition 6.4.8" aria-label="Copy heading and permalink for Definition 6.4.8">🔗</a></div>
+</article>
+<div class="para logical" id="sec_limits-4-5">
+<div class="para">This definition may look<details class="ptx-footnote" aria-live="polite" id="sec_limits-4-5-1"><summary class="ptx-footnote__number" title="Footnote 55"><sup> 55 </sup></summary>
+<div class="ptx-footnote__contents" id="sec_limits-4-5-1">In fairness, it is a little more complicated. But it is not <em class="emphasis">that</em> much more complicated.
+</div></details> more complicated than the equivalent definition for the convergence of a sequence, <a href="sec_limits.html#def-convergence-sequence" class="xref" data-knowl="./knowl/xref/def-convergence-sequence.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 6.4.2">Definition 6.4.2</a>. But if we do some reverse engineering (much as we did for sequence convergence above, but in reverse) then we can read the definition as</div>
+<ul class="disc" id="sec_limits-4-5-3">
+<li id="sec_limits-4-5-3-1">
+<div class="para" id="p-derived-sec_limits-4-5-3-1">
+<dfn class="terminology">For all</dfn> positive <span class="process-math">\(\epsilon\text{,}\)</span> <dfn class="terminology">there is some</dfn> positive <span class="process-math">\(\delta\)</span> so that <dfn class="terminology">if</dfn> the distance between <span class="process-math">\(x\)</span> and <span class="process-math">\(a\)</span> is less than delta (but not zero), <dfn class="terminology">then</dfn> the distance between <span class="process-math">\(f(x)\)</span> and <span class="process-math">\(L\)</span> is less than <span class="process-math">\(\epsilon\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec_limits-4-5-3-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">We can rephrase these quantifiers as little:</div>
+<ul class="disc" id="sec_limits-4-5-4">
+<li id="sec_limits-4-5-4-1">
+<div class="para" id="p-derived-sec_limits-4-5-4-1">
+<dfn class="terminology">No matter which</dfn> positive <span class="process-math">\(\epsilon\text{,}\)</span> <dfn class="terminology">we can always find some</dfn> positive <span class="process-math">\(\delta\)</span> so that <dfn class="terminology">if</dfn> the distance between <span class="process-math">\(x\)</span> and <span class="process-math">\(a\)</span> is less than delta (but not zero), <dfn class="terminology">then</dfn> the distance between <span class="process-math">\(f(x)\)</span> and <span class="process-math">\(L\)</span> is less than <span class="process-math">\(\epsilon\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec_limits-4-5-4-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">This is telling us that if we need to make the distance between the function and its limit very small, we can always find some <span class="process-math">\(\delta\)</span> so that we just need to make the distance <span class="process-math">\(|x-a| \lt \delta\text{.}\)</span> That is</div>
+<ul class="disc" id="sec_limits-4-5-7">
+<li id="sec_limits-4-5-7-1">
+<div class="para" id="p-derived-sec_limits-4-5-7-1">We can make the distance between <span class="process-math">\(f(x)\)</span> and <span class="process-math">\(L\)</span> <dfn class="terminology">as small as we want</dfn>, by making the distance between <span class="process-math">\(x\)</span> and <span class="process-math">\(a\)</span> <dfn class="terminology">arbitrarily small</dfn> (but not zero).</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec_limits-4-5-7-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">So we reach</div>
+<ul class="disc" id="sec_limits-4-5-8">
+<li id="sec_limits-4-5-8-1">
+<div class="para" id="p-derived-sec_limits-4-5-8-1">We can make <span class="process-math">\(f(x)\)</span> <dfn class="terminology">closer and closer</dfn> to <span class="process-math">\(L\)</span> by taking <span class="process-math">\(x\)</span> <dfn class="terminology">closer and closer</dfn> to <span class="process-math">\(a\)</span> (but not actually equal).</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec_limits-4-5-8-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">This is probably, more or less, the working definition of a limit of a function you used in your first Calculus course. This gives reasonable intuition, but the power of quantifiers is to make everything precise and eliminate misunderstandings.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-4-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="remark remark-like" id="sec_limits-4-6"><h3 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.4.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Why exclude <span class="process-math">\(x=a\)</span>.</span>
+</h3>
+<div class="para logical" id="sec_limits-4-6-2">
+<div class="para">Notice that the definition of convergence of a function says that given any <span class="process-math">\(\epsilon\)</span> we can find <span class="process-math">\(\delta\)</span> so that when</div>
+<div class="displaymath process-math" id="sec_limits-4-6-2-3">
+\begin{equation*}
+0 \lt |x-a| \lt \delta
+\end{equation*}
+</div>
+<div class="para">we know that the distance between the function and its limit is smaller than <span class="process-math">\(\epsilon\text{.}\)</span> This hypothesis tells us that the distance between <span class="process-math">\(x\)</span> and <span class="process-math">\(a\)</span> has to be small, but not zero — that is we do not require the function be close to its limit exactly at <span class="process-math">\(x=a\text{.}\)</span> This is because the definition of <dfn class="terminology">limit</dfn> has been crafted to tell us how the function behaves as it <em class="emphasis">approaches</em> <span class="process-math">\(x=a\text{.}\)</span> We do not care about what happens exactly at <span class="process-math">\(x=a\text{,}\)</span> and indeed we do not even require that the function be defined there. In fact, many important applications of limits — such as derivatives — would not work if we extended this hypothesis to include <span class="process-math">\(x=a\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-4-6-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec_limits-4-6-3">Notice also, that our definition of limits of sequences had a similar quirk. We defined the limit in terms of the behaviour of the sequence terms as <span class="process-math">\(n\)</span> became very very large. We did not care about the “infiniteth” term in the sequence — if such a thing were defined.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-4-6-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Remark 6.4.9: Why exclude x=a"><a tabindex="-1" href="#sec_limits-4-6" title="Copy heading and permalink for Remark 6.4.9: Why exclude x=a" aria-label="Copy heading and permalink for Remark 6.4.9: Why exclude x=a">🔗</a></div>
+</article>
+<div class="para" id="sec_limits-4-7">Let’s put this definition to work by considering the limit of a simple function.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-4-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="example example-like" id="sec_limits-4-8"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.4.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="sec_limits-4-8-1-1">Show that for any <span class="process-math">\(\ds a\in \mathbb R, \lim_{x\to a}x=a\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-4-8-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="sec_limits-4-8-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Scratchwork</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="answer solution-like knowl__content">
+<div class="para" id="sec_limits-4-8-2-1">In this example we want to show that the function <span class="process-math">\(f(x)=x\)</span> converges to the limit <span class="process-math">\(a\)</span> as <span class="process-math">\(x\)</span> goes to <span class="process-math">\(a\text{.}\)</span> Even though this feels more like a tautology than an example, it is a good exercise in applying the limit definition.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-4-8-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec_limits-4-8-2-2">
+<div class="para">To prove that <span class="process-math">\(\lim_{x\to a}x = a\)</span> the definition tells us that we need to show that</div>
+<div class="displaymath process-math" id="sec_limits-4-8-2-2-2">
+\begin{equation*}
+\forall\epsilon \gt 0, \exists \delta\gt 0 \st \left(0\lt |x-a|\lt \delta\right)\implies \left(|f(x)-L| \lt \epsilon \right).
+\end{equation*}
+</div>
+<div class="para">Now, this simplifies immediately since we have <span class="process-math">\(f(x)=x\)</span> and <span class="process-math">\(L=a\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="sec_limits-4-8-2-2-5">
+\begin{equation*}
+\forall\epsilon \gt 0, \exists \delta\gt 0 \st \left(0\lt |x-a|\lt \delta\right)\implies \left(|x-a| \lt \epsilon \right).
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-4-8-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec_limits-4-8-2-3">
+<div class="para">So, given an arbitrary <span class="process-math">\(\epsilon&gt;0\text{,}\)</span> we need a <span class="process-math">\(\delta&gt;0\)</span> such that</div>
+<div class="displaymath process-math" id="sec_limits-4-8-2-3-3">
+\begin{equation*}
+0 \lt |x-a| \lt \delta \implies |x-a| \lt \epsilon.
+\end{equation*}
+</div>
+<div class="para">That is, whatever positive <span class="process-math">\(\delta\)</span> we pick, whenever <span class="process-math">\(0 \lt |x-a| \lt \delta\text{,}\)</span> it implies that <span class="process-math">\(|x-a| \lt \epsilon\text{.}\)</span> A good<details class="ptx-footnote" aria-live="polite" id="sec_limits-4-8-2-3-7"><summary class="ptx-footnote__number" title="Footnote 56"><sup> 56 </sup></summary>
+<div class="ptx-footnote__contents" id="sec_limits-4-8-2-3-7">There are an infinite number of possible correct choices of <span class="process-math">\(\delta\text{.}\)</span> Indeed, <span class="process-math">\(\delta = \epsilon/n\)</span> for any <span class="process-math">\(n \in \mathbb{N}\)</span> works. But the choice of <span class="process-math">\(\delta = \epsilon\)</span> is good because it works, while being neat and simple.
+</div></details> choice for <span class="process-math">\(\delta\)</span> is simply <span class="process-math">\(\delta = \epsilon\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-4-8-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec_limits-4-8-2-4">Now, let’s write this in a proof.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-4-8-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Scratchwork 6.4.10.1"><a tabindex="-1" href="#sec_limits-4-8-2" title="Copy heading and permalink for Scratchwork 6.4.10.1" aria-label="Copy heading and permalink for Scratchwork 6.4.10.1">🔗</a></div>
+</div></details>
+<details id="sec_limits-4-8-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<details id="sec_limits-4-8-3-1" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary>
+<article class="hiddenproof knowl__content">
+<div class="para" id="sec_limits-4-8-3-1-1">Suppose <span class="process-math">\(\epsilon\)</span> is any positive real number. Then pick <span class="process-math">\(\delta = \epsilon\text{.}\)</span> Then whenever <span class="process-math">\(|x-a| \lt \delta\text{,}\)</span> then we know that <span class="process-math">\(|f(x)-a| = |x-a| \lt \delta =\epsilon\)</span> as required.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-4-8-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 6.4.10.1.1"><a tabindex="-1" href="#sec_limits-4-8-3-1" title="Copy heading and permalink for Proof 6.4.10.1.1" aria-label="Copy heading and permalink for Proof 6.4.10.1.1">🔗</a></div>
+</article></details><div class="autopermalink" aria-hidden="true" data-description="Solution 6.4.10.1"><a tabindex="-1" href="#sec_limits-4-8-3" title="Copy heading and permalink for Solution 6.4.10.1" aria-label="Copy heading and permalink for Solution 6.4.10.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 6.4.10"><a tabindex="-1" href="#sec_limits-4-8" title="Copy heading and permalink for Example 6.4.10" aria-label="Copy heading and permalink for Example 6.4.10">🔗</a></div>
+</article>
+<div class="para" id="sec_limits-4-9">That one is arguably a little too simple. Here is a slightly more complicated one.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-4-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="example example-like" id="sec_limits-4-10"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.4.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="sec_limits-4-10-1-1">
+<div class="para">Let <span class="process-math">\(a \in \mathbb{R}\text{.}\)</span> Prove that</div>
+<div class="displaymath process-math" id="sec_limits-4-10-1-1-2">
+\begin{equation*}
+\lim_{x\to a} 3x+5 = 3a+5.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-4-10-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="sec_limits-4-10-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Scratchwork</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="answer solution-like knowl__content">
+<div class="para logical" id="sec_limits-4-10-2-1">
+<div class="para">Again, our starting point is to look at the definition. We need to prove that</div>
+<div class="displaymath process-math" id="sec_limits-4-10-2-1-1">
+\begin{equation*}
+\forall\epsilon \gt 0, \exists \delta \gt 0 \st (0\lt |x-a| \lt \delta)\implies (|(3x+5)-(3a+5)| \lt \epsilon).
+\end{equation*}
+</div>
+<div class="para">Before we go much further, we should clean this up a little. We can simplify that last inequality. That is <span class="process-math">\(|(3x+5)-(3a+5)| = |3x-3a| = 3|x-a|\text{,}\)</span> so</div>
+<div class="displaymath process-math" id="sec_limits-4-10-2-1-3">
+\begin{equation*}
+\forall\epsilon \gt 0, \exists \delta \gt 0 \st (0\lt |x-a| \lt \delta)\implies (3|x-a| \lt \epsilon).
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-4-10-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec_limits-4-10-2-2">
+<div class="para">Now this is looking pretty similar to the previous example. Given any <span class="process-math">\(\epsilon\text{,}\)</span> we need to pick <span class="process-math">\(\delta\text{,}\)</span> so that when <span class="process-math">\(0 \lt |x-a| \lt \delta\text{,}\)</span> we guarantee that <span class="process-math">\(3|x-a| \lt \epsilon\text{.}\)</span> If we rearrange this last inequality, we want</div>
+<div class="displaymath process-math" id="sec_limits-4-10-2-2-5">
+\begin{equation*}
+|x-a| \lt \frac{\epsilon}{3}.
+\end{equation*}
+</div>
+<div class="para">And thus we pick <span class="process-math">\(\delta = \frac{\epsilon}{3}\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-4-10-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec_limits-4-10-2-3">
+<div class="para">Alternatively, if we assume that we have <span class="process-math">\(0 \lt |x-a| \lt \delta\text{,}\)</span> then multiplying everything by <span class="process-math">\(3\)</span> gives:</div>
+<div class="displaymath process-math" id="sec_limits-4-10-2-3-3">
+\begin{equation*}
+0 \lt 3|x-a| \lt 3\delta
+\end{equation*}
+</div>
+<div class="para">and thus we need <span class="process-math">\(3\delta \leq \epsilon\text{.}\)</span> So again, we reach the neat choice of <span class="process-math">\(\delta = \frac{\epsilon}{3}\text{.}\)</span> Time for the proof.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-4-10-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Scratchwork 6.4.11.1"><a tabindex="-1" href="#sec_limits-4-10-2" title="Copy heading and permalink for Scratchwork 6.4.11.1" aria-label="Copy heading and permalink for Scratchwork 6.4.11.1">🔗</a></div>
+</div></details>
+<details id="sec_limits-4-10-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<details id="sec_limits-4-10-3-1" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="sec_limits-4-10-3-1-1">
+<div class="para">Let <span class="process-math">\(\epsilon\)</span> be any positive real number. Then pick <span class="process-math">\(\delta = \frac{\epsilon}{3}\text{.}\)</span> Then as long as <span class="process-math">\(|x-a| \lt \delta\text{,}\)</span> we have that</div>
+<div class="displaymath process-math" id="sec_limits-4-10-3-1-1-4">
+\begin{equation*}
+|(3x+5)-(3a+5)| = |3x-3a| = 3|x-a| \lt 3\delta = \epsilon.
+\end{equation*}
+</div>
+<div class="para">And thus <span class="process-math">\((3x+5)\)</span> converges to <span class="process-math">\(3a+5\)</span> as <span class="process-math">\(x\)</span> approaches <span class="process-math">\(a\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-4-10-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 6.4.11.1.1"><a tabindex="-1" href="#sec_limits-4-10-3-1" title="Copy heading and permalink for Proof 6.4.11.1.1" aria-label="Copy heading and permalink for Proof 6.4.11.1.1">🔗</a></div>
+</article></details>
+<div class="para" id="sec_limits-4-10-3-2">As you can see, the proof of the statement is very short, clean, and doesn’t omit any necessary information. And, as was the case with our proofs above, we don’t explain to the reader how we come up with the choice of <span class="process-math">\(\delta = \epsilon/3\text{,}\)</span> we just have to prove that it works.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-4-10-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 6.4.11.1"><a tabindex="-1" href="#sec_limits-4-10-3" title="Copy heading and permalink for Solution 6.4.11.1" aria-label="Copy heading and permalink for Solution 6.4.11.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 6.4.11"><a tabindex="-1" href="#sec_limits-4-10" title="Copy heading and permalink for Example 6.4.11" aria-label="Copy heading and permalink for Example 6.4.11">🔗</a></div>
+</article>
+<div class="para" id="sec_limits-4-11">Let’s ratchet up the difficultly a little.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-4-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="example example-like" id="sec_limits-4-12"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.4.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="sec_limits-4-12-1-1">Show that <span class="process-math">\(\ds \lim_{x\to2} \left(\dfrac{1}{x} \right)= \dfrac{1}{2}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-4-12-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="sec_limits-4-12-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Scratchwork</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="answer solution-like knowl__content">
+<div class="para logical" id="sec_limits-4-12-2-1">
+<div class="para">Just like in our previous example(s) we start with the definition of convergence and adapt it to the problem at hand. We need to show that</div>
+<div class="displaymath process-math" id="sec_limits-4-12-2-1-1">
+\begin{equation*}
+\forall\epsilon \gt 0, \exists \delta \gt 0 \st (0\lt |x-2|\lt\delta)\implies \left(\left|\frac 1x-\frac 12\right|\lt \epsilon\right).
+\end{equation*}
+</div>
+<div class="para">Again, we can clean up and simplify the final inequality, since</div>
+<div class="displaymath process-math" id="sec_limits-4-12-2-1-2">
+\begin{equation*}
+\left|\frac{1}{x}-\frac{1}{2}\right| = \left|\frac{2-x}{2x} \right| = \frac{|x-2|}{2|x|}.
+\end{equation*}
+</div>
+<div class="para">Thus we need to show that</div>
+<div class="displaymath process-math" id="sec_limits-4-12-2-1-3">
+\begin{equation*}
+\forall\epsilon \gt 0, \exists \delta \gt 0 \st (0\lt |x-2|\lt\delta)\implies \left( \frac{|2-x|}{2|x|} \lt \epsilon\right).
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-4-12-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec_limits-4-12-2-2">
+<div class="para">Now that we know what we need to show, let <span class="process-math">\(\epsilon&gt;0\)</span> be arbitrary. Then, we want a <span class="process-math">\(\delta \gt 0\)</span> such that if we assume <span class="process-math">\(0 \lt |x-2| \lt \delta\text{,}\)</span> we can guarantee that <span class="process-math">\(\frac{|x-2|}{2|x|} \lt \epsilon\text{.}\)</span> Well, if we know that <span class="process-math">\(|x-2| \lt \delta\text{,}\)</span> then we can write</div>
+<div class="displaymath process-math" id="sec_limits-4-12-2-2-6">
+\begin{equation*}
+\frac{|x-2|}{2|x|} \lt \frac{\delta}{2|x|} \leq \epsilon
+\end{equation*}
+</div>
+<div class="para">and so we need</div>
+<div class="displaymath process-math" id="sec_limits-4-12-2-2-7">
+\begin{equation*}
+\delta \leq 2|x| \epsilon.
+\end{equation*}
+</div>
+<div class="para">This is not quite enough — our choice of <span class="process-math">\(\delta\)</span> should not depend on <span class="process-math">\(x\text{.}\)</span> We need some bound on <span class="process-math">\(x\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-4-12-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec_limits-4-12-2-3">Recall our intuitive idea of the limit, as <span class="process-math">\(x\)</span> gets very close to <span class="process-math">\(2\text{,}\)</span> the function <span class="process-math">\(\frac{1}{x}\)</span> gets very close to <span class="process-math">\(\frac{1}{2}\text{.}\)</span> We don’t really care what happens when <span class="process-math">\(x\)</span> is a long way from <span class="process-math">\(2\text{,}\)</span> and only on what happens when <span class="process-math">\(x\)</span> is very close to <span class="process-math">\(2\text{.}\)</span> Thus we should be able to focus on the region around <span class="process-math">\(x=2\text{,}\)</span> say, <span class="process-math">\(1 \lt x \lt 3\text{,}\)</span> or equivalently, <span class="process-math">\(|x-2| \lt 1\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-4-12-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec_limits-4-12-2-4">
+<div class="para">How<details class="ptx-footnote" aria-live="polite" id="sec_limits-4-12-2-4-1"><summary class="ptx-footnote__number" title="Footnote 57"><sup> 57 </sup></summary>
+<div class="ptx-footnote__contents" id="sec_limits-4-12-2-4-1">Should one ask rhetorical questions in a textbook?
+</div></details> does this help us? Well, if we know that <span class="process-math">\(1 \lt x \lt 3\text{,}\)</span> then we know<details class="ptx-footnote" aria-live="polite" id="sec_limits-4-12-2-4-3"><summary class="ptx-footnote__number" title="Footnote 58"><sup> 58 </sup></summary>
+<div class="ptx-footnote__contents" id="sec_limits-4-12-2-4-3">Be careful with the inequalities here.
+</div></details> that  <span class="process-math">\(|x|\gt 1\text{,}\)</span> and so</div>
+<div class="displaymath process-math" id="sec_limits-4-12-2-4-5">
+\begin{equation*}
+\frac{|x-2|}{2|x|} \lt \frac{\delta}{2|x|} \lt \frac{\delta}{2} \leq \epsilon
+\end{equation*}
+</div>
+<div class="para">And thus we need to ensure that</div>
+<div class="displaymath process-math" id="sec_limits-4-12-2-4-6">
+\begin{equation*}
+\delta \leq 2 \epsilon.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-4-12-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec_limits-4-12-2-5">
+<div class="para">At this point it  seems that we can choose any <span class="process-math">\(\delta \leq 2 \epsilon\text{,}\)</span> but this is not quite right. Say, we chose a large value of <span class="process-math">\(\epsilon\text{,}\)</span> like <span class="process-math">\(\epsilon=3\text{,}\)</span> and so we could pick <span class="process-math">\(\delta = 2\epsilon=6\text{.}\)</span> With that choice of <span class="process-math">\(\epsilon\)</span> and <span class="process-math">\(\delta\text{,}\)</span> the implication at the heart of the definition of convergence becomes</div>
+<div class="displaymath process-math" id="sec_limits-4-12-2-5-7">
+\begin{equation*}
+(|x-2| \lt 6) \implies \left(\left|\frac{1}{x}-\frac{1}{2}\right| \lt 3\right).
+\end{equation*}
+</div>
+<div class="para">Unfortunately this is false. We could take, say <span class="process-math">\(x=\frac{1}{10}=0.1\text{,}\)</span> and then the hypothesis is true, since <span class="process-math">\(|x-2|=1.9 \lt 6\text{,}\)</span> but the conclusion is false since <span class="process-math">\(\left|\frac{1}{x}-\frac{1}{2}\right| = |10-0.5| = 9.5 \gt 3\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-4-12-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec_limits-4-12-2-6">
+<div class="para">What went wrong? Remember to make our bound on <span class="process-math">\(|x|\)</span> we required that <span class="process-math">\(|x-2|\lt 1\text{.}\)</span> This is the same as requiring that <span class="process-math">\(\delta\leq 1\text{.}\)</span> So we have actually imposed two requirements on <span class="process-math">\(\delta\text{.}\)</span> We need both <span class="process-math">\(\delta \leq 1\)</span> <em class="emphasis">and</em> <span class="process-math">\(\delta \leq 2\epsilon\text{.}\)</span> To enforce both of these we can pick</div>
+<div class="displaymath process-math" id="sec_limits-4-12-2-6-8">
+\begin{equation*}
+\delta = \min\{1, 2\epsilon \}.
+\end{equation*}
+</div>
+<div class="para">Now we can finally write up the proof.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-4-12-2-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Scratchwork 6.4.12.1"><a tabindex="-1" href="#sec_limits-4-12-2" title="Copy heading and permalink for Scratchwork 6.4.12.1" aria-label="Copy heading and permalink for Scratchwork 6.4.12.1">🔗</a></div>
+</div></details>
+<details id="sec_limits-4-12-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<details id="sec_limits-4-12-3-1" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary>
+<article class="hiddenproof knowl__content">
+<div class="para" id="sec_limits-4-12-3-1-1">Let <span class="process-math">\(\epsilon \gt 0\)</span> and set <span class="process-math">\(\delta = \min\{1,2\epsilon\}\text{.}\)</span> Now assume that <span class="process-math">\(0 \lt |x-2| \lt \delta.\)</span> Since <span class="process-math">\(\delta \leq 1\text{,}\)</span> we know that <span class="process-math">\(|x-2| \lt 1\)</span> and so <span class="process-math">\(1 \lt |x| \lt 3\)</span> and thus <span class="process-math">\(2|x| \gt 2\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-4-12-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec_limits-4-12-3-1-2">
+<div class="para">Then</div>
+<div class="displaymath process-math" id="sec_limits-4-12-3-1-2-1">
+\begin{equation*}
+\left| \frac{1}{x} - \frac{1}{2} \right| = \frac{|x-2|}{2|x|} \lt \frac{|x-2|}{2} \lt \frac{\delta}{2}.
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(\delta \leq 2\epsilon\text{,}\)</span> we know that</div>
+<div class="displaymath process-math" id="sec_limits-4-12-3-1-2-3">
+\begin{equation*}
+\left| \frac{1}{x} - \frac{1}{2} \right| \lt \epsilon
+\end{equation*}
+</div>
+<div class="para">and so <span class="process-math">\(\frac{1}{x} \to \frac{1}{2}\)</span> as <span class="process-math">\(x \to 2\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_limits-4-12-3-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 6.4.12.1.1"><a tabindex="-1" href="#sec_limits-4-12-3-1" title="Copy heading and permalink for Proof 6.4.12.1.1" aria-label="Copy heading and permalink for Proof 6.4.12.1.1">🔗</a></div>
+</article></details><div class="autopermalink" aria-hidden="true" data-description="Solution 6.4.12.1"><a tabindex="-1" href="#sec_limits-4-12-3" title="Copy heading and permalink for Solution 6.4.12.1" aria-label="Copy heading and permalink for Solution 6.4.12.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 6.4.12"><a tabindex="-1" href="#sec_limits-4-12" title="Copy heading and permalink for Example 6.4.12" aria-label="Copy heading and permalink for Example 6.4.12">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Subsection 6.4.2: The limit of a function"><a tabindex="-1" href="#sec_limits-4" title="Copy heading and permalink for Subsection 6.4.2: The limit of a function" aria-label="Copy heading and permalink for Subsection 6.4.2: The limit of a function">🔗</a></div>
+</section><div class="autopermalink" aria-hidden="true" data-description="Section 6.4: Quantifiers and rigorous limits"><a tabindex="-1" href="#sec_limits" title="Copy heading and permalink for Section 6.4: Quantifiers and rigorous limits" aria-label="Copy heading and permalink for Section 6.4: Quantifiers and rigorous limits">🔗</a></div>
+</section>
+</div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="ch-quantifiers-5.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch-quantifiers-7.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+<!--Start: Google Global Site Tag code--><!--*** DO NOT COPY ANOTHER PROJECT'S MAGIC NUMBERS/ID ***--><!--***           GET YOUR OWN FROM GOOGLE             ***-->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-FL66FX9988"></script><script>  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-FL66FX9988');
+</script><!--End: Google Global Site Tag code-->
+</body>
+</html>

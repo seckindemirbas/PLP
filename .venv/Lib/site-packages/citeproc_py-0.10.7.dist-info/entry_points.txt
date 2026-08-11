@@ -1,0 +1,2 @@
+[console_scripts]
+csl_unsorted = citeproc.scripts.csl_unsorted:main

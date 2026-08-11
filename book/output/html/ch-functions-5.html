@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Images and preimages of sets</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
+startMathJax({
+hasWebworkReps: false,
+hasSage: false,
+isReact: false,
+htmlPresentation: false,
+lang: "en-US",
+});
+</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta name="twitter:title" content="PLP">
+<meta property="og:title" content="PLP">
+<meta property="book:title" content="PLP">
+<meta name="twitter:description" content="An introduction to mathematical proof">
+<meta property="og:description" content="An introduction to mathematical proof">
+<meta name="twitter:card" content="summary">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.48"></script><script src="_static/pretext/js/dist/pretext-read-aloud.js?v=2.48"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.2.4';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.40bd1420d3277749.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.b388362b5f43738a.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.8086b62682b271d1.css">
+<script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead" role="banner"><div class="ptx-banner"><div class="title-container">
+<div class="heading ptx-banner-heading"><a href="plp.html"><span class="title">PLP</span> <span class="subtitle">An introduction to mathematical proof</span></a></div>
+<p class="byline">Seçkin Demirbaş, Andrew Rechnitzer</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button id="ptx-toc-toggle" type="button" aria-controls="ptx-sidebar" class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="ptx-search-box">
+<div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search Book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog"><div class="ptx-search-dialog-controls">
+<input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close" id="ptx-search-close" class="ptx-search-close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div id="ptx-search-status" class="ptx-search-status" aria-live="polite" aria-atomic="true"></div>
+<h2 class="heading ptx-search-results-heading">Search Results: </h2>
+<div id="ptx-search-empty" class="ptx-search-empty"><span>No results.</span></div>
+<ol id="ptx-search-results" class="ptx-search-results"></ol></dialog>
+</div>
+<span class="nav-other-controls"><button id="ptx-read-aloud-button" class="ptx-read-aloud-button button" title="Read aloud" aria-expanded="false"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf1bc;</span><span class="name">Read aloud</span></button><div id="ptx-read-aloud-player" class="ptx-read-aloud-player" hidden="hidden" role="group" aria-label="Read aloud">
+<button id="ptx-read-aloud-prev" class="button" title="Previous sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe045;</span></button><button id="ptx-read-aloud-toggle" class="ptx-read-aloud-toggle button" title="Play"><span class="ptx-read-aloud-icon-play"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></span><span class="ptx-read-aloud-icon-pause"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe034;</span></span></button><button id="ptx-read-aloud-next" class="button" title="Next sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe044;</span></button><a id="ptx-read-aloud-continue" class="ptx-read-aloud-continue button" hidden="hidden">Continue<span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></a><button id="ptx-read-aloud-settings-button" class="ptx-read-aloud-settings-button button" title="Reading settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe429;</span></button>
+</div>
+<dialog class="ptx-dialog ptx-read-aloud-settings-popup" id="ptx-read-aloud-settings-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Read aloud settings</h2>
+<button class="ptx-read-aloud-settings-close-button button" id="ptx-read-aloud-settings-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label for="ptx-read-aloud-voice"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe91f;</span><span>Voice</span></label><select id="ptx-read-aloud-voice"></select><label class="ptx-readability-slider-label" for="ptx-read-aloud-rate"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe9e4;</span><span>Reading speed</span><output id="ptx-read-aloud-rate-value" for="ptx-read-aloud-rate">1×</output></label><input type="range" id="ptx-read-aloud-rate" min="0.5" max="2" step="0.1" value="1"><label for="ptx-read-aloud-asides"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d7;</span><span>Collapsed content</span></label><select id="ptx-read-aloud-asides"><option value="skip">Announce, do not read</option>
+<option value="read">Read automatically</option></select><label for="ptx-read-aloud-autoscroll"><input type="checkbox" id="ptx-read-aloud-autoscroll" checked><span>Follow along (auto-scroll)</span></label><label for="ptx-read-aloud-autocontinue"><input type="checkbox" id="ptx-read-aloud-autocontinue"><span>Continue to the next page automatically</span></label>
+</div></dialog><button id="ptx-readability-options-button" class="ptx-readability-options-button button" title="Readability settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf6f1;</span><span class="name">Readability settings</span></button><dialog class="ptx-dialog ptx-readability-options-popup" id="ptx-readability-options-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Readability settings</h2>
+<button class="ptx-readability-options-close-button button" id="ptx-readability-options-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-line-height"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe240;</span><span>Line height</span><output id="ptx-readability-line-height-value" for="ptx-readability-line-height">1.35</output></label><input type="range" id="ptx-readability-line-height" min="1.10" max="3" step="0.05" value="1.35">
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-font-size"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe245;</span><span>Content font size</span><output id="ptx-readability-font-size-value" for="ptx-readability-font-size">100%</output></label><input type="range" id="ptx-readability-font-size" min="0.8" max="1.5" step="0.05" value="1">
+</div>
+<fieldset class="ptx-readability-options-group ptx-readability-options-group-theme">
+<legend>Theme</legend>
+<label for="ptx-readability-theme-system"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-system" value="system"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe1ab;</span><span>System</span></label><label for="ptx-readability-theme-light"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-light" value="light"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe518;</span><span>Light</span></label><label for="ptx-readability-theme-dark"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-dark" value="dark"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span>Dark</span></label>
+</fieldset>
+<fieldset class="ptx-readability-options-group">
+<legend>Assistive technologies</legend>
+<label for="ptx-readability-accessible-permalinks"><input type="checkbox" id="ptx-readability-accessible-permalinks"><span>🔗</span><span>Expose permalinks</span></label>
+</fieldset>
+<div class="ptx-readability-options-group"><button type="button" class="ptx-readability-reset-button button" id="ptx-readability-reset-button"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf053;</span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="ch-functions-4.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-functions.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="ch-functions-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{cancel}\require{upgreek} \newcommand{\ds}{\displaystyle}
+ \renewcommand{\textcolor}[2]{{\color{#1}{#2}}}
+ 
+ \newcommand{\es}{ {\varnothing}}
+ \newcommand{\st}{ \;\mathrm{s.t.}\; }
+ \newcommand{\so}{ \;\mid\; }
+ \newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+ \newcommand{\set}[1]{ \left\{#1\right\} }
+ 
+ \renewcommand{\neg}{\sim}
+
+ \newcommand{\rel}[1][R]{\;\mathcal{#1}\;}
+ \newcommand{\nrel}[1][R]{\;\cancel{\mathcal{#1}}\;}
+
+ \newcommand{\dee}[1]{\mathrm{d}#1}
+ \newcommand{\diff}[2]{\dfrac{\mathrm{d}#1}{\mathrm{d}#2}}
+ 
+ \renewcommand{\mod}[1]{\ (\mathrm{mod}\ #1)}
+ \newcommand{\lcm}{\mathrm{lcm}}
+ 
+ \let\oldepsilon\epsilon
+ 
+ \renewcommand{\epsilon}{\varepsilon}
+ \newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" role="complementary" class="ptx-sidebar"><nav id="ptx-toc" tabindex="-1" aria-label="Contents" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul id="ptx-toc-group-frontmatter" class="structural toc-item-list">
+<li class="toc-item toc-dedication"><div class="toc-title-box"><a href="frontmatter-3.html" class="internal"><span class="title">Dedication</span></a></div></li>
+<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="frontmatter-5.html" class="internal"><span class="title">Preface</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="plp-4.html" class="internal"><span class="codenumber">1</span> <span class="title">Sets</span></a></div>
+<ul id="ptx-toc-group-plp-4" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="plp-4-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="plp-4-3.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Not so formal definition</span></a></div>
+<ul id="ptx-toc-group-plp-4-3" class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="plp-4-3.html#plp-4-3-3" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Who is this reader you keep on mentioning?</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-describing.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Describing a set</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-4-5.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Onward</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="plp-4-6.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-logic.html" class="internal"><span class="codenumber">2</span> <span class="title">A little logic</span></a></div>
+<ul id="ptx-toc-group-ch-logic" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-logic-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-logic-3.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Statements and open sentences</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-logic-4.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Negation</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-logic-5.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Or and And</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-implication.html" class="internal"><span class="codenumber">2.4</span> <span class="title">The implication</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-logic-7.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Modus ponens and chaining implications</span></a></div>
+<ul id="ptx-toc-group-ch-logic-7" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-logic-7.html#ch-logic-7-2" class="internal"><span class="codenumber">2.5.1</span> <span class="title">Modus ponens</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-logic-7.html#ch-logic-7-3" class="internal"><span class="codenumber">2.5.2</span> <span class="title">Affirming the consequent and denying the antecedent</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-logic-7.html#ch-logic-7-4" class="internal"><span class="codenumber">2.5.3</span> <span class="title">Chaining implications together</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-CCB.html" class="internal"><span class="codenumber">2.6</span> <span class="title">The converse, contrapositive and biconditional</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-logic-9.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-direct.html" class="internal"><span class="codenumber">3</span> <span class="title">Direct proofs</span></a></div>
+<ul id="ptx-toc-group-ch-direct" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-direct-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-direct-3.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Trivialities and vacuousness</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-direct-4.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Direct proofs</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-direct-5.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Proofs of inequalities</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-direct-6.html" class="internal"><span class="codenumber">3.4</span> <span class="title">A quick visit to disproofs</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-direct-7.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="plp-7.html" class="internal"><span class="codenumber">4</span> <span class="title">More logic</span></a></div>
+<ul id="ptx-toc-group-plp-7" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="plp-7-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-7-3.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Tautologies and contradictions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-7-4.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Logical equivalence</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="plp-7-5.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-moreproof.html" class="internal"><span class="codenumber">5</span> <span class="title">More proofs</span></a></div>
+<ul id="ptx-toc-group-ch-moreproof" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-moreproof-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-moreproof-3.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Contrapositive</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-moreproof-4.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Proofs with cases</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-congruence.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Congruence modulo <span class="process-math">\(n\)</span></span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-abs-triangle.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Absolute values and the triangle inequality</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-moreproof-7.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-quantifiers.html" class="internal"><span class="codenumber">6</span> <span class="title">Quantifiers</span></a></div>
+<ul id="ptx-toc-group-ch-quantifiers" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-quantifiers-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-quantifiers-3.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Quantified statements</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-quantifiers-4.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Negation of quantifiers</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-quantifiers-5.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Nested quantifiers</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_limits.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Quantifiers and rigorous limits</span></a></div>
+<ul id="ptx-toc-group-sec_limits" class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec_limits.html#sec_limits-3" class="internal"><span class="codenumber">6.4.1</span> <span class="title">Convergence of sequences</span></a></div>
+<ul id="ptx-toc-group-sec_limits-3" class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec_limits.html#sec_limits-3-3" class="internal"><span class="codenumber">6.4.1.1</span> <span class="title">Quantifying towards a definition</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec_limits.html#sec_limits-3-4" class="internal"><span class="codenumber">6.4.1.2</span> <span class="title">Some examples</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_limits.html#sec_limits-4" class="internal"><span class="codenumber">6.4.2</span> <span class="title">The limit of a function</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-quantifiers-7.html" class="internal"><span class="codenumber">6.5</span> <span class="title">(Optional) Properties of limits</span></a></div>
+<ul id="ptx-toc-group-ch-quantifiers-7" class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimseq" class="internal"><span class="codenumber">6.5.1</span> <span class="title">(Optional) Some properties of limits of sequences</span></a></div>
+<ul id="ptx-toc-group-subsec-proplimseq" class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimseq-3" class="internal"><span class="codenumber">6.5.1.1</span> <span class="title">Uniqueness of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimseq-4" class="internal"><span class="codenumber">6.5.1.2</span> <span class="title">Linearity of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimseq-5" class="internal"><span class="codenumber">6.5.1.3</span> <span class="title">Product of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimseq-6" class="internal"><span class="codenumber">6.5.1.4</span> <span class="title">Ratio of limits</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimfunc" class="internal"><span class="codenumber">6.5.2</span> <span class="title">(Optional) Some properties of limits of functions</span></a></div>
+<ul id="ptx-toc-group-subsec-proplimfunc" class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimfunc-3" class="internal"><span class="codenumber">6.5.2.1</span> <span class="title">Uniqueness of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimfunc-4" class="internal"><span class="codenumber">6.5.2.2</span> <span class="title">Linearity of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimfunc-5" class="internal"><span class="codenumber">6.5.2.3</span> <span class="title">Product of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimfunc-6" class="internal"><span class="codenumber">6.5.2.4</span> <span class="title">Ratio of limits</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-quantifiers-8.html" class="internal"><span class="codenumber">6.6</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_induction.html" class="internal"><span class="codenumber">7</span> <span class="title">Induction</span></a></div>
+<ul id="ptx-toc-group-ch_induction" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch_induction-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch_induction-3.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Induction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch_induction-4.html" class="internal"><span class="codenumber">7.2</span> <span class="title">More general inductions</span></a></div>
+<ul id="ptx-toc-group-ch_induction-4" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch_induction-4.html#subsec-extendedinduction" class="internal"><span class="codenumber">7.2.1</span> <span class="title">A little more general</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch_induction-4.html#subsec-stronginduction" class="internal"><span class="codenumber">7.2.2</span> <span class="title">More general and yet equivalent</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch_induction-5.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="plp-11.html" class="internal"><span class="codenumber">8</span> <span class="title">Return to sets</span></a></div>
+<ul id="ptx-toc-group-plp-11" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="plp-11-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-11-3.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Subsets</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-11-4.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Set operations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-11-5.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Cartesian products of sets</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-11-6.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Some set-flavoured results</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-11-7.html" class="internal"><span class="codenumber">8.5</span> <span class="title">Indexed sets</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="plp-11-8.html" class="internal"><span class="codenumber">8.6</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_relations.html" class="internal"><span class="codenumber">9</span> <span class="title">Relations</span></a></div>
+<ul id="ptx-toc-group-ch_relations" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch_relations-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch_relations-3.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Relations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_prop_rel.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Properties of relations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch_relations-5.html" class="internal"><span class="codenumber">9.3</span> <span class="title">Equivalence relations &amp; classes</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_congruence_revisited.html" class="internal"><span class="codenumber">9.4</span> <span class="title">Congruence revisited</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-euclid.html" class="internal"><span class="codenumber">9.5</span> <span class="title">Greatest divisors, Bézout and the Euclidean algorithm</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-unique-fact.html" class="internal"><span class="codenumber">9.6</span> <span class="title">Uniqueness of prime factorisation</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch_relations-9.html" class="internal"><span class="codenumber">9.7</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-functions.html" class="internal"><span class="codenumber">10</span> <span class="title">Functions</span></a></div>
+<ul class="structural toc-item-list contains-active" id="ptx-toc-group-ch-functions">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-functions-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-functions-3.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-functions-4.html" class="internal"><span class="codenumber">10.2</span> <span class="title">A more abstract definition</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="ch-functions-5.html" class="internal"><span class="codenumber">10.3</span> <span class="title">Images and preimages of sets</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-functions-6.html" class="internal"><span class="codenumber">10.4</span> <span class="title">Injective and surjective functions</span></a></div>
+<ul id="ptx-toc-group-ch-functions-6" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-functions-6.html#ch-functions-6-3" class="internal"><span class="codenumber">10.4.1</span> <span class="title">Injections and surjections</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-functions-6.html#ch-functions-6-4" class="internal"><span class="codenumber">10.4.2</span> <span class="title">Bijective functions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-functions-7.html" class="internal"><span class="codenumber">10.5</span> <span class="title">Composition of functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_inv_func.html" class="internal"><span class="codenumber">10.6</span> <span class="title">Inverse functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-functions-9.html" class="internal"><span class="codenumber">10.7</span> <span class="title">(Optional) The axiom of choice</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-functions-10.html" class="internal"><span class="codenumber">10.8</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-contradictions.html" class="internal"><span class="codenumber">11</span> <span class="title">Proof by contradiction</span></a></div>
+<ul id="ptx-toc-group-ch-contradictions" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-contradictions-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-contradictions-3.html" class="internal"><span class="codenumber">11.1</span> <span class="title">Structure of a proof by contradiction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-contradictions-4.html" class="internal"><span class="codenumber">11.2</span> <span class="title">Some examples</span></a></div>
+<ul id="ptx-toc-group-ch-contradictions-4" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-contradictions-4.html#ch-contradictions-4-3" class="internal"><span class="codenumber">11.2.1</span> <span class="title">The irrationality of <span class="process-math">\(\sqrt{2}\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-contradictions-4.html#ssec_inf_primes" class="internal"><span class="codenumber">11.2.2</span> <span class="title">The infinitude of primes</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-contradictions-5.html" class="internal"><span class="codenumber">11.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap_cardinality.html" class="internal"><span class="codenumber">12</span> <span class="title">Cardinality</span></a></div>
+<ul id="ptx-toc-group-chap_cardinality" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="chap_cardinality-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="chap_cardinality-3.html" class="internal"><span class="codenumber">12.1</span> <span class="title">Finite sets</span></a></div>
+<ul id="ptx-toc-group-chap_cardinality-3" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-3.html#chap_cardinality-3-3" class="internal"><span class="codenumber">12.1.1</span> <span class="title">Equinumerous sets, bijections and pigeons</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-3.html#chap_cardinality-3-4" class="internal"><span class="codenumber">12.1.2</span> <span class="title">Comparing with functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-3.html#chap_cardinality-3-5" class="internal"><span class="codenumber">12.1.3</span> <span class="title">Infinite sets are strange.</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap_cardinality-4.html" class="internal"><span class="codenumber">12.2</span> <span class="title">Denumerable sets</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_uncount.html" class="internal"><span class="codenumber">12.3</span> <span class="title">Uncountable sets</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="chap_cardinality-6.html" class="internal"><span class="codenumber">12.4</span> <span class="title">Comparing cardinalities</span></a></div>
+<ul id="ptx-toc-group-chap_cardinality-6" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-6.html#chap_cardinality-6-2" class="internal"><span class="codenumber">12.4.1</span> <span class="title">Extending to the infinite</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-6.html#chap_cardinality-6-3" class="internal"><span class="codenumber">12.4.2</span> <span class="title">Cantor’s Theorem and infinite infinities</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-6.html#chap_cardinality-6-4" class="internal"><span class="codenumber">12.4.3</span> <span class="title">Congratulations are in order</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-6.html#chap_cardinality-6-5" class="internal"><span class="codenumber">12.4.4</span> <span class="title">One more question</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_compare_card.html" class="internal"><span class="codenumber">12.5</span> <span class="title">More comparisons of cardinalties</span></a></div>
+<ul id="ptx-toc-group-sec_compare_card" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_compare_card.html#sec_compare_card-3" class="internal"><span class="codenumber">12.5.1</span> <span class="title">The Cantor-Schröder-Bernstein theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_compare_card.html#sec_compare_card-4" class="internal"><span class="codenumber">12.5.2</span> <span class="title">Applications</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_compare_card.html#sec_compare_card-5" class="internal"><span class="codenumber">12.5.3</span> <span class="title">Proof that <span class="process-math">\(|\pow{\mathbb{N}}| = |\mathbb{R}|\)</span></span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_cantor_first.html" class="internal"><span class="codenumber">12.6</span> <span class="title">(Optional) Cantor’s first proof of the uncountability of the reals</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chap_cardinality-9.html" class="internal"><span class="codenumber">12.7</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul id="ptx-toc-group-backmatter" class="structural toc-item-list">
+<li class="toc-item toc-solutions"><div class="toc-title-box"><a href="app_hint.html" class="internal"><span class="codenumber">A.</span> <span class="title">Hints for Exercises</span></a></div></li>
+<li class="toc-item toc-solutions"><div class="toc-title-box"><a href="app_answ.html" class="internal"><span class="codenumber">B.</span> <span class="title">Scratchwork for Exercises</span></a></div></li>
+<li class="toc-item toc-solutions"><div class="toc-title-box"><a href="app_soln.html" class="internal"><span class="codenumber">C.</span> <span class="title">Solutions to Exercises</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="backmatter-5.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="ch-functions-5">
+<h1 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">10.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Images and preimages of sets</span>
+</h1>
+<div class="para" id="ch-functions-5-2">When we defined the function <span class="process-math">\(f:A \to B\text{,}\)</span>  we said that if <span class="process-math">\(f(a)=b\)</span> then we called <span class="process-math">\(b\)</span> the image of <span class="process-math">\(a\)</span> under <span class="process-math">\(f\text{.}\)</span> This idea can be extended quite naturally to think of the image of a set of points. Also, given an element <span class="process-math">\(b \in B\text{,}\)</span> we can ask for all the elements of <span class="process-math">\(A\)</span> that map to it. This latter idea is not quite the inverse function, but it is getting close to it.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-functions-5-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ch-functions-5-3">We should define these sets more precisely:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-functions-5-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="ch-functions-5-4"><h2 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">10.3.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Image and preimage.</span>
+</h2>
+<div class="para logical" id="ch-functions-5-4-2-1">
+<div class="para">Let <span class="process-math">\(f: A \to B\)</span> be a function, and let <span class="process-math">\(C \subseteq A\)</span> and let <span class="process-math">\(D \subseteq B\text{.}\)</span>
+</div>
+<ul class="disc" id="ch-functions-5-4-2-1-4">
+<li id="ch-functions-5-4-2-1-4-1">
+<div class="para" id="p-derived-ch-functions-5-4-2-1-4-1">The set <span class="process-math">\(f(C) = \set{f(x) : x \in C}\)</span> is the <dfn class="terminology">image of <span class="process-math">\(C\)</span> in <span class="process-math">\(B\)</span></dfn>.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch-functions-5-4-2-1-4-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch-functions-5-4-2-1-4-2">
+<div class="para" id="p-derived-ch-functions-5-4-2-1-4-2">The set <span class="process-math">\(f^{-1}(D) = \set{ x \in A : f(x) \in D }\)</span> is the <dfn class="terminology">preimage of  <span class="process-math">\(D\)</span> in <span class="process-math">\(A\)</span></dfn> or <dfn class="terminology"><span class="process-math">\(f\)</span>-inverse of <span class="process-math">\(D\)</span></dfn>.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch-functions-5-4-2-1-4-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-functions-5-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 10.3.1: Image and preimage"><a tabindex="-1" href="#ch-functions-5-4" title="Copy heading and permalink for Definition 10.3.1: Image and preimage" aria-label="Copy heading and permalink for Definition 10.3.1: Image and preimage">🔗</a></div>
+</article>
+<article class="remark remark-like" id="ch-functions-5-5"><h2 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">10.3.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Preimage of a single element.</span>
+</h2>
+<div class="para logical" id="ch-functions-5-5-2">
+<div class="para">Note that the preimage of a set containing a single element of <span class="process-math">\(B\)</span> is a (possibly) set of elements of <span class="process-math">\(A\text{.}\)</span> For example, consider the function <span class="process-math">\(f: \mathbb{R} \to \mathbb{R} \)</span> defined by <span class="process-math">\(f(x)=x^2\text{.}\)</span> Then</div>
+<div class="displaymath process-math" id="ch-functions-5-5-2-5">
+\begin{align*}
+f^{-1}(\set{0}) &amp;= \set{0} &amp;
+f^{-1}(\set{1}) &amp;= \set{-1,1} &amp;
+f^{-1}(\set{-1}) &amp;= \es.
+\end{align*}
+</div>
+<div class="para">This shows that the preimage of a set containing a single element is a set that may contain zero, one, two or even more elements. Indeed, it is not hard to construct an example in which the preimage contains infinitely many elements. When our function satisfies very specific conditions, we can ensure that the preimage of a set containing a single element is always set containing a single element. Understanding those conditions is one of the main aims of this chapter and we’ll discuss it in detail in the next section. That, in turn, will help us to define the <dfn class="terminology">inverse function</dfn>.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-functions-5-5-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ch-functions-5-5-3">You will have noticed that in the preceding paragraph we have had to write “the preimage of a set containing a single element” several times. This becomes quite cumbersome. We will, from here, abuse the definition of the preimage a little to simplify our writing. In particular, we will often write “the preimage of an element <span class="process-math">\(x\)</span>” to mean “the preimage of the set <span class="process-math">\(\set{x}\)</span>”. While this is modestly incorrect, it does make the writing and reading easier.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-functions-5-5-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Remark 10.3.2: Preimage of a single element"><a tabindex="-1" href="#ch-functions-5-5" title="Copy heading and permalink for Remark 10.3.2: Preimage of a single element" aria-label="Copy heading and permalink for Remark 10.3.2: Preimage of a single element">🔗</a></div>
+</article>
+<div class="para logical" id="ch-functions-5-6">
+<div class="para">The notation for preimage, <span class="process-math">\(f^{-1}\text{,}\)</span> is somewhat unfortunate in that we use the same notation to mean the inverse-function. Additionally, it is regularly confused with</div>
+<div class="displaymath process-math" id="ch-functions-5-6-2">
+\begin{equation*}
+\left(f(x)\right)^{-1} = \dfrac{1}{f(x)}
+\end{equation*}
+</div>
+<div class="para">i.e. the reciprocal. Alas, we are stuck with this notation and must be careful to understand its meaning by context.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-functions-5-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ch-functions-5-7">This is an important point, so we’ll make it a formal warning:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-functions-5-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="warning remark-like" id="ch-functions-5-8"><h2 class="heading">
+<span class="type">Warning</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">10.3.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para logical" id="ch-functions-5-8-1">
+<div class="para">Be careful with preimages:</div>
+<ul class="disc" id="ch-functions-5-8-1-1">
+<li id="ch-functions-5-8-1-1-1">
+<div class="para" id="p-derived-ch-functions-5-8-1-1-1">The preimage <span class="process-math">\(f^{-1}\)</span> is <em class="emphasis">not</em> the inverse function.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch-functions-5-8-1-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch-functions-5-8-1-1-2">
+<div class="para" id="p-derived-ch-functions-5-8-1-1-2">If certain special conditions are satisfied, then the inverse function exists and we use the same notation to denote that function.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch-functions-5-8-1-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">Consequently, when you see <span class="process-math">\(f^{-1}\)</span> you should think “preimage” and not “inverse function” unless we specifically know that the inverse exists.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-functions-5-8-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Warning 10.3.3"><a tabindex="-1" href="#ch-functions-5-8" title="Copy heading and permalink for Warning 10.3.3" aria-label="Copy heading and permalink for Warning 10.3.3">🔗</a></div>
+</article>
+<div class="para" id="ch-functions-5-9">After all those warnings and caveats, lets draw a schematic of images and preimages:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-functions-5-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="external/function_imgpreimg.svg" role="img" class="contained"></div>
+<div class="para logical" id="ch-functions-5-11">
+<div class="para">Notice in this figure that</div>
+<ul class="disc" id="ch-functions-5-11-1">
+<li id="ch-functions-5-11-1-1">
+<div class="para" id="p-derived-ch-functions-5-11-1-1">we have drawn <span class="process-math">\(f(A)\)</span> as a subset of <span class="process-math">\(B\)</span> — in fact <span class="process-math">\(f(A)\)</span> is exactly the range of <span class="process-math">\(f\)</span> and so must be a subset of <span class="process-math">\(B\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch-functions-5-11-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch-functions-5-11-1-2">
+<div class="para" id="p-derived-ch-functions-5-11-1-2">we have drawn the preimage of <span class="process-math">\(D\)</span> so that it looks like two copies of half of the set <span class="process-math">\(D\)</span> — this is to emphasise the fact that not every element of <span class="process-math">\(B\)</span> has to have a preimage in <span class="process-math">\(A\text{.}\)</span> Further, a given point in <span class="process-math">\(B\)</span> might have more than one preimage.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch-functions-5-11-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">Our quick look at preimages of <span class="process-math">\(f(x)=x^2\)</span> above illustrated this second point. That was a little brief, but the following example looks at this in more detail.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-functions-5-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="example example-like" id="ch-functions-5-12"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">10.3.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Images and preimages.</span>
+</h2>
+<div class="para logical" id="ch-functions-5-12-2-1">
+<div class="para">Let <span class="process-math">\(f: \mathbb{R} \to \mathbb{R}\)</span> be defined by <span class="process-math">\(f(x) = x^2\text{.}\)</span> Find the following</div>
+<ol class="lower-alpha ol-marker-1" id="ch-functions-5-12-2-1-3">
+<li id="ch-functions-5-12-2-1-3-1">
+<div class="para" id="p-derived-ch-functions-5-12-2-1-3-1"><span class="process-math">\(\displaystyle f([0,4])\)</span></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item a"><a tabindex="-1" href="#ch-functions-5-12-2-1-3-1" title="Copy heading and permalink for Item a" aria-label="Copy heading and permalink for Item a">🔗</a></div>
+</li>
+<li id="ch-functions-5-12-2-1-3-2">
+<div class="para" id="p-derived-ch-functions-5-12-2-1-3-2"><span class="process-math">\(\displaystyle f( [-3,-1] \cup [1,2] )\)</span></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item b"><a tabindex="-1" href="#ch-functions-5-12-2-1-3-2" title="Copy heading and permalink for Item b" aria-label="Copy heading and permalink for Item b">🔗</a></div>
+</li>
+<li id="ch-functions-5-12-2-1-3-3">
+<div class="para" id="p-derived-ch-functions-5-12-2-1-3-3"><span class="process-math">\(\displaystyle f^{-1}(\set{0})\)</span></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item c"><a tabindex="-1" href="#ch-functions-5-12-2-1-3-3" title="Copy heading and permalink for Item c" aria-label="Copy heading and permalink for Item c">🔗</a></div>
+</li>
+<li id="ch-functions-5-12-2-1-3-4">
+<div class="para" id="p-derived-ch-functions-5-12-2-1-3-4"><span class="process-math">\(\displaystyle f^{-1}(\set{1})\)</span></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item d"><a tabindex="-1" href="#ch-functions-5-12-2-1-3-4" title="Copy heading and permalink for Item d" aria-label="Copy heading and permalink for Item d">🔗</a></div>
+</li>
+<li id="ch-functions-5-12-2-1-3-5">
+<div class="para" id="p-derived-ch-functions-5-12-2-1-3-5"><span class="process-math">\(\displaystyle f^{-1}( [0,4] ) = [-2,2]\)</span></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item e"><a tabindex="-1" href="#ch-functions-5-12-2-1-3-5" title="Copy heading and permalink for Item e" aria-label="Copy heading and permalink for Item e">🔗</a></div>
+</li>
+<li id="ch-functions-5-12-2-1-3-6">
+<div class="para" id="p-derived-ch-functions-5-12-2-1-3-6"><span class="process-math">\(\displaystyle f^{-1}( [1,4] ) = [-2,-1] \cup [1,2]\)</span></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item f"><a tabindex="-1" href="#ch-functions-5-12-2-1-3-6" title="Copy heading and permalink for Item f" aria-label="Copy heading and permalink for Item f">🔗</a></div>
+</li>
+<li id="ch-functions-5-12-2-1-3-7">
+<div class="para" id="p-derived-ch-functions-5-12-2-1-3-7"><span class="process-math">\(\displaystyle f^{-1}(\set{-1})\)</span></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item g"><a tabindex="-1" href="#ch-functions-5-12-2-1-3-7" title="Copy heading and permalink for Item g" aria-label="Copy heading and permalink for Item g">🔗</a></div>
+</li>
+<li id="ch-functions-5-12-2-1-3-8">
+<div class="para" id="p-derived-ch-functions-5-12-2-1-3-8"><span class="process-math">\(\displaystyle f^{-1}([-4,-1])\)</span></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item h"><a tabindex="-1" href="#ch-functions-5-12-2-1-3-8" title="Copy heading and permalink for Item h" aria-label="Copy heading and permalink for Item h">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-functions-5-12-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="ch-functions-5-12-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para" id="ch-functions-5-12-3-1">It will help to make a quick sketch of <span class="process-math">\(y=f(x)=x^2\)</span> and think about the various intervals in the domain and codomain. That <span class="process-math">\(f(x)\)</span> is decreasing for <span class="process-math">\(x\lt 0\)</span> and increasing for <span class="process-math">\(x \gt 0\)</span> does make this exercise a little easier.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-functions-5-12-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="image-box" style="width: 66%; margin-left: 17%; margin-right: 17%;"><img src="external/parabola.svg" role="img" class="contained"></div>
+<div class="para logical" id="ch-functions-5-12-3-3">
+<ol class="lower-alpha ol-marker-1" id="ch-functions-5-12-3-3-1">
+<li id="ch-functions-5-12-3-3-1-1">
+<div class="para" id="p-derived-ch-functions-5-12-3-3-1-1">The interval <span class="process-math">\(0 \leq x \leq 4\)</span> maps to <span class="process-math">\(0 \leq x^2 \leq 16\text{.}\)</span> So <span class="process-math">\(f([0,4])=[0,16]\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item a"><a tabindex="-1" href="#ch-functions-5-12-3-3-1-1" title="Copy heading and permalink for Item a" aria-label="Copy heading and permalink for Item a">🔗</a></div>
+</li>
+<li id="ch-functions-5-12-3-3-1-2">
+<div class="para" id="p-derived-ch-functions-5-12-3-3-1-2">The interval <span class="process-math">\(-3 \leq x \leq -1\)</span> maps to <span class="process-math">\(1 \leq x^2 \leq 9\text{,}\)</span> and the interval <span class="process-math">\(1 \leq x \leq 2\)</span> maps to <span class="process-math">\(1 \leq x^2 \leq 4\text{.}\)</span> Hence the points in the union <span class="process-math">\([-3,-1] \cup [1,2]\)</span> map to the interval <span class="process-math">\([1,9] \cup [1,4] = [1,9]\text{.}\)</span> Hence <span class="process-math">\(f( [-3,-1] \cup [1,2] ) = [1,9]\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item b"><a tabindex="-1" href="#ch-functions-5-12-3-3-1-2" title="Copy heading and permalink for Item b" aria-label="Copy heading and permalink for Item b">🔗</a></div>
+</li>
+<li id="ch-functions-5-12-3-3-1-3">
+<div class="para" id="p-derived-ch-functions-5-12-3-3-1-3">To find the preimage of <span class="process-math">\(\set{0}\text{,}\)</span> we need to solve <span class="process-math">\(f(x)=x^2=0\text{.}\)</span> This only has a single solution, namely <span class="process-math">\(x=0\text{,}\)</span> and so <span class="process-math">\(f^{-1}(\set{0})= \set{0}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item c"><a tabindex="-1" href="#ch-functions-5-12-3-3-1-3" title="Copy heading and permalink for Item c" aria-label="Copy heading and permalink for Item c">🔗</a></div>
+</li>
+<li id="ch-functions-5-12-3-3-1-4">
+<div class="para" id="p-derived-ch-functions-5-12-3-3-1-4">To find the preimage of <span class="process-math">\(\set{1}\text{,}\)</span> we need to solve <span class="process-math">\(f(x)=x^2=1\text{.}\)</span> This only two solutions, namely <span class="process-math">\(x= \pm 1\text{,}\)</span> and so <span class="process-math">\(f^{-1}(\set{1})= \set{-1,1}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item d"><a tabindex="-1" href="#ch-functions-5-12-3-3-1-4" title="Copy heading and permalink for Item d" aria-label="Copy heading and permalink for Item d">🔗</a></div>
+</li>
+<li id="ch-functions-5-12-3-3-1-5">
+<div class="para" id="ch-functions-5-12-3-3-1-5-1">The interval <span class="process-math">\(0 \leq x^2 \leq 4\)</span> is mapped to by any number in the interval <span class="process-math">\(-2 \leq x \leq 2\text{.}\)</span> So <span class="process-math">\(f^{-1}([0,4])=[-2,2]\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-functions-5-12-3-3-1-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ch-functions-5-12-3-3-1-5-2">We can check this by looking at the above plot, but also by considering <span class="process-math">\(f([-2,0] \cup [0,2])\text{.}\)</span> The interval <span class="process-math">\(0 \leq x \leq 2\)</span> maps to <span class="process-math">\(0 \leq x^2 \leq 4\)</span> and <span class="process-math">\(-2 \leq x \leq 0\)</span> maps to the same, <span class="process-math">\(0 \leq x^2 \leq 4\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-functions-5-12-3-3-1-5-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item e"><a tabindex="-1" href="#ch-functions-5-12-3-3-1-5" title="Copy heading and permalink for Item e" aria-label="Copy heading and permalink for Item e">🔗</a></div>
+</li>
+<li id="ch-functions-5-12-3-3-1-6">
+<div class="para" id="ch-functions-5-12-3-3-1-6-1">The interval <span class="process-math">\(1 \leq x^2 \leq 4\)</span> is mapped to by any number in the interval <span class="process-math">\(1 \leq x \leq 2\)</span> or any number in <span class="process-math">\(-2 \leq x \leq -1\text{.}\)</span> So <span class="process-math">\(f^{-1}([1,4])=[-2,-1]\cup[1,2]\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-functions-5-12-3-3-1-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ch-functions-5-12-3-3-1-6-2">Again, we can check this by looking at the above plot, but also by considering <span class="process-math">\(f([-2,-1] \cup [1,2])\text{.}\)</span> The interval <span class="process-math">\(1\leq x \leq 2\)</span> mapes to <span class="process-math">\(1 \leq x^2 \leq 4\text{,}\)</span> and <span class="process-math">\(-2 \leq x \leq -1\)</span> maps to the same.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-functions-5-12-3-3-1-6-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item f"><a tabindex="-1" href="#ch-functions-5-12-3-3-1-6" title="Copy heading and permalink for Item f" aria-label="Copy heading and permalink for Item f">🔗</a></div>
+</li>
+<li id="ch-functions-5-12-3-3-1-7">
+<div class="para" id="p-derived-ch-functions-5-12-3-3-1-7">To find the preimage of <span class="process-math">\(\set{-1}\text{,}\)</span> we need to solve <span class="process-math">\(f(x)=x^2=-1\text{.}\)</span> This has no solutions<details class="ptx-footnote" aria-live="polite" id="ch-functions-5-12-3-3-1-7-3"><summary class="ptx-footnote__number" title="Footnote 117"><sup> 117 </sup></summary>
+<div class="ptx-footnote__contents" id="ch-functions-5-12-3-3-1-7-3">To be more precise, it has no solutions over the reals, which is the domain of the function.
+</div></details>, so <span class="process-math">\(f^{-1}(\set{-1})=\es \)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item g"><a tabindex="-1" href="#ch-functions-5-12-3-3-1-7" title="Copy heading and permalink for Item g" aria-label="Copy heading and permalink for Item g">🔗</a></div>
+</li>
+<li id="ch-functions-5-12-3-3-1-8">
+<div class="para" id="p-derived-ch-functions-5-12-3-3-1-8">To find the preimage of <span class="process-math">\(-4 \leq x^2 \leq -1\text{,}\)</span> we should recall that the square of any real number is non-negative. So there are no values of <span class="process-math">\(x\)</span> that map into that interval. Thus <span class="process-math">\(f^{-1}([-4,-1])=\es\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item h"><a tabindex="-1" href="#ch-functions-5-12-3-3-1-8" title="Copy heading and permalink for Item h" aria-label="Copy heading and permalink for Item h">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-functions-5-12-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 10.3.4.1"><a tabindex="-1" href="#ch-functions-5-12-3" title="Copy heading and permalink for Solution 10.3.4.1" aria-label="Copy heading and permalink for Solution 10.3.4.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 10.3.4: Images and preimages"><a tabindex="-1" href="#ch-functions-5-12" title="Copy heading and permalink for Example 10.3.4: Images and preimages" aria-label="Copy heading and permalink for Example 10.3.4: Images and preimages">🔗</a></div>
+</article>
+<div class="para" id="ch-functions-5-13">This example shows that the preimage of a single element<details class="ptx-footnote" aria-live="polite" id="ch-functions-5-13-1"><summary class="ptx-footnote__number" title="Footnote 118"><sup> 118 </sup></summary>
+<div class="ptx-footnote__contents" id="ch-functions-5-13-1">Recall that we are abusing the definition of preimage here; we really mean “the preimage of a set containing a single element”.
+</div></details> in the codomain can be empty, or can contain a single element, or can contain multiple elements. As noted above, we want to understand what conditions we can impose on a function so that the preimage of a single point<details class="ptx-footnote" aria-live="polite" id="ch-functions-5-13-2"><summary class="ptx-footnote__number" title="Footnote 119"><sup> 119 </sup></summary>
+<div class="ptx-footnote__contents" id="ch-functions-5-13-2">Another similar abuse of the definition of preimage in order to keep the language flowing.
+</div></details> in the codomain always contains exactly one point in the domain. This will allow us to properly define inverse functions — that is if <span class="process-math">\(f(x)=y\)</span> then how do we define a new function <span class="process-math">\(g\)</span> so that <span class="process-math">\(g(y)=x\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-functions-5-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ch-functions-5-14">Before we get to inverses we can do some more exploring of images and preimages. Since these are really operations on sets, we can (and should) ask ourselves how do these new things we can do to sets interact with the other things we can do to sets. So we now explore some of the relationships between subsets and their images and preimages, and also the interplay between functions, unions, intersections and differences.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-functions-5-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ch-functions-5-15">For example — it is clearly <details class="ptx-footnote" aria-live="polite" id="ch-functions-5-15-2"><summary class="ptx-footnote__number" title="Footnote 120"><sup> 120 </sup></summary>
+<div class="ptx-footnote__contents" id="ch-functions-5-15-2">This is always a dangerous word when writing mathematics, and the authors include it here as an example of what, perhaps, one should not do. One person’s “clearly” is another persons “3 hours of confusion”.
+</div></details> the case that if <span class="process-math">\(C_1 \subseteq C_2 \subseteq A\)</span> then <span class="process-math">\(f(C_1) \subseteq f(C_2)\text{.}\)</span> Similarly if <span class="process-math">\(D_1 \subseteq D_2 \subseteq B\)</span> then <span class="process-math">\(f^{-1}(D_1) \subseteq f^{-1}(D_2)\text{.}\)</span>  While we’ve said “clearly”, we should really state results carefully and make them a result and prove them. We’ll follow this up with a more important result which we’ll call a theorem.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-functions-5-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="proposition theorem-like" id="ch-functions-5-16"><h2 class="heading">
+<span class="type">Result</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">10.3.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para logical" id="ch-functions-5-16-1-1">
+<div class="para">Let <span class="process-math">\(f: A \to B\text{,}\)</span> and let <span class="process-math">\(C_1 \subseteq C_2 \subseteq A\)</span> and <span class="process-math">\(D_1 \subseteq D_2 \subseteq B\text{.}\)</span> Then</div>
+<div class="displaymath process-math" id="ch-functions-5-16-1-1-4">
+\begin{equation*}
+f(C_1) \subseteq f(C_2) \qquad \text{and} \qquad f^{-1}(D_1) \subseteq f^{-1}(D_2).
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-functions-5-16-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Result 10.3.5"><a tabindex="-1" href="#ch-functions-5-16" title="Copy heading and permalink for Result 10.3.5" aria-label="Copy heading and permalink for Result 10.3.5">🔗</a></div>
+</article>
+<details id="ch-functions-5-17" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="ch-functions-5-17-1">
+<div class="para">We prove each inclusion in turn.</div>
+<ul class="disc" id="ch-functions-5-17-1-1">
+<li id="ch-functions-5-17-1-1-1">
+<div class="para" id="ch-functions-5-17-1-1-1-1">Let <span class="process-math">\(b \in f(C_1)\text{.}\)</span> Then (by the definition of image) there is some <span class="process-math">\(a \in C_1\)</span> so that <span class="process-math">\(f(a)=b\text{.}\)</span> But since <span class="process-math">\(C_1 \subseteq C_2\text{,}\)</span> we know that <span class="process-math">\(a \in C_2\text{.}\)</span> Hence <span class="process-math">\(b=f(a) \in f(C_2)\)</span> as required.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-functions-5-17-1-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch-functions-5-17-1-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch-functions-5-17-1-1-2">
+<div class="para" id="ch-functions-5-17-1-1-2-1">Let <span class="process-math">\(a \in f^{-1}(D_1)\text{.}\)</span> Then (by definition of preimage) <span class="process-math">\(f(a) \in D_1\text{.}\)</span> But since <span class="process-math">\(D_1 \subseteq D_2\text{,}\)</span> we know <span class="process-math">\(f(a) \in D_2\text{.}\)</span> Then, by the definition of preimage, we know that <span class="process-math">\(a \in f^{-1}(D_2)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-functions-5-17-1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch-functions-5-17-1-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-functions-5-17-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 10.3.1"><a tabindex="-1" href="#ch-functions-5-17" title="Copy heading and permalink for Proof 10.3.1" aria-label="Copy heading and permalink for Proof 10.3.1">🔗</a></div>
+</article></details>
+<div class="para" id="ch-functions-5-18">Now, while the above proof is not terribly technical, it does require us to know the definitions of image and preimage and to understand how to manipulate them. Even though the statement we have just proved is (arguably) obvious<details class="ptx-footnote" aria-live="polite" id="ch-functions-5-18-1"><summary class="ptx-footnote__number" title="Footnote 121"><sup> 121 </sup></summary>
+<div class="ptx-footnote__contents" id="ch-functions-5-18-1">“Obvious” is another dangerous word, and is a good example of <dfn class="terminology">emotive conjugation</dfn>. “I found it obvious” but “they spent 4 days trying to work out what was going on”. This sort of thing often arises in the descriptions that people give their own actions compared with the descriptions of others. The interested reader should search-engine their way to the BBC series “Yes Prime Minister” which has the following example: “I give confidential press briefings; you leak; he’s being charged under section 2A of the Official Secrets Act.”
+</div></details>, its proof is not so trivial.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-functions-5-18" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm_img_preimg"><h2 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">10.3.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para logical" id="thm_img_preimg-1-1">
+<div class="para">Let <span class="process-math">\(f: A \to B\text{,}\)</span> and let <span class="process-math">\(C \subseteq A\)</span> and <span class="process-math">\(D \subseteq B\text{.}\)</span> Further, let <span class="process-math">\(C_1, C_2\)</span> be subsets of <span class="process-math">\(A\)</span> and let <span class="process-math">\(D_1, D_2\)</span> be subsets of <span class="process-math">\(B\text{.}\)</span> The following are true</div>
+<ol class="lower-roman ol-marker-3" id="thm_img_preimg-1-1-8">
+<li id="thm_img_preimg-1-1-8-1">
+<div class="para" id="p-derived-thm_img_preimg-1-1-8-1"><span class="process-math">\(\displaystyle C \subseteq f^{-1}( f(C) )\)</span></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item i"><a tabindex="-1" href="#thm_img_preimg-1-1-8-1" title="Copy heading and permalink for Item i" aria-label="Copy heading and permalink for Item i">🔗</a></div>
+</li>
+<li id="thm_img_preimg-1-1-8-2">
+<div class="para" id="p-derived-thm_img_preimg-1-1-8-2"><span class="process-math">\(\displaystyle f( f^{-1}(D) ) \subseteq D\)</span></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item ii"><a tabindex="-1" href="#thm_img_preimg-1-1-8-2" title="Copy heading and permalink for Item ii" aria-label="Copy heading and permalink for Item ii">🔗</a></div>
+</li>
+<li id="thm_img_preimg-1-1-8-3">
+<div class="para" id="p-derived-thm_img_preimg-1-1-8-3">
+<span class="process-math">\(f(C_1 \cap C_2) \subseteq f(C_1) \cap f(C_2)\)</span> — note: need not be equal</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item iii"><a tabindex="-1" href="#thm_img_preimg-1-1-8-3" title="Copy heading and permalink for Item iii" aria-label="Copy heading and permalink for Item iii">🔗</a></div>
+</li>
+<li id="thm_img_preimg-1-1-8-4">
+<div class="para" id="p-derived-thm_img_preimg-1-1-8-4">
+<span class="process-math">\(f(C_1 \cup C_2) = f(C_1) \cup f(C_2)\)</span> — note: are equal</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item iv"><a tabindex="-1" href="#thm_img_preimg-1-1-8-4" title="Copy heading and permalink for Item iv" aria-label="Copy heading and permalink for Item iv">🔗</a></div>
+</li>
+<li id="thm_img_preimg-1-1-8-5">
+<div class="para" id="p-derived-thm_img_preimg-1-1-8-5"><span class="process-math">\(\displaystyle f^{-1}(D_1 \cap D_2) = f^{-1}(D_1) \cap f^{-1}(D_2)\)</span></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item v"><a tabindex="-1" href="#thm_img_preimg-1-1-8-5" title="Copy heading and permalink for Item v" aria-label="Copy heading and permalink for Item v">🔗</a></div>
+</li>
+<li id="thm_img_preimg-1-1-8-6">
+<div class="para" id="p-derived-thm_img_preimg-1-1-8-6"><span class="process-math">\(\displaystyle f^{-1}(D_1 \cup D_2) = f^{-1}(D_1) \cup f^{-1}(D_2)\)</span></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item vi"><a tabindex="-1" href="#thm_img_preimg-1-1-8-6" title="Copy heading and permalink for Item vi" aria-label="Copy heading and permalink for Item vi">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm_img_preimg-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 10.3.6"><a tabindex="-1" href="#thm_img_preimg" title="Copy heading and permalink for Theorem 10.3.6" aria-label="Copy heading and permalink for Theorem 10.3.6">🔗</a></div>
+</article>
+<div class="para logical" id="ch-functions-5-20">
+<div class="para">So what does this theorem tell us? It says that preimages play very nicely with set operations — they are  well-behaved:</div>
+<ul class="disc" id="ch-functions-5-20-2">
+<li id="ch-functions-5-20-2-1">
+<div class="para" id="p-derived-ch-functions-5-20-2-1">The preimage of the intersection is the intersection of the preimages</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch-functions-5-20-2-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch-functions-5-20-2-2">
+<div class="para" id="p-derived-ch-functions-5-20-2-2">The preimage of the union is the union of the preimages</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch-functions-5-20-2-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">It also tells us that images are <em class="emphasis">mostly</em> well-behaved:</div>
+<ul class="disc" id="ch-functions-5-20-4">
+<li id="ch-functions-5-20-4-1">
+<div class="para" id="p-derived-ch-functions-5-20-4-1">The image of the union is the union of the images</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch-functions-5-20-4-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch-functions-5-20-4-2">
+<div class="para" id="p-derived-ch-functions-5-20-4-2">The image of the intersection is <em class="emphasis">a subset of</em> the intersection of the images.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch-functions-5-20-4-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-functions-5-20" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ch-functions-5-21">Of course, we should prove these results. We’ll do some in the text and leave some of them as exercises. We’ll prove (iii) first and then (vi) and leave (i) until last. In the authors’ experience, people find (i) quite confusing, so we will tackle it after we’ve warmed up on the other two.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-functions-5-21" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="ch-functions-5-22" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="ch-functions-5-22-1">
+<ul class="disc" id="ch-functions-5-22-1-1">
+<li id="ch-functions-5-22-1-1-1">
+<div class="para" id="ch-functions-5-22-1-1-1-1">Proof of (iii):<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-functions-5-22-1-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ch-functions-5-22-1-1-1-2">We need to show that if an element is in the set on the left then it is in the set on the right. Let <span class="process-math">\(b \in f(C_1 \cap C_2\)</span>). Hence there is  <span class="process-math">\(a \in C_1 \cap C_2\)</span> such that <span class="process-math">\(f(a) = b\text{.}\)</span> This means that <span class="process-math">\(a \in C_1\)</span> and <span class="process-math">\(a \in C_2\text{.}\)</span> It follows that  <span class="process-math">\(f(a) = b \in f(C_1)\)</span> and <span class="process-math">\(f(a) = b \in f(C_2)\text{,}\)</span> and hence <span class="process-math">\(b \in f(C_1) \cap f(C_2)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-functions-5-22-1-1-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ch-functions-5-22-1-1-1-3">The converse is false: <span class="process-math">\(f(C_1) \cap f(C_2) \not\subseteq f(C_1 \cap C_2)\)</span> — another good exercise for the reader.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-functions-5-22-1-1-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch-functions-5-22-1-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch-functions-5-22-1-1-2">
+<div class="para" id="ch-functions-5-22-1-1-2-1">Proof of (vi):<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-functions-5-22-1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ch-functions-5-22-1-1-2-2">Let <span class="process-math">\(a \in f^{-1}(D_1 \cup D_2)\)</span> and so <span class="process-math">\(f(a)
+\in D_1 \cup D_2\text{.}\)</span> This means that <span class="process-math">\(f(a) \in D_1\)</span> or <span class="process-math">\(f(a) \in D_2\text{.}\)</span> If <span class="process-math">\(f(a)
+\in D_1\)</span> it follows that <span class="process-math">\(a \in f^{-1}(D_1)\text{.}\)</span> Similarly if <span class="process-math">\(f(a) \in D_2\)</span> then <span class="process-math">\(a \in f^{-1}(D_2)\text{.}\)</span> Since <span class="process-math">\(a\)</span> lies in one of these two sets, it follows that <span class="process-math">\(a \in f^{-1}(D_1) \cup f^{-1}(D_2)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-functions-5-22-1-1-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ch-functions-5-22-1-1-2-3">Let <span class="process-math">\(a \in f^{-1}(D_1) \cup f^{-1}(D_2)\text{.}\)</span> Then <span class="process-math">\(a\)</span> is an element of one of these two sets. If <span class="process-math">\(a \in f^{-1}(D_1)\text{,}\)</span> then <span class="process-math">\(f(a) \in D_1\text{.}\)</span> Similarly if <span class="process-math">\(a
+\in f^{-1}(D_2)\)</span> then <span class="process-math">\(f(a) \in D_2\text{.}\)</span> In either case <span class="process-math">\(f(a) \in D_1 \cup D_2\)</span> and so <span class="process-math">\(a \in f^{-1} ( D_1 \cup D_2 )\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-functions-5-22-1-1-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch-functions-5-22-1-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ch-functions-5-22-1-1-3">
+<div class="para" id="ch-functions-5-22-1-1-3-1">Proof of (i):<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-functions-5-22-1-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ch-functions-5-22-1-1-3-2">Let <span class="process-math">\(x \in C\text{.}\)</span> We need to show that <span class="process-math">\(x \in f^{-1}( f(C) )\text{.}\)</span> So what is this set — by the definition it is <span class="process-math">\(\{a \in A : f(a) \in f(C) \}\text{.}\)</span> Since <span class="process-math">\(x
+\in C\)</span> we have, by definition, <span class="process-math">\(f(x) \in f(C)\text{.}\)</span> Since <span class="process-math">\(f(x) \in f(C)\)</span> it follows that <span class="process-math">\(x \in
+f^{-1}(f(C))\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-functions-5-22-1-1-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ch-functions-5-22-1-1-3-3">Note that the converse of this statement is false: <span class="process-math">\(f^{-1}(f(C)) \not\subseteq C\text{.}\)</span> This makes a good exercise. We also note that (ii) follows a similarly flavoured argument and is another good exercise for the reader.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-functions-5-22-1-1-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch-functions-5-22-1-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch-functions-5-22-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 10.3.2"><a tabindex="-1" href="#ch-functions-5-22" title="Copy heading and permalink for Proof 10.3.2" aria-label="Copy heading and permalink for Proof 10.3.2">🔗</a></div>
+</article></details><div class="autopermalink" aria-hidden="true" data-description="Section 10.3: Images and preimages of sets"><a tabindex="-1" href="#ch-functions-5" title="Copy heading and permalink for Section 10.3: Images and preimages of sets" aria-label="Copy heading and permalink for Section 10.3: Images and preimages of sets">🔗</a></div>
+</section>
+</div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="ch-functions-4.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch-functions-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+<!--Start: Google Global Site Tag code--><!--*** DO NOT COPY ANOTHER PROJECT'S MAGIC NUMBERS/ID ***--><!--***           GET YOUR OWN FROM GOOGLE             ***-->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-FL66FX9988"></script><script>  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-FL66FX9988');
+</script><!--End: Google Global Site Tag code-->
+</body>
+</html>

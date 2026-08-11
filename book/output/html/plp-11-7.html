@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Indexed sets</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
+startMathJax({
+hasWebworkReps: false,
+hasSage: false,
+isReact: false,
+htmlPresentation: false,
+lang: "en-US",
+});
+</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta name="twitter:title" content="PLP">
+<meta property="og:title" content="PLP">
+<meta property="book:title" content="PLP">
+<meta name="twitter:description" content="An introduction to mathematical proof">
+<meta property="og:description" content="An introduction to mathematical proof">
+<meta name="twitter:card" content="summary">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.48"></script><script src="_static/pretext/js/dist/pretext-read-aloud.js?v=2.48"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.2.4';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.40bd1420d3277749.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.b388362b5f43738a.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.8086b62682b271d1.css">
+<script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead" role="banner"><div class="ptx-banner"><div class="title-container">
+<div class="heading ptx-banner-heading"><a href="plp.html"><span class="title">PLP</span> <span class="subtitle">An introduction to mathematical proof</span></a></div>
+<p class="byline">Seçkin Demirbaş, Andrew Rechnitzer</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button id="ptx-toc-toggle" type="button" aria-controls="ptx-sidebar" class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="ptx-search-box">
+<div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search Book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog"><div class="ptx-search-dialog-controls">
+<input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close" id="ptx-search-close" class="ptx-search-close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div id="ptx-search-status" class="ptx-search-status" aria-live="polite" aria-atomic="true"></div>
+<h2 class="heading ptx-search-results-heading">Search Results: </h2>
+<div id="ptx-search-empty" class="ptx-search-empty"><span>No results.</span></div>
+<ol id="ptx-search-results" class="ptx-search-results"></ol></dialog>
+</div>
+<span class="nav-other-controls"><button id="ptx-read-aloud-button" class="ptx-read-aloud-button button" title="Read aloud" aria-expanded="false"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf1bc;</span><span class="name">Read aloud</span></button><div id="ptx-read-aloud-player" class="ptx-read-aloud-player" hidden="hidden" role="group" aria-label="Read aloud">
+<button id="ptx-read-aloud-prev" class="button" title="Previous sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe045;</span></button><button id="ptx-read-aloud-toggle" class="ptx-read-aloud-toggle button" title="Play"><span class="ptx-read-aloud-icon-play"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></span><span class="ptx-read-aloud-icon-pause"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe034;</span></span></button><button id="ptx-read-aloud-next" class="button" title="Next sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe044;</span></button><a id="ptx-read-aloud-continue" class="ptx-read-aloud-continue button" hidden="hidden">Continue<span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></a><button id="ptx-read-aloud-settings-button" class="ptx-read-aloud-settings-button button" title="Reading settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe429;</span></button>
+</div>
+<dialog class="ptx-dialog ptx-read-aloud-settings-popup" id="ptx-read-aloud-settings-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Read aloud settings</h2>
+<button class="ptx-read-aloud-settings-close-button button" id="ptx-read-aloud-settings-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label for="ptx-read-aloud-voice"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe91f;</span><span>Voice</span></label><select id="ptx-read-aloud-voice"></select><label class="ptx-readability-slider-label" for="ptx-read-aloud-rate"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe9e4;</span><span>Reading speed</span><output id="ptx-read-aloud-rate-value" for="ptx-read-aloud-rate">1×</output></label><input type="range" id="ptx-read-aloud-rate" min="0.5" max="2" step="0.1" value="1"><label for="ptx-read-aloud-asides"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d7;</span><span>Collapsed content</span></label><select id="ptx-read-aloud-asides"><option value="skip">Announce, do not read</option>
+<option value="read">Read automatically</option></select><label for="ptx-read-aloud-autoscroll"><input type="checkbox" id="ptx-read-aloud-autoscroll" checked><span>Follow along (auto-scroll)</span></label><label for="ptx-read-aloud-autocontinue"><input type="checkbox" id="ptx-read-aloud-autocontinue"><span>Continue to the next page automatically</span></label>
+</div></dialog><button id="ptx-readability-options-button" class="ptx-readability-options-button button" title="Readability settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf6f1;</span><span class="name">Readability settings</span></button><dialog class="ptx-dialog ptx-readability-options-popup" id="ptx-readability-options-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Readability settings</h2>
+<button class="ptx-readability-options-close-button button" id="ptx-readability-options-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-line-height"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe240;</span><span>Line height</span><output id="ptx-readability-line-height-value" for="ptx-readability-line-height">1.35</output></label><input type="range" id="ptx-readability-line-height" min="1.10" max="3" step="0.05" value="1.35">
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-font-size"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe245;</span><span>Content font size</span><output id="ptx-readability-font-size-value" for="ptx-readability-font-size">100%</output></label><input type="range" id="ptx-readability-font-size" min="0.8" max="1.5" step="0.05" value="1">
+</div>
+<fieldset class="ptx-readability-options-group ptx-readability-options-group-theme">
+<legend>Theme</legend>
+<label for="ptx-readability-theme-system"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-system" value="system"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe1ab;</span><span>System</span></label><label for="ptx-readability-theme-light"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-light" value="light"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe518;</span><span>Light</span></label><label for="ptx-readability-theme-dark"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-dark" value="dark"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span>Dark</span></label>
+</fieldset>
+<fieldset class="ptx-readability-options-group">
+<legend>Assistive technologies</legend>
+<label for="ptx-readability-accessible-permalinks"><input type="checkbox" id="ptx-readability-accessible-permalinks"><span>🔗</span><span>Expose permalinks</span></label>
+</fieldset>
+<div class="ptx-readability-options-group"><button type="button" class="ptx-readability-reset-button button" id="ptx-readability-reset-button"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf053;</span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="plp-11-6.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="plp-11.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="plp-11-8.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{cancel}\require{upgreek} \newcommand{\ds}{\displaystyle}
+ \renewcommand{\textcolor}[2]{{\color{#1}{#2}}}
+ 
+ \newcommand{\es}{ {\varnothing}}
+ \newcommand{\st}{ \;\mathrm{s.t.}\; }
+ \newcommand{\so}{ \;\mid\; }
+ \newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+ \newcommand{\set}[1]{ \left\{#1\right\} }
+ 
+ \renewcommand{\neg}{\sim}
+
+ \newcommand{\rel}[1][R]{\;\mathcal{#1}\;}
+ \newcommand{\nrel}[1][R]{\;\cancel{\mathcal{#1}}\;}
+
+ \newcommand{\dee}[1]{\mathrm{d}#1}
+ \newcommand{\diff}[2]{\dfrac{\mathrm{d}#1}{\mathrm{d}#2}}
+ 
+ \renewcommand{\mod}[1]{\ (\mathrm{mod}\ #1)}
+ \newcommand{\lcm}{\mathrm{lcm}}
+ 
+ \let\oldepsilon\epsilon
+ 
+ \renewcommand{\epsilon}{\varepsilon}
+ \newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" role="complementary" class="ptx-sidebar"><nav id="ptx-toc" tabindex="-1" aria-label="Contents" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul id="ptx-toc-group-frontmatter" class="structural toc-item-list">
+<li class="toc-item toc-dedication"><div class="toc-title-box"><a href="frontmatter-3.html" class="internal"><span class="title">Dedication</span></a></div></li>
+<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="frontmatter-5.html" class="internal"><span class="title">Preface</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="plp-4.html" class="internal"><span class="codenumber">1</span> <span class="title">Sets</span></a></div>
+<ul id="ptx-toc-group-plp-4" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="plp-4-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="plp-4-3.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Not so formal definition</span></a></div>
+<ul id="ptx-toc-group-plp-4-3" class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="plp-4-3.html#plp-4-3-3" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Who is this reader you keep on mentioning?</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-describing.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Describing a set</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-4-5.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Onward</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="plp-4-6.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-logic.html" class="internal"><span class="codenumber">2</span> <span class="title">A little logic</span></a></div>
+<ul id="ptx-toc-group-ch-logic" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-logic-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-logic-3.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Statements and open sentences</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-logic-4.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Negation</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-logic-5.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Or and And</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-implication.html" class="internal"><span class="codenumber">2.4</span> <span class="title">The implication</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-logic-7.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Modus ponens and chaining implications</span></a></div>
+<ul id="ptx-toc-group-ch-logic-7" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-logic-7.html#ch-logic-7-2" class="internal"><span class="codenumber">2.5.1</span> <span class="title">Modus ponens</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-logic-7.html#ch-logic-7-3" class="internal"><span class="codenumber">2.5.2</span> <span class="title">Affirming the consequent and denying the antecedent</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-logic-7.html#ch-logic-7-4" class="internal"><span class="codenumber">2.5.3</span> <span class="title">Chaining implications together</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-CCB.html" class="internal"><span class="codenumber">2.6</span> <span class="title">The converse, contrapositive and biconditional</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-logic-9.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-direct.html" class="internal"><span class="codenumber">3</span> <span class="title">Direct proofs</span></a></div>
+<ul id="ptx-toc-group-ch-direct" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-direct-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-direct-3.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Trivialities and vacuousness</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-direct-4.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Direct proofs</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-direct-5.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Proofs of inequalities</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-direct-6.html" class="internal"><span class="codenumber">3.4</span> <span class="title">A quick visit to disproofs</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-direct-7.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="plp-7.html" class="internal"><span class="codenumber">4</span> <span class="title">More logic</span></a></div>
+<ul id="ptx-toc-group-plp-7" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="plp-7-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-7-3.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Tautologies and contradictions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-7-4.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Logical equivalence</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="plp-7-5.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-moreproof.html" class="internal"><span class="codenumber">5</span> <span class="title">More proofs</span></a></div>
+<ul id="ptx-toc-group-ch-moreproof" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-moreproof-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-moreproof-3.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Contrapositive</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-moreproof-4.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Proofs with cases</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-congruence.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Congruence modulo <span class="process-math">\(n\)</span></span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-abs-triangle.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Absolute values and the triangle inequality</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-moreproof-7.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-quantifiers.html" class="internal"><span class="codenumber">6</span> <span class="title">Quantifiers</span></a></div>
+<ul id="ptx-toc-group-ch-quantifiers" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-quantifiers-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-quantifiers-3.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Quantified statements</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-quantifiers-4.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Negation of quantifiers</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-quantifiers-5.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Nested quantifiers</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_limits.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Quantifiers and rigorous limits</span></a></div>
+<ul id="ptx-toc-group-sec_limits" class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec_limits.html#sec_limits-3" class="internal"><span class="codenumber">6.4.1</span> <span class="title">Convergence of sequences</span></a></div>
+<ul id="ptx-toc-group-sec_limits-3" class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec_limits.html#sec_limits-3-3" class="internal"><span class="codenumber">6.4.1.1</span> <span class="title">Quantifying towards a definition</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec_limits.html#sec_limits-3-4" class="internal"><span class="codenumber">6.4.1.2</span> <span class="title">Some examples</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_limits.html#sec_limits-4" class="internal"><span class="codenumber">6.4.2</span> <span class="title">The limit of a function</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-quantifiers-7.html" class="internal"><span class="codenumber">6.5</span> <span class="title">(Optional) Properties of limits</span></a></div>
+<ul id="ptx-toc-group-ch-quantifiers-7" class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimseq" class="internal"><span class="codenumber">6.5.1</span> <span class="title">(Optional) Some properties of limits of sequences</span></a></div>
+<ul id="ptx-toc-group-subsec-proplimseq" class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimseq-3" class="internal"><span class="codenumber">6.5.1.1</span> <span class="title">Uniqueness of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimseq-4" class="internal"><span class="codenumber">6.5.1.2</span> <span class="title">Linearity of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimseq-5" class="internal"><span class="codenumber">6.5.1.3</span> <span class="title">Product of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimseq-6" class="internal"><span class="codenumber">6.5.1.4</span> <span class="title">Ratio of limits</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimfunc" class="internal"><span class="codenumber">6.5.2</span> <span class="title">(Optional) Some properties of limits of functions</span></a></div>
+<ul id="ptx-toc-group-subsec-proplimfunc" class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimfunc-3" class="internal"><span class="codenumber">6.5.2.1</span> <span class="title">Uniqueness of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimfunc-4" class="internal"><span class="codenumber">6.5.2.2</span> <span class="title">Linearity of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimfunc-5" class="internal"><span class="codenumber">6.5.2.3</span> <span class="title">Product of limits</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ch-quantifiers-7.html#subsec-proplimfunc-6" class="internal"><span class="codenumber">6.5.2.4</span> <span class="title">Ratio of limits</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-quantifiers-8.html" class="internal"><span class="codenumber">6.6</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_induction.html" class="internal"><span class="codenumber">7</span> <span class="title">Induction</span></a></div>
+<ul id="ptx-toc-group-ch_induction" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch_induction-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch_induction-3.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Induction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch_induction-4.html" class="internal"><span class="codenumber">7.2</span> <span class="title">More general inductions</span></a></div>
+<ul id="ptx-toc-group-ch_induction-4" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch_induction-4.html#subsec-extendedinduction" class="internal"><span class="codenumber">7.2.1</span> <span class="title">A little more general</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch_induction-4.html#subsec-stronginduction" class="internal"><span class="codenumber">7.2.2</span> <span class="title">More general and yet equivalent</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch_induction-5.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="plp-11.html" class="internal"><span class="codenumber">8</span> <span class="title">Return to sets</span></a></div>
+<ul class="structural toc-item-list contains-active" id="ptx-toc-group-plp-11">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="plp-11-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-11-3.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Subsets</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-11-4.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Set operations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-11-5.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Cartesian products of sets</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="plp-11-6.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Some set-flavoured results</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="plp-11-7.html" class="internal"><span class="codenumber">8.5</span> <span class="title">Indexed sets</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="plp-11-8.html" class="internal"><span class="codenumber">8.6</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_relations.html" class="internal"><span class="codenumber">9</span> <span class="title">Relations</span></a></div>
+<ul id="ptx-toc-group-ch_relations" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch_relations-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch_relations-3.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Relations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_prop_rel.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Properties of relations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch_relations-5.html" class="internal"><span class="codenumber">9.3</span> <span class="title">Equivalence relations &amp; classes</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_congruence_revisited.html" class="internal"><span class="codenumber">9.4</span> <span class="title">Congruence revisited</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-euclid.html" class="internal"><span class="codenumber">9.5</span> <span class="title">Greatest divisors, Bézout and the Euclidean algorithm</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-unique-fact.html" class="internal"><span class="codenumber">9.6</span> <span class="title">Uniqueness of prime factorisation</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch_relations-9.html" class="internal"><span class="codenumber">9.7</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-functions.html" class="internal"><span class="codenumber">10</span> <span class="title">Functions</span></a></div>
+<ul id="ptx-toc-group-ch-functions" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-functions-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-functions-3.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-functions-4.html" class="internal"><span class="codenumber">10.2</span> <span class="title">A more abstract definition</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-functions-5.html" class="internal"><span class="codenumber">10.3</span> <span class="title">Images and preimages of sets</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-functions-6.html" class="internal"><span class="codenumber">10.4</span> <span class="title">Injective and surjective functions</span></a></div>
+<ul id="ptx-toc-group-ch-functions-6" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-functions-6.html#ch-functions-6-3" class="internal"><span class="codenumber">10.4.1</span> <span class="title">Injections and surjections</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-functions-6.html#ch-functions-6-4" class="internal"><span class="codenumber">10.4.2</span> <span class="title">Bijective functions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-functions-7.html" class="internal"><span class="codenumber">10.5</span> <span class="title">Composition of functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_inv_func.html" class="internal"><span class="codenumber">10.6</span> <span class="title">Inverse functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-functions-9.html" class="internal"><span class="codenumber">10.7</span> <span class="title">(Optional) The axiom of choice</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-functions-10.html" class="internal"><span class="codenumber">10.8</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-contradictions.html" class="internal"><span class="codenumber">11</span> <span class="title">Proof by contradiction</span></a></div>
+<ul id="ptx-toc-group-ch-contradictions" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-contradictions-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch-contradictions-3.html" class="internal"><span class="codenumber">11.1</span> <span class="title">Structure of a proof by contradiction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch-contradictions-4.html" class="internal"><span class="codenumber">11.2</span> <span class="title">Some examples</span></a></div>
+<ul id="ptx-toc-group-ch-contradictions-4" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-contradictions-4.html#ch-contradictions-4-3" class="internal"><span class="codenumber">11.2.1</span> <span class="title">The irrationality of <span class="process-math">\(\sqrt{2}\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch-contradictions-4.html#ssec_inf_primes" class="internal"><span class="codenumber">11.2.2</span> <span class="title">The infinitude of primes</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch-contradictions-5.html" class="internal"><span class="codenumber">11.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap_cardinality.html" class="internal"><span class="codenumber">12</span> <span class="title">Cardinality</span></a></div>
+<ul id="ptx-toc-group-chap_cardinality" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="chap_cardinality-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="chap_cardinality-3.html" class="internal"><span class="codenumber">12.1</span> <span class="title">Finite sets</span></a></div>
+<ul id="ptx-toc-group-chap_cardinality-3" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-3.html#chap_cardinality-3-3" class="internal"><span class="codenumber">12.1.1</span> <span class="title">Equinumerous sets, bijections and pigeons</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-3.html#chap_cardinality-3-4" class="internal"><span class="codenumber">12.1.2</span> <span class="title">Comparing with functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-3.html#chap_cardinality-3-5" class="internal"><span class="codenumber">12.1.3</span> <span class="title">Infinite sets are strange.</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap_cardinality-4.html" class="internal"><span class="codenumber">12.2</span> <span class="title">Denumerable sets</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_uncount.html" class="internal"><span class="codenumber">12.3</span> <span class="title">Uncountable sets</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="chap_cardinality-6.html" class="internal"><span class="codenumber">12.4</span> <span class="title">Comparing cardinalities</span></a></div>
+<ul id="ptx-toc-group-chap_cardinality-6" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-6.html#chap_cardinality-6-2" class="internal"><span class="codenumber">12.4.1</span> <span class="title">Extending to the infinite</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-6.html#chap_cardinality-6-3" class="internal"><span class="codenumber">12.4.2</span> <span class="title">Cantor’s Theorem and infinite infinities</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-6.html#chap_cardinality-6-4" class="internal"><span class="codenumber">12.4.3</span> <span class="title">Congratulations are in order</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap_cardinality-6.html#chap_cardinality-6-5" class="internal"><span class="codenumber">12.4.4</span> <span class="title">One more question</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_compare_card.html" class="internal"><span class="codenumber">12.5</span> <span class="title">More comparisons of cardinalties</span></a></div>
+<ul id="ptx-toc-group-sec_compare_card" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_compare_card.html#sec_compare_card-3" class="internal"><span class="codenumber">12.5.1</span> <span class="title">The Cantor-Schröder-Bernstein theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_compare_card.html#sec_compare_card-4" class="internal"><span class="codenumber">12.5.2</span> <span class="title">Applications</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_compare_card.html#sec_compare_card-5" class="internal"><span class="codenumber">12.5.3</span> <span class="title">Proof that <span class="process-math">\(|\pow{\mathbb{N}}| = |\mathbb{R}|\)</span></span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_cantor_first.html" class="internal"><span class="codenumber">12.6</span> <span class="title">(Optional) Cantor’s first proof of the uncountability of the reals</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chap_cardinality-9.html" class="internal"><span class="codenumber">12.7</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul id="ptx-toc-group-backmatter" class="structural toc-item-list">
+<li class="toc-item toc-solutions"><div class="toc-title-box"><a href="app_hint.html" class="internal"><span class="codenumber">A.</span> <span class="title">Hints for Exercises</span></a></div></li>
+<li class="toc-item toc-solutions"><div class="toc-title-box"><a href="app_answ.html" class="internal"><span class="codenumber">B.</span> <span class="title">Scratchwork for Exercises</span></a></div></li>
+<li class="toc-item toc-solutions"><div class="toc-title-box"><a href="app_soln.html" class="internal"><span class="codenumber">C.</span> <span class="title">Solutions to Exercises</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="backmatter-5.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="plp-11-7">
+<h1 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.5</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Indexed sets</span>
+</h1>
+<div class="para logical" id="plp-11-7-2">
+<div class="para">Our usual set notation works well when we have a small number of sets; if our work involves three sets, we can just denote them <span class="process-math">\(A,B\)</span> and <span class="process-math">\(C\text{.}\)</span> However, this quickly becomes inconvenient when we have even a moderate number of sets; what should we use to denote the <span class="process-math">\(17^\mathrm{th}\)</span> set? One solution it to use indices to distinguish between sets:</div>
+<div class="displaymath process-math" id="plp-11-7-2-4">
+\begin{equation*}
+A_1, A_2, A_3, \dots
+\end{equation*}
+</div>
+<div class="para">More generally, our indices do not need to be natural numbers, but instead come from any set. So, for example, we could define a family of sets indexed by elements of another set <span class="process-math">\(S\)</span>
+</div>
+<div class="displaymath process-math" id="plp-11-7-2-6">
+\begin{equation*}
+\set{ A_\alpha \st \alpha \in S}
+\end{equation*}
+</div>
+<div class="para">In this context<details class="ptx-footnote" aria-live="polite" id="plp-11-7-2-7"><summary class="ptx-footnote__number" title="Footnote 95"><sup> 95 </sup></summary>
+<div class="ptx-footnote__contents" id="plp-11-7-2-7">We hope the reader will forgive the authors for not making a formal definition here.
+</div></details> we call <span class="process-math">\(S\)</span> the <dfn class="terminology">indexing set</dfn>, and the sets <span class="process-math">\(A_\alpha\)</span> the <dfn class="terminology">indexed sets</dfn>. Typically, the indexing set is a subset of the natural numbers.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-7-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="plp-11-7-3">
+<div class="para">Now, recall that we defined the intersection of sets <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> to be the set of all elements that are in both sets. Similarly the union of <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> is the set of all elements that are in at least one of the sets. It is not hard to extend this to the intersection and union of three sets:</div>
+<div class="displaymath process-math" id="plp-11-7-3-5">
+\begin{equation*}
+A \cap B \cap C = \set{x \st x \text{ is every one of }A,B,C}
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math" id="plp-11-7-3-6">
+\begin{equation*}
+A \cup B \cup C = \set{x \st x \text{ is in at least one of }A,B,C}
+\end{equation*}
+</div>
+<div class="para">Writing the intersection and union this way, shows how we can extend them to intersections and unions of large numbers of sets. Indeed we define,</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-7-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="def-indexedsets1"><h2 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.5.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para logical" id="def-indexedsets1-1-1">
+<div class="para">Let <span class="process-math">\(N \in \mathbb{N}\)</span> and let <span class="process-math">\(A_1, A_2, \dots, A_{N}\)</span> be a collection of sets. We define the intersection of <span class="process-math">\(A_1, A_2, \dots, A_{N}\)</span> as</div>
+<div class="displaymath process-math" id="def-indexedsets1-1-1-4">
+\begin{equation*}
+\bigcap_{k=1}^N A_k = \set{x \st x \in A_j \text{ for all } j \in \set{1,2,\dots,N} }.
+\end{equation*}
+</div>
+<div class="para">We similarly define their union to be</div>
+<div class="displaymath process-math" id="def-indexedsets1-1-1-5">
+\begin{equation*}
+\bigcup_{k=1}^N A_k = \set{x \st x \in A_j \text{ for some } j \in \set{1,2,\dots,N} }.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#def-indexedsets1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 8.5.1"><a tabindex="-1" href="#def-indexedsets1" title="Copy heading and permalink for Definition 8.5.1" aria-label="Copy heading and permalink for Definition 8.5.1">🔗</a></div>
+</article>
+<div class="para" id="plp-11-7-5">This notation is very useful when we have to work with lots of sets<details class="ptx-footnote" aria-live="polite" id="plp-11-7-5-1"><summary class="ptx-footnote__number" title="Footnote 96"><sup> 96 </sup></summary>
+<div class="ptx-footnote__contents" id="plp-11-7-5-1">As you can see, this notation is very similar to the <span class="process-math">\(\Sigma, \Pi\)</span> notation we use to denote sums and products.
+</div></details>. We can generalise it further. For example, these unions and intersections need not start at index 1. Nor do they need to be unions and intersections over finite collections of sets.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-7-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="def-indexedsets2"><h2 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.5.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para logical" id="def-indexedsets2-1-1">
+<div class="para">Let <span class="process-math">\(m,M \in \mathbb{N}\)</span> with <span class="process-math">\(m \leq M\text{,}\)</span> and let <span class="process-math">\(A_k\)</span> be a set for all <span class="process-math">\(k=m,m+1,\dots,M\text{.}\)</span> Then</div>
+<div class="displaymath process-math" id="def-indexedsets2-1-1-5">
+\begin{align*}
+\bigcap_{k=m}^M A_k \amp= \set{x \st \forall j \in \set{m,m+1,\dots,M}, x \in A_j } \\
+\bigcup_{k=m}^M A_k \amp= \set{x \st \exists j \in \set{m,m+1,\dots,M} \text{ s.t. } x \in A_j } 
+\end{align*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#def-indexedsets2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para logical" id="def-indexedsets2-1-2">
+<div class="para">Further, let <span class="process-math">\(B_m, B_{m+1}, B_{m+2},\dots\)</span> be sets, then</div>
+<div class="displaymath process-math" id="def-indexedsets2-1-2-2">
+\begin{align*}
+\bigcap_{k=m}^\infty B_k \amp = \set{x \st \forall j \in \mathbb{N} \text{ with } j \geq m, x \in B_j } \\
+\bigcup_{k=m}^\infty B_k \amp = \set{x \st \exists j \in \mathbb{N} \text{ with } j \geq m \text{ s.t. } x \in B_j } 
+\end{align*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#def-indexedsets2-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 8.5.2"><a tabindex="-1" href="#def-indexedsets2" title="Copy heading and permalink for Definition 8.5.2" aria-label="Copy heading and permalink for Definition 8.5.2">🔗</a></div>
+</article>
+<div class="para" id="plp-11-7-7">These definitions tell us that if <span class="process-math">\(x \in \bigcap_{n=m}^\infty A_n\text{,}\)</span> then <span class="process-math">\(x \in A_k\)</span> for every single <span class="process-math">\(k \geq m\text{.}\)</span> On the other hand, if we know that <span class="process-math">\(x \not \in \bigcap_{n=m}^\infty A_n\text{,}\)</span> then there must be at least one index <span class="process-math">\(k \geq m\)</span> so that <span class="process-math">\(x \not\in A_k\text{.}\)</span> Similarly,  if <span class="process-math">\(x \in \bigcup_{n=m}^\infty A_n\text{,}\)</span> then there is at least one index <span class="process-math">\(k \geq m\)</span> so that <span class="process-math">\(x \in A_k\text{.}\)</span> And if <span class="process-math">\(x \not\in \bigcup_{n=m}^\infty A_n\text{,}\)</span> then <span class="process-math">\(x \not\in A_k\)</span> for every single <span class="process-math">\(k \geq m\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-7-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="example example-like" id="plp-11-7-8"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.5.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para logical" id="plp-11-7-8-1-1">
+<div class="para">Consider the indexed sets, <span class="process-math">\(A_n=\left( -\dfrac 1n,\dfrac 1n \right)\)</span> for <span class="process-math">\(n\in\mathbb{N}\text{.}\)</span> So that, for example,</div>
+<div class="displaymath process-math" id="plp-11-7-8-1-1-3">
+\begin{equation*}
+A_2=\left( -\dfrac 12,\dfrac 12\right)
+\qquad \text{ and }\qquad
+A_{27}=\left( -\dfrac {1}{27},\dfrac {1}{27} \right).
+\end{equation*}
+</div>
+<div class="para">Then</div>
+<div class="displaymath process-math" id="plp-11-7-8-1-1-4">
+\begin{equation*}
+0 \in \bigcap_{n=1}^\infty A_n
+\end{equation*}
+</div>
+<div class="para">but</div>
+<div class="displaymath process-math" id="plp-11-7-8-1-1-5">
+\begin{equation*}
+\dfrac{1}{e} \not\in \bigcap_{n=1}^\infty A_n.
+\end{equation*}
+</div>
+<div class="para">The first of these is true since <span class="process-math">\(0 \in A_n=\left(-\dfrac
+1n,\dfrac 1n\right)\)</span> for all <span class="process-math">\(n \in \mathbb{N}\text{.}\)</span> The second follows<details class="ptx-footnote" aria-live="polite" id="plp-11-7-8-1-1-8"><summary class="ptx-footnote__number" title="Footnote 97"><sup> 97 </sup></summary>
+<div class="ptx-footnote__contents" id="plp-11-7-8-1-1-8">We are assuming that we know <span class="process-math">\(e = 2.71828\dots\text{.}\)</span> It is not too hard to show that <span class="process-math">\(2 \lt e \lt 3\text{,}\)</span> but it does take some calculus.
+</div></details> since <span class="process-math">\(e \lt 3\)</span> and so <span class="process-math">\(\frac{1}{e} \gt \frac{1}{3}\)</span> and so <span class="process-math">\(\frac{1}{e} \not\in
+A_3\text{;}\)</span> since it is not in one of the sets, it cannot be in the intersection of those sets.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-7-8-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="plp-11-7-8-1-2">Actually we have something a little stronger here. We have <span class="process-math">\(\frac 1e\notin \left(-\frac 1n,\frac 1n\right)\)</span> for any <span class="process-math">\(n\geq 3\text{.}\)</span> But since we want to show that <span class="process-math">\(\frac 1e\)</span> is not in the intersection, it is enough to show that it is not in at least one of the intersecting sets.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-7-8-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 8.5.3"><a tabindex="-1" href="#plp-11-7-8" title="Copy heading and permalink for Example 8.5.3" aria-label="Copy heading and permalink for Example 8.5.3">🔗</a></div>
+</article>
+<div class="para logical" id="plp-11-7-9">
+<div class="para">In general, we don’t have to take our indices from the natural numbers. We can index sets with rational numbers, real number, matrices, colours — just about any set. For example, for any real number <span class="process-math">\(x \in (0,10)\)</span> we can define</div>
+<div class="displaymath process-math" id="plp-11-7-9-3">
+\begin{equation*}
+A_x = [-x,x^2] = \set{t \in \mathbb{R} \st -x \leq t \leq x^2}.
+\end{equation*}
+</div>
+<div class="para">So that <span class="process-math">\(A_5 = [5,25]\)</span> and <span class="process-math">\(A_\pi = [-\pi, \pi^2]\text{.}\)</span> So the <span class="process-math">\(A_x\)</span> form a family of sets indexed by real numbers. Sometimes we might need to take the union and intersection of all the sets in such a family, and so we generalise the notation even more.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-7-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="def-indexedsets3"><h2 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.5.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para logical" id="def-indexedsets3-1-1">
+<div class="para">Let <span class="process-math">\(\mathcal{S}\)</span> be a set, and let <span class="process-math">\(A_s\)</span> be a set for all <span class="process-math">\(s \in \mathcal{S}\text{.}\)</span> Then we can define the intersection and union over all of these sets:</div>
+<div class="displaymath process-math" id="def-indexedsets3-1-1-4">
+\begin{equation*}
+\bigcap_{s \in \mathcal{S} } A_s = \set{x \st \forall s \in \mathcal{S}, x \in A_s},
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math" id="def-indexedsets3-1-1-5">
+\begin{equation*}
+\bigcup_{s \in \mathcal{S} } A_s = \set{x \st \exists s \in \mathcal{S} \text{ s.t. } x \in A_s},
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#def-indexedsets3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 8.5.4"><a tabindex="-1" href="#def-indexedsets3" title="Copy heading and permalink for Definition 8.5.4" aria-label="Copy heading and permalink for Definition 8.5.4">🔗</a></div>
+</article>
+<article class="remark remark-like" id="plp-11-7-11"><h2 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.5.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para logical" id="plp-11-7-11-1">
+<div class="para">When we do have sets indexed by the natural numbers, say <span class="process-math">\(A_m, A_{m+1}, A_{m+2}, \dots\)</span> etc, it can be convenient to write their intersection and union as</div>
+<div class="displaymath process-math" id="plp-11-7-11-1-2">
+\begin{equation*}
+A_m\cap A_{m+1}\cap A_{m+2}\cap \cdots \qquad \text{and} \qquad
+A_m\cup A_{m+1}\cup A_{m+2}\cup \cdots
+\end{equation*}
+</div>
+<div class="para">It is arguably better to avoid this notation in favour of the more precise notation above. We should make sure that things are clear for our reader.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-7-11-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="plp-11-7-11-2">A more subtle, but very important point, is that when sets are indexed by real numbers it can, in fact, be impossible to write the union or intersection of those sets in this way. This is because the real numbers are not <dfn class="terminology">countable</dfn>. There is simply no way to write out the real numbers in an ordered list in this way. The interested reader should jump ahead to <a href="chap_cardinality.html" class="internal" title="Chapter 12: Cardinality">Chapter 12</a> for more on the uncountability of the reals.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-7-11-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Remark 8.5.5"><a tabindex="-1" href="#plp-11-7-11" title="Copy heading and permalink for Remark 8.5.5" aria-label="Copy heading and permalink for Remark 8.5.5">🔗</a></div>
+</article>
+<article class="example example-like" id="plp-11-7-12"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.5.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para logical" id="plp-11-7-12-1-1">
+<div class="para">Determine whether or not the following statements are true or false.</div>
+<ol class="lower-alpha ol-marker-1" id="plp-11-7-12-1-1-1">
+<li id="plp-11-7-12-1-1-1-1">
+<div class="para" id="p-derived-plp-11-7-12-1-1-1-1"><span class="process-math">\(\displaystyle \ds \bigcap\limits_{n=1}^\infty \left(-\dfrac 1n,\dfrac 1n\right)=\emptyset\)</span></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item a"><a tabindex="-1" href="#plp-11-7-12-1-1-1-1" title="Copy heading and permalink for Item a" aria-label="Copy heading and permalink for Item a">🔗</a></div>
+</li>
+<li id="plp-11-7-12-1-1-1-2">
+<div class="para" id="p-derived-plp-11-7-12-1-1-1-2"><span class="process-math">\(\displaystyle \ds 3\in \bigcup\limits_{n=3}^\infty \left(2+\dfrac 1n,3-\dfrac 1n\right]\)</span></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item b"><a tabindex="-1" href="#plp-11-7-12-1-1-1-2" title="Copy heading and permalink for Item b" aria-label="Copy heading and permalink for Item b">🔗</a></div>
+</li>
+<li id="plp-11-7-12-1-1-1-3">
+<div class="para logical" id="plp-11-7-12-1-1-1-3-1">
+<div class="para">Given the indexed sets <span class="process-math">\(A_x=[-x,x^2]\text{,}\)</span> for <span class="process-math">\(x\in\mathbb R, x&gt;0\text{,}\)</span> we have</div>
+<div class="displaymath process-math" id="plp-11-7-12-1-1-1-3-1-3">
+\begin{equation*}
+0\in \bigcap\limits_{x\in (0,1)} A_x.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-7-12-1-1-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item c"><a tabindex="-1" href="#plp-11-7-12-1-1-1-3" title="Copy heading and permalink for Item c" aria-label="Copy heading and permalink for Item c">🔗</a></div>
+</li>
+<li id="plp-11-7-12-1-1-1-4">
+<div class="para logical" id="plp-11-7-12-1-1-1-4-1">
+<div class="para">Given the indexed sets <span class="process-math">\(A_y=\big(-e^y,1-\frac 1y\big]\text{,}\)</span> for <span class="process-math">\(y\in\mathbb R\text{,}\)</span> we have</div>
+<div class="displaymath process-math" id="plp-11-7-12-1-1-1-4-1-3">
+\begin{equation*}
+1\in \bigcup\limits_{y\in (1,\infty)} A_y.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-7-12-1-1-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item d"><a tabindex="-1" href="#plp-11-7-12-1-1-1-4" title="Copy heading and permalink for Item d" aria-label="Copy heading and permalink for Item d">🔗</a></div>
+</li>
+<li id="plp-11-7-12-1-1-1-5">
+<div class="para" id="p-derived-plp-11-7-12-1-1-1-5"><span class="process-math">\(\displaystyle \ds [-1,0)\subseteq \bigcup\limits_{n=2}^\infty \left[-1, -\dfrac 1n\right]\)</span></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item e"><a tabindex="-1" href="#plp-11-7-12-1-1-1-5" title="Copy heading and permalink for Item e" aria-label="Copy heading and permalink for Item e">🔗</a></div>
+</li>
+<li id="plp-11-7-12-1-1-1-6">
+<div class="para" id="p-derived-plp-11-7-12-1-1-1-6"><span class="process-math">\(\displaystyle \ds \bigcap\limits_{n=5}^\infty \left[0, 1+\dfrac 1n\right)\subseteq [0,1)\)</span></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item f"><a tabindex="-1" href="#plp-11-7-12-1-1-1-6" title="Copy heading and permalink for Item f" aria-label="Copy heading and permalink for Item f">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-7-12-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="plp-11-7-12-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="plp-11-7-12-2-1">
+<ol class="lower-alpha ol-marker-1" id="plp-11-7-12-2-1-1">
+<li id="ex-ind-set-a">
+<div class="para" id="ex-ind-set-a-1">This statement is false since for all <span class="process-math">\(n\in\mathbb N\text{,}\)</span> we have <span class="process-math">\(\ds 0\in \left(-\dfrac 1n,\dfrac 1n\right)\text{.}\)</span> Therefore <span class="process-math">\(\ds \bigcap\limits_{n=1}^\infty \left(-\dfrac 1n,\dfrac 1n\right)\neq\emptyset\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-ind-set-a-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ex-ind-set-a-2">
+<div class="para">Notice that we see that our indexed sets are getting smaller and smaller as <span class="process-math">\(n\)</span> grows larger and larger. We also see that</div>
+<div class="displaymath process-math" id="ex-ind-set-a-2-2">
+\begin{equation*}
+\bigcap_{n=1}^k \left(-\dfrac 1n,\dfrac 1n\right)=\left(-\dfrac 1k,\dfrac 1k\right).
+\end{equation*}
+</div>
+<div class="para">One might take this to suggest that we can understand <span class="process-math">\(\ds \bigcap\limits_{n=1}^\infty \left(-\dfrac 1n,\dfrac 1n\right)\text{,}\)</span> by just looking at what happens to <span class="process-math">\(A_k\)</span> as <span class="process-math">\(k\)</span> goes to infinity. This is a dangerous line of reasoning. Since <span class="process-math">\(-\frac{1}{k}\)</span> and <span class="process-math">\(\frac{1}{k}\)</span> both go to <span class="process-math">\(0\)</span> as <span class="process-math">\(k\)</span> goes to infinity, we are tempted to say that <span class="process-math">\(\ds \bigcap\limits_{n=1}^\infty \left(-\dfrac 1n,\dfrac 1n\right)=(0,0)=\emptyset\text{.}\)</span> But we have already shown the intersection is not empty since it contains <span class="process-math">\(0\text{.}\)</span> It is important to use the definitions carefully to determine what the intersections or unions contain.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-ind-set-a-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item a"><a tabindex="-1" href="#ex-ind-set-a" title="Copy heading and permalink for Item a" aria-label="Copy heading and permalink for Item a">🔗</a></div>
+</li>
+<li id="plp-11-7-12-2-1-1-2">
+<div class="para" id="plp-11-7-12-2-1-1-2-1">We see that this statement is false since in order for <span class="process-math">\(3\)</span> to be in <span class="process-math">\(\ds \bigcup\limits_{n=3}^\infty \left(2+\dfrac 1n,3-\dfrac 1n\right]\text{,}\)</span> it must be in at least one of the sets <span class="process-math">\(\left(2+\dfrac 1n,3-\dfrac 1n\right]\)</span> for <span class="process-math">\(n\in\set{3,4,5,\ldots}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-7-12-2-1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="plp-11-7-12-2-1-1-2-2">But, we see that for all <span class="process-math">\(n\in\set{3,4,5,\ldots}\text{,}\)</span> <span class="process-math">\(3-\dfrac 1n \lt 3\text{,}\)</span> which implies that <span class="process-math">\(\ds 3\notin \left(2+\dfrac 1n,3-\dfrac 1n\right]\)</span> for any <span class="process-math">\(n\in\set {3,4,5,\ldots}\text{.}\)</span> Therefore <span class="process-math">\(\ds 3\notin \bigcup\limits_{n=3}^\infty \left(2+\dfrac 1n,3-\dfrac 1n\right]\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-7-12-2-1-1-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item b"><a tabindex="-1" href="#plp-11-7-12-2-1-1-2" title="Copy heading and permalink for Item b" aria-label="Copy heading and permalink for Item b">🔗</a></div>
+</li>
+<li id="plp-11-7-12-2-1-1-3">
+<div class="para" id="plp-11-7-12-2-1-1-3-1">We see that for all <span class="process-math">\(x\in(0,1)\text{,}\)</span> we have <span class="process-math">\(-x \lt 0\)</span> and <span class="process-math">\(x^2 \gt 0\text{.}\)</span> Thus, this statement is true since we have <span class="process-math">\(0\in [-x,x^2]\text{,}\)</span> for all <span class="process-math">\(x\in(0,1)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-7-12-2-1-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item c"><a tabindex="-1" href="#plp-11-7-12-2-1-1-3" title="Copy heading and permalink for Item c" aria-label="Copy heading and permalink for Item c">🔗</a></div>
+</li>
+<li id="plp-11-7-12-2-1-1-4">
+<div class="para" id="plp-11-7-12-2-1-1-4-1">This statement is false since for all <span class="process-math">\(y\in (1,\infty)\text{,}\)</span> we see <span class="process-math">\(1-\dfrac 1n \lt 1\text{,}\)</span> and hence <span class="process-math">\(\ds 1\notin \big(-e^y,1-\frac 1y\big]\)</span> for any <span class="process-math">\(y\in (1,\infty)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-7-12-2-1-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item d"><a tabindex="-1" href="#plp-11-7-12-2-1-1-4" title="Copy heading and permalink for Item d" aria-label="Copy heading and permalink for Item d">🔗</a></div>
+</li>
+<li id="plp-11-7-12-2-1-1-5">
+<div class="para" id="plp-11-7-12-2-1-1-5-1">This statement is true. To show it let <span class="process-math">\(x\in[-1,0)\text{.}\)</span> Then, all we have to do is to show that <span class="process-math">\(x\in \left[-1, -\dfrac 1n\right]\)</span> for at least one <span class="process-math">\(n\in\set{2,3,4,\ldots}\text{.}\)</span> For that, it is sufficient to show that <span class="process-math">\(x\leq -\dfrac 1n\)</span> for some <span class="process-math">\(n\in\set{2,3,4,\ldots}\)</span> (since we already know that <span class="process-math">\(x \geq -1\)</span>).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-7-12-2-1-1-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="plp-11-7-12-2-1-1-5-2">We can find such <span class="process-math">\(n\)</span> by choosing <span class="process-math">\(N=\ceil{\frac {1}{|x|}}\text{,}\)</span> where <span class="process-math">\(\ceil{t}\)</span> denotes the ceiling function — ie the first integer greater or equal to <span class="process-math">\(t\text{.}\)</span> By using the ceiling function we are really just rounding up the value of <span class="process-math">\(\frac {1}{|x|}\text{.}\)</span> With that choice of <span class="process-math">\(N\text{,}\)</span> we know that <span class="process-math">\(x\leq -\dfrac 1N\)</span> and hence <span class="process-math">\(\ds x\in [-1, \frac 1N]\text{.}\)</span> Therefore <span class="process-math">\(\ds [-1,0)\subseteq \bigcup\limits_{n=2}^\infty \left[-1, -\dfrac 1n\right]\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-7-12-2-1-1-5-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item e"><a tabindex="-1" href="#plp-11-7-12-2-1-1-5" title="Copy heading and permalink for Item e" aria-label="Copy heading and permalink for Item e">🔗</a></div>
+</li>
+<li id="plp-11-7-12-2-1-1-6">
+<div class="para" id="plp-11-7-12-2-1-1-6-1">Since <span class="process-math">\(1+\dfrac 1n\)</span> goes to <span class="process-math">\(1\)</span> as <span class="process-math">\(n\)</span> goes to infinity, it is tempting to say that the statement is true. Unfortunately<details class="ptx-footnote" aria-live="polite" id="plp-11-7-12-2-1-1-6-1-4"><summary class="ptx-footnote__number" title="Footnote 98"><sup> 98 </sup></summary>
+<div class="ptx-footnote__contents" id="plp-11-7-12-2-1-1-6-1-4">Well, actually it is fortunate. The authors have constructed this example with precisely that in mind. The reader should not give in to the temptation of a quick limit to solve all their set problems.
+</div></details>, this it not correct.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-7-12-2-1-1-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="plp-11-7-12-2-1-1-6-2">This statement is actually false because, similar to the argument we used in <a href="plp-11-7.html#ex-ind-set-a" class="xref" data-knowl="./knowl/xref/ex-ind-set-a.html" data-reveal-label="Reveal" data-close-label="Close" title="Item a">Item a</a>, <span class="process-math">\(\ds 1\in \bigcap\limits_{n=5}^\infty \left[0, 1+\dfrac 1n\right)\text{.}\)</span> Thus, <span class="process-math">\(\ds 1\in \bigcap\limits_{n=5}^\infty \left[0, 1+\dfrac 1n\right)\text{,}\)</span> but <span class="process-math">\(\ds 1\notin [0,1)\text{.}\)</span> Therefore <span class="process-math">\(\ds \bigcap\limits_{n=5}^\infty \left[0, 1+\dfrac 1n\right)\not\subseteq [0,1)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-7-12-2-1-1-6-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item f"><a tabindex="-1" href="#plp-11-7-12-2-1-1-6" title="Copy heading and permalink for Item f" aria-label="Copy heading and permalink for Item f">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-7-12-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 8.5.6.1"><a tabindex="-1" href="#plp-11-7-12-2" title="Copy heading and permalink for Solution 8.5.6.1" aria-label="Copy heading and permalink for Solution 8.5.6.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 8.5.6"><a tabindex="-1" href="#plp-11-7-12" title="Copy heading and permalink for Example 8.5.6" aria-label="Copy heading and permalink for Example 8.5.6">🔗</a></div>
+</article>
+<div class="para" id="plp-11-7-13">Before we go on to the next example, let’s prove a useful lemma.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-7-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="lemma theorem-like" id="lem_lim_pos_x_zero"><h2 class="heading">
+<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.5.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para" id="lem_lim_pos_x_zero-1-1">Let <span class="process-math">\(x \in \mathbb{R}\text{.}\)</span> If for all <span class="process-math">\(k \in \mathbb{N}\text{,}\)</span> <span class="process-math">\(x \lt \frac{1}{k}\)</span> then <span class="process-math">\(x \leq 0\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem_lim_pos_x_zero-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Lemma 8.5.7"><a tabindex="-1" href="#lem_lim_pos_x_zero" title="Copy heading and permalink for Lemma 8.5.7" aria-label="Copy heading and permalink for Lemma 8.5.7">🔗</a></div>
+</article>
+<details id="lem_lim_pos_x_zero-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para" id="lem_lim_pos_x_zero-2-1">We prove the contrapositive of this statement. Namely, if <span class="process-math">\(x
+\gt 0\)</span> then there is some <span class="process-math">\(k \in \mathbb{N}\)</span> so that <span class="process-math">\(x \geq \frac{1}{k}\text{.}\)</span> So assume that <span class="process-math">\(x \gt 0\text{.}\)</span> Then <span class="process-math">\(0 \lt \frac{1}{x} \leq \ceil{\frac{1}{x}} = \ell\text{,}\)</span> where <span class="process-math">\(\ell \in \mathbb{N}\text{.}\)</span> Then <span class="process-math">\(x \geq \frac{1}{\ell}\)</span> as required.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem_lim_pos_x_zero-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 8.5.7.1"><a tabindex="-1" href="#lem_lim_pos_x_zero-2" title="Copy heading and permalink for Proof 8.5.7.1" aria-label="Copy heading and permalink for Proof 8.5.7.1">🔗</a></div>
+</article></details>
+<article class="example example-like" id="plp-11-7-15"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.5.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para logical" id="plp-11-7-15-1-1">
+<div class="para">For <span class="process-math">\(k\in\mathbb N\)</span> let <span class="process-math">\(A_k\)</span> be the intervals <span class="process-math">\(A_k=[\frac{1}{k+1},1+\frac{1}{k+1})\text{.}\)</span>
+</div>
+<ol class="lower-alpha ol-marker-1" id="plp-11-7-15-1-1-4">
+<li id="plp-11-7-15-1-1-4-1">
+<div class="para" id="p-derived-plp-11-7-15-1-1-4-1">Show that <span class="process-math">\(\bigcup_{k=1}^\infty A_k=(0,\frac32)\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item a"><a tabindex="-1" href="#plp-11-7-15-1-1-4-1" title="Copy heading and permalink for Item a" aria-label="Copy heading and permalink for Item a">🔗</a></div>
+</li>
+<li id="plp-11-7-15-1-1-4-2">
+<div class="para" id="p-derived-plp-11-7-15-1-1-4-2">Show that <span class="process-math">\(\bigcap_{k=1}^\infty A_k=[\frac12,1]\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item b"><a tabindex="-1" href="#plp-11-7-15-1-1-4-2" title="Copy heading and permalink for Item b" aria-label="Copy heading and permalink for Item b">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-7-15-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="plp-11-7-15-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<details id="plp-11-7-15-2-1" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="title">Proof of (a).</span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="plp-11-7-15-2-1-2">
+<div class="para">Let us show the two inclusions in turn.</div>
+<ul class="disc" id="plp-11-7-15-2-1-2-1">
+<li id="plp-11-7-15-2-1-2-1-1">
+<div class="para" id="plp-11-7-15-2-1-2-1-1-1">Let <span class="process-math">\(x\in\bigcup_{k=1}^\infty A_k\text{.}\)</span> Then <span class="process-math">\(x\in A_k\)</span> for some <span class="process-math">\(k\in \mathbb N\)</span> so that <span class="process-math">\(\frac{1}{k+1} \leq x \lt 1 + \frac{1}{k+1}\)</span> from which we get that <span class="process-math">\(0 \lt x \lt \frac{3}{2}\text{,}\)</span> so that <span class="process-math">\(x\in (0,\frac32)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-7-15-2-1-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-7-15-2-1-2-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="plp-11-7-15-2-1-2-1-2">
+<div class="para logical" id="plp-11-7-15-2-1-2-1-2-1">
+<div class="para">Now let <span class="process-math">\(x\in(0,\frac32)\text{.}\)</span> Then let us consider two cases, <span class="process-math">\(x\geq \frac{1}{2}\)</span> or <span class="process-math">\(x \lt \frac12\text{.}\)</span>
+</div>
+<ol class="decimal" id="plp-11-7-15-2-1-2-1-2-1-4">
+<li id="plp-11-7-15-2-1-2-1-2-1-4-1">
+<div class="para" id="p-derived-plp-11-7-15-2-1-2-1-2-1-4-1">First case: Suppose that <span class="process-math">\(x\geq \frac{1}{2}\text{.}\)</span> Then because of the assumption on <span class="process-math">\(x\)</span> we have <span class="process-math">\(\frac12\leq x \lt \frac32\text{,}\)</span> and so <span class="process-math">\(x\in A_1\text{,}\)</span> so <span class="process-math">\(x\in\bigcup_{k=1}^\infty A_k\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-7-15-2-1-2-1-2-1-4-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="plp-11-7-15-2-1-2-1-2-1-4-2">
+<div class="para" id="p-derived-plp-11-7-15-2-1-2-1-2-1-4-2">Second case: Suppose that <span class="process-math">\(x \lt \frac12\text{.}\)</span> Then if we let <span class="process-math">\(n=\ceil{\frac1x}\)</span> then we have <span class="process-math">\(\frac1x \lt n+1\)</span> and so <span class="process-math">\(x \gt \frac{1}{n+1}\text{.}\)</span> This is enough to show that <span class="process-math">\(x\in A_n\)</span> with <span class="process-math">\(n\in \mathbb N\)</span> and so <span class="process-math">\(x\in\bigcup_{k=1}^\infty A_k\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-7-15-2-1-2-1-2-1-4-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-7-15-2-1-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-7-15-2-1-2-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-7-15-2-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 8.5.8.1.1: Proof of (a)"><a tabindex="-1" href="#plp-11-7-15-2-1" title="Copy heading and permalink for Proof 8.5.8.1.1: Proof of (a)" aria-label="Copy heading and permalink for Proof 8.5.8.1.1: Proof of (a)">🔗</a></div>
+</article></details>
+<details id="plp-11-7-15-2-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="title">Proof of (b).</span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="plp-11-7-15-2-2-2">
+<div class="para">Again, we prove the two inclusions in turn.</div>
+<ul class="disc" id="plp-11-7-15-2-2-2-1">
+<li id="plp-11-7-15-2-2-2-1-1">
+<div class="para" id="plp-11-7-15-2-2-2-1-1-1">Let <span class="process-math">\(x\in\bigcap_{k=1}^\infty A_k\text{.}\)</span>  Then for any <span class="process-math">\(k\in \mathbb N\)</span> we have <span class="process-math">\(x\in A_k\)</span> so that the inequality <span class="process-math">\(\frac{1}{k+1}\leq x \lt 1+\frac{1}{k+1}\)</span> holds for any <span class="process-math">\(k\in \mathbb N\text{.}\)</span>  In particular, <span class="process-math">\(x\geq \frac{1}{2}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-7-15-2-2-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="plp-11-7-15-2-2-2-1-1-2">Now we can use <a href="plp-11-7.html#lem_lim_pos_x_zero" class="xref" data-knowl="./knowl/xref/lem_lim_pos_x_zero.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 8.5.7">Lemma 8.5.7</a> to show that <span class="process-math">\(x \leq 1\text{.}\)</span> Since we know that <span class="process-math">\(x-1 \lt
+\frac{1}{k+1}\text{,}\)</span> <a href="plp-11-7.html#lem_lim_pos_x_zero" class="xref" data-knowl="./knowl/xref/lem_lim_pos_x_zero.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 8.5.7">Lemma 8.5.7</a> implies that <span class="process-math">\(x-1 \lt 0\)</span> and hence <span class="process-math">\(x \leq
+1\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-7-15-2-2-2-1-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="plp-11-7-15-2-2-2-1-1-3">So we have now shown that <span class="process-math">\(x \geq \frac{1}{2}\)</span> and <span class="process-math">\(x \leq 1\)</span> and thus <span class="process-math">\(x \in [\frac{1}{2},1]\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-7-15-2-2-2-1-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-7-15-2-2-2-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="plp-11-7-15-2-2-2-1-2">
+<div class="para" id="p-derived-plp-11-7-15-2-2-2-1-2">Now let <span class="process-math">\(x\in[\frac12,1]\text{.}\)</span> So <span class="process-math">\(\frac12 \leq x \leq 1\text{.}\)</span> Let <span class="process-math">\(k\in \mathbb N\text{,}\)</span> we can check that <span class="process-math">\(\frac{1}{k+1} \leq \frac{1}{2}\)</span> and <span class="process-math">\(1+\frac{1}{k+1} \gt 1\text{,}\)</span> hence <span class="process-math">\(\frac{1}{k+1}\leq x \lt 1 + \frac{1}{k+1}\)</span> so <span class="process-math">\(x\in A_k\text{.}\)</span> In the end, for any <span class="process-math">\(k\in \mathbb N\)</span> we have <span class="process-math">\(x\in A_k\text{,}\)</span> so that <span class="process-math">\(x\in\bigcap_{k=1}^\infty A_k\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#plp-11-7-15-2-2-2-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#plp-11-7-15-2-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 8.5.8.1.2: Proof of (b)"><a tabindex="-1" href="#plp-11-7-15-2-2" title="Copy heading and permalink for Proof 8.5.8.1.2: Proof of (b)" aria-label="Copy heading and permalink for Proof 8.5.8.1.2: Proof of (b)">🔗</a></div>
+</article></details><div class="autopermalink" aria-hidden="true" data-description="Solution 8.5.8.1"><a tabindex="-1" href="#plp-11-7-15-2" title="Copy heading and permalink for Solution 8.5.8.1" aria-label="Copy heading and permalink for Solution 8.5.8.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 8.5.8"><a tabindex="-1" href="#plp-11-7-15" title="Copy heading and permalink for Example 8.5.8" aria-label="Copy heading and permalink for Example 8.5.8">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Section 8.5: Indexed sets"><a tabindex="-1" href="#plp-11-7" title="Copy heading and permalink for Section 8.5: Indexed sets" aria-label="Copy heading and permalink for Section 8.5: Indexed sets">🔗</a></div>
+</section>
+</div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="plp-11-6.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="plp-11-8.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+<!--Start: Google Global Site Tag code--><!--*** DO NOT COPY ANOTHER PROJECT'S MAGIC NUMBERS/ID ***--><!--***           GET YOUR OWN FROM GOOGLE             ***-->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-FL66FX9988"></script><script>  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-FL66FX9988');
+</script><!--End: Google Global Site Tag code-->
+</body>
+</html>

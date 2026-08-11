@@ -1,0 +1,2 @@
+[console_scripts]
+CodeChat_Server = CodeChat_Server.__main__:app

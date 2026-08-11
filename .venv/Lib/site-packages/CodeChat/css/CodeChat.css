@@ -1,0 +1,56 @@
+/*
+.. Copyright (C) 2012-2022 Bryan A. Jones.
+
+    This file is part of CodeChat.
+
+    CodeChat is free software: you can redistribute it and/or modify it under
+    the terms of the GNU General Public License as published by the Free
+    Software Foundation, either version 3 of the License, or (at your option)
+    any later version.
+
+    CodeChat is distributed in the hope that it will be useful, but WITHOUT ANY
+    WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+    FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
+    details.
+
+    You should have received a copy of the GNU General Public License along
+    with CodeChat.  If not, see <http://www.gnu.org/licenses/>.
+
+**********************************************
+|docname| - Style sheet for CodeChat documents
+**********************************************
+This is a style sheet for use with CodeChat's extensions to Docutils/Sphinx.
+
+The overall goal is to allow comments (everything but ``<pre>`` tags) to appear with normal (double) spacing, while comments and code are single spaced.
+
+This import will cause an error if the Docutils ``html4css1`` style sheet is embedded instead of linked, though the page still displays without problems. However, omitting it will cause the linked style sheet case to fail, so leave this in.
+*/
+@import url(html4css1.css);
+
+/* Remove all top and bottom space around ``<pre>``, making it single-spaced. Also, remove the border so that code and comments mix more naturally. */
+.fenced-code pre,
+div.fenced-code div.highlight,
+div.fenced-code div.highlight pre,
+pre.fenced-code,
+div[class*="highlight-"] {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    border: none;
+    -webkit-box-shadow: none;
+}
+
+/* Remove the space between code and a following comment. This style will be added to comments following code by JavaScript; see ``CodeChat.SourceClassifer.codechat_style``. Override other styling by using the ``!important`` rule, since I don't see any other way to do this. */
+.CodeChat_noTop {
+    margin-top: 0px !important;
+    padding-top: 0px !important;
+}
+
+/* Remove the space between a comment and the following code. This style will be added to comments preceeding code JavaScript; see ``CodeChat.SourceClassifer.codechat_style``.  Override other styling by using the ``!important`` rule, since I don't see any other way to do this. */
+.CodeChat_noBottom {
+    margin-bottom: 0px !important;
+    padding-bottom: 0px !important;
+}

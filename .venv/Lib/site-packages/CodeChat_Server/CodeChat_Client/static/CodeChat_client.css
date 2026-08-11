@@ -1,0 +1,111 @@
+/*
+.. Copyright (C) 2012-2022 Bryan A. Jones.
+
+    This file is part of the CodeChat System.
+
+    The CodeChat System is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+    The CodeChat System is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+
+    You should have received a `copy of the GNU General Public License <LICENSE>` along with the CodeChat System.  If not, see http://www.gnu.org/licenses/.
+
+***********************************************
+|docname| - Style sheet for the CodeChat Client
+***********************************************
+*/
+
+/* This is used only to store a reused variable value. See https://drafts.csswg.org/css-variables/. */
+:root {
+    --status-height: 1rem;
+    --body-padding: 8px;
+}
+
+/* See https://css-tricks.com/box-sizing/ for the following technique to use ``border-box`` sizing. */
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    /* For box model simplicity, switch the padding and margin. */
+    padding: var(--body-padding);
+    margin: 0px;
+    /* The default of transparent makes VS Code's black show up and confuse everything. For now, make it white. */
+    background: white;
+}
+
+/* This div contains the splitter plus both split divs. */
+#splitter {
+    /* Auto-size the splitter to be the height of the screen except for the status bar and body padding. See `calc <https://developer.mozilla.org/en-US/docs/Web/CSS/calc>`_. */
+    height: calc(100vh - var(--status-height) - 2 * var(--body-padding));
+}
+
+/* An iframe containing the HTML output by the renderer. */
+#output {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* The title for the top of the following div. */
+#build_heading {
+    margin-top: 0px;
+    margin-bottom: 2px;
+}
+
+/* A div containing the build messages and errors. */
+#build_contents {
+    overflow: auto;
+    /* Not setting the width and height prevents the scroll bars from appearing. */
+    height: 100%;
+    width: 100%;
+}
+
+/* The build messages and error messages divs. */
+#build,
+#errors {
+    /* Build output is console text. */
+    font-family: monospace;
+    /* Wrap long lines for convenience. */
+    white-space: pre-wrap;
+}
+
+#errors {
+    color: red;
+}
+
+/* The status bar at the bottom of the screen. */
+#status_div {
+    height: var(--status-height);
+    border-top: 1px solid;
+    padding-top: 2px;
+}
+
+/* Make the status right aligned to the right. */
+#status_right {
+    float: right;
+}
+
+/* The build progress bar. */
+#build_progress {
+    display: none;
+}
+
+/* Classes for the errors/warning text in the status bar. */
+.have_errors {
+    background-color: red;
+}
+
+.have_warnings {
+    background-color: sandybrown;
+}
+
+/* `Class to use <class building>` for the output iframe when a build is in progress. */
+.building {
+    opacity: 0.5;
+}

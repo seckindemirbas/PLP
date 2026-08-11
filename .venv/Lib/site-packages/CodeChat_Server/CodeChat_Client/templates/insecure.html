@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!-- *******************************************************
+     |docname| - A warning when running in insecure mode
+     *******************************************************
+     This page warns users if the server is running in insecure mode.
+-->
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>CodeChat Client - insecure warning</title>
+    </head>
+    <body>
+        <h1 style="color: red">Warning</h1>
+        <p>
+            The CodeChat Server is running in insecure mode. Ports
+            {{THRIFT_PORT}}, {{HTTP_PORT}} and {{WEBSOCKET_PORT}} should
+            <em>never</em> be exposed publicly, since this will provide access
+            to <b>the server's entire filesystem</b>, as detailed on the
+            <a
+                href="https://codechat-system.readthedocs.io/en/latest/CodeChat_Server/security.html"
+                >security considerations page</a
+            >.
+        </p>
+        <p>Click the button below to proceed.</p>
+        <p style="text-align: center">
+            <button onclick="location.href='client' + location.search">
+                I understand
+            </button>
+        </p>
+    </body>
+</html>

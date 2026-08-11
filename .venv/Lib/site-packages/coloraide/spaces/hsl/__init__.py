@@ -1,0 +1,120 @@
+"""HSL class."""
+from __future__ import annotations
+from ... import algebra as alg
+from ...spaces import HSLish, Space
+from ...cat import WHITES
+from ...channels import Channel, FLG_ANGLE
+from ... import util
+from ...types import Vector
+from typing import Any
+
+
+def srgb_to_hsl(rgb: Vector) -> Vector:
+    """
+    Convert sRGB to HSL.
+
+    https://en.wikipedia.org/wiki/HSL_and_HSV#Hue_and_chroma
+    https://en.wikipedia.org/wiki/HSL_and_HSV#Saturation
+    https://en.wikipedia.org/wiki/HSL_and_HSV#Lightness
+    """
+
+    r, g, b = rgb
+    mx = max(rgb)
+    mn = min(rgb)
+    h = 0.0
+    s = 0.0
+    l = (mn + mx) / 2
+    c = mx - mn
+
+    if c != 0.0:
+        if mx == r:
+            h = (g - b) / c
+        elif mx == g:
+            h = (b - r) / c + 2.0
+        else:
+            h = (r - g) / c + 4.0
+        s = 0 if l == 0.0 or l == 1.0 else (mx - l) / min(l, 1 - l)
+        h *= 60.0
+
+    # Adjust for negative saturation
+    if s < 0:
+        s *= -1.0
+        h += 180.0
+
+    return [util.constrain_hue(h), s, l]
+
+
+def hsl_to_srgb(hsl: Vector) -> Vector:
+    """
+    HSL to RGB.
+
+    https://en.wikipedia.org/wiki/HSL_and_HSV#HSL_to_RGB_alternative
+    """
+
+    h, s, l = hsl
+    h = util.constrain_hue(h) / 30
+
+    def f(n: int) -> float:
+        """Calculate the channels."""
+
+        k = (n + h) % 12
+        a = s * min(l, 1 - l)
+        return l - a * max(-1, min(k - 3, 9 - k, 1))
+
+    return [f(0), f(8), f(4)]
+
+
+class HSL(HSLish, Space):
+    """HSL class."""
+
+    BASE = "srgb"
+    NAME = "hsl"
+    SERIALIZE = ("--hsl",)
+    CHANNELS = (
+        Channel("h", 0.0, 360.0, flags=FLG_ANGLE),
+        Channel("s", 0.0, 1.0, bound=True),
+        Channel("l", 0.0, 1.0, bound=True)
+    )
+    CHANNEL_ALIASES = {
+        "hue": "h",
+        "saturation": "s",
+        "lightness": "l"
+    }
+    WHITE = WHITES['2deg']['D65']
+    GAMUT_CHECK = "srgb"  # type: str | None
+    CLIP_SPACE = "hsl"  # type: str | None
+
+    def __init__(self, **kwargs: Any):
+        """Initialize."""
+
+        super().__init__(**kwargs)
+        order = alg.order(round(self.channels[self.indexes()[2]].high, 5))
+        self.achromatic_threshold = (1 * 10.0 ** order) / 1_000_000
+
+    def normalize(self, coords: Vector) -> Vector:
+        """Normalize coordinates."""
+
+        if coords[1] < 0:
+            coords[1] *= -1.0
+            coords[0] += 180.0
+        coords[0] %= 360.0
+        return coords
+
+    def is_achromatic(self, coords: Vector) -> bool | None:
+        """Check if color is achromatic."""
+
+        return (
+            abs(coords[1]) < self.achromatic_threshold or
+            coords[2] == 0.0 or
+            abs(1 - coords[2]) < self.achromatic_threshold
+        )
+
+    def to_base(self, coords: Vector) -> Vector:
+        """To sRGB from HSL."""
+
+        return hsl_to_srgb(coords)
+
+    def from_base(self, coords: Vector) -> Vector:
+        """From sRGB to HSL."""
+
+        return srgb_to_hsl(coords)

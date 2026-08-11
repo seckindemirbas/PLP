@@ -1,0 +1,12 @@
+# <!--
+# Note: this is workaround to include a file that's not in the `src/`
+# directory in the book. See the comments in `../book.toml` for more
+# details. In general, don't do this.
+#
+# It's also a workaround to avoid having another file named
+# `codechat_config.yaml` placed here, since the CodeChat Server would then
+# attempt to use this as the CodeChat project file and become very confused.
+#
+# Really, really don't do this.
+# -->
+{{#include ../codechat_config.yaml}}
