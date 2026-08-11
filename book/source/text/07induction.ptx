@@ -818,7 +818,7 @@ By the principle of mathematical induction the statement is true for all <m>n\ge
       We prove this by induction. When <m>n=a</m> we have <m>\frac{(a+a)(a+1-a)}{2} = a</m> as required, so the base case holds.
     </p>
     <p>
-      Now assume that the result holds for <m>n=k</m>. Hence
+      Now let <m>k</m> be a natural number, <m>k \ge a</m>, and assume that the result holds for <m>n=k</m>. Hence
       <md>
       <mrow> a + (a+1) + \cdots + k \amp = \frac{(k+a)(k+1-a)}{2} \amp \text{and so}</mrow>
       <mrow> a + (a+1) + \cdots + k + (k+1) \amp = \frac{(k+a)(k+1-a)}{2} + (k+1) </mrow>
