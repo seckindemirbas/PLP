@@ -1512,7 +1512,7 @@ Let <m>n\in\mathbb{N}</m>, <m>n\geq 2</m>. We proceed by strong induction on <m>
 Then <m>n</m> is prime, and the result holds.
 </p>
 <p>
-Now suppose that the result holds for all <m>2\leq n\leq k</m>; that is, if <m>n\leq k</m>, then <m>n</m> is a product of prime numbers.
+Now let <m>k \in \mathbb N</m>, <m>k \ge 2</m>, and suppose the result holds for all <m>2\leq n\leq k</m>; that is, if <m>n\leq k</m>, then <m>n</m> is a product of prime numbers.
 Either <m>k+1</m> is prime, or not prime. If <m>k+1</m> is prime, then the result holds. So suppose that <m>k+1</m> is not prime.
 Then, by definition, <m>k+1=ab</m> for some <m>a,b\in\mathbb{N}</m>, <m>1 \lt a,b \lt k+1</m>. By the inductive hypothesis, both <m>a</m> and <m>b</m> can be written as a product of prime numbers;
 that is <m>a=p_1\cdots p_r</m> and <m>b=q_1\cdots q_s</m> for prime numbers <m>p_1,\dots,p_r,q_1,\dots,q_s</m>. Then
