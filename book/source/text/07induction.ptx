@@ -1549,7 +1549,7 @@ Thus by strong induction, any <m>n\in\mathbb{N}</m>, <m>n\geq 2</m> is a product
       We prove the result by induction. When <m>n=0</m> we have <m>p_0 = \cos 0 = 1</m>, so the base case is true. We now turn to the inductive step.
     </p>
     <p>
-      Assume that the result hold for <m>n=0,1,\cdots,k</m>. In particular,
+      Let <m>k \in \mathbb N\cup\{0\}</m> and assume that the result holds for <m>n=0,1,\cdots,k</m>. In particular,
       <md>
         <mrow> p_1\amp=\cos\theta \amp p_k\amp=\cos k\theta </mrow>
       </md>
