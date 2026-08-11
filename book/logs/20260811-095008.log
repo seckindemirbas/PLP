@@ -11,7 +11,7 @@ INFO    :   personal computer.)
 INFO    : 
 INFO    : starting server ...
 INFO    : setting up PreTeXt web server ...
-INFO    : Added pretext web server entry b4b5062731 20340 8128 localhost
+INFO    : Added pretext web server entry b4b5062731 47488 8128 localhost
 
 INFO    : Server will soon be available at http://localhost:8128
 INFO    : Opening browser for target `html` at http://localhost:8128/output/html

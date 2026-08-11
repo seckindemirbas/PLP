@@ -850,7 +850,7 @@ By the principle of mathematical induction the statement is true for all <m>n\ge
       so the base case is true.
     </p>
     <p>
-      Let us now assume that <m>k! \gt 2^k</m>. Then
+      Let us now assume that <m>k! \gt 2^k</m> for some <m>k \in \mathbb N</m>, <m>k \ge 4</m>. Then
       <md>
         <mrow>k! \amp\gt 2^k </mrow>
         <mrow>(k+1) k! \amp \gt (k+1)2^k </mrow>
