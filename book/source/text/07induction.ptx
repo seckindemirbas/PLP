@@ -648,7 +648,7 @@ By the principle of mathematical induction it is true for all natural numbers <m
     </p>
     <justification>
       <p>
-        We prove this by induction. So assume that the statement is true for <m>n=k</m>. That is
+        We prove this by induction. So let <m>k \in \mathbb N</m> and assume that the statement is true for <m>n=k</m>. That is
         <me>
           k+1 \lt k.
         </me>
@@ -666,7 +666,10 @@ By the principle of mathematical induction it is true for all natural numbers <m
       <me>
         (k+1 \lt k) \implies (k+2 \lt k+1)
       </me>
-      However this is a vacuous statement since the hypothesis is never true. This is the flaw in our proof <mdash /> we did not check the base-case. When <m>n=1</m> the statement is false.
+      for all <m>k \in \mathbb N</m>.
+    </p>
+    <p>
+      However, this is a vacuous statement, since the hypothesis is never true. This is the flaw in our proof <mdash /> we did not check the base-case. When <m>n=1</m>, the statement is false.
     </p>
     <p>
       Since the base case fails, we cannot use mathematical induction.  Both the base case and the inductive step must be true for an induction proof to work.
