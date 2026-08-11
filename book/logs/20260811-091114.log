@@ -1,0 +1,19 @@
+WARNING : Using CLI version 2.48.1 but project's `requirements.txt`
+WARNING : is configured to use 2.36.0. Consider either installing
+WARNING : CLI version 2.36.0 or running `pretext update-project`
+WARNING : to update `requirements.txt` and other managed files to match 2.48.1.
+INFO    : Since no target was supplied, we will use "html".
+
+INFO    : Building target html
+INFO    : XSL conversion of C:\Users\ecyea\git\PLP\book\source\plp.ptx by C:\Users\ecyea\.ptx\2.48.1\core\xsl\utilities\pretext-enhanced-source.xsl
+ERROR   : Error loading file:///C:/Users/ecyea/git/PLP/book/source/text/07induction.ptx: Opening and ending tag mismatch: br line 567 and li, line 573, column 6 (file:///C:/Users/ecyea/git/PLP/book/source/text/07induction.ptx, line 573)
+ERROR   : Error assembling source file: Opening and ending tag mismatch: br line 567 and li, line 573, column 6 (file:///C:/Users/ecyea/git/PLP/book/source/text/07induction.ptx, line 573)
+FATAL   : XML syntax for source file is invalid
+INFO    : ------------------------
+exit    : Failed to build without errors.  Exiting...
+INFO    : 
+----------------------------------------------------
+INFO    : While running pretext, the following errors occurred:
+
+INFO    : (see log messages above or in the 'logs' folder for more information)
+INFO    : ----------------------------------------------------

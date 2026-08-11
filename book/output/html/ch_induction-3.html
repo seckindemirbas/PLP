@@ -985,14 +985,14 @@ P(n): \text{if } (x \gt -1) \text{ then } (1+x)^n \geq (1+nx).
 <div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_induction-3-29-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
 </li>
 <li id="ch_induction-3-29-1-2">
-<div class="para" id="p-derived-ch_induction-3-29-1-2">As is typical, the inductive step needs a bit more work. We need to prove that<div class="displaymath process-math" id="ch_induction-3-29-1-2-1">
+<div class="para" id="p-derived-ch_induction-3-29-1-2">As is typical, the inductive step needs a bit more work. We need to prove that, for all <span class="process-math">\(k \in \mathbb N\text{,}\)</span><div class="displaymath process-math" id="ch_induction-3-29-1-2-2">
 \begin{align*}
 \left( 1 + 2 + \cdots + k = \frac{k(k+1)}{2} \right)
 &amp; \implies
-\left( 1 + 2 + \cdots + k + k+1 = \frac{(k+1)(k+2)}{2} \right)
+\left( 1 + 2 + \cdots + k + k+1 = \frac{(k+1)(k+2)}{2} \right)\text{.}
 \end{align*}
-</div>Like most proofs of implications, we start by assuming the hypothesis is true and try to work our way to the conclusion. In this case, it is pretty clear that we can get from the first statement to the second just by adding <span class="process-math">\((k+1)\)</span> to both sides. Note that “adding <span class="process-math">\(k+1\)</span> to both sides” is <em class="alert">not</em> the induction step. The induction step requires us to prove that <span class="process-math">\(P(k) \implies P(k+1)\text{,}\)</span> and we prove that <em class="alert">in this particular example</em> by adding <span class="process-math">\(k+1\)</span> to both sides. This is a very common error (and more than a little frustrating to mark<details class="ptx-footnote" aria-live="polite" id="ch_induction-3-29-1-2-8"><summary class="ptx-footnote__number" title="Footnote 75"><sup> 75 </sup></summary>
-<div class="ptx-footnote__contents" id="ch_induction-3-29-1-2-8">Be nice to your marker?
+</div>Like most proofs of implications, we start by assuming the hypothesis is true and try to work our way to the conclusion. In this case, it is pretty clear that we can get from the first statement to the second just by adding <span class="process-math">\((k+1)\)</span> to both sides. Note that “adding <span class="process-math">\(k+1\)</span> to both sides” is <em class="alert">not</em> the induction step. The induction step requires us to prove that <span class="process-math">\(P(k) \implies P(k+1)\text{,}\)</span> and we prove that <em class="alert">in this particular example</em> by adding <span class="process-math">\(k+1\)</span> to both sides. This is a very common error (and more than a little frustrating to mark<details class="ptx-footnote" aria-live="polite" id="ch_induction-3-29-1-2-9"><summary class="ptx-footnote__number" title="Footnote 75"><sup> 75 </sup></summary>
+<div class="ptx-footnote__contents" id="ch_induction-3-29-1-2-9">Be nice to your marker?
 </div></details>).</div>
 <div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_induction-3-29-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
 </li>
@@ -1011,11 +1011,11 @@ P(n): \text{if } (x \gt -1) \text{ then } (1+x)^n \geq (1+nx).
 <div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_induction-3-30-1-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
 </li>
 <li id="ch_induction-3-30-1-1-2">
-<div class="para" id="p-derived-ch_induction-3-30-1-1-2">Inductive hypothesis — Assume the statement is true for <span class="process-math">\(n=k\text{,}\)</span> that is<div class="displaymath process-math" id="ch_induction-3-30-1-1-2-3">
+<div class="para" id="p-derived-ch_induction-3-30-1-1-2">Inductive hypothesis — Let <span class="process-math">\(k \in \mathbb N\text{.}\)</span> Assume the statement is true for <span class="process-math">\(n=k\text{,}\)</span> that is<div class="displaymath process-math" id="ch_induction-3-30-1-1-2-4">
 \begin{align*}
 1 + 2 + \cdots + k &amp;= \frac{k(k+1)}{2}
 \end{align*}
-</div>Adding <span class="process-math">\(k+1\)</span> to both sides gives<div class="displaymath process-math" id="ch_induction-3-30-1-1-2-5">
+</div>Adding <span class="process-math">\(k+1\)</span> to both sides gives<div class="displaymath process-math" id="ch_induction-3-30-1-1-2-6">
 \begin{align*}
 1 + 2 + \cdots + k +(k+1) &amp;= \frac{k(k+1)}{2} + (k+1)\\
 &amp;= \frac{1}{2} \left(k^2+k + 2k +2 \right)\\

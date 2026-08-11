@@ -556,14 +556,14 @@ So by induction the inequality is true for all <m>n\in\mathbb{N}</m>.
 </md>
 </li>
 <li> As is typical, the inductive step needs a bit more work.
-  We need to prove that
+  We need to prove that, for all <m>k \in \mathbb N</m>,
   <md>
 <mrow>
     \left( 1 + 2 + \cdots + k = \frac{k(k+1)}{2} \right)
     &amp; \implies
     \left( 1 + 2 + \cdots + k + k+1 = \frac{(k+1)(k+2)}{2} \right)
   </mrow>
-</md>
+</md>.
   Like most proofs of implications, we start by assuming the hypothesis is true and try to work our way to the conclusion.
   In this case, it is pretty clear that we can get from the first statement to the second just by adding <m>(k+1)</m> to both sides.
   Note that <q>adding <m>k+1</m> to both sides</q> is <alert>not</alert> the induction step.
@@ -580,7 +580,7 @@ We are now ready to write things up nicely.
 <ul>
 <li> Base case <mdash/> When <m>n=1</m> the statement is true since <m>1 = \frac{1 \cdot 2}{2}</m>.
 </li>
-<li> Inductive hypothesis <mdash/> Assume the statement is true for <m>n=k</m>, that is
+<li> Inductive hypothesis <mdash/> Let <m>k \in \mathbb N</m>. Assume the statement is true for <m>n=k</m>, that is
 <md>
 <mrow>
 	1 + 2 + \cdots + k &amp;= \frac{k(k+1)}{2}
