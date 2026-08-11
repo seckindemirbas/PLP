@@ -82,7 +82,7 @@ Now we can write the formal proof up:
 Let <m>n\in\mathbb{N}</m>.
 We proceed by induction on <m>n</m>. When <m>n=1</m>, we have
 <me> 3^{2\cdot 1}-1 =9-1=8, </me>
-which is divisible by <m>8</m>. Now suppose that the result holds for <m>n=k</m>, so
+which is divisible by <m>8</m>. Now suppose that the result holds for <m>n=k</m> for some <m>k\in\mathbb N</m>, so
 <me> 8 \mid 3^{2k}-1. </me>
 So we can write <m>3^{2k}-1 = 8\ell</m> for some <m>\ell \in \mathbb{Z}</m>. Now, notice that
 <md>
