@@ -1067,11 +1067,11 @@ then <m>P(n)</m> is true for all <m>n \in S</m>.
     <me>
       P(\ell),  P(\ell+1), \cdots, P(n)  \text{ are all true}
     </me>
-    Then since <m>P(1)</m> is true, we know that <m>Q(1)</m> is true. Further, since we know that
+    Then since <m>P(1)</m> is true, we know that <m>Q(1)</m> is true. Further, let <m>k \in S</m>. Since we know that
     <me>
       P(\ell) \land P(\ell+1) \land \cdots \land P(k) \implies P(k+1)
     </me>
-    then if <m>Q(k)</m> is true, then <m>Q(k+1)</m> is true. Hence <m>Q(k) \implies Q(k+1)</m> is true. By (regular) mathematical induction, we know that <m>Q(n)</m> is true for all <m>n \in S</m>, and so <m>P(n)</m> is true for all <m>n \in S</m> as required.
+    then if <m>Q(k)</m> is true, then <m>Q(k+1)</m> is true. Hence <m>Q(k) \implies Q(k+1)</m> is true for all <m>k \in S</m>. By (regular) mathematical induction, we know that <m>Q(n)</m> is true for all <m>n \in S</m>, and so <m>P(n)</m> is true for all <m>n \in S</m> as required.
     </p>
 </proof>
 </corollary>
