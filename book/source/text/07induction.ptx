@@ -1305,7 +1305,7 @@ then <m>P(n)</m> is true for all <m>n \in S</m>.
       and since <m>F_1=1, F_3=2</m> it is true.
     </p>
     <p>
-      Now assume that the result holds for <m>n=k</m>. That is
+      Now let <m>k \in \mathbb N</m> and assume that the result holds for <m>n=k</m>. That is
       <me>
         F_1 + F_2 + \cdots + F_k = F_{k+2}-1
       </me>
@@ -1338,7 +1338,7 @@ then <m>P(n)</m> is true for all <m>n \in S</m>.
       as required.
     </p>
     <p>
-      Now assume that it holds for <m>n=k</m>, so that
+      Now let <m>k \in \mathbb N</m> and assume that it holds for <m>n=k</m>, so that
       <me>
         F_{k+1}F_{k-1} - F_k^2 = (-1)^k
       </me>
@@ -1366,7 +1366,7 @@ then <m>P(n)</m> is true for all <m>n \in S</m>.
       Fix <m>q \in \mathbb{N}</m>. We prove the result by induction. When <m>n=1</m> the result holds since <m>F_5 = 5</m>.
     </p>
     <p>
-      Now assume that <m>5 \mid F_{5k}</m>. Now
+      Now let <m>k \in \mathbb N</m> and assume that <m>5 \mid F_{5k}</m>. Then
       <md>
         <mrow>F_{5k+5} \amp= F_{5k+4} + F_{5k+3} </mrow>
         <mrow>  \amp= (F_{5k+3}+F_{5k+2}) + F_{5k+3} = 2F_{5k+3}+F_{5k+2} </mrow>

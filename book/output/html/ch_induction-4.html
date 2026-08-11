@@ -1073,14 +1073,14 @@ F_1 = F_3-1
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#prop-fib1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="prop-fib1-2-2">
-<div class="para">Now assume that the result holds for <span class="process-math">\(n=k\text{.}\)</span> That is</div>
-<div class="displaymath process-math" id="prop-fib1-2-2-2">
+<div class="para">Now let <span class="process-math">\(k \in \mathbb N\)</span> and assume that the result holds for <span class="process-math">\(n=k\text{.}\)</span> That is</div>
+<div class="displaymath process-math" id="prop-fib1-2-2-3">
 \begin{equation*}
 F_1 + F_2 + \cdots + F_k = F_{k+2}-1
 \end{equation*}
 </div>
 <div class="para">Then we have</div>
-<div class="displaymath process-math" id="prop-fib1-2-2-3">
+<div class="displaymath process-math" id="prop-fib1-2-2-4">
 \begin{align*}
 F_1 + F_2 + \cdots + F_k + F_{k+1} \amp= F_{k+1}+F_{k+2}-1  \\
 \amp= F_{k+3}-1 
@@ -1120,14 +1120,14 @@ F_2 F_0 - F_1^2 = 0 - 1 = -1
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#prop-fib2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="prop-fib2-2-2">
-<div class="para">Now assume that it holds for <span class="process-math">\(n=k\text{,}\)</span> so that</div>
-<div class="displaymath process-math" id="prop-fib2-2-2-2">
+<div class="para">Now let <span class="process-math">\(k \in \mathbb N\)</span> and assume that it holds for <span class="process-math">\(n=k\text{,}\)</span> so that</div>
+<div class="displaymath process-math" id="prop-fib2-2-2-3">
 \begin{equation*}
 F_{k+1}F_{k-1} - F_k^2 = (-1)^k
 \end{equation*}
 </div>
 <div class="para">Now consider</div>
-<div class="displaymath process-math" id="prop-fib2-2-2-3">
+<div class="displaymath process-math" id="prop-fib2-2-2-4">
 \begin{align*}
 F_{k+2}F_k - F_{k+1}^2 \amp = (F_{k+1}+F_k)F_k - (F_k+F_{k-1})F_{k+1} \\
 \amp= \underbrace{F_{k+1}F_k} + F_k^2 - \underbrace{F_kF_{k+1}} - F_{k-1}F_{k+1} \\
@@ -1153,8 +1153,8 @@ F_{k+2}F_k - F_{k+1}^2 \amp = (F_{k+1}+F_k)F_k - (F_k+F_{k-1})F_{k+1} \\
 <div class="para" id="prop-fib3-2-1">Fix <span class="process-math">\(q \in \mathbb{N}\text{.}\)</span> We prove the result by induction. When <span class="process-math">\(n=1\)</span> the result holds since <span class="process-math">\(F_5 = 5\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#prop-fib3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="prop-fib3-2-2">
-<div class="para">Now assume that <span class="process-math">\(5 \mid F_{5k}\text{.}\)</span> Now</div>
-<div class="displaymath process-math" id="prop-fib3-2-2-2">
+<div class="para">Now let <span class="process-math">\(k \in \mathbb N\)</span> and assume that <span class="process-math">\(5 \mid F_{5k}\text{.}\)</span> Then</div>
+<div class="displaymath process-math" id="prop-fib3-2-2-3">
 \begin{align*}
 F_{5k+5} \amp= F_{5k+4} + F_{5k+3} \\
 \amp= (F_{5k+3}+F_{5k+2}) + F_{5k+3} = 2F_{5k+3}+F_{5k+2} \\
