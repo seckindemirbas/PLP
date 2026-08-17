@@ -120,7 +120,9 @@ These two statements imply that for <m>n\in\mathbb{N}</m>, <m>\log_2(n)</m> is i
   <proof><title>Proof of (a)</title>
   <p>
 Let <m>k\in\mathbb{N}</m>. If <m>k=1</m>, then <m>5^k=5</m> is odd, establishing the base case.
-Assume that <m>5^k</m> is odd for <m>k=m</m>. Then <m>5^{m+1}=5^m\cdot 5</m> is the product of two odd numbers, and so odd.
+</p>
+<p>
+Let <m>m \in \mathbb N</m>. Assume that <m>5^k</m> is odd when <m>k=m</m>. Then <m>5^{m+1}=5^m\cdot 5</m> is the product of two odd numbers, and so odd.
 Thus, by induction <m>5^k</m> is odd for all <m>k\in\mathbb{N}</m>.
 </p></proof>
 
