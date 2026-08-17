@@ -116,7 +116,7 @@ Now we're left with <m>(k+1)</m> times the integral that we've assumed is equal 
 <p>
 Let <m>n\in\mathbb{Z}</m>, <m>n\geq0</m>. We proceed by induction on <m>n</m>. First assume <m>n=0</m>. Then
 <me> \lim_{x\to\infty}x^ne^{-x}=\lim_{x\to\infty}e^{-x}=0, </me>
-and so the result holds. Next suppose the result holds for <m>n=k</m>, so that
+and so the result holds. Next  let <m>k \in \mathbb N \cup \{0\}</m>, and suppose the result holds for <m>n=k</m>, so that
 <me> \lim_{x\to\infty}x^ke^{-x}=0. </me>
 By l'Hôpital's rule,
 <me> \lim_{x\to\infty}x^{k+1}e^{-x}=\lim_{x\to\infty}\frac{x^{k+1}}{e^{x}}=\lim_{x\to\infty}\frac{(k+1)x^{k}}{e^{x}}. </me>
@@ -132,7 +132,7 @@ Therefore the result holds for <m>n=k+1</m>, and by induction, for any <m>n</m>.
 <p>
 Let <m>n\in\mathbb{Z}</m>, <m>n\geq0</m>. We proceed by induction on <m>n</m>. First assume <m>n=0</m>. Then
 <me> \int_0^\infty x^ne^{-x}\mathrm{d}x =\int_0^\infty e^{-x}\mathrm{d}x = \lim_{t\to\infty}(-e^{-x})\Big]_0^t = 1=0!. </me>
-Next suppose that the result holds for <m>n=k</m>; that is,
+Next let <m>k \in \mathbb N \cup \{0\}</m>, and suppose that the result holds for <m>n=k</m>; that is,
 <me> k! = \int_0^\infty x^ke^{-x}\mathrm{d}x.</me>
 Then, by integration by parts,
 <md>

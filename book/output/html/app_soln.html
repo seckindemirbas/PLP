@@ -5485,7 +5485,7 @@ h^{(k+1)}(x)  \amp = \frac{d}{dx}h^{(k)}(x).
 \lim_{x\to\infty}x^ne^{-x}=\lim_{x\to\infty}e^{-x}=0, 
 \end{equation*}
 </div>
-<div class="para">and so the result holds. Next suppose the result holds for <span class="process-math">\(n=k\text{,}\)</span> so that</div>
+<div class="para">and so the result holds. Next  let <span class="process-math">\(k \in \mathbb N \cup \{0\}\text{,}\)</span> and suppose the result holds for <span class="process-math">\(n=k\text{,}\)</span> so that</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \lim_{x\to\infty}x^ke^{-x}=0. 
@@ -5518,7 +5518,7 @@ h^{(k+1)}(x)  \amp = \frac{d}{dx}h^{(k)}(x).
 \int_0^\infty x^ne^{-x}\mathrm{d}x =\int_0^\infty e^{-x}\mathrm{d}x = \lim_{t\to\infty}(-e^{-x})\Big]_0^t = 1=0!. 
 \end{equation*}
 </div>
-<div class="para">Next suppose that the result holds for <span class="process-math">\(n=k\text{;}\)</span> that is,</div>
+<div class="para">Next let <span class="process-math">\(k \in \mathbb N \cup \{0\}\text{,}\)</span> and suppose that the result holds for <span class="process-math">\(n=k\text{;}\)</span> that is,</div>
 <div class="displaymath process-math">
 \begin{equation*}
 k! = \int_0^\infty x^ke^{-x}\mathrm{d}x.
@@ -5577,7 +5577,7 @@ k! = \int_0^\infty x^ke^{-x}\mathrm{d}x.
 <li>
 <div class="para logical">
 <div class="para">
-<em class="emphasis">Inductive step:</em> Assume that this statement is true for <span class="process-math">\(m=n\geq 2\text{.}\)</span> This means that whenever <span class="process-math">\(a_1, a_2, \ldots a_n\in\mathbb R\text{,}\)</span> then we have</div>
+<em class="emphasis">Inductive step:</em> Let <span class="process-math">\(m \in \mathbb N\text{,}\)</span> <span class="process-math">\(m \ge 2\text{.}\)</span> Assume that this statement is true for <span class="process-math">\(m=n\text{.}\)</span> This means that whenever <span class="process-math">\(a_1, a_2, \ldots a_n\in\mathbb R\text{,}\)</span> then we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \left| \sum_{k=1}^n a_k \right|\leq\sum_{k=1}^n|a_k|.
@@ -5620,7 +5620,7 @@ k! = \int_0^\infty x^ke^{-x}\mathrm{d}x.
 <div class="para">For our base case, take <span class="process-math">\(n=0\text{.}\)</span> That is, we wish to show that <span class="process-math">\(1007\)</span> is divisible by <span class="process-math">\(53\text{.}\)</span> Since <span class="process-math">\(1007 = 19\cdot 53\text{,}\)</span> our base case is true.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ch_induction-5-19-3-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical">
-<div class="para">We assume that the statement holds true for <span class="process-math">\(n=k\)</span> and wish to prove it for the <span class="process-math">\(n=k+1\)</span> case. Notice that we can write</div>
+<div class="para">Let <span class="process-math">\(k \in \mathbb N \cup \{0\}\text{.}\)</span> We assume that the statement holds true for <span class="process-math">\(n=k\)</span> and wish to prove it for the <span class="process-math">\(n=k+1\)</span> case. Notice that we can write</div>
 <div class="displaymath process-math">
 \begin{equation*}
 100\underbrace{1\dots 1}_{\substack{{k+1}
@@ -5670,11 +5670,11 @@ F_{n+1} = F_1 \cdot F_{n+1} + F_0 \cdot F_{n}
 <div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ch_induction-5-20-4-1-1-4-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
 </li>
 <li>
-<div class="para">Inductive step: Now assume that<div class="displaymath process-math">
+<div class="para">Inductive step: Now let <span class="process-math">\(\ell \in \mathbb N\)</span> and assume that<div class="displaymath process-math">
 \begin{equation*}
 F_{n+k} = F_{k} \cdot F_{n+1} + F_{k-1} \cdot F_{n}.
 \end{equation*}
-</div>holds for all <span class="process-math">\(k \leq \ell\text{.}\)</span> Then<div class="displaymath process-math">
+</div>holds for all natural numbers <span class="process-math">\(k\)</span> s.t. <span class="process-math">\(k \leq \ell\text{.}\)</span> Then<div class="displaymath process-math">
 \begin{align*}
 F_{n+\ell+1} \amp = F_{n+\ell} + F_{n+\ell-1}\\
 \amp =

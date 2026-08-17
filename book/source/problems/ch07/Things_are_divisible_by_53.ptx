@@ -25,7 +25,7 @@ For our base case, take <m>n=0</m>. That is, we wish to show that <m>1007</m> is
 </p>
 
 <p>
-We assume that the statement holds true for <m>n=k</m> and wish to prove it for the <m>n=k+1</m> case. Notice that we can write
+Let <m>k \in \mathbb N \cup \{0\}</m>. We assume that the statement holds true for <m>n=k</m> and wish to prove it for the <m>n=k+1</m> case. Notice that we can write
 <me>
 100\underbrace{1\dots 1}_{\substack{{k+1}
 \\ \text{times}}}7 =

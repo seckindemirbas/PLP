@@ -83,7 +83,7 @@
 	  <me>
 	    F_{n+k} = F_{k} \cdot F_{n+1} + F_{k-1} \cdot F_{n}.
 	  </me>
-	  holds for all <m>k \leq \ell</m>. Then
+	  holds for all natural numbers <m>k</m> s.t. <m>k \leq \ell</m>. Then
 	  <md>
 	    <mrow>F_{n+\ell+1} \amp = F_{n+\ell} + F_{n+\ell-1}</mrow>
 	    <mrow>\amp =
