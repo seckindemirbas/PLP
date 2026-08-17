@@ -1493,7 +1493,7 @@ f)(a_2)</m>. Thus <m>g\circ f</m> is injective.
   <p>
     Let <m>\mathcal{S}</m> be a collection of non-empty sets. Then a <term>choice function</term> on <m>\mathcal{S}</m> is a function
     <me>
-      f: \mathcal{S} \to \bigcup_{X \in S} X
+      f: \mathcal{S} \to \bigcup_{X \in \mathcal{S}} X
     </me>
     so that, for any <m>X \in \mathcal{S}</m>, <m>f(X) \in X</m>. That is, for
     any set <m>X</m> in our collection <m>\mathcal{S}</m>, the
