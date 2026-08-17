@@ -64,7 +64,7 @@ Moreover, we see that if <m>|A|=1</m>, then <m>A=\set{a}</m> for some <m>a</m>. 
 </li>
 <li>
 <p>
-<em>Inductive step</em>: Assume that the statement is true for <m>k=n</m>, that is, if <m>|A|=n</m>, then we have <m>|\pow A|=2^n</m>.
+<em>Inductive step</em>: let <m>k \in \mathbb N</m> and assume that the statement is true for <m>n=k</m>. That is, if <m>|A|=n</m>, then we have <m>|\pow A|=2^n</m>.
 </p>
 <p>
 Now, let <m>B</m> be a set with <m>|B|=n+1</m>. Then, we see <m>B=\set{b_1, b_2, b_3, \ldots, b_{n+1}}</m>. Therefore, we see that we can write
