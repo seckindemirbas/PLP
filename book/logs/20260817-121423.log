@@ -1,0 +1,75 @@
+WARNING : Using CLI version 2.48.1 but project's `requirements.txt`
+WARNING : is configured to use 2.36.0. Consider either installing
+WARNING : CLI version 2.36.0 or running `pretext update-project`
+WARNING : to update `requirements.txt` and other managed files to match 2.48.1.
+INFO    : Since no target was supplied, we will use "html".
+
+INFO    : Building target html
+INFO    : XSL conversion of C:\Users\ecyea\git\PLP\book\source\plp.ptx by C:\Users\ecyea\.ptx\2.48.1\core\xsl\utilities\pretext-enhanced-source.xsl
+INFO    : messages from the log for XSL processing (prefaced with a *):
+WARNING : * PTX:DEPRECATE: (2026-07-30) the external directory is a property of your source, and is now declared with a "directories/@external" attribute within "docinfo".  The publication file entry "source/directories/@external" is honored meanwhile, but please relocate it.
+INFO    : successful application of C:\Users\ecyea\.ptx\2.48.1\core\xsl\utilities\pretext-enhanced-source.xsl
+INFO    : discovering source file's directory name: C:\Users\ecyea\git\PLP\book\source
+WARNING : (2026-07-30) the external directory is a property of your source, and is now declared with a "directories/@external" attribute within "docinfo". The publisher file entry "source/directories/@external" is honored meanwhile, but please relocate it.
+INFO    : verifying and expanding input directory: C:\Users\ecyea\git\PLP\book\source\../assets
+INFO    : input directory expanded to absolute path: C:\Users\ecyea\git\PLP\book\assets
+INFO    : Generating any needed assets.
+INFO    : Finished generating assets.
+
+INFO    : Preparing to build into C:\Users\ecyea\git\PLP\book\output\html.
+WARNING : Node.js must be installed to build CSS files.  Please install node.js and npm.
+ Will try to use prebuilt CSS files instead.
+WARNING : Cannot find npm.  Will try to use prebuilt CSS files instead.
+WARNING : Unable to install npm packages to build css files.  Non-default CSS themes require node.js and npm to be installed.  See https://pretextbook.org/doc/guide/html/node-and-npm.html
+WARNING : 
+INFO    : discovering source file's directory name: C:\Users\ecyea\git\PLP\book\source
+WARNING : (2026-07-30) the external directory is a property of your source, and is now declared with a "directories/@external" attribute within "docinfo". The publisher file entry "source/directories/@external" is honored meanwhile, but please relocate it.
+INFO    : verifying and expanding input directory: C:\Users\ecyea\git\PLP\book\source\../assets
+INFO    : input directory expanded to absolute path: C:\Users\ecyea\git\PLP\book\assets
+INFO    : discovering source file's directory name: C:\Users\ecyea\git\PLP\book\source
+INFO    : XSL conversion of C:\Users\ecyea\git\PLP\book\source\plp.ptx by C:\Users\ecyea\.ptx\2.48.1\core\xsl\utilities\report-publisher-variables.xsl
+INFO    : messages from the log for XSL processing (prefaced with a *):
+WARNING : * PTX:DEPRECATE: (2026-07-30) the external directory is a property of your source, and is now declared with a "directories/@external" attribute within "docinfo".  The publication file entry "source/directories/@external" is honored meanwhile, but please relocate it.
+INFO    : successful application of C:\Users\ecyea\.ptx\2.48.1\core\xsl\utilities\report-publisher-variables.xsl
+INFO    : Downloading rs services file from https://runestone.academy/cdn/runestone/latest/webpack_static_imports.xml.
+INFO    : Runestone Services via online CDN query: version 8.2.5
+INFO    : Downloading Runestone Services, version 8.2.5
+INFO    : Extracting Runestone Services from archive file
+INFO    : Node.js not available. Relying on prebuilt default-modern.
+INFO    : Using prebuilt CSS theme: default-modern with options: {'options': {'primary-color': '#195684', 'secondary-color': '#932c1c'}, 'contrast-checks': {'primary-color': '#fff', 'secondary-color': '#fff', 'primary-color-dark': '#23241f'}}
+INFO    : converting C:\Users\ecyea\git\PLP\book\source\plp.ptx to HTML in C:\Users\ecyea\AppData\Local\Temp\ptx-jvyi43f9
+INFO    : XSL conversion of C:\Users\ecyea\git\PLP\book\source\plp.ptx by C:\Users\ecyea\.ptx\2.48.1\core\xsl\pretext-html.xsl
+INFO    : messages from the log for XSL processing (prefaced with a *):
+WARNING : * PTX:DEPRECATE: (2026-07-30) the external directory is a property of your source, and is now declared with a "directories/@external" attribute within "docinfo".  The publication file entry "source/directories/@external" is honored meanwhile, but please relocate it.
+INFO    : * PTX:INFO:   checking all deprecated elements.
+WARNING : * PTX:DEPRECATE: (2026-05-11) the "me" and "men" elements have been deprecated.  The replacement is an "md" with no "mrow" children, and numbering is controlled by the "@number" attribute, or a global setting in "docinfo". (1197 times)
+INFO    : *              located at: pretext/book/chapter/exercises/exercise/solution/p/ol/li/p/me
+INFO    : *              located within: "Sets" (title)
+INFO    : *              located at: pretext/book/chapter/exercises/exercise/solution/p/ol/li/p/me
+INFO    : *              located within: "Sets" (title)
+INFO    : *              located at: pretext/book/chapter/exercises/exercise/solution/p/ol/li/p/me
+INFO    : *              located within: "Sets" (title)
+INFO    : *              located at: pretext/book/chapter/exercises/exercise/solution/p/ol/li/p/me
+INFO    : *              located within: "Sets" (title)
+INFO    : *              located at: pretext/book/chapter/exercises/exercise/solution/p/ol/li/p/me
+INFO    : *              located within: "Sets" (title)
+INFO    : *              located at: pretext/book/chapter/exercises/exercise/solution/p/ol/li/p/me
+INFO    : *              located within: "Sets" (title)
+INFO    : *              located at: pretext/book/chapter/exercises/exercise/solution/p/me
+INFO    : *              located within: "Sets" (title)
+INFO    : *              located at: pretext/book/chapter/exercises/exercise/solution/p/me
+INFO    : *              located within: "Sets" (title)
+INFO    : * --------------
+WARNING : * PTX:DEPRECATE: (2026-07-31) the document-wide style of cross-reference text is now a "text" attribute on an "xrefs" element within "docinfo/defaults", replacing the "cross-references" element.  We will honor your intent, but please convert to the new form. (1 time)
+INFO    : *              located at: pretext/docinfo/cross-references
+INFO    : * --------------
+INFO    : successful application of C:\Users\ecyea\.ptx\2.48.1\core\xsl\pretext-html.xsl
+INFO    : Removing temporary directory C:\Users\ecyea\AppData\Local\Temp\ptx-jvyi43f9
+INFO    : Removing temporary directory C:\Users\ecyea\AppData\Local\Temp\ptx-y_i0c8ac
+INFO    : 
+Finished build for target html. Run `pretext view html` to see the results.
+
+INFO    : 
+Success!  Built requested target(s) without errors.
+
+INFO    : 
