@@ -43,7 +43,8 @@ Now we can write the formal proof up:
   <proof>
 <p>
 Let <m>n\in\mathbb{N}</m>.
-We proceed by induction on <m>n</m>. When <m>n=2</m>, the result holds by the distributive law. Now assume the result holds for <m>n=k</m>, and suppose that
+We proceed by induction on <m>n</m>. When <m>n=2</m>, the result holds by the distributive law. Let <m>k \in \mathbb N</m>,
+<m>k \ge 2</m>. Assume the result holds for <m>n=k</m>, and suppose that
 <m>a,b_1,b_2,\dots,b_k,b_{k+1}</m> are real numbers. Then
 <me> a\cdot(b_1+b_2+\dots+b_k+b_{k+1})=a\cdot((b_1+b_2+\dots+b_k)+b_{k+1})=a\cdot(b_1+b_2+\dots+b_k)+a\cdot b_{k+1} </me>
 by the distributive law. But by inductive hypothesis,

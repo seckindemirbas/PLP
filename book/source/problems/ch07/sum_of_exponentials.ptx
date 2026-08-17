@@ -67,7 +67,7 @@ Now we can write the formal proof.
 Let <m>n\in\mathbb{N}</m>.
 We proceed by induction on <m>n</m>. When <m>n=0</m>, we have
 <me> 2^{2n+1}+3^{2n+1} =2+3=5, </me>
-which is divisible by <m>5</m>. Now suppose that the result holds for <m>n=k</m>, so
+which is divisible by <m>5</m>. Now let <m>k \in \mathbb N \cup\{0\}</m> and suppose that the result holds for <m>n=k</m>, so
 <me> 5\mid \left( 2^{2k+1}+3^{2k+1} \right). </me>
 Then there is some <m>\ell\in\mathbb{Z}</m> such that
 <me> 2^{2k+1}+3^{2k+1} = 5\ell. </me>

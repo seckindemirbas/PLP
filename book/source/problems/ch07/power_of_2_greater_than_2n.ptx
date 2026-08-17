@@ -51,7 +51,7 @@ Let <m>n\in\mathbb{N}</m>. We proceed with induction on <m>n</m>.
 For the base case, suppose <m>n=1</m>. Since <m>2^1=2\cdot 1</m>, we have <m>2^n\geq 2n</m>.
 </p>
 <p>
-Now suppose that the statement is true for <m>n=k</m>; that is, <m>2^k\geq 2k</m>. Multiplying both sides of the inequality by <m>2</m>, we have
+Let <m>k \in \mathbb N</m> and suppose that the statement is true for <m>n=k</m>; that is, <m>2^k\geq 2k</m>. Multiplying both sides of the inequality by <m>2</m>, we have
 <m>2^{k+1}\geq 4k</m>.
 Rewrite this inequality as <m>2^{k+1}\geq 2k+2k</m>.  Since <m>k\geq 1</m>, we have <m>2k\geq 2</m>, and so
 <me> 2^{k+1}\geq 2k+2k\geq 2k+2=2(k+1) </me>
