@@ -17,10 +17,10 @@ Shops will not be intimidated by excess purchasing power; even though you have l
 </p>
 
 <proof><p>
-We proceed by strong induction. As a base case, we take <m>p=8</m>, <m>p=9</m>, and <m>p=10</m>. Since <m>p=3+5</m>, we can pay for an <m>\$8</m> item with one <m>3</m> dollar bill and one <m>5</m> dollar bill. Similarly, <m>9= 3 \cdot 3 </m>, so we can use three <m>\$3</m> bills to purchase a <m>\$9</m> item, and <m>10 = 2\cdot 5</m>, so we can use two <m>\$5</m> bills to purchase a <m>\$10</m> item.
+We proceed by strong induction. As base cases, we take <m>p=8</m>, <m>p=9</m>, and <m>p=10</m>. Since <m>p=3+5</m>, we can pay for an <m>\$8</m> item with one <m>3</m> dollar bill and one <m>5</m> dollar bill. Similarly, <m>9= 3 \cdot 3 </m>, so we can use three <m>\$3</m> bills to purchase a <m>\$9</m> item, and <m>10 = 2\cdot 5</m>, so we can use two <m>\$5</m> bills to purchase a <m>\$10</m> item.
 </p>
 <p>
-Let <m>n \in \mathbb{N}</m> with <m>n \gt 10</m>. As our inductive hypothesis, we assume that we can pay for items with price <m>p=8, \, p=9, \dots, p=n</m> using only <m>3</m> and <m>5</m> dollar bills. We show that we can purchase an <m>\$(n+1)</m> item.
+Let <m>n \in \mathbb{N}</m> with <m>n \ge 10</m>. As our inductive hypothesis, we assume that we can pay for items with price <m>p=8, \, p=9, \dots, p=n</m> using only <m>3</m> and <m>5</m> dollar bills. We show that we can purchase an <m>\$(n+1)</m> item.
 </p>
 <p>
 By the inductive hypothesis, we can purchase an <m>\$(n-2)</m> souvenir. That is, there exist natural numbers <m>a, b</m> such that <m>3a+5b = n-2</m>. Adding <m>3</m> to each side, we see <m>3(a+1) + 5b = n+1</m>. Therefore, we can purchase an <m>\$(n+1)</m> souvenir using <m>(a+1)</m> <m>\$3</m> bills and <m>b</m> <m>\$5</m> bills.
