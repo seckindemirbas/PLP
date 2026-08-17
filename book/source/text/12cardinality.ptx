@@ -2000,7 +2000,7 @@ converge to a real limit.
 	  endpoints.
 	</li>
 	<li>
-	  Now assume that the result holds for <m>n=k</m>, and so
+	  Let <m>k \in \mathbb N</m>. Assume the result holds for <m>n=k</m>, and so
 	  <m>x_1,x_2,\dots x_{2n}</m> are lie outside the interval
 	  <m>(a_n,b_n)</m>. Then either <m>x_{2n+1}, x_{2n+2}</m> lie
 	  outside this interval, or, if they lie inside the interval
