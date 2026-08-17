@@ -40,7 +40,7 @@ Let us prove this using strong induction on the property <m>P(n): f(n)=n</m>.
     </p></li>
 <li>
 <p>
- Induction step: assume that <m>f(k)=k</m> for all <m>k\le n</m>. By assumption, <m>f(n+1)\in \{1,2,3,\dots ,n+1\}</m>. We cannot have <m>f(n+1)=k</m> for any <m>k\leq n</m> by injectivity of <m>f</m>, because we already have <m>f(k)=k</m> and <m>k\neq n+1</m>.
+ Induction step: assume that <m>f(k)=k</m> for all natural numbers <m>k\le n</m>. By assumption, <m>f(n+1)\in \{1,2,3,\dots ,n+1\}</m>. We cannot have <m>f(n+1)=k</m> for any <m>k\leq n</m> by injectivity of <m>f</m>, because we already have <m>f(k)=k</m> and <m>k\neq n+1</m>.
     Hence the only possible value is <m>f(n+1)=n+1</m>.
 </p></li>
 </ul>
