@@ -92,7 +92,7 @@ while
     </p></li>
 <li>
 <p>
- Inductive step: Assume that <m> \binom{k}{r} \in \mathbb{Z} </m> for all <m>0 \leq r \leq k</m>. Then consider <m> \binom{k+1}{s} </m>. If <m>s = 0, k+1 </m> then, by the boundary conditions, we know that the coefficient is an integer. Otherwise, we can write <m> \binom{k+1}{s} = \binom{k}{s-1}+\binom{k}{s}</m> which is, by hypothesis, the sum of two integers, and so is itself an integer.
+ Inductive step: let <m>k \in \mathbb N \cup \{0\}</m>. Assume that <m> \binom{k}{r} \in \mathbb{Z} </m> for all integers <m>r</m> s.t. <m>0 \leq r \leq k</m>. Then consider <m> \binom{k+1}{s} </m>. If <m>s = 0, k+1 </m> then, by the boundary conditions, we know that the coefficient is an integer. Otherwise, we can write <m> \binom{k+1}{s} = \binom{k}{s-1}+\binom{k}{s}</m> which is, by hypothesis, the sum of two integers, and so is itself an integer.
   </p></li>
 </ul>
   Thus, by mathematical induction, the binomial coefficients are integers.
