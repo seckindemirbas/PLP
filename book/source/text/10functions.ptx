@@ -1535,7 +1535,7 @@ f)(a_2)</m>. Thus <m>g\circ f</m> is injective.
 	</li>
 	<li>
 	  <p>
-	    Now assume that the statement hold for all collections of
+	    Now let <m>k \in \mathbb N</m>. Assume that the statement holds for all collections of
 	    <m>k</m> non-empty sets, and let <m>\mathcal{T} = \set{A_i
 	    \st i \in \set{1,2,\dots,k+1}}</m>. Since <m>A_{k+1} \neq \es</m> there is some <m>q \in A_{k+1}</m>. 
 	  </p>
