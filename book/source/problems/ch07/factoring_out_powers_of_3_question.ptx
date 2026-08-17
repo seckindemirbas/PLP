@@ -27,7 +27,7 @@ This question tell us that from a natural number <m>n</m>, we can divide out the
 </li>
 <li>
 <p>
-<em>Inductive step:</em> Let <m>k \in \mathbb N</m> and assume that the statement is true for all natural numbers <m>\ell</m> s.t.  <m> \ell \leq k</m>.
+<em>Inductive step:</em> Let <m>k \in \mathbb N</m> and assume that the statement is true for all natural numbers <m>\ell</m> s.t.  <m> \ell \leq k</m> .
 </p>
 <p>
 Then for <m>n=k+1</m> we have two cases.

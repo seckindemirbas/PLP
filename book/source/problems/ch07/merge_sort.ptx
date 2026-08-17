@@ -39,7 +39,7 @@ You can simplify the analysis of the floor function by studying even and odd val
     </p></li>
 <li>
 <p>
- Now assume that the result holds for all <m>1 \leq k \leq \ell</m> and we wish to show that it holds for <m>k= \ell+1</m>. Since the recurrence is slightly different for even or odd <m>k=\ell+1</m>, we split into two cases.
+ Now let <m>l \in \mathbb N</m>  and assume that the result holds for all natural numbers <m>k</m> s.t. <m> k \leq \ell</m>. We wish to show that it holds for <m>k= \ell+1</m>. Since the recurrence is slightly different for even or odd <m>k=\ell+1</m>, we split into two cases.
     <ul>
 <li>
 <p>

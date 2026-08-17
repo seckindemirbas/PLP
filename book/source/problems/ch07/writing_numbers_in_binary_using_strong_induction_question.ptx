@@ -81,7 +81,7 @@ that is, we show how we distribute the produce over two summands, rather than <m
 </li>
 <li>
 <p>
-<em>Inductive step:</em> Assume that the statement is true for all <m>1 \leq \ell \leq k</m>
+<em>Inductive step:</em> Let <m>k \in \mathbb N</m> and assume that the statement is true for all natural numbers <m>\ell</m> s.t.  <m> \ell \leq k</m>.
 Then for <m>n=k+1</m> we have two cases.
 </p>
 <p>
