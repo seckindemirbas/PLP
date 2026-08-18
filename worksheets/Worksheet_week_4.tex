@@ -43,10 +43,12 @@ Note: Order of the quantifiers matters.
 \[ \forall x\in\mathbb R, \forall y\in\mathbb R, (\forall z>0, |x-y|<z)\implies (x=y).  \]
 Hint: How can you rewrite the statement?
 
-\item Let $\mathbb I$ denote the set of irrationals. Prove that $\forall x\in\mathbb I$, $\left(k\in\mathbb{Q}\setminus\set{0}\implies \dfrac{x}{k}\in\mathbb I\right)$.
+\item Let $\mathbb I$ denote the set of irrationals, $\mathbb{I} = \set{x \in \mathbb{R}, x \not\in \mathbb{Q}}$.
+
+Prove that $\forall x\in\mathbb R, \forall k \in \mathbb{Q}\setminus\set{0}$, $\left( x \in \mathbb{I} \implies \dfrac{x}{k}\in\mathbb I\right)$.
 
 Now, use this result, and the fact that $\pi\in\mathbb I$ to show
-\[\forall n\in\mathbb N, \exists y\in\mathbb I \st x>y>0.\]
+\[\forall n\in\mathbb N, \exists y\in\mathbb I \st 1/n > y > 0.\]
 
 \item Let $A$ be a set. We say that a function $f: A\to \mathbb R$ is bounded if $\exists M\in\mathbb R, \st \forall x\in A,\  |f(x)|\leq M$.
 
